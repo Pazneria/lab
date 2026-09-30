@@ -1,91 +1,87 @@
-# Catalog integration is blocked
+# Catalog provenance and mapping
 
-This branch contains a tested interface scaffold, not the completed catalog.
-The site deliberately loads **zero entries**. VoxelBench is a named watch item
-from the task brief, outside the catalog, with no invented source URL or claim.
+**Content integrated:** all 20 parent-supplied original records and all 51 exact
+source URLs. VoxelBench remains a separate unverified watch; Astra remains a
+showcase, not a scored benchmark. Thirty metric definitions have null values,
+subjects, and result dates. Aggregation is disabled.
 
-## Source identity and transfer result
+## Provenance
 
-- Library item: `libfile_bc3ccc1d4f2481918e6776195be562f8`, version `0`.
-- File: `benchmark-tracker-v1.zip`.
-- Backing file: `file_000000004ce881f98a78532f5eaa9e52`.
-- Task brief reports 20 entries, 51 source URLs, a JSON schema, README, and
-  validator. Those counts and files have **not been independently checked**.
-- The current Library skill's resolved-reference transfer was attempted in this
-  Windows workspace. The first download failed under the restricted network.
-- The one supported retry reached the download but failed before installing the
-  file: `AttributeError: module 'os' has no attribute 'setxattr'` in the unmodified
-  Library helper. No readable final ZIP exists at the requested destination.
-- The helper was not modified, metadata was not bypassed, and no alternate
-  download route was attempted.
+The parent supplied the full original catalog JSON directly in the delegation
+message, authorizing its use as local task input. The JSON values are saved in
+`data/catalog.original.json`. JSON property order and whitespace are not part of
+the source contract; strings, arrays, numbers, booleans, and nulls are retained.
 
-Complete materialization in a supported environment using the current Library
-skill and preserve Library identity. Do not publish this preview or link it from
-the homepage as a completed benchmark destination before source integration.
+- Schema version: `1.0.0`; catalog: `public-benchmark-tracker-v1`.
+- Research snapshot: `2026-09-30`.
+- Local original SHA-256:
+  `261e704c6076c5c85b698fefd9a4135d61049e56377d01d42c14aae28800ce85`.
+- Source: **parent-supplied original catalog**, not successful Library materialization.
+- Sources inherit earlier research and its access labels. The interface does not
+  claim fresh source-page, methodology, row, or outcome verification.
+- Later HTTP response checks are separate evidence about link reachability only.
+  They do not change lifecycle or verification labels.
 
-## Next integration steps
+The earlier Library ZIP transfer failed during Windows metadata application
+(`os.setxattr` unavailable), before installation at the exact destination.
+A read-only check confirmed no final ZIP there. No transfer or helper was retried
+or modified after the parent supplied JSON, and no metadata workaround was used
+to recover that ZIP. The ZIP's separate schema/README/validator remain unread;
+we validate the supplied JSON with the local source-preserving builder.
 
-1. Verify the final ZIP bytes exist and are readable, then inspect its README,
-   schema, validator, and catalog. Record its checksum and actual counts.
-2. Run the supplied validator. Keep all scores null. Preserve all source URLs
-   verbatim, date qualifications, limitations, and uncertainty statements.
-3. Build a reviewed display projection in `assets/catalog.js`. The contract below
-   is an interface contract only; it does not claim to reproduce the unread
-   source schema. Map source categories, status definitions, and evidence settings
-   explicitly. Do not silently force ambiguous entries into a category.
-4. Include every source entry. Check stable IDs, exact URLs, count parity, and
-   next verification steps. Remove the provisional status-definition note only
-   after matching the source definitions. Adapt the separate VoxelBench note to
-   its actual source record; do not upgrade its verification status by inference.
-5. Rerun browser tests with the actual catalog. Check all 51 reported URLs and
-   record redirects, failures, paywalls, and unverifiable destinations without
-   deleting their evidence. Review the source basis/date shown in the UI.
-6. Coordinate the Lab change and homepage link with the homepage owner. This
-   branch changes only `Pazneria/lab`; nothing is published, pushed, or merged.
+## Category and evidence mapping
 
-## Display contract
+| Original area         | Display category      |                       Records |
+| --------------------- | --------------------- | ----------------------------: |
+| `community_games`     | Games                 | 5, including VoxelBench watch |
+| `independent_general` | Independent & general |                             4 |
+| `medical`             | Medical evidence      |                             5 |
+| `physical_world`      | Robots & cars         |                             6 |
 
-The dependency-free renderer loads a classic local script, so file previews and
-GitHub Pages subpaths work without fetching JSON or adding a backend. The checked
-in file sets `availability: 'unavailable'` and contains no sample entries.
+The category key `community` selects the original independent/general area.
+Maintainer names and relationships remain visible; category membership is not a
+claim of funding independence.
 
-`window.LAB_CATALOG` has:
+| Original context                                               | Display evidence setting      |
+| -------------------------------------------------------------- | ----------------------------- |
+| `real_world`, prospective clinical / controlled physical trial | Real trial / physical test    |
+| `real_world`, observational evidence                           | Real-world observation        |
+| `simulation`                                                   | Simulation                    |
+| `interactive_game` or `virtual_construction`                   | Virtual game / construction   |
+| `static_dataset`                                               | Dataset / retrospective tasks |
+| `sandboxed_computer`                                           | Computer sandbox              |
+| `mixed`                                                        | Mixed                         |
+| `showcase` entry type                                          | Showcase / case study         |
 
-| Field           | Requirement                                        |
-| --------------- | -------------------------------------------------- |
-| `schemaVersion` | `1` (display contract version)                     |
-| `availability`  | `available` or `unavailable`                       |
-| `basis`         | Source-basis text when available; otherwise `null` |
-| `verifiedAt`    | Actual verification date `YYYY-MM-DD` or `null`    |
-| `entries`       | Array; empty when unavailable                      |
+Astra's original setting **Interactive game** is preserved in its detail view
+while the filter flags its showcase evidence. Medical prospective studies retain
+the Clinical study type and their exact original outcome qualifications.
+Retrospective datasets, simulated EHR tasks, and real patient trials remain
+distinguishable. Waymo observations are separated from controlled trials.
 
-Each entry requires:
+Lifecycle labels are copied exactly: 11 live, 6 historical, 2 ongoing,
+1 unverified, all as of the research date. A working URL does not upgrade
+VoxelBench's unresolved standings or any other source's verification status.
 
-| Field              | Requirement                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `id`               | Unique lowercase slug                                              |
-| `name`, `summary`  | Source-grounded text                                               |
-| `categories`       | Nonempty array of `community`, `games`, `medical`, `physical`      |
-| `status`           | `historical`, `live`, `ongoing`, `unverified`                      |
-| `setting`          | `real-trial`, `simulation`, `case`, `mixed`, `other`, `unverified` |
-| `evidenceType`     | Source's specific study/test type, not an inferred ranking         |
-| `sourceBasis`      | What the cited sources establish                                   |
-| `verifiedAt`       | Actual verification date or `null`                                 |
-| `score`            | Exactly `null`; the UI has no score comparison                     |
-| `limitations`      | Nonempty array of source-grounded limits                           |
-| `nextVerification` | Concrete next check                                                |
-| `sources`          | Nonempty array of source records                                   |
+## Projection and checks
 
-Each source requires `title`, exact `url` (HTTP or HTTPS, no credentials), `basis`
-(what this particular source supports), and `publishedAt` (`YYYY-MM-DD` or
-`null`). Do not manufacture dates to satisfy the contract. If the source uses a
-year, date range, or qualified date, extend the display contract and tests to
-preserve that qualification. Unknown dates render as "Not recorded".
+`scripts/build-catalog.cjs` validates 20 unique records, 51 unique source IDs,
+all four area counts, 30 null-valued metric definitions, in-record metric source
+references, and the watch/showcase identities. It writes `assets/catalog.js`
+deterministically; `--check` detects stale projection bytes. Browser checks
+compare every record's scope, summaries, inference limits, status basis,
+verification note, result interpretation, next step, protocols, and exact URLs
+against the saved original JSON.
 
-Invalid display data fails visibly and shows zero records. Text is inserted as
-text nodes, not HTML. Source URLs are validated and assigned exactly as supplied.
-Entries sort alphabetically; filter counts never express performance.
+No publication date is invented from a research-check date. The UI displays
+**Research snapshot** and **Snapshot source check**, including inherited research
+and prior retrieval-failure labels. It retains the original provenance text per
+source. Unpopulated scores never become zero, ratings, or rankings.
 
-The browser tests inject clearly named synthetic TEST ONLY records **in memory**
-to exercise the renderer, safe links, filtering, and evidence details. These are
-not included in the runtime catalog and do not verify real source content.
+The client rejects unsafe URLs, non-null values, duplicate IDs, impossible dates,
+and missing evidence limits. It uses text nodes for research content. The
+fallback and synthetic regression fixtures are injected only in memory and are
+not runtime catalog entries.
+
+Coordinate homepage linking only after the Lab change is deliberately integrated.
+No merge, push, or publish has occurred.

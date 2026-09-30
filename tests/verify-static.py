@@ -38,10 +38,10 @@ report = {
     "assets": [],
     "fragments": [],
     "publicLinks": [],
-    "catalogSourceURLs": "Blocked: source ZIP not installed; 51 reported URLs not checked",
+    "catalogSourceURLs": "51 exact parent-supplied URLs; separate response results in source-links.json",
 }
 for ref in parser.refs:
-    if ref.startswith("assets/"):
+    if ref.startswith("assets/") or ref.startswith("data/"):
         asset = (ROOT / ref).resolve()
         assert asset.is_relative_to(ROOT) and asset.is_file(), ref
         content = asset.read_bytes()

@@ -100,6 +100,7 @@ h2 {
   font-size: 2.8rem;
 }
 h3 {
+  overflow-wrap: anywhere;
   font-size: 1.15rem;
   line-height: 1.3;
   font-weight: 500;
@@ -224,6 +225,45 @@ h1 em {
 }
 .catalog-basis {
   color: var(--muted);
+}
+.snapshot-date {
+  white-space: nowrap;
+}
+.coverage-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  max-width: 860px;
+  margin: 0 0 20px;
+  line-height: 1.7;
+}
+.entry-type {
+  background: #e5e8e1;
+  border-color: #b2bdb4;
+}
+.metric-definitions {
+  margin-block: 22px;
+}
+.metric-definition {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.metric-definition strong {
+  font-weight: 600;
+}
+.metric-definition p {
+  margin-top: 5px;
+  color: var(--muted);
+}
+.entry details > div {
+  font-size: 0.8rem;
+  margin-top: 20px;
+}
+.entry details > div p {
+  max-width: 820px;
+}
+.watch-section .entry {
+  padding-block: 24px;
 }
 .evidence-notice {
   display: flex;

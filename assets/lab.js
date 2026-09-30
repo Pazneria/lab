@@ -2,7 +2,7 @@
   "use strict";
 
   const categories = {
-    community: "Community",
+    community: "Independent & general",
     games: "Games",
     medical: "Medical evidence",
     physical: "Robots & cars",
@@ -16,7 +16,11 @@
   const settings = {
     "real-trial": "Real trial / physical test",
     simulation: "Simulation",
-    case: "Case / vignette",
+    case: "Showcase / case study",
+    game: "Virtual game / construction",
+    dataset: "Dataset / retrospective tasks",
+    sandbox: "Computer sandbox",
+    observation: "Real-world observation",
     mixed: "Mixed",
     other: "Other",
     unverified: "Unverified setting",
@@ -55,7 +59,7 @@
     }
   }
 
-  // This is a display contract, not an adapter for the unread source schema.
+  // Validate the generated display projection before showing any records.
   // Reject an incomplete projection rather than silently dropping evidence.
   function validateCatalog(value) {
     if (!value || value.schemaVersion !== 1 || !Array.isArray(value.entries))
@@ -110,6 +114,12 @@
       )
         return false;
       if (!Array.isArray(entry.sources) || !entry.sources.length) return false;
+      if (
+        entry.metrics &&
+        (!Array.isArray(entry.metrics) ||
+          entry.metrics.some((metric) => metric.value !== null))
+      )
+        return false;
       return entry.sources.every(
         (source) =>
           source &&
@@ -154,6 +164,7 @@
   function renderEntry(entry) {
     const article = el("article", "entry");
     article.id = "benchmark-" + entry.id;
+    article.dataset.entryType = entry.entryType || "benchmark";
     article.setAttribute("aria-labelledby", "title-" + entry.id);
     const tags = el("div", "entry-top");
     for (const category of entry.categories)
@@ -163,6 +174,17 @@
       el("span", "tag", settings[entry.setting]),
     );
     const heading = el("h3", "", entry.name);
+    const types = {
+      benchmark: "Benchmark",
+      leaderboard: "Leaderboard",
+      watch: "Unverified watch",
+      showcase: "Showcase",
+      clinical_study: "Clinical study",
+      field_evaluation: "Field evaluation",
+      challenge: "Challenge",
+    };
+    if (entry.entryType)
+      tags.append(el("span", "tag entry-type", types[entry.entryType]));
     heading.id = "title-" + entry.id;
     article.append(tags, heading, el("p", "entry-summary", entry.summary));
     article.append(
@@ -171,8 +193,9 @@
         "entry-meta",
         "Evidence: " +
           entry.evidenceType +
-          " · Verified: " +
-          dated(entry.verifiedAt),
+          (entry.snapshotAt
+            ? " · Research snapshot: " + entry.snapshotAt
+            : " · Verified: " + dated(entry.verifiedAt)),
       ),
     );
     const details = el("details");
@@ -185,16 +208,64 @@
     const grid = el("div", "entry-detail-grid");
     grid.append(
       block("Source basis", entry.sourceBasis),
-      block("Evidence setting", settings[entry.setting]),
+      block("Evidence setting", entry.sourceSetting || settings[entry.setting]),
     );
     details.append(grid);
+    if (entry.scope) grid.append(block("Scope & protocol", entry.scope));
+    if (entry.maintainer)
+      grid.append(
+        block(
+          "Maintainer / relationship",
+          entry.maintainer + " · " + entry.relationship,
+        ),
+      );
+    if (entry.verificationNote)
+      details.append(
+        block("Research verification basis", entry.verificationNote),
+      );
+    if (entry.mayInfer) {
+      const inference = el("div", "entry-limitations");
+      inference.append(el("h4", "", "What the evidence may support"));
+      const claims = el("ul");
+      for (const claim of entry.mayInfer) claims.append(el("li", "", claim));
+      inference.append(claims);
+      details.append(inference);
+    }
     const limits = el("div", "entry-limitations");
-    limits.append(el("h4", "", "Limitations"));
+    limits.append(el("h4", "", "Limitations & unsupported conclusions"));
+    limits.append(
+      el(
+        "p",
+        "",
+        "These are caution statements or propositions that the evidence does not establish.",
+      ),
+    );
     const list = el("ul");
     for (const limitation of entry.limitations)
       list.append(el("li", "", limitation));
     limits.append(list);
     details.append(limits);
+    if (entry.metrics && entry.metrics.length) {
+      const definitions = el("div", "metric-definitions");
+      definitions.append(
+        el("h4", "", "Metric definitions · results not populated"),
+      );
+      for (const metric of entry.metrics) {
+        const definition = el("div", "metric-definition");
+        definition.append(
+          el(
+            "strong",
+            "",
+            metric.name + (metric.unit ? " (" + metric.unit + ")" : ""),
+          ),
+          el("p", "", metric.protocol),
+        );
+        definitions.append(definition);
+      }
+      details.append(definitions);
+    }
+    if (entry.resultNote)
+      details.append(block("Result interpretation", entry.resultNote));
     const next = el("p", "next-step");
     next.append(
       el("strong", "", "Next verification step"),
@@ -214,9 +285,19 @@
         el(
           "p",
           "source-description",
-          source.basis + " · Source date: " + dated(source.publishedAt),
+          source.basis +
+            (source.checkedAt
+              ? " · Snapshot source check: " +
+                source.checkedAt +
+                " · " +
+                (source.access === "failed"
+                  ? "Prior retrieval failed"
+                  : "Inherited research")
+              : " · Source date: " + dated(source.publishedAt)),
         ),
       );
+      if (source.provenance)
+        item.append(el("p", "source-description", source.provenance));
       sources.append(item);
     }
     sourceSection.append(sources);
@@ -246,6 +327,11 @@
         entry.summary,
         entry.evidenceType,
         entry.sourceBasis,
+        entry.scope || "",
+        entry.maintainer || "",
+        entry.resultNote || "",
+        ...(entry.tags || []),
+        ...(entry.mayInfer || []),
         statuses[entry.status],
         settings[entry.setting],
         ...entry.categories.map((category) => categories[category]),
@@ -331,12 +417,22 @@
     const filters = currentFilters();
     const matching = entries.filter((entry) => matches(entry, filters));
     const fragment = document.createDocumentFragment();
-    for (const entry of matching) fragment.append(renderEntry(entry));
+    const normal = matching.filter((entry) => entry.entryType !== "watch");
+    const watches = matching.filter((entry) => entry.entryType === "watch");
+    for (const entry of normal) fragment.append(renderEntry(entry));
     results.replaceChildren(fragment);
+    document
+      .getElementById("watch-results")
+      .replaceChildren(...watches.map(renderEntry));
+    document.querySelector(".watch-section").hidden = watches.length === 0;
     const count = document.getElementById("result-count");
     count.textContent =
       catalog.availability === "available"
-        ? matching.length + " of " + entries.length + " entries"
+        ? matching.length +
+          " of " +
+          entries.length +
+          " records" +
+          (watches.length ? " · " + watches.length + " watch item" : "")
         : "0 entries loaded";
     for (const counter of document.querySelectorAll("[data-count]")) {
       const category = counter.dataset.count;
@@ -348,20 +444,30 @@
         ).length,
       );
     }
-    empty.hidden = matching.length > 0;
+    empty.hidden = normal.length > 0;
     if (catalog.availability === "available") {
       document.getElementById("empty-label").textContent = "No matches";
       document.getElementById("empty-title").textContent =
         "No entries match these filters.";
       document.getElementById("empty-copy").textContent =
         "Try a broader search or reset the filters to browse the catalog.";
-      document.getElementById("empty-footnote").textContent =
-        "The watch item is listed separately below.";
+      document.getElementById("empty-footnote").textContent = watches.length
+        ? "A matching watch item is listed separately below."
+        : "No scores or rankings are included.";
     } else if (invalid) {
       document.getElementById("empty-label").textContent =
         "Catalog could not be loaded";
       document.getElementById("empty-copy").textContent =
         "The catalog did not pass the display checks. No records are shown until its source data can be verified.";
+      document.getElementById("empty-title").textContent =
+        "No benchmark records loaded.";
+    } else {
+      document.getElementById("empty-label").textContent =
+        "Catalog unavailable";
+      document.getElementById("empty-title").textContent =
+        "No benchmark records loaded.";
+      document.getElementById("empty-copy").textContent =
+        "The catalog data is unavailable. No sample records or performance results are shown.";
     }
     if (syncURL) updateURL(filters);
     openLinkedEntry(false);
@@ -369,11 +475,23 @@
 
   if (catalog.availability === "available") {
     const basis = document.getElementById("catalog-basis");
-    basis.replaceChildren(
-      el("span", "", catalog.basis),
-      el("br"),
-      el("span", "", "Verified: " + dated(catalog.verifiedAt)),
+    const dateLabel = el(
+      "span",
+      "",
+      catalog.snapshotAt ? "Research snapshot: " : "Verified: ",
     );
+    if (catalog.snapshotAt) {
+      const date = el("time", "snapshot-date", catalog.snapshotAt);
+      date.dateTime = catalog.snapshotAt;
+      dateLabel.append(date);
+    } else dateLabel.append(document.createTextNode(dated(catalog.verifiedAt)));
+    basis.replaceChildren(el("span", "", catalog.basis), el("br"), dateLabel);
+    if (catalog.coverageNote)
+      document.getElementById("coverage-note").textContent =
+        catalog.coverageNote;
+    if (catalog.aggregationReason)
+      document.getElementById("aggregation-note").textContent =
+        catalog.aggregationReason;
   }
   form.addEventListener("submit", (event) => event.preventDefault());
   form.addEventListener("input", () => render());

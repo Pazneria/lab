@@ -10,7 +10,7 @@ const root = path.resolve(__dirname, "..");
 const evidence = path.join(root, "evidence");
 const report = {
   testedAt: new Date().toISOString(),
-  actualCatalogIntegrated: false,
+  actualCatalogIntegrated: true,
   actualSourceURLsVerified: false,
   syntheticFixtures:
     "TEST ONLY records injected in memory; never added to assets/catalog.js",
@@ -226,6 +226,13 @@ async function audit(page, label) {
     ).version;
     const context = await browser.newContext({ reducedMotion: "reduce" });
     const page = await context.newPage();
+    await inject(page, {
+      schemaVersion: 1,
+      availability: "unavailable",
+      basis: null,
+      verifiedAt: null,
+      entries: [],
+    });
     page.on("pageerror", (error) => report.errors.push(error.message));
     page.on("request", (request) => {
       if (
@@ -287,7 +294,7 @@ async function audit(page, label) {
     }));
     assert.equal(focus.width, "3px");
     assert.equal(focus.style, "solid");
-    await page.getByRole("radio", { name: "Community" }).focus();
+    await page.getByRole("radio", { name: "Independent & general" }).focus();
     await page.keyboard.press("ArrowDown");
     assert.equal(
       await page.locator("input[name=category]:checked").inputValue(),
@@ -513,7 +520,7 @@ async function audit(page, label) {
     assert.equal(await noJSPage.locator("noscript").isVisible(), true);
     assert.equal(
       await noJSPage.locator("#empty-title").innerText(),
-      "No benchmark records loaded.",
+      "Enable JavaScript to explore the catalog.",
     );
     assert.equal(
       await noJSPage.getByRole("heading", { name: "VoxelBench" }).count(),
@@ -533,9 +540,9 @@ async function audit(page, label) {
     await page.goto(pathToFileURL(path.join(root, "index.html")).href);
     assert.equal(
       await page.locator("#empty-label").textContent(),
-      "Catalog unavailable",
+      "No matches",
     );
-    assert.equal(await page.locator(".entry").count(), 0);
+    assert.equal(await page.locator(".entry").count(), 20);
     done(
       "Direct file preview loads local scripts and styles without a JSON fetch",
     );

@@ -56,9 +56,14 @@
             <h2 id="catalog-title">The catalog</h2>
           </div>
           <p class="catalog-basis" id="catalog-basis">
-            Source basis unavailable<br />Verification date not established
+            Original research catalog<br />Research snapshot:
+            <time class="snapshot-date" datetime="2026-09-30">2026-09-30</time>
           </p>
         </div>
+        <p class="coverage-note" id="coverage-note">
+          20 records from the 2026-09-30 research snapshot. Source pages have
+          not been freshly polled for this interface.
+        </p>
         <div class="evidence-notice">
           <span class="notice-dot" aria-hidden="true"></span>
           <p>
@@ -97,7 +102,7 @@
                 >
                 <label class="category-option"
                   ><input type="radio" name="category" value="community" /><span
-                    >Community</span
+                    >Independent &amp; general</span
                   ><span class="category-count" data-count="community"
                     >0</span
                   ></label
@@ -137,7 +142,11 @@
                 <option value="all">Any setting</option>
                 <option value="real-trial">Real trial / physical test</option>
                 <option value="simulation">Simulation</option>
-                <option value="case">Case / vignette</option>
+                <option value="case">Showcase / case study</option>
+                <option value="game">Virtual game / construction</option>
+                <option value="dataset">Dataset / retrospective tasks</option>
+                <option value="sandbox">Computer sandbox</option>
+                <option value="observation">Real-world observation</option>
                 <option value="mixed">Mixed</option>
                 <option value="other">Other</option>
                 <option value="unverified">Unverified</option>
@@ -175,12 +184,14 @@
                   d="M12 14h40v36H12zM12 25h40M23 14v36M31 35h13M31 42h8"
                 ></path>
               </svg>
-              <p class="eyebrow" id="empty-label">Catalog unavailable</p>
-              <h3 id="empty-title">No benchmark records loaded.</h3>
+              <p class="eyebrow" id="empty-label">Catalog viewer</p>
+              <h3 id="empty-title">
+                Enable JavaScript to explore the catalog.
+              </h3>
               <p id="empty-copy">
-                The source catalog is unavailable in this local preview. Its
-                entries, source links, and verification dates cannot be
-                displayed yet.
+                The complete 20-record research snapshot is available in the
+                original catalog JSON linked below. JavaScript enables search,
+                filters, and readable evidence details.
               </p>
               <p class="empty-footnote" id="empty-footnote">
                 No sample records or performance results have been added.
@@ -188,9 +199,11 @@
             </div>
             <noscript
               ><p class="noscript-note">
-                JavaScript is needed to load and filter catalog records. This
-                preview has no loaded records. The evidence guide and watch note
-                below remain readable.
+                JavaScript is needed for the catalog viewer. Read the complete
+                <a href="data/catalog.original.json"
+                  >original research catalog JSON</a
+                >
+                or use the evidence guide below.
               </p></noscript
             >
           </div>
@@ -204,27 +217,29 @@
           </div>
           <p class="muted">Separate from the catalog</p>
         </div>
-        <article class="watch-item">
-          <div>
-            <span class="tag status-unverified">Unverified</span>
-            <h3>VoxelBench</h3>
-          </div>
-          <div>
-            <p>
-              A named watch item. Its source record is unavailable in this
-              preview, so no benchmark claims, results, or source links are
-              shown.
-            </p>
-            <p class="next-step">
-              <strong>Next verification step</strong
-              ><span
-                >Retrieve the source record, confirm the exact project identity
-                and primary URL, then verify the task, evidence setting, and
-                current status.</span
-              >
-            </p>
-          </div>
-        </article>
+        <div id="watch-results">
+          <article class="watch-item">
+            <div>
+              <span class="tag status-unverified">Unverified</span>
+              <h3>VoxelBench</h3>
+            </div>
+            <div>
+              <p>
+                Voxel-construction preference benchmark with separate text and
+                image tracks. Current standings remain unresolved in the
+                research snapshot.
+              </p>
+              <p class="next-step">
+                <strong>Next verification step</strong
+                ><span
+                  >Reopen the official board when available and confirm
+                  methodology, text/image track, dated rows, generation rules,
+                  vote counts, and intervals.</span
+                >
+              </p>
+            </div>
+          </article>
+        </div>
       </section>
       <section
         class="reading-section wrap"
@@ -266,6 +281,9 @@
             </p>
           </article>
         </div>
+        <p class="coverage-note" id="aggregation-note">
+          No custom or aggregate ratings are assigned.
+        </p>
         <details class="status-guide">
           <summary>
             What the source statuses mean <span aria-hidden="true">+</span>
@@ -282,7 +300,7 @@
               <dt>Live</dt>
               <dd>
                 The catalog’s cited source documented availability at its
-                recorded verification date.
+                recorded research date. This interface does not poll it live.
               </dd>
             </div>
             <div>
@@ -301,8 +319,10 @@
             </div>
           </dl>
           <p>
-            These display labels must be mapped to the source catalog’s own
-            definitions before catalog integration.
+            These are the original catalog's lifecycle labels as of 2026-09-30.
+            Each entry retains its specific status basis. Catalog-supported
+            means inherited research support; source pages were not freshly
+            reopened.
           </p>
         </details>
       </section>
