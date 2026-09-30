@@ -65,9 +65,14 @@ Reports and screenshots are saved to ignored `evidence/`.
 
 Existing Pages settings were read: `main`, repository root, legacy branch
 deployment at `https://pazneria.github.io/lab/`. Home links use `/` on the shared
-domain. Merging to main would publish, so coordinate integration and a homepage
-link with the homepage owner. This isolated branch has not been pushed, merged,
-or published. Homepage files are untouched.
+domain. Merging reviewed commits to main publishes through this existing
+workflow. Coordinate homepage linking separately after deployment verification.
+This repository change leaves homepage files untouched.
+
+After publication, `node tests/verify-deployment.cjs` checks the live Pages files
+against the current Git commit and exercises catalog details, exact sources,
+filters, keyboard controls, mobile reflow, and accessibility. It uses the same
+developer test dependencies and writes `evidence/deployment-validation.json`.
 
 Library catalog materialization failed on Windows; it was not retried or
 modified after the parent supplied JSON. The ZIP schema/validator are not claimed

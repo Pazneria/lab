@@ -83,5 +83,5 @@ and missing evidence limits. It uses text nodes for research content. The
 fallback and synthetic regression fixtures are injected only in memory and are
 not runtime catalog entries.
 
-Coordinate homepage linking only after the Lab change is deliberately integrated.
-No merge, push, or publish has occurred.
+Publish the catalog through this repository's existing main-branch Pages workflow.
+Coordinate homepage linking separately after the deployed Lab interface is verified.

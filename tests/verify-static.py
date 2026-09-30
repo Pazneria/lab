@@ -1,6 +1,6 @@
 """Validate checked-in asset/fragment references and current public navigation.
 
-This does not verify the missing catalog's reported source URLs.
+Source URL reachability is checked separately by check-source-links.py.
 """
 import hashlib
 import json

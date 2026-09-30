@@ -80,4 +80,5 @@ Desktop, mobile, and medical detail screenshots were visually inspected.
 The actual-source screenshots are `lab-catalog-*` and `lab-medical-detail-*`;
 fallback regression images depict intentional empty/error states.
 Reports/screenshots are in local ignored `evidence/` and packaged with the
-handoff. No homepage change, push, merge, or publication occurred.
+handoff. These checks preceded publication. Deployment verification is recorded
+separately; homepage files are outside this change.
