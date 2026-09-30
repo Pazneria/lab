@@ -1,3 +1,79 @@
-# Lab Repository
+# Lab · Benchmark discovery
 
-This repository will contain experimental projects and simulations. To add new experiments or simulations, create new markdown (.md) or HTML files in appropriate folders. More details and guidelines will be provided later.
+A static discovery interface containing **20 source-grounded records**: 19 catalog
+entries and the separate, unverified VoxelBench watch item. Search and filter by
+category, research-snapshot status, and evidence setting. Expand a record for
+scope, source basis, metric definitions, inference limits, exact sources, and its
+next verification step.
+
+All 30 metric values remain null. No results, rankings, or aggregate scores are
+invented. The snapshot is dated **2026-09-30**, not a live methodology or standings
+check. See [catalog provenance and mapping](docs/CATALOG-INTEGRATION.md) and
+[actual validation](docs/VALIDATION.md).
+
+## Static structure
+
+- `data/catalog.original.json`: exact JSON values supplied directly by the parent.
+- `scripts/build-catalog.cjs`: validates counts, IDs, dates, metric references,
+  null results, and exact URLs; creates the reviewed display projection.
+- `assets/catalog.js`: generated local script. Do not hand-edit.
+- `assets/lab.js`: validated text rendering, filters, URL state, and native details.
+- `index.html`, `assets/lab.css`, `assets/mark.svg`: responsive page and J² mark.
+- `tests/`: real-data checks, fallback/security regressions, static checks, and
+  one-pass source URL response checks.
+
+No build, package installation, backend, account, paid API, or third-party request
+is needed to use the website. System fonts and project-relative assets work on
+GitHub Pages and direct file previews. With JavaScript off, the original JSON and
+native evidence guide remain available.
+
+## Preview and regeneration
+
+Open `index.html`, or serve this folder:
+
+```powershell
+python -m http.server 5188 --bind 127.0.0.1
+```
+
+Visit `http://127.0.0.1:5188/`. To regenerate after an authorized catalog change:
+
+```powershell
+node scripts/build-catalog.cjs
+node scripts/build-catalog.cjs --check
+```
+
+## Checks
+
+Developer checks require Playwright and axe-core; the website itself does not:
+
+```powershell
+npm install --no-save --package-lock=false --ignore-scripts playwright axe-core
+npx playwright install chromium
+node tests/verify-real-catalog.cjs
+node tests/verify-ui.cjs
+python tests/verify-static.py
+python tests/check-source-links.py
+```
+
+Existing installations can be selected with `LAB_PLAYWRIGHT_MODULE`,
+`LAB_AXE_SCRIPT`, and optional `LAB_BROWSER_CHANNEL=msedge`. Tests use one
+separate headless browser sequentially and close only their own contexts. They
+do not control desktop apps, Rocket League, or existing browser sessions.
+Reports and screenshots are saved to ignored `evidence/`.
+
+## Deployment and integration
+
+Existing Pages settings were read: `main`, repository root, legacy branch
+deployment at `https://pazneria.github.io/lab/`. Home links use `/` on the shared
+domain. Merging reviewed commits to main publishes through this existing
+workflow. Coordinate homepage linking separately after deployment verification.
+This repository change leaves homepage files untouched.
+
+After publication, `node tests/verify-deployment.cjs` checks the live Pages files
+against the current Git commit and exercises catalog details, exact sources,
+filters, keyboard controls, mobile reflow, and accessibility. It uses the same
+developer test dependencies and writes `evidence/deployment-validation.json`.
+
+Library catalog materialization failed on Windows; it was not retried or
+modified after the parent supplied JSON. The ZIP schema/validator are not claimed
+to have run. The local checks validate the provided JSON and its display mapping.

@@ -1,11 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lab</title>
-</head>
-<body>
-  <h1>Lab - Experiments coming soon</h1>
-  <p>Stay tuned for experimental projects and simulations.</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f2ec" />
+    <meta
+      name="description"
+      content="Explore benchmark evidence by category, test setting, and source. A discovery catalog with explicit verification limits."
+    />
+    <title>Benchmark discovery · Lab</title>
+    <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/lab.css" />
+    <script src="assets/catalog.js" defer></script>
+    <script src="assets/lab.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to benchmark discovery</a>
+    <header class="masthead wrap">
+      <a class="mark" href="/" aria-label="Jordan's home">J<sup>2</sup></a>
+      <div class="site-name">Lab<span>Benchmark discovery</span></div>
+      <nav aria-label="Main navigation">
+        <a href="/">Home <span aria-hidden="true">↗</span></a
+        ><a href="#catalog" aria-current="page">Catalog</a
+        ><a href="#reading-evidence">Reading the evidence</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section class="intro wrap" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Lab / Evidence index</p>
+          <h1 id="page-title">Benchmark<br /><em>discovery.</em></h1>
+        </div>
+        <div class="intro-note">
+          <p>
+            A source-led index for community evaluations, game tests, medical
+            evidence, and physical systems.
+          </p>
+          <p class="muted">
+            Discovery comes first. Scores and rankings need a verified
+            comparison basis.
+          </p>
+          <a class="underlined" href="#catalog"
+            >Explore the catalog <span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <section
+        class="catalog-section wrap"
+        id="catalog"
+        aria-labelledby="catalog-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / Browse</p>
+            <h2 id="catalog-title">The catalog</h2>
+          </div>
+          <p class="catalog-basis" id="catalog-basis">
+            Original research catalog<br />Research snapshot:
+            <time class="snapshot-date" datetime="2026-09-30">2026-09-30</time>
+          </p>
+        </div>
+        <p class="coverage-note" id="coverage-note">
+          20 records from the 2026-09-30 research snapshot. Source pages have
+          not been freshly polled for this interface.
+        </p>
+        <div class="evidence-notice">
+          <span class="notice-dot" aria-hidden="true"></span>
+          <p>
+            <strong>Discovery catalog.</strong> Entries describe tests and
+            evidence, not comparable model performance. No scores or rankings
+            are included.
+          </p>
+        </div>
+        <div class="catalog-layout">
+          <aside class="filters" aria-label="Catalog filters">
+            <form id="filters" role="search" aria-label="Search benchmarks">
+              <label class="field-label" for="search">Search the catalog</label>
+              <div class="search-field">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <circle cx="10" cy="10" r="6"></circle>
+                  <path d="m15 15 5 5"></path></svg
+                ><input
+                  id="search"
+                  type="search"
+                  name="q"
+                  placeholder="Name, task, source…"
+                  autocomplete="off"
+                  maxlength="200"
+                />
+              </div>
+              <fieldset class="category-field">
+                <legend class="field-label">Category</legend>
+                <label class="category-option"
+                  ><input
+                    type="radio"
+                    name="category"
+                    value="all"
+                    checked
+                  /><span>All categories</span
+                  ><span class="category-count" data-count="all">0</span></label
+                >
+                <label class="category-option"
+                  ><input type="radio" name="category" value="community" /><span
+                    >Independent &amp; general</span
+                  ><span class="category-count" data-count="community"
+                    >0</span
+                  ></label
+                >
+                <label class="category-option"
+                  ><input type="radio" name="category" value="games" /><span
+                    >Games</span
+                  ><span class="category-count" data-count="games"
+                    >0</span
+                  ></label
+                >
+                <label class="category-option"
+                  ><input type="radio" name="category" value="medical" /><span
+                    >Medical evidence</span
+                  ><span class="category-count" data-count="medical"
+                    >0</span
+                  ></label
+                >
+                <label class="category-option"
+                  ><input type="radio" name="category" value="physical" /><span
+                    >Robots &amp; cars</span
+                  ><span class="category-count" data-count="physical"
+                    >0</span
+                  ></label
+                >
+              </fieldset>
+              <label class="field-label" for="status">Source status</label>
+              <select id="status" name="status">
+                <option value="all">Any status</option>
+                <option value="historical">Historical</option>
+                <option value="live">Live</option>
+                <option value="ongoing">Ongoing</option>
+                <option value="unverified">Unverified</option>
+              </select>
+              <label class="field-label" for="setting">Evidence setting</label>
+              <select id="setting" name="setting">
+                <option value="all">Any setting</option>
+                <option value="real-trial">Real trial / physical test</option>
+                <option value="simulation">Simulation</option>
+                <option value="case">Showcase / case study</option>
+                <option value="game">Virtual game / construction</option>
+                <option value="dataset">Dataset / retrospective tasks</option>
+                <option value="sandbox">Computer sandbox</option>
+                <option value="observation">Real-world observation</option>
+                <option value="mixed">Mixed</option>
+                <option value="other">Other</option>
+                <option value="unverified">Unverified</option>
+              </select>
+              <button class="reset-button" type="reset">
+                Reset filters <span aria-hidden="true">↺</span>
+              </button>
+            </form>
+            <p class="filter-note">
+              A source’s activity status does not establish its validity. The
+              evidence setting describes what was tested.
+            </p>
+          </aside>
+          <div class="catalog-results">
+            <div class="results-topline">
+              <p
+                id="result-count"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                0 entries loaded
+              </p>
+              <span class="muted">Alphabetical · no ranking</span>
+            </div>
+            <div id="results"></div>
+            <div class="empty-state" id="empty-state">
+              <svg
+                class="empty-symbol"
+                viewBox="0 0 64 64"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M12 14h40v36H12zM12 25h40M23 14v36M31 35h13M31 42h8"
+                ></path>
+              </svg>
+              <p class="eyebrow" id="empty-label">Catalog viewer</p>
+              <h3 id="empty-title">
+                Enable JavaScript to explore the catalog.
+              </h3>
+              <p id="empty-copy">
+                The complete 20-record research snapshot is available in the
+                original catalog JSON linked below. JavaScript enables search,
+                filters, and readable evidence details.
+              </p>
+              <p class="empty-footnote" id="empty-footnote">
+                No sample records or performance results have been added.
+              </p>
+            </div>
+            <noscript
+              ><p class="noscript-note">
+                JavaScript is needed for the catalog viewer. Read the complete
+                <a href="data/catalog.original.json"
+                  >original research catalog JSON</a
+                >
+                or use the evidence guide below.
+              </p></noscript
+            >
+          </div>
+        </div>
+      </section>
+      <section class="watch-section wrap" aria-labelledby="watch-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / Watch</p>
+            <h2 id="watch-title">Awaiting verification</h2>
+          </div>
+          <p class="muted">Separate from the catalog</p>
+        </div>
+        <div id="watch-results">
+          <article class="watch-item">
+            <div>
+              <span class="tag status-unverified">Unverified</span>
+              <h3>VoxelBench</h3>
+            </div>
+            <div>
+              <p>
+                Voxel-construction preference benchmark with separate text and
+                image tracks. Current standings remain unresolved in the
+                research snapshot.
+              </p>
+              <p class="next-step">
+                <strong>Next verification step</strong
+                ><span
+                  >Reopen the official board when available and confirm
+                  methodology, text/image track, dated rows, generation rules,
+                  vote counts, and intervals.</span
+                >
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section
+        class="reading-section wrap"
+        id="reading-evidence"
+        aria-labelledby="reading-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / Method</p>
+            <h2 id="reading-title">Reading the evidence</h2>
+          </div>
+          <p class="muted">Scope before scores</p>
+        </div>
+        <div class="method-grid">
+          <article>
+            <span class="method-number">01</span>
+            <h3>Start with the source</h3>
+            <p>
+              Follow the exact paper, repository, or project link. Check its
+              date, version, protocol, and what the claim actually covers.
+            </p>
+          </article>
+          <article>
+            <span class="method-number">02</span>
+            <h3>Check the setting</h3>
+            <p>
+              A simulated drive, a physical road test, and a clinical case
+              answer different questions. Medical cases do not establish patient
+              outcomes; simulations do not establish real-world performance.
+            </p>
+          </article>
+          <article>
+            <span class="method-number">03</span>
+            <h3>Keep limits attached</h3>
+            <p>
+              Read the limitations and next verification step alongside each
+              entry. A missing score is unknown, not zero. A live source is not
+              a guarantee of current validity.
+            </p>
+          </article>
+        </div>
+        <p class="coverage-note" id="aggregation-note">
+          No custom or aggregate ratings are assigned.
+        </p>
+        <details class="status-guide">
+          <summary>
+            What the source statuses mean <span aria-hidden="true">+</span>
+          </summary>
+          <dl>
+            <div>
+              <dt>Historical</dt>
+              <dd>
+                Evidence describes a past test or release; present availability
+                still needs checking.
+              </dd>
+            </div>
+            <div>
+              <dt>Live</dt>
+              <dd>
+                The catalog’s cited source documented availability at its
+                recorded research date. This interface does not poll it live.
+              </dd>
+            </div>
+            <div>
+              <dt>Ongoing</dt>
+              <dd>
+                The cited work was in progress; its protocol or findings may
+                change.
+              </dd>
+            </div>
+            <div>
+              <dt>Unverified</dt>
+              <dd>
+                The source identity, availability, or claim needs confirmation
+                before use.
+              </dd>
+            </div>
+          </dl>
+          <p>
+            These are the original catalog's lifecycle labels as of 2026-09-30.
+            Each entry retains its specific status basis. Catalog-supported
+            means inherited research support; source pages were not freshly
+            reopened.
+          </p>
+        </details>
+      </section>
+    </main>
+    <footer class="footer wrap">
+      <p>
+        <span class="footer-mark" aria-hidden="true">J<sup>2</sup></span> Lab
+        <span class="muted">/ Benchmark discovery</span>
+      </p>
+      <a href="https://github.com/Pazneria/lab"
+        >Project source <span aria-hidden="true">↗</span></a
+      >
+    </footer>
+  </body>
 </html>
