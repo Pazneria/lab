@@ -1,0 +1,8 @@
+# Preserve exact source/projection bytes across Windows and Pages checkouts.
+data/catalog.original.json text eol=lf
+assets/catalog.js text eol=lf
+data/results.original.json text eol=lf
+data/results-rune-evidence.json text eol=lf
+data/results-researcher-readme.md text eol=lf
+data/results-researcher-readme.txt text eol=lf
+assets/results-data.js text eol=lf
