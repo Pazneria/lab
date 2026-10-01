@@ -262,14 +262,14 @@ async function main() {
           await page
             .locator("#bullshitbench-score-cost .chart-scale-note")
             .textContent(),
-          /0-100%/,
+          /0[–-]100%/,
         );
         await page.locator("#bullshitbench-score-cost .zoom-button").click();
         assert.match(
           await page
             .locator("#bullshitbench-score-cost .chart-scale-note")
             .textContent(),
-          /50-75%.*Zoomed/,
+          /50[–-]75%.*Zoomed/,
         );
         await page.locator("#bullshitbench-score-cost .zoom-button").click();
       }
