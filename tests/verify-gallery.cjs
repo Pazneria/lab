@@ -275,8 +275,8 @@ async function main() {
       assert.ok(values.every((r) => r[3] === "Not reported / not reported"));
       if (c.display_status === "historical_source_cohort")
         assert.match(
-          await page.locator(".detail-notice").textContent(),
-          /Historical March 2026/,
+          await page.locator(".historical-notice").textContent(),
+          /March 2026.*not current standings/,
         );
       if (c.id === "frontiermath-tier4-v2") {
         assert.match(
@@ -488,6 +488,7 @@ async function main() {
       "All original 18 result records and seven views retain exact axes, values, table alternatives, source links, shapes and all 720 time points",
     );
     await go("results.html?benchmark=runebench&view=cost");
+    const detailHistoryLength = await page.evaluate(() => history.length);
     await page.locator("select[name=skill]").selectOption("mining");
     assert.match(page.url(), /skill=mining/);
     assert.equal(
@@ -501,10 +502,14 @@ async function main() {
       await page.locator(".chart-card").getAttribute("id"),
       /mining-score-time/,
     );
-    await page.goBack();
+    assert.equal(
+      await page.evaluate(() => history.length),
+      detailHistoryLength,
+    );
+    await page.reload();
     assert.match(
       await page.locator(".chart-card").getAttribute("id"),
-      /mining-score-cost/,
+      /mining-score-time/,
     );
     await go(
       "results.html?benchmark=medagentbench#observation-medagentbench-paper-v2-gpt4o",

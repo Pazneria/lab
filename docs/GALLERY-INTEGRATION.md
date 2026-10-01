@@ -85,6 +85,18 @@ all 120 samples per Rune series remain accessible by keyboard, focus and tap.
 A persistent readout keeps values available below the graph. Table alternatives
 retain exact supplied numeric strings, including values rounded for display.
 
+Graph view and Rune skill changes replace the current detail history entry.
+Opening a card remains ordinary document navigation. Browser Back and the
+“All benchmarks” link restore the originating gallery's category, search,
+graph filter, scroll position and focused card. The latest view survives reload
+and Forward; reopening a card starts its default view. Direct links keep a
+plain gallery fallback. Four March cohorts carry a conspicuous historical date
+and a notice before the graph; none of their data or source dates are changed.
+
+`tests/verify-gallery-navigation.cjs` exercises repeated variant switches,
+native and in-page Back, Forward, reload, reopen, keyboard and touch. It also
+checks direct links, unsafe return destinations and disabled session storage.
+
 `tests/verify-gallery.cjs` checks card membership, all 30 standard scores,
 all original 18 rows/seven views, HLE tools/partitions, source links, missing-data
 rules, URL state, keyboard interaction and mobile reflow. It also performs axe
@@ -110,7 +122,8 @@ data projections contain only the supplied public research and editorial notes.
 Private transfer receipts and CLI account/session metadata stay outside the
 repository and screenshot/archive artifacts.
 
-Untrusted boundaries are source metadata, names, prose, URL queries and hashes.
+Untrusted boundaries are source metadata, names, prose, URL queries, hashes
+and browser return metadata.
 Rendering uses explicit DOM/SVG construction and `textContent`; it never inserts
 supplied HTML, evaluates supplied code or uses supplied style strings. Numeric
 coordinates must be finite, and standard cost/time fields must remain null.
@@ -119,7 +132,15 @@ defensively and only identify existing detail elements.
 
 Outbound source URLs require HTTPS without embedded credentials. Links opened
 in a new tab carry `noopener noreferrer`; original strings are retained.
-Local paths are fixed. No runtime fetch, iframe, postMessage, storage, backend,
+Return destinations must be the same-origin root, `index.html` or
+`benchmarks.html`; foreign URLs, credentials, other local paths and non-finite
+scroll values are rejected. Session storage carries only public gallery URL,
+scroll and focus metadata into the next detail document, where it is consumed
+once and retained in that history entry. If storage is disabled, a validated
+same-window referrer provides the native-Back fallback. No private data or
+persistent storage is introduced.
+
+Local paths are fixed. No runtime fetch, iframe, postMessage, backend,
 tracking, new dependency, CDN, image service or web-font resource was introduced.
 Existing developer-only Playwright and axe-core installations run a separate
 headless Edge process and close only their own contexts.
