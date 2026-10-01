@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-01",
+  "branch": "data/current-benchmark-refresh",
+  "ownership": {
+    "data": "Dated inputs, normalized projections, source notes, data builder, generated gallery-data.js, validation evidence",
+    "ui": "Renderer/navigation/styles/runtime smoke tests; no data-owner edits",
+    "room": "Separate lab-space owner"
+  },
+  "runtime": {
+    "global": "window.LAB_GALLERY",
+    "existingKeys": [
+      "standard",
+      "notes",
+      "provenance"
+    ],
+    "newKey": "expanded",
+    "standardCategories": [
+      "standard",
+      "medical"
+    ],
+    "counts": {
+      "catalogCards": 20,
+      "sourceCohortCards": 22,
+      "totalCards": 42,
+      "sourceCohortRows": 340,
+      "originalResultRows": 18,
+      "originalChartViews": 7
+    },
+    "source": "data/gallery-current-2026-10-01.json"
+  },
+  "requiredRendererWork": [
+    "Replace six-card/30-row/26-total hardcoded validation with the dated 22-cohort/340-row/42-card contract; retain original 18-row/seven-view checks.",
+    "Use c.category; four appended generic percent cohorts are medical. Preserve original discovery card IDs.",
+    "Keep each c.comparison_group separate. Full/HARD-51, common/native agents, private math task versions and medical memory/task conditions must not share rankings.",
+    "History cards c.history=true / display_status=historical_source_cohort belong to an explicit history/version choice. Use c.date_label rather than hardcoded March history labels.",
+    "Respect display_defaults.row_limit=12 with exact-configuration search and show-all access. GPQA/old math sort by evaluation_date_desc; MMMU retains source_order. Never discard underlying rows.",
+    "Expose reported_cost/reported_time, raw_record, source_input, exact effort/agent/fallback, uncertainty kind and evaluation/model-release dates in details. Generic plot cost_usd/latency_seconds remain null because bases differ.",
+    "Current FrontierMath only task 2.1.0: GPT-6.1 Sol max 100%, Claude Sonnet 5.5 max 80.48780487804879%; stderr6.265967111543964 percentage points for Sonnet. Python allowed. History2.0.0 separate.",
+    "Use provenance.sourceFiles and c.source_id source links instead of linking only old standard JSON.",
+    "expanded.bullshitbench.records contains228; value is clear-pushback/all100attempts, including errors/refusals. Secondary refusal_excluded_percent is a different denominator. Per-response reported cost with incomplete coverage cannot enter a matched cost graph.",
+    "expanded.runebench.records contains48 rows, three efforts x16skills. Skill selector keeps skills separate; sample_size1 is one trial, tracking_sample_count120 is tracking points. API-equivalent cost and tracker seconds are tagged in details.",
+    "expanded.medical.medagentbench_original.rows contains12 historical results versus old six; preserve six original observations/charts and offer all12. V2 cards each represent one system condition, not a model leaderboard.",
+    "Layperson score labels retain technical provenance in details. No current publication or live chart claim until coordinated runtime checks pass."
+  ],
+  "cohorts": [
+    {
+      "id": "hle-diamond",
+      "rows": 9,
+      "status": "current existing September source"
+    },
+    {
+      "id": "gpqa-diamond",
+      "rows": 157,
+      "status": "current Epoch task1.0.11"
+    },
+    {
+      "id": "mmmu-pro",
+      "rows": 20,
+      "status": "current AA default chart, not full284 archive"
+    },
+    {
+      "id": "swe-bench-pro-public-v1",
+      "rows": 4,
+      "status": "history"
+    },
+    {
+      "id": "terminal-bench-2",
+      "rows": 4,
+      "status": "history"
+    },
+    {
+      "id": "frontiermath-tier4-v2",
+      "rows": 2,
+      "status": "current task2.1.0"
+    },
+    {
+      "id": "gpqa-diamond-march-reported",
+      "rows": 4,
+      "status": "history"
+    },
+    {
+      "id": "mmmu-pro-march-reported",
+      "rows": 4,
+      "status": "history"
+    },
+    {
+      "id": "frontiermath-tier4-v2-september-reported",
+      "rows": 5,
+      "status": "history cross-lab report"
+    },
+    {
+      "id": "frontiermath-tier4-v2-task-2-0-0",
+      "rows": 67,
+      "status": "history task2.0.0"
+    },
+    {
+      "id": "healthbench-professional",
+      "rows": 7,
+      "status": "corrected developer report"
+    },
+    {
+      "id": "medagentbench-v2-revised-original-tasks",
+      "rows": 1,
+      "status": "later author condition"
+    },
+    {
+      "id": "medagentbench-v2-memory-heldout",
+      "rows": 1,
+      "status": "later author condition"
+    },
+    {
+      "id": "medagentbench-v2-new-tasks",
+      "rows": 1,
+      "status": "later author condition"
+    },
+    {
+      "id": "swe-bench-pro-public-v2",
+      "rows": 10,
+      "status": "current Full642"
+    },
+    {
+      "id": "swe-bench-pro-public-v2-hard",
+      "rows": 11,
+      "status": "current HARD-51"
+    },
+    {
+      "id": "terminal-bench-4",
+      "rows": 6,
+      "status": "current Vals common scaffold"
+    },
+    {
+      "id": "terminal-bench-science",
+      "rows": 7,
+      "status": "current AA common scaffold"
+    },
+    {
+      "id": "terminal-bench-4-native-agents",
+      "rows": 7,
+      "status": "current creator native systems"
+    },
+    {
+      "id": "terminal-bench-science-native-agents",
+      "rows": 5,
+      "status": "current Snorkel native systems"
+    },
+    {
+      "id": "swe-bench-verified-bash-history",
+      "rows": 5,
+      "status": "historical Feb17"
+    },
+    {
+      "id": "terminal-bench-2-1-history",
+      "rows": 3,
+      "status": "history"
+    }
+  ]
+}

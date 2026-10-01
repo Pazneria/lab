@@ -1,0 +1,18 @@
+{
+  "cards": 42,
+  "sourceCohorts": 22,
+  "standardRows": 340,
+  "expandedBullshitBenchRows": 228,
+  "expandedRuneBenchRows": 48,
+  "runeSkills": 16,
+  "historicalMedAgentRows": 12,
+  "existingResultRows": 18,
+  "existingCharts": 7,
+  "scoreChartCostTime": "All 340 generic plot values null; known coding measurements retained with units and bases in details",
+  "unchangedOriginalHashes": true,
+  "inputSHA256": {
+    "data/gallery-current-2026-10-01.json": "1e46d6a0865cd7e679c83033650f114e094543b939fd87bd8bb8e433d24c0b10",
+    "data/community-expanded-2026-10-01.json": "e51ef8406fca8114ea66f0ae44846fe4830bc6c461fbf09b3f13b47b4931cd6b"
+  },
+  "passed": true
+}

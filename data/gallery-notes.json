@@ -118,14 +118,18 @@
     "notice": "Creator-reported · 1,000 questions. High effort; no tools in the main view. Individual run dates and uncertainty are not reported."
   },
   "gpqa-diamond": {
-    "tests": "Models answer difficult graduate-level science questions. This chart preserves the four model results reported together in OpenAI’s March 2026 release comparison.",
-    "matters": "Difficult science questions probe whether a model can work with specialist concepts. This is narrower than being a dependable research assistant.",
-    "read": "Bars show one OpenAI release comparison from March 2026. Effort is xhigh, except GPT-5 mini at its maximum high setting. Full harness and trial details are unavailable, so the chart does not establish equal compute or current standings."
+    "question": "Can it reason through difficult graduate-level science questions?",
+    "matters": "Difficult science questions test whether a model can reason beyond familiar facts. Exact configurations help explain the range of reported results.",
+    "read": "Higher means a higher accuracy within this source cohort. Same task version does not establish equal compute or identical per-run settings. Distinct observations, including repeated configurations, are retained. Standard errors are percentage points, not confidence intervals.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "Epoch runs through September 29, 2026; task 1.0.11; source checked October 1"
   },
   "mmmu-pro": {
-    "tests": "Models combine information from images with specialist knowledge to answer questions. The graph preserves the baseline MMMUPro results from OpenAI’s March 2026 release comparison.",
-    "matters": "Understanding a diagram or image while applying subject knowledge tests a different ability from answering text-only questions.",
-    "read": "This historical March comparison uses the baseline MMMUPro row. The Python-enabled row is a separate setting and is not included. Full harness and trial details are unavailable; these are lab-reported results rather than current standings."
+    "question": "Can it solve academic questions that require reading images as well as text?",
+    "matters": "Questions with images require a model to connect what it sees with subject knowledge and reasoning.",
+    "read": "Higher means a higher accuracy within this source cohort. All 20 configurations returned in the official evaluator page default chart payload; not an exhaustive export of its 284-model catalog Model release dates are not evaluation dates. Exact dataset revision and uncertainty are unavailable.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "Artificial Analysis default chart checked October 1, 2026; individual run dates unavailable"
   },
   "swe-bench-pro-public-v1": {
     "tests": "Coding agents attempt to fix real software issues in existing repositories. The graph shows the original public split results reported in OpenAI’s March 2026 comparison.",
@@ -138,8 +142,122 @@
     "read": "This chart preserves OpenAI’s March 2026 comparison for version 2.0. It cannot be mixed with Terminal-Bench 4.0 or Science 0.1. Full scaffold and trial details are unavailable, and costs and times were not extracted."
   },
   "frontiermath-tier4-v2": {
-    "tests": "Models tackle especially difficult research-level math problems in a Python-enabled benchmark. These five scores are cross-lab reports assembled in OpenAI’s September 2026 comparison for the v2 dataset.",
-    "matters": "Research-level mathematics can require extended reasoning and computational experiments. This tier focuses on especially difficult problems.",
-    "read": "These dots are cross-lab results reported in OpenAI’s September release, using the best reported score across effort settings. The harnesses are not established as identical. They are not a controlled comparison; use the v2 dataset only. OpenAI funded the benchmark and has access to a subset."
+    "question": "Can it solve research-level math problems while experimenting with Python?",
+    "matters": "Research-level math tests whether a model can build a sustained argument and use computation to explore a difficult problem.",
+    "read": "Higher means a higher accuracy within this source cohort. Only two source observations are available for task 2.1.0. Never combine task versions 2.1.0 and 2.0.0 in one ranking. OpenAI funded FrontierMath; the creator discloses access to a subset. Standard errors are not confidence intervals.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "Epoch runs: September 29, 2026; task 2.1.0; source checked October 1"
+  },
+  "gpqa-diamond-march-reported": {
+    "question": "Can it answer difficult graduate-level science questions?",
+    "matters": "Difficult science questions test whether a model can reason beyond familiar facts. Exact configurations help explain the range of reported results.",
+    "read": "Historical evidence retained for comparison over time. Higher means a higher accuracy within this source cohort. Lab-reported comparison; not an independently controlled experiment Same publication and nominal benchmark setting, but full harness and trial details are not exposed; no claim of exact compute parity Do not silently merge with another publication's reruns Not a current frontier-model leaderboard Do not substitute the 92.8% GPT-5.4 value from the April GPT-5.5 release; it is a different reported run",
+    "notice": "No numeric per-task cost or latency extracted; token list prices are not benchmark cost",
+    "date": "OpenAI release comparison · March 17, 2026"
+  },
+  "mmmu-pro-march-reported": {
+    "question": "Can it combine what it sees in an image with specialist knowledge to answer a question?",
+    "matters": "Questions with images require a model to connect what it sees with subject knowledge and reasoning.",
+    "read": "Historical evidence retained for comparison over time. Higher means a higher accuracy within this source cohort. Lab-reported comparison; not an independently controlled experiment Same publication and nominal benchmark setting, but full harness and trial details are not exposed; no claim of exact compute parity Do not silently merge with another publication's reruns Not a current frontier-model leaderboard MMMU and MMMU-Pro are different benchmarks The source calls this row MMMUPro; do not merge with the Python row",
+    "notice": "No numeric per-task cost or latency extracted; token list prices are not benchmark cost",
+    "date": "OpenAI release comparison · March 17, 2026"
+  },
+  "frontiermath-tier4-v2-september-reported": {
+    "question": "Can it solve research-level math problems while experimenting with Python?",
+    "matters": "Research-level math tests whether a model can build a sustained argument and use computation to explore a difficult problem.",
+    "read": "Historical evidence retained for comparison over time. Higher means a higher accuracy within this source cohort. Not a controlled apples-to-apples leaderboard; display as reported results or keep behind a separate view June 12 v2 corrected 12 Tier 4 problems and removed 7; 43 remain Do not merge April 2026 Tier 4 results with v2 OpenAI funded the benchmark and has access to a subset; creator discloses this Research/API evaluations can differ from production",
+    "notice": "No paired cost or elapsed-time measurements supplied.",
+    "date": "OpenAI September 3, 2026 comparison · v2 dataset"
+  },
+  "frontiermath-tier4-v2-task-2-0-0": {
+    "question": "Earlier runs on the previous private Tier 4 task version.",
+    "matters": "Research-level math tests whether a model can build a sustained argument and use computation to explore a difficult problem.",
+    "read": "Historical evidence retained for comparison over time. Higher means a higher accuracy within this source cohort. Separate history cohort; do not rank against task 2.1.0. Effort, budgets and per-run settings vary.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "Historical task 2.0.0 observations; source checked October 1, 2026"
+  },
+  "healthbench-professional": {
+    "question": "How well does an AI answer professional medical questions under a detailed rubric?",
+    "matters": "Medical tasks test careful use of information and workflow tools. This controlled benchmark result does not establish that a system is safe for clinical use.",
+    "read": "Higher means a higher length-adjusted rubric score within this source cohort. developer-reported comparison, not independent clinical validation 2000-character reference, 1.47 score points per 500 characters; longer penalized and shorter receive positive adjustment Use corrected live table. Search snippets/launch material may retain superseded Astra 63.4 adjusted / 69.5 raw. This is a distinct series from original HealthBench, Hard, Consensus and MedAgentBench. Medical benchmark score does not establish clinical qualification or real-patient safety.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "Developer report: September 3, 2026; corrected September 22; run dates unavailable"
+  },
+  "medagentbench-v2-revised-original-tasks": {
+    "question": "Can a revised agent complete tasks in a simulated electronic health record?",
+    "matters": "Medical tasks test careful use of information and workflow tools. This controlled benchmark result does not establish that a system is safe for clinical use.",
+    "read": "Higher means a higher reported benchmark score within this source cohort. One reported model-agent condition, not a model leaderboard. Original, held-out memory, and new-task conditions are separate. Do not merge with the original baseline-agent comparison. Appendix A2 gives representative task-category averages for GPT-4.1, not verified per-score paired full-benchmark cost. Keep separate; not joined to 91/98/88.67 scores. Simulated task success is not clinical qualification, deployment approval, or evidence of real-patient safety.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "PSB 2026 author paper; precise run dates unavailable"
+  },
+  "medagentbench-v2-memory-heldout": {
+    "question": "Can a revised agent complete tasks in a simulated electronic health record?",
+    "matters": "Medical tasks test careful use of information and workflow tools. This controlled benchmark result does not establish that a system is safe for clinical use.",
+    "read": "Higher means a higher reported benchmark score within this source cohort. One reported model-agent condition, not a model leaderboard. Original, held-out memory, and new-task conditions are separate. Memory uses five failed examples per category to populate memory; remaining tasks held out. Do not label 98% as an untouched 300-task evaluation. Appendix A2 gives representative task-category averages for GPT-4.1, not verified per-score paired full-benchmark cost. Keep separate; not joined to 91/98/88.67 scores. Simulated task success is not clinical qualification, deployment approval, or evidence of real-patient safety.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "PSB 2026 author paper; precise run dates unavailable"
+  },
+  "medagentbench-v2-new-tasks": {
+    "question": "Can a revised agent complete tasks in a simulated electronic health record?",
+    "matters": "Medical tasks test careful use of information and workflow tools. This controlled benchmark result does not establish that a system is safe for clinical use.",
+    "read": "Higher means a higher reported benchmark score within this source cohort. One reported model-agent condition, not a model leaderboard. Original, held-out memory, and new-task conditions are separate. Do not merge with the original baseline-agent comparison. Appendix A2 gives representative task-category averages for GPT-4.1, not verified per-score paired full-benchmark cost. Keep separate; not joined to 91/98/88.67 scores. Simulated task success is not clinical qualification, deployment approval, or evidence of real-patient safety.",
+    "notice": "No paired cost or elapsed-time results supplied; values remain null",
+    "date": "PSB 2026 author paper; precise run dates unavailable"
+  },
+  "swe-bench-pro-public-v2": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Higher means a higher resolve rate within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "swe-bench-pro-public-v2-hard": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Higher means a higher resolve rate within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "terminal-bench-4": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Higher means a higher avg@3: mean of three pass@1 runs within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "terminal-bench-science": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Higher means a higher pass@1 averaged over three repeats per task within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "terminal-bench-4-native-agents": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Higher means a higher resolve rate within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "terminal-bench-science-native-agents": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Higher means a higher resolve rate within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "swe-bench-verified-bash-history": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Historical evidence retained for comparison over time. Higher means a higher resolve rate within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Historical source cohort; checked October 1, 2026; exact run dates generally unavailable"
+  },
+  "terminal-bench-2-1-history": {
+    "question": "Can an AI agent complete real coding and terminal tasks?",
+    "matters": "Finishing a software task requires an agent to inspect a problem, use tools and check its work. The result describes the complete model and agent setup.",
+    "read": "Historical evidence retained for comparison over time. Higher means a higher pass@1 averaged over three repeats within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
+    "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
+    "date": "Historical source cohort; checked October 1, 2026; exact run dates generally unavailable"
   }
 }
