@@ -73,6 +73,10 @@ python tests/verify-static.py
 python tests/check-source-links.py
 ```
 
+After the normal GitHub Pages deployment, `node tests/verify-results-deployment.cjs`
+checks the live original data/assets against the exact local Git commit, all 18
+observations and seven chart views, details/source links, and mobile tables.
+
 Existing installations can be selected with `LAB_PLAYWRIGHT_MODULE`,
 `LAB_AXE_SCRIPT`, and optional `LAB_BROWSER_CHANNEL=msedge`. Tests use one
 separate headless browser sequentially and close only their own contexts. They

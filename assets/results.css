@@ -220,6 +220,11 @@
   flex-shrink: 0;
   border-top: 3px solid var(--series-color);
 }
+.legend-marker {
+  width: 22px;
+  height: 18px;
+  flex-shrink: 0;
+}
 .legend-swatch.medium {
   border-top-style: dashed;
 }
@@ -493,8 +498,10 @@
   .plot-symbol {
     stroke: CanvasText;
   }
-  .plot-symbol {
+  .plot-symbol,
+  .legend-symbol {
     fill: Canvas;
+    stroke: CanvasText;
   }
   .plot-selected {
     stroke: Highlight;

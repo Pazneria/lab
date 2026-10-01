@@ -17,6 +17,19 @@ const evidence = JSON.parse(
   fs.readFileSync(path.join(root, "data/results-rune-evidence.json")),
 );
 const { results, graph_views } = input;
+assert.equal(
+  results.protocols[0].score_formula,
+  "round_half_up(max((raw_XP_i - raw_XP_k) / (elapsed_ms_i - elapsed_ms_k) * 60000 / 200)); nearest earlier sample &gt;=12000 ms back",
+);
+assert.equal(
+  results.protocols[0].missing[1],
+  "Exact Codex CLI version (author states &gt;=0.159 needed)",
+);
+assert.equal(results.sources[7].id, "r-pricing");
+assert.equal(
+  results.sources[7].excerpt,
+  "Long-context (&gt;272K) 2x/1.5x not modelled.",
+);
 const records = new Map(results.records.map((r) => [r.result_id, r]));
 const protocols = new Map(results.protocols.map((p) => [p.id, p]));
 const sources = new Map(results.sources.map((s) => [s.id, s]));

@@ -326,6 +326,23 @@
         ? "#9a3b25"
         : "#264d50";
   }
+  function pointSymbol(r, x, y, className = "plot-symbol") {
+    const attrs = { fill: color(r), class: className };
+    if (r.reasoning_effort === "max" || r.reasoning_effort === "high")
+      return svg("path", {
+        ...attrs,
+        d: `M ${x} ${y - 7} L ${x + 7} ${y} L ${x} ${y + 7} L ${x - 7} ${y} Z`,
+      });
+    if (r.reasoning_effort === "medium")
+      return svg("rect", {
+        ...attrs,
+        x: x - 6,
+        y: y - 6,
+        width: 12,
+        height: 12,
+      });
+    return svg("circle", { ...attrs, cx: x, cy: y, r: 6 });
+  }
   function niceMax(max) {
     if (max <= 0) return 1;
     const power = 10 ** Math.floor(Math.log10(max));
@@ -462,9 +479,21 @@
       b.type = "button";
       b.dataset.resultId = r.result_id;
       b.setAttribute("aria-pressed", "false");
-      const swatch = el("span", "legend-swatch " + (r.reasoning_effort || ""));
-      swatch.setAttribute("aria-hidden", "true");
-      swatch.style.setProperty("--series-color", color(r) || "#264d50");
+      const swatch =
+        c.type === "scatter"
+          ? svg("svg", {
+              class: "legend-marker",
+              viewBox: "0 0 22 18",
+              "aria-hidden": "true",
+              focusable: "false",
+            })
+          : el("span", "legend-swatch " + (r.reasoning_effort || ""));
+      if (c.type === "scatter")
+        swatch.append(pointSymbol(r, 11, 9, "legend-symbol"));
+      else {
+        swatch.setAttribute("aria-hidden", "true");
+        swatch.style.setProperty("--series-color", color(r) || "#264d50");
+      }
       b.append(swatch, el("span", "", r.display_label));
       const select = (announce) => {
         activeSeries = i;
@@ -754,32 +783,9 @@
             }),
           );
         } else {
-          const symbol =
-            r.reasoning_effort === "max" || r.reasoning_effort === "high"
-              ? svg("path", {
-                  d: `M ${x} ${y - 7} L ${x + 7} ${y} L ${x} ${y + 7} L ${x - 7} ${y} Z`,
-                  fill: color(r),
-                  class: "plot-symbol",
-                })
-              : r.reasoning_effort === "medium"
-                ? svg("rect", {
-                    x: x - 6,
-                    y: y - 6,
-                    width: 12,
-                    height: 12,
-                    fill: color(r),
-                    class: "plot-symbol",
-                  })
-                : svg("circle", {
-                    cx: x,
-                    cy: y,
-                    r: 6,
-                    fill: color(r),
-                    class: "plot-symbol",
-                  });
           group.append(
             svg("circle", { cx: x, cy: y, r: 14, class: "plot-hit" }),
-            symbol,
+            pointSymbol(r, x, y),
           );
         }
         const select = (announce) => inspect(r.result_id, p, null, announce);

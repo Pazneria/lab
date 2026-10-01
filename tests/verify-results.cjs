@@ -262,6 +262,44 @@ async function main() {
             /Sample \d+ of 120/,
           );
         } else {
+          if (c.type === "scatter") {
+            const symbols = await card.evaluate((node) =>
+              [...node.querySelectorAll(".chart-legend button")].map(
+                (button) => {
+                  const legend = button.querySelector(".legend-symbol");
+                  const point = node.querySelector(
+                    `.plot-point[data-result-id="${button.dataset.resultId}"] .plot-symbol`,
+                  );
+                  return {
+                    id: button.dataset.resultId,
+                    shape: legend.tagName,
+                    pointShape: point.tagName,
+                    sameColor:
+                      legend.getAttribute("fill") ===
+                      point.getAttribute("fill"),
+                  };
+                },
+              ),
+            );
+            assert.deepEqual(
+              symbols,
+              c.points.map((p) => {
+                const shape =
+                  p.reasoning_effort === "medium"
+                    ? "rect"
+                    : ["max", "high"].includes(p.reasoning_effort)
+                      ? "path"
+                      : "circle";
+                return {
+                  id: p.result_id,
+                  shape,
+                  pointShape: shape,
+                  sameColor: true,
+                };
+              }),
+              c.id + " matching legend shapes and colors",
+            );
+          }
           assert.deepEqual(
             await card.locator(".plot-point").evaluateAll((nodes) =>
               nodes.map((n) => ({

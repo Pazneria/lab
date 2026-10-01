@@ -147,6 +147,18 @@ certification.
 
 ## Integration scope
 
-This branch is prepared for parent semantic review before publication. It does
-not publish, merge, alter homepage files, or implement the separately coordinated
-3D room. Results continue to use the repository's existing static Pages layout.
+Independent parent semantic review approved the 18 rows, axes, units, protocols,
+memberships, and exclusions. The three requested literal `&gt;` metadata strings
+were already present exactly in the local source and regenerated projection;
+explicit builder assertions now guard their fidelity. Numeric data is unchanged.
+Scatter legends share the plotted circle/square/diamond geometry and color,
+including effort pairs that share a model color. Line-series dash styles remain
+visible, and markers retain their shapes in forced colors.
+
+The authorized publication uses `Pazneria/lab` and its existing main/root GitHub
+Pages workflow at `https://pazneria.github.io/lab/`. It preserves the 20-entry
+catalog, homepage files, and the separately coordinated 3D room. The new read-only
+`tests/verify-results-deployment.cjs` verifies twelve deployed asset/data files
+against the local Git commit, all 18 observations/seven views, exact tables,
+sources/opening details, scatter markers, caveats, exclusions, and mobile layout.
+Deployment evidence is captured in ignored `evidence/results-deployment-validation.json`.
