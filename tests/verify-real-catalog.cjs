@@ -28,7 +28,10 @@ const server = http.createServer((req, res) => {
     rel = u.pathname.replace(/^\/lab(?=\/|$)/, "") || "/";
   const file = path.resolve(
     root,
-    "." + (rel.endsWith("/") ? rel + "index.html" : rel),
+    "." +
+      (rel.endsWith("/")
+        ? rel + "catalog.html"
+        : rel.replace(/index\.html$/, "catalog.html")),
   );
   if (
     !file.startsWith(root + path.sep) ||

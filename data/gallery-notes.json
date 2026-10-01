@@ -1,0 +1,145 @@
+{
+  "runebench": {
+    "question": "Can an AI learn its way around RuneScape?",
+    "tests": "An agent writes code and uses tools to train a character in an accelerated RuneScape world. These six runs follow one model at low, medium and high reasoning effort, separately for woodcutting and mining.",
+    "matters": "A game makes planning concrete: the agent must find resources, take useful actions and adapt as its skills improve. It offers a window into how a whole agent system behaves over a longer task.",
+    "read": "Higher means a better peak normalized XP rate, not more total XP. The time graph tracks the best rate found so far. Cost is an API-equivalent estimate for the whole OAuth run, not cash spent; the score uses the 30-minute window. Each effort has only one selected trial, so these differences don’t establish a reliable winner.",
+    "notice": "Exploratory: one selected trial per effort and skill. No uncertainty intervals; exact executed SDK, image and CLI versions are unknown.",
+    "date": "Runs: September 29, 2026",
+    "main_graph": "runebench-woodcutting-score-cost"
+  },
+  "bullshitbench-v2": {
+    "question": "Will it push back when a question makes no sense?",
+    "tests": "Models answer 100 questions built around invalid premises. Three named model judges assess whether each response clearly challenges the nonsense. The scores here count all 100 attempts, including refusals.",
+    "matters": "A helpful assistant needs to notice when a question starts from a faulty assumption. This test checks that behavior directly, although it doesn’t tell us how often the model rejects a perfectly valid question.",
+    "read": "Higher means more clear pushback. The time axis is the mean instrumented request time, including API waiting and retries, rather than pure inference speed. The cost axis counts candidate responses and excludes judges and infrastructure. Opus’s refusal costs are missing, so it appears on the time graph but is excluded from the cost graph.",
+    "notice": "One pass through 100 fixed questions. No uncertainty intervals; differences are descriptive, not statistically established.",
+    "date": "Runs: September 25–29, 2026",
+    "main_graph": "bullshitbench-score-time"
+  },
+  "medagentbench": {
+    "question": "Can an AI complete tasks in a virtual health record?",
+    "tests": "Models work through 300 clinician-written tasks in a virtual electronic health record using the authors’ baseline agent. Half ask for information and half request actions. The graph uses the original paper’s February 2025 comparison.",
+    "matters": "Answering a medical question and completing a workflow are different skills. This test lets us examine whether a model can use the available record tools and produce the expected answer or action payload.",
+    "read": "Higher means more tasks completed successfully on the first attempt, with at most eight interaction rounds. POST actions were simulated, so success isn’t evidence of safe clinical deployment. Cost, time, exact model snapshots and uncertainty were not reported; this is a historical comparison, and the evaluation date is unknown.",
+    "notice": "Historical author baseline · paper v2, February 12, 2025. Simulated actions; no clinical safety validation or reported uncertainty.",
+    "date": "Paper: February 12, 2025",
+    "main_graph": "medagentbench-historical-score"
+  },
+  "voxelbench": {
+    "question": "Which AI-made voxel builds do people prefer?",
+    "matters": "Building from a prompt combines spatial understanding and creativity. Human preference can reveal whether the result looks right, but it measures taste rather than physical-world skill.",
+    "read": "The text and image tracks use pairwise votes. Current scores were unresolved in the research snapshot, so no standings or graph are shown here."
+  },
+  "balrog": {
+    "question": "Can it plan and make progress across six games?",
+    "matters": "Games create situations where an agent must explore, remember and act over time. A varied suite can expose strengths that a static question test misses.",
+    "read": "Environment progress must be read within its game, modality and agent setup. Progress is not a win rate, and an open-code mark does not mean a result was independently reproduced."
+  },
+  "factorio-learning-environment": {
+    "question": "Can it build a working factory?",
+    "matters": "Factory construction links resource planning with code that has to work. A productive factory needs more than a correct one-step answer.",
+    "read": "Open-play production scores and constrained lab-play success use different rules. The recorded evaluations are historical; a recent page update doesn’t make those runs new."
+  },
+  "astra-nethack-ascension": {
+    "question": "Can an AI finish an entire game of NetHack?",
+    "matters": "A documented ascension shows a long chain of decisions reaching a concrete goal. Journals and server evidence make that particular achievement inspectable.",
+    "read": "This is a showcase with an evolving harness and operator setup or resumptions. A successful attempt doesn’t establish a stable win rate or a fixed-budget comparison."
+  },
+  "terminal-bench-science-0-1": {
+    "question": "Can it carry out a scientific workflow on a computer?",
+    "matters": "A scientific task can require useful files, working programs and valid analysis, rather than a plausible written answer.",
+    "read": "Task-specific checks score the produced artifacts. Keep the Science 0.1 version and its workflow separate from other Terminal-Bench suites."
+  },
+  "matharena": {
+    "question": "How does it handle fresh mathematical problems?",
+    "matters": "Inspectable competitions and other math tracks offer ways to study reasoning across different kinds of problems.",
+    "read": "Competition, visual, proof and research tracks test different skills. Their datasets and rules need to stay visible before comparing scores."
+  },
+  "eq-bench-creative-writing-v3": {
+    "question": "How well can it write a creative piece?",
+    "matters": "Creative quality involves more than factual accuracy. Rubric and preference judgments can capture aspects of style, while repetition diagnostics reveal a different problem.",
+    "read": "Writing ratings depend on prompts and judges. They should not be treated as a general intelligence score, and repetition measures are a separate outcome."
+  },
+  "mast": {
+    "question": "How does it handle a range of medical tasks?",
+    "matters": "Medical reasoning, imaging, safety and agent workflows each demand different abilities. A broad suite helps expose those distinctions.",
+    "read": "The technical board was a preview in this snapshot. Retrospective and simulated test results do not establish safe care in a live clinic."
+  },
+  "medhelm": {
+    "question": "Can it help with everyday clinical workflows?",
+    "matters": "Documentation, communication, research and administration are part of clinical work too. A workflow-focused evaluation extends beyond exam-style questions.",
+    "read": "Read each task and protocol separately. Performance on a benchmark is not proof of better patient outcomes or safe deployment."
+  },
+  "masai-trial": {
+    "question": "What happens when mammography AI supports radiologists?",
+    "matters": "A randomized screening trial studies a real clinical workflow, including the human readers. It offers a different kind of evidence from a model answering exam questions.",
+    "read": "The trial evaluates a specialized system and defined reading process. Its clinical outcomes cannot be used to rank general-purpose language models."
+  },
+  "kenya-ai-consult-trial": {
+    "question": "Does AI assistance help in a real consultation workflow?",
+    "matters": "A pragmatic trial can study the effects of a system used by clinicians in practice, while clinicians retain treatment decisions.",
+    "read": "The intervention is the integrated workflow, not an isolated model. Preserve the trial’s setting and outcomes when interpreting its findings."
+  },
+  "robochallenge-table30": {
+    "question": "Can a robot manipulate objects on a real table?",
+    "matters": "Real hardware has friction, imprecise motion and objects that may behave unexpectedly. Physical tasks offer evidence beyond simulation.",
+    "read": "Task success and partial progress are separate tracks. The hardware, setup, trial count and intervention policy matter when comparing systems."
+  },
+  "stationerybench": {
+    "question": "Can two robot arms finish a desk task?",
+    "matters": "Bimanual desk tasks test whether an agent can turn instructions into coordinated physical actions. Published videos make the particular trials inspectable.",
+    "read": "The report compares full systems on five fixed tasks, with 20 trials per model per task. Interfaces and budgets differ, and the released package differs from the report; this is not a broad robot leaderboard."
+  },
+  "barn-challenge-2026-finals": {
+    "question": "Can a robot navigate a tight obstacle course?",
+    "matters": "Physical obstacle courses put a navigation system’s perception and control into contact with real hardware.",
+    "read": "The 2026 finals count the best three of five attempts per course. Those selected attempts are not an estimate of everyday reliability. The original source has a documented certificate issue; its warning has not been bypassed."
+  },
+  "behavior-challenge-2026": {
+    "question": "Can it complete long household tasks in simulation?",
+    "matters": "Household activities can involve many dependent steps. A simulator offers repeatable tasks for studying planning and manipulation.",
+    "read": "Partial goal-predicate satisfaction is not full task success. Self-reported, verified and archived results must stay distinct, and simulation does not establish reliability in a real home."
+  },
+  "bench2drive": {
+    "question": "Can an AI drive through simulated traffic?",
+    "matters": "Closed-loop driving lets the system’s actions change what happens next. It tests an entire sensor-and-controller setup rather than a prediction made from a static image.",
+    "read": "Version 0.0.4 uses all 220 routes, including missing or failed routes. Driving Score and route success are separate measures; neither proves on-road crash safety."
+  },
+  "waymo-onroad-safety": {
+    "question": "What does real road exposure tell us about crashes?",
+    "matters": "Exposure-adjusted crash evidence studies a deployed vehicle and operations system. That gives a different perspective from a controlled driving simulation.",
+    "read": "Independent IIHS analysis and provider-authored Waymo data cover different periods and methods. Keep them separate, including geography and uncertainty; no in-car driver does not mean no remote assistance."
+  },
+  "hle-diamond": {
+    "tests": "Models answer 1,000 expert questions across many subjects. Half emphasize reasoning and half emphasize knowledge. The main comparison uses each provider’s high reasoning effort without tools; a separate view shows the six reported web-and-code results.",
+    "matters": "Hard questions span expert knowledge and reasoning, so a single familiar subject cannot carry the result. The separate partitions help explain where a model’s score comes from.",
+    "read": "The main graph shows accuracy without tools, at each provider’s high effort setting. Reasoning and knowledge each contain 500 questions. The web-and-code view is a separate setting with six reported models; three scores are missing. High effort is not matched compute, individual run dates are unknown, and no uncertainty intervals are supplied.",
+    "notice": "Creator-reported · 1,000 questions. High effort; no tools in the main view. Individual run dates and uncertainty are not reported."
+  },
+  "gpqa-diamond": {
+    "tests": "Models answer difficult graduate-level science questions. This chart preserves the four model results reported together in OpenAI’s March 2026 release comparison.",
+    "matters": "Difficult science questions probe whether a model can work with specialist concepts. This is narrower than being a dependable research assistant.",
+    "read": "Bars show one OpenAI release comparison from March 2026. Effort is xhigh, except GPT-5 mini at its maximum high setting. Full harness and trial details are unavailable, so the chart does not establish equal compute or current standings."
+  },
+  "mmmu-pro": {
+    "tests": "Models combine information from images with specialist knowledge to answer questions. The graph preserves the baseline MMMUPro results from OpenAI’s March 2026 release comparison.",
+    "matters": "Understanding a diagram or image while applying subject knowledge tests a different ability from answering text-only questions.",
+    "read": "This historical March comparison uses the baseline MMMUPro row. The Python-enabled row is a separate setting and is not included. Full harness and trial details are unavailable; these are lab-reported results rather than current standings."
+  },
+  "swe-bench-pro-public-v1": {
+    "tests": "Coding agents attempt to fix real software issues in existing repositories. The graph shows the original public split results reported in OpenAI’s March 2026 comparison.",
+    "matters": "Real repository issues require a model to understand existing code and deliver a change that passes checks. That is more concrete than writing a short standalone program.",
+    "read": "This is the original public split in OpenAI’s March comparison, not September’s V2 or SWE-bench Verified. Passing the available tests has limits, and contamination concerns can affect interpretation. Full scaffold and trial details are unavailable."
+  },
+  "terminal-bench-2": {
+    "tests": "Agents use terminal tools to complete practical computer tasks. The graph shows the four version 2.0 results reported in OpenAI’s March 2026 release comparison.",
+    "matters": "Computer tasks require an agent to act, inspect the outcome and recover when something goes wrong. The task completion rate reflects the model and the tools around it.",
+    "read": "This chart preserves OpenAI’s March 2026 comparison for version 2.0. It cannot be mixed with Terminal-Bench 4.0 or Science 0.1. Full scaffold and trial details are unavailable, and costs and times were not extracted."
+  },
+  "frontiermath-tier4-v2": {
+    "tests": "Models tackle especially difficult research-level math problems in a Python-enabled benchmark. These five scores are cross-lab reports assembled in OpenAI’s September 2026 comparison for the v2 dataset.",
+    "matters": "Research-level mathematics can require extended reasoning and computational experiments. This tier focuses on especially difficult problems.",
+    "read": "These dots are cross-lab results reported in OpenAI’s September release, using the best reported score across effort settings. The harnesses are not established as identical. They are not a controlled comparison; use the v2 dataset only. OpenAI funded the benchmark and has access to a subset."
+  }
+}

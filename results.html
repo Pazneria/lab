@@ -3,191 +3,61 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f4f2ec" />
+    <meta name="theme-color" content="#faf8f4" />
     <meta
       name="description"
-      content="Explore source-reported benchmark results, costs and time within clearly defined protocols."
+      content="Interactive benchmark graphs with plain-English explanations, exact sources, and honest cost and time comparisons."
     />
-    <title>Results &amp; graphs — Lab</title>
+    <title>Explore a benchmark · Jordan’s Lab</title>
     <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/lab.css" />
     <link rel="stylesheet" href="assets/results.css" />
+    <link rel="stylesheet" href="assets/gallery.css" />
+    <script src="assets/catalog.js" defer></script>
     <script src="assets/results-data.js" defer></script>
+    <script src="assets/gallery-data.js" defer></script>
     <script src="assets/results.js" defer></script>
+    <script src="assets/gallery.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to result graphs</a>
-    <header class="masthead wrap">
-      <a class="mark" href="/" aria-label="Jordan's home">J<sup>2</sup></a>
-      <div class="site-name">Lab<span>Benchmark results</span></div>
+  <body class="detail-page">
+    <a class="skip-link" href="#main">Skip to benchmark</a>
+    <header class="site-header shell">
+      <a class="brand" href="benchmarks.html" aria-label="Jordan’s Lab home"
+        ><span class="brand-mark" aria-hidden="true">J²</span
+        ><span>Jordan’s <b>Lab</b></span></a
+      >
       <nav aria-label="Main navigation">
-        <a href="/">Home ↗</a><a href="index.html#catalog">Catalog</a
-        ><a href="results.html" aria-current="page">Results &amp; graphs</a>
+        <a href="/">Home <span aria-hidden="true">↗</span></a
+        ><a href="benchmarks.html">Benchmarks</a>
       </nav>
     </header>
-    <main id="main" tabindex="-1">
-      <section class="intro wrap results-intro" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">Lab / Result slices</p>
-          <h1 id="page-title">Results &amp;<br /><em>graphs.</em></h1>
-        </div>
-        <div class="intro-note">
-          <p>
-            18 selected observations across three benchmarks. Explore scores
-            alongside the cost, time, and protocol that produced them.
-          </p>
-          <p class="muted">
-            Primary-source results, reported by their authors. Comparisons stay
-            within each slice; no overall model ranking.
-          </p>
-          <a class="underlined" href="#result-views">Explore the graphs ↓</a>
-        </div>
-      </section>
-      <section
-        class="wrap result-section"
-        id="result-views"
-        aria-labelledby="results-title"
+    <main id="main" class="shell detail-shell" tabindex="-1">
+      <a class="back-link" href="benchmarks.html#gallery"
+        ><span aria-hidden="true">←</span> All benchmarks</a
       >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">01 / Compare within a protocol</p>
-            <h2 id="results-title">The result slices</h2>
-          </div>
-          <p class="catalog-basis">
-            Research supplied<br /><time datetime="2026-09-30">2026-09-30</time>
-          </p>
-        </div>
-        <form
-          id="result-controls"
-          class="result-controls"
-          aria-label="Choose result slice"
-        >
-          <fieldset class="benchmark-options">
-            <legend class="field-label">Benchmark</legend>
-            <label
-              ><input
-                type="radio"
-                name="benchmark"
-                value="runebench"
-                checked
-              /><span>RuneBench <small>6 trials · 2026</small></span></label
-            >
-            <label
-              ><input
-                type="radio"
-                name="benchmark"
-                value="bullshitbench-v2"
-              /><span
-                >BullshitBench V2
-                <small>6 model/effort rows · 2026</small></span
-              ></label
-            >
-            <label
-              ><input
-                type="radio"
-                name="benchmark"
-                value="medagentbench"
-              /><span
-                >MedAgentBench
-                <small>6 historical rows · paper 2025</small></span
-              ></label
-            >
-          </fieldset>
-          <div class="skill-controls" id="skill-control">
-            <label class="field-label" for="result-skill">RuneBench skill</label
-            ><select id="result-skill" name="skill">
-              <option value="woodcutting">Woodcutting</option>
-              <option value="mining">Mining</option>
-            </select>
-          </div>
-        </form>
-        <p
-          id="result-state"
-          class="sr-only"
-          role="status"
-          aria-live="polite"
-        ></p>
-        <div id="results-unavailable" class="result-warning">
-          Enable JavaScript to explore the charts. The complete
-          <a href="data/results.original.json"
-            >original results and graph data</a
-          >
-          and
-          <a href="data/results-researcher-readme.txt"
-            >researcher's interpretation</a
-          >
-          remain available.
-        </div>
-        <div id="results-content" hidden>
-          <header class="slice-header">
-            <div>
-              <p class="eyebrow" id="slice-kicker"></p>
-              <h2 id="slice-title"></h2>
-              <p id="slice-dates" class="muted"></p>
-            </div>
-            <a id="slice-catalog" class="underlined">Discovery record ↗</a>
-          </header>
-          <div class="slice-notice" id="slice-notice"></div>
-          <div class="charts-grid" id="charts"></div>
-          <section class="observations" aria-labelledby="observations-title">
-            <div class="section-heading">
-              <h3 id="observations-title">Reported observations</h3>
-              <p class="muted" id="observation-count"></p>
-            </div>
-            <p class="table-note">
-              Source order; no rank. Display values are rounded for readability.
-              Exact values and all supplied fields remain in the original JSON
-              and each observation's details.
-            </p>
-            <div id="observation-table"></div>
-            <div id="observation-details"></div>
-          </section>
-          <section class="protocol-section" aria-labelledby="protocol-title">
-            <h3 id="protocol-title">Protocol &amp; source basis</h3>
-            <div id="protocol-content"></div>
-          </section>
-        </div>
-      </section>
-      <section class="wrap result-method" aria-labelledby="comparison-limits">
-        <h2 id="comparison-limits">Read the axes with the evidence.</h2>
-        <div class="method-grid">
-          <article>
-            <span class="method-number">01</span>
-            <h3>Cost has a scope</h3>
-            <p>
-              RuneBench uses an API-equivalent estimate for OAuth runs.
-              BullshitBench reports covered candidate-response telemetry.
-              Neither is a complete benchmark bill. Missing medical costs stay
-              unknown.
-            </p>
-          </article>
-          <article>
-            <span class="method-number">02</span>
-            <h3>Time has a clock</h3>
-            <p>
-              RuneBench curves follow gameplay tracker time. BullshitBench
-              measures instrumented requests including network waits and
-              retries. Neither measures pure model inference speed.
-            </p>
-          </article>
-          <article>
-            <span class="method-number">03</span>
-            <h3>Uncertainty stays visible</h3>
-            <p>
-              These slices have no reported repeat-trial intervals. Differences
-              are descriptive; they do not establish statistical significance or
-              a causal effect of reasoning effort.
-            </p>
-          </article>
-        </div>
-      </section>
-    </main>
-    <footer class="footer wrap">
-      <p>
-        <span class="footer-mark" aria-hidden="true">J<sup>2</sup></span> Lab
-        <span class="muted">/ Results within their protocols</span>
+      <div id="benchmark-detail" hidden></div>
+      <p id="gallery-unavailable" class="empty-state">
+        Loading this benchmark.
+        <a href="benchmarks.html">Browse the gallery</a> or
+        <a href="results-technical.html">open the original result explorer</a>.
       </p>
-      <a href="https://github.com/Pazneria/lab">Project source ↗</a>
+      <p id="results-unavailable" hidden></p>
+      <noscript
+        ><p class="empty-state">
+          The graphs need JavaScript. Read the
+          <a href="data/results.original.json">original result data</a> and
+          <a href="data/standard-benchmarks.original.json"
+            >standard benchmark source data</a
+          >, including dates, settings and missing values.
+        </p></noscript
+      >
+    </main>
+    <footer class="site-footer shell">
+      <span
+        >Jordan’s Lab <span aria-hidden="true">·</span> Follow your
+        curiosity.</span
+      ><a href="benchmarks.html"
+        >Explore another benchmark <span aria-hidden="true">↗</span></a
+      >
     </footer>
   </body>
 </html>

@@ -26,7 +26,12 @@ const server = http.createServer((req, res) => {
   );
   const file = path.resolve(
     root,
-    "." + (pathname.endsWith("/") ? pathname + "index.html" : pathname),
+    "." +
+      (pathname.endsWith("/")
+        ? pathname + "catalog.html"
+        : pathname
+            .replace(/index\.html$/, "catalog.html")
+            .replace(/results\.html$/, "results-technical.html")),
   );
   if (
     !file.startsWith(root + path.sep) ||
@@ -560,7 +565,8 @@ async function main() {
     await noJS.close();
     const local = await context.newPage();
     await local.goto(
-      "file:///" + path.join(root, "results.html").replace(/\\/g, "/"),
+      "file:///" +
+        path.join(root, "results-technical.html").replace(/\\/g, "/"),
     );
     assert.equal(await local.locator(".chart-card").count(), 2);
     await local.locator('input[value="medagentbench"]').check();
