@@ -1603,7 +1603,7 @@ window.LAB_RESULTS = {
       "sampling_cadence_ms": 15000,
       "minimum_peak_window_ms": 12000,
       "normalization_divisor": 200,
-      "score_formula": "round_half_up(max((raw_XP_i - raw_XP_k) / (elapsed_ms_i - elapsed_ms_k) * 60000 / 200)); nearest earlier sample &gt;=12000 ms back",
+      "score_formula": "round_half_up(max((raw_XP_i - raw_XP_k) / (elapsed_ms_i - elapsed_ms_k) * 60000 / 200)); nearest earlier sample >=12000 ms back",
       "scoring_clock": "Tracker elapsedMs within intended 1800-second window; fixed sample boundaries, not arbitrary sliding windows",
       "tools": [
         "Harbor Codex agent",
@@ -1632,7 +1632,7 @@ window.LAB_RESULTS = {
       "selection": "Two skills, three explicit effort levels of launch-day GPT-6.1 Sol; latest valid published trial per model/skill, not all attempts",
       "missing": [
         "Executed rs-sdk commit and image digest",
-        "Exact Codex CLI version (author states &gt;=0.159 needed)",
+        "Exact Codex CLI version (author states >=0.159 needed)",
         "Complete initial inventory/location and seed",
         "Inference-only latency",
         "Actual cash cost for OAuth plan"
@@ -1877,7 +1877,7 @@ window.LAB_RESULTS = {
         "API-equivalent cost rates",
         "long-context surcharge limitation"
       ],
-      "excerpt": "Long-context (&gt;272K) 2x/1.5x not modelled."
+      "excerpt": "Long-context (>272K) 2x/1.5x not modelled."
     },
     {
       "id": "r-commit",

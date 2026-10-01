@@ -23506,7 +23506,7 @@ window.LAB_GALLERY = {
         "version": "30-minute skills snapshot 5358a49f212e238cd093154bc3e93999d345ab97",
         "checked_at": "2026-10-01",
         "data_commit_date": "2026-09-29T21:39:10Z",
-        "freshness": "same source snapshot as current gallery; 87 configurations available, gallery uses 3 efforts and only 2 skills",
+        "freshness": "Same September 29 source snapshot; expanded selection covers three efforts across all 16 skills, not all 87 model configurations",
         "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/_data.js",
         "metric": "per-skill peak normalized XP/min; mean ln(1+rate) aggregate is dimensionless and not a percentage",
         "tools_scaffold": "Harbor coding agent, TypeScript rs-sdk, wiki files; individual harness/model/effort config must remain distinct",
@@ -23516,66 +23516,9 @@ window.LAB_GALLERY = {
         "comparability_warning": "Runs span changing harness/container recipes, dates and settings. Do not treat all 87 as controlled same-version model ranking. One selected trial per skill, no uncertainty intervals. Old/new 10m/15m/30m tracks must not be merged. Exact executed SDK/container digest absent.",
         "protocol": {
           "id": "runebench-30m-20260929-v71",
-          "benchmark_id": "runebench",
-          "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
-          "evaluation_track": "30-minute skills; woodcutting and mining kept separate",
-          "version": "No formal benchmark version in result; recipe at source commit uses rs-agent-benchmark:v71",
-          "nominal_budget_seconds": 1800,
-          "agent_timeout_seconds": 1920,
-          "codex_run_timeout_seconds": 1900,
-          "sampling_cadence_ms": 15000,
-          "minimum_peak_window_ms": 12000,
-          "normalization_divisor": 200,
-          "score_formula": "round_half_up(max((raw_XP_i - raw_XP_k) / (elapsed_ms_i - elapsed_ms_k) * 60000 / 200)); nearest earlier sample &amp;gt;=12000 ms back",
-          "scoring_clock": "Tracker elapsedMs within intended 1800-second window; fixed sample boundaries, not arbitrary sliding windows",
-          "tools": [
-            "Harbor Codex agent",
-            "TypeScript rs-sdk with BotActions and BotSDK",
-            "MCP resources",
-            "local wiki files",
-            "shell/code execution"
-          ],
-          "model_unit": "openai/gpt-6.1-sol + Codex OAuth + explicit reasoning effort + harness + one skill run",
-          "sdk_commit": null,
-          "sdk_commit_status": "Docker recipe writes SDK SHA inside runtime image; published model JSON lacks it",
-          "starting_state": {
-            "target_skill_level": 1,
-            "target_skill_xp": 0,
-            "source": "First recorded sample in each selected trial",
-            "location": null,
-            "inventory": null,
-            "seed": null
-          },
-          "uncertainty": {
-            "trial_count_per_model_skill": 1,
-            "confidence_interval": null,
-            "replicate_variance": null
-          },
-          "comparability_status": "Exploratory within same skill, date and task recipe; exact executed SDK/container digest and CLI version unverified",
-          "selection": "Two skills, three explicit effort levels of launch-day GPT-6.1 Sol; latest valid published trial per model/skill, not all attempts",
-          "missing": [
-            "Executed rs-sdk commit and image digest",
-            "Exact Codex CLI version (author states &amp;gt;=0.159 needed)",
-            "Complete initial inventory/location and seed",
-            "Inference-only latency",
-            "Actual cash cost for OAuth plan"
-          ],
-          "limitations": [
-            "One selected run is not a mean or stable ranking",
-            "Wall time includes game execution and latency",
-            "API-equivalent token-cost estimate excludes compute and subscription costs",
-            "Historical rate card ignores long-context surcharges",
-            "No causal claim about reasoning effort from single trials"
-          ],
-          "source_ids": [
-            "r-runner",
-            "r-task",
-            "r-extractor",
-            "r-utils",
-            "r-pricing",
-            "r-commit",
-            "r-docker"
-          ]
+          "source_protocol": "data/current-runebench.original.json#/protocol",
+          "evaluation_track": "30-minute skills; each skill kept separate",
+          "selection": "All 16 skills, three explicit GPT-6.1 Sol efforts; one selected published trial per model/skill"
         },
         "systems": {
           "gpt61sol-low": {
@@ -25715,7 +25658,7 @@ window.LAB_GALLERY = {
           "woodcutting"
         ]
       },
-      "expanded_selection_note": "48 rows cover all 16 skills at three GPT-6.1 Sol efforts. Inherited protocol selection describes the earlier two-skill subset and is preserved verbatim in original metadata."
+      "expanded_selection_note": "The complete inherited protocol is preserved in current-runebench.original.json. Its two-skill selection describes the earlier subset; the expanded selection is stated once in this metadata."
     },
     "medical": {
       "schema_version": "community-medical-integration-1-medical-excerpt",

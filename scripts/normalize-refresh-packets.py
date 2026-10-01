@@ -120,11 +120,20 @@ if __name__ == "__main__":
     originals = {"coding": {"rows": coding}, "bullshitbench": {**bb_meta, "rows": bb_arrays}, "runebench": {**rune_meta, "rows": rune_arrays}}
     for dataset, source in originals.items():
         write_or_check(DATA / ("current-" + dataset + ".original.json"), source)
+    # Keep the complete relayed protocol verbatim in the original archive.
+    # The UI already discloses its legacy copy; expanded metadata should state
+    # the changed selection and link the archive rather than repeat that prose.
+    rune_display_meta = {**rune_meta,
+        "freshness": "Same September 29 source snapshot; expanded selection covers three efforts across all 16 skills, not all 87 model configurations",
+        "protocol": {"id": rune_meta["protocol"]["id"],
+            "source_protocol": "data/current-runebench.original.json#/protocol",
+            "evaluation_track": "30-minute skills; each skill kept separate",
+            "selection": "All 16 skills, three explicit GPT-6.1 Sol efforts; one selected published trial per model/skill"}}
     normalized = {"schema_version": 1, "freshness": "Expanded coverage of already-current September snapshots; no new release or benchmark execution",
         "bullshitbench": {"benchmark_id": "bullshitbench-v2", "metadata": bb_meta, "records": bb_records,
             "display_defaults": {"row_limit": 12, "search_configurations": True, "all_records_available": True, "metric": "all_attempts"}},
-        "runebench": {"benchmark_id": "runebench", "metadata": rune_meta, "records": rune_records,
+        "runebench": {"benchmark_id": "runebench", "metadata": rune_display_meta, "records": rune_records,
             "display_defaults": {"skill": "woodcutting", "skills_available": sorted({r["skill"] for r in rune_records})},
-            "expanded_selection_note": "48 rows cover all 16 skills at three GPT-6.1 Sol efforts. Inherited protocol selection describes the earlier two-skill subset and is preserved verbatim in original metadata."}}
+            "expanded_selection_note": "The complete inherited protocol is preserved in current-runebench.original.json. Its two-skill selection describes the earlier subset; the expanded selection is stated once in this metadata."}}
     write_or_check(DATA / "community-expanded-2026-10-01.json", normalized)
     print(json.dumps({"passed": True, "packets": 29, "coding": 54, "bullshitbench": 228, "runebench": 48, "rune_skills": 16}))

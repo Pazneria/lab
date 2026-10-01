@@ -3,6 +3,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
+const normalizeDisplayText = require('./normalize-display-text.cjs');
 const root = path.resolve(__dirname, '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
 const sha = name => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex');
@@ -108,7 +109,7 @@ assert.equal(community.runebench.display_defaults.skills_available.length, 16);
 assert.ok(community.bullshitbench.records.every(r => r.evaluation_date === null));
 assert.equal(medical.medagentbench_original.rows.length, 12);
 const output = {
-  standard, notes, expanded: {...community, medical},
+  standard, notes, expanded: normalizeDisplayText({...community, medical}),
   provenance: {
     input: 'Public source snapshots and complete parent-relayed research packets. Library materialization failed on Windows os.setxattr; no successful transfer claimed.',
     verification: 'Epoch CSV and pinned community CSV/JSON independently parsed. MMMU and coding research relayed by parent. Medical author tables and corrected HealthBench report reopened. Offline checks validate cohort membership, units, missing data and preserved originals.',
