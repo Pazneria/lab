@@ -60,8 +60,37 @@ asset, or `lab-space` file and makes no publication claim.
 
 The three supplied Library packages could not be installed using the supported
 Windows helper: `os.setxattr` is unavailable. The reasoning transfer included
-the requested bounded retry. This file does not claim to contain the inaccessible
-Artificial Analysis, coding, medical, RuneBench, or BullshitBench packages.
-They require validated compact data relayed by the parent or a supported local
-transfer before ingestion. Preparation IDs and version metadata are retained
-outside the public repository; no private transfer receipts or URLs are included.
+the requested bounded retry. No successful Library transfer is claimed.
+
+The parent subsequently relayed complete MMMU-Pro and medical sections as public
+task input. `current-mmmu-pro.original.json` retains all 20 default-chart
+configurations and `current-mmmu-pro.provenance.json` records the research source
+identity. It is not the evaluator's entire 284-model archive. Exact effort and
+fallback configurations remain separate; all evaluation dates and cost/time
+values are null. Model release dates remain separate from evaluation dates.
+
+`current-medical.original.json` preserves 12 historical original MedAgentBench
+results, three distinct GPT-4.1 V2 conditions, and seven corrected HealthBench
+Professional results. The V2 memory-conditioned 98% result has no established
+held-out sample count; it must not be represented as an untouched 300-task test.
+Original-agent, revised-agent, memory, and new-task conditions cannot share a
+controlled cohort. HealthBench adjusted and unadjusted scores are different
+metrics; its seven results are developer reported and do not establish clinical
+qualification. `python scripts/validate-current-sources.py` validates these
+complete source excerpts and their missing-data constraints.
+
+All 12 original MedAgentBench values were independently checked against the
+[author homepage](https://stanfordmlgroup.github.io/projects/medagentbench/).
+The three V2 conditions were checked against the
+[author paper](https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf),
+and the seven corrected HealthBench values, raw scores and response lengths
+agree with [Table 29](https://deploymentsafety.openai.com/gpt-6-astra/healthbench).
+The source explicitly dates Astra's correction September 22, 2026. These are
+source verification checks, not new evaluations.
+
+The relayed coding and community payloads contain literal truncation markers.
+They cannot be validated as all 54 coding or 228 BullshitBench records and are
+not ingested as complete data. Complete chunks remain required. Private
+preparation receipts stay outside the public repository; no transfer URLs are
+included. The branch was rebased onto navigation merge `48e42a2` without editing
+the renderer, navigation, or room.
