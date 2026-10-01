@@ -43,7 +43,7 @@ def write_or_check(path, value):
     if "--check" in sys.argv:
         assert path.read_text(encoding="utf-8") == serialized, f"Normalized source differs: {path.name}"
     else:
-        path.write_text(serialized, encoding="utf-8")
+        path.write_text(serialized, encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":
