@@ -225,11 +225,26 @@ export function createRoom(canvas,onLost){
   const exit=text(['EXIT / HOME'],5.4,3.45,6.83,1.7,.34,'#284b3b');exit.rotation.y=Math.PI;exit.userData.destination='home';
   const doorLabel=text(['Home ↗'],5.4,2.3,6.865,1.17,.42);doorLabel.rotation.y=Math.PI;doorLabel.userData.destination='home';
 
+  const targetMarker=new T.Mesh(new T.RingGeometry(.17,.22,32),new T.MeshBasicMaterial({color:'#224e40',side:T.DoubleSide,depthWrite:false}));
+  targetMarker.rotation.x=-Math.PI/2;targetMarker.position.y=.025;targetMarker.visible=false;scene.add(targetMarker);
   const raycaster=new T.Raycaster();const pointer=new T.Vector2();let disposed=false;
   const lost=(event)=>{event.preventDefault();onLost();};canvas.addEventListener('webglcontextlost',lost);
   return {
     draw(p){if(disposed)return;const w=canvas.clientWidth,h=canvas.clientHeight;const size=renderer.getSize(new T.Vector2());if(size.x!==w||size.y!==h){renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w/h<1?78:65;camera.updateProjectionMatrix();}camera.position.set(p.x,1.68,p.z);camera.rotation.set(p.pitch,p.yaw,0);renderer.render(scene,camera);},
-    pick(clientX,clientY){const rect=canvas.getBoundingClientRect();pointer.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);const first=raycaster.intersectObjects(scene.children,false)[0];return first&&first.distance<6?first.object.userData.destination:null;},
+    pick(clientX,clientY){
+      const rect=canvas.getBoundingClientRect();pointer.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);
+      const first=raycaster.intersectObjects(scene.children,false).find(hit=>hit.object!==targetMarker);
+      if(!first||first.distance>24)return null;
+      const {x,y,z}=first.point;
+      const destination=first.object.userData.destination||(x>=-2.6&&x<=2.6&&z>=-3.95&&z<=-2&&y<2.4?'catalog':x>4.6&&x<6.2&&z>6.7&&z<7&&y<3.7?'home':null);
+      if(destination)return {destination};
+      if(Math.abs(x)>7.95||Math.abs(z)>6.95)return null;
+      if(y<=.035)return {point:{x,z},approach:false};
+      const bounds=new T.Box3().setFromObject(first.object);
+      if(bounds.max.y>3||y>2.6)return null; // walls, glazing, roofs and exterior scenery
+      return {point:{x,z},approach:true};
+    },
+    target(p){targetMarker.visible=!!p;if(p)targetMarker.position.set(p.x,.025,p.z);},
     dispose(){disposed=true;canvas.removeEventListener('webglcontextlost',lost);scene.traverse(o=>{o.geometry?.dispose();if(o.material){for(const m of [].concat(o.material)){m.map?.dispose();m.dispose();}}});renderer.dispose();},
   };
 }

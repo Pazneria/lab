@@ -11,11 +11,11 @@
   <script type="module" src="assets/space.js"></script>
 </head>
 <body>
-  <a class="skip" href="#tools">Skip to room tools</a>
+  <a class="skip" href="#tools">Skip to catalog and home links</a>
   <header class="masthead">
     <a class="wordmark" href="https://pazneria.github.io/" aria-label="Jordan's home">J<sup>2</sup></a>
     <div class="identity"><span>LAB</span><h1>Research room</h1></div>
-    <nav aria-label="Primary"><a href="https://pazneria.github.io/lab/">Catalog ↗</a><a href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
+    <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
   </header>
   <main>
     <div class="room-heading"><p><span class="dot"></span> The workshop</p><span>01 / Benchmark discovery</span></div>
@@ -23,44 +23,35 @@
       <section class="view" aria-label="Research room view">
         <div class="flat" id="flat-view">
           <img src="assets/room-plan.svg" alt="Room plan: a central benchmark hall, apparatus bay to the west, and study alcove to the northeast. Level routes connect them to the entrance and home exit in the southeast. The benchmark catalog is the only project station.">
-          <p id="flat-message">Flat room view. All room tools are available below.</p>
+          <p id="flat-message">Flat room view. Open the catalog or home using the links above.</p>
         </div>
-        <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable research workshop. Focus here to move with W A S D or arrow keys; drag to look. Enter opens the nearby bench or exit." aria-describedby="navigation-help"></canvas>
-        <div class="view-top" id="view-ui" hidden><span>RESEARCH ROOM / 01</span><button id="reset" type="button">Return to entrance</button></div>
+        <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable research workshop. Click or tap floor or furniture to walk there; drag to look. Keyboard navigation is available." aria-describedby="navigation-help"></canvas>
+        <div class="view-top"><span>RESEARCH ROOM / 01</span><div class="view-actions"><button id="mode" type="button" hidden>Enter 3D room</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
         <div class="orientation" id="orientation" hidden>
           <svg viewBox="0 0 100 96" aria-hidden="true"><path d="M12 14H88V82H12V52H4V25H12Z" fill="#edece2" stroke="#929b90"/><path d="M67 14H88V45H67Z" fill="#d0b48e"/><path d="M13 20H21V55H13Z" fill="#687d70"/><path d="M38 29H63V39H38Z" fill="#447268"/><path d="M68 45H88M67 14V21" stroke="#8b6c48" stroke-width="2"/><path d="M5 27V50" stroke="#b9d4da" stroke-width="3"/><path d="M71 81H79" stroke="#be8a46" stroke-width="4"/><g fill="#aaa88f"><circle cx="33" cy="24" r="2"/><circle cx="33" cy="45" r="2"/><circle cx="33" cy="62" r="2"/><circle cx="33" cy="69" r="2"/><circle cx="67" cy="45" r="2"/><circle cx="67" cy="69" r="2"/></g><text x="47" y="10">N</text><path id="map-player" d="M0 -5L-4 4L4 4Z" fill="#193f37"/></svg>
           <p id="position">Entrance · facing north</p>
         </div>
         <button class="nearby" id="nearby" type="button" hidden>Open benchmark bench</button>
+        <div class="walk-status" id="walk-status" hidden><span id="walk-message" role="status" aria-live="polite"></span><button id="cancel-walk" type="button" hidden>Stop</button></div>
+        <div class="movement" id="movement" role="group" aria-label="Direction controls" hidden>
+          <button type="button" data-move="turnLeft" aria-label="Turn left">↶</button><button type="button" data-move="forward" aria-label="Walk forward">↑</button><button type="button" data-move="turnRight" aria-label="Turn right">↷</button>
+          <button type="button" data-move="left" aria-label="Step left">←</button><button type="button" data-move="backward" aria-label="Walk backward">↓</button><button type="button" data-move="right" aria-label="Step right">→</button>
+        </div>
       </section>
-      <aside class="tools" id="tools" tabindex="-1" aria-label="Room tools">
-        <section class="station">
-          <p class="eyebrow">01 / Public tools</p>
-          <h2>Benchmark <br>discovery</h2>
-          <p>Browse benchmark records and their evidence in the working 2D catalog.</p>
-          <a class="primary" href="https://pazneria.github.io/lab/">Open the catalog <span aria-hidden="true">↗</span></a>
-          <button class="text-button" id="visit-bench" type="button" hidden>Go to the bench <span aria-hidden="true">→</span></button>
-        </section>
-        <section class="navigation" aria-label="Navigation controls">
-          <div class="section-label"><h2>Move around</h2><button id="mode" type="button" hidden>Enter 3D room</button></div>
-          <p id="navigation-help">Focus the room to walk with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>. Arrow keys move and turn. Drag to look; <kbd>Enter</kbd> opens a nearby station. <kbd>Esc</kbd> releases the room.</p>
-          <div class="movement" id="movement" role="group" aria-label="Direction controls" hidden>
-            <button type="button" data-move="turnLeft" aria-label="Turn left">↶</button>
-            <button type="button" data-move="forward" aria-label="Walk forward">↑</button>
-            <button type="button" data-move="turnRight" aria-label="Turn right">↷</button>
-            <button type="button" data-move="left" aria-label="Step left">←</button>
-            <button type="button" data-move="backward" aria-label="Walk backward">↓</button>
-            <button type="button" data-move="right" aria-label="Step right">→</button>
-          </div>
-          <p class="hint" id="control-note">Hold a direction to walk. Tap for a small step.</p>
-          <label class="motion-setting"><input type="checkbox" id="gentle">Gentle movement</label>
-        </section>
-        <div class="tools-foot"><span>Public benchmark catalog</span><a href="https://pazneria.github.io/">Exit to home ↗</a></div>
-      </aside>
     </div>
-    <footer><p>Lab <span>/</span> A local room study</p><details><summary>Design references</summary><p>Visible apparatus and work surfaces from <a href="https://www.rigb.org/visit/faraday-museum">Faraday's laboratory at the Royal Institution</a>; daylight and open circulation from <a href="https://www.salk.edu/about/visiting-salk/virtual-architecture-tour/">Salk's architecture</a>; quiet instrument work from <a href="https://www.nokia.com/bell-labs/about/history/">Bell Labs' historical photographs</a>. An original room, with no institutional affiliation. The instruments are decorative; the benchmark bench opens the public catalog.</p></details></footer>
+    <footer><p>Lab <span>/</span> Research room</p><details><summary>Design references</summary><p>Visible apparatus and work surfaces from <a href="https://www.rigb.org/visit/faraday-museum">Faraday's laboratory at the Royal Institution</a>; daylight and open circulation from <a href="https://www.salk.edu/about/visiting-salk/virtual-architecture-tour/">Salk's architecture</a>; quiet instrument work from <a href="https://www.nokia.com/bell-labs/about/history/">Bell Labs' historical photographs</a>. An original room, with no institutional affiliation. The instruments are decorative; the benchmark bench opens the public catalog.</p></details></footer>
     <noscript><p class="noscript">JavaScript is off. Use the flat room plan and the catalog or home links above.</p></noscript>
   </main>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <form method="dialog"><button class="close" aria-label="Close help">×</button></form>
+    <p class="eyebrow">Research room</p><h2 id="help-title">Move around</h2>
+    <p id="navigation-help">Click or tap the floor to walk there. Select an instrument or piece of furniture to approach it. Select the benchmark bench or home door to walk over and open its controls. Drag to look.</p>
+    <p>Focus the room to walk with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>. Arrow keys walk and turn. <kbd>Enter</kbd> or <kbd>E</kbd> opens a nearby station. Manual movement or dragging stops a route; a new tap replaces it. <kbd>Esc</kbd> stops walking and releases room focus.</p>
+    <div class="destinations"><button id="visit-bench" type="button" disabled>Walk to benchmark bench</button><button id="visit-home" type="button" disabled>Walk to home exit</button><button id="reset" type="button" disabled>Return to entrance</button></div>
+    <label class="motion-setting"><input type="checkbox" id="show-pad">Show direction buttons</label>
+    <label class="motion-setting"><input type="checkbox" id="gentle">Gentle movement</label>
+    <p class="hint">Direction buttons support holds and small taps. The catalog and home links are always available above the room.</p>
+  </dialog>
   <dialog id="station-dialog" aria-labelledby="dialog-title">
     <form method="dialog"><button class="close" aria-label="Close station">×</button></form>
     <p class="eyebrow" id="dialog-number">01 / Benchmark bench</p><h2 id="dialog-title">Benchmark discovery</h2>
