@@ -1092,14 +1092,17 @@
     plot.setAttribute("aria-label", title);
     inspector.setAttribute("role", "region");
     inspector.setAttribute("aria-label", "Selected model result");
-    inspector.append(
-      e("strong", "", "Explore a result"),
-      e(
-        "p",
-        "",
-        "Hover, focus or tap a configuration to see its score, settings and source.",
-      ),
-    );
+    function resetInspector() {
+      inspector.replaceChildren(
+        e("strong", "", "Explore a result"),
+        e(
+          "p",
+          "",
+          "Hover, focus or tap a configuration to see its score, settings and source.",
+        ),
+      );
+    }
+    resetInspector();
     announcement.setAttribute("role", "status");
     announcement.setAttribute("aria-live", "polite");
     const value = (r) =>
@@ -1129,7 +1132,8 @@
               m.total_attempts
             : "");
     let query = state.config || "",
-      showAll = state.all === true;
+      showAll = state.all === true,
+      selected = null;
     const count = e("p", "cohort-count");
     count.setAttribute("role", "status");
     count.setAttribute("aria-live", "polite");
@@ -1184,6 +1188,12 @@
       const visible = showAll
         ? matching
         : matching.slice(0, c.display_defaults?.row_limit || 12);
+      if (selected && !visible.includes(selected)) {
+        selected = null;
+        resetInspector();
+        announcement.textContent =
+          "Selection cleared because the result is no longer visible. Choose a visible configuration.";
+      }
       count.textContent =
         "Showing " +
         visible.length +
@@ -1206,7 +1216,7 @@
         if (missing) row.dataset.missing = "true";
         else {
           row.type = "button";
-          row.setAttribute("aria-pressed", "false");
+          row.setAttribute("aria-pressed", String(selected === r));
           row.setAttribute(
             "aria-label",
             r.model_variant +
@@ -1242,6 +1252,7 @@
         );
         if (!missing) {
           const select = (announce) => {
+            selected = r;
             for (const other of plot.querySelectorAll("button"))
               other.setAttribute("aria-pressed", String(other === row));
             const uncertainty =
