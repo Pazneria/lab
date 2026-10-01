@@ -152,6 +152,10 @@ p {
 .site-header nav a {
   text-decoration: none;
 }
+.site-header nav .room-link {
+  color: var(--accent);
+  font-weight: 650;
+}
 .site-header nav a[aria-current] {
   font-weight: 650;
 }
@@ -1098,7 +1102,10 @@ p {
     width: calc(100% - 32px);
   }
   .site-header {
-    height: 82px;
+    height: auto;
+    min-height: 82px;
+    padding: 18px 0;
+    flex-wrap: wrap;
     gap: 12px;
   }
   .brand {
@@ -1112,7 +1119,9 @@ p {
     font-size: 23px;
   }
   .site-header nav {
-    gap: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 16px 22px;
     font-size: 12px;
   }
   .gallery-intro {

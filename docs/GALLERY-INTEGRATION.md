@@ -13,6 +13,9 @@ The separately owned room’s benchmark station opens the stable root gallery at
 **https://pazneria.github.io/lab/lab-space/** directly. Preserve these routes:
 the root and `benchmarks.html` both serve the gallery, and `results.html` serves
 details. The remote room commit `2443b2e` was preserved without editing its files.
+Every benchmark page provides a visible “Back to 3D Lab” link. Detail pages also
+retain “All benchmarks” for returning to the gallery, so these two destinations
+remain explicit.
 No 3D room implementation or homepage routing is owned by this change.
 
 The gallery contains 26 benchmarks: all 20 original discovery records plus six
