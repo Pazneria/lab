@@ -107,6 +107,13 @@ reduced motion; flat switching; WebGL loss/unavailability; JS off; external
 asset requests; automated desktop/mobile WCAG A/AA checks. The output is
 `evidence/lab-space/validation.json`. No catalog/root test scripts are run.
 
+`LAB_AXE_SCRIPT` is required. If it is unset or does not name a readable local
+axe-core script, the command exits nonzero and writes a failed report before
+launching a browser. A successful report requires completed desktop and mobile
+audits, records the axe version for each, and separately logs both checks.
+An audit with violations or an injection/evaluation failure also fails the run.
+An empty accessibility array does not represent a completed audit.
+
 Limits: simulated touch and software WebGL, not a real phone, GPU performance
 soak, screen-reader user test, or comprehensive browser matrix. External
 destinations were checked read-only: catalog and home both returned HTTP 200.
