@@ -1,101 +1,101 @@
-# Lab · Benchmark discovery
+# Lab · AI benchmark gallery
 
-A static discovery interface containing **20 source-grounded records**: 19 catalog
-entries and the separate, unverified VoxelBench watch item. Search and filter by
-category, research-snapshot status, and evidence setting. Expand a record for
-scope, source basis, metric definitions, inference limits, exact sources, and its
-next verification step.
+A source-backed gallery of **26 benchmarks** spanning standard tests, community
+projects, games, medicine and physical systems. Nine cards show real graphs;
+17 are clearly labeled evidence guides without ingested model scores. A card
+opens an interactive graph with plain-English explanations. Sources, settings,
+exact tables and full records remain in expandable disclosures.
 
-All 30 metric values remain null. No results, rankings, or aggregate scores are
-invented. The snapshot is dated **2026-09-30**, not a live methodology or standings
-check. See [catalog provenance and mapping](docs/CATALOG-INTEGRATION.md) and
-[actual validation](docs/VALIDATION.md).
+The page preserves all **20 original discovery records**, their 51 URLs and
+30 null metric definitions. The original **18 result rows and seven graph
+views** cover RuneBench, BullshitBench V2 and historical MedAgentBench. A separate
+standard dataset adds **30 supplied primary rows** across six benchmark cohorts.
+There is no aggregate score or global model ranking. Historical and cross-lab
+reported results are explicitly labeled; missing values remain null.
 
-`results.html` adds **18 primary reported observations and seven graph views**
-for RuneBench, BullshitBench V2, and historical MedAgentBench. The original
-discovery records and their null metric definitions are preserved. New numeric
-observations stay in a separate result dataset with their own protocols, source
-dates, cost/time meanings, and exclusions. There is no overall model ranking.
-See [results validation and security review](docs/RESULTS-INTEGRATION.md).
+See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
+[original result validation](docs/RESULTS-INTEGRATION.md), and
+[catalog provenance](docs/CATALOG-INTEGRATION.md).
 
-## Static structure
+## Pages and data
 
-- `data/catalog.original.json`: exact JSON values supplied directly by the parent.
-- `scripts/build-catalog.cjs`: validates counts, IDs, dates, metric references,
-  null results, and exact URLs; creates the reviewed display projection.
-- `assets/catalog.js`: generated local script. Do not hand-edit.
-- `assets/lab.js`: validated text rendering, filters, URL state, and native details.
-- `index.html`, `assets/lab.css`, `assets/mark.svg`: responsive page and J² mark.
-- `tests/`: real-data checks, fallback/security regressions, static checks, and
-  one-pass source URL response checks.
-- `data/results.original.json`: original researcher rows, graph specifications,
-  and README supplied by the parent; all numeric values and source metadata retained.
-- `data/results-rune-evidence.json`: numeric-only supplemental checks of the same
-  pinned RuneBench samples and container/agent clocks; no trajectory text.
-- `scripts/build-results.cjs`: validates record arithmetic, exact membership and
-  all 720 tracker points; generates `assets/results-data.js`.
-- `assets/results.js`, `assets/results.css`, `results.html`: local interactive
-  charts, complete table alternatives, and observation/protocol details.
+- `benchmarks.html`: stable visual gallery, category/search filters and score-graph filter.
+- `index.html`: temporary gallery alias; the parent owns later 3D room entrance routing.
+- `results.html?benchmark=hle-diamond`: interactive detail page for any card.
+- `catalog.html`: retained full research index with status/setting filters.
+- `results-technical.html`: retained original three-benchmark result explorer.
+- `data/catalog.original.json`: parent-supplied original discovery input.
+- `data/results.original.json`: original 18 rows, protocols, sources and graph configurations.
+- `data/results-rune-evidence.json`: numeric-only validation evidence for 720 samples and clocks.
+- `data/standard-benchmarks.original.json`: exact supplied standard results and settings.
+- `data/gallery-notes.json`: separate editorial explanations; no research values.
+- `assets/gallery.js`, `assets/gallery.css`: text-safe gallery/detail implementation.
+- `assets/results.js`, `assets/results.css`: shared validated original chart renderer.
+- `assets/catalog.js`, `assets/results-data.js`, `assets/gallery-data.js`: generated projections.
 
-No build, package installation, backend, account, paid API, or third-party request
-is needed to use the website. System fonts and project-relative assets work on
-GitHub Pages and direct file previews. With JavaScript off, the original JSON and
-native evidence guide remain available.
+The site uses local scripts, SVG/DOM graphs and system fonts. It needs no package
+installation, backend, account or external runtime resource. No evaluations or
+paid API runs are performed. Direct file previews work; with JavaScript disabled,
+original JSON and source interpretation remain available.
 
-## Preview and regeneration
+## Preview and generation
 
-Open `index.html`, or serve this folder:
+Open `index.html` directly or serve the repository on loopback:
 
 ```powershell
 python -m http.server 5188 --bind 127.0.0.1
 ```
 
-Visit `http://127.0.0.1:5188/`. To regenerate after an authorized catalog change:
+Visit `http://127.0.0.1:5188/`. Regenerate and validate the static data:
 
 ```powershell
-node scripts/build-catalog.cjs
 node scripts/build-catalog.cjs --check
-node scripts/build-results.cjs
 node scripts/build-results.cjs --check
+node scripts/build-gallery.cjs
 ```
 
-## Checks
+The gallery builder asserts both existing original-file checksums and the exact
+30 supplied standard score values, including HLE partition/tool membership.
 
-Developer checks require Playwright and axe-core; the website itself does not:
+## Validation
+
+Playwright and axe-core are developer-only tools, not frontend dependencies.
+Use existing installations through `LAB_PLAYWRIGHT_MODULE`, `LAB_AXE_SCRIPT` and
+optional `LAB_BROWSER_CHANNEL=msedge`. If needed, install them separately from the
+site with lifecycle scripts disabled. Tests launch and close their own headless
+browser; they do not interact with existing desktop sessions or apps.
 
 ```powershell
-npm install --no-save --package-lock=false --ignore-scripts playwright axe-core
-npx playwright install chromium
+node tests/verify-gallery.cjs
 node tests/verify-real-catalog.cjs
 node tests/verify-ui.cjs
 node tests/verify-results.cjs
 python tests/verify-static.py
-python tests/check-source-links.py
 ```
 
-After the normal GitHub Pages deployment, `node tests/verify-results-deployment.cjs`
-checks the live original data/assets against the exact local Git commit, all 18
-observations and seven chart views, details/source links, and mobile tables.
+The first command checks the current gallery and detail pages. The next three
+retain regression coverage for the original research renderers. Reports and
+screenshots go to ignored `evidence/`. The existing source-response report retains
+the BARN certificate failure; no warning is bypassed. Functional and scoped
+security checks are not a security certification.
 
-Existing installations can be selected with `LAB_PLAYWRIGHT_MODULE`,
-`LAB_AXE_SCRIPT`, and optional `LAB_BROWSER_CHANNEL=msedge`. Tests use one
-separate headless browser sequentially and close only their own contexts. They
-do not control desktop apps, Rocket League, or existing browser sessions.
-Reports and screenshots are saved to ignored `evidence/`.
+## Publication
 
-## Deployment and integration
+The selected repository is `Pazneria/lab`, with its existing `main`/root legacy
+GitHub Pages workflow at **https://pazneria.github.io/lab/**. Publish tested,
+reversible commits through a pull request after fetching and preserving remote
+work. This change owns the benchmark UI/data; homepage and the separately owned
+3D `lab-space` prototype remain outside its scope.
 
-Existing Pages settings were read: `main`, repository root, legacy branch
-deployment at `https://pazneria.github.io/lab/`. Home links use `/` on the shared
-domain. Merging reviewed commits to main publishes through this existing
-workflow. Coordinate homepage linking separately after deployment verification.
-This repository change leaves homepage files untouched.
+After deployment, run the same browser checks against the live site:
 
-After publication, `node tests/verify-deployment.cjs` checks the live Pages files
-against the current Git commit and exercises catalog details, exact sources,
-filters, keyboard controls, mobile reflow, and accessibility. It uses the same
-developer test dependencies and writes `evidence/deployment-validation.json`.
+```powershell
+$env:LAB_GALLERY_BASE='https://pazneria.github.io/lab/'
+node tests/verify-gallery.cjs
+```
 
-Library catalog materialization failed on Windows; it was not retried or
-modified after the parent supplied JSON. The ZIP schema/validator are not claimed
-to have run. The local checks validate the provided JSON and its display mapping.
+Live mode also compares 15 served files to the exact checked-out Git commit.
+Confirm the Pages build head and successful workflow separately; capture those
+receipts with the merge and browser evidence. Library provenance remains
+parent-supplied input, not successful Windows materialization. The failed transfer
+helper has not been retried or modified.

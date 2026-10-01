@@ -27,7 +27,10 @@ const server = http.createServer((req, res) => {
   const relative = url.pathname.replace(/^\/lab(?=\/|$)/, "") || "/";
   const file = path.resolve(
     root,
-    "." + (relative.endsWith("/") ? relative + "index.html" : relative),
+    "." +
+      (relative.endsWith("/")
+        ? relative + "catalog.html"
+        : relative.replace(/index\.html$/, "catalog.html")),
   );
   if (
     !file.startsWith(root + path.sep) ||
@@ -537,7 +540,7 @@ async function audit(page, label) {
     );
 
     await page.unroute("**/assets/catalog.js");
-    await page.goto(pathToFileURL(path.join(root, "index.html")).href);
+    await page.goto(pathToFileURL(path.join(root, "catalog.html")).href);
     assert.equal(
       await page.locator("#empty-label").textContent(),
       "No matches",

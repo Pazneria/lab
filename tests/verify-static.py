@@ -32,7 +32,7 @@ class References(HTMLParser):
 
 
 pages = {}
-for page in ["index.html", "results.html"]:
+for page in ["index.html", "benchmarks.html", "results.html", "catalog.html", "results-technical.html"]:
     parser = References()
     parser.feed((ROOT / page).read_text(encoding="utf-8"))
     assert len(parser.ids) == len(set(parser.ids)), f"Duplicate static IDs in {page}"

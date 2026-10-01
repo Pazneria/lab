@@ -211,7 +211,7 @@
   try {
     if (!valid()) throw new Error("Invalid result data");
   } catch {
-    fallback.replaceChildren(
+    fallback?.replaceChildren(
       document.createTextNode(
         "The result data could not be validated. Charts are unavailable. ",
       ),
@@ -219,8 +219,8 @@
     const link = document.createElement("a");
     link.href = "data/results.original.json";
     link.textContent = "Read the supplied original data";
-    fallback.append(link);
-    controls.hidden = true;
+    fallback?.append(link);
+    if (controls) controls.hidden = true;
     return;
   }
   const records = new Map(data.records.map((r) => [r.result_id, r]));
@@ -1060,7 +1060,7 @@
         ? "Paper v2: 2025-02-12 · Evaluation date unknown · Source access: 2026-09-30"
         : `Evaluation: ${state.benchmark === "runebench" ? "2026-09-29" : "2026-09-25–29"} · Source access: 2026-09-30`;
     const catalog = document.getElementById("slice-catalog");
-    catalog.href = "index.html#benchmark-" + state.benchmark;
+    catalog.href = "catalog.html#benchmark-" + state.benchmark;
     const notices =
       state.benchmark === "runebench"
         ? [
@@ -1189,6 +1189,18 @@
       return "";
     }
   }
+  // Share the validated, accessible chart renderer with the gallery detail view.
+  // The original research projection and the seven chart configurations stay intact.
+  window.LAB_CHARTS = Object.freeze({
+    chartCard,
+    observation,
+    rawDetails,
+    reset() {
+      observers.forEach((o) => o.disconnect());
+      observers = [];
+    },
+  });
+  if (!controls) return;
   controls.addEventListener("change", () => {
     const state = {
       benchmark: controls.elements.benchmark.value,

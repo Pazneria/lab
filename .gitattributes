@@ -6,3 +6,6 @@ data/results-rune-evidence.json text eol=lf
 data/results-researcher-readme.md text eol=lf
 data/results-researcher-readme.txt text eol=lf
 assets/results-data.js text eol=lf
+data/standard-benchmarks.original.json text eol=lf
+data/gallery-notes.json text eol=lf
+assets/gallery-data.js text eol=lf
