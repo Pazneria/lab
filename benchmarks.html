@@ -110,6 +110,14 @@
           <label class="graph-only"
             ><input type="checkbox" name="graphs" /> With score graphs</label
           >
+          <label class="history-picker"
+            >Results
+            <select name="history" aria-label="Results history">
+              <option value="all">All versions</option>
+              <option value="current">Current &amp; evidence guides</option>
+              <option value="historical">Historical comparisons</option>
+            </select>
+          </label>
         </form>
         <p
           class="browse-count"
@@ -131,8 +139,8 @@
             The interactive gallery needs JavaScript. The
             <a href="data/catalog.original.json">20-entry discovery catalog</a>,
             <a href="data/results.original.json">original results</a> and
-            <a href="data/standard-benchmarks.original.json"
-              >standard benchmark source data</a
+            <a href="data/gallery-current-2026-10-01.json"
+              >dated benchmark source cohorts</a
             >
             are available to read directly.
           </p></noscript

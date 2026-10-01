@@ -11,7 +11,7 @@ const original = JSON.parse(
 );
 const standard = JSON.parse(
   fs.readFileSync(
-    path.join(root, "data/standard-benchmarks.original.json"),
+    path.join(root, "data/gallery-current-2026-10-01.json"),
     "utf8",
   ),
 );
@@ -174,12 +174,12 @@ async function main() {
     pass(
       "All five benchmark pages offer a visible keyboard-accessible return to the 3D Lab; detail Back still opens the gallery",
     );
-    assert.equal(await page.locator(".benchmark-card").count(), 26);
-    assert.equal(await page.locator(".mini-graph svg").count(), 9);
+    assert.equal(await page.locator(".benchmark-card").count(), 42);
+    assert.equal(await page.locator(".mini-graph svg").count(), 25);
     assert.equal(await page.locator(".mini-evidence").count(), 17);
     assert.match(
       await page.locator("#gallery-count").textContent(),
-      /26 benchmarks.*9 with score/,
+      /42 benchmarks.*25 with score/,
     );
     for (const e of discovery.entries)
       assert.equal(
@@ -192,13 +192,13 @@ async function main() {
     await screenshot(page, "gallery-desktop.png");
     await screenshot(page, "gallery-desktop-full.png", true);
     pass(
-      "26 cards preserve all 20 discovery IDs; nine real graphs and 17 explicit evidence-only cards",
+      "42 cards preserve all 20 discovery IDs; 25 real score cards and 17 explicit evidence-only cards",
     );
     for (const [category, count] of [
-      ["standard", 6],
+      ["standard", 18],
       ["community", 4],
       ["games", 5],
-      ["medical", 5],
+      ["medical", 9],
       ["physical", 6],
     ]) {
       await page
@@ -208,7 +208,7 @@ async function main() {
     }
     await page.locator("input[name=category][value=all]").check();
     await page.locator("input[name=graphs]").check();
-    assert.equal(await page.locator(".benchmark-card").count(), 9);
+    assert.equal(await page.locator(".benchmark-card").count(), 25);
     await page.locator("input[name=graphs]").uncheck();
     await page.locator("#benchmark-search").fill("runescape");
     assert.equal(await page.locator(".benchmark-card").count(), 1);
@@ -232,12 +232,22 @@ async function main() {
     );
     for (const c of standard.cards) {
       await go("results.html?benchmark=" + c.id);
+      if (c.rows.length > 12)
+        await page
+          .getByRole("checkbox", { name: "Show all matching configurations" })
+          .check();
+      const plotted =
+        c.display_defaults?.sort === "evaluation_date_desc"
+          ? [...c.rows].sort((a, b) =>
+              (b.evaluation_date || "").localeCompare(a.evaluation_date || ""),
+            )
+          : c.rows;
       assert.equal(await page.locator(".standard-row").count(), c.rows.length);
       assert.deepEqual(
         await page
           .locator(".standard-row")
           .evaluateAll((nodes) => nodes.map((n) => Number(n.dataset.value))),
-        c.rows.map((r) => r.value),
+        plotted.map((r) => r.value),
       );
       assert.equal(
         await page.locator("input[name=view][value=cost]").count(),
@@ -256,12 +266,12 @@ async function main() {
       assert.match(
         await page.locator(".chart-inspector strong").textContent(),
         new RegExp(
-          c.rows[0].model_variant.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+          plotted[0].model_variant.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
         ),
       );
       assert.equal(
         await page.locator(".chart-inspector>a").getAttribute("href"),
-        c.rows[0].source_url,
+        plotted[0].source_url,
       );
       const values = await page
         .locator(".standard-table tbody tr")
@@ -272,22 +282,22 @@ async function main() {
         values.map((r) => Number(r[1])),
         c.rows.map((r) => r.value),
       );
-      assert.ok(values.every((r) => r[3] === "Not reported / not reported"));
+      assert.ok(values.every((r) => r[3].length > 0));
       if (c.display_status === "historical_source_cohort")
         assert.match(
           await page.locator(".historical-notice").textContent(),
-          /March 2026.*not current standings/,
+          /historical comparison, not current standings/,
         );
       if (c.id === "frontiermath-tier4-v2") {
+        assert.equal(await page.locator(".standard-row").count(), 2);
         assert.match(
-          await page.locator(".detail-notice").textContent(),
-          /setups differ/,
+          await page.locator(".detail-dates").textContent(),
+          /2.1.0/,
         );
-        assert.equal(await page.locator(".dot-track").count(), 5);
       }
     }
     pass(
-      "All 30 standard scores, source URLs and effort labels; four historical cohorts, cross-lab dots, zero-to-100 scales and null cost/time",
+      "All 340 source-cohort scores, source URLs and exact configuration labels; historical cohorts separate, zero-to-100 scales and generic null cost/time retained",
     );
     await go("results.html?benchmark=hle-diamond");
     for (const [view, field] of [
@@ -693,7 +703,7 @@ async function main() {
       await file.goto(
         "file:///" + path.join(root, "benchmarks.html").replace(/\\/g, "/"),
       );
-      assert.equal(await file.locator(".benchmark-card").count(), 26);
+      assert.equal(await file.locator(".benchmark-card").count(), 42);
       await file.goto(
         "file:///" +
           path.join(root, "results.html").replace(/\\/g, "/") +

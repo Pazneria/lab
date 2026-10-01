@@ -1,5 +1,10 @@
 # Benchmark gallery
 
+The October 1 refresh supersedes the original 26-card membership described below.
+See [the 42-card renderer integration](CURRENT-GALLERY-INTEGRATION.md) for current
+cohorts, expanded evidence and its security/validation scope. The earlier source
+verification and original-chart history remain documented here.
+
 The primary Lab pages now introduce each benchmark with a real graph and a clear
 question. A card opens `results.html?benchmark=…`, where the graph comes first,
 followed by connected explanations of the test, its purpose and its limits.
