@@ -1,0 +1,83 @@
+{
+  "dataset": "bullshitbench",
+  "kind": "metadata",
+  "part": 1,
+  "parts": 2,
+  "metadata": {
+    "benchmark": "BullshitBench",
+    "version": "V2, 100 prompts",
+    "checked_at": "2026-10-01",
+    "manifest_generated_at": "2026-09-29T20:42:04Z",
+    "freshness": "same source release as existing gallery; 228 configurations available vs 6 selected",
+    "source_url": "https://github.com/petergpt/bullshit-benchmark/tree/main/data/v2/latest",
+    "manifest_source": "https://raw.githubusercontent.com/petergpt/bullshit-benchmark/main/data/v2/latest/manifest.json",
+    "question_snapshot": "data/v2/latest/metadata/43f43d14bd20ddf17a29fafad2c3e9862e06c2e9c4a5bc94cf08d6ee2a6b1ece-questions.json",
+    "judges": [
+      "Claude Sonnet 4.6",
+      "GPT-5.2",
+      "Gemini 3.1 Pro Preview"
+    ],
+    "metric_notes": "Primary chart should use all-attempt clear-pushback percentage. Dashboard default excludes candidate refusals; both provided explicitly. avg_score is judge-average 0–2, not a percent. Errors remain in denominator. No valid-question false-rejection test.",
+    "cost_time_notes": "Candidate reported costs and latency only; preserve per-model coverage. Mean cost divides cost total by cost-covered responses, not all 100 when coverage missing. Not a billed invoice. Excludes judge cost. Latency includes request processing/retries, not human end-to-end workflow time.",
+    "protocol": {
+      "id": "bullshitbench-v2-20260929-all-attempts",
+      "benchmark_id": "bullshitbench-v2",
+      "source_snapshot_commit": "3bbed0441665478de85ee99c33d2b939992ba263",
+      "manifest_generated_at_utc": "2026-09-29T20:42:04Z",
+      "question_snapshot_sha256": "43f43d14bd20ddf17a29fafad2c3e9862e06c2e9c4a5bc94cf08d6ee2a6b1ece",
+      "evaluation_track": "V2, 100 invalid-premise prompts, 13 techniques; one run per model-effort",
+      "sample_size": 100,
+      "attempts_per_question": 1,
+      "metric": "Clear-pushback / all 100 attempts; refusals remain in denominator",
+      "judges": [
+        "anthropic/claude-sonnet-4.6",
+        "openai/gpt-5.2",
+        "google/gemini-3.1-pro-preview"
+      ],
+      "judge_failure_policy": "Up to three attempts for failed judge; mean of two valid judgments allowed after exhaustion; refusals deliberately ungraded",
+      "judge_bucket_rule": "Half-up rounding of mean judge score; bucket 2 is clear pushback",
+      "tools": "Stateless single-turn text requests through OpenRouter; no agent tool-use phase in inspected collector",
+      "reasoning_efforts": "Exact @reasoning suffix per result; not harmonized across vendors",
+      "current_durable_config": {
+        "temperature": null,
+        "system_prompt_omitted": true,
+        "request_timeout_seconds": 600,
+        "explicit_output_token_cap": null,
+        "strict_upstream_routing": true,
+        "source_id": "b-config",
+        "historical_receipt_status": "Current pinned config and technical guide support configured setup; no per-request payload retained in selected artifacts"
+      },
+      "latency_definition": "response_latency_ms timer surrounds collect_one request construction/API call/retries/response processing; excludes external task-queue wait before collect_one, judging and whole-evaluation completion. Includes API/network/provider wait and any retries inside that call; not pure model inference.",
+      "cost_definition": "Provider-reported response_cost_usd summed for covered candidate responses; excludes judge calls, infrastructure and potentially separate retries; not independently invoice-reconciled",
+      "pricing_date": null,
+      "pricing_date_status": "No static rate-card effective date used; telemetry captured at per-response evaluation times",
+      "uncertainty": {
+        "confidence_interval": null,
+        "repeated_run_stddev": null,
+        "repeat_count": 1
+      },
+      "comparability_status": "Shared fixed V2 prompt snapshot and named judging panel; retain effort, coverage and collection dates",
+      "limitations": [
+        "Invalid-premise detection is not valid-question rejection accuracy",
+        "LLM judges are noisy; selected rows include two-judge fallback",
+        "One pass through fixed 100 questions, no replicate CI",
+        "Provider snapshots are aliases, not immutable weight versions",
+        "Compare all-attempt scores only to all-attempt scores"
+      ],
+      "source_ids": [
+        "b-manifest",
+        "b-csv",
+        "b-summary",
+        "b-panel",
+        "b-config",
+        "b-methods",
+        "b-collector",
+        "b-cost",
+        "b-responses-0",
+        "b-responses-1",
+        "b-aggregate-0",
+        "b-aggregate-1"
+      ]
+    }
+  }
+}

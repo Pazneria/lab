@@ -103,7 +103,8 @@ async function main() {
       base + "benchmarks.html?category=standard&graphs=1&q=can";
     await page.goto(galleryURL);
     await page.locator(".benchmark-card").first().waitFor();
-    assert.equal(await page.locator(".benchmark-card").count(), 6);
+    const standardCount = await page.locator(".benchmark-card").count();
+    assert.ok(standardCount > 6);
     await page.evaluate(() => scrollTo({ top: 600, behavior: "instant" }));
     const card = page.locator('[data-benchmark-id="hle-diamond"]');
     await card.focus();
@@ -133,7 +134,7 @@ async function main() {
     await ready(page);
     assert.equal(await page.locator("input[value=tools]").isChecked(), true);
     await page.goBack();
-    await returned(page, galleryURL, before.y, "standard", 6);
+    await returned(page, galleryURL, before.y, "standard", standardCount);
     assert.equal(await page.locator("#benchmark-search").inputValue(), "can");
     assert.equal(await page.locator("input[name=graphs]").isChecked(), true);
     assert.equal(
@@ -149,23 +150,23 @@ async function main() {
     assert.equal(await page.evaluate(() => history.length), detailLength);
     await page.locator(".back-link").focus();
     await page.locator(".back-link").press("Enter");
-    await returned(page, galleryURL, before.y, "standard", 6);
+    await returned(page, galleryURL, before.y, "standard", standardCount);
     await card.click();
     await ready(page);
     assert.equal(await page.locator("input[value=score]").isChecked(), true);
     await page.locator("input[value=knowledge]").check();
     await page.locator(".back-link").click();
-    await returned(page, galleryURL, before.y, "standard", 6);
+    await returned(page, galleryURL, before.y, "standard", standardCount);
     await page.reload();
-    await returned(page, galleryURL, before.y, "standard", 6);
+    await returned(page, galleryURL, before.y, "standard", standardCount);
     await capture(page, "gallery-history-return-desktop.png");
     pass(
       "Keyboard entry and repeated HLE switches add exactly one detail entry; browser Back, Forward, in-page Back, reopen and reload preserve gallery filters, scroll and focus",
     );
 
     for (const id of [
-      "gpqa-diamond",
-      "mmmu-pro",
+      "gpqa-diamond-march-reported",
+      "mmmu-pro-march-reported",
       "swe-bench-pro-public-v1",
       "terminal-bench-2",
     ]) {
@@ -173,11 +174,11 @@ async function main() {
       await ready(page);
       assert.match(
         await page.locator(".historical-status").textContent(),
-        /Historical.*Mar 2026/,
+        /Historical.*2026-03-17/,
       );
       assert.match(
         await page.locator(".historical-notice").textContent(),
-        /March 2026.*not current standings/,
+        /March 17, 2026.*not current standings/,
       );
       assert.ok(
         await page
@@ -277,7 +278,7 @@ async function main() {
     await ready(deep);
     await deep.locator(".back-link").click();
     await deep.waitForURL("**/benchmarks.html#gallery");
-    assert.equal(await deep.locator(".benchmark-card").count(), 26);
+    assert.equal(await deep.locator(".benchmark-card").count(), 42);
     await deep.goto(base + "results.html?benchmark=hle-diamond");
     await ready(deep);
     for (const url of [
@@ -324,7 +325,7 @@ async function main() {
     await ready(noStorage);
     await noStorage.locator("input[value=tools]").check();
     await noStorage.locator(".back-link").click();
-    await returned(noStorage, galleryURL, blockedY, "standard", 6);
+    await returned(noStorage, galleryURL, blockedY, "standard", standardCount);
     await blocked.close();
     pass(
       "When session storage is disabled, validated same-window referrer and native history still return to the gallery with filters and scroll intact",

@@ -1,0 +1,215 @@
+{
+  "schema_version": "community-medical-integration-1-medical-excerpt",
+  "prepared_date": "2026-10-01",
+  "transport_note": "Complete medical sections from parent-relayed public benchmark task data. Community portions were truncated and are not represented by this excerpt. No successful Library materialization.",
+  "medagentbench_original": {
+    "benchmark": "MedAgentBench",
+    "checked_at": "2026-10-01",
+    "freshness": "original author homepage still displays historical 12-model table; no newer same-protocol official model table identified in focused audit. Six additional historical rows were uncollected. Author-led v2 exists and is separate.",
+    "source_url": "https://stanfordmlgroup.github.io/projects/medagentbench/",
+    "version": "original 300-task FHIR EHR benchmark",
+    "score_unit": "success rate percent, pass@1",
+    "evaluation_date": null,
+    "publication": "2025 paper; exact run dates unspecified",
+    "rows": [
+      {
+        "model": "Claude 3.5 Sonnet v2",
+        "score": 69.67,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-4o",
+        "score": 64,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "DeepSeek-V3",
+        "score": 62.67,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Gemini-1.5 Pro",
+        "score": 62,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-4o-mini",
+        "score": 56.33,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "o3-mini",
+        "score": 51.67,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Qwen2.5 72B",
+        "score": 51.33,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Llama 3.3 70B",
+        "score": 46.33,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Gemini 2.0 Flash",
+        "score": 38.33,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Gemma2 27B",
+        "score": 19.33,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Gemini 2.0 Pro",
+        "score": 18,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "Mistral v0.3 7B",
+        "score": 4,
+        "reasoning_effort": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      }
+    ],
+    "safety_note": "Simulated task success is not clinical qualification, deployment approval, or evidence of real-patient safety."
+  },
+  "medagentbench_v2": {
+    "source_url": "https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf",
+    "code_url": "https://github.com/ericoericochen/medagentbenchv2",
+    "publication": "Pacific Symposium on Biocomputing 2026, copyright 2025; precise evaluation date unspecified",
+    "model": "GPT-4.1",
+    "tools_scaffold": "Revised plan-first/few-shot prompt, structured FHIR tools, calculator, output-format tools; optional failure-derived system-prompt memory",
+    "rows": [
+      {
+        "task_set": "original MedAgentBench 300 tasks",
+        "memory": false,
+        "score": 91
+      },
+      {
+        "task_set": "held-out tasks after memory training from failed tasks",
+        "memory": true,
+        "score": 98,
+        "sample_size": null,
+        "note": "Memory uses five failed examples per category to populate memory; remaining tasks held out. Do not label 98% as an untouched 300-task evaluation."
+      },
+      {
+        "task_set": "new 300-task v2 set",
+        "memory": "v2 approach; paper section 3.3",
+        "score": 88.67,
+        "successes": 266,
+        "sample_size": 300
+      }
+    ],
+    "cost_time_note": "Appendix A2 gives representative task-category averages for GPT-4.1, not verified per-score paired full-benchmark cost. Keep separate; not joined to 91/98/88.67 scores."
+  },
+  "healthbench_professional": {
+    "benchmark": "HealthBench Professional",
+    "version": "length-adjusted, GPT-6 system card Table 29, corrected 2026-09-22",
+    "checked_at": "2026-10-01",
+    "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+    "source_table": "Table 29, section 11.4.1",
+    "publication_date": "2026-09-03",
+    "revision_date": "2026-09-22",
+    "evaluation_date": null,
+    "evidence_type": "developer-reported comparison, not independent clinical validation",
+    "metric": "length-adjusted rubric score on 0–100 scale, higher better",
+    "adjustment": "2000-character reference, 1.47 score points per 500 characters; longer penalized and shorter receive positive adjustment",
+    "reasoning_effort": null,
+    "effort_note": "Not specified in inspected HealthBench table; do not import effort from unrelated evaluations",
+    "tools": null,
+    "scaffold": "HealthBench Professional rubric-scored responses, default verbosity per section 11.4.1",
+    "rows": [
+      {
+        "model": "GPT-5.5",
+        "score_length_adjusted": 51.8,
+        "score_unadjusted": 57.2,
+        "mean_response_length_characters": 3818,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-5.6 Sol",
+        "score_length_adjusted": 60.5,
+        "score_unadjusted": 64.1,
+        "mean_response_length_characters": 3228,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-5.6 Terra",
+        "score_length_adjusted": 57.7,
+        "score_unadjusted": 62.4,
+        "mean_response_length_characters": 3618,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-5.6 Luna",
+        "score_length_adjusted": 55.7,
+        "score_unadjusted": 59.8,
+        "mean_response_length_characters": 3389,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-6 Astra",
+        "score_length_adjusted": 64.7,
+        "score_unadjusted": 68.2,
+        "mean_response_length_characters": 3185,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-6 Sol",
+        "score_length_adjusted": 60.8,
+        "score_unadjusted": 59.5,
+        "mean_response_length_characters": 1573,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "model": "GPT-6 Luna",
+        "score_length_adjusted": 60.8,
+        "score_unadjusted": 61.2,
+        "mean_response_length_characters": 2119,
+        "cost_usd": null,
+        "latency_seconds": null
+      }
+    ],
+    "freshness_note": "Use corrected live table. Search snippets/launch material may retain superseded Astra 63.4 adjusted / 69.5 raw. This is a distinct series from original HealthBench, Hard, Consensus and MedAgentBench.",
+    "safety_note": "Medical benchmark score does not establish clinical qualification or real-patient safety."
+  },
+  "archive_provenance": {
+    "library_file_id": "libfile_ba83fb5bba90819190195b3767abb854",
+    "file_id": "file_00000000c75881f6a6bdd980e1eb5dce",
+    "file_name": "community-medical-expanded-coverage-2026-10-01.zip",
+    "version": 0,
+    "acquisition": "Parent-relayed task-input excerpt; no successful Library materialization"
+  }
+}

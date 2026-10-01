@@ -1,0 +1,10 @@
+{
+  "acquisition": "Validated parent-owned public research JSON relayed as task input; no successful Library materialization",
+  "library_file_id": "libfile_8e89d030beb88191baf636893c020eee",
+  "file_id": "file_0000000069b881f9a68ed451b57ca33c",
+  "file_name": "current-reasoning-benchmarks.json",
+  "prepared_current_version_number": 0,
+  "version_scope": "Version metadata returned by prepare_materialize; this task-input excerpt does not claim an installed Library file",
+  "independently_executed": false,
+  "records": 20
+}

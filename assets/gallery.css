@@ -907,6 +907,73 @@ p {
   gap: 12px;
   margin: 20px 0 16px;
 }
+.history-picker,
+.cohort-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+.history-picker select,
+.cohort-controls input[type="search"] {
+  max-width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: var(--paper, #faf8f4);
+  color: var(--ink);
+  font: inherit;
+}
+.cohort-controls label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.cohort-count {
+  font-size: 12px;
+  color: var(--muted);
+}
+.expanded-scatter {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+.expanded-scatter text {
+  font-family: inherit;
+  font-size: 13px;
+  fill: currentColor;
+}
+.expanded-scatter g {
+  cursor: pointer;
+}
+.expanded-scatter g:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.expanded-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.expanded-legend button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  min-height: 42px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
 .standard-row {
   display: grid;
   grid-template-columns: 175px 1fr 56px;

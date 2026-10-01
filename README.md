@@ -1,7 +1,7 @@
 # Lab · AI benchmark gallery
 
-A source-backed gallery of **26 benchmarks** spanning standard tests, community
-projects, games, medicine and physical systems. Nine cards show real graphs;
+A source-backed gallery of **42 benchmark cards** spanning standard tests, community
+projects, games, medicine and physical systems. Twenty-five cards show real graphs;
 17 are clearly labeled evidence guides without ingested model scores. A card
 opens an interactive graph with plain-English explanations. Sources, settings,
 exact tables and full records remain in expandable disclosures.
@@ -9,11 +9,18 @@ exact tables and full records remain in expandable disclosures.
 The page preserves all **20 original discovery records**, their 51 URLs and
 30 null metric definitions. The original **18 result rows and seven graph
 views** cover RuneBench, BullshitBench V2 and historical MedAgentBench. A separate
-standard dataset adds **30 supplied primary rows** across six benchmark cohorts.
+dated dataset contains **340 supplied primary rows** across 22 separate source cohorts.
 There is no aggregate score or global model ranking. Historical and cross-lab
 reported results are explicitly labeled; missing values remain null.
 
+The Results selector separates current evidence and historical versions. Large
+cohorts have configuration search and a Show all option. Community views expose
+228 BullshitBench rows and 48 Rune runs across 16 skills; a separate historical
+medical view contains 12 author-homepage results. The existing seven verified
+charts remain available with their exact cost/time meanings.
+
 See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
+[current refresh and renderer review](docs/CURRENT-GALLERY-INTEGRATION.md),
 [original result validation](docs/RESULTS-INTEGRATION.md), and
 [catalog provenance](docs/CATALOG-INTEGRATION.md).
 
@@ -27,7 +34,10 @@ See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md
 - `data/catalog.original.json`: parent-supplied original discovery input.
 - `data/results.original.json`: original 18 rows, protocols, sources and graph configurations.
 - `data/results-rune-evidence.json`: numeric-only validation evidence for 720 samples and clocks.
-- `data/standard-benchmarks.original.json`: exact supplied standard results and settings.
+- `data/standard-benchmarks.original.json`: archived first 30-row standard cohort input.
+- `data/gallery-current-2026-10-01.json`: 22 current and historical source cohorts.
+- `data/community-expanded-2026-10-01.json`: complete expanded community records.
+- `data/gallery-renderer-contract-2026-10-01.json`: reviewed dated renderer contract.
 - `data/gallery-notes.json`: separate editorial explanations; no research values.
 - `assets/gallery.js`, `assets/gallery.css`: text-safe gallery/detail implementation.
 - `assets/results.js`, `assets/results.css`: shared validated original chart renderer.
@@ -54,8 +64,8 @@ node scripts/build-results.cjs --check
 node scripts/build-gallery.cjs
 ```
 
-The gallery builder asserts both existing original-file checksums and the exact
-30 supplied standard score values, including HLE partition/tool membership.
+The gallery builder asserts archival checksums, exact cohort counts and source
+relationships, including HLE partition/tool membership and null generic cost/time.
 
 ## Validation
 
@@ -67,6 +77,7 @@ browser; they do not interact with existing desktop sessions or apps.
 
 ```powershell
 node tests/verify-gallery.cjs
+node tests/verify-current-gallery.cjs
 node tests/verify-gallery-navigation.cjs
 node tests/verify-deployment-routing.cjs
 node tests/verify-real-catalog.cjs
@@ -75,7 +86,9 @@ node tests/verify-results.cjs
 python tests/verify-static.py
 ```
 
-The first command checks the current gallery and detail pages. The navigation
+The first command checks the current gallery and detail pages. The current-gallery
+command checks large cohorts, expanded evidence, uncertainty labels and history.
+The navigation
 command checks Back/Forward, repeated view switches, filter/scroll restoration,
 reload, direct links, keyboard, touch and the storage-disabled fallback. The deployment
 routing command checks the retained catalog and results pages and verifies that

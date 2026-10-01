@@ -1,0 +1,49 @@
+{
+  "dataset": "bullshitbench",
+  "kind": "metadata",
+  "part": 2,
+  "parts": 2,
+  "metadata": {
+    "columns": [
+      "model",
+      "reasoning",
+      "rank",
+      "avg_score",
+      "green_rate",
+      "red_rate",
+      "refusal_rate",
+      "score_2",
+      "score_1",
+      "score_0",
+      "refusal_count",
+      "answered_count",
+      "nonsense_count",
+      "error_count",
+      "score_percent_all_attempts",
+      "score_percent_excluding_candidate_refusals",
+      "first_seen_utc",
+      "usage_rows",
+      "usage_rows_with_usage",
+      "usage_rows_with_cost",
+      "usage_rows_with_latency",
+      "usage_cost_usd_total",
+      "usage_latency_ms_total",
+      "usage_avg_latency_ms",
+      "mean_candidate_cost_usd_on_cost_covered_responses",
+      "mean_candidate_latency_seconds"
+    ],
+    "column_units": {
+      "green_rate": "fraction all attempts",
+      "red_rate": "fraction all attempts",
+      "refusal_rate": "fraction all attempts",
+      "avg_score": "mean judge grade, 0–2",
+      "score_percent_all_attempts": "percent =100*score_2/nonsense_count",
+      "score_percent_excluding_candidate_refusals": "percent =100*score_2/(nonsense_count-refusal_count)",
+      "usage_cost_usd_total": "USD on cost-covered candidate responses",
+      "mean_candidate_cost_usd_on_cost_covered_responses": "USD/response on cost-covered responses; null if no coverage",
+      "usage_latency_ms_total": "milliseconds",
+      "usage_avg_latency_ms": "milliseconds/response, source-reported",
+      "mean_candidate_latency_seconds": "seconds/response"
+    }
+  }
+}
