@@ -1172,6 +1172,34 @@
         history.back();
       });
     }
+    detail.addEventListener("click", (event) => {
+      if (!ordinaryClick(event) || !(event.target instanceof Element)) return;
+      const link = event.target.closest("a[href]");
+      if (!link || !detail.contains(link)) return;
+      const url = new URL(link.href);
+      if (
+        url.origin !== location.origin ||
+        url.pathname !== location.pathname ||
+        url.search !== location.search ||
+        !url.hash
+      )
+        return;
+      let id;
+      try {
+        id = decodeURIComponent(url.hash.slice(1));
+      } catch {
+        return;
+      }
+      if (!/^[a-z0-9-]+$/.test(id)) return;
+      const target = document.getElementById(id);
+      if (!target || !detail.contains(target)) return;
+      event.preventDefault();
+      // A section jump is part of this detail entry, like a graph variant.
+      history.replaceState(historyState(), "", url);
+      openHash();
+      if (target.tagName === "DETAILS")
+        target.querySelector("summary")?.focus({ preventScroll: true });
+    });
     function render(state) {
       window.LAB_CHARTS?.reset();
       const card = byId.get(state.id),

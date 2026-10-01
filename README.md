@@ -68,6 +68,7 @@ browser; they do not interact with existing desktop sessions or apps.
 ```powershell
 node tests/verify-gallery.cjs
 node tests/verify-gallery-navigation.cjs
+node tests/verify-deployment-routing.cjs
 node tests/verify-real-catalog.cjs
 node tests/verify-ui.cjs
 node tests/verify-results.cjs
@@ -76,7 +77,9 @@ python tests/verify-static.py
 
 The first command checks the current gallery and detail pages. The navigation
 command checks Back/Forward, repeated view switches, filter/scroll restoration,
-reload, direct links, keyboard, touch and the storage-disabled fallback. The next three
+reload, direct links, keyboard, touch and the storage-disabled fallback. The deployment
+routing command checks the retained catalog and results pages and verifies that
+the gallery and detail pages are rejected as substitutes. The next three commands
 retain regression coverage for the original research renderers. Reports and
 screenshots go to ignored `evidence/`. The existing source-response report retains
 the BARN certificate failure; no warning is bypassed. Functional and scoped
