@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="580" viewBox="0 0 800 580">
+<rect width="800" height="580" rx="8" fill="#e8ebe0"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#284b3b">
+<text x="48" y="45" font-size="12" letter-spacing="3">LAB / RESEARCH ROOM</text><text x="730" y="45" font-size="14">N &#8593;</text>
+<path d="M140 80H660V458H140V291H88V146H140Z" fill="#f6f3e7" stroke="#788e79" stroke-width="6"/>
+<path d="M140 80H283V389H140V291H88V146H140Z" fill="#e5e5d8"/>
+<path d="M517 80H660V251H517Z" fill="#d1b48d"/>
+<path d="M88 151V286M143 98V129M143 310V374" stroke="#a6cdd2" stroke-width="9"/>
+<path d="M143 98V129M143 310V374" stroke="#faf8ec" stroke-width="2"/>
+<path d="M380 457V218H426V457" fill="#d8c9a9" stroke="#bb945b" stroke-width="2"/>
+<path d="M519 80V115M519 247H660" stroke="#8b6c48" stroke-width="6"/>
+<path d="M294 115H478M294 361H478" stroke="#d5cfc0" stroke-width="2" stroke-dasharray="4 6"/>
+<text x="396" y="107" font-size="14" text-anchor="middle">Benchmark hall</text>
+<text x="396" y="128" font-size="11" text-anchor="middle">Roof lantern above</text>
+<rect x="314" y="161" width="169" height="52" rx="3" fill="#3e7160"/><rect x="395" y="156" width="37" height="10" fill="#264e40"/>
+<text x="397" y="183" font-size="12" fill="#fff" text-anchor="middle">01 / BENCHMARK</text><text x="397" y="201" font-size="12" fill="#fff" text-anchor="middle">DISCOVERY</text>
+<path d="M403 325V243" stroke="#8d693e" stroke-width="2" stroke-dasharray="5 7"/><path d="M398 250L403 241L408 250" fill="none" stroke="#8d693e" stroke-width="2"/>
+<rect x="149" y="110" width="52" height="190" fill="#52645b"/><g fill="#c09456"><circle cx="176" cy="127" r="7"/><circle cx="176" cy="165" r="9"/><circle cx="176" cy="211" r="6"/><circle cx="176" cy="248" r="8"/><circle cx="176" cy="283" r="8"/></g>
+<rect x="210" y="89" width="62" height="16" fill="#a8b8a1"/>
+<text x="213" y="330" font-size="14" text-anchor="middle">Apparatus bay</text><text x="213" y="349" font-size="11" text-anchor="middle">Decorative instruments</text>
+<g fill="#b4ac95"><rect x="274" y="124" width="18" height="18"/><rect x="274" y="241" width="18" height="18"/><rect x="274" y="333" width="18" height="18"/><rect x="274" y="376" width="18" height="18"/><rect x="508" y="241" width="18" height="18"/><rect x="508" y="376" width="18" height="18"/></g>
+<rect x="525" y="84" width="78" height="14" fill="#7b5a3c"/><rect x="568" y="160" width="50" height="66" fill="#a6674b"/><rect x="633" y="164" width="23" height="59" fill="#7b5a3c"/><rect x="608" y="192" width="16" height="14" fill="#7b5a3c"/>
+<text x="584" y="124" font-size="14" text-anchor="middle">Study alcove</text><text x="584" y="141" font-size="11" text-anchor="middle">Books and instrument desk</text>
+<path d="M520 178H550" stroke="#8b6c48" stroke-width="2" stroke-dasharray="4 4"/>
+<path d="M647 267V377" stroke="#b48c5c" stroke-width="9"/><text x="584" y="308" font-size="13" text-anchor="middle">Window gallery</text>
+<path d="M203 450H348" stroke="#b48c5c" stroke-width="9"/>
+<path d="M542 458H617" stroke="#f6f3e7" stroke-width="10"/><path d="M550 458V407M550 407A51 51 0 0 1 601 458" fill="none" stroke="#ad8349" stroke-width="2"/>
+<text x="576" y="487" font-size="13" text-anchor="middle">Entrance / Home</text>
+<text x="48" y="531" font-size="12">One level floor. Walking is optional.</text><text x="48" y="551" font-size="12">Use the native catalog and home links for the working tools.</text>
+</g></svg>
