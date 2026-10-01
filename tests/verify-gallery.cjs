@@ -145,6 +145,35 @@ async function main() {
       await page.waitForTimeout(100);
     };
     await go("");
+    for (const file of [
+      "index.html",
+      "benchmarks.html",
+      "results.html?benchmark=hle-diamond",
+      "catalog.html",
+      "results-technical.html",
+    ]) {
+      await go(file);
+      const roomLink = page.getByRole("link", {
+        name: "Back to 3D Lab",
+        exact: true,
+      });
+      assert.equal(await roomLink.getAttribute("href"), "/lab/lab-space/");
+      assert.equal(await roomLink.isVisible(), true);
+      await roomLink.focus();
+      assert.equal(
+        await roomLink.evaluate((link) => link === document.activeElement),
+        true,
+      );
+      if (file.startsWith("results.html"))
+        assert.equal(
+          await page.locator(".back-link").getAttribute("href"),
+          "benchmarks.html#gallery",
+        );
+    }
+    await go("");
+    pass(
+      "All five benchmark pages offer a visible keyboard-accessible return to the 3D Lab; detail Back still opens the gallery",
+    );
     assert.equal(await page.locator(".benchmark-card").count(), 26);
     assert.equal(await page.locator(".mini-graph svg").count(), 9);
     assert.equal(await page.locator(".mini-evidence").count(), 17);

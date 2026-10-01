@@ -20,7 +20,7 @@ See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md
 ## Pages and data
 
 - `benchmarks.html`: stable visual gallery, category/search filters and score-graph filter.
-- `index.html`: temporary gallery alias; the parent owns later 3D room entrance routing.
+- `index.html`: stable root gallery, used by the 3D room’s benchmark station.
 - `results.html?benchmark=hle-diamond`: interactive detail page for any card.
 - `catalog.html`: retained full research index with status/setting filters.
 - `results-technical.html`: retained original three-benchmark result explorer.
@@ -85,7 +85,9 @@ The selected repository is `Pazneria/lab`, with its existing `main`/root legacy
 GitHub Pages workflow at **https://pazneria.github.io/lab/**. Publish tested,
 reversible commits through a pull request after fetching and preserving remote
 work. This change owns the benchmark UI/data; homepage and the separately owned
-3D `lab-space` prototype remain outside its scope.
+3D `lab-space` room remain outside its scope. The homepage’s Lab link opens
+`lab-space/`; that room’s benchmark station opens the root gallery. Preserve
+both destinations and the additional `benchmarks.html` route.
 
 After deployment, run the same browser checks against the live site:
 

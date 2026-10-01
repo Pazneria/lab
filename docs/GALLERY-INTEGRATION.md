@@ -7,12 +7,16 @@ Sources, settings, exact tables and complete result records remain available in
 native disclosures. The original discovery renderer is retained at `catalog.html`
 and the original result explorer at `results-technical.html`.
 
-The stable gallery destination for the separately owned room’s benchmark station
-is **https://pazneria.github.io/lab/benchmarks.html**. Internal gallery navigation
-uses that route. `index.html` is a temporary gallery alias; the parent may change
-the Lab entry to open the room without touching `benchmarks.html`, `results.html`,
-the data, or the gallery assets. No 3D room or root entrance routing is integrated
-by this change.
+The separately owned room’s benchmark station opens the stable root gallery at
+**https://pazneria.github.io/lab/**. Internal gallery navigation also supports
+**https://pazneria.github.io/lab/benchmarks.html**. The homepage’s Lab link opens
+**https://pazneria.github.io/lab/lab-space/** directly. Preserve these routes:
+the root and `benchmarks.html` both serve the gallery, and `results.html` serves
+details. The remote room commit `2443b2e` was preserved without editing its files.
+Every benchmark page provides a visible “Back to 3D Lab” link. Detail pages also
+retain “All benchmarks” for returning to the gallery, so these two destinations
+remain explicit.
+No 3D room implementation or homepage routing is owned by this change.
 
 The gallery contains 26 benchmarks: all 20 original discovery records plus six
 supplied standard benchmark cohorts. Nine cards contain graphs. The remaining 17

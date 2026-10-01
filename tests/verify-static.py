@@ -51,6 +51,9 @@ for page, parser in pages.items():
             continue
         if parts.path == "/":
             continue  # Existing account-root homepage; checked below as a public URL.
+        if parts.path == "/lab/lab-space/":
+            assert (ROOT / "lab-space/index.html").is_file(), ref
+            continue  # Existing room; checked below at its actual public destination.
         if parts.path:
             asset = (ROOT / parts.path).resolve()
             assert asset.is_relative_to(ROOT) and asset.is_file(), ref
@@ -64,7 +67,7 @@ for page, parser in pages.items():
 result_input = json.loads((ROOT / "data/results.original.json").read_text(encoding="utf-8"))
 assert (ROOT / "data/results-researcher-readme.txt").read_text(encoding="utf-8") == result_input["readme"]
 ET.parse(ROOT / "assets" / "mark.svg")
-for url in ["https://pazneria.github.io/", "https://github.com/Pazneria/lab", "https://pazneria.github.io/lab/"]:
+for url in ["https://pazneria.github.io/", "https://github.com/Pazneria/lab", "https://pazneria.github.io/lab/", "https://pazneria.github.io/lab/lab-space/"]:
     try:
         request = urllib.request.Request(url, headers={"User-Agent": "Lab-local-navigation-check/1.0"})
         with urllib.request.urlopen(request, timeout=15) as response:
