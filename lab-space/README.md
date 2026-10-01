@@ -1,139 +1,97 @@
-# Lab research room — local prototype
+# Lab research room
 
-An isolated, walkable 16 × 14 metre research workshop with one functional public
-benchmark station and a home exit. The room provides orientation, not a second
-catalog: search, evidence, data, charts, and results remain in the existing 2D
-catalog at <https://pazneria.github.io/lab/>. No future project stations exist.
+The published room at <https://pazneria.github.io/lab/lab-space/> is a bounded
+16 x 14 metre workshop. Its benchmark bench opens the working gallery at
+<https://pazneria.github.io/lab/>; its exit opens Jordan's home. Search, evidence,
+data and detailed graphs remain accessible 2D tools. No future project stations
+or external runtime resources exist.
 
-The original Codex prototype is preserved at `429c724225d13edcedb597826b426cc726b9a25a`
-in the separate `lab-space-checkout`, branch `codex/lab-space-prototype`. Its base
-is public `main` at `9e8eb47b580d2a2c8c673de52d8f1f247304e957`.
+## Movement and access
 
-This variation is in a second checkout on `codex/lab-space-opus-variation`.
-Actual Claude Code `claude-opus-5-5` wrote the room renderer: a roof-lit benchmark
-hall, a glazed apparatus bay, and a lower oak study alcove. Codex aligned
-collisions, orientation, the flat plan and documentation, and performed the
-short checks. See `OPUS-ITERATION.md` for provenance and exact variation files.
-Nothing was pushed, published, or linked from the root page. No existing
-catalog, data, charts, Arcade source, private data or other running apps changed.
+Click or tap visible floor to walk to it. Select furniture or an instrument to
+approach accessible floor beside it. Select the benchmark bench or home door to
+walk to its approach point and open its controls on arrival. Following the public
+Arcade's approach-before-action interaction, navigation is implemented locally
+for this room's furniture; no Arcade code, dependencies or private files were
+copied. Fixed catalog/home anchors always allow direct access.
 
-## Local preview
+The room occupies the full content width. Help is optional and holds instructions,
+gentle movement, an optional six-button direction pad, and keyboard-accessible
+walk-to-bench/home/entrance buttons. WASD walks; up/down arrows walk; left/right
+arrows turn. Drag to look. Enter/E opens a nearby station. Escape stops walking
+and releases canvas focus. Tab reaches native controls. Direction buttons support
+holds and small taps.
 
-From this checkout:
+A new click replaces the route. Manual walking, an actual drag, Stop, Help,
+mode changes, pointer cancellation, loss of focus or a hidden tab cancels it.
+Sub-threshold pointer movement does not turn the camera. Routes use an eight-way
+grid with expanded furniture footprints, continuous segment checks and path
+smoothing. The same clearance protects manual walking. A selected floor point
+must be reachable; occupied furniture is approached from nearby free floor.
+Walls, ceilings and exterior scenery are rejected. The player never leaves the
+existing room bounds. The camera stays level; no bobbing, inertia or auto-tour.
 
-```powershell
-python -m http.server 5198 --bind 127.0.0.1 --directory lab-space
-```
+Reduced motion starts flat with gentle walking selected. 3D is deliberate opt-in.
+Flat mode, JavaScript off, unavailable WebGL, missing modules and context loss
+retain the plan and native catalog/home links. No pointer lock or keyboard trap.
 
-Open <http://127.0.0.1:5198/>. The preserved before preview uses port 5197.
-JavaScript modules need HTTP; opening `index.html`
-directly from disk still supplies the native flat room and real tool links.
-The prototype also works at a repository subpath such as `/lab/lab-space/`.
+## Provenance and ownership
 
-WASD walks; up/down arrows walk; left/right arrows turn. Drag the room to look.
-Enter (or E) opens a nearby station. Escape leaves canvas focus. Tab reaches
-ordinary links and buttons. The monitor is clickable; the six direction buttons
-support holds and small taps. On phones the pad sits over the visible room.
-The bench shortcut and always-visible native catalog/home links bypass walking.
+The first prototype was Codex's, preserved at
+429c724225d13edcedb597826b426cc726b9a25a in lab-space-checkout. Actual Claude Code
+claude-opus-5-5, normal Claude Pro with usage credits OFF, authored the varied
+architecture in room.mjs. See OPUS-ITERATION.md and DESIGN.md for that recorded
+aesthetic pass and primary historic references. This functional navigation and
+interface change is Codex's. It preserves the room's layout and materials.
 
-Reduced motion starts in the flat view with gentle movement selected. 3D is
-opt-in in that mode. Movement stays level, without bobbing, animation, inertia,
-or fly-throughs. All camera jumps are immediate. A missing module, unavailable
-WebGL2, or context loss leaves the flat plan and normal links usable. JS off
-also preserves those links. There is no pointer lock, keyboard trap, or sound.
+This change owns exactly these seven files:
 
-## Ownership — exact integration file list
+- lab-space/README.md
+- lab-space/index.html
+- lab-space/assets/navigation.mjs
+- lab-space/assets/room.mjs
+- lab-space/assets/space.js
+- lab-space/assets/space.css
+- lab-space/tests/verify-space.cjs
 
-Only these files are owned by this branch:
+Catalog, results, gallery, data, charts, homepage, other checkouts and dependency
+files are outside the change. The complete room remains under lab-space/.
 
-```text
-lab-space/README.md
-lab-space/DESIGN.md
-lab-space/OPUS-ITERATION.md
-lab-space/index.html
-lab-space/assets/navigation.mjs
-lab-space/assets/room-mark.svg
-lab-space/assets/room-plan.svg
-lab-space/assets/room.mjs
-lab-space/assets/space.css
-lab-space/assets/space.js
-lab-space/assets/vendor/THREE-LICENSE.txt
-lab-space/assets/vendor/three.core.min.js
-lab-space/assets/vendor/three.module.min.js
-lab-space/tests/verify-space.cjs
-```
+## Local preview and short checks
 
-Screenshots and `validation.json` are task-owned review evidence in ignored
-`evidence/lab-space/`, outside the integration patch. Historical reference photos
-were inspected in task scratch storage and are not website assets.
+Serve the checkout on loopback, then open /lab-space/:
 
-## Dependency and security boundary
-
-The only runtime dependency is vendored Three.js **0.180.0**, MIT, from the public
-npm `three` package. Only its two renderer modules and license are included:
-720,032 bytes of JavaScript. No package install or CDN is needed by the website.
-Upstream: <https://github.com/mrdoob/three.js/tree/r180>.
-The original package tarball SHA-512 is:
-
-```text
-a3eab2700319ae1f93b04d351aa594c5420a47500bd12f29abbcc3918390c3c1aa7d7f1bf15a022985281db8625f98feee1afc5ecb870d553afa09102502a0f7
-```
-
-No model downloads, analytics, remote textures, user input ingestion, fetches,
-storage, paid APIs, untrusted HTML, service workers, permissions, or accounts.
-Only exact catalog/home destinations can be opened by station logic, checked
-for HTTPS and the public hostname. All other outbound links are fixed verified
-design-source references. No arbitrary URLs, interpolation into HTML, or scripts
-from query strings. Apparatus and foliage are original local geometry; the room
-plan and window texture are original procedural graphics.
-
-Pixel ratio is capped at 1.25; a 1024px shadow map is rendered once. The scene
-renders on input/resize, stops at rest, and pauses when the tab is hidden. This
-is a bounded design slice, not an optimized production engine.
-
-## Short validation
-
-```powershell
+~~~powershell
+python -m http.server 5199 --bind 127.0.0.1
 $env:LAB_PLAYWRIGHT_MODULE = '<existing Playwright module path>'
 $env:LAB_AXE_SCRIPT = '<existing axe-core/axe.min.js path>'
 node lab-space/tests/verify-space.cjs
-```
+~~~
 
-Uses one separate headless Edge with software WebGL and sequential contexts.
-Checks safe destinations; room and furniture collisions; `/lab/` subpath;
-keyboard movement and drag look; monitor clicking; nearby bench and physical
-exit; the new bay and study portal; modal focus; mobile taps and reflow; the pad beside the visible room;
-reduced motion; flat switching; WebGL loss/unavailability; JS off; external
-asset requests; automated desktop/mobile WCAG A/AA checks. The output is
-`evidence/lab-space/validation.json`. No catalog/root test scripts are run.
+LAB_AXE_SCRIPT is required and must be readable before a browser launches. Both
+desktop and mobile WCAG A/AA audits must complete with no violations for a pass.
+Reports and screenshots are in ignored evidence/lab-space/. The test verifies
+six collision-aware routes and every movement step, unreachable targets, actual
+floor/monitor clicks, route replacement/cancellation, drag versus tap, keyboard
+focus, station/home arrival, optional mobile controls, touch and reflow, reduced
+motion, flat view, context loss, unavailable WebGL and JavaScript off.
 
-`LAB_AXE_SCRIPT` is required. If it is unset or does not name a readable local
-axe-core script, the command exits nonzero and writes a failed report before
-launching a browser. A successful report requires completed desktop and mobile
-audits, records the axe version for each, and separately logs both checks.
-An audit with violations or an injection/evaluation failure also fails the run.
-An empty accessibility array does not represent a completed audit.
+For a deployed pass, set LAB_ROOM_URL to the published room URL and run the same
+command. Confirm the Pages workflow head and served asset hashes separately.
+The harness uses one separate headless Edge with sequential contexts, software
+WebGL and simulated touch. It does not test a real phone, a screen-reader user
+session, sustained GPU performance or the catalog regression suite. It touches
+no existing desktop browser, game or other app.
 
-Limits: simulated touch and software WebGL, not a real phone, GPU performance
-soak, screen-reader user test, or comprehensive browser matrix. External
-destinations were checked read-only: catalog and home both returned HTTP 200.
-Only apps and contexts created by the smoke script are closed. There is no
-desktop control or game interference. Claude Pro and usage credits OFF were
-verified before the actual Opus request and again before the successful retry.
-Trust was approved only for the exact isolated `lab-space` project folder; the
-specific renderer Write was approved separately. No global permission, account,
-model fallback or billing settings were changed. The website uses no account.
+## Security and rendering
 
-## Proposed integration
+Only exact HTTPS public catalog/home destinations can be opened by station
+logic. Reference links are fixed verified primary sources. No arbitrary URLs,
+untrusted HTML, private data, credentials or query-supplied scripts. No new
+dependencies: local Three.js 0.180.0 and MIT license remain unchanged.
 
-1. Review the room screenshots and local feel; agree on the material palette.
-2. Coordinate with the results/graphs owner. Import only the 14 listed files,
-   using the complete folder archive or a folder-only patch. A commit-based
-   import needs the original prototype commit and then the variation commit;
-   the variation alone assumes the original files exist. The catalog remains independently
-   owned; its newest results and graphs are reached through the existing link.
-3. If later authorized, publish the isolated `/lab-space/` route first. Treat
-   merging to `main` as publication because this repo deploys Pages from `main`.
-4. Add an optional room link in a separate owner-approved integration task.
-   A root route switch, chart placement, new stations, or homepage edit needs a
-   separately scoped decision. Keep the 2D catalog and exit available throughout.
+Pixel ratio is capped at 1.25; one static 1024px shadow map is retained. Frames
+run only during movement/input/resize and stop at rest or when the tab is hidden.
+No global permissions, folder trust, accounts or billing settings are changed.
+Publish through a scoped PR after fetching and preserving remote owner work;
+main deploys GitHub Pages. Existing gallery and home destinations stay intact.
