@@ -7,16 +7,24 @@ const { execFileSync } = require("node:child_process");
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, "..");
 const out = path.join(root, "evidence");
-const base = "https://pazneria.github.io/lab/";
-const sha = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root })
-  .toString()
-  .trim();
+const base =
+  process.env.LAB_CATALOG_LIVE_BASE || "https://pazneria.github.io/lab/";
+const catalogPage = process.env.LAB_CATALOG_DEPLOYMENT_PAGE || "catalog.html";
+assert.ok(["catalog.html", "index.html"].includes(catalogPage));
+const git = (...args) =>
+  execFileSync(
+    "git",
+    ["-c", "safe.directory=" + root.replace(/\\/g, "/"), ...args],
+    { cwd: root, maxBuffer: 2 * 1024 * 1024 },
+  );
+const sha = git("rev-parse", "HEAD").toString().trim();
 const original = JSON.parse(
   fs.readFileSync(path.join(root, "data/catalog.original.json"), "utf8"),
 );
 const report = {
   checkedAt: new Date().toISOString(),
-  url: base,
+  url: new URL(catalogPage, base).href,
+  expectedInterface: "legacy_catalog",
   expectedCommit: sha,
   assets: [],
   checks: [],
@@ -54,7 +62,7 @@ async function audit(page, label) {
 }
 async function main() {
   for (const file of [
-    "index.html",
+    catalogPage,
     "assets/lab.css",
     "assets/lab.js",
     "assets/catalog.js",
@@ -66,10 +74,7 @@ async function main() {
     });
     assert.equal(response.status, 200, file + " HTTP status");
     const bytes = Buffer.from(await response.arrayBuffer());
-    const expected = execFileSync("git", ["show", "HEAD:" + file], {
-      cwd: root,
-      maxBuffer: 2 * 1024 * 1024,
-    });
+    const expected = git("show", "HEAD:" + file);
     assert.deepEqual(bytes, expected, file + " differs from local commit");
     report.assets.push({
       path: file,
@@ -109,7 +114,19 @@ async function main() {
       if (new URL(request.url()).origin !== new URL(base).origin)
         report.externalRequests.push(request.url());
     });
-    await page.goto(base, { waitUntil: "networkidle" });
+    await page.goto(new URL(catalogPage, base).href, {
+      waitUntil: "networkidle",
+    });
+    assert.equal(
+      await page.locator("#filters").count(),
+      1,
+      "Expected legacy catalog interface at " + catalogPage,
+    );
+    assert.equal(
+      await page.locator("#results").count(),
+      1,
+      "Expected legacy catalog results at " + catalogPage,
+    );
     await page.locator("#benchmark-runebench").waitFor();
     assert.equal(await page.locator("#results .entry").count(), 19);
     assert.equal(await page.locator("#watch-results .entry").count(), 1);
@@ -175,9 +192,12 @@ async function main() {
     assert.equal(await page.locator("#search").inputValue(), "voxelbench");
     await page.getByRole("button", { name: "Reset filters" }).click();
     assert.equal(await page.locator(".entry").count(), 20);
-    await page.goto(base + "?category=medical&setting=real-trial", {
-      waitUntil: "networkidle",
-    });
+    await page.goto(
+      base + catalogPage + "?category=medical&setting=real-trial",
+      {
+        waitUntil: "networkidle",
+      },
+    );
     assert.equal(await page.locator(".entry").count(), 2);
     for (const id of ["masai-trial", "kenya-ai-consult-trial"])
       assert.equal(await page.locator("#benchmark-" + id).count(), 1);
@@ -186,9 +206,12 @@ async function main() {
     );
     for (const width of [390, 320]) {
       await page.setViewportSize({ width, height: 844 });
-      await page.goto(base + "?category=medical#benchmark-masai-trial", {
-        waitUntil: "networkidle",
-      });
+      await page.goto(
+        base + catalogPage + "?category=medical#benchmark-masai-trial",
+        {
+          waitUntil: "networkidle",
+        },
+      );
       assert.equal(
         await page
           .locator("#benchmark-masai-trial details")
@@ -211,12 +234,12 @@ async function main() {
       );
     }
     await audit(page, "live medical detail 320px");
-    await page
-      .locator("#benchmark-masai-trial")
-      .screenshot({
-        path: path.join(out, "lab-live-medical-detail-mobile.png"),
-      });
-    await page.goto(base, { waitUntil: "networkidle" });
+    await page.locator("#benchmark-masai-trial").screenshot({
+      path: path.join(out, "lab-live-medical-detail-mobile.png"),
+    });
+    await page.goto(new URL(catalogPage, base).href, {
+      waitUntil: "networkidle",
+    });
     await page.screenshot({ path: path.join(out, "lab-live-mobile.png") });
     passed(
       "Live mobile layout at 390px and 320px reflows with expanded clinical evidence and source links",

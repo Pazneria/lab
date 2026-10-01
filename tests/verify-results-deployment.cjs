@@ -16,13 +16,17 @@ const git = (...args) =>
 const sha = git("rev-parse", "HEAD").toString().trim();
 const base =
   process.env.LAB_RESULTS_LIVE_BASE || "https://pazneria.github.io/lab/";
+const resultsPage =
+  process.env.LAB_RESULTS_DEPLOYMENT_PAGE || "results-technical.html";
+assert.ok(["results-technical.html", "results.html"].includes(resultsPage));
 const input = JSON.parse(
   fs.readFileSync(path.join(root, "data/results.original.json")),
 );
 const original = input.results;
 const report = {
   checkedAt: new Date().toISOString(),
-  url: base + "results.html",
+  url: base + resultsPage,
+  expectedInterface: "legacy_results_explorer",
   expectedCommit: sha,
   assets: [],
   checks: [],
@@ -77,12 +81,12 @@ async function screenshotCard(page, selector, filename) {
 }
 async function main() {
   for (const file of [
-    "index.html",
+    "catalog.html",
     "assets/lab.css",
     "assets/lab.js",
     "assets/catalog.js",
     "data/catalog.original.json",
-    "results.html",
+    resultsPage,
     "assets/results.css",
     "assets/results.js",
     "assets/results-data.js",
@@ -141,10 +145,20 @@ async function main() {
       ["bullshitbench-v2", ""],
       ["medagentbench", ""],
     ]) {
-      const url = new URL("results.html", base);
+      const url = new URL(resultsPage, base);
       url.searchParams.set("benchmark", benchmark);
       if (skill) url.searchParams.set("skill", skill);
       await page.goto(url.href, { waitUntil: "networkidle" });
+      assert.equal(
+        await page.locator("#result-controls").count(),
+        1,
+        "Expected legacy results explorer interface at " + resultsPage,
+      );
+      assert.equal(
+        await page.locator("#charts").count(),
+        1,
+        "Expected legacy all-chart container at " + resultsPage,
+      );
       await page.locator(".chart-card").first().waitFor();
       assert.deepEqual(
         await page.evaluate(() => ({

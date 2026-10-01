@@ -86,6 +86,9 @@ A persistent readout keeps values available below the graph. Table alternatives
 retain exact supplied numeric strings, including values rounded for display.
 
 Graph view and Rune skill changes replace the current detail history entry.
+Internal source-section links also replace that entry, so Back returns to the
+gallery after a source jump rather than merely removing its hash. Direct source
+hash URLs still open their enclosing disclosures.
 Opening a card remains ordinary document navigation. Browser Back and the
 “All benchmarks” link restore the originating gallery's category, search,
 graph filter, scroll position and focused card. The latest view survives reload
@@ -96,6 +99,10 @@ and a notice before the graph; none of their data or source dates are changed.
 `tests/verify-gallery-navigation.cjs` exercises repeated variant switches,
 native and in-page Back, Forward, reload, reopen, keyboard and touch. It also
 checks direct links, unsafe return destinations and disabled session storage.
+The retained-interface deployment validators now target `catalog.html` and
+`results-technical.html`. `tests/verify-deployment-routing.cjs` verifies both
+routes and deliberately points them at the new gallery/detail pages to ensure
+they reject the wrong interface promptly rather than making stale assertions.
 
 `tests/verify-gallery.cjs` checks card membership, all 30 standard scores,
 all original 18 rows/seven views, HLE tools/partitions, source links, missing-data

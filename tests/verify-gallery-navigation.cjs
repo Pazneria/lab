@@ -329,6 +329,65 @@ async function main() {
     pass(
       "When session storage is disabled, validated same-window referrer and native history still return to the gallery with filters and scroll intact",
     );
+    const anchors = await browser.newContext({
+      viewport: { width: 1280, height: 800 },
+      reducedMotion: "reduce",
+    });
+    const anchored = await anchors.newPage();
+    watch(anchored);
+    const sourceGallery = base + "benchmarks.html?category=games&q=balrog";
+    for (const method of ["in-page", "browser"]) {
+      await anchored.goto(sourceGallery);
+      await anchored.locator(".benchmark-card").waitFor();
+      await anchored.locator(".benchmark-card").scrollIntoViewIfNeeded();
+      const y = await anchored.evaluate(() => scrollY);
+      await anchored.locator(".benchmark-card").click();
+      await ready(anchored);
+      const length = await anchored.evaluate(() => history.length);
+      await anchored
+        .getByRole("link", { name: "Read the original sources", exact: true })
+        .click();
+      assert.equal(new URL(anchored.url()).hash, "#benchmark-sources");
+      assert.equal(
+        await anchored.locator("#benchmark-sources").getAttribute("open"),
+        "",
+      );
+      assert.equal(
+        await anchored.evaluate(() => history.length),
+        length,
+        "Section anchors must replace, not add detail entries",
+      );
+      if (method === "in-page") await anchored.locator(".back-link").click();
+      else await anchored.goBack();
+      await returned(anchored, sourceGallery, y, "games", 1);
+      await anchored.goForward();
+      await ready(anchored);
+      assert.equal(new URL(anchored.url()).hash, "#benchmark-sources");
+      assert.equal(
+        await anchored.locator("#benchmark-sources").getAttribute("open"),
+        "",
+      );
+      await anchored.reload();
+      await ready(anchored);
+      await anchored.locator(".back-link").click();
+      await returned(anchored, sourceGallery, y, "games", 1);
+    }
+    await anchored.goto(
+      base + "results.html?benchmark=balrog#benchmark-sources",
+    );
+    await ready(anchored);
+    assert.equal(
+      await anchored.locator("#benchmark-sources").getAttribute("open"),
+      "",
+    );
+    assert.equal(
+      await anchored.locator(".back-link").getAttribute("href"),
+      "benchmarks.html#gallery",
+    );
+    await anchors.close();
+    pass(
+      "Source-anchor jumps add no history entries; both Back controls, Forward and reload preserve the source section and originating filtered gallery; direct source hashes still open",
+    );
     assert.deepEqual(report.errors, []);
     assert.deepEqual(report.externalRequests, []);
     report.passed = true;
