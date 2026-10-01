@@ -207,6 +207,85 @@
               ? "Watch item"
               : "Evidence guide";
   }
+  function isHistorical(card) {
+    return (
+      card.standard?.display_status === "historical_source_cohort" ||
+      card.id === "medagentbench"
+    );
+  }
+  function historyState() {
+    return history.state &&
+      typeof history.state === "object" &&
+      !Array.isArray(history.state)
+      ? history.state
+      : {};
+  }
+  function galleryPosition(raw) {
+    if (!raw || typeof raw.url !== "string" || !finite(raw.scrollY))
+      return null;
+    try {
+      const url = new URL(raw.url),
+        base = new URL(".", location.href);
+      if (
+        url.origin !== base.origin ||
+        url.username ||
+        url.password ||
+        ![
+          base.pathname,
+          base.pathname + "index.html",
+          base.pathname + "benchmarks.html",
+        ].includes(url.pathname)
+      )
+        return null;
+      return {
+        url: url.href,
+        scrollY: Math.min(raw.scrollY, 1000000),
+        focusId: byId.has(raw.focusId) ? raw.focusId : null,
+      };
+    } catch {
+      return null;
+    }
+  }
+  function ordinaryClick(event) {
+    return (
+      !event.defaultPrevented &&
+      event.button === 0 &&
+      !event.metaKey &&
+      !event.ctrlKey &&
+      !event.shiftKey &&
+      !event.altKey
+    );
+  }
+  const returnKey = "lab.benchmark-return.v1";
+  function detailReturnPosition() {
+    let position = galleryPosition(historyState().labGalleryReturn);
+    if (position) return position;
+    try {
+      const pending = JSON.parse(sessionStorage.getItem(returnKey));
+      sessionStorage.removeItem(returnKey);
+      if (
+        pending?.destination === location.href &&
+        pending.createdAt <= Date.now() &&
+        Date.now() - pending.createdAt < 60000
+      ) {
+        const candidate = galleryPosition(pending.position);
+        if (candidate?.url === document.referrer) position = candidate;
+      }
+    } catch {
+      /* Storage can be disabled; native navigation still works. */
+    }
+    // Same-window navigation can still use native Back when storage is disabled.
+    // A fresh tab has no previous gallery entry and keeps the direct-link fallback.
+    if (!position && history.length > 1)
+      position = galleryPosition({ url: document.referrer, scrollY: 0 });
+    if (position)
+      history.replaceState(
+        { ...historyState(), labGalleryReturn: position },
+        "",
+        location.href,
+      );
+    return position;
+  }
   const palette = [
     "#4354d8",
     "#7b87e4",
@@ -273,7 +352,7 @@
           "",
           card.original.status === "unverified"
             ? "Current numerical results unresolved."
-              : "Scores haven’t been added to this guide.",
+            : "Scores haven’t been added to this guide.",
         ),
       );
       return fig;
@@ -427,7 +506,11 @@
     const top = e("div", "card-top");
     top.append(
       e("span", "category-badge", categories[card.category]),
-      e("span", "card-status", status(card)),
+      e(
+        "span",
+        "card-status" + (isHistorical(card) ? " historical-status" : ""),
+        status(card),
+      ),
     );
     a.append(
       top,
@@ -540,7 +623,7 @@
       if (state.q) url.searchParams.set("q", state.q);
       if (state.graphs) url.searchParams.set("graphs", "1");
       if (push) history.pushState({}, "", url);
-      else history.replaceState({}, "", url);
+      else history.replaceState(historyState(), "", url);
       render(state);
     }
     form.addEventListener("submit", (ev) => {
@@ -553,9 +636,66 @@
       if (event.target.name !== "q") update(true);
     });
     form.elements.q.addEventListener("input", () => update(false));
-    window.addEventListener("popstate", () => render(fromURL()));
+    function restorePosition() {
+      const position = galleryPosition(historyState().labGallery);
+      if (!position || position.url !== location.href) return;
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          if (position.focusId)
+            document
+              .getElementById("benchmark-" + position.focusId)
+              ?.focus({ preventScroll: true });
+          window.scrollTo({
+            top: position.scrollY,
+            left: 0,
+            behavior: "instant",
+          });
+        }),
+      );
+    }
+    grid.addEventListener("click", (event) => {
+      if (!ordinaryClick(event) || !(event.target instanceof Element)) return;
+      const link = event.target.closest("a.benchmark-card");
+      if (!link || !grid.contains(link)) return;
+      const position = {
+        url: location.href,
+        scrollY: window.scrollY,
+        focusId: link.dataset.benchmarkId,
+      };
+      const destination = new URL(link.href);
+      if (
+        destination.origin !== location.origin ||
+        destination.pathname !== new URL("results.html", location.href).pathname
+      )
+        return;
+      history.replaceState(
+        { ...historyState(), labGallery: position },
+        "",
+        location.href,
+      );
+      // Keep ordinary document navigation. Only public return metadata crosses
+      // into the next document; it is consumed once and retained in that entry.
+      try {
+        sessionStorage.setItem(
+          returnKey,
+          JSON.stringify({
+            position,
+            destination: destination.href,
+            createdAt: Date.now(),
+          }),
+        );
+      } catch {
+        /* The validated referrer provides the native-Back fallback. */
+      }
+    });
+    window.addEventListener("popstate", () => {
+      render(fromURL());
+      restorePosition();
+    });
+    window.addEventListener("pageshow", restorePosition);
     unavailable.hidden = true;
     render(fromURL());
+    restorePosition();
   }
   function sourceSection(card) {
     const wrap = e("div"),
@@ -1022,6 +1162,16 @@
     };
   }
   function detailView() {
+    const back = document.querySelector(".back-link");
+    const returnPosition = detailReturnPosition();
+    if (back && returnPosition) {
+      back.href = returnPosition.url;
+      back.addEventListener("click", (event) => {
+        if (!ordinaryClick(event)) return;
+        event.preventDefault();
+        history.back();
+      });
+    }
     function render(state) {
       window.LAB_CHARTS?.reset();
       const card = byId.get(state.id),
@@ -1034,7 +1184,11 @@
       const badges = e("div");
       badges.append(
         e("span", "category-badge", categories[card.category]),
-        e("span", "card-status", status(card)),
+        e(
+          "span",
+          "card-status" + (isHistorical(card) ? " historical-status" : ""),
+          status(card),
+        ),
       );
       header.append(
         badges,
@@ -1053,6 +1207,14 @@
         ),
       );
       detail.append(header);
+      if (card.standard?.display_status === "historical_source_cohort")
+        detail.append(
+          e(
+            "p",
+            "historical-notice",
+            "These are March 2026 results. They are kept as a historical comparison, not current standings.",
+          ),
+        );
       if (graph) {
         const form = e("form", "view-controls");
         form.setAttribute("aria-label", "Choose graph view");
@@ -1123,7 +1285,7 @@
           if (next.id === "runebench")
             url.searchParams.set("skill", next.skill);
           url.hash = "";
-          history.pushState({}, "", url);
+          history.replaceState(historyState(), "", url);
           render(next);
           const selector =
             next.id === "runebench" && changedSkill
@@ -1147,7 +1309,7 @@
                   " API-equivalent estimate, not cash spend; whole-run cost versus a 30-minute score window."
                 : notes.notice)) ||
               (card.standard.display_status === "historical_source_cohort"
-                ? "Historical March 2026 lab-reported comparison, with incomplete harness and trial details. No uncertainty intervals or cost/time results supplied."
+                ? "Lab-reported comparison, with incomplete harness and trial details. No uncertainty intervals or cost/time results supplied."
                 : "Cross-lab reported results; setups differ. No controlled ranking, uncertainty intervals or cost/time results supplied."),
           ),
         );
