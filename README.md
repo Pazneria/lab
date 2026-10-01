@@ -79,6 +79,7 @@ browser; they do not interact with existing desktop sessions or apps.
 node tests/verify-gallery.cjs
 node tests/verify-current-gallery.cjs
 node tests/verify-gallery-navigation.cjs
+node tests/verify-gallery-selection.cjs
 node tests/verify-deployment-routing.cjs
 node tests/verify-real-catalog.cjs
 node tests/verify-ui.cjs
@@ -90,7 +91,9 @@ The first command checks the current gallery and detail pages. The current-galle
 command checks large cohorts, expanded evidence, uncertainty labels and history.
 The navigation
 command checks Back/Forward, repeated view switches, filter/scroll restoration,
-reload, direct links, keyboard, touch and the storage-disabled fallback. The deployment
+reload, direct links, keyboard, touch and the storage-disabled fallback. The selection
+command checks that filters and Show all clear hidden result details, preserve visible
+selections, and reset details when changing cohorts or graph settings. The deployment
 routing command checks the retained catalog and results pages and verifies that
 the gallery and detail pages are rejected as substitutes. The next three commands
 retain regression coverage for the original research renderers. Reports and

@@ -13,6 +13,12 @@ where the source specifies it. Search and Show all expose every row, while the
 table retains the exact full source values. These presentation limits do not
 discard observations or select a claimed winner.
 
+Selecting a configuration connects its visible graph row to the score, settings
+and source in the details panel. Search and Show all preserve that selection
+while its row remains visible. When the row disappears, the panel clears and
+announces the change; expanding the list again requires a new selection. Changing
+the cohort or graph setting also starts with an empty details prompt.
+
 FrontierMath task 2.1.0 contains two observations and stays separate from 67 older
 task 2.0.0 records and the September cross-lab report. SWE-Bench Pro Full and HARD
 use different cards, as do common-scaffold and native-agent terminal results.
@@ -31,8 +37,10 @@ samples are distinct counts. The historical medical homepage has a separate
 
 ## Sources and uncertainty
 
-The input is the exact data-owner PR10 commit
-`f8d50139f7f38c2c8d3396f7b01753dd76c35526`. Its dated JSON, source packets and
+The input began with the exact data-owner PR10 commit
+`f8d50139f7f38c2c8d3396f7b01753dd76c35526`. PR12 subsequently corrected Rune
+protocol copy and decoded display comparison text, merged as
+`e7c3a082a76713e475480dc6f92f100bbe520bae`. Its dated JSON, source packets and
 generated projection are preserved. Source links come from each cohort's
 `source_id`, and source-input links use the supplied provenance files. Evaluation
 dates, model-release dates and access dates remain separately labeled. Unknown
@@ -74,12 +82,9 @@ the March report, explain why Full and HARD software results use separate graphs
 and find why Rune dollars differ from cash spend. Required explanations stay in
 connected paragraphs; exact technical records remain secondary disclosures.
 
-## Remaining data-owner text correction
+## Rune protocol copy correction
 
-The expanded Rune metadata repeats the original two-skill selection description
-and the older `&amp;gt;` strings in its protocol formula and CLI-version note.
-The renderer preserves this source input and uses the corrected original protocol
-for the seven archival charts. The data owner should update that duplicated
-metadata to describe the 16-skill expansion and restore the exact `&gt;` wording.
-The stale data-only publication checkpoint also needs an eventual status update;
-this UI document records the coordinated integration instead.
+PR12 resolved the duplicated two-skill selection description and escaped comparison
+text in the expanded Rune protocol. The source metadata now describes all 16 skills;
+safe text rendering remains in place. The selection-state fix changes no research
+values, source URLs or generated data.
