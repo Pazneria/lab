@@ -11,8 +11,8 @@
   "scoreChartCostTime": "All 340 generic plot values null; known coding measurements retained with units and bases in details",
   "unchangedOriginalHashes": true,
   "inputSHA256": {
-    "data/gallery-current-2026-10-01.json": "1e46d6a0865cd7e679c83033650f114e094543b939fd87bd8bb8e433d24c0b10",
-    "data/community-expanded-2026-10-01.json": "8af817611194a3fcc611bf2e43e159b4a6f1f8501d2e378c736504218b6ffb44"
+    "data/gallery-current-2026-10-01.json": "2b9ef568c282d4e29d8b5f1387eadbb40b358448aac80d19252b45f1cb24cc48",
+    "data/community-expanded-2026-10-01.json": "86fb1e6eaf0bffd137c520fa9428fb24a7a5cf814ede0132cf776a95ae63aa6e"
   },
   "passed": true
 }

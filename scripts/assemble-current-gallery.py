@@ -187,5 +187,5 @@ if __name__ == "__main__":
     if "--check" in sys.argv:
         assert output.read_text(encoding="utf-8") == serialized, "Gallery projection differs from validated inputs"
     else:
-        output.write_text(serialized, encoding="utf-8")
+        output.write_text(serialized, encoding="utf-8", newline="\n")
     print(json.dumps({"cards": len(data["cards"]), "rows": sum(len(c["rows"]) for c in data["cards"])}))

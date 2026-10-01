@@ -7,6 +7,10 @@ const normalizeDisplayText = require('./normalize-display-text.cjs');
 const root = path.resolve(__dirname, '..');
 const read = name => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
 const sha = name => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex');
+// These publication inputs have text eol=lf in .gitattributes. Hash the exact
+// bytes that Pages serves, never a Windows CRLF working-file representation.
+for (const name of ['data/gallery-current-2026-10-01.json', 'data/community-expanded-2026-10-01.json'])
+  assert.ok(!fs.readFileSync(path.join(root, name)).includes(Buffer.from('\r\n')), `${name}: regenerate with LF before recording publication hashes`);
 const standard = read('data/gallery-current-2026-10-01.json');
 const notes = read('data/gallery-notes.json');
 const catalog = read('data/catalog.original.json');
@@ -126,5 +130,6 @@ if (process.argv.includes('--check')) assert.equal(fs.readFileSync(path.join(roo
 else fs.writeFileSync(path.join(root, 'assets/gallery-data.js'), js);
 const evidence = {cards: 42, sourceCohorts: 22, standardRows: 340, expandedBullshitBenchRows: 228, expandedRuneBenchRows: 48, runeSkills: 16, historicalMedAgentRows: 12, existingResultRows: 18, existingCharts: 7, scoreChartCostTime: 'All 340 generic plot values null; known coding measurements retained with units and bases in details', unchangedOriginalHashes: true, inputSHA256: {'data/gallery-current-2026-10-01.json': sha('data/gallery-current-2026-10-01.json'), 'data/community-expanded-2026-10-01.json': sha('data/community-expanded-2026-10-01.json')}, passed: true};
 fs.mkdirSync(path.join(root, 'evidence'), {recursive: true});
-if (!process.argv.includes('--check')) fs.writeFileSync(path.join(root, 'evidence/gallery-data-validation.json'), JSON.stringify(evidence, null, 2) + '\n');
+if (process.argv.includes('--check')) assert.deepEqual(read('evidence/gallery-data-validation.json'), evidence, 'Stale validation evidence; regenerate against exact publication input bytes');
+else fs.writeFileSync(path.join(root, 'evidence/gallery-data-validation.json'), JSON.stringify(evidence, null, 2) + '\n');
 console.log(JSON.stringify(evidence));
