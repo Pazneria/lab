@@ -162,6 +162,11 @@
   }
 
   function renderEntry(entry) {
+    const hasResultSlice = [
+      "runebench",
+      "bullshitbench-v2",
+      "medagentbench",
+    ].includes(entry.id);
     const article = el("article", "entry");
     article.id = "benchmark-" + entry.id;
     article.dataset.entryType = entry.entryType || "benchmark";
@@ -187,6 +192,15 @@
       tags.append(el("span", "tag entry-type", types[entry.entryType]));
     heading.id = "title-" + entry.id;
     article.append(tags, heading, el("p", "entry-summary", entry.summary));
+    if (hasResultSlice) {
+      const resultLink = el(
+        "a",
+        "discovery-result-link",
+        "View protocol-specific results and graphs ↗",
+      );
+      resultLink.href = "results.html?benchmark=" + entry.id;
+      article.append(resultLink);
+    }
     article.append(
       el(
         "p",
@@ -248,7 +262,13 @@
     if (entry.metrics && entry.metrics.length) {
       const definitions = el("div", "metric-definitions");
       definitions.append(
-        el("h4", "", "Metric definitions · results not populated"),
+        el(
+          "h4",
+          "",
+          hasResultSlice
+            ? "Metric definitions · discovery snapshot"
+            : "Metric definitions · results not populated",
+        ),
       );
       for (const metric of entry.metrics) {
         const definition = el("div", "metric-definition");
@@ -306,7 +326,9 @@
       el(
         "p",
         "entry-score-note",
-        "Score not recorded. No model ranking or cross-benchmark comparison is implied.",
+        hasResultSlice
+          ? "Reported numeric observations are in the separate protocol-specific result slice. No global model ranking is implied."
+          : "Score not recorded. No model ranking or cross-benchmark comparison is implied.",
       ),
     );
     const permalink = el("a", "entry-permalink", "Link to this entry");

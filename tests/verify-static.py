@@ -7,6 +7,7 @@ import json
 import pathlib
 import urllib.error
 import urllib.request
+from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from html.parser import HTMLParser
@@ -30,9 +31,12 @@ class References(HTMLParser):
                 self.refs.append(attrs[name])
 
 
-parser = References()
-parser.feed((ROOT / "index.html").read_text(encoding="utf-8"))
-assert len(parser.ids) == len(set(parser.ids)), "Duplicate static IDs"
+pages = {}
+for page in ["index.html", "results.html"]:
+    parser = References()
+    parser.feed((ROOT / page).read_text(encoding="utf-8"))
+    assert len(parser.ids) == len(set(parser.ids)), f"Duplicate static IDs in {page}"
+    pages[page] = parser
 report = {
     "checkedAt": datetime.now(timezone.utc).isoformat(),
     "assets": [],
@@ -40,16 +44,25 @@ report = {
     "publicLinks": [],
     "catalogSourceURLs": "51 exact parent-supplied URLs; separate response results in source-links.json",
 }
-for ref in parser.refs:
-    if ref.startswith("assets/") or ref.startswith("data/"):
-        asset = (ROOT / ref).resolve()
-        assert asset.is_relative_to(ROOT) and asset.is_file(), ref
-        content = asset.read_bytes()
-        assert content, ref
-        report["assets"].append({"path": ref, "bytes": len(content), "sha256": hashlib.sha256(content).hexdigest()})
-    elif ref.startswith("#"):
-        assert ref[1:] in parser.ids, ref
-        report["fragments"].append(ref)
+for page, parser in pages.items():
+    for ref in parser.refs:
+        parts = urlsplit(ref)
+        if parts.scheme or parts.netloc:
+            continue
+        if parts.path == "/":
+            continue  # Existing account-root homepage; checked below as a public URL.
+        if parts.path:
+            asset = (ROOT / parts.path).resolve()
+            assert asset.is_relative_to(ROOT) and asset.is_file(), ref
+            content = asset.read_bytes()
+            assert content, ref
+            report["assets"].append({"page": page, "path": parts.path, "bytes": len(content), "sha256": hashlib.sha256(content).hexdigest()})
+        if parts.fragment:
+            target = pages.get(parts.path or page)
+            assert target and parts.fragment in target.ids, ref
+            report["fragments"].append({"page": page, "ref": ref})
+result_input = json.loads((ROOT / "data/results.original.json").read_text(encoding="utf-8"))
+assert (ROOT / "data/results-researcher-readme.txt").read_text(encoding="utf-8") == result_input["readme"]
 ET.parse(ROOT / "assets" / "mark.svg")
 for url in ["https://pazneria.github.io/", "https://github.com/Pazneria/lab", "https://pazneria.github.io/lab/"]:
     try:

@@ -1,0 +1,2993 @@
+{
+  "provenance": "Supplemental read-only check of the same pinned primary result artifacts; numeric samples and clocks only, no agent trajectory text.",
+  "records": [
+    {
+      "result_id": "runebench-20260929-gpt61sol-low-woodcutting",
+      "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol-low.json",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
+      "source_check_date": "2026-09-30",
+      "samples": [
+        {
+          "elapsedMs": 0,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 15001,
+          "xp": 625
+        },
+        {
+          "elapsedMs": 30001,
+          "xp": 7500
+        },
+        {
+          "elapsedMs": 45001,
+          "xp": 8125
+        },
+        {
+          "elapsedMs": 60002,
+          "xp": 15625
+        },
+        {
+          "elapsedMs": 75002,
+          "xp": 25000
+        },
+        {
+          "elapsedMs": 90003,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 105003,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 120003,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 135003,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 150004,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 165004,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 180004,
+          "xp": 34375
+        },
+        {
+          "elapsedMs": 195006,
+          "xp": 38125
+        },
+        {
+          "elapsedMs": 210006,
+          "xp": 48437
+        },
+        {
+          "elapsedMs": 225006,
+          "xp": 58750
+        },
+        {
+          "elapsedMs": 240006,
+          "xp": 62500
+        },
+        {
+          "elapsedMs": 255007,
+          "xp": 62500
+        },
+        {
+          "elapsedMs": 270007,
+          "xp": 62500
+        },
+        {
+          "elapsedMs": 285007,
+          "xp": 62500
+        },
+        {
+          "elapsedMs": 300007,
+          "xp": 67562
+        },
+        {
+          "elapsedMs": 315007,
+          "xp": 81062
+        },
+        {
+          "elapsedMs": 330007,
+          "xp": 97937
+        },
+        {
+          "elapsedMs": 345008,
+          "xp": 108062
+        },
+        {
+          "elapsedMs": 360008,
+          "xp": 128312
+        },
+        {
+          "elapsedMs": 375008,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 390009,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 405010,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 420011,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 435011,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 450011,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 465012,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 480012,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 495012,
+          "xp": 164687
+        },
+        {
+          "elapsedMs": 510013,
+          "xp": 164687
+        },
+        {
+          "elapsedMs": 525013,
+          "xp": 164687
+        },
+        {
+          "elapsedMs": 540014,
+          "xp": 164687
+        },
+        {
+          "elapsedMs": 555014,
+          "xp": 205187
+        },
+        {
+          "elapsedMs": 570015,
+          "xp": 238937
+        },
+        {
+          "elapsedMs": 585017,
+          "xp": 262562
+        },
+        {
+          "elapsedMs": 600018,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 615018,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 630018,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 645018,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 660019,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 675019,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 690019,
+          "xp": 289562
+        },
+        {
+          "elapsedMs": 705019,
+          "xp": 293937
+        },
+        {
+          "elapsedMs": 720020,
+          "xp": 315812
+        },
+        {
+          "elapsedMs": 735021,
+          "xp": 333312
+        },
+        {
+          "elapsedMs": 750022,
+          "xp": 337687
+        },
+        {
+          "elapsedMs": 765023,
+          "xp": 363937
+        },
+        {
+          "elapsedMs": 780024,
+          "xp": 385812
+        },
+        {
+          "elapsedMs": 795024,
+          "xp": 385812
+        },
+        {
+          "elapsedMs": 810024,
+          "xp": 421250
+        },
+        {
+          "elapsedMs": 825025,
+          "xp": 446562
+        },
+        {
+          "elapsedMs": 840024,
+          "xp": 470187
+        },
+        {
+          "elapsedMs": 855025,
+          "xp": 470187
+        },
+        {
+          "elapsedMs": 870026,
+          "xp": 485375
+        },
+        {
+          "elapsedMs": 885026,
+          "xp": 507312
+        },
+        {
+          "elapsedMs": 900026,
+          "xp": 527562
+        },
+        {
+          "elapsedMs": 915026,
+          "xp": 549500
+        },
+        {
+          "elapsedMs": 930027,
+          "xp": 569750
+        },
+        {
+          "elapsedMs": 945030,
+          "xp": 593375
+        },
+        {
+          "elapsedMs": 960030,
+          "xp": 632187
+        },
+        {
+          "elapsedMs": 975031,
+          "xp": 659187
+        },
+        {
+          "elapsedMs": 990032,
+          "xp": 674375
+        },
+        {
+          "elapsedMs": 1005033,
+          "xp": 718250
+        },
+        {
+          "elapsedMs": 1020034,
+          "xp": 718250
+        },
+        {
+          "elapsedMs": 1035035,
+          "xp": 728375
+        },
+        {
+          "elapsedMs": 1050036,
+          "xp": 762125
+        },
+        {
+          "elapsedMs": 1065035,
+          "xp": 794187
+        },
+        {
+          "elapsedMs": 1080036,
+          "xp": 826250
+        },
+        {
+          "elapsedMs": 1095036,
+          "xp": 849875
+        },
+        {
+          "elapsedMs": 1110037,
+          "xp": 853250
+        },
+        {
+          "elapsedMs": 1125037,
+          "xp": 853250
+        },
+        {
+          "elapsedMs": 1140037,
+          "xp": 853250
+        },
+        {
+          "elapsedMs": 1155037,
+          "xp": 853250
+        },
+        {
+          "elapsedMs": 1170037,
+          "xp": 853250
+        },
+        {
+          "elapsedMs": 1185038,
+          "xp": 872000
+        },
+        {
+          "elapsedMs": 1200039,
+          "xp": 890750
+        },
+        {
+          "elapsedMs": 1215041,
+          "xp": 915125
+        },
+        {
+          "elapsedMs": 1230042,
+          "xp": 937625
+        },
+        {
+          "elapsedMs": 1245043,
+          "xp": 960125
+        },
+        {
+          "elapsedMs": 1260043,
+          "xp": 972687
+        },
+        {
+          "elapsedMs": 1275043,
+          "xp": 1003062
+        },
+        {
+          "elapsedMs": 1290043,
+          "xp": 1026687
+        },
+        {
+          "elapsedMs": 1305043,
+          "xp": 1045250
+        },
+        {
+          "elapsedMs": 1320043,
+          "xp": 1073937
+        },
+        {
+          "elapsedMs": 1335044,
+          "xp": 1102625
+        },
+        {
+          "elapsedMs": 1350044,
+          "xp": 1126250
+        },
+        {
+          "elapsedMs": 1365044,
+          "xp": 1158312
+        },
+        {
+          "elapsedMs": 1380045,
+          "xp": 1185312
+        },
+        {
+          "elapsedMs": 1395045,
+          "xp": 1202187
+        },
+        {
+          "elapsedMs": 1410045,
+          "xp": 1244375
+        },
+        {
+          "elapsedMs": 1425047,
+          "xp": 1288250
+        },
+        {
+          "elapsedMs": 1440047,
+          "xp": 1328750
+        },
+        {
+          "elapsedMs": 1455048,
+          "xp": 1370937
+        },
+        {
+          "elapsedMs": 1470048,
+          "xp": 1406375
+        },
+        {
+          "elapsedMs": 1485048,
+          "xp": 1441812
+        },
+        {
+          "elapsedMs": 1500048,
+          "xp": 1472187
+        },
+        {
+          "elapsedMs": 1515048,
+          "xp": 1500875
+        },
+        {
+          "elapsedMs": 1530048,
+          "xp": 1539687
+        },
+        {
+          "elapsedMs": 1545050,
+          "xp": 1578500
+        },
+        {
+          "elapsedMs": 1560050,
+          "xp": 1603812
+        },
+        {
+          "elapsedMs": 1575050,
+          "xp": 1635875
+        },
+        {
+          "elapsedMs": 1590050,
+          "xp": 1666250
+        },
+        {
+          "elapsedMs": 1605051,
+          "xp": 1694937
+        },
+        {
+          "elapsedMs": 1620052,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1635052,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1650052,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1665053,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1680054,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1695054,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1710054,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1725055,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1740055,
+          "xp": 1705062
+        },
+        {
+          "elapsedMs": 1755056,
+          "xp": 1752312
+        },
+        {
+          "elapsedMs": 1770056,
+          "xp": 1769187
+        },
+        {
+          "elapsedMs": 1785057,
+          "xp": 1799562
+        }
+      ],
+      "tokenUsage": {
+        "inputTokens": 9384835,
+        "cacheTokens": 9249152,
+        "outputTokens": 12008,
+        "costUsd": 1.316361
+      },
+      "containerStartedAt": "2026-09-29T19:18:36.937276Z",
+      "containerFinishedAt": "2026-09-29T19:53:51.209280Z",
+      "agentStartedAt": "2026-09-29T19:20:05.078911Z",
+      "peakXpRate": 945
+    },
+    {
+      "result_id": "runebench-20260929-gpt61sol-low-mining",
+      "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol-low.json",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
+      "source_check_date": "2026-09-30",
+      "samples": [
+        {
+          "elapsedMs": 1,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 15004,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 30005,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 45007,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 60007,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 75008,
+          "xp": 437
+        },
+        {
+          "elapsedMs": 90009,
+          "xp": 437
+        },
+        {
+          "elapsedMs": 105009,
+          "xp": 437
+        },
+        {
+          "elapsedMs": 120011,
+          "xp": 437
+        },
+        {
+          "elapsedMs": 135012,
+          "xp": 437
+        },
+        {
+          "elapsedMs": 150014,
+          "xp": 5687
+        },
+        {
+          "elapsedMs": 165015,
+          "xp": 17937
+        },
+        {
+          "elapsedMs": 180015,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 195017,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 210018,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 225021,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 240022,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 255023,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 270024,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 285023,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 300023,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 315024,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 330024,
+          "xp": 24062
+        },
+        {
+          "elapsedMs": 345024,
+          "xp": 27562
+        },
+        {
+          "elapsedMs": 360025,
+          "xp": 46812
+        },
+        {
+          "elapsedMs": 375025,
+          "xp": 56437
+        },
+        {
+          "elapsedMs": 390028,
+          "xp": 69562
+        },
+        {
+          "elapsedMs": 405030,
+          "xp": 77437
+        },
+        {
+          "elapsedMs": 420031,
+          "xp": 81812
+        },
+        {
+          "elapsedMs": 435031,
+          "xp": 92312
+        },
+        {
+          "elapsedMs": 450033,
+          "xp": 107187
+        },
+        {
+          "elapsedMs": 465034,
+          "xp": 116812
+        },
+        {
+          "elapsedMs": 480036,
+          "xp": 133437
+        },
+        {
+          "elapsedMs": 495037,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 510039,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 525041,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 540041,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 555041,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 570044,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 585044,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 600044,
+          "xp": 142187
+        },
+        {
+          "elapsedMs": 615044,
+          "xp": 143812
+        },
+        {
+          "elapsedMs": 630046,
+          "xp": 143812
+        },
+        {
+          "elapsedMs": 645048,
+          "xp": 143812
+        },
+        {
+          "elapsedMs": 660048,
+          "xp": 143812
+        },
+        {
+          "elapsedMs": 675050,
+          "xp": 143812
+        },
+        {
+          "elapsedMs": 690050,
+          "xp": 143812
+        },
+        {
+          "elapsedMs": 705050,
+          "xp": 148687
+        },
+        {
+          "elapsedMs": 720051,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 735052,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 750054,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 765054,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 780056,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 795057,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 810058,
+          "xp": 150312
+        },
+        {
+          "elapsedMs": 825059,
+          "xp": 155312
+        },
+        {
+          "elapsedMs": 840060,
+          "xp": 162812
+        },
+        {
+          "elapsedMs": 855060,
+          "xp": 172812
+        },
+        {
+          "elapsedMs": 870061,
+          "xp": 182812
+        },
+        {
+          "elapsedMs": 885062,
+          "xp": 189062
+        },
+        {
+          "elapsedMs": 900063,
+          "xp": 201562
+        },
+        {
+          "elapsedMs": 915065,
+          "xp": 214062
+        },
+        {
+          "elapsedMs": 930066,
+          "xp": 220312
+        },
+        {
+          "elapsedMs": 945067,
+          "xp": 231562
+        },
+        {
+          "elapsedMs": 960069,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 975071,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 990071,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 1005071,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 1020071,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 1035072,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 1050074,
+          "xp": 237812
+        },
+        {
+          "elapsedMs": 1065075,
+          "xp": 250937
+        },
+        {
+          "elapsedMs": 1080077,
+          "xp": 260562
+        },
+        {
+          "elapsedMs": 1095079,
+          "xp": 260562
+        },
+        {
+          "elapsedMs": 1110081,
+          "xp": 271062
+        },
+        {
+          "elapsedMs": 1125082,
+          "xp": 281562
+        },
+        {
+          "elapsedMs": 1140082,
+          "xp": 290312
+        },
+        {
+          "elapsedMs": 1155083,
+          "xp": 290312
+        },
+        {
+          "elapsedMs": 1170084,
+          "xp": 292937
+        },
+        {
+          "elapsedMs": 1185086,
+          "xp": 306937
+        },
+        {
+          "elapsedMs": 1200087,
+          "xp": 321812
+        },
+        {
+          "elapsedMs": 1215089,
+          "xp": 321812
+        },
+        {
+          "elapsedMs": 1230090,
+          "xp": 321812
+        },
+        {
+          "elapsedMs": 1245092,
+          "xp": 341062
+        },
+        {
+          "elapsedMs": 1260093,
+          "xp": 342812
+        },
+        {
+          "elapsedMs": 1275094,
+          "xp": 353312
+        },
+        {
+          "elapsedMs": 1290095,
+          "xp": 364687
+        },
+        {
+          "elapsedMs": 1305097,
+          "xp": 366437
+        },
+        {
+          "elapsedMs": 1320098,
+          "xp": 386562
+        },
+        {
+          "elapsedMs": 1335100,
+          "xp": 386562
+        },
+        {
+          "elapsedMs": 1350100,
+          "xp": 399687
+        },
+        {
+          "elapsedMs": 1365102,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1380103,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1395104,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1410105,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1425107,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1440108,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1455111,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1470111,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1485111,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1500113,
+          "xp": 408437
+        },
+        {
+          "elapsedMs": 1515114,
+          "xp": 418937
+        },
+        {
+          "elapsedMs": 1530116,
+          "xp": 431187
+        },
+        {
+          "elapsedMs": 1545116,
+          "xp": 432937
+        },
+        {
+          "elapsedMs": 1560116,
+          "xp": 450437
+        },
+        {
+          "elapsedMs": 1575116,
+          "xp": 467062
+        },
+        {
+          "elapsedMs": 1590117,
+          "xp": 467062
+        },
+        {
+          "elapsedMs": 1605117,
+          "xp": 467062
+        },
+        {
+          "elapsedMs": 1620119,
+          "xp": 467937
+        },
+        {
+          "elapsedMs": 1635121,
+          "xp": 473187
+        },
+        {
+          "elapsedMs": 1650121,
+          "xp": 488937
+        },
+        {
+          "elapsedMs": 1665123,
+          "xp": 506437
+        },
+        {
+          "elapsedMs": 1680124,
+          "xp": 517812
+        },
+        {
+          "elapsedMs": 1695125,
+          "xp": 534437
+        },
+        {
+          "elapsedMs": 1710125,
+          "xp": 548437
+        },
+        {
+          "elapsedMs": 1725126,
+          "xp": 567687
+        },
+        {
+          "elapsedMs": 1740127,
+          "xp": 586937
+        },
+        {
+          "elapsedMs": 1755128,
+          "xp": 606187
+        },
+        {
+          "elapsedMs": 1770130,
+          "xp": 625437
+        },
+        {
+          "elapsedMs": 1785132,
+          "xp": 644687
+        }
+      ],
+      "tokenUsage": {
+        "inputTokens": 8392694,
+        "cacheTokens": 8238848,
+        "outputTokens": 20079,
+        "costUsd": 1.332367
+      },
+      "containerStartedAt": "2026-09-29T19:18:36.938914Z",
+      "containerFinishedAt": "2026-09-29T19:55:26.318925Z",
+      "agentStartedAt": "2026-09-29T19:20:23.263067Z",
+      "peakXpRate": 402
+    },
+    {
+      "result_id": "runebench-20260929-gpt61sol-woodcutting",
+      "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol.json",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
+      "source_check_date": "2026-09-30",
+      "samples": [
+        {
+          "elapsedMs": 0,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 15002,
+          "xp": 625
+        },
+        {
+          "elapsedMs": 30001,
+          "xp": 5625
+        },
+        {
+          "elapsedMs": 45002,
+          "xp": 6250
+        },
+        {
+          "elapsedMs": 60002,
+          "xp": 6250
+        },
+        {
+          "elapsedMs": 75002,
+          "xp": 9062
+        },
+        {
+          "elapsedMs": 90002,
+          "xp": 17500
+        },
+        {
+          "elapsedMs": 105002,
+          "xp": 21250
+        },
+        {
+          "elapsedMs": 120002,
+          "xp": 21250
+        },
+        {
+          "elapsedMs": 135003,
+          "xp": 27812
+        },
+        {
+          "elapsedMs": 150003,
+          "xp": 37187
+        },
+        {
+          "elapsedMs": 165003,
+          "xp": 37187
+        },
+        {
+          "elapsedMs": 180003,
+          "xp": 37187
+        },
+        {
+          "elapsedMs": 195003,
+          "xp": 47312
+        },
+        {
+          "elapsedMs": 210003,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 225004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 240004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 255004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 270004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 285004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 300004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 315004,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 330005,
+          "xp": 65875
+        },
+        {
+          "elapsedMs": 345006,
+          "xp": 67562
+        },
+        {
+          "elapsedMs": 360006,
+          "xp": 89500
+        },
+        {
+          "elapsedMs": 375006,
+          "xp": 106375
+        },
+        {
+          "elapsedMs": 390007,
+          "xp": 119875
+        },
+        {
+          "elapsedMs": 405007,
+          "xp": 150250
+        },
+        {
+          "elapsedMs": 420007,
+          "xp": 177250
+        },
+        {
+          "elapsedMs": 435008,
+          "xp": 199187
+        },
+        {
+          "elapsedMs": 450008,
+          "xp": 224500
+        },
+        {
+          "elapsedMs": 465009,
+          "xp": 229562
+        },
+        {
+          "elapsedMs": 480009,
+          "xp": 229562
+        },
+        {
+          "elapsedMs": 495010,
+          "xp": 229562
+        },
+        {
+          "elapsedMs": 510010,
+          "xp": 229562
+        },
+        {
+          "elapsedMs": 525011,
+          "xp": 229562
+        },
+        {
+          "elapsedMs": 540011,
+          "xp": 234562
+        },
+        {
+          "elapsedMs": 555011,
+          "xp": 259562
+        },
+        {
+          "elapsedMs": 570012,
+          "xp": 287062
+        },
+        {
+          "elapsedMs": 585012,
+          "xp": 304562
+        },
+        {
+          "elapsedMs": 600012,
+          "xp": 332062
+        },
+        {
+          "elapsedMs": 615012,
+          "xp": 359562
+        },
+        {
+          "elapsedMs": 630012,
+          "xp": 367062
+        },
+        {
+          "elapsedMs": 645013,
+          "xp": 384562
+        },
+        {
+          "elapsedMs": 660013,
+          "xp": 384562
+        },
+        {
+          "elapsedMs": 675013,
+          "xp": 388937
+        },
+        {
+          "elapsedMs": 690013,
+          "xp": 428312
+        },
+        {
+          "elapsedMs": 705014,
+          "xp": 441437
+        },
+        {
+          "elapsedMs": 720014,
+          "xp": 467687
+        },
+        {
+          "elapsedMs": 735014,
+          "xp": 502687
+        },
+        {
+          "elapsedMs": 750015,
+          "xp": 520187
+        },
+        {
+          "elapsedMs": 765015,
+          "xp": 542062
+        },
+        {
+          "elapsedMs": 780015,
+          "xp": 581437
+        },
+        {
+          "elapsedMs": 795015,
+          "xp": 590187
+        },
+        {
+          "elapsedMs": 810015,
+          "xp": 612062
+        },
+        {
+          "elapsedMs": 825015,
+          "xp": 629562
+        },
+        {
+          "elapsedMs": 840015,
+          "xp": 638312
+        },
+        {
+          "elapsedMs": 855017,
+          "xp": 638312
+        },
+        {
+          "elapsedMs": 870017,
+          "xp": 650812
+        },
+        {
+          "elapsedMs": 885018,
+          "xp": 675812
+        },
+        {
+          "elapsedMs": 900019,
+          "xp": 700812
+        },
+        {
+          "elapsedMs": 915019,
+          "xp": 738312
+        },
+        {
+          "elapsedMs": 930020,
+          "xp": 750812
+        },
+        {
+          "elapsedMs": 945021,
+          "xp": 750812
+        },
+        {
+          "elapsedMs": 960021,
+          "xp": 750812
+        },
+        {
+          "elapsedMs": 975021,
+          "xp": 750812
+        },
+        {
+          "elapsedMs": 990021,
+          "xp": 750812
+        },
+        {
+          "elapsedMs": 1005022,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1020023,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1035023,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1050025,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1065026,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1080026,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1095026,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1110027,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1125027,
+          "xp": 751437
+        },
+        {
+          "elapsedMs": 1140027,
+          "xp": 773375
+        },
+        {
+          "elapsedMs": 1155027,
+          "xp": 795312
+        },
+        {
+          "elapsedMs": 1170027,
+          "xp": 829062
+        },
+        {
+          "elapsedMs": 1185027,
+          "xp": 866187
+        },
+        {
+          "elapsedMs": 1200027,
+          "xp": 884750
+        },
+        {
+          "elapsedMs": 1215028,
+          "xp": 925250
+        },
+        {
+          "elapsedMs": 1230028,
+          "xp": 938750
+        },
+        {
+          "elapsedMs": 1245028,
+          "xp": 975875
+        },
+        {
+          "elapsedMs": 1260028,
+          "xp": 989375
+        },
+        {
+          "elapsedMs": 1275028,
+          "xp": 1019750
+        },
+        {
+          "elapsedMs": 1290028,
+          "xp": 1048437
+        },
+        {
+          "elapsedMs": 1305029,
+          "xp": 1073750
+        },
+        {
+          "elapsedMs": 1320029,
+          "xp": 1078812
+        },
+        {
+          "elapsedMs": 1335029,
+          "xp": 1083187
+        },
+        {
+          "elapsedMs": 1350029,
+          "xp": 1122562
+        },
+        {
+          "elapsedMs": 1365029,
+          "xp": 1148812
+        },
+        {
+          "elapsedMs": 1380029,
+          "xp": 1170687
+        },
+        {
+          "elapsedMs": 1395030,
+          "xp": 1201312
+        },
+        {
+          "elapsedMs": 1410031,
+          "xp": 1214437
+        },
+        {
+          "elapsedMs": 1425032,
+          "xp": 1214437
+        },
+        {
+          "elapsedMs": 1440033,
+          "xp": 1240687
+        },
+        {
+          "elapsedMs": 1455033,
+          "xp": 1258187
+        },
+        {
+          "elapsedMs": 1470034,
+          "xp": 1284437
+        },
+        {
+          "elapsedMs": 1485035,
+          "xp": 1310687
+        },
+        {
+          "elapsedMs": 1500036,
+          "xp": 1316937
+        },
+        {
+          "elapsedMs": 1515037,
+          "xp": 1323187
+        },
+        {
+          "elapsedMs": 1530037,
+          "xp": 1360687
+        },
+        {
+          "elapsedMs": 1545038,
+          "xp": 1366937
+        },
+        {
+          "elapsedMs": 1560038,
+          "xp": 1410687
+        },
+        {
+          "elapsedMs": 1575038,
+          "xp": 1429437
+        },
+        {
+          "elapsedMs": 1590038,
+          "xp": 1460687
+        },
+        {
+          "elapsedMs": 1605038,
+          "xp": 1473187
+        },
+        {
+          "elapsedMs": 1620039,
+          "xp": 1491937
+        },
+        {
+          "elapsedMs": 1635039,
+          "xp": 1516937
+        },
+        {
+          "elapsedMs": 1650039,
+          "xp": 1548187
+        },
+        {
+          "elapsedMs": 1665039,
+          "xp": 1566937
+        },
+        {
+          "elapsedMs": 1680040,
+          "xp": 1591937
+        },
+        {
+          "elapsedMs": 1695041,
+          "xp": 1591937
+        },
+        {
+          "elapsedMs": 1710041,
+          "xp": 1591937
+        },
+        {
+          "elapsedMs": 1725041,
+          "xp": 1616937
+        },
+        {
+          "elapsedMs": 1740042,
+          "xp": 1651937
+        },
+        {
+          "elapsedMs": 1755043,
+          "xp": 1694437
+        },
+        {
+          "elapsedMs": 1770043,
+          "xp": 1716937
+        },
+        {
+          "elapsedMs": 1785043,
+          "xp": 1744437
+        }
+      ],
+      "tokenUsage": {
+        "inputTokens": 12246230,
+        "cacheTokens": 12039424,
+        "outputTokens": 26289,
+        "costUsd": 1.880444
+      },
+      "containerStartedAt": "2026-09-29T19:57:37.934960Z",
+      "containerFinishedAt": "2026-09-29T20:34:39.011988Z",
+      "agentStartedAt": "2026-09-29T19:57:57.281596Z",
+      "peakXpRate": 875
+    },
+    {
+      "result_id": "runebench-20260929-gpt61sol-mining",
+      "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol.json",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
+      "source_check_date": "2026-09-30",
+      "samples": [
+        {
+          "elapsedMs": 0,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 15006,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 30006,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 45007,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 60008,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 75008,
+          "xp": 875
+        },
+        {
+          "elapsedMs": 90011,
+          "xp": 3937
+        },
+        {
+          "elapsedMs": 105012,
+          "xp": 3937
+        },
+        {
+          "elapsedMs": 120014,
+          "xp": 14437
+        },
+        {
+          "elapsedMs": 135017,
+          "xp": 14437
+        },
+        {
+          "elapsedMs": 150017,
+          "xp": 14437
+        },
+        {
+          "elapsedMs": 165019,
+          "xp": 14437
+        },
+        {
+          "elapsedMs": 180019,
+          "xp": 14437
+        },
+        {
+          "elapsedMs": 195020,
+          "xp": 21437
+        },
+        {
+          "elapsedMs": 210020,
+          "xp": 36312
+        },
+        {
+          "elapsedMs": 225022,
+          "xp": 52937
+        },
+        {
+          "elapsedMs": 240021,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 255022,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 270022,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 285024,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 300024,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 315026,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 330028,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 345028,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 360028,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 375030,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 390032,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 405032,
+          "xp": 61687
+        },
+        {
+          "elapsedMs": 420034,
+          "xp": 72187
+        },
+        {
+          "elapsedMs": 435036,
+          "xp": 84437
+        },
+        {
+          "elapsedMs": 450037,
+          "xp": 84437
+        },
+        {
+          "elapsedMs": 465039,
+          "xp": 98437
+        },
+        {
+          "elapsedMs": 480039,
+          "xp": 106312
+        },
+        {
+          "elapsedMs": 495040,
+          "xp": 121187
+        },
+        {
+          "elapsedMs": 510041,
+          "xp": 128187
+        },
+        {
+          "elapsedMs": 525042,
+          "xp": 143062
+        },
+        {
+          "elapsedMs": 540042,
+          "xp": 150062
+        },
+        {
+          "elapsedMs": 555044,
+          "xp": 157062
+        },
+        {
+          "elapsedMs": 570045,
+          "xp": 157062
+        },
+        {
+          "elapsedMs": 585048,
+          "xp": 157062
+        },
+        {
+          "elapsedMs": 600048,
+          "xp": 157062
+        },
+        {
+          "elapsedMs": 615049,
+          "xp": 157062
+        },
+        {
+          "elapsedMs": 630051,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 645054,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 660055,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 675056,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 690056,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 705059,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 720059,
+          "xp": 159437
+        },
+        {
+          "elapsedMs": 735059,
+          "xp": 160687
+        },
+        {
+          "elapsedMs": 750060,
+          "xp": 171937
+        },
+        {
+          "elapsedMs": 765062,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 780065,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 795066,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 810067,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 825066,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 840067,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 855069,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 870070,
+          "xp": 185687
+        },
+        {
+          "elapsedMs": 885070,
+          "xp": 196187
+        },
+        {
+          "elapsedMs": 900070,
+          "xp": 215437
+        },
+        {
+          "elapsedMs": 915071,
+          "xp": 234687
+        },
+        {
+          "elapsedMs": 930072,
+          "xp": 254812
+        },
+        {
+          "elapsedMs": 945072,
+          "xp": 274062
+        },
+        {
+          "elapsedMs": 960074,
+          "xp": 293312
+        },
+        {
+          "elapsedMs": 975074,
+          "xp": 312562
+        },
+        {
+          "elapsedMs": 990078,
+          "xp": 331812
+        },
+        {
+          "elapsedMs": 1005082,
+          "xp": 349312
+        },
+        {
+          "elapsedMs": 1020084,
+          "xp": 368562
+        },
+        {
+          "elapsedMs": 1035085,
+          "xp": 387812
+        },
+        {
+          "elapsedMs": 1050085,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1065087,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1080088,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1095091,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1110094,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1125095,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1140096,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1155097,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1170099,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1185102,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1200104,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1215106,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1230106,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1245107,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1260110,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1275112,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1290114,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1305116,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1320117,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1335118,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1350120,
+          "xp": 403562
+        },
+        {
+          "elapsedMs": 1365122,
+          "xp": 408812
+        },
+        {
+          "elapsedMs": 1380124,
+          "xp": 428937
+        },
+        {
+          "elapsedMs": 1395126,
+          "xp": 449062
+        },
+        {
+          "elapsedMs": 1410127,
+          "xp": 470937
+        },
+        {
+          "elapsedMs": 1425130,
+          "xp": 491937
+        },
+        {
+          "elapsedMs": 1440131,
+          "xp": 510312
+        },
+        {
+          "elapsedMs": 1455132,
+          "xp": 531312
+        },
+        {
+          "elapsedMs": 1470132,
+          "xp": 552312
+        },
+        {
+          "elapsedMs": 1485133,
+          "xp": 564562
+        },
+        {
+          "elapsedMs": 1500134,
+          "xp": 584687
+        },
+        {
+          "elapsedMs": 1515134,
+          "xp": 604812
+        },
+        {
+          "elapsedMs": 1530134,
+          "xp": 624062
+        },
+        {
+          "elapsedMs": 1545134,
+          "xp": 645937
+        },
+        {
+          "elapsedMs": 1560135,
+          "xp": 666937
+        },
+        {
+          "elapsedMs": 1575135,
+          "xp": 687062
+        },
+        {
+          "elapsedMs": 1590137,
+          "xp": 706312
+        },
+        {
+          "elapsedMs": 1605139,
+          "xp": 719437
+        },
+        {
+          "elapsedMs": 1620141,
+          "xp": 720312
+        },
+        {
+          "elapsedMs": 1635142,
+          "xp": 731687
+        },
+        {
+          "elapsedMs": 1650143,
+          "xp": 739562
+        },
+        {
+          "elapsedMs": 1665145,
+          "xp": 739562
+        },
+        {
+          "elapsedMs": 1680145,
+          "xp": 742187
+        },
+        {
+          "elapsedMs": 1695145,
+          "xp": 755312
+        },
+        {
+          "elapsedMs": 1710152,
+          "xp": 765812
+        },
+        {
+          "elapsedMs": 1725154,
+          "xp": 773687
+        },
+        {
+          "elapsedMs": 1740154,
+          "xp": 788562
+        },
+        {
+          "elapsedMs": 1755154,
+          "xp": 800812
+        },
+        {
+          "elapsedMs": 1770155,
+          "xp": 814812
+        },
+        {
+          "elapsedMs": 1785156,
+          "xp": 831437
+        }
+      ],
+      "tokenUsage": {
+        "inputTokens": 7619058,
+        "cacheTokens": 7479552,
+        "outputTokens": 20449,
+        "costUsd": 1.231457
+      },
+      "containerStartedAt": "2026-09-29T19:57:37.938317Z",
+      "containerFinishedAt": "2026-09-29T20:31:58.312679Z",
+      "agentStartedAt": "2026-09-29T19:58:29.259163Z",
+      "peakXpRate": 438
+    },
+    {
+      "result_id": "runebench-20260929-gpt61sol-high-woodcutting",
+      "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol-high.json",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
+      "source_check_date": "2026-09-30",
+      "samples": [
+        {
+          "elapsedMs": 1,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 15004,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 30005,
+          "xp": 625
+        },
+        {
+          "elapsedMs": 45005,
+          "xp": 6250
+        },
+        {
+          "elapsedMs": 60007,
+          "xp": 6250
+        },
+        {
+          "elapsedMs": 75008,
+          "xp": 7187
+        },
+        {
+          "elapsedMs": 90008,
+          "xp": 8125
+        },
+        {
+          "elapsedMs": 105008,
+          "xp": 21250
+        },
+        {
+          "elapsedMs": 120009,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 135009,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 150011,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 165013,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 180014,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 195015,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 210016,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 225017,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 240018,
+          "xp": 25625
+        },
+        {
+          "elapsedMs": 255020,
+          "xp": 27312
+        },
+        {
+          "elapsedMs": 270022,
+          "xp": 27312
+        },
+        {
+          "elapsedMs": 285024,
+          "xp": 27312
+        },
+        {
+          "elapsedMs": 300027,
+          "xp": 45875
+        },
+        {
+          "elapsedMs": 315029,
+          "xp": 62750
+        },
+        {
+          "elapsedMs": 330030,
+          "xp": 96500
+        },
+        {
+          "elapsedMs": 345031,
+          "xp": 113375
+        },
+        {
+          "elapsedMs": 360032,
+          "xp": 142062
+        },
+        {
+          "elapsedMs": 375032,
+          "xp": 169062
+        },
+        {
+          "elapsedMs": 390032,
+          "xp": 189312
+        },
+        {
+          "elapsedMs": 405034,
+          "xp": 214625
+        },
+        {
+          "elapsedMs": 420034,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 435034,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 450036,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 465036,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 480037,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 495039,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 510039,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 525040,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 540041,
+          "xp": 228125
+        },
+        {
+          "elapsedMs": 555044,
+          "xp": 245000
+        },
+        {
+          "elapsedMs": 570044,
+          "xp": 275375
+        },
+        {
+          "elapsedMs": 585044,
+          "xp": 287187
+        },
+        {
+          "elapsedMs": 600045,
+          "xp": 317562
+        },
+        {
+          "elapsedMs": 615045,
+          "xp": 341187
+        },
+        {
+          "elapsedMs": 630047,
+          "xp": 368187
+        },
+        {
+          "elapsedMs": 645047,
+          "xp": 368187
+        },
+        {
+          "elapsedMs": 660047,
+          "xp": 368187
+        },
+        {
+          "elapsedMs": 675047,
+          "xp": 386750
+        },
+        {
+          "elapsedMs": 690049,
+          "xp": 413750
+        },
+        {
+          "elapsedMs": 705048,
+          "xp": 455937
+        },
+        {
+          "elapsedMs": 720050,
+          "xp": 466062
+        },
+        {
+          "elapsedMs": 735050,
+          "xp": 506562
+        },
+        {
+          "elapsedMs": 750050,
+          "xp": 530187
+        },
+        {
+          "elapsedMs": 765051,
+          "xp": 530187
+        },
+        {
+          "elapsedMs": 780052,
+          "xp": 530187
+        },
+        {
+          "elapsedMs": 795053,
+          "xp": 552687
+        },
+        {
+          "elapsedMs": 810054,
+          "xp": 575187
+        },
+        {
+          "elapsedMs": 825055,
+          "xp": 597687
+        },
+        {
+          "elapsedMs": 840055,
+          "xp": 627687
+        },
+        {
+          "elapsedMs": 855055,
+          "xp": 662687
+        },
+        {
+          "elapsedMs": 870056,
+          "xp": 692687
+        },
+        {
+          "elapsedMs": 885059,
+          "xp": 692687
+        },
+        {
+          "elapsedMs": 900059,
+          "xp": 692687
+        },
+        {
+          "elapsedMs": 915059,
+          "xp": 692687
+        },
+        {
+          "elapsedMs": 930059,
+          "xp": 693937
+        },
+        {
+          "elapsedMs": 945059,
+          "xp": 712500
+        },
+        {
+          "elapsedMs": 960060,
+          "xp": 712500
+        },
+        {
+          "elapsedMs": 975062,
+          "xp": 712500
+        },
+        {
+          "elapsedMs": 990063,
+          "xp": 712500
+        },
+        {
+          "elapsedMs": 1005065,
+          "xp": 712500
+        },
+        {
+          "elapsedMs": 1020066,
+          "xp": 756250
+        },
+        {
+          "elapsedMs": 1035067,
+          "xp": 760625
+        },
+        {
+          "elapsedMs": 1050068,
+          "xp": 786875
+        },
+        {
+          "elapsedMs": 1065069,
+          "xp": 817500
+        },
+        {
+          "elapsedMs": 1080070,
+          "xp": 830625
+        },
+        {
+          "elapsedMs": 1095071,
+          "xp": 871875
+        },
+        {
+          "elapsedMs": 1110071,
+          "xp": 903125
+        },
+        {
+          "elapsedMs": 1125074,
+          "xp": 928125
+        },
+        {
+          "elapsedMs": 1140075,
+          "xp": 934375
+        },
+        {
+          "elapsedMs": 1155076,
+          "xp": 953125
+        },
+        {
+          "elapsedMs": 1170078,
+          "xp": 959375
+        },
+        {
+          "elapsedMs": 1185078,
+          "xp": 971875
+        },
+        {
+          "elapsedMs": 1200078,
+          "xp": 992125
+        },
+        {
+          "elapsedMs": 1215079,
+          "xp": 1037687
+        },
+        {
+          "elapsedMs": 1230080,
+          "xp": 1086625
+        },
+        {
+          "elapsedMs": 1245084,
+          "xp": 1125437
+        },
+        {
+          "elapsedMs": 1260084,
+          "xp": 1164250
+        },
+        {
+          "elapsedMs": 1275084,
+          "xp": 1209812
+        },
+        {
+          "elapsedMs": 1290085,
+          "xp": 1250312
+        },
+        {
+          "elapsedMs": 1305087,
+          "xp": 1297562
+        },
+        {
+          "elapsedMs": 1320088,
+          "xp": 1343125
+        },
+        {
+          "elapsedMs": 1335089,
+          "xp": 1390375
+        },
+        {
+          "elapsedMs": 1350089,
+          "xp": 1422437
+        },
+        {
+          "elapsedMs": 1365089,
+          "xp": 1462937
+        },
+        {
+          "elapsedMs": 1380089,
+          "xp": 1500062
+        },
+        {
+          "elapsedMs": 1395089,
+          "xp": 1549000
+        },
+        {
+          "elapsedMs": 1410090,
+          "xp": 1592875
+        },
+        {
+          "elapsedMs": 1425091,
+          "xp": 1635062
+        },
+        {
+          "elapsedMs": 1440091,
+          "xp": 1672187
+        },
+        {
+          "elapsedMs": 1455091,
+          "xp": 1712687
+        },
+        {
+          "elapsedMs": 1470094,
+          "xp": 1753187
+        },
+        {
+          "elapsedMs": 1485094,
+          "xp": 1792000
+        },
+        {
+          "elapsedMs": 1500094,
+          "xp": 1835875
+        },
+        {
+          "elapsedMs": 1515094,
+          "xp": 1874687
+        },
+        {
+          "elapsedMs": 1530094,
+          "xp": 1921937
+        },
+        {
+          "elapsedMs": 1545095,
+          "xp": 1957375
+        },
+        {
+          "elapsedMs": 1560095,
+          "xp": 2004625
+        },
+        {
+          "elapsedMs": 1575097,
+          "xp": 2046812
+        },
+        {
+          "elapsedMs": 1590097,
+          "xp": 2072125
+        },
+        {
+          "elapsedMs": 1605098,
+          "xp": 2116000
+        },
+        {
+          "elapsedMs": 1620099,
+          "xp": 2161562
+        },
+        {
+          "elapsedMs": 1635100,
+          "xp": 2193625
+        },
+        {
+          "elapsedMs": 1650102,
+          "xp": 2237500
+        },
+        {
+          "elapsedMs": 1665105,
+          "xp": 2286437
+        },
+        {
+          "elapsedMs": 1680105,
+          "xp": 2332000
+        },
+        {
+          "elapsedMs": 1695105,
+          "xp": 2374187
+        },
+        {
+          "elapsedMs": 1710106,
+          "xp": 2406250
+        },
+        {
+          "elapsedMs": 1725106,
+          "xp": 2441687
+        },
+        {
+          "elapsedMs": 1740107,
+          "xp": 2487250
+        },
+        {
+          "elapsedMs": 1755109,
+          "xp": 2524375
+        },
+        {
+          "elapsedMs": 1770110,
+          "xp": 2568250
+        },
+        {
+          "elapsedMs": 1785111,
+          "xp": 2610437
+        }
+      ],
+      "tokenUsage": {
+        "inputTokens": 9253583,
+        "cacheTokens": 9088512,
+        "outputTokens": 29487,
+        "costUsd": 1.533863
+      },
+      "containerStartedAt": "2026-09-29T20:55:12.861246Z",
+      "containerFinishedAt": "2026-09-29T21:30:48.984774Z",
+      "agentStartedAt": "2026-09-29T20:55:46.480727Z",
+      "peakXpRate": 979
+    },
+    {
+      "result_id": "runebench-20260929-gpt61sol-high-mining",
+      "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol-high.json",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
+      "source_check_date": "2026-09-30",
+      "samples": [
+        {
+          "elapsedMs": 1,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 15002,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 30002,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 45003,
+          "xp": 0
+        },
+        {
+          "elapsedMs": 60003,
+          "xp": 437
+        },
+        {
+          "elapsedMs": 75004,
+          "xp": 4375
+        },
+        {
+          "elapsedMs": 90007,
+          "xp": 7875
+        },
+        {
+          "elapsedMs": 105007,
+          "xp": 8750
+        },
+        {
+          "elapsedMs": 120008,
+          "xp": 8750
+        },
+        {
+          "elapsedMs": 135009,
+          "xp": 8750
+        },
+        {
+          "elapsedMs": 150009,
+          "xp": 10500
+        },
+        {
+          "elapsedMs": 165009,
+          "xp": 24500
+        },
+        {
+          "elapsedMs": 180009,
+          "xp": 39375
+        },
+        {
+          "elapsedMs": 195009,
+          "xp": 54250
+        },
+        {
+          "elapsedMs": 210011,
+          "xp": 70875
+        },
+        {
+          "elapsedMs": 225013,
+          "xp": 86625
+        },
+        {
+          "elapsedMs": 240014,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 255015,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 270018,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 285019,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 300020,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 315020,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 330022,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 345025,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 360026,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 375026,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 390029,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 405029,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 420029,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 435031,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 450032,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 465033,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 480035,
+          "xp": 89250
+        },
+        {
+          "elapsedMs": 495036,
+          "xp": 103250
+        },
+        {
+          "elapsedMs": 510038,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 525038,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 540039,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 555040,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 570042,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 585043,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 600044,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 615045,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 630046,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 645048,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 660048,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 675049,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 690049,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 705051,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 720052,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 735052,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 750054,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 765054,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 780054,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 795054,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 810058,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 825056,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 840057,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 855057,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 870060,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 885060,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 900061,
+          "xp": 110250
+        },
+        {
+          "elapsedMs": 915062,
+          "xp": 116500
+        },
+        {
+          "elapsedMs": 930063,
+          "xp": 129000
+        },
+        {
+          "elapsedMs": 945065,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 960065,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 975065,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 990065,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 1005065,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 1020066,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 1035068,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 1050068,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 1065068,
+          "xp": 141500
+        },
+        {
+          "elapsedMs": 1080068,
+          "xp": 147750
+        },
+        {
+          "elapsedMs": 1095068,
+          "xp": 156500
+        },
+        {
+          "elapsedMs": 1110070,
+          "xp": 171500
+        },
+        {
+          "elapsedMs": 1125071,
+          "xp": 181500
+        },
+        {
+          "elapsedMs": 1140072,
+          "xp": 185500
+        },
+        {
+          "elapsedMs": 1155072,
+          "xp": 191500
+        },
+        {
+          "elapsedMs": 1170073,
+          "xp": 197500
+        },
+        {
+          "elapsedMs": 1185074,
+          "xp": 203500
+        },
+        {
+          "elapsedMs": 1200076,
+          "xp": 211500
+        },
+        {
+          "elapsedMs": 1215077,
+          "xp": 219500
+        },
+        {
+          "elapsedMs": 1230078,
+          "xp": 223500
+        },
+        {
+          "elapsedMs": 1245078,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1260080,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1275081,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1290083,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1305084,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1320086,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1335086,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1350086,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1365087,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1380088,
+          "xp": 227500
+        },
+        {
+          "elapsedMs": 1395089,
+          "xp": 242375
+        },
+        {
+          "elapsedMs": 1410089,
+          "xp": 259875
+        },
+        {
+          "elapsedMs": 1425091,
+          "xp": 277375
+        },
+        {
+          "elapsedMs": 1440090,
+          "xp": 294875
+        },
+        {
+          "elapsedMs": 1455091,
+          "xp": 308000
+        },
+        {
+          "elapsedMs": 1470092,
+          "xp": 322875
+        },
+        {
+          "elapsedMs": 1485093,
+          "xp": 342125
+        },
+        {
+          "elapsedMs": 1500094,
+          "xp": 347375
+        },
+        {
+          "elapsedMs": 1515094,
+          "xp": 352625
+        },
+        {
+          "elapsedMs": 1530094,
+          "xp": 358750
+        },
+        {
+          "elapsedMs": 1545094,
+          "xp": 376250
+        },
+        {
+          "elapsedMs": 1560095,
+          "xp": 391125
+        },
+        {
+          "elapsedMs": 1575095,
+          "xp": 405125
+        },
+        {
+          "elapsedMs": 1590096,
+          "xp": 420000
+        },
+        {
+          "elapsedMs": 1605098,
+          "xp": 437500
+        },
+        {
+          "elapsedMs": 1620099,
+          "xp": 455000
+        },
+        {
+          "elapsedMs": 1635099,
+          "xp": 471625
+        },
+        {
+          "elapsedMs": 1650100,
+          "xp": 487375
+        },
+        {
+          "elapsedMs": 1665102,
+          "xp": 504000
+        },
+        {
+          "elapsedMs": 1680104,
+          "xp": 520625
+        },
+        {
+          "elapsedMs": 1695104,
+          "xp": 538125
+        },
+        {
+          "elapsedMs": 1710106,
+          "xp": 555625
+        },
+        {
+          "elapsedMs": 1725107,
+          "xp": 572250
+        },
+        {
+          "elapsedMs": 1740107,
+          "xp": 588875
+        },
+        {
+          "elapsedMs": 1755107,
+          "xp": 605500
+        },
+        {
+          "elapsedMs": 1770107,
+          "xp": 622125
+        },
+        {
+          "elapsedMs": 1785107,
+          "xp": 638750
+        }
+      ],
+      "tokenUsage": {
+        "inputTokens": 10626988,
+        "cacheTokens": 10485760,
+        "outputTokens": 25432,
+        "costUsd": 1.585352
+      },
+      "containerStartedAt": "2026-09-29T20:55:12.862923Z",
+      "containerFinishedAt": "2026-09-29T21:29:34.586167Z",
+      "agentStartedAt": "2026-09-29T20:55:47.341818Z",
+      "peakXpRate": 385
+    }
+  ]
+}
