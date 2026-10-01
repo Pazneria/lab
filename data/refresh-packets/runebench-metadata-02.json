@@ -1,0 +1,58 @@
+{
+  "dataset": "runebench",
+  "kind": "metadata",
+  "part": 2,
+  "parts": 2,
+  "metadata": {
+    "systems": {
+      "gpt61sol-low": {
+        "model_identifier": "openai/gpt-6.1-sol",
+        "reasoning_effort": "low",
+        "display_label": "GPT-6.1 Sol low",
+        "skill_count": 16,
+        "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol-low.json"
+      },
+      "gpt61sol": {
+        "model_identifier": "openai/gpt-6.1-sol",
+        "reasoning_effort": "medium",
+        "display_label": "GPT-6.1 Sol",
+        "skill_count": 16,
+        "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol.json"
+      },
+      "gpt61sol-high": {
+        "model_identifier": "openai/gpt-6.1-sol",
+        "reasoning_effort": "high",
+        "display_label": "GPT-6.1 Sol high",
+        "skill_count": 16,
+        "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/gpt61sol-high.json"
+      }
+    },
+    "columns": [
+      "system_identifier",
+      "skill",
+      "peakXpRate",
+      "durationSeconds",
+      "sampleCount",
+      "inputTokens",
+      "cacheTokens",
+      "outputTokens",
+      "costUsd",
+      "toolCalls",
+      "firstStepAt",
+      "containerStartedAt",
+      "containerFinishedAt",
+      "agentStartedAt",
+      "jobName",
+      "trialDir"
+    ],
+    "row_count": 48,
+    "column_units": {
+      "peakXpRate": "normalized XP/min, higher better",
+      "durationSeconds": "seconds of tracker duration, not inference latency",
+      "costUsd": "USD API-equivalent estimate for same skill run; not OAuth invoice",
+      "sampleCount": "tracker samples, not replicate trials",
+      "toolCalls": "tool invocations in same skill run"
+    },
+    "sample_size_per_row": 1
+  }
+}
