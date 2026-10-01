@@ -846,7 +846,9 @@
     const texts = [
       [
         "What it tests",
-        notes.tests || card.standard?.description || card.original.summary,
+        card.id === "runebench"
+          ? "An agent writes code and uses tools to train a character in an accelerated RuneScape world. The published slice follows one model at low, medium and high reasoning effort across 16 skills, with one selected trial per effort and skill."
+          : notes.tests || card.standard?.description || card.original.summary,
       ],
       ["Why it matters", notes.matters],
       ["How to read it", notes.read],
@@ -1703,7 +1705,8 @@
       window.LAB_CHARTS?.reset();
       const card = byId.get(state.id),
         notes = input.notes[card.id],
-        graph = graphFor(card);
+        graph = graphFor(card),
+        viewCohort = expandedCohort(card, state);
       document.title = card.name + " · Jordan’s Lab";
       detail.className = "category-" + card.category;
       detail.replaceChildren();
@@ -1728,7 +1731,8 @@
         e(
           "p",
           "detail-dates",
-          card.standard?.date_label ||
+          viewCohort?.date_label ||
+            card.standard?.date_label ||
             notes.date ||
             "Discovery snapshot: September 30, 2026 · source pages not freshly polled",
         ),
@@ -1739,7 +1743,9 @@
           e(
             "p",
             "historical-notice",
-            (card.standard?.date_label || notes.date) +
+            (viewCohort?.date_label ||
+              card.standard?.date_label ||
+              notes.date) +
               ". This is a historical comparison, not current standings.",
           ),
         );
@@ -1844,7 +1850,7 @@
           detail.querySelector(selector)?.focus({ preventScroll: true });
         });
         if (options.length || card.id === "runebench") detail.append(form);
-        const expanded = expandedCohort(card, state);
+        const expanded = viewCohort;
         detail.append(
           card.standard
             ? standardChart(card, state)
