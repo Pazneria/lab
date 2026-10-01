@@ -95,9 +95,8 @@ async function main() {
     });
     assert.equal(response.status, 200, file + " HTTP status");
     const bytes = Buffer.from(await response.arrayBuffer());
-    assert.deepEqual(
-      bytes,
-      git("show", "HEAD:" + file),
+    assert.ok(
+      bytes.equals(git("show", "HEAD:" + file)),
       file + " differs from deployed commit",
     );
     report.assets.push({
