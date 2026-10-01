@@ -3,6 +3,7 @@ const fs = require("node:fs"),
   path = require("node:path"),
   http = require("node:http");
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
+const normalizeDisplayText = require("../scripts/normalize-display-text.cjs");
 const root = path.resolve(__dirname, ".."),
   out = path.join(root, "evidence");
 const original = JSON.parse(
@@ -143,8 +144,9 @@ async function main() {
       })),
       {
         records: original.results.records,
-        protocols: original.results.protocols,
-        sources: original.results.sources,
+        // Display text is decoded; raw inputs and numeric comparisons stay exact.
+        protocols: normalizeDisplayText(original.results.protocols),
+        sources: normalizeDisplayText(original.results.sources),
         aggregation: original.results.aggregation,
         graph_views: original.graph_views,
       },

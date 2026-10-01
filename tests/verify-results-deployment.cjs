@@ -5,6 +5,7 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 const { execFileSync } = require("node:child_process");
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
+const normalizeDisplayText = require("../scripts/normalize-display-text.cjs");
 const root = path.resolve(__dirname, "..");
 const out = path.join(root, "evidence");
 const git = (...args) =>
@@ -169,8 +170,9 @@ async function main() {
         })),
         {
           records: original.records,
-          protocols: original.protocols,
-          sources: original.sources,
+          // Display text is decoded; raw-file provenance checks above stay exact.
+          protocols: normalizeDisplayText(original.protocols),
+          sources: normalizeDisplayText(original.sources),
           graph_views: input.graph_views,
         },
       );
