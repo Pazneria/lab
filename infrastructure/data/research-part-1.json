@@ -1,0 +1,454 @@
+{
+  "schema_version": "0.1.0",
+  "metadata": {
+    "title": "AI Infrastructure Atlas",
+    "subtitle": "A first map of the physical supply chain",
+    "as_of": "2026-10-05",
+    "publication_state": "research_draft_not_published",
+    "evidence_policy": "Public primary sources; dated claims; no private conversation or mailbox content",
+    "map_policy": "Approximate locality markers only",
+    "status_policy": "Last publicly reported status, not a real-time operational audit",
+    "counts": {
+      "players": 25,
+      "featured_players": 18,
+      "sites": 25,
+      "products": 12,
+      "relationships": 27,
+      "sources": 49
+    }
+  },
+  "players": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "roles": ["chip_designer", "systems_platform"],
+      "description": "Designs AI accelerators and networking; foundry and memory suppliers manufacture key components.",
+      "source_ids": ["nvidia-blackwell", "nvidia-arizona"],
+      "featured": true,
+      "site_ids": ["stargate-abilene", "tsmc-arizona"]
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "roles": ["chip_designer"],
+      "description": "Designs Instinct accelerators using TSMC processes; exact fab allocation is unreported here.",
+      "source_ids": ["amd-mi350"],
+      "featured": true,
+      "site_ids": []
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "roles": ["foundry", "advanced_packaging"],
+      "description": "Makes logic chips and provides chiplet packaging and testing.",
+      "source_ids": ["tsmc-q1-2026", "tsmc-ap6"],
+      "featured": true,
+      "site_ids": ["tsmc-ap6", "tsmc-arizona", "tsmc-hsinchu", "tsmc-kaohsiung"]
+    },
+    {
+      "id": "intel",
+      "name": "Intel",
+      "roles": ["chip_designer", "foundry"],
+      "description": "Combines processor design, wafer fabrication and process development.",
+      "source_ids": ["intel-fab52", "intel-d1x"],
+      "featured": true,
+      "site_ids": ["intel-d1x", "intel-fab52"]
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung",
+      "roles": ["foundry", "memory_manufacturer"],
+      "description": "Logic-foundry footprint represented by Taylor; memory operations remain a coverage gap.",
+      "source_ids": ["samsung-sites"],
+      "featured": true,
+      "site_ids": ["samsung-taylor"]
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "roles": ["memory_manufacturer", "advanced_packaging"],
+      "description": "DRAM, HBM and NAND supplier with separate wafer and assembly/test facilities.",
+      "source_ids": ["micron-q3-2026", "micron-sanand"],
+      "featured": true,
+      "site_ids": [
+        "micron-boise-id1",
+        "micron-sanand",
+        "micron-singapore-hbm",
+        "micron-singapore-nand",
+        "micron-tongluo"
+      ]
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "roles": ["memory_manufacturer", "advanced_packaging"],
+      "description": "Builds DRAM and HBM capacity, including separate packaging facilities.",
+      "source_ids": ["sk-m15x", "sk-pt7"],
+      "featured": true,
+      "site_ids": ["sk-m15x", "sk-pt7", "sk-yongin"]
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "roles": ["equipment_supplier"],
+      "description": "Supplies lithography tools; an Intel Oregon installation is explicitly documented.",
+      "source_ids": ["intel-d1x", "asml-highna"],
+      "featured": true,
+      "site_ids": ["intel-d1x"]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon / AWS",
+      "roles": ["cloud_provider", "chip_designer", "compute_operator"],
+      "description": "Operates Rainier and designs Trainium; Anthropic is a compute customer.",
+      "source_ids": ["aws-rainier-online"],
+      "featured": true,
+      "site_ids": ["calvert-cliffs", "rainier-indiana"]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "roles": ["ai_lab", "compute_customer"],
+      "description": "Uses AWS Rainier and has contracted access to Colossus 1.",
+      "source_ids": ["aws-rainier-online", "xai-anthropic"],
+      "featured": true,
+      "site_ids": ["colossus-1", "rainier-indiana"]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "roles": ["ai_lab", "compute_customer"],
+      "description": "Uses Oracle-operated Abilene infrastructure and participates in Stargate projects.",
+      "source_ids": ["openai-abilene", "openai-norway"],
+      "featured": true,
+      "site_ids": ["stargate-abilene", "stargate-norway"]
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "roles": ["cloud_provider", "compute_operator"],
+      "description": "Operates Oracle Cloud Infrastructure at Stargate Abilene.",
+      "source_ids": ["openai-abilene"],
+      "featured": true,
+      "site_ids": ["stargate-abilene"]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "roles": ["cloud_provider", "ai_lab", "compute_operator"],
+      "description": "Operates Fairwater and purchases nuclear power under the Crane restart agreement.",
+      "source_ids": ["microsoft-fairwater", "constellation-crane-ppa"],
+      "featured": true,
+      "site_ids": ["crane", "fairwater-wisconsin"]
+    },
+    {
+      "id": "google",
+      "name": "Google / Alphabet",
+      "roles": ["cloud_provider", "ai_lab", "compute_operator"],
+      "description": "Developing a full-stack AI hub in Visakhapatnam.",
+      "source_ids": ["google-vizag-build"],
+      "featured": true,
+      "site_ids": ["google-vizag"]
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "roles": ["ai_lab", "compute_operator"],
+      "description": "Building the Hyperion training campus in Louisiana.",
+      "source_ids": ["meta-hyperion"],
+      "featured": true,
+      "site_ids": ["meta-hyperion"]
+    },
+    {
+      "id": "xai",
+      "name": "xAI / SpaceXAI",
+      "roles": ["ai_lab", "compute_operator"],
+      "description": "Runs Colossus; current company pages use SpaceXAI branding.",
+      "source_ids": ["xai-memphis", "xai-anthropic"],
+      "featured": true,
+      "site_ids": ["colossus-1"]
+    },
+    {
+      "id": "constellation",
+      "name": "Constellation",
+      "roles": ["power_generator"],
+      "description": "Operates nuclear assets with distinct power-purchase and capacity-expansion agreements.",
+      "source_ids": ["constellation-calvert", "constellation-crane-status"],
+      "featured": true,
+      "site_ids": ["calvert-cliffs", "crane"]
+    },
+    {
+      "id": "jera",
+      "name": "JERA",
+      "roles": ["power_generator"],
+      "description": "Power and site partner for the proposed Chiba AI infrastructure project.",
+      "source_ids": ["jera-chiba"],
+      "featured": true,
+      "site_ids": ["chiba-ai"]
+    },
+    {
+      "id": "crusoe",
+      "name": "Crusoe",
+      "roles": ["data_center_developer"],
+      "description": "Developer of Abilene infrastructure.",
+      "source_ids": ["crusoe-abilene"],
+      "featured": false,
+      "site_ids": ["stargate-abilene"]
+    },
+    {
+      "id": "nscale",
+      "name": "Nscale",
+      "roles": ["data_center_developer", "cloud_provider"],
+      "description": "Developer and proposed joint-venture owner of Stargate Norway.",
+      "source_ids": ["openai-norway"],
+      "featured": false,
+      "site_ids": ["stargate-norway"]
+    },
+    {
+      "id": "aker",
+      "name": "Aker",
+      "roles": ["infrastructure_partner"],
+      "description": "Proposed equal joint-venture owner with Nscale.",
+      "source_ids": ["openai-norway"],
+      "featured": false,
+      "site_ids": ["stargate-norway"]
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "roles": ["system_supplier"],
+      "description": "Proposed rack-scale compute platform supplier at Chiba.",
+      "source_ids": ["jera-chiba"],
+      "featured": false,
+      "site_ids": ["chiba-ai"]
+    },
+    {
+      "id": "rhaelm",
+      "name": "RHAELM",
+      "roles": ["data_center_developer"],
+      "description": "Leads proposed Chiba project delivery.",
+      "source_ids": ["jera-chiba"],
+      "featured": false,
+      "site_ids": ["chiba-ai"]
+    },
+    {
+      "id": "adaniconnex",
+      "name": "AdaniConneX",
+      "roles": ["infrastructure_partner"],
+      "description": "Named partner in Google’s Visakhapatnam project.",
+      "source_ids": ["google-vizag-build"],
+      "featured": false,
+      "site_ids": ["google-vizag"]
+    },
+    {
+      "id": "nxtra",
+      "name": "Nxtra by Airtel",
+      "roles": ["infrastructure_partner"],
+      "description": "Named partner in Google’s Visakhapatnam project.",
+      "source_ids": ["google-vizag-build"],
+      "featured": false,
+      "site_ids": ["google-vizag"]
+    }
+  ],
+  "products": [
+    {
+      "id": "blackwell",
+      "name": "NVIDIA Blackwell / GB200",
+      "type": "accelerator",
+      "designer_id": "nvidia",
+      "process_nodes": ["TSMC 4NP"],
+      "memory": null,
+      "status": "reported",
+      "source_ids": ["nvidia-blackwell", "nvidia-arizona"]
+    },
+    {
+      "id": "h200",
+      "name": "NVIDIA H200",
+      "type": "accelerator",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": ["HBM3E"],
+      "status": "reported",
+      "source_ids": ["micron-h200"]
+    },
+    {
+      "id": "gb300",
+      "name": "NVIDIA Grace Blackwell GB300",
+      "type": "accelerator_system",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": ["HBM3E"],
+      "status": "reported",
+      "source_ids": ["sk-nvidia"]
+    },
+    {
+      "id": "rubin",
+      "name": "NVIDIA Vera Rubin",
+      "type": "accelerator_system",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": ["HBM4", "SOCAMM2"],
+      "status": "reported",
+      "source_ids": ["sk-nvidia-september"]
+    },
+    {
+      "id": "mi350",
+      "name": "AMD Instinct MI350 family",
+      "type": "accelerator",
+      "designer_id": "amd",
+      "process_nodes": ["TSMC 3nm", "TSMC 6nm"],
+      "memory": ["HBM3E"],
+      "status": "reported",
+      "source_ids": ["amd-mi350"]
+    },
+    {
+      "id": "panther-lake",
+      "name": "Intel Panther Lake / Core Ultra Series 3",
+      "type": "client_processor",
+      "designer_id": "intel",
+      "process_nodes": ["Intel 18A"],
+      "memory": null,
+      "status": "reported",
+      "source_ids": ["intel-fab52"]
+    },
+    {
+      "id": "clearwater-forest",
+      "name": "Intel Clearwater Forest / Xeon 6+",
+      "type": "server_processor",
+      "designer_id": "intel",
+      "process_nodes": ["Intel 18A"],
+      "memory": null,
+      "status": "reported",
+      "source_ids": ["intel-fab52"]
+    },
+    {
+      "id": "trainium2",
+      "name": "AWS Trainium2",
+      "type": "accelerator",
+      "designer_id": "amazon",
+      "process_nodes": [],
+      "memory": null,
+      "status": "reported",
+      "source_ids": ["aws-rainier-online"]
+    },
+    {
+      "id": "micron-hbm3e",
+      "name": "Micron HBM3E",
+      "type": "memory",
+      "designer_id": "micron",
+      "process_nodes": [],
+      "memory": ["HBM3E"],
+      "status": "reported",
+      "source_ids": ["micron-h200"]
+    },
+    {
+      "id": "sk-hbm4",
+      "name": "SK hynix HBM4",
+      "type": "memory",
+      "designer_id": "sk-hynix",
+      "process_nodes": [],
+      "memory": ["HBM4"],
+      "status": "reported",
+      "source_ids": ["sk-nvidia-september", "sk-tsmc"]
+    },
+    {
+      "id": "sk-hbm3e",
+      "name": "SK hynix HBM3E",
+      "type": "memory",
+      "designer_id": "sk-hynix",
+      "process_nodes": [],
+      "memory": ["HBM3E"],
+      "status": "reported",
+      "source_ids": ["sk-nvidia"]
+    },
+    {
+      "id": "asml-exe5000",
+      "name": "ASML TWINSCAN EXE:5000",
+      "type": "lithography_equipment",
+      "designer_id": "asml",
+      "process_nodes": [],
+      "memory": null,
+      "status": "reported",
+      "source_ids": ["intel-d1x"]
+    }
+  ],
+  "programs": [
+    {
+      "id": "rainier-program",
+      "name": "AWS Project Rainier",
+      "entity_ids": ["amazon", "anthropic"],
+      "site_ids": ["rainier-indiana"],
+      "status": "operating",
+      "reported_at": "2025-11-03",
+      "source_ids": ["aws-rainier-online"],
+      "capacity_observations": [
+        {
+          "value": 500000,
+          "unit": "Trainium2 chips",
+          "qualifier": "nearly",
+          "basis": "accelerator_count",
+          "scope": "multi_site_program",
+          "state": "operating",
+          "source_ids": ["aws-rainier-online"],
+          "additive": false
+        }
+      ],
+      "note": "Indiana is one public location. Do not allocate the entire program chip count to that site."
+    }
+  ],
+  "coverage": {
+    "mode": "curated_seed_not_census",
+    "description": "Expandable public-source sample across equipment, logic, memory, packaging, compute and power. No global market-share, output or power totals.",
+    "geographic_gaps": [
+      "Mainland China",
+      "Southeast Asia beyond Singapore",
+      "Middle East",
+      "Africa",
+      "Latin America"
+    ],
+    "company_gaps": [
+      "SMIC",
+      "Huawei",
+      "CXMT",
+      "YMTC",
+      "UMC",
+      "GlobalFoundries",
+      "Rapidus",
+      "ASE",
+      "Amkor",
+      "JCET",
+      "Broadcom",
+      "Marvell",
+      "CoreWeave"
+    ],
+    "layer_gaps": [
+      "Silicon wafers and substrates",
+      "Chemicals and gases",
+      "EDA and IP",
+      "Etch/deposition/metrology tools",
+      "Server assembly factories",
+      "Optical/networking manufacturing",
+      "Cooling equipment",
+      "Transformers and grid interconnection queues"
+    ],
+    "unknowns": [
+      "Most exact chip-to-fab assignments",
+      "Fab yields, utilization and qualified wafer starts",
+      "Site-level GPU allocation for multisite deployments",
+      "Current energized power versus planned campus capacity",
+      "Customer shares and confidential supply contracts"
+    ],
+    "rules": [
+      "Null means not established by this evidence set, never zero.",
+      "A company supplying a customer does not establish which fab supplied that customer.",
+      "Links describe disclosed relationships, not provenance of a particular deployed chip.",
+      "All map coordinates are approximate editorial locality markers, never claimed facility coordinates.",
+      "No capacity or spending totals: measurements differ, periods overlap and shared assets would double-count.",
+      "Company announcements verify what was announced; they do not independently verify delivery or performance.",
+      "Last-reported status and source date must remain visible. A past target date does not prove operation.",
+      "Separate power contracts, generation, facility power, IT load, GPU counts and wafer output.",
+      "Separate construction, commissioning, qualification, volume production and mature utilization.",
+      "Process-node names are vendor labels, not directly comparable physical dimensions."
+    ]
+  }
+}

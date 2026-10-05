@@ -1,0 +1,333 @@
+{
+  "sources": [
+    {
+      "id": "sk-yongin",
+      "title": "New facility investment for Yongin",
+      "publisher": "SK hynix",
+      "published_at": "2026-02-25",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/new-facility-investment-for-yongin-semiconductor-cluster/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-tsmc",
+      "title": "HBM4 and packaging collaboration",
+      "publisher": "SK hynix",
+      "published_at": "2024-04-19",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/sk-hynix-partners-with-tsmc-to-strengthen-hbm-technological-leadership/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-nvidia",
+      "title": "AI memory at GTC 2026",
+      "publisher": "SK hynix",
+      "published_at": "2026-03-17",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/gtc-2026-ai-partnership/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-nvidia-september",
+      "title": "Memory portfolio at TSMC OIP",
+      "publisher": "SK hynix",
+      "published_at": "2026-09-28",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/tsmc-oip-conference-2026-3/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "openai-abilene",
+      "title": "Compute infrastructure for the Intelligence Age",
+      "publisher": "OpenAI",
+      "published_at": "2026-04-29",
+      "retrieved_at": "2026-10-05",
+      "url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "crusoe-abilene",
+      "title": "Abilene campus expansion to 1.2 GW",
+      "publisher": "Crusoe",
+      "published_at": "2025-03-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-expands-ai-data-center-campus-in-abilene-to-1-2-gigawatts",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "crusoe-microsoft",
+      "title": "Separate 900 MW Microsoft Abilene campus",
+      "publisher": "Crusoe",
+      "published_at": "2026-03-27",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-announces-new-900-mw-ai-factory-campus-in-abilene-texas-to-support-microsoft-ai-infrastructure",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "aws-rainier-location",
+      "title": "Project Rainier infrastructure",
+      "publisher": "Amazon",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster",
+      "source_type": "primary",
+      "note": "Explicitly identifies St. Joseph County as one Rainier site; program spans sites"
+    },
+    {
+      "id": "aws-rainier-online",
+      "title": "AWS weekly roundup: Rainier online",
+      "publisher": "Amazon",
+      "published_at": "2025-11-03",
+      "retrieved_at": "2026-10-05",
+      "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-project-rainier-online-amazon-nova-amazon-bedrock-and-more-november-3-2025/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "amazon-q4-2025",
+      "title": "Q4 2025 results and 2026 capital guidance",
+      "publisher": "Amazon",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q4-2025-report",
+      "source_type": "primary",
+      "note": "2026 earnings release; exact day not captured"
+    },
+    {
+      "id": "microsoft-fairwater",
+      "title": "First Mount Pleasant facility fully operational",
+      "publisher": "Microsoft",
+      "published_at": "2026-06-23",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "microsoft-wisconsin",
+      "title": "Wisconsin investment and second facility",
+      "publisher": "Microsoft",
+      "published_at": "2025-09-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blogs.microsoft.com/on-the-issues/2025/09/18/made-in-wisconsin-the-worlds-most-powerful-ai-datacenter/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "meta-hyperion",
+      "title": "Richland Parish expansion",
+      "publisher": "Meta",
+      "published_at": "2026-07-13",
+      "retrieved_at": "2026-10-05",
+      "url": "https://datacenters.atmeta.com/2026/07/deepening-our-investment-in-richland-parish-louisiana/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "google-vizag-announce",
+      "title": "India AI hub investment",
+      "publisher": "Google",
+      "published_at": "2025-10-14",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blog.google/intl/en-in/company-news/our-first-ai-hub-in-india-powered-by-a-15-billion-investment/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "google-vizag-build",
+      "title": "Visakhapatnam groundbreaking",
+      "publisher": "Google",
+      "published_at": "2026-04-28",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "openai-norway",
+      "title": "Introducing Stargate Norway",
+      "publisher": "OpenAI",
+      "published_at": "2025-07-31",
+      "retrieved_at": "2026-10-05",
+      "url": "https://openai.com/index/introducing-stargate-norway/",
+      "source_type": "primary",
+      "note": "English page gives 230 MW plus 290 MW ambition; translated pages differ, so English and Nscale release used"
+    },
+    {
+      "id": "nscale-norway",
+      "title": "Stargate Norway partnership",
+      "publisher": "Nscale",
+      "published_at": "2025-07-31",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.nscale.com/press-releases/stargate-norway-nscale-aker-openai",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "xai-anthropic",
+      "title": "Compute partnership with Anthropic",
+      "publisher": "SpaceXAI",
+      "published_at": "2026-05-06",
+      "retrieved_at": "2026-10-05",
+      "url": "https://x.ai/news/anthropic-compute-partnership",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "xai-memphis",
+      "title": "Memphis and Colossus",
+      "publisher": "SpaceXAI",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://x.ai/memphis",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "jera-chiba",
+      "title": "JERA Dell RHAELM AI infrastructure MoU",
+      "publisher": "JERA",
+      "published_at": "2026-10-01",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.jera.co.jp/en/news/information/20261001_2535",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-calvert",
+      "title": "Amazon PPA and Calvert Cliffs uprate",
+      "publisher": "Constellation",
+      "published_at": "2026-09-30",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.constellationenergy.com/news/2026/09/constellation-and-amazon-announce-20-year-power-purchase-agreement-at-calvert-cliffs.html",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-crane-status",
+      "title": "Q2 2026 results and Crane restart",
+      "publisher": "Constellation",
+      "published_at": "2026-08-06",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-second-quarter-2026-results",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-crane",
+      "title": "Crane Clean Energy Center",
+      "publisher": "Constellation",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.constellationenergy.com/about/locations/crane-clean-energy-center.html",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-crane-ppa",
+      "title": "Crane restart anniversary update",
+      "publisher": "Constellation",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.constellationenergy.com/news/2025/09/one-year-later-crane-clean-energy-center-still-in-the-spotlight-and-ahead-of-schedule.html",
+      "source_type": "primary",
+      "note": "September 2025; day not captured"
+    }
+  ],
+  "changes": [
+    {
+      "id": "c-intel-highna",
+      "date": "2026-07-15",
+      "entity_ids": ["asml", "intel"],
+      "site_ids": ["intel-d1x"],
+      "type": "manufacturing_milestone",
+      "summary": "ASML reports Intel shipping a high-volume logic product using High NA EUV on selected layers.",
+      "source_ids": ["asml-highna"],
+      "prior_value": null,
+      "new_value": null
+    },
+    {
+      "id": "c-fairwater",
+      "date": "2026-06-23",
+      "entity_ids": ["microsoft"],
+      "site_ids": ["fairwater-wisconsin"],
+      "type": "status_change",
+      "summary": "Microsoft confirms its first Mount Pleasant facility is fully operational.",
+      "source_ids": ["microsoft-fairwater"],
+      "prior_value": "construction",
+      "new_value": "operating"
+    },
+    {
+      "id": "c-hyperion",
+      "date": "2026-07-13",
+      "entity_ids": ["meta"],
+      "site_ids": ["meta-hyperion"],
+      "type": "capacity_plan",
+      "summary": "Meta announces expanded 5 GW campus target; energized capacity remains unknown.",
+      "source_ids": ["meta-hyperion"],
+      "prior_value": null,
+      "new_value": {
+        "value": 5000,
+        "unit": "MW",
+        "state": "planned",
+        "basis": "compute_capacity_definition_unspecified"
+      }
+    },
+    {
+      "id": "c-sk-rubin",
+      "date": "2026-09-28",
+      "entity_ids": ["sk-hynix", "nvidia"],
+      "site_ids": [],
+      "type": "product_link",
+      "summary": "SK hynix identifies HBM4 and SOCAMM2 in Vera Rubin at the TSMC OIP event.",
+      "source_ids": ["sk-nvidia-september"],
+      "prior_value": null,
+      "new_value": null
+    },
+    {
+      "id": "c-micron-capex",
+      "date": "2026-09-30",
+      "entity_ids": ["micron"],
+      "site_ids": [],
+      "type": "capital_spending",
+      "summary": "Micron reports FY2026 net capital expenditure of $27.37 billion.",
+      "source_ids": ["micron-q4-2026"],
+      "prior_value": null,
+      "new_value": {
+        "value": 27.37,
+        "unit": "billion USD",
+        "period": "FY2026",
+        "scope": "company_wide"
+      }
+    },
+    {
+      "id": "c-calvert",
+      "date": "2026-09-30",
+      "entity_ids": ["constellation", "amazon"],
+      "site_ids": ["calvert-cliffs"],
+      "type": "power_contract",
+      "summary": "Amazon contracts 690 MW, including 190 MW of future new capacity.",
+      "source_ids": ["constellation-calvert"],
+      "prior_value": null,
+      "new_value": null
+    },
+    {
+      "id": "c-chiba",
+      "date": "2026-10-01",
+      "entity_ids": ["jera", "dell", "rhaelm"],
+      "site_ids": ["chiba-ai"],
+      "type": "announcement",
+      "summary": "Chiba MoU describes up to 400 MW supporting power and operations around 2028.",
+      "source_ids": ["jera-chiba"],
+      "prior_value": null,
+      "new_value": "announced"
+    }
+  ]
+}

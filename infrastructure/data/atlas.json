@@ -1,0 +1,3448 @@
+{
+  "schema_version": "0.1.0",
+  "metadata": {
+    "title": "AI Infrastructure Atlas",
+    "subtitle": "A first map of the physical supply chain",
+    "as_of": "2026-10-05",
+    "publication_state": "research_draft_not_published",
+    "evidence_policy": "Public primary sources; dated claims; no private conversation or mailbox content",
+    "map_policy": "Approximate locality markers only",
+    "status_policy": "Last publicly reported status, not a real-time operational audit",
+    "counts": {
+      "players": 25,
+      "featured_players": 18,
+      "sites": 25,
+      "products": 14,
+      "relationships": 28,
+      "sources": 49
+    }
+  },
+  "players": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "roles": [
+        "chip_designer",
+        "systems_platform"
+      ],
+      "description": "Designs AI accelerators and networking; foundry and memory suppliers manufacture key components.",
+      "source_ids": [
+        "nvidia-blackwell",
+        "nvidia-arizona"
+      ],
+      "featured": true,
+      "site_ids": [
+        "stargate-abilene",
+        "tsmc-arizona"
+      ]
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "roles": [
+        "chip_designer"
+      ],
+      "description": "Designs Instinct accelerators using TSMC processes; exact fab allocation is unreported here.",
+      "source_ids": [
+        "amd-mi350"
+      ],
+      "featured": true,
+      "site_ids": []
+    },
+    {
+      "id": "tsmc",
+      "name": "TSMC",
+      "roles": [
+        "foundry",
+        "advanced_packaging"
+      ],
+      "description": "Makes logic chips and provides chiplet packaging and testing.",
+      "source_ids": [
+        "tsmc-q1-2026",
+        "tsmc-ap6"
+      ],
+      "featured": true,
+      "site_ids": [
+        "tsmc-ap6",
+        "tsmc-arizona",
+        "tsmc-hsinchu",
+        "tsmc-kaohsiung"
+      ]
+    },
+    {
+      "id": "intel",
+      "name": "Intel",
+      "roles": [
+        "chip_designer",
+        "foundry"
+      ],
+      "description": "Combines processor design, wafer fabrication and process development.",
+      "source_ids": [
+        "intel-fab52",
+        "intel-d1x"
+      ],
+      "featured": true,
+      "site_ids": [
+        "intel-d1x",
+        "intel-fab52"
+      ]
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung",
+      "roles": [
+        "foundry",
+        "memory_manufacturer"
+      ],
+      "description": "Logic-foundry footprint represented by Taylor; memory operations remain a coverage gap.",
+      "source_ids": [
+        "samsung-sites"
+      ],
+      "featured": true,
+      "site_ids": [
+        "samsung-taylor"
+      ]
+    },
+    {
+      "id": "micron",
+      "name": "Micron",
+      "roles": [
+        "memory_manufacturer",
+        "advanced_packaging"
+      ],
+      "description": "DRAM, HBM and NAND supplier with separate wafer and assembly/test facilities.",
+      "source_ids": [
+        "micron-q3-2026",
+        "micron-sanand"
+      ],
+      "featured": true,
+      "site_ids": [
+        "micron-boise-id1",
+        "micron-sanand",
+        "micron-singapore-hbm",
+        "micron-singapore-nand",
+        "micron-tongluo"
+      ]
+    },
+    {
+      "id": "sk-hynix",
+      "name": "SK hynix",
+      "roles": [
+        "memory_manufacturer",
+        "advanced_packaging"
+      ],
+      "description": "Builds DRAM and HBM capacity, including separate packaging facilities.",
+      "source_ids": [
+        "sk-m15x",
+        "sk-pt7"
+      ],
+      "featured": true,
+      "site_ids": [
+        "sk-m15x",
+        "sk-pt7",
+        "sk-yongin"
+      ]
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "roles": [
+        "equipment_supplier"
+      ],
+      "description": "Supplies lithography tools; an Intel Oregon installation is explicitly documented.",
+      "source_ids": [
+        "intel-d1x",
+        "asml-highna"
+      ],
+      "featured": true,
+      "site_ids": [
+        "intel-d1x"
+      ]
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon / AWS",
+      "roles": [
+        "cloud_provider",
+        "chip_designer",
+        "compute_operator"
+      ],
+      "description": "Operates Rainier and designs Trainium; Anthropic is a compute customer.",
+      "source_ids": [
+        "aws-rainier-online"
+      ],
+      "featured": true,
+      "site_ids": [
+        "calvert-cliffs",
+        "rainier-indiana"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "roles": [
+        "ai_lab",
+        "compute_customer"
+      ],
+      "description": "Uses AWS Rainier and has contracted access to Colossus 1.",
+      "source_ids": [
+        "aws-rainier-online",
+        "xai-anthropic"
+      ],
+      "featured": true,
+      "site_ids": [
+        "colossus-1",
+        "rainier-indiana"
+      ]
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "roles": [
+        "ai_lab",
+        "compute_customer"
+      ],
+      "description": "Uses Oracle-operated Abilene infrastructure and participates in Stargate projects.",
+      "source_ids": [
+        "openai-abilene",
+        "openai-norway"
+      ],
+      "featured": true,
+      "site_ids": [
+        "stargate-abilene",
+        "stargate-norway"
+      ]
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "roles": [
+        "cloud_provider",
+        "compute_operator"
+      ],
+      "description": "Operates Oracle Cloud Infrastructure at Stargate Abilene.",
+      "source_ids": [
+        "openai-abilene"
+      ],
+      "featured": true,
+      "site_ids": [
+        "stargate-abilene"
+      ]
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "roles": [
+        "cloud_provider",
+        "ai_lab",
+        "compute_operator"
+      ],
+      "description": "Operates Fairwater and purchases nuclear power under the Crane restart agreement.",
+      "source_ids": [
+        "microsoft-fairwater",
+        "constellation-crane-ppa"
+      ],
+      "featured": true,
+      "site_ids": [
+        "crane",
+        "fairwater-wisconsin"
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google / Alphabet",
+      "roles": [
+        "cloud_provider",
+        "ai_lab",
+        "compute_operator"
+      ],
+      "description": "Developing a full-stack AI hub in Visakhapatnam.",
+      "source_ids": [
+        "google-vizag-build"
+      ],
+      "featured": true,
+      "site_ids": [
+        "google-vizag"
+      ]
+    },
+    {
+      "id": "meta",
+      "name": "Meta",
+      "roles": [
+        "ai_lab",
+        "compute_operator"
+      ],
+      "description": "Building the Hyperion training campus in Louisiana.",
+      "source_ids": [
+        "meta-hyperion"
+      ],
+      "featured": true,
+      "site_ids": [
+        "meta-hyperion"
+      ]
+    },
+    {
+      "id": "xai",
+      "name": "xAI / SpaceXAI",
+      "roles": [
+        "ai_lab",
+        "compute_operator"
+      ],
+      "description": "Runs Colossus; current company pages use SpaceXAI branding.",
+      "source_ids": [
+        "xai-memphis",
+        "xai-anthropic"
+      ],
+      "featured": true,
+      "site_ids": [
+        "colossus-1"
+      ]
+    },
+    {
+      "id": "constellation",
+      "name": "Constellation",
+      "roles": [
+        "power_generator"
+      ],
+      "description": "Operates nuclear assets with distinct power-purchase and capacity-expansion agreements.",
+      "source_ids": [
+        "constellation-calvert",
+        "constellation-crane-status"
+      ],
+      "featured": true,
+      "site_ids": [
+        "calvert-cliffs",
+        "crane"
+      ]
+    },
+    {
+      "id": "jera",
+      "name": "JERA",
+      "roles": [
+        "power_generator"
+      ],
+      "description": "Power and site partner for the proposed Chiba AI infrastructure project.",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "featured": true,
+      "site_ids": [
+        "chiba-ai"
+      ]
+    },
+    {
+      "id": "crusoe",
+      "name": "Crusoe",
+      "roles": [
+        "data_center_developer"
+      ],
+      "description": "Developer of Abilene infrastructure.",
+      "source_ids": [
+        "crusoe-abilene"
+      ],
+      "featured": false,
+      "site_ids": [
+        "stargate-abilene"
+      ]
+    },
+    {
+      "id": "nscale",
+      "name": "Nscale",
+      "roles": [
+        "data_center_developer",
+        "cloud_provider"
+      ],
+      "description": "Developer and proposed joint-venture owner of Stargate Norway.",
+      "source_ids": [
+        "openai-norway"
+      ],
+      "featured": false,
+      "site_ids": [
+        "stargate-norway"
+      ]
+    },
+    {
+      "id": "aker",
+      "name": "Aker",
+      "roles": [
+        "infrastructure_partner"
+      ],
+      "description": "Proposed equal joint-venture owner with Nscale.",
+      "source_ids": [
+        "openai-norway"
+      ],
+      "featured": false,
+      "site_ids": [
+        "stargate-norway"
+      ]
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "roles": [
+        "system_supplier"
+      ],
+      "description": "Proposed rack-scale compute platform supplier at Chiba.",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "featured": false,
+      "site_ids": [
+        "chiba-ai"
+      ]
+    },
+    {
+      "id": "rhaelm",
+      "name": "RHAELM",
+      "roles": [
+        "data_center_developer"
+      ],
+      "description": "Leads proposed Chiba project delivery.",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "featured": false,
+      "site_ids": [
+        "chiba-ai"
+      ]
+    },
+    {
+      "id": "adaniconnex",
+      "name": "AdaniConneX",
+      "roles": [
+        "infrastructure_partner"
+      ],
+      "description": "Named partner in Google’s Visakhapatnam project.",
+      "source_ids": [
+        "google-vizag-build"
+      ],
+      "featured": false,
+      "site_ids": [
+        "google-vizag"
+      ]
+    },
+    {
+      "id": "nxtra",
+      "name": "Nxtra by Airtel",
+      "roles": [
+        "infrastructure_partner"
+      ],
+      "description": "Named partner in Google’s Visakhapatnam project.",
+      "source_ids": [
+        "google-vizag-build"
+      ],
+      "featured": false,
+      "site_ids": [
+        "google-vizag"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": "blackwell",
+      "name": "NVIDIA Blackwell GPU",
+      "type": "accelerator",
+      "designer_id": "nvidia",
+      "process_nodes": [
+        "TSMC 4NP"
+      ],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "nvidia-blackwell",
+        "nvidia-arizona"
+      ]
+    },
+    {
+      "id": "h200",
+      "name": "NVIDIA H200",
+      "type": "accelerator",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": [
+        "HBM3E"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "micron-h200"
+      ]
+    },
+    {
+      "id": "gb300",
+      "name": "NVIDIA Grace Blackwell GB300",
+      "type": "accelerator_system",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": [
+        "HBM3E"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "sk-nvidia"
+      ]
+    },
+    {
+      "id": "rubin",
+      "name": "NVIDIA Vera Rubin",
+      "type": "accelerator_system",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": [
+        "HBM4",
+        "SOCAMM2"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "sk-nvidia-september"
+      ]
+    },
+    {
+      "id": "mi350",
+      "name": "AMD Instinct MI350 family",
+      "type": "accelerator",
+      "designer_id": "amd",
+      "process_nodes": [
+        "TSMC 3nm",
+        "TSMC 6nm"
+      ],
+      "memory": [
+        "HBM3E"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "amd-mi350"
+      ]
+    },
+    {
+      "id": "panther-lake",
+      "name": "Intel Panther Lake / Core Ultra Series 3",
+      "type": "client_processor",
+      "designer_id": "intel",
+      "process_nodes": [
+        "Intel 18A"
+      ],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "intel-fab52"
+      ]
+    },
+    {
+      "id": "clearwater-forest",
+      "name": "Intel Clearwater Forest / Xeon 6+",
+      "type": "server_processor",
+      "designer_id": "intel",
+      "process_nodes": [
+        "Intel 18A"
+      ],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "intel-fab52"
+      ]
+    },
+    {
+      "id": "trainium2",
+      "name": "AWS Trainium2",
+      "type": "accelerator",
+      "designer_id": "amazon",
+      "process_nodes": [],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "aws-rainier-online"
+      ]
+    },
+    {
+      "id": "micron-hbm3e",
+      "name": "Micron HBM3E",
+      "type": "memory",
+      "designer_id": "micron",
+      "process_nodes": [],
+      "memory": [
+        "HBM3E"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "micron-h200"
+      ]
+    },
+    {
+      "id": "sk-hbm4",
+      "name": "SK hynix HBM4",
+      "type": "memory",
+      "designer_id": "sk-hynix",
+      "process_nodes": [],
+      "memory": [
+        "HBM4"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "sk-nvidia-september",
+        "sk-tsmc"
+      ]
+    },
+    {
+      "id": "sk-hbm3e",
+      "name": "SK hynix HBM3E",
+      "type": "memory",
+      "designer_id": "sk-hynix",
+      "process_nodes": [],
+      "memory": [
+        "HBM3E"
+      ],
+      "status": "reported",
+      "source_ids": [
+        "sk-nvidia"
+      ]
+    },
+    {
+      "id": "asml-exe5000",
+      "name": "ASML TWINSCAN EXE:5000",
+      "type": "lithography_equipment",
+      "designer_id": "asml",
+      "process_nodes": [],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "intel-d1x"
+      ]
+    },
+    {
+      "id": "gb200",
+      "name": "NVIDIA Grace Blackwell GB200",
+      "type": "accelerator_system",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "openai-abilene",
+        "nvidia-blackwell"
+      ]
+    },
+    {
+      "id": "h100",
+      "name": "NVIDIA H100",
+      "type": "accelerator",
+      "designer_id": "nvidia",
+      "process_nodes": [],
+      "memory": null,
+      "status": "reported",
+      "source_ids": [
+        "xai-anthropic"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "id": "rainier-program",
+      "name": "AWS Project Rainier",
+      "entity_ids": [
+        "amazon",
+        "anthropic"
+      ],
+      "site_ids": [
+        "rainier-indiana"
+      ],
+      "status": "operating",
+      "reported_at": "2025-11-03",
+      "source_ids": [
+        "aws-rainier-online"
+      ],
+      "capacity_observations": [
+        {
+          "value": 500000,
+          "unit": "Trainium2 chips",
+          "qualifier": "nearly",
+          "basis": "accelerator_count",
+          "scope": "multi_site_program",
+          "state": "operating",
+          "source_ids": [
+            "aws-rainier-online"
+          ],
+          "additive": false
+        }
+      ],
+      "note": "Indiana is one public location. Do not allocate the entire program chip count to that site."
+    }
+  ],
+  "coverage": {
+    "mode": "curated_seed_not_census",
+    "description": "Expandable public-source sample across equipment, logic, memory, packaging, compute and power. No global market-share, output or power totals.",
+    "geographic_gaps": [
+      "Mainland China",
+      "Southeast Asia beyond Singapore",
+      "Middle East",
+      "Africa",
+      "Latin America"
+    ],
+    "company_gaps": [
+      "SMIC",
+      "Huawei",
+      "CXMT",
+      "YMTC",
+      "UMC",
+      "GlobalFoundries",
+      "Rapidus",
+      "ASE",
+      "Amkor",
+      "JCET",
+      "Broadcom",
+      "Marvell",
+      "CoreWeave"
+    ],
+    "layer_gaps": [
+      "Silicon wafers and substrates",
+      "Chemicals and gases",
+      "EDA and IP",
+      "Etch/deposition/metrology tools",
+      "Server assembly factories",
+      "Optical/networking manufacturing",
+      "Cooling equipment",
+      "Transformers and grid interconnection queues"
+    ],
+    "unknowns": [
+      "Most exact chip-to-fab assignments",
+      "Fab yields, utilization and qualified wafer starts",
+      "Site-level GPU allocation for multisite deployments",
+      "Current energized power versus planned campus capacity",
+      "Customer shares and confidential supply contracts"
+    ],
+    "rules": [
+      "Null means not established by this evidence set, never zero.",
+      "A company supplying a customer does not establish which fab supplied that customer.",
+      "Links describe disclosed relationships, not provenance of a particular deployed chip.",
+      "All map coordinates are approximate editorial locality markers, never claimed facility coordinates.",
+      "No capacity or spending totals: measurements differ, periods overlap and shared assets would double-count.",
+      "Company announcements verify what was announced; they do not independently verify delivery or performance.",
+      "Last-reported status and source date must remain visible. A past target date does not prove operation.",
+      "Separate power contracts, generation, facility power, IT load, GPU counts and wafer output.",
+      "Separate construction, commissioning, qualification, volume production and mature utilization.",
+      "Process-node names are vendor labels, not directly comparable physical dimensions."
+    ]
+  },
+  "sites": [
+    {
+      "id": "tsmc-arizona",
+      "name": "TSMC Arizona / Phoenix",
+      "layer": "logic_fab",
+      "country": "US",
+      "region": "Arizona",
+      "locality": "Phoenix",
+      "location": {
+        "latitude": 33.45,
+        "longitude": -112.07,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Phoenix area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "nvidia-arizona",
+          "nvidia-blackwell"
+        ]
+      },
+      "owner_ids": [
+        "tsmc"
+      ],
+      "operator_ids": [
+        "tsmc"
+      ],
+      "customer_ids": [
+        "nvidia"
+      ],
+      "product_ids": [
+        "blackwell"
+      ],
+      "outputs": [
+        "Logic wafers",
+        "AI accelerators"
+      ],
+      "process_nodes": [
+        "4nm-class; Blackwell 4NP"
+      ],
+      "last_reported_status": "operating",
+      "status_reported_at": "2025-10-17",
+      "status_note": "Operating phase only; later campus expansion is separate and not treated as live output",
+      "verified_on": "2026-10-05",
+      "summary": "Blackwell wafer production is explicitly tied to this location.",
+      "source_ids": [
+        "nvidia-arizona",
+        "nvidia-blackwell"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "tsmc-hsinchu",
+      "name": "TSMC N2 Hsinchu",
+      "layer": "logic_fab",
+      "country": "TW",
+      "region": "Hsinchu",
+      "locality": "Hsinchu",
+      "location": {
+        "latitude": 24.8,
+        "longitude": 120.97,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Hsinchu area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "tsmc-q1-2026"
+        ]
+      },
+      "owner_ids": [
+        "tsmc"
+      ],
+      "operator_ids": [
+        "tsmc"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "Logic wafers; smartphone and HPC/AI"
+      ],
+      "process_nodes": [
+        "TSMC N2"
+      ],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-04-16",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "N2 volume manufacturing is ramping; named product allocations are not disclosed here.",
+      "source_ids": [
+        "tsmc-q1-2026"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "tsmc-kaohsiung",
+      "name": "TSMC N2 Kaohsiung",
+      "layer": "logic_fab",
+      "country": "TW",
+      "region": "Kaohsiung",
+      "locality": "Kaohsiung",
+      "location": {
+        "latitude": 22.63,
+        "longitude": 120.3,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Kaohsiung area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "tsmc-q1-2026"
+        ]
+      },
+      "owner_ids": [
+        "tsmc"
+      ],
+      "operator_ids": [
+        "tsmc"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "Logic wafers; smartphone and HPC/AI"
+      ],
+      "process_nodes": [
+        "TSMC N2"
+      ],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-04-16",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "A second Taiwan location ramping N2 production.",
+      "source_ids": [
+        "tsmc-q1-2026"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "tsmc-ap6",
+      "name": "TSMC Advanced Backend Fab 6",
+      "layer": "advanced_packaging",
+      "country": "TW",
+      "region": "Miaoli",
+      "locality": "Zhunan",
+      "location": {
+        "latitude": 24.69,
+        "longitude": 120.88,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Zhunan area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "tsmc-ap6"
+        ]
+      },
+      "owner_ids": [
+        "tsmc"
+      ],
+      "operator_ids": [
+        "tsmc"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "Advanced packaging",
+        "Silicon stacking",
+        "Testing"
+      ],
+      "process_nodes": [
+        "SoIC",
+        "InFO",
+        "CoWoS"
+      ],
+      "last_reported_status": "operating",
+      "status_reported_at": "2023-06-08",
+      "status_note": "Opening confirmed in 2023; current utilization not independently established",
+      "verified_on": "2026-10-05",
+      "summary": "Advanced packaging and testing facility; specific customer products are not assigned.",
+      "source_ids": [
+        "tsmc-ap6"
+      ],
+      "target": null,
+      "capacity_observations": [
+        {
+          "value": 1000000,
+          "unit": "300mm_wafer_equivalent_per_year",
+          "basis": "advanced_packaging_throughput",
+          "state": "design_estimate",
+          "label": "Estimated packaging capacity, not front-end wafer starts",
+          "period": null,
+          "qualifier": "greater_than",
+          "scope_id": "tsmc-ap6",
+          "source_ids": [
+            "tsmc-ap6"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "intel-fab52",
+      "name": "Intel Fab 52",
+      "layer": "logic_fab",
+      "country": "US",
+      "region": "Arizona",
+      "locality": "Chandler",
+      "location": {
+        "latitude": 33.31,
+        "longitude": -111.84,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Chandler area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "intel-fab52",
+          "intel-18a"
+        ]
+      },
+      "owner_ids": [
+        "intel"
+      ],
+      "operator_ids": [
+        "intel"
+      ],
+      "customer_ids": [
+        "intel"
+      ],
+      "product_ids": [
+        "panther-lake",
+        "clearwater-forest"
+      ],
+      "outputs": [
+        "Client processors",
+        "Server processors"
+      ],
+      "process_nodes": [
+        "Intel 18A"
+      ],
+      "last_reported_status": "operating",
+      "status_reported_at": "2025-10-09",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "Intel explicitly links this fab to Panther Lake and Clearwater Forest.",
+      "source_ids": [
+        "intel-fab52",
+        "intel-18a"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "intel-d1x",
+      "name": "Intel D1X development fab",
+      "layer": "research_fab",
+      "country": "US",
+      "region": "Oregon",
+      "locality": "Hillsboro",
+      "location": {
+        "latitude": 45.52,
+        "longitude": -122.99,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Hillsboro area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "intel-d1x",
+          "asml-highna"
+        ]
+      },
+      "owner_ids": [
+        "intel"
+      ],
+      "operator_ids": [
+        "intel"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "Process research and development"
+      ],
+      "process_nodes": [
+        "High NA EUV development"
+      ],
+      "last_reported_status": "operating",
+      "status_reported_at": "2024-04-18",
+      "status_note": "R&amp;D facility; not counted as a volume-output fab",
+      "verified_on": "2026-10-05",
+      "summary": "Process-development facility with a documented ASML High NA installation.",
+      "source_ids": [
+        "intel-d1x",
+        "asml-highna"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "samsung-taylor",
+      "name": "Samsung Taylor",
+      "layer": "logic_fab",
+      "country": "US",
+      "region": "Texas",
+      "locality": "Taylor",
+      "location": {
+        "latitude": 30.57,
+        "longitude": -97.41,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Taylor area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "samsung-taylor",
+          "samsung-sites"
+        ]
+      },
+      "owner_ids": [
+        "samsung"
+      ],
+      "operator_ids": [
+        "samsung"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "Planned advanced logic"
+      ],
+      "process_nodes": [
+        "Advanced; specific node unverified"
+      ],
+      "last_reported_status": "construction",
+      "status_reported_at": null,
+      "status_note": "Undated official project page describes construction and nearing operational status",
+      "verified_on": "2026-10-05",
+      "summary": "Advanced-logic project; production start and named customers remain unverified in this seed.",
+      "source_ids": [
+        "samsung-taylor",
+        "samsung-sites"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "micron-boise-id1",
+      "name": "Micron Idaho ID1",
+      "layer": "memory_fab",
+      "country": "US",
+      "region": "Idaho",
+      "locality": "Boise",
+      "location": {
+        "latitude": 43.62,
+        "longitude": -116.2,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Boise area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "micron-q3-2026",
+          "micron-us-july"
+        ]
+      },
+      "owner_ids": [
+        "micron"
+      ],
+      "operator_ids": [
+        "micron"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "DRAM"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-07-09",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "New DRAM fab; planned wafer output is distinct from mature production volume.",
+      "source_ids": [
+        "micron-q3-2026",
+        "micron-us-july"
+      ],
+      "target": {
+        "event": "First wafer output",
+        "period": "mid-2027",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "micron-tongluo",
+      "name": "Micron Tongluo P5",
+      "layer": "memory_fab",
+      "country": "TW",
+      "region": "Miaoli",
+      "locality": "Tongluo",
+      "location": {
+        "latitude": 24.49,
+        "longitude": 120.79,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Tongluo area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "micron-tongluo",
+          "micron-q3-2026"
+        ]
+      },
+      "owner_ids": [
+        "micron"
+      ],
+      "operator_ids": [
+        "micron"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "DRAM",
+        "HBM-related production"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-06-25",
+      "status_note": "Acquisition completed; second cleanroom construction reported; not proof of current Micron output",
+      "verified_on": "2026-10-05",
+      "summary": "Acquired fab being expanded for DRAM, including HBM-related supply.",
+      "source_ids": [
+        "micron-tongluo",
+        "micron-q3-2026"
+      ],
+      "target": {
+        "event": "Meaningful shipments from existing fab",
+        "period": "mid-2027",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "micron-singapore-nand",
+      "name": "Micron Singapore NAND expansion",
+      "layer": "memory_fab",
+      "country": "SG",
+      "region": "Singapore",
+      "locality": "Singapore",
+      "location": {
+        "latitude": 1.35,
+        "longitude": 103.82,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Singapore area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "micron-singapore-nand"
+        ]
+      },
+      "owner_ids": [
+        "micron"
+      ],
+      "operator_ids": [
+        "micron"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "NAND flash wafers"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-01-27",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "New wafer fab within an existing NAND complex.",
+      "source_ids": [
+        "micron-singapore-nand"
+      ],
+      "target": {
+        "event": "Initial wafer output",
+        "period": "2028-H2",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "micron-singapore-hbm",
+      "name": "Micron Singapore HBM packaging",
+      "layer": "advanced_packaging",
+      "country": "SG",
+      "region": "Singapore",
+      "locality": "Singapore",
+      "location": {
+        "latitude": 1.35,
+        "longitude": 103.82,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Singapore area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "micron-singapore-hbm",
+          "micron-q3-2026"
+        ]
+      },
+      "owner_ids": [
+        "micron"
+      ],
+      "operator_ids": [
+        "micron"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "HBM packaging and test"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-06-25",
+      "status_note": "Original 2026 operations target is not treated as proof of opening",
+      "verified_on": "2026-10-05",
+      "summary": "HBM packaging expansion, separate from the neighboring NAND wafer fab.",
+      "source_ids": [
+        "micron-singapore-hbm",
+        "micron-q3-2026"
+      ],
+      "target": {
+        "event": "Meaningful additional packaging capacity",
+        "period": "2027-H1",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "micron-sanand",
+      "name": "Micron Sanand assembly and test",
+      "layer": "assembly_test",
+      "country": "IN",
+      "region": "Gujarat",
+      "locality": "Sanand",
+      "location": {
+        "latitude": 22.99,
+        "longitude": 72.38,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Sanand area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "micron-sanand"
+        ]
+      },
+      "owner_ids": [
+        "micron"
+      ],
+      "operator_ids": [
+        "micron"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "DRAM assembly and test",
+        "NAND assembly and test"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-02-28",
+      "status_note": "Assembly and test, not front-end wafer fabrication",
+      "verified_on": "2026-10-05",
+      "summary": "Converts imported DRAM and NAND wafers into finished memory/storage products.",
+      "source_ids": [
+        "micron-sanand"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "sk-m15x",
+      "name": "SK hynix M15X",
+      "layer": "memory_fab",
+      "country": "KR",
+      "region": "North Chungcheong",
+      "locality": "Cheongju",
+      "location": {
+        "latitude": 36.64,
+        "longitude": 127.49,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Cheongju area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "sk-m15x",
+          "sk-gsa",
+          "sk-q2-2026"
+        ]
+      },
+      "owner_ids": [
+        "sk-hynix"
+      ],
+      "operator_ids": [
+        "sk-hynix"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "DRAM",
+        "HBM"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "unknown",
+      "status_reported_at": "2026-07-29",
+      "status_note": "Latest retrieved update says accelerating mass-production schedule; does not establish full operation",
+      "verified_on": "2026-10-05",
+      "summary": "DRAM/HBM expansion with an opened cleanroom; exact mass-production state needs confirmation.",
+      "source_ids": [
+        "sk-m15x",
+        "sk-gsa",
+        "sk-q2-2026"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "sk-pt7",
+      "name": "SK hynix P&amp;T7",
+      "layer": "advanced_packaging",
+      "country": "KR",
+      "region": "North Chungcheong",
+      "locality": "Cheongju",
+      "location": {
+        "latitude": 36.64,
+        "longitude": 127.49,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Cheongju area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "sk-pt7"
+        ]
+      },
+      "owner_ids": [
+        "sk-hynix"
+      ],
+      "operator_ids": [
+        "sk-hynix"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "HBM packaging",
+        "Wafer test"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-04-22",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "Dedicated AI-memory packaging project.",
+      "source_ids": [
+        "sk-pt7"
+      ],
+      "target": {
+        "event": "WT line / WLP line completion",
+        "period": "2027-10 / 2028-02",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "sk-yongin",
+      "name": "SK hynix Yongin first fab",
+      "layer": "memory_fab",
+      "country": "KR",
+      "region": "Gyeonggi",
+      "locality": "Yongin",
+      "location": {
+        "latitude": 37.24,
+        "longitude": 127.18,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Yongin area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "sk-yongin"
+        ]
+      },
+      "owner_ids": [
+        "sk-hynix"
+      ],
+      "operator_ids": [
+        "sk-hynix"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "High-performance memory"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-02-25",
+      "status_note": "Cleanroom opening is not equivalent to qualified volume output",
+      "verified_on": "2026-10-05",
+      "summary": "First fab and cleanroom phases in a larger memory campus.",
+      "source_ids": [
+        "sk-yongin"
+      ],
+      "target": {
+        "event": "First cleanroom opening",
+        "period": "2027-02",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "stargate-abilene",
+      "name": "Stargate Abilene",
+      "layer": "data_center",
+      "country": "US",
+      "region": "Texas",
+      "locality": "Abilene",
+      "location": {
+        "latitude": 32.45,
+        "longitude": -99.73,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Abilene area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "openai-abilene",
+          "crusoe-abilene"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": [
+        "oracle"
+      ],
+      "customer_ids": [
+        "openai"
+      ],
+      "product_ids": [
+        "gb200"
+      ],
+      "outputs": [
+        "AI training and inference"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-04-29",
+      "status_note": "Operating campus; full planned power energization not established. Separate Microsoft campus is excluded",
+      "verified_on": "2026-10-05",
+      "summary": "OpenAI training infrastructure running on OCI with NVIDIA GB200 systems.",
+      "source_ids": [
+        "openai-abilene",
+        "crusoe-abilene"
+      ],
+      "target": null,
+      "capacity_observations": [
+        {
+          "value": 1200,
+          "unit": "MW",
+          "basis": "total_facility_power",
+          "state": "planned",
+          "label": "Original eight-building campus plan",
+          "period": null,
+          "qualifier": "planned_buildout",
+          "scope_id": "stargate-abilene",
+          "source_ids": [
+            "crusoe-abilene"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "rainier-indiana",
+      "name": "AWS Rainier: St. Joseph County node",
+      "layer": "data_center",
+      "country": "US",
+      "region": "Indiana",
+      "locality": "St. Joseph County / South Bend",
+      "location": {
+        "latitude": 41.68,
+        "longitude": -86.25,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "St. Joseph County / South Bend area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "aws-rainier-location",
+          "aws-rainier-online"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": [
+        "amazon"
+      ],
+      "customer_ids": [
+        "anthropic"
+      ],
+      "product_ids": [
+        "trainium2"
+      ],
+      "outputs": [
+        "AI training and inference"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "operating",
+      "status_reported_at": "2025-11-03",
+      "status_note": "Program is operational; node-specific chip count and energized power are not disclosed",
+      "verified_on": "2026-10-05",
+      "summary": "A public location in AWS’s operating multisite Rainier program.",
+      "source_ids": [
+        "aws-rainier-location",
+        "aws-rainier-online"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "fairwater-wisconsin",
+      "name": "Microsoft Fairwater: first Wisconsin facility",
+      "layer": "data_center",
+      "country": "US",
+      "region": "Wisconsin",
+      "locality": "Mount Pleasant",
+      "location": {
+        "latitude": 42.71,
+        "longitude": -87.89,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Mount Pleasant area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "microsoft-fairwater"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": [
+        "microsoft"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "AI computing"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-06-23",
+      "status_note": "Record excludes the adjacent second facility and its 2028 completion target",
+      "verified_on": "2026-10-05",
+      "summary": "First facility is fully operational; adjacent second facility remains under construction.",
+      "source_ids": [
+        "microsoft-fairwater"
+      ],
+      "target": null,
+      "capacity_observations": [],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "meta-hyperion",
+      "name": "Meta Hyperion / Richland Parish",
+      "layer": "data_center",
+      "country": "US",
+      "region": "Louisiana",
+      "locality": "Richland Parish / Rayville",
+      "location": {
+        "latitude": 32.48,
+        "longitude": -91.75,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Richland Parish / Rayville area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "meta-hyperion"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": [
+        "meta"
+      ],
+      "customer_ids": [
+        "meta"
+      ],
+      "product_ids": [],
+      "outputs": [
+        "AI training"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-07-13",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "Large AI training campus with an expanded future capacity plan.",
+      "source_ids": [
+        "meta-hyperion"
+      ],
+      "target": null,
+      "capacity_observations": [
+        {
+          "value": 5000,
+          "unit": "MW",
+          "basis": "compute_capacity_definition_unspecified",
+          "state": "planned",
+          "label": "Expanded campus target",
+          "period": null,
+          "qualifier": "future_buildout",
+          "scope_id": "meta-hyperion",
+          "source_ids": [
+            "meta-hyperion"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "google-vizag",
+      "name": "Google Visakhapatnam AI hub",
+      "layer": "data_center",
+      "country": "IN",
+      "region": "Andhra Pradesh",
+      "locality": "Visakhapatnam",
+      "location": {
+        "latitude": 17.69,
+        "longitude": 83.22,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Visakhapatnam area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "google-vizag-announce",
+          "google-vizag-build"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": [
+        "google"
+      ],
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "AI and cloud computing"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "construction",
+      "status_reported_at": "2026-04-28",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "AI hub combines data-center, energy and subsea connectivity investments.",
+      "source_ids": [
+        "google-vizag-announce",
+        "google-vizag-build"
+      ],
+      "target": null,
+      "capacity_observations": [
+        {
+          "value": null,
+          "unit": "MW",
+          "basis": "compute_capacity_definition_unspecified",
+          "state": "planned",
+          "label": "Gigawatt-scale; no exact comparable power basis",
+          "period": null,
+          "qualifier": "exact_as_reported",
+          "scope_id": "google-vizag",
+          "source_ids": [
+            "google-vizag-announce"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "stargate-norway",
+      "name": "Stargate Norway / Kvandal",
+      "layer": "data_center",
+      "country": "NO",
+      "region": "Nordland",
+      "locality": "Narvik",
+      "location": {
+        "latitude": 68.44,
+        "longitude": 17.43,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Narvik area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "openai-norway",
+          "nscale-norway"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": null,
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "AI computing"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "announced",
+      "status_reported_at": "2025-07-31",
+      "status_note": "Expected 50/50 ownership and possible offtake are proposed roles, not completed ownership or delivery",
+      "verified_on": "2026-10-05",
+      "summary": "Nscale/Aker project with OpenAI as a potential initial offtaker.",
+      "source_ids": [
+        "openai-norway",
+        "nscale-norway"
+      ],
+      "target": {
+        "event": "Target 100,000 GPUs",
+        "period": "2026-end",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [
+        {
+          "value": 230,
+          "unit": "MW",
+          "basis": "capacity_definition_unspecified",
+          "state": "planned",
+          "label": "Initial planned capacity",
+          "period": null,
+          "qualifier": "exact_as_reported",
+          "scope_id": "stargate-norway",
+          "source_ids": [
+            "openai-norway"
+          ],
+          "additive": false
+        },
+        {
+          "value": 290,
+          "unit": "MW",
+          "basis": "capacity_definition_unspecified",
+          "state": "aspirational",
+          "label": "Additional expansion ambition",
+          "period": null,
+          "qualifier": "exact_as_reported",
+          "scope_id": "stargate-norway",
+          "source_ids": [
+            "openai-norway"
+          ],
+          "additive": false
+        },
+        {
+          "value": 100000,
+          "unit": "GPU",
+          "basis": "accelerator_count",
+          "state": "planned",
+          "label": "Initial GPU target",
+          "period": "2026-end",
+          "qualifier": "exact_as_reported",
+          "scope_id": "stargate-norway",
+          "source_ids": [
+            "openai-norway"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "colossus-1",
+      "name": "Colossus 1",
+      "layer": "data_center",
+      "country": "US",
+      "region": "Tennessee",
+      "locality": "Memphis",
+      "location": {
+        "latitude": 35.15,
+        "longitude": -90.05,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Memphis area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "xai-anthropic",
+          "xai-memphis"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": [
+        "xai"
+      ],
+      "customer_ids": [
+        "anthropic",
+        "xai"
+      ],
+      "product_ids": [
+        "h100",
+        "h200",
+        "gb200"
+      ],
+      "outputs": [
+        "AI training",
+        "AI inference"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-05-06",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "NVIDIA cluster with announced Anthropic access; separate later campuses are excluded.",
+      "source_ids": [
+        "xai-anthropic",
+        "xai-memphis"
+      ],
+      "target": null,
+      "capacity_observations": [
+        {
+          "value": 220000,
+          "unit": "GPU",
+          "basis": "accelerator_count",
+          "state": "reported_installed",
+          "label": "NVIDIA GPUs across multiple models",
+          "period": null,
+          "qualifier": "greater_than",
+          "scope_id": "colossus-1",
+          "source_ids": [
+            "xai-anthropic"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "chiba-ai",
+      "name": "Chiba AI infrastructure project",
+      "layer": "data_center",
+      "country": "JP",
+      "region": "Chiba",
+      "locality": "Chiba",
+      "location": {
+        "latitude": 35.61,
+        "longitude": 140.11,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Chiba area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "jera-chiba"
+        ]
+      },
+      "owner_ids": null,
+      "operator_ids": null,
+      "customer_ids": null,
+      "product_ids": [],
+      "outputs": [
+        "AI computing"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "announced",
+      "status_reported_at": "2026-10-01",
+      "status_note": "MoU and development plan, not operating compute; Dell is a systems supplier",
+      "verified_on": "2026-10-05",
+      "summary": "Proposed behind-the-meter compute project at JERA’s Chiba power station.",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "target": {
+        "event": "Operations begin",
+        "period": "around-2028",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [
+        {
+          "value": 400,
+          "unit": "MW",
+          "basis": "power_supply_capacity",
+          "state": "planned",
+          "label": "Maximum supporting power",
+          "period": "around-2028",
+          "qualifier": "up_to",
+          "scope_id": "chiba-ai",
+          "source_ids": [
+            "jera-chiba"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "calvert-cliffs",
+      "name": "Calvert Cliffs Clean Energy Center",
+      "layer": "power_generation",
+      "country": "US",
+      "region": "Maryland",
+      "locality": "Lusby",
+      "location": {
+        "latitude": 38.41,
+        "longitude": -76.46,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Lusby area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "constellation-calvert"
+        ]
+      },
+      "owner_ids": [
+        "constellation"
+      ],
+      "operator_ids": [
+        "constellation"
+      ],
+      "customer_ids": [
+        "amazon"
+      ],
+      "product_ids": [],
+      "outputs": [
+        "Grid electricity"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "operating",
+      "status_reported_at": "2026-09-30",
+      "status_note": "Contract supports regional grid supply, not a dedicated physical connection to a mapped Amazon data center",
+      "verified_on": "2026-10-05",
+      "summary": "Operating nuclear plant with Amazon PPA and a separately planned uprate.",
+      "source_ids": [
+        "constellation-calvert"
+      ],
+      "target": {
+        "event": "New uprate capacity online",
+        "period": "2030–2032",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [
+        {
+          "value": 1790,
+          "unit": "MW",
+          "basis": "plant_generation_capacity",
+          "state": "operating",
+          "label": "Existing plant generation capacity",
+          "period": null,
+          "qualifier": "exact_as_reported",
+          "scope_id": "calvert-cliffs",
+          "source_ids": [
+            "constellation-calvert"
+          ],
+          "additive": false
+        },
+        {
+          "value": 690,
+          "unit": "MW",
+          "basis": "contracted_power",
+          "state": "contracted",
+          "label": "20-year Amazon PPA, including planned uprate",
+          "period": null,
+          "qualifier": "exact_as_reported",
+          "scope_id": "calvert-cliffs",
+          "source_ids": [
+            "constellation-calvert"
+          ],
+          "additive": false
+        },
+        {
+          "value": 190,
+          "unit": "MW",
+          "basis": "incremental_generation_capacity",
+          "state": "planned",
+          "label": "New uprate; included within 690 MW contract",
+          "period": "2030–2032",
+          "qualifier": "approximately",
+          "scope_id": "calvert-cliffs",
+          "source_ids": [
+            "constellation-calvert"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    },
+    {
+      "id": "crane",
+      "name": "Crane Clean Energy Center",
+      "layer": "power_generation",
+      "country": "US",
+      "region": "Pennsylvania",
+      "locality": "Middletown",
+      "location": {
+        "latitude": 40.2,
+        "longitude": -76.73,
+        "precision": "approximate_city_or_region_center",
+        "display_label": "Middletown area; approximate marker, not facility coordinates",
+        "coordinate_source": "Editorial rounded locality marker; public sources verify locality, not coordinates",
+        "public_location_source_ids": [
+          "constellation-crane-status",
+          "constellation-crane",
+          "constellation-crane-ppa"
+        ]
+      },
+      "owner_ids": [
+        "constellation"
+      ],
+      "operator_ids": [
+        "constellation"
+      ],
+      "customer_ids": [
+        "microsoft"
+      ],
+      "product_ids": [],
+      "outputs": [
+        "Planned grid electricity"
+      ],
+      "process_nodes": [],
+      "last_reported_status": "restart_in_progress",
+      "status_reported_at": "2026-08-06",
+      "status_note": null,
+      "verified_on": "2026-10-05",
+      "summary": "Retired Unit 1 is being restored under a Microsoft-backed power purchase agreement.",
+      "source_ids": [
+        "constellation-crane-status",
+        "constellation-crane",
+        "constellation-crane-ppa"
+      ],
+      "target": {
+        "event": "Restart",
+        "period": "2027",
+        "certainty": "company_target"
+      },
+      "capacity_observations": [
+        {
+          "value": 835,
+          "unit": "MW",
+          "basis": "restored_generation_capacity",
+          "state": "planned",
+          "label": "Capacity to return with Unit 1 restart",
+          "period": "2027",
+          "qualifier": "exact_as_reported",
+          "scope_id": "crane",
+          "source_ids": [
+            "constellation-crane"
+          ],
+          "additive": false
+        }
+      ],
+      "energized_power_mw": null,
+      "it_load_mw": null,
+      "facility_power_mw": null,
+      "annual_wafer_capacity": null
+    }
+  ],
+  "relationships": [
+    {
+      "id": "e-nvidia-tsmc",
+      "from_id": "nvidia",
+      "to_id": "tsmc",
+      "type": "uses_foundry",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "blackwell",
+      "state": "reported",
+      "reported_at": "2024-03-18",
+      "source_ids": [
+        "nvidia-blackwell"
+      ],
+      "description": "Blackwell uses TSMC 4NP.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-arizona-blackwell",
+      "from_id": "tsmc-arizona",
+      "to_id": "blackwell",
+      "type": "manufactures",
+      "evidence_scope": "site_product",
+      "site_id": "tsmc-arizona",
+      "product_id": "blackwell",
+      "state": "reported",
+      "reported_at": "2025-10-17",
+      "source_ids": [
+        "nvidia-arizona"
+      ],
+      "description": "Phoenix is explicitly linked to Blackwell wafer production.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-amd-tsmc",
+      "from_id": "amd",
+      "to_id": "tsmc",
+      "type": "uses_foundry",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "mi350",
+      "state": "reported",
+      "reported_at": null,
+      "source_ids": [
+        "amd-mi350"
+      ],
+      "description": "MI350 family uses TSMC 3nm/6nm; exact fab unknown.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-micron-nvidia",
+      "from_id": "micron",
+      "to_id": "nvidia",
+      "type": "supplies_memory",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "h200",
+      "state": "reported",
+      "reported_at": "2024-02-26",
+      "source_ids": [
+        "micron-h200"
+      ],
+      "description": "Micron HBM3E is specified for H200; fab and packaging-site assignment unknown.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-sk-gb300",
+      "from_id": "sk-hynix",
+      "to_id": "nvidia",
+      "type": "supplies_memory",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "gb300",
+      "state": "reported",
+      "reported_at": "2026-03-17",
+      "source_ids": [
+        "sk-nvidia"
+      ],
+      "description": "SK hynix exhibited HBM3E integrated in GB300; no exact fab allocation.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-sk-rubin",
+      "from_id": "sk-hynix",
+      "to_id": "nvidia",
+      "type": "supplies_memory",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "rubin",
+      "state": "reported",
+      "reported_at": "2026-09-28",
+      "source_ids": [
+        "sk-nvidia-september"
+      ],
+      "description": "Vera Rubin shown with SK hynix HBM4 and SOCAMM2; no exact fab allocation.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-sk-tsmc",
+      "from_id": "sk-hynix",
+      "to_id": "tsmc",
+      "type": "uses_foundry_and_packaging_collaboration",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "sk-hbm4",
+      "state": "announced_collaboration",
+      "reported_at": "2024-04-19",
+      "source_ids": [
+        "sk-tsmc"
+      ],
+      "description": "HBM4 base-die and packaging collaboration; specific TSMC fab not disclosed.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-asml-intel",
+      "from_id": "asml",
+      "to_id": "intel-d1x",
+      "type": "supplies_equipment",
+      "evidence_scope": "site",
+      "site_id": "intel-d1x",
+      "product_id": "asml-exe5000",
+      "state": "reported",
+      "reported_at": "2024-04-18",
+      "source_ids": [
+        "intel-d1x"
+      ],
+      "description": "ASML EXE:5000 installed at D1X.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-intel-panther",
+      "from_id": "intel-fab52",
+      "to_id": "panther-lake",
+      "type": "manufactures",
+      "evidence_scope": "site_product",
+      "site_id": "intel-fab52",
+      "product_id": "panther-lake",
+      "state": "reported",
+      "reported_at": "2025-10-09",
+      "source_ids": [
+        "intel-fab52"
+      ],
+      "description": "Fab 52 is explicitly linked to Panther Lake.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-intel-clearwater",
+      "from_id": "intel-fab52",
+      "to_id": "clearwater-forest",
+      "type": "manufactures",
+      "evidence_scope": "site_product",
+      "site_id": "intel-fab52",
+      "product_id": "clearwater-forest",
+      "state": "reported",
+      "reported_at": "2025-10-09",
+      "source_ids": [
+        "intel-fab52"
+      ],
+      "description": "Fab 52 is explicitly linked to Clearwater Forest.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-oracle-openai",
+      "from_id": "oracle",
+      "to_id": "openai",
+      "type": "provides_compute",
+      "evidence_scope": "site",
+      "site_id": "stargate-abilene",
+      "product_id": null,
+      "state": "reported",
+      "reported_at": "2026-04-29",
+      "source_ids": [
+        "openai-abilene"
+      ],
+      "description": "OpenAI workloads run on OCI at Abilene.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-abilene-nvidia",
+      "from_id": "nvidia",
+      "to_id": "stargate-abilene",
+      "type": "supplies_accelerator_platform",
+      "evidence_scope": "site",
+      "site_id": "stargate-abilene",
+      "product_id": "gb200",
+      "state": "reported",
+      "reported_at": "2026-04-29",
+      "source_ids": [
+        "openai-abilene"
+      ],
+      "description": "GB200 systems deployed at Abilene; originating fab lots unknown.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-crusoe-abilene",
+      "from_id": "crusoe",
+      "to_id": "stargate-abilene",
+      "type": "develops",
+      "evidence_scope": "site",
+      "site_id": "stargate-abilene",
+      "product_id": null,
+      "state": "reported",
+      "reported_at": "2025-03-18",
+      "source_ids": [
+        "crusoe-abilene"
+      ],
+      "description": "Crusoe develops the original Abilene campus.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-amazon-anthropic",
+      "from_id": "amazon",
+      "to_id": "anthropic",
+      "type": "provides_compute",
+      "evidence_scope": "program",
+      "site_id": null,
+      "product_id": null,
+      "state": "reported",
+      "reported_at": "2025-11-03",
+      "source_ids": [
+        "aws-rainier-online"
+      ],
+      "description": "Anthropic uses the multisite Rainier program; chip total is not assigned to Indiana.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-amazon-trainium",
+      "from_id": "amazon",
+      "to_id": "trainium2",
+      "type": "designs",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "trainium2",
+      "state": "reported",
+      "reported_at": "2025-11-03",
+      "source_ids": [
+        "aws-rainier-online"
+      ],
+      "description": "AWS designs Trainium2.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-nscale-norway",
+      "from_id": "nscale",
+      "to_id": "stargate-norway",
+      "type": "develops",
+      "evidence_scope": "site",
+      "site_id": "stargate-norway",
+      "product_id": null,
+      "state": "planned",
+      "reported_at": "2025-07-31",
+      "source_ids": [
+        "openai-norway"
+      ],
+      "description": "Nscale designs and builds the project.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-nscale-owner",
+      "from_id": "nscale",
+      "to_id": "stargate-norway",
+      "type": "proposed_joint_owner",
+      "evidence_scope": "site",
+      "site_id": "stargate-norway",
+      "product_id": null,
+      "state": "planned",
+      "reported_at": "2025-07-31",
+      "source_ids": [
+        "openai-norway"
+      ],
+      "description": "Expected 50/50 joint venture with Aker.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-aker-owner",
+      "from_id": "aker",
+      "to_id": "stargate-norway",
+      "type": "proposed_joint_owner",
+      "evidence_scope": "site",
+      "site_id": "stargate-norway",
+      "product_id": null,
+      "state": "planned",
+      "reported_at": "2025-07-31",
+      "source_ids": [
+        "openai-norway"
+      ],
+      "description": "Expected 50/50 joint venture with Nscale.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-openai-norway",
+      "from_id": "stargate-norway",
+      "to_id": "openai",
+      "type": "potential_compute_offtake",
+      "evidence_scope": "site",
+      "site_id": "stargate-norway",
+      "product_id": null,
+      "state": "potential",
+      "reported_at": "2025-07-31",
+      "source_ids": [
+        "openai-norway"
+      ],
+      "description": "OpenAI described as potential initial offtaker.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-xai-anthropic",
+      "from_id": "xai",
+      "to_id": "anthropic",
+      "type": "provides_compute",
+      "evidence_scope": "site",
+      "site_id": "colossus-1",
+      "product_id": null,
+      "state": "contracted",
+      "reported_at": "2026-05-06",
+      "source_ids": [
+        "xai-anthropic"
+      ],
+      "description": "Agreement grants Anthropic access to Colossus 1.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-jera-chiba",
+      "from_id": "jera",
+      "to_id": "chiba-ai",
+      "type": "provides_power_and_site",
+      "evidence_scope": "site",
+      "site_id": "chiba-ai",
+      "product_id": null,
+      "state": "planned",
+      "reported_at": "2026-10-01",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "description": "Proposed behind-the-meter supply from operating Chiba station.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-dell-chiba",
+      "from_id": "dell",
+      "to_id": "chiba-ai",
+      "type": "supplies_systems",
+      "evidence_scope": "site",
+      "site_id": "chiba-ai",
+      "product_id": null,
+      "state": "planned",
+      "reported_at": "2026-10-01",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "description": "Dell AI Factory is the planned compute standard.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-rhaelm-chiba",
+      "from_id": "rhaelm",
+      "to_id": "chiba-ai",
+      "type": "develops",
+      "evidence_scope": "site",
+      "site_id": "chiba-ai",
+      "product_id": null,
+      "state": "planned",
+      "reported_at": "2026-10-01",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "description": "RHAELM leads proposed project delivery.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-adaniconnex-google",
+      "from_id": "adaniconnex",
+      "to_id": "google-vizag",
+      "type": "infrastructure_partner",
+      "evidence_scope": "site",
+      "site_id": "google-vizag",
+      "product_id": null,
+      "state": "reported",
+      "reported_at": "2026-04-28",
+      "source_ids": [
+        "google-vizag-build"
+      ],
+      "description": "Named development partner; ownership share not disclosed.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-nxtra-google",
+      "from_id": "nxtra",
+      "to_id": "google-vizag",
+      "type": "infrastructure_partner",
+      "evidence_scope": "site",
+      "site_id": "google-vizag",
+      "product_id": null,
+      "state": "reported",
+      "reported_at": "2026-04-28",
+      "source_ids": [
+        "google-vizag-build"
+      ],
+      "description": "Named development partner; ownership share not disclosed.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-constellation-amazon",
+      "from_id": "constellation",
+      "to_id": "amazon",
+      "type": "power_purchase_agreement",
+      "evidence_scope": "site",
+      "site_id": "calvert-cliffs",
+      "product_id": null,
+      "state": "contracted",
+      "reported_at": "2026-09-30",
+      "source_ids": [
+        "constellation-calvert"
+      ],
+      "description": "690 MW contracted includes 190 MW future uprate; regional grid supply.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-constellation-ms",
+      "from_id": "constellation",
+      "to_id": "microsoft",
+      "type": "power_purchase_agreement",
+      "evidence_scope": "site",
+      "site_id": "crane",
+      "product_id": null,
+      "state": "contracted",
+      "reported_at": null,
+      "source_ids": [
+        "constellation-crane-ppa"
+      ],
+      "description": "20-year agreement supports Crane restart; no direct Fairwater power-routing claim.",
+      "quantity": null,
+      "allocation_share": null
+    },
+    {
+      "id": "e-gb200-blackwell",
+      "from_id": "gb200",
+      "to_id": "blackwell",
+      "type": "uses_accelerator_architecture",
+      "evidence_scope": "product",
+      "site_id": null,
+      "product_id": "gb200",
+      "state": "reported",
+      "reported_at": "2024-03-18",
+      "source_ids": [
+        "nvidia-blackwell"
+      ],
+      "description": "GB200 uses Blackwell GPUs; this does not identify originating fab lots.",
+      "quantity": null,
+      "allocation_share": null
+    }
+  ],
+  "investments": [
+    {
+      "id": "i-micron-2026",
+      "entity_ids": [
+        "micron"
+      ],
+      "site_id": null,
+      "value": 27.37,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "reported_net_capex_non_gaap",
+      "scope": "company_wide",
+      "period": {
+        "basis": "fiscal_year",
+        "label": "FY2026",
+        "end": "2026-09-03"
+      },
+      "qualifier": "reported",
+      "reported_at": "2026-09-30",
+      "source_ids": [
+        "micron-q4-2026"
+      ],
+      "ai_specific": false,
+      "note": "Actual net capital expenditure; not an AI-only budget and not a forecast for FY2027",
+      "additive": false
+    },
+    {
+      "id": "i-micron-sing-nand",
+      "entity_ids": [
+        "micron"
+      ],
+      "site_id": "micron-singapore-nand",
+      "value": 24,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "planned_project_investment",
+      "scope": "project",
+      "period": {
+        "basis": "multi_year",
+        "label": "10 years from 2026 announcement"
+      },
+      "qualifier": "approximately",
+      "reported_at": "2026-01-27",
+      "source_ids": [
+        "micron-singapore-nand"
+      ],
+      "ai_specific": null,
+      "note": null,
+      "additive": false
+    },
+    {
+      "id": "i-micron-sing-hbm",
+      "entity_ids": [
+        "micron"
+      ],
+      "site_id": "micron-singapore-hbm",
+      "value": 7,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "planned_project_investment",
+      "scope": "project",
+      "period": {
+        "basis": "multi_year",
+        "label": "Through end of decade and beyond"
+      },
+      "qualifier": "approximately",
+      "reported_at": "2025-01-08",
+      "source_ids": [
+        "micron-singapore-hbm"
+      ],
+      "ai_specific": null,
+      "note": null,
+      "additive": false
+    },
+    {
+      "id": "i-sanand",
+      "entity_ids": [
+        "micron"
+      ],
+      "site_id": "micron-sanand",
+      "value": 2.75,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "combined_project_investment",
+      "scope": "project",
+      "period": {
+        "basis": "multi_year",
+        "label": "Facility development; exact period unspecified"
+      },
+      "qualifier": "approximately",
+      "reported_at": "2026-02-28",
+      "source_ids": [
+        "micron-sanand"
+      ],
+      "ai_specific": null,
+      "note": "Combined Micron and government-partner investment; not Micron-only capex",
+      "additive": false
+    },
+    {
+      "id": "i-sk-yongin",
+      "entity_ids": [
+        "sk-hynix"
+      ],
+      "site_id": "sk-yongin",
+      "value": 31,
+      "currency": "KRW",
+      "unit": "trillion",
+      "kind": "planned_project_investment",
+      "scope": "first_fab",
+      "period": {
+        "basis": "multi_year",
+        "label": "Through December 2030"
+      },
+      "qualifier": "approximately",
+      "reported_at": "2026-02-25",
+      "source_ids": [
+        "sk-yongin"
+      ],
+      "ai_specific": null,
+      "note": "Value in trillion KRW; includes earlier 9.4 trillion and additional 21.6 trillion, not additive",
+      "additive": false
+    },
+    {
+      "id": "i-google-vizag",
+      "entity_ids": [
+        "google"
+      ],
+      "site_id": "google-vizag",
+      "value": 15,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "planned_project_investment",
+      "scope": "hub_including_energy_and_network",
+      "period": {
+        "basis": "calendar_years",
+        "start": "2026",
+        "end": "2030"
+      },
+      "qualifier": "approximately",
+      "reported_at": "2025-10-14",
+      "source_ids": [
+        "google-vizag-announce"
+      ],
+      "ai_specific": null,
+      "note": null,
+      "additive": false
+    },
+    {
+      "id": "i-meta-richland",
+      "entity_ids": [
+        "meta"
+      ],
+      "site_id": "meta-hyperion",
+      "value": 50,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "planned_regional_investment",
+      "scope": "campus_and_region",
+      "period": {
+        "basis": "multi_year",
+        "label": "Full expansion; completion unspecified"
+      },
+      "qualifier": "greater_than",
+      "reported_at": "2026-07-13",
+      "source_ids": [
+        "meta-hyperion"
+      ],
+      "ai_specific": null,
+      "note": null,
+      "additive": false
+    },
+    {
+      "id": "i-chiba",
+      "entity_ids": [
+        "jera",
+        "rhaelm"
+      ],
+      "site_id": "chiba-ai",
+      "value": 15,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "expected_total_capital_deployment",
+      "scope": "land_power_facility_and_compute",
+      "period": {
+        "basis": "multi_phase",
+        "label": "All development phases; operations targeted around 2028"
+      },
+      "qualifier": "greater_than",
+      "reported_at": "2026-10-01",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "ai_specific": null,
+      "note": "Project total; no allocation between partners",
+      "additive": false
+    },
+    {
+      "id": "i-calvert",
+      "entity_ids": [
+        "constellation"
+      ],
+      "site_id": "calvert-cliffs",
+      "value": 3,
+      "currency": "USD",
+      "unit": "billion",
+      "kind": "enabled_infrastructure_investment",
+      "scope": "maryland_infrastructure",
+      "period": {
+        "basis": "multi_year",
+        "label": "Uprate targeted 2030–2032; full spending period unspecified"
+      },
+      "qualifier": "greater_than",
+      "reported_at": "2026-09-30",
+      "source_ids": [
+        "constellation-calvert"
+      ],
+      "ai_specific": null,
+      "note": null,
+      "additive": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "nvidia-blackwell",
+      "title": "Blackwell platform announcement",
+      "publisher": "NVIDIA",
+      "published_at": "2024-03-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "nvidia-arizona",
+      "title": "First Blackwell wafer produced in the US",
+      "publisher": "NVIDIA",
+      "published_at": "2025-10-17",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blogs.nvidia.com/blog/tsmc-blackwell-manufacturing/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-q1-2026",
+      "title": "Q1 2026 earnings call transcript",
+      "publisher": "TSMC",
+      "published_at": "2026-04-16",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-q2-2026",
+      "title": "Q2 2026 earnings call transcript",
+      "publisher": "TSMC",
+      "published_at": "2026-07-16",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-ap6",
+      "title": "Opening of Advanced Backend Fab 6",
+      "publisher": "TSMC",
+      "published_at": "2023-06-08",
+      "retrieved_at": "2026-10-05",
+      "url": "https://pr.tsmc.com/english/news/3033",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-packaging",
+      "title": "Advanced packaging services",
+      "publisher": "TSMC",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.tsmc.com/english/dedicatedFoundry/services/advanced-packaging",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "amd-mi350",
+      "title": "AMD Instinct GPU family brochure",
+      "publisher": "AMD",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/product-briefs/amd-instinct-gpu-family-brochure.pdf",
+      "source_type": "primary",
+      "note": "Document copyright 2025; publication day not established"
+    },
+    {
+      "id": "intel-fab52",
+      "title": "Intel Technology Tour 2025",
+      "publisher": "Intel",
+      "published_at": "2025-10-09",
+      "retrieved_at": "2026-10-05",
+      "url": "https://newsroom.intel.com/press-kit/press-kit-intel-technology-tour-2025",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "intel-18a",
+      "title": "Process milestones at VLSI Symposium",
+      "publisher": "Intel",
+      "published_at": "2026-06-16",
+      "retrieved_at": "2026-10-05",
+      "url": "https://newsroom.intel.com/intel-foundry/intel-foundry-details-process-milestones-future-innovation-at-vlsi-symposium",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "intel-d1x",
+      "title": "High NA EUV at Intel Foundry",
+      "publisher": "Intel",
+      "published_at": "2024-04-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://newsroom.intel.com/intel-foundry/intel-foundry-opens-new-frontier-chipmaking",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "asml-highna",
+      "title": "High NA EUV readiness milestone",
+      "publisher": "ASML",
+      "published_at": "2026-07-15",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.investor.asml.com/news-releases/news-release-details/high-na-euv-reaches-new-readiness-milestone",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "samsung-taylor",
+      "title": "Taylor US fab",
+      "publisher": "Samsung",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://semiconductor.samsung.com/sas/company/taylor/",
+      "source_type": "primary",
+      "note": "Undated project page; not proof that production has started"
+    },
+    {
+      "id": "samsung-sites",
+      "title": "Manufacturing sites",
+      "publisher": "Samsung",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://semiconductor.samsung.com/foundry/manufacturing/manufacturing-sites/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-q3-2026",
+      "title": "Fiscal Q3 2026 Form 10-Q",
+      "publisher": "Micron",
+      "published_at": "2026-06-25",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/static-files/23023765-dfef-4e7e-845b-cd744fc20d93",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-us-july",
+      "title": "US manufacturing investment update",
+      "publisher": "Micron",
+      "published_at": "2026-07-09",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Accelerates-U-S--Investments-Pours-First-Concrete-at-New-York-Fab/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-singapore-nand",
+      "title": "Singapore wafer fab groundbreaking",
+      "publisher": "Micron",
+      "published_at": "2026-01-27",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Breaks-Ground-on-Advanced-Wafer-Fabrication-Facility-in-Singapore-01-26-2026/default.aspx",
+      "source_type": "primary",
+      "note": "Page header January 26; release dateline and event January 27"
+    },
+    {
+      "id": "micron-singapore-hbm",
+      "title": "Singapore HBM packaging groundbreaking",
+      "publisher": "Micron",
+      "published_at": "2025-01-08",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2025/Micron-Breaks-Ground-on-New-HBM-Advanced-Packaging-Facility-in-Singapore-01-08-2025/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-sanand",
+      "title": "Sanand assembly and test opening",
+      "publisher": "Micron",
+      "published_at": "2026-02-28",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/node/50101/pdf",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-tongluo",
+      "title": "Acquisition of Tongluo P5 completed",
+      "publisher": "Micron",
+      "published_at": "2026-03-15",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Completes-Acquisition-of-PSMCs-Tongluo-P5-Site-in-Taiwan-03-15-2026/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-h200",
+      "title": "HBM3E volume production for H200",
+      "publisher": "Micron",
+      "published_at": "2024-02-26",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2024/Micron-Commences-Volume-Production-of-Industry-Leading-HBM3E-Solution-to-Accelerate-the-Growth-of-AI-02-26-2024/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-q4-2026",
+      "title": "Fiscal Q4 and full-year 2026 results",
+      "publisher": "Micron",
+      "published_at": "2026-09-30",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-m15x",
+      "title": "M15X DRAM fab announcement",
+      "publisher": "SK hynix",
+      "published_at": "2024-04-24",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/sk-hynix-to-produce-dram-from-m15x-in-cheongju/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-gsa",
+      "title": "GSA awards and manufacturing update",
+      "publisher": "SK hynix",
+      "published_at": "2025-12-06",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/sk-hynix-honored-with-two-major-titles-at-gsa-awards-2025/",
+      "source_type": "primary",
+      "note": "Page header December 6; release dateline December 7; cleanroom opened October 2025"
+    },
+    {
+      "id": "sk-q2-2026",
+      "title": "Q2 2026 results",
+      "publisher": "SK hynix",
+      "published_at": "2026-07-29",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/q2-2026-business-results/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-pt7",
+      "title": "P&amp;T7 packaging fab groundbreaking",
+      "publisher": "SK hynix",
+      "published_at": "2026-04-22",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/skhynix-chungju-pt7/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-yongin",
+      "title": "New facility investment for Yongin",
+      "publisher": "SK hynix",
+      "published_at": "2026-02-25",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/new-facility-investment-for-yongin-semiconductor-cluster/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-tsmc",
+      "title": "HBM4 and packaging collaboration",
+      "publisher": "SK hynix",
+      "published_at": "2024-04-19",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/sk-hynix-partners-with-tsmc-to-strengthen-hbm-technological-leadership/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-nvidia",
+      "title": "AI memory at GTC 2026",
+      "publisher": "SK hynix",
+      "published_at": "2026-03-17",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/gtc-2026-ai-partnership/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-nvidia-september",
+      "title": "Memory portfolio at TSMC OIP",
+      "publisher": "SK hynix",
+      "published_at": "2026-09-28",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/tsmc-oip-conference-2026-3/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "openai-abilene",
+      "title": "Compute infrastructure for the Intelligence Age",
+      "publisher": "OpenAI",
+      "published_at": "2026-04-29",
+      "retrieved_at": "2026-10-05",
+      "url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "crusoe-abilene",
+      "title": "Abilene campus expansion to 1.2 GW",
+      "publisher": "Crusoe",
+      "published_at": "2025-03-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-expands-ai-data-center-campus-in-abilene-to-1-2-gigawatts",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "crusoe-microsoft",
+      "title": "Separate 900 MW Microsoft Abilene campus",
+      "publisher": "Crusoe",
+      "published_at": "2026-03-27",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.crusoe.ai/resources/newsroom/crusoe-announces-new-900-mw-ai-factory-campus-in-abilene-texas-to-support-microsoft-ai-infrastructure",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "aws-rainier-location",
+      "title": "Project Rainier infrastructure",
+      "publisher": "Amazon",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster",
+      "source_type": "primary",
+      "note": "Explicitly identifies St. Joseph County as one Rainier site; program spans sites"
+    },
+    {
+      "id": "aws-rainier-online",
+      "title": "AWS weekly roundup: Rainier online",
+      "publisher": "Amazon",
+      "published_at": "2025-11-03",
+      "retrieved_at": "2026-10-05",
+      "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-project-rainier-online-amazon-nova-amazon-bedrock-and-more-november-3-2025/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "amazon-q4-2025",
+      "title": "Q4 2025 results and 2026 capital guidance",
+      "publisher": "Amazon",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.aboutamazon.com/news/company-news/amazon-earnings-q4-2025-report",
+      "source_type": "primary",
+      "note": "2026 earnings release; exact day not captured"
+    },
+    {
+      "id": "microsoft-fairwater",
+      "title": "First Mount Pleasant facility fully operational",
+      "publisher": "Microsoft",
+      "published_at": "2026-06-23",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "microsoft-wisconsin",
+      "title": "Wisconsin investment and second facility",
+      "publisher": "Microsoft",
+      "published_at": "2025-09-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blogs.microsoft.com/on-the-issues/2025/09/18/made-in-wisconsin-the-worlds-most-powerful-ai-datacenter/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "meta-hyperion",
+      "title": "Richland Parish expansion",
+      "publisher": "Meta",
+      "published_at": "2026-07-13",
+      "retrieved_at": "2026-10-05",
+      "url": "https://datacenters.atmeta.com/2026/07/deepening-our-investment-in-richland-parish-louisiana/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "google-vizag-announce",
+      "title": "India AI hub investment",
+      "publisher": "Google",
+      "published_at": "2025-10-14",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blog.google/intl/en-in/company-news/our-first-ai-hub-in-india-powered-by-a-15-billion-investment/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "google-vizag-build",
+      "title": "Visakhapatnam groundbreaking",
+      "publisher": "Google",
+      "published_at": "2026-04-28",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "openai-norway",
+      "title": "Introducing Stargate Norway",
+      "publisher": "OpenAI",
+      "published_at": "2025-07-31",
+      "retrieved_at": "2026-10-05",
+      "url": "https://openai.com/index/introducing-stargate-norway/",
+      "source_type": "primary",
+      "note": "English page gives 230 MW plus 290 MW ambition; translated pages differ, so English and Nscale release used"
+    },
+    {
+      "id": "nscale-norway",
+      "title": "Stargate Norway partnership",
+      "publisher": "Nscale",
+      "published_at": "2025-07-31",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.nscale.com/press-releases/stargate-norway-nscale-aker-openai",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "xai-anthropic",
+      "title": "Compute partnership with Anthropic",
+      "publisher": "SpaceXAI",
+      "published_at": "2026-05-06",
+      "retrieved_at": "2026-10-05",
+      "url": "https://x.ai/news/anthropic-compute-partnership",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "xai-memphis",
+      "title": "Memphis and Colossus",
+      "publisher": "SpaceXAI",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://x.ai/memphis",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "jera-chiba",
+      "title": "JERA Dell RHAELM AI infrastructure MoU",
+      "publisher": "JERA",
+      "published_at": "2026-10-01",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.jera.co.jp/en/news/information/20261001_2535",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-calvert",
+      "title": "Amazon PPA and Calvert Cliffs uprate",
+      "publisher": "Constellation",
+      "published_at": "2026-09-30",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.constellationenergy.com/news/2026/09/constellation-and-amazon-announce-20-year-power-purchase-agreement-at-calvert-cliffs.html",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-crane-status",
+      "title": "Q2 2026 results and Crane restart",
+      "publisher": "Constellation",
+      "published_at": "2026-08-06",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.constellationenergy.com/news-releases/news-release-details/constellation-reports-second-quarter-2026-results",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-crane",
+      "title": "Crane Clean Energy Center",
+      "publisher": "Constellation",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.constellationenergy.com/about/locations/crane-clean-energy-center.html",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "constellation-crane-ppa",
+      "title": "Crane restart anniversary update",
+      "publisher": "Constellation",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.constellationenergy.com/news/2025/09/one-year-later-crane-clean-energy-center-still-in-the-spotlight-and-ahead-of-schedule.html",
+      "source_type": "primary",
+      "note": "September 2025; day not captured"
+    }
+  ],
+  "changes": [
+    {
+      "id": "c-intel-highna",
+      "date": "2026-07-15",
+      "entity_ids": [
+        "asml",
+        "intel"
+      ],
+      "site_ids": [
+        "intel-d1x"
+      ],
+      "type": "manufacturing_milestone",
+      "summary": "ASML reports Intel shipping a high-volume logic product using High NA EUV on selected layers.",
+      "source_ids": [
+        "asml-highna"
+      ],
+      "prior_value": null,
+      "new_value": null
+    },
+    {
+      "id": "c-fairwater",
+      "date": "2026-06-23",
+      "entity_ids": [
+        "microsoft"
+      ],
+      "site_ids": [
+        "fairwater-wisconsin"
+      ],
+      "type": "status_change",
+      "summary": "Microsoft confirms its first Mount Pleasant facility is fully operational.",
+      "source_ids": [
+        "microsoft-fairwater"
+      ],
+      "prior_value": "construction",
+      "new_value": "operating"
+    },
+    {
+      "id": "c-hyperion",
+      "date": "2026-07-13",
+      "entity_ids": [
+        "meta"
+      ],
+      "site_ids": [
+        "meta-hyperion"
+      ],
+      "type": "capacity_plan",
+      "summary": "Meta announces expanded 5 GW campus target; energized capacity remains unknown.",
+      "source_ids": [
+        "meta-hyperion"
+      ],
+      "prior_value": null,
+      "new_value": {
+        "value": 5000,
+        "unit": "MW",
+        "state": "planned",
+        "basis": "compute_capacity_definition_unspecified"
+      }
+    },
+    {
+      "id": "c-sk-rubin",
+      "date": "2026-09-28",
+      "entity_ids": [
+        "sk-hynix",
+        "nvidia"
+      ],
+      "site_ids": [],
+      "type": "product_link",
+      "summary": "SK hynix identifies HBM4 and SOCAMM2 in Vera Rubin at the TSMC OIP event.",
+      "source_ids": [
+        "sk-nvidia-september"
+      ],
+      "prior_value": null,
+      "new_value": null
+    },
+    {
+      "id": "c-micron-capex",
+      "date": "2026-09-30",
+      "entity_ids": [
+        "micron"
+      ],
+      "site_ids": [],
+      "type": "capital_spending",
+      "summary": "Micron reports FY2026 net capital expenditure of $27.37 billion.",
+      "source_ids": [
+        "micron-q4-2026"
+      ],
+      "prior_value": null,
+      "new_value": {
+        "value": 27.37,
+        "unit": "billion USD",
+        "period": "FY2026",
+        "scope": "company_wide"
+      }
+    },
+    {
+      "id": "c-calvert",
+      "date": "2026-09-30",
+      "entity_ids": [
+        "constellation",
+        "amazon"
+      ],
+      "site_ids": [
+        "calvert-cliffs"
+      ],
+      "type": "power_contract",
+      "summary": "Amazon contracts 690 MW, including 190 MW of future new capacity.",
+      "source_ids": [
+        "constellation-calvert"
+      ],
+      "prior_value": null,
+      "new_value": null
+    },
+    {
+      "id": "c-chiba",
+      "date": "2026-10-01",
+      "entity_ids": [
+        "jera",
+        "dell",
+        "rhaelm"
+      ],
+      "site_ids": [
+        "chiba-ai"
+      ],
+      "type": "announcement",
+      "summary": "Chiba MoU describes up to 400 MW supporting power and operations around 2028.",
+      "source_ids": [
+        "jera-chiba"
+      ],
+      "prior_value": null,
+      "new_value": "announced"
+    }
+  ]
+}
