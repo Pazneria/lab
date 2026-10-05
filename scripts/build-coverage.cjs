@@ -722,7 +722,7 @@ function build() {
             [0, 100],
           ),
         ],
-        { label_field: "label" },
+        { label_field: "label", rank_group: "task" },
       ),
     ],
     true,

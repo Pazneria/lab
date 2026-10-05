@@ -141,9 +141,7 @@ async function main() {
     await page.locator(".standard-row").first().click();
     const first = await selected(page);
     await page.mouse.move(1, 1);
-    await page
-      .getByLabel("Find an exact configuration")
-      .fill("gpt-6.1-sol_max");
+    await page.getByLabel("Find an exact configuration").fill(first);
     assert.equal(await selected(page), first);
     await page
       .getByLabel("Find an exact configuration")

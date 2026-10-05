@@ -529,12 +529,8 @@
     d.id = "benchmark-dates";
     return d;
   }
-  function orderedRows(c) {
-    return c.display_defaults?.sort === "evaluation_date_desc"
-      ? [...c.rows].sort((a, b) =>
-          (b.evaluation_date || "").localeCompare(a.evaluation_date || ""),
-        )
-      : c.rows;
+  function orderedRows(c, value = (r) => r.value) {
+    return window.LAB_METRIC_ORDER.order(c.rows, value, c.direction);
   }
   const dotCohort = (card) =>
     card.standard?.recommended_chart?.includes("dots");
@@ -662,7 +658,13 @@
               value: r.value,
             })),
             metrics: [
-              { id: "all", field: "value", unit: "percent", domain: [0, 100] },
+              {
+                id: "all",
+                field: "value",
+                unit: "percent",
+                domain: [0, 100],
+                direction: "higher_is_better",
+              },
             ],
           },
         ],
@@ -717,7 +719,13 @@
               label: r.model_variant,
               value: r.value,
             }))
-        : graph.points.map((p) => ({ label: p.label, value: p.x }));
+        : window.LAB_METRIC_ORDER.order(
+            graph.points,
+            (p) => p.x,
+            results.records.find(
+              (r) => r.result_id === graph.points[0].result_id,
+            )?.direction,
+          ).map((p) => ({ label: p.label, value: p.x }));
       const left = 124,
         right = 35,
         top = 17,
@@ -1590,6 +1598,7 @@
             : label;
     const node = e("article", "chart-card standard-chart");
     node.id = c.id + "-" + state.view;
+    node.dataset.direction = c.direction || "unknown";
     node.append(
       e("h2", "", title),
       e(
@@ -1687,7 +1696,7 @@
       checkbox.addEventListener("change", update);
     }
     function draw() {
-      const matching = orderedRows(c).filter((r) =>
+      const matching = orderedRows(c, value).filter((r) =>
         [
           r.model_variant,
           r.model_identifier,
@@ -1715,14 +1724,13 @@
         " of " +
         matching.length +
         " matching configurations" +
-        (c.display_defaults?.sort === "evaluation_date_desc"
-          ? " · latest evaluation dates first"
-          : " · source order") +
-        ". Each row stays within this source cohort.";
+        " · " +
+        window.LAB_METRIC_ORDER.description(c.direction) +
+        " Each row stays within this source cohort.";
       plot.replaceChildren();
       for (const r of visible) {
         const n = value(r),
-          missing = n === null,
+          missing = !window.LAB_METRIC_ORDER.measured(n),
           row = e(missing ? "div" : "button", "standard-row");
         row.dataset.model = r.model_variant;
         row.dataset.value = missing ? "null" : String(n);
@@ -1892,11 +1900,13 @@
     }
     head.append(tr);
     table.append(head);
-    for (const r of c.rows) {
+    for (const r of orderedRows(c, value)) {
       const row = e("tr");
       for (const cell of [
         r.model_variant,
-        value(r) === null ? "Not reported" : String(value(r)),
+        !window.LAB_METRIC_ORDER.measured(value(r))
+          ? "Not reported"
+          : String(value(r)),
         r.effort || "Not reported",
         measurement(r.reported_cost) + " / " + measurement(r.reported_time),
         external(r.source_url, "Source"),
@@ -1921,6 +1931,7 @@
     if (card.id === "bullshitbench-v2" && state.view === "all")
       return {
         id: "bullshitbench-expanded",
+        direction: "higher_is_better",
         unit: "percent",
         metric: "clear pushback, all 100 attempts",
         date_label:
@@ -1941,6 +1952,7 @@
       const m = input.expanded.medical.medagentbench_original;
       return {
         id: "medagentbench-expanded",
+        direction: "higher_is_better",
         unit: "percent",
         metric: "overall task success",
         date_label:
@@ -1963,6 +1975,7 @@
     )
       return {
         id: "runebench-expanded-" + state.skill,
+        direction: "higher_is_better",
         unit: "normalized XP/min",
         metric: "peak normalized XP rate",
         date_label:
@@ -2111,7 +2124,13 @@
     }
     node.append(svg, legend, inspector);
     const table = e("table", "result-data-table"),
-      caption = e("caption", "", "Exact selected runs for " + rows[0].skill),
+      caption = e(
+        "caption",
+        "",
+        "Exact selected runs for " +
+          rows[0].skill +
+          "; highest peak rate first. Scatter positions retain rate and cost.",
+      ),
       head = e("thead"),
       tr = e("tr"),
       body = e("tbody");
@@ -2128,7 +2147,15 @@
     }
     head.append(tr);
     table.append(caption, head);
-    for (const r of rows) {
+    for (const r of window.LAB_METRIC_ORDER.order(
+      rows,
+      (r) => r.value,
+      cohort.direction,
+      {
+        eligible: (r) =>
+          window.LAB_METRIC_ORDER.measured(r.reported_cost?.value),
+      },
+    )) {
       const row = e("tr");
       for (const cell of [
         r.model_variant,

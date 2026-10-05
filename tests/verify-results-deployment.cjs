@@ -224,11 +224,17 @@ async function main() {
                   String(p.peak_normalized_xp_per_min),
                 ]),
               )
-            : c.points.map((p) =>
-                c.type === "bar"
-                  ? [p.label, String(p.x)]
-                  : [p.label, String(p.x), String(p.y)],
-              );
+            : [...c.points]
+                .sort(
+                  (a, b) =>
+                    (c.type === "bar" ? b.x - a.x : b.y - a.y) ||
+                    c.points.indexOf(a) - c.points.indexOf(b),
+                )
+                .map((p) =>
+                  c.type === "bar"
+                    ? [p.label, String(p.x)]
+                    : [p.label, String(p.x), String(p.y)],
+                );
         const rows = await card
           .locator(".chart-table tbody tr")
           .evaluateAll((nodes) =>
