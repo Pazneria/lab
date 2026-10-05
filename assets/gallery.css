@@ -1507,3 +1507,47 @@ p {
     outline: 2px solid Highlight;
   }
 }
+.category-frontend {
+  --category-color: #17645a;
+}
+.mini-interval {
+  stroke: #17645a;
+  stroke-width: 2;
+}
+.frontend-interval {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  background: #17645a;
+}
+.frontend-interval::before,
+.frontend-interval::after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 2px;
+  top: -4px;
+  background: #17645a;
+}
+.frontend-interval::after {
+  right: 0;
+}
+.frontend-chart .row-model {
+  overflow-wrap: anywhere;
+}
+.frontend-chart .bar-value {
+  font-variant-numeric: tabular-nums;
+}
+.frontend-chart .frontend-table {
+  min-width: 730px;
+}
+@media (forced-colors: active) {
+  .frontend-interval,
+  .frontend-interval::before,
+  .frontend-interval::after {
+    background: CanvasText;
+  }
+  .mini-interval {
+    stroke: CanvasText;
+  }
+}

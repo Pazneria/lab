@@ -174,12 +174,12 @@ async function main() {
     pass(
       "All five benchmark pages offer a visible keyboard-accessible return to the 3D Lab; detail Back still opens the gallery",
     );
-    assert.equal(await page.locator(".benchmark-card").count(), 42);
-    assert.equal(await page.locator(".mini-graph svg").count(), 25);
-    assert.equal(await page.locator(".mini-evidence").count(), 17);
+    assert.equal(await page.locator(".benchmark-card").count(), 46);
+    assert.equal(await page.locator(".mini-graph svg").count(), 27);
+    assert.equal(await page.locator(".mini-evidence").count(), 19);
     assert.match(
       await page.locator("#gallery-count").textContent(),
-      /42 benchmarks.*25 with score/,
+      /46 benchmarks.*27 with score/,
     );
     for (const e of discovery.entries)
       assert.equal(
@@ -192,10 +192,11 @@ async function main() {
     await screenshot(page, "gallery-desktop.png");
     await screenshot(page, "gallery-desktop-full.png", true);
     pass(
-      "42 cards preserve all 20 discovery IDs; 25 real score cards and 17 explicit evidence-only cards",
+      "46 cards preserve all 20 discovery IDs; 27 real score cards and 19 explicit evidence-only cards",
     );
     for (const [category, count] of [
       ["standard", 18],
+      ["frontend", 4],
       ["community", 4],
       ["games", 5],
       ["medical", 9],
@@ -208,7 +209,7 @@ async function main() {
     }
     await page.locator("input[name=category][value=all]").check();
     await page.locator("input[name=graphs]").check();
-    assert.equal(await page.locator(".benchmark-card").count(), 25);
+    assert.equal(await page.locator(".benchmark-card").count(), 27);
     await page.locator("input[name=graphs]").uncheck();
     await page.locator("#benchmark-search").fill("runescape");
     assert.equal(await page.locator(".benchmark-card").count(), 1);
@@ -703,7 +704,7 @@ async function main() {
       await file.goto(
         "file:///" + path.join(root, "benchmarks.html").replace(/\\/g, "/"),
       );
-      assert.equal(await file.locator(".benchmark-card").count(), 42);
+      assert.equal(await file.locator(".benchmark-card").count(), 46);
       await file.goto(
         "file:///" +
           path.join(root, "results.html").replace(/\\/g, "/") +
@@ -730,6 +731,10 @@ async function main() {
         "catalog.html",
         "results-technical.html",
         "assets/gallery.js",
+        "assets/frontend-graphs.js",
+        "data/frontend-research-2026-10-05.original.json",
+        "data/frontend-research-supplement-2026-10-05.original.json",
+        "data/gallery-renderer-contract-2026-10-05.json",
         "assets/gallery.css",
         "assets/gallery-data.js",
         "assets/results.js",
@@ -758,7 +763,7 @@ async function main() {
           filename + " deployed bytes",
         );
       }
-      pass("15 deployed files match exact Git commit " + report.commit);
+      pass("19 deployed files match exact Git commit " + report.commit);
     }
     assert.deepEqual(report.errors, []);
     assert.deepEqual(report.missingAssets, []);

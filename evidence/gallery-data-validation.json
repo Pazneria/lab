@@ -1,5 +1,9 @@
 {
-  "cards": 42,
+  "cards": 46,
+  "frontendCards": 4,
+  "frontendNumericRows": 18,
+  "frontendSourceOnlyCards": 2,
+  "frontendInputSHA256": "1142299b6f03c4f49cf6645e9e40375c052408caa74801c66b0f0450a89621f1",
   "sourceCohorts": 22,
   "standardRows": 340,
   "expandedBullshitBenchRows": 228,

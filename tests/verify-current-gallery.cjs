@@ -123,16 +123,16 @@ async function main() {
       assert.equal(a.violations.length, 0, JSON.stringify(report.axe.at(-1)));
     };
     await go("benchmarks.html");
-    assert.equal(await page.locator(".benchmark-card").count(), 42);
+    assert.equal(await page.locator(".benchmark-card").count(), 46);
     await page.getByLabel("Results history").selectOption("historical");
-    assert.equal(await page.locator(".benchmark-card").count(), 9);
+    assert.equal(await page.locator(".benchmark-card").count(), 10);
     await page.reload();
     assert.equal(
       await page.getByLabel("Results history").inputValue(),
       "historical",
     );
     await page.getByLabel("Results history").selectOption("current");
-    assert.equal(await page.locator(".benchmark-card").count(), 33);
+    assert.equal(await page.locator(".benchmark-card").count(), 36);
     assert.equal(
       await page
         .locator('[data-benchmark-id="gpqa-diamond-march-reported"]')
@@ -144,7 +144,7 @@ async function main() {
       1,
     );
     pass(
-      "42 cards and explicit current/history choices preserve 33 current/guides and nine historical cards without mixing versions",
+      "46 cards and explicit current/history choices preserve 36 current/guides and ten historical cards without mixing versions",
     );
     await go("results.html?benchmark=gpqa-diamond");
     assert.equal(await page.locator(".standard-row").count(), 12);

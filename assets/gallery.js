@@ -7,6 +7,7 @@
   const detail = document.getElementById("benchmark-detail");
   const categories = {
     standard: "Standard",
+    frontend: "Frontend",
     community: "Community",
     games: "Games",
     medical: "Medical",
@@ -32,6 +33,9 @@
       results.records?.length !== 18 ||
       results.graph_views?.charts?.length !== 7 ||
       input.standard?.cards?.length !== 22 ||
+      !window.LAB_FRONTEND?.valid(input.frontend?.cards) ||
+      !/^data\/[a-z0-9.-]+\.json$/.test(input.frontend?.source_input || "") ||
+      !Array.isArray(input.supplement?.audit) ||
       input.expanded?.bullshitbench?.records?.length !== 228 ||
       input.expanded?.runebench?.records?.length !== 48 ||
       input.expanded?.medical?.medagentbench_original?.rows?.length !== 12
@@ -93,8 +97,12 @@
         return false;
       ids.add(c.id);
     }
+    for (const c of input.frontend.cards) {
+      if (!idOK(c.id) || ids.has(c.id)) return false;
+      ids.add(c.id);
+    }
     return (
-      ids.size === 42 &&
+      ids.size === 46 &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(
@@ -178,6 +186,12 @@
   const standards = new Map(input.standard.cards.map((c) => [c.id, c]));
   const originals = new Map(catalog.entries.map((c) => [c.id, c]));
   const all = [
+    ...input.frontend.cards.map((c) => ({
+      id: c.id,
+      name: c.name,
+      category: c.category,
+      frontend: c,
+    })),
     ...input.standard.cards.map((c) => ({
       id: c.id,
       name: c.name,
@@ -194,6 +208,7 @@
   const byId = new Map(all.map((c) => [c.id, c]));
   const priority = [
     "hle-diamond",
+    "webdev-arena-frontend",
     "bullshitbench-v2",
     "runebench",
     "gpqa-diamond",
@@ -210,6 +225,7 @@
     return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
   });
   function graphFor(card) {
+    if (card.frontend) return card.frontend.rows.length ? card.frontend : null;
     return (
       card.standard ||
       results.graph_views.charts.find(
@@ -218,6 +234,12 @@
     );
   }
   function status(card) {
+    if (card.frontend)
+      return isHistorical(card)
+        ? "Historical · Feb 2025"
+        : graphFor(card)
+          ? "Source snapshot · Oct 2026"
+          : "Evidence guide";
     return card.standard
       ? isHistorical(card)
         ? "Historical" +
@@ -240,6 +262,7 @@
     return (
       card.standard?.history === true ||
       card.standard?.display_status === "historical_source_cohort" ||
+      card.frontend?.status === "historical_source_cohort" ||
       card.id === "medagentbench"
     );
   }
@@ -365,6 +388,8 @@
         : s("circle", { ...attrs, cx: x, cy: y, r: size });
   }
   function miniature(card) {
+    if (card.frontend?.rows.length)
+      return window.LAB_FRONTEND.miniature(card.frontend);
     const graph = graphFor(card),
       fig = e("div", "mini-graph");
     if (!graph) {
@@ -382,16 +407,18 @@
         e(
           "strong",
           "",
-          card.original.entryType === "showcase"
+          card.original?.entryType === "showcase"
             ? "A documented achievement"
             : "Explore the evidence",
         ),
         e(
           "p",
           "",
-          card.original.status === "unverified"
-            ? "Current numerical results unresolved."
-            : "Scores haven’t been added to this guide.",
+          card.id === "webcraftbench-v3" || card.id === "design-arena-frontend"
+            ? "Full configuration review pending."
+            : card.original?.status === "unverified" || card.frontend
+              ? "Current numerical results unresolved."
+              : "Scores haven’t been added to this guide.",
         ),
       );
       return fig;
@@ -555,13 +582,22 @@
     );
     a.append(
       top,
-      e("h3", "", card.id === "medagentbench" ? "MedAgentBench" : card.name),
+      e(
+        "h3",
+        "",
+        card.id === "design2code-v3-484"
+          ? "Design2Code"
+          : card.id === "medagentbench"
+            ? "MedAgentBench"
+            : card.name,
+      ),
       e(
         "p",
         "card-question",
         input.notes[card.id].question ||
           card.standard?.description ||
-          card.original.summary,
+          card.frontend?.summary ||
+          card.original?.summary,
       ),
       miniature(card),
     );
@@ -572,21 +608,25 @@
         e(
           "strong",
           "",
-          card.standard
-            ? card.id === "frontiermath-tier4-v2"
-              ? "Reported accuracy · 0–100%"
-              : (card.standard.metric.includes("accuracy")
-                  ? "Accuracy"
-                  : card.standard.metric.includes("resolve")
-                    ? "Issues resolved"
-                    : card.standard.metric.includes("rubric")
-                      ? "Rubric score"
-                      : "Task score") + " · 0–100%"
-            : card.id === "medagentbench"
-              ? "Task success · 0–100%"
-              : card.id === "runebench"
-                ? "Woodcutting · 3 effort settings"
-                : "6 selected model / effort settings",
+          card.frontend
+            ? card.id === "webdev-arena-frontend"
+              ? "Preference rating · 12 selected rows"
+              : "Visual similarity · 4 Direct configurations"
+            : card.standard
+              ? card.id === "frontiermath-tier4-v2"
+                ? "Reported accuracy · 0–100%"
+                : (card.standard.metric.includes("accuracy")
+                    ? "Accuracy"
+                    : card.standard.metric.includes("resolve")
+                      ? "Issues resolved"
+                      : card.standard.metric.includes("rubric")
+                        ? "Rubric score"
+                        : "Task score") + " · 0–100%"
+              : card.id === "medagentbench"
+                ? "Task success · 0–100%"
+                : card.id === "runebench"
+                  ? "Woodcutting · 3 effort settings"
+                  : "6 selected model / effort settings",
         ),
         document.createTextNode(
           card.id === "runebench"
@@ -601,11 +641,12 @@
         ),
       );
     else
-      cap.textContent =
-        card.original.sourceSetting +
-        " · " +
-        card.original.sources.length +
-        " original sources";
+      cap.textContent = card.frontend
+        ? "Source guide · no graph yet"
+        : card.original.sourceSetting +
+          " · " +
+          card.original.sources.length +
+          " original sources";
     const foot = e("div", "card-foot");
     foot.append(
       e(
@@ -759,7 +800,26 @@
     const wrap = e("div"),
       list = e("ul", "source-list");
     let sources = [];
-    if (card.standard)
+    if (card.frontend) {
+      const c = card.frontend;
+      sources = [
+        c.source_url,
+        ...(c.methodology_urls || []),
+        c.methodology_url,
+        c.project_url,
+        c.code_url,
+        c.changelog_url,
+      ]
+        .filter(Boolean)
+        .map((url, i) => ({
+          url,
+          title:
+            i === 0
+              ? "Primary benchmark source"
+              : "Project and methodology source",
+          info: "Source checked October 5, 2026; snapshot, paper and evaluation dates remain separately labeled.",
+        }));
+    } else if (card.standard)
       for (const id of [
         card.standard.source_id,
         card.standard.definition_source_id,
@@ -848,7 +908,10 @@
         "What it tests",
         card.id === "runebench"
           ? "An agent writes code and uses tools to train a character in an accelerated RuneScape world. The published slice follows one model at low, medium and high reasoning effort across 16 skills, with one selected trial per effort and skill."
-          : notes.tests || card.standard?.description || card.original.summary,
+          : notes.tests ||
+            card.standard?.description ||
+            card.frontend?.summary ||
+            card.original?.summary,
       ],
       ["Why it matters", notes.matters],
       ["How to read it", notes.read],
@@ -893,7 +956,16 @@
     stack.setAttribute("aria-label", "Sources and supporting details");
     stack.append(sourceSection(card));
     const body = e("div");
-    if (card.standard) {
+    if (card.frontend) {
+      const c = card.frontend,
+        ul = e("ul");
+      for (const text of c.limitations) ul.append(e("li", "", text));
+      body.append(
+        ul,
+        raw("Source settings and complete observations", c),
+        local(input.frontend.source_input, "Read the frontend research input"),
+      );
+    } else if (card.standard) {
       body.append(
         e("p", "", card.standard.date_label),
         e("p", "", card.standard.settings.effort),
@@ -928,6 +1000,46 @@
       );
     }
     stack.append(disclosure("Settings & limitations", body));
+    const update = input.supplement.audit.find((item) => item.id === card.id);
+    if (update) {
+      const context = e("div");
+      const notes = {
+        "behavior-challenge-2026":
+          "The October 1 Zero-Shot Butlers submission is self-reported and covers 50 tasks and 500 episodes. Verified result files remain empty. Another submission covers eight tasks and 80 episodes, so these rows cannot form a unified comparison. Submission timestamps do not establish evaluation dates.",
+        "waymo-onroad-safety":
+          "The provider hub still covers exposure through June 2026, released September 24. It remains separate from IIHS’s July 23 study of 2021–2024. One crash involving two Waymo vehicles has unknown suspected serious-injury status pending a police report. Unknown severity must not be counted as no serious injury; the release notes provide a sensitivity calculation.",
+        stationerybench:
+          "The report is still dated September 10, 2026. Its 200 trials span five tasks, with 100 trials per system. The two systems use different interfaces, so the reported complete trials describe those fixed setups rather than a current model leaderboard.",
+        "robochallenge-table30":
+          "No readable numerical standings or fresh evaluation dates were available from the primary homepage. This remains a source guide.",
+      };
+      context.append(
+        e("p", "", notes[card.id] || update.finding),
+        external(
+          update.pinned_source_url || update.source_url,
+          "Reviewed primary source",
+        ),
+      );
+      if (update.release_notes)
+        context.append(
+          e(
+            "p",
+            "",
+            "The injury-severity limitation is explained in the provider’s release notes.",
+          ),
+          external(update.release_notes, "Provider release notes · page 2"),
+        );
+      context.append(
+        raw("Exact parent-supplied source update", update),
+        local(
+          "data/frontend-research-supplement-2026-10-05.original.json",
+          "Read the original supplemental packet",
+        ),
+      );
+      stack.append(
+        disclosure("October 5 source check and qualifications", context),
+      );
+    }
     const expanded =
       input.expanded[
         card.id === "runebench"
@@ -972,7 +1084,7 @@
           "Read the medical source input",
         ),
       );
-    if (!card.standard && window.LAB_CHARTS) {
+    if (!card.standard && !card.frontend && window.LAB_CHARTS) {
       const rr = results.records.filter((r) => r.benchmark_id === card.id);
       if (rr.length) {
         const observations = e("div");
@@ -1647,17 +1759,21 @@
       : "hle-diamond";
     const card = byId.get(id);
     const choices =
-      card.id === "hle-diamond"
-        ? ["score", "reasoning", "knowledge", "tools"]
-        : card.id === "runebench"
-          ? ["woodcutting", "mining"].includes(p.get("skill") || "woodcutting")
-            ? ["cost", "time", "score"]
-            : ["cost", "score"]
-          : card.id === "bullshitbench-v2"
-            ? ["time", "cost", "all"]
-            : card.id === "medagentbench"
-              ? ["score", "all"]
-              : ["score"];
+      card.id === "design2code-v3-484"
+        ? Object.keys(window.LAB_FRONTEND.metrics)
+        : card.id === "hle-diamond"
+          ? ["score", "reasoning", "knowledge", "tools"]
+          : card.id === "runebench"
+            ? ["woodcutting", "mining"].includes(
+                p.get("skill") || "woodcutting",
+              )
+              ? ["cost", "time", "score"]
+              : ["cost", "score"]
+            : card.id === "bullshitbench-v2"
+              ? ["time", "cost", "all"]
+              : card.id === "medagentbench"
+                ? ["score", "all"]
+                : ["score"];
     return {
       id,
       view: choices.includes(p.get("view"))
@@ -1670,6 +1786,7 @@
         : "woodcutting",
       config: (p.get("config") || "").slice(0, 200),
       all: p.get("all") === "1",
+      comparison: p.get("comparison") === "methods" ? "methods" : "direct",
     };
   }
   function detailView() {
@@ -1733,11 +1850,22 @@
       );
       header.append(
         badges,
-        e("h1", "", card.id === "medagentbench" ? "MedAgentBench" : card.name),
+        e(
+          "h1",
+          "",
+          card.id === "design2code-v3-484"
+            ? "Design2Code"
+            : card.id === "medagentbench"
+              ? "MedAgentBench"
+              : card.name,
+        ),
         e(
           "p",
           "detail-question",
-          notes.question || card.standard?.description || card.original.summary,
+          notes.question ||
+            card.standard?.description ||
+            card.frontend?.summary ||
+            card.original?.summary,
         ),
         e(
           "p",
@@ -1764,35 +1892,37 @@
         const form = e("form", "view-controls");
         form.setAttribute("aria-label", "Choose graph view");
         const options =
-          card.id === "hle-diamond"
-            ? [
-                ["score", "No tools"],
-                ["reasoning", "Reasoning"],
-                ["knowledge", "Knowledge"],
-                ["tools", "Web + code"],
-              ]
-            : ["runebench", "bullshitbench-v2"].includes(card.id)
+          card.id === "design2code-v3-484"
+            ? Object.entries(window.LAB_FRONTEND.metrics)
+            : card.id === "hle-diamond"
               ? [
-                  [
-                    "time",
-                    card.id === "runebench"
-                      ? "Progress over time"
-                      : "Score vs time",
-                  ],
-                  ["cost", "Score vs cost"],
-                  [
-                    card.id === "runebench" ? "score" : "all",
-                    card.id === "runebench"
-                      ? "Peak scores"
-                      : "All 228 configurations",
-                  ],
+                  ["score", "No tools"],
+                  ["reasoning", "Reasoning"],
+                  ["knowledge", "Knowledge"],
+                  ["tools", "Web + code"],
                 ]
-              : card.id === "medagentbench"
+              : ["runebench", "bullshitbench-v2"].includes(card.id)
                 ? [
-                    ["score", "Original paper slice"],
-                    ["all", "All 12 historical models"],
+                    [
+                      "time",
+                      card.id === "runebench"
+                        ? "Progress over time"
+                        : "Score vs time",
+                    ],
+                    ["cost", "Score vs cost"],
+                    [
+                      card.id === "runebench" ? "score" : "all",
+                      card.id === "runebench"
+                        ? "Peak scores"
+                        : "All 228 configurations",
+                    ],
                   ]
-                : [];
+                : card.id === "medagentbench"
+                  ? [
+                      ["score", "Original paper slice"],
+                      ["all", "All 12 historical models"],
+                    ]
+                  : [];
         if (
           card.id === "runebench" &&
           !["woodcutting", "mining"].includes(state.skill)
@@ -1831,6 +1961,23 @@
           label.append(select);
           form.append(label);
         }
+        if (card.id === "design2code-v3-484") {
+          const label = e("label", "skill-picker", "Compare"),
+            select = e("select");
+          select.name = "comparison";
+          select.setAttribute("aria-label", "Design2Code comparison");
+          for (const [value, text] of [
+            ["direct", "Four Direct configurations"],
+            ["methods", "GPT-4o prompting methods"],
+          ]) {
+            const option = e("option", "", text);
+            option.value = value;
+            option.selected = state.comparison === value;
+            select.append(option);
+          }
+          label.append(select);
+          form.append(label);
+        }
         form.addEventListener("submit", (ev) => ev.preventDefault());
         form.addEventListener("change", (event) => {
           const changedSkill = event.target.name === "skill";
@@ -1838,6 +1985,7 @@
             ...state,
             view: form.elements.view?.value || state.view,
             skill: form.elements.skill?.value || state.skill,
+            comparison: form.elements.comparison?.value || state.comparison,
           };
           if (
             next.id === "runebench" &&
@@ -1851,25 +1999,31 @@
           url.searchParams.set("view", next.view);
           if (next.id === "runebench")
             url.searchParams.set("skill", next.skill);
+          if (next.id === "design2code-v3-484")
+            url.searchParams.set("comparison", next.comparison);
           url.hash = "";
           history.replaceState(historyState(), "", url);
           render(next);
           const selector =
-            next.id === "runebench" && changedSkill
-              ? "select"
-              : `input[value="${next.view}"]`;
+            event.target.name === "comparison"
+              ? "select[name=comparison]"
+              : next.id === "runebench" && changedSkill
+                ? "select[name=skill]"
+                : `input[value="${next.view}"]`;
           detail.querySelector(selector)?.focus({ preventScroll: true });
         });
         if (options.length || card.id === "runebench") detail.append(form);
         const expanded = viewCohort;
         detail.append(
-          card.standard
-            ? standardChart(card, state)
-            : expanded
-              ? card.id === "runebench" && state.view === "cost"
-                ? expandedCost(card, expanded)
-                : standardChart(card, state, expanded)
-              : originalChart(card, state),
+          card.frontend
+            ? window.LAB_FRONTEND.chart(card.frontend, state)
+            : card.standard
+              ? standardChart(card, state)
+              : expanded
+                ? card.id === "runebench" && state.view === "cost"
+                  ? expandedCost(card, expanded)
+                  : standardChart(card, state, expanded)
+                : originalChart(card, state),
         );
         const notice = e("p", "detail-notice");
         notice.append(
@@ -1892,7 +2046,7 @@
           e(
             "h2",
             "",
-            card.original.entryType === "showcase"
+            card.original?.entryType === "showcase"
               ? "A showcase, not a scored comparison"
               : "The evidence comes first",
           ),
