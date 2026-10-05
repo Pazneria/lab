@@ -24,6 +24,8 @@ The change handles public numeric research, model/system names, public source UR
 
 Browser checks exercise injected name/query strings and unsafe link rejection. No injected elements, iframe, external runtime request or browser error was observed. No dependency, paid API, credential setting, account permission, network permission or game security setting was changed. No private transfer URLs, local identities or Library metadata are included in the frontend or review artifacts. This is a review of the owned change, not a repository-wide audit or security certification. Automated accessibility checks can leave contrast cases incomplete; native screen-reader behavior and every source's factual claim were not independently certified.
 
+The artifact check found four inherited `library_file_id` metadata fields in three earlier provenance inputs, one of which was copied into the generated gallery. These operational fields were removed from the public inputs and regenerated asset. Private exact originals remain outside the repository. No numerical value, date, primary URL or research statement changed; this is not a history purge or a claim that an account credential was exposed.
+
 ## Review and publication
 
 The selected repository remains `Pazneria/lab`. This work is rebased onto `82183ca78b00daf8d9c0651497b8ccfac2dd76e2`, preserving the separate infrastructure directory and the room's infrastructure link and position resets. It does not change the external homepage or `lab-space`. The local preview is useful now; PR 17 remains a draft for the parent's source/semantic review. Nothing in this increment has been merged or deployed.

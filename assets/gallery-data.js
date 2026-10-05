@@ -82377,7 +82377,6 @@ window.LAB_GALLERY = {
         "safety_note": "Medical benchmark score does not establish clinical qualification or real-patient safety."
       },
       "archive_provenance": {
-        "library_file_id": "libfile_ba83fb5bba90819190195b3767abb854",
         "file_id": "file_00000000c75881f6a6bdd980e1eb5dce",
         "file_name": "community-medical-expanded-coverage-2026-10-01.zip",
         "version": 0,
