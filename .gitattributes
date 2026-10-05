@@ -18,3 +18,6 @@ data/refresh-packets/*.json text eol=lf
 data/public-sources/* text eol=lf
 data/frontend-*.json text eol=lf
 data/frontend-research-parts-2026-10-05/*.json text eol=lf
+data/coverage-*.json text eol=lf
+data/coverage-research-2026-10-05/** text eol=lf
+assets/coverage-graphs.js text eol=lf
