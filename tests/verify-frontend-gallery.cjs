@@ -254,6 +254,37 @@ async function main() {
     pass(
       "Frontend filter and browser-back preserve four cards; all 12 Arena ratings, exact interval bounds, source links and table values match",
     );
+    for (const comparison of ["direct", "methods"]) {
+      await go(
+        "results.html?benchmark=webdev-arena-frontend&comparison=" + comparison,
+      );
+      assert.deepEqual(
+        await page.locator(".frontend-row .row-model").allTextContents(),
+        Array.from(
+          arena.rows,
+          (r) => r.model_variant + (r.preliminary ? " · preliminary" : ""),
+        ),
+      );
+      const names = await page
+        .locator(".frontend-row")
+        .evaluateAll((ns) => ns.map((n) => n.getAttribute("aria-label")));
+      names.forEach((name, i) => {
+        assert.ok(name.startsWith(arena.rows[i].model_variant + ". "));
+        assert.ok(!name.includes("undefined"));
+      });
+      assert.equal(await page.locator("select[name=comparison]").count(), 0);
+      await page.reload();
+      assert.equal(await page.locator(".frontend-row").count(), 12);
+      assert.ok(
+        !(
+          await page.locator(".frontend-row .row-model").allTextContents()
+        ).some((name) => name.includes("undefined")),
+      );
+    }
+    await audit("Arena ignores Design2Code-only methods URL state");
+    pass(
+      "Arena direct/methods URLs and reload preserve exact model labels and accessible names; method comparison is limited to Design2Code",
+    );
     await go("results.html?benchmark=design2code-v3-484");
     assert.equal(
       await page.locator("input[name=view][value=clip]").isChecked(),
@@ -273,6 +304,18 @@ async function main() {
       for (const metric of Array.from(design.metric_order)) {
         await page.locator("input[name=view][value=" + metric + "]").check();
         assert.equal(await page.locator(".frontend-row").count(), rows.length);
+        assert.deepEqual(
+          await page.locator(".frontend-row .row-model").allTextContents(),
+          rows.map((r) =>
+            comparison === "methods"
+              ? {
+                  direct: "Direct",
+                  text_augmented: "Text augmented",
+                  self_revision: "Self revision",
+                }[r.prompt_method]
+              : r.model_variant,
+          ),
+        );
         assert.deepEqual(
           await page
             .locator(".frontend-row")
@@ -389,7 +432,7 @@ async function main() {
     assert.equal(await page.locator(".frontend-row").count(), 4);
     await page.emulateMedia({ forcedColors: "none" });
     pass(
-      "Six viewport widths down to 320px with open tables; keyboard/tap inspectors, nine axe audits and forced-colors chart presence",
+      "Six viewport widths down to 320px with open tables; keyboard/tap inspectors, ten axe audits and forced-colors chart presence",
     );
     const data = fs.readFileSync(
         path.join(root, "assets/gallery-data.js"),

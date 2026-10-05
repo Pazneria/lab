@@ -1786,7 +1786,10 @@
         : "woodcutting",
       config: (p.get("config") || "").slice(0, 200),
       all: p.get("all") === "1",
-      comparison: p.get("comparison") === "methods" ? "methods" : "direct",
+      comparison:
+        card.id === "design2code-v3-484" && p.get("comparison") === "methods"
+          ? "methods"
+          : "direct",
     };
   }
   function detailView() {

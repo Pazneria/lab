@@ -227,7 +227,7 @@
   }
   function chart(c, state) {
     const arena = c.id === "webdev-arena-frontend",
-      methods = state.comparison === "methods",
+      methods = c.id === "design2code-v3-484" && state.comparison === "methods",
       metric = Object.hasOwn(metrics, state.view) ? state.view : "clip";
     const rows = plotted(c, state),
       low = arena ? 1600 : 0,

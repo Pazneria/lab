@@ -191,10 +191,14 @@ than the original optional candidate. The missing recommendation and 14 audits
 are now preserved in the original source data. No new audit finding becomes a
 numeric observation or an October evaluation date.
 
-The source-input publication check now passes. The parent's requested semantic
-review remains the final pre-merge gate; source reconciliation does not itself
-authorize publication. The reconciled candidate changes neither plotted values
-nor chart membership, axes, effort suffixes, null cost/time fields or qualifiers.
+The source-input publication check passes, and independent parent semantic review
+passed numeric values, provenance, default views and existing cohorts. Its one
+URL-state finding is corrected in both the detail parser and chart renderer:
+method comparison is available only for Design2Code. An Arena URL carrying
+`comparison=methods` keeps exact model labels and accessible names. The bounded
+fix changes no source data, plotted values, chart membership, axes, effort
+suffixes, null cost/time fields or qualifiers. Publication follows the user's
+established tested-website workflow.
 
 ## Browser source check
 
@@ -209,11 +213,11 @@ privileged endpoint or credential change was used.
 The new frontend browser suite verifies 18 observations, all interval bounds
 and votes, all 30 fidelity dimensions, graph membership, exact tables, sources,
 metric/comparison URL state, keyboard/tap inspectors and six viewport widths
-from 320 to 1440px. Nine axe scans report zero violations; color-contrast checks
+from 320 to 1440px. Ten axe scans report zero violations; color-contrast checks
 remain incomplete, so this is not a full accessibility certification. Existing
 full-gallery, current-cohort, navigation, selection, original-results and
 routing checks passed. Existing builder/source checks also passed with original
-input hashes unchanged. The original-packet input check passes after reconciliation; publication still waits parent semantic review.
+input hashes unchanged. The original-packet input check passes after reconciliation. The affected frontend and navigation checks pass after the review fix, including Arena direct/methods URLs, reload and all five Design2Code metric/comparison slices.
 
 A reader can answer three practical questions from the visible explanations:
 
