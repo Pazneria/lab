@@ -289,7 +289,7 @@ async function main() {
         await first.focus();
         assert.ok(
           (await page.locator(".chart-inspector").textContent()).includes(
-            rows[0].snapshot,
+            rows[0].model_snapshot,
           ),
         );
         await page.reload();

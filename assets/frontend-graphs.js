@@ -118,8 +118,8 @@
             r.prompt_method,
           ) &&
           r.uncertainty === null &&
-          typeof r.snapshot === "string" &&
-          r.snapshot.length > 0
+          typeof r.model_snapshot === "string" &&
+          r.model_snapshot.length > 0
         );
       });
     });
@@ -359,7 +359,7 @@
                   "." +
                   (r.preliminary ? " Source marks this row preliminary." : "")
               : "Snapshot: " +
-                  r.snapshot +
+                  r.model_snapshot +
                   ". Prompt method: " +
                   r.prompt_method +
                   ". 484 pages; uncertainty not reported.",
@@ -445,7 +445,7 @@
             "–" +
             r.confidence_interval.upper +
             "; level not supplied"
-          : r.snapshot + " / " + r.prompt_method,
+          : r.model_snapshot + " / " + r.prompt_method,
         arena ? r.votes + " / " + r.rank_spread.join("–") : "Not reported",
         "Not reported / Not reported",
       ])

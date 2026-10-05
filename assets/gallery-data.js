@@ -11089,7 +11089,7 @@ window.LAB_GALLERY = {
   },
   "frontend": {
     "checked_at": "2026-10-05",
-    "source_input": "data/frontend-research-2026-10-05.working.json",
+    "source_input": "data/frontend-research-2026-10-05.original.json",
     "cards": [
       {
         "id": "webdev-arena-frontend",
@@ -11476,7 +11476,7 @@ window.LAB_GALLERY = {
         "rows": [
           {
             "model_variant": "GPT-4o",
-            "snapshot": "gpt-4o-2024-05-13",
+            "model_snapshot": "gpt-4o-2024-05-13",
             "prompt_method": "direct",
             "metrics": {
               "block_match": 93,
@@ -11491,7 +11491,7 @@ window.LAB_GALLERY = {
           },
           {
             "model_variant": "GPT-4o",
-            "snapshot": "gpt-4o-2024-05-13",
+            "model_snapshot": "gpt-4o-2024-05-13",
             "prompt_method": "text_augmented",
             "metrics": {
               "block_match": 92.4,
@@ -11506,7 +11506,7 @@ window.LAB_GALLERY = {
           },
           {
             "model_variant": "GPT-4o",
-            "snapshot": "gpt-4o-2024-05-13",
+            "model_snapshot": "gpt-4o-2024-05-13",
             "prompt_method": "self_revision",
             "metrics": {
               "block_match": 92.7,
@@ -11521,7 +11521,7 @@ window.LAB_GALLERY = {
           },
           {
             "model_variant": "GPT-4V",
-            "snapshot": "gpt-4-1106-vision-preview",
+            "model_snapshot": "gpt-4-1106-vision-preview",
             "prompt_method": "direct",
             "metrics": {
               "block_match": 85.8,
@@ -11536,7 +11536,7 @@ window.LAB_GALLERY = {
           },
           {
             "model_variant": "Claude 3 Opus",
-            "snapshot": "claude-3-opus-20240229",
+            "model_snapshot": "claude-3-opus-20240229",
             "prompt_method": "direct",
             "metrics": {
               "block_match": 90.2,
@@ -11551,7 +11551,7 @@ window.LAB_GALLERY = {
           },
           {
             "model_variant": "Gemini 1.0 Pro Vision",
-            "snapshot": "gemini-1.0-pro-vision",
+            "model_snapshot": "gemini-1.0-pro-vision",
             "prompt_method": "direct",
             "metrics": {
               "block_match": 80.2,
@@ -11569,7 +11569,6 @@ window.LAB_GALLERY = {
       {
         "id": "webcraftbench-v3",
         "name": "WebCraftBench",
-        "category": "frontend",
         "source_url": "https://arxiv.org/html/2609.15387v3",
         "revision_date": "2026-09-20",
         "description": "Runtime coverage-guided exploration with separate aesthetics, usability and requirement-alignment scores",
@@ -11586,6 +11585,7 @@ window.LAB_GALLERY = {
           "85.3% is human-preference agreement, not functional task success.",
           "No new numeric publication recommended from this abbreviated review."
         ],
+        "category": "frontend",
         "rows": [],
         "summary": "Runtime coverage-guided exploration with separate aesthetics, usability and requirement-alignment scores"
       }
@@ -26496,10 +26496,10 @@ window.LAB_GALLERY = {
       "data/current-medical.original.json",
       "data/community-expanded-2026-10-01.json",
       "data/refresh-packets/manifest.json",
-      "data/frontend-research-2026-10-05.working.json",
+      "data/frontend-research-2026-10-05.original.json",
       "data/frontend-research-supplement-2026-10-05.original.json"
     ],
     "rendererContract": "data/gallery-renderer-contract-2026-10-05.json",
-    "frontendInputStatus": "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
+    "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

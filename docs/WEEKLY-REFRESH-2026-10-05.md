@@ -172,20 +172,29 @@ self-reports, Waymo's unresolved serious-injury severity, StationeryBench's
 fixed setups and RoboChallenge's unresolved standings appear in secondary
 source disclosures. Those updates create no new robotics or driving graphs.
 
-The compaction retained the main packet's frontend values and settings but did
-not retain its complete audit text. A resend has been requested. Until then,
-`data/frontend-research-2026-10-05.working.json` is explicitly labeled as a
-provisional renderer input, not a verbatim original archive. Arena's 12 rating
-and vote rows and all 30 supplied Design2Code dimensions were independently
-cross-checked against the primary table and paper. This verification does not
-replace the instruction to preserve the complete parent-supplied original.
+The parent resent the complete main packet as three valid JSON pieces. All are
+archived under `data/frontend-research-parts-2026-10-05/`, and the reconstructed
+original is `data/frontend-research-2026-10-05.original.json`. Its SHA-256 is
+`b22df38b78f92f9110ea839cb07e336a5393ffc0c6f580916a63bf850ab5cd3c`.
+The packet contains three cards, 12 Arena rows, six Design2Code configurations,
+one optional source-only candidate and all 14 qualified source audit entries.
+The provisional working input remains as a historical artifact and is no longer
+selected by the builder. No Library materialization is claimed.
 
-`node scripts/build-gallery.cjs --publish-check` deliberately rejects the
-working packet. Before release, archive the full original at
-`data/frontend-research-2026-10-05.original.json`, reconcile its row field names
-without changing values, regenerate the projection and obtain the parent's
-requested semantic review. The ordinary build/check path supports reviewing
-this local draft; it does not clear the publication gate.
+`scripts/verify-frontend-packet.cjs` checks each received piece's bytes, exact
+assembly, counts, null fields, dates, model configurations and the draft-to-original
+difference. All Arena and Design Arena fields match the draft. Design2Code's
+canonical `model_snapshot` replaces the provisional `snapshot` field name;
+its values and all 30 fidelity measurements are unchanged. WebCraftBench's
+provisional `category` and empty `rows` belong to the renderer projection rather
+than the original optional candidate. The missing recommendation and 14 audits
+are now preserved in the original source data. No new audit finding becomes a
+numeric observation or an October evaluation date.
+
+The source-input publication check now passes. The parent's requested semantic
+review remains the final pre-merge gate; source reconciliation does not itself
+authorize publication. The reconciled candidate changes neither plotted values
+nor chart membership, axes, effort suffixes, null cost/time fields or qualifiers.
 
 ## Browser source check
 
@@ -204,7 +213,7 @@ from 320 to 1440px. Nine axe scans report zero violations; color-contrast checks
 remain incomplete, so this is not a full accessibility certification. Existing
 full-gallery, current-cohort, navigation, selection, original-results and
 routing checks passed. Existing builder/source checks also passed with original
-input hashes unchanged. The publication-input gate remains intentionally closed.
+input hashes unchanged. The original-packet input check passes after reconciliation; publication still waits parent semantic review.
 
 A reader can answer three practical questions from the visible explanations:
 

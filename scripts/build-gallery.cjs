@@ -15,6 +15,7 @@ const standard = read('data/gallery-current-2026-10-01.json');
 const notes = read('data/gallery-notes.json');
 const frontendInput = fs.existsSync(path.join(root, 'data/frontend-research-2026-10-05.original.json')) ? 'data/frontend-research-2026-10-05.original.json' : 'data/frontend-research-2026-10-05.working.json';
 const frontendPacket = read(frontendInput);
+if (frontendInput.endsWith('.original.json')) require('./verify-frontend-packet.cjs')(true);
 if (process.argv.includes('--publish-check')) {
   assert.equal(frontendInput, 'data/frontend-research-2026-10-05.original.json', 'Publication blocked: the full parent original packet has not been archived');
   assert.equal(frontendPacket.schema_version, 'benchmark-research-packet-2026-10-05-v1');

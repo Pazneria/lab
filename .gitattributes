@@ -16,3 +16,4 @@ data/gallery-renderer-contract-*.json text eol=lf
 data/refresh-packets/*.json text eol=lf
 data/public-sources/* text eol=lf
 data/frontend-*.json text eol=lf
+data/frontend-research-parts-2026-10-05/*.json text eol=lf

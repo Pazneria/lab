@@ -22,9 +22,8 @@ charts remain available with their exact cost/time meanings.
 The October 5 draft adds separate frontend preference and historical screenshot-fidelity
 views, plus Design Arena and WebCraftBench source guides. Arena ratings retain
 source intervals and votes. Design2Code defaults to four Direct configurations;
-GPT-4o's prompting methods and five fidelity dimensions remain separate. The
-full main packet archive and parent semantic review are required before this
-draft's numeric changes can be published. See the [October 5 refresh report](docs/WEEKLY-REFRESH-2026-10-05.md).
+GPT-4o's prompting methods and five fidelity dimensions remain separate. The complete original research packet is archived and reconciled. Parent semantic
+review is required before this draft's numeric changes can be published. See the [October 5 refresh report](docs/WEEKLY-REFRESH-2026-10-05.md).
 
 See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
 [current refresh and renderer review](docs/CURRENT-GALLERY-INTEGRATION.md),
