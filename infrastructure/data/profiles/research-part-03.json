@@ -1,0 +1,95 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 3,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "interpretation_rules",
+      "value": {
+        "format": "markdown",
+        "content": "# Profile expansion: interpretation and missing-data rules\n\nAs of October 5, 2026. This is a research delta for the existing atlas, not a live monitoring service.\n\n## Units and scopes\n\n- W, MW and GW are power. One MW is 1,000,000 W; one GW is 1,000 MW\n- FLOP measures accumulated computation. FLOP/s is computing throughput. Neither is electricity consumption\n- MWh/TWh are energy over time. Do not turn annual energy into installed power without an explicit, labelled average calculation\n- Display IT capacity separately from total facility capacity. Facility power includes cooling and electrical overhead; do not add it to IT power\n- A power contract, generating station capacity, utility connection, permitted load, future campus design and operating AI equipment are different observations\n- GPU model, GPU count, GB200 superchip count, NVL72 rack count and H100-equivalents are different units. Never multiply the Astra estimate's 100,000 accelerators by 72\n\n## Required UI distinctions\n\n1. Company-reported operating capacity, with observation date\n2. Independent estimated operating capacity, with evidence date and method\n3. Announced/contracted future capacity, with target date and delivery status\n4. Historical or superseded claims\n5. Unknown or undisclosed values\n\nUse an estimate badge immediately beside an estimated number. Show both “as of October 5” and the date of the underlying observation. Older evidence is not a measurement made today. Do not use a green “live” badge.\n\n“Operating” in the Epoch file is an inference about installed/available site capacity. The numbers are not live electricity-meter readings or a measure of how busy the chips are.\n\n## Ownership, access and counting\n\n- Preserve hardware owner, property owner, facility operator, developer, power supplier and compute customer as distinct roles\n- The Epoch owner field means owner of AI chips, not necessarily owner of the building or land\n- A lab's access to a cloud does not establish its capacity allocation. Cloud availability of a model is not proof that the model was trained there\n- Colossus 1 is SpaceXAI-owned infrastructure associated with Anthropic's all-capacity agreement. Epoch's June 1 access date is assumed from the May announcement\n- Colossus 2 has several users. Its 946-MW IT site estimate cannot be credited in full to every user\n- Rainier's fleet-wide chip count overlaps New Carlisle's site count. Never add the two\n- OpenAI's 1.9-GW available-compute disclosure for 2025 overlaps partner sites. Never add it to them or relabel it October 2026\n- Google's, Microsoft's and Amazon's owned AI-site subtotals include Cloud workloads and outside customers. They are not DeepMind, MAI or Nova training allocations\n- Covered-site owner subtotals in the JSON are deliberately incomplete samples of documented sites, not global company totals or hard lower bounds. Estimates can be wrong in either direction\n- Preserve confidence tags on user assignments. Speculative users must not be promoted to confirmed allocations\n- Global aggregation should count each physical site once. A customer view may show the same site but must not turn it into additive capacity for that customer\n\n## Null is a result\n\nUse null with a reason when the public evidence cannot establish a value. Render as “Not publicly established” or “Undisclosed,” not zero or a blank dash that looks like an error. Do not fill null with an extrapolation from:\n\n- future announcements\n- total cloud-fleet capacity\n- a power purchase agreement\n- capital expenditure\n- model quality, API price, output speed or the release name\n- an older model's compute estimate\n\nA zero for an under-construction site means no operating capacity counted in this dated site model. It does not mean the construction site literally consumes no electricity.\n\n## Training compute\n\nA supported hardware calculation needs accelerator count, numerical precision and dense/sparse performance convention, effective throughput/utilization, run duration and training scope. General form: count × FLOP/s per accelerator × seconds × utilization. Inputs must be observed or explicitly assumed, with uncertainty.\n\nFor transformer pretraining, 6 × active parameters × training tokens is a useful approximation. It is not a complete account of attention, multimodal computation, recomputation, distillation teachers, reinforcement learning, failed runs or research experiments. Use active MoE parameters rather than total MoE parameters unless the method states otherwise.\n\n- GPT-6 Astra: show Epoch's approximately 1e27-FLOP estimate, with its note's approximately 5e26–2e27 interval and 100,000-GB200 / 90-day / 25%-FP8-MFU assumptions. Attribute to Epoch, not OpenAI. The underlying notebook was not readable in this pass; do not claim a full independent reconstruction. Epoch's “Likely” confidence category and the narrower interval in its notes are different metadata\n- MAI-Thinking-1: approximately 7e24 FLOP is an estimate of pretraining plus mid-training, from 33.55T tokens and about 34.7B active parameters. Keep total training FLOP null because post-training is not quantified. The paper discloses 8192 GB200 GPUs in the first two phases and 4096 in the final mid-training phase; these are not a company fleet count\n- Opus 5.5, Fable 5.1, Gemini 4 Argon, Grok 4.7, Muse Spark 1.3 and Nova 2 Pro: no supported current-model compute value was established; checked Epoch rows are blank\n- Historical estimates are separate reference cards. Do not label Llama 3.1, Grok 3 or Gemini 1.0 Ultra as today's best model\n\nDo not rank labs by FLOP when most current values are missing, and do not imply more training compute guarantees a better model.\n\n## Model selection\n\n“Current flagship,” “latest release,” “broadly available model” and “highest on a named benchmark” need separate fields. A benchmark claim needs the benchmark/version, effort/harness where available, date and source.\n\nAnthropic's Opus 5.5 and Sonnet 5.5 are verified releases. Fable 5.1 is also verified. No official Fable 5.5 confirmation was found. Google Gemini 4 Argon began trusted-access rollout September 30, while Gemini 3.8 Flash is a broad-access comparator. GPT-6 Astra remains OpenAI's highest-intelligence flagship even though GPT-6.1 Sol is newer.\n\n## Source and refresh policy\n\nThe original atlas's “primary sources only” banner must be updated if importing this delta. Suggested wording: “Company disclosures and public technical sources, with clearly labelled independent research estimates.” Attribute Epoch AI and its CC BY data licence in both the source drawer and downloadable data.\n\nRaw Epoch CSV snapshots are included for audit. They are broader than the finished profile selection. Do not publish unfiltered raw research artifacts or file paths in the interface. Raw dates, numerical precision and uncertainty tags are retained for reproducibility; round display values conservatively.\n\nFuture dates that pass are not proof of completion. Require fresh operational evidence before moving a project from announced to online.\n\n## Existing atlas correction: Norway\n\nThe July 2025 OpenAI page described a proposed 50/50 Aker/Nscale joint venture, 230 MW initial capacity and OpenAI as a potential offtaker. Nscale's April 14, 2026 update says the Narvik project is solely managed by Nscale after rolling up the JV and describes an expanded Microsoft deal, including 30,000+ Rubin GPUs for 2027. Keep the OpenAI announcement historical and make present allocations unverified, rather than silently assigning the whole campus to OpenAI.\n\nSource: https://www.nscale.com/press-releases/nscale-microsoft-norway\n"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "colossus-1",
+        "name": "Colossus 1",
+        "atlas_site_exists": true,
+        "location_label": "3231 Riverport Rd, Memphis, TN 38109",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "SpaceXAI",
+            "player_id": "xai",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Anthropic",
+            "player_id": "anthropic",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": "SpaceXAI",
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-06-15",
+        "it_capacity_w": 340000000,
+        "it_capacity_mw": 340,
+        "facility_capacity_w": 425000000,
+        "facility_capacity_mw": 425,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1aXs4vx7AMrzUIR3YeBvJRAD_rmDiioY9zR95DZdDa_s/edit?usp=sharing",
+        "hardware_types": [
+          "H100",
+          "H200",
+          "B200"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "H100",
+            "count": 150000,
+            "date": "2026-06-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          },
+          {
+            "chip_type": "H200",
+            "count": 50000,
+            "date": "2026-06-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          },
+          {
+            "chip_type": "B200",
+            "count": 30000,
+            "date": "2026-06-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          }
+        ],
+        "warnings": [
+          "Anthropic access beginning June 1 is an Epoch assumption based on the May announcement, not independently verified delivery. SpaceXAI owns the hardware; Anthropic is the named user."
+        ],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    }
+  ]
+}

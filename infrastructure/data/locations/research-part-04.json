@@ -1,0 +1,240 @@
+{
+  "part": 4,
+  "parts": 5,
+  "as_of": "2026-10-05",
+  "sites": [
+    {
+      "site_id": "meta-hyperion",
+      "location": {
+        "latitude": 32.499969,
+        "longitude": -91.635911,
+        "precision": "government_project_reference",
+        "display_label": "Meta / Laidley Richland Parish campus; USACE project reference",
+        "coordinate_source": "USACE public notice project-location coordinate for Laidley data-center campus",
+        "public_location_source_ids": [
+          "location-meta-usace",
+          "meta-hyperion"
+        ],
+        "address": "Richland Parish near Holly Ridge, Louisiana, USA",
+        "source_date": "2024-12-12",
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 13,
+        "footprint": null,
+        "location_note": "Public project reference point for the original campus; does not define all later Hyperion expansion land."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "google-vizag",
+      "location": {
+        "latitude": 17.906,
+        "longitude": 83.329,
+        "precision": "approximate_locality",
+        "display_label": "Tarluvada area, Visakhapatnam; approximate village marker",
+        "coordinate_source": "Google official groundbreaking locality; OSM village point rounded to 3 decimals",
+        "public_location_source_ids": [
+          "location-google-tarluvada",
+          "location-osm-google-vizag"
+        ],
+        "address": "Tarluvada, Anandapuram, Visakhapatnam, Andhra Pradesh, India",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 11,
+        "footprint": null,
+        "location_note": "Village marker, not the construction parcel. The hub spans broader infrastructure and this source identifies the groundbreaking locality."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "stargate-norway",
+      "location": {
+        "latitude": 68.577,
+        "longitude": 17.586,
+        "precision": "approximate_planning_area",
+        "display_label": "Skoglund / Kvandal planning area; approximate marker",
+        "coordinate_source": "Editorial area reference derived from published municipal map grid: ETRS89 UTM33N, approximately E605400 N7609400, rounded to 3 decimals",
+        "public_location_source_ids": [
+          "location-stargate-narvik",
+          "location-skoglund-plan"
+        ],
+        "address": "Skoglund / Kvandal, Bjerkvik, Narvik, Norway",
+        "source_date": "2026-04-08",
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 12,
+        "footprint": null,
+        "location_note": "Planning-area reference, not a surveyed Stargate parcel. No private farm geocode used. No planning boundary presented as current site footprint."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "colossus-1",
+      "location": {
+        "latitude": 35.059681,
+        "longitude": -90.157633,
+        "precision": "public_mapped_campus",
+        "display_label": "Colossus 1, Memphis; public campus point",
+        "coordinate_source": "City of Memphis public property address matched to OSM named Colossus campus feature",
+        "public_location_source_ids": [
+          "location-colossus-public-address",
+          "location-osm-colossus-1"
+        ],
+        "address": "3231 Paul R. Lowery Road, Memphis, Tennessee, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Colossus 1 campus only, not other Memphis or Mississippi expansion sites."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "chiba-ai",
+      "location": {
+        "latitude": 35.564703,
+        "longitude": 140.107261,
+        "precision": "associated_campus_reference",
+        "display_label": "JERA Chiba power-station campus; proposed AI parcel not pinpointed",
+        "coordinate_source": "JERA official station address and AI-site announcement, plus OSM named campus point",
+        "public_location_source_ids": [
+          "location-jera-chiba",
+          "jera-chiba",
+          "location-osm-chiba-ai"
+        ],
+        "address": "2-1377 Soga-cho, Chuo-ku, Chiba, Japan",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Existing station campus reference only. Exact proposed AI-building footprint has not been established."
+      },
+      "coordinate_changed": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "location-meta-usace",
+      "title": "Laidley data-center campus public project location",
+      "publisher": "US Army Corps of Engineers, Vicksburg District",
+      "url": "https://www.mvk.usace.army.mil/Portals/58/docs/regulatory/publicnotices/Public%20Notice%20MVK-2024-740_Final.pdf?ver=mi1h5xECRBUjFiqtHN9mqg%3D%3D",
+      "published_at": "2024-12-12",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Public Notice MVK-2024-740, dated December 12, 2024, publishes the project coordinate."
+    },
+    {
+      "id": "meta-hyperion",
+      "title": "Richland Parish expansion",
+      "publisher": "Meta",
+      "url": "https://datacenters.atmeta.com/2026/07/deepening-our-investment-in-richland-parish-louisiana/",
+      "published_at": "2026-07-13",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-google-tarluvada",
+      "title": "Google AI hub groundbreaking at Tarluvada",
+      "publisher": "Google Cloud",
+      "url": "https://www.googlecloudpresscorner.com/2026-04-28-Google-Breaks-Ground-on-India-AI-Hub%2C-Launching-a-National-Industrial-Ecosystem-Alongside-Indias-Digital-Infrastructure-Milestone",
+      "published_at": "2026-04-28",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-osm-google-vizag",
+      "title": "Public map feature for Google Visakhapatnam AI hub",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/node/12460654961",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-stargate-narvik",
+      "title": "Narvik municipality identifies Stargate at Skoglund in Kvandal",
+      "publisher": "Narvik municipality",
+      "url": "https://www.narvik.kommune.no/nyheter/narvik-vertskap-for-europas-forste-openai-datasenter.5690.aspx",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-skoglund-plan",
+      "title": "Skoglund public planning map, adopted March 2026",
+      "publisher": "Narvik municipality",
+      "url": "https://www.narvik.kommune.no/_f/p1/i210c4269-c744-40c1-a0aa-75947e077fff/vedtatt-plankart-med-paskrift-unntatt-rettsvirkning-nokv-104-pna-pla-00005-plankart.pdf",
+      "published_at": "2026-04-08",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Page 2 is Skoglund, ETRS89 UTM33N. Broad planning area, not an as-built Stargate footprint. Plan 2023003 supersedes 2019002."
+    },
+    {
+      "id": "location-colossus-public-address",
+      "title": "Colossus public facility address in municipal property record",
+      "publisher": "City of Memphis",
+      "url": "https://epayments.memphistn.gov/Property/Detail.aspx?ParcelNo=P301698",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Public property record P301698 identifies XAI at 3231 Paul R. Lowery Road. Used only for location, with no financial details retained."
+    },
+    {
+      "id": "location-osm-colossus-1",
+      "title": "Public map feature for Colossus 1",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/relation/16356926",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-jera-chiba",
+      "title": "JERA Chiba thermal power station public location",
+      "publisher": "JERA",
+      "url": "https://www.jera.co.jp/corporate/business/thermal-power/list/chiba/",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Operator publishes address and map for existing power-station campus."
+    },
+    {
+      "id": "jera-chiba",
+      "title": "JERA Dell RHAELM AI infrastructure MoU",
+      "publisher": "JERA",
+      "url": "https://www.jera.co.jp/en/news/information/20261001_2535",
+      "published_at": "2026-10-01",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-osm-chiba-ai",
+      "title": "Public map feature for Chiba AI infrastructure project",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/605327355",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    }
+  ]
+}

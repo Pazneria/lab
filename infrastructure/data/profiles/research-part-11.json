@@ -1,0 +1,267 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 11,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-spacex",
+        "title": "Higher usage limits and SpaceX compute agreement",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/higher-limits-spacex",
+        "published_at": "2026-05-06",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-dc-timelines",
+        "title": "Data center timeline CSV",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/data_centers/data_center_timelines.csv",
+        "published_at": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research_dataset",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-amazon-2026",
+        "title": "Expanded Amazon compute collaboration",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/anthropic-amazon-compute",
+        "published_at": "2026-04-20",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "google-flash38",
+        "title": "Gemini 3.8 Flash model card",
+        "publisher": "Google DeepMind",
+        "url": "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+        "published_at": "2026-09-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-fable51",
+        "title": "Claude Fable 5.1 and Mythos 5.1",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+        "published_at": "2026-09-01",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "xai-colossus-partnership",
+        "title": "Anthropic compute partnership",
+        "publisher": "SpaceXAI",
+        "url": "https://x.ai/news/anthropic-compute-partnership",
+        "published_at": "2026-05-06",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-dc-csv",
+        "title": "Data centers CSV",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/data_centers/data_centers.csv",
+        "published_at": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research_dataset",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-sonnet55",
+        "title": "Introducing Claude Sonnet 5.5",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/claude-sonnet-5-5",
+        "published_at": "2026-09-28",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-partners-2026",
+        "title": "Scaling AI for everyone",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/scaling-ai-for-everyone/",
+        "published_at": "2026-02-27",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "meta-spark13",
+        "title": "Introducing Muse Spark 1.3",
+        "publisher": "Meta",
+        "url": "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+        "published_at": "2026-09-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-current-models",
+        "title": "Current flagship model guidance",
+        "publisher": "OpenAI",
+        "url": "https://developers.openai.com/api/docs/models",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-ports",
+        "title": "PORTS-Pike agreement",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/openai-joins-ports-pike-project/",
+        "published_at": "2026-08-17",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-opus55",
+        "title": "Introducing Claude Opus 5.5",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/claude-opus-5-5",
+        "published_at": "2026-09-22",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-sol61",
+        "title": "Introducing GPT-6.1 Sol",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "published_at": "2026-09-29",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "microsoft-thinking1",
+        "title": "MAI-Thinking-1 model page",
+        "publisher": "Microsoft",
+        "url": "https://microsoft.ai/models/mai-thinking-1/",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-models-csv",
+        "title": "All AI models CSV",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/all_ai_models.csv",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research_dataset",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-aws",
+        "title": "Amazon partnership",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/amazon-partnership/",
+        "published_at": "2026-02-27",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-astra",
+        "title": "GPT-6 Astra",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/gpt-6-astra/",
+        "published_at": "2026-09-03",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "xai-grok47",
+        "title": "Introducing Grok 4.7",
+        "publisher": "SpaceXAI",
+        "url": "https://x.ai/news/grok-4-7",
+        "published_at": "2026-09-21",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "amazon-nova-current",
+        "title": "Amazon Nova",
+        "publisher": "AWS",
+        "url": "https://aws.amazon.com/nova/",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,393 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 10,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-meta-rosemount",
+        "name": "Meta Rosemount",
+        "atlas_site_exists": false,
+        "location_label": "1772-2396 145th St, Rosemount, MN 55068, USA",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Meta",
+            "player_id": "meta",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Meta",
+            "player_id": "meta",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-06-19",
+        "it_capacity_w": 178000000,
+        "it_capacity_mw": 178,
+        "facility_capacity_w": 241000000,
+        "facility_capacity_mw": 241,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/11pdqhcJnw3iAwraTho9AW4m7WyBdvTR9sYzK0z5-SC8/edit?usp=sharing",
+        "hardware_types": [
+          "B200"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "B200",
+            "count": 85364,
+            "date": "2026-06-19",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "google-tpu8",
+        "title": "Google Cloud Next 2026",
+        "publisher": "Google",
+        "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cloud-next-2026-sundar-pichai/",
+        "published_at": "2026-04-22",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": "TPU 8t/8i announcement, not a disclosed Argon hardware or training allocation."
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "aws-rainier-location",
+        "title": "Project Rainier infrastructure",
+        "publisher": "Amazon",
+        "url": "https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": "Explicitly identifies St. Joseph County as one Rainier site; program spans sites"
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-dc",
+        "title": "AI data centers",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/ai-data-centers",
+        "published_at": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research",
+        "note": "CC BY. Original analysis of satellite/drone imagery, equipment, permits and reports; capacity estimates, not metered draw. Incomplete coverage."
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "microsoft-fairwater",
+        "title": "First Mount Pleasant facility fully operational",
+        "publisher": "Microsoft",
+        "url": "https://news.microsoft.com/source/2026/06/23/microsoft-completes-construction-on-first-datacenter-facility-in-mount-pleasant-wisconsin/",
+        "published_at": "2026-06-23",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-norway",
+        "title": "Introducing Stargate Norway",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/introducing-stargate-norway/",
+        "published_at": "2025-07-31",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": "English page gives 230 MW plus 290 MW ambition; translated pages differ, so English and Nscale release used"
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "crusoe-microsoft",
+        "title": "Separate 900 MW Microsoft Abilene campus",
+        "publisher": "Crusoe",
+        "url": "https://www.crusoe.ai/resources/newsroom/crusoe-announces-new-900-mw-ai-factory-campus-in-abilene-texas-to-support-microsoft-ai-infrastructure",
+        "published_at": "2026-03-27",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "aws-rainier-online",
+        "title": "AWS weekly roundup: Rainier online",
+        "publisher": "Amazon",
+        "url": "https://aws.amazon.com/blogs/aws/aws-weekly-roundup-project-rainier-online-amazon-nova-amazon-bedrock-and-more-november-3-2025/",
+        "published_at": "2025-11-03",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "microsoft-wisconsin",
+        "title": "Wisconsin investment and second facility",
+        "publisher": "Microsoft",
+        "url": "https://blogs.microsoft.com/on-the-issues/2025/09/18/made-in-wisconsin-the-worlds-most-powerful-ai-datacenter/",
+        "published_at": "2025-09-18",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-fluidstack",
+        "title": "American infrastructure investment with Fluidstack",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure",
+        "published_at": "2025-11-12",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "crusoe-abilene",
+        "title": "Abilene campus expansion to 1.2 GW",
+        "publisher": "Crusoe",
+        "url": "https://www.crusoe.ai/resources/newsroom/crusoe-expands-ai-data-center-campus-in-abilene-to-1-2-gigawatts",
+        "published_at": "2025-03-18",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "openai-abilene-training",
+        "title": "Compute infrastructure and Abilene training",
+        "publisher": "OpenAI",
+        "url": "https://openai.com/index/building-the-compute-infrastructure-for-the-intelligence-age/",
+        "published_at": "2026-04-29",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-azure",
+        "title": "Microsoft, NVIDIA and Anthropic partnerships",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships",
+        "published_at": "2025-11-18",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "meta-infra",
+        "title": "Infrastructure evolution and AI",
+        "publisher": "Meta",
+        "url": "https://engineering.fb.com/2025/09/29/data-infrastructure/metas-infrastructure-evolution-and-the-advent-of-ai/",
+        "published_at": "2025-09-29",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "google-vizag-announce",
+        "title": "India AI hub investment",
+        "publisher": "Google",
+        "url": "https://blog.google/intl/en-in/company-news/our-first-ai-hub-in-india-powered-by-a-15-billion-investment/",
+        "published_at": "2025-10-14",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "google-vizag-build",
+        "title": "Visakhapatnam groundbreaking",
+        "publisher": "Google",
+        "url": "https://blog.google/intl/en-in/google-ai-hub-scaling-indias-ai-infrastructure-and-community-impact/",
+        "published_at": "2026-04-28",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "microsoft-mai-launch",
+        "title": "Launching seven new MAI models",
+        "publisher": "Microsoft",
+        "url": "https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/",
+        "published_at": "2026-06-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-models",
+        "title": "AI models dataset",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/ai-models",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research",
+        "note": "CC BY. CSV downloaded on 2026-10-05; individual row modification dates retained."
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-google-2026",
+        "title": "Expanded Google and Broadcom compute agreement",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
+        "published_at": "2026-04-06",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "anthropic-google-2025",
+        "title": "Expanded Google Cloud TPU use",
+        "publisher": "Anthropic",
+        "url": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services",
+        "published_at": "2025-10-23",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-eci",
+        "title": "Epoch model index",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/models/search",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_benchmark",
+        "note": "Dated snapshot; ECI is one composite metric, not a universal best-model verdict."
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "amazon-nova2",
+        "title": "Amazon Nova 2 models in Bedrock",
+        "publisher": "AWS",
+        "url": "https://aws.amazon.com/about-aws/whats-new/2025/12/nova-2-foundation-models-amazon-bedrock/",
+        "published_at": "2025-12-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "meta-hyperion",
+        "title": "Richland Parish expansion",
+        "publisher": "Meta",
+        "url": "https://datacenters.atmeta.com/2026/07/deepening-our-investment-in-richland-parish-louisiana/",
+        "published_at": "2026-07-13",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-dc-chips",
+        "title": "Data center chip quantities CSV",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/data_centers/data_centers_chip_quantities.csv",
+        "published_at": "2026-10-02",
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research_dataset",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "google-argon",
+        "title": "Introducing Gemini 4 Argon",
+        "publisher": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "published_at": "2026-09-30",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": null
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "epoch-models-method",
+        "title": "AI models estimation methodology",
+        "publisher": "Epoch AI",
+        "url": "https://epoch.ai/data/ai-models-documentation/estimation",
+        "published_at": null,
+        "retrieved_at": "2026-10-05",
+        "source_type": "independent_research_methodology",
+        "note": null
+      }
+    }
+  ]
+}

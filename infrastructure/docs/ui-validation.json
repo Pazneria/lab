@@ -1,67 +1,147 @@
 {
-  "checkedAt": "2026-10-05T17:21:39.394Z",
+  "checkedAt": "2026-10-05T19:18:42.704Z",
   "checks": [
-    "All 25 sites, featured supply-chain profiles and seven source-timeline entries load with no runtime service dependency.",
-    "The shared Lab navigation opens the atlas by keyboard and preserves the benchmark destination.",
-    "Status, type, search, country and explicit company-role filters combine, clear hidden selections, reset and show meaningful empty states.",
-    "Coincident Singapore projects share one cluster; keyboard activation opens independently selectable sites.",
-    "Keyboard site selection and URL reload retain the selected site and filters.",
-    "Evidence/product filters, all partner profiles, product/fab separation and multisite program boundaries are retained.",
-    "Every site deep link resolves; distinct generation, contract, planned uprate, packaging capacity and unknown/restart states are visible.",
-    "External links use HTTPS plus noopener/noreferrer; search text is rendered as text.",
-    "390px, 320px and 768px layouts have no horizontal overflow; mobile filter and detail selection pass.",
-    "Failed basemap leaves the directory usable; missing data and JavaScript-disabled mode offer the complete readable source index.",
-    "Direct file preview works without fetch or a local web server.",
-    "Data rendering rejects non-HTTPS source URLs and HTML payloads."
+    "140 entity pages have native headings, breadcrumbs, existing internal routes and safe external links.",
+    "Seven unknown lab totals, 75 scoped estimates, future cutoff, 25 reviewed coordinates, three approximate areas and single Narvik identity are preserved.",
+    "Atlas shows 94 facilities with a compact initial list, 25 map actions, and no external requests by default.",
+    "Combined filters, URL persistence, no-results/reset, same-point clustering and keyboard pan/zoom work.",
+    "Street detail is opt-in; simulated tile failure preserves the local map. All tile requests were intercepted.",
+    "Directory search opens native facility URLs; estimated IT/facility power, address-only records and Norway history retain their meaning.",
+    "Historical paper-reported training is labeled separately; Opus ECI and MAI preview clauses link to their verified sources.",
+    "Model identity, access, total-versus-partial training FLOPs, historical reports and product/company/facility links render separately.",
+    "Atlas, directory, company, product, mapped and unmapped facility pages fit 768, 390 and 320 pixel widths.",
+    "Adversarial data stays text; unsafe source URLs are not rendered as active links.",
+    "Blocked map/data, JavaScript-disabled entity pages/directory and local-file preview retain useful content and fallback links.",
+    "No page errors or unapproved external runtime requests in the tested revision."
   ],
   "screenshots": [
-    "desktop.png",
-    "power-detail.png",
-    "supply-chain.png",
-    "lab-navigation-mobile.png",
-    "mobile.png",
-    "mobile-detail.png"
+    "v2-home.png",
+    "v2-facility-capacity.png",
+    "v2-facility-map.png",
+    "v2-model-evidence.png",
+    "v2-company.png",
+    "v2-company-power.png",
+    "v2-company-models.png",
+    "v2-product.png",
+    "v2-mobile-company.png",
+    "v2-mobile-models.png",
+    "v2-mobile-map.png"
   ],
   "viewports": [
     {
-      "label": "desktop",
+      "label": "desktop atlas",
       "width": 1440,
       "scroll": 1440
     },
     {
-      "label": "390px shared navigation",
-      "width": 390,
-      "scroll": 390
-    },
-    {
-      "label": "390px",
-      "width": 390,
-      "scroll": 390
-    },
-    {
-      "label": "320px shared navigation",
-      "width": 320,
-      "scroll": 320
-    },
-    {
-      "label": "320px",
-      "width": 320,
-      "scroll": 320
-    },
-    {
-      "label": "768px shared navigation",
+      "label": "768: atlas",
       "width": 768,
       "scroll": 768
     },
     {
-      "label": "768px",
+      "label": "768: companies/anthropic/",
       "width": 768,
       "scroll": 768
+    },
+    {
+      "label": "768: companies/microsoft/",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "768: facilities/stargate-abilene/",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "768: facilities/epoch-coreweave-denton-tx/",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "768: directory/",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "768: products/gb200/",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "390: atlas",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390: companies/anthropic/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390: companies/microsoft/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390: facilities/stargate-abilene/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390: facilities/epoch-coreweave-denton-tx/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390: directory/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390: products/gb200/",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "320: atlas",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320: companies/anthropic/",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320: companies/microsoft/",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320: facilities/stargate-abilene/",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320: facilities/epoch-coreweave-denton-tx/",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320: directory/",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320: products/gb200/",
+      "width": 320,
+      "scroll": 320
     }
   ],
   "accessibility": [
     {
-      "label": "desktop",
+      "label": "desktop atlas",
       "violations": [],
       "incomplete": [
         "aria-prohibited-attr",
@@ -69,15 +149,35 @@
       ]
     },
     {
-      "label": "supply-chain",
+      "label": "facility estimates",
       "violations": [],
       "incomplete": [
-        "aria-prohibited-attr",
         "color-contrast"
       ]
     },
     {
-      "label": "mobile",
+      "label": "OpenAI profile",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "product profile",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "mobile company",
+      "violations": [],
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "mobile atlas",
       "violations": [],
       "incomplete": [
         "aria-prohibited-attr",
@@ -87,6 +187,14 @@
   ],
   "externalRequests": [],
   "pageErrors": [],
-  "base": "http://127.0.0.1:61108/lab/infrastructure/",
-  "browser": "154.0.4258.53"
+  "browser": "154.0.4258.53",
+  "interceptedStreetTileRequests": 15,
+  "status": "passed",
+  "scope": "Final source-corrected entity and geographic revision; headless local checks",
+  "tilePolicy": "All optional OSM tile requests intercepted; no public tile service requests",
+  "limits": [
+    "Headless Edge only; no physical-device, Firefox, Safari or screen-reader testing",
+    "Broader Epoch records are attributed ingestion, not a second underlying permit audit",
+    "Deployment is verified separately"
+  ]
 }

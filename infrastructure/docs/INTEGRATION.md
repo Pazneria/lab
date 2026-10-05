@@ -1,80 +1,63 @@
-# Infrastructure atlas integration
+# Atlas entity and map revision: integration boundary
 
-Base: `132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9` on `Pazneria/lab` main.
-Local branch: `codex/infrastructure-atlas`.
+Base: `fd8bace01e99e99e5bae0afe65c6d7efc95873bc` (verified main, including benchmark PR #17). The revision began at `82183ca78b00daf8d9c0651497b8ccfac2dd76e2` and fast-forwarded to current main without atlas conflicts.
+Branch: `codex/atlas-entity-pages`.
 
-## Boundary
+## Source review and publication authorization
 
-Every added file lives under `infrastructure/`. The one agreed shared change is
-an `AI infrastructure` link in `lab-space/index.html` inside `nav#tools`, pointing
-to `/lab/infrastructure/`. No benchmark data, benchmark UI, root page, 3D station
-or hosting configuration is changed.
-The atlas's own return links point to the existing `../lab-space/` route.
+Independent review passed PR #19 at `4b9a73954db869781c86cbde2939957888936297`,
+including all profiles, capacity/location records, three CSV hashes, 430 timeline
+observations and 99 chip-count records. Publication was authorized after three
+small corrections: derive historical training badges from the evidence class,
+add Epoch's Opus ECI page, and add Microsoft's August 12 preview announcement.
+Those source pages were verified and retained in `data/profiles/review-corrections.json`.
+The updated builder and browser checks verify these corrections.
 
-The room regression test also reloads before its keyboard-cancellation and
-bench-arrival scenarios. This restores a known starting distance; the previous
-sequence could reach the bench before its pre-arrival assertions. Every original
-assertion remains. No room JavaScript or geometry changed.
+Every changed or added file in this revision is under `infrastructure/`. No benchmark
+data/UI, shared navigation, room behavior or hosting configuration is changed.
+The existing navigation link already reaches `/lab/infrastructure/`; all new entity
+routes are ordinary static directories under that route. GitHub Pages can serve them
+without a new service, paid key, credential or deployment pipeline.
 
-The public route is `https://pazneria.github.io/lab/infrastructure/`.
-Existing GitHub Pages main/root hosting can serve the directory without a new
-service or build pipeline. Local preview also works by opening
-`infrastructure/index.html` directly.
+## Parent review checklist
 
-## Parent review and integration
+1. Review the seven lab profiles, estimated versus unknown power, current model
+   identity/access and model-training scope against the supplied public research.
+2. Review 25 location patches, three approximate areas and address-only records.
+   No footprint, surveyed accuracy, inferred coordinate or model allocation is added.
+3. Confirm Narvik is one canonical project. Its July 2025 proposal is historical;
+   April 2026 Nscale management/Microsoft contract evidence is separate from delivery.
+4. Inspect company, facility, product, map and mobile screenshots. Full source records
+   and confidence qualifiers remain available on native entity pages.
+5. Fetch latest main and resolve only atlas-local conflicts. Preserve benchmark PR #17
+   and the benchmark owner's subsequent work. Do not alter shared navigation here.
+6. Run the build consistency and atlas browser checks. The explicit source review and publication authorization are recorded above;
+   merge only after these checks pass at the final branch head.
+7. After an authorized merge, verify the exact Pages commit and served entity routes,
+   assets and normalized dataset. Use the updated publication test for all native entity routes and runtime assets;
+   save the Pages build identity and exact live-byte receipt separately.
 
-1. Parent source/semantics review passed, including 13 primary sources and the
-   screenshots. The final delta records the requested Intel URL repair and three
-   literal ampersand corrections. The builder's checksum and reference checks
-   are in `data-validation.json`.
-2. Parent approved the single shared-navigation link described above. The
-   benchmark owner remains responsible for separate benchmark changes.
-3. Fetch current main and integrate it safely before release. The atlas and
-   agreed navigation entry remain separate from benchmark PR #17.
-4. Repeat `build-atlas.cjs --check` and the atlas browser check, plus the shared
-   navigation owner's relevant checks if navigation is changed.
-5. Publish through PR #18 using the existing GitHub Pages workflow. Confirm the
-   Pages build commit, exact served dataset/assets and both navigation routes
-   after deployment. Save release receipts in ignored evidence.
+## Evidence and limits
 
-## Verified
+The normalized Epoch import was reproduced from all three hash-matching downloads;
+20 essential records match the parent's supplied values. All 11 profile packets and
+five location packets are retained. Raw unfiltered snapshots stay in ignored evidence.
+Broader imported rows are attributed dataset ingestion, not an independent audit of
+every underlying permit or claim. Original packet fields and superseded records are
+retained; visible labels decode literal HTML entities.
 
-- Parent-corrected counts: 25 sites, 25 players (18 featured), 14 products,
-  28 relationships, 49 sources, nine investment records and seven developments.
-- IDs, source/entity references, original null capacities, typed measurements,
-  M15X uncertainty, Rainier program/site boundary, corrected GB200/Blackwell
-  separation, and packaging throughput invariants.
-- Headless Microsoft Edge 154: combined map filters, company roles, product and
-  evidence filters, all site deep links, keyboard activation, clustered
-  Singapore records, URL reload, and reset/empty states.
-- 1440, 768, 390 and 320 pixel widths without horizontal overflow.
-- Basemap failure, data-script failure, JavaScript disabled, direct local-file
-  preview, HTTPS source links with opener protection, and text-safe rendering.
-- No external runtime requests and no browser page errors in the completed run.
-- axe-core 4.13 reports zero automated violations in desktop, mobile and
-  supply-chain views for the selected WCAG/best-practice rules.
+Current local verification results are in `data-validation.json` and
+`ui-validation.json`. Screenshots and the full browser report are under ignored
+`evidence/infrastructure/`. Earlier `aggregate-validation.json` documents the first
+edition, not a fresh full-repository regression run for this revision.
 
-The aggregate release checks and initial failures are recorded in
-`aggregate-validation.json`. Three catalog checks initially used axe 4.11 and
-passed when rerun with the repository's documented 4.13. The room test exposed
-the scenario-state issue described above; a separate run with isolated starting
-states established the fix before applying it to the canonical test.
+Browser coverage is headless Microsoft Edge, not physical touch devices, Safari or
+Firefox. Automated accessibility checks supplement manual keyboard/visual inspection;
+they are not a screen-reader user test. Optional external street detail depends on
+OSM availability and policy; tests simulate tile failure and never request real tiles.
+The bundled map and directory work without that service. At street zoom with street
+detail off, bundled geography has no building-level detail; marker evidence does not
+become more precise by zooming.
 
-The machine report and screenshots are under ignored
-`evidence/infrastructure/`. Screenshot names include `desktop.png`,
-`supply-chain.png`, `mobile.png`, `mobile-detail.png` and `power-detail.png`.
-
-## Limits
-
-Sources were independently researched by the parent research worker; this
-implementation verifies preservation and display, not a second independent
-factual audit of all 49 URLs. Deployment results are recorded separately. Browser
-coverage is headless Edge, not physical mobile hardware, Safari or Firefox.
-Automated accessibility checks are not a screen-reader user test; axe also
-flags incomplete ARIA and color-contrast checks for manual review. Screenshots
-were visually inspected for desktop and mobile detail layout.
-
-Region controls provide fixed views rather than free-form pan/zoom. The data is
-a curated sample with gaps listed in the source index, and dates are the last
-publicly reported observations. There is no automatic refresh or status upgrade
-when a target date passes.
+No automatic source refresh, geocoding or status advancement occurs when a target
+date passes. The snapshot remains dated 2026-10-05, with unknowns shown explicitly.

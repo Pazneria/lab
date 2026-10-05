@@ -1,0 +1,235 @@
+{
+  "part": 2,
+  "parts": 5,
+  "as_of": "2026-10-05",
+  "sites": [
+    {
+      "site_id": "micron-boise-id1",
+      "location": {
+        "latitude": 43.527478,
+        "longitude": -116.1444,
+        "precision": "public_mapped_campus",
+        "display_label": "Micron Boise campus; public campus reference",
+        "coordinate_source": "NIST ID1 site context and Micron public address matched to OSM campus geometry",
+        "public_location_source_ids": [
+          "location-micron-directory",
+          "location-micron-id1-nist",
+          "location-osm-micron-boise-id1"
+        ],
+        "address": "8000 S. Federal Way, Boise, ID 83716, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "ID1 is a campus expansion. This point represents the campus, not the new fab roof. Micron’s directory city-center directions link was rejected."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "micron-tongluo",
+      "location": {
+        "latitude": 24.462992,
+        "longitude": 120.754179,
+        "precision": "operator_published_map_point",
+        "display_label": "Micron Tongluo campus; operator-published map point",
+        "coordinate_source": "Micron public directory → linked Google Maps directions destination",
+        "public_location_source_ids": [
+          "location-micron-directory"
+        ],
+        "address": "8 Tongke 7th Rd., Tongluo Township, Miaoli County 366003, Taiwan",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Official directory names the Tongluo campus; acquired P5 site identity is separately established by Micron’s acquisition release."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "micron-singapore-nand",
+      "location": {
+        "latitude": 1.454815,
+        "longitude": 103.794058,
+        "precision": "associated_campus_reference",
+        "display_label": "Micron North Coast complex; NAND expansion building not pinpointed",
+        "coordinate_source": "Micron directory map destination for the existing North Coast complex, linked to the co-located projects by the 2026 release",
+        "public_location_source_ids": [
+          "location-micron-directory",
+          "location-micron-singapore-complex",
+          "location-micron-northcoast-mti"
+        ],
+        "address": "1 North Coast Drive, Singapore 757432 (existing campus reference)",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Shared campus reference only. Do not imply NAND and HBM occupy the same building; their individual construction footprints are unverified."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "micron-singapore-hbm",
+      "location": {
+        "latitude": 1.454815,
+        "longitude": 103.794058,
+        "precision": "associated_campus_reference",
+        "display_label": "Micron North Coast complex; HBM packaging building not pinpointed",
+        "coordinate_source": "Micron directory map destination for the existing North Coast complex, linked to the co-located projects by the 2026 release",
+        "public_location_source_ids": [
+          "location-micron-directory",
+          "location-micron-singapore-complex",
+          "location-micron-northcoast-mti"
+        ],
+        "address": "1 North Coast Drive, Singapore 757432 (existing campus reference)",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Shared campus reference only. Do not imply NAND and HBM occupy the same building; their individual construction footprints are unverified."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "micron-sanand",
+      "location": {
+        "latitude": 22.974556,
+        "longitude": 72.258861,
+        "precision": "operator_published_map_point",
+        "display_label": "Micron Sanand SEZ campus; operator-published map point",
+        "coordinate_source": "Micron public directory → map destination for SEZ unit",
+        "public_location_source_ids": [
+          "location-micron-directory"
+        ],
+        "address": "Plot No. SM12 51/3, Sanand GIDC-II Industrial Estate, Ahmedabad, Gujarat 382110, India",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Use the SEZ manufacturing location. The directory also lists a different AV-11 Sanand address."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "sk-m15x",
+      "location": {
+        "latitude": 36.655565,
+        "longitude": 127.433803,
+        "precision": "public_mapped_facility",
+        "display_label": "SK hynix M15X, Cheongju Technopolis; public map point",
+        "coordinate_source": "Official Technopolis location and campus address matched to OSM named M15X feature",
+        "public_location_source_ids": [
+          "location-sk-directory",
+          "location-sk-m15x-announcement",
+          "location-osm-sk-m15x"
+        ],
+        "address": "120 SK-ro, Heungdeok-gu, Cheongju-si, Chungcheongbuk-do, South Korea",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 16,
+        "footprint": null,
+        "location_note": "M15X point, distinct from Icheon and the older M15. Public map geometry is not evidence of current operational status."
+      },
+      "coordinate_changed": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "location-micron-directory",
+      "title": "Micron global locations",
+      "publisher": "Micron",
+      "url": "https://www.micron.com/about/locations",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Live directory; publication date not stated. Boise map link incorrectly targets city center and was rejected."
+    },
+    {
+      "id": "location-micron-id1-nist",
+      "title": "Micron ID1 environmental assessment",
+      "publisher": "US NIST",
+      "url": "https://www.nist.gov/document/draft-environmental-assessment-micron-boise",
+      "published_at": "2024-07-10",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Figure 1-2 and section 3.6.2 identify ID1 adjacent to the existing southeast Boise campus; page 59 lists 8000 South Federal Way."
+    },
+    {
+      "id": "location-osm-micron-boise-id1",
+      "title": "Public map feature for Micron Idaho ID1",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/relation/13674773",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-micron-singapore-complex",
+      "title": "Singapore NAND and HBM projects are in the same manufacturing complex",
+      "publisher": "Micron",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Breaks-Ground-on-Advanced-Wafer-Fabrication-Facility-in-Singapore-01-26-2026/default.aspx",
+      "published_at": "2026-01-27",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "The release explicitly places the HBM project in the same Singapore manufacturing complex as the new NAND fab."
+    },
+    {
+      "id": "location-micron-northcoast-mti",
+      "title": "Micron NAND campus at 1 North Coast Drive",
+      "publisher": "Singapore Ministry of Trade and Industry",
+      "url": "https://www.mti.gov.sg/newsroom/speech-by-minister-s-iswaran-at-the-ground-breaking-ceremony-for-micron-s-fab-10-expansion/",
+      "published_at": "2018-04-04",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-sk-directory",
+      "title": "SK hynix public campus addresses",
+      "publisher": "SK hynix",
+      "url": "https://m.skhynix.com/company/UI-FR-CP06/",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-sk-m15x-announcement",
+      "title": "M15X site in Cheongju Technopolis",
+      "publisher": "SK hynix",
+      "url": "https://news.skhynix.com/en/sk-hynix-to-build-m15x-fab-in-cheongju-in-october/",
+      "published_at": "2022-09-06",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-osm-sk-m15x",
+      "title": "Public map feature for SK hynix M15X",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1467790692",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "part": 5,
+  "parts": 5,
+  "as_of": "2026-10-05",
+  "sites": [
+    {
+      "site_id": "calvert-cliffs",
+      "location": {
+        "latitude": 38.4344,
+        "longitude": -76.4417,
+        "precision": "government_facility_point",
+        "display_label": "Calvert Cliffs; EIA public plant point",
+        "coordinate_source": "EIA-860M August 2026 plant 6011 latitude/longitude",
+        "public_location_source_ids": [
+          "location-eia-202608"
+        ],
+        "address": "Lusby, Calvert County, Maryland, USA",
+        "source_date": "2026-09-24",
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Plant-level map reference; not equipment or access-route detail."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "crane",
+      "location": {
+        "latitude": 40.1515,
+        "longitude": -76.7232,
+        "precision": "government_facility_point",
+        "display_label": "Crane Clean Energy Center; EIA public plant point",
+        "coordinate_source": "EIA-860M August 2026 plant 8011 latitude/longitude",
+        "public_location_source_ids": [
+          "location-eia-202608"
+        ],
+        "address": "Londonderry Township, Dauphin County, Pennsylvania, USA",
+        "source_date": "2026-09-24",
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Plant-level reference. Location data does not establish that the restart is complete."
+      },
+      "coordinate_changed": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "location-eia-202608",
+      "title": "EIA-860M August 2026 generator inventory",
+      "publisher": "US Energy Information Administration",
+      "url": "https://www.eia.gov/electricity/data/eia860m/xls/august_generator2026.xlsx",
+      "published_at": "2026-09-24",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Location fields only. Operating worksheet rows 5868–5869 and 8035, columns AJ/AK. A worksheet name is not evidence of operating status."
+    }
+  ],
+  "map_recommendation": {
+    "library": "Leaflet 1.9.4",
+    "tile_url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+    "max_zoom": 19,
+    "api_key_required": false,
+    "attribution": "© OpenStreetMap contributors",
+    "attribution_url": "https://www.openstreetmap.org/copyright",
+    "docs_url": "https://leafletjs.com/examples/quick-start/",
+    "policy_url": "https://operations.osmfoundation.org/policies/tiles/",
+    "rules": [
+      "Keep attribution visible and clickable",
+      "Use browser defaults for User-Agent, Referer and caching; no restrictive no-referrer policy",
+      "No bulk tile downloading, background prefetch, offline archive or automated pan/zoom scraping",
+      "Keep provider URL configurable; OSM tiles are best-effort and have no SLA"
+    ],
+    "ui": [
+      "Use each record’s recommended_zoom on selection, while leaving manual zoom available",
+      "Expose location.precision and location.location_note beside the point",
+      "Use hollow/halo markers for approximate_locality and approximate_planning_area; do not imply a radius is measured accuracy",
+      "Overlapping Singapore points intentionally share a campus reference; use a cluster/list or spiderfy interaction, never alter their saved coordinates",
+      "Keep road labels readable; avoid CSS inversion that alters map-label contrast",
+      "No invented cadastral polygon; footprint remains null until an appropriate published boundary is verified"
+    ],
+    "geocoding_note": "Coordinates are stored evidence, not live browser geocoding. The research used a small cached, single-thread Nominatim run below 1 request/second. Do not add public Nominatim autocomplete or periodic bulk geocoding; https://operations.osmfoundation.org/policies/nominatim/"
+  },
+  "metadata_patch": {
+    "map_policy": "Publicly documented campus, address or project-area points where supported; explicitly labeled locality markers otherwise."
+  },
+  "counts": {
+    "sites": 25,
+    "coordinate_improvements": 25,
+    "retained_city_markers": 0,
+    "approximate_area_references": 3
+  },
+  "limitations": [
+    "No coordinate establishes real-time operating status, capacity, GPU deployment or a product-to-fab allocation.",
+    "A source-provided coordinate may be an address or project reference rather than a campus centroid.",
+    "Associated-campus points deliberately distinguish the known campus from an unresolved new project building.",
+    "OpenStreetMap-derived coordinates require ODbL attribution; source map status is never adopted as production-status evidence."
+  ],
+  "footprint_policy": "All footprint geometries remain null. Published planning maps are source links, not digitized cadastral claims.",
+  "integration": "Merge sites by site_id, replacing location only. Upsert sources by id. Update metadata.map_policy and replace any old rule claiming that all coordinates are city-level. Keep all existing non-location site data.",
+  "qa_notes": [
+    "Micron Boise directory links to the city center despite showing the campus address; that map link was rejected",
+    "Nominatim loosely matched TSMC Fab 22 to Nanjing and M15 to Icheon; those results were rejected in favor of locally matched named features",
+    "NORWAY planning-map sheet 2 was visually checked; rounded map-area reference does not assert a current Stargate property polygon",
+    "Colossus address verified in the City of Memphis public record; the stale health-department comments link was replaced",
+    "EIA Operating worksheet includes out-of-service generators; coordinates were extracted without adopting worksheet name as status"
+  ]
+}

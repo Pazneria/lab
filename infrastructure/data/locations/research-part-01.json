@@ -1,0 +1,255 @@
+{
+  "part": 1,
+  "parts": 5,
+  "as_of": "2026-10-05",
+  "sites": [
+    {
+      "site_id": "tsmc-arizona",
+      "location": {
+        "latitude": 33.774912,
+        "longitude": -112.160555,
+        "precision": "operator_published_map_point",
+        "display_label": "TSMC Arizona campus; operator-published map point",
+        "coordinate_source": "TSMC public directory → linked Google Maps place destination",
+        "public_location_source_ids": [
+          "location-tsmc-directory"
+        ],
+        "address": "5088 W. Innovation Circle, Phoenix, AZ 85083, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Campus reference point. Does not identify a particular fab phase."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "tsmc-hsinchu",
+      "location": {
+        "latitude": 24.764431,
+        "longitude": 121.005434,
+        "precision": "public_mapped_campus",
+        "display_label": "TSMC Fab 20 campus, Baoshan; public map point",
+        "coordinate_source": "Official TSMC address matched to OpenStreetMap named campus feature",
+        "public_location_source_ids": [
+          "location-tsmc-directory",
+          "location-osm-tsmc-hsinchu"
+        ],
+        "address": "1 Kehuan Rd., Hsinchu Science Park, Hsinchu 308-001, Taiwan",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": "Public campus feature; not a surveyed individual fab/building coordinate."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "tsmc-kaohsiung",
+      "location": {
+        "latitude": 22.708599,
+        "longitude": 120.311095,
+        "precision": "public_mapped_facility",
+        "display_label": "TSMC Fab 22 P1, Nanzi; public map point",
+        "coordinate_source": "Official TSMC Fab 22 address plus OSM named Fab22 P1 map feature; Overpass center",
+        "public_location_source_ids": [
+          "location-tsmc-directory",
+          "location-osm-tsmc-kaohsiung"
+        ],
+        "address": "1 Yuancyu N. Rd., Nanzi District, Kaohsiung 811-019, Taiwan",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 16,
+        "footprint": null,
+        "location_note": "Reference point for phase 1; the wider Fab 22 campus includes other phases. OSM map status is not used as production evidence."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "tsmc-ap6",
+      "location": {
+        "latitude": 24.706099,
+        "longitude": 120.906539,
+        "precision": "operator_published_map_point",
+        "display_label": "TSMC AP6 Zhunan; operator-published map point",
+        "coordinate_source": "TSMC public directory → linked Google Maps place destination",
+        "public_location_source_ids": [
+          "location-tsmc-directory"
+        ],
+        "address": "1 Kezhuan 1st Rd., Zhunan Township, Miaoli 350-012, Taiwan",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 15,
+        "footprint": null,
+        "location_note": null
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "intel-fab52",
+      "location": {
+        "latitude": 33.24591,
+        "longitude": -111.88146,
+        "precision": "government_campus_reference",
+        "display_label": "Intel Ocotillo campus; EPA campus reference point",
+        "coordinate_source": "EPA FRS best-pick campus coordinate, NAD83",
+        "public_location_source_ids": [
+          "location-intel-campus-addresses",
+          "location-intel-ocotillo-epa"
+        ],
+        "address": "4500 S. Dobson Road, Chandler, AZ 85248, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Campus reference, not Fab 52’s exact building. EPA reports 30 m geocoding accuracy for the reference, which must not be interpreted as accuracy to Fab 52."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "intel-d1x",
+      "location": {
+        "latitude": 45.54415,
+        "longitude": -122.91544,
+        "precision": "government_campus_reference",
+        "display_label": "Intel Ronler Acres / Gordon Moore Park; DEQ campus point",
+        "coordinate_source": "Inverse UTM of Oregon DEQ public campus location: NAD83 zone 10N, E506601.5 N5043404.5",
+        "public_location_source_ids": [
+          "location-intel-campus-addresses",
+          "location-intel-oregon-deq"
+        ],
+        "address": "2501 NE Century Boulevard, Hillsboro, OR 97124, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Campus point, not D1X’s individual building or equipment location."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "samsung-taylor",
+      "location": {
+        "latitude": 30.537396,
+        "longitude": -97.452582,
+        "precision": "public_mapped_facility",
+        "display_label": "Samsung Taylor Fab 1; public map point",
+        "coordinate_source": "OSHA site address, Samsung Taylor campus page and OSM named Fab 1 geometry",
+        "public_location_source_ids": [
+          "location-samsung-osha",
+          "location-osm-samsung-taylor"
+        ],
+        "address": "1530 FM 973, Taylor, TX 76574, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 16,
+        "footprint": null,
+        "location_note": "Community-mapped fab point; cadastral/phase boundaries not established."
+      },
+      "coordinate_changed": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "location-tsmc-directory",
+      "title": "TSMC fab addresses and public map links",
+      "publisher": "TSMC",
+      "url": "https://www.tsmc.com/english/aboutTSMC/TSMC_Fabs",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Live directory; publication date not stated"
+    },
+    {
+      "id": "location-osm-tsmc-hsinchu",
+      "title": "Public map feature for TSMC N2 Hsinchu",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1451380993",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-osm-tsmc-kaohsiung",
+      "title": "Public map feature for TSMC N2 Kaohsiung",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1286255607",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-intel-campus-addresses",
+      "title": "Intel ISO 9001 registration appendix",
+      "publisher": "Intel / Intertek",
+      "url": "https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2026-01/0222427-cert-qms-eng-intel-corporation-main-appendix.pdf",
+      "published_at": "2026-01",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-intel-ocotillo-epa",
+      "title": "Intel Ocotillo FRS facility coordinates",
+      "publisher": "US EPA",
+      "url": "https://frs-public.epa.gov/ords/frs_public2/gis_viewer.map_page?p_registry_id=110000471365",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "FRS best-pick record 32036999; NAD83; address matching; center-of-facility reference."
+    },
+    {
+      "id": "location-intel-oregon-deq",
+      "title": "Gordon Moore Park / Ronler Acres campus location",
+      "publisher": "Oregon Department of Environmental Quality",
+      "url": "https://www.oregon.gov/deq/Programs/Documents/Intel-PSDModelingSummary.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Introduction gives NAD83 UTM zone 10 coordinates E506601.5 N5043404.5 for the campus; transformed to geographic coordinates, rounded to 5 decimals."
+    },
+    {
+      "id": "location-samsung-osha",
+      "title": "Samsung Taylor manufacturing construction-site address",
+      "publisher": "US OSHA",
+      "url": "https://www.osha.gov/ords/imis/establishment.inspection_detail?id=1874721.015",
+      "published_at": "2026-02-11",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Establishment inspection identifies the site at 1530 FM 973; used only for public location identity."
+    },
+    {
+      "id": "location-osm-samsung-taylor",
+      "title": "Public map feature for Samsung Taylor",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1454508020",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    }
+  ]
+}

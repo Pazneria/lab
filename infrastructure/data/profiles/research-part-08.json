@@ -1,0 +1,380 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 8,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-microsoft-goodyear",
+        "name": "Microsoft Goodyear",
+        "atlas_site_exists": false,
+        "location_label": "14250 W Broadway Rd, Goodyear, AZ 85338",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Microsoft",
+            "player_id": "microsoft",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "OpenAI",
+            "player_id": "openai",
+            "confidence": "likely"
+          },
+          {
+            "name": "Microsoft",
+            "player_id": "microsoft",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-04-27",
+        "it_capacity_w": 202000000,
+        "it_capacity_mw": 202,
+        "facility_capacity_w": 263000000,
+        "facility_capacity_mw": 263,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/12pVrAs40UMGZwxdJz5lyFlr-CATUwl4Im42BVDvi8-A/edit?usp=sharing",
+        "hardware_types": [
+          "H100",
+          "B200"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "H100",
+            "count": 58302,
+            "date": "2025-01-16",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "B200",
+            "count": 58121,
+            "date": "2025-09-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "stargate-abilene",
+        "name": "OpenAI Stargate Abilene",
+        "atlas_site_exists": true,
+        "location_label": "5502 Spinks Rd, Abilene, TX 79601",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Oracle",
+            "player_id": null,
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "OpenAI",
+            "player_id": "openai",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": "Oracle Cloud Infrastructure",
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-07-28",
+        "it_capacity_w": 421000000,
+        "it_capacity_mw": 421,
+        "facility_capacity_w": 590000000,
+        "facility_capacity_mw": 590,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers/directory/openai-stargate-abilene",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/197BW-5tHutOzJ_LTv990eCO_M8nUXT2t1nl--UfMIUk/edit?usp=sharing",
+        "hardware_types": [
+          "B200",
+          "B300"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "B200",
+            "count": 100800,
+            "date": "2025-12-24",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          },
+          {
+            "chip_type": "B300",
+            "count": 100800,
+            "date": "2026-05-23",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "major_site_page_checked"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-amazon-madison-mega-site",
+        "name": "Amazon Madison Mega Site",
+        "atlas_site_exists": false,
+        "location_label": "Amazon Data Services Inc, Madison Mega Site Nissan Parkway and Highway 22 Canton, Mississippi Madison County",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Amazon",
+            "player_id": "amazon",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Anthropic",
+            "player_id": "anthropic",
+            "confidence": "speculative"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-06-04",
+        "it_capacity_w": 284000000,
+        "it_capacity_mw": 284,
+        "facility_capacity_w": 341000000,
+        "facility_capacity_mw": 341,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/10asD982gArQ0CQTVo_v331kEx_vDnwhWAusaYo1zsto/edit?usp=sharing",
+        "hardware_types": [
+          "Trainium2"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "Trainium2",
+            "count": 326555,
+            "date": "2025-06-23",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [
+          "One or more user assignments are speculative; not eligible for a lab-attributed capacity total."
+        ],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "fairwater-atlanta",
+        "name": "Microsoft Fairwater Atlanta",
+        "atlas_site_exists": false,
+        "location_label": "1435 Hwy 54 W, Fayetteville, GA 30214",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Microsoft",
+            "player_id": "microsoft",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "OpenAI",
+            "player_id": "openai",
+            "confidence": "likely"
+          },
+          {
+            "name": "Microsoft",
+            "player_id": "microsoft",
+            "confidence": "likely"
+          }
+        ],
+        "operator_name": "Microsoft",
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-06-14",
+        "it_capacity_w": 636000000,
+        "it_capacity_mw": 636,
+        "facility_capacity_w": 859000000,
+        "facility_capacity_mw": 859,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1XeruHu2ES3UsSrsAU3HSMkk5zwzFOQzxQE9pQ_fuEUw/edit?usp=sharing",
+        "hardware_types": [
+          "B200"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "B200",
+            "count": 304279,
+            "date": "2026-06-14",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [
+          "OpenAI and Microsoft user assignments are likely, with no disclosed split. Not a disclosed MAI-only cluster."
+        ],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-xai-qts-atlanta",
+        "name": "xAI QTS Atlanta",
+        "atlas_site_exists": false,
+        "location_label": "1025 Jefferson Street NW, Atlanta, GA 30318",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "SpaceXAI",
+            "player_id": "xai",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "SpaceXAI",
+            "player_id": "xai",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-07-10",
+        "it_capacity_w": 17329710,
+        "it_capacity_mw": 17.32971,
+        "facility_capacity_w": 24000000,
+        "facility_capacity_mw": 24,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1i9MM0gKZOoc4UXpuMBHhy2qu_y64TlXeD8JUpgiLaWE/edit",
+        "hardware_types": [
+          "H100",
+          "A100"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "H100",
+            "count": 11000,
+            "date": "2025-02-20",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          },
+          {
+            "chip_type": "A100",
+            "count": 1448,
+            "date": "2025-02-20",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Company disclosure"
+          }
+        ],
+        "warnings": [],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "metadata",
+      "value": {
+        "schema_version": "0.2.0-profile-research",
+        "as_of": "2026-10-05",
+        "publication_state": "research_delta_not_published",
+        "evidence_policy": "Public company/technical sources plus explicitly attributed independent Epoch AI research estimates. No private data.",
+        "capacity_source_attribution": "Epoch AI, AI data centers, retrieved 2026-10-05. CC BY. Adapted and filtered; values are estimates.",
+        "essential_site_count": 20,
+        "full_site_count": 75,
+        "reassembly": "Merge record values by kind: profile→profiles array; source→sources array; capacity_site→sites array; metadata→top-level metadata; interpretation_rules and fetch_recipe stay separate. Ordering of records is not semantic. All seven complete profiles and all 48 complete sources are included.",
+        "publication_warning": "This is a research handoff, not a claim that the public site has been updated."
+      }
+    },
+    {
+      "kind": "source",
+      "value": {
+        "id": "nscale-narvik-2026",
+        "title": "Expanded Microsoft agreement in Norway",
+        "publisher": "Nscale",
+        "url": "https://www.nscale.com/press-releases/nscale-microsoft-norway",
+        "published_at": "2026-04-14",
+        "retrieved_at": "2026-10-05",
+        "source_type": "primary_company",
+        "note": "230 MW Narvik campus; added 30,000+ Rubin GPUs for 2027; solely managed by Nscale after Aker JV roll-up. Supersedes treating the old proposed JV as current."
+      }
+    }
+  ]
+}

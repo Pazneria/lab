@@ -1,0 +1,344 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 6,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "profile",
+      "value": {
+        "best_model_rule": "Use official flagship positioning with release/access date; show benchmark-specific leaders separately. Do not infer training compute from capability, model name, pricing, or release recency.",
+        "source_verification_scope": "Official sources checked for model identity and selected major contracts. Broader site list is attributed Epoch dataset ingestion, not a separate audit of every underlying permit.",
+        "player_id": "meta",
+        "title": "Meta / Meta Superintelligence Labs",
+        "as_of": "2026-10-05",
+        "summary": "Meta owns and uses many AI facilities. Its current Muse flagship has no substantiated public FLOP total; older Llama disclosures remain separate historical references.",
+        "flagship_models": [
+          {
+            "name": "Muse Spark 1.3",
+            "released_at": "2026-09-02",
+            "selection_basis": "Current Muse Spark release with agentic and coding improvements",
+            "access": "available",
+            "source_ids": [
+              "meta-spark13"
+            ]
+          }
+        ],
+        "training_compute": [
+          {
+            "model": "Muse Spark 1.3",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "Not publicly established",
+            "evidence_status": "not_disclosed_or_no_supported_estimate_found",
+            "hardware": null,
+            "accelerator_count": null,
+            "duration_days": null,
+            "utilization": null,
+            "range_flop": null,
+            "reason": "No model-specific FLOP estimate or sufficient training inputs found in the checked public sources; the current Epoch row is also blank.",
+            "epoch_row_last_modified": "2026-09-22 00:35:40+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv"
+            ]
+          }
+        ],
+        "operating_power": {
+          "lab_wide_power_w": null,
+          "lab_wide_power_mw": null,
+          "status": "not_publicly_established",
+          "reason": "A complete, dated, de-duplicated lab allocation is unavailable. Site estimates below do not establish the lab’s total or metered consumption.",
+          "covered_owned_ai_sites": {
+            "it_capacity_w": 1977000000,
+            "it_capacity_mw": 1977,
+            "site_count": 12,
+            "site_ids": [
+              "meta-prometheus",
+              "epoch-meta-rosemount",
+              "epoch-meta-jeffersonville",
+              "epoch-meta-temple",
+              "epoch-meta-montgomery",
+              "epoch-meta-kuna",
+              "epoch-meta-cheyenne",
+              "epoch-meta-huntsville",
+              "epoch-meta-eagle-mountain",
+              "epoch-meta-los-lunas",
+              "epoch-meta-sarpy",
+              "epoch-meta-aiken"
+            ],
+            "scope": "Incomplete sample of AI chip-owning company sites, including capacity used by external customers; not the company-wide fleet or its model lab allocation.",
+            "evidence_class": "independent_estimate",
+            "source_ids": [
+              "epoch-dc",
+              "epoch-dc-csv",
+              "epoch-dc-timelines"
+            ],
+            "aggregation_allowed_as_lab_total": false,
+            "display_precision": "Two significant figures; retain exact underlying numbers only for audit"
+          },
+          "metered_consumption_w": null,
+          "metered_consumption_status": "No lab-wide live electricity measurement established",
+          "aggregation_allowed": false
+        },
+        "site_ids": [
+          "meta-prometheus",
+          "epoch-meta-rosemount",
+          "epoch-meta-jeffersonville",
+          "epoch-meta-temple",
+          "epoch-meta-montgomery",
+          "epoch-meta-kuna",
+          "epoch-meta-cheyenne",
+          "epoch-meta-huntsville",
+          "epoch-meta-eagle-mountain",
+          "epoch-meta-qts-hillsboro-2",
+          "epoch-meta-los-lunas",
+          "epoch-meta-sarpy",
+          "epoch-meta-aiken",
+          "epoch-meta-bowling-green",
+          "epoch-meta-gallatin",
+          "meta-hyperion",
+          "epoch-qts-eagle-mountain"
+        ],
+        "major_site_ids": [
+          "meta-prometheus",
+          "meta-hyperion",
+          "epoch-meta-rosemount",
+          "epoch-meta-jeffersonville"
+        ],
+        "partners": [
+          {
+            "name": "NVIDIA",
+            "role": "Primary accelerator supplier at covered sites",
+            "source_ids": [
+              "epoch-dc-chips"
+            ]
+          },
+          {
+            "name": "Vantage / power partners",
+            "role": "Prometheus buildout includes partner infrastructure; ownership and power supply must remain distinct",
+            "source_ids": [
+              "meta-infra",
+              "epoch-dc"
+            ]
+          }
+        ],
+        "hardware": [
+          {
+            "platform": "NVIDIA Blackwell B200/B300",
+            "status": "independent_site_estimates",
+            "scope": "Current covered-site hardware, not a Muse-specific training disclosure",
+            "source_ids": [
+              "epoch-dc-csv",
+              "epoch-dc-chips"
+            ]
+          }
+        ],
+        "future_capacity": [
+          {
+            "id": "meta-prometheus-target",
+            "label": "Prometheus campus target",
+            "power_w": 1000000000,
+            "power_mw": 1000,
+            "power_basis": "unspecified",
+            "value_qualifier": "company_target",
+            "announced_at": "2025-09-29",
+            "target_online": "2026 announced target",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "meta-infra"
+            ],
+            "notes": "Partial operating estimate is separate; never count the full target as delivered."
+          },
+          {
+            "id": "meta-hyperion",
+            "label": "Hyperion expansion",
+            "power_w": 5000000000,
+            "power_mw": 5000,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-07-13",
+            "target_online": "Future staged buildout",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "meta-hyperion"
+            ],
+            "notes": "Future 5-GW capacity target; no operational capacity established in the checked snapshot."
+          }
+        ],
+        "historical_training_reference": [
+          {
+            "model": "Llama 3.1-405B",
+            "released_at": "2024-07-23",
+            "compute_flop": 3.8e+25,
+            "low_flop": null,
+            "high_flop": null,
+            "evidence_class": "historical_paper_reported",
+            "source_confidence": "Confident",
+            "row_modified_at": "2025-11-28 11:53:44+00:00",
+            "hardware": "NVIDIA H100 SXM5 80GB",
+            "hardware_quantity": 16384,
+            "method_note": "Stated in paper.\n\nAlso, 6 * 405B * 15.6T training tokens = 3.8e25",
+            "source_ids": [
+              "epoch-models-csv"
+            ],
+            "not_current_flagship": true
+          }
+        ],
+        "cautions": [
+          "Epoch’s covered Meta sites are an incomplete sample, not the company-wide fleet.",
+          "Hyperion’s future capacity is excluded from the online estimate.",
+          "Meta’s AI capacity also serves workloads beyond frontier-model training."
+        ]
+      }
+    },
+    {
+      "kind": "profile",
+      "value": {
+        "best_model_rule": "Use official flagship positioning with release/access date; show benchmark-specific leaders separately. Do not infer training compute from capability, model name, pricing, or release recency.",
+        "source_verification_scope": "Official sources checked for model identity and selected major contracts. Broader site list is attributed Epoch dataset ingestion, not a separate audit of every underlying permit.",
+        "player_id": "xai",
+        "title": "xAI / SpaceXAI",
+        "as_of": "2026-10-05",
+        "summary": "SpaceXAI owns Colossus infrastructure, but some capacity is used by Anthropic and Cursor. Owned site power is therefore different from compute allocated to Grok.",
+        "flagship_models": [
+          {
+            "name": "Grok 4.7",
+            "released_at": "2026-09-21",
+            "selection_basis": "Current officially named coding and knowledge-work flagship",
+            "access": "available",
+            "source_ids": [
+              "xai-grok47"
+            ]
+          }
+        ],
+        "training_compute": [
+          {
+            "model": "Grok 4.7",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "Not publicly established",
+            "evidence_status": "not_disclosed_or_no_supported_estimate_found",
+            "hardware": null,
+            "accelerator_count": null,
+            "duration_days": null,
+            "utilization": null,
+            "range_flop": null,
+            "reason": "No model-specific FLOP estimate or sufficient training inputs found in the checked public sources; the current Epoch row is also blank.",
+            "epoch_row_last_modified": "2026-09-22 00:35:41+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv"
+            ]
+          }
+        ],
+        "operating_power": {
+          "lab_wide_power_w": null,
+          "lab_wide_power_mw": null,
+          "status": "not_publicly_established",
+          "reason": "A complete, dated, de-duplicated lab allocation is unavailable. Site estimates below do not establish the lab’s total or metered consumption.",
+          "covered_owned_ai_sites": {
+            "it_capacity_w": 1303329710,
+            "it_capacity_mw": 1303.32971,
+            "site_count": 3,
+            "site_ids": [
+              "colossus-2",
+              "colossus-1",
+              "epoch-xai-qts-atlanta"
+            ],
+            "scope": "Incomplete sample of AI chip-owning company sites, including capacity used by external customers; not the company-wide fleet or its model lab allocation.",
+            "evidence_class": "independent_estimate",
+            "source_ids": [
+              "epoch-dc",
+              "epoch-dc-csv",
+              "epoch-dc-timelines"
+            ],
+            "aggregation_allowed_as_lab_total": false,
+            "display_precision": "Two significant figures; retain exact underlying numbers only for audit"
+          },
+          "metered_consumption_w": null,
+          "metered_consumption_status": "No lab-wide live electricity measurement established",
+          "aggregation_allowed": false
+        },
+        "site_ids": [
+          "colossus-2",
+          "colossus-1",
+          "epoch-xai-qts-atlanta"
+        ],
+        "major_site_ids": [
+          "colossus-2",
+          "colossus-1",
+          "epoch-xai-qts-atlanta"
+        ],
+        "partners": [
+          {
+            "name": "NVIDIA",
+            "role": "Accelerator supplier",
+            "source_ids": [
+              "xai-colossus-partnership",
+              "epoch-dc-chips"
+            ]
+          },
+          {
+            "name": "Anthropic / Cursor",
+            "role": "Compute users/customers, not owners",
+            "source_ids": [
+              "anthropic-spacex",
+              "epoch-dc-csv"
+            ]
+          }
+        ],
+        "hardware": [
+          {
+            "platform": "NVIDIA H100, H200, B200 / B300",
+            "status": "reported_and_estimated_deployed",
+            "scope": "Colossus site generations; hardware-owner capacity does not equal Grok allocation",
+            "source_ids": [
+              "xai-colossus-partnership",
+              "epoch-dc-chips"
+            ]
+          }
+        ],
+        "future_capacity": [],
+        "historical_training_reference": [
+          {
+            "model": "Grok 3",
+            "released_at": "2025-02-17",
+            "compute_flop": 3.5e+26,
+            "low_flop": 2.1e+26,
+            "high_flop": 1.13e+27,
+            "evidence_class": "historical_independent_estimate",
+            "source_confidence": "Likely",
+            "row_modified_at": "2026-06-03 15:53:16+00:00",
+            "hardware": "NVIDIA H100 SXM5 80GB",
+            "hardware_quantity": 80000,
+            "method_note": "Estimate based on a cluster of 80,000 H100s per the xai website and an estimated training time of approximately three months.\n\nFull estimate here: https://docs.google.com/document/d/1MIUFviULJ3YI_XjyzL8cwG0cBRANKNxVEB4DrUcFiNs/edit?usp=sharing",
+            "source_ids": [
+              "epoch-models-csv"
+            ],
+            "not_current_flagship": true
+          }
+        ],
+        "cautions": [
+          "Do not retain all Colossus 1 capacity as xAI model-training capacity after the Anthropic agreement.",
+          "Colossus 2’s estimated 946 MW IT cannot be counted once per each of its three named users.",
+          "Earlier Grok training estimates do not establish Grok 4.7 training compute."
+        ]
+      }
+    },
+    {
+      "kind": "correction",
+      "value": {
+        "site_id": "stargate-norway",
+        "topic": "Current ownership/customer story supersedes old proposal",
+        "historical_source_id": "openai-norway",
+        "new_source_id": "nscale-narvik-2026",
+        "new_source_url": "https://www.nscale.com/press-releases/nscale-microsoft-norway",
+        "effective_evidence_at": "2026-04-14",
+        "change": "Nscale says the 230 MW Narvik campus is solely managed by Nscale after the Aker JV roll-up and describes an expanded Microsoft deal with 30,000+ Rubin GPUs for 2027. Preserve OpenAI as historical potential offtaker only; current OpenAI allocation is unverified.",
+        "online_claim": false
+      }
+    }
+  ]
+}

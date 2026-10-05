@@ -1,0 +1,415 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 7,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-google-columbus",
+        "name": "Google Columbus",
+        "atlas_site_exists": false,
+        "location_label": "5076 S High St, Columbus, OH 43207",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Google",
+            "player_id": "google",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Google DeepMind",
+            "player_id": "google",
+            "confidence": "speculative"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-08-05",
+        "it_capacity_w": 303000000,
+        "it_capacity_mw": 303,
+        "facility_capacity_w": 364000000,
+        "facility_capacity_mw": 364,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/17vNqp7jsx3CUwFeUfxIyI3KA0uZ0Bh7BNkrVyH77Ohs/edit?usp=sharing",
+        "hardware_types": [
+          "TPU v5e",
+          "TPU v5p",
+          "TPU v6e",
+          "TPU v7"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "TPU v5e",
+            "count": 193949,
+            "date": "2025-03-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "TPU v5p",
+            "count": 28246,
+            "date": "2025-03-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "TPU v6e",
+            "count": 204638,
+            "date": "2026-05-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "TPU v7",
+            "count": 38886,
+            "date": "2026-05-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [
+          "One or more user assignments are speculative; not eligible for a lab-attributed capacity total."
+        ],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-google-new-albany",
+        "name": "Google New Albany",
+        "atlas_site_exists": false,
+        "location_label": "1101 Beech Rd SW, New Albany, OH 43054",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Google",
+            "player_id": "google",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Google DeepMind",
+            "player_id": "google",
+            "confidence": "speculative"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-05-18",
+        "it_capacity_w": 333000000,
+        "it_capacity_mw": 333,
+        "facility_capacity_w": 400000000,
+        "facility_capacity_mw": 400,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1b9T05Ze9Kv3Um4C6wv2uVYB0q7KgZ4AQaDPnaoh-ro0/edit?usp=sharing",
+        "hardware_types": [
+          "TPU v5e",
+          "TPU v5p",
+          "TPU v6e"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "TPU v5e",
+            "count": 247041,
+            "date": "2024-09-13",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "TPU v5p",
+            "count": 66612,
+            "date": "2025-06-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "TPU v6e",
+            "count": 262731,
+            "date": "2025-10-14",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [
+          "One or more user assignments are speculative; not eligible for a lab-attributed capacity total."
+        ],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "google-pryor-north",
+        "name": "Google Pryor (North)",
+        "atlas_site_exists": false,
+        "location_label": "4581 Webb St, Pryor, OK 74361",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Google",
+            "player_id": "google",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Google DeepMind",
+            "player_id": "google",
+            "confidence": "speculative"
+          }
+        ],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-09-06",
+        "it_capacity_w": 368000000,
+        "it_capacity_mw": 368,
+        "facility_capacity_w": 442000000,
+        "facility_capacity_mw": 442,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1lD_rxcr7NwyAXlJf2TUis1AuMry4jGJNxOFP8zn17zc/edit?usp=sharing",
+        "hardware_types": [
+          "TPU v5p",
+          "TPU v5e"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "TPU v5p",
+            "count": 23466,
+            "date": "2024-07-19",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "TPU v5e",
+            "count": 77886,
+            "date": "2024-07-19",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [
+          "One or more user assignments are speculative; not eligible for a lab-attributed capacity total.",
+          "Timeline dates the operational step September 6 but cites imagery from September 8; treat as early September 2026, not an exact energization date. DeepMind user assignment is speculative."
+        ],
+        "future_timeline_available": false,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "colossus-2",
+        "name": "Colossus 2",
+        "atlas_site_exists": false,
+        "location_label": "5420 Tulane Rd, Memphis, TN 38109",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "SpaceXAI",
+            "player_id": "xai",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Anthropic",
+            "player_id": "anthropic",
+            "confidence": "confident"
+          },
+          {
+            "name": "Cursor",
+            "player_id": null,
+            "confidence": "confident"
+          },
+          {
+            "name": "SpaceXAI",
+            "player_id": "xai",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": "SpaceXAI",
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-06-15",
+        "it_capacity_w": 946000000,
+        "it_capacity_mw": 946,
+        "facility_capacity_w": 1276000000,
+        "facility_capacity_mw": 1276,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers/directory/colossus-2",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1oZpZ9nTTV6wW0xjc1pPOQmKS7NCyDzuG2HiycC1GqFs/edit?usp=sharing",
+        "hardware_types": [
+          "B200",
+          "B300"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "B200",
+            "count": 110000,
+            "date": "2025-10-19",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          },
+          {
+            "chip_type": "B300",
+            "count": 330000,
+            "date": "2026-06-15",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Company disclosure",
+            "chip_source": "Company disclosure"
+          }
+        ],
+        "warnings": [
+          "Shared by Anthropic, Cursor and SpaceXAI. No public customer allocation; do not count the whole site as each customer’s capacity."
+        ],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "major_site_page_checked"
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "epoch-aws-new-albany",
+        "name": "AWS New Albany",
+        "atlas_site_exists": false,
+        "location_label": "13360 Miller Rd NW",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Amazon",
+            "player_id": "amazon",
+            "confidence": "confident"
+          }
+        ],
+        "users": [],
+        "operator_name": null,
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-05-18",
+        "it_capacity_w": 213000000,
+        "it_capacity_mw": 213,
+        "facility_capacity_w": 255000000,
+        "facility_capacity_mw": 255,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/10uynqa40vg0ycoigE2TRah3aUPEDlMCb-n1w-IdN7sQ/edit?usp=sharing",
+        "hardware_types": [
+          "Trainium2",
+          "H100",
+          "H200",
+          "B200"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "Trainium2",
+            "count": 36702,
+            "date": "2026-03-12",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "H100",
+            "count": 64944,
+            "date": "2024-12-01",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "H200",
+            "count": 23603,
+            "date": "2026-03-12",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          },
+          {
+            "chip_type": "B200",
+            "count": 46847,
+            "date": "2026-05-18",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Estimate"
+          }
+        ],
+        "warnings": [],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    }
+  ]
+}
