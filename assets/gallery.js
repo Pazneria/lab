@@ -1,10 +1,40 @@
-(() => {
+(async () => {
   "use strict";
   const input = window.LAB_GALLERY,
     catalog = window.LAB_CATALOG,
     results = window.LAB_RESULTS;
   const unavailable = document.getElementById("gallery-unavailable");
   const detail = document.getElementById("benchmark-detail");
+  function showUnavailable() {
+    unavailable.hidden = false;
+    if (detail) detail.hidden = true;
+    const message = "The benchmark gallery could not finish loading. ";
+    if (unavailable.firstChild?.nodeType === Node.TEXT_NODE)
+      unavailable.firstChild.textContent = message;
+    else unavailable.prepend(document.createTextNode(message));
+  }
+  const orderingReady = () =>
+    ["order", "measured", "description"].every(
+      (name) => typeof window.LAB_METRIC_ORDER?.[name] === "function",
+    );
+  if (!orderingReady()) {
+    // A returning visitor can have pre-ordering HTML cached alongside newer
+    // renderers. Load only this fixed local dependency before drawing cards.
+    const loaded = await new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = new URL(
+        "assets/metric-order.js?v=5fcbd08",
+        location.href,
+      ).href;
+      script.onload = () => resolve(orderingReady());
+      script.onerror = () => resolve(false);
+      document.head.append(script);
+    });
+    if (!loaded) {
+      showUnavailable();
+      return;
+    }
+  }
   const categories = {
     standard: "Standard",
     frontend: "Frontend",
@@ -1160,8 +1190,8 @@
       restorePosition();
     });
     window.addEventListener("pageshow", restorePosition);
-    unavailable.hidden = true;
     render(fromURL());
+    unavailable.hidden = true;
     restorePosition();
   }
   function sourceSection(card) {
@@ -2705,6 +2735,10 @@
     window.addEventListener("hashchange", openHash);
     render(detailState());
   }
-  if (detail) detailView();
-  else gallery();
+  try {
+    if (detail) detailView();
+    else gallery();
+  } catch {
+    showUnavailable();
+  }
 })();
