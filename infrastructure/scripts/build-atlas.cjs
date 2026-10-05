@@ -453,7 +453,7 @@ const staticHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><
   )
   .join(
     "",
-  )}<h2 id="relationships">28 evidence-scoped relationships</h2>${view.relationships
+  )}<h2 id="relationships">${view.relationships.length} evidence-scoped relationships</h2>${view.relationships
   .map(
     (r) =>
       `<article class="static-record" id="${esc(r.id)}"><h3>${esc(name(r.from))} → ${esc(name(r.to))}</h3><p>${esc(r.summary)}</p>${fields(

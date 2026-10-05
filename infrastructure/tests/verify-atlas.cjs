@@ -51,6 +51,26 @@ const pass = (s) => {
   report.checks.push(s);
   console.log("PASS " + s);
 };
+const relationshipSection = fs
+  .readFileSync(path.join(root, "infrastructure/sources.html"), "utf8")
+  .match(
+    /<h2 id="relationships">(\d+) evidence-scoped relationships<\/h2>([\s\S]*?)<h2 id="timeline">/,
+  );
+assert(relationshipSection, "Source index relationship section is missing");
+assert.equal(
+  Number(relationshipSection[1]),
+  raw.relationships.length,
+  "Source index relationship heading must match the dataset",
+);
+assert.equal(
+  (relationshipSection[2].match(/<article class="static-record"/g) || [])
+    .length,
+  raw.relationships.length,
+  "Source index must render every relationship exactly once",
+);
+pass(
+  "Source index relationship heading and rendered records match the dataset.",
+);
 async function audit(page, label) {
   const script = process.env.LAB_AXE_SCRIPT;
   assert(

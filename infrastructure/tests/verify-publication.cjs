@@ -81,6 +81,32 @@ async function checkFile(file) {
   });
   if (file === "infrastructure/data/atlas.json")
     report.datasetCounts = JSON.parse(served.toString("utf8")).metadata.counts;
+  if (file === "infrastructure/sources.html") {
+    const section = served
+      .toString("utf8")
+      .match(
+        /<h2 id="relationships">(\d+) evidence-scoped relationships<\/h2>([\s\S]*?)<h2 id="timeline">/,
+      );
+    assert(section, "Live source index relationship section is missing");
+    const heading = Number(section[1]);
+    const rendered = (section[2].match(/<article class="static-record"/g) || [])
+      .length;
+    assert.equal(
+      heading,
+      expectedData.relationships.length,
+      "Live relationship heading differs from dataset",
+    );
+    assert.equal(
+      rendered,
+      expectedData.relationships.length,
+      "Live relationship records differ from dataset",
+    );
+    report.sourceIndexRelationships = {
+      heading,
+      rendered,
+      dataset: expectedData.relationships.length,
+    };
+  }
   if (file === "lab-space/index.html")
     assert(
       served
