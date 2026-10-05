@@ -710,14 +710,13 @@
       },
       "source_review": {
         "date": "2026-10-05",
-        "mode": "parent_source_audit",
-        "scope": "HEAD remains September29 pinned source5358a49f; no newer runs.",
-        "audit_status": "no_source_change"
+        "mode": "parent_primary_research",
+        "scope": "Pinned source files independently parsed for 87 published configurations. Container timestamps describe individual runs; the source revision and review dates do not date all experiments."
       },
-      "result_packet_checked_at": "2026-10-01",
+      "result_packet_checked_at": "2026-10-05",
       "snapshot_at": "2026-09-30",
       "publication_at": null,
-      "publication_label": "Runs: September 29, 2026",
+      "publication_label": null,
       "evaluations": [
         {
           "slice": "Original selected results",
@@ -732,10 +731,25 @@
           "latest": "2026-09-29",
           "known": 48,
           "unknown": 0
+        },
+        {
+          "slice": "Published configuration explorer",
+          "date_kind": "container start dates",
+          "earliest": "2026-03-10",
+          "latest": "2026-09-29",
+          "known": 1392,
+          "unknown": 0
         }
       ],
-      "model_releases": null,
-      "unavailable_reason": null
+      "model_releases": {
+        "earliest": "2025-08-05",
+        "latest": "2026-09-29",
+        "known": 86,
+        "unknown": 1
+      },
+      "unavailable_reason": null,
+      "source_revision_at": "2026-09-29",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97"
     },
     "voxelbench": {
       "evidence": "unresolved",

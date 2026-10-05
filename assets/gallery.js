@@ -338,16 +338,52 @@
         }).format(new Date(value + "T00:00:00Z"))
       : "Not established";
   }
+  function selectedRuneRun(card, state) {
+    if (card.id !== "runebench" || state?.view !== "published") return null;
+    const rune = input.coverage.rune,
+      row = rune.summaries[state.configuration]?.[state.skill];
+    if (!row) return null;
+    return {
+      row,
+      label:
+        rune.labels[state.configuration]?.displayName || state.configuration,
+      configuration: state.configuration,
+      skill: state.skill,
+      date: row.containerStartedAt?.slice(0, 10) || null,
+      model_release: rune.labels[state.configuration]?.releaseDate || null,
+      source_revision: rune.source_revision_at,
+    };
+  }
   function dateSummary(card, state = null) {
     const m = metadata(card),
-      slices =
-        card.id === "bullshitbench-v2" && state
+      selected = selectedRuneRun(card, state);
+    if (selected)
+      return (
+        "Selected container start: " +
+        shortDate(selected.date) +
+        " · Source revision: " +
+        shortDate(selected.source_revision) +
+        " · Source review: " +
+        shortDate(m.source_review.date)
+      );
+    const slices =
+      card.id === "bullshitbench-v2" && state
+        ? m.evaluations.filter(
+            (s) =>
+              s.slice ===
+              (state.view === "all"
+                ? "Expanded configurations"
+                : "Original selected results"),
+          )
+        : card.id === "runebench"
           ? m.evaluations.filter(
               (s) =>
                 s.slice ===
-                (state.view === "all"
-                  ? "Expanded configurations"
-                  : "Original selected results"),
+                (!state
+                  ? "Published configuration explorer"
+                  : state.view === "score"
+                    ? "Expanded configurations"
+                    : "Original selected results"),
             )
           : m.evaluations;
     const known = slices.reduce((n, s) => n + s.known, 0),
@@ -363,7 +399,9 @@
         ? "Run dates not reported"
         : unknown
           ? "Some run dates unknown"
-          : "Latest dated run: " + shortDate(latest);
+          : (card.id === "runebench" && !state
+              ? "Latest container start: "
+              : "Latest dated run: ") + shortDate(latest);
     return (
       runs +
       " · " +
@@ -373,8 +411,9 @@
       shortDate(m.source_review.date)
     );
   }
-  function metadataDetails(card) {
+  function metadataDetails(card, state = null) {
     const m = metadata(card),
+      selected = selectedRuneRun(card, state),
       content = e("div", "metadata-facts");
     content.append(e("p", "", m.cohort_basis));
     content.append(
@@ -388,6 +427,37 @@
     function fact(label, value) {
       list.append(e("dt", "", label), e("dd", "", value));
     }
+    if (selected) {
+      fact(
+        "Selected configuration and skill",
+        selected.label +
+          " (" +
+          selected.configuration +
+          ") · " +
+          selected.skill,
+      );
+      fact(
+        "Selected container start (UTC)",
+        selected.row.containerStartedAt || "Not reported.",
+      );
+      fact(
+        "Selected container finish (UTC)",
+        selected.row.containerFinishedAt || "Not reported.",
+      );
+      fact(
+        "Selected model release date",
+        shortDate(selected.model_release) +
+          "; this is not the selected run date.",
+      );
+    }
+    if (m.source_revision_at)
+      fact(
+        "Pinned source revision",
+        shortDate(m.source_revision_at) +
+          " · " +
+          m.source_snapshot_commit +
+          "; this revision contains runs from different dates.",
+      );
     fact(
       "Source review",
       shortDate(m.source_review.date) + ". " + m.source_review.scope,
@@ -400,7 +470,9 @@
         : "No numeric result packet collected for this guide.",
     );
     fact(
-      "Source snapshot",
+      card.id === "runebench"
+        ? "Original discovery snapshot"
+        : "Source snapshot",
       m.snapshot_at
         ? shortDate(m.snapshot_at)
         : "Not established as a separate dated snapshot.",
@@ -411,9 +483,11 @@
         ? shortDate(m.publication_at)
         : m.publication_label || "Not established in this record.",
     );
-    for (const slice of m.evaluations) {
+    for (const slice of m.evaluations.filter(
+      (s) => !selected || s.slice === "Published configuration explorer",
+    )) {
       fact(
-        slice.slice + " — evaluation dates",
+        slice.slice + " - " + (slice.date_kind || "evaluation dates"),
         slice.known
           ? shortDate(slice.earliest) +
               (slice.earliest === slice.latest
@@ -2179,6 +2253,7 @@
       const card = byId.get(state.id),
         notes = input.notes[card.id],
         graph = graphFor(card),
+        selectedRune = selectedRuneRun(card, state),
         viewCohort =
           card.coverage ||
           (card.id === "runebench" && state.view === "published")
@@ -2219,7 +2294,15 @@
         e(
           "p",
           "detail-dates",
-          viewCohort?.date_label ||
+          (selectedRune
+            ? selectedRune.label +
+              " · " +
+              selectedRune.skill +
+              " · Container start: " +
+              shortDate(selectedRune.date) +
+              " (UTC)"
+            : null) ||
+            viewCohort?.date_label ||
             card.standard?.date_label ||
             notes.date ||
             "Discovery snapshot: September 30, 2026 · source pages not freshly polled",
@@ -2277,16 +2360,32 @@
       const audited = input.coverage.audits.find((a) => a.id === card.id);
       if (audited?.audit_warning) {
         const warning = audited.audit_warning,
-          p = e("p", "source-warning");
+          p = e("p", "source-warning"),
+          publisher =
+            safeURL(warning.source) &&
+            new URL(warning.source).hostname === "epoch.ai"
+              ? "Epoch"
+              : "The linked source";
         p.append(
           e("strong", "", "Source review qualification. "),
           document.createTextNode(
-            [warning.finding, warning.scope, warning.residuals]
+            [
+              warning.verdict &&
+                publisher +
+                  "'s " +
+                  shortDate(warning.review_date) +
+                  " review gives the verdict “" +
+                  warning.verdict +
+                  ".”",
+              warning.scope && "Scope: " + warning.scope + ".",
+              warning.finding,
+              warning.residuals,
+            ]
               .filter(Boolean)
               .join(" "),
           ),
           document.createTextNode(" "),
-          external(warning.source, "Read the attributed review"),
+          external(warning.source, "Read the " + publisher + " review"),
         );
         detail.append(p);
       }
@@ -2552,7 +2651,7 @@
       }
       detail.append(
         explanation(card),
-        metadataDetails(card),
+        metadataDetails(card, state),
         technicalSection(card),
       );
       detail.hidden = false;

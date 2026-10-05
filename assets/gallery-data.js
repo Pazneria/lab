@@ -12621,14 +12621,13 @@ window.LAB_GALLERY = {
         },
         "source_review": {
           "date": "2026-10-05",
-          "mode": "parent_source_audit",
-          "scope": "HEAD remains September29 pinned source5358a49f; no newer runs.",
-          "audit_status": "no_source_change"
+          "mode": "parent_primary_research",
+          "scope": "Pinned source files independently parsed for 87 published configurations. Container timestamps describe individual runs; the source revision and review dates do not date all experiments."
         },
-        "result_packet_checked_at": "2026-10-01",
+        "result_packet_checked_at": "2026-10-05",
         "snapshot_at": "2026-09-30",
         "publication_at": null,
-        "publication_label": "Runs: September 29, 2026",
+        "publication_label": null,
         "evaluations": [
           {
             "slice": "Original selected results",
@@ -12643,10 +12642,25 @@ window.LAB_GALLERY = {
             "latest": "2026-09-29",
             "known": 48,
             "unknown": 0
+          },
+          {
+            "slice": "Published configuration explorer",
+            "date_kind": "container start dates",
+            "earliest": "2026-03-10",
+            "latest": "2026-09-29",
+            "known": 1392,
+            "unknown": 0
           }
         ],
-        "model_releases": null,
-        "unavailable_reason": null
+        "model_releases": {
+          "earliest": "2025-08-05",
+          "latest": "2026-09-29",
+          "known": 86,
+          "unknown": 1
+        },
+        "unavailable_reason": null,
+        "source_revision_at": "2026-09-29",
+        "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97"
       },
       "voxelbench": {
         "evidence": "unresolved",
@@ -27786,7 +27800,7 @@ window.LAB_GALLERY = {
             "label": "September 20 paper revision · 17 systems",
             "rows": [
               {
-                "label": "Claude-Opus-5",
+                "label": "Claude-Opus-5 · Claude Code · xhigh",
                 "result_id": "model_variant-0",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -27825,7 +27839,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "GPT-5.6-Sol",
+                "label": "GPT-5.6-Sol · Codex · xhigh",
                 "result_id": "model_variant-1",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -27864,7 +27878,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Qwen3.8-Max",
+                "label": "Qwen3.8-Max · Claude Code · enabled",
                 "result_id": "model_variant-2",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -27903,7 +27917,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Kimi-K3",
+                "label": "Kimi-K3 · Claude Code · max",
                 "result_id": "model_variant-3",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -27942,7 +27956,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Hy4 preview",
+                "label": "Hy4 preview · Claude Code · high",
                 "result_id": "model_variant-4",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -27981,7 +27995,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Claude-Opus-4.8",
+                "label": "Claude-Opus-4.8 · Claude Code · xhigh",
                 "result_id": "model_variant-5",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28020,7 +28034,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Grok-4.5",
+                "label": "Grok-4.5 · Claude Code · high",
                 "result_id": "model_variant-6",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28059,7 +28073,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "GPT-5.5",
+                "label": "GPT-5.5 · Codex · xhigh",
                 "result_id": "model_variant-7",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28098,7 +28112,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Claude-Opus-4.7",
+                "label": "Claude-Opus-4.7 · Claude Code · xhigh",
                 "result_id": "model_variant-8",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28137,7 +28151,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "GLM-5.2",
+                "label": "GLM-5.2 · Claude Code · max",
                 "result_id": "model_variant-9",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28176,7 +28190,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "DeepSeek-V4-Flash",
+                "label": "DeepSeek-V4-Flash · Claude Code · max",
                 "result_id": "model_variant-10",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28215,7 +28229,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Hy3",
+                "label": "Hy3 · Claude Code · high",
                 "result_id": "model_variant-11",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28254,7 +28268,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Qwen3.7-Max",
+                "label": "Qwen3.7-Max · Claude Code · enabled",
                 "result_id": "model_variant-12",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28293,7 +28307,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "GLM-5.1",
+                "label": "GLM-5.1 · Claude Code · enabled",
                 "result_id": "model_variant-13",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28332,7 +28346,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "DeepSeek-V4-Pro-Prev",
+                "label": "DeepSeek-V4-Pro-Prev · Claude Code · max",
                 "result_id": "model_variant-14",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28371,7 +28385,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "Kimi-K2.7-Code",
+                "label": "Kimi-K2.7-Code · Claude Code · enabled",
                 "result_id": "model_variant-15",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28410,7 +28424,7 @@ window.LAB_GALLERY = {
                 }
               },
               {
-                "label": "MiniMax-M3",
+                "label": "MiniMax-M3 · Claude Code · adaptive",
                 "result_id": "model_variant-16",
                 "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
                 "raw": {
@@ -28550,7 +28564,12 @@ window.LAB_GALLERY = {
             ],
             "evaluation_date": null,
             "publication_at": "2026-09-20",
-            "snapshot_at": null
+            "snapshot_at": null,
+            "configuration_fields": [
+              "model_variant",
+              "harness",
+              "effort"
+            ]
           }
         ]
       },
@@ -29801,7 +29820,9 @@ window.LAB_GALLERY = {
                   0,
                   3
                 ],
-                "direction": "lower_is_better"
+                "direction": "lower_is_better",
+                "ci_field": "interval_cancer_ci95",
+                "ci_level": 0.95
               },
               {
                 "id": "sensitivity",
@@ -29812,7 +29833,9 @@ window.LAB_GALLERY = {
                   0,
                   100
                 ],
-                "direction": "higher_is_better"
+                "direction": "higher_is_better",
+                "ci_field": "sensitivity_ci95",
+                "ci_level": 0.95
               }
             ],
             "source_url": "https://lup.lub.lu.se/record/7851a699-d9c4-4263-93dc-b29779d5b8d4",
@@ -67514,6 +67537,8 @@ window.LAB_GALLERY = {
         }
       },
       "source_url": "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/_data.js",
+      "source_revision_at": "2026-09-29",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97",
       "warning": "Single-configuration explorer. Harness/image versions and task prompts differ across 87 configurations; do not interpret them as a matched experiment. Existing verified same-slice effort charts remain separate."
     },
     "provenance": {

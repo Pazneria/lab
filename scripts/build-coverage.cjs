@@ -365,7 +365,17 @@ function build() {
     variant(
       id,
       label,
-      rows(cohort, extra.label_field || "model_variant"),
+      rows(cohort, extra.label_field || "model_variant").map((r) =>
+        extra.configuration_fields
+          ? {
+              ...r,
+              label: extra.configuration_fields
+                .map((field) => r[field])
+                .filter(Boolean)
+                .join(" · "),
+            }
+          : r,
+      ),
       metrics,
       cohort.source_url,
       cohort.settings,
@@ -590,6 +600,7 @@ function build() {
             [-3, 3],
           ),
         ),
+        { configuration_fields: ["model_variant", "harness", "effort"] },
       ),
     ],
     true,
@@ -755,21 +766,29 @@ function build() {
         "Fixed randomized trial · final report",
         c["masai-trial"],
         [
-          metric(
-            "interval",
-            "Interval cancers per 1,000",
-            "cases per 1,000",
-            "interval_cancer_per_1000",
-            [0, 3],
-            "lower_is_better",
-          ),
-          metric(
-            "sensitivity",
-            "Sensitivity",
-            "percent",
-            "sensitivity_percent",
-            [0, 100],
-          ),
+          {
+            ...metric(
+              "interval",
+              "Interval cancers per 1,000",
+              "cases per 1,000",
+              "interval_cancer_per_1000",
+              [0, 3],
+              "lower_is_better",
+            ),
+            ci_field: "interval_cancer_ci95",
+            ci_level: 0.95,
+          },
+          {
+            ...metric(
+              "sensitivity",
+              "Sensitivity",
+              "percent",
+              "sensitivity_percent",
+              [0, 100],
+            ),
+            ci_field: "sensitivity_ci95",
+            ci_level: 0.95,
+          },
         ],
         {
           label_field: "arm",
@@ -899,6 +918,8 @@ function build() {
       labels: runeLabels,
       source_url:
         "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/_data.js",
+      source_revision_at: "2026-09-29",
+      source_snapshot_commit: "5358a49f212e238cd093154bc3e93999d345ab97",
       warning:
         "Single-configuration explorer. Harness/image versions and task prompts differ across 87 configurations; do not interpret them as a matched experiment. Existing verified same-slice effort charts remain separate.",
     },

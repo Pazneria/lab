@@ -239,6 +239,33 @@ function build() {
       model_releases: range(rows, "model_release_date"),
     };
   }
+  const runeMetadata = cards.runebench;
+  runeMetadata.source_review = {
+    date: coverage.checked_at,
+    mode: "parent_primary_research",
+    scope:
+      "Pinned source files independently parsed for 87 published configurations. Container timestamps describe individual runs; the source revision and review dates do not date all experiments.",
+  };
+  runeMetadata.result_packet_checked_at = coverage.checked_at;
+  runeMetadata.source_revision_at = coverage.rune.source_revision_at;
+  runeMetadata.source_snapshot_commit = coverage.rune.source_snapshot_commit;
+  runeMetadata.publication_label = null;
+  runeMetadata.evaluations.push({
+    slice: "Published configuration explorer",
+    date_kind: "container start dates",
+    ...range(
+      Object.values(coverage.rune.summaries).flatMap((skills) =>
+        Object.values(skills).map((r) => ({
+          container_start_date: r.containerStartedAt?.slice(0, 10) || null,
+        })),
+      ),
+      "container_start_date",
+    ),
+  });
+  runeMetadata.model_releases = range(
+    Object.values(coverage.rune.labels),
+    "releaseDate",
+  );
   const values = Object.values(cards);
   const counts = {
     all: values.length,

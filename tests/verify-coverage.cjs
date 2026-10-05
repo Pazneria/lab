@@ -289,6 +289,172 @@ async function main() {
     pass(
       "BALROG modalities, 140 EQ rows, TB4 cost/time and original six, VoiceCode missing-cost exclusion, BB all-228 default and four-point cost slice, and Rune 87-configuration explorer preserve compatible slices and units",
     );
+    await go(
+      "results.html?benchmark=runebench&configuration=opus&skill=woodcutting",
+    );
+    async function checkRuneDate(configuration, skill) {
+      const row = coverage.rune.summaries[configuration][skill];
+      const label = new Intl.DateTimeFormat("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC",
+      }).format(new Date(row.containerStartedAt));
+      assert.ok(
+        (await page.locator(".detail-dates").textContent()).includes(label),
+      );
+      assert.match(
+        await page.locator(".detail-source-review").textContent(),
+        /Source revision: Sep 29, 2026.*Source review: Oct 5, 2026/,
+      );
+      const facts = await page.locator("#benchmark-dates").textContent();
+      assert.ok(facts.includes(row.containerStartedAt));
+      assert.ok(facts.includes(row.containerFinishedAt));
+      assert.match(facts, /1392 rows dated/);
+      assert.doesNotMatch(
+        facts,
+        /Original selected results|Expanded configurations/,
+      );
+      await page.locator(".coverage-mark").focus();
+      assert.ok(
+        (await page.locator(".point-inspector").textContent()).includes(
+          "Container start date: " + row.containerStartedAt.slice(0, 10),
+        ),
+      );
+    }
+    await checkRuneDate("opus", "woodcutting");
+    await page.reload();
+    await checkRuneDate("opus", "woodcutting");
+    await page.locator("select[name=configuration]").selectOption("gpt61sol");
+    await page.locator("select[name=skill]").selectOption("mining");
+    await checkRuneDate("gpt61sol", "mining");
+    await page.locator("input[name=view][value=score]").check();
+    assert.match(
+      await page.locator(".detail-dates").textContent(),
+      /September 29, 2026/,
+    );
+    assert.equal(await page.locator(".confidence-interval").count(), 0);
+    pass(
+      "Rune selected container dates change with configuration/skill and survive reload; Apr 18 runs remain separate from Sep 29 revision and verified effort slice",
+    );
+    const masai = coverage.cards.find((c) => c.id === "masai-trial")
+      .variants[0];
+    for (const metric of masai.metrics) {
+      await go("results.html?benchmark=masai-trial&view=" + metric.id);
+      await page.reload();
+      assert.equal(await page.locator(".confidence-interval").count(), 2);
+      assert.match(
+        await page.locator(".coverage-chart").textContent(),
+        /reported 95% confidence intervals/,
+      );
+      assert.doesNotMatch(
+        await page.locator(".coverage-chart").textContent(),
+        /No defined uncertainty/,
+      );
+      await page.locator(".chart-table summary").click();
+      assert.match(
+        await page.locator(".chart-table thead").textContent(),
+        /Reported confidence interval/,
+      );
+      for (let i = 0; i < masai.rows.length; i++) {
+        const bounds = masai.rows[i][metric.ci_field];
+        const ci = page.locator(".confidence-interval").nth(i);
+        assert.equal(await ci.getAttribute("data-ci-lower"), String(bounds[0]));
+        assert.equal(await ci.getAttribute("data-ci-upper"), String(bounds[1]));
+        assert.equal(await ci.getAttribute("data-ci-level"), "0.95");
+        const coords = await ci.evaluate((line) => ({
+          width: line.ownerSVGElement.viewBox.baseVal.width,
+          x1: Number(line.getAttribute("x1")),
+          x2: Number(line.getAttribute("x2")),
+        }));
+        for (const [key, bound] of [
+          ["x1", bounds[0]],
+          ["x2", bounds[1]],
+        ]) {
+          const expected =
+            320 +
+            ((coords.width - 320 - 72) * (bound - metric.domain[0])) /
+              (metric.domain[1] - metric.domain[0]);
+          assert.ok(Math.abs(coords[key] - expected) < 1e-8);
+        }
+        await page.locator(".coverage-mark").nth(i).focus();
+        for (const container of [
+          page.locator(".point-inspector"),
+          page.locator(".chart-table tbody tr").nth(i),
+        ]) {
+          const text = await container.textContent();
+          assert.ok(
+            text.includes(String(bounds[0])) &&
+              text.includes(String(bounds[1])),
+          );
+          assert.match(text, /95% CI/);
+        }
+        assert.match(
+          await page
+            .locator(".coverage-mark")
+            .nth(i)
+            .getAttribute("aria-label"),
+          /95% CI/,
+        );
+      }
+    }
+    await page.locator(".coverage-chart").scrollIntoViewIfNeeded();
+    await capture("coverage-masai-ci-desktop.png");
+    pass(
+      "Both MASAI outcomes plot their exact metric-specific 95% CI bounds, with accessible mark descriptions, inspector and table; undefined uncertainty is not invented elsewhere",
+    );
+    await go("results.html?benchmark=webcraftbench-v3");
+    const webcraft = coverage.cards.find((c) => c.id === "webcraftbench-v3")
+      .variants[0];
+    for (let i = 0; i < 2; i++) {
+      const row = webcraft.rows[i];
+      for (const field of ["model_variant", "harness", "effort"])
+        assert.ok(
+          (
+            await page.locator(".chart-table tbody tr").nth(i).textContent()
+          ).includes(row[field]),
+        );
+      await page.locator(".coverage-mark").nth(i).focus();
+      assert.ok(
+        (await page.locator(".point-inspector").textContent()).includes(
+          "Harness: " + row.harness,
+        ),
+      );
+      assert.ok(
+        (await page.locator(".point-inspector").textContent()).includes(
+          "Effort: " + row.effort,
+        ),
+      );
+      assert.ok(
+        (
+          await page.locator(".coverage-mark").nth(i).getAttribute("aria-label")
+        ).includes(row.harness),
+      );
+    }
+    await go("results.html?benchmark=swe-bench-pro-public-v1");
+    const warning = await page.locator(".source-warning").first().textContent();
+    assert.match(warning, /Epoch.*Sep 1, 2026.*Flawed.*Pre-V2 public set/);
+    assert.equal(
+      await page
+        .getByRole("link", { name: "Read the Epoch review" })
+        .getAttribute("href"),
+      "https://epoch.ai/benchmarks/swe-bench-pro/review",
+    );
+    await page
+      .locator("select[name=family]")
+      .selectOption("swe-bench-pro-public-v2");
+    assert.doesNotMatch(
+      await page.locator("#benchmark-detail").textContent(),
+      /verdict “Flawed|Pre-V2 public set/,
+    );
+    await page.reload();
+    assert.doesNotMatch(
+      await page.locator("#benchmark-detail").textContent(),
+      /verdict “Flawed|Pre-V2 public set/,
+    );
+    pass(
+      "WebCraft model/harness/effort stay visible in labels, table and structured inspector; Epoch verdict and review date are attributed only to SWE-Bench Pro V1",
+    );
     await go("results.html?benchmark=gpqa-diamond");
     await page
       .locator("select[name=family]")
@@ -310,9 +476,12 @@ async function main() {
         "results.html?benchmark=webcraftbench-v3",
         "results.html?benchmark=terminal-bench-4&view=cost",
         "results.html?benchmark=masai-trial",
+        "results.html?benchmark=masai-trial&view=sensitivity",
         "results.html?benchmark=voicecodebench&view=cost",
         "results.html?benchmark=balrog&cohort=VLM",
         "results.html?benchmark=runebench",
+        "results.html?benchmark=runebench&configuration=opus&skill=woodcutting",
+        "results.html?benchmark=swe-bench-pro-public-v1",
       ]) {
         await go(route);
         assert.equal(
@@ -331,6 +500,14 @@ async function main() {
         await go("results.html?benchmark=webcraftbench-v3");
         await page.locator(".coverage-chart").scrollIntoViewIfNeeded();
         await capture("coverage-webcraft-mobile.png");
+        await go("results.html?benchmark=masai-trial&view=sensitivity");
+        await page.locator(".coverage-mark").first().focus();
+        await page.locator(".coverage-chart").scrollIntoViewIfNeeded();
+        await capture("coverage-masai-ci-mobile.png");
+        await go(
+          "results.html?benchmark=runebench&configuration=opus&skill=woodcutting",
+        );
+        await capture("coverage-rune-selected-date-mobile.png");
       }
       if (width === 1440) {
         await go("results.html?benchmark=terminal-bench-4&view=cost");

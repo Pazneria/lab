@@ -30,6 +30,36 @@
       : Number(n).toLocaleString("en-US", { maximumFractionDigits: 6 });
   const shown = (n, unit) =>
     fmt(n) + (n == null ? "" : unit === "percent" ? "%" : " " + unit);
+  function confidence(row, metric) {
+    const n = value(row, metric.field);
+    let bounds, level;
+    if (metric.ci_field) {
+      bounds = value(row, metric.ci_field);
+      level = metric.ci_level;
+    } else if (metric.field === "value") {
+      bounds = [n + row.ci_lower_delta, n + row.ci_upper_delta];
+      level = row.ci_level;
+    }
+    return number(n) &&
+      number(level) &&
+      level > 0 &&
+      level < 1 &&
+      Array.isArray(bounds) &&
+      bounds.length === 2 &&
+      bounds.every(number) &&
+      bounds[0] <= n &&
+      n <= bounds[1]
+      ? { lower: bounds[0], upper: bounds[1], level }
+      : null;
+  }
+  const intervalText = (ci, unit) =>
+    ci
+      ? fmt(ci.level * 100) +
+        "% CI: " +
+        shown(ci.lower, unit) +
+        " to " +
+        shown(ci.upper, unit)
+      : "Not reported for this measurement";
   const colors = ["#725cc7", "#2e7669", "#b65d3e", "#516aa5", "#99623d"];
   function link(url, label = "Original result source") {
     const a = e("a", "", label);
@@ -312,6 +342,8 @@
           metric.label + ": " + shown(value(r, metric.field), metric.unit),
         ),
       );
+      const ci = confidence(r, metric);
+      if (ci) panel.append(e("p", "metric-ci", intervalText(ci, metric.unit)));
       if (metric.x_field)
         panel.append(
           e(
@@ -322,13 +354,14 @@
               shown(value(r, metric.x_field), metric.x_unit),
           ),
         );
-      if (r.agent || r.effort || r.modality)
+      if (r.agent || r.harness || r.effort || r.modality)
         panel.append(
           e(
             "p",
             "",
             [
               r.agent && "Agent: " + r.agent,
+              r.harness && "Harness: " + r.harness,
               r.effort && "Effort: " + r.effort,
               r.modality && "Modality: " + r.modality,
             ]
@@ -340,7 +373,8 @@
         e(
           "p",
           "",
-          "Evaluation date: " +
+          (r.evaluation_date_label || "Evaluation date") +
+            ": " +
             (r.evaluation_date || variant.evaluation_date || "not reported") +
             (r.model_release_date
               ? " · Model release: " + r.model_release_date
@@ -463,7 +497,8 @@
       points.forEach((r, i) => {
         const n = value(r, metric.field),
           y = metric.x_field ? sy(n) : top + 18 + i * (narrow ? 58 : 42),
-          x = sx(metric.x_field ? value(r, metric.x_field) : n);
+          x = sx(metric.x_field ? value(r, metric.x_field) : n),
+          ci = confidence(r, metric);
         const mark = svg("g", {
           tabindex: 0,
           role: "button",
@@ -473,7 +508,8 @@
             shown(n, metric.unit) +
             (metric.x_field
               ? ", " + shown(value(r, metric.x_field), metric.x_unit)
-              : ""),
+              : "") +
+            (ci ? ", " + intervalText(ci, metric.unit) : ""),
           class: "coverage-mark",
           "data-result-id": r.result_id || String(i),
         });
@@ -532,26 +568,38 @@
               rx: 3,
               fill: colors[i % colors.length],
             }),
-            svg("text", { x: x + 7, y: y + 4, class: "chart-tick" }, fmt(n)),
+            svg(
+              "text",
+              { x: x + 7, y: y + (ci ? 22 : 4), class: "chart-tick" },
+              fmt(n),
+            ),
           );
         }
         // Only explicitly identified source confidence intervals are drawn. Undefined +/- columns remain in source details.
-        if (
-          !metric.x_field &&
-          metric.field === "value" &&
-          number(r.ci_lower_delta) &&
-          number(r.ci_upper_delta) &&
-          number(r.ci_level)
-        )
+        if (!metric.x_field && ci)
           mark.append(
             svg("line", {
-              x1: sx(n + r.ci_lower_delta),
-              x2: sx(n + r.ci_upper_delta),
+              x1: sx(ci.lower),
+              x2: sx(ci.upper),
               y1: y,
               y2: y,
               stroke: "#1e293b",
               "stroke-width": 2,
+              class: "confidence-interval",
+              "data-ci-lower": ci.lower,
+              "data-ci-upper": ci.upper,
+              "data-ci-level": ci.level,
             }),
+            ...[ci.lower, ci.upper].map((bound) =>
+              svg("line", {
+                x1: sx(bound),
+                x2: sx(bound),
+                y1: y - 5,
+                y2: y + 5,
+                stroke: "#1e293b",
+                "stroke-width": 2,
+              }),
+            ),
           );
         for (const event of ["mouseenter", "focus", "click"])
           mark.addEventListener(event, () => inspect(r));
@@ -580,13 +628,22 @@
     } else
       node.append(e("p", "empty-state", "No reported values match this view."));
     node.append(panel);
-    const knownCI = eligible.some((r) => number(r.ci_level));
+    const knownCI = variant.rows.some((r) => confidence(r, metric));
+    const confidenceLevels = [
+      ...new Set(
+        variant.rows.map((r) => confidence(r, metric)?.level).filter(number),
+      ),
+    ].map((level) => fmt(level * 100) + "%");
     node.append(
       e(
         "p",
         "chart-subtitle",
         knownCI
-          ? "Source confidence intervals are retained where reported; rows without intervals remain unlabeled. Differences do not by themselves establish significance."
+          ? "Whiskers show the reported " +
+              confidenceLevels.join(" and ") +
+              " confidence intervals for " +
+              metric.label +
+              "; exact bounds are in the table and mark details. Rows without reported intervals remain unlabeled. Differences do not by themselves establish significance."
           : "No defined uncertainty intervals were supplied for this view. Reported ± values with an unknown definition remain in the source details; no significance claim is made.",
       ),
     );
@@ -605,6 +662,9 @@
     for (const title of [
       "Configuration",
       metric.label + " (" + metric.unit + ")",
+      ...(knownCI
+        ? ["Reported confidence interval (" + metric.unit + ")"]
+        : []),
       ...(metric.x_field ? [metric.x_label + " (" + metric.x_unit + ")"] : []),
       "Source",
     ]) {
@@ -619,6 +679,7 @@
       for (const cell of [
         r.label,
         shown(value(r, metric.field), metric.unit),
+        ...(knownCI ? [intervalText(confidence(r, metric), metric.unit)] : []),
         ...(metric.x_field
           ? [shown(value(r, metric.x_field), metric.x_unit)]
           : []),
@@ -661,6 +722,7 @@
               source_url: data.source_url,
               result_id: key + "-" + skill,
               evaluation_date: row.containerStartedAt?.slice(0, 10) || null,
+              evaluation_date_label: "Container start date",
               raw: row,
             },
           ],
