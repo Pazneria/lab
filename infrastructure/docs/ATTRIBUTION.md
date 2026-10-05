@@ -23,7 +23,9 @@ Leaflet 1.9.4 is bundled locally in `assets/vendor/leaflet/`, including its BSD 
 license and image assets. Source: https://leafletjs.com/ and the published leaflet
 1.9.4 package. JS SHA-256:
 `db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a`;
-CSS SHA-256: `a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6`.
+Retrieved CSS SHA-256: `a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6`.
+Git normalizes its CRLF line endings to LF; the committed CSS SHA-256 is
+`337bfca5cabd03b39815b2700febe2b3b7edf55921c59cd49f88ecb328212303`.
 No remote script, font, paid API key or analytics is used.
 
 ## OpenStreetMap
