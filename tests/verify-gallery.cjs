@@ -237,12 +237,12 @@ async function main() {
         await page
           .getByRole("checkbox", { name: "Show all matching configurations" })
           .check();
-      const plotted =
-        c.display_defaults?.sort === "evaluation_date_desc"
-          ? [...c.rows].sort((a, b) =>
-              (b.evaluation_date || "").localeCompare(a.evaluation_date || ""),
-            )
-          : c.rows;
+      const plotted = [...c.rows].sort(
+        (a, b) =>
+          (c.direction === "lower_is_better"
+            ? a.value - b.value
+            : b.value - a.value) || c.rows.indexOf(a) - c.rows.indexOf(b),
+      );
       assert.equal(await page.locator(".standard-row").count(), c.rows.length);
       assert.deepEqual(
         await page
@@ -281,7 +281,7 @@ async function main() {
         );
       assert.deepEqual(
         values.map((r) => Number(r[1])),
-        c.rows.map((r) => r.value),
+        plotted.map((r) => r.value),
       );
       assert.ok(values.every((r) => r[3].length > 0));
       if (c.display_status === "historical_source_cohort")

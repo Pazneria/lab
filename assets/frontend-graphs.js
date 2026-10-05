@@ -154,7 +154,11 @@
     const arena = c.id === "webdev-arena-frontend",
       low = arena ? 1600 : 0,
       high = arena ? 1900 : 100;
-    const rows = plotted(c).slice(0, 6),
+    const rows = window.LAB_METRIC_ORDER.order(
+        plotted(c),
+        (r) => (arena ? r.value : r.metrics.clip),
+        arena ? c.direction : "higher_is_better",
+      ).slice(0, 6),
       left = 128,
       right = 27,
       top = 21,
@@ -229,7 +233,13 @@
     const arena = c.id === "webdev-arena-frontend",
       methods = c.id === "design2code-v3-484" && state.comparison === "methods",
       metric = Object.hasOwn(metrics, state.view) ? state.view : "clip";
-    const rows = plotted(c, state),
+    const value = (r) => (arena ? r.value : r.metrics[metric]),
+      direction = arena ? c.direction : "higher_is_better";
+    const rows = window.LAB_METRIC_ORDER.order(
+        plotted(c, state),
+        value,
+        direction,
+      ),
       low = arena ? 1600 : 0,
       high = arena ? 1900 : 100;
     const title = arena
@@ -244,6 +254,7 @@
       ? "webdev-arena-frontend-2026-10-01"
       : "design2code-v3-484-" + (methods ? "gpt4o-methods" : "direct");
     const node = e("article", "chart-card frontend-chart");
+    node.dataset.direction = direction || "unknown";
     node.id = c.id + "-" + (arena ? "rating" : metric);
     node.append(
       e("h2", "", title),
@@ -255,6 +266,13 @@
           : "Similarity score axis: 0–100. " +
               metrics[metric] +
               "; one dimension at a time. Paper revision February 9, 2025; evaluation dates unknown.",
+      ),
+    );
+    node.append(
+      e(
+        "p",
+        "chart-scale-note",
+        window.LAB_METRIC_ORDER.description(direction),
       ),
     );
     const plot = e("div", "standard-plot"),
@@ -274,7 +292,6 @@
     );
     announcement.setAttribute("role", "status");
     announcement.setAttribute("aria-live", "polite");
-    const value = (r) => (arena ? r.value : r.metrics[metric]);
     const pct = (n) => ((n - low) / (high - low)) * 100;
     rows.forEach((r, i) => {
       const row = e("button", "standard-row frontend-row");

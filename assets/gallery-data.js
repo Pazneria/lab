@@ -29635,7 +29635,8 @@ window.LAB_GALLERY = {
             "evaluation_date": null,
             "publication_at": "2026-09-10",
             "snapshot_at": null,
-            "label_field": "label"
+            "label_field": "label",
+            "rank_group": "task"
           }
         ]
       },

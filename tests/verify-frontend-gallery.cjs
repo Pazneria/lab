@@ -302,6 +302,11 @@ async function main() {
           : r.model_variant === "GPT-4o",
       );
       for (const metric of Array.from(design.metric_order)) {
+        rows.sort(
+          (a, b) =>
+            b.metrics[metric] - a.metrics[metric] ||
+            design.rows.indexOf(a) - design.rows.indexOf(b),
+        );
         await page.locator("input[name=view][value=" + metric + "]").check();
         assert.equal(await page.locator(".frontend-row").count(), rows.length);
         assert.deepEqual(

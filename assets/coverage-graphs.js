@@ -146,7 +146,12 @@
       "aria-hidden": "true",
       focusable: "false",
     });
-    const rows = variant.rows
+    const rows = window.LAB_METRIC_ORDER.order(
+      variant.rows,
+      (r) => value(r, metric.field),
+      metric.direction,
+      { group: variant.rank_group ? (r) => r[variant.rank_group] : undefined },
+    )
       .filter((r) => number(value(r, metric.field)))
       .slice(0, 6);
     const sx = (x) =>
@@ -185,7 +190,8 @@
           width: Math.max(2, Math.abs(sx(n) - sx(0))),
           height: 10,
           rx: 3,
-          fill: colors[i % colors.length],
+          fill: colors[variant.rows.indexOf(r) % colors.length],
+          "data-value": n,
         }),
         svg(
           "text",
@@ -203,6 +209,7 @@
     node.dataset.coverageId = card.id;
     node.dataset.cohort = variant.id;
     node.dataset.metric = metric.id;
+    node.dataset.direction = metric.direction || "unknown";
     const h = e("h2", "", metric.label);
     node.append(
       h,
@@ -213,7 +220,9 @@
           " · " +
           (metric.direction === "lower_is_better"
             ? "Lower is better"
-            : "Higher is better"),
+            : metric.direction === "higher_is_better"
+              ? "Higher is better"
+              : "Preferred direction not established"),
       ),
     );
     const form = e("form", "coverage-controls");
@@ -281,13 +290,23 @@
       if (ev.target.name !== "config") changed(ev.target.name);
     });
     text.addEventListener("input", () => changed("config"));
-    const matching = variant.rows.filter((r) =>
+    const nativeMatching = variant.rows.filter((r) =>
       r.label.toLocaleLowerCase().includes(text.value.toLocaleLowerCase()),
     );
-    const eligible = matching.filter(
-      (r) =>
-        number(value(r, metric.field)) &&
-        (!metric.x_field || number(value(r, metric.x_field))),
+    const complete = (r) =>
+      number(value(r, metric.field)) &&
+      (!metric.x_field || number(value(r, metric.x_field)));
+    const matching = window.LAB_METRIC_ORDER.order(
+      nativeMatching,
+      (r) => value(r, metric.field),
+      metric.direction,
+      {
+        eligible: complete,
+        group: variant.rank_group ? (r) => r[variant.rank_group] : undefined,
+      },
+    );
+    const eligible = (metric.x_field ? nativeMatching : matching).filter(
+      complete,
     );
     const points = checkbox.checked ? eligible : eligible.slice(0, 12);
     node.append(
@@ -300,6 +319,19 @@
           " eligible matching rows · " +
           variant.rows.length +
           " source rows",
+      ),
+    );
+    node.append(
+      e(
+        "p",
+        "chart-scale-note",
+        window.LAB_METRIC_ORDER.description(metric.direction) +
+          (variant.rank_group
+            ? " Order is within each task; different tasks are not pooled."
+            : "") +
+          (metric.x_field
+            ? " Table order follows the outcome score; scatter positions retain both measurements."
+            : ""),
       ),
     );
     if (variant.complete === false)
@@ -512,6 +544,7 @@
             (ci ? ", " + intervalText(ci, metric.unit) : ""),
           class: "coverage-mark",
           "data-result-id": r.result_id || String(i),
+          "data-value": n,
         });
         if (metric.x_field)
           mark.append(
@@ -566,7 +599,7 @@
               width: Math.max(2, Math.abs(x - sx(0))),
               height: 18,
               rx: 3,
-              fill: colors[i % colors.length],
+              fill: colors[variant.rows.indexOf(r) % colors.length],
             }),
             svg(
               "text",
