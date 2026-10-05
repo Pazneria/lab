@@ -360,6 +360,20 @@
     return `${score(r)} · ${format(p.x, c.x.unit === "USD" ? 6 : 5)} ${c.x.unit}. ${c.id.endsWith("-cost") ? r.cost.basis : "Mean instrumented request time per prompt; not pure inference."}`;
   }
   function chartCard(c) {
+    const directions = new Set(
+      (c.points || c.series).map((p) => records.get(p.result_id).direction),
+    );
+    const direction = directions.size === 1 ? [...directions][0] : undefined;
+    const rankedPoints =
+      c.type === "line"
+        ? null
+        : window.LAB_METRIC_ORDER.order(
+            c.points,
+            (p) => (c.type === "bar" ? p.x : p.y),
+            direction,
+            { eligible: (p) => window.LAB_METRIC_ORDER.measured(p.x) },
+          );
+    if (c.type === "bar") c = { ...c, points: rankedPoints };
     const card = el(
       "article",
       "chart-card" + (c.type === "bar" ? " bar-chart" : ""),
@@ -597,12 +611,17 @@
                 `${c.x.label} (${c.x.unit})`,
                 `${c.y.label} (${c.y.unit})`,
               ],
-          c.points.map((p) =>
+          rankedPoints.map((p) =>
             c.type === "bar"
               ? [p.label, String(p.x)]
               : [p.label, String(p.x), String(p.y)],
           ),
-          "Exact source values; source links and protocol details are attached to each observation below.",
+          "Exact source values. " +
+            window.LAB_METRIC_ORDER.description(direction) +
+            (c.type === "scatter"
+              ? " Table order follows the outcome score; scatter positions retain both measurements."
+              : "") +
+            " Source links and protocol details are attached to each observation below.",
         ),
       );
     card.append(table);
@@ -1042,10 +1061,16 @@
     document.getElementById("result-skill").value = state.skill;
     document.getElementById("skill-control").hidden =
       state.benchmark !== "runebench";
-    const rr = data.records.filter(
-        (r) =>
-          r.benchmark_id === state.benchmark &&
-          (state.benchmark !== "runebench" || r.skill === state.skill),
+    const selectedRecords = data.records.filter(
+      (r) =>
+        r.benchmark_id === state.benchmark &&
+        (state.benchmark !== "runebench" || r.skill === state.skill),
+    );
+    const directions = new Set(selectedRecords.map((r) => r.direction));
+    const rr = window.LAB_METRIC_ORDER.order(
+        selectedRecords,
+        (r) => r.value,
+        directions.size === 1 ? [...directions][0] : undefined,
       ),
       p = protocols.get(rr[0].protocol_id);
     document.getElementById("slice-kicker").textContent =

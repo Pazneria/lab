@@ -72,6 +72,7 @@ browser; they do not interact with existing desktop sessions or apps.
 
 ```powershell
 node tests/verify-coverage.cjs
+node tests/verify-ranking-order.cjs
 node tests/verify-gallery-navigation.cjs
 node tests/verify-gallery-selection.cjs
 node tests/verify-deployment-routing.cjs
@@ -81,7 +82,7 @@ node tests/verify-results.cjs
 python tests/verify-static.py
 ```
 
-The coverage command checks the expanded gallery, exact values, signed axes, cost/time bases, exclusions, version controls and mobile/accessibility behavior. The older gallery/current/audit scripts describe previous fixed-size renderer contracts; the combined coverage contract supersedes their old card-count expectations.
+The coverage command checks the expanded gallery, exact values, signed axes, cost/time bases, exclusions, version controls and mobile/accessibility behavior. The ranking command checks best-to-worst ordering for every renderer and selected metric, including signed scores, stable ties and missing values. Higher-is-better scores descend; lower-is-better error and adverse-outcome rates ascend. StationeryBench ordering stays within each task. Time series retain chronological sample order, and scatterplots retain their two measurement axes; their tables use the labeled outcome score. Unknown directions keep native source order and disclose that the preferred direction is not established. Sorting describes reported observations within the displayed cohort and does not establish a controlled or cross-benchmark ranking. The older gallery/current/audit scripts describe previous fixed-size renderer contracts; the combined coverage contract supersedes their old card-count expectations.
 The navigation
 command checks Back/Forward, repeated view switches, filter/scroll restoration,
 reload, direct links, keyboard, touch and the storage-disabled fallback. The selection
