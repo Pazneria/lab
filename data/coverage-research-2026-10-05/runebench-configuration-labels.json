@@ -1,0 +1,438 @@
+{
+  "opus": {
+    "displayName": "Claude Opus 4.6",
+    "shortName": "Opus 4.6",
+    "releaseDate": "2026-03-13"
+  },
+  "gpt6astra": {
+    "displayName": "GPT-6 Astra",
+    "shortName": "GPT-6 Astra",
+    "releaseDate": "2026-09-03"
+  },
+  "qwen35": {
+    "displayName": "Qwen3.5 35B",
+    "shortName": "Qwen3.5 35B",
+    "releaseDate": "2026-02-16"
+  },
+  "gemini38flash": {
+    "displayName": "Gemini 3.8 Flash",
+    "shortName": "Gemini 3.8 Flash",
+    "releaseDate": "2026-09-02"
+  },
+  "kimi": {
+    "displayName": "Kimi K2.5",
+    "shortName": "Kimi K2.5",
+    "releaseDate": "2026-01-15"
+  },
+  "laguna": {
+    "displayName": "Laguna S 2.1",
+    "shortName": "Laguna S",
+    "releaseDate": "2026-07-20"
+  },
+  "opus45": {
+    "displayName": "Claude Opus 4.5",
+    "shortName": "Opus 4.5",
+    "releaseDate": "2025-11-24"
+  },
+  "opus55": {
+    "displayName": "Claude Opus 5.5",
+    "shortName": "Opus 5.5",
+    "releaseDate": "2026-09-22"
+  },
+  "opus5-xhigh": {
+    "displayName": "Claude Opus 5 xhigh",
+    "shortName": "Opus 5 xh",
+    "releaseDate": "2026-07-24"
+  },
+  "opus5": {
+    "displayName": "Claude Opus 5",
+    "shortName": "Opus 5",
+    "releaseDate": "2026-07-24"
+  },
+  "gemini31": {
+    "displayName": "Gemini 3.1 Pro",
+    "shortName": "Gemini 3.1 Pro",
+    "releaseDate": "2026-02-19"
+  },
+  "gpt61sol-low": {
+    "displayName": "GPT-6.1 Sol low",
+    "shortName": "GPT-6.1 Sol lo",
+    "releaseDate": "2026-09-29"
+  },
+  "gemini35flash": {
+    "displayName": "Gemini 3.5 Flash",
+    "shortName": "Gemini 3.5 Flash",
+    "releaseDate": "2026-05-19"
+  },
+  "gptoss120b": {
+    "displayName": "GPT-OSS-120B",
+    "shortName": "GPT-OSS-120B",
+    "releaseDate": "2025-08-05"
+  },
+  "haiku": {
+    "displayName": "Claude Haiku 4.5",
+    "shortName": "Haiku 4.5",
+    "releaseDate": "2025-10-15"
+  },
+  "kimi26": {
+    "displayName": "Kimi K2.6",
+    "shortName": "Kimi K2.6",
+    "releaseDate": "2026-04-21"
+  },
+  "glm": {
+    "displayName": "GLM 5",
+    "shortName": "GLM 5",
+    "releaseDate": "2026-02-11"
+  },
+  "gpt56terra": {
+    "displayName": "GPT-5.6 Terra",
+    "shortName": "GPT-5.6 Terra",
+    "releaseDate": "2026-07-09"
+  },
+  "sonnet46": {
+    "displayName": "Claude Sonnet 4.6",
+    "shortName": "Sonnet 4.6",
+    "releaseDate": "2026-03-13"
+  },
+  "gpt55": {
+    "displayName": "GPT-5.5",
+    "shortName": "GPT-5.5",
+    "releaseDate": "2026-04-23"
+  },
+  "gemini35flashlite": {
+    "displayName": "Gemini 3.5 Flash-Lite",
+    "shortName": "Gemini 3.5 F-Lite",
+    "releaseDate": "2026-07-21"
+  },
+  "gemini37flash": {
+    "displayName": "Gemini 3.7 Flash",
+    "shortName": "Gemini 3.7 Flash",
+    "releaseDate": "2026-08-13"
+  },
+  "opus5-low": {
+    "displayName": "Claude Opus 5 low",
+    "shortName": "Opus 5 lo",
+    "releaseDate": "2026-07-24"
+  },
+  "gpt54mini": {
+    "displayName": "GPT-5.4 Mini",
+    "shortName": "GPT-5.4 Mini",
+    "releaseDate": "2026-03-17"
+  },
+  "kimi3": {
+    "displayName": "Kimi K3",
+    "shortName": "Kimi K3",
+    "releaseDate": "2026-07-16"
+  },
+  "glm53": {
+    "displayName": "GLM 5.3",
+    "shortName": "GLM 5.3",
+    "releaseDate": "2026-08-14"
+  },
+  "deepseekflash0731": {
+    "displayName": "DeepSeek V4 Flash 0731",
+    "shortName": "DS Flash 0731",
+    "releaseDate": "2026-07-31"
+  },
+  "kimi27": {
+    "displayName": "Kimi K2.7 Code",
+    "shortName": "Kimi K2.7",
+    "releaseDate": "2026-06-12"
+  },
+  "grok46-xhigh": {
+    "displayName": "Grok 4.6 xhigh",
+    "shortName": "Grok 4.6 xhigh",
+    "releaseDate": "2026-08-10"
+  },
+  "inkling": {
+    "displayName": "Inkling",
+    "shortName": "Inkling",
+    "releaseDate": "2026-07-15"
+  },
+  "gpt61sol": {
+    "displayName": "GPT-6.1 Sol",
+    "shortName": "GPT-6.1 Sol",
+    "releaseDate": "2026-09-29"
+  },
+  "opus47": {
+    "displayName": "Claude Opus 4.7",
+    "shortName": "Opus 4.7",
+    "releaseDate": "2026-04-16"
+  },
+  "grok46": {
+    "displayName": "Grok 4.6",
+    "shortName": "Grok 4.6",
+    "releaseDate": "2026-08-10"
+  },
+  "gemini": {
+    "displayName": "Gemini 3 Pro",
+    "shortName": "Gemini 3 Pro",
+    "releaseDate": "2025-11-18"
+  },
+  "muse13": {
+    "displayName": "Muse Spark 1.3",
+    "shortName": "Muse Spark 1.3",
+    "releaseDate": "2026-09-02"
+  },
+  "gpt56": {
+    "displayName": "GPT-5.6 Sol",
+    "shortName": "GPT-5.6 Sol",
+    "releaseDate": "2026-07-09"
+  },
+  "gpt56luna": {
+    "displayName": "GPT-5.6 Luna",
+    "shortName": "GPT-5.6 Luna",
+    "releaseDate": "2026-07-09"
+  },
+  "sonnet55-xhigh": {
+    "displayName": "Claude Sonnet 5.5 xhigh",
+    "shortName": "Sonnet 5.5 xh",
+    "releaseDate": "2026-09-28"
+  },
+  "gemini35flash-high": {
+    "displayName": "Gemini 3.5 Flash high",
+    "shortName": "Gemini 3.5 Flash hi",
+    "releaseDate": "2026-05-19"
+  },
+  "gpt55-apikey": {
+    "displayName": "GPT-5.5 xhigh",
+    "shortName": "GPT-5.5 xh",
+    "releaseDate": "2026-04-23"
+  },
+  "glm53flash": {
+    "displayName": "GLM 5.3 Flash",
+    "shortName": "GLM 5.3 Flash",
+    "releaseDate": "2026-08-26"
+  },
+  "sonnet45": {
+    "displayName": "Claude Sonnet 4.5",
+    "shortName": "Sonnet 4.5",
+    "releaseDate": "2025-09-29"
+  },
+  "fable51": {
+    "displayName": "Claude Fable 5.1",
+    "shortName": "Fable 5.1",
+    "releaseDate": "2026-09-01"
+  },
+  "gpt56terra-xhigh": {
+    "displayName": "GPT-5.6 Terra xhigh",
+    "shortName": "GPT-5.6 Terra xh",
+    "releaseDate": "2026-07-09"
+  },
+  "gpt6sol-high": {
+    "displayName": "GPT-6 Sol high",
+    "shortName": "GPT-6 Sol hi",
+    "releaseDate": "2026-09-22"
+  },
+  "sonnet55": {
+    "displayName": "Claude Sonnet 5.5",
+    "shortName": "Sonnet 5.5",
+    "releaseDate": "2026-09-28"
+  },
+  "opus47-xhigh": {
+    "displayName": "Claude Opus 4.7 xhigh",
+    "shortName": "Opus 4.7 xh",
+    "releaseDate": "2026-04-16"
+  },
+  "muse": {
+    "displayName": "Muse Spark 1.1",
+    "shortName": "Muse Spark",
+    "releaseDate": "2026-07-09"
+  },
+  "gpt54": {
+    "displayName": "GPT-5.4",
+    "shortName": "GPT-5.4",
+    "releaseDate": "2026-03-05"
+  },
+  "grok47-xhigh": {
+    "displayName": "Grok 4.7 xhigh",
+    "shortName": "Grok 4.7 xhigh",
+    "releaseDate": "2026-09-16"
+  },
+  "grok45": {
+    "displayName": "Grok 4.5",
+    "shortName": "Grok 4.5",
+    "releaseDate": "2026-07-08"
+  },
+  "gpt54nano": {
+    "displayName": "GPT-5.4 Nano",
+    "shortName": "GPT-5.4 Nano",
+    "releaseDate": "2026-03-17"
+  },
+  "fable51-xhigh": {
+    "displayName": "Claude Fable 5.1 xhigh",
+    "shortName": "Fable 5.1 xh",
+    "releaseDate": "2026-09-01"
+  },
+  "gpt56-xhigh": {
+    "displayName": "GPT-5.6 Sol xhigh",
+    "shortName": "GPT-5.6 Sol xh",
+    "releaseDate": "2026-07-09"
+  },
+  "gpt6astra-high": {
+    "displayName": "GPT-6 Astra high",
+    "shortName": "GPT-6 Astra hi",
+    "releaseDate": "2026-09-03"
+  },
+  "muse12": {
+    "displayName": "Muse Spark 1.2",
+    "shortName": "Muse Spark 1.2",
+    "releaseDate": "2026-08-05"
+  },
+  "qwen37max": {
+    "displayName": "Qwen3.7 Max",
+    "shortName": "Qwen3.7 Max",
+    "releaseDate": "2026-05-21"
+  },
+  "geminiflash": {
+    "displayName": "Gemini 3 Flash",
+    "shortName": "Gemini 3 Flash",
+    "releaseDate": "2025-12-17"
+  },
+  "opus48-max": {
+    "displayName": "Claude Opus 4.8 max",
+    "shortName": "Opus 4.8 max",
+    "releaseDate": "2026-05-28"
+  },
+  "qwen38max": {
+    "displayName": "Qwen3.8 Max",
+    "shortName": "Qwen3.8 Max",
+    "releaseDate": "2026-08-03"
+  },
+  "gpt6luna": {
+    "displayName": "GPT-6 Luna",
+    "shortName": "GPT-6 Luna",
+    "releaseDate": "2026-09-22"
+  },
+  "gemma4": {
+    "displayName": "Gemma 4 31B",
+    "shortName": "Gemma 4 31B",
+    "releaseDate": "2026-04-02"
+  },
+  "deepseek41flash": {
+    "displayName": "DeepSeek V4.1 Flash",
+    "shortName": "DS V4.1 Flash",
+    "releaseDate": "2026-09-10"
+  },
+  "sonnet5": {
+    "displayName": "Claude Sonnet 5",
+    "shortName": "Sonnet 5",
+    "releaseDate": "2026-06-30"
+  },
+  "codex53": {
+    "displayName": "Codex CLI 5.3",
+    "shortName": "Codex 5.3",
+    "releaseDate": "2026-02-05"
+  },
+  "sonnet5-xhigh": {
+    "displayName": "Claude Sonnet 5 xhigh",
+    "shortName": "Sonnet 5 xh",
+    "releaseDate": "2026-06-30"
+  },
+  "deepseek": {
+    "displayName": "DeepSeek V4 Pro",
+    "shortName": "DeepSeek V4",
+    "releaseDate": "2026-04-24"
+  },
+  "qwen3max": {
+    "displayName": "Qwen3 Max",
+    "shortName": "Qwen3 Max",
+    "releaseDate": "2025-09-23"
+  },
+  "gpt56luna-xhigh": {
+    "displayName": "GPT-5.6 Luna xhigh",
+    "shortName": "GPT-5.6 Luna xh",
+    "releaseDate": "2026-07-09"
+  },
+  "grok46-medium": {
+    "displayName": "Grok 4.6 medium",
+    "shortName": "Grok 4.6 med",
+    "releaseDate": "2026-08-10"
+  },
+  "glm52": {
+    "displayName": "GLM 5.2",
+    "shortName": "GLM 5.2",
+    "releaseDate": "2026-06-16"
+  },
+  "fable-5": {
+    "displayName": "Claude Fable 5",
+    "shortName": "Fable 5",
+    "releaseDate": "2026-06-09"
+  },
+  "opus5-medium": {
+    "displayName": "Claude Opus 5 medium",
+    "shortName": "Opus 5 med",
+    "releaseDate": "2026-07-24"
+  },
+  "grok45-medium": {
+    "displayName": "Grok 4.5 medium",
+    "shortName": "Grok 4.5 med",
+    "releaseDate": "2026-07-08"
+  },
+  "opus48": {
+    "displayName": "Claude Opus 4.8",
+    "shortName": "Opus 4.8",
+    "releaseDate": "2026-05-28"
+  },
+  "gpt61sol-high": {
+    "displayName": "GPT-6.1 Sol high",
+    "shortName": "GPT-6.1 Sol hi",
+    "releaseDate": "2026-09-29"
+  },
+  "gpt6luna-high": {
+    "displayName": "GPT-6 Luna high",
+    "shortName": "GPT-6 Luna hi",
+    "releaseDate": "2026-09-22"
+  },
+  "gemini36flash": {
+    "displayName": "Gemini 3.6 Flash",
+    "shortName": "Gemini 3.6 Flash",
+    "releaseDate": "2026-07-21"
+  },
+  "fable-5-xhigh": {
+    "displayName": "Claude Fable 5 xhigh",
+    "shortName": "Fable 5 xh",
+    "releaseDate": "2026-06-09"
+  },
+  "opus55-xhigh": {
+    "displayName": "Claude Opus 5.5 xhigh",
+    "shortName": "Opus 5.5 xh",
+    "releaseDate": "2026-09-22"
+  },
+  "grok43": {
+    "displayName": "Grok 4.3",
+    "shortName": "Grok 4.3",
+    "releaseDate": "2026-04-17"
+  },
+  "qwen38": {
+    "displayName": "Qwen3.8 27B",
+    "shortName": "Qwen3.8 27B",
+    "releaseDate": "2026-08-14"
+  },
+  "grok47": {
+    "displayName": "Grok 4.7",
+    "shortName": "Grok 4.7",
+    "releaseDate": "2026-09-16"
+  },
+  "glm52-wandb": {
+    "displayName": "GLM 5.2 (WandB fp4)",
+    "shortName": "GLM 5.2 fp4",
+    "releaseDate": "2026-06-16"
+  },
+  "kimi3-low": {
+    "displayName": "kimi3-low",
+    "shortName": "kimi3-low",
+    "releaseDate": null,
+    "label_status": "Exact configuration key; display label absent from pinned MODEL_CONFIG"
+  },
+  "deepseekflash": {
+    "displayName": "DeepSeek V4 Flash",
+    "shortName": "DS V4 Flash",
+    "releaseDate": "2026-04-24"
+  },
+  "gpt6sol": {
+    "displayName": "GPT-6 Sol",
+    "shortName": "GPT-6 Sol",
+    "releaseDate": "2026-09-22"
+  }
+}

@@ -1,34 +1,10 @@
 # Lab · AI benchmark gallery
 
-A source-backed gallery of **46 benchmark cards** spanning standard tests, community
-projects, frontend development, games, medicine and physical systems. Twenty-seven cards show real graphs;
-17 are source guides and two have unresolved results, without fabricated graphs. A card
-opens an interactive graph with plain-English explanations. Sources, settings,
-exact tables and full records remain in expandable disclosures.
+A source-backed gallery of **73 individual cards**, grouped into **51 benchmark families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
 
-The page preserves all **20 original discovery records**, their 51 URLs and
-30 null metric definitions. The original **18 result rows and seven graph
-views** cover RuneBench, BullshitBench V2 and historical MedAgentBench. A separate
-dated dataset contains **340 supplied primary rows** across 22 separate source cohorts.
-There is no aggregate score or global model ranking. Historical and cross-lab
-reported results are explicitly labeled; missing values remain null.
+The page preserves all **20 original discovery records**, their 51 URLs and 30 null metric definitions. The original **18 result rows and seven graph views**, 340 standard rows, frontend packet and expanded community source records remain unchanged. The new coverage input adds 319 primary rows, 81 selected first-wave observations and 1,392 RuneBench skill summaries for 87 configurations. No global score, cross-benchmark rank or missing-value zero is introduced. Selected cohorts are clearly incomplete, and source review dates remain separate from publication and evaluation dates.
 
-The Results selector separates latest collected result cohorts, historical evidence,
-source guides and unresolved results. Source review, evaluation, publication and
-model-release dates are labeled separately. Latest collected does not mean newly
-evaluated; a maintained benchmark can contain older experiments. Large
-cohorts have configuration search and a Show all option. Community views expose
-228 BullshitBench rows and 48 Rune runs across 16 skills; a separate historical
-medical view contains 12 author-homepage results. The existing seven verified
-charts remain available with their exact cost/time meanings.
-
-The published October 5 increment added separate frontend preference and historical screenshot-fidelity
-views, plus Design Arena and WebCraftBench source guides. Arena ratings retain
-source intervals and votes. Design2Code defaults to four Direct configurations;
-GPT-4o's prompting methods and five fidelity dimensions remain separate. The complete original research packet is archived and reconciled. Parent semantic
-review passed before that increment was published. The separate catalog status/date
-cleanup remains a draft for source review; its broader research import is blocked
-by unavailable Windows file-metadata support. See the [October 5 refresh report](docs/WEEKLY-REFRESH-2026-10-05.md).
+This combined increment is an **unpublished draft in PR 17** for parent source review. The full public research input was supplied in 15 ordered JSON parts after Library materialization failed on Windows. It was reconstructed and validated successfully; no Library download success is claimed. See [the combined coverage draft and narrow security review](docs/COVERAGE-DRAFT-2026-10-05.md). The external homepage, room and infrastructure remain outside the change.
 
 See [catalog audit and pending evidence](docs/CATALOG-AUDIT-2026-10-05.md),
 [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
@@ -52,7 +28,10 @@ See [catalog audit and pending evidence](docs/CATALOG-AUDIT-2026-10-05.md),
 - `data/gallery-renderer-contract-2026-10-01.json`: reviewed dated renderer contract.
 - `data/gallery-notes.json`: separate editorial explanations; no research values.
 - `data/gallery-metadata-2026-10-05.json`: derived evidence availability, cohort history and date semantics.
-- `data/gallery-renderer-contract-2026-10-05-audit.json`: draft status/date contract.
+- `data/gallery-renderer-contract-2026-10-05-audit.json`: earlier status/date contract.
+- `data/coverage-renderer-contract-2026-10-05.json`: combined draft renderer contract.
+- `data/coverage-research-2026-10-05/`: reconstructed parent research, pinned text/CSV sources and provenance.
+- `assets/coverage-graphs.js`: local signed-score, typed-unit and cost/time chart renderer.
 - `assets/gallery.js`, `assets/gallery.css`: text-safe gallery/detail implementation.
 - `assets/results.js`, `assets/results.css`: shared validated original chart renderer.
 - `assets/catalog.js`, `assets/results-data.js`, `assets/gallery-data.js`: generated projections.
@@ -75,6 +54,7 @@ Visit `http://127.0.0.1:5188/`. Regenerate and validate the static data:
 ```powershell
 node scripts/build-catalog.cjs --check
 node scripts/build-results.cjs --check
+node scripts/build-coverage.cjs
 node scripts/build-gallery-metadata.cjs
 node scripts/build-gallery.cjs
 ```
@@ -91,9 +71,7 @@ site with lifecycle scripts disabled. Tests launch and close their own headless
 browser; they do not interact with existing desktop sessions or apps.
 
 ```powershell
-node tests/verify-gallery.cjs
-node tests/verify-gallery-audit.cjs
-node tests/verify-current-gallery.cjs
+node tests/verify-coverage.cjs
 node tests/verify-gallery-navigation.cjs
 node tests/verify-gallery-selection.cjs
 node tests/verify-deployment-routing.cjs
@@ -103,8 +81,7 @@ node tests/verify-results.cjs
 python tests/verify-static.py
 ```
 
-The first command checks the current gallery and detail pages. The current-gallery
-command checks large cohorts, expanded evidence, uncertainty labels and history.
+The coverage command checks the expanded gallery, exact values, signed axes, cost/time bases, exclusions, version controls and mobile/accessibility behavior. The older gallery/current/audit scripts describe previous fixed-size renderer contracts; the combined coverage contract supersedes their old card-count expectations.
 The navigation
 command checks Back/Forward, repeated view switches, filter/scroll restoration,
 reload, direct links, keyboard, touch and the storage-disabled fallback. The selection
@@ -122,7 +99,7 @@ security checks are not a security certification.
 The selected repository is `Pazneria/lab`, with its existing `main`/root legacy
 GitHub Pages workflow at **https://pazneria.github.io/lab/**. Publish tested,
 reversible commits through a pull request after fetching and preserving remote
-work. This change owns the benchmark UI/data; homepage and the separately owned
+work. This combined draft must remain unpublished until parent source review. This change owns the benchmark UI/data; homepage and the separately owned
 3D `lab-space` room remain outside its scope. The homepage’s Lab link opens
 `lab-space/`; that room’s benchmark station opens the root gallery. Preserve
 both destinations and the additional `benchmarks.html` route.

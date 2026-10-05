@@ -1576,3 +1576,150 @@ p {
     stroke: CanvasText;
   }
 }
+.coverage-categories {
+  grid-column: 1 / -1;
+}
+.coverage-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 16px;
+  margin: 20px 0;
+}
+.browse-controls > .category-chips {
+  flex-basis: 100%;
+}
+.view-controls .skill-picker {
+  min-width: 0;
+  max-width: 100%;
+}
+.view-controls .skill-picker select {
+  min-width: 0;
+  max-width: 100%;
+}
+.coverage-plot .chart-grid {
+  stroke: #ded9d1;
+  stroke-width: 1;
+}
+.coverage-plot .chart-tick,
+.coverage-plot .chart-axis {
+  fill: #51493f;
+  font-family: inherit;
+  font-size: 13px;
+}
+.coverage-chart .point-inspector {
+  padding: 18px;
+  margin: 16px 0;
+  background: #f4f1ec;
+  border-radius: 12px;
+  min-height: 120px;
+}
+.coverage-chart .point-inspector pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.coverage-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  max-width: 100%;
+}
+.coverage-controls input[type="search"],
+.coverage-controls select {
+  width: 100%;
+  max-width: 420px;
+  min-height: 44px;
+  padding: 9px;
+  border: 1px solid #a89e92;
+  border-radius: 8px;
+  background: #fff;
+  color: #302c29;
+  font: inherit;
+}
+.coverage-controls .show-all {
+  flex-direction: row;
+  align-items: center;
+  min-height: 44px;
+}
+.coverage-count,
+.axis-description {
+  color: #60564d;
+  font-size: 14px;
+}
+.coverage-plot {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+.coverage-label {
+  font-size: 12px;
+  fill: #37322d;
+}
+.coverage-mark {
+  cursor: pointer;
+}
+.coverage-mark:focus {
+  outline: none;
+}
+.coverage-mark:focus rect,
+.coverage-mark:focus circle {
+  stroke: #171e2b;
+  stroke-width: 3px;
+}
+.research-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px 24px;
+  padding-left: 24px;
+}
+.research-directory small {
+  display: block;
+  color: #625b53;
+}
+.category-audio {
+  --accent: #a75d3a;
+  --tint: #f5e9df;
+}
+.category-video {
+  --accent: #725cc7;
+  --tint: #eee9f6;
+}
+.category-multilingual {
+  --accent: #2e7669;
+  --tint: #e4efe8;
+}
+.category-context {
+  --accent: #516aa5;
+  --tint: #e9edf6;
+}
+.category-agents {
+  --accent: #99623d;
+  --tint: #f4eade;
+}
+@media (max-width: 600px) {
+  .view-controls .skill-picker {
+    width: 100%;
+  }
+  .coverage-controls {
+    align-items: stretch;
+  }
+  .coverage-controls label {
+    width: 100%;
+  }
+  .coverage-controls select {
+    max-width: 100%;
+  }
+  .coverage-label {
+    font-size: 10px;
+  }
+  .coverage-plot .chart-tick,
+  .coverage-plot .chart-axis {
+    font-size: 11px;
+  }
+  .research-directory {
+    grid-template-columns: 1fr;
+  }
+}

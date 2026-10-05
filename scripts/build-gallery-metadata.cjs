@@ -208,6 +208,37 @@ function build() {
       model_releases: null,
     };
   }
+  const legacyValues = Object.values(cards);
+  assert.equal(legacyValues.length, 46);
+  assert.equal(legacyValues.filter((c) => c.evidence === "plotted").length, 27);
+  const coverage = require("./build-coverage.cjs")();
+  for (const c of coverage.cards) {
+    const rows = c.variants.flatMap((v) => v.rows);
+    const prior = cards[c.id];
+    cards[c.id] = {
+      evidence: "plotted",
+      cohort: c.historical ? "historical" : "latest_collected",
+      cohort_basis: c.historical
+        ? "Fixed dated source cohort; source checks do not make these runs new."
+        : "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      discovery_lifecycle: prior?.discovery_lifecycle || null,
+      source_review: {
+        date: "2026-10-05",
+        mode: "parent_primary_research",
+        scope:
+          "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed.",
+      },
+      result_packet_checked_at: "2026-10-05",
+      snapshot_at: date(c.variants[0].snapshot_at),
+      publication_at: date(c.publication_at || c.variants[0].publication_at),
+      publication_label: c.publication_label || null,
+      evaluations: c.variants.map((v) => ({
+        slice: v.label,
+        ...range(v.rows, "evaluation_date"),
+      })),
+      model_releases: range(rows, "model_release_date"),
+    };
+  }
   const values = Object.values(cards);
   const counts = {
     all: values.length,
@@ -219,11 +250,8 @@ function build() {
     source_only: values.filter((c) => c.evidence === "source_only").length,
     unavailable: values.filter((c) => c.evidence === "unresolved").length,
   };
-  assert.equal(counts.all, 46);
-  assert.equal(counts.plotted, 27);
-  assert.equal(counts.current, 14);
-  assert.equal(counts.historical, 19);
-  assert.equal(counts.source_only, 17);
+  assert.equal(counts.all, 73);
+  assert.equal(counts.plotted, 64);
   assert.equal(counts.unavailable, 2);
   return {
     schema_version: 1,

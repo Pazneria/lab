@@ -15,6 +15,7 @@
     <script src="assets/results-data.js" defer></script>
     <script src="assets/gallery-data.js" defer></script>
     <script src="assets/frontend-graphs.js" defer></script>
+    <script src="assets/coverage-graphs.js" defer></script>
     <script src="assets/gallery.js" defer></script>
   </head>
   <body>
@@ -99,6 +100,31 @@
                 >Robots &amp; cars</span
               ></label
             >
+            <label
+              ><input type="radio" name="category" value="agents" /><span
+                >Work &amp; agents</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="category" value="context" /><span
+                >Long context</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="category" value="audio" /><span
+                >Audio</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="category" value="video" /><span
+                >Video</span
+              ></label
+            >
+            <label
+              ><input type="radio" name="category" value="multilingual" /><span
+                >Languages</span
+              ></label
+            >
           </fieldset>
           <div class="search-field">
             <label for="benchmark-search" class="sr-only"
@@ -119,6 +145,7 @@
           <label class="history-picker"
             >Results
             <select name="history" aria-label="Results history">
+              <option value="results">Benchmark families with graphs</option>
               <option value="all">All versions</option>
               <option value="current">Latest collected results</option>
               <option value="historical">Historical evidence</option>
@@ -139,6 +166,7 @@
           review does not make a run new.
         </p>
         <div id="benchmark-grid" class="benchmark-grid"></div>
+        <div id="source-directory" class="technical-stack"></div>
         <p id="gallery-empty" class="empty-state" hidden>
           No benchmarks match yet. Try another category or a shorter search.
         </p>
