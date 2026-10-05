@@ -1,0 +1,2238 @@
+{
+  "schema_version": 1,
+  "prepared_at": "2026-10-05",
+  "basis": "Derived from archived source packets, not a fresh source poll or new evaluation.",
+  "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
+  "counts": {
+    "all": 73,
+    "plotted": 64,
+    "current": 44,
+    "historical": 22,
+    "source_only": 7,
+    "unavailable": 2
+  },
+  "cards": {
+    "hle-diamond": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "All nine high/no-tools headline scores and six tool scores match Oct1 stored cohort.",
+        "audit_status": "no_numeric_change_verified"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-09-22",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 9
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 9
+      }
+    },
+    "gpqa-diamond": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Methodology pages verified. CSV current score/run delta not re-extracted in this pass.",
+        "audit_status": "no_new_numeric_claim"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": "2026-06-16",
+          "latest": "2026-09-29",
+          "known": 157,
+          "unknown": 0
+        }
+      ],
+      "model_releases": {
+        "earliest": "2024-07-23",
+        "latest": "2026-09-29",
+        "known": 155,
+        "unknown": 2
+      }
+    },
+    "mmmu-pro": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Page now says20of285 configurations versus earlier284; same rounded top3. Full chart not re-extracted, so no all-row unchanged claim.",
+        "audit_status": "archive_count_changed_numeric_delta_unresolved"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 20
+        }
+      ],
+      "model_releases": {
+        "earliest": "2026-04-29",
+        "latest": "2026-09-29",
+        "known": 20,
+        "unknown": 0
+      }
+    },
+    "swe-bench-pro-public-v1": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-03-17",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 4
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 4
+      }
+    },
+    "terminal-bench-2": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-03-17",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 4
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 4
+      }
+    },
+    "frontiermath-tier4-v2": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Methodology pages verified. CSV current score/run delta not re-extracted in this pass.",
+        "audit_status": "no_new_numeric_claim"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": "2026-09-29",
+          "latest": "2026-09-29",
+          "known": 2,
+          "unknown": 0
+        }
+      ],
+      "model_releases": {
+        "earliest": "2026-09-28",
+        "latest": "2026-09-29",
+        "known": 2,
+        "unknown": 0
+      }
+    },
+    "gpqa-diamond-march-reported": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-03-17",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 4
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 4
+      }
+    },
+    "mmmu-pro-march-reported": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-03-17",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 4
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 4
+      }
+    },
+    "frontiermath-tier4-v2-september-reported": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-09-03",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 5
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 5
+      }
+    },
+    "frontiermath-tier4-v2-task-2-0-0": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": "2026-06-09",
+          "latest": "2026-09-22",
+          "known": 67,
+          "unknown": 0
+        }
+      ],
+      "model_releases": {
+        "earliest": "2025-01-31",
+        "latest": "2026-09-22",
+        "known": 67,
+        "unknown": 0
+      }
+    },
+    "healthbench-professional": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Table29 corrected September22 values match all seven Oct1 rows.",
+        "audit_status": "no_numeric_change_verified"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": "2026-09-03",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 7
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 7
+      }
+    },
+    "medagentbench-v2-revised-original-tasks": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed PSB 2026 author-paper experiments; no live standings or individual evaluation dates established.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": "PSB 2026 paper; exact publication date not captured",
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 1
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 1
+      }
+    },
+    "medagentbench-v2-memory-heldout": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed PSB 2026 author-paper experiments; no live standings or individual evaluation dates established.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": "PSB 2026 paper; exact publication date not captured",
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 1
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 1
+      }
+    },
+    "medagentbench-v2-new-tasks": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed PSB 2026 author-paper experiments; no live standings or individual evaluation dates established.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": "PSB 2026 paper; exact publication date not captured",
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 1
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 1
+      }
+    },
+    "swe-bench-pro-public-v2": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "September22 protocol still exposed; dynamic current table not extracted through text renderer.",
+        "audit_status": "no_new_numeric_claim"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 10
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 10
+      }
+    },
+    "swe-bench-pro-public-v2-hard": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "September22 protocol still exposed; dynamic current table not extracted through text renderer.",
+        "audit_status": "no_new_numeric_claim"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 11
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 11
+      }
+    },
+    "terminal-bench-4": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": "2026-10-01",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "43 published configurations",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 43
+        },
+        {
+          "slice": "Original six configurations with verified settings",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 6
+        }
+      ],
+      "model_releases": {
+        "earliest": "2026-09-29",
+        "latest": "2026-09-29",
+        "known": 1,
+        "unknown": 48
+      }
+    },
+    "terminal-bench-science": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 7
+        }
+      ],
+      "model_releases": {
+        "earliest": "2026-09-29",
+        "latest": "2026-09-29",
+        "known": 1,
+        "unknown": 6
+      }
+    },
+    "terminal-bench-4-native-agents": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 7
+        }
+      ],
+      "model_releases": {
+        "earliest": "2026-06-09",
+        "latest": "2026-09-21",
+        "known": 7,
+        "unknown": 0
+      }
+    },
+    "terminal-bench-science-native-agents": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Overall · 17 native-agent systems",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 17
+        }
+      ],
+      "model_releases": {
+        "earliest": "2026-05-28",
+        "latest": "2026-09-22",
+        "known": 17,
+        "unknown": 0
+      }
+    },
+    "swe-bench-verified-bash-history": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": "2026-02-17",
+          "latest": "2026-02-17",
+          "known": 5,
+          "unknown": 0
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 5
+      }
+    },
+    "terminal-bench-2-1-history": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "The archived source packet identifies this as a historical or superseded comparison cohort.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-01",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected source cohort",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "runebench": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Selected and expanded results are tied to the archived protocol; source checks do not redetermine evaluation dates.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Prior research found September 2026 trial artifacts; the README model list lagged the results directory."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Pinned source files independently parsed for 87 published configurations. Container timestamps describe individual runs; the source revision and review dates do not date all experiments."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Original selected results",
+          "earliest": "2026-09-29",
+          "latest": "2026-09-29",
+          "known": 6,
+          "unknown": 0
+        },
+        {
+          "slice": "Expanded configurations",
+          "earliest": "2026-09-29",
+          "latest": "2026-09-29",
+          "known": 48,
+          "unknown": 0
+        },
+        {
+          "slice": "Published configuration explorer",
+          "date_kind": "container start dates",
+          "earliest": "2026-03-10",
+          "latest": "2026-09-29",
+          "known": 1392,
+          "unknown": 0
+        }
+      ],
+      "model_releases": {
+        "earliest": "2025-08-05",
+        "latest": "2026-09-29",
+        "known": 86,
+        "unknown": 1
+      },
+      "unavailable_reason": null,
+      "source_revision_at": "2026-09-29",
+      "source_snapshot_commit": "5358a49f212e238cd093154bc3e93999d345ab97"
+    },
+    "voxelbench": {
+      "evidence": "unresolved",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort has been imported into this guide; project activity is not a measured result.",
+      "discovery_lifecycle": {
+        "status": "unverified",
+        "as_of": "2026-09-30",
+        "basis": "Prior research found 2026 coverage, but direct leaderboard retrieval exposed only an AI-voting notice and indexed snapshots disagreed."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Primary leaderboard does not expose numeric rows to text renderer.",
+        "audit_status": "scores_unresolved"
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": "Primary leaderboard does not expose numeric rows to text renderer."
+    },
+    "balrog": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Prior research directly observed September 2026 rows and a stated weekly update schedule."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "LLM environment set",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 39
+        },
+        {
+          "slice": "VLM environment set",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 10
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 49
+      }
+    },
+    "factorio-learning-environment": {
+      "evidence": "source_only",
+      "cohort": "historical",
+      "cohort_basis": "The board showed a 2026-09-28 page update, but visible open-play evaluations were dated March 6–7, 2025; v0.3 lab-play results concerned September 2025 models.",
+      "discovery_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "The board showed a 2026-09-28 page update, but visible open-play evaluations were dated March 6–7, 2025; v0.3 lab-play results concerned September 2025 models."
+      },
+      "source_review": {
+        "date": "2026-09-30",
+        "mode": "inherited_catalog",
+        "scope": "Inherited research check; source pages were not reopened in catalog assembly.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "astra-nethack-ascension": {
+      "evidence": "source_only",
+      "cohort": "historical",
+      "cohort_basis": "Fixed author write-up published September 21, 2026.",
+      "discovery_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Fixed author write-up published September 21, 2026."
+      },
+      "source_review": {
+        "date": "2026-09-30",
+        "mode": "inherited_catalog",
+        "scope": "Inherited research check; source pages were not reopened in catalog assembly.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "bullshitbench-v2": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Selected and expanded results are tied to the archived protocol; source checks do not redetermine evaluation dates.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research reports an official README update on September 29, 2026 and versioned v2 data."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Pinned3bbed044 to currentb063a3b compare changes only README; five daily star-history cache-bust commits, no result changes.",
+        "audit_status": "no_result_change"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": "Runs: September 25–29, 2026",
+      "evaluations": [
+        {
+          "slice": "Original selected results",
+          "earliest": "2026-09-25",
+          "latest": "2026-09-29",
+          "known": 6,
+          "unknown": 0
+        },
+        {
+          "slice": "Expanded configurations",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 228
+        }
+      ],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "terminal-bench-science-0-1": {
+      "evidence": "source_only",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort has been imported into this guide; project activity is not a measured result.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Version 0.1 launched August 27, 2026; the recovered catalog found public results, code, and a 0.2 roadmap."
+      },
+      "source_review": {
+        "date": "2026-09-30",
+        "mode": "inherited_catalog",
+        "scope": "Inherited research check; source pages were not reopened in catalog assembly.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "matharena": {
+      "evidence": "source_only",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort has been imported into this guide; project activity is not a measured result.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research found official September 23–24, 2026 result announcements and raw-response/data links."
+      },
+      "source_review": {
+        "date": "2026-09-30",
+        "mode": "inherited_catalog",
+        "scope": "Inherited research check; source pages were not reopened in catalog assembly.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "eq-bench-creative-writing-v3": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research found a live v3 site, a March 1, 2026 pairwise-judge change, and September website activity; individual row freshness was not established."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Pinned v3 cohort · 140 models",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 140
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 140
+      }
+    },
+    "mast": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "MAST v1.0 launched July 27, 2026; overview updated August 15; recovered research found preview results and submission infrastructure."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "NOHARM v2 preview · 16 visible systems",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 16
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 16
+      }
+    },
+    "medhelm": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Current project in recovered research advertised v5.0.0, updated May 14, 2026; older HELM releases used different benchmark counts."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": "2026-05-14",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "May 14 v5.0.0 · 10 of 11 models",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 10
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 10
+      }
+    },
+    "medagentbench": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Displayed original-paper and author-homepage results are historical. The maintained V2 benchmark has separate cards.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Original 2025 work is extended by a separate 2026 v2 project and MAST track; a July 2026 verifier audit proposes another revision."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Author homepage still displays historical 300-task model comparison; no later same-protocol score update found.",
+        "audit_status": "historical_no_new_same_protocol_table"
+      },
+      "result_packet_checked_at": "2026-10-01",
+      "snapshot_at": "2026-09-30",
+      "publication_at": "2025-02-12",
+      "publication_label": "Paper: February 12, 2025",
+      "evaluations": [
+        {
+          "slice": "Original selected results",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 6
+        },
+        {
+          "slice": "Historical author-homepage results",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 12
+        }
+      ],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "masai-trial": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Completed randomized trial with final interval-cancer report in January 2026; it is a fixed cohort, not a rolling leaderboard."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2026-01-31",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Fixed randomized trial · final report",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 2
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 2
+      }
+    },
+    "kenya-ai-consult-trial": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Fixed April–July 2025 study published June 26, 2026."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2026-06-26",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "April–July 2025 enrollment · June 2026 report",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 2
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 2
+      }
+    },
+    "robochallenge-table30": {
+      "evidence": "unresolved",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort has been imported into this guide; project activity is not a measured result.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research directly observed Table30 V2 and a separate Specialist board on September 30, 2026; row dates were not shown."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Primary home page returned no readable text; no numeric standings or fresh dates accepted.",
+        "audit_status": "scores_unresolved"
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": "Primary home page returned no readable text; no numeric standings or fresh dates accepted."
+    },
+    "stationerybench": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Fixed September 10, 2026 report using Inspect Robots 0.58.0; not a broad ongoing leaderboard."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2026-09-10",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "September 10 fixed study · per-task results",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 10
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 10
+      }
+    },
+    "barn-challenge-2026-finals": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Official physical finals were held June 3–4, 2026 with published results and team-code links."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "June 3–4 physical finals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "behavior-challenge-2026": {
+      "evidence": "source_only",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort has been imported into this guide; project activity is not a measured result.",
+      "discovery_lifecycle": {
+        "status": "ongoing",
+        "as_of": "2026-09-30",
+        "basis": "Launched July 2, 2026; submissions due October 16 and winners scheduled November 4. Prior research found self-reported results but an empty verified-results file."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Verified results.jsonl and per_task_results.jsonl remain empty. October1 Zero-Shot Butlers self-report covers50tasks/500episodes, not100tasks/1000episodes; no unified ranking recommended.",
+        "audit_status": "self_reported_new_subset_only"
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "bench2drive": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research observed v0.0.4 repository results on September 30, 2026; individual row dates were not supplied."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "v0.0.4 · 220 routes",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 10
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 10
+      }
+    },
+    "waymo-onroad-safety": {
+      "evidence": "source_only",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort has been imported into this guide; project activity is not a measured result.",
+      "discovery_lifecycle": {
+        "status": "ongoing",
+        "as_of": "2026-09-30",
+        "basis": "Fixed IIHS report published July 23, 2026 analyzes 2021–2024; provider hub in earlier research covered exposure through June 2026 and remains an ongoing data source."
+      },
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Provider hub remains data through June2026, released September24,2026. Keep provider data separate from IIHS July23,2026 study of2021–2024.",
+        "audit_status": "no_new_exposure_period_interpretive_caveat_found"
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": "2026-09-30",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null,
+      "unavailable_reason": null
+    },
+    "webdev-arena-frontend": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Selected preference rows from a dated leaderboard snapshot; individual run dates remain unknown.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": "2026-10-01",
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected configurations",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 12
+        }
+      ],
+      "model_releases": null
+    },
+    "design-arena-frontend": {
+      "evidence": "source_only",
+      "cohort": "not_assessed",
+      "cohort_basis": "No scored cohort admitted; source access and protocol review are different questions.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
+        "audit_status": null
+      },
+      "result_packet_checked_at": null,
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [],
+      "model_releases": null
+    },
+    "design2code-v3-484": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed author-paper Table 1 cohort; historical model labels and prompting setups remain intact.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_source_audit",
+        "scope": "Official code repository latest commit remains November2,2024; paper latest revision remains February9,2025.",
+        "audit_status": "historical_source"
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2025-02-09",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Collected configurations",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 6
+        }
+      ],
+      "model_releases": null
+    },
+    "webcraftbench-v3": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2026-09-20",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "September 20 paper revision · 17 systems",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 17
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 17
+      }
+    },
+    "aa-briefcase-v1-1": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "gdpval-aa-v2-1": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "automationbench-aa": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "gdp-pdf": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "aa-lcr-v1-1": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "aa-omniscience": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "ifbench": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "global-mmlu-lite": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "apex-agents-aa": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "aa-analyst-agent": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "swe-atlas-refactoring": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "swe-atlas-test-writing": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "swe-atlas-codebase-qna": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "hil-bench": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "mcp-atlas": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "audio-multichallenge": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "multinrc": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "frontierswe-v2": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "voicecodebench": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "big-bench-audio": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "full-duplex-bench": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "tau-voice-aa": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "aa-wer-v2": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "video-mme-v2": {
+      "evidence": "plotted",
+      "cohort": "historical",
+      "cohort_basis": "Fixed dated source cohort; source checks do not make these runs new.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "osworld-v2-offline": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2026-09-03",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "browsecomp": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": "2026-09-03",
+      "publication_label": null,
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    },
+    "charxiv-reasoning": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-10-05",
+        "mode": "parent_primary_research",
+        "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+      },
+      "result_packet_checked_at": "2026-10-05",
+      "snapshot_at": null,
+      "publication_at": null,
+      "publication_label": "2026-07",
+      "evaluations": [
+        {
+          "slice": "Selected published rows",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 3
+      }
+    }
+  }
+}

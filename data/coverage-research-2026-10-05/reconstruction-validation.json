@@ -1,0 +1,104 @@
+{
+  "parts": [
+    {
+      "sequence": 1,
+      "sha256": "8a5fb0db8f08fd61a0d4ad942245d070f9949792218b5073b2ebde679e693b86",
+      "records": 13
+    },
+    {
+      "sequence": 2,
+      "sha256": "1ccaa0b35ad067460c00385c73b842dffd978a849b425b844556824563169a65",
+      "records": 10
+    },
+    {
+      "sequence": 3,
+      "sha256": "30707ec30f49a67c461af1535b90bcd7a9104e6943f445015d4622775188d3f7",
+      "records": 9
+    },
+    {
+      "sequence": 4,
+      "sha256": "e4685e3014079d646d39710b9504e015e602ba6481497e3eccbebf9042bd6073",
+      "records": 8
+    },
+    {
+      "sequence": 5,
+      "sha256": "61277f032fe7e032c987f8328ccf2fe0df8cf2e911267ba95ce17fe8c16fd68e",
+      "records": 13
+    },
+    {
+      "sequence": 6,
+      "sha256": "16178ce780df5aedd61e2825d5124910ccd76da16136a03c942543dba6484d6b",
+      "records": 17
+    },
+    {
+      "sequence": 7,
+      "sha256": "67c6cbcbcc1821156801570fd53370009eefc144f2818953c2467d1e2c8b2070",
+      "records": 1
+    },
+    {
+      "sequence": 8,
+      "sha256": "cfba8a025e6f1a316a29018894dd7600efb07ccd47cf1d74a86a64445a363729",
+      "records": 3
+    },
+    {
+      "sequence": 9,
+      "sha256": "8143be4e19557280501d38ab876c001491f9e873f1016af9e3293b27d885c3af",
+      "records": 1
+    },
+    {
+      "sequence": 10,
+      "sha256": "6ea719d2e423db2e3bf88ba653fea76d7f5265949d48baccb8e62962f61a07a7",
+      "records": 1
+    },
+    {
+      "sequence": 11,
+      "sha256": "9eed4cde16a199e705258b1d2a80c912011667802d47d0d9aaefba97c9f5f0d2",
+      "records": 2
+    },
+    {
+      "sequence": 12,
+      "sha256": "2cb039000289cb55a864d608243f12d9290fc1130405e3a477a7cc8b9c6d4225",
+      "records": 1
+    },
+    {
+      "sequence": 13,
+      "sha256": "f1a431e23a32f8df83bf0115090124592bec0f0699f6e13bffbbd7613b22cdf1",
+      "records": 1
+    },
+    {
+      "sequence": 14,
+      "sha256": "5da0b4dbc96fe0df51e4f9ee6b75cb0bd86241e6fa3abc30d4cde96949aa4e1b",
+      "records": 1
+    },
+    {
+      "sequence": 15,
+      "sha256": "168736cc88ce42aae61c1c6499b372d6ad8f6c2aca0f23ed2258b7956fa987fe",
+      "records": 1
+    }
+  ],
+  "source_checks": [
+    {
+      "recipe": "runebench-pinned",
+      "git_blob_sha1": "1560ccc1675c0b857b45cafa438072518c18e5a0",
+      "sha256": "2017bef113a0c6073b695506947f7a7c9a7ed32468e702354525b4d34369a9e2",
+      "bytes": 993045
+    },
+    {
+      "recipe": "eq-creative-v3-pinned",
+      "git_blob_sha1": "b2e900861a760e0a90ba6e1eab769d0d63a91cf5",
+      "sha256": "722ddb132e8d3a5e5c39b8d445f8475f3f7e24893a007260c6f3e3cce5c1ee18",
+      "bytes": 1220549
+    }
+  ],
+  "counts": {
+    "addition_rows": 319,
+    "first_wave": 27,
+    "backlog": 52,
+    "card_audits": 46,
+    "rune_configurations": 87,
+    "rune_summaries": 1392
+  },
+  "missing_vs_null_preserved": true,
+  "fetched_code_executed": false,
+  "provenance": "Parent-supplied original research content; public pinned sources parsed as data. Not Library materialization."
+}

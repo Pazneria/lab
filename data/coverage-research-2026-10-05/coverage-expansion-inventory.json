@@ -1,0 +1,3473 @@
+{
+  "schema_version": "coverage-audit-2026-10-05-v1",
+  "as_of": "2026-10-05",
+  "repository": "Pazneria/lab",
+  "commit": "132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9",
+  "scope": "Missing-benchmark breadth discovery and score-import recommendations. No external edits. Gaming, medical, physical-world and frontend-specific audits delegated separately.",
+  "limits": [
+    "Not an exhaustive benchmark universe",
+    "79 candidate entries are benchmark/cohort candidates, not proposed 79 new default cards",
+    "Seed rows support concrete data availability; they are not a complete or current full model leaderboard",
+    "A checked date is not an evaluation date",
+    "Unrecovered dynamic data means this pass did not extract rows; it does not establish that the source has no scores"
+  ],
+  "baseline": {
+    "cards": 46,
+    "discovery_entries": 20,
+    "source_cohort_cards": 22,
+    "frontend_cards": 4,
+    "observation": "46 cards include repeated benchmark versions, evaluator/harness cohorts, source-only discoveries and non-benchmark real-world evidence."
+  },
+  "canonical_sources": [
+    {
+      "name": "Artificial Analysis evaluations",
+      "url": "https://artificialanalysis.ai/evaluations",
+      "role": "Multi-benchmark index plus independent evaluator and creator",
+      "use": "Discover benchmark-specific boards; do not add Intelligence Index as a standalone benchmark card"
+    },
+    {
+      "name": "Artificial Analysis methodology",
+      "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+      "role": "Version/protocol authority",
+      "use": "Current v4.3.2 suite, standalone and legacy evaluations"
+    },
+    {
+      "name": "Epoch hub",
+      "url": "https://epoch.ai/benchmarks/search",
+      "role": "Multi-benchmark registry plus primary evaluator for some tasks",
+      "use": "87 listed entries observed; verify every numeric row's original evaluator"
+    },
+    {
+      "name": "Epoch ECI source list",
+      "url": "https://epoch.ai/data/eci-documentation/data",
+      "role": "Canonical coverage checklist",
+      "use": "61 fitted benchmarks include historical tests; do not import ECI-rescaled scores as raw benchmark results"
+    },
+    {
+      "name": "Epoch benchmark reviews",
+      "url": "https://epoch.ai/data/benchmark-reviews-documentation/included-benchmarks",
+      "role": "Quality-audit index",
+      "use": "Show attributed verdict with reviewed version/date; reviews do not replace primary scores"
+    },
+    {
+      "name": "HELM",
+      "url": "https://crfm.stanford.edu/helm/index.html",
+      "role": "Evaluation framework and suite family",
+      "use": "Extract per-scenario metrics; many visible cohorts are 2024–2025"
+    },
+    {
+      "name": "Scale Labs",
+      "url": "https://labs.scale.com/leaderboard",
+      "role": "Creator/evaluator multi-benchmark hub",
+      "use": "SWE Atlas, MCP Atlas, AudioMultiChallenge, MultiNRC, HiL-Bench, robustness"
+    },
+    {
+      "name": "Vals",
+      "url": "https://www.vals.ai/benchmarks",
+      "role": "Creator/evaluator multi-benchmark hub",
+      "use": "Professional tasks, long-horizon coding, formal proofs, voice transcription; distinguish proprietary benchmarks from index"
+    },
+    {
+      "name": "OpenAI GPT-6 Astra evaluation report",
+      "url": "https://openai.com/index/gpt-6-astra/",
+      "role": "Developer-reported multi-benchmark results",
+      "use": "Gap discovery and labeled reported cohorts; max-across-effort table is not matched compute"
+    },
+    {
+      "name": "Anthropic Opus 5.5 report",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "role": "Developer-reported multi-benchmark results",
+      "use": "Confirms current benchmark use; preserve adaptive effort, production safeguards/fallbacks"
+    },
+    {
+      "name": "Google evaluation hub",
+      "url": "https://deepmind.google/research/evals/",
+      "role": "Benchmark creator/model evaluation hub",
+      "use": "FACTS, DeepSearchQA, SimpleQA Verified, MRCR"
+    },
+    {
+      "name": "Google model cards",
+      "url": "https://deepmind.google/models/model-cards/",
+      "role": "Developer-reported evaluation reports",
+      "use": "Multimodal, multilingual and agent benchmark discovery; dates/efforts are source-specific"
+    }
+  ],
+  "source_hubs_not_benchmarks": [
+    "Artificial Analysis Intelligence Index",
+    "Epoch Capabilities Index",
+    "HELM aggregate mean/win-rate boards",
+    "Vals Index",
+    "Artificial Analysis Speech-to-Speech Index",
+    "LMArena overall model ranking"
+  ],
+  "priority_rule": {
+    "P0": "Meaningful domain gap and usable public scores or high-value accessible export; import after freezing full compatible cohort",
+    "P1": "Useful complementary coverage or protocol/freshness extraction needed",
+    "P2": "Historical, narrow or neighboring-scope coverage; not default empty cards"
+  },
+  "first_wave_ids": [
+    "aa-lcr-v1-1",
+    "aa-omniscience",
+    "ifbench",
+    "gdp-pdf",
+    "automationbench-aa",
+    "aa-briefcase-v1-1",
+    "gdpval-aa-v2-1",
+    "apex-agents-aa",
+    "aa-analyst-agent",
+    "mcp-atlas",
+    "hil-bench",
+    "swe-atlas-refactoring",
+    "swe-atlas-test-writing",
+    "swe-atlas-codebase-qna",
+    "frontierswe-v2",
+    "osworld-v2-offline",
+    "browsecomp",
+    "charxiv-reasoning",
+    "video-mme-v2",
+    "big-bench-audio",
+    "full-duplex-bench",
+    "tau-voice-aa",
+    "aa-wer-v2",
+    "voicecodebench",
+    "audio-multichallenge",
+    "global-mmlu-lite",
+    "multinrc"
+  ],
+  "coverage_matrix": [
+    {
+      "domain": "Reasoning / factuality",
+      "existing": "GPQA Diamond; HLE-Diamond; BullshitBench v2; MathArena discovery",
+      "gap": "Broad closed-answer reasoning and knowledge calibration",
+      "first_wave": [
+        "AA-Omniscience",
+        "IFBench",
+        "HLE main text subset",
+        "ARC-AGI-2/3",
+        "SimpleQA Verified"
+      ]
+    },
+    {
+      "domain": "Mathematics",
+      "existing": "FrontierMath Tier 4 versions and MathArena",
+      "gap": "Other difficulty tiers and formally verified/open problems",
+      "first_wave": [
+        "FrontierMath Tiers 1–3 v2",
+        "FrontierMath Erdős",
+        "ProofBench v1.1"
+      ]
+    },
+    {
+      "domain": "Science / ML R&amp;D",
+      "existing": "GPQA; Terminal-Bench Science; separately reviewed medical entries",
+      "gap": "Scientific coding and model-training research",
+      "first_wave": [
+        "SciCode",
+        "CritPt",
+        "MLE-Bench",
+        "PostTrainBench",
+        "WeirdML v3"
+      ]
+    },
+    {
+      "domain": "Coding",
+      "existing": "SWE-Bench Pro cohorts; Terminal-Bench cohorts; frontend-specific work separately audited",
+      "gap": "Refactoring, test writing, code comprehension, long-horizon reconstruction",
+      "first_wave": [
+        "SWE Atlas 3 tracks",
+        "DeepSWE",
+        "FrontierCode",
+        "FrontierSWE v2",
+        "ProgramBench",
+        "MirrorCode"
+      ]
+    },
+    {
+      "domain": "Agents / tools / professional work",
+      "existing": "Coding agents; game agents; narrow clinical agent cohorts",
+      "gap": "General workplace software and human collaboration",
+      "first_wave": [
+        "AA-Briefcase",
+        "GDPval-AA",
+        "AutomationBench",
+        "APEX-Agents",
+        "AA-AnalystAgent",
+        "MCP Atlas",
+        "HiL-Bench"
+      ]
+    },
+    {
+      "domain": "Computer use / search",
+      "existing": "No dedicated general-purpose scored cohort",
+      "gap": "GUI workflows, grounding, research search",
+      "first_wave": [
+        "OSWorld 2.0 offline",
+        "ScreenSpot-Pro",
+        "BrowseComp",
+        "DeepSearchQA",
+        "METR Time Horizons"
+      ]
+    },
+    {
+      "domain": "Long context",
+      "existing": "No dedicated broad context benchmark",
+      "gap": "Retrieval versus reasoning versus contextual learning",
+      "first_wave": [
+        "AA-LCR v1.1",
+        "MRCR v2",
+        "GDP.pdf",
+        "CL-bench",
+        "LongBench v2 historical"
+      ]
+    },
+    {
+      "domain": "Image / document understanding",
+      "existing": "MMMU-Pro",
+      "gap": "Charts, OCR, tool-assisted visual tasks",
+      "first_wave": [
+        "CharXiv Reasoning",
+        "GDP.pdf",
+        "VisualToolBench",
+        "OmniDocBench"
+      ]
+    },
+    {
+      "domain": "Video understanding",
+      "existing": "No dedicated scored benchmark",
+      "gap": "Temporal and audiovisual reasoning",
+      "first_wave": [
+        "Video-MME-v2",
+        "Video-MMMU",
+        "Video-MME historical"
+      ]
+    },
+    {
+      "domain": "Audio / speech",
+      "existing": "No dedicated scored benchmark",
+      "gap": "Transcription, reasoning, dialogue, spoken tool use",
+      "first_wave": [
+        "AA-WER v2",
+        "Big Bench Audio",
+        "Full Duplex Bench",
+        "τ-Voice",
+        "VoiceCodeBench",
+        "AudioMultiChallenge"
+      ]
+    },
+    {
+      "domain": "Multilingual",
+      "existing": "No dedicated scored benchmark",
+      "gap": "Per-language coverage and native cultural reasoning",
+      "first_wave": [
+        "Global-MMLU-Lite",
+        "MultiNRC",
+        "MMMLU",
+        "IndQA"
+      ]
+    },
+    {
+      "domain": "Robustness / instruction following",
+      "existing": "BullshitBench v2",
+      "gap": "Precise constraints, honesty, prompt injection and interactive uncertainty",
+      "first_wave": [
+        "IFBench",
+        "AA-Omniscience",
+        "MASK",
+        "HiL-Bench",
+        "AgentDojo"
+      ]
+    },
+    {
+      "domain": "Image / video generation",
+      "existing": "Frontend and creative/game work do not replace media-generation evaluation",
+      "gap": "Optional neighboring scope",
+      "first_wave": [
+        "GenEval",
+        "VBench"
+      ],
+      "note": "P2 only; preserve understanding vs generation distinction"
+    }
+  ],
+  "historical_or_optional_families": [
+    {
+      "names": [
+        "MMLU",
+        "MMLU-Pro",
+        "GSM8K",
+        "MATH-500",
+        "MATH Level 5",
+        "AIME 2024/2025",
+        "BBH",
+        "HellaSwag",
+        "ARC AI2",
+        "PIQA",
+        "WinoGrande",
+        "LAMBADA",
+        "TriviaQA",
+        "OpenBookQA",
+        "SuperGLUE"
+      ],
+      "decision": "Historical/reference drawer only unless a fresh unsaturated comparison is specifically needed",
+      "source_url": "https://epoch.ai/data/eci-documentation/data"
+    },
+    {
+      "names": [
+        "IFEval",
+        "WildBench",
+        "Omni-MATH"
+      ],
+      "decision": "HELM per-scenario historical cohorts can fill provenance-rich context; avoid redundant aggregate HELM card",
+      "source_url": "https://crfm.stanford.edu/2025/03/20/helm-capabilities.html"
+    },
+    {
+      "names": [
+        "RULER",
+        "∞Bench",
+        "OpenAI MRCR"
+      ],
+      "decision": "HELM Long Context uses its own 128K/sampled cohort; AA-LCR/MRCR current source cohorts should ship first",
+      "source_url": "https://crfm.stanford.edu/2025/09/29/helm-long-context.html"
+    },
+    {
+      "names": [
+        "HELM Safety",
+        "AIR-Bench",
+        "VHELM",
+        "HELM Audio"
+      ],
+      "decision": "Inspect per-scenario update freshness; aggregate suites are provenance indexes, not independent additional tests",
+      "source_url": "https://crfm.stanford.edu/helm/index.html"
+    }
+  ],
+  "import_contract": [
+    "Every row needs source URL, exact source model name/config, dataset version/split, evaluator, harness, tools, metric, units and direction",
+    "Unknown timestamps/settings remain null; never use model launch or page crawl as evaluation date",
+    "Freeze source snapshot and hash; preserve raw values, decimal precision, and original labels",
+    "Keep fallback systems, native-agent systems and common-harness systems separate",
+    "Keep pass@1, pass@k, pass^k, rubric partial score, binary success, Elo, WER, and horizon duration distinct",
+    "Show coverage/freshness and audit flags without claiming independent reproduction",
+    "Add only populated compatible cohorts to default gallery; discoveries without rows belong to research backlog"
+  ],
+  "entries": [
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "aa-briefcase-v1-1",
+      "name": "AA-Briefcase v1.1",
+      "domains": [
+        "agents",
+        "professional_work"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
+      "source_role": "primary_evaluator",
+      "metric": "Combined Elo",
+      "unit": "Elo",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+          "value": 1823,
+          "ci_lower_delta": -12,
+          "ci_upper_delta": 13,
+          "ci_level": 0.95
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 1807,
+          "ci_lower_delta": -11,
+          "ci_upper_delta": 12,
+          "ci_level": 0.95
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+          "value": 1768
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Private tasks; public Lite scenario is illustrative and not scored on this board",
+        "Elo must not be displayed as percent"
+      ],
+      "cohort": {
+        "version": "1.1",
+        "task_count": 91,
+        "scenarios": 4,
+        "harness": "Stirrup; AA implementation",
+        "evaluation_date": null
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "gdpval-aa-v2-1",
+      "name": "GDPval-AA v2.1",
+      "domains": [
+        "agents",
+        "professional_work"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+      "source_role": "primary_evaluator",
+      "metric": "Elo",
+      "unit": "Elo",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 1866,
+          "ci_lower_delta": -26,
+          "ci_upper_delta": 26
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+          "value": 1839,
+          "ci_lower_delta": -24,
+          "ci_upper_delta": 24
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+          "value": 1837
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Separate from original GDPval human win/tie rates and earlier GDPval-AA Elo revisions",
+        "Current anchor is DeepSeek V4.1 Flash max at 1600; do not carry v2 human-1000 anchor into v2.1"
+      ],
+      "cohort": {
+        "version": "2.1",
+        "task_count": 220,
+        "harness": "Stirrup; AA implementation"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "automationbench-aa",
+      "name": "AutomationBench-AA",
+      "domains": [
+        "agents",
+        "tools",
+        "professional_work"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/automationbench-aa",
+      "source_role": "primary_evaluator",
+      "metric": "Guardrail-adjusted partial objective completion",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 4 Argon (High)",
+          "value": 77.5
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+          "value": 71.8
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 69.5
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Not Zapier full-task completion rate",
+        "Any guardrail violation makes that task score zero; unguarded objectives-completed metric is separate"
+      ],
+      "cohort": {
+        "upstream_version": "1.0.6",
+        "task_count": 657,
+        "domains": 6,
+        "harness": "Stirrup; REST tools; AA implementation"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "gdp-pdf",
+      "name": "GDP.pdf (AA)",
+      "domains": [
+        "long_context",
+        "multimodal",
+        "professional_work"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/gdp-pdf",
+      "source_role": "primary_evaluator",
+      "metric": "All-pass",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra (Xhigh)",
+          "value": 32.2
+        },
+        {
+          "model_variant": "GPT-6.1 Sol (High)",
+          "value": 32
+        },
+        {
+          "model_variant": "GPT-6.1 Sol (Xhigh)",
+          "value": 31.8
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Do not mix All-pass with task-macro Mean Pass",
+        "Retain PDF preprocessing/OCR and judge configuration"
+      ],
+      "cohort": {
+        "task_count": 100,
+        "domains": 10,
+        "repeats": 5,
+        "criteria": 1275
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "aa-lcr-v1-1",
+      "name": "AA-LCR v1.1",
+      "domains": [
+        "long_context",
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/artificial-analysis-long-context-reasoning",
+      "source_role": "primary_evaluator",
+      "metric": "pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Kimi K3 (Max)",
+          "value": 88.7
+        },
+        {
+          "model_variant": "Step 5 Preview",
+          "value": 88.3
+        },
+        {
+          "model_variant": "MiMo-V2.6-Pro",
+          "value": 86.3
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Exact evaluator revision matters; do not combine original AA-LCR with v1.1"
+      ],
+      "cohort": {
+        "version": "1.1",
+        "task_count": 100,
+        "repeats": 3,
+        "input_length": "10k–100k tokens",
+        "tools": false
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "aa-omniscience",
+      "name": "AA-Omniscience",
+      "domains": [
+        "robustness",
+        "factuality"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/omniscience",
+      "source_role": "primary_evaluator",
+      "metric": "Knowledge reliability index",
+      "unit": "index points",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 46
+        },
+        {
+          "model_variant": "GPT-6 Astra (High)",
+          "value": 44
+        },
+        {
+          "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+          "value": 43
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Index is not accuracy; separately retain accuracy, hallucination and attempt rates",
+        "Current judge differs from original publication"
+      ],
+      "cohort": {
+        "questions": 6000,
+        "topics": 42,
+        "tools": false,
+        "scale": [
+          -100,
+          100
+        ]
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "scicode-aa",
+      "name": "SciCode (AA)",
+      "domains": [
+        "science",
+        "coding"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/scicode",
+      "source_role": "primary_evaluator",
+      "metric": "Subproblem pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 66.9
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+          "value": 65
+        },
+        {
+          "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+          "value": 63.1
+        }
+      ],
+      "caveats": [
+        "Under review: independent SciCode-Verified audit flags possible test errors",
+        "Do not mix subproblem accuracy with full-problem success"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "version": "AA v1.0.1 regrade",
+        "test_subproblems": 288,
+        "repeats": 3,
+        "background": "scientist-annotated background included",
+        "timeout_seconds": 300
+      },
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "quality_status": "under_review"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "critpt-aa",
+      "name": "CritPt (AA)",
+      "domains": [
+        "science",
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/critpt",
+      "source_role": "primary_evaluator",
+      "metric": "pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-5.6 Sol (Max)",
+          "value": 32.3
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 31.7
+        },
+        {
+          "model_variant": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+          "value": 31.7
+        }
+      ],
+      "caveats": [
+        "Under review; expert audit may change dataset and scores",
+        "Checkpoint subtasks and full composite problems differ"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "test_challenges": 70,
+        "repeats": 5,
+        "agent_harness": false,
+        "grader": "benchmark authors' server"
+      },
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "quality_status": "under_review"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "hle-aa-main-text",
+      "name": "Humanity’s Last Exam, main text subset (AA)",
+      "domains": [
+        "reasoning",
+        "science",
+        "math"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/humanitys-last-exam",
+      "source_role": "primary_evaluator",
+      "metric": "pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+          "value": 61.4
+        },
+        {
+          "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+          "value": 59.1
+        },
+        {
+          "model_variant": "Claude Fable 5.1 (Xhigh, Default Fallback)",
+          "value": 58.7
+        }
+      ],
+      "caveats": [
+        "HLE-Diamond is already present but is a different dataset",
+        "Keep no-tools text subset separate from full multimodal and tools-enabled HLE",
+        "Epoch reviewed original HLE as Flawed; attribute critique and revision"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "questions": 2158,
+        "tools": false,
+        "modality": "text only",
+        "repeats": 1
+      },
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "ifbench",
+      "name": "IFBench",
+      "domains": [
+        "instruction_following",
+        "robustness"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/ifbench",
+      "source_role": "primary_evaluator",
+      "metric": "pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Grok 4.3 (Medium)",
+          "value": 83.3
+        },
+        {
+          "model_variant": "Grok 4.20 0309 (Reasoning)",
+          "value": 82.9
+        },
+        {
+          "model_variant": "MiniMax-M3",
+          "value": 82.9
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "AA removed IFBench from intelligence index but still runs it; removal is not benchmark unavailability"
+      ],
+      "cohort": {
+        "questions": 294,
+        "constraint_types": 58,
+        "repeats": 5,
+        "grader": "deterministic constraint checks"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "global-mmlu-lite",
+      "name": "Global-MMLU-Lite (AA)",
+      "domains": [
+        "multilingual",
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/global-mmlu-lite",
+      "source_role": "primary_evaluator",
+      "metric": "Average accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.1 Pro Preview",
+          "value": 93.2
+        },
+        {
+          "model_variant": "Gemini 3 Flash Preview (Non-reasoning)",
+          "value": 92.7
+        },
+        {
+          "model_variant": "Gemini 3 Pro Preview (High)",
+          "value": 92.2
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Current page’s model coverage is older than other AA boards; disclose this, do not invent September scores",
+        "Preserve per-language results; aggregate hides language differences"
+      ],
+      "cohort": {
+        "languages": 16,
+        "questions": "approximately 400/language",
+        "repeats": 1,
+        "tools": false
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "apex-agents-aa",
+      "name": "APEX-Agents (AA)",
+      "domains": [
+        "agents",
+        "professional_work"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/apex-agents-aa",
+      "source_role": "primary_evaluator",
+      "metric": "pass@1 all-rubric success",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.5 Flash (High)",
+          "value": 47.1
+        },
+        {
+          "model_variant": "Qwen3.8 Max (0902)",
+          "value": 42.4
+        },
+        {
+          "model_variant": "Kimi K3 (Max)",
+          "value": 41.3
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "Not comparable with Mercor's full 480-task Archipelago cohort or mean rubric score"
+      ],
+      "cohort": {
+        "task_count": 452,
+        "repeats": 3,
+        "harness": "Stirrup",
+        "excluded_worlds": [
+          244,
+          246
+        ]
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "aa-analyst-agent",
+      "name": "AA-AnalystAgent",
+      "domains": [
+        "agents",
+        "data_analysis"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/aa-analyst-agent",
+      "source_role": "primary_evaluator",
+      "metric": "pass^5",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.7 Flash (High)",
+          "value": 60
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+          "value": 57.5
+        },
+        {
+          "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+          "value": 57.5
+        }
+      ],
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
+      "caveats": [
+        "pass^5 means correct on all five attempts, not pass@5 or mean pass@1"
+      ],
+      "cohort": {
+        "tasks": 80,
+        "domains": 14,
+        "attempts_per_task": 5,
+        "harness": "Stirrup"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "enterprise-ops-gym-aa",
+      "name": "EnterpriseOps-Gym (AA)",
+      "domains": [
+        "agents",
+        "tools"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/enterprise-ops-gym-aa",
+      "source_role": "primary_evaluator",
+      "metric": "Strict task success pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Fable 5 (Max, Opus 4.8 Fallback)",
+          "value": 51.1
+        },
+        {
+          "model_variant": "Gemini 3.7 Flash (Medium)",
+          "value": 50.4
+        },
+        {
+          "model_variant": "Gemini 3.5 Flash (High)",
+          "value": 50.1
+        }
+      ],
+      "caveats": [
+        "Original dataset has 1,150 tasks; AA oracle-task cohort is distinct"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 1117,
+        "domains": 8,
+        "repeats": 3,
+        "harness": "Stirrup; resettable MCP servers"
+      },
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "itbench-aa",
+      "name": "ITBench (AA)",
+      "domains": [
+        "agents",
+        "tools",
+        "coding"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/itbench-aa",
+      "source_role": "primary_evaluator",
+      "metric": "Average precision at full recall",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-5.6 Sol (Max)",
+          "value": 56.2
+        },
+        {
+          "model_variant": "Step 5 Preview",
+          "value": 55.6
+        },
+        {
+          "model_variant": "Gemini 3.8 Flash (High)",
+          "value": 52.5
+        }
+      ],
+      "caveats": [
+        "Not simple task accuracy or live incident remediation"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 59,
+        "public_tasks": 40,
+        "private_tasks": 19,
+        "repeats": 3,
+        "input": "offline Kubernetes incident snapshots"
+      },
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "tau3-banking-aa",
+      "name": "τ³-Banking (AA)",
+      "domains": [
+        "agents",
+        "tools"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/evaluations/tau3-banking",
+      "source_role": "primary_evaluator",
+      "metric": "pass@1",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Qwen3.8 Max",
+          "value": 51.3
+        },
+        {
+          "model_variant": "Grok 4.6 (High)",
+          "value": 50.7
+        },
+        {
+          "model_variant": "Muse Spark 1.3 (Max)",
+          "value": 50.5
+        }
+      ],
+      "caveats": [
+        "Separate τ² retail/airline/telecom and τ³ banking; retired from AA index does not mean invalid"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 97,
+        "repeats": 5,
+        "grading": "backend state",
+        "dataset_revision": "upstream tau2-bench v1.0.1 per AA August 2026 update"
+      },
+      "row_scope": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "swe-atlas-refactoring",
+      "name": "SWE Atlas: Refactoring",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/sweatlas-refactoring",
+      "source_role": "primary_evaluator",
+      "metric": "Task resolve rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT 6 Astra (Codex) xHigh",
+          "value": 59.05,
+          "reported_uncertainty": 6.43
+        },
+        {
+          "model_variant": "Fable-5.1 (Claude Code) xHigh",
+          "value": 56.67,
+          "reported_uncertainty": 6.52
+        },
+        {
+          "model_variant": "Fable-5 (Claude Code) xHigh",
+          "value": 54.76,
+          "reported_uncertainty": 6.76
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "Do not merge native agents with mini-SWE-agent common harness",
+        "Read exact uncertainty definition from source before labeling intervals"
+      ],
+      "cohort": {
+        "tasks": 70,
+        "repositories": 10,
+        "languages": 6,
+        "track": "native agents"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "swe-atlas-test-writing",
+      "name": "SWE Atlas: Test Writing",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/sweatlas-tw",
+      "source_role": "primary_evaluator",
+      "metric": "Task resolve rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Fable-5.1 (Claude Code) xHigh*",
+          "value": 67.04,
+          "reported_uncertainty": 5.33
+        },
+        {
+          "model_variant": "Opus 5 (Claude Code) xHigh",
+          "value": 62.22,
+          "reported_uncertainty": 5.58
+        },
+        {
+          "model_variant": "Fable-5 (Claude Code) xHigh*",
+          "value": 55.6,
+          "reported_uncertainty": 5.8
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "Retain asterisk footnotes and fallback rules",
+        "Tests passing alone is not full rubric/mutation success"
+      ],
+      "cohort": {
+        "tasks": 90,
+        "repositories": 11,
+        "languages": 4,
+        "track": "native agents"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "swe-atlas-codebase-qna",
+      "name": "SWE Atlas: Codebase QnA",
+      "domains": [
+        "coding",
+        "long_context"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/sweatlas-qna",
+      "source_role": "primary_evaluator",
+      "metric": "All-rubric task resolve rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Opus 5 (Claude Code) xHigh",
+          "value": 63.17,
+          "reported_uncertainty": 5.01
+        },
+        {
+          "model_variant": "Fable-5.1 (Claude Code) xHigh*",
+          "value": 59.95,
+          "reported_uncertainty": 4.85
+        },
+        {
+          "model_variant": "GPT 6 Astra (Codex) xHigh*",
+          "value": 59.14,
+          "reported_uncertainty": 4.88
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "Keep rubric score and all-rubric success distinct; retain asterisk/fallback caveats"
+      ],
+      "cohort": {
+        "tasks": 124,
+        "repositories": 11,
+        "languages": 4,
+        "threshold": 1,
+        "track": "native agents"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "hil-bench",
+      "name": "HiL-Bench",
+      "domains": [
+        "agents",
+        "robustness"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/hil",
+      "source_role": "primary_evaluator",
+      "metric": "Combined Pass@3",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Fable 5.1",
+          "value": 61.5,
+          "reported_uncertainty": 6.47
+        },
+        {
+          "model_variant": "Claude Opus 5",
+          "value": 57,
+          "reported_uncertainty": 5.48
+        },
+        {
+          "model_variant": "Claude Fable 5",
+          "value": 56.33,
+          "reported_uncertainty": 5.5
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "ASK-F1 and Pass@3 are different outcomes",
+        "Scores measure blocked-task collaboration, not ordinary SWE-Bench performance"
+      ],
+      "cohort": {
+        "tasks": 300,
+        "public": 200,
+        "private": 100,
+        "domains": [
+          "SWE",
+          "text-to-SQL"
+        ],
+        "harness": "SWE-Agent; custom SQL tools"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "mcp-atlas",
+      "name": "MCP Atlas",
+      "domains": [
+        "tools",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/mcp_atlas",
+      "source_role": "primary_evaluator",
+      "metric": "Pass rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Muse Spark 1.1",
+          "value": 88.1,
+          "reported_uncertainty": 1.95
+        },
+        {
+          "model_variant": "Fable 5.1",
+          "value": 87.2,
+          "reported_uncertainty": 2.05
+        },
+        {
+          "model_variant": "claude-opus-5 (xhigh)",
+          "value": 85.8,
+          "reported_uncertainty": 2.1
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "Extract explicit board split from export before importing full cohort; prose distinguishes public/private",
+        "Pass rate differs from average claim coverage"
+      ],
+      "cohort": {
+        "tasks_total": 1000,
+        "public": 500,
+        "private": 500,
+        "servers": 36,
+        "tools": 220
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "audio-multichallenge",
+      "name": "AudioMultiChallenge",
+      "domains": [
+        "audio",
+        "speech",
+        "instruction_following"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/audiomc",
+      "source_role": "primary_evaluator",
+      "metric": "Reported task success",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "gemini-3.8-flash (high)",
+          "value": 60.4,
+          "reported_uncertainty": 4.49
+        },
+        {
+          "model_variant": "Inkling (Thinking)*",
+          "value": 56.64,
+          "reported_uncertainty": 4.55
+        },
+        {
+          "model_variant": "Inkling-small",
+          "value": 54.87,
+          "reported_uncertainty": 4.57
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "Separate audio-output and text-output tracks; combined view is not matched output modality",
+        "Retain asterisk and dagger footnotes"
+      ],
+      "cohort": {
+        "interaction": "multi-turn audio input"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "multinrc",
+      "name": "MultiNRC",
+      "domains": [
+        "multilingual",
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/multinrc",
+      "source_role": "primary_evaluator",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Muse Spark 1.1",
+          "value": 65.59,
+          "reported_uncertainty": 2.87
+        },
+        {
+          "model_variant": "gpt-5-pro-2025-10-06",
+          "value": 65.2,
+          "reported_uncertainty": 1.24
+        },
+        {
+          "model_variant": "gemini-3.1-pro-preview",
+          "value": 64.74,
+          "reported_uncertainty": 2.88
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "caveats": [
+        "Preserve language/task breakdown and sampling/effort; not a translation-only benchmark"
+      ],
+      "cohort": {
+        "language_basis": "native linguistic/cultural reasoning"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "visualtoolbench",
+      "name": "VisualToolBench",
+      "domains": [
+        "multimodal",
+        "tools"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/vtb",
+      "source_role": "primary_evaluator",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Muse Spark 1.1",
+          "value": 44.77,
+          "reported_uncertainty": 2.82
+        },
+        {
+          "model_variant": "gpt-5.4-2026-03-05 (reasoning effort = high)",
+          "value": 29.17,
+          "reported_uncertainty": 0.13
+        },
+        {
+          "model_variant": "gemini-3.1-pro-preview",
+          "value": 28.97,
+          "reported_uncertainty": 0.91
+        }
+      ],
+      "caveats": [
+        "Tools-enabled visual reasoning differs from no-tools MMMU-Pro"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 1204,
+        "setting": "interactive visual tools"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "multichallenge",
+      "name": "MultiChallenge",
+      "domains": [
+        "instruction_following",
+        "long_context"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/multichallenge",
+      "source_role": "primary_evaluator",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Muse Spark",
+          "value": 75.52,
+          "reported_uncertainty": 4.05
+        },
+        {
+          "model_variant": "Muse Spark 1.1",
+          "value": 75.3,
+          "reported_uncertainty": 0.6
+        },
+        {
+          "model_variant": "gemini-3.1-pro-preview",
+          "value": 71.37,
+          "reported_uncertainty": 1.74
+        }
+      ],
+      "caveats": [
+        "Adversarially selected against six original models; rubric/judge dependence"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "setting": "multi-turn conversations",
+        "challenges": 4
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "enigmaeval",
+      "name": "EnigmaEval",
+      "domains": [
+        "reasoning"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/enigma_eval",
+      "source_role": "primary_evaluator",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "claude-fable-5-high",
+          "value": 39.28,
+          "reported_uncertainty": 2.8
+        },
+        {
+          "model_variant": "gpt-5.6-sol-high",
+          "value": 37.12,
+          "reported_uncertainty": 2.8
+        },
+        {
+          "model_variant": "gemini-3.1-pro-preview-high",
+          "value": 36.78,
+          "reported_uncertainty": 2.71
+        }
+      ],
+      "caveats": [
+        "Exact model date/scaffold should remain as reported"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "setting": "multi-step puzzles"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "vista",
+      "name": "VISTA",
+      "domains": [
+        "multimodal",
+        "reasoning"
+      ],
+      "priority": "P2",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/visual_language_understanding",
+      "source_role": "primary_evaluator",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 2.5 Pro Experimental (March 2025)",
+          "value": 54.65,
+          "reported_uncertainty": 1.46
+        },
+        {
+          "model_variant": "gemini-2.5-pro-preview-06-05",
+          "value": 54.63,
+          "reported_uncertainty": 0.55
+        },
+        {
+          "model_variant": "gpt-5.4-pro-2026-03-05",
+          "value": 53.89,
+          "reported_uncertainty": 2.02
+        }
+      ],
+      "caveats": [
+        "Board top models are historical relative to September 2026; show model coverage clearly",
+        "ATA and strict task success are distinct"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 758,
+        "images": 747,
+        "private": true
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "freshness": "historical_models_visible"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "mask",
+      "name": "MASK",
+      "domains": [
+        "robustness",
+        "honesty"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://labs.scale.com/leaderboard/mask",
+      "source_role": "primary_evaluator",
+      "metric": "Honesty score (1 − P(lie))",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "claude-opus-4-6 (Non-Thinking)",
+          "value": 96.28,
+          "reported_uncertainty": 0.41
+        },
+        {
+          "model_variant": "claude-sonnet-4-5-20250929-thinking",
+          "value": 96.13,
+          "reported_uncertainty": 0.57
+        },
+        {
+          "model_variant": "Claude Sonnet 4 (Thinking)",
+          "value": 95.33,
+          "reported_uncertainty": 2.29
+        }
+      ],
+      "caveats": [
+        "Includes evasive/lack-of-belief responses; honesty is not factual accuracy",
+        "Frontier September models absent from displayed top cohort"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 500,
+        "split": "private"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Source model labels are retained; unspecified API snapshot/effort must remain unknown.",
+      "freshness": "historical_models_visible"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "deepswe-v1-1",
+      "name": "DeepSWE v1.1",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://deepswe.datacurve.ai/",
+      "source_role": "primary_evaluator",
+      "metric": "Task resolve rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "gpt-6-astra [xhigh]",
+          "value": 74,
+          "source_precision": "whole percent",
+          "reported_uncertainty": 3,
+          "cost_usd_per_task": 4.43
+        },
+        {
+          "model_variant": "gemini-3.8-flash [high]",
+          "value": 74,
+          "source_precision": "whole percent",
+          "reported_uncertainty": 1,
+          "cost_usd_per_task": 2.36
+        },
+        {
+          "model_variant": "claude-opus-5 [max]",
+          "value": 74,
+          "source_precision": "whole percent",
+          "reported_uncertainty": 4,
+          "cost_usd_per_task": 11.84
+        }
+      ],
+      "caveats": [
+        "Primary chart rounds scores; do not fabricate decimals from chart",
+        "Epoch Sep 7 review marks v1.1 Flawed; attach review and avoid laundering as independently validated"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "version": "1.1",
+        "tasks": 113,
+        "harness": "mini-swe-agent",
+        "source_updated": "2026-09-22"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "quality_status": "review_flag",
+      "audit_url": "https://epoch.ai/data/benchmark-reviews-documentation/included-benchmarks"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "frontierswe-v2",
+      "name": "FrontierSWE v2",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://www.frontierswe.com/",
+      "source_role": "primary_evaluator",
+      "metric": "Mean@5 task score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 65.5,
+          "harness": "proximus",
+          "effort": "maximum",
+          "reported_uncertainty": 8.9
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "value": 62.3,
+          "harness": "proximus",
+          "effort": "maximum",
+          "reported_uncertainty": 9.8
+        },
+        {
+          "model_variant": "Gemini 4 Argon",
+          "value": 55,
+          "harness": "proximus",
+          "effort": "maximum",
+          "reported_uncertainty": 9.9
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Mean score differs from best-of-five and binary success",
+        "Do not combine v1 and v2; verify whether uncertainty is CI or other range before naming it"
+      ],
+      "cohort": {
+        "version": "2",
+        "tasks": 34,
+        "trials": 5,
+        "hours_per_task": 20,
+        "harness": "proximus"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "programbench-vals",
+      "name": "ProgramBench (Vals)",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://www.vals.ai/benchmarks/programbench",
+      "source_role": "primary_evaluator",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Opus 5.5",
+          "value": 18.5,
+          "cost_usd_per_test": 68.05,
+          "reported_duration": "2h24m"
+        },
+        {
+          "model_variant": "Claude Fable 5.1",
+          "value": 7,
+          "cost_usd_per_test": 58.52,
+          "reported_duration": "2h27m"
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "value": 6.5,
+          "cost_usd_per_test": 35.86,
+          "reported_duration": "2h07m"
+        }
+      ],
+      "caveats": [
+        "Keep Vals execution protocol; retrieve model settings before equating with creator or Epoch cohorts"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "source_updated": "2026-09-30"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "finance-agent-v2",
+      "name": "Finance Agent v2",
+      "domains": [
+        "agents",
+        "professional_work"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://www.vals.ai/benchmarks/fabv2",
+      "source_role": "primary_evaluator",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 4 Argon",
+          "value": 65.4,
+          "cost_usd_per_test": 4.38,
+          "reported_duration": "16m21s"
+        },
+        {
+          "model_variant": "Gemini 3.8 Flash",
+          "value": 61.44,
+          "cost_usd_per_test": 2,
+          "reported_duration": "3m21s"
+        },
+        {
+          "model_variant": "Muse Spark 1.2",
+          "value": 60.6,
+          "cost_usd_per_test": 0.77,
+          "reported_duration": "5m04s"
+        }
+      ],
+      "caveats": [
+        "Keep exact Vals task/agent configuration; this is benchmark performance, not financial suitability"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "version": "2",
+        "source_updated": "2026-10-01"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "proofbench-v1-1",
+      "name": "ProofBench v1.1",
+      "domains": [
+        "math",
+        "agents"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://www.vals.ai/benchmarks/proof_bench",
+      "source_role": "primary_evaluator",
+      "metric": "Lean proof success",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "value": 100,
+          "cost_usd_per_test": 0.56
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "value": 100,
+          "cost_usd_per_test": 0.96
+        },
+        {
+          "model_variant": "GPT-6.1 Sol",
+          "value": 99,
+          "cost_usd_per_test": 0.23
+        }
+      ],
+      "caveats": [
+        "Highly saturated current frontier; lower priority than unsolved math",
+        "Aristotle/AlephProver use separate infrastructure; do not mix into common harness without label"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "version": "1.1",
+        "tasks": 100,
+        "turn_budget": 40,
+        "tools": [
+          "Mathlib search",
+          "Lean execution",
+          "submit_proof"
+        ],
+        "lean_version": "4.25.2",
+        "source_updated": "2026-10-01"
+      },
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "voicecodebench",
+      "name": "VoiceCodeBench",
+      "domains": [
+        "speech",
+        "audio"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://www.vals.ai/benchmarks/voice-code-bench",
+      "source_role": "primary_evaluator",
+      "metric": "Task Success Rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT Live Transcribe",
+          "value": 67.67,
+          "stt_cost_usd_per_task": 0.019,
+          "reported_latency_seconds": 70.34
+        },
+        {
+          "model_variant": "Grok Voice Transcribe 2.0",
+          "value": 65.33,
+          "stt_cost_usd_per_task": 0.0037,
+          "reported_latency_seconds": 67.48
+        },
+        {
+          "model_variant": "Cartesia Ink 2",
+          "value": 62,
+          "stt_cost_usd_per_task": null,
+          "reported_latency_seconds": 69.2
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Not WER; streaming and batch latency reflect different timing conventions"
+      ],
+      "cohort": {
+        "source_updated": "2026-09-24",
+        "setting": "exact structured values in English workplace speech"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "big-bench-audio",
+      "name": "Big Bench Audio",
+      "domains": [
+        "audio",
+        "speech",
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/speech-to-speech",
+      "source_role": "primary_evaluator",
+      "metric": "Speech reasoning accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "StepAudio 3 Realtime",
+          "value": 99.7
+        },
+        {
+          "model_variant": "Qwen Audio 3.0 Realtime Plus",
+          "value": 99.2
+        },
+        {
+          "model_variant": "Qwen3.5 Omni Plus Realtime",
+          "value": 98.7
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Use unrounded FAQ values; table rounds to whole percent",
+        "Do not substitute Speech-to-Speech composite index"
+      ],
+      "cohort": {
+        "source": "AA speech-to-speech component",
+        "samples": 1000
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "full-duplex-bench",
+      "name": "Full Duplex Bench (AA)",
+      "domains": [
+        "audio",
+        "speech"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/speech-to-speech",
+      "source_role": "primary_evaluator",
+      "metric": "Conversational dynamics",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "StepAudio 3 Realtime",
+          "value": 98.9
+        },
+        {
+          "model_variant": "Qwen Audio 3.0 Realtime Plus",
+          "value": 98.4
+        },
+        {
+          "model_variant": "GPT-Live-1 (Sol, low)",
+          "value": 97.3
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Keep version/subset and component metrics; not reasoning accuracy"
+      ],
+      "cohort": {
+        "versions": [
+          "1",
+          "1.5"
+        ],
+        "scope": "AA subset; pause, turn taking, interruption and backchannel handling"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "tau-voice-aa",
+      "name": "τ-Voice (AA)",
+      "domains": [
+        "audio",
+        "speech",
+        "tools"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/speech-to-speech",
+      "source_role": "primary_evaluator",
+      "metric": "Agentic performance",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.8 Live Extended Thinking (High)",
+          "value": 68.6
+        },
+        {
+          "model_variant": "GPT-Live-1 (Astra, medium)",
+          "value": 67.9
+        },
+        {
+          "model_variant": "GPT-Live-1 (Sol, low)",
+          "value": 59.3
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Preserve native speech model versus STT/LLM/TTS pipeline identity"
+      ],
+      "cohort": {
+        "source": "AA speech-to-speech component"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "aa-wer-v2",
+      "name": "AA-WER v2",
+      "domains": [
+        "speech",
+        "audio"
+      ],
+      "priority": "P0",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://artificialanalysis.ai/speech-to-text/non-streaming",
+      "source_role": "primary_evaluation_suite",
+      "metric": "Word Error Rate",
+      "unit": "percent",
+      "direction": "lower_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Fun-Realtime-ASR-preview",
+          "value": 1.7,
+          "provider": "Alibaba Cloud"
+        },
+        {
+          "model_variant": "MAI-Transcribe-2",
+          "value": 2,
+          "provider": "Microsoft AI"
+        },
+        {
+          "model_variant": "Scribe v2",
+          "provider": "ElevenLabs",
+          "value": 2.2
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Audio-duration-weighted; preserve normalization/chunking/provider",
+        "Component datasets and streaming results should be separate series"
+      ],
+      "cohort": {
+        "version": "2",
+        "mode": "non-streaming",
+        "datasets": [
+          "AA-AgentTalk 50%",
+          "VoxPopuli-Cleaned-AA 25%",
+          "Earnings22-Cleaned-AA 25%"
+        ]
+      },
+      "freshness": "Canonical primary table rechecked 2026-10-05; individual evaluation dates unavailable"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "video-mme-v2",
+      "name": "Video-MME-v2",
+      "domains": [
+        "video",
+        "multimodal"
+      ],
+      "priority": "P1",
+      "recommendation": "add_scored_cohort",
+      "source_url": "https://arxiv.org/html/2604.05015v1",
+      "source_role": "benchmark_creator_paper",
+      "metric": "Group non-linear score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini-3-Pro",
+          "value": 49.4,
+          "frames": "1fps"
+        },
+        {
+          "model_variant": "Doubao-Seed-2.0-Pro-260215",
+          "value": 43.3,
+          "frames": "1fps"
+        },
+        {
+          "model_variant": "Gemini-3-Flash",
+          "value": 42.5,
+          "frames": "1fps"
+        }
+      ],
+      "row_scope": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
+      "caveats": [
+        "Do not conflate with average per-question accuracy or Video-MME v1",
+        "April 2026 paper cohort, not claimed October frontier coverage"
+      ],
+      "cohort": {
+        "version": "paper v1",
+        "videos": 800,
+        "questions": 3200,
+        "track": "with subtitle/audio",
+        "scoring": "group non-linear"
+      },
+      "freshness": "historical_scored_cohort"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "osworld-v2-offline",
+      "name": "OSWorld 2.0 offline",
+      "domains": [
+        "agents",
+        "computer_use"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Partial reward",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 72.6
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 65.7
+        },
+        {
+          "model_variant": "Claude Opus 5",
+          "value": 70.2
+        }
+      ],
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage.",
+      "caveats": [
+        "Binary completion differs from partial reward",
+        "Claude row uses official settings, not modified Fable system-card tasks",
+        "Primary benchmark: https://osworld-v2.xlang.ai/"
+      ],
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table",
+        "version": "v2026.08.08",
+        "split": "offline"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "agents-last-exam",
+      "name": "Agents’ Last Exam",
+      "domains": [
+        "agents",
+        "computer_use"
+      ],
+      "priority": "P1",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Reported success",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 59.3
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 53.6
+        },
+        {
+          "model_variant": "Claude Opus 5",
+          "value": 55.5
+        }
+      ],
+      "caveats": [
+        "Capture benchmark creator dataset/harness before treating as a clean shared leaderboard"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "screenspot-pro",
+      "name": "ScreenSpot-Pro",
+      "domains": [
+        "multimodal",
+        "computer_use"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 92.7
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 76.9
+        }
+      ],
+      "caveats": [
+        "Image grounding is not full workflow completion",
+        "Fable-labelled chart result uses Mythos with fewer safeguards; omitted from seed cohort"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table",
+        "tools": false
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "browsecomp",
+      "name": "BrowseComp",
+      "domains": [
+        "agents",
+        "search"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 91.5
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 90.4
+        },
+        {
+          "model_variant": "Claude Opus 5",
+          "value": 90.8
+        }
+      ],
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage.",
+      "caveats": [
+        "Retain search scaffold and tool budgets; not comparable to no-tools factuality"
+      ],
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table"
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "mrcr-v2-openai-512k-1m",
+      "name": "OpenAI MRCR v2",
+      "domains": [
+        "long_context"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Match score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 96.3
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 73.8
+        }
+      ],
+      "caveats": [
+        "Also available 256K–512K: 100.0 and 91.5, but separate series",
+        "Do not mix with Google MRCR pointwise/average contexts"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table",
+        "needles": 8,
+        "context_bucket": "512K–1M"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "arc-agi-3",
+      "name": "ARC-AGI-3",
+      "domains": [
+        "reasoning",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 99.9
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 7.8
+        },
+        {
+          "model_variant": "Claude Opus 5",
+          "value": 30.2
+        }
+      ],
+      "caveats": [
+        "Benchmark creator board: https://arcprize.org/leaderboard",
+        "Not a common-harness cohort; reported configuration must be visible"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table",
+        "harness": "OpenAI Responses API harness for Astra; two settings modified"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "arc-agi-2",
+      "name": "ARC-AGI-2",
+      "domains": [
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 95
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 92.5
+        },
+        {
+          "model_variant": "Claude Fable 5.1",
+          "value": 90
+        }
+      ],
+      "caveats": [
+        "Pin ARC public/semi-private/private split and harness from creator export before final import",
+        "ARC-AGI-1 is separate and now heavily saturated"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "frontiercode-main-v1-1",
+      "name": "FrontierCode 1.1 Main",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "source_role": "model_developer_report",
+      "metric": "Rubric score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 53.3
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "value": 47.5
+        },
+        {
+          "model_variant": "Claude Fable 5.1",
+          "value": 50.9
+        }
+      ],
+      "caveats": [
+        "Separate 150-task Extended and binary pass rate",
+        "Primary source https://cognition.com/frontiercode is dynamic; lab table supplies exact report cohort",
+        "Epoch review: Not enough info"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_date": "2026-09-03",
+        "effort": "maximum score across tested efforts; exact effort not resolved by table",
+        "version": "1.1",
+        "split": "Main",
+        "tasks": 100,
+        "aggregation": "mean@5"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "mle-bench",
+      "name": "MLE-Bench",
+      "domains": [
+        "coding",
+        "science",
+        "agents"
+      ],
+      "priority": "P1",
+      "recommendation": "verify_protocol_then_import",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "source_role": "model_developer_report",
+      "metric": "Reported benchmark score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.6 Flash",
+          "value": 63.9
+        },
+        {
+          "model_variant": "Gemini 3.5 Flash",
+          "value": 49.7
+        },
+        {
+          "model_variant": "Claude Sonnet 5",
+          "value": 66.9
+        }
+      ],
+      "caveats": [
+        "Need exact Kaggle task subset, medal criterion, budget, and scaffold before final import"
+      ],
+      "import_readiness": "score_verified_protocol_incomplete",
+      "cohort": {
+        "published_month": "2026-07"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "id": "charxiv-reasoning",
+      "name": "CharXiv Reasoning",
+      "domains": [
+        "multimodal",
+        "reasoning"
+      ],
+      "priority": "P0",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-3-6-flash/",
+      "source_role": "model_developer_report",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.6 Flash",
+          "value": 85.2
+        },
+        {
+          "model_variant": "Gemini 3.5 Flash",
+          "value": 84.2
+        },
+        {
+          "model_variant": "Gemini 3.1 Pro",
+          "value": 83.3
+        }
+      ],
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage.",
+      "caveats": [
+        "Tool-enabled rows are separate; do not mix Python-assisted results",
+        "Creator https://charxiv.github.io/ has historical original report"
+      ],
+      "cohort": {
+        "published_month": "2026-07",
+        "tools": false
+      }
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "video-mmmu",
+      "name": "Video-MMMU",
+      "domains": [
+        "video",
+        "multimodal"
+      ],
+      "priority": "P1",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/",
+      "source_role": "model_developer_report",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.1 Flash-Lite High",
+          "value": 84.8
+        },
+        {
+          "model_variant": "Gemini 2.5 Flash Dynamic",
+          "value": 79.2
+        },
+        {
+          "model_variant": "Gemini 2.5 Flash-Lite Dynamic",
+          "value": 60.7
+        }
+      ],
+      "caveats": [
+        "Creator https://videommmu.github.io/ has older cohort; don't blend model-card and creator scores silently",
+        "Knowledge-gain metric is separate from overall accuracy"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_month": "2026-03"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage.",
+      "freshness": "historical_reported_cohort"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "mmmlu",
+      "name": "MMMLU",
+      "domains": [
+        "multilingual",
+        "reasoning"
+      ],
+      "priority": "P1",
+      "recommendation": "add_labeled_reported_cohort",
+      "source_url": "https://deepmind.google/models/model-cards/gemini-3-1-flash-lite/",
+      "source_role": "model_developer_report",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini 3.1 Flash-Lite High",
+          "value": 88.9
+        },
+        {
+          "model_variant": "Gemini 2.5 Flash Dynamic",
+          "value": 86.6
+        },
+        {
+          "model_variant": "Gemini 2.5 Flash-Lite Dynamic",
+          "value": 84.5
+        }
+      ],
+      "caveats": [
+        "Translated MMLU is different from native multilingual reasoning; languages and averaging must be retained"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "published_month": "2026-03"
+      },
+      "row_scope": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage.",
+      "freshness": "historical_reported_cohort"
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "mirrorcode",
+      "name": "MirrorCode",
+      "domains": [
+        "coding",
+        "agents"
+      ],
+      "priority": "P0",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/mirrorcode",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Paper settings differ: 25 programs, six languages, different budget"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "track": "ML,+Private,2L",
+        "tasks": 30,
+        "trials": 3,
+        "token_budget": 10000000000,
+        "days_per_attempt": 7
+      },
+      "availability_note": "Creator methodology verified; scores are client-rendered and were not recovered in this pass. Epoch export is the import path."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "frontiermath-tiers1-3-v2",
+      "name": "FrontierMath Tiers 1–3 v2",
+      "domains": [
+        "math"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/frontiermath-tiers-1-3-v2",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Keep old v1 as historical; known dataset errors triggered v2"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {},
+      "availability_note": "Tier 4 coverage does not cover tiers 1–3. Fetch current task-versioned internal Epoch runs before adding."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "frontiermath-erdos",
+      "name": "FrontierMath Erdős",
+      "domains": [
+        "math",
+        "agents"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/frontiermath-erdos",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Binary proof/disproof success, not ordinary math QA"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 68,
+        "budget_usd_per_problem": 300,
+        "hours_per_problem": 72,
+        "verification": "Lean 4"
+      },
+      "availability_note": "Exact creator announcement reports GPT-6 Astra solved 2/68; full current model configuration/cohort not recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "posttrainbench-v1-1",
+      "name": "PostTrainBench v1.1",
+      "domains": [
+        "coding",
+        "science",
+        "agents"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://posttrainbench.com/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Reprompted is a separate condition; contamination-disqualified runs receive base-model score"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "gpu": "H100",
+        "hours": 10,
+        "base_models": 4,
+        "target_benchmarks": 7
+      },
+      "availability_note": "Live leaderboard is client-rendered. Methodology/changelog and Epoch review verified; need frozen row export."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "weirdml-v3",
+      "name": "WeirdML v3",
+      "domains": [
+        "coding",
+        "science",
+        "agents"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://htihle.github.io/weirdml.html",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Official score not raw accuracy; hint penalties and harness version matter",
+        "Creator main page moved to v3; Epoch v2 methodology contains historical settings"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 11,
+        "configurations": 15,
+        "metric": "80% log-token-curve area + 20% final effective score"
+      },
+      "availability_note": "Creator links prepared and full JSON plus model summary; import current v3 JSON instead of old v2 alias."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "cl-bench",
+      "name": "CL-bench",
+      "domains": [
+        "long_context",
+        "reasoning"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://www.clbench.com/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "All-rubric task solving, not average rubric fraction"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 1899,
+        "categories": 4,
+        "rubrics": 31607
+      },
+      "availability_note": "Creator page and downloadable code confirmed; client-rendered score rows not recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "cl-bench-life",
+      "name": "CL-bench Life",
+      "domains": [
+        "long_context",
+        "reasoning"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://www.clbench.com/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Messy everyday context; distinct from professional-context CL-bench"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 405,
+        "rubrics": 5348,
+        "categories": 3
+      },
+      "availability_note": "Life tab verified; use separate dataset/cohort from standard CL-bench."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "simpleqa-verified-epoch",
+      "name": "SimpleQA Verified (Epoch)",
+      "domains": [
+        "factuality",
+        "robustness"
+      ],
+      "priority": "P0",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/simple-qa-verified",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Epoch percent-correct differs from Google F1; older bare-prompt runs retired"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "questions": 1000,
+        "tools": false,
+        "prompt_revision": "anti-abstention from 2026-08-27"
+      },
+      "availability_note": "Current methodology verified but exact current row table not retrieved; import CSV cohort."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "simplebench",
+      "name": "SimpleBench",
+      "domains": [
+        "reasoning"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://simple-bench.com/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Do not copy old 81.9% value from historical prose as current"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "questions": 213,
+        "options": 6,
+        "runs": 5
+      },
+      "availability_note": "Primary page gives AVG@5 table but rows client-rendered; no current score inferred from struck-through historical prose."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "metr-time-horizons",
+      "name": "METR Time Horizons",
+      "domains": [
+        "agents",
+        "coding"
+      ],
+      "priority": "P0",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://metr.org/time-horizons/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Not wall-clock agent runtime or percent accuracy",
+        "Task distribution and horizon version change; CI and fit must be retained"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "metric": "Human-expert task duration at 50% success"
+      },
+      "availability_note": "Primary raw-data and analysis links available; needs versioned horizon export rather than chart inference."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "livecodebench",
+      "name": "LiveCodeBench",
+      "domains": [
+        "coding"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://livecodebench.github.io/leaderboard.html",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Do not mix v6/v5 or January–May windows with later problem windows"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "metric": "pass@1"
+      },
+      "availability_note": "Creator leaderboard exists but no rows extracted; import exact contest-date window/version, not aggregated cross-window numbers."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "omnidocbench",
+      "name": "OmniDocBench",
+      "domains": [
+        "multimodal",
+        "document_understanding"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://github.com/opendatalab/OmniDocBench",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "README contains retained v1.5/v1.6 instructions; pin revision",
+        "End-to-end and pipeline systems; edit distance and overall score have different directions"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "version": "1.7 per repository changelog"
+      },
+      "availability_note": "Primary repo confirms v1.7 update and Sep 11 new results. Need exact matching dataset/evaluator table export."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "video-mme-v1",
+      "name": "Video-MME",
+      "domains": [
+        "video",
+        "multimodal"
+      ],
+      "priority": "P2",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://video-mme.github.io/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "With/without subtitles and input frames are mandatory cohort fields"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {},
+      "availability_note": "Creator shell/primary paper verified; current score rows not captured. Prefer scored v2 first, keep v1 historical if imported."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "facts-suite",
+      "name": "FACTS benchmark components",
+      "domains": [
+        "factuality",
+        "long_context",
+        "multimodal",
+        "search"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://deepmind.google/research/evals/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Prefer four component series; aggregate FACTS Score is a suite summary"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "components": [
+          "Grounding v2",
+          "Parametric",
+          "Search",
+          "Multimodal"
+        ]
+      },
+      "availability_note": "Primary hub links Kaggle boards for Grounding v2, Parametric, Search and Multimodal; exact latest component cohorts not yet recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "deepsearchqa",
+      "name": "DeepSearchQA",
+      "domains": [
+        "agents",
+        "search"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://deepmind.google/research/evals/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Exhaustive answer-list retrieval, distinct from single-answer BrowseComp"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 900,
+        "fields": 17
+      },
+      "availability_note": "Primary evaluation hub verifies public benchmark and links Kaggle leaderboard; scores not recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "deepresearchbench-futuresearch",
+      "name": "DeepResearchBench (FutureSearch)",
+      "domains": [
+        "agents",
+        "search"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/deepresearchbench",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Name collision with other DeepResearch Bench datasets; keep creator explicit"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 91,
+        "action_budget": 50,
+        "environment": "RetroSearch frozen web"
+      },
+      "availability_note": "Canonical hub identifies FutureSearch benchmark and source links; current rows need creator export."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "bfcl-v4",
+      "name": "Berkeley Function Calling Leaderboard v4",
+      "domains": [
+        "tools"
+      ],
+      "priority": "P1",
+      "recommendation": "historical_scored_optional",
+      "source_url": "https://gorilla.cs.berkeley.edu/leaderboard",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": "Overall accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Claude-Opus-4-5-20251101 (FC)",
+          "value": 77.47
+        },
+        {
+          "model_variant": "Claude-Sonnet-4-5-20250929 (FC)",
+          "value": 73.24
+        },
+        {
+          "model_variant": "Gemini-3-Pro-Preview (Prompt)",
+          "value": 72.51
+        }
+      ],
+      "caveats": [
+        "Epoch review marks v4 Flawed; attach review",
+        "FC vs prompt mode and subcategory aggregation differ"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "source_updated": "2026-04-12",
+        "commit": "f7cf735",
+        "package": "bfcl-eval==2025.12.17"
+      },
+      "availability_note": "Primary page has exact old cohort; current September-model coverage not established."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "longbench-v2",
+      "name": "LongBench v2",
+      "domains": [
+        "long_context"
+      ],
+      "priority": "P1",
+      "recommendation": "historical_scored_optional",
+      "source_url": "https://longbench2.github.io/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": "Accuracy",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "Gemini-2.5-Pro (2025-03-25), with CoT",
+          "value": 63.3
+        },
+        {
+          "model_variant": "Gemini-2.5-Flash (2025-04-17), with CoT",
+          "value": 62.1
+        },
+        {
+          "model_variant": "Qwen3-235B-A22B-Thinking-2507, with CoT",
+          "value": 60.6
+        }
+      ],
+      "caveats": [
+        "Dates in board are model dates, not established evaluation dates"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "questions": 503,
+        "track": "with CoT"
+      },
+      "availability_note": "Exact creator rows available, but observed models are predominantly 2024–2025. Useful historical cohort, not current frontier comparison."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "aider-polyglot",
+      "name": "Aider Polyglot",
+      "domains": [
+        "coding"
+      ],
+      "priority": "P2",
+      "recommendation": "historical_scored_optional",
+      "source_url": "https://aider.chat/docs/leaderboards/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": "Second-attempt percent correct",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "seed_rows": [
+        {
+          "model_variant": "gpt-5 (high)",
+          "value": 88,
+          "evaluation_date": "2025-08-23"
+        },
+        {
+          "model_variant": "gpt-5 (medium)",
+          "value": 86.7,
+          "evaluation_date": "2025-08-25"
+        }
+      ],
+      "caveats": [
+        "Report second-attempt and first-attempt separately"
+      ],
+      "import_readiness": "verified_seed_cohort_not_full_board",
+      "cohort": {
+        "tasks": 225,
+        "edit_format": "diff",
+        "harness_commit": "32faf82"
+      },
+      "availability_note": "Exact historical run metadata readily available; displayed current page updated November 2025."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "indqa",
+      "name": "IndQA",
+      "domains": [
+        "multilingual"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://openai.com/index/introducing-indqa/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Different questions by language prohibit direct cross-language ranking; adversarially filtered against selected OpenAI models"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "questions": 2278,
+        "languages": 12,
+        "domains": 10
+      },
+      "availability_note": "Creator release and rubric methodology verified; latest exact scores not extracted."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "agentdojo",
+      "name": "AgentDojo",
+      "domains": [
+        "robustness",
+        "agents"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://github.com/ethz-spylab/agentdojo",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Track benign utility and attack success separately; defense and attacker configuration required"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {},
+      "availability_note": "Primary evaluation environment verified; needs pinned attack/defense/utility result file rather than a single undifferentiated score."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "vbench",
+      "name": "VBench",
+      "domains": [
+        "video_generation"
+      ],
+      "priority": "P2",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://vchitect.github.io/VBench-project/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Generation distinct from video understanding; preserve version/dimensions"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {},
+      "availability_note": "Primary video-generation evaluation suite and embedded board verified; current table export not recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "geneval",
+      "name": "GenEval",
+      "domains": [
+        "image_generation"
+      ],
+      "priority": "P2",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://github.com/djghosh13/geneval",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Compositional alignment not subjective image quality; aggregate hides weak subskills"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {},
+      "availability_note": "Official repo contains historical model results; fresh frontier model scores require direct model reports or evaluator runs."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "dtbench",
+      "name": "DTBench",
+      "domains": [
+        "reasoning"
+      ],
+      "priority": "P2",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://conceptualreasoning.ai/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Only capability questions have correct answers; attitude section must not be ranked as correctness"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "capability_questions": 407,
+        "attitude_questions": 130
+      },
+      "availability_note": "Primary board dynamic; Epoch supplies clear metric/protocol but exact current rows not recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "lmca",
+      "name": "LMCA",
+      "domains": [
+        "reasoning"
+      ],
+      "priority": "P2",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://conceptualreasoning.ai/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Not percent accuracy; estimated human agreement ceiling and CI important"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "arguments": 1461,
+        "metric": "Pearson correlation ×100"
+      },
+      "availability_note": "Primary board dynamic; exact current correlation cohort not recovered."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "gso",
+      "name": "GSO",
+      "domains": [
+        "coding"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/gso",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "k attempts, agent and compute budget required; different from issue resolution"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "metric": "fraction reaching at least 95% of human speedup"
+      },
+      "availability_note": "Canonical hub identifies creator leaderboard; current exact Opt@k results not extracted."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "surface-evolver-bench",
+      "name": "Surface Evolver Bench",
+      "domains": [
+        "science",
+        "coding"
+      ],
+      "priority": "P2",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://yhenon.github.io/surface-evolver-llm-eval/",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Mean partial score differs from all-check pass rate"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {
+        "tasks": 16
+      },
+      "availability_note": "Creator results are linked plots/data; exact current numeric cohort not extracted."
+    },
+    {
+      "coverage_status": "missing",
+      "checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "id": "the-agent-company",
+      "name": "The Agent Company",
+      "domains": [
+        "agents",
+        "professional_work"
+      ],
+      "priority": "P1",
+      "recommendation": "fetch_before_card",
+      "source_url": "https://epoch.ai/benchmarks/the-agent-company",
+      "source_role": "benchmark_primary_or_index_route",
+      "metric": null,
+      "unit": null,
+      "direction": null,
+      "seed_rows": [],
+      "caveats": [
+        "Do not use generic hub prose as exact dataset protocol"
+      ],
+      "import_readiness": "no_numeric_import_yet",
+      "cohort": {},
+      "availability_note": "Canonical hub inclusion verified; must fetch original office-work benchmark and current agent rows before import."
+    }
+  ]
+}

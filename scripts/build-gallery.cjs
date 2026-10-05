@@ -1,79 +1,147 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const vm = require('node:vm');
-const assert = require('node:assert/strict');
-const crypto = require('node:crypto');
-const normalizeDisplayText = require('./normalize-display-text.cjs');
-const root = path.resolve(__dirname, '..');
-const read = name => JSON.parse(fs.readFileSync(path.join(root, name), 'utf8'));
-const sha = name => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, name))).digest('hex');
+const fs = require("node:fs");
+const path = require("node:path");
+const vm = require("node:vm");
+const assert = require("node:assert/strict");
+const crypto = require("node:crypto");
+const normalizeDisplayText = require("./normalize-display-text.cjs");
+const root = path.resolve(__dirname, "..");
+const read = (name) =>
+  JSON.parse(fs.readFileSync(path.join(root, name), "utf8"));
+const sha = (name) =>
+  crypto
+    .createHash("sha256")
+    .update(fs.readFileSync(path.join(root, name)))
+    .digest("hex");
 // These publication inputs have text eol=lf in .gitattributes. Hash the exact
 // bytes that Pages serves, never a Windows CRLF working-file representation.
-for (const name of ['data/gallery-current-2026-10-01.json', 'data/community-expanded-2026-10-01.json'])
-  assert.ok(!fs.readFileSync(path.join(root, name)).includes(Buffer.from('\r\n')), `${name}: regenerate with LF before recording publication hashes`);
-const standard = read('data/gallery-current-2026-10-01.json');
-const notes = read('data/gallery-notes.json');
-const frontendInput = fs.existsSync(path.join(root, 'data/frontend-research-2026-10-05.original.json')) ? 'data/frontend-research-2026-10-05.original.json' : 'data/frontend-research-2026-10-05.working.json';
+for (const name of [
+  "data/gallery-current-2026-10-01.json",
+  "data/community-expanded-2026-10-01.json",
+])
+  assert.ok(
+    !fs.readFileSync(path.join(root, name)).includes(Buffer.from("\r\n")),
+    `${name}: regenerate with LF before recording publication hashes`,
+  );
+const standard = read("data/gallery-current-2026-10-01.json");
+const notes = read("data/gallery-notes.json");
+const frontendInput = fs.existsSync(
+  path.join(root, "data/frontend-research-2026-10-05.original.json"),
+)
+  ? "data/frontend-research-2026-10-05.original.json"
+  : "data/frontend-research-2026-10-05.working.json";
 const frontendPacket = read(frontendInput);
-if (frontendInput.endsWith('.original.json')) require('./verify-frontend-packet.cjs')(true);
-if (process.argv.includes('--publish-check')) {
-  assert.equal(frontendInput, 'data/frontend-research-2026-10-05.original.json', 'Publication blocked: the full parent original packet has not been archived');
-  assert.equal(frontendPacket.schema_version, 'benchmark-research-packet-2026-10-05-v1');
+if (frontendInput.endsWith(".original.json"))
+  require("./verify-frontend-packet.cjs")(true);
+if (process.argv.includes("--publish-check")) {
+  assert.equal(
+    frontendInput,
+    "data/frontend-research-2026-10-05.original.json",
+    "Publication blocked: the full parent original packet has not been archived",
+  );
+  assert.equal(
+    frontendPacket.schema_version,
+    "benchmark-research-packet-2026-10-05-v1",
+  );
 }
-const frontend = { checked_at: frontendPacket.checked_at, source_input: frontendInput, cards: [...frontendPacket.cards, ...frontendPacket.optional_source_only_candidates.map(c => ({...c, category: 'frontend', rows: [], summary: c.description}))] };
-const frontendNotes = read('data/frontend-notes-2026-10-05.json');
-const supplement = read('data/frontend-research-supplement-2026-10-05.original.json');
-const catalog = read('data/catalog.original.json');
-const originalResults = read('data/results.original.json');
-const community = read('data/community-expanded-2026-10-01.json');
-const medical = read('data/current-medical.original.json');
-const preservedHashes = {
-  'data/catalog.original.json': '261e704c6076c5c85b698fefd9a4135d61049e56377d01d42c14aae28800ce85',
-  'data/results.original.json': 'dd9164301b95d503eda9f467fa6411e375b25e5ba0c9a3d9ec475e58ba3c68d3',
-  'data/standard-benchmarks.original.json': 'f60fae368dee3dbcf408473e68abcc207850b7b7ce33f75c9a222eda7a24627d',
+const frontend = {
+  checked_at: frontendPacket.checked_at,
+  source_input: frontendInput,
+  cards: [
+    ...frontendPacket.cards,
+    ...frontendPacket.optional_source_only_candidates.map((c) => ({
+      ...c,
+      category: "frontend",
+      rows: [],
+      summary: c.description,
+    })),
+  ],
 };
-for (const [name, hash] of Object.entries(preservedHashes)) assert.equal(sha(name), hash, `${name} original bytes changed`);
+const frontendNotes = read("data/frontend-notes-2026-10-05.json");
+const supplement = read(
+  "data/frontend-research-supplement-2026-10-05.original.json",
+);
+const catalog = read("data/catalog.original.json");
+const originalResults = read("data/results.original.json");
+const community = read("data/community-expanded-2026-10-01.json");
+const medical = read("data/current-medical.original.json");
+const coverage = require("./build-coverage.cjs")();
+assert.deepEqual(read("data/coverage-projection-2026-10-05.json"), coverage);
+const cardMetadata = require("./build-gallery-metadata.cjs")();
+assert.deepEqual(
+  read("data/gallery-metadata-2026-10-05.json"),
+  cardMetadata,
+  "Regenerate gallery metadata from archived sources",
+);
+const preservedHashes = {
+  "data/catalog.original.json":
+    "261e704c6076c5c85b698fefd9a4135d61049e56377d01d42c14aae28800ce85",
+  "data/results.original.json":
+    "dd9164301b95d503eda9f467fa6411e375b25e5ba0c9a3d9ec475e58ba3c68d3",
+  "data/standard-benchmarks.original.json":
+    "f60fae368dee3dbcf408473e68abcc207850b7b7ce33f75c9a222eda7a24627d",
+};
+for (const [name, hash] of Object.entries(preservedHashes))
+  assert.equal(sha(name), hash, `${name} original bytes changed`);
 function safeURL(url) {
   const u = new URL(url);
-  assert.equal(u.protocol, 'https:');
-  assert.equal(u.username, '');
-  assert.equal(u.password, '');
+  assert.equal(u.protocol, "https:");
+  assert.equal(u.username, "");
+  assert.equal(u.password, "");
 }
 const expectedCounts = {
-  'hle-diamond': 9, 'gpqa-diamond': 157, 'mmmu-pro': 20,
-  'swe-bench-pro-public-v1': 4, 'terminal-bench-2': 4, 'frontiermath-tier4-v2': 2,
-  'gpqa-diamond-march-reported': 4, 'mmmu-pro-march-reported': 4,
-  'frontiermath-tier4-v2-september-reported': 5, 'frontiermath-tier4-v2-task-2-0-0': 67,
-  'healthbench-professional': 7, 'medagentbench-v2-revised-original-tasks': 1,
-  'medagentbench-v2-memory-heldout': 1, 'medagentbench-v2-new-tasks': 1,
-  'swe-bench-pro-public-v2': 10, 'swe-bench-pro-public-v2-hard': 11,
-  'terminal-bench-4': 6, 'terminal-bench-science': 7,
-  'terminal-bench-4-native-agents': 7, 'terminal-bench-science-native-agents': 5,
-  'swe-bench-verified-bash-history': 5, 'terminal-bench-2-1-history': 3,
+  "hle-diamond": 9,
+  "gpqa-diamond": 157,
+  "mmmu-pro": 20,
+  "swe-bench-pro-public-v1": 4,
+  "terminal-bench-2": 4,
+  "frontiermath-tier4-v2": 2,
+  "gpqa-diamond-march-reported": 4,
+  "mmmu-pro-march-reported": 4,
+  "frontiermath-tier4-v2-september-reported": 5,
+  "frontiermath-tier4-v2-task-2-0-0": 67,
+  "healthbench-professional": 7,
+  "medagentbench-v2-revised-original-tasks": 1,
+  "medagentbench-v2-memory-heldout": 1,
+  "medagentbench-v2-new-tasks": 1,
+  "swe-bench-pro-public-v2": 10,
+  "swe-bench-pro-public-v2-hard": 11,
+  "terminal-bench-4": 6,
+  "terminal-bench-science": 7,
+  "terminal-bench-4-native-agents": 7,
+  "terminal-bench-science-native-agents": 5,
+  "swe-bench-verified-bash-history": 5,
+  "terminal-bench-2-1-history": 3,
 };
 assert.equal(standard.schema_version, 1);
-assert.equal(standard.researched_at, '2026-10-01');
+assert.equal(standard.researched_at, "2026-10-01");
 assert.equal(standard.cards.length, 22);
-assert.equal(standard.cards.reduce((n, c) => n + c.rows.length, 0), 340);
-assert.deepEqual(standard.cards.map(c => c.id), Object.keys(expectedCounts));
+assert.equal(
+  standard.cards.reduce((n, c) => n + c.rows.length, 0),
+  340,
+);
+assert.deepEqual(
+  standard.cards.map((c) => c.id),
+  Object.keys(expectedCounts),
+);
 for (const source of Object.values(standard.sources)) safeURL(source.url);
 for (const c of standard.cards) {
-  assert.ok(['standard', 'medical'].includes(c.category));
-  assert.equal(c.unit, 'percent');
-  assert.equal(c.direction, 'higher_is_better');
+  assert.ok(["standard", "medical"].includes(c.category));
+  assert.equal(c.unit, "percent");
+  assert.equal(c.direction, "higher_is_better");
   assert.deepEqual(c.scale, [0, 100]);
   assert.ok(standard.sources[c.source_id]);
-  if (c.definition_source_id) assert.ok(standard.sources[c.definition_source_id]);
+  if (c.definition_source_id)
+    assert.ok(standard.sources[c.definition_source_id]);
   assert.equal(c.rows.length, expectedCounts[c.id]);
-  assert.equal(new Set(c.rows.map(r => r.model_variant)).size, c.rows.length);
-  assert.equal(c.history, c.display_status === 'historical_source_cohort');
+  assert.equal(new Set(c.rows.map((r) => r.model_variant)).size, c.rows.length);
+  assert.equal(c.history, c.display_status === "historical_source_cohort");
   if (c.display_defaults) {
     assert.equal(c.display_defaults.row_limit, 12);
     assert.equal(c.display_defaults.show_all_available, true);
     assert.equal(c.display_defaults.search_configurations, true);
   }
   for (const r of c.rows) {
-    assert.ok(typeof r.model_variant === 'string' && r.model_variant);
+    assert.ok(typeof r.model_variant === "string" && r.model_variant);
     assert.ok(Number.isFinite(r.value) && r.value >= 0 && r.value <= 100);
     // Incompatible cost/time bases are kept in details, outside generic plots.
     assert.equal(r.cost_usd, null);
@@ -87,68 +155,224 @@ for (const c of standard.cards) {
     if (r.raw_record) assert.equal(r.value, r.raw_record.score_percent);
     if (r.reported_cost?.value != null) assert.ok(r.reported_cost.basis);
     if (r.reported_time?.value != null) assert.ok(r.reported_time.basis);
-    if (c.id === 'hle-diamond') {
-      assert.equal(r.effort, 'high');
-      assert.ok(Math.abs((r.reasoning_percent + r.knowledge_percent) / 2 - r.value) < 1e-10);
+    if (c.id === "hle-diamond") {
+      assert.equal(r.effort, "high");
+      assert.ok(
+        Math.abs((r.reasoning_percent + r.knowledge_percent) / 2 - r.value) <
+          1e-10,
+      );
     }
-    if (c.id === 'mmmu-pro') {
+    if (c.id === "mmmu-pro") {
       assert.equal(r.evaluation_date, null);
       assert.ok(Math.abs(r.raw_score * 100 - r.value) < 1e-10);
     }
-    if (c.source_id === 'epoch_current') {
+    if (c.source_id === "epoch_current") {
       assert.equal(r.cohort_id, c.comparison_group);
-      assert.ok(r.result_id && r.model_identifier && r.exact_source_model_variant);
-      if (r.stderr_percentage_points != null) assert.ok(r.stderr_percentage_points >= 0);
+      assert.ok(
+        r.result_id && r.model_identifier && r.exact_source_model_variant,
+      );
+      if (r.stderr_percentage_points != null)
+        assert.ok(r.stderr_percentage_points >= 0);
     }
   }
 }
-const old = read('data/standard-benchmarks.original.json');
-for (const id of ['hle-diamond', 'swe-bench-pro-public-v1', 'terminal-bench-2'])
-  assert.deepEqual(standard.cards.find(c => c.id === id).rows, old.cards.find(c => c.id === id).rows);
-for (const [id, suffix] of [['gpqa-diamond', '-march-reported'], ['mmmu-pro', '-march-reported'], ['frontiermath-tier4-v2', '-september-reported']])
-  assert.deepEqual(standard.cards.find(c => c.id === id + suffix).rows, old.cards.find(c => c.id === id).rows);
-const latestMath = standard.cards.find(c => c.id === 'frontiermath-tier4-v2');
-assert.deepEqual(new Set(latestMath.rows.map(r => r.model_identifier)), new Set(['claude-sonnet-5-5_max', 'gpt-6.1-sol_max']));
-assert.ok(latestMath.rows.every(r => r.task_version === '2.1.0'));
-assert.ok(standard.cards.find(c => c.id === 'frontiermath-tier4-v2-task-2-0-0').rows.every(r => r.task_version === '2.0.0'));
-const ids = [...catalog.entries.map(e => e.id), ...standard.cards.map(c => c.id)];
+const old = read("data/standard-benchmarks.original.json");
+for (const id of ["hle-diamond", "swe-bench-pro-public-v1", "terminal-bench-2"])
+  assert.deepEqual(
+    standard.cards.find((c) => c.id === id).rows,
+    old.cards.find((c) => c.id === id).rows,
+  );
+for (const [id, suffix] of [
+  ["gpqa-diamond", "-march-reported"],
+  ["mmmu-pro", "-march-reported"],
+  ["frontiermath-tier4-v2", "-september-reported"],
+])
+  assert.deepEqual(
+    standard.cards.find((c) => c.id === id + suffix).rows,
+    old.cards.find((c) => c.id === id).rows,
+  );
+const latestMath = standard.cards.find((c) => c.id === "frontiermath-tier4-v2");
+assert.deepEqual(
+  new Set(latestMath.rows.map((r) => r.model_identifier)),
+  new Set(["claude-sonnet-5-5_max", "gpt-6.1-sol_max"]),
+);
+assert.ok(latestMath.rows.every((r) => r.task_version === "2.1.0"));
+assert.ok(
+  standard.cards
+    .find((c) => c.id === "frontiermath-tier4-v2-task-2-0-0")
+    .rows.every((r) => r.task_version === "2.0.0"),
+);
+const ids = [
+  ...catalog.entries.map((e) => e.id),
+  ...standard.cards.map((c) => c.id),
+];
 assert.equal(new Set(ids).size, 42);
 assert.deepEqual(new Set(Object.keys(notes)), new Set(ids));
-for (const id of ids) { assert.ok(notes[id].matters); assert.ok(notes[id].read); }
-assert.equal(frontend.checked_at, '2026-10-05');
+for (const id of ids) {
+  assert.ok(notes[id].matters);
+  assert.ok(notes[id].read);
+}
+assert.equal(frontend.checked_at, "2026-10-05");
 assert.equal(frontend.cards.length, 4);
-assert.equal(frontend.cards.reduce((n,c) => n+c.rows.length,0),18);
-const frontendSandbox = {window:{}, URL};
-vm.runInNewContext(fs.readFileSync(path.join(root,'assets/frontend-graphs.js'),'utf8'),frontendSandbox);
-assert.ok(frontendSandbox.window.LAB_FRONTEND.valid(frontend.cards),'Invalid separate frontend source data');
-for (const c of frontend.cards) { assert.ok(!ids.includes(c.id)); assert.ok(frontendNotes[c.id].tests && frontendNotes[c.id].matters && frontendNotes[c.id].read); }
+assert.equal(
+  frontend.cards.reduce((n, c) => n + c.rows.length, 0),
+  18,
+);
+const frontendSandbox = { window: {}, URL };
+vm.runInNewContext(
+  fs.readFileSync(path.join(root, "assets/frontend-graphs.js"), "utf8"),
+  frontendSandbox,
+);
+assert.ok(
+  frontendSandbox.window.LAB_FRONTEND.valid(frontend.cards),
+  "Invalid separate frontend source data",
+);
+for (const c of frontend.cards) {
+  assert.ok(!ids.includes(c.id));
+  assert.ok(
+    frontendNotes[c.id].tests &&
+      frontendNotes[c.id].matters &&
+      frontendNotes[c.id].read,
+  );
+}
 assert.equal(originalResults.results.records.length, 18);
 assert.equal(originalResults.graph_views.charts.length, 7);
 assert.equal(community.bullshitbench.records.length, 228);
 assert.equal(community.runebench.records.length, 48);
 assert.equal(community.runebench.display_defaults.skills_available.length, 16);
-assert.ok(community.bullshitbench.records.every(r => r.evaluation_date === null));
+assert.ok(
+  community.bullshitbench.records.every((r) => r.evaluation_date === null),
+);
 assert.equal(medical.medagentbench_original.rows.length, 12);
 const output = {
-  standard, notes: {...notes,...frontendNotes}, frontend, supplement, expanded: normalizeDisplayText({...community, medical}),
+  standard,
+  notes: {
+    ...notes,
+    ...frontendNotes,
+    ...Object.fromEntries(
+      coverage.cards.map((c) => [
+        c.id,
+        {
+          question: c.question,
+          tests: c.tests,
+          matters: c.matters,
+          read: c.read,
+          notice: c.notice,
+          date:
+            c.publication_label ||
+            (c.variants[0].snapshot_at
+              ? "Source snapshot " + c.variants[0].snapshot_at
+              : "Source checked October 5, 2026; individual evaluation dates remain separately labeled"),
+        },
+      ]),
+    ),
+  },
+  frontend,
+  supplement,
+  cardMetadata,
+  coverage,
+  expanded: normalizeDisplayText({ ...community, medical }),
   provenance: {
-    input: 'Public source snapshots and complete parent-relayed research packets. Library materialization failed on Windows os.setxattr; no successful transfer claimed.',
-    verification: 'Epoch CSV and pinned community CSV/JSON independently parsed. MMMU and coding research relayed by parent. Medical author tables and corrected HealthBench report reopened. Offline checks validate cohort membership, units, missing data and preserved originals.',
+    input:
+      "Public source snapshots and complete parent-relayed research packets. Library materialization failed on Windows os.setxattr; no successful transfer claimed.",
+    verification:
+      "Epoch CSV and pinned community CSV/JSON independently parsed. MMMU and coding research relayed by parent. Medical author tables and corrected HealthBench report reopened. Offline checks validate cohort membership, units, missing data and preserved originals.",
     independentlyExecuted: false,
-    sourceFiles: ['data/current-reasoning-epoch.json', 'data/current-mmmu-pro.original.json', 'data/current-coding.original.json', 'data/current-medical.original.json', 'data/community-expanded-2026-10-01.json', 'data/refresh-packets/manifest.json', frontendInput, 'data/frontend-research-supplement-2026-10-05.original.json'],
-    rendererContract: 'data/gallery-renderer-contract-2026-10-05.json',
-    frontendInputStatus: frontendInput.endsWith('.working.json') ? 'Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked' : 'Original public research packet supplied directly by parent; not Library materialization',
+    sourceFiles: [
+      "data/current-reasoning-epoch.json",
+      "data/current-mmmu-pro.original.json",
+      "data/current-coding.original.json",
+      "data/current-medical.original.json",
+      "data/community-expanded-2026-10-01.json",
+      "data/refresh-packets/manifest.json",
+      frontendInput,
+      "data/frontend-research-supplement-2026-10-05.original.json",
+      "data/coverage-projection-2026-10-05.json",
+      "data/coverage-research-2026-10-05/provenance.json",
+      "data/coverage-research-2026-10-05/primary-source-additions.json",
+      "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+      "data/coverage-research-2026-10-05/per-card-audit.json",
+      "data/coverage-research-2026-10-05/runebench-primary-summary.json",
+    ],
+    rendererContract: "data/coverage-renderer-contract-2026-10-05.json",
+    presentationMetadata: "data/gallery-metadata-2026-10-05.json",
+    frontendInputStatus: frontendInput.endsWith(".working.json")
+      ? "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
+      : "Original public research packet supplied directly by parent; not Library materialization",
   },
 };
-assert.equal(read('data/gallery-renderer-contract-2026-10-05.json').counts.totalCards, 46);
-const js = '/* Generated by scripts/build-gallery.cjs; preserve original source data. */\nwindow.LAB_GALLERY = ' + JSON.stringify(output, null, 2).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029') + ';\n';
-const sandbox = {window: {}};
+assert.equal(
+  read("data/gallery-renderer-contract-2026-10-05-audit.json").counts
+    .totalCards,
+  46,
+);
+const js =
+  "/* Generated by scripts/build-gallery.cjs; preserve original source data. */\nwindow.LAB_GALLERY = " +
+  JSON.stringify(output, null, 2)
+    .replace(/</g, "\\u003c")
+    .replace(/\u2028/g, "\\u2028")
+    .replace(/\u2029/g, "\\u2029") +
+  ";\n";
+const sandbox = { window: {} };
 vm.runInNewContext(js, sandbox);
-assert.deepEqual(JSON.parse(JSON.stringify(sandbox.window.LAB_GALLERY)), output);
-if (process.argv.includes('--check')) assert.equal(fs.readFileSync(path.join(root, 'assets/gallery-data.js'), 'utf8'), js, 'Generated asset differs');
-else fs.writeFileSync(path.join(root, 'assets/gallery-data.js'), js);
-const evidence = {cards: 46, frontendCards: 4, frontendNumericRows: 18, frontendSourceOnlyCards: 2, frontendInputSHA256: sha(frontendInput), sourceCohorts: 22, standardRows: 340, expandedBullshitBenchRows: 228, expandedRuneBenchRows: 48, runeSkills: 16, historicalMedAgentRows: 12, existingResultRows: 18, existingCharts: 7, scoreChartCostTime: 'All 340 generic plot values null; known coding measurements retained with units and bases in details', unchangedOriginalHashes: true, inputSHA256: {'data/gallery-current-2026-10-01.json': sha('data/gallery-current-2026-10-01.json'), 'data/community-expanded-2026-10-01.json': sha('data/community-expanded-2026-10-01.json')}, passed: true};
-fs.mkdirSync(path.join(root, 'evidence'), {recursive: true});
-if (process.argv.includes('--check')) assert.deepEqual(read('evidence/gallery-data-validation.json'), evidence, 'Stale validation evidence; regenerate against exact publication input bytes');
-else fs.writeFileSync(path.join(root, 'evidence/gallery-data-validation.json'), JSON.stringify(evidence, null, 2) + '\n');
+assert.deepEqual(
+  JSON.parse(JSON.stringify(sandbox.window.LAB_GALLERY)),
+  output,
+);
+if (process.argv.includes("--check"))
+  assert.equal(
+    fs.readFileSync(path.join(root, "assets/gallery-data.js"), "utf8"),
+    js,
+    "Generated asset differs",
+  );
+else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
+const evidence = {
+  cards: 73,
+  coverageCards: 39,
+  firstWaveCards: 27,
+  firstWaveRows: 81,
+  additionRows: 319,
+  runeConfigurations: 87,
+  runeSummaries: 1392,
+  inventory: 79,
+  backlog: 52,
+  coverageInputSHA256: sha("data/coverage-projection-2026-10-05.json"),
+  legacyCards: 46,
+  frontendCards: 4,
+  frontendNumericRows: 18,
+  frontendSourceOnlyCards: 2,
+  frontendInputSHA256: sha(frontendInput),
+  sourceCohorts: 22,
+  standardRows: 340,
+  expandedBullshitBenchRows: 228,
+  expandedRuneBenchRows: 48,
+  runeSkills: 16,
+  historicalMedAgentRows: 12,
+  existingResultRows: 18,
+  existingCharts: 7,
+  scoreChartCostTime:
+    "All 340 generic plot values null; known coding measurements retained with units and bases in details",
+  unchangedOriginalHashes: true,
+  inputSHA256: {
+    "data/gallery-current-2026-10-01.json": sha(
+      "data/gallery-current-2026-10-01.json",
+    ),
+    "data/community-expanded-2026-10-01.json": sha(
+      "data/community-expanded-2026-10-01.json",
+    ),
+  },
+  passed: true,
+};
+fs.mkdirSync(path.join(root, "evidence"), { recursive: true });
+if (process.argv.includes("--check"))
+  assert.deepEqual(
+    read("evidence/gallery-data-validation.json"),
+    evidence,
+    "Stale validation evidence; regenerate against exact publication input bytes",
+  );
+else
+  fs.writeFileSync(
+    path.join(root, "evidence/gallery-data-validation.json"),
+    JSON.stringify(evidence, null, 2) + "\n",
+  );
 console.log(JSON.stringify(evidence));

@@ -12,6 +12,11 @@
     games: "Games",
     medical: "Medical",
     physical: "Robots & cars",
+    agents: "Work & agents",
+    context: "Long context",
+    audio: "Audio",
+    video: "Video",
+    multilingual: "Languages",
   };
   const safeURL = (url) => {
     try {
@@ -24,9 +29,53 @@
   const finite = (n) => typeof n === "number" && Number.isFinite(n) && n >= 0;
   const idOK = (id) =>
     typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id);
+  const dateOK = (value) => {
+    if (value === null) return true;
+    if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value))
+      return false;
+    const parsed = new Date(value + "T00:00:00Z");
+    return (
+      Number.isFinite(parsed.valueOf()) &&
+      parsed.toISOString().slice(0, 10) === value
+    );
+  };
+  function validMetadata(m) {
+    return (
+      m &&
+      ["plotted", "source_only", "unresolved"].includes(m.evidence) &&
+      ["latest_collected", "historical", "not_assessed"].includes(m.cohort) &&
+      typeof m.cohort_basis === "string" &&
+      m.source_review?.date !== null &&
+      dateOK(m.source_review?.date) &&
+      [
+        "parent_source_audit",
+        "parent_primary_research",
+        "inherited_catalog",
+      ].includes(m.source_review?.mode) &&
+      typeof m.source_review?.scope === "string" &&
+      [m.snapshot_at, m.publication_at, m.result_packet_checked_at].every(
+        dateOK,
+      ) &&
+      Array.isArray(m.evaluations) &&
+      m.evaluations.every(
+        (s) =>
+          typeof s.slice === "string" &&
+          dateOK(s.earliest) &&
+          dateOK(s.latest) &&
+          Number.isInteger(s.known) &&
+          s.known >= 0 &&
+          Number.isInteger(s.unknown) &&
+          s.unknown >= 0 &&
+          (s.known
+            ? s.earliest !== null && s.latest !== null && s.earliest <= s.latest
+            : s.earliest === null && s.latest === null),
+      )
+    );
+  }
   function valid() {
     if (
       !input ||
+      !window.LAB_COVERAGE?.valid(input.coverage) ||
       !catalog ||
       !results ||
       catalog.entries?.length !== 20 ||
@@ -36,6 +85,7 @@
       !window.LAB_FRONTEND?.valid(input.frontend?.cards) ||
       !/^data\/[a-z0-9.-]+\.json$/.test(input.frontend?.source_input || "") ||
       !Array.isArray(input.supplement?.audit) ||
+      input.cardMetadata?.schema_version !== 1 ||
       input.expanded?.bullshitbench?.records?.length !== 228 ||
       input.expanded?.runebench?.records?.length !== 48 ||
       input.expanded?.medical?.medagentbench_original?.rows?.length !== 12
@@ -101,14 +151,20 @@
       if (!idOK(c.id) || ids.has(c.id)) return false;
       ids.add(c.id);
     }
+    if (ids.size !== 46) return false;
+    for (const c of input.coverage.cards) {
+      if (!Object.hasOwn(categories, c.category)) return false;
+      ids.add(c.id);
+    }
     return (
-      ids.size === 46 &&
+      ids.size === 73 &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(
         (id) =>
           typeof input.notes[id]?.matters === "string" &&
-          typeof input.notes[id]?.read === "string",
+          typeof input.notes[id]?.read === "string" &&
+          validMetadata(input.cardMetadata.cards[id]),
       ) &&
       results.records.every((r) => safeURL(r.source_url) && finite(r.value)) &&
       input.expanded.runebench.records.every(
@@ -205,6 +261,24 @@
       original: c,
     })),
   ];
+  for (const coverage of input.coverage.cards) {
+    const found = all.find((c) => c.id === coverage.id);
+    if (found) {
+      found.coverage = coverage;
+      found.name = coverage.name;
+    } else
+      all.push({
+        id: coverage.id,
+        name: coverage.name,
+        category: coverage.category,
+        coverage,
+      });
+  }
+  const families = new Map(
+    Object.entries(input.coverage.familyGroups).flatMap(([id, members]) =>
+      members.map((member) => [member, id]),
+    ),
+  );
   const byId = new Map(all.map((c) => [c.id, c]));
   const priority = [
     "hle-diamond",
@@ -212,7 +286,7 @@
     "bullshitbench-v2",
     "runebench",
     "gpqa-diamond",
-    "medagentbench",
+    "medagentbench-v2-revised-original-tasks",
     "frontiermath-tier4-v2",
     "mmmu-pro",
     "terminal-bench-4",
@@ -225,6 +299,7 @@
     return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi);
   });
   function graphFor(card) {
+    if (card.coverage) return card.coverage;
     if (card.frontend) return card.frontend.rows.length ? card.frontend : null;
     return (
       card.standard ||
@@ -234,37 +309,225 @@
     );
   }
   function status(card) {
-    if (card.frontend)
-      return isHistorical(card)
-        ? "Historical · Feb 2025"
-        : graphFor(card)
-          ? "Source snapshot · Oct 2026"
-          : "Evidence guide";
-    return card.standard
-      ? isHistorical(card)
-        ? "Historical" +
-          (input.standard.sources[card.standard.source_id].published_date
-            ? " · source " +
-              input.standard.sources[card.standard.source_id].published_date
-            : " · previous cohort")
-        : "Source checked · Oct 2026"
-      : card.id === "medagentbench"
-        ? "Historical · Feb 2025"
-        : graphFor(card)
-          ? "Selected results · Sep 2026"
-          : card.original.entryType === "showcase"
-            ? "Showcase"
-            : card.original.status === "unverified"
-              ? "Watch item"
-              : "Evidence guide";
+    const m = metadata(card);
+    if (m.evidence === "unresolved") return "Results unresolved";
+    if (card.original?.entryType === "showcase") return "Documented showcase";
+    if (isHistorical(card) && card.standard && m.publication_at)
+      return "Historical · source " + m.publication_at;
+    return isHistorical(card)
+      ? m.evidence === "plotted"
+        ? "Historical results"
+        : "Historical guide"
+      : m.evidence === "plotted"
+        ? "Collected results"
+        : "Source guide";
   }
   function isHistorical(card) {
+    return metadata(card).cohort === "historical";
+  }
+  function metadata(card) {
+    return input.cardMetadata.cards[card.id];
+  }
+  function shortDate(value) {
+    return value
+      ? new Intl.DateTimeFormat("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          timeZone: "UTC",
+        }).format(new Date(value + "T00:00:00Z"))
+      : "Not established";
+  }
+  function selectedRuneRun(card, state) {
+    if (card.id !== "runebench" || state?.view !== "published") return null;
+    const rune = input.coverage.rune,
+      row = rune.summaries[state.configuration]?.[state.skill];
+    if (!row) return null;
+    return {
+      row,
+      label:
+        rune.labels[state.configuration]?.displayName || state.configuration,
+      configuration: state.configuration,
+      skill: state.skill,
+      date: row.containerStartedAt?.slice(0, 10) || null,
+      model_release: rune.labels[state.configuration]?.releaseDate || null,
+      source_revision: rune.source_revision_at,
+    };
+  }
+  function dateSummary(card, state = null) {
+    const m = metadata(card),
+      selected = selectedRuneRun(card, state);
+    if (selected)
+      return (
+        "Selected container start: " +
+        shortDate(selected.date) +
+        " · Source revision: " +
+        shortDate(selected.source_revision) +
+        " · Source review: " +
+        shortDate(m.source_review.date)
+      );
+    const slices =
+      card.id === "bullshitbench-v2" && state
+        ? m.evaluations.filter(
+            (s) =>
+              s.slice ===
+              (state.view === "all"
+                ? "Expanded configurations"
+                : "Original selected results"),
+          )
+        : card.id === "runebench"
+          ? m.evaluations.filter(
+              (s) =>
+                s.slice ===
+                (!state
+                  ? "Published configuration explorer"
+                  : state.view === "score"
+                    ? "Expanded configurations"
+                    : "Original selected results"),
+            )
+          : m.evaluations;
+    const known = slices.reduce((n, s) => n + s.known, 0),
+      unknown = slices.reduce((n, s) => n + s.unknown, 0),
+      latest = slices
+        .map((s) => s.latest)
+        .filter(Boolean)
+        .sort()
+        .at(-1);
+    const runs = !slices.length
+      ? "No collected score rows"
+      : !known
+        ? "Run dates not reported"
+        : unknown
+          ? "Some run dates unknown"
+          : (card.id === "runebench" && !state
+              ? "Latest container start: "
+              : "Latest dated run: ") + shortDate(latest);
     return (
-      card.standard?.history === true ||
-      card.standard?.display_status === "historical_source_cohort" ||
-      card.frontend?.status === "historical_source_cohort" ||
-      card.id === "medagentbench"
+      runs +
+      " · " +
+      (m.source_review.mode === "inherited_catalog"
+        ? "Research record: "
+        : "Source review: ") +
+      shortDate(m.source_review.date)
     );
+  }
+  function metadataDetails(card, state = null) {
+    const m = metadata(card),
+      selected = selectedRuneRun(card, state),
+      content = e("div", "metadata-facts");
+    content.append(e("p", "", m.cohort_basis));
+    content.append(
+      e(
+        "p",
+        "",
+        "Source review, publication, model release and evaluation dates describe different events. A maintained benchmark can contain older experiments; missing run dates stay unknown.",
+      ),
+    );
+    const list = e("dl", "date-facts");
+    function fact(label, value) {
+      list.append(e("dt", "", label), e("dd", "", value));
+    }
+    if (selected) {
+      fact(
+        "Selected configuration and skill",
+        selected.label +
+          " (" +
+          selected.configuration +
+          ") · " +
+          selected.skill,
+      );
+      fact(
+        "Selected container start (UTC)",
+        selected.row.containerStartedAt || "Not reported.",
+      );
+      fact(
+        "Selected container finish (UTC)",
+        selected.row.containerFinishedAt || "Not reported.",
+      );
+      fact(
+        "Selected model release date",
+        shortDate(selected.model_release) +
+          "; this is not the selected run date.",
+      );
+    }
+    if (m.source_revision_at)
+      fact(
+        "Pinned source revision",
+        shortDate(m.source_revision_at) +
+          " · " +
+          m.source_snapshot_commit +
+          "; this revision contains runs from different dates.",
+      );
+    fact(
+      "Source review",
+      shortDate(m.source_review.date) + ". " + m.source_review.scope,
+    );
+    fact(
+      "Result packet collected",
+      m.result_packet_checked_at
+        ? shortDate(m.result_packet_checked_at) +
+            "; this is not an evaluation date."
+        : "No numeric result packet collected for this guide.",
+    );
+    fact(
+      card.id === "runebench"
+        ? "Original discovery snapshot"
+        : "Source snapshot",
+      m.snapshot_at
+        ? shortDate(m.snapshot_at)
+        : "Not established as a separate dated snapshot.",
+    );
+    fact(
+      "Publication or revision",
+      m.publication_at
+        ? shortDate(m.publication_at)
+        : m.publication_label || "Not established in this record.",
+    );
+    for (const slice of m.evaluations.filter(
+      (s) => !selected || s.slice === "Published configuration explorer",
+    )) {
+      fact(
+        slice.slice + " - " + (slice.date_kind || "evaluation dates"),
+        slice.known
+          ? shortDate(slice.earliest) +
+              (slice.earliest === slice.latest
+                ? ""
+                : " to " + shortDate(slice.latest)) +
+              "; " +
+              slice.known +
+              " rows dated, " +
+              slice.unknown +
+              " dates not reported."
+          : "Not reported for any of the " + slice.unknown + " collected rows.",
+      );
+    }
+    if (m.discovery_lifecycle)
+      fact(
+        "Original discovery label",
+        m.discovery_lifecycle.status +
+          " as of " +
+          shortDate(m.discovery_lifecycle.as_of) +
+          ". " +
+          m.discovery_lifecycle.basis,
+      );
+    if (m.model_releases?.known)
+      fact(
+        "Model release dates",
+        shortDate(m.model_releases.earliest) +
+          " to " +
+          shortDate(m.model_releases.latest) +
+          "; model release is not evaluation time or benchmark age.",
+      );
+    if (m.unavailable_reason)
+      fact(
+        "Unresolved results",
+        m.unavailable_reason +
+          " This does not establish that the project is inactive.",
+      );
+    content.append(list);
+    const d = disclosure("Dates & evidence status", content);
+    d.id = "benchmark-dates";
+    return d;
   }
   function orderedRows(c) {
     return c.display_defaults?.sort === "evaluation_date_desc"
@@ -388,6 +651,22 @@
         : s("circle", { ...attrs, cx: x, cy: y, r: size });
   }
   function miniature(card) {
+    if (card.coverage) return window.LAB_COVERAGE.miniature(card.coverage);
+    if (card.id === "bullshitbench-v2")
+      return window.LAB_COVERAGE.miniature({
+        id: card.id,
+        variants: [
+          {
+            rows: input.expanded.bullshitbench.records.map((r) => ({
+              label: r.model_identifier,
+              value: r.value,
+            })),
+            metrics: [
+              { id: "all", field: "value", unit: "percent", domain: [0, 100] },
+            ],
+          },
+        ],
+      });
     if (card.frontend?.rows.length)
       return window.LAB_FRONTEND.miniature(card.frontend);
     const graph = graphFor(card),
@@ -571,6 +850,8 @@
     a.href = "results.html?benchmark=" + card.id;
     a.id = "benchmark-" + card.id;
     a.dataset.benchmarkId = card.id;
+    a.dataset.evidenceStatus = metadata(card).evidence;
+    a.dataset.cohortPeriod = metadata(card).cohort;
     const top = e("div", "card-top");
     top.append(
       e("span", "category-badge", categories[card.category]),
@@ -599,6 +880,7 @@
           card.frontend?.summary ||
           card.original?.summary,
       ),
+      e("p", "card-dates", dateSummary(card)),
       miniature(card),
     );
     const graph = graphFor(card);
@@ -608,36 +890,49 @@
         e(
           "strong",
           "",
-          card.frontend
-            ? card.id === "webdev-arena-frontend"
-              ? "Preference rating · 12 selected rows"
-              : "Visual similarity · 4 Direct configurations"
-            : card.standard
-              ? card.id === "frontiermath-tier4-v2"
-                ? "Reported accuracy · 0–100%"
-                : (card.standard.metric.includes("accuracy")
-                    ? "Accuracy"
-                    : card.standard.metric.includes("resolve")
-                      ? "Issues resolved"
-                      : card.standard.metric.includes("rubric")
-                        ? "Rubric score"
-                        : "Task score") + " · 0–100%"
-              : card.id === "medagentbench"
-                ? "Task success · 0–100%"
-                : card.id === "runebench"
-                  ? "Woodcutting · 3 effort settings"
-                  : "6 selected model / effort settings",
+          card.coverage
+            ? card.coverage.variants[0].metrics[0].label +
+                " · " +
+                card.coverage.variants[0].metrics[0].unit
+            : card.id === "bullshitbench-v2"
+              ? "Clear pushback · all 228 configurations"
+              : card.frontend
+                ? card.id === "webdev-arena-frontend"
+                  ? "Preference rating · 12 selected rows"
+                  : "Visual similarity · 4 Direct configurations"
+                : card.standard
+                  ? card.id === "frontiermath-tier4-v2"
+                    ? "Reported accuracy · 0–100%"
+                    : (card.standard.metric.includes("accuracy")
+                        ? "Accuracy"
+                        : card.standard.metric.includes("resolve")
+                          ? "Issues resolved"
+                          : card.standard.metric.includes("rubric")
+                            ? "Rubric score"
+                            : "Task score") + " · 0–100%"
+                  : card.id === "medagentbench"
+                    ? "Task success · 0–100%"
+                    : card.id === "runebench"
+                      ? "Woodcutting · 3 effort settings"
+                      : "6 selected model / effort settings",
         ),
         document.createTextNode(
-          card.id === "runebench"
-            ? " · estimate, not cash spend"
-            : card.standard?.rows.length > 12
-              ? " · preview of " + card.standard.rows.length + " configurations"
-              : isHistorical(card)
-                ? " · historical source cohort"
-                : dotCohort(card)
-                  ? " · different lab setups"
-                  : " · open to explore",
+          card.coverage
+            ? " · " +
+                (card.coverage.variants[0].complete === false
+                  ? "selected source rows"
+                  : "published source cohort")
+            : card.id === "runebench"
+              ? " · 87 configurations available; verified effort slice shown"
+              : card.standard?.rows.length > 12
+                ? " · preview of " +
+                  card.standard.rows.length +
+                  " configurations"
+                : isHistorical(card)
+                  ? " · historical source cohort"
+                  : dotCohort(card)
+                    ? " · different lab setups"
+                    : " · open to explore",
         ),
       );
     else
@@ -670,9 +965,16 @@
           : "all",
         q: (p.get("q") || "").slice(0, 200),
         graphs: p.get("graphs") === "1",
-        history: ["current", "historical"].includes(p.get("history"))
+        history: [
+          "all",
+          "results",
+          "current",
+          "historical",
+          "source-only",
+          "unavailable",
+        ].includes(p.get("history"))
           ? p.get("history")
-          : "all",
+          : "results",
       };
     }
     function render(state) {
@@ -681,12 +983,20 @@
       form.elements.graphs.checked = state.graphs;
       form.elements.history.value = state.history;
       const q = state.q.toLocaleLowerCase();
-      const cards = all.filter(
+      let cards = all.filter(
         (c) =>
           (state.category === "all" || c.category === state.category) &&
           (!state.graphs || graphFor(c)) &&
           (state.history === "all" ||
-            (state.history === "historical") === isHistorical(c)) &&
+            (state.history === "results" && Boolean(graphFor(c))) ||
+            (state.history === "historical" && isHistorical(c)) ||
+            (state.history === "current" &&
+              metadata(c).cohort === "latest_collected" &&
+              metadata(c).evidence === "plotted") ||
+            (state.history === "source-only" &&
+              metadata(c).evidence === "source_only") ||
+            (state.history === "unavailable" &&
+              metadata(c).evidence === "unresolved")) &&
           [
             c.name,
             input.notes[c.id].question,
@@ -698,7 +1008,57 @@
             .toLocaleLowerCase()
             .includes(q),
       );
+      if (
+        state.history !== "all" &&
+        state.history !== "source-only" &&
+        state.history !== "unavailable"
+      ) {
+        const seen = new Set();
+        cards = cards.filter((c) => {
+          const family = families.get(c.id) || c.id;
+          if (seen.has(family)) return false;
+          seen.add(family);
+          return true;
+        });
+      }
       grid.replaceChildren(...cards.map(cardNode));
+      const directory = document.getElementById("source-directory");
+      if (directory) {
+        const guides = e("ul", "research-directory");
+        for (const c of all.filter((c) => !graphFor(c))) {
+          const li = e("li"),
+            a = e("a", "", c.name + " — " + status(c));
+          a.href = "results.html?benchmark=" + c.id;
+          li.append(a);
+          guides.append(li);
+        }
+        const backlog = e("ul", "research-directory");
+        for (const c of input.coverage.backlog) {
+          const li = e("li");
+          li.append(external(c.source_url, c.name));
+          if (c.row_scope) li.append(e("small", "", c.row_scope));
+          backlog.append(li);
+        }
+        directory.replaceChildren(
+          disclosure(
+            "Evidence guides · " +
+              guides.children.length +
+              " entries without admitted charts",
+            guides,
+          ),
+          disclosure(
+            "Further research · " +
+              backlog.children.length +
+              " source candidates",
+            e(
+              "p",
+              "",
+              "These candidates are a research backlog. They have no admitted gallery graph and are not presented as measured results.",
+            ),
+            backlog,
+          ),
+        );
+      }
       document.getElementById("gallery-count").textContent =
         cards.length +
         " benchmarks · " +
@@ -719,7 +1079,7 @@
         url.searchParams.set("category", state.category);
       if (state.q) url.searchParams.set("q", state.q);
       if (state.graphs) url.searchParams.set("graphs", "1");
-      if (state.history !== "all")
+      if (state.history !== "results")
         url.searchParams.set("history", state.history);
       if (push) history.pushState({}, "", url);
       else history.replaceState(historyState(), "", url);
@@ -800,7 +1160,35 @@
     const wrap = e("div"),
       list = e("ul", "source-list");
     let sources = [];
-    if (card.frontend) {
+    if (card.coverage) {
+      sources = card.coverage.variants.map((v) => ({
+        url: v.source_url,
+        title: "Primary result source — " + v.label,
+        info: "Source checked October 5, 2026; evaluation dates remain separately labeled.",
+      }));
+      if (card.original)
+        sources.push(
+          ...card.original.sources.map((s) => ({
+            url: s.url,
+            title: s.title,
+            info: s.provenance + " · " + s.access,
+          })),
+        );
+      if (card.standard)
+        for (const id of [
+          card.standard.source_id,
+          card.standard.definition_source_id,
+        ].filter(Boolean)) {
+          const src = input.standard.sources[id];
+          sources.push({
+            url: src.url,
+            title: "Preserved original source",
+            info: src.publisher || "Benchmark creator",
+          });
+        }
+      const used = new Set();
+      sources = sources.filter((s) => !used.has(s.url) && used.add(s.url));
+    } else if (card.frontend) {
       const c = card.frontend;
       sources = [
         c.source_url,
@@ -836,7 +1224,10 @@
           info:
             (source.published_date
               ? "Published " + source.published_date + " · "
-              : "") + "Accessed 2026-10-01",
+              : "") +
+            "Source packet collected " +
+            input.standard.researched_at +
+            "; this is not the evaluation date.",
         });
       }
     else {
@@ -907,7 +1298,7 @@
       [
         "What it tests",
         card.id === "runebench"
-          ? "An agent writes code and uses tools to train a character in an accelerated RuneScape world. The published slice follows one model at low, medium and high reasoning effort across 16 skills, with one selected trial per effort and skill."
+          ? "An agent writes code and uses tools to train a character in an accelerated RuneScape world. The published explorer covers 87 configurations and 16 skills. The separate verified charts compare one GPT-6.1 Sol trial per effort and skill within the same dated task recipe."
           : notes.tests ||
             card.standard?.description ||
             card.frontend?.summary ||
@@ -930,7 +1321,7 @@
         e(
           "p",
           "",
-          "The skill selector also includes all 16 skills from 48 published runs: one trial for each of three efforts per skill. Progress curves remain available for the two originally verified skills. Other skills show their reported peak and API-equivalent cost; tracker duration stays in the source details.",
+          "Choose a published configuration to inspect its per-skill result, or open the verified effort slice for score, cost and progress curves. The 87 configurations span different dates, harness images and task prompts; they are not a matched experiment. Peak normalized XP/min is not total XP, and API-equivalent token cost is not actual OAuth cash spend.",
         ),
       );
     if (card.id === "bullshitbench-v2")
@@ -956,7 +1347,19 @@
     stack.setAttribute("aria-label", "Sources and supporting details");
     stack.append(sourceSection(card));
     const body = e("div");
-    if (card.frontend) {
+    if (card.coverage) {
+      body.append(
+        raw("Complete source cohorts, settings and limitations", card.coverage),
+        local(
+          card.coverage.source_input,
+          "Read the supplied original research input",
+        ),
+      );
+      if (card.standard)
+        body.append(raw("Preserved earlier source cohort", card.standard));
+      if (card.original)
+        body.append(raw("Preserved discovery record", card.original));
+    } else if (card.frontend) {
       const c = card.frontend,
         ul = e("ul");
       for (const text of c.limitations) ul.append(e("li", "", text));
@@ -1758,8 +2161,14 @@
       ? p.get("benchmark")
       : "hle-diamond";
     const card = byId.get(id);
-    const choices =
-      card.id === "design2code-v3-484"
+    const variant = card.coverage
+      ? window.LAB_COVERAGE.selection(card.coverage, {
+          cohort: p.get("cohort"),
+        }).variant
+      : null;
+    const choices = card.coverage
+      ? variant.metrics.map((m) => m.id)
+      : card.id === "design2code-v3-484"
         ? Object.keys(window.LAB_FRONTEND.metrics)
         : card.id === "hle-diamond"
           ? ["score", "reasoning", "knowledge", "tools"]
@@ -1767,10 +2176,10 @@
             ? ["woodcutting", "mining"].includes(
                 p.get("skill") || "woodcutting",
               )
-              ? ["cost", "time", "score"]
-              : ["cost", "score"]
+              ? ["published", "cost", "time", "score"]
+              : ["published", "cost", "score"]
             : card.id === "bullshitbench-v2"
-              ? ["time", "cost", "all"]
+              ? ["all", "time", "cost"]
               : card.id === "medagentbench"
                 ? ["score", "all"]
                 : ["score"];
@@ -1779,8 +2188,15 @@
       view: choices.includes(p.get("view"))
         ? p.get("view")
         : card.id === "runebench"
-          ? "cost"
+          ? "published"
           : choices[0],
+      cohort: variant?.id || "",
+      configuration: Object.hasOwn(
+        input.coverage.rune.summaries,
+        p.get("configuration"),
+      )
+        ? p.get("configuration")
+        : "gpt61sol",
       skill: runeSkills.includes(p.get("skill"))
         ? p.get("skill")
         : "woodcutting",
@@ -1837,7 +2253,12 @@
       const card = byId.get(state.id),
         notes = input.notes[card.id],
         graph = graphFor(card),
-        viewCohort = expandedCohort(card, state);
+        selectedRune = selectedRuneRun(card, state),
+        viewCohort =
+          card.coverage ||
+          (card.id === "runebench" && state.view === "published")
+            ? null
+            : expandedCohort(card, state);
       document.title = card.name + " · Jordan’s Lab";
       detail.className = "category-" + card.category;
       detail.replaceChildren();
@@ -1873,25 +2294,141 @@
         e(
           "p",
           "detail-dates",
-          viewCohort?.date_label ||
+          (selectedRune
+            ? selectedRune.label +
+              " · " +
+              selectedRune.skill +
+              " · Container start: " +
+              shortDate(selectedRune.date) +
+              " (UTC)"
+            : null) ||
+            viewCohort?.date_label ||
             card.standard?.date_label ||
             notes.date ||
             "Discovery snapshot: September 30, 2026 · source pages not freshly polled",
         ),
       );
       detail.append(header);
+      header.append(e("p", "detail-source-review", dateSummary(card, state)));
+      header.append(local("#benchmark-sources", "Read the original sources"));
       if (isHistorical(card))
         detail.append(
           e(
             "p",
             "historical-notice",
-            (viewCohort?.date_label ||
-              card.standard?.date_label ||
-              notes.date) +
-              ". This is a historical comparison, not current standings.",
+            (viewCohort?.date_label || card.standard?.date_label || notes.date
+              ? (viewCohort?.date_label ||
+                  card.standard?.date_label ||
+                  notes.date) + ". "
+              : "") +
+              metadata(card).cohort_basis +
+              (graph
+                ? " This is a historical comparison, not current standings."
+                : " This is historical evidence, not current standings."),
           ),
         );
-      if (graph) {
+      const familyIds = input.coverage.familyGroups[families.get(card.id)];
+      if (familyIds) {
+        const familyForm = e("form", "view-controls"),
+          label = e("label", "skill-picker", "Version and setup"),
+          select = e("select");
+        select.name = "family";
+        for (const id of familyIds) {
+          const related = byId.get(id);
+          if (!related) continue;
+          const opt = e("option", "", related.name + " · " + status(related));
+          opt.value = id;
+          opt.selected = id === card.id;
+          select.append(opt);
+        }
+        label.append(select);
+        familyForm.append(label);
+        familyForm.addEventListener("submit", (ev) => ev.preventDefault());
+        familyForm.addEventListener("change", () => {
+          const url = new URL(location.href);
+          url.search = "";
+          url.searchParams.set("benchmark", select.value);
+          url.hash = "";
+          history.replaceState(historyState(), "", url);
+          render(detailState());
+          detail
+            .querySelector("select[name=family]")
+            ?.focus({ preventScroll: true });
+        });
+        detail.append(familyForm);
+      }
+      const audited = input.coverage.audits.find((a) => a.id === card.id);
+      if (audited?.audit_warning) {
+        const warning = audited.audit_warning,
+          p = e("p", "source-warning"),
+          publisher =
+            safeURL(warning.source) &&
+            new URL(warning.source).hostname === "epoch.ai"
+              ? "Epoch"
+              : "The linked source";
+        p.append(
+          e("strong", "", "Source review qualification. "),
+          document.createTextNode(
+            [
+              warning.verdict &&
+                publisher +
+                  "'s " +
+                  shortDate(warning.review_date) +
+                  " review gives the verdict “" +
+                  warning.verdict +
+                  ".”",
+              warning.scope && "Scope: " + warning.scope + ".",
+              warning.finding,
+              warning.residuals,
+            ]
+              .filter(Boolean)
+              .join(" "),
+          ),
+          document.createTextNode(" "),
+          external(warning.source, "Read the " + publisher + " review"),
+        );
+        detail.append(p);
+      }
+      if (card.id === "barn-challenge-2026-finals")
+        detail.append(
+          e(
+            "p",
+            "source-warning",
+            "The original BARN source failed certificate validation. Its warning has not been bypassed; the source URL and research provenance are retained.",
+          ),
+        );
+      if (graph && card.coverage) {
+        if (card.id === "terminal-bench-4")
+          detail.append(
+            e(
+              "p",
+              "source-warning",
+              "Some reported runs use fallback models. Counting fallback-served attempts as failures changes Opus 5.5 from 65.15% to 58.08%, and Sonnet 5.5 from 64.14% to 62.63%. Extra configurations do not establish exact effort or fallback settings; the original six retain their verified settings separately.",
+            ),
+          );
+        const update = (next, field) => {
+          const url = new URL(location.href);
+          url.searchParams.set("view", next.view);
+          url.searchParams.set("cohort", next.cohort);
+          if (next.config) url.searchParams.set("config", next.config);
+          else url.searchParams.delete("config");
+          if (next.all) url.searchParams.set("all", "1");
+          else url.searchParams.delete("all");
+          history.replaceState(historyState(), "", url);
+          const start =
+            detail.querySelector("input[name=config]")?.selectionStart;
+          render({ ...state, ...next });
+          const focus = detail.querySelector(`[name="${field}"]`);
+          focus?.focus({ preventScroll: true });
+          if (field === "config" && start != null)
+            focus.setSelectionRange(start, start);
+        };
+        detail.append(
+          e("p", "detail-notice", card.coverage.read),
+          window.LAB_COVERAGE.chart(card.coverage, state, update),
+          e("p", "detail-notice", notes.notice || card.coverage.read),
+        );
+      } else if (graph) {
         const form = e("form", "view-controls");
         form.setAttribute("aria-label", "Choose graph view");
         const options =
@@ -1906,6 +2443,9 @@
                 ]
               : ["runebench", "bullshitbench-v2"].includes(card.id)
                 ? [
+                    ...(card.id === "runebench"
+                      ? [["published", "Published configurations"]]
+                      : []),
                     [
                       "time",
                       card.id === "runebench"
@@ -1945,6 +2485,21 @@
             fs.append(l);
           }
           form.append(fs);
+        }
+        if (card.id === "runebench" && state.view === "published") {
+          const label = e("label", "skill-picker", "Published configuration"),
+            select = e("select");
+          select.name = "configuration";
+          for (const [key, meta] of Object.entries(
+            input.coverage.rune.labels,
+          )) {
+            const option = e("option", "", meta.displayName + " · " + key);
+            option.value = key;
+            option.selected = key === state.configuration;
+            select.append(option);
+          }
+          label.append(select);
+          form.append(label);
         }
         if (card.id === "runebench") {
           const label = e("label", "skill-picker", "Skill"),
@@ -1989,6 +2544,8 @@
             view: form.elements.view?.value || state.view,
             skill: form.elements.skill?.value || state.skill,
             comparison: form.elements.comparison?.value || state.comparison,
+            configuration:
+              form.elements.configuration?.value || state.configuration,
           };
           if (
             next.id === "runebench" &&
@@ -2002,32 +2559,62 @@
           url.searchParams.set("view", next.view);
           if (next.id === "runebench")
             url.searchParams.set("skill", next.skill);
+          if (next.id === "runebench" && next.view === "published")
+            url.searchParams.set("configuration", next.configuration);
           if (next.id === "design2code-v3-484")
             url.searchParams.set("comparison", next.comparison);
           url.hash = "";
           history.replaceState(historyState(), "", url);
           render(next);
           const selector =
-            event.target.name === "comparison"
-              ? "select[name=comparison]"
-              : next.id === "runebench" && changedSkill
-                ? "select[name=skill]"
-                : `input[value="${next.view}"]`;
+            event.target.name === "configuration"
+              ? "select[name=configuration]"
+              : event.target.name === "comparison"
+                ? "select[name=comparison]"
+                : next.id === "runebench" && changedSkill
+                  ? "select[name=skill]"
+                  : `input[value="${next.view}"]`;
           detail.querySelector(selector)?.focus({ preventScroll: true });
         });
         if (options.length || card.id === "runebench") detail.append(form);
         const expanded = viewCohort;
         detail.append(
-          card.frontend
-            ? window.LAB_FRONTEND.chart(card.frontend, state)
-            : card.standard
-              ? standardChart(card, state)
-              : expanded
-                ? card.id === "runebench" && state.view === "cost"
-                  ? expandedCost(card, expanded)
-                  : standardChart(card, state, expanded)
-                : originalChart(card, state),
+          card.id === "runebench" && state.view === "published"
+            ? window.LAB_COVERAGE.chart(
+                window.LAB_COVERAGE.runeCard(
+                  input.coverage.rune,
+                  state.configuration,
+                  state.skill,
+                ),
+                {},
+              )
+            : card.frontend
+              ? window.LAB_FRONTEND.chart(card.frontend, state)
+              : card.standard
+                ? standardChart(card, state)
+                : expanded
+                  ? card.id === "runebench" && state.view === "cost"
+                    ? expandedCost(card, expanded)
+                    : standardChart(card, state, expanded)
+                  : originalChart(card, state),
         );
+        if (card.id === "runebench" && state.view === "published") {
+          detail.append(
+            e("p", "source-warning", input.coverage.rune.warning),
+            raw(
+              "All 16 skill summaries for this configuration",
+              input.coverage.rune.summaries[state.configuration],
+            ),
+          );
+          if (input.coverage.rune.labels[state.configuration].label_status)
+            detail.append(
+              e(
+                "p",
+                "source-warning",
+                input.coverage.rune.labels[state.configuration].label_status,
+              ),
+            );
+        }
         const notice = e("p", "detail-notice");
         notice.append(
           e("strong", "", "Keep in mind. "),
@@ -2037,7 +2624,7 @@
                 ? notes.notice +
                   " API-equivalent estimate, not cash spend; whole-run cost versus a 30-minute score window."
                 : notes.notice)) ||
-              (card.standard.display_status === "historical_source_cohort"
+              (card.standard?.display_status === "historical_source_cohort"
                 ? "Lab-reported comparison, with incomplete harness and trial details. No uncertainty intervals or cost/time results supplied."
                 : "Cross-lab reported results; setups differ. No controlled ranking, uncertainty intervals or cost/time results supplied."),
           ),
@@ -2062,7 +2649,11 @@
         );
         detail.append(panel);
       }
-      detail.append(explanation(card), technicalSection(card));
+      detail.append(
+        explanation(card),
+        metadataDetails(card, state),
+        technicalSection(card),
+      );
       detail.hidden = false;
       unavailable.hidden = true;
       openHash();

@@ -1,0 +1,5606 @@
+{
+  "checked_at": "2026-10-05",
+  "purpose": "Primary-source research additions for existing gallery cards; not externally published",
+  "cohorts": {
+    "balrog": {
+      "source_url": "https://balrogai.com/",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "notes": [
+        "LLM and VLM contain different environment sets and must not be pooled.",
+        "Listed date is not independently established as evaluation date.",
+        "September 2026 entries show open-code markers but no maintainer reproduction checkmark.",
+        "Progress is not probability of beating a game; uncertainty type must be confirmed before labeling it standard error or confidence interval."
+      ],
+      "rows": [
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 63.4,
+              "reported_plus_minus": 1.8
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 100,
+              "reported_plus_minus": 0
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 68.2,
+              "reported_plus_minus": 3.5
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 71.6,
+              "reported_plus_minus": 6.8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 95.8,
+              "reported_plus_minus": 1.8
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 37.5,
+              "reported_plus_minus": 7.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 7.3,
+              "reported_plus_minus": 1.6
+            }
+          },
+          "model_variant": "Claude-Opus-5-Max",
+          "listed_date": "2026-09-20",
+          "reproduced_by_maintainer": false
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 43.5,
+              "reported_plus_minus": 2.3
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 80,
+              "reported_plus_minus": 5.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 49.5,
+              "reported_plus_minus": 3.1
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 51.4,
+              "reported_plus_minus": 8.4
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 50.8,
+              "reported_plus_minus": 4.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 27.5,
+              "reported_plus_minus": 7.1
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 2,
+              "reported_plus_minus": 0.5
+            }
+          },
+          "model_variant": "Claude-Opus-4.5",
+          "listed_date": "2026-02-24",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 23,
+              "reported_plus_minus": 1.7
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 66,
+              "reported_plus_minus": 6.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 28.6,
+              "reported_plus_minus": 4.1
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 9,
+              "reported_plus_minus": 2.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 29.2,
+              "reported_plus_minus": 4.1
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.4,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Llama-3.3-70B-it",
+          "listed_date": "2024-12-09",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 32.3,
+              "reported_plus_minus": 1.5
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 77.6,
+              "reported_plus_minus": 3.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 33.1,
+              "reported_plus_minus": 2.3
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 39.3,
+              "reported_plus_minus": 5.2
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 33.7,
+              "reported_plus_minus": 3.3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 10,
+              "reported_plus_minus": 4.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.4,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "GPT-4o-2024-05-13",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 21,
+              "reported_plus_minus": 1.2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 58.4,
+              "reported_plus_minus": 4.4
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 30.2,
+              "reported_plus_minus": 2.9
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 32,
+              "reported_plus_minus": 3.3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.4,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "Gemini-1.5-Pro-002",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 16.8,
+              "reported_plus_minus": 1.5
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 50,
+              "reported_plus_minus": 7.1
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 26.2,
+              "reported_plus_minus": 3.3
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 6.7,
+              "reported_plus_minus": 2.2
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 15.6,
+              "reported_plus_minus": 2.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.2-11B-it",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 43.6,
+              "reported_plus_minus": 2.2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 76,
+              "reported_plus_minus": 6
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 57.3,
+              "reported_plus_minus": 3.9
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 62.9,
+              "reported_plus_minus": 7.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 45.8,
+              "reported_plus_minus": 4.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 17.5,
+              "reported_plus_minus": 6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.8,
+              "reported_plus_minus": 0.8
+            }
+          },
+          "model_variant": "Grok-4",
+          "listed_date": "2025-07-23",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 6.6,
+              "reported_plus_minus": 1
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 8,
+              "reported_plus_minus": 3.8
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 12.7,
+              "reported_plus_minus": 1.9
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 3.3,
+              "reported_plus_minus": 0.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 10.8,
+              "reported_plus_minus": 2.8
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.2-1B-it",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 43,
+              "reported_plus_minus": 2.3
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 72,
+              "reported_plus_minus": 6.3
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 48.6,
+              "reported_plus_minus": 3.2
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 59,
+              "reported_plus_minus": 8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 45.8,
+              "reported_plus_minus": 4.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 30,
+              "reported_plus_minus": 7.2
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 2.4,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Claude-Opus-4.5-Thinking",
+          "listed_date": "2026-02-24",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 53.2,
+              "reported_plus_minus": 2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 98,
+              "reported_plus_minus": 2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 55,
+              "reported_plus_minus": 4.9
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 27.8,
+              "reported_plus_minus": 7.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 97.5,
+              "reported_plus_minus": 1.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 37.5,
+              "reported_plus_minus": 7.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 3.3,
+              "reported_plus_minus": 1.9
+            }
+          },
+          "model_variant": "GPT-5.6-Terra-Max",
+          "listed_date": "2026-09-20",
+          "reproduced_by_maintainer": false
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 34.9,
+              "reported_plus_minus": 2.1
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 74,
+              "reported_plus_minus": 6.2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 36.4,
+              "reported_plus_minus": 3.8
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 21.8,
+              "reported_plus_minus": 6.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 50.8,
+              "reported_plus_minus": 4.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 25,
+              "reported_plus_minus": 6.8
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.4,
+              "reported_plus_minus": 0.5
+            }
+          },
+          "model_variant": "DeepSeek-R1",
+          "listed_date": "2025-04-10",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 32.6,
+              "reported_plus_minus": 1.9
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 68,
+              "reported_plus_minus": 6.6
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 32.7,
+              "reported_plus_minus": 3.2
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 42.1,
+              "reported_plus_minus": 5.4
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 37.5,
+              "reported_plus_minus": 4.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 15,
+              "reported_plus_minus": 5.6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.6,
+              "reported_plus_minus": 0.5
+            }
+          },
+          "model_variant": "Claude-3.5-Sonnet-2024-10-22",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 68.3,
+              "reported_plus_minus": 2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 100,
+              "reported_plus_minus": 0
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 76.8,
+              "reported_plus_minus": 3.6
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 54.5,
+              "reported_plus_minus": 7.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 100,
+              "reported_plus_minus": 0
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 65,
+              "reported_plus_minus": 7.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 13.2,
+              "reported_plus_minus": 2.7
+            }
+          },
+          "model_variant": "GPT-6-Astra-Max",
+          "listed_date": "2026-09-18",
+          "reproduced_by_maintainer": false
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 17.4,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 50.4,
+              "reported_plus_minus": 4.5
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 15.9,
+              "reported_plus_minus": 2
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 12.2,
+              "reported_plus_minus": 3.5
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 15.6,
+              "reported_plus_minus": 2.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 10,
+              "reported_plus_minus": 4.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "GPT-4o-mini-2024-07-18",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 29.2,
+              "reported_plus_minus": 1.8
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 76,
+              "reported_plus_minus": 6
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 33.6,
+              "reported_plus_minus": 3.5
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 11.6,
+              "reported_plus_minus": 4.6
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 43.3,
+              "reported_plus_minus": 4.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 10,
+              "reported_plus_minus": 4.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.6,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Reka-Flash-3",
+          "listed_date": "2025-03-13",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 33.5,
+              "reported_plus_minus": 2.2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 68,
+              "reported_plus_minus": 6.6
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 40,
+              "reported_plus_minus": 4.8
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 29.6,
+              "reported_plus_minus": 7.2
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 50,
+              "reported_plus_minus": 4.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 12.5,
+              "reported_plus_minus": 5.2
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.8,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "Gemini-2.5-Flash",
+          "listed_date": "2025-07-22",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 57,
+              "reported_plus_minus": 2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 98,
+              "reported_plus_minus": 2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 55,
+              "reported_plus_minus": 6.4
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 75.7,
+              "reported_plus_minus": 6.4
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 83.3,
+              "reported_plus_minus": 3.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 27.5,
+              "reported_plus_minus": 7.1
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 2.6,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Gemini-3.1-Pro-Thinking",
+          "listed_date": "2026-02-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 27.9,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 73.2,
+              "reported_plus_minus": 4
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 31.2,
+              "reported_plus_minus": 2.7
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 15,
+              "reported_plus_minus": 4.6
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 40,
+              "reported_plus_minus": 3.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 7.5,
+              "reported_plus_minus": 4.2
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.3,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Llama-3.1-70B-it",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 45.6,
+              "reported_plus_minus": 1.7
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 98,
+              "reported_plus_minus": 2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 55.5,
+              "reported_plus_minus": 4.4
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 18.2,
+              "reported_plus_minus": 5.2
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 77.5,
+              "reported_plus_minus": 3.8
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 22.5,
+              "reported_plus_minus": 6.6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.7,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "GPT-5.6-Luna-Max",
+          "listed_date": "2026-09-18",
+          "reproduced_by_maintainer": false
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 11.6,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 32,
+              "reported_plus_minus": 6.6
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 13.6,
+              "reported_plus_minus": 2.7
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 0.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 16.7,
+              "reported_plus_minus": 3.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Microsoft-Phi-4",
+          "listed_date": "2025-01-13",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 19.5,
+              "reported_plus_minus": 1.6
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 48,
+              "reported_plus_minus": 7.1
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 15,
+              "reported_plus_minus": 2.1
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 10.6,
+              "reported_plus_minus": 3.7
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 40,
+              "reported_plus_minus": 4.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.7,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "DeepSeek-R1-Distill-Qwen-32B",
+          "listed_date": "2025-01-26",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 56.9,
+              "reported_plus_minus": 2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 100,
+              "reported_plus_minus": 0
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 46.8,
+              "reported_plus_minus": 4.2
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 66.5,
+              "reported_plus_minus": 7.5
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 90,
+              "reported_plus_minus": 2.7
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 35,
+              "reported_plus_minus": 7.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 3,
+              "reported_plus_minus": 0.5
+            }
+          },
+          "model_variant": "Gemini-3.1-Pro",
+          "listed_date": "2026-02-21",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 19.3,
+              "reported_plus_minus": 1.8
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 52,
+              "reported_plus_minus": 7.1
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 26.4,
+              "reported_plus_minus": 2.8
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 18,
+              "reported_plus_minus": 5.8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 8.3,
+              "reported_plus_minus": 2.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 10,
+              "reported_plus_minus": 4.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.2,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "Claude-3.5-Haiku-2024-10-22",
+          "listed_date": "2024-12-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 16.2,
+              "reported_plus_minus": 1.6
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 34,
+              "reported_plus_minus": 6.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 27.3,
+              "reported_plus_minus": 3.6
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 11.2,
+              "reported_plus_minus": 3.8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 19.3,
+              "reported_plus_minus": 3.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.3,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Qwen2.5-72B-it",
+          "listed_date": "2024-11-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 60,
+              "reported_plus_minus": 2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 98,
+              "reported_plus_minus": 2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 55.9,
+              "reported_plus_minus": 4
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 63.5,
+              "reported_plus_minus": 7.8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 96.7,
+              "reported_plus_minus": 1.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 42.5,
+              "reported_plus_minus": 7.8
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 3.2,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "GPT-5.6-Sol-Max",
+          "listed_date": "2026-09-18",
+          "reproduced_by_maintainer": false
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 7.8,
+              "reported_plus_minus": 1.1
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 14,
+              "reported_plus_minus": 4.9
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 16.4,
+              "reported_plus_minus": 3
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 3.9,
+              "reported_plus_minus": 1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 12.5,
+              "reported_plus_minus": 3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Qwen-2.5-7B-it",
+          "listed_date": "2024-11-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 48.1,
+              "reported_plus_minus": 2.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 86,
+              "reported_plus_minus": 4.9
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 45,
+              "reported_plus_minus": 6.3
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 50.2,
+              "reported_plus_minus": 8.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 73.3,
+              "reported_plus_minus": 4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 30,
+              "reported_plus_minus": 7.2
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 4,
+              "reported_plus_minus": 0.8
+            }
+          },
+          "model_variant": "Gemini-3-Flash",
+          "listed_date": "2026-02-13",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 43.3,
+              "reported_plus_minus": 2.3
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 80,
+              "reported_plus_minus": 5.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 55,
+              "reported_plus_minus": 6
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 49.2,
+              "reported_plus_minus": 8.2
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 56.7,
+              "reported_plus_minus": 4.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 17.5,
+              "reported_plus_minus": 6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.7,
+              "reported_plus_minus": 0.2
+            }
+          },
+          "model_variant": "Gemini-2.5-Pro-Exp-03-25",
+          "listed_date": "2025-04-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 3.7,
+              "reported_plus_minus": 0.8
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 4,
+              "reported_plus_minus": 2.8
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 6.4,
+              "reported_plus_minus": 1.7
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 1.6,
+              "reported_plus_minus": 0.6
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 7.6,
+              "reported_plus_minus": 2.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Qwen2-VL-7B-it",
+          "listed_date": "2024-11-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 15.1,
+              "reported_plus_minus": 1.6
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 36,
+              "reported_plus_minus": 6.8
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 25.5,
+              "reported_plus_minus": 3.2
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 6.1,
+              "reported_plus_minus": 2.4
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 18.3,
+              "reported_plus_minus": 3.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.1-8B-it",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 17.6,
+              "reported_plus_minus": 1.5
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 50,
+              "reported_plus_minus": 7.1
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 27.7,
+              "reported_plus_minus": 2.7
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 4.5,
+              "reported_plus_minus": 1.3
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 20.8,
+              "reported_plus_minus": 3.7
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.3,
+              "reported_plus_minus": 0.3
+            }
+          },
+          "model_variant": "Mistral-Nemo-it-2407",
+          "listed_date": "2024-12-09",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 12.8,
+              "reported_plus_minus": 1.6
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 24,
+              "reported_plus_minus": 6
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 22.7,
+              "reported_plus_minus": 2.7
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 16.5,
+              "reported_plus_minus": 5.4
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 10.8,
+              "reported_plus_minus": 2.8
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Qwen2-VL-72B-it",
+          "listed_date": "2024-11-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 10.1,
+              "reported_plus_minus": 1.3
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 20,
+              "reported_plus_minus": 5.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 17.3,
+              "reported_plus_minus": 2.8
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 3.5,
+              "reported_plus_minus": 1.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 17.5,
+              "reported_plus_minus": 3.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.2-3B-it",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 31.2,
+              "reported_plus_minus": 2.1
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 66,
+              "reported_plus_minus": 6.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 24.1,
+              "reported_plus_minus": 3.2
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 49,
+              "reported_plus_minus": 7.6
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 33.3,
+              "reported_plus_minus": 4.3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 15,
+              "reported_plus_minus": 5.6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Claude-Haiku-4.5",
+          "listed_date": "2026-02-24",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 14.6,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 50,
+              "reported_plus_minus": 7.1
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 20,
+              "reported_plus_minus": 0.7
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 12.8,
+              "reported_plus_minus": 2.3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Gemini-1.5-Flash-002",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 32.8,
+              "reported_plus_minus": 2.2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 80,
+              "reported_plus_minus": 5.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 39.1,
+              "reported_plus_minus": 4.1
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 30.6,
+              "reported_plus_minus": 7
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 25.8,
+              "reported_plus_minus": 4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 20,
+              "reported_plus_minus": 7.3
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.3,
+              "reported_plus_minus": 0.5
+            }
+          },
+          "model_variant": "GPT-5-minimal-think",
+          "listed_date": "2025-08-19",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 58.1,
+              "reported_plus_minus": 2.1
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 96,
+              "reported_plus_minus": 2.8
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 57.3,
+              "reported_plus_minus": 4.4
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 60.2,
+              "reported_plus_minus": 7.5
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 88.3,
+              "reported_plus_minus": 2.9
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 40,
+              "reported_plus_minus": 7.7
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 6.8,
+              "reported_plus_minus": 3.2
+            }
+          },
+          "model_variant": "Gemini-3-Pro",
+          "listed_date": "2026-02-03",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 27.3,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 72,
+              "reported_plus_minus": 6.3
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 31.7,
+              "reported_plus_minus": 1.4
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 11.2,
+              "reported_plus_minus": 3
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 43.9,
+              "reported_plus_minus": 3.5
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.2-90B-it",
+          "listed_date": "2024-11-11",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "LLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 29.5,
+              "reported_plus_minus": 2.2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 62,
+              "reported_plus_minus": 6.9
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 25,
+              "reported_plus_minus": 4.1
+            },
+            "textworld": {
+              "uncertainty_type": null,
+              "value": 32.5,
+              "reported_plus_minus": 6.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 33.3,
+              "reported_plus_minus": 4.3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 22.5,
+              "reported_plus_minus": 6.6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.6,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "Grok-3-beta",
+          "listed_date": "2025-04-25",
+          "reproduced_by_maintainer": true
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 25.8,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 58.4,
+              "reported_plus_minus": 4.4
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 33.5,
+              "reported_plus_minus": 2.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 31.4,
+              "reported_plus_minus": 3.2
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.5,
+              "reported_plus_minus": 0.5
+            }
+          },
+          "model_variant": "Gemini-1.5-Pro-002",
+          "listed_date": "2024-11-11"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 8.4,
+              "reported_plus_minus": 1.3
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 18,
+              "reported_plus_minus": 5.4
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 15.9,
+              "reported_plus_minus": 1.2
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 5.8,
+              "reported_plus_minus": 1.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.2-11B-it",
+          "listed_date": "2024-11-11"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 35.5,
+              "reported_plus_minus": 2
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 82,
+              "reported_plus_minus": 5.4
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 37.3,
+              "reported_plus_minus": 3.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 34.5,
+              "reported_plus_minus": 4.4
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 22.5,
+              "reported_plus_minus": 6.6
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.2,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "Claude-3.5-Sonnet-2024-10-22",
+          "listed_date": "2024-11-11"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 22.6,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 62,
+              "reported_plus_minus": 4.3
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 26.8,
+              "reported_plus_minus": 3.7
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 18.6,
+              "reported_plus_minus": 2.7
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0.4,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "GPT-4o-2024-05-13",
+          "listed_date": "2024-11-11"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 35.7,
+              "reported_plus_minus": 2.1
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 74,
+              "reported_plus_minus": 6.2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 37.3,
+              "reported_plus_minus": 4.6
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 53.3,
+              "reported_plus_minus": 4.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 12.5,
+              "reported_plus_minus": 5.2
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 1.6,
+              "reported_plus_minus": 0.4
+            }
+          },
+          "model_variant": "Gemini-2.5-Pro-Exp-03-25",
+          "listed_date": "2025-04-25"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 4.4,
+              "reported_plus_minus": 0.8
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 2,
+              "reported_plus_minus": 2
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 5.5,
+              "reported_plus_minus": 0.9
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 11.9,
+              "reported_plus_minus": 3
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 5,
+              "reported_plus_minus": 3.4
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Qwen2-VL-7B-it",
+          "listed_date": "2024-11-25"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 15.4,
+              "reported_plus_minus": 1.3
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 38,
+              "reported_plus_minus": 4.3
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 19.9,
+              "reported_plus_minus": 3.1
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 16.4,
+              "reported_plus_minus": 2.6
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "GPT-4o-mini-2024-07-18",
+          "listed_date": "2024-11-11"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 12.2,
+              "reported_plus_minus": 1.6
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 34,
+              "reported_plus_minus": 6.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 18.6,
+              "reported_plus_minus": 2.8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 5.9,
+              "reported_plus_minus": 2.2
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Qwen2-VL-72B-it",
+          "listed_date": "2024-11-25"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 14.9,
+              "reported_plus_minus": 1.4
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 43.2,
+              "reported_plus_minus": 4.4
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 20.7,
+              "reported_plus_minus": 4.4
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 8.3,
+              "reported_plus_minus": 1.9
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Gemini-1.5-Flash-002",
+          "listed_date": "2024-11-11"
+        },
+        {
+          "modality": "VLM",
+          "evaluation_date": null,
+          "open_code": true,
+          "reproduced_by_maintainer": true,
+          "metrics_percent_progress": {
+            "overall_progress": {
+              "uncertainty_type": null,
+              "value": 21,
+              "reported_plus_minus": 1.6
+            },
+            "babyai": {
+              "uncertainty_type": null,
+              "value": 66,
+              "reported_plus_minus": 6.7
+            },
+            "crafter": {
+              "uncertainty_type": null,
+              "value": 14.5,
+              "reported_plus_minus": 1.8
+            },
+            "babaisai": {
+              "uncertainty_type": null,
+              "value": 21.9,
+              "reported_plus_minus": 2.9
+            },
+            "minihack": {
+              "uncertainty_type": null,
+              "value": 2.5,
+              "reported_plus_minus": 2.5
+            },
+            "nethack": {
+              "uncertainty_type": null,
+              "value": 0,
+              "reported_plus_minus": 0
+            }
+          },
+          "model_variant": "Llama-3.2-90B-it",
+          "listed_date": "2024-11-11"
+        }
+      ]
+    },
+    "eq-bench-creative-writing-v3": {
+      "source_url": "https://github.com/EQ-bench/EQ-bench-site/blob/108382e3f5017dce6f90c643e6bb4842825f62df/creative_writing.js",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "source_commit": "108382e3f5017dce6f90c643e6bb4842825f62df",
+      "methodology_url": "https://eqbench.com/about.html#creative-writing-v3",
+      "settings": {
+        "prompts": 32,
+        "iterations": 3,
+        "temperature": 0.7,
+        "min_p": 0.1,
+        "rubric_judge": "Claude Sonnet 4 via OpenRouter",
+        "pairwise_judge": "Claude Sonnet 4.6",
+        "pairwise_judge_change_date": "2026-03-01",
+        "pairwise_truncation_chars": 4000,
+        "rating": "modified Glicko, anchored DeepSeek-R1=1500 and ministral-3b=200"
+      },
+      "notes": [
+        "140 rows available. Parse stars as new-item markers, not part of API model identifiers.",
+        "Rubric and Elo are different measures; neither is percent task success.",
+        "Source commit time and new marker are not evaluation timestamps.",
+        "Per-row provider/effort settings must be read from sample output where needed; missing settings remain unknown."
+      ],
+      "rows": [
+        {
+          "model_variant": "gpt-6-astra",
+          "source_model_label": "*gpt-6-astra",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2173.3,
+          "creative_writing_score": 16.8,
+          "avg_length": 6191.0,
+          "vocab_complexity": 36.3,
+          "slop_score": 8.41,
+          "repetition_score": 3.54
+        },
+        {
+          "model_variant": "claude-fable-5-1",
+          "source_model_label": "*claude-fable-5-1",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2162.0,
+          "creative_writing_score": 16.95,
+          "avg_length": 5841.0,
+          "vocab_complexity": 23.67,
+          "slop_score": 8.16,
+          "repetition_score": 3.64
+        },
+        {
+          "model_variant": "claude-opus-5",
+          "source_model_label": "claude-opus-5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2132.6,
+          "creative_writing_score": 17.07,
+          "avg_length": 6003.0,
+          "vocab_complexity": 27.46,
+          "slop_score": 6.59,
+          "repetition_score": 4.31
+        },
+        {
+          "model_variant": "gpt-6-sol",
+          "source_model_label": "*gpt-6-sol",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2124.7,
+          "creative_writing_score": 16.51,
+          "avg_length": 6182.0,
+          "vocab_complexity": 27.59,
+          "slop_score": 8.97,
+          "repetition_score": 3.63
+        },
+        {
+          "model_variant": "kimi-k3",
+          "source_model_label": "kimi-k3",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2082.3,
+          "creative_writing_score": 16.85,
+          "avg_length": 5488.0,
+          "vocab_complexity": 26.18,
+          "slop_score": 9.7,
+          "repetition_score": 3.73
+        },
+        {
+          "model_variant": "GLM-5.3",
+          "source_model_label": "GLM-5.3",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2075.0,
+          "creative_writing_score": 17.04,
+          "avg_length": 5913.0,
+          "vocab_complexity": 25.71,
+          "slop_score": 8.42,
+          "repetition_score": 3.23
+        },
+        {
+          "model_variant": "claude-opus-5-5",
+          "source_model_label": "*claude-opus-5-5",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2050.1,
+          "creative_writing_score": 16.79,
+          "avg_length": 6041.0,
+          "vocab_complexity": 24.48,
+          "slop_score": 10.43,
+          "repetition_score": 3.78
+        },
+        {
+          "model_variant": "grok-4.7",
+          "source_model_label": "*grok-4.7",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 2006.7,
+          "creative_writing_score": 17.16,
+          "avg_length": 6282.0,
+          "vocab_complexity": 24.64,
+          "slop_score": 8.47,
+          "repetition_score": 3.52
+        },
+        {
+          "model_variant": "ox-alpha",
+          "source_model_label": "ox-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1971.7,
+          "creative_writing_score": 16.89,
+          "avg_length": 6112.0,
+          "vocab_complexity": 30.12,
+          "slop_score": 9.83,
+          "repetition_score": 3.05
+        },
+        {
+          "model_variant": "gpt-5.6-sol",
+          "source_model_label": "gpt-5.6-sol",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1971.6,
+          "creative_writing_score": 16.78,
+          "avg_length": 8548.0,
+          "vocab_complexity": 33.1,
+          "slop_score": 11.68,
+          "repetition_score": 3.41
+        },
+        {
+          "model_variant": "claude-fable-5",
+          "source_model_label": "claude-fable-5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1943.1,
+          "creative_writing_score": 16.81,
+          "avg_length": 5887.0,
+          "vocab_complexity": 30.85,
+          "slop_score": 10.28,
+          "repetition_score": 3.92
+        },
+        {
+          "model_variant": "aion-3.5",
+          "source_model_label": "*aion-3.5",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1929.3,
+          "creative_writing_score": 16.73,
+          "avg_length": 6499.0,
+          "vocab_complexity": 29.33,
+          "slop_score": 10.26,
+          "repetition_score": 3.62
+        },
+        {
+          "model_variant": "muse-spark-1.1",
+          "source_model_label": "muse-spark-1.1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1927.1,
+          "creative_writing_score": 16.54,
+          "avg_length": 7551.0,
+          "vocab_complexity": 22.51,
+          "slop_score": 12.11,
+          "repetition_score": 3.49
+        },
+        {
+          "model_variant": "claude-opus-4-7",
+          "source_model_label": "claude-opus-4-7",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1914.3,
+          "creative_writing_score": 16.57,
+          "avg_length": 5692.0,
+          "vocab_complexity": 26.76,
+          "slop_score": 11.09,
+          "repetition_score": 4.0
+        },
+        {
+          "model_variant": "Altworld/Hemmingway-1",
+          "source_model_label": "*Altworld/Hemmingway-1",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1906.4,
+          "creative_writing_score": 16.53,
+          "avg_length": 5754.0,
+          "vocab_complexity": 25.96,
+          "slop_score": 7.74,
+          "repetition_score": 3.72
+        },
+        {
+          "model_variant": "muse-spark-1.3",
+          "source_model_label": "*muse-spark-1.3",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1905.9,
+          "creative_writing_score": 16.7,
+          "avg_length": 8001.0,
+          "vocab_complexity": 23.46,
+          "slop_score": 10.73,
+          "repetition_score": 3.66
+        },
+        {
+          "model_variant": "gpt-5.6-terra",
+          "source_model_label": "gpt-5.6-terra",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1854.9,
+          "creative_writing_score": 16.56,
+          "avg_length": 10271.0,
+          "vocab_complexity": 32.34,
+          "slop_score": 12.4,
+          "repetition_score": 3.02
+        },
+        {
+          "model_variant": "gpt-5.5",
+          "source_model_label": "gpt-5.5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1843.9,
+          "creative_writing_score": 17.01,
+          "avg_length": 12945.0,
+          "vocab_complexity": 31.57,
+          "slop_score": 13.1,
+          "repetition_score": 2.48
+        },
+        {
+          "model_variant": "Qwen/Qwen3.8-2.4T-A95B",
+          "source_model_label": "Qwen/Qwen3.8-2.4T-A95B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1842.5,
+          "creative_writing_score": 16.72,
+          "avg_length": 6046.0,
+          "vocab_complexity": 27.23,
+          "slop_score": 12.26,
+          "repetition_score": 3.5
+        },
+        {
+          "model_variant": "muse-spark-1.2",
+          "source_model_label": "muse-spark-1.2",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1840.4,
+          "creative_writing_score": 16.44,
+          "avg_length": 8618.0,
+          "vocab_complexity": 25.74,
+          "slop_score": 12.98,
+          "repetition_score": 3.31
+        },
+        {
+          "model_variant": "claude-opus-4-8",
+          "source_model_label": "claude-opus-4-8",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1839.8,
+          "creative_writing_score": 16.66,
+          "avg_length": 5842.0,
+          "vocab_complexity": 26.77,
+          "slop_score": 13.16,
+          "repetition_score": 3.68
+        },
+        {
+          "model_variant": "gpt-5.4",
+          "source_model_label": "gpt-5.4",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1839.7,
+          "creative_writing_score": 16.89,
+          "avg_length": 10488.0,
+          "vocab_complexity": 36.35,
+          "slop_score": 12.2,
+          "repetition_score": 2.71
+        },
+        {
+          "model_variant": "gpt-5.6-luna",
+          "source_model_label": "gpt-5.6-luna",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1828.7,
+          "creative_writing_score": 16.58,
+          "avg_length": 7927.0,
+          "vocab_complexity": 32.96,
+          "slop_score": 11.8,
+          "repetition_score": 4.0
+        },
+        {
+          "model_variant": "claude-sonnet-4-6",
+          "source_model_label": "claude-sonnet-4-6",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1810.4,
+          "creative_writing_score": 16.5,
+          "avg_length": 5876.0,
+          "vocab_complexity": 37.46,
+          "slop_score": 9.9,
+          "repetition_score": 4.06
+        },
+        {
+          "model_variant": "claude-opus-4-6",
+          "source_model_label": "claude-opus-4-6",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1809.1,
+          "creative_writing_score": 16.53,
+          "avg_length": 6055.0,
+          "vocab_complexity": 33.13,
+          "slop_score": 12.12,
+          "repetition_score": 4.02
+        },
+        {
+          "model_variant": "meta-models/Muse-Glimmer-30B",
+          "source_model_label": "meta-models/Muse-Glimmer-30B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1798.3,
+          "creative_writing_score": 16.26,
+          "avg_length": 5837.0,
+          "vocab_complexity": 22.38,
+          "slop_score": 12.35,
+          "repetition_score": 3.96
+        },
+        {
+          "model_variant": "claude-sonnet-5",
+          "source_model_label": "claude-sonnet-5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1794.0,
+          "creative_writing_score": 16.47,
+          "avg_length": 5753.0,
+          "vocab_complexity": 37.9,
+          "slop_score": 11.6,
+          "repetition_score": 4.62
+        },
+        {
+          "model_variant": "space-bunny-alpha",
+          "source_model_label": "*space-bunny-alpha",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1784.3,
+          "creative_writing_score": 16.3,
+          "avg_length": 6784.0,
+          "vocab_complexity": 34.23,
+          "slop_score": 8.22,
+          "repetition_score": 3.1
+        },
+        {
+          "model_variant": "zai-org/GLM-5.2",
+          "source_model_label": "zai-org/GLM-5.2",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1756.5,
+          "creative_writing_score": 16.44,
+          "avg_length": 6104.0,
+          "vocab_complexity": 30.76,
+          "slop_score": 13.11,
+          "repetition_score": 3.94
+        },
+        {
+          "model_variant": "gemini-3.8-flash",
+          "source_model_label": "*gemini-3.8-flash",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1747.9,
+          "creative_writing_score": 16.54,
+          "avg_length": 7251.0,
+          "vocab_complexity": 37.61,
+          "slop_score": 22.6,
+          "repetition_score": 3.12
+        },
+        {
+          "model_variant": "moonshotai/Kimi-K2.6",
+          "source_model_label": "moonshotai/Kimi-K2.6",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1724.5,
+          "creative_writing_score": 16.67,
+          "avg_length": 8333.0,
+          "vocab_complexity": 38.16,
+          "slop_score": 13.3,
+          "repetition_score": 3.77
+        },
+        {
+          "model_variant": "gemini-3.7-flash",
+          "source_model_label": "gemini-3.7-flash",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1723.2,
+          "creative_writing_score": 16.27,
+          "avg_length": 6772.0,
+          "vocab_complexity": 39.84,
+          "slop_score": 24.44,
+          "repetition_score": 3.41
+        },
+        {
+          "model_variant": "gpt-5.2",
+          "source_model_label": "gpt-5.2",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1702.9,
+          "creative_writing_score": 16.66,
+          "avg_length": 12536.0,
+          "vocab_complexity": 29.19,
+          "slop_score": 16.8,
+          "repetition_score": 2.95
+        },
+        {
+          "model_variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
+          "source_model_label": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1692.4,
+          "creative_writing_score": 16.58,
+          "avg_length": 10536.0,
+          "vocab_complexity": 25.12,
+          "slop_score": 18.42,
+          "repetition_score": 3.23
+        },
+        {
+          "model_variant": "gpt-5.3-chat",
+          "source_model_label": "gpt-5.3-chat",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1689.9,
+          "creative_writing_score": 16.21,
+          "avg_length": 7048.0,
+          "vocab_complexity": 31.18,
+          "slop_score": 20.93,
+          "repetition_score": 4.42
+        },
+        {
+          "model_variant": "claude-opus-4-5-20251101",
+          "source_model_label": "claude-opus-4-5-20251101",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1686.7,
+          "creative_writing_score": 16.35,
+          "avg_length": 6124.0,
+          "vocab_complexity": 33.7,
+          "slop_score": 16.23,
+          "repetition_score": 4.3
+        },
+        {
+          "model_variant": "claude-sonnet-4.5",
+          "source_model_label": "claude-sonnet-4.5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1677.6,
+          "creative_writing_score": 16.14,
+          "avg_length": 5784.0,
+          "vocab_complexity": 32.94,
+          "slop_score": 16.07,
+          "repetition_score": 3.64
+        },
+        {
+          "model_variant": "o3",
+          "source_model_label": "o3",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1675.6,
+          "creative_writing_score": 16.28,
+          "avg_length": 7864.0,
+          "vocab_complexity": 36.45,
+          "slop_score": 17.33,
+          "repetition_score": 2.67
+        },
+        {
+          "model_variant": "Qwen/Qwen3.8-27B",
+          "source_model_label": "Qwen/Qwen3.8-27B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1671.3,
+          "creative_writing_score": 15.5,
+          "avg_length": 5400.0,
+          "vocab_complexity": 21.86,
+          "slop_score": 12.12,
+          "repetition_score": 4.19
+        },
+        {
+          "model_variant": "moonshotai/Kimi-K2-Instruct",
+          "source_model_label": "moonshotai/Kimi-K2-Instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1665.7,
+          "creative_writing_score": 16.4,
+          "avg_length": 7308.0,
+          "vocab_complexity": 31.98,
+          "slop_score": 15.51,
+          "repetition_score": 3.4
+        },
+        {
+          "model_variant": "gpt-5.4-mini",
+          "source_model_label": "gpt-5.4-mini",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1665.0,
+          "creative_writing_score": 16.51,
+          "avg_length": 10365.0,
+          "vocab_complexity": 34.53,
+          "slop_score": 14.45,
+          "repetition_score": 3.23
+        },
+        {
+          "model_variant": "moonshotai/Kimi-K2-Thinking",
+          "source_model_label": "moonshotai/Kimi-K2-Thinking",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1630.9,
+          "creative_writing_score": 16.47,
+          "avg_length": 7094.0,
+          "vocab_complexity": 32.14,
+          "slop_score": 18.3,
+          "repetition_score": 3.47
+        },
+        {
+          "model_variant": "openrouter/horizon-beta",
+          "source_model_label": "openrouter/horizon-beta",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1627.3,
+          "creative_writing_score": 16.66,
+          "avg_length": 14202.0,
+          "vocab_complexity": 27.71,
+          "slop_score": 11.19,
+          "repetition_score": 2.22
+        },
+        {
+          "model_variant": "gpt-5-2025-08-07",
+          "source_model_label": "gpt-5-2025-08-07",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1626.6,
+          "creative_writing_score": 16.79,
+          "avg_length": 14147.0,
+          "vocab_complexity": 28.26,
+          "slop_score": 11.41,
+          "repetition_score": 2.43
+        },
+        {
+          "model_variant": "openrouter/horizon-alpha",
+          "source_model_label": "openrouter/horizon-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1622.7,
+          "creative_writing_score": 16.7,
+          "avg_length": 14929.0,
+          "vocab_complexity": 26.86,
+          "slop_score": 11.14,
+          "repetition_score": 2.33
+        },
+        {
+          "model_variant": "openrouter/pony-alpha",
+          "source_model_label": "openrouter/pony-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1616.7,
+          "creative_writing_score": 16.27,
+          "avg_length": 6605.0,
+          "vocab_complexity": 32.65,
+          "slop_score": 17.76,
+          "repetition_score": 3.72
+        },
+        {
+          "model_variant": "thinkingmachines/Inkling",
+          "source_model_label": "thinkingmachines/Inkling",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1610.8,
+          "creative_writing_score": 16.38,
+          "avg_length": 8378.0,
+          "vocab_complexity": 35.24,
+          "slop_score": 15.02,
+          "repetition_score": 4.22
+        },
+        {
+          "model_variant": "gemini-3.6-flash",
+          "source_model_label": "gemini-3.6-flash",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1603.5,
+          "creative_writing_score": 16.22,
+          "avg_length": 7016.0,
+          "vocab_complexity": 38.06,
+          "slop_score": 24.29,
+          "repetition_score": 4.6
+        },
+        {
+          "model_variant": "zai-org/GLM-5",
+          "source_model_label": "zai-org/GLM-5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1600.6,
+          "creative_writing_score": 16.09,
+          "avg_length": 6376.0,
+          "vocab_complexity": 32.12,
+          "slop_score": 18.82,
+          "repetition_score": 3.55
+        },
+        {
+          "model_variant": "zai-org/GLM-5.1",
+          "source_model_label": "zai-org/GLM-5.1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1592.2,
+          "creative_writing_score": 16.26,
+          "avg_length": 6226.0,
+          "vocab_complexity": 31.58,
+          "slop_score": 23.56,
+          "repetition_score": 3.76
+        },
+        {
+          "model_variant": "claude-opus-4",
+          "source_model_label": "claude-opus-4",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1579.7,
+          "creative_writing_score": 16.05,
+          "avg_length": 5774.0,
+          "vocab_complexity": 35.99,
+          "slop_score": 17.44,
+          "repetition_score": 3.99
+        },
+        {
+          "model_variant": "grok-4.5",
+          "source_model_label": "grok-4.5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1578.8,
+          "creative_writing_score": 16.25,
+          "avg_length": 7190.0,
+          "vocab_complexity": 36.87,
+          "slop_score": 17.73,
+          "repetition_score": 3.52
+        },
+        {
+          "model_variant": "moonshotai/Kimi-K2.5",
+          "source_model_label": "moonshotai/Kimi-K2.5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1578.6,
+          "creative_writing_score": 15.94,
+          "avg_length": 5593.0,
+          "vocab_complexity": 36.92,
+          "slop_score": 17.77,
+          "repetition_score": 4.58
+        },
+        {
+          "model_variant": "grok-4.20-beta",
+          "source_model_label": "grok-4.20-beta",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1573.6,
+          "creative_writing_score": 14.51,
+          "avg_length": 7250.0,
+          "vocab_complexity": 34.78,
+          "slop_score": 15.85,
+          "repetition_score": 4.5
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V4-Flash",
+          "source_model_label": "deepseek-ai/DeepSeek-V4-Flash",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1559.1,
+          "creative_writing_score": 16.29,
+          "avg_length": 6031.0,
+          "vocab_complexity": 25.55,
+          "slop_score": 20.92,
+          "repetition_score": 4.3
+        },
+        {
+          "model_variant": "gemini-3.5-flash-lite",
+          "source_model_label": "gemini-3.5-flash-lite",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1559.1,
+          "creative_writing_score": 16.15,
+          "avg_length": 7278.0,
+          "vocab_complexity": 39.01,
+          "slop_score": 25.24,
+          "repetition_score": 5.25
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V4-Pro",
+          "source_model_label": "deepseek-ai/DeepSeek-V4-Pro",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1553.2,
+          "creative_writing_score": 16.45,
+          "avg_length": 7444.0,
+          "vocab_complexity": 35.85,
+          "slop_score": 19.66,
+          "repetition_score": 3.21
+        },
+        {
+          "model_variant": "deepseek-v4.1-flash",
+          "source_model_label": "*deepseek-v4.1-flash",
+          "new_marker": true,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1540.1,
+          "creative_writing_score": 16.08,
+          "avg_length": 6121.0,
+          "vocab_complexity": 27.85,
+          "slop_score": 22.42,
+          "repetition_score": 5.21
+        },
+        {
+          "model_variant": "gemini-3-pro-preview",
+          "source_model_label": "gemini-3-pro-preview",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1524.5,
+          "creative_writing_score": 16.3,
+          "avg_length": 7688.0,
+          "vocab_complexity": 29.12,
+          "slop_score": 24.71,
+          "repetition_score": 4.52
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V3.2",
+          "source_model_label": "deepseek-ai/DeepSeek-V3.2",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1515.0,
+          "creative_writing_score": 16.28,
+          "avg_length": 6135.0,
+          "vocab_complexity": 34.22,
+          "slop_score": 23.19,
+          "repetition_score": 4.06
+        },
+        {
+          "model_variant": "chatgpt-4o-latest-2025-03-27",
+          "source_model_label": "chatgpt-4o-latest-2025-03-27",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1501.2,
+          "creative_writing_score": 15.89,
+          "avg_length": 5956.0,
+          "vocab_complexity": 28.29,
+          "slop_score": 24.76,
+          "repetition_score": 4.38
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-R1",
+          "source_model_label": "deepseek-ai/DeepSeek-R1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1500.0,
+          "creative_writing_score": 15.68,
+          "avg_length": 5352.0,
+          "vocab_complexity": 29.2,
+          "slop_score": 31.21,
+          "repetition_score": 4.62
+        },
+        {
+          "model_variant": "XiaomiMiMo/MiMo-V2.5-Pro",
+          "source_model_label": "XiaomiMiMo/MiMo-V2.5-Pro",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1493.4,
+          "creative_writing_score": 16.06,
+          "avg_length": 6797.0,
+          "vocab_complexity": 30.18,
+          "slop_score": 25.52,
+          "repetition_score": 4.24
+        },
+        {
+          "model_variant": "thinkingmachines/Inkling-Small",
+          "source_model_label": "thinkingmachines/Inkling-Small",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1491.4,
+          "creative_writing_score": 15.53,
+          "avg_length": 8589.0,
+          "vocab_complexity": 36.18,
+          "slop_score": 14.67,
+          "repetition_score": 3.78
+        },
+        {
+          "model_variant": "gemini-3.1-pro-preview",
+          "source_model_label": "gemini-3.1-pro-preview",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1491.3,
+          "creative_writing_score": 16.04,
+          "avg_length": 6866.0,
+          "vocab_complexity": 38.15,
+          "slop_score": 30.03,
+          "repetition_score": 4.48
+        },
+        {
+          "model_variant": "hunter-alpha",
+          "source_model_label": "hunter-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1483.9,
+          "creative_writing_score": 16.15,
+          "avg_length": 7208.0,
+          "vocab_complexity": 30.09,
+          "slop_score": 25.7,
+          "repetition_score": 4.04
+        },
+        {
+          "model_variant": "claude-sonnet-4",
+          "source_model_label": "claude-sonnet-4",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1482.8,
+          "creative_writing_score": 15.77,
+          "avg_length": 6125.0,
+          "vocab_complexity": 42.48,
+          "slop_score": 19.56,
+          "repetition_score": 4.33
+        },
+        {
+          "model_variant": "Qwen/Qwen3.5-397B-A17B",
+          "source_model_label": "Qwen/Qwen3.5-397B-A17B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1478.2,
+          "creative_writing_score": 16.0,
+          "avg_length": 5871.0,
+          "vocab_complexity": 27.42,
+          "slop_score": 24.32,
+          "repetition_score": 5.23
+        },
+        {
+          "model_variant": "mistral-medium-3.1",
+          "source_model_label": "mistral-medium-3.1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1475.7,
+          "creative_writing_score": 15.96,
+          "avg_length": 6763.0,
+          "vocab_complexity": 22.83,
+          "slop_score": 26.21,
+          "repetition_score": 5.15
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V3-0324",
+          "source_model_label": "deepseek-ai/DeepSeek-V3-0324",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1472.3,
+          "creative_writing_score": 15.36,
+          "avg_length": 4414.0,
+          "vocab_complexity": 24.28,
+          "slop_score": 33.02,
+          "repetition_score": 6.22
+        },
+        {
+          "model_variant": "claude-3-5-sonnet-20241022",
+          "source_model_label": "claude-3-5-sonnet-20241022",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1450.8,
+          "creative_writing_score": 14.95,
+          "avg_length": 4921.0,
+          "vocab_complexity": 39.27,
+          "slop_score": 19.82,
+          "repetition_score": 4.42
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "source_model_label": "deepseek-ai/DeepSeek-V4-Flash-0731",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1441.1,
+          "creative_writing_score": 15.98,
+          "avg_length": 6952.0,
+          "vocab_complexity": 29.46,
+          "slop_score": 24.59,
+          "repetition_score": 5.45
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V3.1",
+          "source_model_label": "deepseek-ai/DeepSeek-V3.1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1435.9,
+          "creative_writing_score": 16.1,
+          "avg_length": 6374.0,
+          "vocab_complexity": 35.22,
+          "slop_score": 27.84,
+          "repetition_score": 4.44
+        },
+        {
+          "model_variant": "gemini-2.5-pro-preview-06-05",
+          "source_model_label": "gemini-2.5-pro-preview-06-05",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1421.2,
+          "creative_writing_score": 16.16,
+          "avg_length": 6974.0,
+          "vocab_complexity": 33.75,
+          "slop_score": 28.73,
+          "repetition_score": 4.9
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-R1-0528",
+          "source_model_label": "deepseek-ai/DeepSeek-R1-0528",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1421.1,
+          "creative_writing_score": 15.88,
+          "avg_length": 7557.0,
+          "vocab_complexity": 38.25,
+          "slop_score": 40.6,
+          "repetition_score": 4.3
+        },
+        {
+          "model_variant": "NousResearch/Hermes-4-405B",
+          "source_model_label": "NousResearch/Hermes-4-405B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1420.8,
+          "creative_writing_score": 16.15,
+          "avg_length": 7943.0,
+          "vocab_complexity": 36.43,
+          "slop_score": 39.62,
+          "repetition_score": 4.96
+        },
+        {
+          "model_variant": "gpt-4.1",
+          "source_model_label": "gpt-4.1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1419.7,
+          "creative_writing_score": 15.8,
+          "avg_length": 5997.0,
+          "vocab_complexity": 29.33,
+          "slop_score": 24.35,
+          "repetition_score": 3.9
+        },
+        {
+          "model_variant": "optimus-alpha",
+          "source_model_label": "optimus-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1417.4,
+          "creative_writing_score": 15.88,
+          "avg_length": 5937.0,
+          "vocab_complexity": 31.02,
+          "slop_score": 25.36,
+          "repetition_score": 3.84
+        },
+        {
+          "model_variant": "zai-org/GLM-4.7",
+          "source_model_label": "zai-org/GLM-4.7",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1413.3,
+          "creative_writing_score": 15.97,
+          "avg_length": 7391.0,
+          "vocab_complexity": 29.15,
+          "slop_score": 26.42,
+          "repetition_score": 5.11
+        },
+        {
+          "model_variant": "mistralai/Mistral-Large-3-675B-Instruct-2512",
+          "source_model_label": "mistralai/Mistral-Large-3-675B-Instruct-2512",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1412.2,
+          "creative_writing_score": 15.49,
+          "avg_length": 6269.0,
+          "vocab_complexity": 23.67,
+          "slop_score": 28.17,
+          "repetition_score": 5.96
+        },
+        {
+          "model_variant": "claude-3-7-sonnet-20250219",
+          "source_model_label": "claude-3-7-sonnet-20250219",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1411.7,
+          "creative_writing_score": 15.47,
+          "avg_length": 6327.0,
+          "vocab_complexity": 39.58,
+          "slop_score": 23.66,
+          "repetition_score": 3.67
+        },
+        {
+          "model_variant": "zai-org/GLM-4.6",
+          "source_model_label": "zai-org/GLM-4.6",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1411.1,
+          "creative_writing_score": 16.1,
+          "avg_length": 6156.0,
+          "vocab_complexity": 32.5,
+          "slop_score": 29.45,
+          "repetition_score": 5.42
+        },
+        {
+          "model_variant": "gemini-2.5-pro-exp-03-25",
+          "source_model_label": "gemini-2.5-pro-exp-03-25",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1396.1,
+          "creative_writing_score": 15.96,
+          "avg_length": 7886.0,
+          "vocab_complexity": 41.0,
+          "slop_score": 35.06,
+          "repetition_score": 4.02
+        },
+        {
+          "model_variant": "mistral-small-creative",
+          "source_model_label": "mistral-small-creative",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1369.4,
+          "creative_writing_score": 15.43,
+          "avg_length": 6952.0,
+          "vocab_complexity": 23.61,
+          "slop_score": 29.61,
+          "repetition_score": 6.0
+        },
+        {
+          "model_variant": "google/gemma-4-31B-it",
+          "source_model_label": "google/gemma-4-31B-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1368.2,
+          "creative_writing_score": 16.01,
+          "avg_length": 5884.0,
+          "vocab_complexity": 37.97,
+          "slop_score": 29.69,
+          "repetition_score": 5.67
+        },
+        {
+          "model_variant": "qwen/qwen3-235b-a22b:thinking",
+          "source_model_label": "qwen/qwen3-235b-a22b:thinking",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1365.8,
+          "creative_writing_score": 15.67,
+          "avg_length": 5530.0,
+          "vocab_complexity": 30.07,
+          "slop_score": 29.03,
+          "repetition_score": 5.09
+        },
+        {
+          "model_variant": "minimax/minimax-m2.5",
+          "source_model_label": "minimax/minimax-m2.5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1361.0,
+          "creative_writing_score": 15.18,
+          "avg_length": 6616.0,
+          "vocab_complexity": 35.52,
+          "slop_score": 26.78,
+          "repetition_score": 3.85
+        },
+        {
+          "model_variant": "quasar-alpha",
+          "source_model_label": "quasar-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1351.0,
+          "creative_writing_score": 15.55,
+          "avg_length": 6671.0,
+          "vocab_complexity": 35.15,
+          "slop_score": 30.02,
+          "repetition_score": 3.77
+        },
+        {
+          "model_variant": "chatgpt-4o-latest-2025-01-29",
+          "source_model_label": "chatgpt-4o-latest-2025-01-29",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1346.4,
+          "creative_writing_score": 15.43,
+          "avg_length": 5622.0,
+          "vocab_complexity": 29.04,
+          "slop_score": 29.09,
+          "repetition_score": 4.79
+        },
+        {
+          "model_variant": "zai-org/GLM-4.5",
+          "source_model_label": "zai-org/GLM-4.5",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1343.3,
+          "creative_writing_score": 15.83,
+          "avg_length": 7214.0,
+          "vocab_complexity": 36.93,
+          "slop_score": 37.73,
+          "repetition_score": 4.84
+        },
+        {
+          "model_variant": "openrouter/sherlock-dash-alpha",
+          "source_model_label": "openrouter/sherlock-dash-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1332.7,
+          "creative_writing_score": 15.16,
+          "avg_length": 6751.0,
+          "vocab_complexity": 29.42,
+          "slop_score": 35.97,
+          "repetition_score": 4.91
+        },
+        {
+          "model_variant": "grok-4.1-fast",
+          "source_model_label": "grok-4.1-fast",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1327.4,
+          "creative_writing_score": 15.49,
+          "avg_length": 6483.0,
+          "vocab_complexity": 29.91,
+          "slop_score": 36.48,
+          "repetition_score": 4.56
+        },
+        {
+          "model_variant": "gpt-5-mini-2025-08-07",
+          "source_model_label": "gpt-5-mini-2025-08-07",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1313.0,
+          "creative_writing_score": 15.05,
+          "avg_length": 11067.0,
+          "vocab_complexity": 35.64,
+          "slop_score": 13.99,
+          "repetition_score": 2.58
+        },
+        {
+          "model_variant": "google/gemma-4-26B-A4B-it",
+          "source_model_label": "google/gemma-4-26B-A4B-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1304.6,
+          "creative_writing_score": 16.03,
+          "avg_length": 6824.0,
+          "vocab_complexity": 36.51,
+          "slop_score": 31.92,
+          "repetition_score": 6.36
+        },
+        {
+          "model_variant": "google/gemma-4-12B-it",
+          "source_model_label": "google/gemma-4-12B-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1288.9,
+          "creative_writing_score": 15.71,
+          "avg_length": 6900.0,
+          "vocab_complexity": 32.85,
+          "slop_score": 32.31,
+          "repetition_score": 6.52
+        },
+        {
+          "model_variant": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+          "source_model_label": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1280.3,
+          "creative_writing_score": 14.39,
+          "avg_length": 11382.0,
+          "vocab_complexity": 35.83,
+          "slop_score": 22.47,
+          "repetition_score": 3.52
+        },
+        {
+          "model_variant": "deepseek-ai/DeepSeek-V3.2-Speciale",
+          "source_model_label": "deepseek-ai/DeepSeek-V3.2-Speciale",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1276.3,
+          "creative_writing_score": 14.65,
+          "avg_length": 5767.0,
+          "vocab_complexity": 31.46,
+          "slop_score": 28.06,
+          "repetition_score": 4.29
+        },
+        {
+          "model_variant": "google/gemma-3-27b-it",
+          "source_model_label": "google/gemma-3-27b-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1265.7,
+          "creative_writing_score": 15.33,
+          "avg_length": 7049.0,
+          "vocab_complexity": 42.62,
+          "slop_score": 35.73,
+          "repetition_score": 6.0
+        },
+        {
+          "model_variant": "gpt-4.5-preview",
+          "source_model_label": "gpt-4.5-preview",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1258.0,
+          "creative_writing_score": 15.19,
+          "avg_length": 6451.0,
+          "vocab_complexity": 46.41,
+          "slop_score": 41.58,
+          "repetition_score": 4.46
+        },
+        {
+          "model_variant": "qwen/qwq-32b",
+          "source_model_label": "qwen/qwq-32b",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1257.2,
+          "creative_writing_score": 14.19,
+          "avg_length": 6126.0,
+          "vocab_complexity": 29.23,
+          "slop_score": 34.74,
+          "repetition_score": 4.67
+        },
+        {
+          "model_variant": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+          "source_model_label": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1255.4,
+          "creative_writing_score": 14.31,
+          "avg_length": 4696.0,
+          "vocab_complexity": 24.6,
+          "slop_score": 32.82,
+          "repetition_score": 6.97
+        },
+        {
+          "model_variant": "RekaAI/reka-flash-3",
+          "source_model_label": "RekaAI/reka-flash-3",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1227.8,
+          "creative_writing_score": 13.63,
+          "avg_length": 5225.0,
+          "vocab_complexity": 29.53,
+          "slop_score": 37.81,
+          "repetition_score": 5.19
+        },
+        {
+          "model_variant": "grok-3-beta",
+          "source_model_label": "grok-3-beta",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1185.8,
+          "creative_writing_score": 15.43,
+          "avg_length": 7022.0,
+          "vocab_complexity": 37.17,
+          "slop_score": 33.88,
+          "repetition_score": 4.26
+        },
+        {
+          "model_variant": "gpt-4.1-mini",
+          "source_model_label": "gpt-4.1-mini",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1147.0,
+          "creative_writing_score": 13.67,
+          "avg_length": 5606.0,
+          "vocab_complexity": 36.33,
+          "slop_score": 40.02,
+          "repetition_score": 5.68
+        },
+        {
+          "model_variant": "anthropic/claude-3.5-haiku-20241022",
+          "source_model_label": "anthropic/claude-3.5-haiku-20241022",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1145.7,
+          "creative_writing_score": 13.57,
+          "avg_length": 4016.0,
+          "vocab_complexity": 60.14,
+          "slop_score": 22.0,
+          "repetition_score": 7.79
+        },
+        {
+          "model_variant": "CohereForAI/c4ai-command-a-03-2025",
+          "source_model_label": "CohereForAI/c4ai-command-a-03-2025",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1145.1,
+          "creative_writing_score": 14.22,
+          "avg_length": 6691.0,
+          "vocab_complexity": 32.24,
+          "slop_score": 39.86,
+          "repetition_score": 6.63
+        },
+        {
+          "model_variant": "gemini-2.5-flash-preview",
+          "source_model_label": "gemini-2.5-flash-preview",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1136.9,
+          "creative_writing_score": 14.85,
+          "avg_length": 7042.0,
+          "vocab_complexity": 42.68,
+          "slop_score": 44.71,
+          "repetition_score": 6.38
+        },
+        {
+          "model_variant": "gemini-2.0-flash-001",
+          "source_model_label": "gemini-2.0-flash-001",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1127.5,
+          "creative_writing_score": 14.24,
+          "avg_length": 6208.0,
+          "vocab_complexity": 37.66,
+          "slop_score": 46.45,
+          "repetition_score": 7.65
+        },
+        {
+          "model_variant": "google/gemma-3-12b-it",
+          "source_model_label": "google/gemma-3-12b-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1125.5,
+          "creative_writing_score": 14.63,
+          "avg_length": 7150.0,
+          "vocab_complexity": 45.86,
+          "slop_score": 44.3,
+          "repetition_score": 5.87
+        },
+        {
+          "model_variant": "zai-org/GLM-4.7-Flash",
+          "source_model_label": "zai-org/GLM-4.7-Flash",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1124.7,
+          "creative_writing_score": 13.68,
+          "avg_length": 6474.0,
+          "vocab_complexity": 28.43,
+          "slop_score": 30.98,
+          "repetition_score": 6.24
+        },
+        {
+          "model_variant": "allura-org/Gemma-3-Glitter-12B",
+          "source_model_label": "allura-org/Gemma-3-Glitter-12B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1118.4,
+          "creative_writing_score": 14.34,
+          "avg_length": 7934.0,
+          "vocab_complexity": 41.37,
+          "slop_score": 43.91,
+          "repetition_score": 6.55
+        },
+        {
+          "model_variant": "sam-paech/Darkest-muse-v1",
+          "source_model_label": "sam-paech/Darkest-muse-v1",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1104.2,
+          "creative_writing_score": 12.74,
+          "avg_length": 8184.0,
+          "vocab_complexity": 39.5,
+          "slop_score": 42.09,
+          "repetition_score": 7.02
+        },
+        {
+          "model_variant": "THUDM/GLM-4-32B-0414",
+          "source_model_label": "THUDM/GLM-4-32B-0414",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1068.1,
+          "creative_writing_score": 12.08,
+          "avg_length": 9796.0,
+          "vocab_complexity": 39.29,
+          "slop_score": 44.13,
+          "repetition_score": 5.79
+        },
+        {
+          "model_variant": "google/gemma-3-4b-it",
+          "source_model_label": "google/gemma-3-4b-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1068.0,
+          "creative_writing_score": 13.91,
+          "avg_length": 6509.0,
+          "vocab_complexity": 51.77,
+          "slop_score": 48.78,
+          "repetition_score": 8.74
+        },
+        {
+          "model_variant": "ifable/gemma-2-Ifable-9B",
+          "source_model_label": "ifable/gemma-2-Ifable-9B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 1002.4,
+          "creative_writing_score": 13.33,
+          "avg_length": 5324.0,
+          "vocab_complexity": 66.98,
+          "slop_score": 43.29,
+          "repetition_score": 6.57
+        },
+        {
+          "model_variant": "mistralai/Pixtral-Large-Instruct-2411",
+          "source_model_label": "mistralai/Pixtral-Large-Instruct-2411",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 987.7,
+          "creative_writing_score": 11.58,
+          "avg_length": 6244.0,
+          "vocab_complexity": 31.19,
+          "slop_score": 47.09,
+          "repetition_score": 9.67
+        },
+        {
+          "model_variant": "mistralai/mistral-large-2411",
+          "source_model_label": "mistralai/mistral-large-2411",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 984.9,
+          "creative_writing_score": 11.78,
+          "avg_length": 5641.0,
+          "vocab_complexity": 31.55,
+          "slop_score": 48.78,
+          "repetition_score": 11.39
+        },
+        {
+          "model_variant": "openai/gpt-oss-120b",
+          "source_model_label": "openai/gpt-oss-120b",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 961.0,
+          "creative_writing_score": 10.74,
+          "avg_length": 10270.0,
+          "vocab_complexity": 41.24,
+          "slop_score": 31.35,
+          "repetition_score": 4.03
+        },
+        {
+          "model_variant": "gpt-4.1-nano",
+          "source_model_label": "gpt-4.1-nano",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 945.8,
+          "creative_writing_score": 11.03,
+          "avg_length": 6190.0,
+          "vocab_complexity": 41.28,
+          "slop_score": 44.92,
+          "repetition_score": 6.66
+        },
+        {
+          "model_variant": "ToastyPigeon/Gemma-3-Starshine-12B",
+          "source_model_label": "ToastyPigeon/Gemma-3-Starshine-12B",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 885.6,
+          "creative_writing_score": 9.63,
+          "avg_length": 7973.0,
+          "vocab_complexity": 29.74,
+          "slop_score": 46.09,
+          "repetition_score": 8.38
+        },
+        {
+          "model_variant": "mistralai/Mistral-Nemo-Instruct-2407",
+          "source_model_label": "mistralai/Mistral-Nemo-Instruct-2407",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 880.9,
+          "creative_writing_score": 9.51,
+          "avg_length": 7013.0,
+          "vocab_complexity": 30.32,
+          "slop_score": 56.72,
+          "repetition_score": 14.14
+        },
+        {
+          "model_variant": "gpt-4o-mini",
+          "source_model_label": "gpt-4o-mini",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 872.8,
+          "creative_writing_score": 11.67,
+          "avg_length": 5999.0,
+          "vocab_complexity": 41.7,
+          "slop_score": 44.02,
+          "repetition_score": 7.54
+        },
+        {
+          "model_variant": "meta-llama/llama-3.1-405b-instruct",
+          "source_model_label": "meta-llama/llama-3.1-405b-instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 870.1,
+          "creative_writing_score": 10.89,
+          "avg_length": 4531.0,
+          "vocab_complexity": 41.56,
+          "slop_score": 45.09,
+          "repetition_score": 11.91
+        },
+        {
+          "model_variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+          "source_model_label": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 860.1,
+          "creative_writing_score": 10.5,
+          "avg_length": 5298.0,
+          "vocab_complexity": 38.6,
+          "slop_score": 49.29,
+          "repetition_score": 10.99
+        },
+        {
+          "model_variant": "google/gemma-2-9b-it",
+          "source_model_label": "google/gemma-2-9b-it",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 841.4,
+          "creative_writing_score": 11.16,
+          "avg_length": 4120.0,
+          "vocab_complexity": 39.98,
+          "slop_score": 67.68,
+          "repetition_score": 13.42
+        },
+        {
+          "model_variant": "Nanbeige/Nanbeige4-3B-Thinking-2511",
+          "source_model_label": "Nanbeige/Nanbeige4-3B-Thinking-2511",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 841.2,
+          "creative_writing_score": 9.02,
+          "avg_length": 10418.0,
+          "vocab_complexity": 27.88,
+          "slop_score": 33.79,
+          "repetition_score": 3.9
+        },
+        {
+          "model_variant": "meta-llama/llama-3.1-70b-instruct",
+          "source_model_label": "meta-llama/llama-3.1-70b-instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 783.6,
+          "creative_writing_score": 10.18,
+          "avg_length": 4502.0,
+          "vocab_complexity": 39.85,
+          "slop_score": 47.79,
+          "repetition_score": 12.22
+        },
+        {
+          "model_variant": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+          "source_model_label": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 783.1,
+          "creative_writing_score": 9.12,
+          "avg_length": 6966.0,
+          "vocab_complexity": 37.5,
+          "slop_score": 47.64,
+          "repetition_score": 12.16
+        },
+        {
+          "model_variant": "openrouter/cypher-alpha",
+          "source_model_label": "openrouter/cypher-alpha",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 776.9,
+          "creative_writing_score": 9.19,
+          "avg_length": 5694.0,
+          "vocab_complexity": 41.23,
+          "slop_score": 46.51,
+          "repetition_score": 11.76
+        },
+        {
+          "model_variant": "mistralai/mistral-small-3.1-24b-instruct-2503",
+          "source_model_label": "mistralai/mistral-small-3.1-24b-instruct-2503",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 760.9,
+          "creative_writing_score": 8.46,
+          "avg_length": 7900.0,
+          "vocab_complexity": 28.8,
+          "slop_score": 62.21,
+          "repetition_score": 17.41
+        },
+        {
+          "model_variant": "openai/gpt-4-0314",
+          "source_model_label": "openai/gpt-4-0314",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 752.2,
+          "creative_writing_score": 9.9,
+          "avg_length": 5378.0,
+          "vocab_complexity": 41.81,
+          "slop_score": 41.57,
+          "repetition_score": 9.31
+        },
+        {
+          "model_variant": "liquid/lfm-7b",
+          "source_model_label": "liquid/lfm-7b",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 751.7,
+          "creative_writing_score": 9.14,
+          "avg_length": 6230.0,
+          "vocab_complexity": 49.84,
+          "slop_score": 57.57,
+          "repetition_score": 7.05
+        },
+        {
+          "model_variant": "anthropic/claude-3-haiku",
+          "source_model_label": "anthropic/claude-3-haiku",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 717.3,
+          "creative_writing_score": 9.91,
+          "avg_length": 5008.0,
+          "vocab_complexity": 41.11,
+          "slop_score": 44.89,
+          "repetition_score": 7.95
+        },
+        {
+          "model_variant": "meta-llama/llama-3.1-8b-instruct",
+          "source_model_label": "meta-llama/llama-3.1-8b-instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 713.0,
+          "creative_writing_score": 8.89,
+          "avg_length": 4709.0,
+          "vocab_complexity": 37.45,
+          "slop_score": 53.28,
+          "repetition_score": 12.59
+        },
+        {
+          "model_variant": "mistralai/Mistral-Small-24B-Instruct-2501",
+          "source_model_label": "mistralai/Mistral-Small-24B-Instruct-2501",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 706.5,
+          "creative_writing_score": 8.17,
+          "avg_length": 7660.0,
+          "vocab_complexity": 32.53,
+          "slop_score": 62.86,
+          "repetition_score": 20.87
+        },
+        {
+          "model_variant": "gpt-5-nano-2025-08-07",
+          "source_model_label": "gpt-5-nano-2025-08-07",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 704.9,
+          "creative_writing_score": 9.71,
+          "avg_length": 13229.0,
+          "vocab_complexity": 53.89,
+          "slop_score": 14.87,
+          "repetition_score": 2.98
+        },
+        {
+          "model_variant": "openai/gpt-oss-20b",
+          "source_model_label": "openai/gpt-oss-20b",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 665.6,
+          "creative_writing_score": 7.87,
+          "avg_length": 8675.0,
+          "vocab_complexity": 34.44,
+          "slop_score": 29.88,
+          "repetition_score": 5.82
+        },
+        {
+          "model_variant": "meta-llama/llama-3.2-3b-instruct",
+          "source_model_label": "meta-llama/llama-3.2-3b-instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 595.3,
+          "creative_writing_score": 8.18,
+          "avg_length": 4759.0,
+          "vocab_complexity": 37.38,
+          "slop_score": 57.45,
+          "repetition_score": 14.83
+        },
+        {
+          "model_variant": "openai/gpt-3.5-turbo-0613",
+          "source_model_label": "openai/gpt-3.5-turbo-0613",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 450.9,
+          "creative_writing_score": 8.22,
+          "avg_length": 3400.0,
+          "vocab_complexity": 42.88,
+          "slop_score": 53.15,
+          "repetition_score": 13.9
+        },
+        {
+          "model_variant": "meta-llama/llama-3.2-1b-instruct",
+          "source_model_label": "meta-llama/llama-3.2-1b-instruct",
+          "new_marker": false,
+          "nsfw_marker": false,
+          "evaluation_date": null,
+          "elo_score": 200.0,
+          "creative_writing_score": 6.49,
+          "avg_length": 5290.0,
+          "vocab_complexity": 38.32,
+          "slop_score": 61.12,
+          "repetition_score": 19.07
+        }
+      ]
+    },
+    "terminal-bench-4-expanded": {
+      "source_url": "https://www.vals-ai.com/benchmarks/terminal-bench-4",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "source_snapshot_date": "2026-10-01",
+      "settings": {
+        "benchmark_version": "4.0",
+        "task_count": 66,
+        "trials": 3,
+        "score": "avg@3 (mean pass@1)",
+        "harness": "mini-swe-agent",
+        "tools": [
+          "bash"
+        ],
+        "step_limit": null,
+        "cost_limit": null
+      },
+      "notes": [
+        "Table enumerates 43 configurations, while a nearby filter label says 19 and stale prose says 30. Use actual rows, not those counts.",
+        "Exact per-model effort/fallback remains to be joined from source row configuration. Existing six detailed records must be preserved.",
+        "Cost is per task, not whole-evaluation cost; reported duration is not inference-only latency.",
+        "Opus 5.5 fallback-failure alternative score 58.08; Sonnet 5.5 62.63; Fable 5.1 50.00; Fable 5 33.84; Opus 5 53.03. Show fallback prominently."
+      ],
+      "rows": [
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 1,
+          "model_variant": "Claude Opus 5.5",
+          "score_percent": 65.15,
+          "reported_cost_per_task_usd": 13.2,
+          "reported_duration": "1h04m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 2,
+          "model_variant": "Claude Sonnet 5.5",
+          "score_percent": 64.14,
+          "reported_cost_per_task_usd": 16.51,
+          "reported_duration": "1h22m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 3,
+          "model_variant": "GPT-6 Astra",
+          "score_percent": 59.6,
+          "reported_cost_per_task_usd": 9.58,
+          "reported_duration": "35m42s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 4,
+          "model_variant": "Claude Fable 5.1",
+          "score_percent": 58.08,
+          "reported_cost_per_task_usd": 17.18,
+          "reported_duration": "1h00m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 5,
+          "model_variant": "Gemini 4 Argon",
+          "score_percent": 57.58,
+          "reported_cost_per_task_usd": 17.64,
+          "reported_duration": "53m35s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 6,
+          "model_variant": "GPT-6.1 Sol",
+          "score_percent": 55.05,
+          "reported_cost_per_task_usd": 1.72,
+          "reported_duration": "45m12s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 7,
+          "model_variant": "Claude Opus 5",
+          "score_percent": 53.53,
+          "reported_cost_per_task_usd": 18.6,
+          "reported_duration": "1h07m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 8,
+          "model_variant": "GPT-6 Sol",
+          "score_percent": 44.44,
+          "reported_cost_per_task_usd": 5.79,
+          "reported_duration": "34m56s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 9,
+          "model_variant": "Claude Fable 5",
+          "score_percent": 41.41,
+          "reported_cost_per_task_usd": 30.34,
+          "reported_duration": "1h08m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 10,
+          "model_variant": "GLM 5.3",
+          "score_percent": 38.89,
+          "reported_cost_per_task_usd": 9.37,
+          "reported_duration": "1h23m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 11,
+          "model_variant": "GPT-5.6 Sol",
+          "score_percent": 37.88,
+          "reported_cost_per_task_usd": 7.98,
+          "reported_duration": "33m46s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 12,
+          "model_variant": "Qwen 3.8 Max",
+          "score_percent": 34.34,
+          "reported_cost_per_task_usd": 10.63,
+          "reported_duration": "2h28m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 13,
+          "model_variant": "Step 5 Preview",
+          "score_percent": 31.82,
+          "reported_cost_per_task_usd": 3.11,
+          "reported_duration": "1h58m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 14,
+          "model_variant": "MiMo V2.6 Pro",
+          "score_percent": 31.31,
+          "reported_cost_per_task_usd": 0.5,
+          "reported_duration": "2h42m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 15,
+          "model_variant": "Grok 4.7",
+          "score_percent": 28.79,
+          "reported_cost_per_task_usd": 18.09,
+          "reported_duration": "50m21s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 16,
+          "model_variant": "Muse Spark 1.3 Max",
+          "score_percent": 24.75,
+          "reported_cost_per_task_usd": 6.65,
+          "reported_duration": "52m56s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 17,
+          "model_variant": "MiMo V2.6 Flash",
+          "score_percent": 24.24,
+          "reported_cost_per_task_usd": 0.22,
+          "reported_duration": "2h25m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 18,
+          "model_variant": "Claude Opus 4.8",
+          "score_percent": 23.23,
+          "reported_cost_per_task_usd": 17.14,
+          "reported_duration": "1h11m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 19,
+          "model_variant": "GPT-5.6 Terra",
+          "score_percent": 22.73,
+          "reported_cost_per_task_usd": 5.6,
+          "reported_duration": "31m29s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 20,
+          "model_variant": "DeepSeek V4.1 Flash",
+          "score_percent": 19.7,
+          "reported_cost_per_task_usd": 0.5,
+          "reported_duration": "48m22s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 21,
+          "model_variant": "Ember-1",
+          "score_percent": 19.7,
+          "reported_cost_per_task_usd": 18.86,
+          "reported_duration": "2h02m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 22,
+          "model_variant": "Gemini 3.8 Flash",
+          "score_percent": 19.19,
+          "reported_cost_per_task_usd": 8.77,
+          "reported_duration": "1h48m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 23,
+          "model_variant": "DeepSeek V4 Flash 0731",
+          "score_percent": 18.69,
+          "reported_cost_per_task_usd": 0.77,
+          "reported_duration": "1h46m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 24,
+          "model_variant": "Grok 4.6",
+          "score_percent": 17.17,
+          "reported_cost_per_task_usd": 5.07,
+          "reported_duration": "29m27s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 25,
+          "model_variant": "Kimi K3",
+          "score_percent": 17.17,
+          "reported_cost_per_task_usd": 12.02,
+          "reported_duration": "3h09m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 26,
+          "model_variant": "DeepSeek V4 Pro 0813",
+          "score_percent": 14.14,
+          "reported_cost_per_task_usd": 3.31,
+          "reported_duration": "1h32m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 27,
+          "model_variant": "GPT-6 Luna",
+          "score_percent": 13.64,
+          "reported_cost_per_task_usd": 0.35,
+          "reported_duration": "32m46s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 28,
+          "model_variant": "Gemini 3.7 Flash",
+          "score_percent": 12.12,
+          "reported_cost_per_task_usd": 9.02,
+          "reported_duration": "1h24m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 29,
+          "model_variant": "GPT-5.6 Luna",
+          "score_percent": 11.62,
+          "reported_cost_per_task_usd": 0.73,
+          "reported_duration": "35m55s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 30,
+          "model_variant": "DeepSeek V4",
+          "score_percent": 11.11,
+          "reported_cost_per_task_usd": 3.38,
+          "reported_duration": "1h28m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 31,
+          "model_variant": "Muse Spark 1.3",
+          "score_percent": 10.61,
+          "reported_cost_per_task_usd": 7.04,
+          "reported_duration": "1h59m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 32,
+          "model_variant": "Claude Sonnet 5",
+          "score_percent": 9.6,
+          "reported_cost_per_task_usd": 26.33,
+          "reported_duration": "1h45m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 33,
+          "model_variant": "Grok 4.5",
+          "score_percent": 8.59,
+          "reported_cost_per_task_usd": 5.79,
+          "reported_duration": "33m51s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 34,
+          "model_variant": "Hy4 Preview",
+          "score_percent": 8.08,
+          "reported_cost_per_task_usd": 2.1,
+          "reported_duration": "2h10m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 35,
+          "model_variant": "Gemini 3.5 Flash",
+          "score_percent": 6.06,
+          "reported_cost_per_task_usd": 5.98,
+          "reported_duration": "1h11m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 36,
+          "model_variant": "Muse Spark 1.2",
+          "score_percent": 6.06,
+          "reported_cost_per_task_usd": 4.14,
+          "reported_duration": "1h18m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 37,
+          "model_variant": "Gemini 3.1 Pro Preview (02/26)",
+          "score_percent": 2.52,
+          "reported_cost_per_task_usd": 4.11,
+          "reported_duration": "18m44s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 38,
+          "model_variant": "GPT 5.4 Mini",
+          "score_percent": 2.52,
+          "reported_cost_per_task_usd": 1.43,
+          "reported_duration": "29m41s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 39,
+          "model_variant": "MiniMax-M3",
+          "score_percent": 1.01,
+          "reported_cost_per_task_usd": 7.23,
+          "reported_duration": "1h16m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 40,
+          "model_variant": "Inkling",
+          "score_percent": 0.51,
+          "reported_cost_per_task_usd": 2.51,
+          "reported_duration": "22m52s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 41,
+          "model_variant": "MiMo V2.5 Pro",
+          "score_percent": 0.51,
+          "reported_cost_per_task_usd": 0.23,
+          "reported_duration": "2h07m"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 42,
+          "model_variant": "Inkling Small",
+          "score_percent": 0,
+          "reported_cost_per_task_usd": 0.32,
+          "reported_duration": "11m45s"
+        },
+        {
+          "harness": "Mini-SWE-agent",
+          "evaluation_date": null,
+          "effort": null,
+          "rank": 43,
+          "model_variant": "Mercury 2.5",
+          "score_percent": 0,
+          "reported_cost_per_task_usd": 0.37,
+          "reported_duration": "14m55s"
+        }
+      ]
+    },
+    "terminal-bench-science-native-expanded": {
+      "source_url": "https://snorkel.ai/leaderboard/terminal-bench-science/",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "settings": {
+        "benchmark_version": "0.1",
+        "task_count": 70,
+        "split": "Overall"
+      },
+      "notes": [
+        "All 17 overall rows; per-domain cohorts exist separately.",
+        "Release Date is model release date, never evaluation date.",
+        "Cost column is whole-evaluation reported cost; do not compare directly with Vals per-task cost.",
+        "Retain different agent scaffolds in every label."
+      ],
+      "rows": [
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 1,
+          "model_variant": "GPT-6 Astra",
+          "agent": "Codex",
+          "effort": "max",
+          "value": 68.1,
+          "reported_plus_minus": 3.2,
+          "model_release_date": "2026-09-03",
+          "tokens_reported": "2.3B",
+          "cost_reported": "$4,997"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 2,
+          "model_variant": "Opus 5.5",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 63.3,
+          "reported_plus_minus": 3.3,
+          "model_release_date": "2026-09-22",
+          "tokens_reported": "8.7B",
+          "cost_reported": "$4,874"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 3,
+          "model_variant": "Fable 5.1",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 40,
+          "reported_plus_minus": 3.4,
+          "model_release_date": "2026-09-01",
+          "tokens_reported": "3.8B",
+          "cost_reported": "$6.25K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 4,
+          "model_variant": "Opus 5",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 30,
+          "reported_plus_minus": 3.2,
+          "model_release_date": "2026-07-24",
+          "tokens_reported": "7.3B",
+          "cost_reported": "$6.99K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 5,
+          "model_variant": "GPT-5.6 Sol",
+          "agent": "Codex",
+          "effort": "max",
+          "value": 22.4,
+          "reported_plus_minus": 2.9,
+          "model_release_date": "2026-07-09",
+          "tokens_reported": "8.4B",
+          "cost_reported": "$4.22K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 6,
+          "model_variant": "Fable 5",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 21.4,
+          "reported_plus_minus": 2.8,
+          "model_release_date": "2026-06-09",
+          "tokens_reported": "6.4B",
+          "cost_reported": "$14.18K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 7,
+          "model_variant": "DeepSeek V4.1 Flash",
+          "agent": "Codex",
+          "effort": "max",
+          "value": 15.7,
+          "reported_plus_minus": 2.5,
+          "model_release_date": "2026-09-10",
+          "tokens_reported": "14.9B",
+          "cost_reported": "$385.93"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 8,
+          "model_variant": "Grok 4.7",
+          "agent": "Grok Build",
+          "effort": "xhigh",
+          "value": 14.3,
+          "reported_plus_minus": 2.4,
+          "model_release_date": "2026-09-21",
+          "tokens_reported": "4.2B",
+          "cost_reported": "$3,071"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 9,
+          "model_variant": "Gemini 3.8 Flash",
+          "agent": "mini-SWE-agent",
+          "effort": "high",
+          "value": 12.4,
+          "reported_plus_minus": 2.3,
+          "model_release_date": "2026-09-02",
+          "tokens_reported": "10.5B",
+          "cost_reported": "$1.12K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 10,
+          "model_variant": "Opus 4.8",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 10.5,
+          "reported_plus_minus": 2.1,
+          "model_release_date": "2026-05-28",
+          "tokens_reported": "6.8B",
+          "cost_reported": "$5.84K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 11,
+          "model_variant": "GPT-5.6 Terra",
+          "agent": "Codex",
+          "effort": "max",
+          "value": 8.6,
+          "reported_plus_minus": 1.9,
+          "model_release_date": "2026-07-09",
+          "tokens_reported": "7.6B",
+          "cost_reported": "$1.98K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 12,
+          "model_variant": "GLM 5.3",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 8.1,
+          "reported_plus_minus": 1.9,
+          "model_release_date": "2026-08-14",
+          "tokens_reported": "8.5B",
+          "cost_reported": "$2.73K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 13,
+          "model_variant": "Kimi K3",
+          "agent": "Claude Code",
+          "effort": "max",
+          "value": 7.1,
+          "reported_plus_minus": 1.8,
+          "model_release_date": "2026-07-16",
+          "tokens_reported": "3.2B",
+          "cost_reported": "$1.52K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 14,
+          "model_variant": "Grok 4.6",
+          "agent": "Grok Build",
+          "effort": "xhigh",
+          "value": 7.1,
+          "reported_plus_minus": 1.8,
+          "model_release_date": "2026-08-12",
+          "tokens_reported": "3.7B",
+          "cost_reported": "$3.34K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 15,
+          "model_variant": "Gemini 3.7 Flash",
+          "agent": "mini-SWE-agent",
+          "effort": "high",
+          "value": 5.7,
+          "reported_plus_minus": 1.6,
+          "model_release_date": "2026-08-13",
+          "tokens_reported": "12.0B",
+          "cost_reported": "$1.30K"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 16,
+          "model_variant": "DeepSeek V4 Pro",
+          "agent": "Codex",
+          "effort": "max",
+          "value": 3.8,
+          "reported_plus_minus": 1.3,
+          "model_release_date": "2026-08-13",
+          "tokens_reported": "11.2B",
+          "cost_reported": "$1,120.15"
+        },
+        {
+          "uncertainty_type": null,
+          "evaluation_date": null,
+          "rank": 17,
+          "model_variant": "GPT-5.6 Luna",
+          "agent": "Codex",
+          "effort": "max",
+          "value": 3.3,
+          "reported_plus_minus": 1.2,
+          "model_release_date": "2026-07-09",
+          "tokens_reported": "14.2B",
+          "cost_reported": "$383.20"
+        }
+      ]
+    },
+    "webcraftbench-v3": {
+      "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "publication_revision_date": "2026-09-20",
+      "settings": {
+        "tasks_per_model": 369,
+        "applications": 6273,
+        "acceptance_criteria": 5088,
+        "generation": "one application per requirement",
+        "other_generation_parameters": "provider defaults",
+        "main_explorer_and_judge": "Claude-Opus-4.8",
+        "robustness_judge": "Gemini-3.7-Flash",
+        "exploration_budget_steps": 100,
+        "final_judge_repeats": 5,
+        "aggregation": "trimmed mean excluding high/low; overall uses within-17-model z scores"
+      },
+      "notes": [
+        "Complete exact harness and effort table is published; missing harness software versions do not justify an empty card. Mark them unknown.",
+        "Scores are relative within this fixed 17-system pool, not percentages.",
+        "Do not rename old source systems to current models or claim this paper tests Astra or GPT-6.1 Sol.",
+        "No public dataset/code release; author-reported fixed study.",
+        "85.3% human-preference agreement is benchmark validation on 197 pairs, not model task success."
+      ],
+      "rows": [
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 1,
+          "model_variant": "Claude-Opus-5",
+          "harness": "Claude Code",
+          "effort": "xhigh",
+          "metrics_zscore": {
+            "aesthetics": 1.428,
+            "usability": 1.757,
+            "functional_alignment": 1.093,
+            "content_alignment": 0.78,
+            "visual_alignment": 0.509,
+            "requirement_alignment": 0.794,
+            "total": 1.326
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 2,
+          "model_variant": "GPT-5.6-Sol",
+          "harness": "Codex",
+          "effort": "xhigh",
+          "metrics_zscore": {
+            "aesthetics": 2.239,
+            "usability": 0.854,
+            "functional_alignment": 0.612,
+            "content_alignment": 0.092,
+            "visual_alignment": -0.294,
+            "requirement_alignment": 0.137,
+            "total": 1.077
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 3,
+          "model_variant": "Qwen3.8-Max",
+          "harness": "Claude Code",
+          "effort": "enabled",
+          "metrics_zscore": {
+            "aesthetics": 0.792,
+            "usability": 1.088,
+            "functional_alignment": 1.008,
+            "content_alignment": 1.049,
+            "visual_alignment": 1.035,
+            "requirement_alignment": 1.031,
+            "total": 0.97
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 4,
+          "model_variant": "Kimi-K3",
+          "harness": "Claude Code",
+          "effort": "max",
+          "metrics_zscore": {
+            "aesthetics": 0.591,
+            "usability": 1.027,
+            "functional_alignment": 1.139,
+            "content_alignment": 1.252,
+            "visual_alignment": 1.46,
+            "requirement_alignment": 1.283,
+            "total": 0.967
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 5,
+          "model_variant": "Hy4 preview",
+          "harness": "Claude Code",
+          "effort": "high",
+          "metrics_zscore": {
+            "aesthetics": 0.505,
+            "usability": 1.099,
+            "functional_alignment": 0.937,
+            "content_alignment": 1.313,
+            "visual_alignment": 1.134,
+            "requirement_alignment": 1.128,
+            "total": 0.911
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 6,
+          "model_variant": "Claude-Opus-4.8",
+          "harness": "Claude Code",
+          "effort": "xhigh",
+          "metrics_zscore": {
+            "aesthetics": 0.158,
+            "usability": 0.848,
+            "functional_alignment": 1.405,
+            "content_alignment": 1.107,
+            "visual_alignment": 1.265,
+            "requirement_alignment": 1.259,
+            "total": 0.755
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 7,
+          "model_variant": "Grok-4.5",
+          "harness": "Claude Code",
+          "effort": "high",
+          "metrics_zscore": {
+            "aesthetics": 0.527,
+            "usability": 0.902,
+            "functional_alignment": 0.923,
+            "content_alignment": 0.648,
+            "visual_alignment": 0.89,
+            "requirement_alignment": 0.82,
+            "total": 0.75
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 8,
+          "model_variant": "GPT-5.5",
+          "harness": "Codex",
+          "effort": "xhigh",
+          "metrics_zscore": {
+            "aesthetics": 0.729,
+            "usability": 0.225,
+            "functional_alignment": 0.318,
+            "content_alignment": 0.518,
+            "visual_alignment": 0.513,
+            "requirement_alignment": 0.45,
+            "total": 0.468
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 9,
+          "model_variant": "Claude-Opus-4.7",
+          "harness": "Claude Code",
+          "effort": "xhigh",
+          "metrics_zscore": {
+            "aesthetics": -0.157,
+            "usability": -0.442,
+            "functional_alignment": -0.251,
+            "content_alignment": -0.163,
+            "visual_alignment": -0.149,
+            "requirement_alignment": -0.188,
+            "total": -0.262
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 10,
+          "model_variant": "GLM-5.2",
+          "harness": "Claude Code",
+          "effort": "max",
+          "metrics_zscore": {
+            "aesthetics": -0.258,
+            "usability": -0.552,
+            "functional_alignment": -0.443,
+            "content_alignment": 0.122,
+            "visual_alignment": -0.081,
+            "requirement_alignment": -0.134,
+            "total": -0.315
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 11,
+          "model_variant": "DeepSeek-V4-Flash",
+          "harness": "Claude Code",
+          "effort": "max",
+          "metrics_zscore": {
+            "aesthetics": -0.312,
+            "usability": -0.322,
+            "functional_alignment": -0.479,
+            "content_alignment": -0.374,
+            "visual_alignment": -0.369,
+            "requirement_alignment": -0.407,
+            "total": -0.347
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 12,
+          "model_variant": "Hy3",
+          "harness": "Claude Code",
+          "effort": "high",
+          "metrics_zscore": {
+            "aesthetics": -0.665,
+            "usability": -0.519,
+            "functional_alignment": -0.673,
+            "content_alignment": -0.725,
+            "visual_alignment": -0.379,
+            "requirement_alignment": -0.592,
+            "total": -0.592
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 13,
+          "model_variant": "Qwen3.7-Max",
+          "harness": "Claude Code",
+          "effort": "enabled",
+          "metrics_zscore": {
+            "aesthetics": -1.014,
+            "usability": -0.976,
+            "functional_alignment": -0.705,
+            "content_alignment": -1.052,
+            "visual_alignment": -0.435,
+            "requirement_alignment": -0.731,
+            "total": -0.907
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 14,
+          "model_variant": "GLM-5.1",
+          "harness": "Claude Code",
+          "effort": "enabled",
+          "metrics_zscore": {
+            "aesthetics": -1.145,
+            "usability": -1.022,
+            "functional_alignment": -0.597,
+            "content_alignment": -0.655,
+            "visual_alignment": -0.733,
+            "requirement_alignment": -0.662,
+            "total": -0.943
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 15,
+          "model_variant": "DeepSeek-V4-Pro-Prev",
+          "harness": "Claude Code",
+          "effort": "max",
+          "metrics_zscore": {
+            "aesthetics": -1.453,
+            "usability": -1.348,
+            "functional_alignment": -0.786,
+            "content_alignment": -0.576,
+            "visual_alignment": -0.391,
+            "requirement_alignment": -0.584,
+            "total": -1.128
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 16,
+          "model_variant": "Kimi-K2.7-Code",
+          "harness": "Claude Code",
+          "effort": "enabled",
+          "metrics_zscore": {
+            "aesthetics": -1.642,
+            "usability": -1.176,
+            "functional_alignment": -1.129,
+            "content_alignment": -0.685,
+            "visual_alignment": -1.529,
+            "requirement_alignment": -1.114,
+            "total": -1.311
+          }
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "rank": 17,
+          "model_variant": "MiniMax-M3",
+          "harness": "Claude Code",
+          "effort": "adaptive",
+          "metrics_zscore": {
+            "aesthetics": -0.323,
+            "usability": -1.443,
+            "functional_alignment": -2.371,
+            "content_alignment": -2.652,
+            "visual_alignment": -2.447,
+            "requirement_alignment": -2.49,
+            "total": -1.419
+          }
+        }
+      ]
+    },
+    "bench2drive": {
+      "source_url": "https://github.com/Thinklab-SJTU/Bench2Drive/blob/0.0.4/docs/v004_update.md",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "version": "0.0.4",
+      "settings": {
+        "routes": 220,
+        "scenarios": 44,
+        "routes_per_scenario": 5
+      },
+      "notes": [
+        "Official repository comparisons, not independent safety audits.",
+        "Driving Score, Success Rate, Efficiency and ability mean have distinct units; never average them.",
+        "Row evaluation dates unavailable; maintained repo is not evidence of newly rerun systems."
+      ],
+      "rows": [
+        {
+          "evaluation_date": null,
+          "system": "TCP",
+          "driving_score": 51.44,
+          "success_rate_percent": 26.36,
+          "efficiency": 75.67,
+          "comfort": 30.16,
+          "overtaking": 14.49,
+          "merging": 14.06,
+          "emergency_brake": 59.64,
+          "give_way": 33.33,
+          "traffic_signs": 63.95,
+          "ability_mean": 37.1
+        },
+        {
+          "evaluation_date": null,
+          "system": "ThinkTwice",
+          "driving_score": 52.84,
+          "success_rate_percent": 27.73,
+          "efficiency": 90.73,
+          "comfort": 19.76,
+          "overtaking": 20.29,
+          "merging": 20.31,
+          "emergency_brake": 59.64,
+          "give_way": 33.33,
+          "traffic_signs": 66.86,
+          "ability_mean": 40.09
+        },
+        {
+          "evaluation_date": null,
+          "system": "DriveAdapter",
+          "driving_score": 54.96,
+          "success_rate_percent": 30.45,
+          "efficiency": 91.82,
+          "comfort": 20.63,
+          "overtaking": 26.09,
+          "merging": 21.88,
+          "emergency_brake": 64.9,
+          "give_way": 33.33,
+          "traffic_signs": 69.18,
+          "ability_mean": 43.08
+        },
+        {
+          "evaluation_date": null,
+          "system": "ADMLP",
+          "driving_score": 35.39,
+          "success_rate_percent": 0,
+          "efficiency": 64.92,
+          "comfort": 20.95,
+          "overtaking": 0,
+          "merging": 0,
+          "emergency_brake": 0,
+          "give_way": 0,
+          "traffic_signs": 45.35,
+          "ability_mean": 9.07
+        },
+        {
+          "evaluation_date": null,
+          "system": "UniAD",
+          "driving_score": 38.69,
+          "success_rate_percent": 19.09,
+          "efficiency": 120.16,
+          "comfort": 64.09,
+          "overtaking": 11.59,
+          "merging": 10.94,
+          "emergency_brake": 40.35,
+          "give_way": 33.33,
+          "traffic_signs": 8.14,
+          "ability_mean": 20.87
+        },
+        {
+          "evaluation_date": null,
+          "system": "VAD",
+          "driving_score": 38.65,
+          "success_rate_percent": 17.27,
+          "efficiency": 163.74,
+          "comfort": 67.34,
+          "overtaking": 13.04,
+          "merging": 17.19,
+          "emergency_brake": 29.82,
+          "give_way": 16.67,
+          "traffic_signs": 19.77,
+          "ability_mean": 19.3
+        },
+        {
+          "evaluation_date": null,
+          "system": "DriveTrans",
+          "driving_score": 60.2,
+          "success_rate_percent": 35.91,
+          "efficiency": 168.87,
+          "comfort": 17.22,
+          "overtaking": 30.43,
+          "merging": 39.06,
+          "emergency_brake": 49.12,
+          "give_way": 0,
+          "traffic_signs": 61.63,
+          "ability_mean": 36.05
+        },
+        {
+          "evaluation_date": null,
+          "system": "Drive-pi0",
+          "driving_score": 69.71,
+          "success_rate_percent": 45.91,
+          "efficiency": 178.07,
+          "comfort": 10.8,
+          "overtaking": 24.64,
+          "merging": 39.06,
+          "emergency_brake": 73.68,
+          "give_way": 33.33,
+          "traffic_signs": 66.86,
+          "ability_mean": 47.52
+        },
+        {
+          "evaluation_date": null,
+          "system": "Simlingo",
+          "driving_score": 86.55,
+          "success_rate_percent": 70.45,
+          "efficiency": 251.72,
+          "comfort": 35.47,
+          "overtaking": 63.77,
+          "merging": 60.94,
+          "emergency_brake": 91.23,
+          "give_way": 50,
+          "traffic_signs": 90.7,
+          "ability_mean": 71.34
+        },
+        {
+          "evaluation_date": null,
+          "system": "LEAD",
+          "driving_score": 95.59,
+          "success_rate_percent": 87.28,
+          "efficiency": 201.55,
+          "comfort": 20.56,
+          "overtaking": 89.86,
+          "merging": 73.44,
+          "emergency_brake": 98.25,
+          "give_way": 50,
+          "traffic_signs": 97.67,
+          "ability_mean": 81.84
+        }
+      ]
+    },
+    "medhelm-v5": {
+      "source_url": "https://medhelm.org/",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "source_snapshot_date": "2026-05-14",
+      "version": "5.0.0",
+      "coverage": "Homepage exposes 10 of 11 models; retrieve full leaderboard for complete import",
+      "notes": [
+        "Latest published cohort found is May 2026, even though site is live.",
+        "Win rate is relative to release-specific comparison pool, not clinical success rate.",
+        "Homepage reports 31 datasets; paper uses 37 evaluations. Preserve release and concept differences."
+      ],
+      "rows": [
+        {
+          "evaluation_date": null,
+          "model_variant": "Gemini 3.1 Pro (Preview)",
+          "mean_win_rate": 0.652
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Gemini-3.5-flash",
+          "mean_win_rate": 0.642
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Muse Spark (2026-04-08)",
+          "mean_win_rate": 0.621
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "GPT-5.4 mini",
+          "mean_win_rate": 0.552
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "GPT-5.4 (2026-03-05)",
+          "mean_win_rate": 0.538
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Gemini 2.5 Pro (05-06 preview)",
+          "mean_win_rate": 0.529
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "DeepSeek R1",
+          "mean_win_rate": 0.485
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Claude 4.6 Opus",
+          "mean_win_rate": 0.456
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Claude 3.7 Sonnet (20250219)",
+          "mean_win_rate": 0.45
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Gemini 2.0 Flash",
+          "mean_win_rate": 0.342
+        }
+      ]
+    },
+    "mast-noharm-v2-preview": {
+      "source_url": "https://www.arise-ai.org/mast/technical",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "coverage": "16 visible ranked entries of 19 NOHARM-v2 models; full technical table advertises 47 systems",
+      "status": "preview",
+      "metric": "First Do NOHARM v2 weighted F1, percent scale",
+      "notes": [
+        "Retrieve full component rows and exact endpoint settings before claiming complete coverage.",
+        "Do not label General/Clinical composite as agentic score: MedAgentBench v2 and PhysicianBench are excluded from composites.",
+        "Blank cells are unavailable, not zero.",
+        "Preview scores may change."
+      ],
+      "rows": [
+        {
+          "evaluation_date": null,
+          "model_variant": "LiSA 2.5 RAG",
+          "value": 86.2
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Doximity Ask 6.1 RAG",
+          "value": 84.5
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "OpenEvidence RAG",
+          "value": 80
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Glass 5.6 Max RAG",
+          "value": 79.7
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Muse Spark 1.1",
+          "value": 79.7
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Claude Opus 5",
+          "value": 74.6
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Kimi K3 OSS",
+          "value": 74
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "GPT-5.6 Sol",
+          "value": 70.1
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "GPT-5.5",
+          "value": 70
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Claude Fable 5",
+          "value": 65
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Gemini 3.1 Pro",
+          "value": 62.6
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Gemini 2.5 Pro",
+          "value": 61.9
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Qwen3.5 397B A17B OSS",
+          "value": 61.1
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Kimi K2.6 OSS",
+          "value": 59.1
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "GLM 5.1 OSS",
+          "value": 57.9
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "DeepSeek R1 OSS",
+          "value": 55.8
+        }
+      ]
+    },
+    "stationerybench": {
+      "source_url": "https://openai.robocurve.org/stationerybench/",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "publication_date": "2026-09-10",
+      "settings": {
+        "total_trials": 200,
+        "trials_per_system": 100,
+        "physical_platform": "same YAM arms",
+        "grading": "human, four task-specific milestones worth 25 points each"
+      },
+      "pooled": [
+        {
+          "system": "GPT-6 Astra + Inspect Robots",
+          "complete": 7,
+          "trials": 100,
+          "reported_mean_progress": 46
+        },
+        {
+          "system": "MolmoAct2",
+          "complete": 0,
+          "trials": 100,
+          "reported_mean_progress": 12
+        }
+      ],
+      "notes": [
+        "Fixed system-level study; different interfaces, inference rates and control horizons matter.",
+        "0/100 observed completions does not establish true success probability zero.",
+        "Report protocol differs from released package; do not blend their task variants."
+      ],
+      "rows": [
+        {
+          "trials": 20,
+          "system": "GPT-6 Astra + Inspect Robots",
+          "task": "marker",
+          "complete": 5,
+          "success_rate_percent": 25,
+          "mean_progress_0_100": 62
+        },
+        {
+          "trials": 20,
+          "system": "MolmoAct2",
+          "task": "marker",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 25
+        },
+        {
+          "trials": 20,
+          "system": "GPT-6 Astra + Inspect Robots",
+          "task": "paper_clips",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 51
+        },
+        {
+          "trials": 20,
+          "system": "MolmoAct2",
+          "task": "paper_clips",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 18
+        },
+        {
+          "trials": 20,
+          "system": "GPT-6 Astra + Inspect Robots",
+          "task": "ruler",
+          "complete": 1,
+          "success_rate_percent": 5,
+          "mean_progress_0_100": 46
+        },
+        {
+          "trials": 20,
+          "system": "MolmoAct2",
+          "task": "ruler",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 16
+        },
+        {
+          "trials": 20,
+          "system": "GPT-6 Astra + Inspect Robots",
+          "task": "sticky_note",
+          "complete": 1,
+          "success_rate_percent": 5,
+          "mean_progress_0_100": 34
+        },
+        {
+          "trials": 20,
+          "system": "MolmoAct2",
+          "task": "sticky_note",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 0
+        },
+        {
+          "trials": 20,
+          "system": "GPT-6 Astra + Inspect Robots",
+          "task": "eraser_box",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 34
+        },
+        {
+          "trials": 20,
+          "system": "MolmoAct2",
+          "task": "eraser_box",
+          "complete": 0,
+          "success_rate_percent": 0,
+          "mean_progress_0_100": 0
+        }
+      ]
+    },
+    "barn-challenge-2026-finals": {
+      "source_url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge26.html",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "event_dates": [
+        "2026-06-03",
+        "2026-06-04"
+      ],
+      "access": "Official search-indexed page recovered after direct 502; fixed final results",
+      "notes": [
+        "Three courses; best three of five timed attempts counted per course. Not an unselected reliability rate.",
+        "Simulation board is a different cohort and metric."
+      ],
+      "rows": [
+        {
+          "scored_trials": 9,
+          "rank": 1,
+          "team": "IN²BOT",
+          "scored_successes": 7
+        },
+        {
+          "scored_trials": 9,
+          "rank": 2,
+          "team": "EW-Glab",
+          "scored_successes": 5
+        },
+        {
+          "scored_trials": 9,
+          "rank": 3,
+          "team": "Team Robo",
+          "scored_successes": 3
+        }
+      ]
+    },
+    "masai-trial": {
+      "source_url": "https://lup.lub.lu.se/record/7851a699-d9c4-4263-93dc-b29779d5b8d4",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "publication_date": "2026-01-31",
+      "enrollment_period": [
+        "2021-04-12",
+        "2022-12-07"
+      ],
+      "randomized": 105934,
+      "excluded": 19,
+      "primary_effect": {
+        "ratio": 0.88,
+        "ci95": [
+          0.65,
+          1.18
+        ],
+        "p": 0.41,
+        "noninferiority_margin": 0.2
+      },
+      "notes": [
+        "Completed fixed trial, not stale LLM leaderboard.",
+        "Primary interval-cancer result supports noninferiority, not statistically demonstrated superiority."
+      ],
+      "rows": [
+        {
+          "specificity_percent": 98.5,
+          "arm": "AI-supported mammography",
+          "interval_cancer_per_1000": 1.55,
+          "interval_cancer_ci95": [
+            1.23,
+            1.92
+          ],
+          "sensitivity_percent": 80.5,
+          "sensitivity_ci95": [
+            76.4,
+            84.2
+          ]
+        },
+        {
+          "specificity_percent": 98.5,
+          "arm": "Standard double reading",
+          "interval_cancer_per_1000": 1.76,
+          "interval_cancer_ci95": [
+            1.42,
+            2.15
+          ],
+          "sensitivity_percent": 73.8,
+          "sensitivity_ci95": [
+            68.9,
+            78.3
+          ]
+        }
+      ]
+    },
+    "kenya-ai-consult-trial": {
+      "source_url": "https://www.nature.com/articles/s41591-026-04503-6",
+      "source_checked_at": "2026-10-05",
+      "evaluation_date": null,
+      "publication_date": "2026-06-26",
+      "enrollment_period": [
+        "2025-04-22",
+        "2025-07-16"
+      ],
+      "primary_effect": {
+        "adjusted_odds_ratio": 0.77,
+        "ci95": [
+          0.55,
+          1.08
+        ],
+        "p": 0.13
+      },
+      "notes": [
+        "Primary endpoint: expert-adjudicated treatment failure within 14 days.",
+        "Adjusted odds ratio differs from crude rates because of study adjustment; do not reverse-engineer one from the other.",
+        "No significant primary treatment-failure reduction; absence of attributed serious adverse events is not universal safety proof."
+      ],
+      "rows": [
+        {
+          "arm": "LLM-assisted",
+          "treatment_failures": 102,
+          "denominator": 4693,
+          "reported_percent": 2.2
+        },
+        {
+          "arm": "Control",
+          "treatment_failures": 94,
+          "denominator": 4654,
+          "reported_percent": 2
+        }
+      ]
+    }
+  }
+}

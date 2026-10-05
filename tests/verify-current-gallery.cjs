@@ -125,14 +125,14 @@ async function main() {
     await go("benchmarks.html");
     assert.equal(await page.locator(".benchmark-card").count(), 46);
     await page.getByLabel("Results history").selectOption("historical");
-    assert.equal(await page.locator(".benchmark-card").count(), 10);
+    assert.equal(await page.locator(".benchmark-card").count(), 19);
     await page.reload();
     assert.equal(
       await page.getByLabel("Results history").inputValue(),
       "historical",
     );
     await page.getByLabel("Results history").selectOption("current");
-    assert.equal(await page.locator(".benchmark-card").count(), 36);
+    assert.equal(await page.locator(".benchmark-card").count(), 14);
     assert.equal(
       await page
         .locator('[data-benchmark-id="gpqa-diamond-march-reported"]')
@@ -144,7 +144,7 @@ async function main() {
       1,
     );
     pass(
-      "46 cards and explicit current/history choices preserve 36 current/guides and ten historical cards without mixing versions",
+      "46 cards and explicit current/history choices preserve 14 latest collected result cards and 19 historical evidence cards without mixing versions",
     );
     await go("results.html?benchmark=gpqa-diamond");
     assert.equal(await page.locator(".standard-row").count(), 12);

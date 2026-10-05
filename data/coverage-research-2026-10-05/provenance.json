@@ -1,0 +1,47 @@
+{
+  "mode": "parent_supplied_original_content",
+  "library_materialization": false,
+  "fetched_code_executed": false,
+  "original_parts": 15,
+  "public_sources": [
+    {
+      "name": "runebench-pinned.js",
+      "url": "https://raw.githubusercontent.com/MaxBittker/runebench/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/_data.js",
+      "bytes": 993045,
+      "sha256": "2017bef113a0c6073b695506947f7a7c9a7ed32468e702354525b4d34369a9e2",
+      "git_blob_sha1": "1560ccc1675c0b857b45cafa438072518c18e5a0"
+    },
+    {
+      "name": "rune-shared-constants.js",
+      "url": "https://raw.githubusercontent.com/MaxBittker/runebench/5358a49f212e238cd093154bc3e93999d345ab97/views/shared-constants.js",
+      "bytes": 21678,
+      "sha256": "23ea2ac0b640f0b67cf5e88ff1b6ba5cea3083f54ce6f6498119ad8b11a07fec",
+      "git_blob_sha1": "cf123d09abc5da96fb321c44a4c232940b615974"
+    },
+    {
+      "name": "rune-run-opus55-30m.sh",
+      "url": "https://raw.githubusercontent.com/MaxBittker/runebench/5358a49f212e238cd093154bc3e93999d345ab97/scripts/run-opus55-30m.sh",
+      "bytes": 2587,
+      "sha256": "254502dfd763488335ebc6fa746d0979beab1093d35c33c49d5c8e763b945307",
+      "git_blob_sha1": "c9d46723eeb48d7bcd65412c07ca46f952c63721"
+    },
+    {
+      "name": "rune-run-sonnet55-30m.sh",
+      "url": "https://raw.githubusercontent.com/MaxBittker/runebench/5358a49f212e238cd093154bc3e93999d345ab97/scripts/run-sonnet55-30m.sh",
+      "bytes": 3060,
+      "sha256": "c88758d11446884da7b8c90aa5a6d713443797cb67814153a588dfde006d3790",
+      "git_blob_sha1": "bb2b39d9ada66a78b72fb18af876956cfc978524"
+    },
+    {
+      "name": "eq-creative-v3-pinned.js",
+      "url": "https://raw.githubusercontent.com/EQ-bench/EQ-bench-site/108382e3f5017dce6f90c643e6bb4842825f62df/creative_writing.js",
+      "bytes": 1220549,
+      "sha256": "722ddb132e8d3a5e5c39b8d445f8475f3f7e24893a007260c6f3e3cce5c1ee18",
+      "git_blob_sha1": "b2e900861a760e0a90ba6e1eab769d0d63a91cf5"
+    }
+  ],
+  "label_parse": "Static quoted MODEL_CONFIG fields only; no JavaScript execution; model release dates are not run dates.",
+  "unresolved_configuration_labels": [
+    "kimi3-low"
+  ]
+}

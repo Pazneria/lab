@@ -1,0 +1,1036 @@
+{
+  "checked_at": "2026-10-05",
+  "repository_commit": "132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9",
+  "inspection_scope": "All 46 gallery entries, generated data, renderer classification, numeric row counts, source metadata and primary-source availability. Direct web extraction was not browser screenshot QA. Not every historic numeric row was re-audited against its upstream report.",
+  "summary": {
+    "gallery_cards": 46,
+    "cards_with_numeric_data": 27,
+    "cards_without_numeric_data": 19,
+    "historical_cards_recognized_by_renderer": 10,
+    "original_historical_lifecycle_missed_by_renderer": [
+      "factorio-learning-environment",
+      "astra-nethack-ascension",
+      "masai-trial",
+      "kenya-ai-consult-trial",
+      "stationerybench",
+      "barn-challenge-2026-finals"
+    ],
+    "independently_retrieved_addition_rows": 319,
+    "runebench_available_summaries": 1392,
+    "no_confirmed_permanent_source_link_failures": "Some extraction failures and oversize files observed; do not label these broken links without browser/network confirmation."
+  },
+  "structural_findings": [
+    {
+      "priority": "P0",
+      "issue": "Date and lifecycle semantics",
+      "evidence": "https://github.com/Pazneria/lab/blob/132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9/assets/gallery.js#L235-L267",
+      "repair": "Replace hardcoded status(card) with explicit source_checked_at, dataset_version, cohort_date/evaluation_date, snapshot_date, evidence_kind and freshness_reason. Historical test must not ignore catalog lifecycle."
+    },
+    {
+      "priority": "P0",
+      "issue": "Availability conflated with collection state",
+      "evidence": "https://github.com/Pazneria/lab/blob/132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9/assets/gallery.js#L390-L424",
+      "repair": "Separate published-not-ingested, extraction-unresolved, unpublished/verified-empty, fixed-study, and superseded-version. Result grid should not have generic no-graph cards."
+    },
+    {
+      "priority": "P1",
+      "issue": "Duplicated family/version cards",
+      "evidence": "https://github.com/Pazneria/lab/blob/132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9/scripts/build-gallery.cjs",
+      "repair": "Use benchmark family plus evaluator/protocol/subset/version selectors. Preserve every original numeric cohort and direct old link; count unique families separately from result views."
+    },
+    {
+      "priority": "P1",
+      "issue": "Brittle static counts reward partial snapshots",
+      "evidence": "https://github.com/Pazneria/lab/blob/132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9/scripts/build-gallery.cjs",
+      "repair": "Keep snapshot manifest count checks but derive expected count from complete acquired source and explicit selection metadata. Do not hardcode partial six/seven/three-model excerpts as universal coverage."
+    },
+    {
+      "priority": "P1",
+      "issue": "Source warning buried",
+      "evidence": "https://github.com/Pazneria/lab/blob/132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9/assets/gallery.js#L961-L1040",
+      "repair": "Put version-specific audit/fallback/clinical caveats next to score; keep technical details expandable. Do not transfer flaws to unreviewed successors."
+    }
+  ],
+  "cards": [
+    {
+      "id": "hle-diamond",
+      "name": "HLE-Diamond",
+      "kind": "standard_numeric",
+      "numeric_rows": 9,
+      "is_current_by_renderer": true,
+      "source_url": "https://lastexam.ai/blog/hle-diamond",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date."
+      ],
+      "placement": "active_results",
+      "action": "Keep nine no-tools/high-effort rows. Add separate tools/high-effort cohort or a clearly labeled protocol selector; six tools results are published.",
+      "source_verification": "Primary Sept 22 report reopened; all nine no-tools/high scores still visible.",
+      "cohort_date_label": "Creator results accessed October 1, 2026 · dataset released September 22",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/hle/review",
+        "scope": "Review dated 2026-08-11 explicitly examines original HLE, not Rolling or Verified; Diamond was released later on 2026-09-22. Do not label Diamond Flawed based on this review."
+      }
+    },
+    {
+      "id": "gpqa-diamond",
+      "name": "GPQA Diamond",
+      "kind": "standard_numeric",
+      "numeric_rows": 157,
+      "is_current_by_renderer": true,
+      "source_url": "https://epoch.ai/data/benchmarks.csv",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date."
+      ],
+      "placement": "active_results",
+      "action": "Keep current Epoch cohort, preserving evaluation dates and exact effort; consolidate March report into history selector.",
+      "source_verification": "157-row imported dataset audited; independent fresh CSV comparison not completed by this worker. Latest included evaluation 2026-09-29.",
+      "cohort_date_label": "Epoch runs through September 29, 2026; task 1.0.11; source checked October 1",
+      "evaluation_date_range": [
+        "2026-06-16",
+        "2026-09-29"
+      ]
+    },
+    {
+      "id": "mmmu-pro",
+      "name": "MMMU-Pro",
+      "kind": "standard_numeric",
+      "numeric_rows": 20,
+      "is_current_by_renderer": true,
+      "source_url": "https://artificialanalysis.ai/evaluations/mmmu-pro",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Source now says 20 of 285 models; imported 20-row cohort is a selection, not the entire leaderboard."
+      ],
+      "placement": "active_results",
+      "action": "Keep independent AA cohort, but label 20 selected configurations and expose broader source coverage instead of claiming completeness.",
+      "source_verification": "Primary AA page reopened; top current configurations agree; full client-side row extraction remains a follow-on.",
+      "cohort_date_label": "Artificial Analysis default chart checked October 1, 2026; individual run dates unavailable",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "swe-bench-pro-public-v1",
+      "name": "SWE-Bench Pro · original public split",
+      "kind": "standard_numeric",
+      "numeric_rows": 4,
+      "is_current_by_renderer": false,
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector."
+      ],
+      "placement": "archive_cohort",
+      "action": "Retain original report with clearly attributed Epoch pre-V2 scoring/contamination concerns; offer V2 current cohort.",
+      "source_verification": "Imported historical report identity, rows, and model cohort inspected; no new upstream evaluation inferred.",
+      "cohort_date_label": "OpenAI release comparison · March 17, 2026",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/swe-bench-pro/review",
+        "review_date": "2026-09-01",
+        "verdict": "Flawed",
+        "scope": "Pre-V2 public set"
+      }
+    },
+    {
+      "id": "terminal-bench-2",
+      "name": "Terminal-Bench 2.0",
+      "kind": "standard_numeric",
+      "numeric_rows": 4,
+      "is_current_by_renderer": false,
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector."
+      ],
+      "placement": "archive_cohort",
+      "action": "Retain March 17, 2026 developer report under the corresponding benchmark family history; never upgrade its cohort date from a later access check.",
+      "source_verification": "Imported historical report identity, rows, and model cohort inspected; no new upstream evaluation inferred.",
+      "cohort_date_label": "OpenAI release comparison · March 17, 2026",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "frontiermath-tier4-v2",
+      "name": "FrontierMath Tier 4 (task 2.1.0)",
+      "kind": "standard_numeric",
+      "numeric_rows": 2,
+      "is_current_by_renderer": true,
+      "source_url": "https://epoch.ai/data/benchmarks.csv",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date."
+      ],
+      "placement": "active_results",
+      "action": "Keep task version 2.1.0 and its two Sep 29 evaluations distinct from 2.0.0 history; make the small current cohort visible.",
+      "source_verification": "Imported Epoch task-version and date fields audited; fresh CSV diff handled separately.",
+      "cohort_date_label": "Epoch runs: September 29, 2026; task 2.1.0; source checked October 1",
+      "evaluation_date_range": [
+        "2026-09-29",
+        "2026-09-29"
+      ]
+    },
+    {
+      "id": "gpqa-diamond-march-reported",
+      "name": "GPQA Diamond — March 2026 report",
+      "kind": "standard_numeric",
+      "numeric_rows": 4,
+      "is_current_by_renderer": false,
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector."
+      ],
+      "placement": "archive_cohort",
+      "action": "Retain March 17, 2026 developer report under the corresponding benchmark family history; never upgrade its cohort date from a later access check.",
+      "source_verification": "Imported historical report identity, rows, and model cohort inspected; no new upstream evaluation inferred.",
+      "cohort_date_label": "OpenAI release comparison · March 17, 2026",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "mmmu-pro-march-reported",
+      "name": "MMMU-Pro — March 2026 report",
+      "kind": "standard_numeric",
+      "numeric_rows": 4,
+      "is_current_by_renderer": false,
+      "source_url": "https://openai.com/index/introducing-gpt-5-4-mini-and-nano/",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector."
+      ],
+      "placement": "archive_cohort",
+      "action": "Retain March 17, 2026 developer report under the corresponding benchmark family history; never upgrade its cohort date from a later access check.",
+      "source_verification": "Imported historical report identity, rows, and model cohort inspected; no new upstream evaluation inferred.",
+      "cohort_date_label": "OpenAI release comparison · March 17, 2026",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "frontiermath-tier4-v2-september-reported",
+      "name": "FrontierMath Tier 4 (v2) — September 2026 report",
+      "kind": "standard_numeric",
+      "numeric_rows": 5,
+      "is_current_by_renderer": false,
+      "source_url": "https://openai.com/index/gpt-6-astra/",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector.",
+        "Multiple FrontierMath cards represent incomparable cohorts, not separate benchmark families."
+      ],
+      "placement": "archive_cohort",
+      "action": "Preserve as a versioned/evaluator-specific history selection inside FrontierMath; do not merge its rows with 2.1.0.",
+      "source_verification": "Repository record audited; see per-card source-check detail below.",
+      "cohort_date_label": "OpenAI September 3, 2026 comparison · v2 dataset",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "frontiermath-tier4-v2-task-2-0-0",
+      "name": "FrontierMath Tier 4 (task 2.0.0 history)",
+      "kind": "standard_numeric",
+      "numeric_rows": 67,
+      "is_current_by_renderer": false,
+      "source_url": "https://epoch.ai/data/benchmarks.csv",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector.",
+        "Multiple FrontierMath cards represent incomparable cohorts, not separate benchmark families."
+      ],
+      "placement": "archive_cohort",
+      "action": "Preserve as a versioned/evaluator-specific history selection inside FrontierMath; do not merge its rows with 2.1.0.",
+      "source_verification": "Repository record audited; see per-card source-check detail below.",
+      "cohort_date_label": "Historical task 2.0.0 observations; source checked October 1, 2026",
+      "evaluation_date_range": [
+        "2026-06-09",
+        "2026-09-22"
+      ]
+    },
+    {
+      "id": "healthbench-professional",
+      "name": "HealthBench Professional",
+      "kind": "standard_numeric",
+      "numeric_rows": 7,
+      "is_current_by_renderer": true,
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date."
+      ],
+      "placement": "active_results",
+      "action": "Retain corrected Table 29 seven-row length-adjusted developer comparison; show September 22 correction and independent review warning near chart.",
+      "source_verification": "Primary Table 29 reopened; seven length-adjusted scores and September 22 correction verified.",
+      "cohort_date_label": "Developer report: September 3, 2026; corrected September 22; run dates unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/healthbench-professional/review",
+        "review_date": "2026-09-10",
+        "verdict": "Flawed",
+        "finding": "Epoch reports errors in 25/50 sampled tasks from 525; 14 structural. The Sep 22 developer correction concerns evaluation misconfiguration and is not evidence those rubric issues were fixed.",
+        "action": "Attribute warning; preserve results and avoid clinical-validity claims."
+      }
+    },
+    {
+      "id": "medagentbench-v2-revised-original-tasks",
+      "name": "MedAgentBench V2 — revised agent, original tasks",
+      "kind": "standard_numeric",
+      "numeric_rows": 1,
+      "is_current_by_renderer": true,
+      "source_url": "https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Renderer calls this current and badges October 2026 although it is the PSB 2026/copyright-2025 author experiment with GPT-4.1.",
+        "Three one-row cards overstate breadth and visually resemble three contemporary leaderboards."
+      ],
+      "placement": "fixed_paper_cohort",
+      "action": "Group three distinct conditions under MedAgentBench V2 paper results, with explicit GPT-4.1 and paper era; keep task-set/memory split, and put newer MAST evaluations in a separate cohort.",
+      "source_verification": "PSB paper reopened; reported 91/98/88.67 conditions remain valid paper observations.",
+      "cohort_date_label": "PSB 2026 author paper; precise run dates unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://arxiv.org/abs/2607.01470",
+        "review_date": "2026-07-01",
+        "finding": "Independent author audit reports a 41.7% silent-finish ceiling in MedAgentBench v1/v2 and proposes MAB-v3 (508 tasks, 8.9% ceiling).",
+        "scope": "Author-reported verifier critique; proposed v3 must not be portrayed as an official in-place replacement or used to change the old scores."
+      }
+    },
+    {
+      "id": "medagentbench-v2-memory-heldout",
+      "name": "MedAgentBench V2 — memory held-out condition",
+      "kind": "standard_numeric",
+      "numeric_rows": 1,
+      "is_current_by_renderer": true,
+      "source_url": "https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Renderer calls this current and badges October 2026 although it is the PSB 2026/copyright-2025 author experiment with GPT-4.1.",
+        "Three one-row cards overstate breadth and visually resemble three contemporary leaderboards."
+      ],
+      "placement": "fixed_paper_cohort",
+      "action": "Group three distinct conditions under MedAgentBench V2 paper results, with explicit GPT-4.1 and paper era; keep task-set/memory split, and put newer MAST evaluations in a separate cohort.",
+      "source_verification": "PSB paper reopened; reported 91/98/88.67 conditions remain valid paper observations.",
+      "cohort_date_label": "PSB 2026 author paper; precise run dates unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://arxiv.org/abs/2607.01470",
+        "review_date": "2026-07-01",
+        "finding": "Independent author audit reports a 41.7% silent-finish ceiling in MedAgentBench v1/v2 and proposes MAB-v3 (508 tasks, 8.9% ceiling).",
+        "scope": "Author-reported verifier critique; proposed v3 must not be portrayed as an official in-place replacement or used to change the old scores."
+      }
+    },
+    {
+      "id": "medagentbench-v2-new-tasks",
+      "name": "MedAgentBench V2 — new tasks",
+      "kind": "standard_numeric",
+      "numeric_rows": 1,
+      "is_current_by_renderer": true,
+      "source_url": "https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Renderer calls this current and badges October 2026 although it is the PSB 2026/copyright-2025 author experiment with GPT-4.1.",
+        "Three one-row cards overstate breadth and visually resemble three contemporary leaderboards."
+      ],
+      "placement": "fixed_paper_cohort",
+      "action": "Group three distinct conditions under MedAgentBench V2 paper results, with explicit GPT-4.1 and paper era; keep task-set/memory split, and put newer MAST evaluations in a separate cohort.",
+      "source_verification": "PSB paper reopened; reported 91/98/88.67 conditions remain valid paper observations.",
+      "cohort_date_label": "PSB 2026 author paper; precise run dates unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://arxiv.org/abs/2607.01470",
+        "review_date": "2026-07-01",
+        "finding": "Independent author audit reports a 41.7% silent-finish ceiling in MedAgentBench v1/v2 and proposes MAB-v3 (508 tasks, 8.9% ceiling).",
+        "scope": "Author-reported verifier critique; proposed v3 must not be portrayed as an official in-place replacement or used to change the old scores."
+      }
+    },
+    {
+      "id": "swe-bench-pro-public-v2",
+      "name": "SWE-Bench Pro V2 — Full",
+      "kind": "standard_numeric",
+      "numeric_rows": 10,
+      "is_current_by_renderer": true,
+      "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2?tab=full",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date."
+      ],
+      "placement": "active_results",
+      "action": "Keep V2 full and HARD-51 as separate selectable subsets in one family; make locked network and pristine regrade basis explicit.",
+      "source_verification": "Scale primary V2 page reopened. Full board contains ten rows matching imported full cohort; hard subset kept separate.",
+      "cohort_date_label": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/swe-bench-pro/review",
+        "review_date": "2026-09-01",
+        "scope": "Review examines old 731-task public set. Sep 22 V2 is 642 tasks with 89 removed, 69 instruction corrections and pristine regrade. Do not apply old verdict as if V2 was reviewed.",
+        "residuals": "V2 creator still acknowledges trusted model relay and patch code executed by verifier."
+      }
+    },
+    {
+      "id": "swe-bench-pro-public-v2-hard",
+      "name": "SWE-Bench Pro V2 — HARD-51",
+      "kind": "standard_numeric",
+      "numeric_rows": 11,
+      "is_current_by_renderer": true,
+      "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2?tab=hard",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date."
+      ],
+      "placement": "active_results",
+      "action": "Keep V2 full and HARD-51 as separate selectable subsets in one family; make locked network and pristine regrade basis explicit.",
+      "source_verification": "Scale primary V2 page reopened. Full board contains ten rows matching imported full cohort; hard subset kept separate.",
+      "cohort_date_label": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/swe-bench-pro/review",
+        "review_date": "2026-09-01",
+        "scope": "Review examines old 731-task public set. Sep 22 V2 is 642 tasks with 89 removed, 69 instruction corrections and pristine regrade. Do not apply old verdict as if V2 was reviewed.",
+        "residuals": "V2 creator still acknowledges trusted model relay and patch code executed by verifier."
+      }
+    },
+    {
+      "id": "terminal-bench-4",
+      "name": "Terminal-Bench 4 — Vals mini-swe-agent",
+      "kind": "standard_numeric",
+      "numeric_rows": 6,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.vals-ai.com/benchmarks/terminal-bench-4",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Only six of 43 primary table rows are ingested.",
+        "Fallback configurations affect rank: Opus 5.5 falls to 58.08 if fallback-served attempts count as failures."
+      ],
+      "placement": "active_results",
+      "action": "Expand six imported configurations to the 43 primary table rows, preserving exact settings and fallback; keep source uncertainty and cost/time basis.",
+      "source_verification": "All 43 primary Vals table rows extracted; additional per-model effort settings remain to be joined.",
+      "cohort_date_label": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null,
+      "additions_cohort": "terminal-bench-4-expanded",
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/terminal-bench-4/review",
+        "review_date": "2026-09-04",
+        "verdict": "Flawed",
+        "scope": "Exact reviewed release 4.0.0; 30/66 publicly documented tasks have scoring defects.",
+        "action": "Attach attributable version-specific warning. Confirm any later patch release before claiming fixes; preserve historical 4.0 scores."
+      }
+    },
+    {
+      "id": "terminal-bench-science",
+      "name": "Terminal-Bench Science — AA mini-swe-agent",
+      "kind": "standard_numeric",
+      "numeric_rows": 7,
+      "is_current_by_renderer": true,
+      "source_url": "https://artificialanalysis.ai/evaluations/terminal-bench-science",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Imported seven rows; current source advertises 23 of 39 models. No claim of full coverage supported."
+      ],
+      "placement": "active_results",
+      "action": "Expand AA source-specific cohort and label imported selection honestly; retain three-repeat metric and common harness.",
+      "source_verification": "AA primary page reopened; selected-row source is reachable but full underlying table extraction still needed.",
+      "cohort_date_label": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "terminal-bench-4-native-agents",
+      "name": "Terminal-Bench 4 — native agents",
+      "kind": "standard_numeric",
+      "numeric_rows": 7,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.tbench.ai/",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Current source URL is broad homepage; latest text retrieval shows placeholders, not the scored table. Completeness remains unverified."
+      ],
+      "placement": "active_results",
+      "action": "Keep native-agent cohort separate from Vals; link to exact versioned leaderboard and fetch complete source table rather than seven selected rows.",
+      "source_verification": "Homepage reachable but rows are client-rendered; existing scores not independently re-extracted in this audit.",
+      "cohort_date_label": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null,
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/terminal-bench-4/review",
+        "review_date": "2026-09-04",
+        "verdict": "Flawed",
+        "scope": "Exact reviewed release 4.0.0; 30/66 publicly documented tasks have scoring defects.",
+        "action": "Attach attributable version-specific warning. Confirm any later patch release before claiming fixes; preserve historical 4.0 scores."
+      }
+    },
+    {
+      "id": "terminal-bench-science-native-agents",
+      "name": "Terminal-Bench Science — native agents",
+      "kind": "standard_numeric",
+      "numeric_rows": 5,
+      "is_current_by_renderer": true,
+      "source_url": "https://snorkel.ai/leaderboard/terminal-bench-science/",
+      "issues": [
+        "Hardcoded source-check badge should be separate from evaluation/cohort date.",
+        "Only five of 17 overall rows are ingested."
+      ],
+      "placement": "active_results",
+      "action": "Expand five imported entries to all 17 overall native-agent rows; retain domain views as distinct slices and model release dates separately.",
+      "source_verification": "All 17 Snorkel overall rows extracted.",
+      "cohort_date_label": "Current source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null,
+      "additions_cohort": "terminal-bench-science-native-expanded"
+    },
+    {
+      "id": "swe-bench-verified-bash-history",
+      "name": "SWE-bench Verified — historical bash-only",
+      "kind": "standard_numeric",
+      "numeric_rows": 5,
+      "is_current_by_renderer": false,
+      "source_url": "https://www.swebench.com/",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector."
+      ],
+      "placement": "archive_cohort",
+      "action": "Keep Feb 17 baseline snapshot under history with contamination/scoring warning; do not interpret these old models as a lack of current coding results.",
+      "source_verification": "Repository record audited; see per-card source-check detail below.",
+      "cohort_date_label": "Historical source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": [
+        "2026-02-17",
+        "2026-02-17"
+      ],
+      "audit_warning": {
+        "source": "https://epoch.ai/benchmarks/swe-bench-verified/review",
+        "review_date": "2026-09-03",
+        "verdict": "Flawed",
+        "scope": "SWE-bench Verified; review cites defective tests, contamination and reward-hacking evidence."
+      }
+    },
+    {
+      "id": "terminal-bench-2-1-history",
+      "name": "Terminal-Bench 2.1 — history",
+      "kind": "standard_numeric",
+      "numeric_rows": 3,
+      "is_current_by_renderer": false,
+      "source_url": "https://artificialanalysis.ai/evaluations/terminalbench-2-1",
+      "issues": [
+        "Valid historical evidence occupies its own gallery card rather than a family history selector.",
+        "Underlying current AA page says 20 of 240 models; imported three Fable settings are an extremely narrow excerpt. Old benchmark version does not mean all available evaluations are old."
+      ],
+      "placement": "archive_cohort",
+      "action": "Keep 2.1 distinct from 4.0; say three selected Fable configurations instead of historical full standings.",
+      "source_verification": "Primary AA summary rechecked; three listed Fable scores still match.",
+      "cohort_date_label": "Historical source cohort; checked October 1, 2026; exact run dates generally unavailable",
+      "evaluation_date_range": null
+    },
+    {
+      "id": "runebench",
+      "name": "RuneBench",
+      "kind": "catalog_numeric",
+      "numeric_rows": 6,
+      "is_current_by_renderer": true,
+      "source_url": "https://maxbittker.github.io/runebench/",
+      "issues": [
+        "48 expanded rows cover only GPT-6.1 Sol at three efforts, not all published models.",
+        "Pinned source already has 87 configurations and 1392 skill summaries. No new source release is needed to improve breadth."
+      ],
+      "placement": "active_results",
+      "action": "Add model/system selector over verified comparable track/version groups. Ingest available run summaries beyond one model; do not pool all 87 across harness versions.",
+      "source_verification": "Source main still at 5358a49f212e238cd093154bc3e93999d345ab97. Summary and label files retrieved.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Prior research found September 2026 trial artifacts; the README model list lagged the results directory."
+      },
+      "available_primary_runs": 1392,
+      "available_primary_configurations": 87,
+      "additional_sources": [
+        "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/results/skills-30m/_data.js",
+        "https://github.com/MaxBittker/runebench/blob/5358a49f212e238cd093154bc3e93999d345ab97/views/shared-constants.js"
+      ]
+    },
+    {
+      "id": "voxelbench",
+      "name": "VoxelBench",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://voxelbench.ai/leaderboard",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Primary response exposes no numeric text; this is an extraction limit, not evidence that benchmark has no scores."
+      ],
+      "placement": "source_directory",
+      "action": "Move out of result gallery until official table can be extracted. Say source not yet retrieved, with last successful observation date; do not invent zero rows or accept inconsistent mirrors.",
+      "source_verification": "Primary leaderboard reopened; zero readable lines. Cloud/browser or official-data retrieval needed.",
+      "catalog_lifecycle": {
+        "status": "unverified",
+        "as_of": "2026-09-30",
+        "basis": "Prior research found 2026 coverage, but direct leaderboard retrieval exposed only an AI-voting notice and indexed snapshots disagreed."
+      }
+    },
+    {
+      "id": "balrog",
+      "name": "BALROG",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://balrogai.com/",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Current results exist and were never ingested, not unavailable."
+      ],
+      "placement": "active_results_after_import",
+      "action": "Import 39 LLM and 10 VLM rows in separate modality/environment cohorts; surface September 2026 model entries without deleting earlier baselines.",
+      "source_verification": "Complete primary HTML tables extracted.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Prior research directly observed September 2026 rows and a stated weekly update schedule."
+      },
+      "additions_cohort": "balrog"
+    },
+    {
+      "id": "factorio-learning-environment",
+      "name": "Factorio Learning Environment",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://jackhopkins.github.io/factorio-learning-environment/leaderboard/",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Catalog says historical, but renderer current filter ignores it.",
+        "Six numeric JSON records exist; no rows were ingested."
+      ],
+      "placement": "archive_cohort",
+      "action": "Import available March 2025 open-play rows into explicit history; keep September 2025 v0.3 lab-play pass@8 separate. Do not imply a page update refreshed evaluations.",
+      "source_verification": "Official processed JSON and v0.3 report reopened; JSON fields are submissionDate, not proven run date.",
+      "catalog_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "The board showed a 2026-09-28 page update, but visible open-play evaluations were dated March 6–7, 2025; v0.3 lab-play results concerned September 2025 models."
+      },
+      "additional_sources": [
+        "https://github.com/JackHopkins/factorio-learning-environment/blob/main/docs/leaderboard/processed/combined-results.json"
+      ]
+    },
+    {
+      "id": "astra-nethack-ascension",
+      "name": "Astra NetHack ascension",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://kenforthewin.github.io/blog/posts/llm-nethack-ascension/",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Catalog historical/showcase lifecycle is excluded from historical filter logic.",
+        "A showcase does not need a fabricated numeric leaderboard."
+      ],
+      "placement": "showcases",
+      "action": "Keep as a documented Sept 21 achievement with three run outcomes and replay links; separate from benchmark leaderboard cards.",
+      "source_verification": "Author report reopened: winning third run 37140 turns; evolving harness, spoilers, non-fixed budget and human setup disclosed.",
+      "catalog_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Fixed author write-up published September 21, 2026."
+      }
+    },
+    {
+      "id": "bullshitbench-v2",
+      "name": "BullshitBench v2",
+      "kind": "catalog_numeric",
+      "numeric_rows": 6,
+      "is_current_by_renderer": true,
+      "source_url": "https://github.com/petergpt/bullshit-benchmark",
+      "issues": [
+        "Six-row thumbnail/default hides broad current coverage already ingested.",
+        "Separate all-attempt versus refusal-excluded denominator and distinguish partial cost coverage."
+      ],
+      "placement": "active_results",
+      "action": "Default to useful score comparison from all 228 source configurations, with search and source-order controls; keep six cost-verified rows as a clearly labeled cost view.",
+      "source_verification": "Compared source 3bbed044… to Oct 5 head b063a3b5…: README only changed. Existing numerical snapshot is still latest confirmed.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research reports an official README update on September 29, 2026 and versioned v2 data."
+      },
+      "expanded_numeric_rows": 228
+    },
+    {
+      "id": "terminal-bench-science-0-1",
+      "name": "Terminal-Bench-Science 0.1",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.tbench.ai/news/terminal-bench-science-0-1",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Redundant no-score card for the same 0.1 benchmark already represented twice numerically."
+      ],
+      "placement": "family_source_tab",
+      "action": "Fold this source guide into Terminal-Bench Science family details alongside the two genuine numeric cohorts.",
+      "source_verification": "Official homepage and Snorkel leaderboard reopened; valid sources.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Version 0.1 launched August 27, 2026; the recovered catalog found public results, code, and a 0.2 roadmap."
+      }
+    },
+    {
+      "id": "matharena",
+      "name": "MathArena",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://matharena.ai/",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Fresh actual evaluations exist and are omitted.",
+        "Gallery discovery note stops at September 23–24 and misses Sept 30 announcement."
+      ],
+      "placement": "active_results_after_import",
+      "action": "Import fixed suite/month observations, starting with September 30 GPT-6.1 Sol release; do not use IRT expected overall performance as observed accuracy.",
+      "source_verification": "Primary site and GPT-6.1 Sol page reopened; May/June/Aug ArXivMath and BrokenArXiv observed scores available.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research found official September 23–24, 2026 result announcements and raw-response/data links."
+      },
+      "additional_sources": [
+        "https://matharena.ai/models/openai_gpt_61_sol"
+      ],
+      "sample_numeric_rows": [
+        {
+          "suite": "ArXivMath",
+          "period": "08/2026",
+          "model": "GPT-6.1 Sol (max)",
+          "accuracy_percent": 96.49,
+          "reported_ci_plus_minus": 4.78,
+          "reported_cost": 0.93
+        },
+        {
+          "suite": "BrokenArXiv",
+          "period": "08/2026",
+          "model": "GPT-6.1 Sol (max)",
+          "accuracy_percent": 86.31,
+          "reported_ci_plus_minus": 9,
+          "reported_cost": 0.94
+        }
+      ],
+      "settings": {
+        "model_endpoint": "openai/gpt-6.1-sol",
+        "provider": "openrouter",
+        "reasoning_effort": "max",
+        "harness": "Codex",
+        "harness_version": "0.159.0",
+        "max_tokens": 128000,
+        "fallbacks": false
+      }
+    },
+    {
+      "id": "eq-bench-creative-writing-v3",
+      "name": "EQ-Bench Creative Writing v3",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://eqbench.com/creative_writing.html",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Client-rendered homepage was mistaken for absence of data."
+      ],
+      "placement": "active_results_after_import",
+      "action": "Import all 140 official JS-embedded CSV rows; offer Elo versus rubric without combining or converting either to percent.",
+      "source_verification": "Official website source repository, JS CSV and methodology independently inspected.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research found a live v3 site, a March 1, 2026 pairwise-judge change, and September website activity; individual row freshness was not established."
+      },
+      "additions_cohort": "eq-bench-creative-writing-v3"
+    },
+    {
+      "id": "mast",
+      "name": "MAST",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.arise-ai.org/mast",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Current primary numerical scores were not ingested.",
+        "Agentic is absent from composites, so a composite cannot replace MedAgentBench/PhysicianBench result views."
+      ],
+      "placement": "active_results_after_import",
+      "action": "Import component-specific preview leaderboards and exact release/configuration; provide family overview. Retrieve remaining hidden rows before claiming completeness.",
+      "source_verification": "Primary technical board and methodology reopened; 16 NOHARM-v2 visible rows captured.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "MAST v1.0 launched July 27, 2026; overview updated August 15; recovered research found preview results and submission infrastructure."
+      },
+      "additions_cohort": "mast-noharm-v2-preview"
+    },
+    {
+      "id": "medhelm",
+      "name": "MedHELM",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://medhelm.org/",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "No scores ingested despite current homepage showing ten numeric means.",
+        "May cohort is latest found, not newly evaluated October data."
+      ],
+      "placement": "active_results_after_import",
+      "action": "Show latest published v5.0.0 May 14 cohort with honest cohort date; retrieve full 11-model release and retain older paper cohort separately.",
+      "source_verification": "Primary homepage reopened; full leaderboard client-rendered.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Current project in recovered research advertised v5.0.0, updated May 14, 2026; older HELM releases used different benchmark counts."
+      },
+      "additions_cohort": "medhelm-v5"
+    },
+    {
+      "id": "medagentbench",
+      "name": "MedAgentBench family",
+      "kind": "catalog_numeric",
+      "numeric_rows": 6,
+      "is_current_by_renderer": false,
+      "source_url": "https://arxiv.org/abs/2501.14654",
+      "issues": [
+        "Renderer currently prioritizes the old original MedAgentBench card sixth in gallery.",
+        "Family name conceals that default chart is the original GPT-4o/Claude-3.5-era experiment."
+      ],
+      "placement": "archive_cohort",
+      "action": "Keep original 12-model paper/homepage results in MedAgentBench history, removing priority promotion of the original cohort above current medical evidence.",
+      "source_verification": "Official author homepage reopened; 12 rows match historical family cohort.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Original 2025 work is extended by a separate 2026 v2 project and MAST track; a July 2026 verifier audit proposes another revision."
+      },
+      "expanded_numeric_rows": 12,
+      "audit_warning": {
+        "source": "https://arxiv.org/abs/2607.01470",
+        "review_date": "2026-07-01",
+        "finding": "Independent author audit reports a 41.7% silent-finish ceiling in MedAgentBench v1/v2 and proposes MAB-v3 (508 tasks, 8.9% ceiling).",
+        "scope": "Author-reported verifier critique; proposed v3 must not be portrayed as an official in-place replacement or used to change the old scores."
+      }
+    },
+    {
+      "id": "masai-trial",
+      "name": "MASAI mammography trial",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://lup.lub.lu.se/search/publication/7851a699-d9c4-4263-93dc-b29779d5b8d4",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Numeric clinical outcomes are published but absent.",
+        "Catalog historical flag does not affect current filter."
+      ],
+      "placement": "fixed_study_results",
+      "action": "Import two-arm endpoint chart and uncertainty in a fixed clinical-study section. Keep trial dates, noninferiority and comparator.",
+      "source_verification": "Primary university publication record reopened, including complete abstract and journal date.",
+      "catalog_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Completed randomized trial with final interval-cancer report in January 2026; it is a fixed cohort, not a rolling leaderboard."
+      },
+      "additions_cohort": "masai-trial"
+    },
+    {
+      "id": "kenya-ai-consult-trial",
+      "name": "Kenya AI Consult trial",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.nature.com/articles/s41591-026-04503-6",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Numeric outcomes are published but absent.",
+        "Catalog historical flag does not affect current filter."
+      ],
+      "placement": "fixed_study_results",
+      "action": "Import endpoint rates and adjusted effect with CI; use a study view rather than model ranking. Label 2025 enrollment and June 2026 publication.",
+      "source_verification": "Primary Nature paper reopened; null primary result and denominators verified.",
+      "catalog_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Fixed April–July 2025 study published June 26, 2026."
+      },
+      "additions_cohort": "kenya-ai-consult-trial"
+    },
+    {
+      "id": "robochallenge-table30",
+      "name": "RoboChallenge Table30 / V2",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://arxiv.org/html/2510.17950v1",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Current primary homepage returns no text; annual PDF exceeds web tool size limit.",
+        "No successful current numeric extraction established."
+      ],
+      "placement": "source_directory",
+      "action": "Resolve current V2 table via supported browser/source route; show historical annual report separately if imported. Do not claim latest standings absent merely because text is empty.",
+      "source_verification": "Homepage reopened (zero text); annual PDF retrieval returned content-length limit over 10 MiB. Neither proves broken site.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research directly observed Table30 V2 and a separate Specialist board on September 30, 2026; row dates were not shown."
+      }
+    },
+    {
+      "id": "stationerybench",
+      "name": "Robocurve StationeryBench",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://openai.robocurve.org/stationerybench/",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Empty despite numeric per-task table and all trial outcomes.",
+        "Catalog historical flag ignored by current filter."
+      ],
+      "placement": "fixed_study_results",
+      "action": "Import system-by-task outcomes (200 trials) with study date, denominators, milestone score, and distinct interfaces; preserve trace/video links.",
+      "source_verification": "Primary September 10 report rechecked; complete summary table available.",
+      "catalog_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Fixed September 10, 2026 report using Inspect Robots 0.58.0; not a broad ongoing leaderboard."
+      },
+      "additions_cohort": "stationerybench"
+    },
+    {
+      "id": "barn-challenge-2026-finals",
+      "name": "BARN Challenge 2026 physical finals",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://people.cs.gmu.edu/~xiao/Research/BARN_Challenge/BARN_Challenge26.html",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Empty despite published physical final results.",
+        "Catalog historical flag ignored by current filter."
+      ],
+      "placement": "fixed_event_results",
+      "action": "Import three official finalist results, flag selected best-three-of-five protocol, and separate physical from simulation.",
+      "source_verification": "Direct 502; official source recovered through search-indexed page with fixed 2026 finals table.",
+      "catalog_lifecycle": {
+        "status": "historical",
+        "as_of": "2026-09-30",
+        "basis": "Official physical finals were held June 3–4, 2026 with published results and team-code links."
+      },
+      "additions_cohort": "barn-challenge-2026-finals"
+    },
+    {
+      "id": "behavior-challenge-2026",
+      "name": "BEHAVIOR Challenge 2026",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://behavior.stanford.edu/challenge/index.html",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "There are numeric self-reports in preserved supplement, but no normal result view.",
+        "Dataset subset and verification are more important than a generic current/history label."
+      ],
+      "placement": "provisional_results",
+      "action": "Show self-reported results only in separate subset panels with tasks/episodes/verification state. Verified-results empty is real; never fabricate verified standings or pool 8-task and 50-task submissions.",
+      "source_verification": "Challenge homepage reopened; current HF file retrieval unavailable in this pass. Exact pinned supplement from earlier same-day check retained, not relabeled fresh verification.",
+      "catalog_lifecycle": {
+        "status": "ongoing",
+        "as_of": "2026-09-30",
+        "basis": "Launched July 2, 2026; submissions due October 16 and winners scheduled November 4. Prior research found self-reported results but an empty verified-results file."
+      },
+      "additional_sources": [
+        "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff/data/self_reported_results.jsonl"
+      ]
+    },
+    {
+      "id": "bench2drive",
+      "name": "Bench2Drive",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://github.com/Thinklab-SJTU/Bench2Drive",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Primary table has scores; omission is never-collected data."
+      ],
+      "placement": "active_results_after_import",
+      "action": "Import ten v0.0.4 systems with route-count/protocol; retain system release and evaluation dates unknown. Never imply on-road safety.",
+      "source_verification": "Official tag-specific numeric markdown fetched through GitHub connector.",
+      "catalog_lifecycle": {
+        "status": "live",
+        "as_of": "2026-09-30",
+        "basis": "Recovered research observed v0.0.4 repository results on September 30, 2026; individual row dates were not supplied."
+      },
+      "additions_cohort": "bench2drive"
+    },
+    {
+      "id": "waymo-onroad-safety",
+      "name": "Waymo on-road safety evidence",
+      "kind": "catalog_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.iihs.org/news/detail/waymos-driverless-cars-crash-less-often-than-people",
+      "issues": [
+        "No numeric result in displayed chart; source card occupies normal gallery grid.",
+        "Numeric observational effects exist; none ingested into a chart.",
+        "A shared model score axis would be misleading."
+      ],
+      "placement": "observational_study_results",
+      "action": "Present independent IIHS 2021–2024 and provider through-June-2026 exposure separately, with methodology, denominators, uncertainty and unknown-injury sensitivity. No foundation-model leaderboard.",
+      "source_verification": "Provider impact page reopened; earlier same-day release-note caveat remains in supplement.",
+      "catalog_lifecycle": {
+        "status": "ongoing",
+        "as_of": "2026-09-30",
+        "basis": "Fixed IIHS report published July 23, 2026 analyzes 2021–2024; provider hub in earlier research covered exposure through June 2026 and remains an ongoing data source."
+      },
+      "sensitivity_note": "One crash involving two Waymo vehicles has suspected serious injury marked unknown pending police report. Provider serious-injury IPMM 0.011 becomes 0.018 if counted, versus aligned human benchmark 0.2133; preserve September 24 release-note attribution."
+    },
+    {
+      "id": "webdev-arena-frontend",
+      "name": "WebDev Arena · Frontend",
+      "kind": "frontend_numeric",
+      "numeric_rows": 12,
+      "is_current_by_renderer": true,
+      "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+      "issues": [
+        "Only 12 of 138 source model configurations imported. API prices must not become measured task costs."
+      ],
+      "placement": "active_results",
+      "action": "Import full source table, retain rank spreads/vote counts and exact harness suffixes; keep 12-row preview only as display limit.",
+      "source_verification": "Primary October 1 table reopened; existing first 12 values match."
+    },
+    {
+      "id": "design-arena-frontend",
+      "name": "Design Arena · Overall Frontend",
+      "kind": "frontend_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://www.designarena.ai/leaderboard/code",
+      "issues": [
+        "No numeric rows; unresolved extraction/review is presented as an ordinary gallery card.",
+        "Empty primary text table is extraction-unresolved, not no published leaderboard."
+      ],
+      "placement": "source_directory",
+      "action": "Resolve official client-side scoreboard with exact category/configuration. Until then keep a small source link in frontend family directory, not empty chart card.",
+      "source_verification": "Primary page reopened; headings available but no numerical standings."
+    },
+    {
+      "id": "design2code-v3-484",
+      "name": "Design2Code · 484-page historical cohort",
+      "kind": "frontend_numeric",
+      "numeric_rows": 6,
+      "is_current_by_renderer": false,
+      "source_url": "https://arxiv.org/html/2403.03163v3",
+      "issues": [
+        "Old cohort is honestly marked but appears beside live frontend boards by default."
+      ],
+      "placement": "archive_cohort",
+      "action": "Keep February 2025 paper cohort and four Direct configurations; preserve GPT-4o method variants in their own selector. Do not promote as current frontier models.",
+      "source_verification": "Existing pinned paper data and renderer audited; no newer same-protocol run verified in this pass."
+    },
+    {
+      "id": "webcraftbench-v3",
+      "name": "WebCraftBench",
+      "kind": "frontend_source_only",
+      "numeric_rows": 0,
+      "is_current_by_renderer": true,
+      "source_url": "https://arxiv.org/html/2609.15387v3",
+      "issues": [
+        "No numeric rows; unresolved extraction/review is presented as an ordinary gallery card.",
+        "Published configuration table resolves the previous abbreviated-review blocker.",
+        "Paper does not cover newly released Opus 5.5/Astra/GPT-6.1 Sol; do not silently substitute them."
+      ],
+      "placement": "fixed_paper_results",
+      "action": "Replace pending placeholder with 17-system paper result view; show z scores per dimension and exact harness/effort, with September 20 revision date.",
+      "source_verification": "Full Table 3, setup, limitations, and Appendix E reopened.",
+      "additions_cohort": "webcraftbench-v3"
+    }
+  ]
+}
