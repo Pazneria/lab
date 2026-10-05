@@ -1,0 +1,254 @@
+{
+  "sources": [
+    {
+      "id": "nvidia-blackwell",
+      "title": "Blackwell platform announcement",
+      "publisher": "NVIDIA",
+      "published_at": "2024-03-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "nvidia-arizona",
+      "title": "First Blackwell wafer produced in the US",
+      "publisher": "NVIDIA",
+      "published_at": "2025-10-17",
+      "retrieved_at": "2026-10-05",
+      "url": "https://blogs.nvidia.com/blog/tsmc-blackwell-manufacturing/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-q1-2026",
+      "title": "Q1 2026 earnings call transcript",
+      "publisher": "TSMC",
+      "published_at": "2026-04-16",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-04/3cef85204275f94fd111485cfdf4adb3c0263c45/TSMC%201Q26%20Transcript.pdf",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-q2-2026",
+      "title": "Q2 2026 earnings call transcript",
+      "publisher": "TSMC",
+      "published_at": "2026-07-16",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-08/3e494f0c14dd0890f897aa044415e21d93486cc4/TSMC%202Q26%20Transcript.pdf",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-ap6",
+      "title": "Opening of Advanced Backend Fab 6",
+      "publisher": "TSMC",
+      "published_at": "2023-06-08",
+      "retrieved_at": "2026-10-05",
+      "url": "https://pr.tsmc.com/english/news/3033",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "tsmc-packaging",
+      "title": "Advanced packaging services",
+      "publisher": "TSMC",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.tsmc.com/english/dedicatedFoundry/services/advanced-packaging",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "amd-mi350",
+      "title": "AMD Instinct GPU family brochure",
+      "publisher": "AMD",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/product-briefs/amd-instinct-gpu-family-brochure.pdf",
+      "source_type": "primary",
+      "note": "Document copyright 2025; publication day not established"
+    },
+    {
+      "id": "intel-fab52",
+      "title": "Intel Technology Tour 2025",
+      "publisher": "Intel",
+      "published_at": "2025-10-09",
+      "retrieved_at": "2026-10-05",
+      "url": "https://newsroom.intel.com/press-kit/press-kit-intel-technology-tour-2025",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "intel-18a",
+      "title": "Process milestones at VLSI Symposium",
+      "publisher": "Intel",
+      "published_at": "2026-06-16",
+      "retrieved_at": "2026-10-05",
+      "url": "https://newsroom.intel.com/intel-foundry/intel-foundry-details-process-milestones-future-innovation-at-vlsi-symposium",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "intel-d1x",
+      "title": "High NA EUV at Intel Foundry",
+      "publisher": "Intel",
+      "published_at": "2024-04-18",
+      "retrieved_at": "2026-10-05",
+      "url": "https://newsroom.intel.com/intel-foundry/intel-foundry-opens-new-frontier-chipmaking",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "asml-highna",
+      "title": "High NA EUV readiness milestone",
+      "publisher": "ASML",
+      "published_at": "2026-07-15",
+      "retrieved_at": "2026-10-05",
+      "url": "https://www.investor.asml.com/news-releases/news-release-details/high-na-euv-reaches-new-readiness-milestone",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "samsung-taylor",
+      "title": "Taylor US fab",
+      "publisher": "Samsung",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://semiconductor.samsung.com/sas/company/taylor/",
+      "source_type": "primary",
+      "note": "Undated project page; not proof that production has started"
+    },
+    {
+      "id": "samsung-sites",
+      "title": "Manufacturing sites",
+      "publisher": "Samsung",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://semiconductor.samsung.com/foundry/manufacturing/manufacturing-sites/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-q3-2026",
+      "title": "Fiscal Q3 2026 Form 10-Q",
+      "publisher": "Micron",
+      "published_at": "2026-06-25",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/static-files/23023765-dfef-4e7e-845b-cd744fc20d93",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-us-july",
+      "title": "US manufacturing investment update",
+      "publisher": "Micron",
+      "published_at": "2026-07-09",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Accelerates-U-S--Investments-Pours-First-Concrete-at-New-York-Fab/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-singapore-nand",
+      "title": "Singapore wafer fab groundbreaking",
+      "publisher": "Micron",
+      "published_at": "2026-01-27",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Breaks-Ground-on-Advanced-Wafer-Fabrication-Facility-in-Singapore-01-26-2026/default.aspx",
+      "source_type": "primary",
+      "note": "Page header January 26; release dateline and event January 27"
+    },
+    {
+      "id": "micron-singapore-hbm",
+      "title": "Singapore HBM packaging groundbreaking",
+      "publisher": "Micron",
+      "published_at": "2025-01-08",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2025/Micron-Breaks-Ground-on-New-HBM-Advanced-Packaging-Facility-in-Singapore-01-08-2025/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-sanand",
+      "title": "Sanand assembly and test opening",
+      "publisher": "Micron",
+      "published_at": "2026-02-28",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/node/50101/pdf",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-tongluo",
+      "title": "Acquisition of Tongluo P5 completed",
+      "publisher": "Micron",
+      "published_at": "2026-03-15",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Completes-Acquisition-of-PSMCs-Tongluo-P5-Site-in-Taiwan-03-15-2026/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-h200",
+      "title": "HBM3E volume production for H200",
+      "publisher": "Micron",
+      "published_at": "2024-02-26",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2024/Micron-Commences-Volume-Production-of-Industry-Leading-HBM3E-Solution-to-Accelerate-the-Growth-of-AI-02-26-2024/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "micron-q4-2026",
+      "title": "Fiscal Q4 and full-year 2026 results",
+      "publisher": "Micron",
+      "published_at": "2026-09-30",
+      "retrieved_at": "2026-10-05",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/default.aspx",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-m15x",
+      "title": "M15X DRAM fab announcement",
+      "publisher": "SK hynix",
+      "published_at": "2024-04-24",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/sk-hynix-to-produce-dram-from-m15x-in-cheongju/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-gsa",
+      "title": "GSA awards and manufacturing update",
+      "publisher": "SK hynix",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/sk-hynix-honored-with-two-major-titles-at-gsa-awards-2025/",
+      "source_type": "primary",
+      "note": "2025 report says cleanroom opened in October; exact publication date not captured"
+    },
+    {
+      "id": "sk-q2-2026",
+      "title": "Q2 2026 results",
+      "publisher": "SK hynix",
+      "published_at": "2026-07-29",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/q2-2026-business-results/",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "sk-pt7",
+      "title": "P&amp;T7 packaging fab groundbreaking",
+      "publisher": "SK hynix",
+      "published_at": "2026-04-22",
+      "retrieved_at": "2026-10-05",
+      "url": "https://news.skhynix.com/en/skhynix-chungju-pt7/",
+      "source_type": "primary",
+      "note": null
+    }
+  ]
+}

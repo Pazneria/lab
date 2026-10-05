@@ -81,7 +81,11 @@ const server=http.createServer((req,res)=>{
  await helpWalk(page,'visit-home');await page.waitForTimeout(100);const r=await page.locator('#room').boundingBox();
  await page.mouse.move(r.x+r.width/2,r.y+r.height/2);await page.mouse.down();await page.mouse.move(r.x+r.width/2+70,r.y+r.height/2+10);await page.mouse.up();
  assert(await page.locator('#cancel-walk').isHidden());assert(!await page.locator('#station-dialog').isVisible());done('Drag look cancels walking and does not count as a destination tap');
+ // Start away from the bench: the preceding cancellation tests can leave us close enough to arrive before a keyboard assertion.
+ await page.reload();await page.locator('#room').waitFor({state:'visible'});
  await helpWalk(page,'visit-bench');await page.waitForTimeout(100);assert.equal(await page.evaluate(()=>document.activeElement.id),'room','Walking returns keyboard focus to the room');await page.keyboard.down('KeyW');await page.waitForTimeout(150);await page.keyboard.up('KeyW');assert(await page.locator('#cancel-walk').isHidden());done('Keyboard movement replaces walking; navigation stays canvas-scoped');
+ // Arrival is a separate scenario; restore the same known starting distance without relaxing its pre-arrival assertion.
+ await page.reload();await page.locator('#room').waitFor({state:'visible'});
  await helpWalk(page,'visit-bench');assert(!await page.locator('#station-dialog').isVisible());await page.locator('#station-dialog').waitFor({state:'visible',timeout:14000});
  assert.equal(await page.locator('#dialog-link').getAttribute('href'),nav.safeDestination('catalog'));assert.equal(nav.nearby(await pos(page)),'catalog');
  await page.keyboard.press('Escape');assert.equal(await page.evaluate(()=>document.activeElement.id),'room');

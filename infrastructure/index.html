@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta
+      name="description"
+      content="Follow the physical AI supply chain: chip designers, fabs, memory, packaging, power, and computing sites. A source-backed atlas from Jordan's Lab."
+    />
+    <title>AI infrastructure atlas — Jordan's Lab</title>
+    <link rel="icon" href="../assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/atlas.css" />
+    <script src="assets/atlas-data.js" defer></script>
+    <script src="assets/atlas.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to atlas</a>
+    <header class="shell masthead">
+      <a class="brand" href="../lab-space/"
+        ><span class="brand-mark" aria-hidden="true">J<span>·</span></span
+        ><span>Jordan's <b>Lab</b></span></a
+      >
+      <nav aria-label="Atlas navigation">
+        <a href="#geography">Map</a><a href="#supply-chain">Supply chain</a
+        ><a href="#changes">Source timeline</a
+        ><a href="../lab-space/"
+          >Back to Lab <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main class="shell" id="main" tabindex="-1">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">
+            <span class="live-dot" aria-hidden="true"></span> Field notes /
+            infrastructure
+          </p>
+          <h1 id="page-title">The physical<br />side of <em>AI.</em></h1>
+        </div>
+        <div class="intro-copy">
+          <p class="lede">
+            Follow the chips. Find the fabs.<br />See where the compute takes
+            shape.
+          </p>
+          <p>
+            An atlas of the companies, places, and public commitments behind
+            AI—from silicon to powered systems.
+          </p>
+          <p class="edition" id="edition">
+            A representative, source-backed collection.
+          </p>
+        </div>
+      </section>
+      <div id="load-error" class="notice" role="status">
+        Loading the atlas. If it does not appear,
+        <a href="sources.html">read the static source index</a>.
+      </div>
+      <noscript
+        ><p class="notice">
+          JavaScript is off.
+          <a href="sources.html">Open the readable site and source index</a> for
+          the same records.
+        </p></noscript
+      >
+      <div id="atlas" hidden>
+        <section
+          id="geography"
+          class="atlas-section"
+          aria-labelledby="map-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 / Geography</p>
+              <h2 id="map-title">Places that make AI possible</h2>
+            </div>
+            <p>
+              Explore a public site.<br />Every dot has a story and a source.
+            </p>
+          </div>
+          <form id="filters" class="filters" aria-label="Filter mapped sites">
+            <label class="search"
+              >Search sites, products, or players<input
+                name="q"
+                type="search"
+                placeholder="Try a company, city, or chip…"
+                maxlength="150"
+                autocomplete="off"
+            /></label>
+            <label
+              >Site type<select name="type">
+                <option value="all">All types</option>
+                <option value="fab">Logic fabs</option>
+                <option value="research">Manufacturing R&amp;D</option>
+                <option value="memory">Memory fabs</option>
+                <option value="packaging">Advanced packaging</option>
+                <option value="assembly">Assembly / test</option>
+                <option value="data-center">Compute sites</option>
+                <option value="power">Power</option>
+              </select></label
+            >
+            <label
+              >Last reported status<select name="status">
+                <option value="all">All statuses</option>
+                <option value="operating">Operating</option>
+                <option value="construction">Under construction</option>
+                <option value="announced">Announced / planned</option>
+                <option value="restart_in_progress">Restart in progress</option>
+                <option value="unknown">Not established</option>
+              </select></label
+            >
+            <label
+              >Player<select name="player">
+                <option value="all">All players</option>
+              </select></label
+            >
+            <button class="reset" type="reset">Reset</button>
+            <details class="more-filters">
+              <summary>Country &amp; company role</summary>
+              <div>
+                <label
+                  >Country<select name="country">
+                    <option value="all">All countries</option>
+                  </select></label
+                ><label
+                  >Company's site role<select name="role">
+                    <option value="all">Any documented link</option>
+                    <option value="owner">Owner</option>
+                    <option value="operator">Operator</option>
+                    <option value="customer">Customer / offtaker</option>
+                    <option value="partner">Other named relationship</option>
+                  </select></label
+                >
+                <p>
+                  Roles apply to the selected player, or to any player when “All
+                  players” is selected. Proposed roles remain qualified in the
+                  site sources.
+                </p>
+              </div>
+            </details>
+          </form>
+          <div class="explorer">
+            <div class="map-column">
+              <div class="map-topbar">
+                <span id="site-count" role="status" aria-live="polite"></span
+                ><a href="#site-list">Browse site list ↓</a>
+              </div>
+              <div class="map-frame" id="map-frame">
+                <div class="map-toolbar" role="group" aria-label="Map region">
+                  <button type="button" data-region="world" aria-pressed="true">
+                    World</button
+                  ><button
+                    type="button"
+                    data-region="americas"
+                    aria-pressed="false"
+                  >
+                    Americas</button
+                  ><button
+                    type="button"
+                    data-region="europe"
+                    aria-pressed="false"
+                  >
+                    Europe</button
+                  ><button
+                    type="button"
+                    data-region="asia"
+                    aria-pressed="false"
+                  >
+                    East Asia
+                  </button>
+                </div>
+                <div id="map-viewport" class="map-viewport">
+                  <img
+                    id="basemap"
+                    src="assets/world.svg"
+                    alt=""
+                    class="basemap"
+                  />
+                  <div id="map-points"></div>
+                </div>
+                <p class="map-empty" id="map-empty" hidden>
+                  No sites match these filters.
+                </p>
+                <p class="map-fallback" id="map-fallback" hidden>
+                  The basemap could not load. Use the complete site list below.
+                </p>
+                <div class="map-legend">
+                  <span><i class="legend-dot operating"></i>Operating</span
+                  ><span
+                    ><i class="legend-dot construction"></i>Construction</span
+                  ><span><i class="legend-dot announced"></i>Planned</span
+                  ><span><i class="legend-dot mixed"></i>Mixed / unknown</span>
+                </div>
+              </div>
+              <div class="map-caption">
+                <span
+                  >Approximate locality, not facility coordinates. Numbers group
+                  nearby sites; select a group to choose a site.</span
+                ><a
+                  href="https://www.naturalearthdata.com/about/terms-of-use/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Made with Natural Earth ↗</a
+                >
+              </div>
+              <div
+                id="map-cluster"
+                class="map-cluster"
+                hidden
+                tabindex="-1"
+              ></div>
+              <div
+                id="site-list"
+                class="site-list"
+                aria-label="Mapped sites"
+                tabindex="-1"
+              ></div>
+            </div>
+            <section
+              id="site-detail"
+              class="site-detail"
+              aria-labelledby="site-title"
+              tabindex="-1"
+            ></section>
+          </div>
+        </section>
+        <section
+          id="supply-chain"
+          class="atlas-section"
+          aria-labelledby="chain-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / The supply chain</p>
+              <h2 id="chain-title">From a chip design to a deployment</h2>
+            </div>
+            <p>
+              Choose a player to follow its documented relationships.<br />Companies
+              can appear in more than one stage.
+            </p>
+          </div>
+          <div id="chain-stages" class="chain-stages"></div>
+          <form
+            id="chain-controls"
+            class="chain-controls"
+            aria-label="Filter supply-chain evidence"
+          >
+            <label
+              >Company / partner<select
+                name="profile"
+                aria-label="Company or partner profile"
+              ></select></label
+            ><label
+              >Evidence specificity<select name="evidence">
+                <option value="all">All documented links</option>
+                <option value="site_product">Exact site + product</option>
+                <option value="site">Site-specific</option>
+                <option value="product">Product-level</option>
+                <option value="program">Multisite program</option>
+                <option value="company">Company-level</option>
+              </select></label
+            ><label
+              >Product<select name="product">
+                <option value="all">All products</option>
+              </select></label
+            >
+          </form>
+          <p class="chain-note">
+            Arrows describe disclosed commercial or product relationships, not
+            the shipping route or origin of an installed chip. Process names are
+            vendor labels, not directly comparable physical dimensions.
+          </p>
+          <div id="player-detail" class="player-detail" tabindex="-1"></div>
+        </section>
+        <section
+          id="changes"
+          class="atlas-section"
+          aria-labelledby="changes-title"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 / Source timeline</p>
+              <h2 id="changes-title">A dated view of a moving industry</h2>
+            </div>
+            <p>
+              Public announcements and reported milestones.<br />A source date
+              is not a promise of current completion.
+            </p>
+          </div>
+          <div id="change-list" class="change-list"></div>
+        </section>
+      </div>
+      <section class="methodology" aria-labelledby="method-title">
+        <p class="eyebrow">Reading the atlas</p>
+        <h2 id="method-title">Useful detail. Visible uncertainty.</h2>
+        <div class="method-grid">
+          <p>
+            <b>A selected sample.</b> This is representative coverage, not a
+            census or market-share ranking. Absence from the map does not mean a
+            company has no activity there.
+          </p>
+          <p>
+            <b>Capacity has a meaning.</b> Operating and proposed projects stay
+            distinct. IT load, grid supply, facility power, wafer capacity, and
+            capex are different measures. No global GW total is calculated.
+          </p>
+          <p>
+            <b>Relationships have a scope.</b> Public company partnerships do
+            not establish a specific fab, memory supplier, or deployment.
+            Unknown assignments remain explicit.
+          </p>
+        </div>
+        <a href="sources.html">Read every record and source →</a
+        ><a href="data/atlas.json" class="data-download"
+          >Download the public dataset ↗</a
+        >
+      </section>
+    </main>
+    <footer class="shell footer">
+      <span>Jordan's Lab / Infrastructure atlas</span
+      ><span id="footer-date">Public sources. Approximate geography.</span>
+    </footer>
+  </body>
+</html>

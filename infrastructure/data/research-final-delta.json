@@ -1,0 +1,129 @@
+{
+  "base_snapshot": "2026-10-05T16:28:23Z",
+  "result_version": "0.1.0-reviewed",
+  "instructions": "Match array records by id. Apply field_updates; append added_records only when id does not exist. Replace metadata.counts with the supplied counts. No site-cards changes.",
+  "metadata_updates": { "publication_state": "reviewed_for_publication" },
+  "field_updates": [
+    {
+      "collection": "sources",
+      "id": "intel-fab52",
+      "fields": {
+        "url": "https://www.intel.com/content/www/us/en/newsroom/press-hub/press-kit/client-computing/press-kit-intel-technology-tour-2025.html"
+      }
+    },
+    {
+      "collection": "sources",
+      "id": "sk-pt7",
+      "fields": { "title": "P&T7 packaging fab groundbreaking" }
+    },
+    {
+      "collection": "sites",
+      "id": "sk-pt7",
+      "fields": { "name": "SK hynix P&T7" }
+    },
+    {
+      "collection": "sites",
+      "id": "intel-d1x",
+      "fields": {
+        "status_note": "R&D facility; not counted as a volume-output fab"
+      }
+    },
+    {
+      "collection": "products",
+      "id": "blackwell",
+      "fields": { "name": "NVIDIA Blackwell GPU" }
+    },
+    {
+      "collection": "sites",
+      "id": "stargate-abilene",
+      "fields": { "product_ids": ["gb200"] }
+    },
+    {
+      "collection": "sites",
+      "id": "colossus-1",
+      "fields": { "product_ids": ["h100", "h200", "gb200"] }
+    },
+    {
+      "collection": "sites",
+      "id": "tsmc-ap6",
+      "fields": {
+        "capacity_observations": [
+          {
+            "value": 1000000,
+            "unit": "300mm_wafer_equivalent_per_year",
+            "basis": "advanced_packaging_throughput",
+            "state": "design_estimate",
+            "label": "Estimated packaging capacity, not front-end wafer starts",
+            "period": null,
+            "qualifier": "greater_than",
+            "scope_id": "tsmc-ap6",
+            "source_ids": ["tsmc-ap6"],
+            "additive": false
+          }
+        ]
+      }
+    },
+    {
+      "collection": "relationships",
+      "id": "e-abilene-nvidia",
+      "fields": { "product_id": "gb200" }
+    },
+    {
+      "collection": "sources",
+      "id": "sk-gsa",
+      "fields": {
+        "published_at": "2025-12-06",
+        "note": "Page header December 6; release dateline December 7; cleanroom opened October 2025"
+      }
+    }
+  ],
+  "added_records": {
+    "products": [
+      {
+        "id": "gb200",
+        "name": "NVIDIA Grace Blackwell GB200",
+        "type": "accelerator_system",
+        "designer_id": "nvidia",
+        "process_nodes": [],
+        "memory": null,
+        "status": "reported",
+        "source_ids": ["openai-abilene", "nvidia-blackwell"]
+      },
+      {
+        "id": "h100",
+        "name": "NVIDIA H100",
+        "type": "accelerator",
+        "designer_id": "nvidia",
+        "process_nodes": [],
+        "memory": null,
+        "status": "reported",
+        "source_ids": ["xai-anthropic"]
+      }
+    ],
+    "relationships": [
+      {
+        "id": "e-gb200-blackwell",
+        "from_id": "gb200",
+        "to_id": "blackwell",
+        "type": "uses_accelerator_architecture",
+        "evidence_scope": "product",
+        "site_id": null,
+        "product_id": "gb200",
+        "state": "reported",
+        "reported_at": "2024-03-18",
+        "source_ids": ["nvidia-blackwell"],
+        "description": "GB200 uses Blackwell GPUs; this does not identify originating fab lots.",
+        "quantity": null,
+        "allocation_share": null
+      }
+    ]
+  },
+  "metadata_counts": {
+    "players": 25,
+    "featured_players": 18,
+    "sites": 25,
+    "products": 14,
+    "relationships": 28,
+    "sources": 49
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "checkedAt": "2026-10-05T17:21:39.394Z",
+  "checks": [
+    "All 25 sites, featured supply-chain profiles and seven source-timeline entries load with no runtime service dependency.",
+    "The shared Lab navigation opens the atlas by keyboard and preserves the benchmark destination.",
+    "Status, type, search, country and explicit company-role filters combine, clear hidden selections, reset and show meaningful empty states.",
+    "Coincident Singapore projects share one cluster; keyboard activation opens independently selectable sites.",
+    "Keyboard site selection and URL reload retain the selected site and filters.",
+    "Evidence/product filters, all partner profiles, product/fab separation and multisite program boundaries are retained.",
+    "Every site deep link resolves; distinct generation, contract, planned uprate, packaging capacity and unknown/restart states are visible.",
+    "External links use HTTPS plus noopener/noreferrer; search text is rendered as text.",
+    "390px, 320px and 768px layouts have no horizontal overflow; mobile filter and detail selection pass.",
+    "Failed basemap leaves the directory usable; missing data and JavaScript-disabled mode offer the complete readable source index.",
+    "Direct file preview works without fetch or a local web server.",
+    "Data rendering rejects non-HTTPS source URLs and HTML payloads."
+  ],
+  "screenshots": [
+    "desktop.png",
+    "power-detail.png",
+    "supply-chain.png",
+    "lab-navigation-mobile.png",
+    "mobile.png",
+    "mobile-detail.png"
+  ],
+  "viewports": [
+    {
+      "label": "desktop",
+      "width": 1440,
+      "scroll": 1440
+    },
+    {
+      "label": "390px shared navigation",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "390px",
+      "width": 390,
+      "scroll": 390
+    },
+    {
+      "label": "320px shared navigation",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "320px",
+      "width": 320,
+      "scroll": 320
+    },
+    {
+      "label": "768px shared navigation",
+      "width": 768,
+      "scroll": 768
+    },
+    {
+      "label": "768px",
+      "width": 768,
+      "scroll": 768
+    }
+  ],
+  "accessibility": [
+    {
+      "label": "desktop",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "supply-chain",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "label": "mobile",
+      "violations": [],
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "base": "http://127.0.0.1:61108/lab/infrastructure/",
+  "browser": "154.0.4258.53"
+}

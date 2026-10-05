@@ -1,0 +1,19 @@
+{
+  "snapshot": "2026-10-05",
+  "counts": {
+    "players": 25,
+    "featured_players": 18,
+    "sites": 25,
+    "products": 14,
+    "relationships": 28,
+    "sources": 49
+  },
+  "checks": [
+    "Expected counts, unique IDs, all entity/source references and final corrections pass.",
+    "Null capacities, approximate locations, unassigned Rainier total, M15X uncertainty and packaging basis remain intact.",
+    "All generated views match the archived seven-part packet plus final review delta."
+  ],
+  "canonicalSha256": "4adfcf4263a6ed188d9e9e969ccbb76fd9aa8c7bd6bf7c728386a71f863f700e",
+  "canonicalMethod": "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
+  "publication": "Parent source/semantics review passed; agreed Lab navigation link included. Release authorized through PR #18."
+}
