@@ -4,7 +4,7 @@
     "title": "AI Infrastructure Atlas",
     "subtitle": "A first map of the physical supply chain",
     "as_of": "2026-10-05",
-    "publication_state": "candidate_pending_parent_review",
+    "publication_state": "reviewed_for_publication",
     "evidence_policy": "Public company/technical sources plus explicitly attributed independent Epoch AI research estimates. No private data.",
     "map_policy": "Publicly documented campus, address or project-area points where supported; explicitly labeled locality markers otherwise.",
     "status_policy": "Last publicly reported status, not a real-time operational audit",
@@ -14,7 +14,7 @@
       "sites": 94,
       "products": 14,
       "relationships": 30,
-      "sources": 124,
+      "sources": 126,
       "lab_profiles": 7,
       "mapped_sites": 25,
       "estimated_sites": 75
@@ -18124,6 +18124,26 @@
       "note": null
     },
     {
+      "id": "epoch-opus55-profile",
+      "title": "Claude Opus 5.5 model profile and ECI ranking",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/models/claude-opus-5-5",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "independent_research_model_profile",
+      "note": "Supports the ECI positioning in this dated snapshot. The model release date is not treated as the page publication date."
+    },
+    {
+      "id": "microsoft-mai-preview",
+      "title": "Introducing MAI-Thinking-1: public preview",
+      "publisher": "Microsoft AI",
+      "url": "https://microsoft.ai/news/introducing-mai-thinking-1/",
+      "published_at": "2026-08-12",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary_company",
+      "note": "The August 12 update establishes public-preview availability; the separate June announcement establishes the earlier model announcement."
+    },
+    {
       "id": "location-tsmc-directory",
       "title": "TSMC fab addresses and public map links",
       "publisher": "TSMC",
@@ -19248,7 +19268,8 @@
           "selection_basis": "Current leading Opus / general-work model; highest Anthropic ECI in the retrieved snapshot",
           "access": "available",
           "source_ids": [
-            "anthropic-opus55"
+            "anthropic-opus55",
+            "epoch-opus55-profile"
           ]
         },
         {
@@ -19751,7 +19772,8 @@
           "selection_basis": "Official flagship reasoning model; public preview expanded August 12",
           "access": "public_preview",
           "source_ids": [
-            "microsoft-mai-launch"
+            "microsoft-mai-launch",
+            "microsoft-mai-preview"
           ]
         }
       ],
@@ -20383,6 +20405,50 @@
   "research_provenance": {
     "profile_packet_count": 11,
     "location_packet_count": 5,
+    "final_review_corrections": {
+      "as_of": "2026-10-05",
+      "reviewed_snapshot_commit": "4b9a73954db869781c86cbde2939957888936297",
+      "sources": [
+        {
+          "id": "epoch-opus55-profile",
+          "title": "Claude Opus 5.5 model profile and ECI ranking",
+          "publisher": "Epoch AI",
+          "url": "https://epoch.ai/models/claude-opus-5-5",
+          "published_at": null,
+          "retrieved_at": "2026-10-05",
+          "source_type": "independent_research_model_profile",
+          "note": "Supports the ECI positioning in this dated snapshot. The model release date is not treated as the page publication date."
+        },
+        {
+          "id": "microsoft-mai-preview",
+          "title": "Introducing MAI-Thinking-1: public preview",
+          "publisher": "Microsoft AI",
+          "url": "https://microsoft.ai/news/introducing-mai-thinking-1/",
+          "published_at": "2026-08-12",
+          "retrieved_at": "2026-10-05",
+          "source_type": "primary_company",
+          "note": "The August 12 update establishes public-preview availability; the separate June announcement establishes the earlier model announcement."
+        }
+      ],
+      "model_source_additions": [
+        {
+          "player_id": "anthropic",
+          "model": "Claude Opus 5.5",
+          "source_ids": [
+            "epoch-opus55-profile"
+          ]
+        },
+        {
+          "player_id": "microsoft",
+          "model": "MAI-Thinking-1",
+          "source_ids": [
+            "microsoft-mai-preview"
+          ]
+        }
+      ],
+      "historical_badge_rule": "Derive the visible historical-model evidence label from evidence_class. Paper-reported values retained through Epoch are distinct from independent Epoch estimates.",
+      "source_verification": "Both added public pages were read on 2026-10-05 and support their assigned clauses. Original profile packets remain unchanged."
+    },
     "capacity_snapshot_hashes": [
       {
         "filename": "epoch-data_centers.csv",

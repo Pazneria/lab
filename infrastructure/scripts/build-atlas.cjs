@@ -515,7 +515,7 @@ const report = {
   canonicalMethod:
     "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
   publication:
-    "Entity-page and geographic revision is held for parent review. No publication authorization for this revision.",
+    "Independent source/semantics review passed; the final evidence-label and citation corrections are verified. Publication authorized after required checks.",
   expansion,
 };
 report.pages = require("./build-entity-pages.cjs")({

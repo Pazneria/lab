@@ -3,11 +3,15 @@
 Base: `fd8bace01e99e99e5bae0afe65c6d7efc95873bc` (verified main, including benchmark PR #17). The revision began at `82183ca78b00daf8d9c0651497b8ccfac2dd76e2` and fast-forwarded to current main without atlas conflicts.
 Branch: `codex/atlas-entity-pages`.
 
-## Review hold
+## Source review and publication authorization
 
-This revision is a candidate only. Parent source/semantics review and any shared
-navigation coordination must finish before merge or publication. The previous
-first-edition approval applied to PR #18, not these expanded records.
+Independent review passed PR #19 at `4b9a73954db869781c86cbde2939957888936297`,
+including all profiles, capacity/location records, three CSV hashes, 430 timeline
+observations and 99 chip-count records. Publication was authorized after three
+small corrections: derive historical training badges from the evidence class,
+add Epoch's Opus ECI page, and add Microsoft's August 12 preview announcement.
+Those source pages were verified and retained in `data/profiles/review-corrections.json`.
+The updated builder and browser checks verify these corrections.
 
 Every changed or added file in this revision is under `infrastructure/`. No benchmark
 data/UI, shared navigation, room behavior or hosting configuration is changed.
@@ -27,11 +31,11 @@ without a new service, paid key, credential or deployment pipeline.
    and confidence qualifiers remain available on native entity pages.
 5. Fetch latest main and resolve only atlas-local conflicts. Preserve benchmark PR #17
    and the benchmark owner's subsequent work. Do not alter shared navigation here.
-6. Run the build consistency and atlas browser checks. Only after explicit parent
-   publication authorization should the draft PR become a merge candidate.
+6. Run the build consistency and atlas browser checks. The explicit source review and publication authorization are recorded above;
+   merge only after these checks pass at the final branch head.
 7. After an authorized merge, verify the exact Pages commit and served entity routes,
-   assets and normalized dataset. Update the first-edition publication test before
-   treating it as release evidence for this expanded route set.
+   assets and normalized dataset. Use the updated publication test for all native entity routes and runtime assets;
+   save the Pages build identity and exact live-byte receipt separately.
 
 ## Evidence and limits
 
@@ -42,7 +46,7 @@ Broader imported rows are attributed dataset ingestion, not an independent audit
 every underlying permit or claim. Original packet fields and superseded records are
 retained; visible labels decode literal HTML entities.
 
-Current candidate verification results are in `data-validation.json` and
+Current local verification results are in `data-validation.json` and
 `ui-validation.json`. Screenshots and the full browser report are under ignored
 `evidence/infrastructure/`. Earlier `aggregate-validation.json` documents the first
 edition, not a fresh full-repository regression run for this revision.

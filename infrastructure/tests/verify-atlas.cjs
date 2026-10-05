@@ -406,6 +406,37 @@ pass(
       .locator("#models")
       .evaluate((el) => el.scrollIntoView({ block: "start" }));
     await shot(page, "v2-company-models.png");
+    await page.goto(new URL("companies/meta/", base).href);
+    await page.locator(".historical-models > summary").click();
+    assert.match(
+      await page.locator(".historical-models").innerText(),
+      /Historical paper-reported value \(via Epoch\)/,
+    );
+    assert(
+      !(await page
+        .locator(".historical-models")
+        .innerText()
+        .then((text) => text.includes("Historical Epoch estimate"))),
+    );
+    await page.goto(new URL("companies/anthropic/", base).href);
+    assert.equal(
+      await page
+        .locator('#models a[href="https://epoch.ai/models/claude-opus-5-5"]')
+        .count(),
+      1,
+    );
+    await page.goto(new URL("companies/microsoft/", base).href);
+    assert.equal(
+      await page
+        .locator(
+          '#models a[href="https://microsoft.ai/news/introducing-mai-thinking-1/"]',
+        )
+        .count(),
+      1,
+    );
+    pass(
+      "Historical paper-reported training is labeled separately; Opus ECI and MAI preview clauses link to their verified sources.",
+    );
     await page.goto(new URL("products/gb200/", base).href);
     assert.match(await page.locator("h1").innerText(), /GB200/);
     assert((await page.locator("#relationships a[data-entity]").count()) > 0);
@@ -524,7 +555,7 @@ pass(
     await staticPage.goto(new URL("sources.html", base).href);
     assert.match(
       await staticPage.locator("#sources").innerText(),
-      /124 public sources/,
+      /126 public sources/,
     );
     await nojs.close();
     await page.goto(

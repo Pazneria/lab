@@ -32,6 +32,18 @@ module.exports = function extendAtlas(raw, root) {
   assert.equal(profiles.length, 7);
   assert.equal(addedSources.length, 48);
   assert.equal(essential.length, 20);
+  const reviewCorrections = read("profiles/review-corrections.json");
+  assert.equal(reviewCorrections.sources.length, 2);
+  addedSources.push(...reviewCorrections.sources);
+  for (const update of reviewCorrections.model_source_additions) {
+    const model = profiles
+      .find((p) => p.player_id === update.player_id)
+      ?.flagship_models.find((m) => m.name === update.model);
+    assert(model, `Missing corrected model ${update.model}`);
+    model.source_ids = [
+      ...new Set([...model.source_ids, ...update.source_ids]),
+    ];
+  }
   const locations = [];
   for (let i = 1; i <= 5; i++) {
     const p = read(
@@ -315,7 +327,7 @@ module.exports = function extendAtlas(raw, root) {
     "Location references derived from OpenStreetMap: © OpenStreetMap contributors, ODbL (https://www.openstreetmap.org/copyright). Other references retain their per-record sources.";
   raw.schema_version = "0.2.0";
   Object.assign(raw.metadata, {
-    publication_state: "candidate_pending_parent_review",
+    publication_state: "reviewed_for_publication",
     evidence_policy: ofKind("metadata")[0].evidence_policy,
     capacity_source_attribution: epoch.attribution,
     counts: {
@@ -333,6 +345,7 @@ module.exports = function extendAtlas(raw, root) {
   raw.research_provenance = {
     profile_packet_count: 11,
     location_packet_count: 5,
+    final_review_corrections: reviewCorrections,
     capacity_snapshot_hashes: epoch.source_snapshots,
     raw_csv_publication:
       "Only filtered normalized records are published; unfiltered CSV audit snapshots stay outside the site.",
@@ -389,6 +402,7 @@ module.exports = function extendAtlas(raw, root) {
   return {
     profiles: 7,
     profile_sources: 48,
+    review_sources: 2,
     location_patches: 25,
     location_sources: 40,
     estimated_sites: 75,

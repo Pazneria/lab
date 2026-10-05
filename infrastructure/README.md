@@ -1,11 +1,11 @@
 # AI infrastructure atlas
 
-Static atlas for Jordan's Lab at `/lab/infrastructure/`. This revision is a local
-candidate awaiting parent source/semantics review; it is not authorized for publication.
-The previously published first edition is retained in Git history (PR #18).
+Static atlas for Jordan's Lab at `/lab/infrastructure/`. Independent source/semantics
+review passed and publication was authorized after the final evidence corrections
+and checks. The first edition remains in Git history (PR #18); this revision is PR #19.
 
 The October 5, 2026 snapshot has 94 canonical facilities, 32 companies (18 featured),
-14 products, seven lab profiles, 30 relationships and 124 public sources. The atlas
+14 products, seven lab profiles, 30 relationships and 126 public sources. The atlas
 provides 140 dedicated entity pages, a searchable directory and a geographic map.
 Twenty-five facilities have reviewed map locations: 22 sourced reference points and
 three explicitly approximate areas. The other 69 have address/locality records and
@@ -29,7 +29,8 @@ works; optional external street tiles are disabled for file URLs.
 ## Data and generation
 
 Preserved inputs: seven original research packets and final delta; eleven profile
-packets in `data/profiles/`; five location packets in `data/locations/`. The normalized
+packets in `data/profiles/`; five location packets in `data/locations/`; final citation corrections in
+`data/profiles/review-corrections.json`. The normalized
 Epoch selection is `data/profiles/epoch-sites-2026-10-05.json`. Raw, unfiltered CSV
 snapshots remain in ignored evidence and are not published.
 
@@ -88,6 +89,10 @@ cluster selection, mobile widths, map/data failure, no-JavaScript pages and loca
 preview. It intercepts every street-tile request; it never crawls the OSM service.
 Reports/screenshots go to ignored `evidence/infrastructure/`.
 
-`tests/verify-publication.cjs` belongs to the published first-edition release process;
-it is not proof that this candidate is deployed. See `docs/INTEGRATION.md` for the
-review boundary and `docs/ATTRIBUTION.md` for data, map and software credits.
+After the Pages build succeeds, set `LAB_ATLAS_COMMIT` to its exact 40-character
+commit and run `node infrastructure/tests/verify-publication.cjs`. It compares every
+native atlas entity page and runtime asset with committed Git bytes, verifies the
+shared Lab/benchmark routes, and checks live map behavior and corrected citations.
+OSM tile requests remain blocked in browser verification. Release receipts are
+written to ignored evidence; a source approval alone is not a deployment receipt.
+See `docs/INTEGRATION.md` for the review boundary and `docs/ATTRIBUTION.md` for credits.

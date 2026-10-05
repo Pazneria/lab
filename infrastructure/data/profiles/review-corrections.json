@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-05",
+  "reviewed_snapshot_commit": "4b9a73954db869781c86cbde2939957888936297",
+  "sources": [
+    {
+      "id": "epoch-opus55-profile",
+      "title": "Claude Opus 5.5 model profile and ECI ranking",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/models/claude-opus-5-5",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "independent_research_model_profile",
+      "note": "Supports the ECI positioning in this dated snapshot. The model release date is not treated as the page publication date."
+    },
+    {
+      "id": "microsoft-mai-preview",
+      "title": "Introducing MAI-Thinking-1: public preview",
+      "publisher": "Microsoft AI",
+      "url": "https://microsoft.ai/news/introducing-mai-thinking-1/",
+      "published_at": "2026-08-12",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary_company",
+      "note": "The August 12 update establishes public-preview availability; the separate June announcement establishes the earlier model announcement."
+    }
+  ],
+  "model_source_additions": [
+    {
+      "player_id": "anthropic",
+      "model": "Claude Opus 5.5",
+      "source_ids": ["epoch-opus55-profile"]
+    },
+    {
+      "player_id": "microsoft",
+      "model": "MAI-Thinking-1",
+      "source_ids": ["microsoft-mai-preview"]
+    }
+  ],
+  "historical_badge_rule": "Derive the visible historical-model evidence label from evidence_class. Paper-reported values retained through Epoch are distinct from independent Epoch estimates.",
+  "source_verification": "Both added public pages were read on 2026-10-05 and support their assigned clauses. Original profile packets remain unchanged."
+}

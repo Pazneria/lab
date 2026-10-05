@@ -934,6 +934,26 @@ window.INFRASTRUCTURE_ATLAS = {
       "sourceType": "primary_company"
     },
     {
+      "id": "epoch-opus55-profile",
+      "title": "Claude Opus 5.5 model profile and ECI ranking",
+      "publisher": "Epoch AI",
+      "url": "https://epoch.ai/models/claude-opus-5-5",
+      "publishedAt": null,
+      "accessedAt": "2026-10-05",
+      "note": "Supports the ECI positioning in this dated snapshot. The model release date is not treated as the page publication date.",
+      "sourceType": "independent_research_model_profile"
+    },
+    {
+      "id": "microsoft-mai-preview",
+      "title": "Introducing MAI-Thinking-1: public preview",
+      "publisher": "Microsoft AI",
+      "url": "https://microsoft.ai/news/introducing-mai-thinking-1/",
+      "publishedAt": "2026-08-12",
+      "accessedAt": "2026-10-05",
+      "note": "The August 12 update establishes public-preview availability; the separate June announcement establishes the earlier model announcement.",
+      "sourceType": "primary_company"
+    },
+    {
       "id": "location-tsmc-directory",
       "title": "TSMC fab addresses and public map links",
       "publisher": "TSMC",

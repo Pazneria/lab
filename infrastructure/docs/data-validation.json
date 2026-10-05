@@ -6,7 +6,7 @@
     "sites": 94,
     "products": 14,
     "relationships": 30,
-    "sources": 124,
+    "sources": 126,
     "lab_profiles": 7,
     "mapped_sites": 25,
     "estimated_sites": 75
@@ -17,12 +17,13 @@
     "All 11 profile and five location packets are present; 75 imported site estimates, 25 location patches, model scopes and the Narvik deduplication validate.",
     "All generated views match the base packets, profile/location overlays, and the hash-pinned normalized Epoch snapshot."
   ],
-  "canonicalSha256": "8cce3f30921da19cc5c023a59a04880b1586e40e9cfedffab1a8256c6e044133",
+  "canonicalSha256": "83dbb89956ae2ccaac95ab2db43c370b1641b615d2c6c51f811f4c7c4eed861a",
   "canonicalMethod": "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
-  "publication": "Entity-page and geographic revision is held for parent review. No publication authorization for this revision.",
+  "publication": "Independent source/semantics review passed; the final evidence-label and citation corrections are verified. Publication authorized after required checks.",
   "expansion": {
     "profiles": 7,
     "profile_sources": 48,
+    "review_sources": 2,
     "location_patches": 25,
     "location_sources": 40,
     "estimated_sites": 75,
