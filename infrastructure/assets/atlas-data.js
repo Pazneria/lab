@@ -128,7 +128,7 @@ window.INFRASTRUCTURE_ATLAS = {
       "id": "intel-fab52",
       "title": "Intel Technology Tour 2025",
       "publisher": "Intel",
-      "url": "https://newsroom.intel.com/press-kit/press-kit-intel-technology-tour-2025",
+      "url": "https://www.intel.com/content/www/us/en/newsroom/press-hub/press-kit/client-computing/press-kit-intel-technology-tour-2025.html",
       "publishedAt": "2025-10-09",
       "accessedAt": "2026-10-05",
       "note": null

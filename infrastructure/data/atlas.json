@@ -4,7 +4,7 @@
     "title": "AI Infrastructure Atlas",
     "subtitle": "A first map of the physical supply chain",
     "as_of": "2026-10-05",
-    "publication_state": "research_draft_not_published",
+    "publication_state": "reviewed_for_publication",
     "evidence_policy": "Public primary sources; dated claims; no private conversation or mailbox content",
     "map_policy": "Approximate locality markers only",
     "status_policy": "Last publicly reported status, not a real-time operational audit",
@@ -1021,7 +1021,7 @@
       ],
       "last_reported_status": "operating",
       "status_reported_at": "2024-04-18",
-      "status_note": "R&amp;D facility; not counted as a volume-output fab",
+      "status_note": "R&D facility; not counted as a volume-output fab",
       "verified_on": "2026-10-05",
       "summary": "Process-development facility with a documented ASML High NA installation.",
       "source_ids": [
@@ -1378,7 +1378,7 @@
     },
     {
       "id": "sk-pt7",
-      "name": "SK hynix P&amp;T7",
+      "name": "SK hynix P&T7",
       "layer": "advanced_packaging",
       "country": "KR",
       "region": "North Chungcheong",
@@ -2898,7 +2898,7 @@
       "publisher": "Intel",
       "published_at": "2025-10-09",
       "retrieved_at": "2026-10-05",
-      "url": "https://newsroom.intel.com/press-kit/press-kit-intel-technology-tour-2025",
+      "url": "https://www.intel.com/content/www/us/en/newsroom/press-hub/press-kit/client-computing/press-kit-intel-technology-tour-2025.html",
       "source_type": "primary",
       "note": null
     },
@@ -3064,7 +3064,7 @@
     },
     {
       "id": "sk-pt7",
-      "title": "P&amp;T7 packaging fab groundbreaking",
+      "title": "P&T7 packaging fab groundbreaking",
       "publisher": "SK hynix",
       "published_at": "2026-04-22",
       "retrieved_at": "2026-10-05",

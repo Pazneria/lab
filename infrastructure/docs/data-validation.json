@@ -13,7 +13,7 @@
     "Null capacities, approximate locations, unassigned Rainier total, M15X uncertainty and packaging basis remain intact.",
     "All generated views match the archived seven-part packet plus final review delta."
   ],
-  "canonicalSha256": "a343f89d02ccc12572d79cd35455f5c8edc50d5b8c78f9237fdfccba09c47b15",
+  "canonicalSha256": "4adfcf4263a6ed188d9e9e969ccbb76fd9aa8c7bd6bf7c728386a71f863f700e",
   "canonicalMethod": "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
-  "publication": "Held for parent source/semantics review and shared-navigation coordination."
+  "publication": "Parent source/semantics review passed; agreed Lab navigation link included. Release authorized through PR #18."
 }

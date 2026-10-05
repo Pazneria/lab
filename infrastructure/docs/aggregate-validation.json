@@ -1,0 +1,118 @@
+{
+  "checkedAt": "2026-10-05T17:31:12.696Z",
+  "baseCommit": "132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9",
+  "status": "passed",
+  "scope": "Combined final results from the aggregate run and targeted corrective reruns; not a claim that the first run passed.",
+  "environment": {
+    "browser": "Microsoft Edge 154.0.4258.53",
+    "axeVersion": "4.13.0"
+  },
+  "checks": [
+    {
+      "check": "tests/verify-gallery.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-gallery.log"
+    },
+    {
+      "check": "tests/verify-current-gallery.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-current-gallery.log"
+    },
+    {
+      "check": "tests/verify-gallery-navigation.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-gallery-navigation.log"
+    },
+    {
+      "check": "tests/verify-gallery-selection.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-gallery-selection.log"
+    },
+    {
+      "check": "tests/verify-deployment-routing.cjs",
+      "exitCode": 0,
+      "axeVersion": "4.13.0",
+      "log": "evidence/infrastructure/verify-deployment-routing-axe413.log"
+    },
+    {
+      "check": "tests/verify-real-catalog.cjs",
+      "exitCode": 0,
+      "axeVersion": "4.13.0",
+      "log": "evidence/infrastructure/verify-real-catalog-axe413.log"
+    },
+    {
+      "check": "tests/verify-ui.cjs",
+      "exitCode": 0,
+      "axeVersion": "4.13.0",
+      "log": "evidence/infrastructure/verify-ui-axe413.log"
+    },
+    {
+      "check": "tests/verify-results.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-results.log"
+    },
+    {
+      "check": "tests/verify-frontend-gallery.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-frontend-gallery.log"
+    },
+    {
+      "check": "lab-space/tests/verify-space.cjs",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-space-stable.log",
+      "axeVersion": "4.13.0",
+      "note": "Original assertions preserved; two bench scenarios now reload to restore a known starting distance."
+    },
+    {
+      "check": "tests/verify-static.py",
+      "exitCode": 0,
+      "log": "evidence/infrastructure/verify-static.log"
+    },
+    {
+      "check": "infrastructure/tests/verify-atlas.cjs",
+      "exitCode": 0,
+      "axeVersion": "4.13.0",
+      "log": "evidence/infrastructure/verify-atlas-axe413.log"
+    },
+    {
+      "check": "scripts/build-catalog.cjs --check",
+      "exitCode": 0
+    },
+    {
+      "check": "scripts/build-results.cjs --check",
+      "exitCode": 0
+    },
+    {
+      "check": "scripts/build-gallery.cjs --check",
+      "exitCode": 0
+    },
+    {
+      "check": "infrastructure/scripts/build-atlas.cjs --check",
+      "exitCode": 0
+    },
+    {
+      "check": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "initialIssues": [
+    {
+      "issue": "Three catalog accessibility checks used axe 4.11; the repository specifies 4.13.",
+      "resolution": "All three passed under documented axe 4.13 with no catalog changes."
+    },
+    {
+      "issue": "The room smoke test could arrive at the bench before its keyboard or pre-arrival assertion.",
+      "resolution": "Reload before these two independent scenarios. All original assertions retained. The separate isolated scenario run and canonical updated suite both passed.",
+      "evidence": [
+        "evidence/infrastructure/verify-space-release.log",
+        "evidence/infrastructure/verify-space-main-baseline.log",
+        "evidence/infrastructure/verify-space-isolated.log",
+        "evidence/infrastructure/verify-space-stable.log"
+      ]
+    }
+  ],
+  "limits": [
+    "Headless Edge and simulated touch; no physical mobile, Safari, Firefox or screen-reader user test.",
+    "These are local checks; publication is verified separately after GitHub Pages deployment."
+  ]
+}

@@ -35,6 +35,7 @@ const server = http.createServer((req, res) => {
       {
         ".html": "text/html; charset=utf-8",
         ".js": "text/javascript; charset=utf-8",
+        ".mjs": "text/javascript; charset=utf-8",
         ".css": "text/css; charset=utf-8",
         ".svg": "image/svg+xml",
         ".json": "application/json; charset=utf-8",
@@ -101,18 +102,16 @@ async function overflow(page, label) {
   report.viewports.push({ label, ...dimensions });
   if (dimensions.scroll > dimensions.width + 1) {
     console.log(
-      await page
-        .locator("body *")
-        .evaluateAll((es) =>
-          es
-            .map((e) => ({
-              tag: e.tagName,
-              cls: e.className,
-              right: e.getBoundingClientRect().right,
-              width: e.getBoundingClientRect().width,
-            }))
-            .filter((e) => e.right > innerWidth + 1),
-        ),
+      await page.locator("body *").evaluateAll((es) =>
+        es
+          .map((e) => ({
+            tag: e.tagName,
+            cls: e.className,
+            right: e.getBoundingClientRect().right,
+            width: e.getBoundingClientRect().width,
+          }))
+          .filter((e) => e.right > innerWidth + 1),
+      ),
     );
     await page.screenshot({
       path: path.join(out, "overflow.png"),
@@ -126,7 +125,9 @@ async function overflow(page, label) {
 }
 (async () => {
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
-  const base = `http://127.0.0.1:${server.address().port}/lab/infrastructure/`;
+  const base =
+    process.env.LAB_ATLAS_BASE ||
+    `http://127.0.0.1:${server.address().port}/lab/infrastructure/`;
   report.base = base;
   const browser = await chromium.launch({
     headless: true,
@@ -144,7 +145,18 @@ async function overflow(page, label) {
       if (new URL(r.url()).origin !== new URL(base).origin)
         report.externalRequests.push(r.url());
     });
-    await page.goto(base);
+    await page.goto(new URL("../lab-space/", base).href);
+    assert.equal(
+      await page.locator("#infrastructure-link").getAttribute("href"),
+      "/lab/infrastructure/",
+    );
+    assert.equal(
+      await page.locator("#catalog-link").getAttribute("href"),
+      "https://pazneria.github.io/lab/",
+    );
+    await page.locator("#infrastructure-link").focus();
+    await page.keyboard.press("Enter");
+    await page.waitForURL(base);
     await page.locator("#atlas:not([hidden])").waitFor();
     assert.equal(await page.locator(".site-button").count(), 25);
     assert.equal(
@@ -157,6 +169,9 @@ async function overflow(page, label) {
     await shot(page, "desktop.png");
     pass(
       "All 25 sites, featured supply-chain profiles and seven source-timeline entries load with no runtime service dependency.",
+    );
+    pass(
+      "The shared Lab navigation opens the atlas by keyboard and preserves the benchmark destination.",
     );
     await page.locator("#filters [name=status]").selectOption("announced");
     assert.equal(await page.locator(".site-button").count(), 2);
@@ -363,6 +378,30 @@ async function overflow(page, label) {
     await audit(page, "supply-chain");
     for (const width of [390, 320, 768]) {
       await page.setViewportSize({ width, height: 844 });
+      await page.goto(new URL("../lab-space/", base).href);
+      await overflow(page, `${width}px shared navigation`);
+      const links = await page
+        .locator("#tools a")
+        .evaluateAll((links) =>
+          links.map((a) => ({
+            left: a.getBoundingClientRect().left,
+            right: a.getBoundingClientRect().right,
+            top: a.getBoundingClientRect().top,
+            bottom: a.getBoundingClientRect().bottom,
+          })),
+        );
+      for (let i = 0; i < links.length; i++)
+        for (let j = i + 1; j < links.length; j++)
+          assert(
+            links[i].right <= links[j].left ||
+              links[j].right <= links[i].left ||
+              links[i].bottom <= links[j].top ||
+              links[j].bottom <= links[i].top,
+            "Shared navigation links overlap",
+          );
+      if (width === 390) await shot(page, "lab-navigation-mobile.png");
+      await page.locator("#infrastructure-link").click();
+      await page.waitForURL(base);
       await page.goto(base);
       await overflow(page, `${width}px`);
       if (width === 390) {
@@ -401,7 +440,13 @@ async function overflow(page, label) {
     await noData.close();
     const disabled = await browser.newContext({ javaScriptEnabled: false });
     const nojs = await disabled.newPage();
-    await nojs.goto(base);
+    await nojs.goto(new URL("../lab-space/", base).href);
+    assert.equal(
+      await nojs.locator("#infrastructure-link").getAttribute("href"),
+      "/lab/infrastructure/",
+    );
+    await nojs.locator("#infrastructure-link").click();
+    await nojs.waitForURL(base);
     assert(await nojs.locator("noscript").isVisible());
     await nojs.goto(base + "sources.html");
     assert.equal(

@@ -1,7 +1,8 @@
 {
-  "checkedAt": "2026-10-05T16:54:57.102Z",
+  "checkedAt": "2026-10-05T17:21:39.394Z",
   "checks": [
     "All 25 sites, featured supply-chain profiles and seven source-timeline entries load with no runtime service dependency.",
+    "The shared Lab navigation opens the atlas by keyboard and preserves the benchmark destination.",
     "Status, type, search, country and explicit company-role filters combine, clear hidden selections, reset and show meaningful empty states.",
     "Coincident Singapore projects share one cluster; keyboard activation opens independently selectable sites.",
     "Keyboard site selection and URL reload retain the selected site and filters.",
@@ -17,6 +18,7 @@
     "desktop.png",
     "power-detail.png",
     "supply-chain.png",
+    "lab-navigation-mobile.png",
     "mobile.png",
     "mobile-detail.png"
   ],
@@ -27,14 +29,29 @@
       "scroll": 1440
     },
     {
+      "label": "390px shared navigation",
+      "width": 390,
+      "scroll": 390
+    },
+    {
       "label": "390px",
       "width": 390,
       "scroll": 390
     },
     {
+      "label": "320px shared navigation",
+      "width": 320,
+      "scroll": 320
+    },
+    {
       "label": "320px",
       "width": 320,
       "scroll": 320
+    },
+    {
+      "label": "768px shared navigation",
+      "width": 768,
+      "scroll": 768
     },
     {
       "label": "768px",
@@ -70,6 +87,6 @@
   ],
   "externalRequests": [],
   "pageErrors": [],
-  "base": "http://127.0.0.1:59408/lab/infrastructure/",
+  "base": "http://127.0.0.1:61108/lab/infrastructure/",
   "browser": "154.0.4258.53"
 }

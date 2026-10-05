@@ -29,7 +29,8 @@ for (const [key, rows] of Object.entries(delta.added_records))
     raw[key].push(row);
   }
 raw.metadata.counts = delta.metadata_counts;
-// The original schema version and review state stay intact; the correction packet is archived separately.
+Object.assign(raw.metadata, delta.metadata_updates || {});
+// The original schema version stays intact; review corrections remain explicit.
 const sources = new Map(raw.sources.map((s) => [s.id, s]));
 const players = new Map(raw.players.map((p) => [p.id, p]));
 const sites = new Map(raw.sites.map((s) => [s.id, s]));
@@ -42,6 +43,21 @@ const entities = new Map(
 );
 const checks = [];
 assert.equal(raw.schema_version, "0.1.0");
+assert.equal(raw.metadata.publication_state, "reviewed_for_publication");
+assert.equal(sites.get("sk-pt7").name, "SK hynix P&T7");
+assert.equal(sources.get("sk-pt7").title, "P&T7 packaging fab groundbreaking");
+assert.equal(
+  sites.get("intel-d1x").status_note,
+  "R&D facility; not counted as a volume-output fab",
+);
+assert.equal(
+  sources.get("intel-fab52").url,
+  "https://www.intel.com/content/www/us/en/newsroom/press-hub/press-kit/client-computing/press-kit-intel-technology-tour-2025.html",
+);
+assert(
+  !JSON.stringify(raw).includes("&amp;"),
+  "Dataset text must contain literal ampersands, not HTML entities",
+);
 for (const key of [
   "players",
   "sites",
@@ -466,7 +482,7 @@ const report = {
   canonicalMethod:
     "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
   publication:
-    "Held for parent source/semantics review and shared-navigation coordination.",
+    "Parent source/semantics review passed; agreed Lab navigation link included. Release authorized through PR #18.",
 };
 if (!process.argv.includes("--check"))
   fs.writeFileSync(

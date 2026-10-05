@@ -1,8 +1,8 @@
 # AI infrastructure atlas
 
 A standalone, source-backed first atlas for Jordan's Lab. Open `index.html`
-directly, or serve the repository and visit `/infrastructure/`. The candidate
-is not published. It changes only this directory.
+directly, or serve the repository and visit `/infrastructure/`. The public route
+is `/lab/infrastructure/`, linked from the research room's navigation.
 
 The October 5, 2026 collection contains 25 sites, 18 featured players and seven
 named partners, 14 products, 28 evidence-scoped relationships, nine investment
@@ -34,9 +34,9 @@ node infrastructure/scripts/build-map.cjs
 
 Do not hand-edit the generated views. The builder changes display wording and
 decodes the supplied `&amp;` strings in visible labels; the research fields remain
-unchanged. Original source URLs and dates remain attached to each claim. The
-review state remains `research_draft_not_published` until the parent coordinates
-publication.
+unchanged. Source dates remain attached to each claim. The explicit final delta
+also records the reviewed Intel source relocation and literal ampersand cleanup.
+The dataset is marked `reviewed_for_publication` following parent source review.
 
 The renderer never adds capacities or spending. It distinguishes actual net
 capex from planned project investment, planned facility capacity from energized
@@ -55,6 +55,14 @@ $env:LAB_AXE_SCRIPT='path-to-axe-core/axe.min.js'
 $env:LAB_BROWSER_CHANNEL='msedge'
 node infrastructure/tests/verify-atlas.cjs
 ```
+
+Set `LAB_ATLAS_BASE=https://pazneria.github.io/lab/infrastructure/` to run the
+same browser checks against the deployed atlas and shared navigation.
+
+After GitHub Pages finishes, set `LAB_ATLAS_COMMIT` to its exact 40-character
+commit and run `node infrastructure/tests/verify-publication.cjs`. This compares
+the deployed atlas, dataset, shared navigation and existing catalog files with
+Git bytes from that commit, then checks the public routes.
 
 The test opens its own headless browser and loopback server, and writes reports
 and screenshots under ignored `evidence/infrastructure/`. It does not use the

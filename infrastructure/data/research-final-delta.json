@@ -1,8 +1,33 @@
 {
   "base_snapshot": "2026-10-05T16:28:23Z",
-  "result_version": "0.1.0-final",
+  "result_version": "0.1.0-reviewed",
   "instructions": "Match array records by id. Apply field_updates; append added_records only when id does not exist. Replace metadata.counts with the supplied counts. No site-cards changes.",
+  "metadata_updates": { "publication_state": "reviewed_for_publication" },
   "field_updates": [
+    {
+      "collection": "sources",
+      "id": "intel-fab52",
+      "fields": {
+        "url": "https://www.intel.com/content/www/us/en/newsroom/press-hub/press-kit/client-computing/press-kit-intel-technology-tour-2025.html"
+      }
+    },
+    {
+      "collection": "sources",
+      "id": "sk-pt7",
+      "fields": { "title": "P&T7 packaging fab groundbreaking" }
+    },
+    {
+      "collection": "sites",
+      "id": "sk-pt7",
+      "fields": { "name": "SK hynix P&T7" }
+    },
+    {
+      "collection": "sites",
+      "id": "intel-d1x",
+      "fields": {
+        "status_note": "R&D facility; not counted as a volume-output fab"
+      }
+    },
     {
       "collection": "products",
       "id": "blackwell",
