@@ -1,0 +1,337 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 5,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "profile",
+      "value": {
+        "best_model_rule": "Use official flagship positioning with release/access date; show benchmark-specific leaders separately. Do not infer training compute from capability, model name, pricing, or release recency.",
+        "source_verification_scope": "Official sources checked for model identity and selected major contracts. Broader site list is attributed Epoch dataset ingestion, not a separate audit of every underlying permit.",
+        "player_id": "microsoft",
+        "title": "Microsoft / Microsoft AI",
+        "as_of": "2026-10-05",
+        "summary": "Microsoft owns Azure infrastructure used by internal models and external labs. MAI-Thinking-1 has enough published pre-/mid-training detail for an approximate FLOP calculation.",
+        "flagship_models": [
+          {
+            "name": "MAI-Thinking-1",
+            "released_at": "2026-06-02",
+            "selection_basis": "Official flagship reasoning model; public preview expanded August 12",
+            "access": "public_preview",
+            "source_ids": [
+              "microsoft-mai-launch"
+            ]
+          }
+        ],
+        "training_compute": [
+          {
+            "model": "MAI-Thinking-1",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": 6.98511e+24,
+            "post_training_compute_flop": null,
+            "display": "~7 × 10^24 FLOP, pre- and mid-training only",
+            "evidence_status": "independent_estimate_from_primary_inputs",
+            "hardware": "NVIDIA GB200 GPUs",
+            "accelerator_count": 8192,
+            "duration_days": null,
+            "utilization": {
+              "value": 0.2,
+              "metric": "MFU",
+              "status": "Approximate final pretraining configuration in primary report; not used for 6ND calculation"
+            },
+            "range_flop": null,
+            "reason": "Epoch applies 6 × 34.7B active parameters × 33.55T tokens. The primary report separately gives 30T + 3.4T + 150B training tokens. This does not quantify all reinforcement learning or development runs.",
+            "epoch_row_last_modified": "2026-09-03 19:50:46+00:00",
+            "source_ids": [
+              "microsoft-thinking1-paper",
+              "epoch-models-csv"
+            ],
+            "source_confidence": "Confident",
+            "scope": "Pretraining plus two mid-training phases; RL/post-training excluded",
+            "assumptions": [
+              "6ND approximation using active MoE parameters, not total parameters",
+              "8192 GPUs for pretraining and first mid-training; 4096 for second mid-training",
+              "Attention, multimodal, recomputation and development-run overhead are not fully represented by 6ND"
+            ],
+            "limitations": [
+              "No defensible total-training range published in the checked row",
+              "Epoch active parameter input is 34.7B; primary marketing rounds to 35B"
+            ]
+          }
+        ],
+        "operating_power": {
+          "lab_wide_power_w": null,
+          "lab_wide_power_mw": null,
+          "status": "not_publicly_established",
+          "reason": "A complete, dated, de-duplicated lab allocation is unavailable. Site estimates below do not establish the lab’s total or metered consumption.",
+          "covered_owned_ai_sites": {
+            "it_capacity_w": 1519000000,
+            "it_capacity_mw": 1519,
+            "site_count": 6,
+            "site_ids": [
+              "fairwater-atlanta",
+              "fairwater-wisconsin",
+              "epoch-microsoft-goodyear",
+              "epoch-microsoft-project-osmium",
+              "epoch-microsoft-sat40",
+              "epoch-microsoft-sat14"
+            ],
+            "scope": "Incomplete sample of AI chip-owning company sites, including capacity used by external customers; not the company-wide fleet or its model lab allocation.",
+            "evidence_class": "independent_estimate",
+            "source_ids": [
+              "epoch-dc",
+              "epoch-dc-csv",
+              "epoch-dc-timelines"
+            ],
+            "aggregation_allowed_as_lab_total": false,
+            "display_precision": "Two significant figures; retain exact underlying numbers only for audit"
+          },
+          "metered_consumption_w": null,
+          "metered_consumption_status": "No lab-wide live electricity measurement established",
+          "aggregation_allowed": false
+        },
+        "site_ids": [
+          "fairwater-atlanta",
+          "fairwater-wisconsin",
+          "epoch-microsoft-goodyear",
+          "epoch-microsoft-project-osmium",
+          "epoch-microsoft-sat40",
+          "epoch-microsoft-nebius-new-jersey",
+          "epoch-nebius-mantsala",
+          "epoch-microsoft-sat14",
+          "epoch-start-campus-sines-data-campus",
+          "epoch-crusoe-abilene-expansion",
+          "epoch-microsoft-narvik-norway"
+        ],
+        "major_site_ids": [
+          "fairwater-wisconsin",
+          "fairwater-atlanta",
+          "epoch-microsoft-goodyear"
+        ],
+        "partners": [
+          {
+            "name": "OpenAI / Anthropic",
+            "role": "External Azure users; cloud capacity is not all Microsoft AI allocation",
+            "source_ids": [
+              "openai-partners-2026",
+              "anthropic-azure"
+            ]
+          },
+          {
+            "name": "NVIDIA",
+            "role": "GB200 training hardware disclosed for MAI-Thinking-1",
+            "source_ids": [
+              "microsoft-thinking1-paper"
+            ]
+          }
+        ],
+        "hardware": [
+          {
+            "platform": "NVIDIA GB200",
+            "status": "reported_model_training_use",
+            "scope": "MAI-Thinking-1 paper; do not infer training site from vendor",
+            "source_ids": [
+              "microsoft-thinking1-paper"
+            ]
+          }
+        ],
+        "future_capacity": [
+          {
+            "id": "microsoft-crusoe-abilene",
+            "label": "Separate Crusoe Abilene campus",
+            "power_w": 900000000,
+            "power_mw": 900,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-03-27",
+            "target_online": "Development project",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "crusoe-microsoft"
+            ],
+            "notes": "Not the same campus phase as OpenAI’s existing Abilene site; not online merely because nearby infrastructure is operating."
+          },
+          {
+            "id": "microsoft-nscale-narvik",
+            "label": "Nscale Narvik campus",
+            "power_w": 230000000,
+            "power_mw": 230,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-04-14",
+            "target_online": "Additional 30,000+ NVIDIA Rubin GPUs in 2027",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "nscale-narvik-2026"
+            ],
+            "notes": "Campus capacity is not a disclosed exclusive Microsoft allocation. Nscale solely manages the project after Aker JV roll-up."
+          }
+        ],
+        "historical_training_reference": [],
+        "cautions": [
+          "Fairwater power estimates cover cloud AI infrastructure; MAI-only allocation is undisclosed.",
+          "Total training compute is null even though a pre-/mid-training estimate exists."
+        ]
+      }
+    },
+    {
+      "kind": "profile",
+      "value": {
+        "best_model_rule": "Use official flagship positioning with release/access date; show benchmark-specific leaders separately. Do not infer training compute from capability, model name, pricing, or release recency.",
+        "source_verification_scope": "Official sources checked for model identity and selected major contracts. Broader site list is attributed Epoch dataset ingestion, not a separate audit of every underlying permit.",
+        "player_id": "amazon",
+        "title": "Amazon / AWS / Nova",
+        "as_of": "2026-10-05",
+        "summary": "AWS owns Trainium infrastructure used by Anthropic and others. Nova model training cannot be assigned the whole AWS fleet or Project Rainier.",
+        "flagship_models": [
+          {
+            "name": "Amazon Nova 2 Pro",
+            "released_at": "2025-12-02",
+            "selection_basis": "Official most intelligent Nova general model in the checked materials",
+            "access": "preview",
+            "source_ids": [
+              "amazon-nova2"
+            ]
+          },
+          {
+            "name": "Amazon Nova 2 Lite",
+            "released_at": "2025-12-02",
+            "selection_basis": "Broadly available everyday reasoning model",
+            "access": "available",
+            "source_ids": [
+              "amazon-nova2"
+            ]
+          }
+        ],
+        "training_compute": [
+          {
+            "model": "Nova 2 Pro (Preview)",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "Not publicly established",
+            "evidence_status": "not_disclosed_or_no_supported_estimate_found",
+            "hardware": null,
+            "accelerator_count": null,
+            "duration_days": null,
+            "utilization": null,
+            "range_flop": null,
+            "reason": "No model-specific FLOP estimate or sufficient training inputs found in the checked public sources; the current Epoch row is also blank.",
+            "epoch_row_last_modified": "2026-04-08 02:15:04+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv"
+            ]
+          }
+        ],
+        "operating_power": {
+          "lab_wide_power_w": null,
+          "lab_wide_power_mw": null,
+          "status": "not_publicly_established",
+          "reason": "A complete, dated, de-duplicated lab allocation is unavailable. Site estimates below do not establish the lab’s total or metered consumption.",
+          "covered_owned_ai_sites": {
+            "it_capacity_w": 1743000000,
+            "it_capacity_mw": 1743,
+            "site_count": 5,
+            "site_ids": [
+              "rainier-indiana",
+              "epoch-amazon-madison-mega-site",
+              "epoch-aws-new-albany",
+              "epoch-amazon-ridgeland",
+              "epoch-aws-berwick"
+            ],
+            "scope": "Incomplete sample of AI chip-owning company sites, including capacity used by external customers; not the company-wide fleet or its model lab allocation.",
+            "evidence_class": "independent_estimate",
+            "source_ids": [
+              "epoch-dc",
+              "epoch-dc-csv",
+              "epoch-dc-timelines"
+            ],
+            "aggregation_allowed_as_lab_total": false,
+            "display_precision": "Two significant figures; retain exact underlying numbers only for audit"
+          },
+          "metered_consumption_w": null,
+          "metered_consumption_status": "No lab-wide live electricity measurement established",
+          "aggregation_allowed": false
+        },
+        "site_ids": [
+          "rainier-indiana",
+          "epoch-amazon-madison-mega-site",
+          "epoch-aws-new-albany",
+          "epoch-amazon-ridgeland",
+          "epoch-aws-berwick"
+        ],
+        "major_site_ids": [
+          "rainier-indiana",
+          "epoch-amazon-madison-mega-site",
+          "epoch-amazon-ridgeland",
+          "epoch-aws-new-albany"
+        ],
+        "partners": [
+          {
+            "name": "Anthropic",
+            "role": "Primary customer of Trainium-based Rainier, not an AWS-owned model",
+            "source_ids": [
+              "anthropic-amazon-2026"
+            ]
+          },
+          {
+            "name": "OpenAI",
+            "role": "Trainium3/4 capacity customer under future commitment",
+            "source_ids": [
+              "openai-aws"
+            ]
+          }
+        ],
+        "hardware": [
+          {
+            "platform": "Trainium2 and NVIDIA GPUs",
+            "status": "independent_site_estimates",
+            "scope": "AWS infrastructure; exact Nova 2 Pro training hardware and allocation are not established here",
+            "source_ids": [
+              "epoch-dc-csv",
+              "epoch-dc-chips"
+            ]
+          }
+        ],
+        "future_capacity": [
+          {
+            "id": "aws-anthropic-expansion",
+            "label": "Anthropic AWS contract",
+            "power_w": 5000000000,
+            "power_mw": 5000,
+            "power_basis": "unspecified",
+            "value_qualifier": "up_to",
+            "announced_at": "2026-04-20",
+            "target_online": "Ten-year program",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "anthropic-amazon-2026"
+            ],
+            "notes": "Same physical commitment shown under Anthropic; do not double count."
+          },
+          {
+            "id": "aws-openai-expansion",
+            "label": "OpenAI Trainium capacity contract",
+            "power_w": 2000000000,
+            "power_mw": 2000,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-02-27",
+            "target_online": "Eight-year expansion",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "openai-aws"
+            ],
+            "notes": "Customer capacity, not Nova training allocation."
+          }
+        ],
+        "historical_training_reference": [],
+        "cautions": [
+          "Do not use AWS-owned Rainier power as Nova training power.",
+          "Nova 2 Pro remains labelled preview based on the checked official product/release evidence; availability should be rechecked on future refreshes."
+        ]
+      }
+    }
+  ]
+}

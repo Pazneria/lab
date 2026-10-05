@@ -10,7 +10,13 @@
     />
     <title>AI infrastructure atlas — Jordan's Lab</title>
     <link rel="icon" href="../assets/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css" />
     <link rel="stylesheet" href="assets/atlas.css" />
+    <link rel="stylesheet" href="assets/entities.css" />
+    <script src="assets/vendor/leaflet/leaflet.js" defer></script>
+    <script src="assets/geography.js" defer></script>
+    <script src="assets/map-config.js" defer></script>
+    <script src="assets/geographic-map.js" defer></script>
     <script src="assets/atlas-data.js" defer></script>
     <script src="assets/atlas.js" defer></script>
   </head>
@@ -22,7 +28,8 @@
         ><span>Jordan's <b>Lab</b></span></a
       >
       <nav aria-label="Atlas navigation">
-        <a href="#geography">Map</a><a href="#supply-chain">Supply chain</a
+        <a href="#geography">Map</a><a href="directory/">All entities</a
+        ><a href="#supply-chain">Companies</a
         ><a href="#changes">Source timeline</a
         ><a href="../lab-space/"
           >Back to Lab <span aria-hidden="true">↗</span></a
@@ -30,28 +37,34 @@
       </nav>
     </header>
     <main class="shell" id="main" tabindex="-1">
-      <section class="intro" aria-labelledby="page-title">
+      <section class="atlas-intro" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">
-            <span class="live-dot" aria-hidden="true"></span> Field notes /
-            infrastructure
-          </p>
-          <h1 id="page-title">The physical<br />side of <em>AI.</em></h1>
+          <p class="eyebrow">Jordan's Lab / Infrastructure</p>
+          <h1 id="page-title">AI, on the map.</h1>
         </div>
-        <div class="intro-copy">
+        <div>
           <p class="lede">
-            Follow the chips. Find the fabs.<br />See where the compute takes
-            shape.
-          </p>
-          <p>
-            An atlas of the companies, places, and public commitments behind
-            AI—from silicon to powered systems.
+            Explore the companies, facilities and chips behind AI. Follow each
+            connection to a dedicated page, with dated evidence and visible
+            uncertainty.
           </p>
           <p class="edition" id="edition">
-            A representative, source-backed collection.
+            A representative public-source collection.
           </p>
         </div>
       </section>
+      <form class="entity-search" action="directory/" role="search">
+        <label for="entity-search">Find a company, facility or product</label>
+        <div>
+          <input
+            id="entity-search"
+            type="search"
+            name="q"
+            placeholder="Anthropic, Abilene, Blackwell…"
+            maxlength="150"
+          /><button type="submit">Search all entities</button>
+        </div>
+      </form>
       <div id="load-error" class="notice" role="status">
         Loading the atlas. If it does not appear,
         <a href="sources.html">read the static source index</a>.
@@ -78,9 +91,9 @@
               Explore a public site.<br />Every dot has a story and a source.
             </p>
           </div>
-          <form id="filters" class="filters" aria-label="Filter mapped sites">
+          <form id="filters" class="filters" aria-label="Filter facilities">
             <label class="search"
-              >Search sites, products, or players<input
+              >Filter facilities<input
                 name="q"
                 type="search"
                 placeholder="Try a company, city, or chip…"
@@ -106,6 +119,12 @@
                 <option value="construction">Under construction</option>
                 <option value="announced">Announced / planned</option>
                 <option value="restart_in_progress">Restart in progress</option>
+                <option value="operating_estimated">
+                  Operating capacity estimated
+                </option>
+                <option value="not_yet_operating_in_estimate">
+                  No operating capacity in estimate
+                </option>
                 <option value="unknown">Not established</option>
               </select></label
             >
@@ -125,7 +144,13 @@
                 ><label
                   >Company's site role<select name="role">
                     <option value="all">Any documented link</option>
-                    <option value="owner">Owner</option>
+                    <option value="owner">Facility owner</option>
+                    <option value="hardwareOwner">
+                      Hardware owner (Epoch)
+                    </option>
+                    <option value="estimatedUser">
+                      Estimated user (Epoch)
+                    </option>
                     <option value="operator">Operator</option>
                     <option value="customer">Customer / offtaker</option>
                     <option value="partner">Other named relationship</option>
@@ -139,89 +164,95 @@
               </div>
             </details>
           </form>
-          <div class="explorer">
-            <div class="map-column">
-              <div class="map-topbar">
-                <span id="site-count" role="status" aria-live="polite"></span
-                ><a href="#site-list">Browse site list ↓</a>
-              </div>
-              <div class="map-frame" id="map-frame">
-                <div class="map-toolbar" role="group" aria-label="Map region">
-                  <button type="button" data-region="world" aria-pressed="true">
-                    World</button
-                  ><button
-                    type="button"
-                    data-region="americas"
-                    aria-pressed="false"
+          <div class="atlas-map-layout">
+            <div>
+              <div class="geographic-frame">
+                <div class="geographic-tools">
+                  <div
+                    class="zoom-buttons"
+                    role="group"
+                    aria-label="Map controls"
                   >
-                    Americas</button
-                  ><button
-                    type="button"
-                    data-region="europe"
-                    aria-pressed="false"
+                    <button
+                      type="button"
+                      data-map-action="zoom-in"
+                      aria-label="Zoom in"
+                    >
+                      +</button
+                    ><button
+                      type="button"
+                      data-map-action="zoom-out"
+                      aria-label="Zoom out"
+                    >
+                      −</button
+                    ><button type="button" data-map-action="fit">
+                      Fit facilities
+                    </button>
+                  </div>
+                  <label class="street-toggle"
+                    ><input type="checkbox" data-street-layer /> Street detail
+                    <span>(OpenStreetMap)</span></label
                   >
-                    Europe</button
-                  ><button
-                    type="button"
-                    data-region="asia"
-                    aria-pressed="false"
-                  >
-                    East Asia
-                  </button>
                 </div>
-                <div id="map-viewport" class="map-viewport">
-                  <img
-                    id="basemap"
-                    src="assets/world.svg"
-                    alt=""
-                    class="basemap"
-                  />
-                  <div id="map-points"></div>
-                </div>
-                <p class="map-empty" id="map-empty" hidden>
-                  No sites match these filters.
+                <div id="geographic-map" class="geographic-map"></div>
+                <p
+                  class="geographic-note"
+                  data-map-count
+                  aria-live="polite"
+                ></p>
+                <p class="geographic-note" data-map-note>
+                  Bundled geography. Enable street detail for roads and
+                  buildings; approximate markers remain approximate at every
+                  zoom.
                 </p>
-                <p class="map-fallback" id="map-fallback" hidden>
-                  The basemap could not load. Use the complete site list below.
+                <p class="map-attribution">
+                  Geography:
+                  <a
+                    href="https://www.naturalearthdata.com/about/terms-of-use/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Natural Earth</a
+                  >
+                  · Some location data &amp; optional street map: ©
+                  <a
+                    href="https://www.openstreetmap.org/copyright"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >OpenStreetMap contributors</a
+                  >
+                  ·
+                  <a
+                    href="https://www.openstreetmap.org/fixthemap"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Report a map issue</a
+                  >
                 </p>
-                <div class="map-legend">
-                  <span><i class="legend-dot operating"></i>Operating</span
-                  ><span
-                    ><i class="legend-dot construction"></i>Construction</span
-                  ><span><i class="legend-dot announced"></i>Planned</span
-                  ><span><i class="legend-dot mixed"></i>Mixed / unknown</span>
-                </div>
               </div>
-              <div class="map-caption">
-                <span
-                  >Approximate locality, not facility coordinates. Numbers group
-                  nearby sites; select a group to choose a site.</span
-                ><a
-                  href="https://www.naturalearthdata.com/about/terms-of-use/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Made with Natural Earth ↗</a
-                >
+              <div class="map-precision-legend">
+                <span>Dashed marker: approximate location</span
+                ><span>Solid marker: sourced reference point</span
+                ><span>Numbers group nearby facilities</span>
               </div>
-              <div
-                id="map-cluster"
-                class="map-cluster"
-                hidden
-                tabindex="-1"
-              ></div>
-              <div
-                id="site-list"
-                class="site-list"
-                aria-label="Mapped sites"
-                tabindex="-1"
-              ></div>
             </div>
             <section
               id="site-detail"
-              class="site-detail"
+              class="facility-preview"
               aria-labelledby="site-title"
               tabindex="-1"
             ></section>
+          </div>
+          <div class="facility-directory">
+            <div class="facility-directory-heading">
+              <h3>Facility directory</h3>
+              <span id="site-count" role="status" aria-live="polite"></span>
+            </div>
+            <div
+              id="site-list"
+              class="entity-grid"
+              aria-label="Filtered facilities"
+              tabindex="-1"
+            ></div>
           </div>
         </section>
         <section
@@ -235,42 +266,21 @@
               <h2 id="chain-title">From a chip design to a deployment</h2>
             </div>
             <p>
-              Choose a player to follow its documented relationships.<br />Companies
-              can appear in more than one stage.
+              Open a company page to follow its facilities, products and
+              partners.<br />Companies can appear in more than one stage.
             </p>
           </div>
           <div id="chain-stages" class="chain-stages"></div>
-          <form
-            id="chain-controls"
-            class="chain-controls"
-            aria-label="Filter supply-chain evidence"
-          >
-            <label
-              >Company / partner<select
-                name="profile"
-                aria-label="Company or partner profile"
-              ></select></label
-            ><label
-              >Evidence specificity<select name="evidence">
-                <option value="all">All documented links</option>
-                <option value="site_product">Exact site + product</option>
-                <option value="site">Site-specific</option>
-                <option value="product">Product-level</option>
-                <option value="program">Multisite program</option>
-                <option value="company">Company-level</option>
-              </select></label
-            ><label
-              >Product<select name="product">
-                <option value="all">All products</option>
-              </select></label
-            >
-          </form>
           <p class="chain-note">
-            Arrows describe disclosed commercial or product relationships, not
-            the shipping route or origin of an installed chip. Process names are
-            vendor labels, not directly comparable physical dimensions.
+            Each company opens a dedicated page. Public partnerships keep their
+            stated scope; a supplier link does not establish the exact fab or
+            origin of installed chips.
           </p>
-          <div id="player-detail" class="player-detail" tabindex="-1"></div>
+          <p>
+            <a href="directory/?type=company"
+              >Browse every company and partner →</a
+            >
+          </p>
         </section>
         <section
           id="changes"
@@ -318,7 +328,9 @@
     </main>
     <footer class="shell footer">
       <span>Jordan's Lab / Infrastructure atlas</span
-      ><span id="footer-date">Public sources. Approximate geography.</span>
+      ><span id="footer-date"
+        >Public sources. Sourced geography and visible uncertainty.</span
+      >
     </footer>
   </body>
 </html>

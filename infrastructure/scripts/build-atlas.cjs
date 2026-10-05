@@ -133,7 +133,21 @@ assert.equal(
   "advanced_packaging_throughput",
 );
 checks.push(
-  "Null capacities, approximate locations, unassigned Rainier total, M15X uncertainty and packaging basis remain intact.",
+  "Original base validated before overlay: null capacities, city-level locations, unassigned Rainier program total, M15X uncertainty and packaging basis.",
+);
+const expansion = require("./extend-atlas.cjs")(raw, root);
+for (const [map, rows] of [
+  [sources, raw.sources],
+  [players, raw.players],
+  [sites, raw.sites],
+  [products, raw.products],
+  [entities, [...raw.players, ...raw.sites, ...raw.products, ...raw.programs]],
+]) {
+  map.clear();
+  for (const row of rows) map.set(row.id, row);
+}
+checks.push(
+  "All 11 profile and five location packets are present; 75 imported site estimates, 25 location patches, model scopes and the Narvik deduplication validate.",
 );
 const clean = (s) => (typeof s === "string" ? s.replaceAll("&amp;", "&") : s);
 const human = (s) => s?.replaceAll("_", " ") || "Not established";
@@ -220,6 +234,7 @@ const stageMap = {
   power_generator: "power",
   data_center_developer: "power",
   infrastructure_partner: "power",
+  documented_infrastructure_participant: "deployment",
 };
 const scopeMap = {
   site: "Site-specific evidence",
@@ -230,7 +245,7 @@ const scopeMap = {
 };
 const view = {
   meta: {
-    edition: "First edition / representative coverage",
+    edition: "Entity and geographic revision / representative coverage",
     asOf: raw.metadata.as_of,
     coverage: raw.coverage.description,
   },
@@ -243,6 +258,7 @@ const view = {
     publishedAt: s.published_at,
     accessedAt: s.retrieved_at,
     note: s.note,
+    sourceType: s.source_type,
   })),
   players: raw.players.map((p) => ({
     id: p.id,
@@ -278,12 +294,20 @@ const view = {
     name: clean(s.name),
     type: typeMap[s.layer],
     layer: human(s.layer),
-    country: countryMap[s.country],
+    country: countryMap[s.country] || s.country,
     location: {
-      label: `${s.locality}, ${countryMap[s.country]}`,
+      label: `${s.locality}, ${countryMap[s.country] || s.country}`,
       lat: s.location.latitude,
       lon: s.location.longitude,
-      precision: "Approximate locality, not facility coordinates",
+      precision: clean(s.location.display_label),
+      precisionKey: s.location.precision,
+      approximate:
+        s.location.precision.startsWith("approximate_") ||
+        s.location.precision === "not_verified",
+      note: clean(s.location.location_note),
+      address: s.location.address,
+      recommendedZoom: s.location.recommended_zoom,
+      sourceIds: s.location.public_location_source_ids,
     },
     status: s.last_reported_status,
     asOf: s.status_reported_at,
@@ -302,6 +326,13 @@ const view = {
     ownerIds: s.owner_ids || [],
     operatorIds: s.operator_ids || [],
     customerIds: s.customer_ids || [],
+    hardwareOwnerIds: (s.capacity_estimate?.hardware_owners || []).map(
+      (p) => p.player_id,
+    ),
+    estimatedUserIds: (s.capacity_estimate?.users || []).map(
+      (p) => p.player_id,
+    ),
+    capacityEstimate: s.capacity_estimate || null,
     productIds: s.product_ids,
     roles: [
       `Owner: ${s.owner_ids?.map(name).join(", ") || "not established"}`,
@@ -318,7 +349,9 @@ const view = {
       : null,
     unknowns:
       s.layer === "data_center"
-        ? "Energized power, IT load and facility power are not established in this record."
+        ? s.capacity_estimate
+          ? "Metered electricity use and model-lab allocation are not established. Dated independent IT/facility capacity estimates are shown separately."
+          : "Energized power, IT load and facility power are not established in this record."
         : null,
     facts: [
       ...s.capacity_observations.map(capacity),
@@ -375,10 +408,10 @@ const factHtml = (f) =>
   `<div class="fact"><strong>${esc(f.value)}</strong><span class="fact-label">${esc(f.label)}</span><p>${esc(f.meaning)} · As of ${esc(f.asOf || "date not stated")}</p>${sourceLinks(f.sourceIds)}</div>`;
 const fields = (rows) =>
   `<dl class="detail-fields">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>`;
-const staticHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas records & sources — Jordan's Lab</title><link rel="stylesheet" href="assets/atlas.css"></head><body class="source-page"><a class="skip-link" href="#main">Skip to records</a><header class="shell masthead"><a href="./">← Infrastructure atlas</a><a href="data/atlas.json">Public dataset JSON</a></header><main id="main" class="shell"><h1>Records & sources</h1><p>Snapshot ${esc(view.meta.asOf)}. Last reported status, not a real-time audit. Approximate locality markers only. No capacity or spending totals.</p><nav aria-label="Source index"><a href="#sites">Sites</a> · <a href="#players">Players</a> · <a href="#products">Products</a> · <a href="#relationships">Relationships</a> · <a href="#timeline">Timeline</a> · <a href="#coverage">Coverage</a> · <a href="#sources">All sources</a></nav><h2 id="sites">25 representative sites</h2>${view.sites
+const staticHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas records & sources — Jordan's Lab</title><link rel="stylesheet" href="assets/atlas.css"></head><body class="source-page"><a class="skip-link" href="#main">Skip to records</a><header class="shell masthead"><a href="./">← Infrastructure atlas</a><a href="data/atlas.json">Public dataset JSON</a></header><main id="main" class="shell"><h1>Records & sources</h1><p>Snapshot ${esc(view.meta.asOf)}. Last reported status, not a real-time audit. 25 reviewed map locations; other facilities have public addresses without verified coordinates. Independent estimates retain dates, scopes and uncertainty. No global capacity or spending totals. Complete static entity pages include the model, power and location evidence.</p><nav aria-label="Source index"><a href="#sites">Sites</a> · <a href="#players">Players</a> · <a href="#products">Products</a> · <a href="#relationships">Relationships</a> · <a href="#timeline">Timeline</a> · <a href="#coverage">Coverage</a> · <a href="#sources">All sources</a></nav><h2 id="sites">${view.sites.length} representative facilities</h2>${view.sites
   .map(
     (s) =>
-      `<article class="static-record" id="${esc(s.id)}"><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p>${fields(
+      `<article class="static-record" id="${esc(s.id)}"><h3><a href="facilities/${s.id}/">${esc(s.name)}</a></h3><p>${s.capacityEstimate ? "Independent power estimates, timeline and hardware evidence are on the linked facility page. " : ""}${esc(s.description)}</p>${fields(
         [
           ["Location", s.location.label + " — " + s.location.precision],
           ["Layer", s.layer],
@@ -406,10 +439,10 @@ const staticHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><
   )
   .join(
     "",
-  )}<h2 id="players">25 companies and partners</h2>${view.players.map((p) => `<article class="static-record" id="${esc(p.id)}"><h3>${esc(p.name)}</h3><p>${esc(p.summary)}</p><p>${esc(p.roles.join(" · "))}</p><p>Related sites: ${p.siteIds.map((id) => `<a href="#${esc(id)}">${esc(name(id))}</a>`).join(", ") || "None established in this collection"}</p>${p.facts.map(factHtml).join("")}${p.programs.map((g) => `<h4>${esc(g.name)}</h4><p>${esc(g.note)}</p>${g.facts.map(factHtml).join("")}`).join("")}${sourceLinks(p.sourceIds)}</article>`).join("")}<h2 id="products">14 products</h2>${view.products
+  )}<h2 id="players">${view.players.length} companies and partners</h2>${view.players.map((p) => `<article class="static-record" id="${esc(p.id)}"><h3><a href="companies/${p.id}/">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p>${esc(p.roles.join(" · "))}</p><p>Related sites: ${p.siteIds.map((id) => `<a href="#${esc(id)}">${esc(name(id))}</a>`).join(", ") || "None established in this collection"}</p>${p.facts.map(factHtml).join("")}${p.programs.map((g) => `<h4>${esc(g.name)}</h4><p>${esc(g.note)}</p>${g.facts.map(factHtml).join("")}`).join("")}${sourceLinks(p.sourceIds)}</article>`).join("")}<h2 id="products">${view.products.length} products</h2>${view.products
   .map(
     (p) =>
-      `<article class="static-record" id="${esc(p.id)}"><h3>${esc(p.name)}</h3>${fields(
+      `<article class="static-record" id="${esc(p.id)}"><h3><a href="products/${p.id}/">${esc(p.name)}</a></h3>${fields(
         [
           ["Designer", name(p.designerId)],
           ["Type", p.type],
@@ -443,14 +476,14 @@ const staticHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><
     ["Layer gaps", raw.coverage.layer_gaps.join(", ")],
     ["Unknowns", raw.coverage.unknowns.join("; ")],
   ],
-)}<ul>${raw.coverage.rules.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><h2 id="sources">49 public primary sources</h2>${sourceLinks(raw.sources.map((s) => s.id))}</main><footer class="shell footer">Jordan's Lab · Public research snapshot ${esc(view.meta.asOf)}</footer></body></html>\n`;
+)}<ul>${raw.coverage.rules.map((x) => `<li>${esc(x)}</li>`).join("")}</ul><h2 id="sources">${raw.sources.length} public sources — primary reporting and attributed datasets</h2>${sourceLinks(raw.sources.map((s) => s.id))}</main><footer class="shell footer">Jordan's Lab · Public research snapshot ${esc(view.meta.asOf)}</footer></body></html>\n`;
 const outputs = {
   "data/atlas.json": JSON.stringify(raw, null, 2) + "\n",
   "assets/atlas-data.js":
     "// Generated by infrastructure/scripts/build-atlas.cjs. Do not edit.\nwindow.INFRASTRUCTURE_ATLAS = " +
     JSON.stringify(view, null, 2).replaceAll("<", "\\u003c") +
     ";\n",
-  "sources.html": staticHtml,
+  "sources.html": staticHtml.replace(/[ \t]+\r?$/gm, ""),
 };
 for (const [file, content] of Object.entries(outputs)) {
   const target = path.join(root, file);
@@ -459,7 +492,7 @@ for (const [file, content] of Object.entries(outputs)) {
   else fs.writeFileSync(target, content);
 }
 checks.push(
-  "All generated views match the archived seven-part packet plus final review delta.",
+  "All generated views match the base packets, profile/location overlays, and the hash-pinned normalized Epoch snapshot.",
 );
 function canonical(value) {
   if (Array.isArray(value)) return value.map(canonical);
@@ -482,8 +515,15 @@ const report = {
   canonicalMethod:
     "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
   publication:
-    "Parent source/semantics review passed; agreed Lab navigation link included. Release authorized through PR #18.",
+    "Entity-page and geographic revision is held for parent review. No publication authorization for this revision.",
+  expansion,
 };
+report.pages = require("./build-entity-pages.cjs")({
+  raw,
+  view,
+  root,
+  check: process.argv.includes("--check"),
+});
 if (!process.argv.includes("--check"))
   fs.writeFileSync(
     path.join(root, "docs/data-validation.json"),

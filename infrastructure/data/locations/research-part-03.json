@@ -1,0 +1,251 @@
+{
+  "part": 3,
+  "parts": 5,
+  "as_of": "2026-10-05",
+  "sites": [
+    {
+      "site_id": "sk-pt7",
+      "location": {
+        "latitude": 36.657,
+        "longitude": 127.432,
+        "precision": "approximate_locality",
+        "display_label": "Oebuk-dong / Cheongju Technopolis area; P&amp;T7 parcel unresolved",
+        "coordinate_source": "Operator names Oebuk-dong; OSM quarter reference rounded to 3 decimals",
+        "public_location_source_ids": [
+          "location-sk-pt7-area",
+          "location-osm-sk-pt7"
+        ],
+        "address": "Oebuk-dong, Heungdeok-gu, Cheongju, South Korea",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 12,
+        "footprint": null,
+        "location_note": "Neighborhood reference only. Do not interpret this as P&amp;T7 or reuse M15X’s building point. The exact P&amp;T7 construction parcel has not been verified."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "sk-yongin",
+      "location": {
+        "latitude": 37.152057,
+        "longitude": 127.318727,
+        "precision": "public_mapped_campus",
+        "display_label": "Yongin Semiconductor Cluster, Wonsam; public campus point",
+        "coordinate_source": "Official industrial-complex identity plus OSM named complex geometry; Overpass center",
+        "public_location_source_ids": [
+          "location-yongin-kotra",
+          "location-osm-sk-yongin"
+        ],
+        "address": "Wonsam-myeon, Cheoin-gu, Yongin-si, Gyeonggi-do, South Korea",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 13,
+        "footprint": null,
+        "location_note": "Represents the general industrial complex, not the first fab’s exact building footprint. Separate from Samsung’s proposed Namsa/I-dong complex."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "stargate-abilene",
+      "location": {
+        "latitude": 32.50289,
+        "longitude": -99.783432,
+        "precision": "public_mapped_campus",
+        "display_label": "Stargate / Lancium Clean Campus, Abilene; public campus point",
+        "coordinate_source": "Lancium’s official campus identity, Texas project address and OSM named campus feature",
+        "public_location_source_ids": [
+          "location-lancium-campus",
+          "location-abilene-tdlr",
+          "location-osm-stargate-abilene"
+        ],
+        "address": "351 Lancium Way, Abilene, TX 79601 (Building 1 public record)",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Campus point, not a specific data hall. The older 5502 Spinks Road label is not used as a verified geocode."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "rainier-indiana",
+      "location": {
+        "latitude": 41.663508,
+        "longitude": -86.471132,
+        "precision": "government_project_reference",
+        "display_label": "AWS New Carlisle campus area; IDEM project reference",
+        "coordinate_source": "IDEM public hearing notice project-location coordinate",
+        "public_location_source_ids": [
+          "location-aws-indiana-idem",
+          "aws-rainier-location"
+        ],
+        "address": "South of IN-2 / Strawberry Road, New Carlisle, St. Joseph County, Indiana, USA",
+        "source_date": "2026-06-03",
+        "verified_on": "2026-10-05",
+        "confidence": "high",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 13,
+        "footprint": null,
+        "location_note": "Reference is the publicly identified AWS campus project area, not a verified Rainier server/data-hall allocation. Rainier is a multisite program."
+      },
+      "coordinate_changed": true
+    },
+    {
+      "site_id": "fairwater-wisconsin",
+      "location": {
+        "latitude": 42.674891,
+        "longitude": -87.894854,
+        "precision": "street_address_geocode",
+        "display_label": "Microsoft Mount Pleasant / Fairwater; street-address geocode",
+        "coordinate_source": "Wisconsin DNR public facility address geocoded by US Census; checked against Microsoft campus map",
+        "public_location_source_ids": [
+          "location-fairwater-dnr",
+          "location-fairwater-campus-map",
+          "location-census-geocoder"
+        ],
+        "address": "4800 90th Street, Mount Pleasant, WI 53403, USA",
+        "source_date": null,
+        "verified_on": "2026-10-05",
+        "confidence": "medium",
+        "accuracy_m": null,
+        "accuracy_note": "No surveyed accuracy or legal property boundary claimed",
+        "recommended_zoom": 14,
+        "footprint": null,
+        "location_note": "Interpolated street position at the campus address; not an exact building point."
+      },
+      "coordinate_changed": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "location-sk-pt7-area",
+      "title": "P&amp;T7 groundbreaking location at Cheongju Technopolis",
+      "publisher": "SK hynix",
+      "url": "https://news.skhynix.com/en/skhynix-chungju-pt7/",
+      "published_at": "2026-04-22",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Operator identifies Oebuk-dong, Heungdeok-gu and Cheongju Technopolis, but no georeferenced parcel in captured source."
+    },
+    {
+      "id": "location-osm-sk-pt7",
+      "title": "Public map feature for SK hynix P&amp;T7",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/node/415159748",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-yongin-kotra",
+      "title": "Yongin Semiconductor Cluster industrial-complex location",
+      "publisher": "Invest KOREA / Korea Industrial Complex Corporation",
+      "url": "https://www.investkorea.org/ik-kr/bbs/i-2483/detail.do?ntt_sn=55",
+      "published_at": "2025-05-08",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-osm-sk-yongin",
+      "title": "Public map feature for SK hynix Yongin first fab",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1300761117",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-lancium-campus",
+      "title": "Lancium identifies its Abilene campus as Stargate 1",
+      "publisher": "Lancium",
+      "url": "https://lancium.com/locations/",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": null
+    },
+    {
+      "id": "location-abilene-tdlr",
+      "title": "Project Ludicrous Building 1 public location",
+      "publisher": "Texas Department of Licensing and Regulation",
+      "url": "https://www.tdlr.texas.gov/TABS/Search/Print/TABS2024023596",
+      "published_at": "2024-07-22",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Live record lists 351 Lancium Way; publication/registration date 2024-07-22, current page retrieved 2026-10-05."
+    },
+    {
+      "id": "location-osm-stargate-abilene",
+      "title": "Public map feature for Stargate Abilene",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/1432100334",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Community-mapped public geometry, retrieved 2026-10-05; not a cadastral survey. ODbL 1.0; attribution required."
+    },
+    {
+      "id": "location-aws-indiana-idem",
+      "title": "AWS New Carlisle campus public project coordinate",
+      "publisher": "Indiana Department of Environmental Management",
+      "url": "https://www.in.gov/idem/files/notice_20260710_401_2025-78-71-enh-wqc-2.pdf",
+      "published_at": "2026-06-03",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Page 1 gives project latitude/longitude for Amazon Data Services south of IN-2 and Strawberry Road."
+    },
+    {
+      "id": "aws-rainier-location",
+      "title": "Project Rainier infrastructure",
+      "publisher": "Amazon",
+      "url": "https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Explicitly identifies St. Joseph County as one Rainier site; program spans sites"
+    },
+    {
+      "id": "location-fairwater-dnr",
+      "title": "Microsoft Mount Pleasant public facility address",
+      "publisher": "Wisconsin DNR",
+      "url": "https://apps.dnr.wi.gov/warp_ext/am_permittracking2.aspx?id=35961",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Facility ID 252302490 lists 4800 90th Street."
+    },
+    {
+      "id": "location-fairwater-campus-map",
+      "title": "Mount Pleasant datacenter campus public map",
+      "publisher": "Microsoft",
+      "url": "https://local.microsoft.com/wp-content/uploads/2023/07/Mount-Pleasant-Map.pdf",
+      "published_at": "2023-07",
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Published site boundary between Braun Road, County KR, the railway and 90th Street; no coordinate polygon digitized."
+    },
+    {
+      "id": "location-census-geocoder",
+      "title": "US Census address geocoder",
+      "publisher": "US Census Bureau",
+      "url": "https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-05",
+      "source_type": "primary",
+      "note": "Oneline address lookup, Public_AR_Current benchmark, cached on 2026-10-05. Interpolated street positions are not building centroids."
+    }
+  ]
+}

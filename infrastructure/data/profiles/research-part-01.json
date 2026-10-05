@@ -1,0 +1,343 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 1,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "profile",
+      "value": {
+        "player_id": "openai",
+        "title": "OpenAI",
+        "as_of": "2026-10-05",
+        "summary": "Partner-operated infrastructure supports GPT training and serving. OpenAI reported about 1.9 GW of available compute for 2025; this is a dated historical statement, not an October 2026 live total.",
+        "flagship_models": [
+          {
+            "name": "GPT-6 Astra",
+            "released_at": "2026-09-03",
+            "selection_basis": "Official highest-intelligence flagship",
+            "access": "available",
+            "source_ids": [
+              "openai-current-models"
+            ]
+          },
+          {
+            "name": "GPT-6.1 Sol",
+            "released_at": "2026-09-29",
+            "selection_basis": "Newer cost/performance flagship; described as near-Astra",
+            "access": "available",
+            "source_ids": [
+              "openai-sol61"
+            ]
+          }
+        ],
+        "training_compute": [
+          {
+            "model": "GPT-6 Astra",
+            "total_training_compute_flop": 1e+27,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "~1 × 10^27 FLOP (Epoch estimate)",
+            "evidence_status": "independent_estimate",
+            "hardware": "NVIDIA GB200; accelerator-versus-superchip convention follows Epoch",
+            "accelerator_count": 100000,
+            "duration_days": 90,
+            "utilization": {
+              "value": 0.25,
+              "metric": "FP8 model FLOPs utilization",
+              "status": "assumed"
+            },
+            "range_flop": {
+              "low": 5e+26,
+              "high": 2e+27,
+              "interpretation": "Interval quoted in Epoch row notes; confidence level not specified there"
+            },
+            "reason": "Epoch infers compute from reported hardware and assumed duration/utilization; not an OpenAI FLOP disclosure.",
+            "epoch_row_last_modified": "2026-09-23 17:19:16+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv",
+              "epoch-models-method"
+            ],
+            "source_confidence": "Likely",
+            "scope": "Main training-run estimate; pretraining/post-training decomposition undisclosed",
+            "assumptions": [
+              "100,000 accelerators treated by Epoch as a lower-bound hardware count",
+              "Approximately 90 days at 25% FP8 MFU",
+              "Do not multiply by 72: this is not 100,000 NVL72 racks"
+            ],
+            "limitations": [
+              "Underlying notebook was linked but not readable with the web tool in this pass",
+              "Hardware reporting was not independently traced to an accessible original NVIDIA/OpenAI statement; attribute hardware basis to Epoch",
+              "Epoch raw point is 1.0001e27; displayed rounded to avoid false precision"
+            ]
+          },
+          {
+            "model": "GPT-6.1 Sol",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "Not publicly established",
+            "evidence_status": "not_disclosed_or_no_supported_estimate_found",
+            "hardware": null,
+            "accelerator_count": null,
+            "duration_days": null,
+            "utilization": null,
+            "range_flop": null,
+            "reason": "No model-specific FLOP estimate or sufficient training inputs found in the checked public sources; the current Epoch row is also blank.",
+            "epoch_row_last_modified": "2026-09-30 19:07:17+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv"
+            ]
+          }
+        ],
+        "operating_power": {
+          "lab_wide_power_w": null,
+          "lab_wide_power_mw": null,
+          "status": "not_publicly_established",
+          "reason": "A complete, dated, de-duplicated lab allocation is unavailable. Site estimates below do not establish the lab’s total or metered consumption.",
+          "covered_owned_ai_sites": {
+            "it_capacity_w": null,
+            "it_capacity_mw": null,
+            "site_count": 0,
+            "site_ids": [],
+            "scope": "Incomplete sample of AI chip-owning company sites, including capacity used by external customers; not the company-wide fleet or its model lab allocation.",
+            "evidence_class": "independent_estimate",
+            "source_ids": [
+              "epoch-dc",
+              "epoch-dc-csv",
+              "epoch-dc-timelines"
+            ],
+            "aggregation_allowed_as_lab_total": false,
+            "display_precision": "Two significant figures; retain exact underlying numbers only for audit"
+          },
+          "historical_company_report": {
+            "id": "openai-2025-available",
+            "label": "Available compute reported for 2025",
+            "power_w": 1900000000,
+            "power_mw": 1900,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-01-18",
+            "target_online": null,
+            "status": "reported_historical_available",
+            "source_ids": [
+              "openai-compute-2025"
+            ],
+            "notes": "Original source calls this available compute in GW; IT versus facility basis is unspecified. Not a current measurement."
+          },
+          "metered_consumption_w": null,
+          "metered_consumption_status": "No lab-wide live electricity measurement established",
+          "aggregation_allowed": false
+        },
+        "site_ids": [
+          "fairwater-atlanta",
+          "stargate-abilene",
+          "fairwater-wisconsin",
+          "epoch-coreweave-denton-tx",
+          "epoch-microsoft-goodyear",
+          "epoch-coreweave-helios",
+          "epoch-microsoft-project-osmium",
+          "epoch-coreweave-ellendale-nd",
+          "epoch-coreweave-chester-va",
+          "epoch-coreweave-marble-nc",
+          "epoch-coreweave-norway",
+          "epoch-coreweave-dalton-1-2",
+          "epoch-coreweave-lancaster-greenfield-site",
+          "epoch-coreweave-muskogee-ok",
+          "epoch-openai-stargate-lordstown",
+          "epoch-openai-stargate-michigan",
+          "epoch-openai-stargate-milam",
+          "epoch-openai-stargate-new-mexico",
+          "epoch-openai-stargate-shackelford",
+          "epoch-openai-stargate-uae",
+          "epoch-openai-stargate-wisconsin"
+        ],
+        "major_site_ids": [
+          "stargate-abilene",
+          "fairwater-wisconsin",
+          "fairwater-atlanta",
+          "epoch-coreweave-denton-tx"
+        ],
+        "partners": [
+          {
+            "name": "Microsoft Azure, Oracle Cloud Infrastructure, CoreWeave",
+            "role": "Hopper and Blackwell systems reported in operation",
+            "source_ids": [
+              "openai-partners-2026"
+            ]
+          },
+          {
+            "name": "AWS",
+            "role": "Cloud/Trainium capacity contract and distribution partner",
+            "source_ids": [
+              "openai-aws"
+            ]
+          },
+          {
+            "name": "Crusoe / SB Energy",
+            "role": "Data center developers/operators; distinguish from chip owner and model customer",
+            "source_ids": [
+              "crusoe-abilene",
+              "openai-ports"
+            ]
+          }
+        ],
+        "hardware": [
+          {
+            "platform": "NVIDIA Hopper / Blackwell",
+            "status": "reported_operating",
+            "scope": "Across Microsoft, OCI and CoreWeave; model allocations mostly undisclosed",
+            "source_ids": [
+              "openai-partners-2026"
+            ]
+          },
+          {
+            "platform": "NVIDIA GB200",
+            "status": "reported_training_use",
+            "scope": "GPT-5.5 trained at OCI-operated Stargate Abilene; not proof of every later model’s exact training cluster",
+            "source_ids": [
+              "openai-abilene-training"
+            ]
+          }
+        ],
+        "future_capacity": [
+          {
+            "id": "openai-rubin-training",
+            "label": "NVIDIA Vera Rubin training commitment",
+            "power_w": 2000000000,
+            "power_mw": 2000,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-02-27",
+            "target_online": null,
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "openai-partners-2026"
+            ],
+            "notes": "Separate from 3 GW dedicated inference; operating delivery unverified."
+          },
+          {
+            "id": "openai-rubin-inference",
+            "label": "NVIDIA Vera Rubin inference commitment",
+            "power_w": 3000000000,
+            "power_mw": 3000,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-02-27",
+            "target_online": null,
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "openai-partners-2026"
+            ],
+            "notes": "Do not count as training capacity or assume operational."
+          },
+          {
+            "id": "openai-aws-trainium",
+            "label": "AWS Trainium commitment",
+            "power_w": 2000000000,
+            "power_mw": 2000,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-02-27",
+            "target_online": "Eight-year expansion; Trainium4 delivery begins 2027",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "openai-aws"
+            ],
+            "notes": "Trainium3/4 contract, not current online power."
+          },
+          {
+            "id": "openai-ports-pike",
+            "label": "PORTS-Pike lease agreement",
+            "power_w": 8000000000,
+            "power_mw": 8000,
+            "power_basis": "it",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-08-17",
+            "target_online": "First 800 MW expected 2028; six-year buildout through 2032",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "openai-ports"
+            ],
+            "notes": "SB Energy to build, own and operate; subject to permits, power, financing and infrastructure."
+          },
+          {
+            "id": "openai-norway",
+            "label": "Stargate Norway initial project",
+            "power_w": 230000000,
+            "power_mw": 230,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2025-07-31",
+            "target_online": "100,000 GPUs targeted by end-2026",
+            "status": "historical_announcement_current_allocation_unverified",
+            "source_ids": [
+              "openai-norway",
+              "nscale-narvik-2026"
+            ],
+            "notes": "July 2025 historical project proposal, not assured OpenAI allocation. April 2026 Nscale release names Microsoft as expanded customer and says Nscale solely manages Narvik after rolling up the Aker JV."
+          }
+        ],
+        "historical_training_reference": [],
+        "cautions": [
+          "More than 10 GW secured for Stargate is contracted/secured infrastructure, not a verified online total.",
+          "The 1.9-GW historical company figure overlaps partner sites and must never be added to their capacities.",
+          "Newest model and most capable flagship are different fields."
+        ],
+        "best_model_rule": "Use official flagship positioning with release/access date; show benchmark-specific leaders separately. Do not infer training compute from capability, model name, pricing, or release recency.",
+        "source_verification_scope": "Official sources checked for model identity and selected major contracts. Broader site list is attributed Epoch dataset ingestion, not a separate audit of every underlying permit."
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "meta-hyperion",
+        "name": "Meta Hyperion",
+        "atlas_site_exists": true,
+        "location_label": "Holly Ridge, LA 71269",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Meta",
+            "player_id": "meta",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "Meta",
+            "player_id": "meta",
+            "confidence": "confident"
+          }
+        ],
+        "operator_name": null,
+        "status": "not_yet_operating_in_estimate",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-04-19",
+        "it_capacity_w": 0,
+        "it_capacity_mw": 0,
+        "facility_capacity_w": 0,
+        "facility_capacity_mw": 0,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1cyXcZ_jIsJDjuPKx6_J1scIWeq0-rfM3-2GcSKN4oA0/edit?usp=sharing",
+        "hardware_types": [],
+        "hardware_count_estimates": [],
+        "warnings": [],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    }
+  ]
+}

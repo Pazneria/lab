@@ -123,11 +123,69 @@ async function overflow(page, label) {
     `${label} horizontal overflow`,
   );
 }
+// Entity routes and source links are native HTML, including when scripts fail.
+const entityRows = [
+  ...raw.players.map((e) => ({ ...e, folder: "companies", kind: "company" })),
+  ...raw.sites.map((e) => ({ ...e, folder: "facilities", kind: "facility" })),
+  ...raw.products.map((e) => ({ ...e, folder: "products", kind: "product" })),
+];
+for (const e of entityRows) {
+  const file = path.join(root, `infrastructure/${e.folder}/${e.id}/index.html`);
+  const html = fs.readFileSync(file, "utf8");
+  assert.equal((html.match(/<h1>/g) || []).length, 1, e.id);
+  assert(html.includes(`data-entity-kind="${e.kind}"`), e.id);
+  assert(html.includes('aria-label="Breadcrumb"'), e.id);
+  assert(!/[\uFFFD\u001A]/.test(html), `Broken encoding ${e.id}`);
+  assert(!html.includes("evidence pending"), e.id);
+  for (const match of html.matchAll(/<a\b([^>]+)href="([^"]+)"([^>]*)>/g)) {
+    const attrs = match[1] + match[3],
+      href = match[2].replaceAll("&amp;", "&");
+    const u = new URL(
+      href,
+      "https://local.test/infrastructure/" + e.folder + "/" + e.id + "/",
+    );
+    if (u.origin !== "https://local.test") {
+      assert.equal(u.protocol, "https:");
+      assert(
+        attrs.includes('rel="noopener noreferrer"'),
+        `${e.id}: unsafe link ${href}`,
+      );
+    } else {
+      const target = path.join(root, decodeURIComponent(u.pathname));
+      assert(fs.existsSync(target), `${e.id}: missing link ${href}`);
+    }
+  }
+}
+pass(
+  `${entityRows.length} entity pages have native headings, breadcrumbs, existing internal routes and safe external links.`,
+);
+assert.equal(
+  raw.sites.filter((s) => Number.isFinite(s.location.latitude)).length,
+  25,
+);
+assert.equal(
+  raw.sites.filter((s) => s.location.precision.startsWith("approximate_"))
+    .length,
+  3,
+);
+assert.equal(raw.sites.filter((s) => s.capacity_estimate).length, 75);
+assert(!raw.sites.some((s) => s.id === "epoch-microsoft-narvik-norway"));
+assert(raw.sites.every((s) => s.location.footprint === null));
+for (const p of raw.lab_profiles) {
+  assert.equal(p.operating_power.lab_wide_power_w, null);
+  assert.equal(p.operating_power.aggregation_allowed, false);
+}
+for (const c of raw.sites.map((s) => s.capacity_estimate).filter(Boolean)) {
+  assert.equal(c.allocated_to_model_lab_capacity_w, null);
+  for (const o of c.observations)
+    assert.equal(o.state === "future_scenario", o.date > raw.metadata.as_of);
+}
+pass(
+  "Seven unknown lab totals, 75 scoped estimates, future cutoff, 25 reviewed coordinates, three approximate areas and single Narvik identity are preserved.",
+);
 (async () => {
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
-  const base =
-    process.env.LAB_ATLAS_BASE ||
-    `http://127.0.0.1:${server.address().port}/lab/infrastructure/`;
+  const base = `http://127.0.0.1:${server.address().port}/lab/infrastructure/`;
   report.base = base;
   const browser = await chromium.launch({
     headless: true,
@@ -136,373 +194,372 @@ async function overflow(page, label) {
   report.browser = browser.version();
   try {
     const context = await browser.newContext({
-      viewport: { width: 1440, height: 1050 },
+      viewport: { width: 1440, height: 1100 },
       reducedMotion: "reduce",
+    });
+    let tileAttempts = 0;
+    // Test tile behavior with a local response. Never fetch or crawl the public tile service.
+    await context.route("https://tile.openstreetmap.org/**", (route) => {
+      tileAttempts++;
+      return route.fulfill({
+        status: 503,
+        body: "test: street tiles unavailable",
+      });
     });
     const page = await context.newPage();
     page.on("pageerror", (e) => report.pageErrors.push(e.message));
     page.on("request", (r) => {
-      if (new URL(r.url()).origin !== new URL(base).origin)
+      if (
+        /^https?:/.test(r.url()) &&
+        new URL(r.url()).origin !== new URL(base).origin &&
+        !r.url().startsWith("https://tile.openstreetmap.org/")
+      )
         report.externalRequests.push(r.url());
     });
-    await page.goto(new URL("../lab-space/", base).href);
-    assert.equal(
-      await page.locator("#infrastructure-link").getAttribute("href"),
-      "/lab/infrastructure/",
-    );
-    assert.equal(
-      await page.locator("#catalog-link").getAttribute("href"),
-      "https://pazneria.github.io/lab/",
-    );
-    await page.locator("#infrastructure-link").focus();
-    await page.keyboard.press("Enter");
-    await page.waitForURL(base);
+    await page.goto(base);
     await page.locator("#atlas:not([hidden])").waitFor();
-    assert.equal(await page.locator(".site-button").count(), 25);
+    assert.equal(await page.locator("#site-list .entity-card").count(), 12);
+    assert.match(
+      await page.locator("#site-count").innerText(),
+      /94 facilities.*25 with reviewed/,
+    );
+    assert.equal(tileAttempts, 0);
+    await audit(page, "desktop atlas");
+    await overflow(page, "desktop atlas");
+    await shot(page, "v2-home.png");
+    await page.locator(".show-facilities").focus();
+    await page.keyboard.press("Enter");
+    assert.equal(await page.locator("#site-list .entity-card").count(), 94);
+    assert.equal(await page.locator("#site-list .map-locate").count(), 25);
+    pass(
+      "Atlas shows 94 facilities with a compact initial list, 25 map actions, and no external requests by default.",
+    );
+    await page.locator("[name=status]").selectOption("announced");
+    await page.locator("[name=type]").selectOption("fab");
+    assert.equal(await page.locator("#site-list .entity-card").count(), 0);
+    assert.equal(await page.locator(".atlas-map-marker").count(), 0);
+    assert.match(
+      await page.locator("#site-detail").innerText(),
+      /No matching facility/,
+    );
+    await page.locator("#filters [type=reset]").click();
+    await page.locator("#filters [name=q]").fill("nothing-will-match-xyz");
+    assert.match(
+      await page.locator("#site-list").innerText(),
+      /No facilities match/,
+    );
+    await page.locator("#filters [type=reset]").click();
+    await page.locator(".more-filters summary").click();
+    await page.locator("[name=player]").selectOption("anthropic");
+    await page.locator("[name=role]").selectOption("estimatedUser");
+    assert((await page.locator("#site-list .entity-card").count()) > 0);
+    await page.reload();
     assert.equal(
-      await page.locator("#chain-stages [data-profile]").count(),
-      22,
+      await page.locator("[name=role]").inputValue(),
+      "estimatedUser",
     );
-    assert.equal(await page.locator(".change").count(), 7);
-    await overflow(page, "desktop");
-    await audit(page, "desktop");
-    await shot(page, "desktop.png");
-    pass(
-      "All 25 sites, featured supply-chain profiles and seven source-timeline entries load with no runtime service dependency.",
-    );
-    pass(
-      "The shared Lab navigation opens the atlas by keyboard and preserves the benchmark destination.",
-    );
-    await page.locator("#filters [name=status]").selectOption("announced");
-    assert.equal(await page.locator(".site-button").count(), 2);
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /planned|Announced/,
-    );
-    await page.locator("#filters [name=type]").selectOption("fab");
-    assert.equal(await page.locator(".site-button").count(), 0);
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /No matching site/,
-    );
-    assert.equal(await page.locator("#map-points button").count(), 0);
-    await page.locator("#filters button[type=reset]").click();
-    assert.equal(await page.locator(".site-button").count(), 25);
-    await page.locator("#filters [name=q]").fill("wafer-nonexistent");
-    assert.equal(await page.locator(".site-button").count(), 0);
-    await page.locator("#filters button[type=reset]").click();
-    await page.locator("#filters [name=q]").fill("4NP");
-    assert.equal(await page.locator(".site-button").count(), 1);
-    assert.match(await page.locator("#site-title").innerText(), /Arizona/);
-    await page.locator("#filters button[type=reset]").click();
+    assert.equal(await page.locator("[name=player]").inputValue(), "anthropic");
+    await page.locator("#filters [type=reset]").click();
     await page.locator(".more-filters summary").click();
     await page.locator("[name=country]").selectOption("Singapore");
-    assert.equal(await page.locator(".site-button").count(), 2);
-    await page.locator("[name=type]").selectOption("packaging");
-    assert.equal(await page.locator(".site-button").count(), 1);
-    assert.match(
-      await page.locator("#site-title").innerText(),
-      /HBM packaging/,
-    );
-    await page.locator("#filters button[type=reset]").click();
-    await page.locator("#filters [name=player]").selectOption("openai");
-    assert.equal(await page.locator(".site-button").count(), 2);
-    await page.locator("[name=role]").selectOption("customer");
-    assert.equal(await page.locator(".site-button").count(), 1);
-    assert.match(await page.locator("#site-title").innerText(), /Abilene/);
-    await page.locator("#filters button[type=reset]").click();
-    pass(
-      "Status, type, search, country and explicit company-role filters combine, clear hidden selections, reset and show meaningful empty states.",
-    );
-    await page.locator("[data-region=asia]").click();
-    await page.locator("[name=country]").selectOption("Singapore");
-    const cluster = page.locator(".cluster-point");
-    assert.equal(await cluster.count(), 1);
-    assert.equal(await cluster.textContent(), "2");
-    await cluster.focus();
+    await page.locator("[data-map-action=fit]").click();
+    assert.equal(await page.locator("#site-list .entity-card").count(), 2);
+    assert.equal(await page.locator(".cluster-point").count(), 1);
+    await page.locator(".atlas-map-marker").focus();
     await page.keyboard.press("Enter");
-    assert.equal(await page.locator("#map-cluster button").count(), 3);
-    await page
-      .locator("#map-cluster button")
-      .filter({ hasText: "HBM packaging" })
-      .click();
-    assert.match(
-      await page.locator("#site-title").innerText(),
-      /HBM packaging/,
+    assert.equal(await page.locator(".cluster-facility-link").count(), 2);
+    await page.locator(".leaflet-popup-close-button").click();
+    await page.locator(".atlas-map-marker").focus();
+    await page.keyboard.press("Space");
+    assert.equal(await page.locator(".cluster-facility-link").count(), 2);
+    await page.locator(".leaflet-popup-close-button").click();
+    await page.locator("#site-list .map-locate").first().click();
+    assert(
+      Number(await page.locator("#geographic-map").getAttribute("data-zoom")) >=
+        13,
     );
-    await page.locator("#filters button[type=reset]").click();
-    pass(
-      "Coincident Singapore projects share one cluster; keyboard activation opens independently selectable sites.",
+    const before = await page
+      .locator("#geographic-map")
+      .getAttribute("data-center");
+    await page.locator("#geographic-map").focus();
+    await page.keyboard.press("ArrowRight");
+    await page.waitForFunction(
+      (before) =>
+        document.querySelector("#geographic-map").dataset.center !== before,
+      before,
     );
-    await page.locator("[name=player]").selectOption("micron");
-    await page.locator(".site-button").filter({ hasText: "Sanand" }).focus();
+    const zoom = Number(
+      await page.locator("#geographic-map").getAttribute("data-zoom"),
+    );
+    await page.locator("[data-map-action=zoom-in]").focus();
     await page.keyboard.press("Enter");
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /not front-end wafer fabrication/,
-    );
-    const selectedUrl = page.url();
-    await page.reload();
-    assert.equal(page.url(), selectedUrl);
-    assert.match(await page.locator("#site-title").innerText(), /Sanand/);
-    assert.equal(await page.locator("[name=player]").inputValue(), "micron");
-    await page.locator("#filters button[type=reset]").click();
-    pass(
-      "Keyboard site selection and URL reload retain the selected site and filters.",
-    );
-    await page.locator("[name=profile]").selectOption("nvidia");
-    await page.locator("[name=product]").selectOption("gb200");
-    assert.equal(await page.locator(".relation").count(), 2);
-    assert.match(
-      await page.locator(".relations").innerText(),
-      /originating fab lots unknown|does not identify originating fab lots/,
-    );
-    await page.locator("[name=evidence]").selectOption("site_product");
-    assert.equal(await page.locator(".relation").count(), 0);
-    assert.match(
-      await page.locator(".relations").innerText(),
-      /No relationship matches/,
-    );
-    await page.locator("[name=product]").selectOption("all");
-    await page.locator("[name=evidence]").selectOption("all");
-    await page.locator(".entity-link[data-entity=tsmc]").first().click();
-    assert.equal(await page.locator("[name=profile]").inputValue(), "tsmc");
-    await page
-      .locator(".entity-link[data-entity=tsmc-arizona]")
-      .first()
-      .click();
-    assert.match(await page.locator("#site-title").innerText(), /Arizona/);
-    await page.locator("[name=profile]").selectOption("amd");
-    assert.match(
-      await page.locator(".relations").innerText(),
-      /exact fab unknown/,
-    );
-    await page.locator("[name=profile]").selectOption("dell");
-    assert.match(
-      await page.locator(".relations").innerText(),
-      /planned compute standard/,
-    );
-    await page.locator("[name=profile]").selectOption("amazon");
-    await page
-      .locator("#player-detail summary")
-      .filter({ hasText: "program scope" })
-      .click();
-    assert.match(
-      await page.locator("#player-detail").innerText(),
-      /Nearly 500,000 Trainium2 chips/,
-    );
-    assert.match(
-      await page.locator("#player-detail").innerText(),
-      /not allocated to one site/,
-    );
-    await page.locator(".profile-map").click();
     assert.equal(
-      await page.locator("#filters [name=player]").inputValue(),
-      "amazon",
-    );
-    await page.locator(".site-button").filter({ hasText: "Rainier" }).click();
-    assert.doesNotMatch(
-      await page.locator("#site-detail").innerText(),
-      /500,000/,
-    );
-    await page.locator("#filters button[type=reset]").click();
-    pass(
-      "Evidence/product filters, all partner profiles, product/fab separation and multisite program boundaries are retained.",
-    );
-    for (const site of raw.sites) {
-      await page.goto(base + "?site=" + site.id);
-      assert.equal(
-        await page.locator("#site-title").textContent(),
-        site.name.replaceAll("&amp;", "&"),
-      );
-      assert.match(
-        await page.locator("#site-detail").innerText(),
-        /Status as of/,
-      );
-    }
-    await page.goto(base + "?site=calvert-cliffs");
-    assert.match(await page.locator("#site-detail").innerText(), /1,790 MW/);
-    assert.match(await page.locator("#site-detail").innerText(), /690 MW/);
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /included within 690 MW/,
-    );
-    await shot(page, "power-detail.png", true);
-    await page.goto(base + "?site=tsmc-ap6");
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /300 mm wafer-equivalents/,
-    );
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /not front-end wafer starts/,
-    );
-    await page.goto(base + "?site=sk-m15x");
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /Status not established/,
-    );
-    await page.goto(base + "?site=crane");
-    assert.match(
-      await page.locator("#site-detail").innerText(),
-      /Restart in progress/,
+      Number(await page.locator("#geographic-map").getAttribute("data-zoom")),
+      zoom + 1,
     );
     pass(
-      "Every site deep link resolves; distinct generation, contract, planned uprate, packaging capacity and unknown/restart states are visible.",
+      "Combined filters, URL persistence, no-results/reset, same-point clustering and keyboard pan/zoom work.",
     );
-    const unsafe = await page
-      .locator('a[href^="https:"]')
-      .evaluateAll((links) =>
-        links
-          .filter(
-            (a) =>
-              a.target !== "_blank" ||
-              !a.rel.includes("noopener") ||
-              !a.rel.includes("noreferrer"),
-          )
-          .map((a) => a.href),
-      );
-    assert.deepEqual(unsafe, []);
-    const hostile = "<img src=x onerror=alert(1)>";
-    await page.goto(base + "?q=" + encodeURIComponent(hostile));
-    assert.equal(await page.locator("#filters [name=q]").inputValue(), hostile);
-    assert.equal(await page.locator('img[src="x"]').count(), 0);
+    await page.locator("[data-street-layer]").check();
+    await page.waitForFunction(() =>
+      document
+        .querySelector("[data-map-note]")
+        .textContent.includes("unavailable"),
+    );
+    assert(tileAttempts > 0);
+    await page.locator("[data-street-layer]").uncheck();
+    report.interceptedStreetTileRequests = tileAttempts;
     pass(
-      "External links use HTTPS plus noopener/noreferrer; search text is rendered as text.",
+      "Street detail is opt-in; simulated tile failure preserves the local map. All tile requests were intercepted.",
     );
-    await page.goto(base + "?site=stargate-abilene");
+    await page.goto(new URL("directory/?q=Abilene&type=facility", base).href);
+    assert((await page.locator(".entity-card:visible").count()) >= 1);
     await page
-      .locator("#supply-chain")
+      .locator('.entity-card:visible a[href="../facilities/stargate-abilene/"]')
+      .focus();
+    await page.keyboard.press("Enter");
+    await page.waitForURL("**/facilities/stargate-abilene/");
+    assert.match(await page.locator("h1").innerText(), /Abilene/);
+    assert.match(
+      await page.locator("#capacity").innerText(),
+      /Independent capacity estimate.*Epoch AI/s,
+    );
+    assert.match(await page.locator("#capacity").innerText(), /~420 MW/);
+    assert.match(await page.locator("#capacity").innerText(), /~590 MW/);
+    assert.match(
+      await page.locator("#capacity").innerText(),
+      /not metered consumption/,
+    );
+    await page
+      .locator("#capacity")
       .evaluate((el) => el.scrollIntoView({ block: "start" }));
-    await shot(page, "supply-chain.png");
-    await audit(page, "supply-chain");
-    for (const width of [390, 320, 768]) {
-      await page.setViewportSize({ width, height: 844 });
-      await page.goto(new URL("../lab-space/", base).href);
-      await overflow(page, `${width}px shared navigation`);
-      const links = await page
-        .locator("#tools a")
-        .evaluateAll((links) =>
-          links.map((a) => ({
-            left: a.getBoundingClientRect().left,
-            right: a.getBoundingClientRect().right,
-            top: a.getBoundingClientRect().top,
-            bottom: a.getBoundingClientRect().bottom,
-          })),
-        );
-      for (let i = 0; i < links.length; i++)
-        for (let j = i + 1; j < links.length; j++)
-          assert(
-            links[i].right <= links[j].left ||
-              links[j].right <= links[i].left ||
-              links[i].bottom <= links[j].top ||
-              links[j].bottom <= links[i].top,
-            "Shared navigation links overlap",
+    await shot(page, "v2-facility-capacity.png");
+    await audit(page, "facility estimates");
+    await page
+      .locator("#location")
+      .evaluate((el) => el.scrollIntoView({ block: "start" }));
+    await shot(page, "v2-facility-map.png");
+    await page.goto(
+      new URL("facilities/epoch-coreweave-denton-tx/", base).href,
+    );
+    assert.equal(await page.locator("[data-facility-map]").count(), 0);
+    assert.match(
+      await page.locator("#location").innerText(),
+      /coordinates have not been verified/i,
+    );
+    await page.goto(new URL("facilities/stargate-norway/", base).href);
+    assert.match(
+      await page.locator("#history").innerText(),
+      /Historical proposal/,
+    );
+    assert.match(
+      await page.locator("#capacity").innerText(),
+      /Zero means no operating capacity/,
+    );
+    assert.match(
+      await page.locator(".entity-lede").innerText(),
+      /current OpenAI allocation remains unverified/,
+    );
+    pass(
+      "Directory search opens native facility URLs; estimated IT/facility power, address-only records and Norway history retain their meaning.",
+    );
+    await page.goto(new URL("companies/openai/", base).href);
+    assert.match(
+      await page.locator("#power").innerText(),
+      /Lab-wide operating power: not established/,
+    );
+    assert.match(
+      await page.locator("#power").innerText(),
+      /Historical company report/,
+    );
+    assert.match(
+      await page.locator('[data-model="GPT-6 Astra"]').innerText(),
+      /10\^27 FLOP/,
+    );
+    await page
+      .locator('[data-model="GPT-6 Astra"] .evidence-detail summary')
+      .click();
+    assert.match(
+      await page.locator('[data-model="GPT-6 Astra"]').innerText(),
+      /Do not multiply by 72/,
+    );
+    await page
+      .locator("#models")
+      .evaluate((el) => el.scrollIntoView({ block: "start" }));
+    await shot(page, "v2-model-evidence.png");
+    await audit(page, "OpenAI profile");
+    await page.goto(new URL("companies/microsoft/", base).href);
+    const mai = page.locator('[data-model="MAI-Thinking-1"]');
+    await mai.locator(".evidence-detail summary").click();
+    assert.match(
+      await mai.innerText(),
+      /Total training compute\s+Not publicly established/i,
+    );
+    assert.match(await mai.innerText(), /pre- and mid-training only/);
+    await page.goto(new URL("companies/anthropic/", base).href);
+    await shot(page, "v2-company.png");
+    await page
+      .locator("#power")
+      .evaluate((el) => el.scrollIntoView({ block: "start" }));
+    await shot(page, "v2-company-power.png");
+    await page
+      .locator("#models")
+      .evaluate((el) => el.scrollIntoView({ block: "start" }));
+    await shot(page, "v2-company-models.png");
+    await page.goto(new URL("products/gb200/", base).href);
+    assert.match(await page.locator("h1").innerText(), /GB200/);
+    assert((await page.locator("#relationships a[data-entity]").count()) > 0);
+    await shot(page, "v2-product.png");
+    await audit(page, "product profile");
+    pass(
+      "Model identity, access, total-versus-partial training FLOPs, historical reports and product/company/facility links render separately.",
+    );
+    for (const width of [768, 390, 320]) {
+      await page.setViewportSize({ width, height: 900 });
+      for (const route of [
+        "",
+        "companies/anthropic/",
+        "companies/microsoft/",
+        "facilities/stargate-abilene/",
+        "facilities/epoch-coreweave-denton-tx/",
+        "directory/",
+        "products/gb200/",
+      ]) {
+        await page.goto(new URL(route, base).href);
+        await overflow(page, `${width}: ${route || "atlas"}`);
+        if (!route)
+          assert.match(
+            await page.locator("[data-map-count]").innerText(),
+            /25 mapped locations.*25 in view/,
           );
-      if (width === 390) await shot(page, "lab-navigation-mobile.png");
-      await page.locator("#infrastructure-link").click();
-      await page.waitForURL(base);
-      await page.goto(base);
-      await overflow(page, `${width}px`);
+      }
       if (width === 390) {
-        await audit(page, "mobile");
-        await shot(page, "mobile.png", true);
-        await page.locator("#filters [name=status]").selectOption("unknown");
-        assert.equal(await page.locator(".site-button").count(), 1);
-        await page.locator(".site-button").click();
-        assert.match(await page.locator("#site-title").textContent(), /M15X/);
-        await shot(page, "mobile-detail.png");
+        await page.goto(new URL("companies/anthropic/", base).href);
+        await shot(page, "v2-mobile-company.png");
+        await page
+          .locator("#models")
+          .evaluate((el) => el.scrollIntoView({ block: "start" }));
+        await shot(page, "v2-mobile-models.png");
+        await audit(page, "mobile company");
+        await page.goto(base);
+        await page
+          .locator("#geographic-map")
+          .evaluate((el) => el.scrollIntoView({ block: "start" }));
+        await shot(page, "v2-mobile-map.png");
+        await audit(page, "mobile atlas");
       }
     }
     pass(
-      "390px, 320px and 768px layouts have no horizontal overflow; mobile filter and detail selection pass.",
+      "Atlas, directory, company, product, mapped and unmapped facility pages fit 768, 390 and 320 pixel widths.",
     );
     const fallback = await context.newPage();
-    await fallback.route("**/assets/world.svg", (r) => r.abort());
+    await fallback.route("**/assets/geography.js", (route) => route.abort());
     await fallback.goto(base);
-    await fallback.locator("#map-fallback:not([hidden])").waitFor();
-    assert.equal(await fallback.locator(".site-button").count(), 25);
-    await fallback.locator(".site-button").nth(2).click();
     assert.match(
-      await fallback.locator("#site-title").innerText(),
-      /Kaohsiung/,
+      await fallback.locator("#geographic-map").innerText(),
+      /could not load/,
     );
+    assert.equal(await fallback.locator("#site-list .entity-card").count(), 12);
     await fallback.close();
-    const noData = await context.newPage();
-    await noData.route("**/assets/atlas-data.js", (r) => r.abort());
-    await noData.goto(base);
-    assert.equal(await noData.locator("#load-error").isVisible(), true);
-    assert.equal(await noData.locator("#atlas").isVisible(), false);
+    const nodata = await context.newPage();
+    await nodata.route("**/assets/atlas-data.js", (route) => route.abort());
+    await nodata.goto(base);
+    assert(await nodata.locator("#load-error").isVisible());
     assert.equal(
-      await noData.locator("#load-error a").getAttribute("href"),
+      await nodata.locator("#load-error a").getAttribute("href"),
       "sources.html",
     );
-    await noData.close();
-    const disabled = await browser.newContext({ javaScriptEnabled: false });
-    const nojs = await disabled.newPage();
-    await nojs.goto(new URL("../lab-space/", base).href);
-    assert.equal(
-      await nojs.locator("#infrastructure-link").getAttribute("href"),
-      "/lab/infrastructure/",
+    await nodata.close();
+    const hostile = await context.newPage();
+    const box = { window: {} };
+    require("node:vm").runInNewContext(
+      fs.readFileSync(
+        path.join(root, "infrastructure/assets/atlas-data.js"),
+        "utf8",
+      ),
+      box,
     );
-    await nojs.locator("#infrastructure-link").click();
-    await nojs.waitForURL(base);
-    assert(await nojs.locator("noscript").isVisible());
-    await nojs.goto(base + "sources.html");
-    assert.equal(
-      await nojs.locator(".static-record").count(),
-      25 + 25 + 14 + 28 + 7,
+    const injected = box.window.INFRASTRUCTURE_ATLAS;
+    injected.sites[0].name = '<img src=x onerror="window.unsafeExecuted=true">';
+    injected.sources.find(
+      (s) => s.id === injected.changes[0].sourceIds[0],
+    ).url = "javascript:window.unsafeExecuted=true";
+    await hostile.route("**/assets/atlas-data.js", (route) =>
+      route.fulfill({
+        contentType: "text/javascript",
+        body: "window.INFRASTRUCTURE_ATLAS=" + JSON.stringify(injected) + ";",
+      }),
     );
+    await hostile.goto(base);
     assert.match(
-      await nojs.locator("body").innerText(),
-      /Null means not established/,
+      await hostile.locator("#site-title").innerText(),
+      /<img src=x/,
     );
-    await disabled.close();
+    assert.equal(
+      await hostile
+        .locator('#site-detail img, #site-list img, a[href^="javascript:"]')
+        .count(),
+      0,
+    );
+    assert.equal(
+      await hostile.evaluate(() => window.unsafeExecuted),
+      undefined,
+    );
+    await hostile.close();
     pass(
-      "Failed basemap leaves the directory usable; missing data and JavaScript-disabled mode offer the complete readable source index.",
+      "Adversarial data stays text; unsafe source URLs are not rendered as active links.",
     );
-    await page.setViewportSize({ width: 1440, height: 1050 });
+    const nojs = await browser.newContext({
+      javaScriptEnabled: false,
+      viewport: { width: 390, height: 900 },
+    });
+    const staticPage = await nojs.newPage();
+    await staticPage.goto(new URL("companies/anthropic/", base).href);
+    assert.match(
+      await staticPage.locator("#models").innerText(),
+      /Claude Opus 5.5/,
+    );
+    await staticPage.goto(new URL("directory/", base).href);
+    assert.equal(await staticPage.locator(".entity-card").count(), 140);
+    await staticPage.goto(new URL("sources.html", base).href);
+    assert.match(
+      await staticPage.locator("#sources").innerText(),
+      /124 public sources/,
+    );
+    await nojs.close();
+    await page.goto(
+      pathToFileURL(
+        path.join(root, "infrastructure/companies/openai/index.html"),
+      ).href,
+    );
+    assert.match(await page.locator("h1").innerText(), /OpenAI/);
     await page.goto(
       pathToFileURL(path.join(root, "infrastructure/index.html")).href,
     );
-    assert.equal(await page.locator(".site-button").count(), 25);
-    pass("Direct file preview works without fetch or a local web server.");
-    // Test hostile fixture in memory only; it is never written to publishable data.
-    const safe = await context.newPage();
-    await safe.route("**/assets/atlas-data.js", async (r) => {
-      const text = fs.readFileSync(
-        path.join(root, "infrastructure/assets/atlas-data.js"),
-        "utf8",
-      );
-      await r.fulfill({
-        contentType: "text/javascript",
-        body:
-          text +
-          '\nwindow.INFRASTRUCTURE_ATLAS.sources[0].url="javascript:alert(1)";window.INFRASTRUCTURE_ATLAS.sites[0].name="<img src=x onerror=alert(1)>";',
-      });
-    });
-    await safe.goto(base);
-    assert.equal(await safe.locator('img[src="x"]').count(), 0);
-    assert.equal(await safe.locator('a[href^="javascript:"]').count(), 0);
-    await safe.close();
-    pass("Data rendering rejects non-HTTPS source URLs and HTML payloads.");
-    // file: requests above are local by design.
-    report.externalRequests = report.externalRequests.filter(
-      (url) => !url.startsWith("file:"),
+    assert.equal(await page.locator("#site-list .entity-card").count(), 12);
+    assert(await page.locator("[data-street-layer]").isDisabled());
+    pass(
+      "Blocked map/data, JavaScript-disabled entity pages/directory and local-file preview retain useful content and fallback links.",
     );
-    assert.deepEqual(report.externalRequests, []);
     assert.deepEqual(report.pageErrors, []);
-    await context.close();
+    assert.deepEqual(report.externalRequests, []);
+    pass(
+      "No page errors or unapproved external runtime requests in the tested revision.",
+    );
+    report.status = "passed";
+  } catch (error) {
+    report.status = "failed";
+    report.error = error.stack;
+    throw error;
   } finally {
     await browser.close();
     server.close();
     fs.writeFileSync(
-      path.join(out, "verification.json"),
+      path.join(out, "v2-browser-report.json"),
       JSON.stringify(report, null, 2) + "\n",
     );
   }
 })().catch((error) => {
   console.error(error);
-  server.close();
   process.exitCode = 1;
 });

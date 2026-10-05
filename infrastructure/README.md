@@ -1,53 +1,79 @@
 # AI infrastructure atlas
 
-A standalone, source-backed first atlas for Jordan's Lab. Open `index.html`
-directly, or serve the repository and visit `/infrastructure/`. The public route
-is `/lab/infrastructure/`, linked from the research room's navigation.
+Static atlas for Jordan's Lab at `/lab/infrastructure/`. This revision is a local
+candidate awaiting parent source/semantics review; it is not authorized for publication.
+The previously published first edition is retained in Git history (PR #18).
 
-The October 5, 2026 collection contains 25 sites, 18 featured players and seven
-named partners, 14 products, 28 evidence-scoped relationships, nine investment
-records, 49 public primary sources, and seven dated developments. It covers
-logic fabs, manufacturing R&D, memory, packaging, assembly/test, compute, and
-power. It is a representative collection, not a census.
+The October 5, 2026 snapshot has 94 canonical facilities, 32 companies (18 featured),
+14 products, seven lab profiles, 30 relationships and 124 public sources. The atlas
+provides 140 dedicated entity pages, a searchable directory and a geographic map.
+Twenty-five facilities have reviewed map locations: 22 sourced reference points and
+three explicitly approximate areas. The other 69 have address/locality records and
+no invented coordinates. Seventy-five facilities have attributed Epoch AI estimates.
+Coverage is representative, not a census.
 
-The world map uses a local Natural Earth SVG, regional views and clickable
-clusters. The complete site directory works without the basemap. `sources.html`
-is a generated, readable fallback containing every site, company, product,
-relationship, development and source. It works without JavaScript.
+## Read and explore
+
+- `/infrastructure/`: pan/zoom map, combined facility filters and compact preview.
+- `companies/<id>/`: power evidence, model/training records, facilities and partners.
+- `facilities/<id>/`: identity, role distinctions, power estimates, history and location.
+- `products/<id>/`: designer, process, public facility assignments and supply links.
+- `directory/`: search by name, locality and type; every record is native HTML.
+- `sources.html`: source index and links to complete static entity records.
+- `data/atlas.json`: merged public dataset, including unknowns and archived scopes.
+
+Entity pages and the directory remain readable without JavaScript. The main atlas
+uses local script data and has a static fallback. Opening `index.html` directly also
+works; optional external street tiles are disabled for file URLs.
 
 ## Data and generation
 
-`data/research-part-1.json` through `research-part-7.json` preserve the supplied
-public research fields. `research-final-delta.json` preserves the final review
-corrections. The builder joins them, validates references and invariants, and
-generates three files:
-
-- `data/atlas.json`: full merged source dataset, with original nulls and scopes.
-- `assets/atlas-data.js`: presentation projection, loaded locally without fetch.
-- `sources.html`: complete static record and source index.
+Preserved inputs: seven original research packets and final delta; eleven profile
+packets in `data/profiles/`; five location packets in `data/locations/`. The normalized
+Epoch selection is `data/profiles/epoch-sites-2026-10-05.json`. Raw, unfiltered CSV
+snapshots remain in ignored evidence and are not published.
 
 ```powershell
 node infrastructure/scripts/build-atlas.cjs
 node infrastructure/scripts/build-atlas.cjs --check
-node infrastructure/scripts/build-map.cjs
+node infrastructure/scripts/build-geography.cjs --check
 ```
 
-Do not hand-edit the generated views. The builder changes display wording and
-decodes the supplied `&amp;` strings in visible labels; the research fields remain
-unchanged. Source dates remain attached to each claim. The explicit final delta
-also records the reviewed Intel source relocation and literal ampersand cleanup.
-The dataset is marked `reviewed_for_publication` following parent source review.
+The builder validates source/entity references, model scopes, location counts,
+source hashes and the Narvik identity before generating JSON, browser data, the
+source index, entity pages and directory. Do not hand-edit generated outputs.
+`render-evidence.cjs` escapes public text and renders typed evidence; it never accepts
+raw HTML from a research packet. Original records and superseded source versions
+remain in the merged dataset.
 
-The renderer never adds capacities or spending. It distinguishes actual net
-capex from planned project investment, planned facility capacity from energized
-power, and power contracts from generation. Company relationships do not create
-fab/customer assignments. Products and systems have separate IDs. Shared sites
-have one record even when several players are connected.
+To reproduce the Epoch selection, first place the three exact CSV snapshots named
+in `data/profiles/research-part-04.json` under
+`evidence/infrastructure/epoch-snapshots/`, then run:
+
+```powershell
+python infrastructure/scripts/import-epoch.py --check
+```
+
+The importer verifies reviewed byte lengths and SHA-256 hashes before parsing. It
+never downloads, geocodes, or silently substitutes a changed upstream snapshot.
+Its selection is the seven labs and their named hardware-owner/user relationships.
+It joins exact facility names, applies the 2026-10-05 cutoff and keeps future scenarios
+separate. Each chip type uses its latest dated count; historical counts are not added.
+
+## Interpretation
+
+All seven lab-wide operating-power totals remain unknown. Site capacity is distinct
+from metered consumption, IT power from total facility power, and chip ownership
+from building ownership or customer access. Owner-sample subtotals are incomplete,
+can include external customers, and are neither model-lab allocations nor hard lower
+bounds. Estimates have immediate labels, dates and methods. Model FLOPs count
+accumulated operations; FLOP/s, watts and energy are different quantities. Microsoft
+MAI-Thinking-1's partial pre/mid-training estimate is not a total-training estimate.
+Future agreements and shared projects are never added into a global GW sum.
 
 ## Verification
 
-Use existing Playwright and axe-core installations. These are development-only
-tools; the site has no runtime package dependencies.
+Use the repository's documented axe-core 4.13 and an existing Playwright installation:
 
 ```powershell
 $env:LAB_PLAYWRIGHT_MODULE='path-to-playwright-module'
@@ -56,20 +82,12 @@ $env:LAB_BROWSER_CHANNEL='msedge'
 node infrastructure/tests/verify-atlas.cjs
 ```
 
-Set `LAB_ATLAS_BASE=https://pazneria.github.io/lab/infrastructure/` to run the
-same browser checks against the deployed atlas and shared navigation.
+The test uses its own loopback server and headless browser. It checks all entity
+routes, sources, semantic invariants, keyboard interactions, filter URL/reset behavior,
+cluster selection, mobile widths, map/data failure, no-JavaScript pages and local-file
+preview. It intercepts every street-tile request; it never crawls the OSM service.
+Reports/screenshots go to ignored `evidence/infrastructure/`.
 
-After GitHub Pages finishes, set `LAB_ATLAS_COMMIT` to its exact 40-character
-commit and run `node infrastructure/tests/verify-publication.cjs`. This compares
-the deployed atlas, dataset, shared navigation and existing catalog files with
-Git bytes from that commit, then checks the public routes.
-
-The test opens its own headless browser and loopback server, and writes reports
-and screenshots under ignored `evidence/infrastructure/`. It does not use the
-user's browser sessions. Tested behavior includes combined filters, clusters,
-keyboard selection, URL reloads, company/product links, status semantics, mobile
-overflow, blocked-map fallback, missing-data fallback, JavaScript-disabled
-records, local-file preview, safe links and text-safe rendering.
-
-See `docs/INTEGRATION.md` for the integration boundary and verified limitations,
-and `docs/ATTRIBUTION.md` for the bundled map source.
+`tests/verify-publication.cjs` belongs to the published first-edition release process;
+it is not proof that this candidate is deployed. See `docs/INTEGRATION.md` for the
+review boundary and `docs/ATTRIBUTION.md` for data, map and software credits.

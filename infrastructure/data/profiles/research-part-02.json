@@ -1,0 +1,367 @@
+{
+  "format": "atlas-profile-handoff-v1",
+  "chunk_index": 2,
+  "chunk_count": 11,
+  "records": [
+    {
+      "kind": "profile",
+      "value": {
+        "best_model_rule": "Use official flagship positioning with release/access date; show benchmark-specific leaders separately. Do not infer training compute from capability, model name, pricing, or release recency.",
+        "source_verification_scope": "Official sources checked for model identity and selected major contracts. Broader site list is attributed Epoch dataset ingestion, not a separate audit of every underlying permit.",
+        "player_id": "anthropic",
+        "title": "Anthropic",
+        "as_of": "2026-10-05",
+        "summary": "Claude runs across AWS Trainium, Google TPUs and NVIDIA GPUs. Public evidence identifies operating sites and large contracts, but no complete lab-wide online-power total.",
+        "flagship_models": [
+          {
+            "name": "Claude Opus 5.5",
+            "released_at": "2026-09-22",
+            "selection_basis": "Current leading Opus / general-work model; highest Anthropic ECI in the retrieved snapshot",
+            "access": "available",
+            "source_ids": [
+              "anthropic-opus55"
+            ]
+          },
+          {
+            "name": "Claude Fable 5.1",
+            "released_at": "2026-09-01",
+            "selection_basis": "Frontier-tier reference; roughly matched by Opus 5.5 on much work",
+            "access": "available",
+            "source_ids": [
+              "anthropic-fable51"
+            ]
+          },
+          {
+            "name": "Claude Mythos 5.1",
+            "released_at": "2026-09-01",
+            "selection_basis": "Same underlying model as Fable 5.1 with different safeguards",
+            "access": "trusted_access",
+            "source_ids": [
+              "anthropic-fable51"
+            ]
+          },
+          {
+            "name": "Claude Sonnet 5.5",
+            "released_at": "2026-09-28",
+            "selection_basis": "Newer efficient model; individual benchmark wins do not make it universally stronger",
+            "access": "available",
+            "source_ids": [
+              "anthropic-sonnet55"
+            ]
+          }
+        ],
+        "training_compute": [
+          {
+            "model": "Claude Opus 5.5",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "Not publicly established",
+            "evidence_status": "not_disclosed_or_no_supported_estimate_found",
+            "hardware": null,
+            "accelerator_count": null,
+            "duration_days": null,
+            "utilization": null,
+            "range_flop": null,
+            "reason": "No model-specific FLOP estimate or sufficient training inputs found in the checked public sources; the current Epoch row is also blank.",
+            "epoch_row_last_modified": "2026-10-05 05:51:54+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv"
+            ]
+          },
+          {
+            "model": "Claude Fable 5.1",
+            "total_training_compute_flop": null,
+            "pretraining_compute_flop": null,
+            "post_training_compute_flop": null,
+            "display": "Not publicly established",
+            "evidence_status": "not_disclosed_or_no_supported_estimate_found",
+            "hardware": null,
+            "accelerator_count": null,
+            "duration_days": null,
+            "utilization": null,
+            "range_flop": null,
+            "reason": "No model-specific FLOP estimate or sufficient training inputs found in the checked public sources; the current Epoch row is also blank.",
+            "epoch_row_last_modified": "2026-09-16 14:56:26+00:00",
+            "source_ids": [
+              "epoch-models",
+              "epoch-models-csv"
+            ]
+          }
+        ],
+        "operating_power": {
+          "lab_wide_power_w": null,
+          "lab_wide_power_mw": null,
+          "status": "not_publicly_established",
+          "reason": "A complete, dated, de-duplicated lab allocation is unavailable. Site estimates below do not establish the lab’s total or metered consumption.",
+          "covered_owned_ai_sites": {
+            "it_capacity_w": null,
+            "it_capacity_mw": null,
+            "site_count": 0,
+            "site_ids": [],
+            "scope": "Incomplete sample of AI chip-owning company sites, including capacity used by external customers; not the company-wide fleet or its model lab allocation.",
+            "evidence_class": "independent_estimate",
+            "source_ids": [
+              "epoch-dc",
+              "epoch-dc-csv",
+              "epoch-dc-timelines"
+            ],
+            "aggregation_allowed_as_lab_total": false,
+            "display_precision": "Two significant figures; retain exact underlying numbers only for audit"
+          },
+          "metered_consumption_w": null,
+          "metered_consumption_status": "No lab-wide live electricity measurement established",
+          "aggregation_allowed": false
+        },
+        "site_ids": [
+          "colossus-2",
+          "rainier-indiana",
+          "colossus-1",
+          "epoch-amazon-madison-mega-site",
+          "epoch-amazon-ridgeland",
+          "epoch-aws-berwick",
+          "epoch-anthropic-lake-mariner",
+          "epoch-anthropic-barber-lake"
+        ],
+        "major_site_ids": [
+          "rainier-indiana",
+          "colossus-1",
+          "colossus-2",
+          "epoch-anthropic-lake-mariner"
+        ],
+        "partners": [
+          {
+            "name": "AWS",
+            "role": "Primary training and cloud provider; hardware owner/operator of Rainier",
+            "source_ids": [
+              "anthropic-amazon-2026"
+            ]
+          },
+          {
+            "name": "Google Cloud / Broadcom",
+            "role": "TPU access and future capacity; not Anthropic-owned fleet",
+            "source_ids": [
+              "anthropic-google-2025",
+              "anthropic-google-2026"
+            ]
+          },
+          {
+            "name": "Microsoft Azure / NVIDIA",
+            "role": "Contracted cloud compute and technology partner",
+            "source_ids": [
+              "anthropic-azure"
+            ]
+          },
+          {
+            "name": "SpaceXAI",
+            "role": "Colossus compute access; owns hardware",
+            "source_ids": [
+              "anthropic-spacex"
+            ]
+          },
+          {
+            "name": "Fluidstack",
+            "role": "Custom infrastructure development partner",
+            "source_ids": [
+              "anthropic-fluidstack"
+            ]
+          }
+        ],
+        "hardware": [
+          {
+            "platform": "AWS Trainium2",
+            "count_lower_bound": 1000000,
+            "count_qualifier": "more_than",
+            "status": "company_reported_in_use",
+            "evidence_at": "2026-04-20",
+            "scope": "Anthropic training and serving across AWS; do not add to Rainier chip counts",
+            "source_ids": [
+              "anthropic-amazon-2026"
+            ]
+          },
+          {
+            "platform": "Google TPU; NVIDIA GPU",
+            "count_lower_bound": null,
+            "status": "company_reported_in_use",
+            "evidence_at": "2026-05-06",
+            "scope": "Fleet mix; exact flagship-training allocation undisclosed",
+            "source_ids": [
+              "anthropic-spacex"
+            ]
+          }
+        ],
+        "future_capacity": [
+          {
+            "id": "anthropic-aws-5gw",
+            "label": "AWS expansion",
+            "power_w": 5000000000,
+            "power_mw": 5000,
+            "power_basis": "unspecified",
+            "value_qualifier": "up_to",
+            "announced_at": "2026-04-20",
+            "target_online": "Over ten-year agreement; nearly 1 GW new capacity targeted by end-2026",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "anthropic-amazon-2026"
+            ],
+            "notes": "Up to 5 GW is contracted future capacity. Nearly 1 GW is a milestone within that agreement, not additional to 5 GW."
+          },
+          {
+            "id": "anthropic-google-2026-expansion",
+            "label": "Google Cloud 2025 expansion",
+            "power_w": 1000000000,
+            "power_mw": 1000,
+            "power_basis": "unspecified",
+            "value_qualifier": "well_over",
+            "announced_at": "2025-10-23",
+            "target_online": "2026",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "anthropic-google-2025"
+            ],
+            "notes": "Well over 1 GW and up to one million TPUs were targets, not verified delivery as of October 5. Later expansions may overlap."
+          },
+          {
+            "id": "anthropic-google-2027",
+            "label": "Google / Broadcom next-generation TPU agreement",
+            "power_w": 5000000000,
+            "power_mw": 5000,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2026-04-06",
+            "target_online": "Begins 2027",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "anthropic-google-2026",
+              "anthropic-spacex"
+            ],
+            "notes": "April announcement says multiple GW; Anthropic’s May update specifies 5 GW. Do not add overlapping phases without reconciliation."
+          },
+          {
+            "id": "anthropic-azure-1gw",
+            "label": "Azure / NVIDIA commitment",
+            "power_w": 1000000000,
+            "power_mw": 1000,
+            "power_basis": "unspecified",
+            "value_qualifier": "up_to",
+            "announced_at": "2025-11-18",
+            "target_online": null,
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "anthropic-azure"
+            ],
+            "notes": "$30 billion Azure purchase commitment and up-to-1-GW additional/initial NVIDIA commitment; no delivery split disclosed."
+          },
+          {
+            "id": "anthropic-fluidstack-2026",
+            "label": "Fluidstack Texas / New York program",
+            "power_w": null,
+            "power_mw": null,
+            "power_basis": "unspecified",
+            "value_qualifier": "approximately",
+            "announced_at": "2025-11-12",
+            "target_online": "Sites announced to come online through 2026",
+            "status": "announced_or_contracted",
+            "source_ids": [
+              "anthropic-fluidstack"
+            ],
+            "notes": "$50 billion investment is not an electrical-capacity number. Specific current site estimates are separate."
+          }
+        ],
+        "historical_training_reference": [
+          {
+            "model": "Claude 3.7 Sonnet",
+            "released_at": "2025-02-24",
+            "compute_flop": 3.35e+25,
+            "low_flop": 1.0000000001e+25,
+            "high_flop": 1.0000000001e+26,
+            "evidence_class": "historical_independent_estimate",
+            "source_confidence": "Likely",
+            "row_modified_at": "2026-04-24 19:32:50+00:00",
+            "hardware": null,
+            "hardware_quantity": null,
+            "method_note": "https://docs.google.com/spreadsheets/d/10bhwdVrfHI8tysVIz62ZxtvQ30L-HojYvmU18_b-WIM/edit?gid=0#gid=0",
+            "source_ids": [
+              "epoch-models-csv"
+            ],
+            "not_current_flagship": true
+          }
+        ],
+        "cautions": [
+          "Fable 5.5 was not confirmed in the checked official sources; Opus 5.5 and Sonnet 5.5 are confirmed releases.",
+          "Colossus 1 access and New Carlisle are not owned by Anthropic. Colossus 2 is shared and cannot be wholly allocated to Anthropic.",
+          "Public cloud availability of a Claude model is not evidence that the cloud trained that exact model."
+        ]
+      }
+    },
+    {
+      "kind": "capacity_site",
+      "value": {
+        "id": "fairwater-wisconsin",
+        "name": "Microsoft Fairwater Wisconsin",
+        "atlas_site_exists": true,
+        "location_label": "4800 90th St, Mount Pleasant, WI 53403",
+        "country": "United States",
+        "hardware_owners": [
+          {
+            "name": "Microsoft",
+            "player_id": "microsoft",
+            "confidence": "confident"
+          }
+        ],
+        "users": [
+          {
+            "name": "OpenAI",
+            "player_id": "openai",
+            "confidence": "likely"
+          },
+          {
+            "name": "Microsoft",
+            "player_id": "microsoft",
+            "confidence": "likely"
+          }
+        ],
+        "operator_name": "Microsoft",
+        "status": "operating_estimated",
+        "snapshot_at": "2026-10-05",
+        "source_updated_at": "2026-10-02",
+        "evidence_at": "2026-05-15",
+        "it_capacity_w": 369000000,
+        "it_capacity_mw": 369,
+        "facility_capacity_w": 442000000,
+        "facility_capacity_mw": 442,
+        "capacity_basis": "installed_or_inferred_available_capacity_not_metered_consumption",
+        "estimate_method": "Epoch AI reconstruction from dated construction evidence, permits and equipment models; see timeline and calculations",
+        "source_url": "https://epoch.ai/data/ai-data-centers",
+        "source_ids": [
+          "epoch-dc",
+          "epoch-dc-csv",
+          "epoch-dc-timelines",
+          "epoch-dc-chips"
+        ],
+        "calculations_url": "https://docs.google.com/spreadsheets/d/1CRnOKjeb6z5VFPyeA7xaMrbppOD5dCS7TE20kvQyb8E/edit?usp=sharing",
+        "hardware_types": [
+          "B200"
+        ],
+        "hardware_count_estimates": [
+          {
+            "chip_type": "B200",
+            "count": 176391,
+            "date": "2026-04-16",
+            "kind": "Epoch estimate; read count source for exceptions",
+            "count_source": "Estimate",
+            "chip_source": "Company disclosure"
+          }
+        ],
+        "warnings": [
+          "OpenAI and Microsoft user assignments are likely, with no disclosed split. Not a disclosed MAI-only cluster."
+        ],
+        "future_timeline_available": true,
+        "allocated_to_model_lab_capacity_w": null,
+        "formal_uncertainty_interval_w": null,
+        "review_level": "dataset_import_with_attribution"
+      }
+    }
+  ]
+}

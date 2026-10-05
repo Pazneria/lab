@@ -1,19 +1,36 @@
 {
   "snapshot": "2026-10-05",
   "counts": {
-    "players": 25,
+    "players": 32,
     "featured_players": 18,
-    "sites": 25,
+    "sites": 94,
     "products": 14,
-    "relationships": 28,
-    "sources": 49
+    "relationships": 30,
+    "sources": 124,
+    "lab_profiles": 7,
+    "mapped_sites": 25,
+    "estimated_sites": 75
   },
   "checks": [
     "Expected counts, unique IDs, all entity/source references and final corrections pass.",
-    "Null capacities, approximate locations, unassigned Rainier total, M15X uncertainty and packaging basis remain intact.",
-    "All generated views match the archived seven-part packet plus final review delta."
+    "Original base validated before overlay: null capacities, city-level locations, unassigned Rainier program total, M15X uncertainty and packaging basis.",
+    "All 11 profile and five location packets are present; 75 imported site estimates, 25 location patches, model scopes and the Narvik deduplication validate.",
+    "All generated views match the base packets, profile/location overlays, and the hash-pinned normalized Epoch snapshot."
   ],
-  "canonicalSha256": "4adfcf4263a6ed188d9e9e969ccbb76fd9aa8c7bd6bf7c728386a71f863f700e",
+  "canonicalSha256": "8cce3f30921da19cc5c023a59a04880b1586e40e9cfedffab1a8256c6e044133",
   "canonicalMethod": "UTF-8 compact JSON; recursively sort object keys; preserve array order.",
-  "publication": "Parent source/semantics review passed; agreed Lab navigation link included. Release authorized through PR #18."
+  "publication": "Entity-page and geographic revision is held for parent review. No publication authorization for this revision.",
+  "expansion": {
+    "profiles": 7,
+    "profile_sources": 48,
+    "location_patches": 25,
+    "location_sources": 40,
+    "estimated_sites": 75,
+    "canonical_sites": 94,
+    "original_sites_preserved": true
+  },
+  "pages": {
+    "entityPages": 140,
+    "directoryPages": 1
+  }
 }
