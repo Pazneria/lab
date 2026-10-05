@@ -1,0 +1,23 @@
+{
+  "received_parts": 3,
+  "assembled_exactly_from_parts": true,
+  "cards": 3,
+  "arena_rows": 12,
+  "design2code_configs": 6,
+  "fidelity_values": 30,
+  "optional_source_only_candidates": 1,
+  "audits": 14,
+  "draft_numeric_values_changed": 0,
+  "arena_card_changed": false,
+  "design_arena_card_changed": false,
+  "design2code_difference": "Canonical source field model_snapshot replaces provisional snapshot; values unchanged",
+  "optional_difference": "Provisional projection-only category/rows excluded from original; renderer still adds them to projection",
+  "new_source_metadata": "Original schema/recommendation and all 14 audit entries retained; provisional provenance removed from selected source input",
+  "original_packet_sha256": "b22df38b78f92f9110ea839cb07e336a5393ffc0c6f580916a63bf850ab5cd3c",
+  "piece_sha256": {
+    "part-1.original.json": "09b106653a9c7c155d8ebeb6b32bc70303046dc433f2d968e3e6e3648676df14",
+    "part-2.original.json": "1c80c0c762bd18e65b7d7b047442f590db3673d80572b6061505a898d9af3020",
+    "part-3.original.json": "eba0d7a570ed2598a634d36f8bfa6d815b49987450f99a0a721f635545f7d0c1"
+  },
+  "publication_authorized_by_reconciliation": false
+}

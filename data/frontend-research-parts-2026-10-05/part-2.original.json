@@ -1,0 +1,164 @@
+{
+  "cards": [
+    {
+      "id": "design-arena-frontend",
+      "name": "Design Arena · Overall Frontend",
+      "category": "frontend",
+      "evidence_kind": "human_design_preference",
+      "source_url": "https://www.designarena.ai/leaderboard/code",
+      "methodology_url": "https://www.designarena.ai/about",
+      "changelog_url": "https://www.designarena.ai/changelog",
+      "snapshot_date": null,
+      "evaluation_date": null,
+      "status": "source_only_scores_unresolved",
+      "rows": [],
+      "metric": "Bradley-Terry preference rating",
+      "summary": "Anonymous four-model tournaments collect design preferences. The text-to-HTML track is separate from image-to-HTML, web-app and fullstack tracks.",
+      "settings": {
+        "scoring": "Five pairwise votes per tournament; Bradley-Terry fit",
+        "configuration": "Per-model configurations required; no exact row settings extracted",
+        "sample_size": null
+      },
+      "limitations": [
+        "Primary page headings load but numeric rows were not exposed in this research pass.",
+        "No third-party mirrored scores accepted.",
+        "Last visible changelog entry is September 29, 2026; that is not the leaderboard evaluation date.",
+        "Taste/preference does not establish functional correctness or reference fidelity."
+      ],
+      "cost_usd": null,
+      "latency_seconds": null
+    },
+    {
+      "id": "design2code-v3-484",
+      "name": "Design2Code · 484-page historical cohort",
+      "category": "frontend",
+      "evidence_kind": "screenshot_fidelity",
+      "source_url": "https://arxiv.org/html/2403.03163v3",
+      "project_url": "https://salt-nlp.github.io/Design2Code/",
+      "code_url": "https://github.com/NoviScl/Design2Code",
+      "paper_revision_date": "2025-02-09",
+      "evaluation_date": null,
+      "status": "historical_source_cohort",
+      "sample_size": 484,
+      "metric_order": [
+        "block_match",
+        "text",
+        "position",
+        "color",
+        "clip"
+      ],
+      "unit": "similarity_score_0_to_100",
+      "summary": "Screenshot-to-HTML/CSS evaluation. Table 1 reports five separate similarity dimensions; no combined success score.",
+      "settings": {
+        "decoding": "Greedy",
+        "max_new_tokens": 4096,
+        "effort": null,
+        "harness": "Author prompting and screenshot evaluation",
+        "prompt_methods": [
+          "direct",
+          "text_augmented",
+          "self_revision"
+        ]
+      },
+      "limitations": [
+        "Historical model cohort; checked now does not make it a current frontier leaderboard.",
+        "Design2Code-HARD contains 80 separate cases and must be a separate cohort.",
+        "Prompt methods have different inputs and generation budgets; retain separate labels.",
+        "Visual similarity is not functional browser completion.",
+        "Missing cost, latency and uncertainty remain null."
+      ],
+      "rows": [
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 93,
+            "text": 98.2,
+            "position": 85.5,
+            "color": 84.1,
+            "clip": 90.4
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "text_augmented",
+          "metrics": {
+            "block_match": 92.4,
+            "text": 98.6,
+            "position": 84.5,
+            "color": 83.1,
+            "clip": 89.9
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "self_revision",
+          "metrics": {
+            "block_match": 92.7,
+            "text": 98.6,
+            "position": 84.9,
+            "color": 83.3,
+            "clip": 90.1
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4V",
+          "model_snapshot": "gpt-4-1106-vision-preview",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 85.8,
+            "text": 97.4,
+            "position": 80.5,
+            "color": 73.3,
+            "clip": 86.9
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "Claude 3 Opus",
+          "model_snapshot": "claude-3-opus-20240229",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 90.2,
+            "text": 97.5,
+            "position": 77.9,
+            "color": 71.4,
+            "clip": 87
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "Gemini 1.0 Pro Vision",
+          "model_snapshot": "gemini-1.0-pro-vision",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 80.2,
+            "text": 94.6,
+            "position": 72.3,
+            "color": 66.2,
+            "clip": 84.4
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        }
+      ]
+    }
+  ]
+}

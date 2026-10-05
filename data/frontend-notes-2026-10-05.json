@@ -1,0 +1,34 @@
+{
+  "webdev-arena-frontend": {
+    "question": "Which generated apps do people prefer?",
+    "tests": "Voters compare generated web apps without seeing the model names. Their choices produce a preference rating for each named configuration. This view preserves 12 selected rows from the October 1 frontend leaderboard, which contained 138 models.",
+    "matters": "An app can meet a prompt yet still feel awkward to use or look unfinished. Human comparisons capture some of those differences, although the votes do not prove that every feature works or explain which design choice drove a preference.",
+    "read": "A point farther right has a higher preference rating in this source snapshot. The horizontal line shows its reported interval; overlapping intervals and rank spreads limit conclusions about close results. The cropped 1600–1900 axis makes differences readable without converting ratings into percentages. Focus or tap a row for its votes, exact model suffix and source.",
+    "date": "Leaderboard snapshot October 1, 2026 · source checked October 5 · individual evaluation dates unknown",
+    "notice": "These are evolving pairwise preferences, not functional success rates. The source does not expose the interval confidence level or measured task cost and time. Preliminary labels and model suffixes stay attached to their rows."
+  },
+  "design2code-v3-484": {
+    "question": "How closely can AI rebuild a website from its screenshot?",
+    "tests": "A model receives a reference screenshot and generates HTML and CSS. The historical 484-page evaluation measures content blocks, text, position, color and CLIP visual similarity separately. The default graph compares four Direct configurations; the separate GPT-4o method view compares Direct, Text augmented and Self revision prompting.",
+    "matters": "Recreating a layout requires matching both the page structure and its appearance. A model can reproduce the words while placing elements incorrectly, which is why the five dimensions answer different questions. None of these measurements verifies that a form submits correctly or a browser workflow finishes.",
+    "read": "Choose one similarity dimension and compare its 0–100 scores within that view. Higher means a closer match under that metric, not a percentage of working websites. Use the comparison selector to inspect GPT-4o’s prompting methods; their inputs and generation budgets differ. The five metrics are never averaged, and the separate 80-case HARD cohort is not included.",
+    "date": "Paper revision February 9, 2025 · historical 484-page cohort · evaluation dates unknown · checked October 5, 2026",
+    "notice": "This is a historical screenshot-fidelity comparison. Exact model snapshots and prompting methods remain in the details; cost, time and uncertainty were not reported."
+  },
+  "design-arena-frontend": {
+    "question": "Which AI-generated website designs do voters like?",
+    "tests": "Anonymous tournaments compare four generated designs and collect five pairwise votes. The creator fits Bradley-Terry preference ratings from those choices. This card follows the Overall Frontend text-to-HTML track, which is separate from image-to-HTML, web-app and fullstack tracks.",
+    "matters": "Design preference can capture whether a page feels coherent and appealing. It complements tests of visual fidelity and working features, because a popular design does not necessarily reproduce a reference or implement every requested behavior.",
+    "read": "Open the creator’s leaderboard and methodology in Sources. The earlier text retrieval did not expose numerical rows. A later isolated browser read showed rating labels, but a dated set of configurations has not been admitted in this increment. This card links the live board without plotting an unreviewed comparison; the changelog date is not an evaluation date.",
+    "date": "Primary source checked October 5, 2026 · browser rating labels observed · numeric comparison not admitted",
+    "notice": "The live board contains rating labels; no dated comparison, task cost or time values have been admitted for plotting here."
+  },
+  "webcraftbench-v3": {
+    "question": "Does a generated web app satisfy its requirements when explored?",
+    "tests": "WebCraftBench explores generated applications at runtime and considers aesthetics, usability and requirement alignment separately. The September 20 paper revision describes 369 tasks and 5,088 acceptance criteria. This source guide keeps that context without importing an abbreviated score comparison.",
+    "matters": "A screenshot may hide broken navigation, controls or later states. Exploring the running application can reveal those failures, but comparisons also depend on the agent that built it: the reported setups use Codex for GPT models and Claude Code for others.",
+    "read": "Use the paper in Sources to inspect the task and configuration details. Its model-pool normalized scores are not percentages, and its 85.3% human-preference agreement is not a functional success rate. Numeric graphs will need a full configuration review before the results can be presented consistently.",
+    "date": "Paper revision September 20, 2026 · source checked October 5 · no numeric comparison admitted",
+    "notice": "This card is a source guide. Mixed agents and model-pool normalization prevent a simple model-only ranking."
+  }
+}

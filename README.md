@@ -1,8 +1,8 @@
 # Lab · AI benchmark gallery
 
-A source-backed gallery of **42 benchmark cards** spanning standard tests, community
-projects, games, medicine and physical systems. Twenty-five cards show real graphs;
-17 are clearly labeled evidence guides without ingested model scores. A card
+A source-backed gallery of **46 benchmark cards** spanning standard tests, community
+projects, frontend development, games, medicine and physical systems. Twenty-seven cards show real graphs;
+19 are clearly labeled evidence guides without ingested model scores. A card
 opens an interactive graph with plain-English explanations. Sources, settings,
 exact tables and full records remain in expandable disclosures.
 
@@ -18,6 +18,12 @@ cohorts have configuration search and a Show all option. Community views expose
 228 BullshitBench rows and 48 Rune runs across 16 skills; a separate historical
 medical view contains 12 author-homepage results. The existing seven verified
 charts remain available with their exact cost/time meanings.
+
+The October 5 draft adds separate frontend preference and historical screenshot-fidelity
+views, plus Design Arena and WebCraftBench source guides. Arena ratings retain
+source intervals and votes. Design2Code defaults to four Direct configurations;
+GPT-4o's prompting methods and five fidelity dimensions remain separate. The complete original research packet is archived and reconciled. Parent semantic
+review is required before this draft's numeric changes can be published. See the [October 5 refresh report](docs/WEEKLY-REFRESH-2026-10-05.md).
 
 See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
 [current refresh and renderer review](docs/CURRENT-GALLERY-INTEGRATION.md),

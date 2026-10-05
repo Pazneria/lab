@@ -11053,7 +11053,616 @@ window.LAB_GALLERY = {
       "read": "Historical evidence retained for comparison over time. Higher means a higher pass@1 averaged over three repeats within this source cohort. Read within this dataset version, subset, evaluator and scaffold only. Model plus agent systems may differ; exact agent versions are often missing. Reported cost/time values retain original units and bases in details; the graph displays scores only. Per-task cost is separate from whole-evaluation cost. Decode time is not wall-clock time. Fallback configurations and alternative failure-scoring values remain in raw records.",
       "notice": "Score-only chart. Known reported cost/time values preserved in reported_cost/reported_time and raw_record; missing values remain null.",
       "date": "Historical source cohort; checked October 1, 2026; exact run dates generally unavailable"
+    },
+    "webdev-arena-frontend": {
+      "question": "Which generated apps do people prefer?",
+      "tests": "Voters compare generated web apps without seeing the model names. Their choices produce a preference rating for each named configuration. This view preserves 12 selected rows from the October 1 frontend leaderboard, which contained 138 models.",
+      "matters": "An app can meet a prompt yet still feel awkward to use or look unfinished. Human comparisons capture some of those differences, although the votes do not prove that every feature works or explain which design choice drove a preference.",
+      "read": "A point farther right has a higher preference rating in this source snapshot. The horizontal line shows its reported interval; overlapping intervals and rank spreads limit conclusions about close results. The cropped 1600–1900 axis makes differences readable without converting ratings into percentages. Focus or tap a row for its votes, exact model suffix and source.",
+      "date": "Leaderboard snapshot October 1, 2026 · source checked October 5 · individual evaluation dates unknown",
+      "notice": "These are evolving pairwise preferences, not functional success rates. The source does not expose the interval confidence level or measured task cost and time. Preliminary labels and model suffixes stay attached to their rows."
+    },
+    "design2code-v3-484": {
+      "question": "How closely can AI rebuild a website from its screenshot?",
+      "tests": "A model receives a reference screenshot and generates HTML and CSS. The historical 484-page evaluation measures content blocks, text, position, color and CLIP visual similarity separately. The default graph compares four Direct configurations; the separate GPT-4o method view compares Direct, Text augmented and Self revision prompting.",
+      "matters": "Recreating a layout requires matching both the page structure and its appearance. A model can reproduce the words while placing elements incorrectly, which is why the five dimensions answer different questions. None of these measurements verifies that a form submits correctly or a browser workflow finishes.",
+      "read": "Choose one similarity dimension and compare its 0–100 scores within that view. Higher means a closer match under that metric, not a percentage of working websites. Use the comparison selector to inspect GPT-4o’s prompting methods; their inputs and generation budgets differ. The five metrics are never averaged, and the separate 80-case HARD cohort is not included.",
+      "date": "Paper revision February 9, 2025 · historical 484-page cohort · evaluation dates unknown · checked October 5, 2026",
+      "notice": "This is a historical screenshot-fidelity comparison. Exact model snapshots and prompting methods remain in the details; cost, time and uncertainty were not reported."
+    },
+    "design-arena-frontend": {
+      "question": "Which AI-generated website designs do voters like?",
+      "tests": "Anonymous tournaments compare four generated designs and collect five pairwise votes. The creator fits Bradley-Terry preference ratings from those choices. This card follows the Overall Frontend text-to-HTML track, which is separate from image-to-HTML, web-app and fullstack tracks.",
+      "matters": "Design preference can capture whether a page feels coherent and appealing. It complements tests of visual fidelity and working features, because a popular design does not necessarily reproduce a reference or implement every requested behavior.",
+      "read": "Open the creator’s leaderboard and methodology in Sources. The earlier text retrieval did not expose numerical rows. A later isolated browser read showed rating labels, but a dated set of configurations has not been admitted in this increment. This card links the live board without plotting an unreviewed comparison; the changelog date is not an evaluation date.",
+      "date": "Primary source checked October 5, 2026 · browser rating labels observed · numeric comparison not admitted",
+      "notice": "The live board contains rating labels; no dated comparison, task cost or time values have been admitted for plotting here."
+    },
+    "webcraftbench-v3": {
+      "question": "Does a generated web app satisfy its requirements when explored?",
+      "tests": "WebCraftBench explores generated applications at runtime and considers aesthetics, usability and requirement alignment separately. The September 20 paper revision describes 369 tasks and 5,088 acceptance criteria. This source guide keeps that context without importing an abbreviated score comparison.",
+      "matters": "A screenshot may hide broken navigation, controls or later states. Exploring the running application can reveal those failures, but comparisons also depend on the agent that built it: the reported setups use Codex for GPT models and Claude Code for others.",
+      "read": "Use the paper in Sources to inspect the task and configuration details. Its model-pool normalized scores are not percentages, and its 85.3% human-preference agreement is not a functional success rate. Numeric graphs will need a full configuration review before the results can be presented consistently.",
+      "date": "Paper revision September 20, 2026 · source checked October 5 · no numeric comparison admitted",
+      "notice": "This card is a source guide. Mixed agents and model-pool normalization prevent a simple model-only ranking."
     }
+  },
+  "frontend": {
+    "checked_at": "2026-10-05",
+    "source_input": "data/frontend-research-2026-10-05.original.json",
+    "cards": [
+      {
+        "id": "webdev-arena-frontend",
+        "name": "WebDev Arena · Frontend",
+        "category": "frontend",
+        "evidence_kind": "human_preference",
+        "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+        "methodology_urls": [
+          "https://arena.ai/blog/webdev-arena",
+          "https://arena.ai/blog/new-categories-code-arena"
+        ],
+        "snapshot_date": "2026-10-01",
+        "evaluation_date": null,
+        "status": "verified_selected_rows",
+        "selection": "Top 12 displayed rows of a 138-model leaderboard; not all models",
+        "total_models": 138,
+        "total_votes": 745814,
+        "metric": "Arena preference rating",
+        "unit": "arena_rating",
+        "direction": "higher_is_better",
+        "summary": "Blind votes on generated apps yield preference ratings; preserve variants, uncertainty and vote counts.",
+        "settings": {
+          "technology": "Frontend HTML or React; overall domain view",
+          "harness": "Current table preserves named harness suffixes, but exact per-row harness versions and tool budgets are not exposed here.",
+          "style_control": "Default URL view; page includes a Remove Style Control control. Exact implementation not reconstructed.",
+          "effort": "Retain exact source suffixes; qwen max is a model name and not independently established as an effort setting.",
+          "trials": null
+        },
+        "limitations": [
+          "Rating is not percent correct, screenshot fidelity or verified functional success.",
+          "Votes are pairwise preferences, not independent benchmark tasks.",
+          "Live cohort and prompt mix evolve; do not splice another date or technology into this comparison.",
+          "Rank spreads overlap; ordinal position does not establish a significant pairwise win.",
+          "Model API prices are not measured task costs."
+        ],
+        "cost_usd": null,
+        "latency_seconds": null,
+        "rows": [
+          {
+            "rank": 1,
+            "model_variant": "claude-opus-5.5-max",
+            "value": 1858,
+            "confidence_interval": {
+              "lower": 1839,
+              "upper": 1877,
+              "minus": 19,
+              "plus": 19,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 1565,
+            "rank_spread": [
+              1,
+              2
+            ],
+            "effort": "max",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 2,
+            "model_variant": "claude-sonnet-5.5-xhigh",
+            "value": 1822,
+            "confidence_interval": {
+              "lower": 1801,
+              "upper": 1843,
+              "minus": 21,
+              "plus": 21,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 1245,
+            "rank_spread": [
+              1,
+              3
+            ],
+            "effort": "xhigh",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 3,
+            "model_variant": "gpt-6-astra-max",
+            "value": 1807,
+            "confidence_interval": {
+              "lower": 1796,
+              "upper": 1818,
+              "minus": 11,
+              "plus": 11,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 5196,
+            "rank_spread": [
+              2,
+              3
+            ],
+            "effort": "max",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 4,
+            "model_variant": "claude-fable-5.1-max",
+            "value": 1782,
+            "confidence_interval": {
+              "lower": 1771,
+              "upper": 1793,
+              "minus": 11,
+              "plus": 11,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 5110,
+            "rank_spread": [
+              4,
+              5
+            ],
+            "effort": "max",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 5,
+            "model_variant": "gpt-6.1-sol-max",
+            "value": 1774,
+            "confidence_interval": {
+              "lower": 1755,
+              "upper": 1793,
+              "minus": 19,
+              "plus": 19,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 1343,
+            "rank_spread": [
+              4,
+              6
+            ],
+            "effort": "max",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 6,
+            "model_variant": "claude-sonnet-5.5-high",
+            "value": 1744,
+            "confidence_interval": {
+              "lower": 1729,
+              "upper": 1759,
+              "minus": 15,
+              "plus": 15,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 2089,
+            "rank_spread": [
+              5,
+              6
+            ],
+            "effort": "high",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 7,
+            "model_variant": "claude-opus-5-max",
+            "value": 1717,
+            "confidence_interval": {
+              "lower": 1710,
+              "upper": 1724,
+              "minus": 7,
+              "plus": 7,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 13257,
+            "rank_spread": [
+              7,
+              8
+            ],
+            "effort": "max",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 8,
+            "model_variant": "gpt-6-sol-max",
+            "value": 1698,
+            "confidence_interval": {
+              "lower": 1685,
+              "upper": 1711,
+              "minus": 13,
+              "plus": 13,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 2844,
+            "rank_spread": [
+              7,
+              12
+            ],
+            "effort": "max",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 9,
+            "model_variant": "gemini-4-argon-high",
+            "value": 1691,
+            "confidence_interval": {
+              "lower": 1676,
+              "upper": 1706,
+              "minus": 15,
+              "plus": 15,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 1929,
+            "rank_spread": [
+              8,
+              14
+            ],
+            "effort": "high",
+            "preliminary": true,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 10,
+            "model_variant": "qwen3.8-max-0902",
+            "value": 1680,
+            "confidence_interval": {
+              "lower": 1671,
+              "upper": 1689,
+              "minus": 9,
+              "plus": 9,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 7694,
+            "rank_spread": [
+              8,
+              14
+            ],
+            "effort": null,
+            "preliminary": true,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 11,
+            "model_variant": "claude-opus-5-high",
+            "value": 1680,
+            "confidence_interval": {
+              "lower": 1674,
+              "upper": 1686,
+              "minus": 6,
+              "plus": 6,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 17378,
+            "rank_spread": [
+              8,
+              14
+            ],
+            "effort": "high",
+            "preliminary": false,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          },
+          {
+            "rank": 12,
+            "model_variant": "qwen3.8-max",
+            "value": 1678,
+            "confidence_interval": {
+              "lower": 1665,
+              "upper": 1691,
+              "minus": 13,
+              "plus": 13,
+              "level": null,
+              "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+            },
+            "votes": 2935,
+            "rank_spread": [
+              8,
+              16
+            ],
+            "effort": null,
+            "preliminary": true,
+            "evaluation_date": null,
+            "cost_usd": null,
+            "latency_seconds": null
+          }
+        ]
+      },
+      {
+        "id": "design-arena-frontend",
+        "name": "Design Arena · Overall Frontend",
+        "category": "frontend",
+        "evidence_kind": "human_design_preference",
+        "source_url": "https://www.designarena.ai/leaderboard/code",
+        "methodology_url": "https://www.designarena.ai/about",
+        "changelog_url": "https://www.designarena.ai/changelog",
+        "snapshot_date": null,
+        "evaluation_date": null,
+        "status": "source_only_scores_unresolved",
+        "rows": [],
+        "metric": "Bradley-Terry preference rating",
+        "summary": "Anonymous four-model tournaments collect design preferences. The text-to-HTML track is separate from image-to-HTML, web-app and fullstack tracks.",
+        "settings": {
+          "scoring": "Five pairwise votes per tournament; Bradley-Terry fit",
+          "configuration": "Per-model configurations required; no exact row settings extracted",
+          "sample_size": null
+        },
+        "limitations": [
+          "Primary page headings load but numeric rows were not exposed in this research pass.",
+          "No third-party mirrored scores accepted.",
+          "Last visible changelog entry is September 29, 2026; that is not the leaderboard evaluation date.",
+          "Taste/preference does not establish functional correctness or reference fidelity."
+        ],
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "design2code-v3-484",
+        "name": "Design2Code · 484-page historical cohort",
+        "category": "frontend",
+        "evidence_kind": "screenshot_fidelity",
+        "source_url": "https://arxiv.org/html/2403.03163v3",
+        "project_url": "https://salt-nlp.github.io/Design2Code/",
+        "code_url": "https://github.com/NoviScl/Design2Code",
+        "paper_revision_date": "2025-02-09",
+        "evaluation_date": null,
+        "status": "historical_source_cohort",
+        "sample_size": 484,
+        "metric_order": [
+          "block_match",
+          "text",
+          "position",
+          "color",
+          "clip"
+        ],
+        "unit": "similarity_score_0_to_100",
+        "summary": "Screenshot-to-HTML/CSS evaluation. Table 1 reports five separate similarity dimensions; no combined success score.",
+        "settings": {
+          "decoding": "Greedy",
+          "max_new_tokens": 4096,
+          "effort": null,
+          "harness": "Author prompting and screenshot evaluation",
+          "prompt_methods": [
+            "direct",
+            "text_augmented",
+            "self_revision"
+          ]
+        },
+        "limitations": [
+          "Historical model cohort; checked now does not make it a current frontier leaderboard.",
+          "Design2Code-HARD contains 80 separate cases and must be a separate cohort.",
+          "Prompt methods have different inputs and generation budgets; retain separate labels.",
+          "Visual similarity is not functional browser completion.",
+          "Missing cost, latency and uncertainty remain null."
+        ],
+        "rows": [
+          {
+            "model_variant": "GPT-4o",
+            "model_snapshot": "gpt-4o-2024-05-13",
+            "prompt_method": "direct",
+            "metrics": {
+              "block_match": 93,
+              "text": 98.2,
+              "position": 85.5,
+              "color": 84.1,
+              "clip": 90.4
+            },
+            "cost_usd": null,
+            "latency_seconds": null,
+            "uncertainty": null
+          },
+          {
+            "model_variant": "GPT-4o",
+            "model_snapshot": "gpt-4o-2024-05-13",
+            "prompt_method": "text_augmented",
+            "metrics": {
+              "block_match": 92.4,
+              "text": 98.6,
+              "position": 84.5,
+              "color": 83.1,
+              "clip": 89.9
+            },
+            "cost_usd": null,
+            "latency_seconds": null,
+            "uncertainty": null
+          },
+          {
+            "model_variant": "GPT-4o",
+            "model_snapshot": "gpt-4o-2024-05-13",
+            "prompt_method": "self_revision",
+            "metrics": {
+              "block_match": 92.7,
+              "text": 98.6,
+              "position": 84.9,
+              "color": 83.3,
+              "clip": 90.1
+            },
+            "cost_usd": null,
+            "latency_seconds": null,
+            "uncertainty": null
+          },
+          {
+            "model_variant": "GPT-4V",
+            "model_snapshot": "gpt-4-1106-vision-preview",
+            "prompt_method": "direct",
+            "metrics": {
+              "block_match": 85.8,
+              "text": 97.4,
+              "position": 80.5,
+              "color": 73.3,
+              "clip": 86.9
+            },
+            "cost_usd": null,
+            "latency_seconds": null,
+            "uncertainty": null
+          },
+          {
+            "model_variant": "Claude 3 Opus",
+            "model_snapshot": "claude-3-opus-20240229",
+            "prompt_method": "direct",
+            "metrics": {
+              "block_match": 90.2,
+              "text": 97.5,
+              "position": 77.9,
+              "color": 71.4,
+              "clip": 87
+            },
+            "cost_usd": null,
+            "latency_seconds": null,
+            "uncertainty": null
+          },
+          {
+            "model_variant": "Gemini 1.0 Pro Vision",
+            "model_snapshot": "gemini-1.0-pro-vision",
+            "prompt_method": "direct",
+            "metrics": {
+              "block_match": 80.2,
+              "text": 94.6,
+              "position": 72.3,
+              "color": 66.2,
+              "clip": 84.4
+            },
+            "cost_usd": null,
+            "latency_seconds": null,
+            "uncertainty": null
+          }
+        ]
+      },
+      {
+        "id": "webcraftbench-v3",
+        "name": "WebCraftBench",
+        "source_url": "https://arxiv.org/html/2609.15387v3",
+        "revision_date": "2026-09-20",
+        "description": "Runtime coverage-guided exploration with separate aesthetics, usability and requirement-alignment scores",
+        "task_count": 369,
+        "acceptance_criteria": 5088,
+        "models": 17,
+        "applications": 6273,
+        "human_validation_pairs": 197,
+        "status": "source_only_until_full_configuration_review",
+        "limitations": [
+          "Current v3 title is WebCraftBench; stale search snippets call it IWC-Bench.",
+          "Scores use model-pool z normalization; not percentages.",
+          "GPT models use Codex, others Claude Code; no fixed-harness model-only ranking.",
+          "85.3% is human-preference agreement, not functional task success.",
+          "No new numeric publication recommended from this abbreviated review."
+        ],
+        "category": "frontend",
+        "rows": [],
+        "summary": "Runtime coverage-guided exploration with separate aesthetics, usability and requirement-alignment scores"
+      }
+    ]
+  },
+  "supplement": {
+    "schema_version": "benchmark-research-supplement-2026-10-05",
+    "checked_at": "2026-10-05",
+    "audit": [
+      {
+        "id": "behavior-challenge-2026",
+        "status": "self_reported_new_subset_only",
+        "finding": "Verified results.jsonl and per_task_results.jsonl remain empty. October1 Zero-Shot Butlers self-report covers50tasks/500episodes, not100tasks/1000episodes; no unified ranking recommended.",
+        "source_url": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/main/data/self_reported_results.jsonl",
+        "new_source_record": {
+          "submission_id": "20261001T050618Z-zero-shot-butlers-comet-pi0-5-pt50-0-shot",
+          "num_tasks": 50,
+          "num_episodes": 500,
+          "q_score": 0.09929310828060828,
+          "success_rate": 0.03500000000000001,
+          "verification": "self_reported",
+          "model_checkpoint": null,
+          "effort": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "evaluation_date": null
+        },
+        "verification_source": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/main/data/results.jsonl",
+        "schedule": {
+          "submission_deadline": "2026-10-16",
+          "winner_announcement": "2026-11-04"
+        },
+        "schedule_source": "https://behavior.stanford.edu/challenge/index.html",
+        "source_commit": "18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff",
+        "commit_url": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/commit/18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff",
+        "pinned_source_url": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff/data/self_reported_results.jsonl",
+        "timestamp_note": "Submission ID embeds October 1, 2026 05:06:18 UTC. This is not verified evaluation time. Commit UI showed a relative timestamp only; exact commit publication time not established.",
+        "other_row_in_same_commit": {
+          "submission_id": "20260930T073223Z-weiyi-vla-wyvla",
+          "num_tasks": 8,
+          "num_episodes": 80,
+          "q_score": 0.012523809523809524,
+          "success_rate": 0.009000000000000001,
+          "verification": "self_reported",
+          "evaluation_date": null
+        }
+      },
+      {
+        "id": "waymo-onroad-safety",
+        "status": "no_new_exposure_period_interpretive_caveat_found",
+        "finding": "Provider hub remains data through June2026, released September24,2026. Keep provider data separate from IIHS July23,2026 study of2021–2024.",
+        "source_url": "https://waymo.com/safety/impact/",
+        "release_notes": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20260924.pdf",
+        "important_caveat": {
+          "description": "One crash involving two Waymo vehicles remains Unknown for suspected serious injury pending a police crash report. Release notes disclose a life-threatening injury in a separate report and a sensitivity calculation.",
+          "reported_serious_injury_ipmm": 0.011,
+          "if_uncertain_crash_counted_ipmm": 0.018,
+          "aligned_human_benchmark_ipmm": 0.2133,
+          "source_pdf_page": 2,
+          "clinical_or_causal_claim": false
+        },
+        "recommendation": "Add caveat beside any future serious-injury headline; do not silently treat unknown injury severity as no serious injury."
+      },
+      {
+        "id": "stationerybench",
+        "status": "historical_report_reverified",
+        "finding": "Report remains dated September10,2026:200trials acrossfive tasks,100per system;7complete Astra trials vs0MolmoAct2. This is system-level fixed setup evidence with different interfaces, not a current model leaderboard.",
+        "source_url": "https://openai.robocurve.org/stationerybench/"
+      },
+      {
+        "id": "robochallenge-table30",
+        "status": "scores_unresolved",
+        "finding": "Primary home page returned no readable text; no numeric standings or fresh dates accepted.",
+        "source_url": "https://robochallenge.ai/home"
+      }
+    ],
+    "design2code_display_rule": "Default view compares only the four Direct rows within one chosen metric. GPT-4o prompting variants belong in a separate method-comparison view. Never average the five metrics."
   },
   "expanded": {
     "schema_version": 1,
@@ -25886,8 +26495,11 @@ window.LAB_GALLERY = {
       "data/current-coding.original.json",
       "data/current-medical.original.json",
       "data/community-expanded-2026-10-01.json",
-      "data/refresh-packets/manifest.json"
+      "data/refresh-packets/manifest.json",
+      "data/frontend-research-2026-10-05.original.json",
+      "data/frontend-research-supplement-2026-10-05.original.json"
     ],
-    "rendererContract": "data/gallery-renderer-contract-2026-10-01.json"
+    "rendererContract": "data/gallery-renderer-contract-2026-10-05.json",
+    "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

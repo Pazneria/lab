@@ -1,0 +1,45 @@
+{
+  "schema_version": "benchmark-research-supplement-2026-10-05",
+  "checked_at": "2026-10-05",
+  "audit": [
+    {
+      "id": "behavior-challenge-2026",
+      "status": "self_reported_new_subset_only",
+      "finding": "Verified results.jsonl and per_task_results.jsonl remain empty. October1 Zero-Shot Butlers self-report covers50tasks/500episodes, not100tasks/1000episodes; no unified ranking recommended.",
+      "source_url": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/main/data/self_reported_results.jsonl",
+      "new_source_record": {
+        "submission_id": "20261001T050618Z-zero-shot-butlers-comet-pi0-5-pt50-0-shot",
+        "num_tasks": 50,
+        "num_episodes": 500,
+        "q_score": 0.09929310828060828,
+        "success_rate": 0.03500000000000001,
+        "verification": "self_reported",
+        "model_checkpoint": null,
+        "effort": null,
+        "cost_usd": null,
+        "latency_seconds": null,
+        "evaluation_date": null
+      },
+      "verification_source": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/main/data/results.jsonl",
+      "schedule": { "submission_deadline": "2026-10-16", "winner_announcement": "2026-11-04" },
+      "schedule_source": "https://behavior.stanford.edu/challenge/index.html",
+      "source_commit": "18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff",
+      "commit_url": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/commit/18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff",
+      "pinned_source_url": "https://huggingface.co/spaces/behavior-1k/2026-challenge-leaderboard/blob/18aeb96d9bc0d4c41b333ee4e77715910b3ae7ff/data/self_reported_results.jsonl",
+      "timestamp_note": "Submission ID embeds October 1, 2026 05:06:18 UTC. This is not verified evaluation time. Commit UI showed a relative timestamp only; exact commit publication time not established.",
+      "other_row_in_same_commit": { "submission_id": "20260930T073223Z-weiyi-vla-wyvla", "num_tasks": 8, "num_episodes": 80, "q_score": 0.012523809523809524, "success_rate": 0.009000000000000001, "verification": "self_reported", "evaluation_date": null }
+    },
+    {
+      "id": "waymo-onroad-safety",
+      "status": "no_new_exposure_period_interpretive_caveat_found",
+      "finding": "Provider hub remains data through June2026, released September24,2026. Keep provider data separate from IIHS July23,2026 study of2021–2024.",
+      "source_url": "https://waymo.com/safety/impact/",
+      "release_notes": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20260924.pdf",
+      "important_caveat": { "description": "One crash involving two Waymo vehicles remains Unknown for suspected serious injury pending a police crash report. Release notes disclose a life-threatening injury in a separate report and a sensitivity calculation.", "reported_serious_injury_ipmm": 0.011, "if_uncertain_crash_counted_ipmm": 0.018, "aligned_human_benchmark_ipmm": 0.2133, "source_pdf_page": 2, "clinical_or_causal_claim": false },
+      "recommendation": "Add caveat beside any future serious-injury headline; do not silently treat unknown injury severity as no serious injury."
+    },
+    { "id": "stationerybench", "status": "historical_report_reverified", "finding": "Report remains dated September10,2026:200trials acrossfive tasks,100per system;7complete Astra trials vs0MolmoAct2. This is system-level fixed setup evidence with different interfaces, not a current model leaderboard.", "source_url": "https://openai.robocurve.org/stationerybench/" },
+    { "id": "robochallenge-table30", "status": "scores_unresolved", "finding": "Primary home page returned no readable text; no numeric standings or fresh dates accepted.", "source_url": "https://robochallenge.ai/home" }
+  ],
+  "design2code_display_rule": "Default view compares only the four Direct rows within one chosen metric. GPT-4o prompting variants belong in a separate method-comparison view. Never average the five metrics."
+}

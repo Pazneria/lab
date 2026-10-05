@@ -1,0 +1,592 @@
+{
+  "schema_version": "benchmark-research-packet-2026-10-05-v1",
+  "checked_at": "2026-10-05",
+  "repository_baseline": "7d385b8df5796090bbee70cadd5d0fdf894f23c0",
+  "independently_executed": false,
+  "recommendation": "Add separate frontend preference, screenshot-fidelity, and source-only design-preference cards. Never combine their scales or treat preference as objective functional success.",
+  "cards": [
+    {
+      "id": "webdev-arena-frontend",
+      "name": "WebDev Arena · Frontend",
+      "category": "frontend",
+      "evidence_kind": "human_preference",
+      "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+      "methodology_urls": [
+        "https://arena.ai/blog/webdev-arena",
+        "https://arena.ai/blog/new-categories-code-arena"
+      ],
+      "snapshot_date": "2026-10-01",
+      "evaluation_date": null,
+      "status": "verified_selected_rows",
+      "selection": "Top 12 displayed rows of a 138-model leaderboard; not all models",
+      "total_models": 138,
+      "total_votes": 745814,
+      "metric": "Arena preference rating",
+      "unit": "arena_rating",
+      "direction": "higher_is_better",
+      "summary": "Blind votes on generated apps yield preference ratings; preserve variants, uncertainty and vote counts.",
+      "settings": {
+        "technology": "Frontend HTML or React; overall domain view",
+        "harness": "Current table preserves named harness suffixes, but exact per-row harness versions and tool budgets are not exposed here.",
+        "style_control": "Default URL view; page includes a Remove Style Control control. Exact implementation not reconstructed.",
+        "effort": "Retain exact source suffixes; qwen max is a model name and not independently established as an effort setting.",
+        "trials": null
+      },
+      "limitations": [
+        "Rating is not percent correct, screenshot fidelity or verified functional success.",
+        "Votes are pairwise preferences, not independent benchmark tasks.",
+        "Live cohort and prompt mix evolve; do not splice another date or technology into this comparison.",
+        "Rank spreads overlap; ordinal position does not establish a significant pairwise win.",
+        "Model API prices are not measured task costs."
+      ],
+      "cost_usd": null,
+      "latency_seconds": null,
+      "rows": [
+        {
+          "rank": 1,
+          "model_variant": "claude-opus-5.5-max",
+          "value": 1858,
+          "confidence_interval": {
+            "lower": 1839,
+            "upper": 1877,
+            "minus": 19,
+            "plus": 19,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 1565,
+          "rank_spread": [
+            1,
+            2
+          ],
+          "effort": "max",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 2,
+          "model_variant": "claude-sonnet-5.5-xhigh",
+          "value": 1822,
+          "confidence_interval": {
+            "lower": 1801,
+            "upper": 1843,
+            "minus": 21,
+            "plus": 21,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 1245,
+          "rank_spread": [
+            1,
+            3
+          ],
+          "effort": "xhigh",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 3,
+          "model_variant": "gpt-6-astra-max",
+          "value": 1807,
+          "confidence_interval": {
+            "lower": 1796,
+            "upper": 1818,
+            "minus": 11,
+            "plus": 11,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 5196,
+          "rank_spread": [
+            2,
+            3
+          ],
+          "effort": "max",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 4,
+          "model_variant": "claude-fable-5.1-max",
+          "value": 1782,
+          "confidence_interval": {
+            "lower": 1771,
+            "upper": 1793,
+            "minus": 11,
+            "plus": 11,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 5110,
+          "rank_spread": [
+            4,
+            5
+          ],
+          "effort": "max",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 5,
+          "model_variant": "gpt-6.1-sol-max",
+          "value": 1774,
+          "confidence_interval": {
+            "lower": 1755,
+            "upper": 1793,
+            "minus": 19,
+            "plus": 19,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 1343,
+          "rank_spread": [
+            4,
+            6
+          ],
+          "effort": "max",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 6,
+          "model_variant": "claude-sonnet-5.5-high",
+          "value": 1744,
+          "confidence_interval": {
+            "lower": 1729,
+            "upper": 1759,
+            "minus": 15,
+            "plus": 15,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 2089,
+          "rank_spread": [
+            5,
+            6
+          ],
+          "effort": "high",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 7,
+          "model_variant": "claude-opus-5-max",
+          "value": 1717,
+          "confidence_interval": {
+            "lower": 1710,
+            "upper": 1724,
+            "minus": 7,
+            "plus": 7,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 13257,
+          "rank_spread": [
+            7,
+            8
+          ],
+          "effort": "max",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 8,
+          "model_variant": "gpt-6-sol-max",
+          "value": 1698,
+          "confidence_interval": {
+            "lower": 1685,
+            "upper": 1711,
+            "minus": 13,
+            "plus": 13,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 2844,
+          "rank_spread": [
+            7,
+            12
+          ],
+          "effort": "max",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 9,
+          "model_variant": "gemini-4-argon-high",
+          "value": 1691,
+          "confidence_interval": {
+            "lower": 1676,
+            "upper": 1706,
+            "minus": 15,
+            "plus": 15,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 1929,
+          "rank_spread": [
+            8,
+            14
+          ],
+          "effort": "high",
+          "preliminary": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 10,
+          "model_variant": "qwen3.8-max-0902",
+          "value": 1680,
+          "confidence_interval": {
+            "lower": 1671,
+            "upper": 1689,
+            "minus": 9,
+            "plus": 9,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 7694,
+          "rank_spread": [
+            8,
+            14
+          ],
+          "effort": null,
+          "preliminary": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 11,
+          "model_variant": "claude-opus-5-high",
+          "value": 1680,
+          "confidence_interval": {
+            "lower": 1674,
+            "upper": 1686,
+            "minus": 6,
+            "plus": 6,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 17378,
+          "rank_spread": [
+            8,
+            14
+          ],
+          "effort": "high",
+          "preliminary": false,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        },
+        {
+          "rank": 12,
+          "model_variant": "qwen3.8-max",
+          "value": 1678,
+          "confidence_interval": {
+            "lower": 1665,
+            "upper": 1691,
+            "minus": 13,
+            "plus": 13,
+            "level": null,
+            "note": "Source table reports confidence interval bounds; level not separately exposed in retrieved current table."
+          },
+          "votes": 2935,
+          "rank_spread": [
+            8,
+            16
+          ],
+          "effort": null,
+          "preliminary": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null
+        }
+      ]
+    },
+    {
+      "id": "design-arena-frontend",
+      "name": "Design Arena · Overall Frontend",
+      "category": "frontend",
+      "evidence_kind": "human_design_preference",
+      "source_url": "https://www.designarena.ai/leaderboard/code",
+      "methodology_url": "https://www.designarena.ai/about",
+      "changelog_url": "https://www.designarena.ai/changelog",
+      "snapshot_date": null,
+      "evaluation_date": null,
+      "status": "source_only_scores_unresolved",
+      "rows": [],
+      "metric": "Bradley-Terry preference rating",
+      "summary": "Anonymous four-model tournaments collect design preferences. The text-to-HTML track is separate from image-to-HTML, web-app and fullstack tracks.",
+      "settings": {
+        "scoring": "Five pairwise votes per tournament; Bradley-Terry fit",
+        "configuration": "Per-model configurations required; no exact row settings extracted",
+        "sample_size": null
+      },
+      "limitations": [
+        "Primary page headings load but numeric rows were not exposed in this research pass.",
+        "No third-party mirrored scores accepted.",
+        "Last visible changelog entry is September 29, 2026; that is not the leaderboard evaluation date.",
+        "Taste/preference does not establish functional correctness or reference fidelity."
+      ],
+      "cost_usd": null,
+      "latency_seconds": null
+    },
+    {
+      "id": "design2code-v3-484",
+      "name": "Design2Code · 484-page historical cohort",
+      "category": "frontend",
+      "evidence_kind": "screenshot_fidelity",
+      "source_url": "https://arxiv.org/html/2403.03163v3",
+      "project_url": "https://salt-nlp.github.io/Design2Code/",
+      "code_url": "https://github.com/NoviScl/Design2Code",
+      "paper_revision_date": "2025-02-09",
+      "evaluation_date": null,
+      "status": "historical_source_cohort",
+      "sample_size": 484,
+      "metric_order": [
+        "block_match",
+        "text",
+        "position",
+        "color",
+        "clip"
+      ],
+      "unit": "similarity_score_0_to_100",
+      "summary": "Screenshot-to-HTML/CSS evaluation. Table 1 reports five separate similarity dimensions; no combined success score.",
+      "settings": {
+        "decoding": "Greedy",
+        "max_new_tokens": 4096,
+        "effort": null,
+        "harness": "Author prompting and screenshot evaluation",
+        "prompt_methods": [
+          "direct",
+          "text_augmented",
+          "self_revision"
+        ]
+      },
+      "limitations": [
+        "Historical model cohort; checked now does not make it a current frontier leaderboard.",
+        "Design2Code-HARD contains 80 separate cases and must be a separate cohort.",
+        "Prompt methods have different inputs and generation budgets; retain separate labels.",
+        "Visual similarity is not functional browser completion.",
+        "Missing cost, latency and uncertainty remain null."
+      ],
+      "rows": [
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 93,
+            "text": 98.2,
+            "position": 85.5,
+            "color": 84.1,
+            "clip": 90.4
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "text_augmented",
+          "metrics": {
+            "block_match": 92.4,
+            "text": 98.6,
+            "position": 84.5,
+            "color": 83.1,
+            "clip": 89.9
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "self_revision",
+          "metrics": {
+            "block_match": 92.7,
+            "text": 98.6,
+            "position": 84.9,
+            "color": 83.3,
+            "clip": 90.1
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4V",
+          "model_snapshot": "gpt-4-1106-vision-preview",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 85.8,
+            "text": 97.4,
+            "position": 80.5,
+            "color": 73.3,
+            "clip": 86.9
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "Claude 3 Opus",
+          "model_snapshot": "claude-3-opus-20240229",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 90.2,
+            "text": 97.5,
+            "position": 77.9,
+            "color": 71.4,
+            "clip": 87
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "Gemini 1.0 Pro Vision",
+          "model_snapshot": "gemini-1.0-pro-vision",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 80.2,
+            "text": 94.6,
+            "position": 72.3,
+            "color": 66.2,
+            "clip": 84.4
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        }
+      ]
+    }
+  ],
+  "optional_source_only_candidates": [
+    {
+      "id": "webcraftbench-v3",
+      "name": "WebCraftBench",
+      "source_url": "https://arxiv.org/html/2609.15387v3",
+      "revision_date": "2026-09-20",
+      "description": "Runtime coverage-guided exploration with separate aesthetics, usability and requirement-alignment scores",
+      "task_count": 369,
+      "acceptance_criteria": 5088,
+      "models": 17,
+      "applications": 6273,
+      "human_validation_pairs": 197,
+      "status": "source_only_until_full_configuration_review",
+      "limitations": [
+        "Current v3 title is WebCraftBench; stale search snippets call it IWC-Bench.",
+        "Scores use model-pool z normalization; not percentages.",
+        "GPT models use Codex, others Claude Code; no fixed-harness model-only ranking.",
+        "85.3% is human-preference agreement, not functional task success.",
+        "No new numeric publication recommended from this abbreviated review."
+      ]
+    }
+  ],
+  "audit": [
+    {
+      "id": "hle-diamond",
+      "finding": "All nine high/no-tools headline scores and six tool scores match Oct1 stored cohort.",
+      "source_url": "https://lastexam.ai/blog/hle-diamond",
+      "status": "no_numeric_change_verified"
+    },
+    {
+      "id": "healthbench-professional",
+      "finding": "Table29 corrected September22 values match all seven Oct1 rows.",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+      "status": "no_numeric_change_verified"
+    },
+    {
+      "id": "medagentbench",
+      "finding": "Author homepage still displays historical 300-task model comparison; no later same-protocol score update found.",
+      "source_url": "https://stanfordmlgroup.github.io/projects/medagentbench/",
+      "status": "historical_no_new_same_protocol_table"
+    },
+    {
+      "id": "runebench",
+      "finding": "HEAD remains September29 pinned source5358a49f; no newer runs.",
+      "source_url": "https://github.com/MaxBittker/runebench/commit/5358a49f212e238cd093154bc3e93999d345ab97",
+      "status": "no_source_change"
+    },
+    {
+      "id": "bullshitbench-v2",
+      "finding": "Pinned3bbed044 to currentb063a3b compare changes only README; five daily star-history cache-bust commits, no result changes.",
+      "source_url": "https://github.com/petergpt/bullshit-benchmark/compare/3bbed0441665478de85ee99c33d2b939992ba263...b063a3b5067bc808f21b68792067772b32757339",
+      "status": "no_result_change"
+    },
+    {
+      "id": "terminal-bench-4",
+      "finding": "Page date now October1; six existing headline score/cost pairs unchanged. Additional lower table rows are possible coverage expansion, not proven fresh runs. Existing source retains fallback conditions.",
+      "source_url": "https://www.vals-ai.com/benchmarks/terminal-bench-4",
+      "status": "no_numeric_change_in_selected_rows"
+    },
+    {
+      "id": "mmmu-pro",
+      "finding": "Page now says20of285 configurations versus earlier284; same rounded top3. Full chart not re-extracted, so no all-row unchanged claim.",
+      "source_url": "https://artificialanalysis.ai/evaluations/mmmu-pro",
+      "status": "archive_count_changed_numeric_delta_unresolved"
+    },
+    {
+      "id": "gpqa-diamond-frontiermath",
+      "finding": "Methodology pages verified. CSV current score/run delta not re-extracted in this pass.",
+      "source_url": "https://epoch.ai/data/benchmarks.csv",
+      "status": "no_new_numeric_claim"
+    },
+    {
+      "id": "swe-bench-pro-v2",
+      "finding": "September22 protocol still exposed; dynamic current table not extracted through text renderer.",
+      "source_url": "https://labs.scale.com/leaderboard/swe_bench_pro_public_v2?tab=full",
+      "status": "no_new_numeric_claim"
+    },
+    {
+      "id": "bench2drive",
+      "finding": "HEAD remains August11 release0.0.4; no newer repository release.",
+      "source_url": "https://github.com/Thinklab-SJTU/Bench2Drive/commit/7ec25d1c9f7522d923ce5f3420986cef1cb2d956",
+      "status": "no_source_change"
+    },
+    {
+      "id": "mast",
+      "finding": "Technical board still explicitly preview; no score promotion recommended without component-specific configuration review.",
+      "source_url": "https://www.arise-ai.org/mast/technical",
+      "status": "preview"
+    },
+    {
+      "id": "medhelm",
+      "finding": "Landing page still identifies v5.0.0 updated May14,2026,11-model mean-win-rate cohort; do not call it an October evaluation.",
+      "source_url": "https://medhelm.org/",
+      "status": "historical_source_date"
+    },
+    {
+      "id": "voxelbench",
+      "finding": "Primary leaderboard does not expose numeric rows to text renderer.",
+      "source_url": "https://voxelbench.ai/leaderboard",
+      "status": "scores_unresolved"
+    },
+    {
+      "id": "design2code-code",
+      "finding": "Official code repository latest commit remains November2,2024; paper latest revision remains February9,2025.",
+      "source_url": "https://github.com/NoviScl/Design2Code/commit/7a575e4c33f417c4be5c64072b8f5798de0d0f99",
+      "status": "historical_source"
+    }
+  ]
+}

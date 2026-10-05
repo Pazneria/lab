@@ -278,7 +278,7 @@ async function main() {
     await ready(deep);
     await deep.locator(".back-link").click();
     await deep.waitForURL("**/benchmarks.html#gallery");
-    assert.equal(await deep.locator(".benchmark-card").count(), 42);
+    assert.equal(await deep.locator(".benchmark-card").count(), 46);
     await deep.goto(base + "results.html?benchmark=hle-diamond");
     await ready(deep);
     for (const url of [

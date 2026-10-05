@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-05",
+  "source_url": "https://www.designarena.ai/leaderboard/code",
+  "method": "Isolated headless Edge; public page, no account or warning bypass",
+  "page_title": "Overall Frontend (Text-to-HTML) Arena | All Code Leaderboards - Design Arena",
+  "status": 200,
+  "body_sha256": "51bf2e77183f4db2c364c2ceb4d58bee1e771cef241fd4218dbc58c44e14a528",
+  "body_characters": 13175,
+  "finding": "The browser-rendered primary page exposes rating labels despite the earlier text retrieval. No dated configuration packet has been assembled or admitted in this increment. The original source-only packet is retained unchanged; no new scores are plotted.",
+  "numeric_rows_admitted": 0,
+  "evaluation_date": null
+}
