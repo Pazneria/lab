@@ -120,8 +120,10 @@
             >Results
             <select name="history" aria-label="Results history">
               <option value="all">All versions</option>
-              <option value="current">Current &amp; evidence guides</option>
-              <option value="historical">Historical comparisons</option>
+              <option value="current">Latest collected results</option>
+              <option value="historical">Historical evidence</option>
+              <option value="source-only">Source guides</option>
+              <option value="unavailable">Unresolved results</option>
             </select>
           </label>
         </form>
@@ -131,6 +133,11 @@
           role="status"
           aria-live="polite"
         ></p>
+        <p class="browse-status-note">
+          Latest collected refers to a protocol's collected cohort. Run dates,
+          source reviews and older evidence are labeled separately; a source
+          review does not make a run new.
+        </p>
         <div id="benchmark-grid" class="benchmark-grid"></div>
         <p id="gallery-empty" class="empty-state" hidden>
           No benchmarks match yet. Try another category or a shorter search.

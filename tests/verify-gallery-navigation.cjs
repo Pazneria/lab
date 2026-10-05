@@ -320,6 +320,10 @@ async function main() {
     await noStorage.goto(galleryURL);
     await noStorage.locator(".benchmark-card").first().waitFor();
     await noStorage.evaluate(() => scrollTo({ top: 600, behavior: "instant" }));
+    // Capture the actual entry position after layout-driven pointer scrolling.
+    await noStorage
+      .locator('[data-benchmark-id="hle-diamond"]')
+      .scrollIntoViewIfNeeded();
     const blockedY = await noStorage.evaluate(() => scrollY);
     await noStorage.locator('[data-benchmark-id="hle-diamond"]').click();
     await ready(noStorage);

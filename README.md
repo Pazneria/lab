@@ -2,7 +2,7 @@
 
 A source-backed gallery of **46 benchmark cards** spanning standard tests, community
 projects, frontend development, games, medicine and physical systems. Twenty-seven cards show real graphs;
-19 are clearly labeled evidence guides without ingested model scores. A card
+17 are source guides and two have unresolved results, without fabricated graphs. A card
 opens an interactive graph with plain-English explanations. Sources, settings,
 exact tables and full records remain in expandable disclosures.
 
@@ -13,19 +13,25 @@ dated dataset contains **340 supplied primary rows** across 22 separate source c
 There is no aggregate score or global model ranking. Historical and cross-lab
 reported results are explicitly labeled; missing values remain null.
 
-The Results selector separates current evidence and historical versions. Large
+The Results selector separates latest collected result cohorts, historical evidence,
+source guides and unresolved results. Source review, evaluation, publication and
+model-release dates are labeled separately. Latest collected does not mean newly
+evaluated; a maintained benchmark can contain older experiments. Large
 cohorts have configuration search and a Show all option. Community views expose
 228 BullshitBench rows and 48 Rune runs across 16 skills; a separate historical
 medical view contains 12 author-homepage results. The existing seven verified
 charts remain available with their exact cost/time meanings.
 
-The October 5 draft adds separate frontend preference and historical screenshot-fidelity
+The published October 5 increment added separate frontend preference and historical screenshot-fidelity
 views, plus Design Arena and WebCraftBench source guides. Arena ratings retain
 source intervals and votes. Design2Code defaults to four Direct configurations;
 GPT-4o's prompting methods and five fidelity dimensions remain separate. The complete original research packet is archived and reconciled. Parent semantic
-review is required before this draft's numeric changes can be published. See the [October 5 refresh report](docs/WEEKLY-REFRESH-2026-10-05.md).
+review passed before that increment was published. The separate catalog status/date
+cleanup remains a draft for source review; its broader research import is blocked
+by unavailable Windows file-metadata support. See the [October 5 refresh report](docs/WEEKLY-REFRESH-2026-10-05.md).
 
-See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
+See [catalog audit and pending evidence](docs/CATALOG-AUDIT-2026-10-05.md),
+[gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
 [current refresh and renderer review](docs/CURRENT-GALLERY-INTEGRATION.md),
 [original result validation](docs/RESULTS-INTEGRATION.md), and
 [catalog provenance](docs/CATALOG-INTEGRATION.md).
@@ -45,6 +51,8 @@ See [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md
 - `data/community-expanded-2026-10-01.json`: complete expanded community records.
 - `data/gallery-renderer-contract-2026-10-01.json`: reviewed dated renderer contract.
 - `data/gallery-notes.json`: separate editorial explanations; no research values.
+- `data/gallery-metadata-2026-10-05.json`: derived evidence availability, cohort history and date semantics.
+- `data/gallery-renderer-contract-2026-10-05-audit.json`: draft status/date contract.
 - `assets/gallery.js`, `assets/gallery.css`: text-safe gallery/detail implementation.
 - `assets/results.js`, `assets/results.css`: shared validated original chart renderer.
 - `assets/catalog.js`, `assets/results-data.js`, `assets/gallery-data.js`: generated projections.
@@ -67,6 +75,7 @@ Visit `http://127.0.0.1:5188/`. Regenerate and validate the static data:
 ```powershell
 node scripts/build-catalog.cjs --check
 node scripts/build-results.cjs --check
+node scripts/build-gallery-metadata.cjs
 node scripts/build-gallery.cjs
 ```
 
@@ -83,6 +92,7 @@ browser; they do not interact with existing desktop sessions or apps.
 
 ```powershell
 node tests/verify-gallery.cjs
+node tests/verify-gallery-audit.cjs
 node tests/verify-current-gallery.cjs
 node tests/verify-gallery-navigation.cjs
 node tests/verify-gallery-selection.cjs
@@ -122,6 +132,7 @@ After deployment, run the same browser checks against the live site:
 ```powershell
 $env:LAB_GALLERY_BASE='https://pazneria.github.io/lab/'
 node tests/verify-gallery.cjs
+node tests/verify-gallery-audit.cjs
 ```
 
 Live mode also compares 15 served files to the exact checked-out Git commit.

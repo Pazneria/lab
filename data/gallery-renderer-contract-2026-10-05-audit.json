@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-05",
+  "baseline": "132cb8dce5a2b120a4390ce8e8066ba88fa6bcd9",
+  "previous_contract": "data/gallery-renderer-contract-2026-10-05.json",
+  "counts": {
+    "catalogCards": 20,
+    "existingSourceCohorts": 22,
+    "existingSourceRows": 340,
+    "frontendCards": 4,
+    "frontendObservations": 18,
+    "totalCards": 46,
+    "graphCards": 27,
+    "sourceOnlyCards": 19,
+    "historicalCards": 19,
+    "originalResultRows": 18,
+    "originalChartViews": 7,
+    "latestCollectedGraphCards": 14,
+    "resolvedSourceGuideCards": 17,
+    "unresolvedCards": 2
+  },
+  "frontend": {
+    "webdev-arena-frontend": {
+      "rows": 12,
+      "unit": "arena_rating",
+      "axis": [
+        1600,
+        1900
+      ],
+      "cropped_axis_disclosure": true,
+      "intervals": "Exact source bounds; confidence level null",
+      "snapshot_date": "2026-10-01",
+      "measured_cost_and_time": null
+    },
+    "design2code-v3-484": {
+      "rows": 6,
+      "default_rows": 4,
+      "default_prompt": "direct",
+      "method_comparison_rows": 3,
+      "method_comparison_model": "GPT-4o",
+      "default_metric": "clip",
+      "metric_choices": [
+        "clip",
+        "block_match",
+        "text",
+        "position",
+        "color"
+      ],
+      "axis": [
+        0,
+        100
+      ],
+      "unit": "similarity_score_0_to_100",
+      "aggregation": false,
+      "paper_revision_date": "2025-02-09",
+      "measured_cost_and_time": null
+    },
+    "design-arena-frontend": {
+      "rows": 0,
+      "graph": false,
+      "reason": "Primary numerical rows unresolved"
+    },
+    "webcraftbench-v3": {
+      "rows": 0,
+      "graph": false,
+      "reason": "Full configuration review pending; mixed agents and model-pool normalization"
+    }
+  },
+  "publication": "Draft candidate requires parent source review; do not publish",
+  "scope": "Existing Lab gallery only; external homepage, independent house task and lab-space unchanged",
+  "presentation_metadata": "data/gallery-metadata-2026-10-05.json",
+  "date_rules": [
+    "Source review dates never substitute for evaluation dates",
+    "Model release dates never substitute for evaluation dates or benchmark age",
+    "Project activity never upgrades a fixed historical cohort",
+    "No graph implies no admitted plotted data, not an inactive benchmark",
+    "Historical source guides appear in both historical and guide filters"
+  ]
+}

@@ -24,6 +24,49 @@
   const finite = (n) => typeof n === "number" && Number.isFinite(n) && n >= 0;
   const idOK = (id) =>
     typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id);
+  const dateOK = (value) => {
+    if (value === null) return true;
+    if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value))
+      return false;
+    const parsed = new Date(value + "T00:00:00Z");
+    return (
+      Number.isFinite(parsed.valueOf()) &&
+      parsed.toISOString().slice(0, 10) === value
+    );
+  };
+  function validMetadata(m) {
+    return (
+      m &&
+      ["plotted", "source_only", "unresolved"].includes(m.evidence) &&
+      ["latest_collected", "historical", "not_assessed"].includes(m.cohort) &&
+      typeof m.cohort_basis === "string" &&
+      m.source_review?.date !== null &&
+      dateOK(m.source_review?.date) &&
+      [
+        "parent_source_audit",
+        "parent_primary_research",
+        "inherited_catalog",
+      ].includes(m.source_review?.mode) &&
+      typeof m.source_review?.scope === "string" &&
+      [m.snapshot_at, m.publication_at, m.result_packet_checked_at].every(
+        dateOK,
+      ) &&
+      Array.isArray(m.evaluations) &&
+      m.evaluations.every(
+        (s) =>
+          typeof s.slice === "string" &&
+          dateOK(s.earliest) &&
+          dateOK(s.latest) &&
+          Number.isInteger(s.known) &&
+          s.known >= 0 &&
+          Number.isInteger(s.unknown) &&
+          s.unknown >= 0 &&
+          (s.known
+            ? s.earliest !== null && s.latest !== null && s.earliest <= s.latest
+            : s.earliest === null && s.latest === null),
+      )
+    );
+  }
   function valid() {
     if (
       !input ||
@@ -36,6 +79,7 @@
       !window.LAB_FRONTEND?.valid(input.frontend?.cards) ||
       !/^data\/[a-z0-9.-]+\.json$/.test(input.frontend?.source_input || "") ||
       !Array.isArray(input.supplement?.audit) ||
+      input.cardMetadata?.schema_version !== 1 ||
       input.expanded?.bullshitbench?.records?.length !== 228 ||
       input.expanded?.runebench?.records?.length !== 48 ||
       input.expanded?.medical?.medagentbench_original?.rows?.length !== 12
@@ -108,7 +152,8 @@
       [...ids].every(
         (id) =>
           typeof input.notes[id]?.matters === "string" &&
-          typeof input.notes[id]?.read === "string",
+          typeof input.notes[id]?.read === "string" &&
+          validMetadata(input.cardMetadata.cards[id]),
       ) &&
       results.records.every((r) => safeURL(r.source_url) && finite(r.value)) &&
       input.expanded.runebench.records.every(
@@ -234,37 +279,151 @@
     );
   }
   function status(card) {
-    if (card.frontend)
-      return isHistorical(card)
-        ? "Historical · Feb 2025"
-        : graphFor(card)
-          ? "Source snapshot · Oct 2026"
-          : "Evidence guide";
-    return card.standard
-      ? isHistorical(card)
-        ? "Historical" +
-          (input.standard.sources[card.standard.source_id].published_date
-            ? " · source " +
-              input.standard.sources[card.standard.source_id].published_date
-            : " · previous cohort")
-        : "Source checked · Oct 2026"
-      : card.id === "medagentbench"
-        ? "Historical · Feb 2025"
-        : graphFor(card)
-          ? "Selected results · Sep 2026"
-          : card.original.entryType === "showcase"
-            ? "Showcase"
-            : card.original.status === "unverified"
-              ? "Watch item"
-              : "Evidence guide";
+    const m = metadata(card);
+    if (m.evidence === "unresolved") return "Results unresolved";
+    if (card.original?.entryType === "showcase") return "Documented showcase";
+    if (isHistorical(card) && card.standard && m.publication_at)
+      return "Historical · source " + m.publication_at;
+    return isHistorical(card)
+      ? m.evidence === "plotted"
+        ? "Historical results"
+        : "Historical guide"
+      : m.evidence === "plotted"
+        ? "Collected results"
+        : "Source guide";
   }
   function isHistorical(card) {
+    return metadata(card).cohort === "historical";
+  }
+  function metadata(card) {
+    return input.cardMetadata.cards[card.id];
+  }
+  function shortDate(value) {
+    return value
+      ? new Intl.DateTimeFormat("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          timeZone: "UTC",
+        }).format(new Date(value + "T00:00:00Z"))
+      : "Not established";
+  }
+  function dateSummary(card, state = null) {
+    const m = metadata(card),
+      slices =
+        card.id === "bullshitbench-v2" && state
+          ? m.evaluations.filter(
+              (s) =>
+                s.slice ===
+                (state.view === "all"
+                  ? "Expanded configurations"
+                  : "Original selected results"),
+            )
+          : m.evaluations;
+    const known = slices.reduce((n, s) => n + s.known, 0),
+      unknown = slices.reduce((n, s) => n + s.unknown, 0),
+      latest = slices
+        .map((s) => s.latest)
+        .filter(Boolean)
+        .sort()
+        .at(-1);
+    const runs = !slices.length
+      ? "No collected score rows"
+      : !known
+        ? "Run dates not reported"
+        : unknown
+          ? "Some run dates unknown"
+          : "Latest dated run: " + shortDate(latest);
     return (
-      card.standard?.history === true ||
-      card.standard?.display_status === "historical_source_cohort" ||
-      card.frontend?.status === "historical_source_cohort" ||
-      card.id === "medagentbench"
+      runs +
+      " · " +
+      (m.source_review.mode === "inherited_catalog"
+        ? "Research record: "
+        : "Source review: ") +
+      shortDate(m.source_review.date)
     );
+  }
+  function metadataDetails(card) {
+    const m = metadata(card),
+      content = e("div", "metadata-facts");
+    content.append(e("p", "", m.cohort_basis));
+    content.append(
+      e(
+        "p",
+        "",
+        "Source review, publication, model release and evaluation dates describe different events. A maintained benchmark can contain older experiments; missing run dates stay unknown.",
+      ),
+    );
+    const list = e("dl", "date-facts");
+    function fact(label, value) {
+      list.append(e("dt", "", label), e("dd", "", value));
+    }
+    fact(
+      "Source review",
+      shortDate(m.source_review.date) + ". " + m.source_review.scope,
+    );
+    fact(
+      "Result packet collected",
+      m.result_packet_checked_at
+        ? shortDate(m.result_packet_checked_at) +
+            "; this is not an evaluation date."
+        : "No numeric result packet collected for this guide.",
+    );
+    fact(
+      "Source snapshot",
+      m.snapshot_at
+        ? shortDate(m.snapshot_at)
+        : "Not established as a separate dated snapshot.",
+    );
+    fact(
+      "Publication or revision",
+      m.publication_at
+        ? shortDate(m.publication_at)
+        : m.publication_label || "Not established in this record.",
+    );
+    for (const slice of m.evaluations) {
+      fact(
+        slice.slice + " — evaluation dates",
+        slice.known
+          ? shortDate(slice.earliest) +
+              (slice.earliest === slice.latest
+                ? ""
+                : " to " + shortDate(slice.latest)) +
+              "; " +
+              slice.known +
+              " rows dated, " +
+              slice.unknown +
+              " dates not reported."
+          : "Not reported for any of the " + slice.unknown + " collected rows.",
+      );
+    }
+    if (m.discovery_lifecycle)
+      fact(
+        "Original discovery label",
+        m.discovery_lifecycle.status +
+          " as of " +
+          shortDate(m.discovery_lifecycle.as_of) +
+          ". " +
+          m.discovery_lifecycle.basis,
+      );
+    if (m.model_releases?.known)
+      fact(
+        "Model release dates",
+        shortDate(m.model_releases.earliest) +
+          " to " +
+          shortDate(m.model_releases.latest) +
+          "; model release is not evaluation time or benchmark age.",
+      );
+    if (m.unavailable_reason)
+      fact(
+        "Unresolved results",
+        m.unavailable_reason +
+          " This does not establish that the project is inactive.",
+      );
+    content.append(list);
+    const d = disclosure("Dates & evidence status", content);
+    d.id = "benchmark-dates";
+    return d;
   }
   function orderedRows(c) {
     return c.display_defaults?.sort === "evaluation_date_desc"
@@ -571,6 +730,8 @@
     a.href = "results.html?benchmark=" + card.id;
     a.id = "benchmark-" + card.id;
     a.dataset.benchmarkId = card.id;
+    a.dataset.evidenceStatus = metadata(card).evidence;
+    a.dataset.cohortPeriod = metadata(card).cohort;
     const top = e("div", "card-top");
     top.append(
       e("span", "category-badge", categories[card.category]),
@@ -599,6 +760,7 @@
           card.frontend?.summary ||
           card.original?.summary,
       ),
+      e("p", "card-dates", dateSummary(card)),
       miniature(card),
     );
     const graph = graphFor(card);
@@ -670,7 +832,12 @@
           : "all",
         q: (p.get("q") || "").slice(0, 200),
         graphs: p.get("graphs") === "1",
-        history: ["current", "historical"].includes(p.get("history"))
+        history: [
+          "current",
+          "historical",
+          "source-only",
+          "unavailable",
+        ].includes(p.get("history"))
           ? p.get("history")
           : "all",
       };
@@ -686,7 +853,14 @@
           (state.category === "all" || c.category === state.category) &&
           (!state.graphs || graphFor(c)) &&
           (state.history === "all" ||
-            (state.history === "historical") === isHistorical(c)) &&
+            (state.history === "historical" && isHistorical(c)) ||
+            (state.history === "current" &&
+              metadata(c).cohort === "latest_collected" &&
+              metadata(c).evidence === "plotted") ||
+            (state.history === "source-only" &&
+              metadata(c).evidence === "source_only") ||
+            (state.history === "unavailable" &&
+              metadata(c).evidence === "unresolved")) &&
           [
             c.name,
             input.notes[c.id].question,
@@ -836,7 +1010,10 @@
           info:
             (source.published_date
               ? "Published " + source.published_date + " · "
-              : "") + "Accessed 2026-10-01",
+              : "") +
+            "Source packet collected " +
+            input.standard.researched_at +
+            "; this is not the evaluation date.",
         });
       }
     else {
@@ -1880,15 +2057,21 @@
         ),
       );
       detail.append(header);
+      header.append(e("p", "detail-source-review", dateSummary(card, state)));
       if (isHistorical(card))
         detail.append(
           e(
             "p",
             "historical-notice",
-            (viewCohort?.date_label ||
-              card.standard?.date_label ||
-              notes.date) +
-              ". This is a historical comparison, not current standings.",
+            (viewCohort?.date_label || card.standard?.date_label || notes.date
+              ? (viewCohort?.date_label ||
+                  card.standard?.date_label ||
+                  notes.date) + ". "
+              : "") +
+              metadata(card).cohort_basis +
+              (graph
+                ? " This is a historical comparison, not current standings."
+                : " This is historical evidence, not current standings."),
           ),
         );
       if (graph) {
@@ -2062,7 +2245,11 @@
         );
         detail.append(panel);
       }
-      detail.append(explanation(card), technicalSection(card));
+      detail.append(
+        explanation(card),
+        metadataDetails(card),
+        technicalSection(card),
+      );
       detail.hidden = false;
       unavailable.hidden = true;
       openHash();

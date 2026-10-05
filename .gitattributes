@@ -13,6 +13,7 @@ data/current-*.json text eol=lf
 data/community-expanded-*.json text eol=lf
 data/gallery-current-*.json text eol=lf
 data/gallery-renderer-contract-*.json text eol=lf
+data/gallery-metadata-*.json text eol=lf
 data/refresh-packets/*.json text eol=lf
 data/public-sources/* text eol=lf
 data/frontend-*.json text eol=lf
