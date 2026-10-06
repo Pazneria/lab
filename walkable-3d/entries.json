@@ -444,6 +444,93 @@
       "archiveSha256": "079fbc0b88223dfdb0543f5f6beac9bf270e52049f33fd74d59263b654e17611",
       "htmlSha256": "05aceae8a2d3c05e6248583b0dd93f7bf248a3c6356ebc7274c76675478f5ee8",
       "archiveLocation": "retained-outside-repository"
+    },
+    {
+      "id": "fern-house-astra",
+      "title": "The Fern House",
+      "promptId": "04",
+      "promptVersion": "04-shared",
+      "requestedConfiguration": "GPT-6 Astra / xhigh (requested)",
+      "modelDisclosure": "Parent requested Astra at xhigh; producer identifies GPT-6 / Codex only. Exact backend identity and effort were unavailable.",
+      "buildWindow": "Session start 2026-10-06 04:08:38 UTC; first implementation 04:09:39 UTC; conservative deadline 05:08:38 UTC; stop 04:51:38 UTC.",
+      "interruptions": "No user interruption or pause; initial dependency install retried with authorized network permission while implementation continued.",
+      "producerChecks": "13 final route, collision, mouse, crouch, reset, quality and resize checks passed; no final browser console errors. Host separately verified rendering, ordinary input, reset, sandbox isolation and unloading.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2; no touch or VR controls.",
+        "Static foliage and lighting; approximate transparent glass and sky reflections.",
+        "Small leaves, stems, hose and hand tools have no individual collision; exploration ends at greenhouse/forecourt boundaries."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer build record",
+          "path": "BUILD-RECORD.json"
+        },
+        {
+          "label": "Producer test summary",
+          "path": "TEST-RESULTS.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading[hidden]",
+      "hostPathReplacements": [],
+      "webgl": "WebGL 2",
+      "htmlSha256": "c541ed5168a77e8f8cf3f59663a523c2c0db2622984b10f6465a137db4d16298",
+      "archiveSha256": "57c6fbde848d2573d2420e5e47231dec7b529e6a8040707199b95c70794a2b97",
+      "archiveLocation": "retained-outside-repository",
+      "preview": "preview.jpg",
+      "description": "Two paths through layered planting meet at a sheltered potting alcove beneath weathered glass.",
+      "controls": "WASD walk; mouse look; Shift brisk walk; C crouch; R reset; Esc release; F frame intervals; High/Balanced/Ultra quality selector.",
+      "performanceEvidence": "Producer short headless Chrome 154 / ANGLE Intel sweeps, 1440 x 960, High: means 13.1 / 8.5 / 13.5 ms; p95 23.3 / 17.3 / 25.4 ms; zero intervals above 50 ms in those short samples. Local diagnostics, not controlled performance judging or a score. The separate host launch test assigns no performance grade.",
+      "previewAlt": "Original Fern House reset view through green metal framing toward layered tropical planting and two stone aisles."
+    },
+    {
+      "id": "old-glasshouse-luna",
+      "title": "The Old Glasshouse",
+      "promptId": "04",
+      "promptVersion": "04-shared",
+      "requestedConfiguration": "GPT-6 Luna / xhigh (requested)",
+      "modelDisclosure": "Parent requested Luna at xhigh. Producer could verify only the GPT-6 family; exact backend model and reasoning effort were unavailable.",
+      "buildWindow": "First implementation 2026-10-06 04:13:56 UTC; one-hour deadline 05:13:56 UTC; actual stop 05:07:26 UTC. Producer-reported timestamps.",
+      "interruptions": "Two transient tool transport closures during browser checks; no user interruption or lost work, according to the producer.",
+      "producerChecks": "Producer reports nine route/collision checks plus syntax and HTTP checks. Its isolated screenshot/debug pass did not complete reliably; no reliable visual capture or browser performance result was supplied. Host separately verified real rendering, walking, mouse look, exact reset canvas pixels, pointer release and unloading.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2 required; no native touch navigation.",
+        "Static plant and steel shadows; no foliage sway or leaf collisions. Bed, perimeter, annex walls, bench and threshold edge have collision.",
+        "Producer did not reliably inspect browser raster output or performance; separate host validation does not assign a grade.",
+        "Supplied Three.js warns that PCFSoftShadowMap is deprecated and uses its native PCFShadowMap fallback; original dependency and scene are unchanged."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer timing & test notes",
+          "path": "BUILD-NOTES.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "body > canvas",
+      "hostPathReplacements": [],
+      "webgl": "WebGL 2",
+      "htmlSha256": "444250270b5272677a5bd510ecd2690d0ef1c091f6d01c7f8f06dabc1f55297d",
+      "archiveSha256": "e8e6ec46c429e48617fdf3c23a70bd7531ffdcd71a6bf4493be19c962dad2093",
+      "archiveLocation": "retained-outside-repository",
+      "description": "A central tropical bed, connected side aisles and a small potting bay inside an old glazed frame.",
+      "controls": "WASD or arrows walk; mouse look; Shift gentle pace; hold C crouch; R reset; Esc pause and release; Resume walk recaptures the mouse.",
+      "performanceEvidence": "Producer supplied no reliable visual capture or browser performance results. Host separately confirmed actual WebGL 2 raster output, walking, mouse look, exact reset pixels and lifecycle handling. This is functional verification, not a benchmark run or score. The in-scene average frame estimate does not summarize long-frame behavior.",
+      "previewAlt": "Original Old Glasshouse reset view: central foliage bed, open side aisles, slender roof framing and weathered panes.",
+      "preview": "preview.jpg"
     }
   ],
   "prompts": [
@@ -464,6 +551,12 @@
       "title": "Desert observatory",
       "brief": "A desert observatory on a rocky plateau in late afternoon.",
       "version": "03-shared"
+    },
+    {
+      "id": "04",
+      "title": "Old greenhouse",
+      "brief": "An old tropical greenhouse, recognizable beneath years of plant growth.",
+      "version": "04-shared"
     }
   ],
   "promptVersions": [
@@ -502,6 +595,15 @@
       "sha256": "fcc0b24af380f0d6606ff043ea3809706f927a6fe6b0e41e2568ba8c39da1560",
       "source": "Exact submitted Prompt 03 supplied verbatim by the benchmark parent in thread 01a0f08d-645b-72a9-9d18-0d86e8b950c4. Parent confirms identical text for Astra, Luna and Sol, with no entrant-specific content variants. UTF-8; no added final newline.",
       "note": "Complete task, grading and shared execution rules. Parent-supplied submission record; no independent thread access in this import turn."
+    },
+    {
+      "id": "04-shared",
+      "promptId": "04",
+      "label": "Astra / Luna submitted prompt",
+      "path": "prompt-04.txt",
+      "sha256": "3d1760548d9dfb0c48ae3d2de8916526323bd2e59e48245a31cbfe737beee396",
+      "source": "Parent supplied the exact complete submitted text and confirmed identical Prompt 04 for all entrants. Entrant conversation threads were not independently read. UTF-8; no added final newline.",
+      "note": "Complete task, grading, inspection route and shared execution rules. Parent-supplied submission record; no independent entrant-thread access in this import."
     }
   ]
 }
