@@ -54,7 +54,7 @@ Parent messages are accepted only from the current iframe window, its opaque ori
 
 ## Personal records
 
-The only persistence key is `lab.walkable3d.judgments.v1`. A saved preference records stable entry IDs, not screen order. Grades are independent; an incomplete grade has a null total. Empty fields are never treated as zero. Records remain in the current browser, can be cleared individually, and can be exported as JSON. Storage failure is explicitly disclosed and falls back to the current page session. There is no authentication, verified judge identity, global ranking, aggregate tally or data upload.
+The only persistence key is `lab.walkable3d.judgments.v1`. A saved preference records stable entry IDs, not screen order. Grades are independent; an incomplete grade has a null total. Empty fields are never treated as zero. Records remain in the current browser, can be cleared individually, and can be exported as JSON. Storage failure is explicitly disclosed and falls back to the current page session. The model leaderboard summarizes only these local records. There is no authentication, verified judge identity, global ranking, public tally or data upload.
 
 
 ## Completed manual Opus handoff and room access
@@ -139,12 +139,26 @@ The completed manual **Desert Observatory** is now the fourth Prompt 03 scene. I
 Only the required runtime/license bytes, concise records, provenance and three small JPEG reset views are added. ZIPs, raw evidence and full-size screenshots remain outside Git and Pages. The one temporary QA server and isolated headless browser close after each bounded run. `verify-walkable-polar.cjs` checks exact prompt records, prior saved judgments, six Observatory pairs, the working polar pair, failed-result handling, actual Lab launch/return, zero parent GL draws during scene use, input/reset, repeated unload, mobile reflow, accessibility, history, missing assets and CSP failure.
 
 
-## Random comparisons after voting
+## Model reveal and random comparisons
 
-After a preference or tie, the Lab screen and notebook draw a new static comparison. Selection chooses a prompt first, then two distinct requested-model groups within that prompt, then the entries and their A/B order. A prompt needs at least two working model groups. Recorded startup failures and entries without an explicit comparison group are excluded. The immediately previous unordered pair is excluded whenever another comparison is available; with only one playable pair, that pair remains available.
+After a preference or tie, the Lab screen and notebook keep the same A/B entries and stills visible, identify the selected choice, and reveal both recorded model configurations. **Next comparison** advances only when requested. Before voting, Next remains a skip without a new preference. Selection chooses a prompt first, then two distinct requested-model groups within that prompt, then the entries and their A/B order. A prompt needs at least two working model groups. Recorded startup failures and entries without an explicit comparison group are excluded. The immediately previous unordered pair is excluded whenever another comparison is available; with only one playable pair, that pair remains available.
 
 `comparisonModel` records the parent-selected/requested model group for pairing, not verified serving-backend identity. Existing provenance disclosures still apply. Preferences retain the same stable unordered entry-ID key and selected entry ID, so reversing A/B cannot change an earlier vote. Saved grades and the browser storage key are unchanged. Only the new pair's JPEG previews load; random selection never opens a scene. Manual prompt selection and inspection remain available. Next and the notebook Skip control draw from the same random selector without recording a vote, and remain available before either scene is opened.
 
 
 
 Voting eligibility belongs to the current displayed comparison. Both scene viewers must report readiness after being explicitly opened in that comparison; old browser-local open history does not unlock a fresh pair. Entering and exiting a scene preserves the current comparison's progress. Selecting another comparison, even a previously viewed pair, resets it. The preference, tie and clear-choice handlers enforce the same rule as the native buttons and in-world controls. Thumbnails never count as opens. No minimum dwell time is imposed, and grades remain independent.
+
+## Browser-local model leaderboard
+
+Both comparison surfaces show **Your votes/grades on this browser**. Pairwise counts use the latest valid stored choice for each unordered, same-prompt, distinct-model pair: wins, ties, losses and matches. Win rate is wins divided by matches; ties are matches but not wins, and skips are omitted. Rows sort by raw win rate then sample count. No matches means no rate. This is an uneven personal sample, not an inferred rating or public consensus.
+
+Rubric averages are separate. They use one latest complete scene grade with each dimension within its original bound (45 / 35 / 20), show the number of graded scenes, and average dimensions and totals. Partial sheets and notes have their own count and do not enter the averages. Empty grades do not become zero scores. Requested model groups may span differing effort settings; entry disclosures remain authoritative. Revising or clearing a judgment updates the local table without changing the record format.
+
+## Grade during exploration
+
+**Grade this scene** is a host control in the viewer bar. It opens the same scene-specific rubric used by the inspector, with points and notes saved under the existing entry ID. Before reveal its heading contains only the A/B slot and scene title; model configuration is shown only after voting or an explicit label reveal. Saved sheets synchronize between the viewer and inspector without discarding unsaved edits.
+
+The iframe stays mounted while the sheet is open, retaining the existing scene state and viewpoint. The authenticated host bridge releases held keys and pointer lock, makes the child body inert and blocks child input before acknowledging the sheet. The parent Lab remains suspended. Resume or Escape closes only the sheet and re-enables input; it does not request pointer lock. The user must intentionally click the entrant's own control to capture the mouse again. No entrant file, render loop, timer or clock is rewritten; world animation may continue behind the sheet. Closing the scene, navigating or hiding the tab still destroys it and clears unsaved sheet edits.
+
+This host UI increment was reviewed as source only under the explicit local-QA pause. No local syntax checks, tests, preview servers, browsers, scene execution or input automation were run. Remote Pages build/deployment and inert source retrieval verify publication only; pointer handling, modal behavior, scene continuity, calculations and responsive appearance remain untested at runtime.

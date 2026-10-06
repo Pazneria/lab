@@ -1,4 +1,5 @@
 import {createViewer} from '../../walkable-3d/assets/viewer.js';
+import {createGradeForm,renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
 import {comparisonKey,randomComparison,hasRandomComparison} from '../../walkable-3d/assets/comparisons.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
@@ -8,16 +9,18 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
   let entries=[],allEntries=[],prompts=[],promptId='01',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
   const openedThisComparison=new Set();
-  let canShuffle=false;
-  function refresh(){try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
+  let canShuffle=false,revealed=false;
+  function refresh(){if(!persistent)return;try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
   const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>comparisonKey(pair());
   const save=()=>{try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}};
   const bothOpened=()=>pair().length===2&&pair().every(e=>openedThisComparison.has(e.id));
-  const viewer=createViewer({base,onOpen:suspend,onReady(entry){if(pair().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();render();},onClose(){render();resume();}});
+  function updateLeaderboard(){renderLeaderboard($('screen-leaderboard'),allEntries,record,persistent);}
+  function gradeForm(entry){return createGradeForm(entry,{getRecord:()=>record,refresh,save,isPersistent:()=>persistent,onChange:updateLeaderboard});}
+  const viewer=createViewer({base,gradeForm,gradeLabelFor:entry=>`${pair()[0]?.id===entry.id?'A':'B'} / ${entry.title} — ${!blind||revealed?entry.requestedConfiguration:'Model hidden until reveal'}`,onOpen:suspend,onReady(entry){if(pair().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();render();},onClose(){render();resume();}});
   function box(x,y,w,h,label,disabled=false){ctx.fillStyle=disabled?'#41584b':'#f3efdf';ctx.fillRect(x,y,w,h);ctx.fillStyle=disabled?'#bec9be':'#1c3c30';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+8);}
   function render(){
-    const current=pair(),both=bothOpened();
+    const current=pair(),both=bothOpened(),hideModel=blind&&!revealed;
     const vote=record.preferences[pairKey()]?.choice;
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
@@ -26,7 +29,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
       const x=40+slot*625,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,105,575,322);
       const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const scale=Math.min(575/img.width,322/img.height),w=img.width*scale,h=img.height*scale;ctx.drawImage(img,x+(575-w)/2,105+(322-h)/2,w,h);}
       ctx.fillStyle='#f6f0dc';ctx.font='25px Georgia';ctx.fillText(e?`${slot?'B':'A'}  /  ${e.title}`:'Awaiting a finished build',x,461,565);
-      ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?(blind?'Model label hidden · Desktop keyboard + mouse':e.requestedConfiguration):'A real pair needs two entries.',x,491,565);
+      ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?(hideModel?'Model label hidden · Desktop keyboard + mouse':e.requestedConfiguration):'A real pair needs two entries.',x,491,565);
     }
     box(40,522,100,48,'←',index===0);box(1140,522,100,48,'Next',!canShuffle);
     box(180,522,230,48,'Prefer A',!both);box(450,522,170,48,'Tie',!both);box(660,522,230,48,'Prefer B',!both);box(930,522,170,48,'Inspect');
@@ -35,27 +38,35 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
     $('screen-prev').disabled=index===0;$('screen-next').disabled=!canShuffle;
     const failed=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed').length;
-    $('screen-boundary').textContent=(canShuffle?'Next skips to a random prompt and model pair without recording a vote.':'Waiting for two working models to compare.')+(failed?` ${failed} completed build failed at startup; inspect its record in the notebook.`:'');
+    $('screen-boundary').textContent=(canShuffle?(revealed?'Your choice and both model labels remain visible. Next comparison uses the random picker.':'Next skips to a random prompt and model pair without recording a vote.'):'Waiting for two working models to compare.')+(failed?` ${failed} completed build failed at startup; inspect its record in the notebook.`:'');
     const cards=current.map((entry,slot)=>{const card=document.createElement('article'),button=document.createElement('button'),img=document.createElement('img'),h=document.createElement('h3'),model=document.createElement('p'),details=document.createElement('a');
-      button.type='button';button.dataset.screenOpen=entry.id;button.setAttribute('aria-label',`Open entry ${slot?'B':'A'}: ${entry.title}`);img.src=new URL(`entries/${entry.id}/preview.jpg`,base);img.alt=entry.previewAlt;img.width=960;img.height=600;button.append(img);button.addEventListener('click',()=>open(entry));h.textContent=`${slot?'B':'A'} / ${entry.title}`;model.textContent=blind?'Model label hidden':entry.requestedConfiguration;details.href=new URL(`?entry=${entry.id}#compare-title`,base);details.textContent='Build inspector & personal grade';card.append(button,h,model,details);return card;});
+      button.type='button';button.dataset.screenOpen=entry.id;button.setAttribute('aria-label',`Open entry ${slot?'B':'A'}: ${entry.title}`);img.src=new URL(`entries/${entry.id}/preview.jpg`,base);img.alt=entry.previewAlt;img.width=960;img.height=600;button.append(img);button.addEventListener('click',()=>open(entry));h.textContent=`${slot?'B':'A'} / ${entry.title}`;model.textContent=hideModel?'Model label hidden':entry.requestedConfiguration;card.dataset.preferred=String(revealed&&vote===entry.id);card.dataset.tied=String(revealed&&vote==='tie');details.href=new URL(`?entry=${entry.id}#compare-title`,base);details.textContent='Build inspector & personal grade';card.append(button,h,model,details);return card;});
     $('screen-cards').replaceChildren(...cards);
     for(const button of document.querySelectorAll('[data-screen-choice]'))button.disabled=!both;
-    $('screen-vote').textContent=error||(both?'Both opened for this comparison. Choose your preference.':'Open both scenes in this comparison to vote.')+(vote?(vote==='tie'?' Saved preference: tie.':vote==='skip'?' Previously skipped.':` Saved preference: entry ${current[0]?.id===vote?'A':'B'}.`):'');
+    $('screen-vote').textContent=error||(revealed?'Models revealed. Choose Next comparison when ready.':both?'Both opened for this comparison. Choose your preference.':'Open both scenes in this comparison to vote.')+(vote?(vote==='tie'?' Saved preference: tie.':vote==='skip'?' Previously skipped.':` Saved preference: entry ${current[0]?.id===vote?'A':'B'}.`):'');
     $('screen-clear').disabled=!both||!vote;$('screen-storage').textContent=persistent?'Preferences are saved in this browser only. No public tally.':'Storage unavailable: preferences last for this page session only.';
+    $('screen-next').textContent=revealed?'Next comparison':'Next random pair';
+    $('screen-next').setAttribute('aria-label',revealed?'Next random comparison; keep saved choice':'Skip to a random prompt and model pair without voting');
+    $('screen-reveal').hidden=!revealed;$('screen-reveal-next').hidden=!revealed;$('screen-reveal-next').disabled=!canShuffle;
+    if(revealed){
+      const result=document.createElement('strong');result.textContent=vote==='tie'?'Your choice: tie':current.some(e=>e.id===vote)?`Your choice: ${vote===current[0].id?'A':'B'}`:'Choice cleared. Models remain revealed.';
+      $('screen-reveal').replaceChildren(result,...current.map((entry,slot)=>{const p=document.createElement('p');p.textContent=`${slot?'B':'A'} / ${entry.title} — ${entry.requestedConfiguration}`;return p;}));
+    }
+    updateLeaderboard();
     changed(source);
   }
   function loadPreviews(){for(const entry of pair()){if(images.has(entry.id))continue;const img=new Image();images.set(entry.id,img);img.onload=()=>render();img.onerror=()=>render();img.src=new URL(`entries/${entry.id}/preview.jpg`,base);}}
   function rememberPair(){const url=new URL(location.href);url.searchParams.set('prompt',promptId);history.replaceState({...history.state,labPair:pairKey(),labPairOrder:pair().map(e=>e.id),labPrompt:promptId},'',url);}
-  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;openedThisComparison.clear();rememberPair();loadPreviews();render();}
-  function nextComparison(message='Skipped without recording a vote. A random prompt and model pair are ready.'){
+  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;openedThisComparison.clear();revealed=false;rememberPair();loadPreviews();render();}
+  function nextComparison(){
+    const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
     const next=randomComparison(prompts,allEntries,pairKey());if(!next){render();return;}
     if(viewer.isOpen)viewer.close(false);
     selectPrompt(next.promptId,false,next.entries);$('notice').textContent=message;
   }
   function vote(choice){
     refresh();const current=pair();if(!bothOpened()||!['a','b','tie'].includes(choice))return;
-    const previous=pairKey();record.preferences[previous]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};save();
-    nextComparison('Preference saved. A random prompt and model pair are ready to inspect.');
+    const previous=pairKey();record.preferences[previous]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};revealed=true;save();render();$('notice').textContent='Preference saved. Both models are revealed; this comparison stays in place.';
   }
   function open(entry){if(!entry)return;$('comparison-dialog').close();viewer.open(entry,$('screen-controls'));}
   function inspect(){suspend();refresh();render();$('comparison-dialog').showModal();}
@@ -63,6 +74,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   $('visit-screen').addEventListener('click',approach);
   $('comparison-dialog').addEventListener('close',()=>{if(!viewer.isOpen)resume();$('screen-controls').focus({preventScroll:true});});
   $('screen-prev').addEventListener('click',()=>step(-1));$('screen-next').addEventListener('click',()=>nextComparison());
+  $('screen-reveal-next').addEventListener('click',()=>nextComparison());
   $('screen-blind').addEventListener('change',e=>{blind=e.target.checked;render();});
   for(const button of document.querySelectorAll('[data-screen-choice]'))button.addEventListener('click',()=>vote(button.dataset.screenChoice));
   $('screen-clear').addEventListener('click',()=>{if(!bothOpened())return;refresh();delete record.preferences[pairKey()];save();render();});
@@ -70,7 +82,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   function activate({x,y}){if(y>=522&&y<=580){if(x<145)step(-1);else if(x>1135)nextComparison();else if(x<415)vote('a');else if(x<625)vote('tie');else if(x<895)vote('b');else inspect();}else if(y>=105&&y<500)open(pair()[x<640?0:1]);else inspect();}
   render();
   function selectPrompt(id,restore=false,chosenPair=null){
-    openedThisComparison.clear();
+    openedThisComparison.clear();revealed=false;
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');pairs=[];
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
     index=chosenPair?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair))):restore?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===history.state?.labPair)):0;
