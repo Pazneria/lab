@@ -1,3 +1,4 @@
+import {createViewer} from './viewer.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -5,7 +6,8 @@
   const key = 'lab.walkable3d.judgments.v1';
   const blank = () => ({ version: 1, grades: {}, preferences: {}, opened: {} });
   let record = blank(), persistent = true, entries = [], pairs = [], pairIndex = 0;
-  let active = null, lastButton = null, sequence = 0;
+  const viewer=createViewer({onReady(entry){refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
+  const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null');
     if (saved?.version === 1) for (const field of ['grades', 'preferences', 'opened']) {
@@ -20,6 +22,10 @@
     try { localStorage.setItem(key, JSON.stringify(record)); } catch { persistent = false; }
     storageState();
   }
+  function refresh() {
+    try {const saved=JSON.parse(localStorage.getItem(key));if(saved?.version===1)for(const field of ['grades','preferences','opened'])if(saved[field]&&typeof saved[field]==='object'&&!Array.isArray(saved[field]))record[field]=saved[field];}catch{persistent=false;}
+  }
+  addEventListener('storage',event=>{if(event.key===key){refresh();updateVote();storageState();}});
   function el(tag, text, className) {
     const node = document.createElement(tag);
     if (text !== undefined) node.textContent = text;
@@ -63,9 +69,9 @@
       const g = { notes: notes.value, savedAt: new Date().toISOString() };
       for (const name of ['visuals', 'performance', 'fulfillment']) g[name] = form.elements[name].value === '' ? null : Number(form.elements[name].value);
       g.total = ['visuals', 'performance', 'fulfillment'].every(n => Number.isFinite(g[n])) ? g.visuals + g.performance + g.fulfillment : null;
-      record.grades[entry.id] = g; save(); updateResult();
+      refresh(); record.grades[entry.id] = g; save(); updateResult();
     });
-    clear.addEventListener('click', () => { delete record.grades[entry.id]; for (const input of form.querySelectorAll('input,textarea')) input.value = ''; save(); updateResult(); });
+    clear.addEventListener('click', () => { refresh(); delete record.grades[entry.id]; for (const input of form.querySelectorAll('input,textarea')) input.value = ''; save(); updateResult(); });
     return form;
   }
   function inspector(entry) {
@@ -79,7 +85,8 @@
     addDefinition(dl, 'Controls', entry.controls);
     addDefinition(dl, 'Producer checks', entry.producerChecks);
     addDefinition(dl, 'Frame evidence', entry.performanceEvidence);
-    addDefinition(dl, 'Original SHA-256', entry.archiveSha256);
+    if (entry.archiveKind) addDefinition(dl, 'Preservation record', entry.archiveKind);
+    addDefinition(dl, 'Archive SHA-256', entry.archiveSha256);
     details.append(dl, el('p', 'Producer diagnostics use different runs and settings. These are not final grades or a controlled performance comparison.', 'small muted'));
     const list = el('ul'); entry.limitations.forEach(item => list.append(el('li', item))); details.append(list);
     const links = el('div', undefined, 'source-links');
@@ -124,11 +131,12 @@
     $('#vote-status').textContent = !saved ? 'No preference recorded.' : choice === 'tie' ? 'Your preference: tie.' : choice === 'skip' ? 'This pair is skipped.' : `Your preference: entry ${pair.findIndex(e => e.id === choice) === 0 ? 'A' : 'B'}.`;
   }
   document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', () => {
+    refresh();
     const pair = selected(); if (pair.length !== 2 || !pair.every(e => record.opened[e.id])) return;
     record.preferences[pairKey()] = { entries: pair.map(e => e.id), choice: button.dataset.choice === 'a' ? pair[0].id : button.dataset.choice === 'b' ? pair[1].id : button.dataset.choice, savedAt: new Date().toISOString() };
     save(); updateVote();
   }));
-  $('#clear-vote').addEventListener('click', () => { delete record.preferences[pairKey()]; save(); updateVote(); });
+  $('#clear-vote').addEventListener('click', () => { refresh(); delete record.preferences[pairKey()]; save(); updateVote(); });
   $('#blind').checked = true;
   $('#blind').addEventListener('change', () => {
     // Preserve unsaved grading input and details state when revealing model labels.
@@ -141,110 +149,19 @@
   });
   $('#next-pair').addEventListener('click', () => { close(false); pairIndex = (pairIndex + 1) % pairs.length; render(); });
   $('#export').addEventListener('click', () => {
+    refresh();
     const blob = new Blob([JSON.stringify({ ...record, exportedAt: new Date().toISOString(), benchmark: 'Jordan walkable 3D / prompt 01', storageScope: 'personal browser-local judgments', rubric: { visuals: 45, performance: 35, fulfillment: 20 } }, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob), a = link('', url); a.download = 'walkable-3d-judgments.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 
-  // Only a click can allocate the child browsing context. History never starts a scene.
-  function destroy() {
-    sequence++;
-    if (active) { active.controller.abort(); clearTimeout(active.timeout); }
-    const frame = $('#scene-mount iframe');
-    if (frame) {
-      // Removing its browsing context ends JS/RAF/audio and releases WebGL resources.
-      frame.removeAttribute('srcdoc'); frame.src = 'about:blank'; frame.remove();
-    }
-    active = null;
-  }
-  function close(back = true) {
-    destroy();
-    if ($('#viewer').open) $('#viewer').close();
-    if (back && history.state?.walkableScene) history.back();
-    lastButton?.focus({ preventScroll: true }); updateVote();
-  }
-  function fail(message) {
-    const entry = active?.entry;
-    destroy(); $('#viewer-message').textContent = message;
-    $('#retry-viewer').hidden = !entry; $('#retry-viewer').onclick = () => open(entry, lastButton, false);
-    $('#return-focus').disabled = true;
-  }
-  function escapeAttribute(text) { return text.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;'); }
-  function shellDocument(entry, source, folder, token) {
-    // Only admitted, documented path substitutions. No rebuilding or scene changes.
-    for (const [from, to] of entry.hostPathReplacements || []) source = source.split(from).join(to);
-    const csp = `default-src 'none'; script-src 'unsafe-inline' ${folder}; style-src 'unsafe-inline' ${folder}; img-src data: blob: ${folder}; font-src 'none'; connect-src 'none'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri ${folder}`;
-    const bridge = `(() => {
-      const send = type => parent.postMessage({channel:'lab-walkable-viewer',token:${JSON.stringify(token)},type}, '*');
-      addEventListener('error', () => send('failed'), true);
-      addEventListener('unhandledrejection', () => send('failed'));
-      document.addEventListener('securitypolicyviolation', () => send('failed'));
-      document.addEventListener('webglcontextlost', () => send('failed'), true);
-      document.addEventListener('pointerlockerror', () => send('pointer-error'));
-      document.addEventListener('keydown', e => { if(e.key === 'Escape') send('released'); });
-      document.addEventListener('pointerlockchange', () => { if (!document.pointerLockElement) send('released'); });
-      const timer = setInterval(() => { if (document.querySelector(${JSON.stringify(entry.readySelector)})) { clearInterval(timer); send('ready'); } }, 150);
-    })();`;
-    return source.replace(/<head([^>]*)>/i, `<head$1><meta http-equiv="Content-Security-Policy" content="${escapeAttribute(csp)}"><base href="${escapeAttribute(folder)}"><script>${bridge}<\/script>`);
-  }
-  async function open(entry, button, push = true) {
-    destroy(); lastButton = button;
-    if (push) {
-      const u = new URL(location.href), replace = !!history.state?.walkableScene;
-      u.hash = `scene=${entry.id}`;
-      history[replace ? 'replaceState' : 'pushState']({ walkableScene: entry.id }, '', u);
-    }
-    $('#viewer-title').textContent = titleFor(entry); $('#viewer-message').textContent = 'Loading the frozen build. Nothing else is running in this viewer.';
-    $('#retry-viewer').hidden = true; $('#return-focus').disabled = true;
-    if (!$('#viewer').open) $('#viewer').showModal(); $('#close-viewer').focus();
-    const controller = new AbortController(), token = crypto.randomUUID(), current = sequence;
-    active = { entry, controller, token, timeout: setTimeout(() => { if (active?.token === token) fail('The scene did not become ready. It has been unloaded. Check WebGL 2 support or try again.'); }, 45000) };
-    try {
-      const folder = new URL(`entries/${entry.id}/frozen/`, location.href).href;
-      const response = await fetch(folder + 'index.html.txt', { signal: controller.signal, credentials: 'omit', cache: 'no-cache' });
-      if (!response.ok) throw Error('The entry document could not be downloaded.');
-      const bytes = await response.arrayBuffer();
-      const digest = Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', bytes)), b => b.toString(16).padStart(2, '0')).join('');
-      if (digest !== entry.htmlSha256) throw Error('The frozen entry failed its integrity check.');
-      if (current !== sequence || controller.signal.aborted || document.hidden) return;
-      const frame = el('iframe'); frame.title = `${entry.title} — isolated walkable scene`;
-      frame.setAttribute('sandbox', 'allow-scripts allow-pointer-lock');
-      frame.setAttribute('allow', "camera 'none'; microphone 'none'; geolocation 'none'; payment 'none'; usb 'none'; fullscreen 'none'");
-      frame.referrerPolicy = 'no-referrer'; frame.setAttribute('credentialless', '');
-      frame.srcdoc = shellDocument(entry, new TextDecoder().decode(bytes), folder, token);
-      $('#scene-mount').append(frame);
-    } catch (error) {
-      if (!controller.signal.aborted && current === sequence) fail(`${error.message} The scene has been unloaded. You can retry or close this viewer.`);
-    }
-  }
-  addEventListener('message', event => {
-    const frame = $('#scene-mount iframe');
-    if (!active || !frame || event.source !== frame.contentWindow || event.origin !== 'null' || event.data?.channel !== 'lab-walkable-viewer' || event.data.token !== active.token) return;
-    if (event.data.type === 'ready') {
-      clearTimeout(active.timeout); record.opened[active.entry.id] = new Date().toISOString(); save();
-      $('#viewer-message').textContent = 'Ready. Click “Enter the station” inside the scene. Press Esc to release the mouse, then close to return.';
-      $('#return-focus').disabled = false;
-    } else if (event.data.type === 'failed') fail('A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.');
-    else if (event.data.type === 'released') { $('#viewer-message').textContent = 'Mouse released. Continue inside the scene, or close to return and judge.'; $('#close-viewer').focus(); }
-    else if (event.data.type === 'pointer-error') $('#viewer-message').textContent = 'Mouse capture was denied. Click inside and try again, or close the scene. Some entries provide drag-to-look controls.';
-  });
-  $('#return-focus').addEventListener('click', () => $('#scene-mount iframe')?.focus());
-  $('#close-viewer').addEventListener('click', () => close());
-  $('#viewer').addEventListener('cancel', event => { event.preventDefault(); close(); });
-  addEventListener('popstate', () => { close(false); $('#notice').textContent = location.hash.startsWith('#scene=') ? 'The previous scene is unloaded. Choose Open walkable scene to start it again.' : ''; });
-  addEventListener('pagehide', destroy);
-  addEventListener('pageshow', event => { if (event.persisted) { close(false); $('#notice').textContent = 'Scenes were unloaded when you left. Open an entry to resume.'; } });
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && (active || $('#viewer').open)) {
-      close(false); const url = new URL(location.href); url.hash = ''; history.replaceState(null, '', url);
-      $('#notice').textContent = 'The scene was unloaded when this tab became hidden. Open it again when you are ready.';
-    }
-  });
   storageState();
   fetch('entries.json', { credentials: 'omit' }).then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => {
     if (!Array.isArray(data.entries) || !data.entries.length) throw Error();
     entries = data.entries;
     if (entries.some(e => !/^[a-z0-9-]+$/.test(e.id) || !/^[a-f0-9]{64}$/.test(e.htmlSha256))) throw Error();
     for (let i = 0; i < entries.length; i++) for (let j = i + 1; j < entries.length; j++) pairs.push([entries[i], entries[j]]);
+    const requestedEntry = new URLSearchParams(location.search).get('entry');
+    if (requestedEntry) pairIndex = Math.max(0, pairs.findIndex(pair => pair.some(entry => entry.id === requestedEntry)));
     if (data.prompt?.verbatim) { $('#prompt-text').textContent = data.prompt.verbatim; $('#prompt-disclosure').textContent = 'Original prompt, preserved verbatim.'; }
     render();
     if (location.hash.startsWith('#scene=')) $('#notice').textContent = 'Scene link received. Choose Open walkable scene when you are ready; no scene starts automatically.';

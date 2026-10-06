@@ -1,0 +1,168 @@
+{
+  "entry": "bracken-hollow-opus",
+  "importedAt": "2026-10-06T02:43:45.049158+00:00",
+  "archiveSource": "Host-created preservation snapshot of completed task-9/opus-railway-entry; no producer ZIP supplied. Contains exact required browser files, README, prompt, package records and launch server.",
+  "archiveSha256": "d3742777fb17c966e020ebf33045408367d77e371c55f875904be1e95f743f18",
+  "originalPreserved": true,
+  "source": {
+    "folder": "task-9/opus-railway-entry",
+    "memberRoot": "",
+    "runtimeRoot": "",
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/world.js": "src/world.js",
+      "frozen/src/tex.js": "src/tex.js",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE",
+      "README.md": "README.md",
+      "task-prompt.txt": "task-prompt.txt"
+    },
+    "files": {
+      "index.html": {
+        "sha256": "6b4abc1beaa1f42ebefe2792c718468b246ad06fa6d191bee5d9c96ebe795a9f",
+        "bytes": 3602,
+        "lastWriteUtc": "2026-10-06T02:21:27.850040+00:00"
+      },
+      "src/main.js": {
+        "sha256": "7245745ead641a0703b98dcfe348a012fa4d8ee1601837368e8e07a174a5fc55",
+        "bytes": 11431,
+        "lastWriteUtc": "2026-10-06T02:31:36.306276+00:00"
+      },
+      "src/world.js": {
+        "sha256": "fee312677ce35caf16797b9328aa1ea0d0135d3fd9abba8f8b300b0880be32b6",
+        "bytes": 78342,
+        "lastWriteUtc": "2026-10-06T02:32:06.979467+00:00"
+      },
+      "src/tex.js": {
+        "sha256": "f3646e836e5d7dd5d54ff2e47468b10aba7249a66fea0b4dc76b1ee25d5af3bb",
+        "bytes": 36841,
+        "lastWriteUtc": "2026-10-06T02:30:21.654389+00:00"
+      },
+      "node_modules/three/build/three.module.js": {
+        "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+        "bytes": 1304820,
+        "lastWriteUtc": "2026-10-06T01:45:23.367507+00:00"
+      },
+      "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js": {
+        "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+        "bytes": 31768,
+        "lastWriteUtc": "2026-10-06T01:45:21.146968+00:00"
+      },
+      "node_modules/three/LICENSE": {
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "bytes": 1081,
+        "lastWriteUtc": "2026-10-06T01:45:20.794059+00:00"
+      },
+      "README.md": {
+        "sha256": "c7a318eefda3fdcdb755b5376776ce1d93c868c619411dcc485f995d71987573",
+        "bytes": 3714,
+        "lastWriteUtc": "2026-10-06T02:32:32.327545+00:00"
+      },
+      "task-prompt.txt": {
+        "sha256": "aec85215a19fc4228d0e61b96ac546b52acde36064737362fc4d7e911bace94e",
+        "bytes": 4150,
+        "lastWriteUtc": "2026-10-06T01:11:16.510379+00:00"
+      },
+      "package.json": {
+        "sha256": "dc24a00680b33baf12a22e496e665e6054609aa87bc86f2cf282b9228b517021",
+        "bytes": 303,
+        "lastWriteUtc": "2026-10-06T01:45:24.580117+00:00"
+      },
+      "package-lock.json": {
+        "sha256": "7ca12a9f51aabd0f848b0b396aa911bd61f57182f121322cd7e27e1c2823502b",
+        "bytes": 562,
+        "lastWriteUtc": "2026-10-06T01:45:24.587023+00:00"
+      },
+      "server.js": {
+        "sha256": "b78757550981ecf64de236d0c87ac4dbbc68424b4cc747110be8a426e640e563",
+        "bytes": 1025,
+        "lastWriteUtc": "2026-10-06T02:04:05.220854+00:00"
+      }
+    },
+    "preview": "Host capture from this frozen runtime after clicking its original entry overlay; no scene changes.",
+    "previewNote": "Frozen original starting viewpoint after original entry click and R reset. 1598 x 956 PNG resized proportionally to 960 x 574 JPEG quality 78; no scene or color edits."
+  },
+  "hostingAdjustments": [
+    "Original index.html bytes preserved as frozen/index.html.txt; host supplies base URL, restrictive CSP and lifecycle bridge inside opaque sandbox.",
+    "Only required Three.js module, BufferGeometryUtils and LICENSE copied byte-for-byte from node_modules/three to vendor/three. In-memory HTML import map replaces ./node_modules/three/ with ./vendor/three/. No entrant JavaScript or scene behavior changed.",
+    "The host bridge explicitly releases pointer lock on Escape; it never modifies movement or scene code."
+  ],
+  "audit": "First-party HTML and source import local Three.js and procedural scene/texture modules. No remote assets, telemetry, fetch/XHR/WebSocket/beacon, storage, credentials, parent DOM, navigation, workers or dynamic-code execution found. Server is preserved in snapshot but not published or executed. Exact library version is 0.169.0 from supplied package record.",
+  "timingDisclosure": "User reports Claude Opus manual run complete. No reliable implementation-start, deadline, elapsed-time, effort or exact backend-ID record supplied. File timestamps are provenance only, not implementation timing. Earlier failed CLI launch is not a start time.",
+  "files": {
+    "original.zip": {
+      "bytes": 320168,
+      "sha256": "d3742777fb17c966e020ebf33045408367d77e371c55f875904be1e95f743f18"
+    },
+    "README.md": {
+      "bytes": 3714,
+      "sha256": "c7a318eefda3fdcdb755b5376776ce1d93c868c619411dcc485f995d71987573"
+    },
+    "task-prompt.txt": {
+      "bytes": 4150,
+      "sha256": "aec85215a19fc4228d0e61b96ac546b52acde36064737362fc4d7e911bace94e"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 3602,
+      "sha256": "6b4abc1beaa1f42ebefe2792c718468b246ad06fa6d191bee5d9c96ebe795a9f"
+    },
+    "frozen/src/main.js": {
+      "bytes": 11431,
+      "sha256": "7245745ead641a0703b98dcfe348a012fa4d8ee1601837368e8e07a174a5fc55"
+    },
+    "frozen/src/tex.js": {
+      "bytes": 36841,
+      "sha256": "f3646e836e5d7dd5d54ff2e47468b10aba7249a66fea0b4dc76b1ee25d5af3bb"
+    },
+    "frozen/src/world.js": {
+      "bytes": 78342,
+      "sha256": "fee312677ce35caf16797b9328aa1ea0d0135d3fd9abba8f8b300b0880be32b6"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 1304820,
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "preview.jpg": {
+      "bytes": 100186,
+      "sha256": "ed3180eb42eea66ee88899b8d451ed9a41f849287342badab01ad8de3ad5d52a"
+    },
+    "evidence/host-smoke.json": {
+      "bytes": 1374,
+      "sha256": "1d3180fef21576698b662b45ed6b58d6b51ddaf7a859c2f707cc5022836b93a3"
+    },
+    "evidence/preview-source.png": {
+      "bytes": 2000013,
+      "sha256": "c08871f86d9b017d4bcd5c82912e295aeb76134bfabcd28d491034b114632b00"
+    }
+  },
+  "publication": {
+    "policy": "Original snapshot and raw evidence remain in Git; only exact runtime and concise records are published.",
+    "publishedFiles": [
+      "README.md",
+      "task-prompt.txt",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/tex.js",
+      "frozen/src/world.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "original.zip",
+      "evidence/host-smoke.json",
+      "evidence/preview-source.png"
+    ]
+  }
+}

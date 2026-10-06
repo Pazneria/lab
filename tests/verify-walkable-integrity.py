@@ -20,8 +20,10 @@ for entry in json.loads((root / 'entries.json').read_text(encoding='utf-8'))['en
             name = file.relative_to(folder / 'frozen').as_posix()
             if name == 'index.html.txt': name = 'index.html'
             member = source['memberRoot'] + source['runtimeRoot'] + name
+            if source.get('runtimeMapping'): member = source['runtimeMapping'][file.relative_to(folder).as_posix()]
             assert file.read_bytes() == archive.read(member), member
         for file in (folder / 'evidence').glob('*.json'):
+            if source.get('runtimeMapping'): continue  # Host evidence, not a producer ZIP member.
             prefix = 'evidence/' if entry['id'] == 'alder-halt' else 'artifacts/'
             assert file.read_bytes() == archive.read(source['memberRoot'] + prefix + file.name), file.name
     assert (folder / 'preview.jpg').stat().st_size < 180000

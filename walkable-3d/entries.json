@@ -88,6 +88,45 @@
       "previewAlt": "Frozen Bracken Hollow build: autumn woodland around the abandoned station approach.",
       "archiveSha256": "6c8832c25dc73678f93b0b709195964a2337c709f29c446a0eed014ce1a73d6e",
       "htmlSha256": "9b5861374a6411b5af424c48ed99a22a6a2a2cf225ac949b9f5e21a91bc040a2"
+    },
+    {
+      "id": "bracken-hollow-opus",
+      "title": "Bracken Hollow Station",
+      "description": "A country halt closed in 1966, with a weathered waiting room and woodland loop.",
+      "requestedConfiguration": "Claude Opus (user-reported); version / effort unknown",
+      "modelDisclosure": "Jordan reports a manually launched Claude Opus entry. Exact model version, backend identity and reasoning effort were not provided or independently verified.",
+      "buildWindow": "Manual run reported complete. Actual implementation start, one-hour deadline and elapsed time are unverified. The earlier unsuccessful CLI launch is not treated as implementation time.",
+      "interruptions": "Not documented.",
+      "controls": "WASD or arrows walk; mouse capture or drag look; Shift faster; R reset; 1–5 viewpoints; P frame times; [ / ] resolution; H hints; Esc release.",
+      "producerChecks": "README describes working route and controls; no separate automated test report supplied. Hosting smoke checks are recorded separately, without assigning a grade.",
+      "performanceEvidence": "README reports synchronous render checks at 1600 x 900: 12–15 ms, later 18–36 ms under heavier background load. Includes GPU readback overhead; not visible-window frame timing or a final grade.",
+      "limitations": [
+        "Desktop keyboard and mouse; no touch movement.",
+        "One-hour cap compliance, elapsed time and precise model/effort are unverified.",
+        "Ticket office is locked. Undergrowth and small props have no collision. Bounded world; distant forest uses billboards.",
+        "No global illumination; static shadows do not follow swaying foliage. Original automatic resolution reduction remains enabled."
+      ],
+      "documents": [
+        {
+          "label": "Controls, limits & producer notes",
+          "path": "README.md"
+        },
+        {
+          "label": "Supplied prompt",
+          "path": "task-prompt.txt"
+        }
+      ],
+      "readySelector": "#loading.hidden",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAlt": "Frozen Bracken Hollow Station build: abandoned railway station beneath autumn foliage.",
+      "archiveSha256": "d3742777fb17c966e020ebf33045408367d77e371c55f875904be1e95f743f18",
+      "archiveKind": "Host preservation snapshot; no producer ZIP supplied",
+      "htmlSha256": "6b4abc1beaa1f42ebefe2792c718468b246ad06fa6d191bee5d9c96ebe795a9f"
     }
   ]
 }

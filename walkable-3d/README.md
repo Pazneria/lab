@@ -14,6 +14,7 @@ With an existing Playwright installation and Chromium executable:
 $env:LAB_PLAYWRIGHT_MODULE='absolute/path/to/playwright'
 $env:CHROME_PATH='absolute/path/to/chrome.exe'
 node tests/verify-walkable.cjs
+node tests/verify-walkable-room.cjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py
 ```
@@ -22,7 +23,7 @@ python tests/verify-walkable-publication.py
 
 ## Frozen submission integrity
 
-Each repository file `entries/<id>/original.zip` is an exact copy of the supplied finished archive. These ZIPs and the raw `evidence/` folders are retained locally and in recoverable Git history, and explicitly excluded from Pages output. `provenance.json` records their SHA-256 values, original source, per-file hashes and all hosting adjustments, and distinguishes published files from retained records. `.gitattributes` disables Git text conversion under `entries/`.
+For Sol and Astra, each repository file `entries/<id>/original.zip` is an exact copy of the supplied finished archive. For the manually completed Opus folder, it is explicitly a host-created preservation snapshot of the exact required files and launch records; no producer ZIP was supplied. These ZIPs and the raw `evidence/` folders are retained locally and in recoverable Git history, and explicitly excluded from Pages output. `provenance.json` records their SHA-256 values, original source, per-file hashes and all hosting adjustments, and distinguishes published files from retained records. `.gitattributes` disables Git text conversion under `entries/`.
 
 The site serves the frozen runtime, small JPEG previews, prompt, provenance, licenses and concise producer records. Full-resolution captures, raw test samples, portable ZIPs and the benchmark's development helpers are excluded by `_config.yml`. Unrelated Lab helpers and tests are outside this exclusion scope. Original runtime HTML is stored as `frozen/index.html.txt`, with identical bytes. The host fetches and SHA-256 verifies it only after a click, then creates an in-memory sandbox document. There is no raw entrant HTML launch link on the Lab origin. Scene JS and CSS are copied unchanged; no source is rebuilt and no entrant visuals, controls, quality settings, collisions or behavior are fixed.
 
@@ -50,3 +51,12 @@ Parent messages are accepted only from the current iframe window, its opaque ori
 ## Personal records
 
 The only persistence key is `lab.walkable3d.judgments.v1`. A saved preference records stable entry IDs, not screen order. Grades are independent; an incomplete grade has a null total. Empty fields are never treated as zero. Records remain in the current browser, can be cleared individually, and can be exported as JSON. Storage failure is explicitly disclosed and falls back to the current page session. There is no authentication, verified judge identity, global ranking, aggregate tally or data upload.
+
+
+## Completed manual Opus handoff and room access
+
+The third entry, **Bracken Hollow Station**, came from Jordan's completed manual Claude Opus folder. Its version, effort, actual implementation start, deadline compliance and elapsed time are unverified. Earlier unsuccessful CLI launch time is not used as a start. The supplied README and prompt are retained. Performance figures are explicitly producer claims, not a final grade. Luna remains unadmitted.
+
+Only the required Three.js 0.169.0 module, BufferGeometryUtils and MIT license were copied from the supplied dependency directory to `frozen/vendor/three/`, byte for byte. The original HTML is preserved; its in-memory import map receives the single documented `./node_modules/three/` → `./vendor/three/` substitution. No scene changes or rebuild. The completed first-party modules use local procedural geometry/textures; no network, credential, telemetry, storage or parent-navigation surface was found. Its server is retained only in the excluded snapshot and never hosted as executable code.
+
+The [3D Lab](../lab-space/) now has an actual north-wall A/B comparison screen plus accessible native controls. It shares the same isolated viewer as this page. The host bridge explicitly calls `document.exitPointerLock()` on Escape; this is host boundary/input release handling, with frozen scene code unchanged. The Lab's render/input loop is suspended before launching and resumes only after the child has been destroyed. All three pairs are data-driven; one-entry waiting and two-entry single-pair boundaries remain supported.

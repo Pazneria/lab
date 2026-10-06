@@ -6,7 +6,7 @@ const excluded = fs.readFileSync(path.join(root, '_config.yml'), 'utf8').split(/
   const pattern = JSON.parse(line.slice(4)).replace(/[.+?^${}()|[\]\\]/g, '\\$&').replaceAll('*', '[^/]*');
   return new RegExp('^' + pattern + '(?:/|$)');
 });
-const types = { '.html':'text/html; charset=utf-8', '.txt':'text/plain; charset=utf-8', '.md':'text/plain; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json', '.jpg':'image/jpeg', '.png':'image/png', '.svg':'image/svg+xml', '.zip':'application/zip' };
+const types = { '.html':'text/html; charset=utf-8', '.txt':'text/plain; charset=utf-8', '.md':'text/plain; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.mjs':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.json':'application/json', '.jpg':'image/jpeg', '.png':'image/png', '.svg':'image/svg+xml', '.zip':'application/zip' };
 const server = http.createServer((req,res) => {
   try {
     let rel = decodeURIComponent(new URL(req.url, 'http://localhost').pathname).replace(/^\/lab\//, '/');

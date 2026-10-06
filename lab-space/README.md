@@ -3,8 +3,7 @@
 The published room at <https://pazneria.github.io/lab/lab-space/> is a bounded
 16 x 14 metre workshop. Its benchmark bench opens the working gallery at
 <https://pazneria.github.io/lab/>; its exit opens Jordan's home. Search, evidence,
-data and detailed graphs remain accessible 2D tools. No future project stations
-or external runtime resources exist.
+data and detailed graphs remain accessible 2D tools. The north-wall comparison screen opens frozen walkable benchmark entries. No external runtime resources are used.
 
 ## Movement and access
 
@@ -95,3 +94,12 @@ run only during movement/input/resize and stop at rest or when the tab is hidden
 No global permissions, folder trust, accounts or billing settings are changed.
 Publish through a scoped PR after fetching and preserving remote owner work;
 main deploys GitHub Pages. Existing gallery and home destinations stay intact.
+
+
+## Walkable comparison screen
+
+The north cabinet holds a real 3D screen with JPEG previews and ray-picked controls. Choose **Walk to 3D benchmark**, then click either still to enter, or use the left/right screen arrows to choose a pair. With three finished entries there are three pairs; arrows stop at the first/last pair. **Compare worlds** provides equivalent native controls on desktop, mobile and the flat fallback. Model labels are hidden by default. Personal preferences share the standalone benchmark's browser-local record; grades remain separate in its inspector/notebook.
+
+The original catalog monitor, room routes, furniture and destinations are preserved. Opening an entrant suspends Lab input and rendering before its opaque-origin sandbox is created. **Exit scene → Lab** destroys the child context and restores the same room position and pair. Escape explicitly releases the child pointer lock through the host bridge and focuses Exit. Back, navigation and hiding the tab unload the entrant; Forward/reload never launch one. Position and pair are retained in the page's history state. The room's resident renderer is idle while an entrant runs; it is not recreated after each visit.
+
+The common host viewer lives in `walkable-3d/assets/viewer.js`. The screen adds `assets/walkable-screen.js` and `.css`; no entrant code is evaluated in the parent. All scene bytes and disclosures are governed by the walkable benchmark's provenance. Additional lifecycle tests: `node tests/verify-walkable-room.cjs`. The local CORS preview server is `node scripts/serve-walkable.cjs`; open `/lab/lab-space/`.
