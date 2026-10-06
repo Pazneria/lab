@@ -44,7 +44,8 @@
       "htmlSha256": "1bbf7cfadc04acfc13aecdd8fa3994cdfee99b8413c2bb462a8d3a91268c33b4",
       "promptId": "01",
       "promptVersion": "01-shared",
-      "webgl": "WebGL 2"
+      "webgl": "WebGL 2",
+      "comparisonModel": "sol"
     },
     {
       "id": "bracken-hollow",
@@ -92,7 +93,8 @@
       "htmlSha256": "9b5861374a6411b5af424c48ed99a22a6a2a2cf225ac949b9f5e21a91bc040a2",
       "promptId": "01",
       "promptVersion": "01-shared",
-      "webgl": "WebGL 2"
+      "webgl": "WebGL 2",
+      "comparisonModel": "astra"
     },
     {
       "id": "bracken-hollow-opus",
@@ -134,7 +136,8 @@
       "htmlSha256": "6b4abc1beaa1f42ebefe2792c718468b246ad06fa6d191bee5d9c96ebe795a9f",
       "promptId": "01",
       "promptVersion": "01-opus-supplied",
-      "webgl": "WebGL 2"
+      "webgl": "WebGL 2",
+      "comparisonModel": "opus"
     },
     {
       "id": "after-rain-luna",
@@ -167,7 +170,8 @@
       "promptVersion": "02-shared",
       "archiveSha256": "3f75afdddba5b90af3122d12da4f939770e7632f2074dc88f0e3d7e18646ad27",
       "htmlSha256": "a6a17e9c2d53a57942bf8260bd319217a6c2751ed4b278ac12629196b266705f",
-      "archiveLocation": "retained-outside-repository"
+      "archiveLocation": "retained-outside-repository",
+      "comparisonModel": "luna"
     },
     {
       "id": "raincourt-astra",
@@ -217,7 +221,8 @@
       "promptVersion": "02-shared",
       "archiveSha256": "1fb50019ffbe2b8868d249220b7fa7a7837db48e1d3d1995169e8088a7b342ce",
       "htmlSha256": "70101227ba667e363cb8ee074b1e1beebcb4a24f0c76317af09fbd992f60ab11",
-      "archiveLocation": "retained-outside-repository"
+      "archiveLocation": "retained-outside-repository",
+      "comparisonModel": "astra"
     },
     {
       "id": "lantern-court-sol",
@@ -257,7 +262,8 @@
       "promptVersion": "02-shared",
       "archiveSha256": "9a1770ab5723de4972a49ada90a5662b10c3693cd634b1878d3a03b2a7ec00d9",
       "htmlSha256": "4958019f384b8d76e2468108bc1492d809a40c87dff7b8d1fb9869968c7070da",
-      "archiveLocation": "retained-outside-repository"
+      "archiveLocation": "retained-outside-repository",
+      "comparisonModel": "sol"
     },
     {
       "id": "saffron-observatory-astra",
@@ -303,7 +309,8 @@
         }
       ],
       "previewAlt": "Unchanged Saffron Observatory reset view: shaded stone arches, turquoise trim and a bronze telescope.",
-      "promptVersion": "03-shared"
+      "promptVersion": "03-shared",
+      "comparisonModel": "astra"
     },
     {
       "id": "asterion-luna",
@@ -345,7 +352,8 @@
         }
       ],
       "previewAlt": "Unchanged Asterion reset view: shallow steps enter a long shaded passage toward the observatory instrument.",
-      "promptVersion": "03-shared"
+      "promptVersion": "03-shared",
+      "comparisonModel": "luna"
     },
     {
       "id": "meridian-sol",
@@ -399,7 +407,8 @@
       "promptVersion": "03-shared",
       "archiveSha256": "852cff20b7ef1b9c1d821468947080fc63ec170791f2745bd9591141c99aad5c",
       "htmlSha256": "a1dc7757e4123f9d2d95349198fb5e76343cc9726a0b226d4faa46e0c6af481d",
-      "archiveLocation": "retained-outside-repository"
+      "archiveLocation": "retained-outside-repository",
+      "comparisonModel": "sol"
     },
     {
       "id": "rain-courtyard-opus",
@@ -443,7 +452,8 @@
       "promptVersion": "02-shared",
       "archiveSha256": "079fbc0b88223dfdb0543f5f6beac9bf270e52049f33fd74d59263b654e17611",
       "htmlSha256": "05aceae8a2d3c05e6248583b0dd93f7bf248a3c6356ebc7274c76675478f5ee8",
-      "archiveLocation": "retained-outside-repository"
+      "archiveLocation": "retained-outside-repository",
+      "comparisonModel": "opus"
     },
     {
       "id": "fern-house-astra",
@@ -488,7 +498,8 @@
       "description": "Two paths through layered planting meet at a sheltered potting alcove beneath weathered glass.",
       "controls": "WASD walk; mouse look; Shift brisk walk; C crouch; R reset; Esc release; F frame intervals; High/Balanced/Ultra quality selector.",
       "performanceEvidence": "Producer short headless Chrome 154 / ANGLE Intel sweeps, 1440 x 960, High: means 13.1 / 8.5 / 13.5 ms; p95 23.3 / 17.3 / 25.4 ms; zero intervals above 50 ms in those short samples. Local diagnostics, not controlled performance judging or a score. The separate host launch test assigns no performance grade.",
-      "previewAlt": "Original Fern House reset view through green metal framing toward layered tropical planting and two stone aisles."
+      "previewAlt": "Original Fern House reset view through green metal framing toward layered tropical planting and two stone aisles.",
+      "comparisonModel": "astra"
     },
     {
       "id": "old-glasshouse-luna",
@@ -530,7 +541,8 @@
       "controls": "WASD or arrows walk; mouse look; Shift gentle pace; hold C crouch; R reset; Esc pause and release; Resume walk recaptures the mouse.",
       "performanceEvidence": "Producer supplied no reliable visual capture or browser performance results. Host separately confirmed actual WebGL 2 raster output, walking, mouse look, exact reset pixels and lifecycle handling. This is functional verification, not a benchmark run or score. The in-scene average frame estimate does not summarize long-frame behavior.",
       "previewAlt": "Original Old Glasshouse reset view: central foliage bed, open side aisles, slender roof framing and weathered panes.",
-      "preview": "preview.jpg"
+      "preview": "preview.jpg",
+      "comparisonModel": "luna"
     },
     {
       "id": "fernery-sol",
@@ -577,7 +589,8 @@
       "description": "A tropical house with layered foliage, connected aisles and a detailed potting alcove.",
       "controls": "WASD walk; mouse look; Shift brisk walk; C crouch; arrows turn/look; R reset; Esc release; F frame-time diagnostics.",
       "performanceEvidence": "Producer headless keyboard walkthrough at 1920 x 1080, actual render size 1686 x 948 under the fixed pixel cap: 1,416 intervals, median 15.9 ms, p95 28.3 ms, p99 36.1 ms, maximum 51.9 ms, one interval above 50 ms. Short turning sample: median 17 ms, p95 27.9 ms. Supporting producer diagnostics, not controlled final judging or a grade.",
-      "previewAlt": "Original Fernery reset view through iron doors toward broad leaves, planted beds, side aisles and a glazed roof."
+      "previewAlt": "Original Fernery reset view through iron doors toward broad leaves, planted beds, side aisles and a glazed roof.",
+      "comparisonModel": "sol"
     },
     {
       "id": "old-palm-house-opus",
@@ -620,7 +633,8 @@
       "description": "A weathered palm house with planted central beds, two connected aisles and a furnished potting alcove.",
       "controls": "Click to capture; WASD/arrows walk; mouse look; Shift faster; hold C crouch; hold Space tiptoe; 1–4 supplied viewpoints; R reset; F frame-time overlay; Esc release.",
       "performanceEvidence": "Producer hidden-pane synchronous render + readPixels tests: about 16.0 ms in aisle A, 14.8 ms in aisle B, 3.3 ms in the alcove and 7.3 ms at the threshold at 1.05 MP. The final default cap was then lowered to 0.95 MP. These synthetic GPU-cost diagnostics are not interactive frame pacing or a grade. Host checks confirm rendering/input only; the unchanged adaptive quality may respond to test overhead.",
-      "previewAlt": "Original Old Palm House reset view along a gravel threshold toward open iron-and-glass doors and layered foliage."
+      "previewAlt": "Original Old Palm House reset view along a gravel threshold toward open iron-and-glass doors and layered foliage.",
+      "comparisonModel": "opus"
     },
     {
       "id": "desert-observatory-opus",
@@ -666,7 +680,8 @@
       "performanceEvidence": "Producer README reports 40-frame GPU-synchronized averages of about 6-7 ms at 1280 x 720 and 8.5-12 ms at 1920 x 1080, measured in a hidden browser pane. These synthetic render timings are not interactive frame-time evidence or a grade. Host checks validate rendering, input and lifecycle only; the preview HUD includes startup/test overhead.",
       "previewAlt": "Original Desert Observatory reset view: stone steps and a deep shaded entrance beneath the dome on a rocky plateau.",
       "archiveKind": "Host preservation snapshot of completed producer files; no producer ZIP supplied.",
-      "promptDisclosure": "Filed under Prompt 03 by the parent. The exact text delivered to this manual run has not been confirmed. The shared Prompt 03 is available as the reference brief; identical submission text is not asserted."
+      "promptDisclosure": "Filed under Prompt 03 by the parent. The exact text delivered to this manual run has not been confirmed. The shared Prompt 03 is available as the reference brief; identical submission text is not asserted.",
+      "comparisonModel": "opus"
     },
     {
       "id": "icefield-astra",
@@ -722,7 +737,8 @@
           "label": "Host verification",
           "path": "host-verification.json"
         }
-      ]
+      ],
+      "comparisonModel": "astra"
     },
     {
       "id": "boreal-sol",
@@ -774,7 +790,8 @@
           "label": "Host verification",
           "path": "host-verification.json"
         }
-      ]
+      ],
+      "comparisonModel": "sol"
     },
     {
       "id": "k17-luna",
@@ -830,7 +847,8 @@
           "label": "Host failure record",
           "path": "host-verification-failed.json"
         }
-      ]
+      ],
+      "comparisonModel": "luna"
     }
   ],
   "prompts": [

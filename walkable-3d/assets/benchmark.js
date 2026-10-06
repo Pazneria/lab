@@ -1,4 +1,5 @@
 import {createViewer} from './viewer.js';
+import {comparisonKey,randomComparison} from './comparisons.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -33,7 +34,7 @@ import {createViewer} from './viewer.js';
     return node;
   }
   const selected = () => pairs[pairIndex] || entries.slice(0, 1);
-  const pairKey = () => selected().map(e => e.id).sort().join('::');
+  const pairKey = () => comparisonKey(selected());
   const titleFor = (entry) => entry.title;
   function link(label, href) {
     const a = el('a', label); a.href = href; return a;
@@ -148,8 +149,11 @@ import {createViewer} from './viewer.js';
   document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', () => {
     refresh();
     const pair = selected(); if (pair.length !== 2 || !pair.every(e => record.opened[e.id])) return;
-    record.preferences[pairKey()] = { entries: pair.map(e => e.id), choice: button.dataset.choice === 'a' ? pair[0].id : button.dataset.choice === 'b' ? pair[1].id : button.dataset.choice, savedAt: new Date().toISOString() };
-    save(); updateVote();
+    const previous=pairKey();
+    record.preferences[previous] = { entries: pair.map(e => e.id), choice: button.dataset.choice === 'a' ? pair[0].id : button.dataset.choice === 'b' ? pair[1].id : button.dataset.choice, savedAt: new Date().toISOString() };
+    save();
+    const next=randomComparison(prompts,allEntries,previous);
+    if(next){selectPrompt(next.promptId,undefined,next.entries);const url=new URL(location.href);url.search='?prompt='+promptId;url.hash='';history.replaceState(history.state,'',url);$('#notice').textContent='Preference saved. A random prompt and model pair are ready to inspect.';}else updateVote();
   }));
   $('#clear-vote').addEventListener('click', () => { refresh(); delete record.preferences[pairKey()]; save(); updateVote(); });
   $('#blind').checked = true;
@@ -169,11 +173,12 @@ import {createViewer} from './viewer.js';
     const url = URL.createObjectURL(blob), a = link('', url); a.download = 'walkable-3d-judgments.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 
-  function selectPrompt(id,entryId){
+  function selectPrompt(id,entryId,chosenPair=null){
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
     entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
     if(entryId)pairIndex=Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId)));
+    if(chosenPair){pairIndex=Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair)));if(pairs[pairIndex])pairs[pairIndex]=chosenPair.slice();}
     $('#prompt-select').value=promptId;$('#prompt-label').textContent=`Prompt ${prompt.id} / ${prompt.title}`;$('#prompt-title').textContent=prompt.brief;
     $('#prompt-version').replaceChildren(...versions.filter(v=>v.promptId===promptId).map(v=>{const o=el('option',v.label);o.value=v.id;return o;}));
     $('#prompt-text').textContent='Open this section to load the exact submitted text.';$('#prompt-disclosure').textContent='';$('#prompt-hash').textContent='';
