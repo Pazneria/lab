@@ -1,0 +1,70 @@
+{
+  "task": "Stillwater - tidal boathouse",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-12",
+  "session_start_utc": "2026-10-06T18:09:03.3110778Z",
+  "timing_record_started_utc": "2026-10-06T18:09:32.4082791Z",
+  "first_implementation_utc": "2026-10-06T18:11:02.5404150Z",
+  "first_implementation_basis": "CreationTimeUtc of package.json, the first implementation file",
+  "deadline_utc": "2026-10-06T19:09:03.3110778Z",
+  "deadline_basis": "One hour from the first task tool action, including setup, implementation and validation",
+  "last_application_edit_utc": "2026-10-06T18:41:55.144Z",
+  "stop_utc": "2026-10-06T18:49:47.341Z",
+  "model": {
+    "identity": "GPT-6 family per developer instructions; exact backend variant not exposed",
+    "requested_exact_model": "Not specified in the delegated prompt",
+    "backend_verified": false,
+    "override_used": false
+  },
+  "effort": {
+    "requested": "Not specified in the delegated prompt",
+    "actual": "Not exposed by the backend",
+    "backend_verified": false,
+    "override_used": false
+  },
+  "subagents_or_other_models_used": false,
+  "interrupts": [],
+  "setup_note": "Registry request was unavailable. Used an ordinary cached Three.js 0.185.1 npm package; no other entrant files or scene assets were read.",
+  "restrictions": {
+    "preview_server_started": false,
+    "browser_started_or_controlled": false,
+    "gpu_scene_execution": false,
+    "interactive_checks_run": false,
+    "performance_benchmark_run": false,
+    "screenshot_or_video": false,
+    "external_publication": false,
+    "native_ui_operated": false,
+    "explanation": "The current run expressly permits only implementation and lightweight non-browser checks. This differs from the interactive QA available in earlier rounds."
+  },
+  "validation": {
+    "syntax": "PASS",
+    "tests_passed": 11,
+    "tests_failed": 0,
+    "build": "PASS",
+    "route_validation": "CPU math tests only; no scene execution",
+    "evidence": "CHECK_RESULTS.txt and VALIDATION.md",
+    "actual_rendering": "Not tested",
+    "actual_frame_times": "Not measured",
+    "pointer_lock_and_browser_input": "Not tested"
+  },
+  "delivery": {
+    "build_directory": "dist",
+    "archive": "Stillwater-boathouse.zip",
+    "source_directory": "src",
+    "launch": "npm start",
+    "address": "http://127.0.0.1:4317",
+    "address_state": "Not running",
+    "dependency": "Three.js 0.185.1, MIT, fully vendored",
+    "remote_assets": false
+  },
+  "process_verification": {
+    "status": "PASS",
+    "method": "Read-only Windows process command-line query filtered to this exact workspace; localhost port listener query",
+    "workspace_processes": 0,
+    "port_4317_listeners": 0,
+    "all_exec_sessions_completed": true,
+    "note": "No preview server or background workload was started.",
+    "checked_utc": "2026-10-06T18:48:01.8829188Z"
+  },
+  "elapsed_seconds_from_session_start": 2444.03,
+  "stopped_before_deadline": true
+}

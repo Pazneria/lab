@@ -1,0 +1,53 @@
+{
+  "title": "Low Tide — Morning at the Boathouse",
+  "model": "Codex, GPT-6 family (exact backend model identifier not exposed)",
+  "reasoningEffort": "Not exposed by execution context",
+  "modelVerification": "Identity and effort are unverified; no alternate models or subagents used",
+  "firstImplementationUtc": "2026-10-06T18:17:56.0586128Z",
+  "deadlineUtc": "2026-10-06T19:17:56.0586128Z",
+  "stopUtc": "2026-10-06T19:07:13.3236550Z",
+  "constraints": [
+    "No preview server, browser, UI, scene execution, GPU checks or performance benchmarks during this run",
+    "Only own new workspace and registry dependencies",
+    "No background processes may remain"
+  ],
+  "interruptions": [],
+  "interactiveChecks": "Not run by instruction",
+  "performanceChecks": "Not run by instruction",
+  "previewPort": 5187,
+  "previewRunning": false,
+  "elapsedSeconds": 2957.324,
+  "completedBeforeDeadline": true,
+  "environmentEvents": [
+    "Initial registry dependency download blocked by sandbox access; authorized registry retry succeeded.",
+    "Vite bundled config loader encountered ancestor-directory access denial; native config loading succeeded.",
+    "Initial process inventory blocked by sandbox access; required read-only approved inventory succeeded."
+  ],
+  "previewAddress": "http://127.0.0.1:5187",
+  "artifactPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-13\\Low-Tide-build.zip",
+  "artifactBytes": 203372,
+  "artifactSha256": "2A2B8DBC4D3F7F857D45BDBC257B89A3ADE8FC324472DBCE6C6B1ECA8AA77AAF",
+  "buildPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-13\\dist",
+  "sourcePath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-13\\src",
+  "validation": {
+    "syntax": "Passed",
+    "staticDataChecks": "8 passed",
+    "productionBuild": "Passed",
+    "productionAssetVerification": "5 files, 559235 bytes, all references and JavaScript syntax valid",
+    "archive": "22 files verified",
+    "browser": "Not run by instruction",
+    "interactive": "Not run by instruction",
+    "scene": "Not run by instruction",
+    "gpu": "Not run by instruction",
+    "performance": "Not run by instruction"
+  },
+  "processClosure": {
+    "checkedUtc": "2026-10-06T19:07:13.2850168Z",
+    "remainingWorkspaceOwnedProcesses": 0,
+    "allInvokedExecSessionsExited": true,
+    "noBackgroundProcessesStarted": true,
+    "noPreviewServerStarted": true
+  },
+  "otherModelsOrSubagentsUsed": false,
+  "publication": "None; local artifact only"
+}

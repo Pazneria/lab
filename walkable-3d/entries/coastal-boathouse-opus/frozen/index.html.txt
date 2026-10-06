@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tidal Boathouse</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #cfd6d8; font-family: system-ui, -apple-system, Segoe UI, sans-serif; }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(28,34,38,0.45); color: #f4efe6; z-index: 10; cursor: pointer; }
+  #overlay .card { background: rgba(22,27,30,0.82); padding: 26px 32px; border-radius: 10px; max-width: 520px; line-height: 1.45; box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+  #overlay h1 { margin: 0 0 6px; font-size: 22px; font-weight: 600; letter-spacing: 0.02em; }
+  #overlay p { margin: 6px 0 12px; color: #d9d2c4; font-size: 14px; }
+  #overlay table { font-size: 13.5px; border-collapse: collapse; width: 100%; }
+  #overlay td { padding: 3px 6px; vertical-align: top; }
+  #overlay td:first-child { color: #ffd59a; white-space: nowrap; font-weight: 600; }
+  #overlay .go { margin-top: 14px; text-align: center; font-weight: 600; color: #fff; background: #3d6b73; border-radius: 6px; padding: 9px; }
+  #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #cfd6d8; color: #2b3437; font-size: 16px; z-index: 20; }
+  #hud { position: fixed; left: 10px; bottom: 10px; color: #fff; font-size: 12px; text-shadow: 0 1px 2px rgba(0,0,0,0.7); z-index: 5; pointer-events: none; }
+  #perf { position: fixed; right: 10px; top: 10px; color: #fff; font: 12px ui-monospace, Consolas, monospace; background: rgba(0,0,0,0.38); padding: 4px 8px; border-radius: 4px; z-index: 5; pointer-events: none; white-space: pre; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,255,255,0.7); z-index: 5; pointer-events: none; }
+  #toast { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); color: #fff; font-size: 13px; background: rgba(0,0,0,0.4); padding: 5px 12px; border-radius: 4px; z-index: 6; opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="loading">Building the boathouse…</div>
+<div id="overlay">
+  <div class="card">
+    <h1>Tidal Boathouse — low water, early morning</h1>
+    <p>A timber workshop, a short pier and the exposed foreshore of a quiet inlet. Click to walk around.</p>
+    <table>
+      <tr><td>Mouse</td><td>Look around (click to capture, Esc to release)</td></tr>
+      <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>C</td><td>Crouch (inspect low surfaces)</td></tr>
+      <tr><td>R</td><td>Reset to start position</td></tr>
+      <tr><td>1 – 5</td><td>Jump to: 1 Workshop · 2 Pier end · 3 Shore steps · 4 Boat · 5 Start</td></tr>
+      <tr><td>P</td><td>Toggle frame-time readout</td></tr>
+      <tr><td>Q</td><td>Toggle render resolution (full / reduced)</td></tr>
+    </table>
+    <div class="go">Click to explore</div>
+  </div>
+</div>
+<div id="hud">WASD move · Mouse look · Shift faster · C crouch · R reset · 1–5 viewpoints · P perf · Esc menu</div>
+<div id="perf"></div>
+<div id="cross"></div>
+<div id="toast"></div>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>

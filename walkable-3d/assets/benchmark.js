@@ -94,7 +94,7 @@ import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './c
   function card(entry, index) {
     const article = el('article', undefined, 'entry'); article.dataset.entry = entry.id;
     const top = el('div', undefined, 'entry-top');
-    top.append(el('span', `ENTRY ${String.fromCharCode(65 + index)}`, 'slot'), el('span', entry.availability==='unverified'?'Frozen build · runtime unverified':'Frozen build · ready', 'ready')); article.append(top);
+    top.append(el('span', `ENTRY ${String.fromCharCode(65 + index)}`, 'slot'), el('span', entry.completionStatus==='partial'?'Partial handoff · runtime unverified':entry.availability==='unverified'?'Frozen build · runtime unverified':'Frozen build · ready', 'ready')); article.append(top);
     const preview = el('button', undefined, 'preview'); preview.type = 'button'; preview.dataset.open = entry.id; preview.setAttribute('aria-label', `Open ${entry.title}`);
     if(entry.previewAvailable===false){
       preview.classList.add('no-preview');
@@ -130,7 +130,8 @@ import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './c
       const body = el('div', undefined, 'entry-body'); body.append(el('h3', 'One world so far.'), el('p', 'Explore the completed entry now. A real comparison opens when a second frozen submission is admitted.')); waiting.append(body); $('#entries').append(waiting);
     }
     const unverified=entries.filter(e=>e.availability==='unverified').length;
-    $('#entry-count').textContent=`${entries.length} finished ${entries.length===1?'entry':'entries'}`+(unverified?` · ${unverified} runtime unverified`:'')+(failedEntries.length?` · ${failedEntries.length} startup failed`:'');
+    const partial=entries.filter(e=>e.completionStatus==='partial').length;
+    $('#entry-count').textContent=`${entries.length+failedEntries.length} saved ${entries.length+failedEntries.length===1?'result':'results'}`+(unverified?` · ${unverified} runtime unverified`:'')+(partial?` · includes ${partial} partial handoff`:'')+(failedEntries.length?` · ${failedEntries.length} startup failed`:'');
     $('#next-pair').hidden = !canShuffle; updateVote(); updateLeaderboard();
   }
   function updateVote() {

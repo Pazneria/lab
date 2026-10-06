@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#202b26">
+  <title>The Aster Reading House</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable 3D hillside library"></canvas>
+  <div id="loading"><span class="loading-mark">A</span><p>Opening the reading house…</p></div>
+  <header class="brand"><div class="seal">A</div><div><span class="eyebrow">THE HILLSIDE COLLECTION</span><h1>Aster Reading House</h1></div></header>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="welcome" class="veil">
+    <section class="welcome-card">
+      <div class="eyebrow">A PLACE TO WANDER</div>
+      <h2>Stay for<br>the afternoon.</h2>
+      <p>Browse the shelves, find a chair by the windows, and take the broad stair to the upper gallery.</p>
+      <div class="control-grid"><span><kbd>W A S D</kbd> or arrows</span><span>Walk</span><span>Mouse</span><span>Look around</span><span><kbd>Shift</kbd></span><span>Walk faster</span><span><kbd>Esc</kbd></span><span>Release mouse</span></div>
+      <button id="enter">Enter the library <span>↗</span></button>
+      <p class="small-note">Click the scene to capture the mouse. Drag to look if mouse capture is unavailable.</p>
+    </section>
+  </div>
+  <aside id="pause" class="pause-card" hidden><span class="eyebrow">THE ROOM IS YOURS</span><h2>Take your time.</h2><p>Click to return to the reading house.</p><button id="resume">Continue exploring</button></aside>
+  <footer class="toolbar"><div class="location"><span class="location-dot"></span><span id="location">Lower reading room</span></div><div class="buttons"><button id="help" title="Show controls (H)">Controls <kbd>H</kbd></button><button id="stats-toggle" title="Show frame timing (F)">Frame times <kbd>F</kbd></button><button id="reset" title="Return to the entrance (R)">Reset <kbd>R</kbd></button><label class="quality-label">Detail <select id="quality"><option value="balanced">Balanced</option><option value="high">High</option><option value="low">Light</option></select></label></div></footer>
+  <div id="help-panel" hidden><b>Explore at your own pace</b><p>WASD / arrows · walk<br>Mouse / drag · look<br>Shift · faster walk<br>R · reset to entrance<br>F · frame-time panel<br>H · controls<br>Esc · release mouse</p><small>Route: lower shelves → window alcove → broad stair → gallery → overlook → return.</small></div>
+  <div id="stats" hidden><strong>Frame times</strong><div id="stats-readout">Collecting samples…</div><canvas id="frame-chart" width="230" height="62"></canvas><small>Rolling 5 s · CPU frame intervals<br>Not a GPU timing measurement</small></div>
+  <div id="error" hidden></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

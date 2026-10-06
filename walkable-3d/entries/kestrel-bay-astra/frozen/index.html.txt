@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#10191b" />
+  <title>Kestrel • Orbital Maintenance Bay</title>
+  <script type="module" crossorigin src="/assets/index-C1zaKrud.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CGm4A21a.css">
+</head>
+<body>
+  <div id="viewport" aria-label="Explorable orbital maintenance bay"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <header><div class="wordmark"><span class="brand-mark">╱╱</span> KESTREL <span class="station">ORBITAL SYSTEMS</span></div><div class="bay-tag"><i></i> SERVICE MODULE <strong>07</strong></div></header>
+  <main id="welcome" class="welcome">
+    <div class="eyebrow">LOW EARTH ORBIT / ENGINEERING DECK</div>
+    <h1>A place to<br>keep things running.</h1>
+    <p>Drive cartridge 04 is on the stand.<br>Take a closer look — from either level.</p>
+    <button id="enter">ENTER MAINTENANCE BAY <span>↗</span></button>
+    <div class="welcome-controls"><span>W A S D <b>move</b></span><span>MOUSE <b>look</b></span><span>ESC <b>release</b></span></div>
+    <div id="loading">Preparing the bay…</div>
+  </main>
+  <div id="crosshair" aria-hidden="true"><span></span><span></span></div>
+  <div id="status"><span class="status-dot"></span><span id="location">MAIN WORK FLOOR</span><span class="divider">/</span><span>DECK <b id="deck">01</b></span></div>
+  <footer><div class="controls"><span><kbd>WASD</kbd> MOVE</span><span><kbd>SHIFT</kbd> BRISK WALK</span><span><kbd>R</kbd> RESET</span><span><kbd>ESC</kbd> RELEASE MOUSE</span></div><div class="settings"><label for="quality">DETAIL</label><select id="quality"><option value="high">High</option><option value="balanced" selected>Balanced</option><option value="low">Low</option></select><button id="reset" title="Return to the entry">↺ RESET</button><button id="help" title="Show controls">?</button></div></footer>
+  <div id="notice" role="status"></div>
+  <div id="error" hidden></div>
+</body>
+</html>
