@@ -1,0 +1,8 @@
+{
+  "name": "characterbench-inspection-studio",
+  "private": true,
+  "type": "module",
+  "description": "Buildless local GLB inspection; no dependency installation required.",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test tests/glb-policy.test.js" }
+}

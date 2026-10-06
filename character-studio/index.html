@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src blob:; worker-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-src 'none'">
+  <title>CharacterBench — Inspection Studio</title>
+  <meta name="description" content="One shared stage for close, consistent inspection of local character assets.">
+  <link rel="stylesheet" href="./studio.css">
+  <script type="module" src="./studio.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#viewport">Skip to model viewport</a>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">C<span>✳</span></span><div><p class="eyebrow">Jordan’s CharacterBench</p><h1>Inspection studio<span class="version"> / 01</span></h1></div></div>
+    <div class="header-note"><span class="status-dot" aria-hidden="true"></span>Local files. Shared conditions.</div>
+    <a class="text-link" href="./README.md">Studio notes ↗</a>
+  </header>
+  <main class="workspace">
+    <aside class="rail assets-panel" aria-labelledby="assets-title">
+      <div class="panel-heading"><div><p class="eyebrow">01 / Collection</p><h2 id="assets-title">Characters</h2></div><span class="count" id="asset-count">0</span></div>
+      <p class="muted compact">Switch entrants on the same stage. Your view and lighting stay consistent.</p>
+      <label class="button primary import-label" for="file-input"><span aria-hidden="true">＋</span> Add GLB files</label>
+      <input id="file-input" class="file-input" type="file" accept=".glb,model/gltf-binary" multiple>
+      <p class="file-hint">Or drop files anywhere in the studio.<br>64 MiB per file · 12 files · 192 MiB total</p>
+      <ul id="asset-list" class="asset-list" aria-label="Local character files"></ul>
+      <div id="collection-empty" class="collection-empty">Your collection is empty.<br>Import a character to begin.</div>
+      <button id="demo-button" class="button quiet">Load calibration dummy</button>
+      <div class="local-note"><span aria-hidden="true">↳</span><p>Files stay in this tab. No uploads or saved copies. Reloading clears the collection.</p></div>
+      <div class="contract-note"><p class="eyebrow">Asset, not an app</p><p>One complete character, multiple meshes welcome. Materials included. Skeleton optional.</p><p class="muted">Static inspection only. No animation playback or automatic scores.</p></div>
+    </aside>
+
+    <section class="stage-column" aria-label="Character inspection">
+      <div class="stage-toolbar"><div class="stage-title"><span class="status-dot" id="ready-dot" aria-hidden="true"></span><span id="active-name">No character selected</span></div><span id="asset-kind" class="pill">STATIC INSPECTION</span></div>
+      <div class="viewport" id="viewport" tabindex="0" role="region" aria-label="3D character viewport" aria-describedby="viewport-help">
+        <div id="canvas-host"></div>
+        <div class="empty-stage" id="empty-stage"><div class="specimen" aria-hidden="true"><span></span><i></i><b></b></div><p class="eyebrow">A common frame of reference</p><h2>Every character.<br>One shared stage.</h2><p>Inspect shape, surfaces, and small details<br>under the same lighting and camera.</p><button class="button" id="empty-import">Choose a GLB file <span aria-hidden="true">↗</span></button></div>
+        <div class="stage-corner top-left" aria-hidden="true">CHARACTER / <span id="stage-index">—</span></div>
+        <div class="stage-corner bottom-left" id="stage-mode">Viewport starts when you load an asset</div>
+        <div class="stage-corner bottom-right" aria-hidden="true">Y ↑ &nbsp; Z FRONT</div>
+        <div id="drop-cue" class="drop-cue" hidden>Drop GLB files to add to the collection</div>
+      </div>
+      <div class="camera-bar" aria-label="Camera controls">
+        <div class="button-group"><button class="button" id="frame-button" disabled>Frame <kbd>F</kbd></button><button class="button quiet" id="reset-button" disabled>Reset view</button></div>
+        <div class="button-group view-buttons" aria-label="View direction"><button class="button quiet" data-view="front" disabled>Front</button><button class="button quiet" data-view="side" disabled>Side</button><button class="button quiet" data-view="back" disabled>Back</button><button class="button quiet" data-view="top" disabled>Top</button></div>
+        <div class="button-group"><button class="button icon-button" id="zoom-out" aria-label="Zoom out" disabled>−</button><button class="button icon-button" id="zoom-in" aria-label="Zoom in" disabled>＋</button><button class="button" id="spin-button" aria-pressed="false" disabled>Spin</button></div>
+      </div>
+      <p class="viewport-help" id="viewport-help">Drag to orbit · Right-drag / Shift-drag to pan · Scroll to zoom · Double-click a surface to focus<span>Touch: one finger orbits; two fingers pan / pinch. Focus viewport: arrows orbit, Shift + arrows pan, + / − zoom, F frames, Home resets, Esc stops spin.</span></p>
+      <div class="message-row"><p id="status" role="status" aria-live="polite">Ready for a self-contained GLB. Nothing is uploaded.</p><button id="cancel-load" class="text-button" hidden>Cancel load</button></div>
+      <p id="error" class="error-message" role="alert" hidden></p>
+      <noscript><p class="error-message">JavaScript is required for local 3D inspection. No file has been loaded.</p></noscript>
+    </section>
+
+    <aside class="rail inspection-panel" aria-labelledby="inspection-title">
+      <div class="panel-heading"><div><p class="eyebrow">02 / Conditions</p><h2 id="inspection-title">The studio</h2></div><span class="small-cross" aria-hidden="true">✳</span></div>
+      <fieldset><legend>Lighting</legend><div class="lighting-options">
+        <label class="lighting-option"><input type="radio" name="lighting" value="neutral" checked><span class="light-swatch neutral"></span><span><strong>Neutral studio</strong><small>Balanced form &amp; material</small></span></label>
+        <label class="lighting-option"><input type="radio" name="lighting" value="raking"><span class="light-swatch raking"></span><span><strong>Raking light</strong><small>Surface detail &amp; silhouette</small></span></label>
+        <label class="lighting-option"><input type="radio" name="lighting" value="contrast"><span class="light-swatch contrast"></span><span><strong>Warm / cool</strong><small>Contrasting key &amp; rim</small></span></label>
+      </div></fieldset>
+      <div class="control-row"><label for="exposure">Exposure</label><output id="exposure-value" for="exposure">0.0 EV</output></div><input id="exposure" type="range" min="-2" max="2" step="0.1" value="0">
+      <div class="control-row"><label for="background">Backdrop</label><select id="background"><option value="slate">Slate</option><option value="light">Light gray</option><option value="dark">Charcoal</option></select></div>
+      <div class="control-row"><label for="surface">Surface</label><select id="surface"><option value="original">Original materials</option><option value="clay">Neutral clay</option><option value="wireframe">Wireframe</option></select></div>
+      <label class="check-row"><input id="grid" type="checkbox" checked> Reference grid</label>
+      <p class="fine-print" id="motion-note">Spin is opt-in. The viewport rests when idle.</p>
+      <div class="metadata-heading"><p class="eyebrow">03 / Asset facts</p><h2>Under the surface</h2></div>
+      <p class="fine-print">Observed asset data, never a score. View scale is normalized; dimensions below use the original glTF scene.</p>
+      <dl class="metadata" id="metadata"><div><dt>Selection</dt><dd>No asset loaded</dd></div></dl>
+      <ul id="asset-notes" class="asset-notes"></ul>
+      <details class="details"><summary>Compatibility &amp; limits</summary><p>GLB 2.0 with embedded PNG/JPEG textures and core PBR materials. Supported material extensions are listed in the studio notes. Export without Draco, Meshopt or KTX2 compression.</p><p>Resource limits protect the viewer; they are not benchmark eligibility rules. Unsupported data produces a visible error. Imported lights, cameras and animation do not change studio conditions.</p></details>
+    </aside>
+  </main>
+  <footer><span>CHARACTERBENCH <span class="muted">/ INSPECTION TOOLS</span></span><span>Product preview · Benchmark contract provisional</span></footer>
+</body>
+</html>
