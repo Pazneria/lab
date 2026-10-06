@@ -15,7 +15,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   function render(){
     const current=pair(),both=current.length===2&&current.every(e=>record.opened[e.id]);
     const vote=record.preferences[pairKey()]?.choice;
-    const choiceLabel=vote?(vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
+    const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
     ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText('AUTUMN STATION  /  STATIC PREVIEWS  /  CLICK TO EXPLORE',40,82);
     for(let slot=0;slot<2;slot++){
