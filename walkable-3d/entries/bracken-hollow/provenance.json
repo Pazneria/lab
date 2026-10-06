@@ -81,5 +81,28 @@
       "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
       "bytes": 1081
     }
+  },
+  "publication": {
+    "policy": "Portable ZIP and raw evidence retained in the repository; excluded from Pages. Frozen runtimes are unchanged.",
+    "publishedFiles": [
+      "ARTIFACT_MANIFEST.json",
+      "BUILD_LOG.md",
+      "frozen/assets/index-BriClH9i.css",
+      "frozen/assets/index-BT2jB9Eh.js",
+      "frozen/index.html.txt",
+      "preview.jpg",
+      "README.md",
+      "TEST_RESULTS.md",
+      "THIRD_PARTY_LICENSES.txt"
+    ],
+    "retainedOutsidePages": [
+      "evidence/controls-test.json",
+      "evidence/final-performance.json",
+      "evidence/preview-source.png",
+      "evidence/resize-test.json",
+      "evidence/route-frame-times.json",
+      "evidence/route-test.json",
+      "original.zip"
+    ]
   }
 }

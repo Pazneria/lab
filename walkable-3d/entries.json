@@ -36,10 +36,6 @@
         {
           "label": "Controls & limits",
           "path": "README.md"
-        },
-        {
-          "label": "Route evidence",
-          "path": "evidence/navigation.json"
         }
       ],
       "readySelector": "#enter:not([disabled])",
@@ -76,10 +72,6 @@
         {
           "label": "Producer checks",
           "path": "TEST_RESULTS.md"
-        },
-        {
-          "label": "Route evidence",
-          "path": "evidence/route-test.json"
         }
       ],
       "readySelector": "#welcome:not([hidden])",
