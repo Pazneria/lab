@@ -1,0 +1,139 @@
+{
+  "entry": "raincourt-astra",
+  "importedAt": "2026-10-06T03:32:52.983654+00:00",
+  "archiveSource": "task-12/Raincourt-portable.zip",
+  "archiveSha256": "1fb50019ffbe2b8868d249220b7fa7a7837db48e1d3d1995169e8088a7b342ce",
+  "originalPreserved": true,
+  "source": {
+    "memberRoot": "",
+    "runtimeRoot": "",
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/materials.js": "src/materials.js",
+      "frozen/src/world.js": "src/world.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE",
+      "frozen/vendor/three/build/three.core.js": "node_modules/three/build/three.core.js",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js"
+    },
+    "preview": "Host capture at original reset view; only resized/compressed to a 960x600 JPEG.",
+    "archive": "task-12/Raincourt-portable.zip"
+  },
+  "hostingAdjustments": [
+    "Original HTML stored as .txt; unchanged bytes SHA-256 checked before opaque sandbox creation.",
+    "All frozen runtime bytes preserved. Only in-memory HTML base/path substitutions recorded in entries.json.",
+    "Raincourt bundled node_modules/three files moved byte-for-byte to frozen/vendor/three for Pages; import-map paths adjusted only in memory."
+  ],
+  "securityAudit": {
+    "result": "No malicious or unsafe access found in the supplied runtime review.",
+    "scope": "Read-only HTML, CSS, authored JavaScript and imported local dependency review; local rendering/input only. No external network, secrets, storage, tracking, parent navigation or dynamic evaluation in entrant code.",
+    "sandbox": "Same shared opaque iframe and CSP. Raincourt user-triggered Blob CSV download remains restricted by sandbox; no allowance added."
+  },
+  "files": {
+    "benchmark-log.json": {
+      "bytes": 1462,
+      "sha256": "8c6f5382a30fe7eafdd74e59068acedce9dc6dbda37b7b19bea6e7af64621473"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2919,
+      "sha256": "70101227ba667e363cb8ee074b1e1beebcb4a24f0c76317af09fbd992f60ab11"
+    },
+    "frozen/src/main.js": {
+      "bytes": 13027,
+      "sha256": "d05dbce133aa93c3572923ba0ec8f7f1b561142f6a206bdda7366c08b91fb175"
+    },
+    "frozen/src/materials.js": {
+      "bytes": 10217,
+      "sha256": "a57b3a14488df342339bf1be27ec0e421ac8ec0af32b9dacaf7dd5c0b64d61b0"
+    },
+    "frozen/src/world.js": {
+      "bytes": 32720,
+      "sha256": "5dec6434dfebc6a5033172d6067e8e589751f7938533be4363bf0ac522156d01"
+    },
+    "frozen/style.css": {
+      "bytes": 4761,
+      "sha256": "c6edf78775558458830a0206248392e5aff8003b284e3734c7aa1fea68dca388"
+    },
+    "frozen/vendor/three/build/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+      "bytes": 6476,
+      "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "preview.jpg": {
+      "bytes": 62795,
+      "sha256": "1529e42fa59f5c4a1425eca0951539cc45bf1ec032f7de119688d14cac1f7a0f"
+    },
+    "README.md": {
+      "bytes": 4333,
+      "sha256": "6944d678d6560a6957155f42553406b458ae4dd27648c74c0f086a1538d09a1b"
+    }
+  },
+  "publication": {
+    "policy": "Runtime, small still, provenance, licenses and concise records only. No ZIP or raw evidence copied to this repository or Pages.",
+    "publishedFiles": [
+      "benchmark-log.json",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/world.js",
+      "frozen/style.css",
+      "frozen/vendor/three/build/three.core.js",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE",
+      "preview.jpg",
+      "README.md"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "evidence/build-manifest.json": {
+      "bytes": 1272,
+      "sha256": "737719248d7f5ac85e6053652b984e0c5eb6696041eddf8a1118fd40b788a1fa"
+    },
+    "evidence/final-render-inspection.json": {
+      "bytes": 495,
+      "sha256": "83244e8186728e4926bd8592d1a08772ccf76c867dbbcc958158517c9676e5aa"
+    },
+    "evidence/host-preview.png": {
+      "bytes": 962583,
+      "sha256": "60faf4e8e52b8988e8abf2418841bf5e0713bac2a45f293ff68acb19b9f7702e"
+    },
+    "evidence/route-frame-times.csv": {
+      "bytes": 60106,
+      "sha256": "bed1385f323eed0fa19272dd3b437659dd1df9464dd06087c75ed01570a99ede"
+    },
+    "evidence/route-test.json": {
+      "bytes": 6459,
+      "sha256": "4e497cd389229acbb90719dd4897d5e63cdd40102c4be81887df67df243489b0"
+    },
+    "evidence/turn-frame-times.csv": {
+      "bytes": 13795,
+      "sha256": "403cdfb15e3968c9d6198194f34f47af0ea30e32389149b9eadd70380a4c0f38"
+    },
+    "original.zip": {
+      "bytes": 468450,
+      "sha256": "1fb50019ffbe2b8868d249220b7fa7a7837db48e1d3d1995169e8088a7b342ce"
+    }
+  },
+  "archiveRetention": "Preserved outside the repository and Pages in the task-11 local queue; producer source also untouched."
+}

@@ -1,0 +1,38 @@
+{
+  "firstImplementationUtc": "2026-10-06T02:43:53.1235831Z",
+  "interruptions": [],
+  "stopUtc": "2026-10-06T03:38:41.231658+00:00",
+  "title": "After Rain — Lantern Court",
+  "reasoningEffort": "Not exposed by execution environment",
+  "model": "GPT-6 (Codex, as identified by session instructions; exact serving variant not exposed)",
+  "deadlineUtc": "2026-10-06T03:43:53.1235831Z",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-13",
+  "previewPort": 5187,
+  "exactModelId": null,
+  "exactReasoningEffort": null,
+  "modelMetadataDisclosure": "Session instructions identify GPT-6 / Codex. The exact serving variant and reasoning-effort setting were not exposed; no identifier was guessed.",
+  "environmentDetours": [
+    "Initial restricted-network npm request failed. Packages were installed through an authorized registry retry with the cache in this workspace; implementation continued during the initial attempt.",
+    "Vite dependency optimization could not read an ancestor directory. Replaced it with a local Node server and native ES modules, using only this workspace and its installed registry libraries.",
+    "A preview-server switch initially encountered the earlier own server still listening. Identified and stopped that localhost process, then launched the production preview in a hidden process."
+  ],
+  "externalInterruptions": [],
+  "lastSourceEditUtc": "2026-10-06T03:31:49.321429+00:00",
+  "previewAddress": "http://127.0.0.1:5187/",
+  "previewServes": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-13\\dist",
+  "artifactPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-13\\after-rain-lantern-court.zip",
+  "sourceBuildMatch": {
+    "index.html": true,
+    "style.css": true,
+    "src\\main.js": true,
+    "src\\materials.js": true,
+    "src\\scene.js": true
+  },
+  "routeCheckpointsPassed": 12,
+  "validation": "VALIDATION.md",
+  "usedSubagents": false,
+  "usedOtherModels": false,
+  "usedExistingProjectAssets": false,
+  "publishedExternally": false,
+  "elapsedMinutes": 54.802
+}

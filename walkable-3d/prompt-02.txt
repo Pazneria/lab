@@ -1,0 +1,46 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a small night market tucked inside an urban courtyard just after rain.
+
+Four compact stalls surround an open walking space, and a covered passage leads to a tiny tea counter. Let the viewer weave between the stalls, stand beneath the awnings, and return through the passage with a different view of the courtyard.
+
+Build the atmosphere from contrasting materials: wet paving, fabric canopies, painted signs, metal cooking surfaces, and crates of produce. Give the stalls distinct silhouettes and a few carefully arranged goods rather than filling every surface uniformly. Warm lanterns and restrained colored signs should illuminate nearby objects and make the pavement feel damp without turning it into a perfect mirror. Vendors and customers are unnecessary. Keep neighboring buildings as enclosing facades; the scene does not need a surrounding city.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, weave between stalls, stand beneath the awnings and return through the passage for another view of the courtyard. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Distinct damp paving, fabric canopies, painted signs, metal surfaces and goods that hold up close
+- Four stalls with individual silhouettes and purposeful arrangements
+- Warm lanterns and restrained colored signs that visibly affect nearby surfaces
+- Wet ground that retains texture and a courtyard that stays readable
+- Thoughtful details and effective composition from multiple viewpoints
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance when several stalls, signs and damp surfaces share the view
+- Smooth transitions between the courtyard, covered passage and tea counter
+- Minimal stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- An enclosed night-market courtyard with four distinct compact stalls
+- A covered passage connecting to a small tea counter
+- Connected, usable walking routes between stalls, beneath awnings and through the passage, with convincing scale
+- Worthwhile views and details beyond the starting position
+
+MY INSPECTION ROUTE
+
+Courtyard entrance → between all four stalls → beneath an awning → passage → tea counter → return.
+
+I will pay particular attention to slow turns with several stalls, signs and damp surfaces in view, and walking from the courtyard into the covered passage and back. Goods and stall edges should support inspection without blocking the main route. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.

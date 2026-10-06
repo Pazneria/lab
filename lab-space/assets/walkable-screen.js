@@ -5,7 +5,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   const $=id=>document.getElementById(id),base=new URL('../../walkable-3d/',import.meta.url);
   const source=document.createElement('canvas');source.width=1280;source.height=600;
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
-  let entries=[],pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
+  let entries=[],allEntries=[],prompts=[],promptId='01',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
   function refresh(){try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
   const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>pair().map(e=>e.id).sort().join('::');
@@ -17,7 +17,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     const vote=record.preferences[pairKey()]?.choice;
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
-    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText('AUTUMN STATION  /  STATIC PREVIEWS  /  CLICK TO EXPLORE',40,82);
+    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Autumn station').toUpperCase()}  /  STATIC PREVIEWS  /  CLICK TO EXPLORE`,40,82);
     for(let slot=0;slot<2;slot++){
       const x=40+slot*625,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,105,575,322);
       const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const scale=Math.min(575/img.width,322/img.height),w=img.width*scale,h=img.height*scale;ctx.drawImage(img,x+(575-w)/2,105+(322-h)/2,w,h);}
@@ -26,6 +26,8 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     }
     box(40,522,100,48,'←',index===0);box(1140,522,100,48,'→',index>=pairs.length-1);
     box(180,522,230,48,'Prefer A',!both);box(450,522,170,48,'Tie',!both);box(660,522,230,48,'Prefer B',!both);box(930,522,170,48,'Inspect');
+    $('screen-prompt-label').textContent=`North-wall screen / Prompt ${promptId}`;
+    $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
     $('screen-prev').disabled=index===0;$('screen-next').disabled=index>=pairs.length-1;
     $('screen-boundary').textContent=pairs.length<2?'No other comparisons yet.':index===0?'First comparison.':index===pairs.length-1?'Last comparison.':'';
@@ -38,7 +40,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     changed(source);
   }
   function loadPreviews(){for(const entry of pair()){if(images.has(entry.id))continue;const img=new Image();images.set(entry.id,img);img.onload=()=>render();img.onerror=()=>render();img.src=new URL(`entries/${entry.id}/preview.jpg`,base);}}
-  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;history.replaceState({...history.state,labPair:pairKey()},'');loadPreviews();render();}
+  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;history.replaceState({...history.state,labPair:pairKey(),labPrompt:promptId},'');loadPreviews();render();}
   function vote(choice){refresh();const current=pair();if(current.length!==2||!current.every(e=>record.opened[e.id]))return;record.preferences[pairKey()]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};save();render();}
   function open(entry){if(!entry)return;$('comparison-dialog').close();viewer.open(entry,$('screen-controls'));}
   function inspect(){suspend();refresh();render();$('comparison-dialog').showModal();}
@@ -52,6 +54,17 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
   function activate({x,y}){if(y>=522&&y<=580){if(x<145)step(-1);else if(x>1135)step(1);else if(x<415)vote('a');else if(x<625)vote('tie');else if(x<895)vote('b');else inspect();}else if(y>=105&&y<500)open(pair()[x<640?0:1]);else inspect();}
   render();
-  fetch(new URL('entries.json',base),{credentials:'omit'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{entries=data.entries;if(!Array.isArray(entries)||entries.some(e=>!/^[a-z0-9-]+$/.test(e.id)||!/^[a-f0-9]{64}$/.test(e.htmlSha256)))throw Error();for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);index=Math.max(0,pairs.findIndex(pair=>pair.map(e=>e.id).sort().join('::')===history.state?.labPair));loadPreviews();render();}).catch(()=>{error='The entry index could not load. Use the standalone benchmark link or reload.';render();});
+  function selectPrompt(id,restore=false){
+    const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId);pairs=[];
+    for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
+    index=restore?Math.max(0,pairs.findIndex(pair=>pair.map(e=>e.id).sort().join('::')===history.state?.labPair)):0;
+    $('screen-prompt').value=promptId;history.replaceState({...history.state,labPair:pairKey(),labPrompt:promptId},'');loadPreviews();render();
+  }
+  $('screen-prompt').addEventListener('change',()=>selectPrompt($('screen-prompt').value));
+  fetch(new URL('entries.json',base),{credentials:'omit'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
+    allEntries=data.entries;if(!Array.isArray(allEntries)||allEntries.some(e=>!/^[a-z0-9-]+$/.test(e.id)||!/^[a-f0-9]{64}$/.test(e.htmlSha256)))throw Error();prompts=data.prompts;
+    $('screen-prompt').replaceChildren(...prompts.map(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=`${p.id} / ${p.title}`;return o;}));
+    selectPrompt(history.state?.labPrompt||new URLSearchParams(location.search).get('prompt')||'01',true);
+  }).catch(()=>{error='The entry index could not load. Use the standalone benchmark link or reload.';render();});
   return {source,activate,inspect,get ready(){return entries.length>0;}};
 }

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101a20" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23182726'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='45' fill='%23d5b77e'%3E雨%3C/text%3E%3C/svg%3E" />
+  <title>Raincourt — After the rain</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three-dimensional night market"></canvas>
+  <div id="loading"><span class="loading-mark">雨</span><p>Opening the courtyard…</p></div>
+  <header><a class="brand" href="#" id="home"><span class="monogram">雨</span><span>RAINCOURT<span class="brand-sub">A SMALL NIGHT MARKET</span></span></a><div class="top-note"><span class="live-dot"></span> AFTER THE RAIN <span class="divider">/</span> <span id="area">COURTYARD ENTRANCE</span></div></header>
+  <section id="intro"><div class="eyebrow">AN URBAN POCKET, STILL AWAKE</div><h1>Stay a little<br>after the rain.</h1><p>Four stalls. A quiet passage. One last cup of tea.</p><button id="enter">Explore the courtyard <span>↗</span></button><div class="intro-controls">W A S D to walk &nbsp; · &nbsp; Mouse to look</div></section>
+  <div id="reticle" aria-hidden="true"></div>
+  <div id="hint">Click the scene to look around</div>
+  <footer><div class="foot-left"><span class="small-line"></span><span id="location">NIGHT MARKET</span><span class="foot-separator">·</span><span class="weather">18° &nbsp; / &nbsp; RAIN HAS PASSED</span></div><nav><button id="help">Controls <kbd>H</kbd></button><button id="quality">Quality: high</button><button id="reset">Reset <kbd>R</kbd></button></nav></footer>
+  <div id="controls" class="panel" hidden><button class="close" id="close-help" aria-label="Close controls">×</button><div class="eyebrow">TAKE YOUR TIME</div><h2>Walk the market</h2><dl><dt>W A S D / arrows</dt><dd>Walk</dd><dt>Mouse</dt><dd>Look around</dd><dt>Shift</dt><dd>Walk faster</dd><dt>Q / E</dt><dd>Turn with the keyboard</dd><dt>Esc</dt><dd>Release the mouse</dd><dt>R</dt><dd>Return to the entrance</dd><dt>P</dt><dd>Frame-time measurements</dd></dl><p>Click to capture the mouse. If capture is unavailable, hold and drag on the scene to look.</p><p class="route">Entrance → four stalls → beneath an awning → covered passage → tea counter → return</p></div>
+  <div id="metrics" hidden><pre id="metrics-text"></pre><button id="export-metrics">Save frame times as CSV</button></div>
+  <div id="error" hidden></div>
+  <script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

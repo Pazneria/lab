@@ -1,0 +1,25 @@
+{
+  "task": "Raincourt night market / personal 3D scene benchmark",
+  "first_implementation_utc": "2026-10-06T02:43:32.2553732Z",
+  "deadline_utc": "2026-10-06T03:43:32.2553732Z",
+  "model": "GPT-6 (Codex; exact backend model identifier not exposed in this execution context)",
+  "effort": "Not exposed in this execution context",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-12",
+  "port": 52743,
+  "constraints": "One local agent. Original procedural assets. No other entrants inspected. No external publication.",
+  "interruptions": [
+    "No human interruptions. The one-hour clock was never paused.",
+    "Initial npm registry access failed under the sandbox; the permitted installation retry succeeded.",
+    "Vite dependency scanning failed under filesystem restrictions. Replaced it with the local Node HTTP server.",
+    "Initial candidate port 5187 was occupied; final preview uses distinct port 52743."
+  ],
+  "implementation_code_complete_utc": "2026-10-06T03:24:59.1313055Z",
+  "runtime_library": "Three.js 0.180.0 (MIT)",
+  "test_browser": "Headless Microsoft Edge, hardware WebGL on Intel Graphics, 1440x900",
+  "timer_paused": false,
+  "actual_stop_utc": "2026-10-06T03:27:54.747Z",
+  "elapsed_seconds": 2662.492,
+  "completed_before_deadline": true,
+  "final_test_result": "PASS: 22 route checkpoints, 8 control/export/resize checks, 6 collision checks; no browser errors.",
+  "final_artifact": "Raincourt-portable.zip"
+}
