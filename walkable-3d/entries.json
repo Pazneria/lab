@@ -1092,6 +1092,52 @@
       "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
       "htmlSha256": "b3033b8092279d02259f2b109ba869e29ba6a771fee84e2f28c8e7a246d83894",
       "promptDisclosure": "Parent supplied the exact Prompt 07 base and confirms the initial OpenAI no-browser execution constraint. The later cleanup reminder is an interruption disclosure, not reconstructed prompt text."
+    },
+    {
+      "id": "mora-sol",
+      "title": "MORA / Studies in matter",
+      "description": "Two concrete galleries linked by a broad ramp, with folded copper, cast resin and a carved limestone loop.",
+      "promptId": "07",
+      "promptVersion": "07-openai",
+      "comparisonModel": "sol",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "requestedConfiguration": "GPT-6.1 Sol (parent-selected); effort unverified",
+      "modelDisclosure": "The parent selected Sol for the GPT-6.1 Sol benchmark group. Producer identified only GPT-6 / Codex; exact backend and reasoning effort were not exposed or independently verified. No run-specific exact requested effort was supplied in the import receipt, so xhigh is not inferred.",
+      "buildWindow": "2026-10-06 UTC: session start 17:42:13; first implementation began 17:45:26 and completed by 17:45:33; fixed deadline 18:42:13; actual stop/freeze 18:14:25.",
+      "interruptions": "Original producer records report no user interruption or suspended work, plus an authorized retry after registry sandbox failure. The parent separately confirms a midrun coordination-only cleanup reminder accepted by Jordan. Both records are preserved; no clock pause or extension is claimed. Producer reports zero workspace-owned processes and zero preview listeners at freeze.",
+      "controls": "WASD / arrows walk; mouse capture or drag look; Shift faster; Esc pause; R reset; P frame panel; quality/sensitivity menus. Original measurement export is blocked by the host sandbox.",
+      "producerChecks": "Producer reports syntax, numerical navigation and production build passed: 1:12 ramp, continuous elevation, connected return route, 720-sample circuit around the main work and boundary/obstacle checks. Original receipt lists 19 file hashes; the host has not run the scene.",
+      "performanceEvidence": "No measured performance result. The optional panel records local rAF intervals during later exploration; static route/build checks do not establish rendering speed or visual correctness.",
+      "limitations": [
+        "Browser/visual/shader/interactive/performance verification is unrun by the explicit protocol; no independent host runtime pass.",
+        "Desktop WebGL 2, no touch navigation. Static daylight and shadows; entrance glazing is a boundary.",
+        "Resin refraction approximates overlapping translucent interiors. Source geometry/materials remain unchanged.",
+        "No screenshot supplied or captured. Optional measurement download is blocked inside the restricted host viewer."
+      ],
+      "documents": [
+        {
+          "label": "Controls & producer limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "RUN_RECORD.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loader.hidden ~ #error.hidden",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "f69815546a2dc09363ec249a7e4e449149549f8b0aa0fbc320c9a8e23b5cf909",
+      "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
+      "htmlSha256": "9185c30d8dbe3d8d53511a2b089e48b4974f3c8b8a2cbf54b7a7c8725d2c4eb0",
+      "promptDisclosure": "Parent-supplied Prompt 07 base and shared initial OpenAI no-browser execution restriction. The later cleanup reminder is recorded separately; no reconstructed interruption text or independently read entrant transcript is claimed."
     }
   ],
   "prompts": [
@@ -1221,7 +1267,7 @@
     {
       "id": "07-openai",
       "promptId": "07",
-      "label": "Astra / base + no-browser constraint",
+      "label": "Astra / Sol / base + no-browser constraint",
       "path": "prompt-07-openai.txt",
       "sha256": "7c8a4459bb1ee5e71224cc13dddfaa07b117ccb4d5352878def1c94a19de48b1",
       "source": "Exact base wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; parent confirms the initial OpenAI no-browser constraint applied. UTF-8, LF, no final newline. Entrant transcript not independently accessed.",

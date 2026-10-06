@@ -1,0 +1,20 @@
+{
+  "id": "mora-sol",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Read-only source/provenance/packaging review only. No local build, syntax check, test, preview server, browser, GPU/scene execution or input automation.",
+  "sourceAudit": "Scoped authored-source/import/browser API review found procedural local resources and no authored external requests, credentials, tracking, storage, workers, dynamic evaluation or parent navigation. Numeric metrics inserted into innerHTML are derived from local frame intervals; parent.add refers to a local Three.js group. The pinned Three.js 0.180.0/Vite bundle uses ordinary unused optional loaders and the module-preload helper; HTML contains no module-preload links. Original local measurement export stays blocked by the unchanged sandbox.",
+  "sourceUnchanged": true,
+  "preview": "No screenshot supplied/captured; text placeholder only.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "Producer reports syntax, numeric route/collision/ramp checks and production build passed; interactive, shader/visual and performance checks were prohibited and not run.",
+  "grade": null,
+  "checkedAt": "2026-10-06T18:19:20.389002+00:00"
+}
