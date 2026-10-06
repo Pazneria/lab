@@ -1,0 +1,141 @@
+{
+  "entry": "fernery-sol",
+  "importedAt": "2026-10-06T05:38:33.279467+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-3\\fernery-build.zip",
+  "archiveSha256": "2edbd9089b36212a81812d51c7c6d6e4a6a9173ba47dbbfa843142d7c02339f8",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-B28rIidQ.js": "dist/assets/index-B28rIidQ.js"
+    },
+    "separateLicenseSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-3\\node_modules\\three\\LICENSE",
+    "authoredSourceSha256": "d1c827c42cb00bd1700e4fa0e53f22569c0279e8b714acba53ee7bdd76b89899",
+    "preview": "Captured from the frozen build after entering and its ordinary R reset, at default rendering settings. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Production HTML and bundle copied directly from ZIP without rebuilding. Original HTML remains index.html.txt; only its /assets/ script prefix becomes ./assets/ in viewer memory.",
+    "Three.js MIT license supplied separately from the installed dependency, copied unchanged; it matches the previously admitted 0.180.0 license."
+  ],
+  "securityAudit": {
+    "result": "Scoped read-only authored source and bundle review found no unsafe access or malicious behavior.",
+    "scope": "Authored browser API/import/control/rendering surfaces and bounded procedural geometry/textures; bundle retains ordinary Three.js loaders and the unused Vite preload shim. Authored scene makes no external requests, storage/credential access, telemetry, workers or parent navigation. HTML has no preload links; existing CSP prohibits network connections.",
+    "boundary": "Existing opaque iframe, one active entrant and entry-scoped CSP unchanged."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 4468,
+      "sha256": "35a16d071190411442288480fa88e7ff930859dd1444f88b3cf2dd439aefe514"
+    },
+    "frozen/assets/index-B28rIidQ.js": {
+      "bytes": 553976,
+      "sha256": "7da3a83bf98c072948741571e0bd3c0ed336761ede938e4afe7d8b1376310217"
+    },
+    "README.md": {
+      "bytes": 4148,
+      "sha256": "21ffa770c901d5e2571b51853476adff93f64d2a7045264ffd27e146266d6d66"
+    },
+    "benchmark-record.json": {
+      "bytes": 1785,
+      "sha256": "5995bbc1db7bcae8708ae4da15960abd7d44955aa8e9df921b775056116a9a18"
+    },
+    "THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "preview.jpg": {
+      "bytes": 104997,
+      "sha256": "76a8f1356af85dcb568d2c0c12123a044c94b49f9efba65fbffa537917400f87"
+    },
+    "host-verification.json": {
+      "bytes": 1136,
+      "sha256": "648fbfc7536b493997685179daeacc2a9b9405d4835b01192b9af03edc4bb8de"
+    }
+  },
+  "producerEvidence": {
+    "rawFilesRetainedAtSource": {
+      "test-results/inspection.json": {
+        "bytes": 4451,
+        "sha256": "bff621624e33a7ca3628e85a925a226f9801e0a2d079925a6824dced45eddbbc"
+      },
+      "test-results/walkthrough.json": {
+        "bytes": 43389,
+        "sha256": "14a2bf65e83e4d89e6c44f0534668a72ad1ad4e40b6d92d35e53f15670b87565"
+      }
+    },
+    "diagnostics": {
+      "walking": {
+        "metrics": {
+          "samples": 1416,
+          "medianMs": 15.899999999999636,
+          "p95Ms": 28.299999999999272,
+          "p99Ms": 36.099999999999454,
+          "drawCalls": 18,
+          "triangles": 128544,
+          "vertices": 451124,
+          "pixelRatio": 0.8784104611578831,
+          "renderSize": [
+            1686,
+            948
+          ],
+          "position": {
+            "x": -0.0075784587406002284,
+            "z": -1.830811570406902
+          }
+        },
+        "maxMs": 51.900000000000546,
+        "framesAbove50Ms": 1,
+        "frames": 1416
+      },
+      "turning": {
+        "metrics": {
+          "samples": 358,
+          "medianMs": 17,
+          "p95Ms": 27.899999999997817,
+          "p99Ms": 35.79999999999927,
+          "drawCalls": 65,
+          "triangles": 322494,
+          "vertices": 451124,
+          "pixelRatio": 0.8784104611578831,
+          "renderSize": [
+            1686,
+            948
+          ],
+          "position": {
+            "x": -2.5500497708196055,
+            "z": 7.994537641319201
+          }
+        },
+        "maxMs": 42.5,
+        "framesAbove50Ms": 0,
+        "frames": 358
+      }
+    },
+    "grade": null
+  },
+  "archiveRetention": "Original ZIP and raw evidence remain at the producer source; no ZIP or raw evidence copied into repository/Pages.",
+  "prompt": {
+    "version": "04-shared",
+    "sha256": "3d1760548d9dfb0c48ae3d2de8916526323bd2e59e48245a31cbfe737beee396",
+    "source": "Parent supplied the exact complete submitted text and confirmed identical Prompt 04 for all entrants. Entrant conversation threads were not independently read."
+  },
+  "hostVerification": "host-verification.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "THREE-LICENSE.txt",
+      "benchmark-record.json",
+      "frozen/assets/index-B28rIidQ.js",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "host-preview.png": {
+      "bytes": 1439233,
+      "sha256": "86045464b696559b57fe8c1a49a638c73837a34f17cc4a896ed15dc616753386"
+    }
+  }
+}
