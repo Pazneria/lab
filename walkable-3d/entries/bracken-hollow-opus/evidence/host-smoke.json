@@ -1,0 +1,49 @@
+{
+  "requests": [
+    "http://127.0.0.1:52072/lab/walkable-3d/entries/bracken-hollow-opus/frozen/index.html.txt",
+    "http://127.0.0.1:52072/lab/walkable-3d/entries/bracken-hollow-opus/frozen/src/main.js",
+    "http://127.0.0.1:52072/lab/walkable-3d/entries/bracken-hollow-opus/frozen/vendor/three/build/three.module.js",
+    "http://127.0.0.1:52072/lab/walkable-3d/entries/bracken-hollow-opus/frozen/src/world.js",
+    "http://127.0.0.1:52072/lab/walkable-3d/entries/bracken-hollow-opus/frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+    "http://127.0.0.1:52072/lab/walkable-3d/entries/bracken-hollow-opus/frozen/src/tex.js"
+  ],
+  "errors": [],
+  "before": {
+    "x": -3.75,
+    "z": 25.5,
+    "feet": 0.9336242154240608,
+    "vy": 0,
+    "yaw": 0,
+    "pitch": -0.04,
+    "vx": 0,
+    "vz": 0,
+    "eye": 2.553624215424061,
+    "bob": 0
+  },
+  "after": {
+    "x": -3.75,
+    "z": 25.01538500839415,
+    "feet": 0.9330614935871827,
+    "vy": 0,
+    "yaw": 0,
+    "pitch": -0.04,
+    "vx": 0,
+    "vz": -1.8957176150282204,
+    "eye": 2.5463706225442215,
+    "bob": 1.2599989781752172
+  },
+  "reset": {
+    "x": -3.75,
+    "z": 25.5,
+    "feet": 0.9336242154240608,
+    "vy": 0,
+    "yaw": 0,
+    "pitch": -0.04,
+    "vx": 0,
+    "vz": 0,
+    "eye": 2.553624215424061,
+    "bob": 1.2599989781752172
+  },
+  "pointerReleased": true,
+  "remainingFrames": 0
+}

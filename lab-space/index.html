@@ -8,6 +8,7 @@
   <title>Research room · Lab</title>
   <link rel="icon" href="assets/room-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/space.css">
+  <link rel="stylesheet" href="assets/walkable-screen.css">
   <script type="module" src="assets/space.js"></script>
 </head>
 <body>
@@ -15,18 +16,18 @@
   <header class="masthead">
     <a class="wordmark" href="https://pazneria.github.io/" aria-label="Jordan's home">J<sup>2</sup></a>
     <div class="identity"><span>LAB</span><h1>Research room</h1></div>
-    <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="infrastructure-link" href="/lab/infrastructure/">AI infrastructure ↗</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
+    <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="infrastructure-link" href="/lab/infrastructure/">AI infrastructure ↗</a><a href="../walkable-3d/">Walkable 3D</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
   </header>
   <main>
     <div class="room-heading"><p><span class="dot"></span> The workshop</p><span>01 / Benchmark discovery</span></div>
     <div class="workspace">
       <section class="view" aria-label="Research room view">
         <div class="flat" id="flat-view">
-          <img src="assets/room-plan.svg" alt="Room plan: a central benchmark hall, apparatus bay to the west, and study alcove to the northeast. Level routes connect them to the entrance and home exit in the southeast. The benchmark catalog is the only project station.">
+          <img src="assets/room-plan.svg" alt="Room plan: a central benchmark hall, apparatus bay to the west, and study alcove to the northeast. Level routes connect them to the entrance and home exit in the southeast. The central bench opens the catalog; a screen on the north cabinet compares walkable worlds.">
           <p id="flat-message">Flat room view. Open the catalog or home using the links above.</p>
         </div>
         <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable research workshop. Click or tap floor or furniture to walk there; drag to look. Keyboard navigation is available." aria-describedby="navigation-help"></canvas>
-        <div class="view-top"><span>RESEARCH ROOM / 01</span><div class="view-actions"><button id="mode" type="button" hidden>Enter 3D room</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
+        <div class="view-top"><span>RESEARCH ROOM / 01</span><div class="view-actions"><button id="visit-screen" type="button">Walk to 3D benchmark</button><button id="screen-controls" type="button" aria-haspopup="dialog">Compare worlds</button><button id="mode" type="button" hidden>Enter 3D room</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
         <div class="orientation" id="orientation" hidden>
           <svg viewBox="0 0 100 96" aria-hidden="true"><path d="M12 14H88V82H12V52H4V25H12Z" fill="#edece2" stroke="#929b90"/><path d="M67 14H88V45H67Z" fill="#d0b48e"/><path d="M13 20H21V55H13Z" fill="#687d70"/><path d="M38 29H63V39H38Z" fill="#447268"/><path d="M68 45H88M67 14V21" stroke="#8b6c48" stroke-width="2"/><path d="M5 27V50" stroke="#b9d4da" stroke-width="3"/><path d="M71 81H79" stroke="#be8a46" stroke-width="4"/><g fill="#aaa88f"><circle cx="33" cy="24" r="2"/><circle cx="33" cy="45" r="2"/><circle cx="33" cy="62" r="2"/><circle cx="33" cy="69" r="2"/><circle cx="67" cy="45" r="2"/><circle cx="67" cy="69" r="2"/></g><text x="47" y="10">N</text><path id="map-player" d="M0 -5L-4 4L4 4Z" fill="#193f37"/></svg>
           <p id="position">Entrance · facing north</p>
@@ -39,13 +40,14 @@
         </div>
       </section>
     </div>
-    <footer><p>Lab <span>/</span> Research room</p><details><summary>Design references</summary><p>Visible apparatus and work surfaces from <a href="https://www.rigb.org/visit/faraday-museum">Faraday's laboratory at the Royal Institution</a>; daylight and open circulation from <a href="https://www.salk.edu/about/visiting-salk/virtual-architecture-tour/">Salk's architecture</a>; quiet instrument work from <a href="https://www.nokia.com/bell-labs/about/history/">Bell Labs' historical photographs</a>. An original room, with no institutional affiliation. The instruments are decorative; the benchmark bench opens the public catalog.</p></details></footer>
+    <footer><p>Lab <span>/</span> Research room</p><details><summary>Design references</summary><p>Visible apparatus and work surfaces from <a href="https://www.rigb.org/visit/faraday-museum">Faraday's laboratory at the Royal Institution</a>; daylight and open circulation from <a href="https://www.salk.edu/about/visiting-salk/virtual-architecture-tour/">Salk's architecture</a>; quiet instrument work from <a href="https://www.nokia.com/bell-labs/about/history/">Bell Labs' historical photographs</a>. An original room, with no institutional affiliation. The instruments are decorative; the benchmark bench opens the public catalog. The north-wall screen compares walkable worlds.</p></details></footer>
     <noscript><p class="noscript">JavaScript is off. Use the flat room plan and the catalog or home links above.</p></noscript>
   </main>
   <dialog id="help-dialog" aria-labelledby="help-title">
     <form method="dialog"><button class="close" aria-label="Close help">×</button></form>
     <p class="eyebrow">Research room</p><h2 id="help-title">Move around</h2>
     <p id="navigation-help">Click or tap the floor to walk there. Select an instrument or piece of furniture to approach it. Select the benchmark bench or home door to walk over and open its controls. Drag to look.</p>
+    <p>The north-wall screen has two static scene previews. Click a preview to enter it; use the screen arrows for another pair. Exit scene returns to the same room position and pair. Compare worlds opens accessible controls; the standalone Walkable 3D page includes full build inspectors and personal grades.</p>
     <p>Focus the room to walk with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>. Arrow keys walk and turn. <kbd>Enter</kbd> or <kbd>E</kbd> opens a nearby station. Manual movement or dragging stops a route; a new tap replaces it. <kbd>Esc</kbd> stops walking and releases room focus.</p>
     <div class="destinations"><button id="visit-bench" type="button" disabled>Walk to benchmark bench</button><button id="visit-home" type="button" disabled>Walk to home exit</button><button id="reset" type="button" disabled>Return to entrance</button></div>
     <label class="motion-setting"><input type="checkbox" id="show-pad">Show direction buttons</label>
@@ -57,6 +59,26 @@
     <p class="eyebrow" id="dialog-number">01 / Benchmark bench</p><h2 id="dialog-title">Benchmark discovery</h2>
     <p id="dialog-copy">The public catalog opens as a normal page, with search, evidence, and detailed tools.</p>
     <a class="primary" id="dialog-link" href="https://pazneria.github.io/lab/">Open the catalog ↗</a>
+  </dialog>
+
+  <dialog id="comparison-dialog" aria-labelledby="screen-title">
+    <form method="dialog"><button class="close" aria-label="Return to room">×</button></form>
+    <p class="eyebrow">North-wall screen / Prompt 01</p><h2 id="screen-title">Walkable worlds</h2>
+    <p>Static previews. Open one scene, explore, then exit back to this Lab. Desktop keyboard + mouse required for the submitted scenes.</p>
+    <div class="screen-toolbar"><button id="screen-prev" aria-label="Previous comparison">← Previous</button><strong id="screen-pair" role="status">Loading entries</strong><button id="screen-next" aria-label="Next comparison">Next →</button></div>
+    <p id="screen-boundary"></p><label><input id="screen-blind" type="checkbox" checked> Hide model labels</label>
+    <div id="screen-cards"></div>
+    <div class="screen-choices"><button data-screen-choice="a">Prefer A</button><button data-screen-choice="tie">Tie</button><button data-screen-choice="b">Prefer B</button><button id="screen-clear">Clear choice</button></div>
+    <p id="screen-vote" role="status"></p><p id="screen-storage"></p>
+    <p>Jordan's separate rubric: visuals 45 / performance 35 / fulfillment 20. One-hour build cap; timing disclosures in each inspector. No scores prefilled.</p>
+    <a href="../walkable-3d/">Full prompt, build inspectors &amp; personal grading notebook →</a>
+  </dialog>
+  <p id="notice" role="status" class="room-notice"></p>
+  <dialog id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-bar"><div><strong id="viewer-title">Walkable scene</strong><p>Esc releases the mouse · exit to return to the Lab screen</p></div><button id="close-viewer">Exit scene → Lab</button></div>
+    <div id="viewer-message" role="status">Preparing the frozen entry…</div>
+    <div id="scene-mount"></div>
+    <div class="viewer-foot"><span>Desktop keyboard + mouse · WebGL 2 required</span><button id="retry-viewer" class="quiet" hidden>Try again</button><button id="return-focus" class="quiet">Focus scene</button></div>
   </dialog>
 </body>
 </html>

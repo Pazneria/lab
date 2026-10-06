@@ -3,6 +3,7 @@
     "walkable-3d/README.md",
     "walkable-3d/assets/benchmark.css",
     "walkable-3d/assets/benchmark.js",
+    "walkable-3d/assets/viewer.js",
     "walkable-3d/entries.json",
     "walkable-3d/entries/alder-halt/BENCHMARK.md",
     "walkable-3d/entries/alder-halt/README.md",
@@ -14,6 +15,17 @@
     "walkable-3d/entries/alder-halt/frozen/vendor/three/three.module.js",
     "walkable-3d/entries/alder-halt/preview.jpg",
     "walkable-3d/entries/alder-halt/provenance.json",
+    "walkable-3d/entries/bracken-hollow-opus/README.md",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/index.html.txt",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/src/main.js",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/src/tex.js",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/src/world.js",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/vendor/three/LICENSE",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/vendor/three/build/three.module.js",
+    "walkable-3d/entries/bracken-hollow-opus/frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+    "walkable-3d/entries/bracken-hollow-opus/preview.jpg",
+    "walkable-3d/entries/bracken-hollow-opus/provenance.json",
+    "walkable-3d/entries/bracken-hollow-opus/task-prompt.txt",
     "walkable-3d/entries/bracken-hollow/ARTIFACT_MANIFEST.json",
     "walkable-3d/entries/bracken-hollow/BUILD_LOG.md",
     "walkable-3d/entries/bracken-hollow/README.md",
@@ -32,7 +44,8 @@
     "walkable-3d/entries/alder-halt/index.html",
     "walkable-3d/entries/bracken-hollow/BUILD_LOG.html",
     "walkable-3d/entries/bracken-hollow/TEST_RESULTS.html",
-    "walkable-3d/entries/bracken-hollow/index.html"
+    "walkable-3d/entries/bracken-hollow/index.html",
+    "walkable-3d/entries/bracken-hollow-opus/index.html"
   ],
   "note": "Exact admitted public files; ZIPs, raw evidence and benchmark development helpers remain repository-only."
 }

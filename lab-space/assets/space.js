@@ -1,8 +1,14 @@
-import {advance,spawn,nearby,safeDestination,planRoute,followRoute,approaches} from './navigation.mjs';
+import {createWalkableScreen} from './walkable-screen.js';
+import {advance,spawn,nearby,safeDestination,planRoute,followRoute,approaches,walkable} from './navigation.mjs';
 const byId=id=>document.getElementById(id);
 const canvas=byId('room'),mode=byId('mode'),gentle=byId('gentle'),dialog=byId('station-dialog'),helpDialog=byId('help-dialog');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');gentle.checked=reduced.matches;
 let position=spawn(),engine=null,active=false,failed=false,loading=false,frame=0,lastTime=0,drag=null,route=null,restoreFocus=null,pendingTarget=null;
+const restored=history.state?.labPosition;
+if(restored&&walkable(restored)&&Number.isFinite(restored.yaw)&&Number.isFinite(restored.pitch))position={...restored};
+function preservePosition(){history.replaceState({...history.state,labPosition:{...position}},'');}
+let suspended=false;
+const screen=createWalkableScreen({changed(source){engine?.comparison(source);draw();},suspend(){suspended=true;stop();preservePosition();},resume(){suspended=false;stop();draw();},approach(){if(active&&innerWidth>=700)requestWalk({point:{x:0,z:-4.6},screen:true});else screen.inspect();}});
 const actions=new Set(),keys=new Set(),heldPointers=new Map();
 const keyMap={KeyW:'forward',KeyS:'backward',KeyA:'left',KeyD:'right',ArrowUp:'forward',ArrowDown:'backward',ArrowLeft:'turnLeft',ArrowRight:'turnRight'};
 function message(text='',walking=false){
@@ -29,9 +35,9 @@ function status(){
   const station=nearby(position);byId('nearby').hidden=!station||!active||!!route;
   byId('nearby').textContent=station==='home'?'Exit to home':'Open benchmark bench';
 }
-function draw(){if(!active||document.hidden)return;try{engine.draw(position);status();}catch{fallback('The 3D view stopped. Use the flat plan and catalog or home links.');}}
+function draw(){if(!active||suspended||document.hidden)return;try{engine.draw(position);status();}catch{fallback('The 3D view stopped. Use the flat plan and catalog or home links.');}}
 function tick(time){
-  frame=0;if(!active||document.hidden)return;
+  frame=0;if(!active||suspended||document.hidden)return;
   const dt=lastTime?Math.min((time-lastTime)/1000,.05):1/60;lastTime=time;
   if(route){
     const result=followRoute(position,route.points,dt,gentle.checked);
@@ -43,15 +49,16 @@ function tick(time){
         else if(arrived.target.approach)position.yaw=Math.atan2(position.x-arrived.target.point.x,position.z-arrived.target.point.z);
         if(arrived.target.destination||arrived.target.approach)position.pitch=-.06;
         message('');
+        if(arrived.target.screen){position.yaw=0;position.pitch=.10;message('Click either still to enter. Screen arrows change the pair.');}
         if(arrived.target.destination)openStation(arrived.target.destination);
       }
     }
   }else advance(position,actions,dt,gentle.checked);
   draw();if(actions.size||route)frame=requestAnimationFrame(tick);else lastTime=0;
 }
-function schedule(){if(active&&!frame&&!document.hidden)frame=requestAnimationFrame(tick);}
+function schedule(){if(active&&!suspended&&!frame&&!document.hidden)frame=requestAnimationFrame(tick);}
 function requestWalk(target){
-  if(!active)return;stop();
+  if(!active||suspended)return;stop();
   const point=target?.destination?approaches[target.destination]:target?.point;
   const points=point&&planRoute(position,point,{approach:!!target.approach});
   if(!points){message('That point is not reachable. Select open floor or a station.');draw();return;}
@@ -71,7 +78,7 @@ function fallback(text){
 async function enter(){
   if(failed||loading)return;if(engine){setMode(true);return;}
   loading=true;mode.disabled=true;mode.textContent='Opening room…';
-  try{const {createRoom}=await import('./room.mjs');engine=createRoom(canvas,()=>fallback('WebGL was interrupted. Use the flat plan and catalog or home links.'));setMode(true);}
+  try{const {createRoom}=await import('./room.mjs');engine=createRoom(canvas,()=>fallback('WebGL was interrupted. Use the flat plan and catalog or home links.'));engine.comparison(screen.source);setMode(true);}
   catch{fallback('3D is unavailable in this browser. Use the flat plan and catalog or home links.');}
   finally{loading=false;mode.disabled=false;}
 }
@@ -95,6 +102,7 @@ byId('show-pad').addEventListener('change',()=>{stop();controls();draw();});
 byId('nearby').addEventListener('click',()=>openStation(nearby(position)));
 byId('cancel-walk').addEventListener('click',()=>{stop(true);draw();canvas.focus({preventScroll:true});});
 canvas.addEventListener('keydown',event=>{
+  if(suspended)return;
   if(keyMap[event.code]){event.preventDefault();cancelRoute();keys.add(event.code);actions.add(keyMap[event.code]);schedule();}
   else if(event.code==='Enter'||event.code==='KeyE'){event.preventDefault();if(!event.repeat)openStation(nearby(position));}
   else if(event.code==='Escape'){event.preventDefault();stop(true);draw();canvas.blur();byId('help').focus({preventScroll:true});}
@@ -102,12 +110,12 @@ canvas.addEventListener('keydown',event=>{
 window.addEventListener('keyup',event=>{keys.delete(event.code);const action=keyMap[event.code];if(action&&!Object.keys(keyMap).some(k=>keys.has(k)&&keyMap[k]===action)&&![...heldPointers.values()].some(v=>v.action===action))actions.delete(action);});
 canvas.addEventListener('blur',()=>{if(!drag){stop();draw();}});
 canvas.addEventListener('pointerdown',event=>{
-  if(event.button!==0||!active||!event.isPrimary)return;
+  if(event.button!==0||!active||suspended||!event.isPrimary)return;
   canvas.focus({preventScroll:true});canvas.setPointerCapture(event.pointerId);
   drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false};
 });
 canvas.addEventListener('pointermove',event=>{
-  if(!drag||drag.id!==event.pointerId)return;
+  if(suspended||!drag||drag.id!==event.pointerId)return;
   if(!drag.moved){
     if(Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<=8)return;
     const saved=drag;stop();drag=saved;drag.moved=true;
@@ -117,16 +125,16 @@ canvas.addEventListener('pointermove',event=>{
   drag.x=event.clientX;drag.y=event.clientY;draw();
 });
 canvas.addEventListener('pointerup',event=>{
-  if(!drag||drag.id!==event.pointerId)return;const click=!drag.moved&&Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<=8;
+  if(suspended||!drag||drag.id!==event.pointerId)return;const click=!drag.moved&&Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<=8;
   drag=null;if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
-  if(click)requestWalk(engine.pick(event.clientX,event.clientY));
+  if(click){const target=engine.pick(event.clientX,event.clientY);if(target?.comparison){stop();if(position.z>-4.5||Math.abs(position.x)>2.1)requestWalk({point:{x:0,z:-4.6},screen:true});else screen.activate(target.comparison);}else requestWalk(target);}
 });
 canvas.addEventListener('pointercancel',()=>{stop(true);draw();});
 canvas.addEventListener('lostpointercapture',()=>{drag=null;});
 for(const button of document.querySelectorAll('[data-move]')){
   const action=button.dataset.move;
   button.addEventListener('pointerdown',event=>{
-    if(event.button!==0||!active)return;event.preventDefault();cancelRoute();button.setPointerCapture(event.pointerId);
+    if(event.button!==0||!active||suspended)return;event.preventDefault();cancelRoute();button.setPointerCapture(event.pointerId);
     heldPointers.set(event.pointerId,{action,start:performance.now()});actions.add(action);schedule();
   });
   const release=event=>{
@@ -136,9 +144,11 @@ for(const button of document.querySelectorAll('[data-move]')){
     if(button.hasPointerCapture(event.pointerId))button.releasePointerCapture(event.pointerId);
   };
   button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);button.addEventListener('lostpointercapture',release);
-  button.addEventListener('click',event=>{if(event.detail===0&&active){cancelRoute();advance(position,new Set([action]),.05,gentle.checked);draw();}});
+  button.addEventListener('click',event=>{if(event.detail===0&&active&&!suspended){cancelRoute();advance(position,new Set([action]),.05,gentle.checked);draw();}});
 }
 window.addEventListener('blur',()=>stop());
+window.addEventListener('pagehide',()=>{preservePosition();suspended=true;stop();});
+window.addEventListener('pageshow',event=>{if(event.persisted){suspended=false;draw();}});
 document.addEventListener('visibilitychange',()=>{stop();if(!document.hidden)draw();});
 window.addEventListener('resize',()=>{stop();draw();});
 reduced.addEventListener('change',event=>{gentle.checked=event.matches;if(event.matches)setMode(false);});

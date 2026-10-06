@@ -121,6 +121,12 @@ export function createRoom(canvas,onLost){
   ext(-2.2,2.2,0,.86,-7,-6.62,'sage');ext(-2.26,2.26,.86,.92,-7,-6.58,'linen');
   for(const [x,h,c] of [[-1.6,.34,'#c4a477'],[-1.2,.22,'linen'],[1.1,.28,'linen'],[1.5,.4,'#c4a477']])cylinder(x,.92+h/2,-6.8,.09,h,c,.07);
 
+  // A separate comparison screen preserves the existing catalog monitor.
+  const comparisonSource=document.createElement('canvas');comparisonSource.width=1280;comparisonSource.height=600;
+  const comparisonTexture=new T.CanvasTexture(comparisonSource);comparisonTexture.colorSpace=T.SRGBColorSpace;
+  box(0,1.90,-6.64,3.92,1.90,.12,'dark');
+  const comparisonScreen=plain(new T.PlaneGeometry(3.8,1.78125),new T.MeshBasicMaterial({map:comparisonTexture}),0,1.90,-6.568);
+  comparisonScreen.userData.comparison=true;
   // Benchmark workbench, same footprint; only this monitor and the exit are interactive.
   ext(-2.35,2.35,0,.12,-3.72,-2.18,'dark');
   for(const x of [-1.7,1.7]){ext(x-.7,x+.7,.12,.86,-3.78,-2.12,'sage');
@@ -230,11 +236,13 @@ export function createRoom(canvas,onLost){
   const raycaster=new T.Raycaster();const pointer=new T.Vector2();let disposed=false;
   const lost=(event)=>{event.preventDefault();onLost();};canvas.addEventListener('webglcontextlost',lost);
   return {
+    comparison(source){if(disposed)return;comparisonSource.getContext('2d').drawImage(source,0,0);comparisonTexture.needsUpdate=true;},
     draw(p){if(disposed)return;const w=canvas.clientWidth,h=canvas.clientHeight;const size=renderer.getSize(new T.Vector2());if(size.x!==w||size.y!==h){renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w/h<1?78:65;camera.updateProjectionMatrix();}camera.position.set(p.x,1.68,p.z);camera.rotation.set(p.pitch,p.yaw,0);renderer.render(scene,camera);},
     pick(clientX,clientY){
       const rect=canvas.getBoundingClientRect();pointer.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);
       const first=raycaster.intersectObjects(scene.children,false).find(hit=>hit.object!==targetMarker);
       if(!first||first.distance>24)return null;
+      if(first.object.userData.comparison&&first.uv)return {comparison:{x:first.uv.x*1280,y:(1-first.uv.y)*600}};
       const {x,y,z}=first.point;
       const destination=first.object.userData.destination||(x>=-2.6&&x<=2.6&&z>=-3.95&&z<=-2&&y<2.4?'catalog':x>4.6&&x<6.2&&z>6.7&&z<7&&y<3.7?'home':null);
       if(destination)return {destination};

@@ -1,0 +1,46 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Build an abandoned railway station in the middle of the woods in autumn.
+
+A short platform and a small station building sit beside disused tracks, with a woodland footpath returning toward the entrance. I must be able to enter the waiting room, walk beneath the platform canopy, cross the tracks safely and follow the woodland path to see the station from the trees.
+
+Give the place a readable history through weathered brick, peeling timber, rusted metal and leaves gathered where wind and rain would leave them. Include memorable details such as a broken timetable case, an old bench or roots disturbing the platform edge. These examples are suggestions; choose details that make the place convincing.
+
+Low afternoon sunlight should separate the warm autumn foliage from the cooler building interior. Keep the forest compact but convincing from inside the scene. A train and an extensive railway network are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, enter the building and view the station from the woodland path. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Convincing construction and weathering of the station
+- Distinct brick, timber and metal surfaces that hold up close
+- Varied autumn foliage, believable leaf placement and forest depth
+- Effective lighting and composition from multiple viewpoints
+- Thoughtful details throughout the explorable area
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance in dense foliage and other busy views
+- Smooth transitions between the waiting room, platform and woods
+- Minimal stuttering, disruptive loading or instability
+
+Scene fulfillment and exploration: 20 points
+- Recognizable abandoned station, waiting room, platform, canopy and disused tracks
+- Autumn woodland, a footpath and a safe crossing
+- Connected, usable walking routes and convincing scale
+- Worthwhile views and details beyond the starting position
+
+MY INSPECTION ROUTE
+
+Entrance → waiting room → covered platform → track crossing → woodland footpath → view back toward the station.
+
+I will pay particular attention to turning toward dense foliage beneath the canopy, crossing the tracks and moving between the interior and exterior. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time and one-hour deadline, stop editing at that deadline, and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.

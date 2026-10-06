@@ -14,9 +14,13 @@ def excluded(name):
     parts = name.split('/')
     return any(fnmatch.fnmatchcase('/'.join(parts[:i]), pattern) for i in range(1, len(parts)+1) for pattern in patterns)
 actual = {p.relative_to(root).as_posix() for p in (root / 'walkable-3d').rglob('*') if p.is_file() and not excluded(p.relative_to(root).as_posix())}
+def published_bytes(name):
+    data = (root/name).read_bytes()
+    # Git normalizes host-authored text. Entrant trees are explicitly -text.
+    return data if name.startswith('walkable-3d/entries/') else data.replace(b'\r\n',b'\n')
 assert actual == set(allow['sourceFiles']), {'unexpected': sorted(actual-set(allow['sourceFiles'])), 'missing': sorted(set(allow['sourceFiles'])-actual)}
 blocked = [p.relative_to(root).as_posix() for p in (root / 'walkable-3d').rglob('*') if p.is_file() and excluded(p.relative_to(root).as_posix())]
-blocked += ['scripts/serve-walkable.cjs','tests/verify-walkable.cjs','tests/verify-walkable-integrity.py','tests/verify-walkable-publication.py','tests/walkable-publication-allowlist.json','docs/WALKABLE-INTEGRATION.md','docs/WALKABLE-INTEGRATION.html']
+blocked += ['scripts/serve-walkable.cjs','tests/verify-walkable.cjs','tests/verify-walkable-room.cjs','tests/verify-walkable-integrity.py','tests/verify-walkable-publication.py','tests/walkable-publication-allowlist.json','docs/WALKABLE-INTEGRATION.md','docs/WALKABLE-INTEGRATION.html']
 assert all(excluded(p) for p in blocked if not p.endswith('/WALKABLE-INTEGRATION.html'))
 assert not excluded('scripts/build-catalog.cjs') and not excluded('tests/verify-static.py')
 class Links(HTMLParser):
@@ -47,13 +51,13 @@ if args.artifact:
         assert published == actual | set(allow['generatedFiles']), {'unexpected': sorted(published-actual-set(allow['generatedFiles'])), 'missing': sorted((actual|set(allow['generatedFiles']))-published)}
         assert not any(excluded(p) or p in blocked for p in members), [p for p in members if excluded(p) or p in blocked]
         for name in actual:
-            assert archive.extractfile(members[name]).read() == (root/name).read_bytes(), name
+            assert archive.extractfile(members[name]).read() == published_bytes(name), name
         result = {'siteBytes':sum(m.size for m in members.values()),'siteFiles':len(members),'walkableBytes':sum(members[p].size for p in published),'walkableFiles':len(published)}
         print('PASS: exact Pages allowlist and source bytes. '+json.dumps(result))
 if args.base:
     for name in sorted(actual):
         with urllib.request.urlopen(urljoin(args.base, name), timeout=30) as response:
-            assert response.read() == (root/name).read_bytes(), name
+            assert response.read() == published_bytes(name), name
     for name in blocked:
         try:
             urllib.request.urlopen(urljoin(args.base, name), timeout=30)
