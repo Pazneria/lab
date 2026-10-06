@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Old Palm House</title>
+<style>html,body{color:#eef2e6;background:#1b2216;height:100%;margin:0;font-family:Georgia,Times New Roman,serif;overflow:hidden}canvas{display:block}#overlay{z-index:10;cursor:pointer;background:#0e140cb8;justify-content:center;align-items:center;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}#overlay .card{background:#141c12eb;border:1px solid #6d7d5a;border-radius:6px;max-width:520px;padding:28px 34px;box-shadow:0 10px 40px #00000080}#overlay h1{letter-spacing:.04em;margin:0 0 6px;font-size:28px;font-weight:400}#overlay p{color:#c9d3bb;margin:6px 0;font-size:14px;line-height:1.5}#overlay table{border-collapse:collapse;margin:14px 0 6px;font-size:14px}#overlay td{color:#dfe7d2;padding:3px 14px 3px 0}#overlay td:first-child{color:#f3d58a;white-space:nowrap;font-family:Consolas,monospace}#go{color:#f3d58a;margin-top:14px;font-size:15px}#hud{color:#e8eedd;pointer-events:none;z-index:5;background:#0a0e0873;border-radius:4px;padding:6px 9px;font:12px/1.5 Consolas,monospace;position:fixed;bottom:10px;left:12px}#stats{color:#e8eedd;pointer-events:none;z-index:5;white-space:pre;background:#0a0e088c;border-radius:4px;padding:5px 8px;font:12px Consolas,monospace;display:none;position:fixed;top:10px;right:10px}#cross{pointer-events:none;z-index:5;background:#ffffff8c;border-radius:50%;width:4px;height:4px;margin:-2px 0 0 -2px;position:fixed;top:50%;left:50%}#loading{z-index:20;letter-spacing:.06em;color:#c9d3bb;background:#1b2216;justify-content:center;align-items:center;font-size:18px;display:flex;position:fixed;top:0;bottom:0;left:0;right:0}</style>
+  <script type="module" crossorigin src="/assets/index-3JCil3LM.js"></script>
+</head>
+<body>
+<div id="loading">Planting the palm house…</div>
+<div id="overlay"><div class="card">
+  <h1>The Old Palm House</h1>
+  <p>A Victorian glasshouse, long untended. Enter from the threshold, follow one aisle to the potting alcove and return by the other.</p>
+  <table>
+    <tr><td>Click</td><td>capture mouse / mouse-look</td></tr>
+    <tr><td>W A S D / Arrows</td><td>walk</td></tr>
+    <tr><td>Shift</td><td>walk faster</td></tr>
+    <tr><td>C (hold)</td><td>crouch (look beneath foliage)</td></tr>
+    <tr><td>Space (hold)</td><td>stand on tiptoe (higher eye)</td></tr>
+    <tr><td>1 2 3 4</td><td>jump to threshold / aisle A / alcove / aisle B</td></tr>
+    <tr><td>R</td><td>reset to start</td></tr>
+    <tr><td>F</td><td>frame-time readout</td></tr>
+    <tr><td>Esc</td><td>release mouse (this panel)</td></tr>
+  </table>
+  <div id="go">Click anywhere to enter</div>
+</div></div>
+<div id="cross"></div>
+<div id="hud">WASD move · mouse look · Shift fast · C crouch · R reset · 1-4 spots · F stats · Esc menu</div>
+<div id="stats"></div>
+</body>
+</html>

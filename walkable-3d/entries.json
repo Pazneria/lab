@@ -578,6 +578,49 @@
       "controls": "WASD walk; mouse look; Shift brisk walk; C crouch; arrows turn/look; R reset; Esc release; F frame-time diagnostics.",
       "performanceEvidence": "Producer headless keyboard walkthrough at 1920 x 1080, actual render size 1686 x 948 under the fixed pixel cap: 1,416 intervals, median 15.9 ms, p95 28.3 ms, p99 36.1 ms, maximum 51.9 ms, one interval above 50 ms. Short turning sample: median 17 ms, p95 27.9 ms. Supporting producer diagnostics, not controlled final judging or a grade.",
       "previewAlt": "Original Fernery reset view through iron doors toward broad leaves, planted beds, side aisles and a glazed roof."
+    },
+    {
+      "id": "old-palm-house-opus",
+      "title": "The Old Palm House",
+      "promptId": "04",
+      "promptVersion": "04-shared",
+      "requestedConfiguration": "Claude Opus 5.5 (producer-reported manual run)",
+      "modelDisclosure": "Producer reports claude-opus-5-5 in Claude Code desktop. Session-default reasoning effort was not exposed; serving backend and manual delivery were not independently verified.",
+      "webgl": "WebGL 2",
+      "readySelector": "#loading[style*=\"none\"]",
+      "htmlSha256": "df9beee419d6855a1cafb930db7ad2c2af57c591bcf3b5ac6976e24a5e43ff04",
+      "archiveSha256": "870d78b55c3448cf2b1a3819579728ea3ba8a1bb14d76685dc033f1e74d29948",
+      "archiveLocation": "retained-outside-repository",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ]
+      ],
+      "buildWindow": "Producer reports work start 2026-10-06 05:19:47 UTC (01:19:47 EDT), approximate first source file 05:27 UTC, deadline 06:19:47 UTC and actual last edit/build 05:56:10 UTC. These manual-run timestamps are producer-reported.",
+      "interruptions": "Producer reports no interruptions. The hidden preview pane prevented pointer-locked rAF frame-time capture.",
+      "producerChecks": "Producer reports scripted key-walk collision checks for threshold, both aisles, central bed, alcove bench and exterior hedges. Host separately verifies actual rendering and ordinary walk/look/reset/release/lifecycle handling.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2; foliage itself is non-solid, while beds, trunks, benches and walls have collision.",
+        "Static foliage and one-time shadows; drifting dust, approximate sun shafts and simplified distant trees remain unchanged. Close leaves may clip at the 3 cm near plane.",
+        "Default render cap is about 0.95 million pixels. While pointer-locked, the native adaptive scaler changes resolution every two seconds at most; it can soften the image.",
+        "Producer hidden-pane GPU timings are synthetic and include synchronous readPixels overhead. No producer pointer-locked frame-pacing capture was possible."
+      ],
+      "documents": [
+        {
+          "label": "Producer controls, limits & timing",
+          "path": "README.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "preview": "preview.jpg",
+      "description": "A weathered palm house with planted central beds, two connected aisles and a furnished potting alcove.",
+      "controls": "Click to capture; WASD/arrows walk; mouse look; Shift faster; hold C crouch; hold Space tiptoe; 1–4 supplied viewpoints; R reset; F frame-time overlay; Esc release.",
+      "performanceEvidence": "Producer hidden-pane synchronous render + readPixels tests: about 16.0 ms in aisle A, 14.8 ms in aisle B, 3.3 ms in the alcove and 7.3 ms at the threshold at 1.05 MP. The final default cap was then lowered to 0.95 MP. These synthetic GPU-cost diagnostics are not interactive frame pacing or a grade. Host checks confirm rendering/input only; the unchanged adaptive quality may respond to test overhead.",
+      "previewAlt": "Original Old Palm House reset view along a gravel threshold toward open iron-and-glass doors and layered foliage."
     }
   ],
   "prompts": [

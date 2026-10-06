@@ -1,0 +1,33 @@
+{
+  "id": "old-palm-house-opus",
+  "passed": true,
+  "errors": [],
+  "failedAssets": [],
+  "warnings": [
+    "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n\n\n\u0000"
+  ],
+  "checks": [
+    "Static initial state with no entrant fetch/context",
+    "Real WebGL 2 rendering and original reset-view capture",
+    "Ordinary keyboard movement, mouse look and reset",
+    "Opaque parent/storage isolation",
+    "Pointer release restores exit focus",
+    "Close destroys child; repeated open/back/forward remains unloaded"
+  ],
+  "diagnostics": {
+    "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "drawingBuffer": [
+      1140,
+      674
+    ],
+    "pixelRatio": 0.825037404956001,
+    "drawCalls": 55,
+    "triangles": 664278
+  },
+  "checkedAt": "2026-10-06T06:02:58.159Z",
+  "scope": "Host launch/input/lifecycle verification only; no benchmark grade or comparative performance claim",
+  "sourceUnchanged": true,
+  "externalRequests": 0,
+  "preview": "Original frozen build after ordinary R reset, with its native adaptive settings. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+}
