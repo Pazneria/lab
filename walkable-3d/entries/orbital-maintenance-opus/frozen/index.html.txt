@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bay 3 Maintenance</title>
+<style>
+  :root { --ink: #e9e6dc; --dim: #a9a79f; --accent: #d9a51c; --panel: rgba(14, 16, 19, 0.82); }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color: var(--ink); font-family: Bahnschrift, "Segoe UI", Arial, sans-serif; }
+  canvas { display: block; }
+  .hidden { display: none !important; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.45); }
+  #card { background: var(--panel); border: 1px solid #3a3d40; border-top: 4px solid var(--accent); padding: 26px 30px; max-width: 460px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+  h1 { margin: 0 0 4px; font-size: 22px; letter-spacing: 0.06em; }
+  .sub { color: var(--dim); font-size: 13px; margin-bottom: 16px; }
+  table { border-collapse: collapse; font-size: 14px; width: 100%; }
+  td { padding: 3px 0; } td:first-child { color: var(--accent); width: 150px; font-weight: 600; }
+  button { margin-top: 18px; background: var(--accent); color: #111; border: 0; font: 600 15px Bahnschrift, Arial; padding: 10px 18px; cursor: pointer; letter-spacing: .05em; }
+  button:disabled { opacity: .5; cursor: wait; }
+  #resetBtn { background: #3a3d40; color: var(--ink); margin-left: 8px; }
+  #stats { position: fixed; left: 10px; top: 10px; font: 12px/1.4 Consolas, monospace; white-space: pre; background: rgba(0,0,0,.55); padding: 6px 9px; pointer-events: none; }
+  #help { position: fixed; right: 10px; bottom: 10px; font-size: 12px; color: var(--dim); background: rgba(0,0,0,.5); padding: 6px 10px; pointer-events: none; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: rgba(255,255,255,.55); pointer-events: none; }
+  #loading { color: var(--dim); font-size: 13px; margin-top: 10px; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="cross"></div>
+<div id="stats">loading…</div>
+<div id="help">WASD move · Mouse look · Shift run · C crouch · R reset · F stats · Esc release</div>
+<div id="overlay">
+  <div id="card">
+    <h1>BAY 3 · MAINTENANCE</h1>
+    <div class="sub">Orbital station service bay — CMG-4 gimbal assembly under slow-roll test.</div>
+    <table>
+      <tr><td>Mouse</td><td>Look (click to capture)</td></tr>
+      <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>C / Ctrl (hold)</td><td>Crouch to inspect low parts</td></tr>
+      <tr><td>R</td><td>Reset to start position</td></tr>
+      <tr><td>F / H</td><td>Toggle frame stats / hint bar</td></tr>
+      <tr><td>P</td><td>Toggle render scale (1.0 / 1.5)</td></tr>
+      <tr><td>Esc</td><td>Release mouse</td></tr>
+    </table>
+    <div class="sub" style="margin:12px 0 0">Route: circle the machine, visit the amber-lit service alcove, take the stairs at the far-left wall up to the walkway and the inspection spur.</div>
+    <button id="start" disabled>ENTER BAY</button><button id="resetBtn">RESET</button>
+    <div id="loading">Generating textures…</div>
+  </div>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

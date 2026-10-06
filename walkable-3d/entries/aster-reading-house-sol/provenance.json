@@ -1,0 +1,166 @@
+{
+  "entry": "aster-reading-house-sol",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-17\\aster-reading-house.zip",
+  "archiveSha256": "e8a83c3dbc6549b7ef9abd4a028c7ef046743733ca3944491ee3a1a0f98eebd9",
+  "archiveKind": "Producer ZIP copied unchanged",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/src/batch.js": "src/batch.js",
+      "frozen/src/books.js": "src/books.js",
+      "frozen/src/layout.js": "src/layout.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/materials.js": "src/materials.js",
+      "frozen/src/objects.js": "src/objects.js",
+      "frozen/src/scene.js": "src/scene.js",
+      "frozen/vendor/BufferGeometryUtils.js": "vendor/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/three.module.js": "vendor/three.module.js"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\aster-reading-house-sol\\extra-records\\README.md",
+      "RUN_RECORD.json": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\aster-reading-house-sol\\extra-records\\RUN_RECORD.json"
+    },
+    "extraRecords": [
+      {
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-17\\RUN_RECORD.json",
+        "preserved": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\aster-reading-house-sol\\extra-records\\RUN_RECORD.json",
+        "bytes": 2011,
+        "sha256": "050c068656ca95f0eb3b863b8a213ffebd1f918e5215cdecceeb2834bfdd90a5",
+        "originalMatches": true
+      },
+      {
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-17\\README.md",
+        "preserved": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\aster-reading-house-sol\\extra-records\\README.md",
+        "bytes": 6608,
+        "sha256": "b829dda68ee09d9761a93806725bd1208dbb487a54ac5b6afad86a68c4f24b14",
+        "originalMatches": true
+      }
+    ]
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": [
+      {
+        "path": "frozen/vendor/BufferGeometryUtils.js",
+        "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/THREE-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/LICENSE"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/build/three.core.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/build/three.module.js"
+        ],
+        "officialMatch": null
+      }
+    ]
+  },
+  "prompt": {
+    "version": "10-openai",
+    "sha256": "833f25008ecb32307072c418e51a5dc731129fd34cef099a718c187403c715bb",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2970,
+      "sha256": "9c6ca03fe7e0c510e811dd242dc19ae588b681ccbaaab3964eb409b2000c0012"
+    },
+    "frozen/src/batch.js": {
+      "bytes": 2906,
+      "sha256": "7756e82f422fbdd3b9f2d2347dd0f19490ed57936296ed5e2d14e699a0250cfe"
+    },
+    "frozen/src/books.js": {
+      "bytes": 5148,
+      "sha256": "bf68c8bae58acf5fa899570cd3352a6e1b52005fe6e8397abd1ee6c7ee3e1dad"
+    },
+    "frozen/src/layout.js": {
+      "bytes": 2714,
+      "sha256": "094ab8086f76f4cb569e539f4cbaf4d629d349b92db21ae44c6c7b11ad12378e"
+    },
+    "frozen/src/main.js": {
+      "bytes": 9071,
+      "sha256": "79fdf65a7f22129643617aa37becb74378a4b9b0433be4f281b04d67e3959d34"
+    },
+    "frozen/src/materials.js": {
+      "bytes": 8861,
+      "sha256": "b62f517fd8ff2e1806ce2be0f669c784c2f681fac9cc6981f0ed42038fde4cdf"
+    },
+    "frozen/src/objects.js": {
+      "bytes": 11402,
+      "sha256": "882485ac0d0e5d481e21f7f26e9d8b322bb8ba1b3275eb99e50cd476ddd989a8"
+    },
+    "frozen/src/scene.js": {
+      "bytes": 20032,
+      "sha256": "cf57215ebc93566060bd5a86a2ccd555a76c4b6fbd6619905463241269d58bc2"
+    },
+    "frozen/style.css": {
+      "bytes": 3973,
+      "sha256": "5ccd45e4d28fda39b7d027d9204c13ac80830de2e4d4ce8d646e47b8ccf558bd"
+    },
+    "frozen/vendor/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "host-verification.json": {
+      "bytes": 1362,
+      "sha256": "08578d861eece860800b7931d4d7806e9e7450c7ac02528cb0e8fd46f4a85d99"
+    },
+    "README.md": {
+      "bytes": 6608,
+      "sha256": "b829dda68ee09d9761a93806725bd1208dbb487a54ac5b6afad86a68c4f24b14"
+    },
+    "RUN_RECORD.json": {
+      "bytes": 2011,
+      "sha256": "050c068656ca95f0eb3b863b8a213ffebd1f918e5215cdecceeb2834bfdd90a5"
+    }
+  }
+}

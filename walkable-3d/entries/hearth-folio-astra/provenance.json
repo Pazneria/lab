@@ -1,0 +1,180 @@
+{
+  "entry": "hearth-folio-astra",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-16\\hearth-and-folio.zip",
+  "archiveSha256": "263198e61afee749a217f4af3c161ba333e70e8e044090e5810d9a5b36df80a6",
+  "archiveKind": "Producer ZIP copied unchanged",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/src/architecture.js": "src/architecture.js",
+      "frozen/src/batch.js": "src/batch.js",
+      "frozen/src/collision-layout.js": "src/collision-layout.js",
+      "frozen/src/details.js": "src/details.js",
+      "frozen/src/exterior.js": "src/exterior.js",
+      "frozen/src/furnishings.js": "src/furnishings.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/materials.js": "src/materials.js",
+      "frozen/src/navigation.js": "src/navigation.js",
+      "frozen/vendor/addons/environments/RoomEnvironment.js": "vendor/addons/environments/RoomEnvironment.js",
+      "frozen/vendor/addons/geometries/RoundedBoxGeometry.js": "vendor/addons/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/three.module.js": "vendor/three.module.js"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\hearth-folio-astra\\source\\README.md",
+      "run-record.json": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\hearth-folio-astra\\extra-records\\run-record.json"
+    },
+    "extraRecords": [
+      {
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-16\\run-record.json",
+        "preserved": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-10\\hearth-folio-astra\\extra-records\\run-record.json",
+        "bytes": 2266,
+        "sha256": "0b97c926ed455969b633bd7976d1db6d8808e71acba2f06c6cc3132cae796378",
+        "originalMatches": true
+      }
+    ]
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": [
+      {
+        "path": "frozen/vendor/addons/environments/RoomEnvironment.js",
+        "sha256": "c20f0b4677f6128a138d7152b85cbef9091f4f45cdfa05adca04d40c1697c7ae",
+        "priorMatch": [],
+        "officialMatch": "https://raw.githubusercontent.com/mrdoob/three.js/r180/examples/jsm/environments/RoomEnvironment.js"
+      },
+      {
+        "path": "frozen/vendor/addons/geometries/RoundedBoxGeometry.js",
+        "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8",
+        "priorMatch": [
+          "walkable-3d/entries/raincourt-astra/frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/THREE-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/LICENSE"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/build/three.core.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "priorMatch": [
+          "walkable-3d/entries/saffron-observatory-astra/frozen/vendor/three/build/three.module.js"
+        ],
+        "officialMatch": null
+      }
+    ]
+  },
+  "prompt": {
+    "version": "10-openai",
+    "sha256": "833f25008ecb32307072c418e51a5dc731129fd34cef099a718c187403c715bb",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2384,
+      "sha256": "1f7a281dde89fd8028b607d7a1b7eedddb33be213769570012e9c229d9d18812"
+    },
+    "frozen/src/architecture.js": {
+      "bytes": 9877,
+      "sha256": "cf5663dacc84048bef2a24258e38f6eba6e3745e2f9e3a117ed04aead017fb41"
+    },
+    "frozen/src/batch.js": {
+      "bytes": 2453,
+      "sha256": "21a1c4c05bfe480bb6136e7d29ad7adceb8c6ecba8a58b136806da8140c9714f"
+    },
+    "frozen/src/collision-layout.js": {
+      "bytes": 1808,
+      "sha256": "bf5d98a15b28b5bb297ad062b9ebd931f7e067307de8784912be3671dec5804a"
+    },
+    "frozen/src/details.js": {
+      "bytes": 9472,
+      "sha256": "05d837a314ecf3a1525427b680f3d58e4822ae52cbe22c65b09e317143464063"
+    },
+    "frozen/src/exterior.js": {
+      "bytes": 3398,
+      "sha256": "89380e38f2b5484e44f0f2385262bef9f2a7f942f263a44270ed5d9812c9d8dc"
+    },
+    "frozen/src/furnishings.js": {
+      "bytes": 11236,
+      "sha256": "5ec61e633e2253cba8b7312562607778e57bcdb153b85990f88c3369c00a9a92"
+    },
+    "frozen/src/main.js": {
+      "bytes": 8777,
+      "sha256": "809dc50a5a6839ea705c25e35056d16f183daea4047eda3acb207d768f605ae7"
+    },
+    "frozen/src/materials.js": {
+      "bytes": 7931,
+      "sha256": "0587ed5972b2609eeec90685a92211880addd1faed236e408d5a3c9cdff62efe"
+    },
+    "frozen/src/navigation.js": {
+      "bytes": 2053,
+      "sha256": "8b56b9554e817cafa897e48c134d0ebb8ce9cf32433a84cac23404992bc3a62f"
+    },
+    "frozen/style.css": {
+      "bytes": 3941,
+      "sha256": "13584dbff40d2dc09068c0fc260b4e3cd554e72a1b978efb429e1b03af534279"
+    },
+    "frozen/vendor/addons/environments/RoomEnvironment.js": {
+      "bytes": 4899,
+      "sha256": "c20f0b4677f6128a138d7152b85cbef9091f4f45cdfa05adca04d40c1697c7ae"
+    },
+    "frozen/vendor/addons/geometries/RoundedBoxGeometry.js": {
+      "bytes": 6476,
+      "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "host-verification.json": {
+      "bytes": 1339,
+      "sha256": "aa7a45855c950ee096df4171d68517a35d11dd56d07ffa0e8126db2b71520d2a"
+    },
+    "README.md": {
+      "bytes": 4517,
+      "sha256": "60ac81bc37a7fc4d03b6de1b9f4a0b322347bbde55e4a46254327d8f67d0fb5a"
+    },
+    "run-record.json": {
+      "bytes": 2266,
+      "sha256": "0b97c926ed455969b633bd7976d1db6d8808e71acba2f06c6cc3132cae796378"
+    }
+  }
+}

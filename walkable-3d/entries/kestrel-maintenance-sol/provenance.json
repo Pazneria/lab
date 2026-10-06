@@ -1,0 +1,73 @@
+{
+  "entry": "kestrel-maintenance-sol",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-15\\Kestrel-maintenance-bay.zip",
+  "archiveSha256": "dd199d6312050a266fd0771fbfe4c5eb31a9beff79ac97fa34b9014b44f3ce13",
+  "archiveKind": "Producer ZIP copied unchanged",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/app.js": "dist/app.js",
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/style.css": "dist/style.css",
+      "frozen/THREE-LICENSE.txt": "dist/THREE-LICENSE.txt"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-09\\kestrel-maintenance-sol\\source\\README.md",
+      "RUN_RECORD.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-09\\kestrel-maintenance-sol\\source\\RUN_RECORD.md"
+    },
+    "extraRecords": []
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": []
+  },
+  "prompt": {
+    "version": "09-openai",
+    "sha256": "133a767c619c7fc1fc3f6858e1fc194448a2a26fec1b3044c487a8918ec79f68",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/app.js": {
+      "bytes": 555047,
+      "sha256": "16823b94189006f9cd8ace99877155e6343e2a36b62891af4178f2f5efbe68ec"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2995,
+      "sha256": "75744063cccfd56c30684fa34e06837ccc28819389191ed6e076327818b4e7ad"
+    },
+    "frozen/style.css": {
+      "bytes": 5385,
+      "sha256": "4ab1715182ab18505e01c18e1faa9f96de0d115f695a484f00bd1a0a4bc2da3b"
+    },
+    "frozen/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "host-verification.json": {
+      "bytes": 1331,
+      "sha256": "a9f2a07a1bf77294717743d2487c57ec00f2c974c533486a35ccd15eb2c1415a"
+    },
+    "README.md": {
+      "bytes": 4380,
+      "sha256": "5766b6d5b8c77b9497200d97977f3cbd3d128cd58e5a32075cfb8a294bd168d7"
+    },
+    "RUN_RECORD.md": {
+      "bytes": 2506,
+      "sha256": "35f3545d793ec87fe006a09222778563982f5e39412ddb30b4c8172014883b0f"
+    }
+  }
+}

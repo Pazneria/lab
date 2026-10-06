@@ -1,0 +1,82 @@
+{
+  "entry": "kestrel-bay-astra",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-14\\Kestrel-Bay.zip",
+  "archiveSha256": "2db2395a199f75d6c14204bc23d66d2305becb89bf47b1d58e1af81d2111d1bd",
+  "archiveKind": "Producer ZIP copied unchanged",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-C1zaKrud.js": "dist/assets/index-C1zaKrud.js",
+      "frozen/assets/index-CGm4A21a.css": "dist/assets/index-CGm4A21a.css",
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/THIRD_PARTY_NOTICES.txt": "THIRD_PARTY_NOTICES.txt"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-09\\kestrel-bay-astra\\source\\README.md",
+      "RUN_RECORD.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-09\\kestrel-bay-astra\\source\\RUN_RECORD.md"
+    },
+    "extraRecords": []
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": []
+  },
+  "prompt": {
+    "version": "09-openai",
+    "sha256": "133a767c619c7fc1fc3f6858e1fc194448a2a26fec1b3044c487a8918ec79f68",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/assets/index-C1zaKrud.js": {
+      "bytes": 547503,
+      "sha256": "201d20b34b3427aa38263bfc34ea0f2fdca9f167a4cb1004acb8a64b5fcc60d6"
+    },
+    "frozen/assets/index-CGm4A21a.css": {
+      "bytes": 4351,
+      "sha256": "adf2a82817831f4291ac1de7656b8bbbd130948ae7cfe795c4718244e8a2c0f2"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2094,
+      "sha256": "2e8aa49f75a025ed3e24e4c3dbf3f6b98870c71b80588ccb731899ffe99a9069"
+    },
+    "frozen/THIRD_PARTY_NOTICES.txt": {
+      "bytes": 102726,
+      "sha256": "b7b2fd49f33f33bec0aff301fbfb205a44cf4f5e724907c59434100ed89cb593"
+    },
+    "host-verification.json": {
+      "bytes": 1345,
+      "sha256": "b14dc3b3f37fdf4b3a2fe9095a174b1cea7c78c050659e6d65096858bce9b472"
+    },
+    "README.md": {
+      "bytes": 4766,
+      "sha256": "d96e42228b7602d087efb094e3827c671519cf27c22d06120fb0e67b8eba24a4"
+    },
+    "RUN_RECORD.md": {
+      "bytes": 3546,
+      "sha256": "71d8d82058db518ad842e4c9f9be35023810adf3f7f9c3ee36b1ca19d9cb55b0"
+    }
+  }
+}

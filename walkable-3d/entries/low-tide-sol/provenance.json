@@ -1,0 +1,86 @@
+{
+  "entry": "low-tide-sol",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-13\\Low-Tide-build.zip",
+  "archiveSha256": "2a2b8dbc4d3f7f857d45bdbc257b89a3ade8fc324472dbce6c6b1eca8aa77aaf",
+  "archiveKind": "Producer ZIP copied unchanged",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-CKhFF1eV.js": "dist/assets/index-CKhFF1eV.js",
+      "frozen/assets/index-VwLSdAVF.css": "dist/assets/index-VwLSdAVF.css",
+      "frozen/assets/three-7Ds55O5b.js": "dist/assets/three-7Ds55O5b.js",
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/THIRD_PARTY_NOTICES.txt": "THIRD_PARTY_NOTICES.txt"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-08\\low-tide-sol\\source\\README.md",
+      "RUN_RECORD.json": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-08\\low-tide-sol\\extra-records\\RUN_RECORD.json"
+    },
+    "extraRecords": [
+      {
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-13\\RUN_RECORD.json",
+        "preserved": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-08\\low-tide-sol\\extra-records\\RUN_RECORD.json",
+        "bytes": 2526,
+        "sha256": "c316401786eccbd424464dfe68ea764f3db22908f17508ca7f6c72c7384a2b5d",
+        "originalMatches": true
+      }
+    ]
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed. The original CSV export creates a local Blob and is blocked by the unchanged no-download sandbox. Native module preload is present; the optional Vite fetch fallback remains blocked by connect-src none. No CSP permission is broadened.",
+    "separateVendorComparisons": []
+  },
+  "prompt": {
+    "version": "08-openai",
+    "sha256": "3a31d355c1ab22c1eb062bfa0f0cf77b30624a2c1339307db4ec8ccc9c4e9ce7",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/assets/index-CKhFF1eV.js": {
+      "bytes": 48579,
+      "sha256": "d8f237463c63b4e3713fd5d4d5b6f5a44a67e810db67d9848624871974cb3174"
+    },
+    "frozen/assets/index-VwLSdAVF.css": {
+      "bytes": 3683,
+      "sha256": "cd03e6ec701ef0056c44819fd19eced0bc100c44af33c9dd05f482aa21c593ac"
+    },
+    "frozen/assets/three-7Ds55O5b.js": {
+      "bytes": 504278,
+      "sha256": "bdd4841972a6cde9c3bd2e903b323aab3c904584aaea930bb3cbbdd86d2b979a"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2368,
+      "sha256": "cf1782ade07d28b6a414179aa2806bfae270f90443dc1617b5424cd76e882900"
+    },
+    "frozen/THIRD_PARTY_NOTICES.txt": {
+      "bytes": 102686,
+      "sha256": "ab533fa09df450d7ecb9b8d8869b6398dde1ae4955fcbcd2046550ea71513285"
+    },
+    "host-verification.json": {
+      "bytes": 1557,
+      "sha256": "0ce8173e8f1a48426ac74fc895ed0cfe64b0f1530e1520e0c10ce176610d599e"
+    },
+    "README.md": {
+      "bytes": 5768,
+      "sha256": "9a3830911d16b4f991d6aafd533db33e59069b15e10c7fb439683f7b0909470f"
+    },
+    "RUN_RECORD.json": {
+      "bytes": 2526,
+      "sha256": "c316401786eccbd424464dfe68ea764f3db22908f17508ca7f6c72c7384a2b5d"
+    }
+  }
+}

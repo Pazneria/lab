@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#142b30" />
+  <title>Low Tide · A morning at the boathouse</title>
+  <script type="module" crossorigin src="./assets/index-CKhFF1eV.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-7Ds55O5b.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-VwLSdAVF.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="loading"><span class="eyebrow">A QUIET TIDAL INLET</span><h1>Low Tide</h1><p>Preparing the morning light…</p></div>
+  <section id="welcome" class="panel" hidden>
+    <span class="eyebrow">A MORNING AT THE BOATHOUSE</span>
+    <h1>Low Tide</h1>
+    <p>Salt in the grain. A boat waiting for the water.<br>A workshop with the doors open to the morning.</p>
+    <button id="enter">Step inside <span>↗</span></button>
+    <div class="keys"><b>W A S D</b> walk <i>·</i> <b>MOUSE</b> look <i>·</i> <b>SHIFT</b> brisk walk</div>
+    <div class="keys"><b>R</b> return to workshop <i>·</i> <b>ESC</b> release mouse</div>
+    <div class="keys"><b>F</b> frame times <i>·</i> <b>P</b> start / save timing CSV</div>
+    <small>Workshop → pier end → shore ramp → boat → return<br>Use the marked timber ramp beside the landing to reach the shore.</small>
+  </section>
+  <header id="hud" hidden><div class="identity"><span class="eyebrow">MORNING / FIXED LOW TIDE</span><strong>Low Tide</strong></div><div class="hud-buttons"><button id="quality" title="Toggle resolution and shadows">Quality: high</button><button id="help" title="Release mouse and show controls">Controls</button><button id="reset" title="Return to workshop">Reset <kbd>R</kbd></button></div></header>
+  <div id="crosshair" hidden></div>
+  <footer id="location" hidden><span id="place">THE WORKSHOP</span><span class="route">Pier ahead · follow the marked shore ramp</span></footer>
+  <aside id="stats" hidden><span>FRAME TIME</span><strong id="frame">—</strong><small id="frame-detail">Collecting samples</small><div id="frame-bars"></div></aside>
+  <div id="hint" hidden>Click the scene to look around · WASD to walk · R to reset · F for frame times</div>
+  <div id="error" class="panel" hidden><h1>Unable to start</h1><p id="error-message"></p></div>
+</body>
+</html>

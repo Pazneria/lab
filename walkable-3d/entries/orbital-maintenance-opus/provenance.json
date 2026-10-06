@@ -1,0 +1,129 @@
+{
+  "entry": "orbital-maintenance-opus",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-orbital-maintenance-entry",
+  "archiveSha256": "d5101a1599870ddc02429702165fc7eb69b5c9e792324942646970e028f95f0c",
+  "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/bay.js": "src/bay.js",
+      "frozen/src/geo.js": "src/geo.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/tex.js": "src/tex.js",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/environments/RoomEnvironment.js": "node_modules/three/examples/jsm/environments/RoomEnvironment.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-09\\orbital-maintenance-opus\\source\\README.md"
+    },
+    "extraRecords": []
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": [
+      {
+        "path": "frozen/vendor/three/build/three.module.js",
+        "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+        "priorMatch": [
+          "walkable-3d/entries/desert-observatory-opus/frozen/vendor/three/build/three.module.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/environments/RoomEnvironment.js",
+        "sha256": "85869bdd22f7cf0b22e68dcefe6cb710480af0f5c901a76f7a7764fd07fc8014",
+        "priorMatch": [],
+        "officialMatch": "https://raw.githubusercontent.com/mrdoob/three.js/r170/examples/jsm/environments/RoomEnvironment.js"
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+        "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three/LICENSE",
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/LICENSE"
+        ],
+        "officialMatch": null
+      }
+    ]
+  },
+  "prompt": {
+    "version": "09-manual",
+    "sha256": "25f559d7acbf9a40d8d92dde33f8b5f70044336d071714d0f0d85fe467fd4fcd",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "Opus (parent-labeled manual entry); exact version and effort unrecorded",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3433,
+      "sha256": "eeb35f496a3e413ba54dc0e39770d1826463847e975ab4eb33e03d27fe930211"
+    },
+    "frozen/src/bay.js": {
+      "bytes": 49031,
+      "sha256": "6f775025c348bc0082cced831ae164cb900ccccc2c22b88dacf2843b74a7e352"
+    },
+    "frozen/src/geo.js": {
+      "bytes": 6147,
+      "sha256": "9d9c45b4301e8c406f9558bb149d80168e9ceed42511495864fac536f45b26c4"
+    },
+    "frozen/src/main.js": {
+      "bytes": 9758,
+      "sha256": "116a831c8e26e7cd115affbda4a0cc4f298733897d8a03ef4d6dcc777c96b397"
+    },
+    "frozen/src/tex.js": {
+      "bytes": 16130,
+      "sha256": "be88e267c7b928aa5fd1a212d1519d6e577eebfd57b1c96155fb3d5f405468a4"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 1314681,
+      "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb"
+    },
+    "frozen/vendor/three/examples/jsm/environments/RoomEnvironment.js": {
+      "bytes": 3606,
+      "sha256": "85869bdd22f7cf0b22e68dcefe6cb710480af0f5c901a76f7a7764fd07fc8014"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "host-verification.json": {
+      "bytes": 1371,
+      "sha256": "a61c4b34d94ce23bc671791b2218055bf639460e69bd961d1da806b396bf9cea"
+    },
+    "README.md": {
+      "bytes": 6551,
+      "sha256": "23a23e9ed75610754025e341bb0f2ef5acccfd483f6a50ebfb56781224ac8222"
+    }
+  }
+}

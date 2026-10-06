@@ -15,8 +15,8 @@
       "id": "alder-halt",
       "title": "Alder Halt",
       "description": "A forgotten branch line, a waiting room, and a path through the returning woods.",
-      "requestedConfiguration": "GPT-6.1 Sol · xhigh (requested)",
-      "modelDisclosure": "The parent requested GPT-6.1 Sol at xhigh. The producer identified only the GPT-6 family; the exact serving model and effort were not exposed. Requested configuration is not verified backend identity.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "The parent requested GPT-6.1 Sol at xhigh. The producer identified only the GPT-6 family; the exact serving model and effort were not exposed. Requested configuration is not verified backend identity. The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "First artifact 2026-10-06 01:02:55 UTC; deadline 02:02:55 UTC. Scene frozen 01:41:27 UTC. Packaging finished before the deadline; parent reports completion around 01:47 UTC.",
       "interruptions": "No human or scheduling interruptions. Restricted dependency fetches failed; an authorized retry succeeded. Setup and retries were included in elapsed time.",
       "controls": "WASD walk; mouse look; Shift brisk walk; arrows turn/tilt; R reset; Esc release/pause; P frame times; Q quality.",
@@ -51,8 +51,8 @@
       "id": "bracken-hollow",
       "title": "Bracken Hollow",
       "description": "An overgrown station, a covered platform, and a woodland loop beyond the tracks.",
-      "requestedConfiguration": "GPT-6 Astra · xhigh (requested)",
-      "modelDisclosure": "The parent requested GPT-6 Astra at xhigh. The producer identified only the GPT-6 family; the exact serving model and effort were not exposed. Requested configuration is not verified backend identity.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "The parent requested GPT-6 Astra at xhigh. The producer identified only the GPT-6 family; the exact serving model and effort were not exposed. Requested configuration is not verified backend identity. The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "Work began 2026-10-06 01:02:10 UTC; implementation start 01:04:09 UTC. Whole-task deadline 02:02:10 UTC; implementation deadline 02:04:09 UTC. Scene frozen 01:53:08 UTC; package recorded 01:54:56 UTC.",
       "interruptions": "No user interruptions. Initial sandbox-blocked npm download retried with automatic approval; included in elapsed work time.",
       "controls": "WASD or arrows walk; mouse look; Shift brisk walk; R reset; Esc release/pause; F frame times; detail button. Drag-to-look fallback.",
@@ -177,8 +177,8 @@
       "id": "raincourt-astra",
       "title": "Raincourt",
       "description": "Four stalls, rain-dark paving, and a sheltered passage to One Last Cup.",
-      "requestedConfiguration": "GPT-6 Astra / xhigh (requested)",
-      "modelDisclosure": "Parent requested GPT-6 Astra at xhigh. Producer could verify only the GPT-6 family; exact serving backend identity and effort were not exposed.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "Parent requested GPT-6 Astra at xhigh. Producer could verify only the GPT-6 family; exact serving backend identity and effort were not exposed. The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "Implementation start 2026-10-06 02:43:32 UTC; actual stop 03:27:54 UTC; deadline 03:43:32 UTC. Producer record: 2,662.492 seconds, completed before deadline.",
       "interruptions": "Clock never paused. Registry retry, restricted Vite scanning replaced by a local server, and an occupied initial port; all included in elapsed time.",
       "controls": "WASD or arrows walk; mouse look or drag; Shift faster; Q/E turn; R reset; Esc release; H controls; P frame times; Quality button.",
@@ -228,8 +228,8 @@
       "id": "lantern-court-sol",
       "title": "Lantern Court",
       "description": "Four kitchens and market stalls, a covered passage, and The Late Cup tea counter.",
-      "requestedConfiguration": "GPT-6.1 Sol / xhigh (requested)",
-      "modelDisclosure": "Parent requested GPT-6.1 Sol at xhigh. Producer identified only GPT-6 / Codex; exact serving model and effort were not exposed.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "Parent requested GPT-6.1 Sol at xhigh. Producer identified only GPT-6 / Codex; exact serving model and effort were not exposed. The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "Implementation start 2026-10-06 02:43:53 UTC; actual stop 03:38:41 UTC; deadline 03:43:53 UTC. Producer record: 54.802 minutes.",
       "interruptions": "No external interruptions. Registry retry, restricted Vite scanning replaced by a local server, and preview-server switch; included in elapsed time.",
       "controls": "WASD walk; mouse capture or drag to look; Shift faster; arrows turn/tilt; R reset; Esc release; P frame timings.",
@@ -281,8 +281,8 @@
       "webgl": "WebGL 2",
       "promptId": "03",
       "description": "A vaulted entrance, a bronze telescope beneath an open dome, and a sheltered viewing terrace.",
-      "requestedConfiguration": "GPT-6 Astra (parent-reported selection)",
-      "modelDisclosure": "Parent identifies the completed run as Astra. Producer could verify only the GPT-6 family; exact backend model and reasoning effort were not exposed. No unverified effort value is asserted.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "Parent identifies the completed run as Astra. Producer could verify only the GPT-6 family; exact backend model and reasoning effort were not exposed. No unverified effort value is asserted. The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "First implementation 2026-10-06 03:31:06 UTC; actual stop 04:07:01.749 UTC. Recorded session start 03:30:09 UTC and deadline 04:30:09 UTC. Producer reports 2,156 seconds from first implementation and completion before that deadline; initial setup clock was earlier.",
       "interruptions": "No user interruption or deadline extension. Initial dependency installation was blocked, then succeeded with authorized escalation while work continued. A standard npm diagnostic unexpectedly exposed another task’s package name, path and version in a shared cache log; producer declares that no referenced project files or assets were opened or reused.",
       "controls": "WASD or arrows walk; mouse look or drag; Shift faster; R reset; Esc releases; P frame times; render quality selector.",
@@ -359,8 +359,8 @@
       "id": "meridian-sol",
       "title": "Meridian Observatory",
       "description": "A vaulted south passage, an equatorial refractor beneath an open dome, and a guarded horizon terrace.",
-      "requestedConfiguration": "GPT-6.1 Sol / xhigh (requested)",
-      "modelDisclosure": "Parent requested GPT-6.1 Sol at xhigh. Producer could verify only GPT-6 / Codex; exact backend identity and effort were not exposed.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "Parent requested GPT-6.1 Sol at xhigh. Producer could verify only GPT-6 / Codex; exact backend identity and effort were not exposed. The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "Task start 2026-10-06 03:41:57 UTC; first implementation 03:44:26.5937812 UTC; deadline 04:41:57 UTC; actual stop 04:33:29.792 UTC. Producer records 3,092.793 seconds elapsed from task start, within its deadline.",
       "interruptions": "No human interruption. Initial registry installation and Vite optimization hit sandbox restrictions; authorized retries completed within the time limit. An occupied original port was abandoned without inspecting or reusing the unrelated server; the completed build uses port 48673.",
       "controls": "WASD or arrows walk; mouse look; Shift brisk walk; R reset; Esc releases/pauses; F frame-time panel; quality button while paused.",
@@ -460,8 +460,8 @@
       "title": "The Fern House",
       "promptId": "04",
       "promptVersion": "04-shared",
-      "requestedConfiguration": "GPT-6 Astra / xhigh (requested)",
-      "modelDisclosure": "Parent requested Astra at xhigh; producer identifies GPT-6 / Codex only. Exact backend identity and effort were unavailable.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "Parent requested Astra at xhigh; producer identifies GPT-6 / Codex only. Exact backend identity and effort were unavailable. The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "Session start 2026-10-06 04:08:38 UTC; first implementation 04:09:39 UTC; conservative deadline 05:08:38 UTC; stop 04:51:38 UTC.",
       "interruptions": "No user interruption or pause; initial dependency install retried with authorized network permission while implementation continued.",
       "producerChecks": "13 final route, collision, mouse, crouch, reset, quality and resize checks passed; no final browser console errors. Host separately verified rendering, ordinary input, reset, sandbox isolation and unloading.",
@@ -549,8 +549,8 @@
       "title": "The Fernery",
       "promptId": "04",
       "promptVersion": "04-shared",
-      "requestedConfiguration": "GPT-6.1 Sol (parent-reported selection)",
-      "modelDisclosure": "Parent identifies the finished run as Sol. The producer could verify only GPT-6 / Codex; exact backend identity and reasoning effort were not exposed. No unverified effort level is asserted.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "Parent identifies the finished run as Sol. The producer could verify only GPT-6 / Codex; exact backend identity and reasoning effort were not exposed. No unverified effort level is asserted. The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "buildWindow": "Session start 2026-10-06 04:35:43 UTC; first implementation 04:36:47.493 UTC; conservative deadline 05:35:43 UTC; final authored-content freeze 05:32:20.693 UTC. Last scene edit 05:30:14.210 UTC; packaging/read-only checks followed without further scene edits.",
       "interruptions": "Producer records an interrupted tool call and about 21 minutes between the 05:04:48 build write and 05:26:28 resumption. Exact interruption time was unavailable; no deadline extension. Registry/network and Vite setup issues are disclosed in the unchanged record.",
       "producerChecks": "Producer reports seven inspection viewpoints, collision/control checks and a seven-stop keyboard walkthrough. Walkthrough confirms mouse look, crouch, release, reset and route completion, with zero reported browser errors.",
@@ -688,8 +688,8 @@
       "title": "ICEFIELD / Station 07",
       "promptId": "05",
       "promptVersion": "05-shared",
-      "requestedConfiguration": "Astra (parent-reported selection)",
-      "modelDisclosure": "Parent identifies the selected model; producer verifies GPT-6 only. Exact serving backend and reasoning effort were unavailable.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "Parent identifies the selected model; producer verifies GPT-6 only. Exact serving backend and reasoning effort were unavailable. The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "webgl": "WebGL 2",
       "readySelector": "#loading.hidden",
       "htmlSha256": "938c6f36c04622a39dd831132796e3db61af429e91ebe55e0b7cb35bf014965d",
@@ -745,8 +745,8 @@
       "title": "Boreal / Polar Field Shelter",
       "promptId": "05",
       "promptVersion": "05-shared",
-      "requestedConfiguration": "GPT-6.1 Sol (parent-reported selection)",
-      "modelDisclosure": "Parent identifies Sol; producer verifies GPT-6 only. Exact backend variant and reasoning effort were unavailable.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "Parent identifies Sol; producer verifies GPT-6 only. Exact backend variant and reasoning effort were unavailable. The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort.",
       "webgl": "WebGL 2",
       "readySelector": "#loading[hidden]",
       "htmlSha256": "fb0fda2a40ab9cf741ecebb1646e7c4d91f8d9d5fe37e1354a81602ff5ce9026",
@@ -857,8 +857,8 @@
       "promptVersion": "06-openai",
       "comparisonModel": "astra",
       "description": "A dry pool-side route beneath a broad arch, leading to a raised survey landing.",
-      "requestedConfiguration": "GPT-6 Astra (parent-selected); effort unverified",
-      "modelDisclosure": "The parent identifies this entry as Astra. The producer could observe only its supplied GPT-6 family identity and reports that exact backend and effort were not exposed or included in its delegated prompt. The import receipt does not establish an exact requested effort for this run; no xhigh claim is inferred.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort. Original producer records report only the identity/effort visible inside their run and remain unchanged; their lack of visibility does not negate the parent-selected request.",
       "buildWindow": "2026-10-06 UTC: run start 17:04:33; first implementation command 17:09:25 and first source creation 17:09:27.823; fixed deadline 18:04:33; actual stop 17:38:48.",
       "interruptions": "Registry and esbuild sandbox failures were retried through available approval. Coordinator reported disconnect notices; producer observed no local work loss or pause. Deadline was not extended.",
       "controls": "WASD / arrows walk; mouse look; Shift faster; R reset; Esc release/pause; H guide; Q quality; F3 frame intervals. Drag-to-look fallback.",
@@ -903,8 +903,8 @@
       "promptVersion": "06-openai",
       "comparisonModel": "sol",
       "description": "A limestone pool chamber, worn arch and survey landing connected by a continuous dry bank.",
-      "requestedConfiguration": "GPT-6.1 Sol (parent-selected); effort unverified",
-      "modelDisclosure": "The parent identifies this entry as Sol in the requested GPT-6.1 Sol benchmark group. The producer could observe only its supplied GPT-6 family identity and reports that exact backend and effort were not exposed or included in its delegated prompt. The import receipt does not establish an exact requested effort for this run; no xhigh claim is inferred.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort. Original producer records report only the identity/effort visible inside their run and remain unchanged; their lack of visibility does not negate the parent-selected request.",
       "buildWindow": "2026-10-06 UTC: run start 17:04:48; first implementation 17:05:13.163; fixed deadline 18:04:48; editing stopped 17:39:28.578; packaging recorded 17:40:08.",
       "interruptions": "Initial npm request failed under the network sandbox and succeeded after automatic approval review. Coordinator reported disconnect notices; producer observed no local pause or lost work. Fixed deadline was not extended.",
       "controls": "WASD / arrows walk; mouse look; Shift brisk walk; Esc pause/release; Enter resume; R reset; Q quality; F frame intervals. Drag-to-look fallback.",
@@ -1047,8 +1047,8 @@
       "comparisonModel": "astra",
       "availability": "unverified",
       "runtimeVerification": "Host runtime QA not run",
-      "requestedConfiguration": "GPT-6 Astra (parent-selected); effort unverified",
-      "modelDisclosure": "Parent-selected Astra. Producer identified GPT-6 / Codex from execution instructions; exact serving variant and effort were not exposed or independently verified. No run-specific exact requested effort was supplied in the import receipt, so xhigh is not inferred.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort. Original producer records report only the identity/effort visible inside their run and remain unchanged; their lack of visibility does not negate the parent-selected request.",
       "buildWindow": "2026-10-06 UTC: work began 17:40:41.260; first implementation 17:41:09.269; fixed deadline 18:40:41.260; last source edit 18:05:37.361; source/build freeze 18:07:27.279; actual stop 18:07:27.671.",
       "interruptions": "Initial network-restricted dependency install was retried with authorization. A coordination-only cleanup reminder arrived midrun; the parent reports Jordan accepted this affected run. No clock pause or extension. Producer recorded zero workspace-owned processes and zero port 5189 listeners at cleanup.",
       "controls": "WASD walk; mouse look or drag fallback; Shift faster; arrows look; Esc pause; R reset; F frame panel; T clear measurements; quality/sensitivity menus. Producer CSV export is blocked by the unchanged host sandbox.",
@@ -1102,8 +1102,8 @@
       "comparisonModel": "sol",
       "availability": "unverified",
       "runtimeVerification": "Host runtime QA not run",
-      "requestedConfiguration": "GPT-6.1 Sol (parent-selected); effort unverified",
-      "modelDisclosure": "The parent selected Sol for the GPT-6.1 Sol benchmark group. Producer identified only GPT-6 / Codex; exact backend and reasoning effort were not exposed or independently verified. No run-specific exact requested effort was supplied in the import receipt, so xhigh is not inferred.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort. Original producer records report only the identity/effort visible inside their run and remain unchanged; their lack of visibility does not negate the parent-selected request.",
       "buildWindow": "2026-10-06 UTC: session start 17:42:13; first implementation began 17:45:26 and completed by 17:45:33; fixed deadline 18:42:13; actual stop/freeze 18:14:25.",
       "interruptions": "Original producer records report no user interruption or suspended work, plus an authorized retry after registry sandbox failure. The parent separately confirms a midrun coordination-only cleanup reminder accepted by Jordan. Both records are preserved; no clock pause or extension is claimed. Producer reports zero workspace-owned processes and zero preview listeners at freeze.",
       "controls": "WASD / arrows walk; mouse capture or drag look; Shift faster; Esc pause; R reset; P frame panel; quality/sensitivity menus. Original measurement export is blocked by the host sandbox.",
@@ -1138,6 +1138,426 @@
       "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
       "htmlSha256": "9185c30d8dbe3d8d53511a2b089e48b4974f3c8b8a2cbf54b7a7c8725d2c4eb0",
       "promptDisclosure": "Parent-supplied Prompt 07 base and shared initial OpenAI no-browser execution restriction. The later cleanup reminder is recorded separately; no reconstructed interruption text or independently read entrant transcript is claimed."
+    },
+    {
+      "id": "stillwater-astra",
+      "title": "Stillwater",
+      "comparisonModel": "astra",
+      "description": "A timber workshop, pier and low-tide shore connected by a clear dry route around a small boat.",
+      "buildWindow": "2026-10-06 UTC: session start 18:09:03.311; first implementation file 18:11:02.540; deadline 19:09:03.311; last application edit 18:41:55.144; stop 18:49:47.341.",
+      "interruptions": "Producer reports no coordination interruptions or paused clock. Registry retrieval was unavailable, so an ordinary cached Three.js 0.185.1 package was used. Producer records zero owned processes and preview listeners at handoff.",
+      "controls": "Mouse capture or drag look; WASD/arrows walk; Shift faster; reset, controls, display settings and frame-time controls are visible in the scene.",
+      "producerChecks": "Producer reports eleven CPU-only checks, syntax and static build passed. These checks did not execute or render the scene.",
+      "performanceEvidence": "No measured rendering performance; optional frame-interval display is for later exploration.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2. Interactive controls, shaders, visual appearance and performance were not tested.",
+        "Tide, boat and distant scenery are fixed; water and decorative collisions are approximations.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "08",
+      "promptVersion": "08-openai",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "RUN_RECORD.json"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#enter:not([disabled])",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "118ba0edd8983ee1d16c8733d506bc5544810d16ab120c0650f6c5ef7e376eb2",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "htmlSha256": "39b82503bdeee86b9297935c2e7d8f351d802f82ba645497c5ecd2d03dc02af0",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+    },
+    {
+      "id": "low-tide-sol",
+      "title": "Low Tide / Morning at the Boathouse",
+      "comparisonModel": "sol",
+      "description": "A salt-worn workshop, short pier and accessible shore surrounding a clinker-built skiff.",
+      "buildWindow": "2026-10-06 UTC: first implementation 18:17:56.059; deadline 19:17:56.059; stop 19:07:13.324.",
+      "interruptions": "No coordination interruptions or paused clock reported. Registry, Vite configuration-loader and process-inventory sandbox issues were resolved during the original run. Producer records zero owned processes and preview listeners.",
+      "controls": "Mouse capture or drag look; WASD/arrows walk; Shift faster; R/reset returns to the workshop; Esc releases; quality and frame-time controls are provided.",
+      "producerChecks": "Producer reports eight static/data checks, syntax, production build and artifact checks passed. Runtime, interaction, visual and GPU checks were prohibited and not run.",
+      "performanceEvidence": "No collected timing samples. The original frame display and CSV feature describe later browser frame intervals, not a producer performance score.",
+      "limitations": [
+        "Desktop keyboard/mouse; no swimming, jumping, touch controls or boat boarding. Fixed tide and approximate water reflections.",
+        "CSV download remains blocked by the unchanged host sandbox. The build uses native module preload; the optional Vite fetch fallback remains restricted by the host's existing connect-src policy.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "08",
+      "promptVersion": "08-openai",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "RUN_RECORD.json"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading[hidden] ~ #error[hidden]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "2a2b8dbc4d3f7f857d45bdbc257b89a3ade8fc324472dbce6c6b1eca8aa77aaf",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "htmlSha256": "cf1782ade07d28b6a414179aa2806bfae270f90443dc1617b5424cd76e882900",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+    },
+    {
+      "id": "coastal-boathouse-opus",
+      "title": "Tidal Boathouse",
+      "comparisonModel": "opus",
+      "description": "A timber workshop, quay, short pier and exposed foreshore around the dinghy Kittiwake.",
+      "requestedConfiguration": "Claude Opus 5.5 (producer-reported); effort unverified",
+      "modelDisclosure": "Original README identifies Claude Opus 5.5 / claude-opus-5-5 in Claude Code and reports session-default effort. Exact effort and serving identity are not independently verified; no XHIGH claim is inferred.",
+      "buildWindow": "Producer record, 2026-10-06: start and first implementation 13:41:41 EDT (17:41:41 UTC); deadline 14:41:41 EDT (18:41:41 UTC); stopped editing 14:13:14 EDT (18:13:14 UTC).",
+      "interruptions": "Producer reports none. Timing and completion claims come from the preserved README.",
+      "controls": "Mouse look; WASD/arrows walk; Shift faster; C crouch; R reset; 1-5 viewpoints; P frame overlay; Q resolution; Esc release.",
+      "producerChecks": "README reports a scripted route through workshop, pier, steps, shore, boat circuit and slipway, with major collision boundaries checked. Host runtime QA was not run.",
+      "performanceEvidence": "Producer reports synchronized 1920x1080 GPU timings: final view medians 9.1-13.3 ms, with worst samples up to 17.1 ms; a busier-GPU run was roughly twice as slow. These are unverified producer measurements, not controlled comparative scores.",
+      "limitations": [
+        "Desktop controls. Simplified collision, inaccessible space under the pier and decorative small objects without individual collision.",
+        "Water reflects an analytic sky, not the boat or pier. Original automatic resolution reduction remains unchanged.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "08",
+      "promptVersion": "08-manual",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading[style*=\"display: none\"]",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "8cb499eb4e6b4b3fca0de3180427292fe2175072722cee0c89d15dfa48d40e78",
+      "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive; retained outside Git and Pages.",
+      "htmlSha256": "53be8fff1641fca211f778577f1858017a9d935cbea63a59a45c8e67d5fc6c51",
+      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed."
+    },
+    {
+      "id": "kestrel-bay-astra",
+      "title": "Kestrel / Maintenance 07",
+      "comparisonModel": "astra",
+      "description": "An orbital work floor, service alcove and ordinary stairs to a guarded gallery overlooking a drive cartridge.",
+      "buildWindow": "2026-10-06 UTC: first implementation 18:52:17.337; deadline 19:52:17.337; stop 19:20:53.636. Archive compression followed the stop without further implementation edits.",
+      "interruptions": "No coordination interruptions or paused clock. A blocked registry request and an initial stylesheet-import build error were resolved by the producer. Producer records zero owned processes and preview listeners.",
+      "controls": "Mouse capture; WASD/arrows walk; Shift brisk walk; R/reset; Esc release; detail selector and controls button.",
+      "producerChecks": "Producer reports syntax and production build passed, plus 2,992 numeric route samples covering stairs, gallery, alcove, obstacles and rails. No scene, browser or GPU execution occurred.",
+      "performanceEvidence": "No measured performance. Geometry grouping and cached shadows are implementation choices, not timing results.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2. Shaders, actual walking feel, appearance and frame times remain unverified.",
+        "Static machinery, procedural space backdrop, inexpensive transparent glass and simplified decorative collisions.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "09",
+      "promptVersion": "09-openai",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "RUN_RECORD.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "2db2395a199f75d6c14204bc23d66d2305becb89bf47b1d58e1af81d2111d1bd",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "htmlSha256": "2e8aa49f75a025ed3e24e4c3dbf3f6b98870c71b80588ccb731899ffe99a9069",
+      "readyTextPrefix": "Ready.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+    },
+    {
+      "id": "kestrel-maintenance-sol",
+      "title": "Kestrel / Orbital Maintenance Bay",
+      "comparisonModel": "sol",
+      "description": "A central drive assembly, open repair alcove and sixteen stairs connecting the work floor to an inspection deck.",
+      "buildWindow": "2026-10-06 UTC: preparation 19:09:13; first implementation 19:09:43.658; deadline 20:09:13; last scene/source edit 19:26:40.279; stop 19:32:09.",
+      "interruptions": "No coordination interruptions. Registry and static-bundling sandbox restrictions were resolved during the original run. Producer records zero owned processes and preview listeners.",
+      "controls": "Mouse capture or drag look; WASD/arrows walk; Shift faster; R/reset; Esc pause/release; F frame-time display; display quality options.",
+      "producerChecks": "Producer reports syntax, numerical route/tread/collision checks and offline production build passed. Browser, visual, scene, GPU and performance checks were not run.",
+      "performanceEvidence": "No measured performance. The optional HUD reports rolling browser presentation intervals only during later exploration.",
+      "limitations": [
+        "Desktop keyboard/mouse. Static machinery; small tools and cables use enclosing collision volumes.",
+        "Host launch, shader compatibility, interactive routes and performance are unverified.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "09",
+      "promptVersion": "09-openai",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "RUN_RECORD.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading[hidden]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "dd199d6312050a266fd0771fbfe4c5eb31a9beff79ac97fa34b9014b44f3ce13",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "htmlSha256": "75744063cccfd56c30684fa34e06837ccc28819389191ed6e076327818b4e7ad",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+    },
+    {
+      "id": "orbital-maintenance-opus",
+      "title": "Bay 3 / Maintenance",
+      "comparisonModel": "opus",
+      "description": "A ribbed orbital bay with a central gimbal assembly, task-lit alcove, stairs and elevated inspection walkway.",
+      "requestedConfiguration": "Opus (parent-labeled manual entry); exact version and effort unrecorded",
+      "modelDisclosure": "The parent identifies this completed handoff as Opus. Its README does not record exact model version, reasoning effort or a timing window. These values are unverified and are not inferred from other Opus entries.",
+      "buildWindow": "Actual first implementation, one-hour deadline and stop timestamps were not supplied in the completed handoff. File modification times are not substituted for a run record.",
+      "interruptions": "No interruption record was supplied. Completion notes are preserved, but an independently verified duration or interruption history is not claimed.",
+      "controls": "Mouse capture; WASD/arrows walk; Shift faster; C/Ctrl crouch; R/reset; F frame stats; H hints; P resolution; Esc release.",
+      "producerChecks": "README reports hidden-browser visual checks and a scripted machine circuit, alcove, stairs, walkway and return, with final console/collision checks. These are producer claims; host runtime QA was not run.",
+      "performanceEvidence": "Producer reports indicative synchronized 1280x720 batches, generally 3.3-5.0 ms after an initial 10 ms batch, in a hidden/throttled pane. No independent comparative score is assigned.",
+      "limitations": [
+        "Exact model/effort and build timing are missing from the handoff. Desktop keyboard/mouse only; simplified collision and a smooth collision ramp beneath visible stairs.",
+        "Original render-scale probes run after explicit scene opening and again shortly afterward while the start overlay remains up. This producer behavior is preserved unchanged.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "09",
+      "promptVersion": "09-manual",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#start:not([disabled])",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "d5101a1599870ddc02429702165fc7eb69b5c9e792324942646970e028f95f0c",
+      "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive; retained outside Git and Pages.",
+      "htmlSha256": "eeb35f496a3e413ba54dc0e39770d1826463847e975ab4eb33e03d27fe930211",
+      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed."
+    },
+    {
+      "id": "hearth-folio-astra",
+      "title": "Hearth & Folio",
+      "comparisonModel": "astra",
+      "description": "A tall hillside reading hall with varied shelves, a window alcove and a broad stair to an overlooking gallery.",
+      "buildWindow": "2026-10-06 UTC: first implementation 19:23:32.642; deadline 20:23:32.642; stop 20:03:11.090.",
+      "interruptions": "No coordination interruptions. Initial registry access and process inventory were restricted, then completed through approved retries. Producer records zero owned processes and no preview server.",
+      "controls": "Mouse capture or drag look; WASD/arrows walk; Shift faster; Q/E turn; R/reset; H controls; F timing; detail selector; Esc release.",
+      "producerChecks": "Producer reports ten static checks covering syntax, local imports, offline assets, navigation arithmetic and boundaries. No browser, server, scene, GPU or performance checks ran.",
+      "performanceEvidence": "No frame-rate claim. Optional timing reports five-second browser frame intervals during later exploration.",
+      "limitations": [
+        "Desktop keyboard/mouse; hillside is a backdrop and the entry door is decorative.",
+        "Simplified furniture collision and a smooth support ramp beneath the visible stair. Static lights and noninteractive books/props.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "10",
+      "promptVersion": "10-openai",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading[hidden] ~ #error[hidden]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "263198e61afee749a217f4af3c161ba333e70e8e044090e5810d9a5b36df80a6",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "htmlSha256": "1f7a281dde89fd8028b607d7a1b7eedddb33be213769570012e9c229d9d18812",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+    },
+    {
+      "id": "aster-reading-house-sol",
+      "title": "The Aster Reading House",
+      "comparisonModel": "sol",
+      "description": "A hillside library with lower shelves, a window-side reading alcove and a broad stair to a partial upper gallery.",
+      "buildWindow": "2026-10-06 UTC: first implementation 19:34:21; deadline 20:34:21; stop and run-record seal 20:10:57. Subsequent work was packaging and read-only verification.",
+      "interruptions": "Producer reports none. An initial blocked registry fetch succeeded through an approved retry while the clock continued. Producer records zero owned processes and preview listeners.",
+      "controls": "Mouse capture or drag look; WASD/arrows walk; Shift faster; R/reset; H/help; F/timing; Esc release; quality selector.",
+      "producerChecks": "Producer reports static build, syntax, local imports, UI bindings, layout dimensions and connectivity checks passed. Browser, scene execution, interaction, GPU and performance checks were not run.",
+      "performanceEvidence": "No measured performance result. Later exploration can display rolling frame intervals.",
+      "limitations": [
+        "Desktop keyboard/mouse; approximate furniture collision, smooth collision ramp beneath visible stairs and a simple hillside backdrop.",
+        "Browser launch, shaders, input, actual collision feel and frame performance remain unverified.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "10",
+      "promptVersion": "10-openai",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "RUN_RECORD.json"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading[hidden] ~ #error[hidden]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "e8a83c3dbc6549b7ef9abd4a028c7ef046743733ca3944491ee3a1a0f98eebd9",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "htmlSha256": "9c6ca03fe7e0c510e811dd242dc19ae588b681ccbaaab3964eb409b2000c0012",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
+      "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+    },
+    {
+      "id": "polar-shelter-opus",
+      "title": "Field Hut K-4",
+      "comparisonModel": "opus",
+      "completionStatus": "partial",
+      "description": "Partial handoff: a polar research shelter with snow approach, vestibule and main work room, stopped early at a usage limit.",
+      "requestedConfiguration": "Claude Opus 5.5 / effort 40 (producer-reported)",
+      "modelDisclosure": "Original README reports Claude Opus 5.5 / claude-opus-5-5 and the raw effort value 40. Its scale and backend execution are not independently verified; this is not relabeled XHIGH or inferred from Opus06's confirmed medium setting. The run ended early at a usage limit.",
+      "buildWindow": "Producer record, 2026-10-06: first implementation 01:38:37 EDT (05:38:37 UTC); deadline 02:38:37 EDT (06:38:37 UTC); approximate stop 02:10 EDT (06:10 UTC).",
+      "interruptions": "Partial submission. Producer and parent report an early usage-limit stop, with no other interruptions claimed. Original files are preserved without completing or repairing the scene.",
+      "controls": "Mouse capture; WASD/arrows walk; Shift faster; C/Ctrl crouch; R reset; F timing; P adaptive resolution; Esc release.",
+      "producerChecks": "README claims a console-clean load and scripted walk from snow through both doors, with furniture blocking. The host did not execute the partial build.",
+      "performanceEvidence": "Producer reports noisy synchronized hidden-pane GPU timings at 1920x1080: roughly 12-18 ms inside, 13-25 ms outside and 30-45 ms at a close deck view. Adaptive resolution was not verified through live play. These are producer claims, not independent grades.",
+      "limitations": [
+        "Partial early-stop handoff; runtime and completeness remain unverified. No host repair or continuation was performed.",
+        "Fixed-open doors, simple 2D collision, no jumping, unshadowed interior lights and potentially soft adaptive resolution.",
+        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+      ],
+      "promptId": "05",
+      "promptVersion": "05-shared",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "documents": [
+        {
+          "label": "Original controls / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#start",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "d1916f0f99c109553d6a816b8adf4ca8830f6d9b06739acec97fe4c6be5e54f6",
+      "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive; retained outside Git and Pages.",
+      "htmlSha256": "eab8bbd46eecea3368e1eb78a7bc5791b0393569f7327c7d0fbd9c6e026ef8b0",
+      "readyTextPrefix": "Click to enter",
+      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed."
     }
   ],
   "prompts": [
@@ -1180,6 +1600,21 @@
       "id": "07",
       "title": "Brutalist museum",
       "brief": "An entrance gallery and taller sculpture hall connected by a broad ramp, with three original abstract sculptures."
+    },
+    {
+      "id": "08",
+      "title": "Tidal boathouse",
+      "brief": "A timber workshop, short pier and exposed shoreline beside a quiet tidal inlet."
+    },
+    {
+      "id": "09",
+      "title": "Orbital maintenance bay",
+      "brief": "A main work floor, service alcove and elevated inspection walkway connected by ordinary stairs."
+    },
+    {
+      "id": "10",
+      "title": "Hillside library",
+      "brief": "Lower shelves, a window reading alcove and broad stairs to a partial upper gallery."
     }
   ],
   "promptVersions": [
@@ -1231,7 +1666,7 @@
     {
       "id": "05-shared",
       "promptId": "05",
-      "label": "Astra / Sol / Luna submitted prompt",
+      "label": "Astra / Sol / Luna / Opus shared base prompt",
       "path": "prompt-05.txt",
       "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
       "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline.",
@@ -1272,6 +1707,60 @@
       "sha256": "7c8a4459bb1ee5e71224cc13dddfaa07b117ccb4d5352878def1c94a19de48b1",
       "source": "Exact base wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; parent confirms the initial OpenAI no-browser constraint applied. UTF-8, LF, no final newline. Entrant transcript not independently accessed.",
       "note": "Supplied base and execution-constraint blocks joined by one blank line; exact wording, not independently observed message-byte framing. A later coordination-only cleanup reminder is disclosed separately in the run record; no deadline extension."
+    },
+    {
+      "id": "08-manual",
+      "promptId": "08",
+      "label": "Opus manual handoff / base prompt",
+      "path": "prompt-08.txt",
+      "sha256": "7d854b6281fc0bf7810d0b0de487452713ec7b1d7532ff89a323533c375fea1e",
+      "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
+      "note": "Parent confirms the manual handoff uses this base only; an independently verified manual transcript is not claimed."
+    },
+    {
+      "id": "08-openai",
+      "promptId": "08",
+      "label": "Astra / Sol / base + initial no-browser constraint",
+      "path": "prompt-08-openai.txt",
+      "sha256": "3a31d355c1ab22c1eb062bfa0f0cf77b30624a2c1339307db4ec8ccc9c4e9ce7",
+      "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
+      "note": "Parent confirms this exact base plus initial execution restriction. Supplied blocks are joined by one blank line; original message-byte framing is not independently observed. No later coordination messages were sent for OpenAI08-10."
+    },
+    {
+      "id": "09-manual",
+      "promptId": "09",
+      "label": "Opus manual handoff / base prompt",
+      "path": "prompt-09.txt",
+      "sha256": "25f559d7acbf9a40d8d92dde33f8b5f70044336d071714d0f0d85fe467fd4fcd",
+      "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
+      "note": "Parent confirms the manual handoff uses this base only; an independently verified manual transcript is not claimed."
+    },
+    {
+      "id": "09-openai",
+      "promptId": "09",
+      "label": "Astra / Sol / base + initial no-browser constraint",
+      "path": "prompt-09-openai.txt",
+      "sha256": "133a767c619c7fc1fc3f6858e1fc194448a2a26fec1b3044c487a8918ec79f68",
+      "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
+      "note": "Parent confirms this exact base plus initial execution restriction. Supplied blocks are joined by one blank line; original message-byte framing is not independently observed. No later coordination messages were sent for OpenAI08-10."
+    },
+    {
+      "id": "10-base",
+      "promptId": "10",
+      "label": "Shared base / no manual result supplied",
+      "path": "prompt-10.txt",
+      "sha256": "f52ab25d650da8b21f04cd103f8c24ddff4ebcbee9bd9346d2d26e36837cad44",
+      "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
+      "note": "Parent-supplied reference base. No Opus10 artifact was supplied or imported."
+    },
+    {
+      "id": "10-openai",
+      "promptId": "10",
+      "label": "Astra / Sol / base + initial no-browser constraint",
+      "path": "prompt-10-openai.txt",
+      "sha256": "833f25008ecb32307072c418e51a5dc731129fd34cef099a718c187403c715bb",
+      "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
+      "note": "Parent confirms this exact base plus initial execution restriction. Supplied blocks are joined by one blank line; original message-byte framing is not independently observed. No later coordination messages were sent for OpenAI08-10."
     }
   ]
 }

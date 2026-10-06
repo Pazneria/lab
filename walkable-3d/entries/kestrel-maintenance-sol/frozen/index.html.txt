@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111c22">
+  <title>Kestrel • Orbital Maintenance Bay</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three dimensional orbital station maintenance bay"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <header class="hud">
+    <div class="identity"><span class="mark">K</span><div><b>KESTREL</b><span>ORBITAL SERVICE / BAY 04</span></div></div>
+    <div class="hud-right"><span class="status"><i></i> PRESSURIZED</span><button id="reset" title="Reset position (R)">↺ <span>Reset</span></button><button id="settings" title="Display options">Display</button></div>
+  </header>
+  <section id="welcome" class="welcome">
+    <div class="eyebrow"><span>04</span> STATION OPERATIONS</div>
+    <h1>Between<br>the stars.</h1>
+    <p class="intro">A working bay for the station’s attitude-control drive. Step inside, walk the service floor, and inspect the assembly from the upper deck.</p>
+    <button id="enter" class="enter">Enter maintenance bay <span>↗</span></button>
+    <div class="instructions"><div><kbd>W A S D</kbd><span>Move</span></div><div><kbd>Mouse</kbd><span>Look</span></div><div><kbd>Shift</kbd><span>Walk faster</span></div><div><kbd>R</kbd><span>Reset position</span></div></div>
+    <p class="hint">Click to capture the mouse · Esc to release<br>Stairs connect both levels. No jump is needed.</p>
+  </section>
+  <section id="options" class="options" hidden>
+    <h2>Display</h2>
+    <label>Rendering quality<select id="quality"><option value="balanced">Balanced</option><option value="high">High detail</option><option value="low">Low power</option></select></label>
+    <label class="checkbox"><input type="checkbox" id="show-performance">Show frame timing <kbd>F</kbd></label>
+    <p>Timing is measured in your current browser session. High detail raises pixel resolution and shadow resolution.</p>
+    <button id="close-options">Close</button>
+  </section>
+  <div id="crosshair" class="crosshair" hidden aria-hidden="true"></div>
+  <footer class="bottom-hud"><div><span class="location-dot"></span><span id="location">MAIN WORK FLOOR</span><small id="level">LEVEL 01</small></div><div class="key-help"><kbd>Esc</kbd> Release mouse <span>·</span> <kbd>R</kbd> Reset <span>·</span> <kbd>F</kbd> Frame timing</div></footer>
+  <div id="performance" class="performance" hidden><b>FRAME TIMING</b><div id="frame-data">Collecting samples…</div><small>Rolling 5 seconds · presentation intervals</small></div>
+  <div id="notice" class="notice" hidden></div>
+  <div id="loading" class="loading"><span class="loader-mark">K</span><p>Preparing maintenance bay…</p></div>
+  <noscript>This environment requires JavaScript and a WebGL-capable browser.</noscript>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

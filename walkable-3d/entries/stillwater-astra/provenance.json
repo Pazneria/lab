@@ -1,0 +1,139 @@
+{
+  "entry": "stillwater-astra",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-12\\Stillwater-boathouse.zip",
+  "archiveSha256": "118ba0edd8983ee1d16c8733d506bc5544810d16ab120c0650f6c5ef7e376eb2",
+  "archiveKind": "Producer ZIP copied unchanged",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/src/layout.js": "dist/src/layout.js",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/materials.js": "dist/src/materials.js",
+      "frozen/src/navigation.js": "dist/src/navigation.js",
+      "frozen/src/world.js": "dist/src/world.js",
+      "frozen/style.css": "dist/style.css",
+      "frozen/vendor/BufferGeometryUtils.js": "dist/vendor/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-08\\stillwater-astra\\source\\README.md",
+      "RUN_RECORD.json": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-08\\stillwater-astra\\source\\RUN_RECORD.json"
+    },
+    "extraRecords": []
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": [
+      {
+        "path": "frozen/vendor/BufferGeometryUtils.js",
+        "sha256": "5c552223a9309883743b80538d6e9cdb45e3227f30d3ec56fb2c39b46e78d595",
+        "priorMatch": [],
+        "officialMatch": "three@0.185.1/examples/jsm/utils/BufferGeometryUtils.js"
+      },
+      {
+        "path": "frozen/vendor/THREE-LICENSE.txt",
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "priorMatch": [
+          "walkable-3d/entries/old-glasshouse-luna/frozen/vendor/THREE-LICENSE.txt"
+        ],
+        "officialMatch": "three@0.185.1/LICENSE"
+      },
+      {
+        "path": "frozen/vendor/three.core.js",
+        "sha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759",
+        "priorMatch": [
+          "walkable-3d/entries/old-glasshouse-luna/frozen/vendor/three.core.js"
+        ],
+        "officialMatch": "three@0.185.1/build/three.core.js"
+      },
+      {
+        "path": "frozen/vendor/three.module.js",
+        "sha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+        "priorMatch": [
+          "walkable-3d/entries/old-glasshouse-luna/frozen/vendor/three.module.js"
+        ],
+        "officialMatch": "three@0.185.1/build/three.module.js"
+      }
+    ]
+  },
+  "prompt": {
+    "version": "08-openai",
+    "sha256": "3a31d355c1ab22c1eb062bfa0f0cf77b30624a2c1339307db4ec8ccc9c4e9ce7",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3011,
+      "sha256": "39b82503bdeee86b9297935c2e7d8f351d802f82ba645497c5ecd2d03dc02af0"
+    },
+    "frozen/src/layout.js": {
+      "bytes": 2890,
+      "sha256": "c77d9954b6bc6c57ebc446998e6d5cfb18141f14acb175733208aa2638bcca7a"
+    },
+    "frozen/src/main.js": {
+      "bytes": 9028,
+      "sha256": "0791b462b90f6cab02a399e69071da99d2ef1e417d40c8ef38e0d9e7306ee70e"
+    },
+    "frozen/src/materials.js": {
+      "bytes": 9874,
+      "sha256": "4436e27ff8e3fb33e522a73e4287d041871eabe3b661f47001a50a469498b320"
+    },
+    "frozen/src/navigation.js": {
+      "bytes": 5220,
+      "sha256": "2e8428a467141b3f739ec9bf6ab54feec99dc4825bebf0f85003504faa5fe589"
+    },
+    "frozen/src/world.js": {
+      "bytes": 33352,
+      "sha256": "a6d694c42aeabb8bf8b58d4d8cdcc0bc03327aefb18a7e0992884ab3dd9c3359"
+    },
+    "frozen/style.css": {
+      "bytes": 5264,
+      "sha256": "af8dfc21fb129bdd250a6761cfa1162d070c646508e71e9b9b3805d95ab3c343"
+    },
+    "frozen/vendor/BufferGeometryUtils.js": {
+      "bytes": 37621,
+      "sha256": "5c552223a9309883743b80538d6e9cdb45e3227f30d3ec56fb2c39b46e78d595"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1443056,
+      "sha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 650153,
+      "sha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7"
+    },
+    "host-verification.json": {
+      "bytes": 1281,
+      "sha256": "116038310cb7403291f8a57c846fb54104e7c94ac60a247cc59acb838cd76300"
+    },
+    "README.md": {
+      "bytes": 4653,
+      "sha256": "7b0f9fbe9c15f1424f0b515e1c60d38dbda7d509e5c587ec8cad40eee9c56b67"
+    },
+    "RUN_RECORD.json": {
+      "bytes": 2960,
+      "sha256": "e1e8d2ccfa5fb4ce771209ca4fb916a3e9b5958943f277bb688d25c573d92e8b"
+    }
+  }
+}

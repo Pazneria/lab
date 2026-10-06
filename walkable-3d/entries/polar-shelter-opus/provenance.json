@@ -1,0 +1,139 @@
+{
+  "entry": "polar-shelter-opus",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-polar-shelter-entry",
+  "archiveSha256": "d1916f0f99c109553d6a816b8adf4ca8830f6d9b06739acec97fe4c6be5e54f6",
+  "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/builder.js": "src/builder.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/noise.js": "src/noise.js",
+      "frozen/src/shelter.js": "src/shelter.js",
+      "frozen/src/textures.js": "src/textures.js",
+      "frozen/src/world.js": "src/world.js",
+      "frozen/vendor/three/build/three.module.min.js": "node_modules/three/build/three.module.min.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-05\\polar-shelter-opus\\source\\README.md"
+    },
+    "extraRecords": []
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": [
+      {
+        "path": "frozen/vendor/three/build/three.module.min.js",
+        "sha256": "f7cee3c7533449a1505cc12cb5128b89e3d4fd3d7ea62b05f9f5464a217472ee",
+        "priorMatch": [],
+        "officialMatch": "https://raw.githubusercontent.com/mrdoob/three.js/r169/build/three.module.min.js"
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+        "sha256": "d20aeaf7077c459a8d952d215738d7b44fba028440bb862d84b622a34f0c80bb",
+        "priorMatch": [
+          "walkable-3d/entries/mass-light-opus/frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+        "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three/LICENSE",
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/LICENSE"
+        ],
+        "officialMatch": null
+      }
+    ]
+  },
+  "prompt": {
+    "version": "05-shared",
+    "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
+    "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline."
+  },
+  "requestedConfiguration": "Claude Opus 5.5 / effort 40 (producer-reported)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "partial",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3273,
+      "sha256": "eab8bbd46eecea3368e1eb78a7bc5791b0393569f7327c7d0fbd9c6e026ef8b0"
+    },
+    "frozen/src/builder.js": {
+      "bytes": 2931,
+      "sha256": "9b3dfc0fdb6dc97710685310a5877020e523693c93b3e9baf88f09d865c452e7"
+    },
+    "frozen/src/main.js": {
+      "bytes": 13659,
+      "sha256": "c9de1fe5913c12ce9fb66d4fc4b1aa4e37cd48f9b0a215a7eb8de6f018b9d31a"
+    },
+    "frozen/src/noise.js": {
+      "bytes": 2172,
+      "sha256": "3435ecdabe65ec3e48816707af806db0e02e5de0bfc1fd0c1a3f42d25615a1a4"
+    },
+    "frozen/src/shelter.js": {
+      "bytes": 55653,
+      "sha256": "ffd825934dbd9a008184e2f7017a3df7c5eae2da111b9900adfc00ee13231f9b"
+    },
+    "frozen/src/textures.js": {
+      "bytes": 13127,
+      "sha256": "8db70b1bef77944972eff44e7018a55e86ceb6797d1893077f783034387df067"
+    },
+    "frozen/src/world.js": {
+      "bytes": 10853,
+      "sha256": "223583cb2ff9980b7d8f164a88dd83103f9566ce368f83162c0daa8fa816ec0d"
+    },
+    "frozen/vendor/three/build/three.module.min.js": {
+      "bytes": 687458,
+      "sha256": "f7cee3c7533449a1505cc12cb5128b89e3d4fd3d7ea62b05f9f5464a217472ee"
+    },
+    "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+      "bytes": 4625,
+      "sha256": "d20aeaf7077c459a8d952d215738d7b44fba028440bb862d84b622a34f0c80bb"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "host-verification.json": {
+      "bytes": 1312,
+      "sha256": "297b0ed7c1742e730b66fb8486c4234e13e4cb8eaea39453058536d98b4320d0"
+    },
+    "README.md": {
+      "bytes": 2990,
+      "sha256": "f3398c4085f08d457287cf26ef31623ffc9457025e2cf5cb28fac160be90bab6"
+    }
+  }
+}

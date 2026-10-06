@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173e41">
+  <title>Stillwater · A tidal workshop</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/utils/BufferGeometryUtils.js":"./vendor/BufferGeometryUtils.js"}}</script>
+</head>
+<body>
+  <main id="viewport" aria-label="Explorable three-dimensional tidal boathouse"></main>
+  <div id="vignette"></div>
+  <header id="identity"><span class="brand-mark">S / W</span><div><strong>STILLWATER</strong><span>A tidal workshop</span></div></header>
+  <div id="conditions"><span class="status-dot"></span> LOW WATER <span class="divider">/</span> 07:16 <span class="divider">/</span> LIGHT EASTERLY</div>
+  <section id="welcome" class="panel">
+    <div class="eyebrow">A PLACE BETWEEN TIDES</div>
+    <h1>Morning at<br>Stillwater.</h1>
+    <p>The workshop is open. Follow the timber out to the inlet, then take the shore ramp down to the boat.</p>
+    <div class="route"><span>01 Workshop</span><i>—</i><span>02 Pier</span><i>—</i><span>03 Shore</span></div>
+    <button id="enter" autofocus disabled>Preparing the workshop… <span>↗</span></button>
+    <div class="control-grid"><span><kbd>W A S D</kbd> Walk</span><span><kbd>MOUSE</kbd> Look</span><span><kbd>SHIFT</kbd> Brisk walk</span><span><kbd>ESC</kbd> Release cursor</span></div>
+    <p class="small">Click to capture the mouse. You can also drag to look. No jumping is needed.</p>
+  </section>
+  <div id="reticle" hidden></div>
+  <footer id="hud"><div class="location"><span id="area-number">01</span><div id="area-label">THE WORKSHOP<small>Tools, timber &amp; the morning tide</small></div></div><div class="hud-actions"><button id="help-button" title="Show controls">Controls</button><button id="reset-button" title="Return to the workshop (R)">Reset <kbd>R</kbd></button><button id="settings-button" title="Display settings">Display</button></div></footer>
+  <section id="settings" class="small-panel" hidden><h2>Display</h2><label>Render quality <select id="quality"><option value="high">High</option><option value="balanced" selected>Balanced</option><option value="low">Light</option></select></label><label>Look sensitivity <input id="sensitivity" type="range" min="0.4" max="2" step="0.1" value="1"></label><label><input id="show-stats" type="checkbox"> Frame-time display <kbd>F3</kbd></label><p>Balanced limits pixel density to 1.5×. High uses up to 2×. Light uses 1× and a smaller shadow map.</p></section>
+  <section id="stats" hidden><div><b id="fps">—</b><span>FPS</span><b id="frame-ms">—</b><span>MS</span></div><canvas id="frame-chart" width="230" height="46"></canvas><p id="stats-detail">Collecting frame times…</p></section>
+  <div id="toast" role="status"></div>
+  <div id="error" hidden></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

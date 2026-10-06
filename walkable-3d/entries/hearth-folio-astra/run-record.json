@@ -1,0 +1,46 @@
+{
+  "task": "Hearth & Folio hillside library",
+  "firstImplementationUtc": "2026-10-06T19:23:32.6419387+00:00",
+  "deadlineUtc": "2026-10-06T20:23:32.6419387+00:00",
+  "stopUtc": "2026-10-06T20:03:11.0898508+00:00",
+  "model": "Codex, GPT-6 family as stated by system/developer instructions. Exact backend model identifier is not exposed or independently verified.",
+  "reasoningEffort": "Not exposed or independently verified. No exact model variant or effort was specified in the delegated request.",
+  "executionConstraint": "No preview server, browser, UI automation, GPU/scene execution or performance benchmarks. Static checks only.",
+  "interruptions": [],
+  "previewPort": 4316,
+  "infrastructureNotes": [
+    "The initial npm registry request was blocked by the network sandbox; an approved retry installed pinned Three.js 0.180.0.",
+    "The initial restricted process inventory was denied; an approved read-only process audit succeeded. No external coordination or user interruptions occurred."
+  ],
+  "artifact": {
+    "path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-16\\hearth-and-folio.zip",
+    "bytes": 438817,
+    "sha256": "263198E61AFEE749A217F4AF3C161BA333E70E8E044090E5810D9A5B36DF80A6",
+    "verifiedArchiveEntries": 23,
+    "runRecordLocation": "Alongside the archive, not inside it"
+  },
+  "preview": {
+    "address": "http://127.0.0.1:4316",
+    "serverStarted": false,
+    "portAvailableAtFinalCheck": true,
+    "launchCommand": "node server.mjs"
+  },
+  "validation": {
+    "staticChecksPassed": 10,
+    "report": "static-check-results.json",
+    "interactive": "NOT RUN — prohibited by execution constraint",
+    "visual": "NOT RUN — prohibited by execution constraint",
+    "serverStartup": "NOT RUN — prohibited by execution constraint",
+    "gpuSceneExecution": "NOT RUN — prohibited by execution constraint",
+    "performance": "NOT RUN — prohibited by execution constraint"
+  },
+  "processAudit": {
+    "verifiedAtUtc": "2026-10-06T20:01:48.6912768Z",
+    "workspaceOwnedProcessCount": 0,
+    "previewServersStarted": 0,
+    "backgroundProcessesStarted": 0,
+    "allExecSessionsCompleted": true
+  },
+  "elapsedMinutes": 39.641,
+  "completedBeforeDeadline": true
+}

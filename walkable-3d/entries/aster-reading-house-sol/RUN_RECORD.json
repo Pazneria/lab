@@ -1,0 +1,25 @@
+{
+  "benchmark": "Hillside library — The Aster Reading House",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-17",
+  "model": "GPT-6 (identity supplied by session instructions; exact backend model identifier not exposed)",
+  "reasoning_effort": "Not specified in the delegated request and not exposed by the backend; no override used",
+  "first_implementation_time_utc": "2026-10-06 19:34:21 UTC",
+  "one_hour_deadline_utc": "2026-10-06 20:34:21 UTC",
+  "actual_stop_timestamp_utc": "2026-10-06 20:10:57 UTC",
+  "preview_port": 4387,
+  "preview_address": "http://127.0.0.1:4387",
+  "execution_constraint": "No preview server, browser, browser automation, UI control, GPU/scene execution, or performance benchmark may run during implementation. Lightweight non-browser build/static checks only.",
+  "interactive_checks": "Not run — required by current execution constraint",
+  "performance_checks": "Not run — required by current execution constraint",
+  "interruptions": [],
+  "process_cleanup_verified": true,
+  "stop_timestamp_definition": "Final implementation, documentation, and run-record seal. Subsequent work is packaging and read-only verification.",
+  "tests": [
+    "npm run build: PASS",
+    "npm run check: PASS — syntax, local imports, bundled files, UI bindings, static layout dimensions and connectivity",
+    "No browser, preview server, scene construction/execution, movement simulation, GPU execution, or performance benchmark was run"
+  ],
+  "process_cleanup_evidence": "PROCESS_AUDIT.json: successful read-only audit; zero workspace-owned processes and zero listeners at port 4387",
+  "installation_note": "Initial sandboxed registry fetch failed with EACCES. A sandbox-approved retry fetched the pinned Three.js library into this workspace. The implementation clock continued.",
+  "backend_identity_verification": "Exact backend model variant and reasoning effort are unavailable; session identifies GPT-6. Neither was overridden."
+}

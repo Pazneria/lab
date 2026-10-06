@@ -1,0 +1,108 @@
+{
+  "entry": "coastal-boathouse-opus",
+  "importedAt": "2026-10-06T20:32:25.133558+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-coastal-boathouse-entry",
+  "archiveSha256": "8cb499eb4e6b4b3fca0de3180427292fe2175072722cee0c89d15dfa48d40e78",
+  "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/js/main.js": "js/main.js",
+      "frozen/js/textures.js": "js/textures.js",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\complete-saved-queue\\prompt-08\\coastal-boathouse-opus\\source\\README.md"
+    },
+    "extraRecords": []
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Runtime and producer record bytes are copied unchanged; no rebuilding, source repair or scene improvements.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Only required runtime modules, styles and licenses are published. Archives, source duplicates, package caches, build/launch/check scripts, maps and raw test outputs remain private."
+  ],
+  "securityAudit": {
+    "scope": "Source-only audit; runtime NOT RUN",
+    "finding": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+    "separateVendorComparisons": [
+      {
+        "path": "frozen/vendor/three/build/three.module.js",
+        "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/build/three.module.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+        "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+        ],
+        "officialMatch": null
+      },
+      {
+        "path": "frozen/vendor/three/LICENSE",
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "priorMatch": [
+          "walkable-3d/entries/rain-courtyard-opus/frozen/vendor/three/LICENSE"
+        ],
+        "officialMatch": null
+      }
+    ]
+  },
+  "prompt": {
+    "version": "08-manual",
+    "sha256": "7d854b6281fc0bf7810d0b0de487452713ec7b1d7532ff89a323533c375fea1e",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "Claude Opus 5.5 (producer-reported); effort unverified",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3574,
+      "sha256": "53be8fff1641fca211f778577f1858017a9d935cbea63a59a45c8e67d5fc6c51"
+    },
+    "frozen/js/main.js": {
+      "bytes": 86407,
+      "sha256": "b5f1d5b7b4206220d8c2b61024da46663687ab9bed565a45ae71be3ad68c214e"
+    },
+    "frozen/js/textures.js": {
+      "bytes": 16420,
+      "sha256": "5533ba53a079675c467f10181c427023952c5508966834e391c425b63d50ea30"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 1304820,
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "host-verification.json": {
+      "bytes": 1330,
+      "sha256": "0b16ff11c10f971c2b7378ac595727164722c9a7e7feb1e88eca47d296354102"
+    },
+    "README.md": {
+      "bytes": 6574,
+      "sha256": "c7a72685c11c88b5146e388851d79617d5bf2d0c015e34b1a9016f911401c2d1"
+    }
+  }
+}

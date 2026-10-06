@@ -1,0 +1,20 @@
+{
+  "id": "coastal-boathouse-opus",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Inert copies, source/byte/provenance review and host metadata only. No local syntax checks, tests, builds, browser, server, scene, GPU or input execution.",
+  "sourceAudit": "Scoped authored-source, browser API, import and dependency inspection found no authored external requests, secrets, tracking, storage, dynamic evaluation, workers or parent navigation. Resources are procedural and local. Runtime import references resolve to included files; documentation examples are excluded from the import scan. Separate vendor modules match previously admitted bytes or official tagged/npm source. Bundles are preserved unchanged and were not executed.",
+  "sourceUnchanged": true,
+  "preview": "No screenshot supplied or captured; text placeholder only.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "README reports a scripted route through workshop, pier, steps, shore, boat circuit and slipway, with major collision boundaries checked. Host runtime QA was not run.",
+  "grade": null,
+  "checkedAt": "2026-10-06T20:32:25.133558+00:00"
+}
