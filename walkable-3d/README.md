@@ -137,3 +137,11 @@ K-17 is a completed result whose original JavaScript fails at startup with “Sp
 The completed manual **Desert Observatory** is now the fourth Prompt 03 scene. Its exact manual prompt text is unconfirmed: the inspector explicitly distinguishes the shared reference brief from verified submission text. Its frozen runtime and audited Three.js dependency closure match the retained host snapshot. The sole path substitution maps `./node_modules/three/` to `./vendor/three/` in memory. Actual WebGL, ordinary controls, pointer release and unloading passed host checks; its synthetic producer GPU timings remain separate from interactive performance and grades.
 
 Only the required runtime/license bytes, concise records, provenance and three small JPEG reset views are added. ZIPs, raw evidence and full-size screenshots remain outside Git and Pages. The one temporary QA server and isolated headless browser close after each bounded run. `verify-walkable-polar.cjs` checks exact prompt records, prior saved judgments, six Observatory pairs, the working polar pair, failed-result handling, actual Lab launch/return, zero parent GL draws during scene use, input/reset, repeated unload, mobile reflow, accessibility, history, missing assets and CSP failure.
+
+
+## Random comparisons after voting
+
+After a preference or tie (or a skip in the notebook), the Lab screen and notebook draw a new static comparison. Selection chooses a prompt first, then two distinct requested-model groups within that prompt, then the entries and their A/B order. A prompt needs at least two working model groups. Recorded startup failures and entries without an explicit comparison group are excluded. The immediately previous unordered pair is excluded whenever another comparison is available; with only one playable pair, that pair remains available.
+
+`comparisonModel` records the parent-selected/requested model group for pairing, not verified serving-backend identity. Existing provenance disclosures still apply. Preferences retain the same stable unordered entry-ID key and selected entry ID, so reversing A/B cannot change an earlier vote. Saved grades and the browser storage key are unchanged. Only the new pair's JPEG previews load; random selection never opens a scene. Manual prompt/pair selection and inspection remain available.
+

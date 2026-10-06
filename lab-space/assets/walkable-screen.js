@@ -1,4 +1,5 @@
 import {createViewer} from '../../walkable-3d/assets/viewer.js';
+import {comparisonKey,randomComparison} from '../../walkable-3d/assets/comparisons.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
 export function createWalkableScreen({changed,suspend,resume,approach}) {
@@ -8,7 +9,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   let entries=[],allEntries=[],prompts=[],promptId='01',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
   function refresh(){try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
-  const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>pair().map(e=>e.id).sort().join('::');
+  const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>comparisonKey(pair());
   const save=()=>{try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}};
   const viewer=createViewer({base,onOpen:suspend,onReady(entry){refresh();record.opened[entry.id]=new Date().toISOString();save();render();},onClose(){render();resume();}});
   function box(x,y,w,h,label,disabled=false){ctx.fillStyle=disabled?'#41584b':'#f3efdf';ctx.fillRect(x,y,w,h);ctx.fillStyle=disabled?'#bec9be':'#1c3c30';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+8);}
@@ -41,8 +42,14 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     changed(source);
   }
   function loadPreviews(){for(const entry of pair()){if(images.has(entry.id))continue;const img=new Image();images.set(entry.id,img);img.onload=()=>render();img.onerror=()=>render();img.src=new URL(`entries/${entry.id}/preview.jpg`,base);}}
-  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;history.replaceState({...history.state,labPair:pairKey(),labPrompt:promptId},'');loadPreviews();render();}
-  function vote(choice){refresh();const current=pair();if(current.length!==2||!current.every(e=>record.opened[e.id]))return;record.preferences[pairKey()]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};save();render();}
+  function rememberPair(){const url=new URL(location.href);url.searchParams.set('prompt',promptId);history.replaceState({...history.state,labPair:pairKey(),labPairOrder:pair().map(e=>e.id),labPrompt:promptId},'',url);}
+  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;rememberPair();loadPreviews();render();}
+  function vote(choice){
+    refresh();const current=pair();if(current.length!==2||!current.every(e=>record.opened[e.id]))return;
+    const previous=pairKey();record.preferences[previous]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};save();
+    const next=randomComparison(prompts,allEntries,previous);
+    if(next){selectPrompt(next.promptId,false,next.entries);$('notice').textContent='Preference saved. A random prompt and model pair are ready to inspect.';}else render();
+  }
   function open(entry){if(!entry)return;$('comparison-dialog').close();viewer.open(entry,$('screen-controls'));}
   function inspect(){suspend();refresh();render();$('comparison-dialog').showModal();}
   $('screen-controls').addEventListener('click',inspect);
@@ -55,11 +62,13 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
   function activate({x,y}){if(y>=522&&y<=580){if(x<145)step(-1);else if(x>1135)step(1);else if(x<415)vote('a');else if(x<625)vote('tie');else if(x<895)vote('b');else inspect();}else if(y>=105&&y<500)open(pair()[x<640?0:1]);else inspect();}
   render();
-  function selectPrompt(id,restore=false){
+  function selectPrompt(id,restore=false,chosenPair=null){
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');pairs=[];
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
-    index=restore?Math.max(0,pairs.findIndex(pair=>pair.map(e=>e.id).sort().join('::')===history.state?.labPair)):0;
-    $('screen-prompt').value=promptId;history.replaceState({...history.state,labPair:pairKey(),labPrompt:promptId},'');loadPreviews();render();
+    index=chosenPair?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair))):restore?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===history.state?.labPair)):0;
+    const order=chosenPair?.map(e=>e.id)||(restore?history.state?.labPairOrder:null);
+    if(pairs[index]&&Array.isArray(order)&&order.length===2&&order[0]!==order[1]&&order.every(id=>pairs[index].some(e=>e.id===id)))pairs[index]=order.map(id=>pairs[index].find(e=>e.id===id));
+    $('screen-prompt').value=promptId;rememberPair();loadPreviews();render();
   }
   $('screen-prompt').addEventListener('change',()=>selectPrompt($('screen-prompt').value));
   fetch(new URL('entries.json',base),{credentials:'omit'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
