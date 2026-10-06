@@ -1,4 +1,5 @@
 import * as T from './vendor/three.module.min.js';
+import {exhibits} from './navigation.mjs';
 
 // One level room in three volumes: a tall top-lit benchmark hall on the axis, a
 // bright west apparatus bay with an oriel, and a low timber study alcove to the east.
@@ -116,18 +117,20 @@ export function createRoom(canvas,onLost){
   // Hall: a niche on the axis frames the bench landmark beneath the slot window.
   ext(-2.65,-2.3,0,4.05,-7,-6.84,'lime');ext(2.3,2.65,0,4.05,-7,-6.84,'lime');ext(-2.8,2.8,4.05,4.2,-7,-6.8,'lime');
   ext(-2.2,2.2,2.45,3.95,-7,-6.92,'sage');
-  text(['01 / BENCHMARK DISCOVERY'],0,3.42,-6.91,4.1,.56);
-  text(['CATALOG · EVIDENCE · SOURCES'],0,2.86,-6.905,3.9,.28,'#49634e');
   ext(-2.2,2.2,0,.86,-7,-6.62,'sage');ext(-2.26,2.26,.86,.92,-7,-6.58,'linen');
   for(const [x,h,c] of [[-1.6,.34,'#c4a477'],[-1.2,.22,'linen'],[1.1,.28,'linen'],[1.5,.4,'#c4a477']])cylinder(x,.92+h/2,-6.8,.09,h,c,.07);
 
-  // A separate comparison screen preserves the existing catalog monitor.
+  // The main exhibit faces the entrance; only two still images occupy this screen.
   const comparisonSource=document.createElement('canvas');comparisonSource.width=1280;comparisonSource.height=600;
   const comparisonTexture=new T.CanvasTexture(comparisonSource);comparisonTexture.colorSpace=T.SRGBColorSpace;
-  box(0,1.90,-6.64,3.92,1.90,.12,'dark');
-  const comparisonScreen=plain(new T.PlaneGeometry(3.8,1.78125),new T.MeshBasicMaterial({map:comparisonTexture}),0,1.90,-6.568);
+  const world=exhibits.worlds;
+  const worldStand=[box(world.x,.45,world.z-.28,4.5,.9,.54,'sage'),box(world.x,.94,world.z-.28,4.5,.08,.54,'oak'),box(world.x,world.y,world.z-.07,world.width+.14,world.height+.14,.12,'dark'),text(['01 / WALKABLE WORLDS'],world.x,3.58,world.z-.02,4.4,.46),text(['OPEN A WORLD · RETURN · VOTE'],world.x,3.23,world.z-.02,4.1,.22,'#49634e')];
+  for(const side of [-1,1])worldStand.push(box(world.x+side*2.16,2.25,world.z-.12,.06,2.65,.08,'brass'));
+  worldStand.forEach(part=>{part.userData.worlds=true;});
+  const comparisonScreen=plain(new T.PlaneGeometry(world.width,world.height),new T.MeshBasicMaterial({map:comparisonTexture}),world.x,world.y,world.z);
   comparisonScreen.userData.comparison=true;
-  // Benchmark workbench, same footprint; only this monitor and the exit are interactive.
+  // Preserve the existing bench and props, rotated together into the east gallery.
+  const catalogStart=scene.children.length;
   ext(-2.35,2.35,0,.12,-3.72,-2.18,'dark');
   for(const x of [-1.7,1.7]){ext(x-.7,x+.7,.12,.86,-3.78,-2.12,'sage');
     for(const [y1,y2] of [[.16,.42],[.46,.64],[.68,.84]]){ext(x-.64,x+.64,y1,y2,-2.13,-2.1,'#8fa48e');ext(x-.16,x+.16,(y1+y2)/2-.015,(y1+y2)/2+.015,-2.1,-2.07,'brass');}}
@@ -143,6 +146,15 @@ export function createRoom(canvas,onLost){
   const notebook=box(-1.5,1.09,-2.76,.56,.02,.8,'#8b9c7d');notebook.rotation.y=.12;
   cylinder(1.83,1.09,-3.2,.16,.28,'paper');cylinder(1.83,1.24,-3.2,.12,.018,'#746449');
   cylinder(-.3,.62,-3.05,.2,.05,'oak');for(const a of [0,2.1,4.2])cylinder(-.3+Math.cos(a)*.13,.3,-3.05+Math.sin(a)*.13,.02,.6,'iron');
+  const catalog=exhibits.catalog,c=Math.cos(catalog.yaw),s=Math.sin(catalog.yaw);
+  for(const part of scene.children.slice(catalogStart)){
+    const x=part.position.x,z=part.position.z-catalog.sourceZ;
+    part.position.x=catalog.x+c*x+s*z;part.position.z=catalog.z-s*x+c*z;
+    part.rotateY(catalog.yaw);part.userData.destination='catalog';
+  }
+  const catalogLabel=text(['02 / CATALOG & EVIDENCE'],catalog.x,2.75,catalog.z,3.6,.42);
+  catalogLabel.rotation.y=catalog.yaw;catalogLabel.userData.destination='catalog';
+  for(const side of [-1,1]){const post=cylinder(catalog.x+.03,1.9,catalog.z+side*1.65,.025,1.8,'brass');post.userData.destination='catalog';}
   // Two pendants hang from the lantern ribs; their glow is static, not an animated light.
   for(const x of [-1.5,2]){cylinder(x,4.5,-2.95,.012,3.8,'brass');mesh(new T.ConeGeometry(.3,.24,24),'dark',x,2.48,-2.95);
     const lit=plain(new T.CircleGeometry(.25,24),glow,x,2.355,-2.95);lit.rotation.x=Math.PI/2;}
@@ -243,8 +255,9 @@ export function createRoom(canvas,onLost){
       const first=raycaster.intersectObjects(scene.children,false).find(hit=>hit.object!==targetMarker);
       if(!first||first.distance>24)return null;
       if(first.object.userData.comparison&&first.uv)return {comparison:{x:first.uv.x*1280,y:(1-first.uv.y)*600}};
+      if(first.object.userData.worlds)return {point:{x:world.approach.x,z:world.approach.z},screen:true};
       const {x,y,z}=first.point;
-      const destination=first.object.userData.destination||(x>=-2.6&&x<=2.6&&z>=-3.95&&z<=-2&&y<2.4?'catalog':x>4.6&&x<6.2&&z>6.7&&z<7&&y<3.7?'home':null);
+      const destination=first.object.userData.destination||(x>4.6&&x<6.2&&z>6.7&&z<7&&y<3.7?'home':null);
       if(destination)return {destination};
       if(Math.abs(x)>7.95||Math.abs(z)>6.95)return null;
       if(y<=.035)return {point:{x,z},approach:false};

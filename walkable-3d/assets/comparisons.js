@@ -1,9 +1,8 @@
 // Host metadata groups requested models; it does not assert serving-backend identity.
 export const comparisonKey = pair => pair.map(entry => entry.id).sort().join('::');
 
-export function randomComparison(prompts, entries, previousKey) {
-  const choose = options => options[Math.floor(Math.random() * options.length)];
-  const options = prompts.map(prompt => {
+function comparisonOptions(prompts, entries) {
+  return prompts.map(prompt => {
     const models = new Map();
     for (const entry of entries) {
       if (entry.promptId !== prompt.id || !entry.comparisonModel ||
@@ -17,6 +16,13 @@ export function randomComparison(prompts, entries, previousKey) {
     }
     return {promptId: prompt.id, modelPairs};
   }).filter(prompt => prompt.modelPairs.length);
+}
+
+export const hasRandomComparison = (prompts, entries) => comparisonOptions(prompts, entries).length > 0;
+
+export function randomComparison(prompts, entries, previousKey) {
+  const choose = options => options[Math.floor(Math.random() * options.length)];
+  const options = comparisonOptions(prompts, entries);
 
   // Exclude the previous unordered entry pair globally when any alternative exists.
   const alternatives = options.map(prompt => ({

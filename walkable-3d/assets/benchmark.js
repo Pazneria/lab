@@ -1,5 +1,5 @@
 import {createViewer} from './viewer.js';
-import {comparisonKey,randomComparison} from './comparisons.js';
+import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -7,7 +7,9 @@ import {comparisonKey,randomComparison} from './comparisons.js';
   const key = 'lab.walkable3d.judgments.v1';
   const blank = () => ({ version: 1, grades: {}, preferences: {}, opened: {} });
   let record = blank(), persistent = true, entries = [], failedEntries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
-  const viewer=createViewer({onReady(entry){if(entry.availability==='failed')return;refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
+  const openedThisComparison=new Set();
+  let canShuffle=false;
+  const viewer=createViewer({onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null');
@@ -35,6 +37,7 @@ import {comparisonKey,randomComparison} from './comparisons.js';
   }
   const selected = () => pairs[pairIndex] || entries.slice(0, 1);
   const pairKey = () => comparisonKey(selected());
+  const hasOpenedBoth = () => selected().length===2&&selected().every(e=>openedThisComparison.has(e.id));
   const titleFor = (entry) => entry.title;
   function link(label, href) {
     const a = el('a', label); a.href = href; return a;
@@ -133,29 +136,29 @@ import {comparisonKey,randomComparison} from './comparisons.js';
       const body = el('div', undefined, 'entry-body'); body.append(el('h3', 'One world so far.'), el('p', 'Explore the completed entry now. A real comparison opens when a second frozen submission is admitted.')); waiting.append(body); $('#entries').append(waiting);
     }
     $('#entry-count').textContent = failedEntries.length ? `${entries.length} ready · ${failedEntries.length} startup failed · ${entries.length+failedEntries.length} frozen results` : `${entries.length} finished ${entries.length === 1 ? 'entry' : 'entries'}`;
-    $('#next-pair').hidden = pairs.length < 2; updateVote();
+    $('#next-pair').hidden = !canShuffle; updateVote();
   }
   function updateVote() {
     const pair = selected(), ready = pair.length === 2;
     $('#vote-buttons').hidden = !ready;
-    const bothOpened = ready && pair.every(e => record.opened[e.id]);
-    $('#vote-instruction').textContent = !ready ? 'Waiting for a second finished entry before comparison opens.' : bothOpened ? 'You have opened both worlds. Which do you prefer?' : 'Open both scenes, then return here to choose your preference.';
-    for (const button of document.querySelectorAll('[data-choice]')) button.disabled = !bothOpened;
+    const bothOpened = hasOpenedBoth();
+    $('#vote-instruction').textContent = !ready ? 'Waiting for a second finished entry before comparison opens.' : bothOpened ? 'You have opened both worlds in this comparison. Which do you prefer?' : 'Open both scenes in this comparison, then return to vote. Next skips without recording a vote.';
+    for (const button of document.querySelectorAll('[data-choice]')) button.disabled = button.dataset.choice==='skip'?!canShuffle:!bothOpened;
     const saved = record.preferences[pairKey()];
-    $('#clear-vote').disabled = !saved;
+    $('#clear-vote').disabled = !bothOpened || !saved;
     const choice = saved?.choice;
     $('#vote-status').textContent = !saved ? 'No preference recorded.' : choice === 'tie' ? 'Your preference: tie.' : choice === 'skip' ? 'This pair is skipped.' : `Your preference: entry ${pair.findIndex(e => e.id === choice) === 0 ? 'A' : 'B'}.`;
   }
   document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', () => {
+    if(button.dataset.choice==='skip'){nextComparison();return;}
     refresh();
-    const pair = selected(); if (pair.length !== 2 || !pair.every(e => record.opened[e.id])) return;
+    const pair = selected(); if (!hasOpenedBoth() || !['a','b','tie'].includes(button.dataset.choice)) return;
     const previous=pairKey();
     record.preferences[previous] = { entries: pair.map(e => e.id), choice: button.dataset.choice === 'a' ? pair[0].id : button.dataset.choice === 'b' ? pair[1].id : button.dataset.choice, savedAt: new Date().toISOString() };
     save();
-    const next=randomComparison(prompts,allEntries,previous);
-    if(next){selectPrompt(next.promptId,undefined,next.entries);const url=new URL(location.href);url.search='?prompt='+promptId;url.hash='';history.replaceState(history.state,'',url);$('#notice').textContent='Preference saved. A random prompt and model pair are ready to inspect.';}else updateVote();
+    nextComparison('Preference saved. A random prompt and model pair are ready to inspect.');
   }));
-  $('#clear-vote').addEventListener('click', () => { refresh(); delete record.preferences[pairKey()]; save(); updateVote(); });
+  $('#clear-vote').addEventListener('click', () => { if(!hasOpenedBoth())return;refresh(); delete record.preferences[pairKey()]; save(); updateVote(); });
   $('#blind').checked = true;
   $('#blind').addEventListener('change', () => {
     // Preserve unsaved grading input and details state when revealing model labels.
@@ -166,7 +169,12 @@ import {comparisonKey,randomComparison} from './comparisons.js';
       article.querySelectorAll('dd')[1].textContent = $('#blind').checked ? 'The exact serving model and effort were not exposed to the producer. Reveal labels to see the parent-requested configuration and full disclosure.' : entry.modelDisclosure;
     }
   });
-  $('#next-pair').addEventListener('click', () => { close(false); pairIndex = (pairIndex + 1) % pairs.length; render(); });
+  function nextComparison(message='Skipped without recording a vote. A random prompt and model pair are ready.'){
+    const next=randomComparison(prompts,allEntries,pairKey());if(!next){updateVote();return;}
+    if(viewer.isOpen)close(false);
+    selectPrompt(next.promptId,undefined,next.entries);const url=new URL(location.href);url.search='?prompt='+promptId;url.hash='';history.replaceState(history.state,'',url);$('#notice').textContent=message;
+  }
+  $('#next-pair').addEventListener('click', () => nextComparison());
   $('#export').addEventListener('click', () => {
     refresh();
     const blob = new Blob([JSON.stringify({ ...record, exportedAt: new Date().toISOString(), benchmark: 'Jordan walkable 3D', promptVersions: versions.map(({id,sha256})=>({id,sha256})), storageScope: 'personal browser-local judgments', rubric: { visuals: 45, performance: 35, fulfillment: 20 } }, null, 2)], { type: 'application/json' });
@@ -174,6 +182,7 @@ import {comparisonKey,randomComparison} from './comparisons.js';
   });
 
   function selectPrompt(id,entryId,chosenPair=null){
+    openedThisComparison.clear();
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
     entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
@@ -203,7 +212,7 @@ import {comparisonKey,randomComparison} from './comparisons.js';
     if (!Array.isArray(data.entries) || !data.entries.length) throw Error();
     allEntries = data.entries;
     if (allEntries.some(e => !/^[a-z0-9-]+$/.test(e.id) || !/^[a-f0-9]{64}$/.test(e.htmlSha256))) throw Error();
-    prompts=data.prompts; versions=data.promptVersions;
+    prompts=data.prompts; versions=data.promptVersions;canShuffle=hasRandomComparison(prompts,allEntries);
     $('#prompt-select').replaceChildren(...prompts.map(p=>{const o=el('option',`${p.id} / ${p.title}`);o.value=p.id;return o;}));
     const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry'));
     selectPrompt(requestedEntry?.promptId||params.get('prompt')||'01',requestedEntry?.id);
