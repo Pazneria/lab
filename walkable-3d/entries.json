@@ -531,6 +531,53 @@
       "performanceEvidence": "Producer supplied no reliable visual capture or browser performance results. Host separately confirmed actual WebGL 2 raster output, walking, mouse look, exact reset pixels and lifecycle handling. This is functional verification, not a benchmark run or score. The in-scene average frame estimate does not summarize long-frame behavior.",
       "previewAlt": "Original Old Glasshouse reset view: central foliage bed, open side aisles, slender roof framing and weathered panes.",
       "preview": "preview.jpg"
+    },
+    {
+      "id": "fernery-sol",
+      "title": "The Fernery",
+      "promptId": "04",
+      "promptVersion": "04-shared",
+      "requestedConfiguration": "GPT-6.1 Sol (parent-reported selection)",
+      "modelDisclosure": "Parent identifies the finished run as Sol. The producer could verify only GPT-6 / Codex; exact backend identity and reasoning effort were not exposed. No unverified effort level is asserted.",
+      "buildWindow": "Session start 2026-10-06 04:35:43 UTC; first implementation 04:36:47.493 UTC; conservative deadline 05:35:43 UTC; final authored-content freeze 05:32:20.693 UTC. Last scene edit 05:30:14.210 UTC; packaging/read-only checks followed without further scene edits.",
+      "interruptions": "Producer records an interrupted tool call and about 21 minutes between the 05:04:48 build write and 05:26:28 resumption. Exact interruption time was unavailable; no deadline extension. Registry/network and Vite setup issues are disclosed in the unchanged record.",
+      "producerChecks": "Producer reports seven inspection viewpoints, collision/control checks and a seven-stop keyboard walkthrough. Walkthrough confirms mouse look, crouch, release, reset and route completion, with zero reported browser errors.",
+      "limitations": [
+        "Desktop keyboard/mouse with WebGL 2; no touch, audio, dynamic weather or animated foliage.",
+        "Leaves are non-solid; major structures and large props have collision. Exploration ends at the immediate threshold.",
+        "Approximate translucent glass/reflections and static plant lighting/shadows. Sparse dust particles move; foliage remains static.",
+        "Render density is capped at 1.5x and 1.6 million pixels, recalculated only on window resize. Producer headless timings do not replace separate performance judging."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Timing & interruptions",
+          "path": "benchmark-record.json"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "body > canvas",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ]
+      ],
+      "webgl": "WebGL 2",
+      "htmlSha256": "35a16d071190411442288480fa88e7ff930859dd1444f88b3cf2dd439aefe514",
+      "archiveSha256": "2edbd9089b36212a81812d51c7c6d6e4a6a9173ba47dbbfa843142d7c02339f8",
+      "archiveLocation": "retained-outside-repository",
+      "preview": "preview.jpg",
+      "description": "A tropical house with layered foliage, connected aisles and a detailed potting alcove.",
+      "controls": "WASD walk; mouse look; Shift brisk walk; C crouch; arrows turn/look; R reset; Esc release; F frame-time diagnostics.",
+      "performanceEvidence": "Producer headless keyboard walkthrough at 1920 x 1080, actual render size 1686 x 948 under the fixed pixel cap: 1,416 intervals, median 15.9 ms, p95 28.3 ms, p99 36.1 ms, maximum 51.9 ms, one interval above 50 ms. Short turning sample: median 17 ms, p95 27.9 ms. Supporting producer diagnostics, not controlled final judging or a grade.",
+      "previewAlt": "Original Fernery reset view through iron doors toward broad leaves, planted beds, side aisles and a glazed roof."
     }
   ],
   "prompts": [
