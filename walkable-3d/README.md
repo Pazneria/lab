@@ -1,4 +1,12 @@
-# Walkable 3D — Jordan's personal benchmark
+# Walkable 3D - Jordan's personal benchmark
+
+## Public judgments
+
+New A/B choices are submitted anonymously to the [dedicated public judgments service](https://walkable-worlds-voting.pazneria.chatgpt.site). Existing local preferences, grades, notes, both-open eligibility, randomized pairing and reveal-until-Next behavior remain in place. Only a new explicit choice is submitted publicly. Retries retain their request ID and a persisted per-pair intent sequence; a delayed older request cannot overwrite a newer choice or withdrawal. Public withdrawal can be retried after a network failure. No legacy record is uploaded.
+
+The public board displays server-computed Bradley-Terry ratings on the Elo scale, match counts and provisional labels. Signed-in rubric averages appear separately. Public rubric submission opens a new blank form; private notebook scores and notes are never copied. Anonymous browser credentials are not verified people; clearing storage or using another device can create another voter. The service uses server quotas and one current preference per browser/pair. No entrant runtime, viewer permission or scene behavior changes are included.
+
+Validation for this integration: ten CPU-only service/rating tests, three client storage/network tests, TypeScript, JavaScript syntax, and the service production build passed. Eleven HTTP checks passed while the service was private, including actual database persistence, retries, revisions, withdrawal, CORS and rubric authorization. The temporary test preference was withdrawn and zero active votes independently confirmed before public access. Seven anonymous HTTP checks then passed against the public service. Local browser, UI, scene, GPU and performance checks remain paused; interactive sign-in and rendering were not exercised. Run the client checks with `node --experimental-vm-modules --test tests/verify-walkable-public-judgments.test.mjs`.
 
 Static entry previews, one explicitly opened scene at a time, pairwise browser-local preferences, and a separate personal grading notebook. Prompt 01 is an abandoned railway station in autumn woodland. Visuals / performance / fulfillment carry 45 / 35 / 20 points; the build cap is one hour. Jordan judges. No scores or votes have been supplied or prefilled.
 

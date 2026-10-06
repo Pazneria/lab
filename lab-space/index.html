@@ -73,8 +73,9 @@
     <p id="screen-boundary"></p><label><input id="screen-blind" type="checkbox" checked> Hide model labels until voting</label>
     <div id="screen-cards"></div>
     <div class="screen-choices"><button data-screen-choice="a">Prefer A</button><button data-screen-choice="tie">Tie</button><button data-screen-choice="b">Prefer B</button><button id="screen-clear">Clear choice</button></div>
-    <p id="screen-vote" role="status"></p><div id="screen-reveal" class="model-reveal" role="status" hidden></div><button id="screen-reveal-next" type="button" hidden>Next comparison</button><p id="screen-storage"></p>
+    <p id="screen-vote" role="status"></p><p id="screen-public-vote" role="status"></p><div id="screen-reveal" class="model-reveal" role="status" hidden></div><button id="screen-reveal-next" type="button" hidden>Next comparison</button><p id="screen-storage"></p>
     <p>Jordan's separate rubric: visuals 45 / performance 35 / fulfillment 20. One-hour build cap; timing disclosures in each inspector. No scores prefilled.</p>
+    <section id="screen-public-leaderboard" class="local-leaderboard" aria-label="Public model leaderboard" hidden></section>
     <section id="screen-leaderboard" class="local-leaderboard" aria-label="Your browser-local model leaderboard"></section>
     <p><a id="screen-full-prompt" href="../walkable-3d/#full-prompt">View full prompt</a></p><a id="screen-notebook" href="../walkable-3d/">Build inspectors &amp; personal grading notebook →</a>
   </dialog>
