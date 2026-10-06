@@ -21,6 +21,9 @@ def published_bytes(name):
 assert actual == set(allow['sourceFiles']), {'unexpected': sorted(actual-set(allow['sourceFiles'])), 'missing': sorted(set(allow['sourceFiles'])-actual)}
 blocked = [p.relative_to(root).as_posix() for p in (root / 'walkable-3d').rglob('*') if p.is_file() and excluded(p.relative_to(root).as_posix())]
 blocked += ['scripts/serve-walkable.cjs','tests/verify-walkable.cjs','tests/verify-walkable-room.cjs','tests/verify-walkable-integrity.py','tests/verify-walkable-publication.py','tests/walkable-publication-allowlist.json','docs/WALKABLE-INTEGRATION.md','docs/WALKABLE-INTEGRATION.html']
+blocked += ['tests/verify-walkable-prompts.cjs','tests/verify-walkable-skip.cjs']
+for entry_id in ['after-rain-luna','raincourt-astra','lantern-court-sol']:
+    blocked += [f'walkable-3d/entries/{entry_id}/original.zip', f'walkable-3d/entries/{entry_id}/evidence/host-preview.png']
 assert all(excluded(p) for p in blocked if not p.endswith('/WALKABLE-INTEGRATION.html'))
 assert not excluded('scripts/build-catalog.cjs') and not excluded('tests/verify-static.py')
 class Links(HTMLParser):

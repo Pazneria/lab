@@ -3,8 +3,7 @@
   "prompt": {
     "id": "01",
     "brief": "An abandoned railway station in autumn woodland, delivered as a walkable 3D environment.",
-    "verbatim": "You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.\n\nYou have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.\n\nBuild an abandoned railway station in the middle of the woods in autumn.\n\nA short platform and a small station building sit beside disused tracks, with a woodland footpath returning toward the entrance. I must be able to enter the waiting room, walk beneath the platform canopy, cross the tracks safely and follow the woodland path to see the station from the trees.\n\nGive the place a readable history through weathered brick, peeling timber, rusted metal and leaves gathered where wind and rain would leave them. Include memorable details such as a broken timetable case, an old bench or roots disturbing the platform edge. These examples are suggestions; choose details that make the place convincing.\n\nLow afternoon sunlight should separate the warm autumn foliage from the cooler building interior. Keep the forest compact but convincing from inside the scene. A train and an extensive railway network are unnecessary.\n\nThe result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.\n\nMake the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, enter the building and view the station from the woodland path. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.\n\nGRADING: 100 POINTS\n\nVisual detail and overall visual quality: 45 points\n- Convincing construction and weathering of the station\n- Distinct brick, timber and metal surfaces that hold up close\n- Varied autumn foliage, believable leaf placement and forest depth\n- Effective lighting and composition from multiple viewpoints\n- Thoughtful details throughout the explorable area\n\nSmooth performance: 35 points\n- Responsive movement and camera turns\n- Consistent performance in dense foliage and other busy views\n- Smooth transitions between the waiting room, platform and woods\n- Minimal stuttering, disruptive loading or instability\n\nI will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.\n\nScene fulfillment and exploration: 20 points\n- Recognizable abandoned station, waiting room, platform, canopy and disused tracks\n- Autumn woodland, a footpath and a safe crossing\n- Connected, usable walking routes and convincing scale\n- Worthwhile views and details beyond the starting position\n\nMY INSPECTION ROUTE\n\nEntrance → waiting room → covered platform → track crossing → woodland footpath → view back toward the station.\n\nI will pay particular attention to turning toward dense foliage beneath the canopy, crossing the tracks and moving between the interior and exterior. Suggested props are optional; the core spaces and routes are required.\n\nWhen finished, provide the working build, how to launch it, its controls and any known limitations.\n\nExecution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time and one-hour deadline, stop editing at that deadline, and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.",
-    "source": "Original common prompt retrieved from the completed Astra task (01a10ebb-405f-7160-8d8b-1fab9ce2e0c3)."
+    "source": "Completed Sol and Astra initial task messages; exact UTF-8 text in prompt-01.txt."
   },
   "rubric": {
     "visuals": 45,
@@ -42,7 +41,10 @@
       "hostPathReplacements": [],
       "previewAlt": "Frozen Alder Halt build: brick waiting room and open doorway under autumn trees.",
       "archiveSha256": "26bf3c4617b4a24a33410d18c42b524752e438bcc160bf7f21b0a8b5d46da785",
-      "htmlSha256": "1bbf7cfadc04acfc13aecdd8fa3994cdfee99b8413c2bb462a8d3a91268c33b4"
+      "htmlSha256": "1bbf7cfadc04acfc13aecdd8fa3994cdfee99b8413c2bb462a8d3a91268c33b4",
+      "promptId": "01",
+      "promptVersion": "01-shared",
+      "webgl": "WebGL 2"
     },
     {
       "id": "bracken-hollow",
@@ -87,7 +89,10 @@
       ],
       "previewAlt": "Frozen Bracken Hollow build: autumn woodland around the abandoned station approach.",
       "archiveSha256": "6c8832c25dc73678f93b0b709195964a2337c709f29c446a0eed014ce1a73d6e",
-      "htmlSha256": "9b5861374a6411b5af424c48ed99a22a6a2a2cf225ac949b9f5e21a91bc040a2"
+      "htmlSha256": "9b5861374a6411b5af424c48ed99a22a6a2a2cf225ac949b9f5e21a91bc040a2",
+      "promptId": "01",
+      "promptVersion": "01-shared",
+      "webgl": "WebGL 2"
     },
     {
       "id": "bracken-hollow-opus",
@@ -126,7 +131,176 @@
       "previewAlt": "Frozen Bracken Hollow Station build: abandoned railway station beneath autumn foliage.",
       "archiveSha256": "d3742777fb17c966e020ebf33045408367d77e371c55f875904be1e95f743f18",
       "archiveKind": "Host preservation snapshot; no producer ZIP supplied",
-      "htmlSha256": "6b4abc1beaa1f42ebefe2792c718468b246ad06fa6d191bee5d9c96ebe795a9f"
+      "htmlSha256": "6b4abc1beaa1f42ebefe2792c718468b246ad06fa6d191bee5d9c96ebe795a9f",
+      "promptId": "01",
+      "promptVersion": "01-opus-supplied",
+      "webgl": "WebGL 2"
+    },
+    {
+      "id": "after-rain-luna",
+      "title": "After Rain",
+      "description": "Four distinct market stalls around an open courtyard, with a covered route to tea.",
+      "requestedConfiguration": "GPT-6 Luna / xhigh (requested)",
+      "modelDisclosure": "Parent requested GPT-6 Luna at xhigh. Exact serving backend identity and effort were not independently exposed.",
+      "buildWindow": "Parent reports implementation start 2026-10-06 02:44:02 UTC, stop 03:18:35 UTC, deadline 03:44:02 UTC.",
+      "interruptions": "Parent reports a stalled registry install followed by a custom renderer completed within the hour.",
+      "controls": "WASD or arrows walk; Shift faster; click for mouse look; R or Reset walk resets; Esc releases the mouse.",
+      "producerChecks": "Parent reports route, collision and input checks with no errors. No raw test record accompanied the two-file handoff.",
+      "performanceEvidence": "Producer reported approximately 14 FPS / 70.8 ms using headless SwiftShader. Software rendering, not a physical GPU result or final grade.",
+      "limitations": [
+        "Desktop keyboard and mouse; no touch movement.",
+        "No shadows, audio, animated people or downloaded textures. One static mesh draw with local procedural shading.",
+        "Producer software-renderer observations do not establish hardware performance."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "#scene",
+      "hostPathReplacements": [],
+      "previewAlt": "Frozen After Rain build: four colorful canopies beneath lanterns in an enclosed night-market courtyard.",
+      "webgl": "WebGL 1",
+      "archiveKind": "Host preservation snapshot; no producer ZIP supplied",
+      "promptId": "02",
+      "promptVersion": "02-shared",
+      "archiveSha256": "3f75afdddba5b90af3122d12da4f939770e7632f2074dc88f0e3d7e18646ad27",
+      "htmlSha256": "a6a17e9c2d53a57942bf8260bd319217a6c2751ed4b278ac12629196b266705f",
+      "archiveLocation": "retained-outside-repository"
+    },
+    {
+      "id": "raincourt-astra",
+      "title": "Raincourt",
+      "description": "Four stalls, rain-dark paving, and a sheltered passage to One Last Cup.",
+      "requestedConfiguration": "GPT-6 Astra / xhigh (requested)",
+      "modelDisclosure": "Parent requested GPT-6 Astra at xhigh. Producer could verify only the GPT-6 family; exact serving backend identity and effort were not exposed.",
+      "buildWindow": "Implementation start 2026-10-06 02:43:32 UTC; actual stop 03:27:54 UTC; deadline 03:43:32 UTC. Producer record: 2,662.492 seconds, completed before deadline.",
+      "interruptions": "Clock never paused. Registry retry, restricted Vite scanning replaced by a local server, and an occupied initial port; all included in elapsed time.",
+      "controls": "WASD or arrows walk; mouse look or drag; Shift faster; Q/E turn; R reset; Esc release; H controls; P frame times; Quality button.",
+      "producerChecks": "Producer record: 22 keyboard route checkpoints, 8 control/export/resize checks, 6 collision checks; no browser errors.",
+      "performanceEvidence": "Producer headless Edge / Intel Graphics, 1440 x 900, DPR 1, High: walking 2,824 frames, median 16.7 ms, p95 29.1 ms; slow turns 697 frames, median 16.6 ms, p95 29.2 ms. Shared host diagnostics, not final grades.",
+      "limitations": [
+        "Desktop keyboard and mouse; WebGL 2 required. No mobile movement UI.",
+        "Approximate reflection lighting; no live planar courtyard mirror.",
+        "No audio; stationary props; fixed eye height; no jumping.",
+        "The original frame-time CSV download is blocked by the hosted sandbox download restriction; portable original retains it."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Timing & interruptions",
+          "path": "benchmark-log.json"
+        }
+      ],
+      "readySelector": "body:not(:has(#loading)) #enter",
+      "hostPathReplacements": [
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "\"/node_modules/three/",
+          "\"./vendor/three/"
+        ],
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ]
+      ],
+      "previewAlt": "Frozen Raincourt build: lantern-lit market stalls and wet paving leading toward the tea passage.",
+      "webgl": "WebGL 2",
+      "promptId": "02",
+      "promptVersion": "02-shared",
+      "archiveSha256": "1fb50019ffbe2b8868d249220b7fa7a7837db48e1d3d1995169e8088a7b342ce",
+      "htmlSha256": "70101227ba667e363cb8ee074b1e1beebcb4a24f0c76317af09fbd992f60ab11",
+      "archiveLocation": "retained-outside-repository"
+    },
+    {
+      "id": "lantern-court-sol",
+      "title": "Lantern Court",
+      "description": "Four kitchens and market stalls, a covered passage, and The Late Cup tea counter.",
+      "requestedConfiguration": "GPT-6.1 Sol / xhigh (requested)",
+      "modelDisclosure": "Parent requested GPT-6.1 Sol at xhigh. Producer identified only GPT-6 / Codex; exact serving model and effort were not exposed.",
+      "buildWindow": "Implementation start 2026-10-06 02:43:53 UTC; actual stop 03:38:41 UTC; deadline 03:43:53 UTC. Producer record: 54.802 minutes.",
+      "interruptions": "No external interruptions. Registry retry, restricted Vite scanning replaced by a local server, and preview-server switch; included in elapsed time.",
+      "controls": "WASD walk; mouse capture or drag to look; Shift faster; arrows turn/tilt; R reset; Esc release; P frame timings.",
+      "producerChecks": "Producer reports 12 route checkpoints, connected/collision-clear routes, counter collision, reset, drag look, frame panel and resize checks; no errors or external requests.",
+      "performanceEvidence": "Producer headless Chrome / Intel GPU at 1440 x 900: 2,909 walking samples, median 15.2 ms, p95 26.6 ms; 1,199 slow-turn samples, median 14.7 ms, p95 25.7 ms. Shared-host animation-frame intervals; not an independent hardware grade.",
+      "limitations": [
+        "Desktop keyboard and mouse; WebGL 2 required; no touch controls or jumping.",
+        "Approximate static reflections; no vendors, customers or surrounding city. Small countertop decorations lack individual collision.",
+        "The original measurement download is blocked by the hosted sandbox download restriction; portable original retains it."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer validation summary",
+          "path": "VALIDATION.md"
+        },
+        {
+          "label": "Timing & interruptions",
+          "path": "benchmark-record.json"
+        }
+      ],
+      "readySelector": "body:not(:has(#loading)) #enter",
+      "hostPathReplacements": [],
+      "previewAlt": "Frozen Lantern Court build: four market stalls under warm lanterns, with damp paving and the tea passage beyond.",
+      "webgl": "WebGL 2",
+      "promptId": "02",
+      "promptVersion": "02-shared",
+      "archiveSha256": "9a1770ab5723de4972a49ada90a5662b10c3693cd634b1878d3a03b2a7ec00d9",
+      "htmlSha256": "4958019f384b8d76e2468108bc1492d809a40c87dff7b8d1fb9869968c7070da",
+      "archiveLocation": "retained-outside-repository"
+    }
+  ],
+  "prompts": [
+    {
+      "id": "01",
+      "title": "Autumn station",
+      "brief": "An abandoned railway station, reclaimed by autumn woodland.",
+      "version": "01-shared"
+    },
+    {
+      "id": "02",
+      "title": "Night market",
+      "brief": "A courtyard night market, just after rain.",
+      "version": "02-shared"
+    }
+  ],
+  "promptVersions": [
+    {
+      "id": "01-shared",
+      "promptId": "01",
+      "label": "Sol / Astra submitted prompt",
+      "path": "prompt-01.txt",
+      "sha256": "f53aaafcdd619a40ae0e3ae3c7a394277a54ea8ec237bf8b5cd1243d27577936",
+      "source": "Identical initial task text verified in completed Sol (01a10ebb-a2d1-7720-af75-4271aa5720fc) and Astra (01a10ebb-405f-7160-8d8b-1fab9ce2e0c3) runs. UTF-8; no added final newline.",
+      "note": "Complete task, grading and shared execution rules."
+    },
+    {
+      "id": "01-opus-supplied",
+      "promptId": "01",
+      "label": "Opus supplied prompt record",
+      "path": "entries/bracken-hollow-opus/task-prompt.txt",
+      "sha256": "aec85215a19fc4228d0e61b96ac546b52acde36064737362fc4d7e911bace94e",
+      "source": "Unchanged task-prompt.txt supplied with the completed manual Opus artifact. Exact bytes of this record; manual submission delivery was not independently observed.",
+      "note": "This variant omits the separate frame-time judging paragraph present in the Sol/Astra prompt. Its original whitespace is retained."
+    },
+    {
+      "id": "02-shared",
+      "promptId": "02",
+      "label": "Luna / Astra / Sol submitted prompt",
+      "path": "prompt-02.txt",
+      "sha256": "013088621eb352cab4e9e1686c7e6c52751f636d4b81fa3b4f54e0b04e24f08f",
+      "source": "Identical initial task text verified in completed Luna (01a10f18-0a01-7264-89d5-1225c8cc60ec), Astra (01a10f17-5ffc-7695-8fbc-112c655ae0cd), and Sol (01a10f17-b29d-75b6-8bb7-bf5b46ace0c1) runs. UTF-8; no added final newline.",
+      "note": "Complete task, grading and shared execution rules."
     }
   ]
 }

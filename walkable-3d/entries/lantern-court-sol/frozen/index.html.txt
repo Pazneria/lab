@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#131c24" />
+  <title>After Rain · Lantern Court</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="data:," />
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <canvas id="world" aria-label="Walkable 3D night market"></canvas>
+  <div id="loading"><span class="eyebrow">LANTERN COURT</span><p>Lighting the market…</p></div>
+  <header id="identity"><span class="small-dot"></span><div><span class="eyebrow">AFTER RAIN</span><h1>Lantern Court</h1></div></header>
+  <div id="location">COURTYARD <span>23:18 / AFTER THE RAIN</span></div>
+  <div id="crosshair"></div>
+  <div id="welcome" class="panel">
+    <span class="eyebrow">A SMALL PLACE, STILL AWAKE</span>
+    <h2>The rain has passed.</h2>
+    <p>Warm kitchens, wet stone, and one last cup of tea.<br>Step inside. Take your time.</p>
+    <button id="enter">Enter the courtyard <span>↗</span></button>
+    <div class="instructions"><div><b>W A S D</b><span>walk</span></div><div><b>MOUSE</b><span>look around</span></div><div><b>SHIFT</b><span>walk faster</span></div><div><b>ESC</b><span>release cursor</span></div></div>
+    <p class="note">You can also drag to look, or use the arrow keys to turn.</p>
+  </div>
+  <footer><span id="hint">WASD walk · Mouse look · R reset</span><div><button id="perf-toggle" title="Show measured frame timings">Frame timings</button><button id="reset">Reset view</button><button id="help">Controls</button></div></footer>
+  <div id="performance" hidden><b>FRAME TIMING</b><div id="metrics">Collecting samples…</div><span>Rolling 10 seconds · P toggles · measured animation frames</span><button id="export">Download measurements</button></div>
+  <div id="error" hidden></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

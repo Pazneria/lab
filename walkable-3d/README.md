@@ -2,7 +2,9 @@
 
 Static entry previews, one explicitly opened scene at a time, pairwise browser-local preferences, and a separate personal grading notebook. Prompt 01 is an abandoned railway station in autumn woodland. Visuals / performance / fulfillment carry 45 / 35 / 20 points; the build cap is one hour. Jordan judges. No scores or votes have been supplied or prefilled.
 
-The original common prompt is preserved in `prompt-01.txt` and the entry index, retrieved from the completed Astra task's initial instruction. Requested model/effort labels come from the parent task, while the producers could verify only their GPT-6 family identity. Both facts remain visible in inspectors. Producer timing diagnostics have different runs/settings and are not directly ranked.
+The full prompt is available through **View full prompt** in the standalone page and the room's Inspect / Compare worlds controls. Prompt selectors keep comparisons within one brief. Exact UTF-8 task text for railway Sol/Astra and Night Market Luna/Astra/Sol is preserved in `prompt-01.txt` and `prompt-02.txt`, verified against each completed run's initial instruction. Version IDs and SHA-256 hashes appear in the prompt viewer and each build inspector; a TXT download retains the original text. The Opus supplied prompt record is a separate version: it omits the additional frame-time judging paragraph and retains its original whitespace. Manual delivery of that record was not independently observed. The prior railway prompt content already matched the source; its extra final file newline was removed so the downloaded record matches the submitted message bytes. No entrant file changed.
+
+Requested model/effort labels come from the parent task, while the producers could verify only their GPT-6 family identity. Both facts remain visible in inspectors. Producer timing diagnostics have different runs/settings and are not directly ranked.
 
 ## Preview and checks
 
@@ -15,6 +17,7 @@ $env:LAB_PLAYWRIGHT_MODULE='absolute/path/to/playwright'
 $env:CHROME_PATH='absolute/path/to/chrome.exe'
 node tests/verify-walkable.cjs
 node tests/verify-walkable-room.cjs
+node tests/verify-walkable-prompts.cjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py
 ```
@@ -23,7 +26,7 @@ python tests/verify-walkable-publication.py
 
 ## Frozen submission integrity
 
-For Sol and Astra, each repository file `entries/<id>/original.zip` is an exact copy of the supplied finished archive. For the manually completed Opus folder, it is explicitly a host-created preservation snapshot of the exact required files and launch records; no producer ZIP was supplied. These ZIPs and the raw `evidence/` folders are retained locally and in recoverable Git history, and explicitly excluded from Pages output. `provenance.json` records their SHA-256 values, original source, per-file hashes and all hosting adjustments, and distinguishes published files from retained records. `.gitattributes` disables Git text conversion under `entries/`.
+For railway Sol and Astra, each repository file `entries/<id>/original.zip` is an exact copy of the supplied finished archive. For the manually completed Opus folder, it is explicitly a host-created preservation snapshot of the exact required files and launch records; no producer ZIP was supplied. These ZIPs and the raw `evidence/` folders are retained locally and in recoverable Git history, and explicitly excluded from Pages output. `provenance.json` records their SHA-256 values, original source, per-file hashes and all hosting adjustments, and distinguishes published files from retained records. `.gitattributes` disables Git text conversion under `entries/`.
 
 The site serves the frozen runtime, small JPEG previews, prompt, provenance, licenses and concise producer records. Full-resolution captures, raw test samples, portable ZIPs and the benchmark's development helpers are excluded by `_config.yml`. Unrelated Lab helpers and tests are outside this exclusion scope. Original runtime HTML is stored as `frozen/index.html.txt`, with identical bytes. The host fetches and SHA-256 verifies it only after a click, then creates an in-memory sandbox document. There is no raw entrant HTML launch link on the Lab origin. Scene JS and CSS are copied unchanged; no source is rebuilt and no entrant visuals, controls, quality settings, collisions or behavior are fixed.
 
@@ -55,8 +58,18 @@ The only persistence key is `lab.walkable3d.judgments.v1`. A saved preference re
 
 ## Completed manual Opus handoff and room access
 
-The third entry, **Bracken Hollow Station**, came from Jordan's completed manual Claude Opus folder. Its version, effort, actual implementation start, deadline compliance and elapsed time are unverified. Earlier unsuccessful CLI launch time is not used as a start. The supplied README and prompt are retained. Performance figures are explicitly producer claims, not a final grade. Luna remains unadmitted.
+The third railway entry, **Bracken Hollow Station**, came from Jordan's completed manual Claude Opus folder. Its version, effort, actual implementation start, deadline compliance and elapsed time are unverified. Earlier unsuccessful CLI launch time is not used as a start. The supplied README and prompt are retained. Performance figures are explicitly producer claims, not a final grade. The earlier railway Luna submission remains unadmitted.
 
 Only the required Three.js 0.169.0 module, BufferGeometryUtils and MIT license were copied from the supplied dependency directory to `frozen/vendor/three/`, byte for byte. The original HTML is preserved; its in-memory import map receives the single documented `./node_modules/three/` → `./vendor/three/` substitution. No scene changes or rebuild. The completed first-party modules use local procedural geometry/textures; no network, credential, telemetry, storage or parent-navigation surface was found. Its server is retained only in the excluded snapshot and never hosted as executable code.
 
 The [3D Lab](../lab-space/) now has an actual north-wall A/B comparison screen plus accessible native controls. It shares the same isolated viewer as this page. The host bridge explicitly calls `document.exitPointerLock()` on Escape; this is host boundary/input release handling, with frozen scene code unchanged. The Lab's render/input loop is suspended before launching and resumes only after the child has been destroyed. All three pairs are data-driven; one-entry waiting and two-entry single-pair boundaries remain supported.
+
+## Prompt 02 / Night Market
+
+**After Rain** (requested Luna / xhigh), **Raincourt** (requested Astra / xhigh), and **Lantern Court** (requested GPT-6.1 Sol / xhigh) are completed, frozen submissions. After Rain's two-file handoff is preserved in a clearly labeled local host snapshot. The original Raincourt and Lantern Court ZIPs remain untouched in producer workspaces; a Raincourt preservation copy is retained in the local queue. New Night Market entry folders contain no ZIPs or raw evidence, as requested. All three use local procedural assets. The scoped read-only audit found no external runtime requests, secrets, tracking, parent navigation or storage access. Raincourt's bundled Three.js core/module bytes match the already admitted dependency; its geometry helper was reviewed separately.
+
+After Rain needs no path substitutions and uses WebGL 1. Raincourt uses WebGL 2; only its in-memory HTML paths change: `/style.css` to `./style.css`, `/src/` to `./src/`, and `/node_modules/three/` to `./vendor/three/`. Dependencies are copied byte-for-byte into the latter folder. All original runtime bytes remain frozen. Raincourt's own CSV download remains blocked by the existing sandbox restriction; the portable original retains that feature. All three builds' limitations and producer measurements remain visible, with no assigned grades.
+
+The three new stills were captured sequentially from their completed sandboxed builds at the original reset view, then resized with aspect ratio preserved and JPEG compression. Raw captures, producer validation records and ZIPs remain outside Pages. `LAB_SITE_BASE` runs `verify-walkable-prompts.cjs` against a deployed site root; optional `AXE_PATH` enables WCAG A/AA checks. This test covers prompt text/download equality, hash failure, same-prompt pairing, real screen launches, isolated input, suspension, unloading and history. Existing stored railway judgments are preserved.
+
+Lantern Court uses WebGL 2 and needs no path substitutions. Its frozen runtime is copied directly from the ZIP's `dist/` tree; the original archive and raw evidence were not copied. Source hashes and archive-member mapping provide provenance. As with Raincourt, the original JSON measurement download stays blocked inside the hosted sandbox.

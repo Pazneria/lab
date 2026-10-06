@@ -1,0 +1,62 @@
+{
+  "entry": "after-rain-luna",
+  "importedAt": "2026-10-06T03:32:52.418364+00:00",
+  "archiveSource": "task-14/index.html and README.md; host-created snapshot",
+  "archiveSha256": "3f75afdddba5b90af3122d12da4f939770e7632f2074dc88f0e3d7e18646ad27",
+  "originalPreserved": true,
+  "source": {
+    "memberRoot": "",
+    "runtimeRoot": "",
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html"
+    },
+    "preview": "Host capture at original reset view; only resized/compressed to a 960x600 JPEG.",
+    "archive": "task-14/index.html and README.md; host-created snapshot"
+  },
+  "hostingAdjustments": [
+    "Original HTML stored as .txt; unchanged bytes SHA-256 checked before opaque sandbox creation. No scene adjustments."
+  ],
+  "securityAudit": {
+    "result": "No malicious or unsafe access found in the supplied runtime review.",
+    "scope": "Read-only HTML, CSS, authored JavaScript and imported local dependency review; local rendering/input only. No external network, secrets, storage, tracking, parent navigation or dynamic evaluation in entrant code.",
+    "sandbox": "Same shared opaque iframe and CSP. Raincourt user-triggered Blob CSV download remains restricted by sandbox; no allowance added."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 39995,
+      "sha256": "a6a17e9c2d53a57942bf8260bd319217a6c2751ed4b278ac12629196b266705f"
+    },
+    "preview.jpg": {
+      "bytes": 52014,
+      "sha256": "cd287110f775038397f8cd9063a0db7fc8e03de9f4bc98c1d294e7fa251ee51e"
+    },
+    "README.md": {
+      "bytes": 1712,
+      "sha256": "d1b46b12d294d94d31f37488abce2ce0a76d01250779ab83ad1e68e16e81b60c"
+    }
+  },
+  "publication": {
+    "policy": "Runtime, small still, provenance, licenses and concise records only. No ZIP or raw evidence copied to this repository or Pages.",
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "preview.jpg",
+      "README.md"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "evidence/handoff.json": {
+      "bytes": 3033,
+      "sha256": "74477ea728ac4716cd7889f96c635805a96e3d4acc5bb995ed6ac332f0fcb583"
+    },
+    "evidence/host-preview.png": {
+      "bytes": 589717,
+      "sha256": "9947df94398d758008d1cabefb05c071364df507e5562c82f085de7f67b14426"
+    },
+    "original.zip": {
+      "bytes": 16605,
+      "sha256": "3f75afdddba5b90af3122d12da4f939770e7632f2074dc88f0e3d7e18646ad27"
+    }
+  },
+  "archiveRetention": "Preserved outside the repository and Pages in the task-11 local queue; producer source also untouched."
+}

@@ -63,15 +63,16 @@
 
   <dialog id="comparison-dialog" aria-labelledby="screen-title">
     <form method="dialog"><button class="close" aria-label="Return to room">×</button></form>
-    <p class="eyebrow">North-wall screen / Prompt 01</p><h2 id="screen-title">Walkable worlds</h2>
+    <p class="eyebrow" id="screen-prompt-label">North-wall screen / Prompt 01</p><h2 id="screen-title">Walkable worlds</h2>
     <p>Static previews. Open one scene, explore, then exit back to this Lab. Desktop keyboard + mouse required for the submitted scenes.</p>
+    <label class="prompt-picker">Benchmark prompt <select id="screen-prompt" aria-label="Benchmark prompt"></select></label>
     <div class="screen-toolbar"><button id="screen-prev" aria-label="Previous comparison">← Previous</button><strong id="screen-pair" role="status">Loading entries</strong><button id="screen-next" aria-label="Next comparison">Next →</button></div>
     <p id="screen-boundary"></p><label><input id="screen-blind" type="checkbox" checked> Hide model labels</label>
     <div id="screen-cards"></div>
     <div class="screen-choices"><button data-screen-choice="a">Prefer A</button><button data-screen-choice="tie">Tie</button><button data-screen-choice="b">Prefer B</button><button id="screen-clear">Clear choice</button></div>
     <p id="screen-vote" role="status"></p><p id="screen-storage"></p>
     <p>Jordan's separate rubric: visuals 45 / performance 35 / fulfillment 20. One-hour build cap; timing disclosures in each inspector. No scores prefilled.</p>
-    <a href="../walkable-3d/">Full prompt, build inspectors &amp; personal grading notebook →</a>
+    <p><a id="screen-full-prompt" href="../walkable-3d/#full-prompt">View full prompt</a></p><a id="screen-notebook" href="../walkable-3d/">Build inspectors &amp; personal grading notebook →</a>
   </dialog>
   <p id="notice" role="status" class="room-notice"></p>
   <dialog id="viewer" aria-labelledby="viewer-title">

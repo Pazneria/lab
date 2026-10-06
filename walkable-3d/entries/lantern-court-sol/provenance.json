@@ -1,0 +1,106 @@
+{
+  "entry": "lantern-court-sol",
+  "importedAt": "2026-10-06T03:44:23.655303+00:00",
+  "archiveSource": "task-13/after-rain-lantern-court.zip",
+  "archiveSha256": "9a1770ab5723de4972a49ada90a5662b10c3693cd634b1878d3a03b2a7ec00d9",
+  "originalPreserved": true,
+  "archiveRetention": "Original remains unchanged in producer task-13; not copied into this repository or Pages.",
+  "source": {
+    "memberRoot": "",
+    "runtimeRoot": "dist/",
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/materials.js": "dist/src/materials.js",
+      "frozen/src/scene.js": "dist/src/scene.js",
+      "frozen/style.css": "dist/style.css",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js": "dist/vendor/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js"
+    },
+    "preview": "Host capture at original reset view, aspect-preserving 960x600 JPEG; raw capture retained outside repository."
+  },
+  "hostingAdjustments": [
+    "Original HTML stored unchanged as .txt and SHA-256 checked before opaque iframe creation.",
+    "No path replacements, source rebuilds, scene edits or behavioral fixes."
+  ],
+  "securityAudit": {
+    "result": "No unsafe access found in scoped read-only review of supplied runtime, DOM/input code, generated materials, scene modules and local imports.",
+    "network": "No external services, secrets, tracking, storage, workers or parent-page access in entrant source. Three core/module and BufferGeometryUtils exactly match previously admitted dependency bytes.",
+    "sandbox": "Existing opaque iframe/CSP unchanged. Original measurement download remains blocked; no download capability granted."
+  },
+  "files": {
+    "benchmark-record.json": {
+      "bytes": 2050,
+      "sha256": "f7479823b8ea6ed7a70f7af66c2d2d6a4d7f10c4d221a02d795880d4bc067f9e"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2034,
+      "sha256": "4958019f384b8d76e2468108bc1492d809a40c87dff7b8d1fb9869968c7070da"
+    },
+    "frozen/src/main.js": {
+      "bytes": 11706,
+      "sha256": "a864e80ff889b94022004ada2614bf9c4edcdbfc92bb8ddd97b82fb36036b6da"
+    },
+    "frozen/src/materials.js": {
+      "bytes": 7425,
+      "sha256": "0a4c84a8e1e1fba82e272cabc94866b5ba65903c84c11a969d0b2f740f6a0879"
+    },
+    "frozen/src/scene.js": {
+      "bytes": 38924,
+      "sha256": "f60a20441870cee2f3e7b802b8a9f6de57933babe7a8b802abfb053e9e38ff6b"
+    },
+    "frozen/style.css": {
+      "bytes": 3175,
+      "sha256": "5f0ec975c7c2a84179a4b09cb9743d2d93c6e9e8e44798b955d7495610754987"
+    },
+    "frozen/vendor/addons/utils/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "preview.jpg": {
+      "bytes": 56133,
+      "sha256": "b86aa13885ad85e3e29ebdc82358439b862c46229ad54466992d57904c3e3745"
+    },
+    "README.md": {
+      "bytes": 4693,
+      "sha256": "1fb326f3e6aef72a4cf67bbcc5c216f3f900061c09539f5cfa78e26084e35124"
+    },
+    "VALIDATION.md": {
+      "bytes": 2054,
+      "sha256": "1987dd4ff31be96d338b4b019d2f89cc66bd2dd5a66daf4dde0cf9588758b55b"
+    }
+  },
+  "publication": {
+    "policy": "Frozen runtime, small still, provenance, licenses and concise records only; producer ZIP and raw evidence stay outside repository/Pages.",
+    "publishedFiles": [
+      "benchmark-record.json",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/scene.js",
+      "frozen/style.css",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "preview.jpg",
+      "README.md",
+      "VALIDATION.md"
+    ],
+    "retainedOutsidePages": []
+  }
+}

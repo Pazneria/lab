@@ -50,7 +50,7 @@ export function createViewer({base=new URL('../',import.meta.url),titleFor=entry
       u.hash = `scene=${entry.id}`;
       history[replace ? 'replaceState' : 'pushState']({ ...history.state, walkableScene: entry.id }, '', u);
     }
-    $('#viewer-title').textContent = titleFor(entry); $('#viewer-message').textContent = 'Loading the frozen build. Nothing else is running in this viewer.';
+    $('#viewer-title').textContent = titleFor(entry); document.querySelector('.viewer-foot span').textContent = `Desktop keyboard + mouse - ${entry.webgl || 'WebGL 2'} required`; $('#viewer-message').textContent = 'Loading the frozen build. Nothing else is running in this viewer.';
     $('#retry-viewer').hidden = true; $('#return-focus').disabled = true;
     if (!$('#viewer').open) $('#viewer').showModal(); $('#close-viewer').focus();
     const controller = new AbortController(), token = crypto.randomUUID(), current = sequence;

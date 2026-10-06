@@ -5,7 +5,7 @@ import {createViewer} from './viewer.js';
   const $ = (s) => document.querySelector(s);
   const key = 'lab.walkable3d.judgments.v1';
   const blank = () => ({ version: 1, grades: {}, preferences: {}, opened: {} });
-  let record = blank(), persistent = true, entries = [], pairs = [], pairIndex = 0;
+  let record = blank(), persistent = true, entries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
   const viewer=createViewer({onReady(entry){refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
@@ -87,12 +87,15 @@ import {createViewer} from './viewer.js';
     addDefinition(dl, 'Frame evidence', entry.performanceEvidence);
     if (entry.archiveKind) addDefinition(dl, 'Preservation record', entry.archiveKind);
     addDefinition(dl, 'Archive SHA-256', entry.archiveSha256);
+    const version=versions.find(v=>v.id===entry.promptVersion);
+    if(version){addDefinition(dl,'Prompt version',version.id);addDefinition(dl,'Prompt SHA-256',version.sha256);}
     details.append(dl, el('p', 'Producer diagnostics use different runs and settings. These are not final grades or a controlled performance comparison.', 'small muted'));
     const list = el('ul'); entry.limitations.forEach(item => list.append(el('li', item))); details.append(list);
     const links = el('div', undefined, 'source-links');
     entry.documents.forEach(doc => links.append(link(doc.label, `entries/${entry.id}/${doc.path}`)));
+    if(version) links.append(link('View submitted prompt', `?prompt=${entry.promptId}&version=${version.id}#full-prompt`));
     links.append(link('Source hashes', `entries/${entry.id}/provenance.json`)); details.append(links);
-    details.append(el('p', 'Opening source documents may reveal model information. Original archives and raw captures are retained in the repository, outside this site; their hashes remain in provenance.', 'blind-note'), gradeForm(entry));
+    details.append(el('p', 'Opening source documents may reveal model information. Original archives and raw captures are retained outside this site; their hashes and retention locations remain in provenance.', 'blind-note'), gradeForm(entry));
     return details;
   }
   function card(entry, index) {
@@ -105,7 +108,7 @@ import {createViewer} from './viewer.js';
     preview.append(img, el('span', '↗ Open walkable scene', 'open-label'));
     preview.addEventListener('click', () => open(entry, preview)); article.append(preview);
     const body = el('div', undefined, 'entry-body'); body.append(el('h3', titleFor(entry)), el('p', entry.description));
-    const meta = el('div', undefined, 'entry-meta'); meta.append(el('span', $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration), el('span', 'Desktop · WebGL 2')); body.append(meta);
+    const meta = el('div', undefined, 'entry-meta'); meta.append(el('span', $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration), el('span', `Desktop · ${entry.webgl || 'WebGL 2'}`)); body.append(meta);
     article.append(body, inspector(entry)); return article;
   }
   function render() {
@@ -150,19 +153,45 @@ import {createViewer} from './viewer.js';
   $('#next-pair').addEventListener('click', () => { close(false); pairIndex = (pairIndex + 1) % pairs.length; render(); });
   $('#export').addEventListener('click', () => {
     refresh();
-    const blob = new Blob([JSON.stringify({ ...record, exportedAt: new Date().toISOString(), benchmark: 'Jordan walkable 3D / prompt 01', storageScope: 'personal browser-local judgments', rubric: { visuals: 45, performance: 35, fulfillment: 20 } }, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify({ ...record, exportedAt: new Date().toISOString(), benchmark: 'Jordan walkable 3D', promptVersions: versions.map(({id,sha256})=>({id,sha256})), storageScope: 'personal browser-local judgments', rubric: { visuals: 45, performance: 35, fulfillment: 20 } }, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob), a = link('', url); a.download = 'walkable-3d-judgments.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
+
+  function selectPrompt(id,entryId){
+    const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
+    entries=allEntries.filter(e=>e.promptId===promptId);pairs=[];pairIndex=0;
+    for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
+    if(entryId)pairIndex=Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId)));
+    $('#prompt-select').value=promptId;$('#prompt-label').textContent=`Prompt ${prompt.id} / ${prompt.title}`;$('#prompt-title').textContent=prompt.brief;
+    $('#prompt-version').replaceChildren(...versions.filter(v=>v.promptId===promptId).map(v=>{const o=el('option',v.label);o.value=v.id;return o;}));
+    $('#prompt-text').textContent='Open this section to load the exact submitted text.';$('#prompt-disclosure').textContent='';$('#prompt-hash').textContent='';
+    $('#prompt-download').href=versions.find(v=>v.id===$('#prompt-version').value)?.path||'#';
+    render();if($('#full-prompt').open)loadPrompt();
+  }
+  async function loadPrompt(){
+    const version=versions.find(v=>v.id===$('#prompt-version').value);if(!version)return;
+    const request=++promptRequest;$('#prompt-text').textContent='Loading the exact prompt record…';
+    $('#prompt-disclosure').textContent=version.source+' '+version.note;$('#prompt-hash').textContent=`Version ${version.id} / SHA-256 ${version.sha256}`;
+    $('#prompt-download').href=version.path;
+    try{const response=await fetch(version.path,{credentials:'omit'});if(!response.ok)throw Error();const bytes=await response.arrayBuffer();const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(hash!==version.sha256)throw Error();if(request!==promptRequest)return;$('#prompt-text').textContent=new TextDecoder().decode(bytes);}
+    catch{if(request===promptRequest)$('#prompt-text').textContent='The prompt could not be loaded or its source hash did not match. No reconstructed text is shown.';}
+  }
+  $('#prompt-select').addEventListener('change',()=>{selectPrompt($('#prompt-select').value);const u=new URL(location.href);u.search='?prompt='+promptId;u.hash='';history.replaceState(history.state,'',u);});
+  $('#prompt-version').addEventListener('change',loadPrompt);
+  $('#full-prompt').addEventListener('toggle',()=>{if($('#full-prompt').open)loadPrompt();});
+  addEventListener('hashchange',()=>{if(location.hash==='#full-prompt'){$('#full-prompt').open=true;loadPrompt();$('#full-prompt').scrollIntoView();}});
 
   storageState();
   fetch('entries.json', { credentials: 'omit' }).then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => {
     if (!Array.isArray(data.entries) || !data.entries.length) throw Error();
-    entries = data.entries;
-    if (entries.some(e => !/^[a-z0-9-]+$/.test(e.id) || !/^[a-f0-9]{64}$/.test(e.htmlSha256))) throw Error();
-    for (let i = 0; i < entries.length; i++) for (let j = i + 1; j < entries.length; j++) pairs.push([entries[i], entries[j]]);
-    const requestedEntry = new URLSearchParams(location.search).get('entry');
-    if (requestedEntry) pairIndex = Math.max(0, pairs.findIndex(pair => pair.some(entry => entry.id === requestedEntry)));
-    if (data.prompt?.verbatim) { $('#prompt-text').textContent = data.prompt.verbatim; $('#prompt-disclosure').textContent = 'Original prompt, preserved verbatim.'; }
+    allEntries = data.entries;
+    if (allEntries.some(e => !/^[a-z0-9-]+$/.test(e.id) || !/^[a-f0-9]{64}$/.test(e.htmlSha256))) throw Error();
+    prompts=data.prompts; versions=data.promptVersions;
+    $('#prompt-select').replaceChildren(...prompts.map(p=>{const o=el('option',`${p.id} / ${p.title}`);o.value=p.id;return o;}));
+    const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry'));
+    selectPrompt(requestedEntry?.promptId||params.get('prompt')||'01',requestedEntry?.id);
+    if(params.has('version') && [...$('#prompt-version').options].some(o=>o.value===params.get('version'))) $('#prompt-version').value=params.get('version');
+    if(location.hash==='#full-prompt'){$('#full-prompt').open=true;loadPrompt();$('#full-prompt').scrollIntoView();}
     render();
     if (location.hash.startsWith('#scene=')) $('#notice').textContent = 'Scene link received. Choose Open walkable scene when you are ready; no scene starts automatically.';
   }).catch(() => {
