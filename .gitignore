@@ -1,4 +1,6 @@
 evidence/
+!walkable-3d/entries/*/evidence/
+!walkable-3d/entries/*/evidence/**
 node_modules/
 .DS_Store
 __pycache__/

@@ -1,0 +1,68 @@
+{
+  "entry": "alder-halt",
+  "importedAt": "2026-10-06",
+  "archiveSource": "task-7/alder-halt-build.zip",
+  "archiveSha256": "26bf3c4617b4a24a33410d18c42b524752e438bcc160bf7f21b0a8b5d46da785",
+  "originalPreserved": true,
+  "source": {
+    "archive": "task-7/alder-halt-build.zip",
+    "memberRoot": "alder-halt-build/",
+    "runtimeRoot": "",
+    "preview": "alder-halt-build/evidence/02-approach.png",
+    "previewNote": "Producer capture, resized from 1600 × 1000 to 960 × 600, JPEG quality 78. No scene or color edits."
+  },
+  "hostingAdjustments": [
+    "Original entry HTML is stored with .txt suffix to avoid offering an unsandboxed document route; its bytes are unchanged.",
+    "The host creates a sandboxed srcdoc with a local base URL, restrictive CSP and lifecycle/error bridge. Entrant JS, CSS, geometry, materials, controls and rendering settings are unchanged."
+  ],
+  "files": {
+    "BENCHMARK.md": {
+      "sha256": "6983fa240c8dc373640eb7f569ab20486f260b3ac85d6fbafa54da10370b8095",
+      "bytes": 2416
+    },
+    "evidence/navigation.json": {
+      "sha256": "74a065d9ec8c29e791adb23a67af69168a34fea74e5d95fdad7a17d5dd4b9891",
+      "bytes": 6438
+    },
+    "evidence/verification.json": {
+      "sha256": "25a6d63acddaa91d31b4a698aa7bd92218474957bce87fc76955942a03765fdc",
+      "bytes": 5742
+    },
+    "frozen/index.html.txt": {
+      "sha256": "1bbf7cfadc04acfc13aecdd8fa3994cdfee99b8413c2bb462a8d3a91268c33b4",
+      "bytes": 5016
+    },
+    "frozen/scene.js": {
+      "sha256": "794ee481c45d1ab9af3795bf4bb576d559fe8281605e1f880f8c946dc9586052",
+      "bytes": 52806
+    },
+    "frozen/vendor/three/BufferGeometryUtils.js": {
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "bytes": 35539
+    },
+    "frozen/vendor/three/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "original.zip": {
+      "sha256": "26bf3c4617b4a24a33410d18c42b524752e438bcc160bf7f21b0a8b5d46da785",
+      "bytes": 17443851
+    },
+    "preview.jpg": {
+      "sha256": "35a07fb83ddb7c33d66466ba8e5d82b77ea304323b6b815a75837258d52ce5c3",
+      "bytes": 102705
+    },
+    "README.md": {
+      "sha256": "4296eefee9812d5d17458f542758569bc06d74211be39dfad38d50a22d31411e",
+      "bytes": 3940
+    }
+  }
+}

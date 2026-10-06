@@ -1,0 +1,16 @@
+{
+  "errors": [],
+  "locked": true,
+  "mouseLook": true,
+  "paused": true,
+  "balanced": true,
+  "reset": {
+    "x": 7.1,
+    "z": -14.8,
+    "y": 1.657872572883969,
+    "yaw": 2.7,
+    "pitch": -0.015
+  },
+  "stats": true,
+  "pauseAgain": true
+}

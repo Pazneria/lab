@@ -56,6 +56,8 @@ for page, parser in pages.items():
             continue  # Existing room; checked below at its actual public destination.
         if parts.path:
             asset = (ROOT / parts.path).resolve()
+            if asset.is_dir():
+                asset = asset / "index.html"
             assert asset.is_relative_to(ROOT) and asset.is_file(), ref
             content = asset.read_bytes()
             assert content, ref

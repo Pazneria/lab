@@ -1,0 +1,19 @@
+{
+  "errors": [],
+  "high": {
+    "pixelRatio": 0.6987712429686843,
+    "w": 1788,
+    "h": 1006
+  },
+  "balanced": {
+    "pixelRatio": 0.49410588440130926,
+    "w": 1264,
+    "h": 711
+  },
+  "restored": {
+    "pixelRatio": 1.25,
+    "w": 1600,
+    "h": 900
+  },
+  "pass": true
+}

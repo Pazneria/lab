@@ -14,6 +14,9 @@ See [catalog audit and pending evidence](docs/CATALOG-AUDIT-2026-10-05.md),
 
 ## Pages and data
 
+- `walkable-3d/`: Jordan's personal walkable-scene benchmark, with static previews,
+  isolated on-demand entry loading, local preferences, and a separate grading notebook.
+  See [preservation, security, entry admission and validation](walkable-3d/README.md).
 - `benchmarks.html`: stable visual gallery, category/search filters and score-graph filter.
 - `index.html`: stable root gallery, used by the 3D room’s benchmark station.
 - `results.html?benchmark=hle-diamond`: interactive detail page for any card.
