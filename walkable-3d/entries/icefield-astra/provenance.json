@@ -1,0 +1,116 @@
+{
+  "entry": "icefield-astra",
+  "importedAt": "2026-10-06T06:34:45.876922+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-4\\ICEFIELD-Station-07.zip",
+  "archiveSha256": "c98c20ac973d3e2634fe5f6287de7fa94a336d85baf19529b4cfc090b04993b1",
+  "archiveKind": "Original producer ZIP retained unchanged outside the repository and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/src/main.js": "src/main.js",
+      "frozen/vendor/three/LICENSE": "vendor/three/LICENSE",
+      "frozen/vendor/three/three.core.js": "vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js": "vendor/three/three.module.js",
+      "frozen/vendor/three/addons/geometries/RoundedBoxGeometry.js": "vendor/three/addons/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/addons/utils/BufferGeometryUtils.js": "vendor/three/addons/utils/BufferGeometryUtils.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css"
+    },
+    "preview": "Frozen original reset view, native default quality; aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Original HTML is served as inert index.html.txt. Only the explicitly listed stylesheet/module/import-map paths change in viewer memory: [[\"href=\\\"/style.css\\\"\", \"href=\\\"./style.css\\\"\"], [\"src=\\\"/src/\", \"src=\\\"./src/\"], [\"\\\"/vendor/\", \"\\\"./vendor/\"]]. No frozen file or scene behavior was modified.",
+    "Entry-scoped CSP permits the original empty data:text/css stylesheet import. Other entries retain their previous policy; external styles, connections, workers and same-origin access remain blocked."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in scoped authored source/browser API/import/control/rendering review.",
+    "externalAccess": "No authored external network, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found.",
+    "dependencyAudit": "All shipped Three.js dependency/license bytes match previously admitted dependency bytes; closed local module imports.",
+    "status": "Host runtime checks passed with documented data stylesheet compatibility option."
+  },
+  "prompt": {
+    "version": "05-shared",
+    "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
+    "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline."
+  },
+  "archiveRetention": "Original ZIP/snapshot, raw producer evidence and full-size host captures remain outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "original.zip": {
+      "bytes": 3267332,
+      "sha256": "c98c20ac973d3e2634fe5f6287de7fa94a336d85baf19529b4cfc090b04993b1"
+    },
+    "host-preview.png": {
+      "bytes": 686626,
+      "sha256": "b7638694fc58995df21bb02a3f900d0a74cfbd41804b3818c1e9b7e9dc5f2c45"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/src/main.js": {
+      "bytes": 56007,
+      "sha256": "3c7ab1772b2b23f3906828b449c686888356b40706980c79b1146d5e5792776d"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "frozen/vendor/three/addons/geometries/RoundedBoxGeometry.js": {
+      "bytes": 6476,
+      "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8"
+    },
+    "frozen/vendor/three/addons/utils/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2757,
+      "sha256": "938c6f36c04622a39dd831132796e3db61af429e91ebe55e0b7cb35bf014965d"
+    },
+    "frozen/style.css": {
+      "bytes": 4633,
+      "sha256": "a5bb645c7b16522b0a8ec12622bb7aa8042b9d9f3fcc9a7ef4f8dc6423ec6092"
+    },
+    "README.md": {
+      "bytes": 2601,
+      "sha256": "08b9f7f317b643ff7982f0cf9c134491351b5773857888f24dd67dac8f4f02b2"
+    },
+    "BUILD_RECORD.md": {
+      "bytes": 2570,
+      "sha256": "6f6e37c8cdb04fcef88002c85d8cc500a4a9d72eccf4521a0c11a3b1ea7bcbbe"
+    },
+    "host-verification.json": {
+      "bytes": 1074,
+      "sha256": "0aea6c97eb4d62a84abdcc5db022357ea1f70eed0b1a0fb61b74f0f0b8aca810"
+    },
+    "preview.jpg": {
+      "bytes": 38744,
+      "sha256": "a3160e1fb049a970573bc9934ad8f17ae5c05a6f39dd8a16997f076f8028f5a4"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "BUILD_RECORD.md",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/style.css",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/addons/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  }
+}

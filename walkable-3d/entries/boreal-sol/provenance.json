@@ -1,0 +1,118 @@
+{
+  "entry": "boreal-sol",
+  "importedAt": "2026-10-06T06:34:46.182371+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-6\\boreal-station\\Boreal-polar-shelter.zip",
+  "archiveSha256": "c11567b7ffa0c5fb637e2d59d92ba99b59047fa60e0d26dec509ebea56b269f2",
+  "archiveKind": "Original producer ZIP retained unchanged outside the repository and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/style.css": "dist/style.css",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/vendor/BufferGeometryUtils.js": "dist/vendor/BufferGeometryUtils.js",
+      "frozen/vendor/RoundedBoxGeometry.js": "dist/vendor/RoundedBoxGeometry.js",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js"
+    },
+    "preview": "Frozen original reset view, native default quality; aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Original HTML is served as inert index.html.txt. Only the explicitly listed stylesheet/module/import-map paths change in viewer memory: [[\"href=\\\"/style.css\\\"\", \"href=\\\"./style.css\\\"\"], [\"src=\\\"/src/\", \"src=\\\"./src/\"]]. No frozen file or scene behavior was modified."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in scoped source/browser API/import/control/rendering review.",
+    "externalAccess": "No authored external requests, storage, credentials, telemetry, workers, dynamic evaluation or parent navigation. User-triggered Blob JSON export remains blocked by the existing sandbox; no download permission added.",
+    "dependencies": {
+      "BufferGeometryUtils.js": "Previously admitted r180 helper with producer-supplied relative import path and extra terminal newline; frozen producer bytes retained.",
+      "RoundedBoxGeometry.js": "Previously admitted r180 helper with producer-supplied relative import path and extra terminal newline; frozen producer bytes retained."
+    },
+    "boundedWork": "Procedural geometry/canvas textures, capped pixel density, cached shadows, bounded frame sample arrays and ordinary animation loop."
+  },
+  "prompt": {
+    "version": "05-shared",
+    "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
+    "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline."
+  },
+  "archiveRetention": "Original ZIP/snapshot, raw producer evidence and full-size host captures remain outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "original.zip": {
+      "bytes": 10887350,
+      "sha256": "c11567b7ffa0c5fb637e2d59d92ba99b59047fa60e0d26dec509ebea56b269f2"
+    },
+    "host-preview.png": {
+      "bytes": 776250,
+      "sha256": "5a7f01a40224d740a47499b66f141b797b797c0c84ee5ffbeb36a26df38216c1"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2842,
+      "sha256": "fb0fda2a40ab9cf741ecebb1646e7c4d91f8d9d5fe37e1354a81602ff5ce9026"
+    },
+    "frozen/style.css": {
+      "bytes": 4419,
+      "sha256": "b6f88d41f9efe3f6ad56eaad1fa4b1f8e666f45755d7ace88243f2a2b2f023f9"
+    },
+    "frozen/src/main.js": {
+      "bytes": 49841,
+      "sha256": "9b3c5a8c3f73c01fa445827a0e75efe0d5b6b913635923b412337d80a0ab8037"
+    },
+    "frozen/vendor/BufferGeometryUtils.js": {
+      "bytes": 35553,
+      "sha256": "dd161846dee1b9e1fba88692d540c0fc76167aff90e1a7dfb1d1837d99d761b6"
+    },
+    "frozen/vendor/RoundedBoxGeometry.js": {
+      "bytes": 6490,
+      "sha256": "38dfa49d386b3e9ef69ddd03fad0bce269aa6c79998429d3cdfdbb80333e95f3"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "README.md": {
+      "bytes": 3862,
+      "sha256": "ff270c7c6aff513a69438df698b28411b8dd5ee8d263385fdeba39b989fa3ab9"
+    },
+    "BENCHMARK.md": {
+      "bytes": 2901,
+      "sha256": "630261f12823338572d56f2a964c9ca9b73038a91b2dc7fab35c0e1bb0c94d56"
+    },
+    "host-verification.json": {
+      "bytes": 1129,
+      "sha256": "894fe6de34ba81a7a9027250c9529f8a6e2ac7b7018839c59be105629a6cc550"
+    },
+    "preview.jpg": {
+      "bytes": 44113,
+      "sha256": "70035a71211e55aa0a23d2144cb36b9c9173aa6990459e9b05afcf08d9e5c036"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "BENCHMARK.md",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/style.css",
+      "frozen/vendor/BufferGeometryUtils.js",
+      "frozen/vendor/RoundedBoxGeometry.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  }
+}

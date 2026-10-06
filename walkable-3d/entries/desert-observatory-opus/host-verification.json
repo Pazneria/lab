@@ -1,0 +1,31 @@
+{
+  "id": "desert-observatory-opus",
+  "passed": true,
+  "errors": [],
+  "failedAssets": [],
+  "warnings": [],
+  "checks": [
+    "Static initial state with no entrant fetch/context",
+    "Real WebGL 2 rendering and original reset-view capture",
+    "Ordinary keyboard movement, mouse look and reset",
+    "Opaque parent/storage isolation",
+    "Pointer release restores exit focus",
+    "Close destroys child; repeated open/back/forward remains unloaded"
+  ],
+  "diagnostics": {
+    "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "drawingBuffer": [
+      1382,
+      818
+    ],
+    "pixelRatio": 1,
+    "drawCalls": 27,
+    "triangles": 394586
+  },
+  "checkedAt": "2026-10-06T05:40:26.737Z",
+  "scope": "Host launch/input/lifecycle verification only; no benchmark grade or comparative performance claim",
+  "sourceUnchanged": true,
+  "externalRequests": 0,
+  "preview": "Captured from the frozen build after entering and its ordinary R reset, at default rendering settings. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+}

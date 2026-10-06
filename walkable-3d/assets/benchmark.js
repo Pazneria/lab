@@ -5,8 +5,8 @@ import {createViewer} from './viewer.js';
   const $ = (s) => document.querySelector(s);
   const key = 'lab.walkable3d.judgments.v1';
   const blank = () => ({ version: 1, grades: {}, preferences: {}, opened: {} });
-  let record = blank(), persistent = true, entries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
-  const viewer=createViewer({onReady(entry){refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
+  let record = blank(), persistent = true, entries = [], failedEntries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
+  const viewer=createViewer({onReady(entry){if(entry.availability==='failed')return;refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null');
@@ -89,6 +89,7 @@ import {createViewer} from './viewer.js';
     addDefinition(dl, 'Archive SHA-256', entry.archiveSha256);
     const version=versions.find(v=>v.id===entry.promptVersion);
     if(version){addDefinition(dl,'Prompt version',version.id);addDefinition(dl,'Prompt SHA-256',version.sha256);}
+    if(entry.promptDisclosure) addDefinition(dl,'Submitted prompt disclosure',entry.promptDisclosure);
     details.append(dl, el('p', 'Producer diagnostics use different runs and settings. These are not final grades or a controlled performance comparison.', 'small muted'));
     const list = el('ul'); entry.limitations.forEach(item => list.append(el('li', item))); details.append(list);
     const links = el('div', undefined, 'source-links');
@@ -111,15 +112,26 @@ import {createViewer} from './viewer.js';
     const meta = el('div', undefined, 'entry-meta'); meta.append(el('span', $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration), el('span', `Desktop · ${entry.webgl || 'WebGL 2'}`)); body.append(meta);
     article.append(body, inspector(entry)); return article;
   }
+  function failedCard(entry) {
+    const article=el('article',undefined,'entry failed-entry');article.dataset.entry=entry.id;
+    const top=el('div',undefined,'entry-top');top.append(el('span','FROZEN RESULT','slot'),el('span','Startup failed'));article.append(top);
+    const body=el('div',undefined,'entry-body');body.append(el('h3',entry.title),el('p',entry.failureSummary));
+    const meta=el('div',undefined,'entry-meta');meta.append(el('span',$('#blind').checked?'Model label hidden':entry.requestedConfiguration));body.append(meta);
+    body.append(el('p','No successful scene preview or walkthrough was captured. This result is excluded from working pairs. No automatic grade is assigned.','small muted'));
+    const attempt=el('button','Attempt frozen build','quiet');attempt.type='button';attempt.dataset.open=entry.id;attempt.addEventListener('click',()=>open(entry,attempt));body.append(attempt);
+    article.append(body,inspector(entry));return article;
+  }
   function render() {
     $('#entries').replaceChildren(...selected().map(card));
+    $('#failed-results').hidden=failedEntries.length===0;
+    $('#failed-entries').replaceChildren(...failedEntries.map(failedCard));
     if (entries.length === 1) {
       const waiting = el('article', undefined, 'entry waiting'), top = el('div', undefined, 'entry-top');
       top.append(el('span', 'NEXT ENTRY', 'slot'), el('span', 'Awaiting a finished build')); waiting.append(top);
       const art = el('div', undefined, 'waiting-art'); art.append(el('span', '+', 'waiting-symbol')); waiting.append(art);
       const body = el('div', undefined, 'entry-body'); body.append(el('h3', 'One world so far.'), el('p', 'Explore the completed entry now. A real comparison opens when a second frozen submission is admitted.')); waiting.append(body); $('#entries').append(waiting);
     }
-    $('#entry-count').textContent = `${entries.length} finished ${entries.length === 1 ? 'entry' : 'entries'}`;
+    $('#entry-count').textContent = failedEntries.length ? `${entries.length} ready · ${failedEntries.length} startup failed · ${entries.length+failedEntries.length} frozen results` : `${entries.length} finished ${entries.length === 1 ? 'entry' : 'entries'}`;
     $('#next-pair').hidden = pairs.length < 2; updateVote();
   }
   function updateVote() {
@@ -143,7 +155,7 @@ import {createViewer} from './viewer.js';
   $('#blind').checked = true;
   $('#blind').addEventListener('change', () => {
     // Preserve unsaved grading input and details state when revealing model labels.
-    for (const entry of selected()) {
+    for (const entry of [...selected(),...failedEntries]) {
       const article = document.querySelector(`[data-entry="${entry.id}"]`);
       article.querySelector('.entry-meta span').textContent = $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration;
       article.querySelector('dd').textContent = $('#blind').checked ? 'Model labels hidden. Uncheck “Hide model labels” to reveal the requested configuration.' : entry.requestedConfiguration;
@@ -159,7 +171,7 @@ import {createViewer} from './viewer.js';
 
   function selectPrompt(id,entryId){
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
-    entries=allEntries.filter(e=>e.promptId===promptId);pairs=[];pairIndex=0;
+    entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
     if(entryId)pairIndex=Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId)));
     $('#prompt-select').value=promptId;$('#prompt-label').textContent=`Prompt ${prompt.id} / ${prompt.title}`;$('#prompt-title').textContent=prompt.brief;
@@ -193,6 +205,7 @@ import {createViewer} from './viewer.js';
     if(params.has('version') && [...$('#prompt-version').options].some(o=>o.value===params.get('version'))) $('#prompt-version').value=params.get('version');
     if(location.hash==='#full-prompt'){$('#full-prompt').open=true;loadPrompt();$('#full-prompt').scrollIntoView();}
     render();
+    if(requestedEntry?.availability==='failed'){const article=document.querySelector(`[data-entry="${requestedEntry.id}"]`);article.querySelector('details').open=true;article.scrollIntoView();}
     if (location.hash.startsWith('#scene=')) $('#notice').textContent = 'Scene link received. Choose Open walkable scene when you are ready; no scene starts automatically.';
   }).catch(() => {
     $('#entry-count').textContent = 'Entries unavailable';

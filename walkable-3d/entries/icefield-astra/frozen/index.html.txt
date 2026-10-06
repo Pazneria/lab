@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#142739"><title>ICEFIELD — Station 07</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231b3445'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='48' fill='%23e8e5cf'%3E✳%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <canvas id="scene" aria-label="Explorable three-dimensional polar research shelter"></canvas>
+  <div id="vignette"></div>
+  <header><div class="mark">✳</div><div><strong>ICEFIELD</strong><span>FIELD STATION / 07</span></div></header>
+  <div class="top-right"><span class="live-dot"></span> BLUE HOUR <i></i> 78° 14′ N</div>
+  <main id="welcome">
+    <div class="eyebrow">A SHELTER AT THE EDGE OF THE ICE</div>
+    <h1>Stay a little<br>longer.</h1>
+    <p>Outside, the last blue light. Inside, a warm lamp,<br>a day’s samples, and a place to come back to.</p>
+    <button id="enter">Explore the station <span>↗</span></button>
+    <div class="intro-controls"><span><kbd>W A S D</kbd> walk</span><span><kbd>MOUSE</kbd> look</span><span><kbd>ESC</kbd> release</span></div>
+  </main>
+  <div id="crosshair" class="hidden"></div>
+  <div id="resume" class="hidden"><button id="resume-button">Continue exploring <span>↗</span></button><p>Click to capture the mouse · Esc to release</p></div>
+  <footer><div><span class="location-dot"></span><span id="location">LEE OF THE STATION</span><small id="temperature">−24°C OUTSIDE</small></div><div class="footer-actions"><button id="help">Controls</button><button id="quality">Quality: Balanced</button><button id="reset">Reset view <span>R</span></button></div></footer>
+  <aside id="help-panel" class="hidden"><h2>Take your time.</h2><p><kbd>W A S D</kbd> or <kbd>↑ ↓</kbd> Move<br><kbd>MOUSE</kbd> Look around<br><kbd>SHIFT</kbd> Walk faster<br><kbd>R</kbd> Return to the snow<br><kbd>ESC</kbd> Release mouse<br><kbd>F</kbd> Frame-time display<br><kbd>H</kbd> Hide the interface</p><p>Click the scene to explore. If mouse capture is unavailable, hold and drag to look. Arrow left/right also turn.</p><p>Follow the grated ramp through the vestibule. The research bench is at the back; the sleeping corner is to the right.</p></aside>
+  <div id="perf" class="hidden"></div>
+  <div id="loading"><div class="loader-mark">✳</div><p>PREPARING FIELD STATION</p></div>
+  <script type="importmap">{"imports":{"three":"/vendor/three/three.module.js","three/addons/":"/vendor/three/addons/"}}</script>
+  <script type="module" src="/src/main.js"></script>
+</body></html>

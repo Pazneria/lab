@@ -621,6 +621,216 @@
       "controls": "Click to capture; WASD/arrows walk; mouse look; Shift faster; hold C crouch; hold Space tiptoe; 1–4 supplied viewpoints; R reset; F frame-time overlay; Esc release.",
       "performanceEvidence": "Producer hidden-pane synchronous render + readPixels tests: about 16.0 ms in aisle A, 14.8 ms in aisle B, 3.3 ms in the alcove and 7.3 ms at the threshold at 1.05 MP. The final default cap was then lowered to 0.95 MP. These synthetic GPU-cost diagnostics are not interactive frame pacing or a grade. Host checks confirm rendering/input only; the unchanged adaptive quality may respond to test overhead.",
       "previewAlt": "Original Old Palm House reset view along a gravel threshold toward open iron-and-glass doors and layered foliage."
+    },
+    {
+      "id": "desert-observatory-opus",
+      "title": "Desert Observatory",
+      "promptId": "03",
+      "promptVersion": null,
+      "requestedConfiguration": "Claude Opus 5.5 (producer-reported manual run)",
+      "modelDisclosure": "Producer README identifies Claude Opus 5.5 / claude-opus-5-5 in Claude Code desktop. Exact backend identity and configured default effort were not independently verified; the effort level was unavailable.",
+      "buildWindow": "Producer records session start 2026-10-06 04:49:32 UTC, first implementation 05:00:45 UTC, conservative deadline 05:49:32 UTC and final stop 05:19:19 UTC (converted from explicit EDT timestamps).",
+      "interruptions": "Producer reports none.",
+      "producerChecks": "Producer reports simulated-input routes through passage/chamber/terrace, the outer plateau loop, cliff boundary and no console errors. Measurements were synchronous hidden-pane render loops, not live interactive capture.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2; no touch navigation, jumping or crouching.",
+        "2D collision with floor-height map; fixed 1.65 m eye height; telescope collision keeps the viewer roughly 1.7 m from its axis.",
+        "Static shadow map, approximate ambient occlusion/bounce, heightfield cliff stretching and low-detail distant mesas.",
+        "Procedural textures build on the main thread behind the loading screen; default resolution adapts downward only from 1x to 0.7x.",
+        "Producer performance figures are hidden-pane GPU-synchronized render averages, not interactive frame-time evidence or a grade."
+      ],
+      "documents": [
+        {
+          "label": "Controls, limits & producer timing",
+          "path": "README.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "body > canvas",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "webgl": "WebGL 2",
+      "htmlSha256": "1e9b928a8ce45313f885a101bd61a2da92cb3b303fb9a9dd32d39b21a881c076",
+      "archiveSha256": "c578f8c1459403eb13a936342f81471c268f7ad1400837ce77730ac99a5fdfc4",
+      "archiveLocation": "retained-outside-repository",
+      "preview": "preview.jpg",
+      "description": "A stone entrance passage connects a domed instrument chamber to a terrace above the desert.",
+      "controls": "WASD or arrows walk; mouse look; Shift faster; R reset; 1-4 supplied viewpoints; Q resolution toggle; P frame-time readout; Esc release.",
+      "performanceEvidence": "Producer README reports 40-frame GPU-synchronized averages of about 6-7 ms at 1280 x 720 and 8.5-12 ms at 1920 x 1080, measured in a hidden browser pane. These synthetic render timings are not interactive frame-time evidence or a grade. Host checks validate rendering, input and lifecycle only; the preview HUD includes startup/test overhead.",
+      "previewAlt": "Original Desert Observatory reset view: stone steps and a deep shaded entrance beneath the dome on a rocky plateau.",
+      "archiveKind": "Host preservation snapshot of completed producer files; no producer ZIP supplied.",
+      "promptDisclosure": "Filed under Prompt 03 by the parent. The exact text delivered to this manual run has not been confirmed. The shared Prompt 03 is available as the reference brief; identical submission text is not asserted."
+    },
+    {
+      "id": "icefield-astra",
+      "title": "ICEFIELD / Station 07",
+      "promptId": "05",
+      "promptVersion": "05-shared",
+      "requestedConfiguration": "Astra (parent-reported selection)",
+      "modelDisclosure": "Parent identifies the selected model; producer verifies GPT-6 only. Exact serving backend and reasoning effort were unavailable.",
+      "webgl": "WebGL 2",
+      "readySelector": "#loading.hidden",
+      "htmlSha256": "938c6f36c04622a39dd831132796e3db61af429e91ebe55e0b7cb35bf014965d",
+      "archiveSha256": "c98c20ac973d3e2634fe5f6287de7fa94a336d85baf19529b4cfc090b04993b1",
+      "archiveLocation": "retained-outside-repository",
+      "hostPathReplacements": [
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "\"/vendor/",
+          "\"./vendor/"
+        ]
+      ],
+      "allowDataStyles": true,
+      "description": "A red field station on wind-shaped snow, with a shallow entrance ramp, vestibule and furnished research room.",
+      "buildWindow": "First implementation 2026-10-06 04:54:11.8878111 UTC; deadline 05:54:11.8878111 UTC; final scene edit 05:44:27.8475716 UTC; actual stop 05:49:00.9068195 UTC.",
+      "interruptions": "No user interruptions or extensions. Producer reports restricted dependency fetches and Vite optimizer failure; final portable server uses Node built-ins. Setup delays counted.",
+      "controls": "Click Explore; WASD walk; mouse look; Shift faster; Up/Down walk; Left/Right turn; R reset; F frame times; H interface; native Balanced/High quality; Esc release; drag-look fallback.",
+      "producerChecks": "Producer reports 12 navigation/control/collision checks and 6 portable checks, including a 14-waypoint outside/inside/return circuit. Host independently verified real rendering, normal input, reset, isolation and unload.",
+      "performanceEvidence": "Producer headless route: 2,626 frames; mean 11.604 ms, median 10.1 ms, p95 22 ms, p99 27.9 ms, maximum 42.8 ms. Viewport 1440 x 900; default Balanced buffer 1224 x 765. Development evidence on the shared host, not a score or controlled comparison.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2; no touch movement or jumping.",
+        "Bounded site, distant mountains as scenery, fixed doors and props.",
+        "Fixed exposure and cached static shadows. Default Balanced pixel-ratio cap 0.85; optional High cap 1.65. Original settings are preserved."
+      ],
+      "previewAlt": "Original ICEFIELD reset view: a red research shelter with open vestibule doors, a snow fence and distant blue mountains.",
+      "archiveKind": "Original producer ZIP retained unchanged outside the repository and Pages.",
+      "preview": "preview.jpg",
+      "documents": [
+        {
+          "label": "Producer controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer build record",
+          "path": "BUILD_RECORD.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ]
+    },
+    {
+      "id": "boreal-sol",
+      "title": "Boreal / Polar Field Shelter",
+      "promptId": "05",
+      "promptVersion": "05-shared",
+      "requestedConfiguration": "GPT-6.1 Sol (parent-reported selection)",
+      "modelDisclosure": "Parent identifies Sol; producer verifies GPT-6 only. Exact backend variant and reasoning effort were unavailable.",
+      "webgl": "WebGL 2",
+      "readySelector": "#loading[hidden]",
+      "htmlSha256": "fb0fda2a40ab9cf741ecebb1646e7c4d91f8d9d5fe37e1354a81602ff5ce9026",
+      "archiveSha256": "c11567b7ffa0c5fb637e2d59d92ba99b59047fa60e0d26dec509ebea56b269f2",
+      "archiveLocation": "retained-outside-repository",
+      "hostPathReplacements": [
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ]
+      ],
+      "description": "A compact insulated shelter with a continuous ramp, short vestibule, research workbench and living equipment.",
+      "buildWindow": "Producer records first implementation 2026-10-06 05:35:45 UTC, deadline 06:35:45 UTC and actual stop 06:08:57 UTC before archive creation.",
+      "interruptions": "No external interruptions. Producer reports initial dependency sandbox restrictions and Vite optimizer failure; the final server uses Node built-ins. Setup delays counted.",
+      "controls": "Click Explore; WASD/arrows walk/strafe; mouse look; Shift faster; R reset; P frame timing; Esc pause/release; drag-look fallback. Original timing JSON download is blocked by the hosted sandbox.",
+      "producerChecks": "Producer reports 15 keyboard/control/collision checks, three entry/exit cycles, five denied-capture fallback checks, nine captured views and no browser errors. Host independently verified real rendering, ordinary input, reset, isolation and unload.",
+      "performanceEvidence": "Producer retained 2,533 actual frame intervals. Final rolling ten-second window: median 16.4 ms, p95 29.3 ms, p99 38.1 ms, at 1440 x 900 and DPR 1 on the shared host. These are headless QA measurements, not a grade; the final rolling window does not summarize the entire route.",
+      "limitations": [
+        "Desktop keyboard/mouse and WebGL 2; no touch movement or audio.",
+        "Doors stay open, props are decorative and distant ridges lie outside the walking area.",
+        "Approximate glass/reflections, cached static shadows and fixed pixel-density cap 1.6.",
+        "Original user-triggered frame-sample download remains blocked in the isolated hosted viewer; the original portable build retains it."
+      ],
+      "previewAlt": "Original Boreal reset view: an illuminated open vestibule and dark insulated cabin against clear blue twilight snow.",
+      "archiveKind": "Original producer ZIP retained unchanged outside the repository and Pages.",
+      "preview": "preview.jpg",
+      "documents": [
+        {
+          "label": "Producer controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer build record",
+          "path": "BENCHMARK.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ]
+    },
+    {
+      "id": "k17-luna",
+      "title": "K-17 / Polar Field Shelter",
+      "promptId": "05",
+      "promptVersion": "05-shared",
+      "requestedConfiguration": "Luna (parent-reported selection)",
+      "modelDisclosure": "Parent identifies the selected model; producer verifies GPT-6 only. Exact serving backend and reasoning effort were unavailable.",
+      "webgl": "WebGL 2",
+      "readySelector": "#scene[width]",
+      "htmlSha256": "7f55544662a19c4609437054462e4ea7e7d46c99cb14e47df4ffdd3952f78bcd",
+      "archiveSha256": "3262673ae937001124e23c7a4b3b197204287f591962b9e5565b174b6d2b0f7e",
+      "archiveLocation": "retained-outside-repository",
+      "hostPathReplacements": [
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "<script type=\"module\"",
+          "<script type=\"importmap\">{\"imports\":{\"/vendor/three.module.js\":\"./vendor/three.module.js\"}}</script><script type=\"module\""
+        ]
+      ],
+      "availability": "failed",
+      "preview": null,
+      "description": "Completed frozen polar shelter submission; its original JavaScript fails during startup.",
+      "failureSummary": "Host launch failed with a JavaScript exception: “Spread syntax requires ...iterable[Symbol.iterator] to be a function.” The viewer unloaded the scene. No repairs were made.",
+      "buildWindow": "Producer records task start 2026-10-06 05:08:49 UTC, first implementation 05:11:16 UTC, deadline 06:08:49 UTC and actual stop 05:53:16.404 UTC.",
+      "interruptions": "Producer reports no interruptions. Its headless GPU process was denied and the in-app browser was unavailable.",
+      "controls": "Producer documents WASD walking, mouse look, Shift faster, R reset and Esc release. These controls could not be verified because the frozen build fails at startup.",
+      "producerChecks": "Producer passed syntax, package parsing, HTTP and module-import checks. It completed no rendered walkthrough. Host launch attempts reached the original runtime exception; the boundary detected the failure and destroyed the child.",
+      "performanceEvidence": "No successful host raster, walkthrough or frame-time measurement. No score assigned.",
+      "limitations": [
+        "Frozen build does not start in host verification. Original JavaScript is retained without repairs.",
+        "No scene preview is fabricated and this record is excluded from working pairs.",
+        "Producer could not measure visual output, movement or frame timing. Documented desktop/WebGL 2 controls remain unverified."
+      ],
+      "archiveKind": "Host preservation snapshot of completed producer files; no producer ZIP supplied.",
+      "documents": [
+        {
+          "label": "Producer controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer build record",
+          "path": "BUILD-RECORD.md"
+        },
+        {
+          "label": "Host failure record",
+          "path": "host-verification-failed.json"
+        }
+      ]
     }
   ],
   "prompts": [
@@ -647,6 +857,12 @@
       "title": "Old greenhouse",
       "brief": "An old tropical greenhouse, recognizable beneath years of plant growth.",
       "version": "04-shared"
+    },
+    {
+      "id": "05",
+      "title": "Polar shelter",
+      "brief": "A compact polar research shelter during clear blue twilight.",
+      "version": "05-shared"
     }
   ],
   "promptVersions": [
@@ -694,6 +910,15 @@
       "sha256": "3d1760548d9dfb0c48ae3d2de8916526323bd2e59e48245a31cbfe737beee396",
       "source": "Parent supplied the exact complete submitted text and confirmed identical Prompt 04 for all entrants. Entrant conversation threads were not independently read. UTF-8; no added final newline.",
       "note": "Complete task, grading, inspection route and shared execution rules. Parent-supplied submission record; no independent entrant-thread access in this import."
+    },
+    {
+      "id": "05-shared",
+      "promptId": "05",
+      "label": "Astra / Sol / Luna submitted prompt",
+      "path": "prompt-05.txt",
+      "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
+      "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline.",
+      "note": "Complete task, grading, inspection route and shared execution rules. Parent-supplied submission record; entrant threads were not independently read."
     }
   ]
 }

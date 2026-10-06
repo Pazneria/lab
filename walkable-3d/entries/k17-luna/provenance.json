@@ -1,0 +1,94 @@
+{
+  "entry": "k17-luna",
+  "importedAt": "2026-10-06T06:34:46.488573+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-5",
+  "archiveSha256": "3262673ae937001124e23c7a4b3b197204287f591962b9e5565b174b6d2b0f7e",
+  "archiveKind": "Host preservation snapshot of completed producer files; no producer ZIP supplied.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/vendor/three.module.js": "vendor/three.module.js",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt"
+    },
+    "preview": "No successful scene preview; no substitute image."
+  },
+  "hostingAdjustments": [
+    "Original HTML is served as inert index.html.txt. Only the explicitly listed stylesheet/module/import-map paths change in viewer memory: [[\"href=\\\"/style.css\\\"\", \"href=\\\"./style.css\\\"\"], [\"src=\\\"/src/\", \"src=\\\"./src/\"], [\"<script type=\\\"module\\\"\", \"<script type=\\\"importmap\\\">{\\\"imports\\\":{\\\"/vendor/three.module.js\\\":\\\"./vendor/three.module.js\\\"}}</script><script type=\\\"module\\\"\"]]. No frozen file or scene behavior was modified."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in scoped authored source/browser API/import/control/rendering review.",
+    "externalAccess": "No authored external network, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found.",
+    "dependencyAudit": "All shipped Three.js dependency/license bytes match previously admitted dependency bytes; closed local module imports.",
+    "status": "Safe to preserve as a failed result; original startup exception remains unchanged."
+  },
+  "prompt": {
+    "version": "05-shared",
+    "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
+    "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline."
+  },
+  "archiveRetention": "Original ZIP/snapshot, raw producer evidence and full-size host captures remain outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "original.zip": {
+      "bytes": 448701,
+      "sha256": "3262673ae937001124e23c7a4b3b197204287f591962b9e5565b174b6d2b0f7e"
+    }
+  },
+  "hostVerification": "host-verification-failed.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2054,
+      "sha256": "7f55544662a19c4609437054462e4ea7e7d46c99cb14e47df4ffdd3952f78bcd"
+    },
+    "frozen/style.css": {
+      "bytes": 5137,
+      "sha256": "17dfa75128b10091a5e5be53893cd26c16f1b4ba30b0baaeee05d56fc7494a1b"
+    },
+    "frozen/src/main.js": {
+      "bytes": 69258,
+      "sha256": "471326e3614fca5b79c9ab854eca4dbbd9dd54102d72d9933654ee4d4f919074"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 650153,
+      "sha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1443056,
+      "sha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "README.md": {
+      "bytes": 2573,
+      "sha256": "3a53eba100ddb75665dc1ba94b14ae9e56475c16d710d7e36d1bff7fd3bc57f5"
+    },
+    "BUILD-RECORD.md": {
+      "bytes": 1315,
+      "sha256": "1be6887d2582ef0008cf40cf9b9d88dd39b4ce481b5713f257bcbfc984227684"
+    },
+    "host-verification-failed.json": {
+      "bytes": 1284,
+      "sha256": "8ff9339647d9d23e233d4c1bf014d1c3d7c2d77e8e80b080d118c572f98ffc65"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "BUILD-RECORD.md",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification-failed.json"
+    ],
+    "retainedOutsidePages": []
+  }
+}

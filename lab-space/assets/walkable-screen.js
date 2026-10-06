@@ -30,7 +30,8 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
     $('screen-prev').disabled=index===0;$('screen-next').disabled=index>=pairs.length-1;
-    $('screen-boundary').textContent=pairs.length<2?'No other comparisons yet.':index===0?'First comparison.':index===pairs.length-1?'Last comparison.':'';
+    const failed=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed').length;
+    $('screen-boundary').textContent=(pairs.length<2?'No other comparisons yet.':index===0?'First comparison.':index===pairs.length-1?'Last comparison.':'')+(failed?` ${failed} completed build failed at startup; inspect its record in the notebook.`:'');
     const cards=current.map((entry,slot)=>{const card=document.createElement('article'),button=document.createElement('button'),img=document.createElement('img'),h=document.createElement('h3'),model=document.createElement('p'),details=document.createElement('a');
       button.type='button';button.dataset.screenOpen=entry.id;button.setAttribute('aria-label',`Open entry ${slot?'B':'A'}: ${entry.title}`);img.src=new URL(`entries/${entry.id}/preview.jpg`,base);img.alt=entry.previewAlt;img.width=960;img.height=600;button.append(img);button.addEventListener('click',()=>open(entry));h.textContent=`${slot?'B':'A'} / ${entry.title}`;model.textContent=blind?'Model label hidden':entry.requestedConfiguration;details.href=new URL(`?entry=${entry.id}#compare-title`,base);details.textContent='Build inspector & personal grade';card.append(button,h,model,details);return card;});
     $('screen-cards').replaceChildren(...cards);
@@ -55,7 +56,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   function activate({x,y}){if(y>=522&&y<=580){if(x<145)step(-1);else if(x>1135)step(1);else if(x<415)vote('a');else if(x<625)vote('tie');else if(x<895)vote('b');else inspect();}else if(y>=105&&y<500)open(pair()[x<640?0:1]);else inspect();}
   render();
   function selectPrompt(id,restore=false){
-    const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId);pairs=[];
+    const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');pairs=[];
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
     index=restore?Math.max(0,pairs.findIndex(pair=>pair.map(e=>e.id).sort().join('::')===history.state?.labPair)):0;
     $('screen-prompt').value=promptId;history.replaceState({...history.state,labPair:pairKey(),labPrompt:promptId},'');loadPreviews();render();

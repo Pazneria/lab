@@ -1,0 +1,46 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Build a compact polar research shelter during a clear blue twilight.
+
+The explorable area consists of a sheltered patch of snow, a short entry vestibule, and one main room. Let the viewer walk around the entrance, step inside, and inspect the workspace before returning outside for a different view of the building.
+
+Convey the cold through wind-shaped snow, frosted edges, exposed fasteners, and a few icy surfaces. Inside, use warm practical lights, insulated wall panels, a workbench, storage, and simple living equipment to make the shelter feel used. The contrast between interior warmth and exterior blue light should remain convincing from either side of the doorway. Distant ice or mountain forms can establish isolation without creating a vast explorable landscape. A storm and elaborate equipment interfaces are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, walk around the entrance, inspect the main room and return outside for another view of the shelter. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Wind-shaped snow with convincing structure and variation
+- Restrained frost, icy surfaces and exposed fasteners in plausible places
+- Insulated panels, furnishings and equipment that look purposeful at close range
+- Warm practical interior lights against a clear blue-twilight exterior
+- Convincing lighting and useful detail from both sides of the doorway
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance when the interior and exterior are visible together
+- Smooth transitions through the vestibule between the workspace and snow
+- Minimal stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A compact polar shelter with a sheltered snow-covered exterior area, short entry vestibule and one main room
+- A blue-twilight exterior and warmly lit interior with recognizable research and living equipment
+- Connected, usable walking routes around the entrance, through the vestibule and into the workspace
+- Convincing scale, comfortable access to the workspace and a worthwhile outside return view
+
+MY INSPECTION ROUTE
+
+Sheltered snow → around entrance → vestibule → inspect main room → outside return view.
+
+I will pay particular attention to moving repeatedly through the vestibule, turning from the warm interior toward the exterior and looking back from the snow. Door clearances and floor levels should be believable, and pauses or sudden lighting changes should not interrupt the walk. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.

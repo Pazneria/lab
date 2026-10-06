@@ -29,7 +29,9 @@ export function createViewer({base=new URL('../',import.meta.url),titleFor=entry
   function shellDocument(entry, source, folder, token) {
     // Only admitted, documented path substitutions. No rebuilding or scene changes.
     for (const [from, to] of entry.hostPathReplacements || []) source = source.split(from).join(to);
-    const csp = `default-src 'none'; script-src 'unsafe-inline' ${folder}; style-src 'unsafe-inline' ${folder}; img-src data: blob: ${folder}; font-src 'none'; connect-src 'none'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri ${folder}`;
+    // Only an explicitly admitted entry can retain its audited data: stylesheet.
+    const dataStyles = entry.allowDataStyles === true ? 'data: ' : '';
+    const csp = `default-src 'none'; script-src 'unsafe-inline' ${folder}; style-src 'unsafe-inline' ${dataStyles}${folder}; img-src data: blob: ${folder}; font-src 'none'; connect-src 'none'; media-src 'none'; worker-src 'none'; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri ${folder}`;
     const bridge = `(() => {
       const send = type => parent.postMessage({channel:'lab-walkable-viewer',token:${JSON.stringify(token)},type}, '*');
       addEventListener('error', () => send('failed'), true);
