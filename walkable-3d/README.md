@@ -1,4 +1,10 @@
-# Walkable 3D — Jordan's personal benchmark
+# Walkable 3D - Jordan's personal benchmark
+
+## Public judgments integration / awaiting service publication
+
+This branch adds an anonymous public A/B client and a separate optional public rubric link. Its service origin is unset until a real dedicated service is published and verified; the live site has not changed. Existing local preferences, grades, notes, both-open eligibility, randomized pairing and reveal-until-Next behavior remain in place. Only a new explicit choice is submitted publicly. Retries retain their request ID and a persisted per-pair intent sequence; a delayed older request cannot overwrite a newer choice or withdrawal. Public withdrawal can be retried after a network failure. No legacy record is uploaded.
+
+The public board will display server-computed Elo-style ratings, match counts and provisional labels. Signed-in rubric averages appear separately. Public rubric submission opens a new blank form; private notebook scores and notes are never copied. The service source is prepared in the separate `walkable-voting-service` workspace; that Site is not registered or deployed yet. No entrant runtime, viewer permission or scene behavior changes are included. Local browser, UI, scene, GPU and performance checks remain paused. CPU-only API/rating checks, schema generation and deployment builds also await approval; source review does not establish runtime correctness. Do not merge or enable this integration before those checks and service publication.
 
 Static entry previews, one explicitly opened scene at a time, pairwise browser-local preferences, and a separate personal grading notebook. Prompt 01 is an abandoned railway station in autumn woodland. Visuals / performance / fulfillment carry 45 / 35 / 20 points; the build cap is one hour. Jordan judges. No scores or votes have been supplied or prefilled.
 

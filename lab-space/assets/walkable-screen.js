@@ -1,6 +1,7 @@
 import {createViewer} from '../../walkable-3d/assets/viewer.js';
 import {createGradeForm,renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
 import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from '../../walkable-3d/assets/comparisons.js';
+import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
 export function createWalkableScreen({changed,suspend,resume,approach}) {
@@ -9,7 +10,8 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
   let entries=[],allEntries=[],prompts=[],promptId='01',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
   const openedThisComparison=new Set();
-  let canShuffle=false,revealed=false;
+  const publicStatus=new Map();
+  let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
   function refresh(){if(!persistent)return;try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
   const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>comparisonKey(pair());
@@ -21,6 +23,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   function box(x,y,w,h,label,disabled=false){ctx.fillStyle=disabled?'#41584b':'#f3efdf';ctx.fillRect(x,y,w,h);ctx.fillStyle=disabled?'#bec9be':'#1c3c30';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+8);}
   function render(){
     const current=pair(),both=bothOpened(),hideModel=blind&&!revealed;
+    $('screen-public-vote').textContent=publicStatus.get(pairKey())||'';
     const vote=record.preferences[pairKey()]?.choice;
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
@@ -50,7 +53,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     $('screen-cards').replaceChildren(...cards);
     for(const button of document.querySelectorAll('[data-screen-choice]'))button.disabled=!both;
     $('screen-vote').textContent=error||(revealed?'Models revealed. Choose Next comparison when ready.':both?'Both opened for this comparison. Choose your preference.':'Open both scenes in this comparison to vote.')+(vote?(vote==='tie'?' Saved preference: tie.':vote==='skip'?' Previously skipped.':` Saved preference: entry ${current[0]?.id===vote?'A':'B'}.`):'');
-    $('screen-clear').disabled=!both||!vote;$('screen-storage').textContent=persistent?'Preferences are saved in this browser only. No public tally.':'Storage unavailable: preferences last for this page session only.';
+    $('screen-clear').disabled=!both||(!vote&&!hasPublicVote(current));$('screen-storage').textContent=publicVotingEnabled?'New A/B choices are sent anonymously to the public leaderboard. Existing private records and rubric notes are not uploaded.':persistent?'Preferences are saved in this browser only. No public tally.':'Storage unavailable: preferences last for this page session only.';
     $('screen-next').textContent=revealed?'Next comparison':'Next random pair';
     $('screen-next').setAttribute('aria-label',revealed?'Next random comparison; keep saved choice':'Skip to a random prompt and model pair without voting');
     $('screen-reveal').hidden=!revealed;$('screen-reveal-next').hidden=!revealed;$('screen-reveal-next').disabled=!canShuffle;
@@ -63,16 +66,22 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   }
   function loadPreviews(){for(const entry of pair()){if(entry.previewAvailable===false||images.has(entry.id))continue;const img=new Image();images.set(entry.id,img);img.onload=()=>render();img.onerror=()=>render();img.src=new URL(`entries/${entry.id}/preview.jpg`,base);}}
   function rememberPair(){const url=new URL(location.href);url.searchParams.set('prompt',promptId);history.replaceState({...history.state,labPair:pairKey(),labPairOrder:pair().map(e=>e.id),labPrompt:promptId},'',url);}
-  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;openedThisComparison.clear();revealed=false;rememberPair();loadPreviews();render();}
+  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;rememberPair();loadPreviews();render();}
   function nextComparison(){
     const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
     const next=randomComparison(prompts,allEntries,pairKey());if(!next){render();return;}
     if(viewer.isOpen)viewer.close(false);
     selectPrompt(next.promptId,false,next.entries);$('notice').textContent=message;
   }
-  function vote(choice){
+  async function vote(choice){
     refresh();const current=pair();if(!bothOpened()||!['a','b','tie'].includes(choice))return;
-    const previous=pairKey();record.preferences[previous]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};revealed=true;save();render();$('notice').textContent='Preference saved. Both models are revealed; this comparison stays in place.';
+    const previous=pairKey(),reportedBlind=blind&&!revealed&&!labelsSeenThisComparison&&!record.preferences[pairKey()];record.preferences[previous]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};revealed=true;save();render();$('notice').textContent='Preference saved. Both models are revealed; this comparison stays in place.';
+    if(publicVotingEnabled){
+      publicStatus.set(previous,'Sending your anonymous public preference…');render();
+      try{await submitPublicVote(current,record.preferences[previous].choice,reportedBlind);publicStatus.set(previous,'Public preference saved. Repeating this pair replaces the same match.');}
+      catch(error){publicStatus.set(previous,'Saved privately; public submission was not confirmed. '+error.message+' Choose again to retry.');}
+      if(pairKey()===previous)render();
+    }
   }
   function open(entry){if(!entry)return;$('comparison-dialog').close();viewer.open(entry,$('screen-controls'));}
   function inspect(){suspend();refresh();render();$('comparison-dialog').showModal();}
@@ -81,14 +90,24 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   $('comparison-dialog').addEventListener('close',()=>{if(!viewer.isOpen)resume();$('screen-controls').focus({preventScroll:true});});
   $('screen-prev').addEventListener('click',()=>step(-1));$('screen-next').addEventListener('click',()=>nextComparison());
   $('screen-reveal-next').addEventListener('click',()=>nextComparison());
-  $('screen-blind').addEventListener('change',e=>{blind=e.target.checked;render();});
+  $('screen-blind').addEventListener('change',e=>{blind=e.target.checked;if(!blind)labelsSeenThisComparison=true;render();});
   for(const button of document.querySelectorAll('[data-screen-choice]'))button.addEventListener('click',()=>vote(button.dataset.screenChoice));
-  $('screen-clear').addEventListener('click',()=>{if(!bothOpened())return;refresh();delete record.preferences[pairKey()];save();render();});
+  $('screen-clear').addEventListener('click',async()=>{
+    if(!bothOpened())return;const current=pair(),previous=pairKey(),published=hasPublicVote(current);refresh();delete record.preferences[previous];save();render();
+    if(publicVotingEnabled&&published){
+      publicStatus.set(previous,'Withdrawing this browser’s public preference…');render();
+      try{await submitPublicVote(current,'withdraw',false);publicStatus.set(previous,'Public preference withdrawn.');}
+      catch(error){publicStatus.set(previous,'Private choice cleared; public withdrawal was not confirmed. '+error.message);}
+      if(pairKey()===previous)render();
+    }
+  });
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
   function activate({x,y}){if(y>=522&&y<=580){if(x<145)step(-1);else if(x>1135)nextComparison();else if(x<415)vote('a');else if(x<625)vote('tie');else if(x<895)vote('b');else inspect();}else if(y>=105&&y<500)open(pair()[x<640?0:1]);else inspect();}
+  subscribePublicJudgments(()=>renderPublicLeaderboard($('screen-public-leaderboard')));
+  renderPublicLeaderboard($('screen-public-leaderboard'));loadPublicLeaderboard();
   render();
   function selectPrompt(id,restore=false,chosenPair=null){
-    openedThisComparison.clear();revealed=false;
+    openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId&&isOpenable(e));pairs=[];
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
     index=chosenPair?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair))):restore?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===history.state?.labPair)):0;

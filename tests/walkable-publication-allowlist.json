@@ -6,6 +6,8 @@
     "walkable-3d/assets/comparisons.js",
     "walkable-3d/assets/judgments.css",
     "walkable-3d/assets/judgments.js",
+    "walkable-3d/assets/public-config.js",
+    "walkable-3d/assets/public-judgments.js",
     "walkable-3d/assets/viewer.js",
     "walkable-3d/entries.json",
     "walkable-3d/entries/after-rain-luna/README.md",

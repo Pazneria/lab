@@ -1,4 +1,5 @@
 import {comparisonKey} from './comparisons.js';
+import {publicRubricUrl} from './public-judgments.js';
 
 const dimensions = [['visuals', 'Visuals', 45], ['performance', 'Performance', 35], ['fulfillment', 'Fulfillment', 20]];
 const el = (tag, text, className) => {
@@ -29,6 +30,8 @@ export function createGradeForm(entry, {getRecord, refresh, save, isPersistent, 
   notes.value = typeof old.notes === 'string' ? old.notes : ''; noteLabel.append(notes); form.append(noteLabel);
   const actions = el('div', undefined, 'actions'), submit = el('button', 'Save grade'), clear = el('button', 'Clear grade', 'quiet');
   submit.type = 'submit'; clear.type = 'button'; actions.append(submit, clear); form.append(actions);
+  const publicUrl=publicRubricUrl(entry);
+  if(publicUrl){const publicLink=el('a','Submit a separate public rubric');publicLink.href=publicUrl;publicLink.target='_blank';publicLink.rel='noopener';form.append(publicLink,el('p','Public rubric submission requires sign-in and a new explicit score entry. These private points and notes are not uploaded. Quick A/B voting stays anonymous.','small muted'));}
   const result = el('p', undefined, 'grade-result'); result.setAttribute('role', 'status'); form.append(result);
   const updateResult = () => {
     const g = getRecord().grades[entry.id], complete = g && dimensions.every(([name,, max]) => validPoint(g[name], max));

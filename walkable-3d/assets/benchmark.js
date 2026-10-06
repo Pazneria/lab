@@ -1,6 +1,7 @@
 import {createViewer} from './viewer.js';
 import {createGradeForm,renderLeaderboard} from './judgments.js';
 import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './comparisons.js';
+import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from './public-judgments.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -9,7 +10,8 @@ import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './c
   const blank = () => ({ version: 1, grades: {}, preferences: {}, opened: {} });
   let record = blank(), persistent = true, entries = [], failedEntries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
   const openedThisComparison=new Set();
-  let canShuffle=false,revealed=false;
+  const publicStatus=new Map();
+  let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
   const viewer=createViewer({gradeForm,gradeLabelFor:entry=>`${selected()[0]?.id===entry.id?'A':selected()[1]?.id===entry.id?'B':'Scene'} / ${entry.title} — ${modelVisible(entry)?entry.requestedConfiguration:'Model hidden until reveal'}`,onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
@@ -136,12 +138,13 @@ import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './c
   }
   function updateVote() {
     const pair = selected(), ready = pair.length === 2;
+    $('#public-vote-status').textContent=publicStatus.get(pairKey())||'';
     $('#vote-buttons').hidden = !ready;
     const bothOpened = hasOpenedBoth();
     $('#vote-instruction').textContent = !ready ? 'Waiting for a second finished entry before comparison opens.' : revealed ? 'Models revealed. Your comparison stays here until you choose Next comparison.' : bothOpened ? 'You have opened both worlds in this comparison. Which do you prefer?' : 'Open both scenes in this comparison, then return to vote. Next skips without recording a vote.';
     for (const button of document.querySelectorAll('[data-choice]')) button.disabled = button.dataset.choice==='skip'?!canShuffle:!bothOpened;
     const saved = record.preferences[pairKey()];
-    $('#clear-vote').disabled = !bothOpened || !saved;
+    $('#clear-vote').disabled = !bothOpened || (!saved&&!hasPublicVote(pair));
     const choice = saved?.choice;
     $('#vote-status').textContent = !saved ? 'No preference recorded.' : choice === 'tie' ? 'Your preference: tie.' : choice === 'skip' ? 'This pair is skipped.' : `Your preference: entry ${pair.findIndex(e => e.id === choice) === 0 ? 'A' : 'B'}.`;
     $('#vote-reveal').hidden=!revealed;$('#reveal-next').hidden=!revealed;$('#reveal-next').disabled=!canShuffle;
@@ -153,17 +156,34 @@ import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './c
     }
     updateLabels();
   }
-  document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', async () => {
     if(button.dataset.choice==='skip'){nextComparison();return;}
     refresh();
     const pair = selected(); if (!hasOpenedBoth() || !['a','b','tie'].includes(button.dataset.choice)) return;
-    const previous=pairKey();
+    const previous=pairKey(),reportedBlind=$('#blind').checked&&!revealed&&!labelsSeenThisComparison&&!record.preferences[pairKey()];
     record.preferences[previous] = { entries: pair.map(e => e.id), choice: button.dataset.choice === 'a' ? pair[0].id : button.dataset.choice === 'b' ? pair[1].id : button.dataset.choice, savedAt: new Date().toISOString() };
     revealed=true;save();updateVote();$('#notice').textContent='Preference saved. Both models are revealed; this comparison stays in place.';
+    if(publicVotingEnabled){
+      publicStatus.set(previous,'Sending your anonymous public preference…');updateVote();
+      try{await submitPublicVote(pair,record.preferences[previous].choice,reportedBlind);publicStatus.set(previous,'Public preference saved. Repeating this pair replaces your browser’s earlier choice; it adds no extra match.');}
+      catch(error){publicStatus.set(previous,'Saved privately; public submission was not confirmed. '+error.message+' Choose your preference again to retry.');}
+      if(pairKey()===previous)updateVote();
+    }
   }));
-  $('#clear-vote').addEventListener('click', () => { if(!hasOpenedBoth())return;refresh(); delete record.preferences[pairKey()]; save(); updateVote(); });
+  $('#clear-vote').addEventListener('click', async () => {
+    if(!hasOpenedBoth())return;const pair=selected(),previous=pairKey(),published=hasPublicVote(pair);refresh();delete record.preferences[previous];save();updateVote();
+    if(publicVotingEnabled&&published){
+      publicStatus.set(previous,'Withdrawing this browser’s public preference…');updateVote();
+      try{await submitPublicVote(pair,'withdraw',false);publicStatus.set(previous,'Public preference withdrawn.');}
+      catch(error){publicStatus.set(previous,'Private choice cleared; public withdrawal was not confirmed. '+error.message);}
+      if(pairKey()===previous)updateVote();
+    }
+  });
+  $('#public-voting-copy').textContent=publicVotingEnabled?'New A/B choices are submitted anonymously to the shared leaderboard. Existing private votes and rubric notes are not uploaded.':'Preferences stay in this browser. No public tally. This is separate from Jordan’s rubric.';
+  subscribePublicJudgments(()=>renderPublicLeaderboard($('#public-leaderboard')));
+  renderPublicLeaderboard($('#public-leaderboard'));loadPublicLeaderboard();
   $('#blind').checked = true;
-  $('#blind').addEventListener('change', updateLabels);
+  $('#blind').addEventListener('change',()=>{if(!$('#blind').checked)labelsSeenThisComparison=true;updateLabels();});
   function nextComparison(){
     const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
     const next=randomComparison(prompts,allEntries,pairKey());if(!next){updateVote();return;}
@@ -179,7 +199,7 @@ import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './c
   });
 
   function selectPrompt(id,entryId,chosenPair=null){
-    openedThisComparison.clear();revealed=false;
+    openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
     entries=allEntries.filter(e=>e.promptId===promptId&&isOpenable(e));failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
