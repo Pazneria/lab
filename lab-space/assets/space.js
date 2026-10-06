@@ -1,4 +1,5 @@
 import {createWalkableScreen} from './walkable-screen.js';
+import {clickSlop,movedBeyondClick,intentionalClick} from './interaction.mjs';
 import {advance,spawn,nearby,safeDestination,planRoute,followRoute,approaches,walkable,exhibits,roomLayoutVersion} from './navigation.mjs';
 const byId=id=>document.getElementById(id);
 const canvas=byId('room'),enterButton=byId('enter-room'),gentle=byId('gentle'),dialog=byId('station-dialog'),helpDialog=byId('help-dialog');
@@ -112,15 +113,23 @@ canvas.addEventListener('keydown',event=>{
 });
 window.addEventListener('keyup',event=>{keys.delete(event.code);const action=keyMap[event.code];if(action&&!Object.keys(keyMap).some(k=>keys.has(k)&&keyMap[k]===action)&&![...heldPointers.values()].some(v=>v.action===action))actions.delete(action);});
 canvas.addEventListener('blur',()=>{if(!drag){stop();draw();}});
+function targetKey(target){
+  if(target?.comparison)return screen.hitTest(target.comparison)?.key||null;
+  if(target?.destination)return 'station:'+target.destination;
+  if(target?.screen)return 'approach:worlds';
+  return target?.point?'walk':null;
+}
 canvas.addEventListener('pointerdown',event=>{
   if(event.button!==0||!active||suspended||!event.isPrimary)return;
   canvas.focus({preventScroll:true});canvas.setPointerCapture(event.pointerId);
-  drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false};
+  cancelRoute();
+  drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,
+    slop:clickSlop(event.pointerType),targetKey:targetKey(engine.pick(event.clientX,event.clientY)),view:{...position}};
 });
 canvas.addEventListener('pointermove',event=>{
   if(suspended||!drag||drag.id!==event.pointerId)return;
   if(!drag.moved){
-    if(Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<=8)return;
+    if(!movedBeyondClick(drag,event))return;
     const saved=drag;stop();drag=saved;drag.moved=true;
   }
   const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
@@ -128,9 +137,10 @@ canvas.addEventListener('pointermove',event=>{
   drag.x=event.clientX;drag.y=event.clientY;draw();
 });
 canvas.addEventListener('pointerup',event=>{
-  if(suspended||!drag||drag.id!==event.pointerId)return;const click=!drag.moved&&Math.hypot(event.clientX-drag.startX,event.clientY-drag.startY)<=8;
+  if(suspended||!drag||drag.id!==event.pointerId)return;
+  const target=engine.pick(event.clientX,event.clientY),click=intentionalClick(drag,event,targetKey(target),position);
   drag=null;if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
-  if(click){const target=engine.pick(event.clientX,event.clientY);if(target?.comparison){stop();if(Math.hypot(position.x-exhibits.worlds.approach.x,position.z-exhibits.worlds.approach.z)>1.1)requestWalk({point:exhibits.worlds.approach,screen:true});else screen.activate(target.comparison);}else requestWalk(target);}
+  if(click){if(target?.comparison){stop();if(Math.hypot(position.x-exhibits.worlds.approach.x,position.z-exhibits.worlds.approach.z)>1.1)requestWalk({point:exhibits.worlds.approach,screen:true});else screen.activate(target.comparison);}else requestWalk(target);}
 });
 canvas.addEventListener('pointercancel',()=>{stop(true);draw();});
 canvas.addEventListener('lostpointercapture',()=>{drag=null;});

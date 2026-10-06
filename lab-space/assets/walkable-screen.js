@@ -1,4 +1,5 @@
 import {createViewer} from '../../walkable-3d/assets/viewer.js';
+import {comparisonLayout,comparisonTargetAt,fitPreview} from './interaction.mjs';
 import {createGradeForm,renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
 import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from '../../walkable-3d/assets/comparisons.js';
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
@@ -6,12 +7,12 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
 export function createWalkableScreen({changed,suspend,resume,approach}) {
   const $=id=>document.getElementById(id),base=new URL('../../walkable-3d/',import.meta.url);
-  const source=document.createElement('canvas');source.width=1280;source.height=600;
+  const source=document.createElement('canvas');source.width=comparisonLayout.width;source.height=comparisonLayout.height;
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
   let entries=[],allEntries=[],prompts=[],promptId='01',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
   const openedThisComparison=new Set();
   const publicStatus=new Map();
-  let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
+  let canShuffle=false,revealed=false,labelsSeenThisComparison=false,previewRects=[];
   function refresh(){if(!persistent)return;try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
   const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>comparisonKey(pair());
@@ -28,15 +29,16 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
     ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Autumn station').toUpperCase()}  /  STATIC PREVIEWS  /  CLICK TO EXPLORE`,40,82);
+    previewRects=[];
     for(let slot=0;slot<2;slot++){
-      const x=40+slot*625,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,105,575,322);
-      const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const scale=Math.min(575/img.width,322/img.height),w=img.width*scale,h=img.height*scale;ctx.drawImage(img,x+(575-w)/2,105+(322-h)/2,w,h);}
+      const bounds=comparisonLayout.previews[slot],x=bounds.x,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,bounds.y,bounds.width,bounds.height);
+      const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const fit=fitPreview(bounds,img.naturalWidth,img.naturalHeight);previewRects[slot]=fit;ctx.drawImage(img,fit.x,fit.y,fit.width,fit.height);}
       else if(e?.previewAvailable===false){ctx.fillStyle='#f6f0dc';ctx.font='28px Georgia';ctx.fillText('Preview not captured',x+32,232,510);ctx.font='18px Arial';ctx.fillText('Click to inspect the frozen build.',x+32,271,510);ctx.fillText('Host runtime QA has not been run.',x+32,302,510);}
       ctx.fillStyle='#f6f0dc';ctx.font='25px Georgia';ctx.fillText(e?`${slot?'B':'A'}  /  ${e.title}`:'Awaiting a finished build',x,461,565);
       ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?((e.completionStatus==='partial'?'Partial handoff · ':'')+(hideModel?'Model label hidden · Desktop keyboard + mouse':e.requestedConfiguration)+(e.availability==='unverified'?' · Runtime unverified':'')):'A real pair needs two entries.',x,491,565);
     }
-    box(40,522,100,48,'←',index===0);box(1140,522,100,48,'Next',!canShuffle);
-    box(180,522,230,48,'Prefer A',!both);box(450,522,170,48,'Tie',!both);box(660,522,230,48,'Prefer B',!both);box(930,522,170,48,'Inspect');
+    for(const bounds of comparisonLayout.buttons)box(bounds.x,bounds.y,bounds.width,bounds.height,bounds.label,
+      bounds.kind==='previous'?index===0:bounds.kind==='next'?!canShuffle:bounds.kind==='vote'?!both:false);
     $('screen-prompt-label').textContent=`Worlds exhibit / Prompt ${promptId}`;
     $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
@@ -102,7 +104,16 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     }
   });
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
-  function activate({x,y}){if(y>=522&&y<=580){if(x<145)step(-1);else if(x>1135)nextComparison();else if(x<415)vote('a');else if(x<625)vote('tie');else if(x<895)vote('b');else inspect();}else if(y>=105&&y<500)open(pair()[x<640?0:1]);else inspect();}
+  function hitTest(point){
+    const bounds=comparisonLayout.previews.map((rect,slot)=>previewRects[slot]||(pair()[slot]?.previewAvailable===false?rect:null));
+    const hit=comparisonTargetAt(point,bounds);if(!hit)return null;
+    if(hit.kind==='entry'){const entry=pair()[hit.slot];return entry?{...hit,key:'entry:'+entry.id}:null;}
+    if(hit.kind==='vote'&&!bothOpened()||hit.kind==='previous'&&index===0||hit.kind==='next'&&!canShuffle)return null;
+    return {...hit,key:hit.kind+(hit.choice?':'+hit.choice:'')};
+  }
+  function activate(point){const hit=hitTest(point);if(!hit)return;
+    if(hit.kind==='entry')open(pair()[hit.slot]);else if(hit.kind==='previous')step(-1);else if(hit.kind==='next')nextComparison();else if(hit.kind==='vote')vote(hit.choice);else if(hit.kind==='inspect')inspect();
+  }
   subscribePublicJudgments(()=>renderPublicLeaderboard($('screen-public-leaderboard')));
   renderPublicLeaderboard($('screen-public-leaderboard'));loadPublicLeaderboard();
   render();
@@ -121,5 +132,5 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     $('screen-prompt').replaceChildren(...prompts.map(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=`${p.id} / ${p.title}`;return o;}));
     selectPrompt(history.state?.labPrompt||new URLSearchParams(location.search).get('prompt')||'01',true);
   }).catch(()=>{error='The entry index could not load. Use the standalone benchmark link or reload.';render();});
-  return {source,activate,inspect,get ready(){return entries.length>0;}};
+  return {source,hitTest,activate,inspect,get ready(){return entries.length>0;}};
 }

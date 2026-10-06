@@ -1,5 +1,6 @@
 import * as T from './vendor/three.module.min.js';
 import {exhibits} from './navigation.mjs';
+import {canvasPointer,firstVisibleHit} from './interaction.mjs';
 
 // One level room in three volumes: a tall top-lit benchmark hall on the axis, a
 // bright west apparatus bay with an oriel, and a low timber study alcove to the east.
@@ -150,11 +151,11 @@ export function createRoom(canvas,onLost){
   for(const part of scene.children.slice(catalogStart)){
     const x=part.position.x,z=part.position.z-catalog.sourceZ;
     part.position.x=catalog.x+c*x+s*z;part.position.z=catalog.z-s*x+c*z;
-    part.rotateY(catalog.yaw);part.userData.destination='catalog';
+    part.rotateY(catalog.yaw);
   }
   const catalogLabel=text(['02 / CATALOG & EVIDENCE'],catalog.x,2.75,catalog.z,3.6,.42);
   catalogLabel.rotation.y=catalog.yaw;catalogLabel.userData.destination='catalog';
-  for(const side of [-1,1]){const post=cylinder(catalog.x+.03,1.9,catalog.z+side*1.65,.025,1.8,'brass');post.userData.destination='catalog';}
+  for(const side of [-1,1])cylinder(catalog.x+.03,1.9,catalog.z+side*1.65,.025,1.8,'brass');
   // Two pendants hang from the lantern ribs; their glow is static, not an animated light.
   for(const x of [-1.5,2]){cylinder(x,4.5,-2.95,.012,3.8,'brass');mesh(new T.ConeGeometry(.3,.24,24),'dark',x,2.48,-2.95);
     const lit=plain(new T.CircleGeometry(.25,24),glow,x,2.355,-2.95);lit.rotation.x=Math.PI/2;}
@@ -237,9 +238,9 @@ export function createRoom(canvas,onLost){
   // South gallery: low stone seat with brass pegs; the exit door keeps its exact place.
   ext(-6.2,-1.8,0,.4,6.6,7,'lime');ext(-6.25,-1.75,.4,.46,6.55,7,'oak');for(let x=-5.8;x<-1.9;x+=.55)sphere(x,1.75,6.95,.04,'brass');
   const door=box(5.4,1.49,6.92,1.55,2.95,.055,'#749080');door.userData.destination='home';
-  for(const y of [.75,2.2])ext(4.85,5.95,y-.5,y+.5,6.88,6.89,'#83a08f');
+  for(const y of [.75,2.2])ext(4.85,5.95,y-.5,y+.5,6.88,6.89,'#83a08f').userData.destination='home';
   box(4.53,1.6,6.85,.16,3.25,.18,'lime');box(6.27,1.6,6.85,.16,3.25,.18,'lime');box(5.4,3.17,6.85,1.9,.16,.18,'lime');
-  box(5.96,1.15,6.84,.035,.3,.07,'brass');
+  box(5.96,1.15,6.84,.035,.3,.07,'brass').userData.destination='home';
   const exit=text(['EXIT / HOME'],5.4,3.45,6.83,1.7,.34,'#284b3b');exit.rotation.y=Math.PI;exit.userData.destination='home';
   const doorLabel=text(['Home ↗'],5.4,2.3,6.865,1.17,.42);doorLabel.rotation.y=Math.PI;doorLabel.userData.destination='home';
 
@@ -251,13 +252,16 @@ export function createRoom(canvas,onLost){
     comparison(source){if(disposed)return;comparisonSource.getContext('2d').drawImage(source,0,0);comparisonTexture.needsUpdate=true;},
     draw(p){if(disposed)return;const w=canvas.clientWidth,h=canvas.clientHeight;const size=renderer.getSize(new T.Vector2());if(size.x!==w||size.y!==h){renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w/h<1?78:65;camera.updateProjectionMatrix();}camera.position.set(p.x,1.68,p.z);camera.rotation.set(p.pitch,p.yaw,0);renderer.render(scene,camera);},
     pick(clientX,clientY){
-      const rect=canvas.getBoundingClientRect();pointer.set((clientX-rect.left)/rect.width*2-1,-(clientY-rect.top)/rect.height*2+1);raycaster.setFromCamera(pointer,camera);
-      const first=raycaster.intersectObjects(scene.children,false).find(hit=>hit.object!==targetMarker);
+      if(disposed)return null;
+      const point=canvasPointer(clientX,clientY,canvas.getBoundingClientRect());if(!point)return null;
+      pointer.set(point.x,point.y);raycaster.setFromCamera(pointer,camera);
+      // Intersect all room geometry so a wall or prop in front blocks a target.
+      const first=firstVisibleHit(raycaster.intersectObjects(scene.children,false),targetMarker);
       if(!first||first.distance>24)return null;
       if(first.object.userData.comparison&&first.uv)return {comparison:{x:first.uv.x*1280,y:(1-first.uv.y)*600}};
       if(first.object.userData.worlds)return {point:{x:world.approach.x,z:world.approach.z},screen:true};
       const {x,y,z}=first.point;
-      const destination=first.object.userData.destination||(x>4.6&&x<6.2&&z>6.7&&z<7&&y<3.7?'home':null);
+      const destination=first.object.userData.destination;
       if(destination)return {destination};
       if(Math.abs(x)>7.95||Math.abs(z)>6.95)return null;
       if(y<=.035)return {point:{x,z},approach:false};
