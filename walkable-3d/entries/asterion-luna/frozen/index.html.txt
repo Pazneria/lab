@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#c18751" />
+  <title>Asterion | Desert Observatory</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+    * { box-sizing: border-box; }
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; background:#b9804f; }
+    #scene { position:fixed; inset:0; width:100%; height:100%; display:block; outline:0; }
+    .vignette { position:fixed; inset:0; pointer-events:none; background:radial-gradient(ellipse at 50% 47%,transparent 48%,rgba(31,24,20,.17) 100%); }
+    .mast { position:fixed; top:22px; left:25px; z-index:3; display:flex; gap:11px; align-items:center; color:#fff2d7; text-shadow:0 1px 10px #2b1e1680; pointer-events:none; }
+    .sigil { width:35px; height:35px; border:1px solid #f0d5a1a8; border-radius:50%; display:grid; place-items:center; font-family:Georgia,serif; font-size:22px; color:#f0d5a1; }
+    .brand { font-family:Georgia,serif; font-size:15px; letter-spacing:.19em; text-transform:uppercase; }
+    .subbrand { margin-top:2px; font-size:9px; letter-spacing:.25em; text-transform:uppercase; opacity:.78; }
+    .help { position:fixed; z-index:3; top:22px; right:24px; color:#fff3db; background:rgba(35,30,27,.38); border:1px solid rgba(255,239,206,.27); border-radius:14px; padding:12px 14px; min-width:190px; backdrop-filter:blur(8px); text-shadow:0 1px 4px #23180d; font-size:11px; transition:opacity .3s; }
+    .help h2 { font-size:9px; letter-spacing:.2em; font-weight:600; text-transform:uppercase; margin:0 0 9px; opacity:.72; }
+    .keys { display:grid; grid-template-columns:1fr 1fr; gap:6px 13px; line-height:1.35; }
+    kbd { font:600 10px ui-monospace,Consolas,monospace; padding:3px 5px; min-width:20px; text-align:center; border:1px solid #f4dfba73; border-bottom-width:2px; border-radius:4px; display:inline-block; margin-right:5px; background:#ffffff13; }
+    .help .foot { margin-top:9px; padding-top:8px; border-top:1px solid #ffebc42a; display:flex; justify-content:space-between; align-items:center; opacity:.85; }
+    .reset { border:1px solid #f4dfba66; background:#ffffff10; color:#fff1d4; border-radius:5px; font:inherit; font-size:10px; padding:4px 8px; cursor:pointer; }
+    .reset:hover { background:#ffffff27; }
+    .crosshair { position:fixed; left:50%; top:50%; width:7px; height:7px; border:1px solid #fff1d7ad; border-radius:50%; transform:translate(-50%,-50%); pointer-events:none; opacity:.75; filter:drop-shadow(0 0 2px #302319); }
+    .location { position:fixed; left:50%; bottom:26px; transform:translateX(-50%); padding:8px 13px; border-radius:99px; background:#251f1a42; border:1px solid #fff1d529; color:#ffefd0; font-size:9px; letter-spacing:.2em; text-transform:uppercase; text-shadow:0 1px 4px #281a0f; pointer-events:none; opacity:0; transition:opacity .35s; }
+    .location.show { opacity:1; }
+    .start { position:fixed; z-index:5; inset:0; display:grid; place-items:center; background:linear-gradient(90deg,#1c1915b8,#21190e26 68%,#19150d54); color:#fff1d6; transition:opacity .65s,visibility .65s; }
+    .start.hide { opacity:0; visibility:hidden; }
+    .card { width:min(465px,calc(100vw - 36px)); padding:35px 38px 32px; background:linear-gradient(145deg,#352a20ed,#2b221bdc); border:1px solid #e5c38a47; box-shadow:0 25px 90px #21180e63; border-radius:3px; position:relative; }
+    .card:before,.card:after { content:""; position:absolute; left:14px; right:14px; height:1px; background:linear-gradient(90deg,transparent,#dbb77866,transparent); }
+    .card:before { top:13px } .card:after { bottom:13px }
+    .eyebrow { color:#ddb875; font-size:9px; letter-spacing:.28em; text-transform:uppercase; }
+    h1 { margin:11px 0 9px; font:normal clamp(30px,6vw,44px)/1.02 Georgia,"Times New Roman",serif; letter-spacing:-.025em; }
+    .card p { margin:0; max-width:340px; color:#ddceb3; font:14px/1.7 Georgia,serif; }
+    .begin { margin-top:25px; width:100%; border:1px solid #d7b679a6; background:#ae7c43; color:#fff4dc; padding:13px; cursor:pointer; font:600 10px ui-sans-serif,system-ui; letter-spacing:.22em; text-transform:uppercase; transition:background .2s; }
+    .begin:hover { background:#c39455; }
+    .hint { margin-top:13px; text-align:center; color:#cdb996a8; font-size:9px; letter-spacing:.05em; }
+    .filmgrain { position:fixed; inset:0; pointer-events:none; opacity:.045; mix-blend-mode:soft-light; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.46'/%3E%3C/svg%3E"); }
+    @media(max-width:640px){.help{top:auto;bottom:16px;right:13px;min-width:unset;padding:9px}.help h2,.help .foot{display:none}.keys{gap:4px}.mast{left:13px;top:13px}.card{padding:30px 26px}}
+  </style>
+</head>
+<body>
+  <canvas id="scene" tabindex="0" aria-label="Walkable 3D desert observatory"></canvas>
+  <div class="mast"><div class="sigil">✳</div><div><div class="brand">Asterion</div><div class="subbrand">House of the Long Meridian</div></div></div>
+  <aside class="help" aria-label="Controls">
+    <h2>Field controls</h2>
+    <div class="keys"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span><kbd>Mouse</kbd> look</span><span><kbd>Shift</kbd> stride</span><span><kbd>R</kbd> reset</span><span><kbd>Esc</kbd> release</span></div>
+    <div class="foot"><span>Field notes · 14:42</span><button class="reset" id="reset">Reset view&nbsp; ↺</button></div>
+  </aside>
+  <div class="crosshair"></div><div class="location" id="location">South passage</div>
+  <div class="start" id="start"><section class="card"><div class="eyebrow">The western escarpment · 14:42</div><h1>The Asterion</h1><p>A small observatory above the red basin. Follow the cool passage into the meridian room, then step through to the open sky terrace.</p><button class="begin" id="begin">Enter the observatory</button><div class="hint">WASD to walk &nbsp;·&nbsp; Mouse to look &nbsp;·&nbsp; Esc releases pointer</div></section></div>
+  <div class="vignette"></div><div class="filmgrain"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

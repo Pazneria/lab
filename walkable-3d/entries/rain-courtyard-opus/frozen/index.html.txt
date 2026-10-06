@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rain Courtyard Night Market</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #07080c; overflow: hidden; font-family: "Segoe UI", system-ui, sans-serif; color: #f1e6d2; }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(10,10,16,0.55), rgba(4,4,8,0.88)); z-index: 10; cursor: pointer; }
+  #overlay.hidden { display: none; }
+  .card { max-width: 440px; padding: 28px 32px; border: 1px solid rgba(255,200,140,0.25); background: rgba(14,12,14,0.78); border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.6); }
+  .card h1 { margin: 0 0 6px; font-weight: 600; font-size: 22px; letter-spacing: 0.04em; color: #ffd9a8; }
+  .card p { margin: 0 0 14px; font-size: 13.5px; line-height: 1.5; color: #cbbfae; }
+  .keys { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 13px; }
+  .keys b { display: inline-block; min-width: 18px; padding: 1px 6px; border: 1px solid rgba(255,220,180,0.35); border-radius: 4px; text-align: center; font-weight: 600; color: #ffe7c7; background: rgba(255,255,255,0.04); }
+  #start { margin-top: 18px; font-size: 14px; color: #ffcf8f; text-align: center; letter-spacing: 0.05em; }
+  #loading { margin-top: 18px; font-size: 13px; color: #9f9484; text-align: center; }
+  #hud { position: fixed; left: 14px; bottom: 12px; font-size: 12px; color: rgba(240,225,205,0.6); z-index: 5; pointer-events: none; text-shadow: 0 1px 2px #000; }
+  #stats { position: fixed; right: 12px; top: 10px; font: 12px/1.4 Consolas, monospace; color: #cfe8c8; background: rgba(0,0,0,0.55); padding: 6px 9px; border-radius: 5px; z-index: 5; pointer-events: none; white-space: pre; display: none; }
+  #crosshair { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,235,210,0.55); z-index: 4; pointer-events: none; }
+  #zone { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,225,190,0.0); transition: color 0.8s; z-index: 5; pointer-events: none; text-shadow: 0 1px 3px #000; }
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div class="card">
+    <h1>Courtyard Night Market</h1>
+    <p>Just after rain. Four stalls in an enclosed courtyard; a covered passage on the east side leads to a small tea counter.</p>
+    <div class="keys">
+      <span><b>Mouse</b></span><span>Look around (click to capture)</span>
+      <span><b>W A S D</b></span><span>Move (arrow keys also work)</span>
+      <span><b>Shift</b></span><span>Walk faster</span>
+      <span><b>C</b> (hold)</span><span>Crouch to inspect goods</span>
+      <span><b>R</b></span><span>Reset to the courtyard entrance</span>
+      <span><b>F</b></span><span>Toggle frame-time stats</span>
+      <span><b>G</b></span><span>Toggle quality (bloom / resolution)</span>
+      <span><b>Esc</b></span><span>Release mouse / show this panel</span>
+    </div>
+    <div id="loading">Preparing scene…</div>
+    <div id="start" style="display:none">Click to enter</div>
+  </div>
+</div>
+<div id="crosshair"></div>
+<div id="zone"></div>
+<div id="hud">WASD move · Mouse look · Shift fast · C crouch · R reset · F stats · G quality · Esc menu</div>
+<div id="stats"></div>
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/"
+} }
+</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

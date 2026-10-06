@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Meridian — Desert Observatory</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%2339534e' width='32' height='32'/%3E%3Cpath fill='none' stroke='%23dfc590' stroke-width='2' d='M5 22a11 11 0 0 1 22 0M5 22h22M16 4v24M4 16h24'/%3E%3C/svg%3E">  <script type="module" crossorigin src="/assets/index-CVZfHC4g.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-i6LjAI14.css">
+</head>
+<body>
+<canvas id="scene" aria-label="Walkable 3D desert observatory"></canvas>
+<div id="veil">
+  <div class="intro">
+    <div class="eyebrow">A FIELD STATION AT THE EDGE OF THE DESERT</div>
+    <h1>Meridian<span>Observatory</span></h1>
+    <p class="description">Warm stone. Cool shadows. The last light on bronze.<br>Walk through the passage, beneath the open dome,<br>and out to the horizon.</p>
+    <button id="enter" disabled>Preparing the observatory <span>↗</span></button>
+    <div class="instruction"><b>W A S D</b> walk &nbsp; · &nbsp; <b>MOUSE</b> look<br><b>SHIFT</b> brisk walk &nbsp; · &nbsp; <b>R</b> reset &nbsp; · &nbsp; <b>ESC</b> pause</div>
+    <div class="fine">A quiet place in the last light</div>
+  </div>
+</div>
+<header id="identity"><span class="mark">✳</span><div>MERIDIAN<span>DESERT OBSERVATORY · 24° N</span></div></header>
+<div id="top-right"><button id="quality" title="Switch pixel resolution">Quality: high</button><button id="reset" title="Return to the entrance (R)">Reset ↺</button></div>
+<div id="crosshair">·</div>
+<footer><div><span class="dot"></span><span id="location">SOUTH PASSAGE</span></div><div id="guide">WASD move &nbsp; Mouse look &nbsp; Shift brisk walk &nbsp; R reset &nbsp; Esc pause</div><span id="bearing">N 000°</span></footer>
+<div id="stats"></div>
+</body></html>

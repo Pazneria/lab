@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#c3a276"><title>Saffron Observatory</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23313933'/%3E%3Ctext x='20' y='29' text-anchor='middle' font-size='32' fill='%23dfc49a'%3E✧%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <canvas id="scene" aria-label="Walkable three dimensional desert observatory"></canvas>
+  <div id="vignette"></div>
+  <header><div class="mark">✧</div><div><span class="eyebrow">THE HIGH DESERT · 27° N</span><h1>Saffron Observatory</h1></div></header>
+  <div id="location"><span class="dot"></span><span id="zone">South passage</span><span class="time">17:24 / LATE AFTERNOON</span></div>
+  <main id="welcome">
+    <span class="eyebrow">A STUDY IN LIGHT, STONE & SKY</span>
+    <h2>A quiet place<br>to measure the heavens.</h2>
+    <p>Beyond the shaded passage, a bronze telescope rests beneath an open dome. Cross the chamber to the terrace and the desert beyond.</p>
+    <button id="enter">Enter the observatory <span>↗</span></button>
+    <div class="keys"><span><kbd>W A S D</kbd> walk</span><span><kbd>MOUSE</kbd> look</span><span><kbd>SHIFT</kbd> move faster</span></div>
+    <div class="subkeys"><kbd>ESC</kbd> release cursor &nbsp;·&nbsp; <kbd>R</kbd> reset &nbsp;·&nbsp; <kbd>P</kbd> frame times</div>
+  </main>
+  <div id="crosshair" hidden></div>
+  <div id="resume" hidden><button id="resumeButton">Continue exploring <span>↗</span></button><p>Click the scene to look around · Esc releases the cursor</p></div>
+  <footer><div class="route">01 <span>PASSAGE</span><i></i>02 <span>CHAMBER</span><i></i>03 <span>TERRACE</span></div><div class="actions"><button id="helpButton" title="Controls">Controls</button><button id="perfButton" title="Frame time display">Performance</button><button id="resetButton" title="Return to entrance">Reset ↺</button></div></footer>
+  <aside id="help" hidden><b>Explore at your pace</b><p>WASD / arrows — walk<br>Mouse — look around<br>Shift — faster walking<br>R — return to the entrance<br>P — frame-time display<br>Esc — release the cursor</p><p class="muted">No jumping is needed. Steps are automatic.<br>Click and drag also works without mouse capture.</p></aside>
+  <aside id="performance" hidden><b>FRAME TIMES <span id="qualityText">HIGH</span></b><canvas id="graph" width="240" height="52"></canvas><div id="metrics">Collecting frames…</div><label>Render quality <select id="quality"><option value="high">High</option><option value="balanced">Balanced</option><option value="low">Low</option></select></label><button id="downloadMetrics">Save measurements</button><small>Rolling 10 s · frame intervals, not GPU timings.<br>Use while actively exploring. P to hide.</small></aside>
+  <div id="loading">Preparing the observatory<span></span></div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

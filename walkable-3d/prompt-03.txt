@@ -1,0 +1,46 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Build a small desert observatory on a rocky plateau in late afternoon.
+
+Connect a shaded entrance passage, a round instrument chamber, and an open viewing terrace. The viewer should be able to walk between all three, circle the central instrument, and approach the terrace edge safely to look back at the building.
+
+Make the architecture feel solid through thick plaster walls, deep openings, stone steps, and a partially open dome. The central instrument can be a compact telescope or a mechanical sky-measuring device with clear, carefully modeled parts. Contrast sun-bleached surfaces with shaded recesses, worn bronze, and a few cool glazed tiles. Sand should collect selectively along sheltered edges. Use hard sunlight and long shadows to reveal the geometry. Distant dunes or mesas may be simple silhouettes; focus the detail on the observatory itself.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, circle the central instrument, look through the dome and look back at the building from the terrace. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Solid-looking architecture with thick plaster walls, deep openings, stone steps and a readable partially open dome
+- A central instrument assembled from clear, carefully modeled parts
+- Distinct plaster, stone, worn bronze and cool glazed accents that hold up close
+- Hard sunlight and long shadows that reveal the geometry
+- Believable placement of sheltered sand and surface wear throughout the explorable area
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while circling the instrument and looking up through the dome
+- Smooth transitions between the shaded passage, chamber and sunlit terrace
+- Minimal stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A shaded entrance passage, round instrument chamber and open viewing terrace
+- A central telescope or mechanical sky-measuring instrument that can be circled
+- A rocky plateau setting, solid desert architecture and a partially open dome
+- Connected, usable walking routes, convincing scale and a safe terrace viewpoint back toward the building
+
+MY INSPECTION ROUTE
+
+Entrance passage → circle the instrument → terrace edge → look back → return.
+
+I will pay particular attention to circling the instrument, looking up through the dome and turning from the terrace toward the chamber. The spaces should connect comfortably, with enough room to inspect the instrument from several sides without clipping through it. Costly shadow views or abrupt exposure changes should not make movement or inspection uncomfortable. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.

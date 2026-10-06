@@ -1,0 +1,33 @@
+{
+  "id": "meridian-sol",
+  "checkedAt": "2026-10-06T04:38:52.289Z",
+  "scope": "Host launch/input/isolation verification, not a benchmark grade.",
+  "passed": true,
+  "checks": [
+    "Real WebGL 2 renders unchanged production bundle",
+    "Keyboard movement, mouse look, original reset view",
+    "Opaque parent boundary, pointer release, focus and complete unload"
+  ],
+  "diagnostics": {
+    "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "drawingBuffer": [
+      1402,
+      765
+    ],
+    "drawCalls": 40
+  },
+  "errors": [],
+  "externalRequests": [],
+  "labIntegration": {
+    "checkedAt": "2026-10-06T04:50:16.136Z",
+    "checks": [
+      "Exact shared Prompt 03 displays and downloads with its recorded SHA-256, complete grading/rules and no scene startup",
+      "All three same-prompt pairings use static previews; no entrant downloads/canvas; 320–700 px layouts; provenance disclosure and separate grade",
+      "Actual in-world screen opens all three frozen builds; one active child; Lab GL paused; input/reset/release; repeated close restores position and prompt",
+      "Pair selection remains within prompts; prior railway/market counts preserved; preferences separate from grades; mobile controls, Back/Forward/reload remain static",
+      "A missing Observatory module produces visible failure and unloads the child"
+    ],
+    "candidateManifest": false,
+    "passed": true
+  }
+}

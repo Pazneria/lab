@@ -1,0 +1,136 @@
+{
+  "entry": "saffron-observatory-astra",
+  "importedAt": "2026-10-06T04:15:00.670587+00:00",
+  "archiveSource": "task-16 (host preservation snapshot, no producer ZIP supplied)",
+  "archiveSha256": "058474dcf784d3df517ef6549827141ae91b3ec8c3d4841fe62cd30a46f27fd2",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/build/three.core.js": "node_modules/three/build/three.core.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js"
+    },
+    "preview": "Captured from the frozen build after entering and pressing its own reset key; original viewpoint. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Original HTML preserved verbatim as index.html.txt; SHA-256 checked before opaque sandbox loading.",
+    "Only required Three.js files and its license copied byte-for-byte into frozen/vendor/three.",
+    "In-memory HTML path changes only; no scene, input, geometry, lighting, quality, timing or behavior repairs.",
+    "Original HTML import-map values change from ./node_modules/three/ to ./vendor/three/ only in the viewer memory."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in the reviewed runtime.",
+    "scope": "Read-only authored HTML/CSS/JavaScript review, local dependency imports, browser API use and bounded procedural asset generation. No external asset requests, telemetry, storage, credentials, dynamic evaluation or parent navigation in authored code.",
+    "sandbox": "Existing Lab opaque sandbox: scripts and pointer lock only, no same-origin, downloads, navigation or external network.",
+    "dependencyReview": "Three 0.180.0 core/module/BufferGeometryUtils/license exactly match previously admitted Raincourt files."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3274,
+      "sha256": "a1a7325e0c9c91dca5806c262fc153dc435287218eb10c617244d3854f3af05f"
+    },
+    "frozen/main.js": {
+      "bytes": 47393,
+      "sha256": "f827c9f40d194a1935a5dfb06c36b0d83ae4c6332a4f223f3f70cbac8ca44f3f"
+    },
+    "frozen/style.css": {
+      "bytes": 4694,
+      "sha256": "919c6ccde3c6450196786e6ee3aff01f6a74e2af66a99d511adb03ceadc3b5ef"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "frozen/vendor/three/build/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "README.md": {
+      "bytes": 4648,
+      "sha256": "5f2405ddd00cdccd728694ba21188e8e26d48d1698eca270688d49ac38db074e"
+    },
+    "BUILD_RECORD.json": {
+      "bytes": 1507,
+      "sha256": "498e243800d97135f5cba23ae58755e08b83d31c9e5114cd2f4035195e4f1160"
+    },
+    "preview.jpg": {
+      "bytes": 49959,
+      "sha256": "b58e727231f01698a5c7e54a30e935d6787e8b11e715e8ea118f703dd1583000"
+    },
+    "host-verification.json": {
+      "bytes": 1892,
+      "sha256": "a7b3921d8b49a39a0b52f0b6adbebd950bf19e0e69b0e8a8b749a0f133b620c8"
+    }
+  },
+  "publication": {
+    "policy": "Runtime, small still, provenance, licenses and concise records only. No ZIP or raw evidence in repository or Pages.",
+    "publishedFiles": [
+      "BUILD_RECORD.json",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/style.css",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.core.js",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "archiveRetention": "Host preservation snapshot retained outside repository and Pages in task-11 queue; producer source is untouched.",
+  "producerEvidence": {
+    "source": "task-16/evidence/route-test.json",
+    "bytes": 228404,
+    "sha256": "af402d1a82fe5c2689f68493dab5afa31f0d1867eae1d683fa8dfecd41276247",
+    "checks": 40,
+    "failures": 0,
+    "browserErrors": 0,
+    "measurementKind": "Producer headless diagnostics, not host validation or a final grade.",
+    "stats": {
+      "samples": 703,
+      "average_ms": 14.24,
+      "p50_ms": 13.7,
+      "p95_ms": 25,
+      "p99_ms": 35.7,
+      "max_ms": 104.8,
+      "drawCalls": 38,
+      "triangles": 141320,
+      "geometries": 39,
+      "textures": 21
+    },
+    "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "producerDisclosure": [
+    "A standard npm diagnostic command unexpectedly read a shared npm cache log containing another task's package name, path, and version. No referenced project files or assets were opened or reused. All scene implementation and assets were created in this new workspace."
+  ],
+  "retainedOriginalFiles": {
+    "original.zip": {
+      "bytes": 431331,
+      "sha256": "058474dcf784d3df517ef6549827141ae91b3ec8c3d4841fe62cd30a46f27fd2"
+    },
+    "host-preview.png": {
+      "bytes": 1352592,
+      "sha256": "b98dd78490375018a7b49d54fd503117b7d1fcaab11b214acfb156245210a5d7"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "prompt": {
+    "version": "03-shared",
+    "sha256": "fcc0b24af380f0d6606ff043ea3809706f927a6fe6b0e41e2568ba8c39da1560",
+    "source": "Parent-supplied exact submitted text; confirmed shared with no variants."
+  }
+}
