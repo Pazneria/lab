@@ -175,6 +175,41 @@
     "run-record.json": {
       "bytes": 2266,
       "sha256": "0b97c926ed455969b633bd7976d1db6d8808e71acba2f06c6cc3132cae796378"
+    },
+    "preview.jpg": {
+      "bytes": 143895,
+      "sha256": "bf814a83d06306ed9e9710e3076d35446de3847e2bc7ab32169ac0921e36f41f"
+    },
+    "preview-capture.json": {
+      "bytes": 1890,
+      "sha256": "bc699f996761a9d063f8055dcd24093562ac600a08004a04cc8c6cf4e6dd689f"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/architecture.js",
+      "frozen/src/batch.js",
+      "frozen/src/collision-layout.js",
+      "frozen/src/details.js",
+      "frozen/src/exterior.js",
+      "frozen/src/furnishings.js",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/navigation.js",
+      "frozen/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/addons/environments/RoomEnvironment.js",
+      "frozen/vendor/addons/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": []
   }
 }

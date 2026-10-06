@@ -1,0 +1,48 @@
+{
+  "entry": "aster-reading-house-sol",
+  "capturedAt": "2026-10-06T23:54:27.732Z",
+  "sourceUrl": "https://pazneria.github.io/lab/walkable-3d/?entry=aster-reading-house-sol",
+  "frozenHtmlSha256": "9c6ca03fe7e0c510e811dd242dc19ae588b681ccbaaab3964eb409b2000c0012",
+  "scope": "Screenshot capture only, after the submission was frozen. Startup readiness was observed. Navigation, collisions, input reliability, shader coverage and performance were not validated; no grade or vote was submitted.",
+  "sourceUnchanged": true,
+  "viewpoint": "Original authored starting viewpoint; no walking or camera adjustment.",
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "captureMethod": "Actual scene canvas copied directly to JPEG in the existing sandboxed Lab viewer. Separate DOM overlays/model labels are absent from canvas pixels. No synthesized content, source edits, lighting adjustment or scene repair.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "canvas": {
+    "id": "scene",
+    "width": 1242,
+    "height": 777,
+    "cssWidth": 1242,
+    "cssHeight": 777
+  },
+  "centerCrop": {
+    "x": 0,
+    "y": 0.375,
+    "width": 1242,
+    "height": 776.25
+  },
+  "output": {
+    "path": "preview.jpg",
+    "width": 960,
+    "height": 600,
+    "format": "JPEG",
+    "quality": 0.88,
+    "bytes": 103867,
+    "sha256": "cc34c4e7c138773685c8831aaf1d951ea925a41cc9bbab25bea0548998fd5b30"
+  },
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "runtimeErrorsObserved": [],
+  "consoleObservations": [],
+  "captureHarnessNote": "Captured with normal automation context defaults and unchanged sandbox/CSP.",
+  "completionStatusPreserved": null,
+  "availabilityPreserved": "unverified",
+  "browserCleanup": "Capture browser sessions ran sequentially and were closed. No owned browser/test processes remained after capture."
+}

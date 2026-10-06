@@ -104,6 +104,14 @@
     "RUN_RECORD.json": {
       "bytes": 5123,
       "sha256": "d95f73fe54eec42eda45312b7f39024e2061edae402410ee077f9ef4c2c4416c"
+    },
+    "preview.jpg": {
+      "bytes": 75758,
+      "sha256": "c438d6998d10739cf9bf0527f01537bec785424bd98a0d53dc104633698a25e4"
+    },
+    "preview-capture.json": {
+      "bytes": 2096,
+      "sha256": "eaf997a56f71bd26dc7b3763ee11a9f825575919ed89bcbfb72d05ae9af90b49"
     }
   },
   "publication": {
@@ -121,7 +129,9 @@
       "frozen/vendor/THREE-LICENSE.txt",
       "frozen/vendor/three.core.js",
       "frozen/vendor/three.module.js",
-      "host-verification.json"
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "original archive/snapshot",
@@ -130,5 +140,6 @@
       "raw test evidence",
       "development source maps"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json"
 }

@@ -1,0 +1,48 @@
+{
+  "entry": "orbital-maintenance-opus",
+  "capturedAt": "2026-10-06T23:52:57.807Z",
+  "sourceUrl": "https://pazneria.github.io/lab/walkable-3d/?entry=orbital-maintenance-opus",
+  "frozenHtmlSha256": "eeb35f496a3e413ba54dc0e39770d1826463847e975ab4eb33e03d27fe930211",
+  "scope": "Screenshot capture only, after the submission was frozen. Startup readiness was observed. Navigation, collisions, input reliability, shader coverage and performance were not validated; no grade or vote was submitted.",
+  "sourceUnchanged": true,
+  "viewpoint": "Original authored starting viewpoint; no walking or camera adjustment.",
+  "controls": [
+    "Click existing #start start control"
+  ],
+  "captureMethod": "Actual scene canvas copied directly to JPEG in the existing sandboxed Lab viewer. Separate DOM overlays/model labels are absent from canvas pixels. No synthesized content, source edits, lighting adjustment or scene repair.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "canvas": {
+    "id": "",
+    "width": 1242,
+    "height": 777,
+    "cssWidth": 1242,
+    "cssHeight": 777
+  },
+  "centerCrop": {
+    "x": 0,
+    "y": 0.375,
+    "width": 1242,
+    "height": 776.25
+  },
+  "output": {
+    "path": "preview.jpg",
+    "width": 960,
+    "height": 600,
+    "format": "JPEG",
+    "quality": 0.88,
+    "bytes": 151297,
+    "sha256": "1519be70192b1b9ec105e43c57fe30902a5a7accaaba50d7a6d5ec677642d814"
+  },
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "runtimeErrorsObserved": [],
+  "consoleObservations": [],
+  "captureHarnessNote": "The first capture harness injected a service-worker blocker that touched an API unavailable in opaque sandboxed frames. This was an automation-only exception, unrelated to entrant source. This capture reached readiness and rendered successfully; the frame was unloaded normally.",
+  "completionStatusPreserved": null,
+  "availabilityPreserved": "unverified",
+  "browserCleanup": "Capture browser sessions ran sequentially and were closed. No owned browser/test processes remained after capture."
+}

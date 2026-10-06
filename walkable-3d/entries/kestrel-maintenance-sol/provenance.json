@@ -68,6 +68,29 @@
     "RUN_RECORD.md": {
       "bytes": 2506,
       "sha256": "35f3545d793ec87fe006a09222778563982f5e39412ddb30b4c8172014883b0f"
+    },
+    "preview.jpg": {
+      "bytes": 108002,
+      "sha256": "53470cf1b644326591527289349f3d76703c3608802f64b83cdfadc42eac742f"
+    },
+    "preview-capture.json": {
+      "bytes": 2103,
+      "sha256": "1e7ced33965b730fa68139643fc9611d69e856b0333b73005f1e372f2801aa8f"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN_RECORD.md",
+      "frozen/THREE-LICENSE.txt",
+      "frozen/app.js",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
   }
 }

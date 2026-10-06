@@ -865,10 +865,10 @@
       "producerChecks": "Producer reports build/static checks passed: 663 dry-route samples, reachable viewpoints and landing, standing clearance and boundary checks. No browser, shader, visual or interactive execution was performed.",
       "performanceEvidence": "No performance measurement. F3 can measure animation-frame intervals during later manual exploration; producer static checks are not frame-time results.",
       "limitations": [
-        "Runtime, visual appearance, shader compatibility and interactive controls are unverified; no independent host runtime QA was run.",
+        "Only startup and a post-freeze screenshot were observed by the host; navigation, controls, shader coverage and performance remain unverified.",
         "The run prohibited browser/server/GPU/interactive/performance testing, unlike earlier rounds.",
         "Water reflection is approximate; conservative formation collisions; tiny gravel and survey pins are decorative.",
-        "Desktop keyboard/mouse only. No screenshot was supplied or captured."
+        "Desktop keyboard/mouse only. A post-freeze host screenshot is available."
       ],
       "readySelector": "#loading.hidden",
       "hostPathReplacements": [],
@@ -882,19 +882,24 @@
           "path": "RUN_RECORD.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
+      "previewAvailable": true,
+      "previewAlt": "Original cavern starting view of a turquoise pool, rope posts and layered rock around a low passage.",
       "archiveKind": "Producer-supplied archive, copied unchanged; retained outside Git and Pages.",
       "archiveSha256": "2edb9acd53f5b629051fb501c29c44337e362d96551b983f3bd2c9370ee1bcce",
       "htmlSha256": "357c7cfbb9e1de578ef7865bfebe7be1d4f93e8b2a4f4644d5fd2a34b68fb2fb",
       "webgl": "WebGL 2",
-      "promptDisclosure": "Parent-supplied prompt wording and execution restriction; producer transcripts were not independently read."
+      "promptDisclosure": "Parent-supplied prompt wording and execution restriction; producer transcripts were not independently read.",
+      "preview": "preview.jpg"
     },
     {
       "id": "hollow-limestone-sol",
@@ -911,10 +916,10 @@
       "producerChecks": "Producer reports build/static checks passed: 646 dry-route samples, standing clearance, collision boundaries and connected dry paths to four pool viewpoints and the landing. Browser, GPU/shader, visual and interactive checks were not run.",
       "performanceEvidence": "No measured performance result. The scene offers a rolling 10-second frame-interval panel for later manual exploration; no frame rate or score is claimed.",
       "limitations": [
-        "Runtime, visual appearance, shader compatibility and interactive controls are unverified; no independent host runtime QA was run.",
+        "Only startup and a post-freeze screenshot were observed by the host; navigation, controls, shader coverage and performance remain unverified.",
         "The run prohibited browser/server/GPU/interactive/performance testing, unlike earlier rounds.",
         "Water reflection is an approximation; collision follows authored analytic room and obstacle boundaries.",
-        "Desktop keyboard/mouse only. No screenshot was supplied or captured."
+        "Desktop keyboard/mouse only. A post-freeze host screenshot is available."
       ],
       "readySelector": "#load[hidden] ~ #error[hidden]",
       "hostPathReplacements": [],
@@ -928,19 +933,24 @@
           "path": "RUN_RECORD.json"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
+      "previewAvailable": true,
+      "previewAlt": "Original cavern starting view with a pale stone path beside a blue pool, stalactites and a rounded passage.",
       "archiveKind": "Producer-supplied archive, copied unchanged; retained outside Git and Pages.",
       "archiveSha256": "f72147bfabda0d0d8192e0d04faac19fbf1fa06e59cab5ea0167ea661daa2976",
       "htmlSha256": "d38e3ab45c7057192cbb7181987b97178b2cc4476784ad0f064e7985f98c940d",
       "webgl": "WebGL 2",
-      "promptDisclosure": "Parent-supplied prompt wording and execution restriction; producer transcripts were not independently read."
+      "promptDisclosure": "Parent-supplied prompt wording and execution restriction; producer transcripts were not independently read.",
+      "preview": "preview.jpg"
     },
     {
       "id": "limestone-cavern-opus",
@@ -954,13 +964,13 @@
       "buildWindow": "Producer record, 2026-10-06: start 12:59:08 EDT (16:59:08 UTC); first implementation about 13:01 EDT; deadline 13:59:08 EDT (17:59:08 UTC); stop 13:22:25 EDT (17:22:25 UTC).",
       "interruptions": "Producer reports none. Manual run; timestamps are producer records, not an independently observed execution log.",
       "controls": "Click captures mouse; mouse / arrows look; WASD walk; Shift faster; F headlamp; R reset; 1–6 viewpoints; H HUD; Esc release.",
-      "producerChecks": "README claims 16 scripted walking waypoints reached, pool/crawl collision boundaries, and shader compilation without final console errors. These are producer claims; the Lab did not run the scene.",
+      "producerChecks": "README claims 16 scripted walking waypoints reached, pool/crawl collision boundaries, and shader compilation without final console errors. These are producer claims; the Lab had not run the scene at admission; later screenshot capture is documented separately.",
       "performanceEvidence": "README reports GPU-synchronized 1280×720 render cost below measurement noise (~0–3 ms against ~8 ms synchronization overhead). Hidden-pane rAF was not measured. This is not an independently verified frame-time comparison or grade.",
       "limitations": [
-        "Host runtime, browser behavior and scene continuity are unverified. Producer claims are shown separately.",
+        "Only startup and a post-freeze screenshot were observed by the host; interactive browser behavior and scene continuity remain unverified. Producer claims are shown separately.",
         "The field mesh uses 0.2 m resolution; finer relief uses a detail map. Baked lighting has smooth per-vertex gradients.",
         "Water reflection is approximate; landing is deliberately dim and offers a headlamp.",
-        "Desktop keyboard/mouse only. No screenshot was supplied in the handoff or captured by the host."
+        "Desktop keyboard/mouse only. A post-freeze host screenshot is available; no navigation or performance QA was performed."
       ],
       "readySelector": "#status",
       "readyTextPrefix": "Ready",
@@ -976,19 +986,24 @@
           "path": "README.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
+      "previewAvailable": true,
+      "previewAlt": "Original dark cavern starting view looking toward a roped pool beneath limestone formations.",
       "archiveKind": "Host-created preservation snapshot of the completed folder; no producer ZIP supplied; retained outside Git and Pages.",
       "archiveSha256": "54bfa1dc40546934a81d2078d46ca7a0681e53226e2da4e853b6cb3189465a27",
       "htmlSha256": "01e190b3f8ea7bd09bca1c3e9ed890df6f24676466eaeffc4951ecebabdfc0a8",
       "webgl": "WebGL 2",
-      "promptDisclosure": "Parent confirms manual handoff of this exact base prompt. No independently verified Claude submission transcript is claimed."
+      "promptDisclosure": "Parent confirms manual handoff of this exact base prompt. No independently verified Claude submission transcript is claimed.",
+      "preview": "preview.jpg"
     },
     {
       "id": "mass-light-opus",
@@ -1002,13 +1017,13 @@
       "buildWindow": "Producer record, 2026-10-06: start 13:01:03 EDT (17:01:03 UTC); first implementation about 13:11 EDT; deadline 14:01:03 EDT (18:01:03 UTC); last edit 13:36:18 EDT (17:36:18 UTC).",
       "interruptions": "Producer reports none. Timing comes from the original README; manual execution was not independently observed.",
       "controls": "WASD / arrows walk; mouse capture or drag look; Shift faster; R reset; 1–4 viewpoints; F frame overlay; Q resolution; Esc release.",
-      "producerChecks": "README reports hidden in-app browser testing, shader/texture warm-up and synchronous render timing. The host performed only source/provenance inspection and did not run the scene.",
+      "producerChecks": "README reports hidden in-app browser testing, shader/texture warm-up and synchronous render timing. At admission the host performed only source/provenance inspection; later screenshot capture is documented separately.",
       "performanceEvidence": "Producer claims 1280×760, DPR 1 synchronized batches: ~6.5–7.5 ms for gallery/ramp/hall views and ~9–10 ms near resin. Hidden-pane rAF was throttled and not representative. These are unverified producer measurements, not grades.",
       "limitations": [
-        "Host runtime, browser behavior, shaders and interactive routes remain unverified.",
+        "Only startup and a post-freeze screenshot were observed by the host; interactive routes, shader coverage and performance remain unverified.",
         "Lighting/reflections use fill lights and captures; no global illumination and limited reflection parallax.",
         "Circle-versus-box collisions, no jump/crouch, exterior visible but not walkable. Original automatic resolution reduction remains enabled.",
-        "Desktop keyboard/mouse only. No screenshot was supplied in the handoff or captured by the host."
+        "Desktop keyboard/mouse only. A post-freeze host screenshot is available; no navigation or performance QA was performed."
       ],
       "readySelector": "#status",
       "readyTextPrefix": "Ready.",
@@ -1024,19 +1039,24 @@
           "path": "README.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
+      "previewAvailable": true,
+      "previewAlt": "Original museum starting view of pale and rust-colored sculptures under beams of skylight.",
       "archiveKind": "Host-created preservation snapshot of the completed folder; no producer ZIP supplied; retained outside Git and Pages.",
       "archiveSha256": "9daac755f34ef51797b13e34e1c0f0571eca4671adbb61e604058fbf32fe9fb6",
       "htmlSha256": "c53c77703d5085a2d65bca2a7de39b55e095ab545c5b41f48c34cf5f950612c1",
       "webgl": "WebGL 2",
-      "promptDisclosure": "Parent confirms manual handoff of this exact base prompt. No independently verified Claude submission transcript is claimed."
+      "promptDisclosure": "Parent confirms manual handoff of this exact base prompt. No independently verified Claude submission transcript is claimed.",
+      "preview": "preview.jpg"
     },
     {
       "id": "mass-light-astra",
@@ -1046,7 +1066,7 @@
       "promptVersion": "07-openai",
       "comparisonModel": "astra",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. Requested settings do not independently verify the actual serving backend or its effort. Original producer records report only the identity/effort visible inside their run and remain unchanged; their lack of visibility does not negate the parent-selected request.",
       "buildWindow": "2026-10-06 UTC: work began 17:40:41.260; first implementation 17:41:09.269; fixed deadline 18:40:41.260; last source edit 18:05:37.361; source/build freeze 18:07:27.279; actual stop 18:07:27.671.",
@@ -1055,10 +1075,10 @@
       "producerChecks": "Producer reports build, eight-module/launcher syntax and literal DOM-reference checks passed. Browser, GPU/shader, interactive movement and performance checks were not run by the explicit protocol.",
       "performanceEvidence": "No measured frame-time result. The scene offers an optional rolling 10-second rAF interval log for later manual inspection. Successful static builds do not establish performance.",
       "limitations": [
-        "Runtime, visuals, shaders, controls and collision feel remain unverified; no host runtime QA was run.",
+        "Only startup and a post-freeze screenshot were observed by the host; controls, collision feel, shader coverage and performance remain unverified.",
         "This run prohibited browser/server/GPU/interactive/performance testing; a midrun cleanup reminder is disclosed separately.",
         "Resin uses screen-space transmission and static environment reflections; no touch movement UI.",
-        "No screenshot was supplied or captured. Optional CSV download is unavailable inside the restricted host viewer."
+        "A post-freeze host screenshot is available. Optional CSV download is unavailable inside the restricted host viewer."
       ],
       "documents": [
         {
@@ -1070,8 +1090,12 @@
           "path": "RUN-RECORD.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading.finished ~ #error[hidden]",
@@ -1085,13 +1109,14 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original museum starting view between white and gold sculptures beneath concrete walls and a skylight.",
       "webgl": "WebGL 2",
       "archiveSha256": "62204aef81a72f4530c1c2bb2ed0007894a311df15874b05a02c188197d278ab",
       "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
       "htmlSha256": "b3033b8092279d02259f2b109ba869e29ba6a771fee84e2f28c8e7a246d83894",
-      "promptDisclosure": "Parent supplied the exact Prompt 07 base and confirms the initial OpenAI no-browser execution constraint. The later cleanup reminder is an interruption disclosure, not reconstructed prompt text."
+      "promptDisclosure": "Parent supplied the exact Prompt 07 base and confirms the initial OpenAI no-browser execution constraint. The later cleanup reminder is an interruption disclosure, not reconstructed prompt text.",
+      "preview": "preview.jpg"
     },
     {
       "id": "mora-sol",
@@ -1101,19 +1126,19 @@
       "promptVersion": "07-openai",
       "comparisonModel": "sol",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. Requested settings do not independently verify the actual serving backend or its effort. Original producer records report only the identity/effort visible inside their run and remain unchanged; their lack of visibility does not negate the parent-selected request.",
       "buildWindow": "2026-10-06 UTC: session start 17:42:13; first implementation began 17:45:26 and completed by 17:45:33; fixed deadline 18:42:13; actual stop/freeze 18:14:25.",
       "interruptions": "Original producer records report no user interruption or suspended work, plus an authorized retry after registry sandbox failure. The parent separately confirms a midrun coordination-only cleanup reminder accepted by Jordan. Both records are preserved; no clock pause or extension is claimed. Producer reports zero workspace-owned processes and zero preview listeners at freeze.",
       "controls": "WASD / arrows walk; mouse capture or drag look; Shift faster; Esc pause; R reset; P frame panel; quality/sensitivity menus. Original measurement export is blocked by the host sandbox.",
-      "producerChecks": "Producer reports syntax, numerical navigation and production build passed: 1:12 ramp, continuous elevation, connected return route, 720-sample circuit around the main work and boundary/obstacle checks. Original receipt lists 19 file hashes; the host has not run the scene.",
+      "producerChecks": "Producer reports syntax, numerical navigation and production build passed: 1:12 ramp, continuous elevation, connected return route, 720-sample circuit around the main work and boundary/obstacle checks. Original receipt lists 19 file hashes; the host had not run the scene at admission; later screenshot capture is documented separately.",
       "performanceEvidence": "No measured performance result. The optional panel records local rAF intervals during later exploration; static route/build checks do not establish rendering speed or visual correctness.",
       "limitations": [
-        "Browser/visual/shader/interactive/performance verification is unrun by the explicit protocol; no independent host runtime pass.",
+        "The original protocol prohibited runtime verification. A post-freeze host screenshot is now available; navigation, shader coverage and performance remain unverified.",
         "Desktop WebGL 2, no touch navigation. Static daylight and shadows; entrance glazing is a boundary.",
         "Resin refraction approximates overlapping translucent interiors. Source geometry/materials remain unchanged.",
-        "No screenshot supplied or captured. Optional measurement download is blocked inside the restricted host viewer."
+        "A post-freeze host screenshot is available. Optional measurement download is blocked inside the restricted host viewer."
       ],
       "documents": [
         {
@@ -1125,19 +1150,24 @@
           "path": "RUN_RECORD.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loader.hidden ~ #error.hidden",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original museum starting view through concrete galleries with green and pale sculptural forms.",
       "webgl": "WebGL 2",
       "archiveSha256": "f69815546a2dc09363ec249a7e4e449149549f8b0aa0fbc320c9a8e23b5cf909",
       "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
       "htmlSha256": "9185c30d8dbe3d8d53511a2b089e48b4974f3c8b8a2cbf54b7a7c8725d2c4eb0",
-      "promptDisclosure": "Parent-supplied Prompt 07 base and shared initial OpenAI no-browser execution restriction. The later cleanup reminder is recorded separately; no reconstructed interruption text or independently read entrant transcript is claimed."
+      "promptDisclosure": "Parent-supplied Prompt 07 base and shared initial OpenAI no-browser execution restriction. The later cleanup reminder is recorded separately; no reconstructed interruption text or independently read entrant transcript is claimed.",
+      "preview": "preview.jpg"
     },
     {
       "id": "stillwater-astra",
@@ -1150,14 +1180,14 @@
       "producerChecks": "Producer reports eleven CPU-only checks, syntax and static build passed. These checks did not execute or render the scene.",
       "performanceEvidence": "No measured rendering performance; optional frame-interval display is for later exploration.",
       "limitations": [
-        "Desktop keyboard/mouse and WebGL 2. Interactive controls, shaders, visual appearance and performance were not tested.",
+        "Desktop keyboard/mouse and WebGL 2. A post-freeze screenshot is available; navigation, shader coverage and performance remain unverified.",
         "Tide, boat and distant scenery are fixed; water and decorative collisions are approximations.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "08",
       "promptVersion": "08-openai",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
@@ -1168,21 +1198,26 @@
           "path": "RUN_RECORD.json"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#enter:not([disabled])",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original timber workshop starting view through open doors toward a narrow pier and sheltered bay.",
       "webgl": "WebGL 2",
       "archiveSha256": "118ba0edd8983ee1d16c8733d506bc5544810d16ab120c0650f6c5ef7e376eb2",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "htmlSha256": "39b82503bdeee86b9297935c2e7d8f351d802f82ba645497c5ecd2d03dc02af0",
       "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
-      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification.",
+      "preview": "preview.jpg"
     },
     {
       "id": "low-tide-sol",
@@ -1197,12 +1232,12 @@
       "limitations": [
         "Desktop keyboard/mouse; no swimming, jumping, touch controls or boat boarding. Fixed tide and approximate water reflections.",
         "CSV download remains blocked by the unchanged host sandbox. The build uses native module preload; the optional Vite fetch fallback remains restricted by the host's existing connect-src policy.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "08",
       "promptVersion": "08-openai",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
@@ -1213,21 +1248,26 @@
           "path": "RUN_RECORD.json"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading[hidden] ~ #error[hidden]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original boathouse starting view through an open workshop doorway toward a timber pier and distant hills.",
       "webgl": "WebGL 2",
       "archiveSha256": "2a2b8dbc4d3f7f857d45bdbc257b89a3ade8fc324472dbce6c6b1eca8aa77aaf",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "htmlSha256": "cf1782ade07d28b6a414179aa2806bfae270f90443dc1617b5424cd76e882900",
       "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
-      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification.",
+      "preview": "preview.jpg"
     },
     {
       "id": "coastal-boathouse-opus",
@@ -1244,20 +1284,24 @@
       "limitations": [
         "Desktop controls. Simplified collision, inaccessible space under the pier and decorative small objects without individual collision.",
         "Water reflects an analytic sky, not the boat or pier. Original automatic resolution reduction remains unchanged.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "08",
       "promptVersion": "08-manual",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
           "path": "README.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading[style*=\"display: none\"]",
@@ -1267,13 +1311,14 @@
           "./vendor/three/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original waterfront starting view across a timber railing, a small boat, tidal shoreline and quiet bay.",
       "webgl": "WebGL 2",
       "archiveSha256": "8cb499eb4e6b4b3fca0de3180427292fe2175072722cee0c89d15dfa48d40e78",
       "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive; retained outside Git and Pages.",
       "htmlSha256": "53be8fff1641fca211f778577f1858017a9d935cbea63a59a45c8e67d5fc6c51",
-      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed."
+      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed.",
+      "preview": "preview.jpg"
     },
     {
       "id": "kestrel-bay-astra",
@@ -1286,14 +1331,14 @@
       "producerChecks": "Producer reports syntax and production build passed, plus 2,992 numeric route samples covering stairs, gallery, alcove, obstacles and rails. No scene, browser or GPU execution occurred.",
       "performanceEvidence": "No measured performance. Geometry grouping and cached shadows are implementation choices, not timing results.",
       "limitations": [
-        "Desktop keyboard/mouse and WebGL 2. Shaders, actual walking feel, appearance and frame times remain unverified.",
+        "Desktop keyboard/mouse and WebGL 2. A post-freeze screenshot is available; shader coverage, actual walking feel and frame times remain unverified.",
         "Static machinery, procedural space backdrop, inexpensive transparent glass and simplified decorative collisions.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "09",
       "promptVersion": "09-openai",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
@@ -1304,8 +1349,12 @@
           "path": "RUN_RECORD.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading",
@@ -1319,8 +1368,8 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original maintenance-bay starting view of a cylindrical machine, metal stairs and an upper service walkway.",
       "webgl": "WebGL 2",
       "archiveSha256": "2db2395a199f75d6c14204bc23d66d2305becb89bf47b1d58e1af81d2111d1bd",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
@@ -1328,7 +1377,8 @@
       "readyTextPrefix": "Ready.",
       "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
-      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification.",
+      "preview": "preview.jpg"
     },
     {
       "id": "kestrel-maintenance-sol",
@@ -1342,13 +1392,13 @@
       "performanceEvidence": "No measured performance. The optional HUD reports rolling browser presentation intervals only during later exploration.",
       "limitations": [
         "Desktop keyboard/mouse. Static machinery; small tools and cables use enclosing collision volumes.",
-        "Host launch, shader compatibility, interactive routes and performance are unverified.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Host startup was observed for the screenshot; shader coverage, interactive routes and performance remain unverified.",
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "09",
       "promptVersion": "09-openai",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
@@ -1359,21 +1409,26 @@
           "path": "RUN_RECORD.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading[hidden]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original maintenance-bay starting view facing a circular drive assembly beneath a gantry and upper walkway.",
       "webgl": "WebGL 2",
       "archiveSha256": "dd199d6312050a266fd0771fbfe4c5eb31a9beff79ac97fa34b9014b44f3ce13",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "htmlSha256": "75744063cccfd56c30684fa34e06837ccc28819389191ed6e076327818b4e7ad",
       "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
-      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification.",
+      "preview": "preview.jpg"
     },
     {
       "id": "orbital-maintenance-opus",
@@ -1390,20 +1445,24 @@
       "limitations": [
         "Exact model/effort and build timing are missing from the handoff. Desktop keyboard/mouse only; simplified collision and a smooth collision ramp beneath visible stairs.",
         "Original render-scale probes run after explicit scene opening and again shortly afterward while the start overlay remains up. This producer behavior is preserved unchanged.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "09",
       "promptVersion": "09-manual",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
           "path": "README.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#start:not([disabled])",
@@ -1413,13 +1472,14 @@
           "./vendor/three/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original maintenance-bay starting view with a suspended cylindrical machine, work light and red tool chest.",
       "webgl": "WebGL 2",
       "archiveSha256": "d5101a1599870ddc02429702165fc7eb69b5c9e792324942646970e028f95f0c",
       "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive; retained outside Git and Pages.",
       "htmlSha256": "eeb35f496a3e413ba54dc0e39770d1826463847e975ab4eb33e03d27fe930211",
-      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed."
+      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed.",
+      "preview": "preview.jpg"
     },
     {
       "id": "hearth-folio-astra",
@@ -1434,12 +1494,12 @@
       "limitations": [
         "Desktop keyboard/mouse; hillside is a backdrop and the entry door is decorative.",
         "Simplified furniture collision and a smooth support ramp beneath the visible stair. Static lights and noninteractive books/props.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "10",
       "promptVersion": "10-openai",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
@@ -1450,21 +1510,26 @@
           "path": "run-record.json"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading[hidden] ~ #error[hidden]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original library starting view with a reading desk, patterned rug, armchair and book-lined timber balcony.",
       "webgl": "WebGL 2",
       "archiveSha256": "263198e61afee749a217f4af3c161ba333e70e8e044090e5810d9a5b36df80a6",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "htmlSha256": "1f7a281dde89fd8028b607d7a1b7eedddb33be213769570012e9c229d9d18812",
       "requestedConfiguration": "GPT-6 Astra / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6 Astra at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
-      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification.",
+      "preview": "preview.jpg"
     },
     {
       "id": "aster-reading-house-sol",
@@ -1478,13 +1543,13 @@
       "performanceEvidence": "No measured performance result. Later exploration can display rolling frame intervals.",
       "limitations": [
         "Desktop keyboard/mouse; approximate furniture collision, smooth collision ramp beneath visible stairs and a simple hillside backdrop.",
-        "Browser launch, shaders, input, actual collision feel and frame performance remain unverified.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Host startup was observed for the screenshot; shader coverage, input, actual collision feel and frame performance remain unverified.",
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "10",
       "promptVersion": "10-openai",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
@@ -1495,21 +1560,26 @@
           "path": "RUN_RECORD.json"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading[hidden] ~ #error[hidden]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original library starting view with tall windows, timber stairs, bookshelves and sunlit reading tables.",
       "webgl": "WebGL 2",
       "archiveSha256": "e8a83c3dbc6549b7ef9abd4a028c7ef046743733ca3944491ee3a1a0f98eebd9",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "htmlSha256": "9c6ca03fe7e0c510e811dd242dc19ae588b681ccbaaab3964eb409b2000c0012",
       "requestedConfiguration": "GPT-6.1 Sol / XHIGH (requested)",
       "modelDisclosure": "The parent verified creation arguments requesting GPT-6.1 Sol at XHIGH. The producer could observe only its session-supplied family identity; exact serving variant and effort were not exposed for independent verification. Original producer records remain unchanged.",
-      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification."
+      "promptDisclosure": "Parent supplied the exact base and initial no-browser/no-server/no-GPU execution restriction. Parent confirms no later coordination messages were sent for these OpenAI08-10 runs. Requested settings are separate from backend verification.",
+      "preview": "preview.jpg"
     },
     {
       "id": "polar-shelter-opus",
@@ -1522,25 +1592,29 @@
       "buildWindow": "Producer record, 2026-10-06: first implementation 01:38:37 EDT (05:38:37 UTC); deadline 02:38:37 EDT (06:38:37 UTC); approximate stop 02:10 EDT (06:10 UTC).",
       "interruptions": "Partial submission. Producer and parent report an early usage-limit stop, with no other interruptions claimed. Original files are preserved without completing or repairing the scene.",
       "controls": "Mouse capture; WASD/arrows walk; Shift faster; C/Ctrl crouch; R reset; F timing; P adaptive resolution; Esc release.",
-      "producerChecks": "README claims a console-clean load and scripted walk from snow through both doors, with furniture blocking. The host did not execute the partial build.",
+      "producerChecks": "README claims a console-clean load and scripted walk from snow through both doors, with furniture blocking. The host did not execute the partial build at admission; later screenshot capture is documented separately.",
       "performanceEvidence": "Producer reports noisy synchronized hidden-pane GPU timings at 1920x1080: roughly 12-18 ms inside, 13-25 ms outside and 30-45 ms at a close deck view. Adaptive resolution was not verified through live play. These are producer claims, not independent grades.",
       "limitations": [
-        "Partial early-stop handoff; runtime and completeness remain unverified. No host repair or continuation was performed.",
+        "Partial early-stop handoff; a post-freeze screenshot is available, while completeness, interactive behavior and performance remain unverified. No host repair or continuation was performed.",
         "Fixed-open doors, simple 2D collision, no jumping, unshadowed interior lights and potentially soft adaptive resolution.",
-        "No independent host runtime QA. No screenshot was supplied or captured; no grade or score is assigned."
+        "Post-freeze screenshot capture only; no navigation or performance QA, grade or score was produced."
       ],
       "promptId": "05",
       "promptVersion": "05-shared",
       "availability": "unverified",
-      "runtimeVerification": "Host runtime QA not run",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / producer claims",
           "path": "README.md"
         },
         {
-          "label": "Host source audit / runtime unrun",
+          "label": "Initial host source audit",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#start",
@@ -1550,14 +1624,15 @@
           "./vendor/three/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "previewAvailable": true,
+      "previewAlt": "Original starting view of a red polar hut with a lit doorway, snowdrifts and mountains under blue twilight.",
       "webgl": "WebGL 2",
       "archiveSha256": "d1916f0f99c109553d6a816b8adf4ca8830f6d9b06739acec97fe4c6be5e54f6",
       "archiveKind": "Host-created preservation snapshot of supplied folder; not a producer archive; retained outside Git and Pages.",
       "htmlSha256": "eab8bbd46eecea3368e1eb78a7bc5791b0393569f7327c7d0fbd9c6e026ef8b0",
       "readyTextPrefix": "Click to enter",
-      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed."
+      "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed.",
+      "preview": "preview.jpg"
     }
   ],
   "prompts": [

@@ -134,6 +134,35 @@
     "README.md": {
       "bytes": 2990,
       "sha256": "f3398c4085f08d457287cf26ef31623ffc9457025e2cf5cb28fac160be90bab6"
+    },
+    "preview.jpg": {
+      "bytes": 71522,
+      "sha256": "19d560de28c6c1f69697001fd9f2100adc312c5d3a249365f0546f5d9717787b"
+    },
+    "preview-capture.json": {
+      "bytes": 1889,
+      "sha256": "4b156f8e3e9f4f9d0162536f33d05cefca864439db5ff21cd80817bcfc56b3da"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/builder.js",
+      "frozen/src/main.js",
+      "frozen/src/noise.js",
+      "frozen/src/shelter.js",
+      "frozen/src/textures.js",
+      "frozen/src/world.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.min.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
   }
 }

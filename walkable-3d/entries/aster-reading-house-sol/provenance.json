@@ -161,6 +161,38 @@
     "RUN_RECORD.json": {
       "bytes": 2011,
       "sha256": "050c068656ca95f0eb3b863b8a213ffebd1f918e5215cdecceeb2834bfdd90a5"
+    },
+    "preview.jpg": {
+      "bytes": 103867,
+      "sha256": "cc34c4e7c138773685c8831aaf1d951ea925a41cc9bbab25bea0548998fd5b30"
+    },
+    "preview-capture.json": {
+      "bytes": 1900,
+      "sha256": "de1635b6eca2d913186ea1f63338a308460d4d42d24d6280b84da62141218c44"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN_RECORD.json",
+      "frozen/index.html.txt",
+      "frozen/src/batch.js",
+      "frozen/src/books.js",
+      "frozen/src/layout.js",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/objects.js",
+      "frozen/src/scene.js",
+      "frozen/style.css",
+      "frozen/vendor/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
   }
 }

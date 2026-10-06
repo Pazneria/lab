@@ -124,6 +124,33 @@
     "README.md": {
       "bytes": 6551,
       "sha256": "23a23e9ed75610754025e341bb0f2ef5acccfd483f6a50ebfb56781224ac8222"
+    },
+    "preview.jpg": {
+      "bytes": 151297,
+      "sha256": "1519be70192b1b9ec105e43c57fe30902a5a7accaaba50d7a6d5ec677642d814"
+    },
+    "preview-capture.json": {
+      "bytes": 2100,
+      "sha256": "3d207b90d820c63c75bce961de65c9c091d3eeefe37c966a6764592e797e861b"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/bay.js",
+      "frozen/src/geo.js",
+      "frozen/src/main.js",
+      "frozen/src/tex.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/environments/RoomEnvironment.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
   }
 }

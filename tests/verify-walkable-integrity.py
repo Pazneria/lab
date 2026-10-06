@@ -11,8 +11,11 @@ for entry in json.loads((root / 'entries.json').read_text(encoding='utf-8'))['en
     if archive_path.exists():
         assert digest(archive_path.read_bytes()) == entry['archiveSha256']
     else:
-        assert entry.get('archiveLocation') == 'retained-outside-repository'
-        assert provenance.get('archiveRetention') and provenance['source'].get('runtimeMapping')
+        # Later frozen imports record external retention in archiveKind rather
+        # than the earlier archiveLocation/archiveRetention fields.
+        retention = entry.get('archiveKind', '').lower()
+        assert entry.get('archiveLocation') == 'retained-outside-repository' or ('retained' in retention and 'outside git and pages' in retention)
+        assert (provenance.get('archiveRetention') or provenance.get('archiveSource')) and provenance['source'].get('runtimeMapping')
     assert digest((folder / 'frozen/index.html.txt').read_bytes()) == entry['htmlSha256']
     for name, expected in provenance['files'].items():
         data = (folder / name).read_bytes()
