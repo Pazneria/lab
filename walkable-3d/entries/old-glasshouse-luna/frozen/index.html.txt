@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#17241d">
+<title>The Old Glasshouse</title>
+<style>
+  :root { color-scheme:dark; font-family:Georgia,'Times New Roman',serif; }
+  * { box-sizing:border-box; }
+  html,body { margin:0;width:100%;height:100%;overflow:hidden;background:#101812;color:#efe8ce; }
+  canvas { display:block;width:100%;height:100%;outline:none; }
+  #hud { position:fixed;inset:0;pointer-events:none; }
+  .brand { position:absolute;left:24px;top:20px;text-shadow:0 2px 14px #07110bd9;letter-spacing:.16em;font-size:10px;color:#d8d4b5;text-transform:uppercase; }
+  .brand strong { display:block;font-size:18px;letter-spacing:.12em;font-weight:500;color:#f2eedc;margin-top:5px; }
+  .readout { position:absolute;right:20px;top:18px;font:10px/1.7 ui-monospace,Consolas,monospace;text-align:right;color:#d7dac2;text-shadow:0 2px 10px #07110b;letter-spacing:.08em; }
+  .help { position:absolute;left:50%;bottom:18px;transform:translateX(-50%);white-space:nowrap;padding:9px 14px;border:1px solid #ded9bc30;border-radius:4px;background:#111b1599;backdrop-filter:blur(5px);font:10px ui-monospace,Consolas,monospace;letter-spacing:.06em;color:#eee9d5; }
+  .help kbd { font:inherit;color:#dccb8e;border:1px solid #c8bd8b50;border-radius:3px;padding:2px 5px;margin:0 2px; }
+  #veil { position:fixed;inset:0;display:grid;place-items:center;background:linear-gradient(120deg,#0b140ec9,#18211991 55%,#0b140ec4);backdrop-filter:blur(4px);z-index:3; }
+  .card { width:min(480px,calc(100vw - 34px));padding:32px 36px 28px;background:#17231deF;border:1px solid #d9d1ae46;box-shadow:0 26px 90px #0009;position:relative; }
+  .card:before,.card:after { content:"";position:absolute;width:20px;height:20px;border-color:#aeaa78;border-style:solid;opacity:.75; }
+  .card:before { left:9px;top:9px;border-width:1px 0 0 1px; }.card:after { right:9px;bottom:9px;border-width:0 1px 1px 0; }
+  .eyebrow { color:#b7b58c;font:10px ui-monospace,Consolas,monospace;letter-spacing:.22em;text-transform:uppercase; }
+  h1 { margin:12px 0 8px;font-weight:400;font-size:32px;letter-spacing:.025em;color:#f2edd8; }
+  .sub { color:#c2c7aa;font-size:14px;line-height:1.55;margin:0 0 22px; }
+  .rule { height:1px;background:linear-gradient(90deg,#9a996e75,transparent);margin:19px 0; }
+  .keys { display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;color:#d0d3bb;font:11px/1.5 ui-monospace,Consolas,monospace; }
+  .key { color:#e3d39d;display:inline-block;min-width:48px; }
+  button { pointer-events:auto;border:1px solid #c6ba805e;background:#b8ad7860;color:#fff4d7;padding:12px 18px;font:11px ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s; }
+  button:hover { background:#c5bb827d;border-color:#e0d5a2a0; }
+  .actions { display:flex;gap:10px;margin-top:22px; }
+  .quiet { background:transparent;color:#d1ceb8; }
+  .foot { color:#8d9a7f;font:9px ui-monospace,Consolas,monospace;letter-spacing:.1em;margin-top:21px; }
+  #pause { display:none; }
+  @media(max-width:560px) { .brand {left:14px;top:14px}.readout{right:12px;top:12px}.help{bottom:10px;font-size:9px;white-space:normal;max-width:calc(100vw - 20px);line-height:1.8;text-align:center}.card{padding:27px 23px}h1{font-size:27px}.keys{font-size:10px} }
+</style>
+</head>
+<body>
+<div id="veil">
+  <section class="card" id="welcome">
+    <div class="eyebrow">Glasshouse · Estate gardens · 1894</div>
+    <h1>The Old Glasshouse</h1>
+    <p class="sub">A quiet walk through a garden that outlived its keepers. Find the potting bay beyond the rear cross-aisle, then return through the other side.</p>
+    <div class="rule"></div>
+    <div class="keys">
+      <div><span class="key">W A S D</span> walk</div><div><span class="key">MOUSE</span> look around</div>
+      <div><span class="key">SHIFT</span> gentle pace</div><div><span class="key">C</span> crouch to see under foliage</div>
+      <div><span class="key">R</span> return to threshold</div>
+      <div><span class="key">ESC</span> pause / release mouse</div><div><span class="key">CLICK</span> resume looking</div>
+    </div>
+    <div class="actions"><button id="enter">Enter the glasshouse</button><button id="reset" class="quiet">Reset</button></div>
+    <div class="foot">MOUSE LOOK · HUMAN-SCALE WALKING · RESET AT ANY TIME</div>
+  </section>
+  <section class="card" id="pause">
+    <div class="eyebrow">Garden walk paused</div><h1>Take your time.</h1>
+    <p class="sub">The doors will stay open. Resume your walk or return to the threshold.</p>
+    <div class="actions"><button id="resume">Resume walk</button><button id="resetPause" class="quiet">Reset to threshold</button></div>
+    <div class="foot">CLICK RESUME TO RECAPTURE THE MOUSE</div>
+  </section>
+</div>
+<div id="hud">
+  <div class="brand">Estate gardens<strong>The Old Glasshouse</strong></div>
+  <div class="readout"><span id="perf">FRAME -- MS</span><br>WALKING PACE · R RESET</div>
+  <div class="help"><kbd>W A S D</kbd> MOVE &nbsp; <kbd>MOUSE</kbd> LOOK &nbsp; <kbd>C</kbd> CROUCH &nbsp; <kbd>R</kbd> RESET &nbsp; <kbd>ESC</kbd> PAUSE</div>
+</div>
+<script type="module">
+import * as THREE from './vendor/three.module.js';
+
+// Old Glasshouse: deliberately local, deterministic geometry and procedural textures.
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x9ba895);
+scene.fog = new THREE.FogExp2(0x929f8a, 0.014);
+const camera = new THREE.PerspectiveCamera(71, innerWidth / innerHeight, 0.07, 90);
+camera.rotation.order = 'YXZ';
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.5));
+renderer.setSize(innerWidth, innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.08;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.setClearColor(0x9ba895, 1);
+document.body.prepend(renderer.domElement);
+
+const hemi = new THREE.HemisphereLight(0xdce8ca, 0x4e4737, 1.72); scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xffe9bd, 2.05); sun.position.set(-5.5, 10, 5.3);sun.castShadow=true;
+sun.shadow.mapSize.set(1024,1024);sun.shadow.camera.left=-10;sun.shadow.camera.right=10;sun.shadow.camera.top=10;sun.shadow.camera.bottom=-10;sun.shadow.camera.near=.5;sun.shadow.camera.far=38;sun.shadow.bias=-.00022;sun.shadow.normalBias=.025;sun.shadow.radius=2;sun.shadow.autoUpdate=false;sun.shadow.needsUpdate=true;sun.shadow.camera.updateProjectionMatrix();scene.add(sun);
+const fill = new THREE.DirectionalLight(0xb4d4cf, 0.75); fill.position.set(6, 5, -8); scene.add(fill);
+const rng = (() => { let s = 0x73a9d1; return () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; }; })();
+const clamp = THREE.MathUtils.clamp;
+const unitBox = new THREE.BoxGeometry(1, 1, 1);
+const unitPlane = new THREE.PlaneGeometry(1, 1);
+const unitSphere = new THREE.SphereGeometry(1, 8, 6);
+const stemGeo = new THREE.CylinderGeometry(0.014, 0.023, 1, 5, 1);
+const batchObj = new THREE.Object3D();
+const rust = new THREE.MeshStandardMaterial({ color: 0x38534a, roughness: 0.78, metalness: 0.58 });
+const metalDark = new THREE.MeshStandardMaterial({ color: 0x263b35, roughness: 0.72, metalness: 0.55 });
+const rustFlake = new THREE.MeshStandardMaterial({ color: 0x76553b, roughness: 0.9, metalness: 0.13 });
+const timber = new THREE.MeshStandardMaterial({ color: 0x65513a, roughness: 0.93 });
+const woodLight = new THREE.MeshStandardMaterial({ color: 0x927751, roughness: 0.89 });
+const leafMat = new THREE.MeshStandardMaterial({ vertexColors: true, color: 0xffffff, roughness: 0.3, metalness: 0.015, side: THREE.DoubleSide, emissive: 0x10240b, emissiveIntensity: 0.075 });
+const leafUnderMat = leafMat;
+const petioleMat = new THREE.MeshStandardMaterial({ color: 0x466044, roughness: 0.6 });
+const clayMats = [0x9f5d3f, 0xb5724b, 0x79503c, 0xc08052].map(c => new THREE.MeshStandardMaterial({ color: c, roughness: 0.94 }));
+const stoneMat = new THREE.MeshStandardMaterial({ color: 0x797c6d, roughness: 1 });
+const mossMat = new THREE.MeshStandardMaterial({ color: 0x4c6742, roughness: 1 });
+
+function canvasTexture(draw, size=256, repeatX=1, repeatY=1) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const ctx = c.getContext('2d'); draw(ctx, size);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(repeatX, repeatY); t.anisotropy = Math.min(4, renderer.capabilities.getMaxAnisotropy());
+  return t;
+}
+const floorTex = canvasTexture((ctx,s) => {
+  ctx.fillStyle = '#766c57'; ctx.fillRect(0,0,s,s);
+  const tw=s/4, th=s/4;
+  for(let y=0;y<4;y++) for(let x=0;x<4;x++) {
+    const ox=x*tw+(y%2)*tw*.5;
+    ctx.fillStyle=['#827660','#746e5e','#8a7e65','#777360'][(x+y*3)%4];
+    ctx.fillRect(ox+2,y*th+2,tw-4,th-4);
+    for(let i=0;i<140;i++){ctx.globalAlpha=.06+rng()*.12;ctx.fillStyle=rng()>.5?'#d4b58a':'#302d27';ctx.fillRect(ox+rng()*tw,y*th+rng()*th,1+rng()*3,1+rng()*2);} ctx.globalAlpha=1;
+    if(rng()>.46){ctx.strokeStyle='#433e35';ctx.globalAlpha=.58;ctx.lineWidth=1;ctx.beginPath();const px=ox+tw*(.2+rng()*.7),py=y*th+th*(.15+rng()*.6);ctx.moveTo(px,py);ctx.lineTo(px+6+rng()*9,py+3+rng()*9);ctx.lineTo(px+4+rng()*9,py+11+rng()*7);ctx.stroke();ctx.globalAlpha=1;}
+  }
+  ctx.globalAlpha=.45;ctx.fillStyle='#31392c';for(let i=0;i<70;i++){ctx.beginPath();ctx.ellipse(rng()*s,rng()*s,4+rng()*20,3+rng()*13,rng()*3,0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;
+}, 256, 4, 8);
+const floorMat = new THREE.MeshStandardMaterial({ map: floorTex, color: 0xc2bca1, roughness: 1 });
+const soilTex = canvasTexture((ctx,s)=>{
+  ctx.fillStyle='#40382a';ctx.fillRect(0,0,s,s);
+  for(let i=0;i<1700;i++){const r=.5+rng()*3;ctx.globalAlpha=.15+rng()*.45;ctx.fillStyle=['#8b7858','#241f1a','#65704a','#a08a67','#384331'][Math.floor(rng()*5)];ctx.beginPath();ctx.ellipse(rng()*s,rng()*s,r,r*.65,rng()*3,0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;
+},256,4,8);
+const soilMat = new THREE.MeshStandardMaterial({map:soilTex,color:0xc0b697,roughness:1});
+const barkTex = canvasTexture((ctx,s)=>{
+  ctx.fillStyle='#4d3a2a';ctx.fillRect(0,0,s,s);
+  for(let i=0;i<420;i++){ctx.globalAlpha=.18+rng()*.3;ctx.strokeStyle=['#ab8660','#221c18','#72513a','#b29a74'][Math.floor(rng()*4)];ctx.lineWidth=.5+rng()*2;ctx.beginPath();const x=rng()*s;ctx.moveTo(x,0);ctx.bezierCurveTo(x-9+rng()*18,s*.35,x-8+rng()*17,s*.65,x-5+rng()*12,s);ctx.stroke();}ctx.globalAlpha=1;
+},256,1,2);
+const barkMat = new THREE.MeshStandardMaterial({map:barkTex,color:0xb5a387,roughness:.96});
+const glassTex = canvasTexture((ctx,s)=>{
+  ctx.clearRect(0,0,s,s);ctx.fillStyle='#bbc7b8';ctx.fillRect(0,0,s,s);
+  for(let i=0;i<220;i++){ctx.globalAlpha=.025+rng()*.13;ctx.fillStyle=rng()>.35?'#fff':'#33483d';ctx.beginPath();ctx.ellipse(rng()*s,rng()*s,2+rng()*21,2+rng()*13,rng()*3,0,Math.PI*2);ctx.fill();}
+  for(let i=0;i<9;i++){ctx.globalAlpha=.13;ctx.strokeStyle='#526458';ctx.lineWidth=1+rng()*3;ctx.beginPath();const x=rng()*s;ctx.moveTo(x,0);ctx.lineTo(x-5+rng()*12,s);ctx.stroke();}ctx.globalAlpha=1;
+},256);
+const glassMat = new THREE.MeshStandardMaterial({ map:glassTex, color:0xaabeb0, transparent:true, opacity:.42, roughness:.36, metalness:.11, side:THREE.DoubleSide, depthWrite:false });
+const hazeMat = new THREE.MeshBasicMaterial({ color:0xddd6a0, transparent:true, opacity:.1, depthWrite:false, side:THREE.DoubleSide });
+const shadowTex = canvasTexture((ctx,s)=>{const g=ctx.createRadialGradient(s/2,s/2,2,s/2,s/2,s*.46);g.addColorStop(0,'rgba(255,239,185,.48)');g.addColorStop(.45,'rgba(245,225,174,.22)');g.addColorStop(1,'rgba(255,240,196,0)');ctx.fillStyle=g;ctx.fillRect(0,0,s,s);},128);
+const patchMat = new THREE.MeshBasicMaterial({map:shadowTex,transparent:true,depthWrite:false,side:THREE.DoubleSide});
+const shadowPoolTex = canvasTexture((ctx,s)=>{const g=ctx.createRadialGradient(s/2,s/2,1,s/2,s/2,s*.48);g.addColorStop(0,'rgba(6,13,7,.5)');g.addColorStop(1,'rgba(6,13,7,0)');ctx.fillStyle=g;ctx.fillRect(0,0,s,s);},128);
+const contactMat = new THREE.MeshBasicMaterial({map:shadowPoolTex,transparent:true,depthWrite:false,side:THREE.DoubleSide});
+
+const boxItems=new Map(), beamItems=new Map(), cylinderItems=new Map();
+function pushItem(map,mat,matrix){if(!map.has(mat))map.set(mat,[]);map.get(mat).push(matrix.clone());}
+function box(x,y,z,sx,sy,sz,mat,parent=scene,immediate=false){
+  if(parent!==scene||immediate){const m=new THREE.Mesh(unitBox,mat);m.position.set(x,y,z);m.scale.set(sx,sy,sz);m.castShadow=false;m.receiveShadow=false;parent.add(m);return m;}
+  batchObj.position.set(x,y,z);batchObj.quaternion.identity();batchObj.rotation.set(0,0,0);batchObj.scale.set(sx,sy,sz);batchObj.updateMatrix();pushItem(boxItems,mat,batchObj.matrix);return null;
+}
+function plane(x,y,z,w,h,mat,parent=scene){const m=new THREE.Mesh(unitPlane,mat);m.position.set(x,y,z);m.scale.set(w,h,1);parent.add(m);return m;}
+function beam(a,b,width,mat=rust,depth=width){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),d=B.clone().sub(A);batchObj.position.copy(A.add(B).multiplyScalar(.5));batchObj.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());batchObj.scale.set(width,d.length(),depth);batchObj.updateMatrix();pushItem(beamItems,mat,batchObj.matrix);}
+function cylinderBetween(a,b,r1,r2,mat,segments=8){
+  const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),d=B.clone().sub(A),ratio=r1/Math.max(.0001,r2),levels=[.25,.5,.75,1,1.5,2,3.5];
+  const level=levels.reduce((p,c)=>Math.abs(c-ratio)<Math.abs(p-ratio)?c:p,levels[0]);
+  if(!cylinderItems.has(mat))cylinderItems.set(mat,new Map());const byRatio=cylinderItems.get(mat);if(!byRatio.has(level))byRatio.set(level,[]);
+  batchObj.position.copy(A.add(B).multiplyScalar(.5));batchObj.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());batchObj.scale.set(r2,d.length(),r2);batchObj.updateMatrix();byRatio.get(level).push(batchObj.matrix.clone());
+}
+function addFloor(){box(0,-.12,0,9.05,.24,15.4,floorMat);box(6.25,-.12,-6.18,3.45,.24,3.9,floorMat);box(0,-.22,8.85,9.8,.18,3.0,new THREE.MeshStandardMaterial({color:0x5f6052,roughness:1}));
+  const threshold=new THREE.MeshStandardMaterial({color:0x96907a,roughness:.95}); for(let x=-3.7;x<=3.7;x+=.72)box(x,.015,7.58,.68,.07,.38,threshold);
+}
+addFloor();
+
+// The open central bed leaves broad, joined cross-aisles at both ends.
+box(0,.08,-.45,3.02,.34,11.42,soilMat);
+const bedEdge = new THREE.MeshStandardMaterial({color:0x584739,roughness:.97});
+for(const x of [-1.53,1.53]){box(x,.13,-.45,.12,.23,11.52,bedEdge);for(let z=-5.9;z<=4.9;z+=1.1)box(x,.27,z,.16,.055,.09,woodLight);}
+for(const z of [-6.23,5.33])box(0,.13,z,3.12,.22,.12,bedEdge);
+
+// Steel skeleton: 3 m side walls, pitched roof, close enough to read from below.
+const roofEnd=-7.78, roofFront=7.66, eave=3.02, peak=4.93, half=4.52;
+for(const x of [-half,half]){
+  for(let z=roofEnd;z<=roofFront+.01;z+=1.45){
+    if(x===half && z>-7.8 && z<-4.25)continue;
+    beam([x,.12,z],[x,eave,z],.072,rust,.072);
+    box(x,.18,z,.13,.10,.16,metalDark);
+  }
+  for(const y of [.24,1.52,3.02]) beam([x,y,roofEnd],[x,y,roofFront],.062,rust,.065);
+  beam([x,eave,roofEnd],[x,eave,roofFront],.115,metalDark,.11);
+}
+// Transverse rafters and longitudinal purlins.
+for(let z=roofEnd;z<=roofFront+.01;z+=1.45){
+  beam([-half,eave,z],[0,peak,z],.065,rust,.07);
+  beam([0,peak,z],[half,eave,z],.065,rust,.07);
+  beam([-.08,peak,z],[.08,peak,z],.105,metalDark,.09);
+  for(const x of [-3.7,-2.85,-1.98,-1.08,0,1.08,1.98,2.85,3.7]){
+    const y=peak-(Math.abs(x)/half)*(peak-eave);
+    box(x,y,z,.085,.10,.13,rustFlake);
+  }
+}
+for(const x of [-3.7,-2.85,-1.98,-1.08,0,1.08,1.98,2.85,3.7]){
+  const y=peak-(Math.abs(x)/half)*(peak-eave);
+  beam([x,y,roofEnd],[x,y,roofFront],.045,rust,.05);
+}
+// Fine braces, patina streaks, and riveted feet.
+for(const z of [-6.35,-3.45,-.55,2.35,5.25]) for(const x of [-half,half]){
+  if(x===half && z<-4.15) continue;
+  beam([x,.3,z-1.05],[x,1.47,z+.28],.035,rustFlake,.035);
+  box(x+(x<0?.055:-.055),1.52,z,.038,.038,.038,rustFlake);
+}
+for(const x of [-half,half]){
+  // Cast iron gutters and down-pipes.
+  beam([x+.08,2.99,roofEnd],[x+.08,2.99,roofFront],.09,metalDark,.09);
+  for(const z of [-6.2,1.1,6.4]){cylinderBetween([x,2.9,z],[x,0.22,z],.035,.035,rust,7);beam([x-.1,.18,z],[x+.1,.18,z],.16,metalDark,.1);}
+}
+
+// Glazing is batched by plane orientation to keep transparent draw calls low.
+const sideMatrices=[], roofMatrices=[], annexMatrices=[];
+function paneMatrix(center,u,v,n,w,h){const U=u.clone().multiplyScalar(w),V=v.clone().multiplyScalar(h);const m=new THREE.Matrix4().makeBasis(U,V,n);m.setPosition(center);return m;}
+const uLeft=new THREE.Vector3(0,0,1),vUp=new THREE.Vector3(0,1,0),nLeft=new THREE.Vector3(-1,0,0),uRight=new THREE.Vector3(0,0,-1),nRight=new THREE.Vector3(1,0,0);
+for(const side of [-1,1]) for(let k=0;k<10;k++) for(let row=0;row<2;row++){
+  const z=-6.56+k*1.45, y=.91+row*1.25;
+  if(side===1 && z>-7.8 && z<-4.2)continue;
+  if((k===1&&row===1)||(k===6&&row===0&&side===-1)||(k===8&&row===1&&side===1))continue;
+  sideMatrices.push(paneMatrix(new THREE.Vector3(side*4.516,y,z),side<0?uLeft:uRight,vUp,side<0?nLeft:nRight,1.39,1.19));
+}
+const uxPos=new THREE.Vector3(.922,.388,0), uxNeg=new THREE.Vector3(-.922,.388,0), vz=new THREE.Vector3(0,0,1);
+for(const side of [-1,1]) for(let col=0;col<4;col++) for(let k=0;k<10;k++){
+  const band=col+.5, dist=band*(half/4), x=side*dist, y=peak-(dist/half)*(peak-eave), z=-6.94+k*1.45;
+  // a scatter of missing roof lights preserves the broken open-air reading
+  if((side===1&&k===3&&col===1)||(side===-1&&k===7&&col===3)||(side===1&&k===8&&col===2))continue;
+  const u=side>0?uxPos:uxNeg, n=new THREE.Vector3().crossVectors(u,vz).normalize();
+  const offset=n.clone().multiplyScalar(.028);
+  roofMatrices.push(paneMatrix(new THREE.Vector3(x,y,z).add(offset),u,vz,n,1.17,1.39));
+}
+// Gable glass above the entrance: narrow horizontal plates under the ridge.
+for(const side of [-1,1]) for(let row=0;row<3;row++){
+  const z=7.69, y=eave+.32+row*.47, halfWidth=(peak-y)/(peak-eave)*half;
+  if(halfWidth>.22) sideMatrices.push(paneMatrix(new THREE.Vector3(side*halfWidth*.51,y,z),new THREE.Vector3(1,0,0),vUp,new THREE.Vector3(0,0,1),halfWidth, .43));
+}
+function batchGlass(matrices, material=glassMat){const inst=new THREE.InstancedMesh(unitPlane,material,matrices.length);for(let i=0;i<matrices.length;i++){inst.setMatrixAt(i,matrices[i]);const t=.88+rng()*.28;inst.setColorAt(i,new THREE.Color(t,t,t));}inst.instanceMatrix.needsUpdate=true;if(inst.instanceColor)inst.instanceColor.needsUpdate=true;inst.renderOrder=2;scene.add(inst);return inst;}
+batchGlass(sideMatrices); batchGlass(roofMatrices);
+
+// Attached potting bay: open side doorway and its own lower roofline.
+const ax0=4.48, ax1=8.12, az0=-7.82, az1=-4.28, ay=2.7;
+for(const x of [ax0,ax1]) for(let z=az0;z<=az1+.001;z+=1.12){
+  if(x===ax0) continue; beam([x,.12,z],[x,ay,z],.06,rust,.06);
+}
+for(const z of [az0,az1]) beam([ax0,.2,z],[ax1,ay,z],.06,rust,.06);
+beam([ax0,.22,az0],[ax1,.22,az0],.06,metalDark,.06);beam([ax1,.22,az0],[ax1,.22,az1],.06,metalDark,.06);
+beam([ax1,ay,az0],[ax1,ay,az1],.09,metalDark,.08);
+// lean-to glazing; roof and far wall panes share the batched glass material.
+for(let j=0;j<3;j++) for(let k=0;k<3;k++){
+  const z=az0+.58+k*1.12, x=ax0+.62+j*1.05, slopeY=2.64-(x-ax0)*.19;
+  if(!(j===1&&k===1)){
+    const u=new THREE.Vector3(1,.19,0).normalize(), n=new THREE.Vector3(0,0,1);
+    annexMatrices.push(paneMatrix(new THREE.Vector3(x,slopeY,z),u,new THREE.Vector3(0,0,1),new THREE.Vector3(-u.y,u.x,0),.95,1.0));
+  }
+}
+for(let j=0;j<3;j++) for(let row=0;row<2;row++){
+  const x=ax1-.04,z=az0+.58+j*1.12,y=.94+row*1.14;
+  if(j===1&&row===0)continue;
+  annexMatrices.push(paneMatrix(new THREE.Vector3(x,y,z),new THREE.Vector3(0,0,-1),vUp,new THREE.Vector3(1,0,0),1.06,1.07));
+}
+// The annex glazing at the rear, with the access side left open.
+for(let j=0;j<3;j++) for(let row=0;row<2;row++) annexMatrices.push(paneMatrix(new THREE.Vector3(ax0+.62+j*1.05,.93+row*1.13,az0),new THREE.Vector3(1,0,0),vUp,new THREE.Vector3(0,0,-1),1.0,1.05));
+batchGlass(annexMatrices);
+for(const j of [0,1,2,3]){const x=ax0+j*.91;const y=2.64-(x-ax0)*.19;beam([x,y,az0],[x,y,az1],.05,rust,.055);}
+for(const z of [az0,az0+1.17,az0+2.34,az1]) beam([ax0,2.69,z],[ax1,2.0,z],.05,rust,.05);
+const rearGlass=[];
+for(let j=0;j<6;j++) for(let row=0;row<2;row++){
+  const x=-3.76+j*1.5, y=.92+row*1.22;
+  if(j===3&&row===1)continue;
+  rearGlass.push(paneMatrix(new THREE.Vector3(x,y,-7.755),new THREE.Vector3(1,0,0),vUp,new THREE.Vector3(0,0,-1),1.43,1.14));
+}
+batchGlass(rearGlass);
+
+// Hairline cracks use a single mesh per pane, not real-time glass simulation.
+function crack(center,u,v,w,h,seed){const pts=[];let x=-w*.38,y=h*.31;for(let i=0;i<12;i++){pts.push(center.clone().addScaledVector(u,x).addScaledVector(v,y));x+=(rng()-.5)*w*.18;y-=h/12*(.75+rng()*.6);if(i===5){pts.push(center.clone().addScaledVector(u,x).addScaledVector(v,y));x+=w*.24*(seed%2?1:-1);}}
+  const geo=new THREE.BufferGeometry().setFromPoints(pts);const line=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0xd5d8c3,transparent:true,opacity:.63,depthWrite:false}));line.renderOrder=3;scene.add(line);}
+crack(new THREE.Vector3(-4.534,2.12,-2.22),uLeft,vUp,1.35,1.16,1);
+crack(new THREE.Vector3(2.15,4.17,-.405),uxPos,vz,1.15,1.37,2);
+crack(new THREE.Vector3(-1.02,4.48,3.97),uxNeg,vz,1.15,1.37,3);
+
+// Daylight leaks and diffuse pools of warm sun on the worn flagstones.
+const lightPatches=[[-3.25,.006,3.35,2.5,3.2],[2.95,.006,1.2,2.8,2.6],[-3.1,.006,-4.15,2.2,2.7],[5.95,.006,-5.2,1.6,1.3],[1.7,.007,7.1,3.3,1.0]];
+for(const [x,y,z,w,h] of lightPatches){const m=plane(x,y,z,w,h,patchMat);m.rotation.x=-Math.PI/2;m.material=patchMat;}
+
+// Batches for leaves, petioles, stones, moss, and rivets.
+const leafGeos=[];
+function makeLeafGeometry(kind){
+  const along=18, across=10, pos=[],uv=[],color=[],idx=[];
+  const dark=new THREE.Color(kind===1?0x294c2e:0x315c32), mid=new THREE.Color(kind===3?0x80a56b:0x5d9850), light=new THREE.Color(0x9ab876);
+  for(let i=0;i<=along;i++){
+    const t=i/along, base=Math.pow(Math.sin(Math.PI*t),kind===1?.38:.77);
+    for(let j=0;j<=across;j++){
+      const u=j/across*2-1, abs=Math.abs(u);let notch=1;
+      if(kind===2 && t>.24 && t<.92)notch-=.23*Math.pow(Math.max(0,Math.sin(t*39+abs*1.1)),9)*abs;
+      if(kind===3 && t<.3)notch*=.65+.35*t/.3;
+      const width=(kind===1?.23:kind===3?.46:.57)*base*notch;
+      const x=u*width+Math.sin(t*Math.PI)*.018;
+      const z=Math.sin(t*Math.PI)*(.06+(1-u*u)*.065)+Math.sin(t*Math.PI*2)*.018+u*u*.008;
+      pos.push(x,t,z);uv.push(j/across,t);
+      const vein=Math.max(0,1-abs*23);const c=dark.clone().lerp(mid, .32+Math.sin(t*Math.PI)*.44).lerp(light,vein*.24);color.push(c.r,c.g,c.b);
+      if(i<along&&j<across){const a=i*(across+1)+j,b=a+across+1;idx.push(a,b,a+1,b,b+1,a+1);}
+    }
+  }
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setAttribute('color',new THREE.Float32BufferAttribute(color,3));g.setIndex(idx);g.computeVertexNormals();return g;
+}
+for(let k=0;k<4;k++)leafGeos.push(makeLeafGeometry(k));
+const leafItems=[[],[],[],[]], stemItems=[], pebbleItems=[], mossItems=[], boltItems=[];
+const tmpObj=new THREE.Object3D(), upY=new THREE.Vector3(0,1,0);
+function randColor(palette){return new THREE.Color(palette[Math.floor(rng()*palette.length)]);}
+const palettes=[[0x77a863,0x4d8850,0x91b66f,0x659b59,0x427c47],[0x6b9a4e,0x719e64,0xa0b36f,0x50834d],[0x528b4e,0x3e7945,0x79a361,0x9bb277],[0x8da768,0x7c9c5a,0xb0b979,0x668e58]];
+function emitLeaf(base,dir,len,wid,kind,palette=0){
+  const d=dir.clone().normalize(), q=new THREE.Quaternion().setFromUnitVectors(upY,d);q.multiply(new THREE.Quaternion().setFromAxisAngle(upY,(rng()-.5)*.55));
+  const stemLen=.12+Math.min(.18,len*.12), leafBase=base.clone().addScaledVector(d,stemLen);
+  const smid=base.clone().add(leafBase).multiplyScalar(.5);tmpObj.position.copy(smid);tmpObj.quaternion.setFromUnitVectors(upY,d);tmpObj.scale.set(.7,stemLen,.7);tmpObj.updateMatrix();stemItems.push({matrix:tmpObj.matrix.clone(),color:randColor([0x3c6242,0x5d794b,0x7e8854])});
+  tmpObj.position.copy(leafBase);tmpObj.quaternion.copy(q);tmpObj.scale.set(wid,len,.88);tmpObj.updateMatrix();leafItems[kind].push({matrix:tmpObj.matrix.clone(),color:randColor(palettes[palette])});
+}
+function addTrunk(x,z,height,radius=0.14,lean=0){
+  const n=6, points=[];
+  for(let i=0;i<=n;i++){const t=i/n;points.push(new THREE.Vector3(x+lean*t+Math.sin(t*5+x)*.045*t,.24+t*height,z+Math.cos(t*4+z)*.035*t));}
+  for(let i=0;i<n;i++)cylinderBetween(points[i].toArray(),points[i+1].toArray(),radius*(1-(i+1)/n*.68),radius*(1-i/n*.68),barkMat,9);
+  // broken flared roots catch the ground and moss around the bole
+  for(let a=0;a<4;a++){const ang=a*Math.PI/2+rng()*.45, ex=x+Math.cos(ang)*(.3+rng()*.23),ez=z+Math.sin(ang)*(.3+rng()*.23);cylinderBetween([x,.27,z],[ex,.25,ez],.013,.045,barkMat,6);}
+  for(let y=.42;y<height*.78;y+=.34){const ring=new THREE.Mesh(new THREE.TorusGeometry(radius*(1-y/height*.62),.009,4,9),woodLight);ring.position.set(x+lean*y/height,.24+y,z);ring.rotation.x=Math.PI/2;scene.add(ring);}
+  return points[n];
+}
+function fanPlant(x,z,count=9,baseY=.32,spread=.7,palette=0){
+  const base=new THREE.Vector3(x,baseY,z);
+  for(let i=0;i<count;i++){
+    const a=(i/count)*Math.PI*2+rng()*.25, elev=.42+rng()*.56,len=.65+rng()*.67;
+    const d=new THREE.Vector3(Math.cos(a)*spread,elev,Math.sin(a)*spread);
+    const kind=[0,2,3][Math.floor(rng()*3)];emitLeaf(base,d,len,.72+rng()*.65,kind,palette);
+  }
+  // tightly rolled new spear, the fresh high note among older leaves
+  for(let i=0;i<2;i++)emitLeaf(base,new THREE.Vector3((rng()-.5)*.2,1.5+rng()*.45,(rng()-.5)*.2),.8+rng()*.45,.24,1,palette);
+}
+function lancePlant(x,z,n=7,baseY=.3,palette=1){
+  const base=new THREE.Vector3(x,baseY,z);
+  for(let i=0;i<n;i++){const a=i/n*Math.PI*2+rng()*.22, tilt=.22+rng()*.5;emitLeaf(base,new THREE.Vector3(Math.cos(a)*tilt,.75+rng()*.55,Math.sin(a)*tilt),1.05+rng()*.78,.72+rng()*.35,1,palette);}
+  emitLeaf(base,new THREE.Vector3(.04,1.68,.02),1.14,.42,1,palette);
+}
+function palm(x,z,h=2.4){
+  const crown=addTrunk(x,z,h,.115,.18*(rng()-.5));
+  for(let f=0;f<6;f++){
+    const a=f/6*Math.PI*2+rng()*.2, L=1.45+rng()*.62, n=12;
+    const spineEnd=crown.clone().add(new THREE.Vector3(Math.cos(a)*L*.78,-.42+rng()*.2,Math.sin(a)*L*.78));
+    cylinderBetween(crown.toArray(),spineEnd.toArray(),.008,.024,petioleMat,5);
+    for(let j=1;j<n;j++){
+      const t=j/n, p=crown.clone().lerp(spineEnd,t), side=new THREE.Vector3(-Math.sin(a),0,Math.cos(a));
+      const sideLen=(.12+.32*Math.sin(t*Math.PI))*(.85+rng()*.3);
+      for(const s of [-1,1]){const b=p.clone().addScaledVector(side,s*.015);const d=side.clone().multiplyScalar(s*.8).add(new THREE.Vector3(Math.cos(a)*.1,.25+.15*(1-t),Math.sin(a)*.1));emitLeaf(b,d,sideLen,.64,1,j%3===0?2:1);}
+    }
+  }
+}
+function fern(x,z,size=.72,palette=2){
+  const base=new THREE.Vector3(x,.25,z), fronds=7;
+  for(let f=0;f<fronds;f++){
+    const a=f/fronds*Math.PI*2+rng()*.12,L=size*(.82+rng()*.38), tip=base.clone().add(new THREE.Vector3(Math.cos(a)*L,.45+L*.65,Math.sin(a)*L));
+    cylinderBetween(base.toArray(),tip.toArray(),.004,.012,petioleMat,5);
+    const side=new THREE.Vector3(-Math.sin(a),0,Math.cos(a));
+    for(let j=1;j<12;j++){
+      const t=j/13,p=base.clone().lerp(tip,t), leaflet=(.08+.25*Math.sin(t*Math.PI))*(.83+rng()*.34);
+      for(const s of [-1,1]){
+        const d=side.clone().multiplyScalar(s*.9).add(new THREE.Vector3(Math.cos(a)*.08,.22+.13*(1-t),Math.sin(a)*.08));
+        emitLeaf(p,d,leaflet,.68,1,palette);
+      }
+    }
+  }
+}
+
+// Tall specimens set a different canopy against each aisle; exposed lower stems
+// and small rosettes keep a view beneath the glossy leaves.
+const treeCanopies=[
+  [-.77,-5.13,0], [.74,-4.25,1], [-.84,-2.98,2], [.79,-1.8,1],
+  [-.73,-.35,3], [.82,.7,0], [-.82,2.12,2], [.78,3.28,1],
+  [-.72,4.34,3]
+];
+for(const [x,z,type] of treeCanopies){
+  const baseY=.3+rng()*.17;
+  if(type===1)lancePlant(x,z,8,baseY,1);
+  else fanPlant(x,z,9+rng()*3|0,baseY,.66,type);
+  if(type===3 && rng()>.4){const top=addTrunk(x+.08,z,.84,.075,.08);for(let i=0;i<4;i++){const a=i*Math.PI/2;emitLeaf(top,new THREE.Vector3(Math.cos(a)*.46,.25,Math.sin(a)*.46),.64,.62,3,3);}}
+}
+palm(-.13,-2.02,2.55); palm(.08,2.43,2.72);
+const tallTop=addTrunk(.36,.12,2.2,.17,.16);
+fanPlant(tallTop.x,tallTop.z,11, tallTop.y,.58,0);
+const caneTop=addTrunk(-.43,4.08,1.65,.115,-.12);
+fanPlant(caneTop.x,caneTop.z,8,caneTop.y,.62,2);
+
+// Ferns make a lace-like middle layer; calathea and juvenile philodendrons sit
+// along the bed edges where the camera can inspect both upper and lower faces.
+for(const [x,z,s] of [[-1.16,-4.54,.46],[-1.17,-2.54,.52],[-1.12,-.68,.48],[-1.15,1.36,.55],[-1.15,3.56,.46],[1.13,-3.35,.5],[1.13,-1.1,.42],[1.12,1.08,.52],[1.14,3.9,.49]])fern(x,z,s,x<0?2:1);
+for(const x of [-1.17,1.17])for(const z of [-5.42,-3.92,-2.22,-.12,1.72,3.03,4.72]){
+  const b=new THREE.Vector3(x,.26,z), n=5+(rng()*3|0);
+  for(let i=0;i<n;i++){const a=i/n*Math.PI*2+rng()*.22,d=new THREE.Vector3(Math.cos(a)*(.22+rng()*.18),.28+rng()*.34,Math.sin(a)*(.22+rng()*.18));emitLeaf(b,d,.32+rng()*.25,.5+rng()*.34,i%5===0?3:0,x<0?3:0);}
+}
+// A trailing aroid climbs two uprights, with new leaves reaching the roof frame.
+for(const [x,z] of [[-3.15,-1.55],[3.18,2.35],[-4.02,4.2]]){
+  const pts=[];for(let i=0;i<=8;i++){const t=i/8;pts.push(new THREE.Vector3(x+Math.sin(t*8+z)*.18,.22+t*2.42,z+Math.cos(t*7+x)*.18));}
+  const curve=new THREE.CatmullRomCurve3(pts),tube=new THREE.Mesh(new THREE.TubeGeometry(curve,28,.027,5,false),new THREE.MeshStandardMaterial({color:0x476245,roughness:.78}));scene.add(tube);
+  for(let i=1;i<8;i+=2){const t=i/8,p=curve.getPoint(t),a=t*17;emitLeaf(p,new THREE.Vector3(Math.cos(a)*.45,.24,Math.sin(a)*.45),.42+rng()*.23,.66,3,3);}
+}
+// Thin runners hang from the roof where the glass panels are broken.
+for(const [x,z] of [[-1.8,-.8],[1.95,-3.9],[.9,1.2]]){
+  const curve=new THREE.CatmullRomCurve3([new THREE.Vector3(x,4.15,z),new THREE.Vector3(x+.12,3.6,z+.08),new THREE.Vector3(x-.08,3.05,z+.16),new THREE.Vector3(x+.18,2.5,z+.19)]);
+  scene.add(new THREE.Mesh(new THREE.TubeGeometry(curve,18,.018,4,false),new THREE.MeshStandardMaterial({color:0x4e6546,roughness:.88})));
+  for(let i=1;i<4;i++){const p=curve.getPoint(i/4);emitLeaf(p,new THREE.Vector3(i%2?.42:-.4,.08,.08),.39,.55,3,2);}
+}
+// Moss and gravel at the base of the bed break up the dark soil surface.
+for(let i=0;i<270;i++){
+  const x=-1.43+rng()*2.86,z=-6.05+rng()*11.2;
+  tmpObj.position.set(x,.255+rng()*.014,z);tmpObj.rotation.set(rng()*.1,rng()*Math.PI,rng()*.1);
+  const isMoss=rng()<.48, scale=isMoss?.025+rng()*.09:.018+rng()*.075;
+  tmpObj.scale.set(scale*(.8+rng()),isMoss?.018:scale*.56,scale*(.7+rng()));tmpObj.updateMatrix();
+  (isMoss?mossItems:pebbleItems).push({matrix:tmpObj.matrix.clone(),color:randColor(isMoss?[0x334a2e,0x52673a,0x657348]:[0x635b46,0x94866c,0x423d34,0xaaa083])});
+}
+
+function buildBatch(items,geometry,material,foliageShadow=false){
+  if(!items.length)return null;const mesh=new THREE.InstancedMesh(geometry,material,items.length);mesh.castShadow=foliageShadow;mesh.receiveShadow=foliageShadow;
+  for(let i=0;i<items.length;i++){mesh.setMatrixAt(i,items[i].matrix);mesh.setColorAt(i,items[i].color);}
+  mesh.instanceMatrix.needsUpdate=true;if(mesh.instanceColor)mesh.instanceColor.needsUpdate=true;mesh.computeBoundingSphere();scene.add(mesh);return mesh;
+}
+for(let i=0;i<leafGeos.length;i++)buildBatch(leafItems[i],leafGeos[i],leafMat,true);
+buildBatch(stemItems,stemGeo,petioleMat);
+buildBatch(pebbleItems,unitSphere,stoneMat);buildBatch(mossItems,unitSphere,mossMat);
+
+// Small, handmade details: terracotta, care tags, pruning table, hose, watering can.
+function makePot(x,y,z,r=.26,h=.34,plant=true){
+  const points=[new THREE.Vector2(r*.51,0),new THREE.Vector2(r*.62,h*.09),new THREE.Vector2(r*.84,h*.73),new THREE.Vector2(r,h*.94),new THREE.Vector2(r*.96,h),new THREE.Vector2(r*.83,h*.96),new THREE.Vector2(r*.76,h*.76)];
+  const mat=clayMats[Math.floor(rng()*clayMats.length)],mesh=new THREE.Mesh(new THREE.LatheGeometry(points,14),mat);mesh.position.set(x,y,z);scene.add(mesh);
+  const lip=new THREE.Mesh(new THREE.TorusGeometry(r*.97,.018,5,18),mat);lip.rotation.x=Math.PI/2;lip.position.set(x,y+h,z);scene.add(lip);
+  const dirt=new THREE.Mesh(new THREE.CircleGeometry(r*.78,14),new THREE.MeshStandardMaterial({color:0x31291f,roughness:1}));dirt.rotation.x=-Math.PI/2;dirt.position.set(x,y+h*.78,z);scene.add(dirt);
+  if(plant){const b=new THREE.Vector3(x,y+h*.82,z);for(let i=0;i<5;i++){const a=i/5*Math.PI*2;emitLeaf(b,new THREE.Vector3(Math.cos(a)*.4,.7,Math.sin(a)*.4),.38+rng()*.22,.58,1,1);}}
+  return h;
+}
+function makeTag(x,y,z,label,rot=0){
+  const mat=new THREE.MeshStandardMaterial({color:0xc9be91,roughness:1});
+  const stick=box(x,y+.27,z,.018,.55,.02,timber,scene,true);stick.rotation.z=(rng()-.5)*.1;
+  const plaque=box(x,y+.51,z,.23,.13,.035,mat,scene,true);plaque.rotation.y=rot;
+  const c=document.createElement('canvas');c.width=256;c.height=128;const cx=c.getContext('2d');cx.fillStyle='#e0d4a7';cx.fillRect(0,0,256,128);cx.fillStyle='#45533c';cx.font='bold 27px Georgia';cx.fillText(label,12,54);cx.font='18px monospace';cx.fillText('BED 1894',12,91);
+  const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;const face=new THREE.Mesh(new THREE.PlaneGeometry(.21,.105),new THREE.MeshBasicMaterial({map:t,side:THREE.DoubleSide}));face.position.set(x,y+.51,z+(Math.cos(rot)*.021));face.rotation.y=rot;scene.add(face);
+}
+for(const [x,z,label] of [[-1.18,-5.05,'MONSTERA'],[-1.18,-2.12,'TREE FERN'],[1.18,.1,'BANANA'],[1.17,3.7,'PALM']])makeTag(x,.15,z,label,x<0?-.18:.18);
+// A few neglected pots along the side apron and clustered in the work bay.
+for(const [x,z,r] of [[-3.73,3.2,.25],[-3.72,-2.6,.29],[3.7,4.1,.25],[3.7,-2.0,.31],[5.04,-5.28,.27],[7.63,-5.45,.25],[7.53,-7.52,.31],[5.02,-7.12,.28]])makePot(x,.02,z,r,.34+rng()*.16,true);
+makeTag(5.04,.16,-5.28,'CUTTINGS',-.12);
+
+// Workbench planks and a shelf of old glass jars.
+for(const z of [-7.46,-6.98,-6.5]){
+  box(6.61,.76,z,2.65,.11,.21,woodLight);
+  for(const x of [5.45,7.78])box(x,.4,z,.1,.74,.11,timber);
+}
+for(let x=5.47;x<=7.77;x+=.77){box(x,.46,-6.5,.09,.82,.09,woodLight);box(x,.91,-6.5,.1,.06,.1,timber);}
+box(6.6,1.34,-7.58,2.9,.08,.36,timber);for(const x of [5.3,7.9]){box(x,1.09,-7.58,.07,.55,.34,woodLight);}
+for(const x of [5.55,6.25,7.12,7.6]){
+  const jar=new THREE.Mesh(new THREE.CylinderGeometry(.09,.12,.26,10),new THREE.MeshStandardMaterial({color:x<6?0x727e69:0x869080,transparent:true,opacity:.68,roughness:.3,metalness:.05}));jar.position.set(x,1.51,-7.57);scene.add(jar);
+  const lid=new THREE.Mesh(new THREE.CylinderGeometry(.095,.095,.025,10),metalDark);lid.position.set(x,1.65,-7.57);scene.add(lid);
+}
+// Watering can, trowel, pruning shears, and faded inventory board.
+const canMat=new THREE.MeshStandardMaterial({color:0x73816d,roughness:.43,metalness:.68});
+const canBody=new THREE.Mesh(new THREE.CylinderGeometry(.19,.24,.46,14),canMat);canBody.position.set(6.02,1.18,-7.08);scene.add(canBody);
+const canTop=new THREE.Mesh(new THREE.CylinderGeometry(.16,.19,.07,14),canMat);canTop.position.set(6.02,1.45,-7.08);scene.add(canTop);
+cylinderBetween([6.18,1.24,-7.08],[6.49,1.46,-7.06],.023,.055,canMat,9);
+const handle=new THREE.Mesh(new THREE.TorusGeometry(.19,.025,5,12,Math.PI),canMat);handle.position.set(6.02,1.48,-7.08);handle.rotation.z=Math.PI;scene.add(handle);
+beam([6.96,1.47,-7.4],[7.26,1.47,-7.12],.035,rustFlake,.035);beam([7.1,1.46,-7.27],[7.24,1.46,-7.12],.02,metalDark,.018);
+const boardMat=new THREE.MeshStandardMaterial({color:0x52624a,roughness:.95});box(7.95,1.83,-5.58,.045,.54,1.18,boardMat);
+const boardCanvas=document.createElement('canvas');boardCanvas.width=512;boardCanvas.height=256;const bc=boardCanvas.getContext('2d');bc.fillStyle='#c3bb95';bc.fillRect(0,0,512,256);bc.fillStyle='#485742';bc.font='bold 38px Georgia';bc.fillText('POTTING  BAY',20,65);bc.font='23px monospace';bc.fillText('SEED · CUT · TEND',20,116);bc.fillText('GLASSHOUSE  /  EAST',20,163);const boardTex=new THREE.CanvasTexture(boardCanvas);boardTex.colorSpace=THREE.SRGBColorSpace;
+const boardFace=new THREE.Mesh(new THREE.PlaneGeometry(.5,1.1),new THREE.MeshBasicMaterial({map:boardTex}));boardFace.position.set(7.923,1.83,-5.58);boardFace.rotation.y=Math.PI/2;scene.add(boardFace);
+
+// A coiled green hose slumps below the work surface and along the sill.
+const hosePts=[];for(let i=0;i<=110;i++){const t=i/110,ang=t*Math.PI*5,rad=.52-.22*t;hosePts.push(new THREE.Vector3(5.92+Math.cos(ang)*rad,.08+Math.sin(ang*.5)*.035,-5.95+Math.sin(ang)*rad));}
+const hoseCurve=new THREE.CatmullRomCurve3(hosePts);scene.add(new THREE.Mesh(new THREE.TubeGeometry(hoseCurve,130,.035,7,false),new THREE.MeshStandardMaterial({color:0x617a48,roughness:.74})));
+const hoseTail=new THREE.CatmullRomCurve3([hosePts[hosePts.length-1],new THREE.Vector3(5.48,.08,-5.61),new THREE.Vector3(4.95,.04,-5.15),new THREE.Vector3(4.7,.04,-4.8)]);scene.add(new THREE.Mesh(new THREE.TubeGeometry(hoseTail,24,.032,6,false),new THREE.MeshStandardMaterial({color:0x617a48,roughness:.78})));
+
+// Merge repeated fixed hardware into a few instanced draws. The leaves, glazing,
+// soil flecks, braces, rail, and shelves stay on the same draw-call budget.
+function flushInstances(groups,geometry,casts=false){
+  for(const [material,matrices] of groups){if(!matrices.length)continue;const mesh=new THREE.InstancedMesh(geometry,material,matrices.length);for(let i=0;i<matrices.length;i++)mesh.setMatrixAt(i,matrices[i]);mesh.instanceMatrix.needsUpdate=true;mesh.castShadow=casts;mesh.receiveShadow=material===floorMat||material===soilMat;mesh.computeBoundingSphere();scene.add(mesh);}
+}
+
+// Caged sash, old hinges, a loose terracotta shard and wet green bloom.
+for(const y of [.28,1.5,2.93])for(const x of [-4.44,4.44]){
+  if(x===4.44)continue;
+  box(x,y,1.2,.018,.13,1.02,rustFlake);
+}
+const puddleMat=new THREE.MeshBasicMaterial({color:0x597457,transparent:true,opacity:.15,depthWrite:false});
+for(const [x,z,s] of [[-4.16,-3.4,.42],[4.08,3.7,.55],[-4.1,1.7,.31],[7.97,-6.22,.4]]){const p=plane(x,.008,z,s,s*.58,puddleMat);p.rotation.x=-Math.PI/2;}
+
+// Boot-worn metal rail at the threshold and the outer step stones.
+for(const x of [-4.5,4.5]){box(x,1.51,7.62,.13,3.02,.14,rust);box(x,3.05,7.62,.12,.12,.16,rustFlake);}
+beam([-4.5,3.02,7.62],[0,4.93,7.62],.065,rust,.07);beam([0,4.93,7.62],[4.5,3.02,7.62],.065,rust,.07);
+for(let x=-3.9;x<=3.91;x+=1.3)box(x,.075,9.4,1.18,.13,1.0,new THREE.MeshStandardMaterial({color:0x6e705e,roughness:1}));
+
+// Soft contact shade beneath stems and warm light on the rear turn.
+for(const [x,z,w] of [[-.5,-2.1,1.4],[.4,2.4,1.35],[-.8,3.9,1.1],[5.8,-6.8,1.6]]){const m=plane(x,.002,z,w,w*1.35,contactMat);m.rotation.x=-Math.PI/2;}
+
+// The human-scale visitor stays on the paths, slides along edges, and cannot
+// pass through the central bed, glazed walls, or potting table.
+const start={x:0,z:9.05,yaw:0,pitch:0}, player={x:start.x,z:start.z,yaw:start.yaw,pitch:start.pitch};
+let eyeHeight=1.64;
+const keys=new Set();
+function reset(){player.x=start.x;player.z=start.z;player.yaw=start.yaw;player.pitch=0;eyeHeight=1.64;camera.rotation.set(0,0,0,'YXZ');camera.position.set(player.x,eyeHeight,player.z);}
+function canStand(x,z){
+  const outside=z>7.95;
+  if(outside){if(Math.abs(x)>4.68||z>10.08)return false;}
+  else if(z< -7.48||x < -4.19)return false;
+  if(!outside&&x>4.19 && !(z>-7.48&&z<-4.58))return false;
+  if(x>7.82)return false;
+  if(x>-1.76&&x<1.76&&z>-6.46&&z<5.56)return false;
+  // keep a soft shoulder from the workbench and the fixed jars
+  if(x>4.84&&x<8.18&&z>-7.82&&z<-6.2)return false;
+  return true;
+}
+function move(dt){
+  const forward=(keys.has('KeyW')||keys.has('ArrowUp')?1:0)-(keys.has('KeyS')||keys.has('ArrowDown')?1:0);
+  const strafe=(keys.has('KeyD')||keys.has('ArrowRight')?1:0)-(keys.has('KeyA')||keys.has('ArrowLeft')?1:0);
+  if(!forward&&!strafe)return;
+  const norm=1/Math.hypot(forward,strafe),pace=keys.has('ShiftLeft')||keys.has('ShiftRight')?2.3:3.05;
+  const f=forward*norm*pace*dt,s=strafe*norm*pace*dt,yaw=player.yaw;
+  const dx=-Math.sin(yaw)*f+Math.cos(yaw)*s,dz=-Math.cos(yaw)*f-Math.sin(yaw)*s;
+  if(canStand(player.x+dx,player.z))player.x+=dx;
+  if(canStand(player.x,player.z+dz))player.z+=dz;
+  camera.position.set(player.x,1.64,player.z);
+}
+
+const veil=document.getElementById('veil'), welcome=document.getElementById('welcome'), pause=document.getElementById('pause');
+function showPause(){veil.style.display='grid';welcome.style.display='none';pause.style.display='block';}
+function startWalk(){renderer.domElement.requestPointerLock?.();}
+document.getElementById('enter').addEventListener('click',startWalk);
+document.getElementById('resume').addEventListener('click',startWalk);
+document.getElementById('reset').addEventListener('click',()=>reset());
+document.getElementById('resetPause').addEventListener('click',()=>{reset();showPause();});
+document.addEventListener('pointerlockchange',()=>{
+  const locked=document.pointerLockElement===renderer.domElement;
+  if(locked){veil.style.display='none';}
+  else if(veil.style.display==='none')showPause();
+});
+document.addEventListener('pointerlockerror',()=>showPause());
+document.addEventListener('mousemove',e=>{if(document.pointerLockElement!==renderer.domElement)return;player.yaw-=e.movementX*.00215;player.pitch=clamp(player.pitch-e.movementY*.00205,-1.42,1.42);camera.rotation.set(player.pitch,player.yaw,0,'YXZ');});
+window.addEventListener('keydown',e=>{keys.add(e.code);if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='KeyR')reset();});
+window.addEventListener('keyup',e=>keys.delete(e.code));window.addEventListener('blur',()=>keys.clear());
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight);});
+flushInstances(boxItems,unitBox,true);flushInstances(beamItems,unitBox,true);
+for(const [material,levels] of cylinderItems)for(const [ratio,matrices] of levels){
+  const geo=new THREE.CylinderGeometry(ratio,1,1,8,1,false),mesh=new THREE.InstancedMesh(geo,material,matrices.length);
+  for(let i=0;i<matrices.length;i++)mesh.setMatrixAt(i,matrices[i]);mesh.instanceMatrix.needsUpdate=true;mesh.castShadow=material===barkMat||material===petioleMat;mesh.computeBoundingSphere();scene.add(mesh);
+}
+reset();
+let last=performance.now(),perfAt=last,frames=0,msMean=16.7;
+function frame(now){requestAnimationFrame(frame);const dt=Math.min(.045,(now-last)/1000||0);last=now;const targetEye=keys.has('KeyC')?1.04:1.64;eyeHeight=THREE.MathUtils.damp(eyeHeight,targetEye,9,dt);if(document.pointerLockElement===renderer.domElement)move(dt);camera.position.y=eyeHeight;renderer.render(scene,camera);frames++;const ms=now-perfAt;if(ms>450){msMean=ms/frames;document.getElementById('perf').textContent=`FRAME ${msMean.toFixed(1)} MS  ·  ${(1000/msMean).toFixed(0)} FPS`;frames=0;perfAt=now;}}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

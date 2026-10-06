@@ -1,0 +1,94 @@
+{
+  "entry": "old-glasshouse-luna",
+  "importedAt": "2026-10-06T05:11:47.443785+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-2 (host preservation snapshot; no producer ZIP supplied)",
+  "archiveSha256": "e8e6ec46c429e48617fdf3c23a70bd7531ffdcd71a6bf4493be19c962dad2093",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/vendor/three.module.js": "vendor/three.module.js",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt"
+    },
+    "preview": "Frozen original reset view; aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Original HTML retained byte-for-byte as index.html.txt. All relative dependency paths work without substitutions; no scene, input, rendering or performance changes."
+  ],
+  "securityAudit": {
+    "result": "No unsafe access or malicious behavior found in scoped read-only runtime review.",
+    "scope": "Entire authored HTML/CSS/module, procedural geometry/textures, imports and browser API use. No authored external requests, credentials, telemetry, storage, workers, dynamic evaluation or parent navigation.",
+    "dependencies": "Both Three.js 0.185.1 module files match the previously admitted Asterion bytes exactly. Supplied MIT license retained byte-for-byte.",
+    "boundary": "Existing opaque sandbox and entry-scoped CSP; one active entrant, no same-origin or downloads."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 43644,
+      "sha256": "444250270b5272677a5bd510ecd2690d0ef1c091f6d01c7f8f06dabc1f55297d"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 650153,
+      "sha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1443056,
+      "sha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "README.md": {
+      "bytes": 1621,
+      "sha256": "69f8ba6fc4151f3188ea1283aae776d22b621b5f58bba74492f4c43cce15825f"
+    },
+    "BUILD-NOTES.md": {
+      "bytes": 1803,
+      "sha256": "ffb702f1c1f724f408d18d6ac716c6d96ad4fc59c9a72f1c4d94c33201fa90a5"
+    },
+    "preview.jpg": {
+      "bytes": 91782,
+      "sha256": "d8b9f25f920682a46ae22e2273d0cea2daa941b77c387a8ae193b58ba02256e4"
+    },
+    "host-verification.json": {
+      "bytes": 1181,
+      "sha256": "2837bcbf3f861420599748bd47a81ca56e530c7bf9f62b3fd88810b59b332317"
+    }
+  },
+  "archiveRetention": "Host snapshot and original source remain outside repository and Pages. No ZIP or raw evidence will be published.",
+  "prompt": {
+    "version": "04-shared",
+    "sha256": "3d1760548d9dfb0c48ae3d2de8916526323bd2e59e48245a31cbfe737beee396",
+    "source": "Parent supplied the exact complete submitted text and confirmed identical Prompt 04 for all entrants. Entrant conversation threads were not independently read."
+  },
+  "producerEvidence": {
+    "functionalChecksReported": 9,
+    "performance": "No reliable visual capture or browser performance results supplied. Live HUD is an average frame interval estimate, not long-frame evidence or a benchmark grade."
+  },
+  "hostVerification": "host-verification.json",
+  "status": "Admitted frozen source for Prompt 04; no scene or behavior changes.",
+  "publication": {
+    "publishedFiles": [
+      "BUILD-NOTES.md",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "host-preview.png": {
+      "bytes": 742677,
+      "sha256": "cdeb3d2bddc421721e880eed5eaec1186efd709f67c76f3bcd4207c3329c7c06"
+    },
+    "original.zip": {
+      "bytes": 435848,
+      "sha256": "e8e6ec46c429e48617fdf3c23a70bd7531ffdcd71a6bf4493be19c962dad2093"
+    }
+  }
+}

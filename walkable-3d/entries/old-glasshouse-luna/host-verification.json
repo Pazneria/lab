@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-10-06T05:11:48.496Z",
+  "kind": "Host launch/input/lifecycle verification only; no grade or performance measurement",
+  "errors": [],
+  "external": [],
+  "warnings": [
+    "THREE.WebGLShadowMap: PCFSoftShadowMap has been deprecated. Using PCFShadowMap instead."
+  ],
+  "failedAssets": [],
+  "checks": [
+    "Static initial page; no entrant requests or context before opening",
+    "Actual WebGL raster changes with real walking/mouse input and returns exactly to original canvas pixels with R reset",
+    "Opaque iframe denies parent DOM and local storage access",
+    "Pointer release restores parent exit focus; close destroys child; repeated open/back/forward stays unloaded"
+  ],
+  "diagnostics": {
+    "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "drawingBuffer": [
+      1382,
+      818
+    ]
+  },
+  "resetRasterSha256": "646dbfcaad90cb26c76e1b4abc959c0333379b381844bf99807b5c001fa40a47",
+  "passed": true,
+  "sourceUnchanged": true,
+  "preview": "Frozen original reset view; aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+}

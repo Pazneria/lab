@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-06T05:03:08.550Z",
+  "kind": "Host sandbox launch/input/lifecycle verification; no benchmark grade or performance score",
+  "entries": [
+    {
+      "id": "fern-house-astra",
+      "passed": true,
+      "failedAssets": [],
+      "checks": [
+        "Static initial page: no entrant fetch or iframe",
+        "Real WebGL2 rendering and visible screenshot",
+        "Keyboard movement, mouse look, reset",
+        "Opaque parent/storage boundary",
+        "Pointer release and parent exit focus",
+        "Close destroys context; repeated open/back/forward stays unloaded"
+      ],
+      "diagnostics": {
+        "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "webgl": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "drawingBuffer": [
+          1382,
+          818
+        ],
+        "drawCalls": 42
+      }
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "passed": true,
+  "sourceUnchanged": true,
+  "preview": "Frozen original reset view; aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+}

@@ -1,0 +1,27 @@
+{
+  "title": "The Fern House",
+  "model": "GPT-6 / Codex, as identified by execution instructions; exact backend model ID unavailable",
+  "effort": "Unavailable: reasoning-effort setting was not exposed",
+  "session_start_utc": "2026-10-06T04:08:38Z",
+  "first_implementation_utc": "2026-10-06T04:09:39Z",
+  "deadline_utc": "2026-10-06T05:08:38Z",
+  "stop_utc": "2026-10-06T04:51:38Z",
+  "interruptions": [],
+  "note": "Deadline conservatively begins with the initial environment inspection, before implementation. The first implementation timestamp is the actual package.json creation time. Own thread title is Build tropical greenhouse Astra, but its metadata exposes neither a model ID nor effort; the title is not treated as proof of backend identity.",
+  "own_thread_id": "01a10f65-f898-7260-9860-99cccac4e0e7",
+  "interruptions_detail": "No user interruptions or work pauses. The first dependency install was blocked by network permissions; it was retried successfully with the approved registry-download escalation while implementation continued.",
+  "asset_provenance": "All scene geometry and art textures were authored procedurally in this workspace. No existing project assets or other entrants files were read or reused.",
+  "libraries": [
+    "Three.js 0.180.0, MIT, npm registry, runtime vendored",
+    "Playwright 1.56.1, npm registry, test-only"
+  ],
+  "subagents_or_other_models_used": false,
+  "browser_foregrounded": false,
+  "preview": "http://127.0.0.1:4387",
+  "public_publication": false,
+  "functional_checks_passed": 13,
+  "browser_console_errors_final": 0,
+  "runtime_node": "v24.14.0",
+  "artifact": "dist/fern-house.zip",
+  "editing_complete": true
+}

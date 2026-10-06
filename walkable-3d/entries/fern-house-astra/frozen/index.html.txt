@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Fern House — an abandoned tropical glasshouse</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌿%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script></head>
+<body><canvas id="world" aria-label="Interactive three dimensional tropical greenhouse"></canvas>
+<div id="vignette"></div>
+<header><div class="eyebrow">FIELD NOTES &nbsp; / &nbsp; CONSERVATORY 03</div><h1>The Fern House</h1><div class="subtitle">A place left to grow.</div></header>
+<div id="loading">Opening the glasshouse…</div>
+<div id="welcome" hidden><div class="rule"></div><p class="eyebrow">A WALK THROUGH THE UNDERGROWTH</p><h2>Step inside.</h2><p>Follow either aisle around the old planting bed.<br>At the far end, a potting bench waits in the shade.</p><button id="enter">Explore the glasshouse <span>↗</span></button><p class="small">W A S D to walk · Mouse to look · Esc to release</p></div>
+<div id="crosshair" hidden></div>
+<footer><div id="location">01 &nbsp; THE THRESHOLD</div><div class="controls"><span>WASD <i>walk</i></span><span>Mouse <i>look</i></span><span>C <i>crouch</i></span><span>Shift <i>brisk walk</i></span></div><div class="actions"><button id="help" title="Controls">?</button><button id="reset">Reset <kbd>R</kbd></button><button id="quality" title="Cycle rendering quality">Quality: High</button><button id="statsToggle" title="Show measured frame times">Stats <kbd>F</kbd></button></div></footer>
+<aside id="helpPanel" hidden><h3>Explore at your own pace</h3><p>Click the scene to capture your mouse. Move with <b>W A S D</b> or arrow keys. Move your mouse to look in any direction.</p><p><b>C</b> hold to crouch beneath leaves · <b>Shift</b> walk faster · <b>R</b> return to the entrance · <b>Esc</b> release the mouse.</p><p>You can also drag to look without capturing the mouse. Quality controls resolution and shadow detail. <b>F</b> opens live frame-time measurements; no benchmark score is implied.</p></aside>
+<aside id="stats" hidden></aside>
+<script type="module" src="main.js"></script></body></html>

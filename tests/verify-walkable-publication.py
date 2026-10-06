@@ -22,6 +22,7 @@ assert actual == set(allow['sourceFiles']), {'unexpected': sorted(actual-set(all
 blocked = [p.relative_to(root).as_posix() for p in (root / 'walkable-3d').rglob('*') if p.is_file() and excluded(p.relative_to(root).as_posix())]
 blocked += ['scripts/serve-walkable.cjs','tests/verify-walkable.cjs','tests/verify-walkable-room.cjs','tests/verify-walkable-integrity.py','tests/verify-walkable-publication.py','tests/walkable-publication-allowlist.json','docs/WALKABLE-INTEGRATION.md','docs/WALKABLE-INTEGRATION.html']
 blocked += ['tests/verify-walkable-prompts.cjs','tests/verify-walkable-skip.cjs','tests/verify-walkable-observatories.cjs']
+blocked += ['tests/verify-walkable-greenhouses.cjs']
 manifest = json.loads((root/'walkable-3d/entries.json').read_text(encoding='utf-8'))
 for entry_id in [e['id'] for e in manifest['entries'] if e.get('archiveLocation') == 'retained-outside-repository']:
     blocked += [f'walkable-3d/entries/{entry_id}/original.zip', f'walkable-3d/entries/{entry_id}/evidence/host-preview.png']

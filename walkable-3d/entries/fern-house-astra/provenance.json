@@ -1,0 +1,137 @@
+{
+  "entry": "fern-house-astra",
+  "importedAt": "2026-10-06T04:57:30.248526+00:00",
+  "status": "Admitted frozen source for Prompt 04; no scene or behavior changes.",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task\\verdant-vault\\dist\\fern-house.zip",
+  "archiveSha256": "57c6fbde848d2573d2420e5e47231dec7b529e6a8040707199b95c70794a2b97",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/main.js": "main.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/textures.js": "textures.js",
+      "frozen/vendor/three.module.js": "vendor/three.module.js",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js": "vendor/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt"
+    },
+    "preview": "Frozen original reset view; aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Original HTML preserved byte-for-byte as index.html.txt for the shared opaque viewer. All original relative paths already work; no substitutions or scene/behavior changes."
+  ],
+  "securityAudit": {
+    "result": "No unsafe access or malicious behavior found in scoped read-only runtime review.",
+    "scope": "Authored HTML/CSS/JS, procedural geometry/texture generation, browser API use and imports. No authored external network, telemetry, storage, secrets, navigation, workers or dynamic evaluation.",
+    "dependencies": "All four vendored Three.js 0.180.0 runtime/helper/license files exactly match previously admitted dependency bytes.",
+    "boundary": "Host with the existing opaque iframe, entry-scoped CSP and one-active-entry lifecycle."
+  },
+  "producerEvidence": {
+    "functionalChecks": 13,
+    "failures": 0,
+    "browserErrors": 0,
+    "rawFilesRetainedAtSource": {
+      "test-results/smoke-test.json": {
+        "bytes": 61409,
+        "sha256": "e3fdb5c9902e1ace5f8eab6240376816e57e254a73e7979021c33aafebb4be50"
+      },
+      "test-results/view-sweeps.json": {
+        "bytes": 37930,
+        "sha256": "c23bea63f599ede5868354a4c86fe973f9ce3b897e3ed63d94370b2ca41cd782"
+      }
+    },
+    "performance": "Short headless diagnostics in TEST-RESULTS.md; no score or controlled hardware claim."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2388,
+      "sha256": "c541ed5168a77e8f8cf3f59663a523c2c0db2622984b10f6465a137db4d16298"
+    },
+    "frozen/style.css": {
+      "bytes": 2898,
+      "sha256": "dbdcd752f067a12c0c23a8dc4983b1bccf2081f929006027d5d97f4811d4b284"
+    },
+    "frozen/main.js": {
+      "bytes": 33205,
+      "sha256": "90d1ac901be768b118f5b46c2d84200a7b1550e33e1f612ba152ff3cf0441acf"
+    },
+    "frozen/geometry.js": {
+      "bytes": 6429,
+      "sha256": "339b7d939454ed828409b532c11bd9c9ea37b0f08dd4ee8ddd4e1508d63577fb"
+    },
+    "frozen/textures.js": {
+      "bytes": 8636,
+      "sha256": "56c60105eb6b9ba0dfcd540db5b0d3710a3bb35538dd0119f9ff3b5a31b94bd6"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/addons/utils/BufferGeometryUtils.js": {
+      "bytes": 35539,
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "README.md": {
+      "bytes": 5006,
+      "sha256": "4f69fd4592c32af0cbeecbeabb6b4b6b208d794aec8710cf1ade0625130810c8"
+    },
+    "BUILD-RECORD.json": {
+      "bytes": 1706,
+      "sha256": "9b9f8422225d2aafbdc0fdca19159763f602ca643181549d0ab90a8afe03d747"
+    },
+    "TEST-RESULTS.md": {
+      "bytes": 1868,
+      "sha256": "4aa12cedec883234edb4274c29081541ea3e68d5428cb23e9dc9edb16a75cecb"
+    },
+    "preview.jpg": {
+      "bytes": 101555,
+      "sha256": "fbf30d2dabb6f562709a93be20cf26594c9e967c7b327d03a886a2add479b11f"
+    },
+    "host-verification.json": {
+      "bytes": 1090,
+      "sha256": "bec7de5ce5fa028ae4262403714466f2b54274fb92e871fb5399a2c70ffb2d4c"
+    }
+  },
+  "archiveRetention": "Original ZIP remains untouched at producer source. No ZIP or raw evidence copied into repository or Pages.",
+  "prompt": {
+    "version": "04-shared",
+    "sha256": "3d1760548d9dfb0c48ae3d2de8916526323bd2e59e48245a31cbfe737beee396",
+    "source": "Parent supplied the exact complete submitted text and confirmed identical Prompt 04 for all entrants. Entrant conversation threads were not independently read."
+  },
+  "hostVerification": "host-verification.json",
+  "publication": {
+    "publishedFiles": [
+      "BUILD-RECORD.json",
+      "README.md",
+      "TEST-RESULTS.md",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/style.css",
+      "frozen/textures.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "host-preview.png": {
+      "bytes": 1546951,
+      "sha256": "16fbcbcc6df9bb606391f728f4e9efdbe04961d8c43bc5706fd1410c4e43a867"
+    }
+  }
+}
