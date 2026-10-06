@@ -1,0 +1,22 @@
+{
+  "id": "hollow-limestone-sol",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Read-only source, dependency, source-hash and packaging inspection only. No local syntax checks, tests, builds, browser, preview server, scene/GPU execution or input automation.",
+  "sourceAudit": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+  "dependencyAudit": "Both Three.js 0.180.0 runtime modules and license match previously admitted dependency bytes. Imports are local and closed; authored modules do not call network or optional external asset loaders.",
+  "sourceUnchanged": true,
+  "preview": "Not captured; no screenshot was supplied in the imported payload. The host shows a text placeholder, not generated scene imagery.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "Producer reports build/static checks passed: 646 dry-route samples, standing clearance, collision boundaries and connected dry paths to four pool viewpoints and the landing. Browser, GPU/shader, visual and interactive checks were not run.",
+  "performanceEvidence": "No measured performance result. The scene offers a rolling 10-second frame-interval panel for later manual exploration; no frame rate or score is claimed.",
+  "grade": null,
+  "checkedAt": "2026-10-06T18:07:34.843865+00:00"
+}

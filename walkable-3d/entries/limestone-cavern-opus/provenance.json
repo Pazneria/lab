@@ -1,0 +1,86 @@
+{
+  "entry": "limestone-cavern-opus",
+  "importedAt": "2026-10-06T18:07:34.932288+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-limestone-cavern-entry",
+  "archiveSha256": "54bfa1dc40546934a81d2078d46ca7a0681e53226e2da4e853b6cb3189465a27",
+  "archiveKind": "Host-created preservation snapshot of the completed folder; no producer ZIP supplied; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js",
+      "frozen/vendor/three/build/three.module.min.js": "node_modules/three/build/three.module.min.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "documentMapping": {
+      "README.md": "README.md"
+    },
+    "preview": "No preview image supplied/captured; explicit text placeholder only."
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Its import-map prefix ./node_modules/three/ is changed to ./vendor/three/ only in viewer memory. Only the required Three.js module and license are copied byte-for-byte; no source, control or rendering behavior is repaired."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+    "dependencyAudit": "Three.js 0.170.0 minified module, pinned by supplied package-lock. Scoped renderer/loader source inspection found ordinary optional loaders; the authored scene creates local procedural resources and does not call external loaders. License matches previously admitted text.",
+    "status": "Source-only review. Runtime NOT RUN; no independent startup, interaction, shader or performance pass is claimed."
+  },
+  "prompt": {
+    "version": "06-manual",
+    "sha256": "a1b16dfcad870f67018a3a2923d0509f31a9114470cdc6c14495b45e590ceedd",
+    "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+    "disclosure": "Parent confirms this base prompt was handed to Opus manually. Delivery is not an independently verified Claude transcript. The OpenAI no-browser constraint is not part of this version."
+  },
+  "archiveRetention": "Original ZIP or host-created snapshot and full preservation source remain in the private integration queue, outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "host-preservation-snapshot.zip": {
+      "bytes": 198002,
+      "sha256": "54bfa1dc40546934a81d2078d46ca7a0681e53226e2da4e853b6cb3189465a27"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2314,
+      "sha256": "01e190b3f8ea7bd09bca1c3e9ed890df6f24676466eaeffc4951ecebabdfc0a8"
+    },
+    "frozen/main.js": {
+      "bytes": 57848,
+      "sha256": "f64b479140fc97ea8f351cf20d27438774869f36c165869b95fed3dee95bdcff"
+    },
+    "frozen/vendor/three/build/three.module.min.js": {
+      "bytes": 691648,
+      "sha256": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "host-verification.json": {
+      "bytes": 1714,
+      "sha256": "e8562d5175a73b1e55879b120767cc53a5a4e4de490ce6839708f812d2acb155"
+    },
+    "README.md": {
+      "bytes": 5641,
+      "sha256": "ea7f38b9a64c3e9acff58119e9372f799c72fed5f099b18a52d3d40bb41bb2af"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.min.js",
+      "host-verification.json"
+    ],
+    "retainedOutsidePages": [
+      "original archive/snapshot",
+      "source duplicates",
+      "development scripts",
+      "raw test evidence",
+      "development source maps"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "entry": "mass-light-opus",
+  "importedAt": "2026-10-06T18:07:35.177653+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-brutalist-museum-entry",
+  "archiveSha256": "9daac755f34ef51797b13e34e1c0f0571eca4671adbb61e604058fbf32fe9fb6",
+  "archiveKind": "Host-created preservation snapshot of the completed folder; no producer ZIP supplied; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js",
+      "frozen/textures.js": "textures.js",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "documentMapping": {
+      "README.md": "README.md"
+    },
+    "preview": "No preview image supplied/captured; explicit text placeholder only."
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt. Its import-map prefix ./node_modules/three/ is changed to ./vendor/three/ only in viewer memory. Required Three.js module, two geometry helpers and license are copied byte-for-byte; source/rendering optimizations remain exactly as submitted."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+    "dependencyAudit": "All Three.js 0.169.0 module/helper/license bytes match previously admitted dependencies. Imports are local and closed; authored resources are procedural. The original transmission-target adjustment is producer code, not a host repair.",
+    "status": "Source-only review. Runtime NOT RUN; no independent startup, interaction, shader or performance pass is claimed."
+  },
+  "prompt": {
+    "version": "07-manual",
+    "sha256": "e65bc53be0330d888e10cde44606d20846fca8a5886576d17546e63e28e9f349",
+    "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+    "disclosure": "Parent confirms this prompt was handed to Opus manually; no independently verified Claude transcript is claimed. Later OpenAI 07 handoffs are not yet imported."
+  },
+  "archiveRetention": "Original ZIP or host-created snapshot and full preservation source remain in the private integration queue, outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "host-preservation-snapshot.zip": {
+      "bytes": 300259,
+      "sha256": "9daac755f34ef51797b13e34e1c0f0571eca4671adbb61e604058fbf32fe9fb6"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3189,
+      "sha256": "c53c77703d5085a2d65bca2a7de39b55e095ab545c5b41f48c34cf5f950612c1"
+    },
+    "frozen/main.js": {
+      "bytes": 47755,
+      "sha256": "09c7d0087101db139948af6e4b7be6637236855b17fe5b171aa1931db4e2580c"
+    },
+    "frozen/textures.js": {
+      "bytes": 14545,
+      "sha256": "2488273a553f058b01efb668b7bb314fe7dd913c763c48053c1c46ec4554f564"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 1304820,
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416"
+    },
+    "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+      "bytes": 4625,
+      "sha256": "d20aeaf7077c459a8d952d215738d7b44fba028440bb862d84b622a34f0c80bb"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "host-verification.json": {
+      "bytes": 1653,
+      "sha256": "4eaa54ea979156f8c388fd4050566ccf36e724b2faeabe93c898c322dc6ffc96"
+    },
+    "README.md": {
+      "bytes": 5347,
+      "sha256": "cea121c898ffbd5cf25f52d4c06412e11bd08e9dc1ec9ac252b1779a21e0eebf"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/textures.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-verification.json"
+    ],
+    "retainedOutsidePages": [
+      "original archive/snapshot",
+      "source duplicates",
+      "development scripts",
+      "raw test evidence",
+      "development source maps"
+    ]
+  }
+}

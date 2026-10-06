@@ -101,7 +101,8 @@ export function createViewer({base=new URL('../',import.meta.url),titleFor=entry
       document.addEventListener('pointerlockerror', () => send('pointer-error'));
       document.addEventListener('keydown', e => { if(e.key === 'Escape') { document.exitPointerLock?.(); send('released'); } });
       document.addEventListener('pointerlockchange', () => { if (grading) { if (document.pointerLockElement) document.exitPointerLock?.(); else acknowledgePause(); } else if (!document.pointerLockElement) send('released'); });
-      const timer = setInterval(() => { if (document.querySelector(${JSON.stringify(entry.readySelector)})) { clearInterval(timer); send('ready'); } }, 150);
+      const prefix = ${JSON.stringify(entry.readyTextPrefix || '')};
+      const timer = setInterval(() => { const node = document.querySelector(${JSON.stringify(entry.readySelector)}); if (node && (!prefix || node.textContent.trim().startsWith(prefix))) { clearInterval(timer); send('ready'); } }, 150);
     })();`;
     return source.replace(/<head([^>]*)>/i, `<head$1><meta http-equiv="Content-Security-Policy" content="${escapeAttribute(csp)}"><base href="${escapeAttribute(folder)}"><script>${bridge}<\/script>`);
   }

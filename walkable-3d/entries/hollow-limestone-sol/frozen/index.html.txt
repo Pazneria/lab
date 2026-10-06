@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#161e20">
+  <title>Hollow / Limestone at daybreak</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%2326383b'/%3E%3Cpath d='M12 35V25C12 9 36 9 36 25V35' fill='none' stroke='%23d8d2bb' stroke-width='7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="An explorable three-dimensional limestone cavern"></canvas>
+  <div id="load"><span class="loading-dot"></span>Shaping the chamber…</div>
+  <div id="intro" class="panel">
+    <div class="eyebrow">A subterranean study · 01</div>
+    <h1>Hollow<span>.</span></h1>
+    <p class="subtitle">Limestone at daybreak</p>
+    <div class="rule"></div>
+    <p class="description">Follow the dry bank, pass under the worn stone arch, and climb to the survey landing. Light enters through a fracture overhead.</p>
+    <button id="enter">Enter the cavern <span>↗</span></button>
+    <p class="controls"><kbd>W A S D</kbd> / arrows to walk<br>Mouse to look · <kbd>Shift</kbd> brisk walk<br><kbd>Esc</kbd> release cursor · <kbd>R</kbd> reset</p>
+    <p class="footnote">No jumping needed. The water’s edge is protected.</p>
+  </div>
+  <div id="hud" hidden>
+    <div class="wordmark">Hollow<span>.</span><small id="region">Entrance recess</small></div>
+    <div id="crosshair"></div>
+    <div class="bottom"><span><kbd>WASD</kbd> walk &nbsp; <kbd>Shift</kbd> brisk &nbsp; <kbd>Esc</kbd> pause</span><div><button id="quality">Quality: balanced</button><button id="stats-toggle">Frame times</button><button id="reset">Reset <span>R</span></button></div></div>
+    <div id="stats" hidden><b>Frame delivery</b><span id="stats-content">Collecting samples…</span><small>Rolling 10-second browser frame intervals.<br>Local measurements; results depend on the device.</small></div>
+  </div>
+  <div id="pause" class="panel compact" hidden><div class="eyebrow">Exploration paused</div><h2>A moment of stillness.</h2><p id="pause-message">Click to return to the cavern.</p><button id="resume">Continue <span>↗</span></button><button id="pause-reset" class="secondary">Return to entrance</button><p class="controls"><kbd>WASD</kbd> walk · mouse look · <kbd>R</kbd> reset<br><kbd>F</kbd> frame times · <kbd>Q</kbd> render quality</p></div>
+  <div id="error" class="panel" hidden><h2>The cavern could not open.</h2><p id="error-detail"></p><p>Use a current browser with WebGL2 enabled, and open this build through the included local server.</p></div>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

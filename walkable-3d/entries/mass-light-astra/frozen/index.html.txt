@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#242924" />
+    <title>Mass & Light — a small museum</title>
+    <script type="module" crossorigin src="/assets/index-SVg6m-VP.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Buo0wODc.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="loading"><span class="wordmark">M / L</span><span>Preparing the museum<span class="pulse">…</span></span></div>
+    <header id="masthead"><div><span class="wordmark">M / L</span><span class="mast-title">MASS & LIGHT<span>A museum in two rooms</span></span></div><button id="menu-button" title="Open controls">Controls <span>Esc</span></button></header>
+    <div id="crosshair" aria-hidden="true"></div>
+    <div id="room-indicator"><span class="status-dot"></span><span id="room-name">01 / Entrance gallery</span></div>
+    <div id="hint">W A S D <span>walk</span> · Mouse <span>look</span> · R <span>reset</span></div>
+    <div id="art-caption"><span id="art-number"></span><strong id="art-name"></strong><span id="art-material"></span></div>
+    <section id="overlay" class="active" aria-label="Museum controls">
+      <div class="intro-card">
+        <div class="eyebrow">A STUDY IN WEIGHT, LIGHT & VOID <span>2026 / 01</span></div>
+        <h1>Mass <i>&</i> Light</h1>
+        <p class="intro-copy">Three objects. Two rooms.<br>A quiet place to look a little longer.</p>
+        <div class="route"><span>Entrance gallery</span><b>↗</b><span>Sculpture hall</span></div>
+        <div class="control-grid"><span><kbd>W A S D</kbd> Move</span><span><kbd>Mouse</kbd> Look</span><span><kbd>Shift</kbd> Walk faster</span><span><kbd>Esc</kbd> Pause</span><span><kbd>R</kbd> Reset view</span><span><kbd>F</kbd> Frame times</span></div>
+        <div class="options"><label>Detail <select id="quality"><option value="balanced" selected>Balanced</option><option value="high">High</option><option value="low">Lightweight</option></select></label><label>Look sensitivity <input id="sensitivity" type="range" min="0.4" max="1.8" value="0.85" step="0.05" /></label></div>
+        <button id="enter" class="enter">Enter the museum <span>↗</span></button>
+        <div class="intro-bottom"><span>Head height 1.68 m · Step-free route</span><button id="reset">Reset position</button></div>
+        <p id="pointer-note">Click to enable mouse-look. If unavailable, drag to look; arrow keys also turn.</p>
+      </div>
+    </section>
+    <aside id="perf" hidden><div>FRAME TIMES <button id="export-perf" title="Download measurement log">↓ log</button></div><canvas id="perf-chart" width="240" height="55"></canvas><p id="perf-text">Collecting samples…</p><small>Rolling 10 s · F to hide · T to clear</small></aside>
+    <div id="error" hidden></div>
+  </body>
+</html>

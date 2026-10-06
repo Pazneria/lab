@@ -1,0 +1,22 @@
+{
+  "id": "limestone-hollow-astra",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Read-only source, dependency, source-hash and packaging inspection only. No local syntax checks, tests, builds, browser, preview server, scene/GPU execution or input automation.",
+  "sourceAudit": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+  "dependencyAudit": "Bundled Three.js 0.180.0 with original license. Source-map first-party contents match the supplied source text. Scoped bundle URL inspection found only an XHTML namespace; authored modules make no external loader calls.",
+  "sourceUnchanged": true,
+  "preview": "Not captured; no screenshot was supplied in the imported payload. The host shows a text placeholder, not generated scene imagery.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "Producer reports build/static checks passed: 663 dry-route samples, reachable viewpoints and landing, standing clearance and boundary checks. No browser, shader, visual or interactive execution was performed.",
+  "performanceEvidence": "No performance measurement. F3 can measure animation-frame intervals during later manual exploration; producer static checks are not frame-time results.",
+  "grade": null,
+  "checkedAt": "2026-10-06T18:07:34.498814+00:00"
+}

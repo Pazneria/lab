@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Limestone Cavern</title>
+<style>
+  html,body{margin:0;height:100%;background:#000;overflow:hidden;font-family:system-ui,Segoe UI,sans-serif;color:#e8e2d6}
+  canvas{display:block}
+  #overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,7,6,.72);cursor:pointer;z-index:5}
+  #panel{max-width:440px;padding:22px 26px;background:rgba(20,18,15,.92);border:1px solid #5a5040;border-radius:8px;line-height:1.5}
+  #panel h1{margin:0 0 6px;font-size:20px;font-weight:600}
+  #panel .k{display:inline-block;min-width:76px;color:#f2c879;font-weight:600}
+  #panel p{margin:4px 0;font-size:14px}
+  #status{margin-top:12px;color:#9fd0c7;font-size:14px}
+  #hud{position:fixed;left:10px;top:8px;font:12px/1.35 ui-monospace,Consolas,monospace;color:#cfc7b6;text-shadow:0 1px 2px #000;z-index:4;pointer-events:none;white-space:pre}
+  #hint{position:fixed;right:10px;bottom:8px;font-size:12px;color:#a69e8e;text-shadow:0 1px 2px #000;z-index:4;pointer-events:none}
+  #cross{position:fixed;left:50%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:rgba(255,255,255,.45);z-index:4;pointer-events:none}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.min.js"}}</script>
+</head>
+<body>
+<div id="overlay"><div id="panel">
+  <h1>Limestone Cavern</h1>
+  <p><span class="k">Click</span>enter / capture mouse (Esc releases)</p>
+  <p><span class="k">Mouse</span>look &nbsp; <span class="k" style="min-width:0">←→↑↓</span> also turn</p>
+  <p><span class="k">W A S D</span>walk &nbsp;&nbsp;<span class="k" style="min-width:0">Shift</span> faster</p>
+  <p><span class="k">F</span>toggle headlamp</p>
+  <p><span class="k">R</span>reset to entrance recess</p>
+  <p><span class="k">1 – 6</span>viewpoints: recess, west shore, north shore (sunlit), south shore, beneath arch, landing look-back</p>
+  <p><span class="k">H</span>toggle HUD / frame times</p>
+  <div id="status">Building cavern…</div>
+</div></div>
+<div id="hud"></div>
+<div id="cross"></div>
+<div id="hint">Click to look · R reset · H HUD</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

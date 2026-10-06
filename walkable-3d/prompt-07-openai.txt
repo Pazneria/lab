@@ -1,0 +1,46 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Build a small brutalist museum containing an entrance gallery and a taller sculpture hall connected by a broad, gently sloping ramp. The viewer should be able to approach the exhibits, circle the main sculpture, and move between the two rooms without encountering narrow or obstructed routes.
+
+Use the architecture to create interest through wall thickness, deep skylights, offset openings, and changes in ceiling height. Concrete should have believable scale and variation, with joints, subtle surface differences, and worn edges used deliberately. Include three original abstract sculptures with clearly different forms and materials, such as folded metal, pale stone, and translucent resin. Daylight should reveal their shapes without washing out the rooms. Benches and a few understated exhibit labels can establish the setting. Keep the architecture and exhibits compact, with no additional museum wings.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, approach the exhibits, circle the main sculpture and move between the entrance gallery and sculpture hall. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Concrete with believable thickness, joints, scale and subtle surface variation
+- Deep skylights, offset openings and changes in ceiling height that shape the space
+- Three original abstract sculptures with deliberate, clearly different forms
+- Distinct sculpture materials that remain convincing from different viewpoints
+- Daylight that reveals silhouettes and surface detail without washing out the rooms
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while circling the main sculpture and viewing several exhibits together
+- Smooth movement along the ramp while turning toward the skylights
+- Minimal stuttering, disruptive loading, flicker or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- An entrance gallery and taller sculpture hall connected by a broad, gently sloping ramp
+- Three original abstract sculptures with clearly different forms and materials
+- Approachable exhibits and enough room to circle the main sculpture
+- Connected, usable routes with convincing scale, comfortable exhibit clearances and walkable elevation changes
+
+MY INSPECTION ROUTE
+
+Entrance gallery → inspect first exhibits → ramp → circle main sculpture → return.
+
+I will pay particular attention to circling the main sculpture, looking across the sculpture hall toward the gallery and walking the ramp while turning toward the skylights. Check the gentle level change and exhibit clearance, and make altered viewpoints reveal form instead of exposing unfinished backs. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+Current execution constraint for this run: Do not start preview servers or launch/control any browser, Playwright, CUA, mouse, keyboard, pointer lock, or native UI. Do not run GPU/scene execution or performance benchmarks. Lightweight non-browser build/static checks are permitted by this implementation request. Deliver the working artifact with launch instructions for later testing, explicitly marking interactive/performance checks not run. This differs from earlier rounds' available QA and must be disclosed in the run record. Do not publish, create other threads, invoke other models/subagents, or access other entrants' files. No background processes may remain. Treat model identity and effort as requested unless the backend exposes verification; report actual start/deadline/stop.

@@ -1,0 +1,95 @@
+{
+  "entry": "mass-light-astra",
+  "importedAt": "2026-10-06T18:13:56.844930+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-9\\Mass-and-Light.zip",
+  "archiveSha256": "62204aef81a72f4530c1c2bb2ed0007894a311df15874b05a02c188197d278ab",
+  "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-Buo0wODc.css": "dist/assets/index-Buo0wODc.css",
+      "frozen/assets/index-SVg6m-VP.js": "dist/assets/index-SVg6m-VP.js",
+      "frozen/THIRD-PARTY-LICENSES.txt": "THIRD-PARTY-LICENSES.txt"
+    },
+    "documentMapping": {
+      "README.md": "README.md",
+      "RUN-RECORD.md": "RUN-RECORD.md"
+    },
+    "additionalUnchangedRecord": {
+      "path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-9\\ARTIFACT-RECEIPT.json",
+      "sha256": "8f5a039f251ffb42c2a50582b0a3533d1f091de581fc6da65f90d7fb5e44cc16"
+    },
+    "preview": "No screenshot supplied/captured; text placeholder."
+  },
+  "hostingAdjustments": [
+    "Original HTML is inert index.html.txt. Only /assets/ script/stylesheet prefixes change to ./assets/ in viewer memory. All frozen bytes remain identical; no rebuild or scene repair.",
+    "Only three dist runtime files and the original third-party license notice are published. Source duplicate, build/check/server scripts, archive and raw check/cleanup records stay private."
+  ],
+  "securityAudit": {
+    "result": "Scoped authored-source/import/browser API review found local procedural resources and no external requests, storage, credentials, tracking, workers, dynamic evaluation or parent navigation. The bundle includes Three.js 0.180.0 and Vite’s ordinary module-preload helper. The HTML has no module-preload links; no authored fetch or external loader calls were found. The optional producer CSV download stays blocked by the existing sandbox; no download permission is added.",
+    "status": "Source review only. Runtime, interaction, shader and performance verification NOT RUN."
+  },
+  "prompt": {
+    "version": "07-openai",
+    "sha256": "7c8a4459bb1ee5e71224cc13dddfaa07b117ccb4d5352878def1c94a19de48b1",
+    "source": "Exact base wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; parent confirms the initial OpenAI no-browser constraint applied. UTF-8, LF, no final newline. Entrant transcript not independently accessed.",
+    "disclosure": "Supplied base and execution-constraint blocks joined by one blank line; exact wording, not independently observed message-byte framing. A later coordination-only cleanup reminder is disclosed separately in the run record; no deadline extension."
+  },
+  "archiveRetention": "Original archive and preservation source remain in the private queue outside repository and Pages.",
+  "retainedOriginalFiles": {
+    "Mass-and-Light.zip": {
+      "bytes": 296724,
+      "sha256": "62204aef81a72f4530c1c2bb2ed0007894a311df15874b05a02c188197d278ab"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/assets/index-Buo0wODc.css": {
+      "bytes": 6082,
+      "sha256": "f849b55f846533578257ae686bff28425ac9960b7dbf82587812ae67418948a2"
+    },
+    "frozen/assets/index-SVg6m-VP.js": {
+      "bytes": 798634,
+      "sha256": "1d1b196b6047705f0e720e360a448e651229fd3928661426cf4c9980a42fd71c"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2924,
+      "sha256": "b3033b8092279d02259f2b109ba869e29ba6a771fee84e2f28c8e7a246d83894"
+    },
+    "frozen/THIRD-PARTY-LICENSES.txt": {
+      "bytes": 102709,
+      "sha256": "4f2241619ce924c31c1f0d70f9e73c170cf468bfc734e8ecd4cf89bd641e5368"
+    },
+    "host-verification.json": {
+      "bytes": 1285,
+      "sha256": "d3002a25dce3bd6276a4276d671c98dee53bfaa05c37d25c888753d9a146c70d"
+    },
+    "README.md": {
+      "bytes": 4016,
+      "sha256": "876ea8949c30505e254d8217824b3eaa2adeaff07c40230bb702ed34347c7ffc"
+    },
+    "RUN-RECORD.md": {
+      "bytes": 2822,
+      "sha256": "ed6b6ea9ba3f9c1b65bfdb614be10dae8993244873bb10e72ded920201409bfb"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN-RECORD.md",
+      "frozen/THIRD-PARTY-LICENSES.txt",
+      "frozen/assets/index-Buo0wODc.css",
+      "frozen/assets/index-SVg6m-VP.js",
+      "frozen/index.html.txt",
+      "host-verification.json"
+    ],
+    "retainedOutsidePages": [
+      "original ZIP",
+      "source duplicate",
+      "development scripts",
+      "raw check and cleanup output"
+    ]
+  }
+}

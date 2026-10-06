@@ -849,6 +849,249 @@
         }
       ],
       "comparisonModel": "luna"
+    },
+    {
+      "id": "limestone-hollow-astra",
+      "title": "Limestone Hollow",
+      "promptId": "06",
+      "promptVersion": "06-openai",
+      "comparisonModel": "astra",
+      "description": "A dry pool-side route beneath a broad arch, leading to a raised survey landing.",
+      "requestedConfiguration": "GPT-6 Astra (parent-selected); effort unverified",
+      "modelDisclosure": "The parent identifies this entry as Astra. The producer could observe only its supplied GPT-6 family identity and reports that exact backend and effort were not exposed or included in its delegated prompt. The import receipt does not establish an exact requested effort for this run; no xhigh claim is inferred.",
+      "buildWindow": "2026-10-06 UTC: run start 17:04:33; first implementation command 17:09:25 and first source creation 17:09:27.823; fixed deadline 18:04:33; actual stop 17:38:48.",
+      "interruptions": "Registry and esbuild sandbox failures were retried through available approval. Coordinator reported disconnect notices; producer observed no local work loss or pause. Deadline was not extended.",
+      "controls": "WASD / arrows walk; mouse look; Shift faster; R reset; Esc release/pause; H guide; Q quality; F3 frame intervals. Drag-to-look fallback.",
+      "producerChecks": "Producer reports build/static checks passed: 663 dry-route samples, reachable viewpoints and landing, standing clearance and boundary checks. No browser, shader, visual or interactive execution was performed.",
+      "performanceEvidence": "No performance measurement. F3 can measure animation-frame intervals during later manual exploration; producer static checks are not frame-time results.",
+      "limitations": [
+        "Runtime, visual appearance, shader compatibility and interactive controls are unverified; no independent host runtime QA was run.",
+        "The run prohibited browser/server/GPU/interactive/performance testing, unlike earlier rounds.",
+        "Water reflection is approximate; conservative formation collisions; tiny gravel and survey pins are decorative.",
+        "Desktop keyboard/mouse only. No screenshot was supplied or captured."
+      ],
+      "readySelector": "#loading.hidden",
+      "hostPathReplacements": [],
+      "documents": [
+        {
+          "label": "Controls & producer limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer run record",
+          "path": "RUN_RECORD.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "archiveKind": "Producer-supplied archive, copied unchanged; retained outside Git and Pages.",
+      "archiveSha256": "2edb9acd53f5b629051fb501c29c44337e362d96551b983f3bd2c9370ee1bcce",
+      "htmlSha256": "357c7cfbb9e1de578ef7865bfebe7be1d4f93e8b2a4f4644d5fd2a34b68fb2fb",
+      "webgl": "WebGL 2",
+      "promptDisclosure": "Parent-supplied prompt wording and execution restriction; producer transcripts were not independently read."
+    },
+    {
+      "id": "hollow-limestone-sol",
+      "title": "Hollow / Limestone at daybreak",
+      "promptId": "06",
+      "promptVersion": "06-openai",
+      "comparisonModel": "sol",
+      "description": "A limestone pool chamber, worn arch and survey landing connected by a continuous dry bank.",
+      "requestedConfiguration": "GPT-6.1 Sol (parent-selected); effort unverified",
+      "modelDisclosure": "The parent identifies this entry as Sol in the requested GPT-6.1 Sol benchmark group. The producer could observe only its supplied GPT-6 family identity and reports that exact backend and effort were not exposed or included in its delegated prompt. The import receipt does not establish an exact requested effort for this run; no xhigh claim is inferred.",
+      "buildWindow": "2026-10-06 UTC: run start 17:04:48; first implementation 17:05:13.163; fixed deadline 18:04:48; editing stopped 17:39:28.578; packaging recorded 17:40:08.",
+      "interruptions": "Initial npm request failed under the network sandbox and succeeded after automatic approval review. Coordinator reported disconnect notices; producer observed no local pause or lost work. Fixed deadline was not extended.",
+      "controls": "WASD / arrows walk; mouse look; Shift brisk walk; Esc pause/release; Enter resume; R reset; Q quality; F frame intervals. Drag-to-look fallback.",
+      "producerChecks": "Producer reports build/static checks passed: 646 dry-route samples, standing clearance, collision boundaries and connected dry paths to four pool viewpoints and the landing. Browser, GPU/shader, visual and interactive checks were not run.",
+      "performanceEvidence": "No measured performance result. The scene offers a rolling 10-second frame-interval panel for later manual exploration; no frame rate or score is claimed.",
+      "limitations": [
+        "Runtime, visual appearance, shader compatibility and interactive controls are unverified; no independent host runtime QA was run.",
+        "The run prohibited browser/server/GPU/interactive/performance testing, unlike earlier rounds.",
+        "Water reflection is an approximation; collision follows authored analytic room and obstacle boundaries.",
+        "Desktop keyboard/mouse only. No screenshot was supplied or captured."
+      ],
+      "readySelector": "#load[hidden] ~ #error[hidden]",
+      "hostPathReplacements": [],
+      "documents": [
+        {
+          "label": "Controls & producer limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer run record",
+          "path": "RUN_RECORD.json"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "archiveKind": "Producer-supplied archive, copied unchanged; retained outside Git and Pages.",
+      "archiveSha256": "f72147bfabda0d0d8192e0d04faac19fbf1fa06e59cab5ea0167ea661daa2976",
+      "htmlSha256": "d38e3ab45c7057192cbb7181987b97178b2cc4476784ad0f064e7985f98c940d",
+      "webgl": "WebGL 2",
+      "promptDisclosure": "Parent-supplied prompt wording and execution restriction; producer transcripts were not independently read."
+    },
+    {
+      "id": "limestone-cavern-opus",
+      "title": "Limestone Cavern",
+      "promptId": "06",
+      "promptVersion": "06-manual",
+      "comparisonModel": "opus",
+      "description": "An entrance recess, domed pool chamber and broad arch leading to a raised survey landing.",
+      "requestedConfiguration": "Claude Opus 5.5 (producer-reported) · medium (Jordan-confirmed)",
+      "modelDisclosure": "README reports Claude Opus 5.5 / claude-opus-5-5 at unchanged default effort. Jordan explicitly confirmed that this run used MEDIUM, accepted it, and requested no rerun. That actual user-confirmed effort differs from the intended XHIGH setting. The original README is preserved unchanged; serving-backend identity is not independently verified.",
+      "buildWindow": "Producer record, 2026-10-06: start 12:59:08 EDT (16:59:08 UTC); first implementation about 13:01 EDT; deadline 13:59:08 EDT (17:59:08 UTC); stop 13:22:25 EDT (17:22:25 UTC).",
+      "interruptions": "Producer reports none. Manual run; timestamps are producer records, not an independently observed execution log.",
+      "controls": "Click captures mouse; mouse / arrows look; WASD walk; Shift faster; F headlamp; R reset; 1–6 viewpoints; H HUD; Esc release.",
+      "producerChecks": "README claims 16 scripted walking waypoints reached, pool/crawl collision boundaries, and shader compilation without final console errors. These are producer claims; the Lab did not run the scene.",
+      "performanceEvidence": "README reports GPU-synchronized 1280×720 render cost below measurement noise (~0–3 ms against ~8 ms synchronization overhead). Hidden-pane rAF was not measured. This is not an independently verified frame-time comparison or grade.",
+      "limitations": [
+        "Host runtime, browser behavior and scene continuity are unverified. Producer claims are shown separately.",
+        "The field mesh uses 0.2 m resolution; finer relief uses a detail map. Baked lighting has smooth per-vertex gradients.",
+        "Water reflection is approximate; landing is deliberately dim and offers a headlamp.",
+        "Desktop keyboard/mouse only. No screenshot was supplied in the handoff or captured by the host."
+      ],
+      "readySelector": "#status",
+      "readyTextPrefix": "Ready",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "documents": [
+        {
+          "label": "Original README / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "archiveKind": "Host-created preservation snapshot of the completed folder; no producer ZIP supplied; retained outside Git and Pages.",
+      "archiveSha256": "54bfa1dc40546934a81d2078d46ca7a0681e53226e2da4e853b6cb3189465a27",
+      "htmlSha256": "01e190b3f8ea7bd09bca1c3e9ed890df6f24676466eaeffc4951ecebabdfc0a8",
+      "webgl": "WebGL 2",
+      "promptDisclosure": "Parent confirms manual handoff of this exact base prompt. No independently verified Claude submission transcript is claimed."
+    },
+    {
+      "id": "mass-light-opus",
+      "title": "MASS / LIGHT",
+      "promptId": "07",
+      "promptVersion": "07-manual",
+      "comparisonModel": "opus",
+      "description": "A compact concrete entrance gallery, broad ramp and taller sculpture hall with three abstract exhibits.",
+      "requestedConfiguration": "Claude Opus 5.5 (producer-reported); effort unverified",
+      "modelDisclosure": "README reports Claude Opus 5.5 / claude-opus-5-5 in Claude Code and says reasoning effort was not visible to the model. The parent supplied no confirmed effort for this run. Opus 06’s medium confirmation is not applied to Opus 07; no XHIGH or verified backend claim is made.",
+      "buildWindow": "Producer record, 2026-10-06: start 13:01:03 EDT (17:01:03 UTC); first implementation about 13:11 EDT; deadline 14:01:03 EDT (18:01:03 UTC); last edit 13:36:18 EDT (17:36:18 UTC).",
+      "interruptions": "Producer reports none. Timing comes from the original README; manual execution was not independently observed.",
+      "controls": "WASD / arrows walk; mouse capture or drag look; Shift faster; R reset; 1–4 viewpoints; F frame overlay; Q resolution; Esc release.",
+      "producerChecks": "README reports hidden in-app browser testing, shader/texture warm-up and synchronous render timing. The host performed only source/provenance inspection and did not run the scene.",
+      "performanceEvidence": "Producer claims 1280×760, DPR 1 synchronized batches: ~6.5–7.5 ms for gallery/ramp/hall views and ~9–10 ms near resin. Hidden-pane rAF was throttled and not representative. These are unverified producer measurements, not grades.",
+      "limitations": [
+        "Host runtime, browser behavior, shaders and interactive routes remain unverified.",
+        "Lighting/reflections use fill lights and captures; no global illumination and limited reflection parallax.",
+        "Circle-versus-box collisions, no jump/crouch, exterior visible but not walkable. Original automatic resolution reduction remains enabled.",
+        "Desktop keyboard/mouse only. No screenshot was supplied in the handoff or captured by the host."
+      ],
+      "readySelector": "#status",
+      "readyTextPrefix": "Ready.",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "documents": [
+        {
+          "label": "Original README / producer claims",
+          "path": "README.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "archiveKind": "Host-created preservation snapshot of the completed folder; no producer ZIP supplied; retained outside Git and Pages.",
+      "archiveSha256": "9daac755f34ef51797b13e34e1c0f0571eca4671adbb61e604058fbf32fe9fb6",
+      "htmlSha256": "c53c77703d5085a2d65bca2a7de39b55e095ab545c5b41f48c34cf5f950612c1",
+      "webgl": "WebGL 2",
+      "promptDisclosure": "Parent confirms manual handoff of this exact base prompt. No independently verified Claude submission transcript is claimed."
+    },
+    {
+      "id": "mass-light-astra",
+      "title": "Mass & Light",
+      "description": "An entrance gallery and taller sculpture hall linked by a broad ramp, with limestone, amber resin and folded titanium exhibits.",
+      "promptId": "07",
+      "promptVersion": "07-openai",
+      "comparisonModel": "astra",
+      "availability": "unverified",
+      "runtimeVerification": "Host runtime QA not run",
+      "requestedConfiguration": "GPT-6 Astra (parent-selected); effort unverified",
+      "modelDisclosure": "Parent-selected Astra. Producer identified GPT-6 / Codex from execution instructions; exact serving variant and effort were not exposed or independently verified. No run-specific exact requested effort was supplied in the import receipt, so xhigh is not inferred.",
+      "buildWindow": "2026-10-06 UTC: work began 17:40:41.260; first implementation 17:41:09.269; fixed deadline 18:40:41.260; last source edit 18:05:37.361; source/build freeze 18:07:27.279; actual stop 18:07:27.671.",
+      "interruptions": "Initial network-restricted dependency install was retried with authorization. A coordination-only cleanup reminder arrived midrun; the parent reports Jordan accepted this affected run. No clock pause or extension. Producer recorded zero workspace-owned processes and zero port 5189 listeners at cleanup.",
+      "controls": "WASD walk; mouse look or drag fallback; Shift faster; arrows look; Esc pause; R reset; F frame panel; T clear measurements; quality/sensitivity menus. Producer CSV export is blocked by the unchanged host sandbox.",
+      "producerChecks": "Producer reports build, eight-module/launcher syntax and literal DOM-reference checks passed. Browser, GPU/shader, interactive movement and performance checks were not run by the explicit protocol.",
+      "performanceEvidence": "No measured frame-time result. The scene offers an optional rolling 10-second rAF interval log for later manual inspection. Successful static builds do not establish performance.",
+      "limitations": [
+        "Runtime, visuals, shaders, controls and collision feel remain unverified; no host runtime QA was run.",
+        "This run prohibited browser/server/GPU/interactive/performance testing; a midrun cleanup reminder is disclosed separately.",
+        "Resin uses screen-space transmission and static environment reflections; no touch movement UI.",
+        "No screenshot was supplied or captured. Optional CSV download is unavailable inside the restricted host viewer."
+      ],
+      "documents": [
+        {
+          "label": "Controls & producer limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer run record / interruption",
+          "path": "RUN-RECORD.md"
+        },
+        {
+          "label": "Host source audit / runtime unrun",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading.finished ~ #error[hidden]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No screenshot captured. Open the frozen scene to inspect it.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "62204aef81a72f4530c1c2bb2ed0007894a311df15874b05a02c188197d278ab",
+      "archiveKind": "Original producer ZIP retained unchanged outside Git and Pages.",
+      "htmlSha256": "b3033b8092279d02259f2b109ba869e29ba6a771fee84e2f28c8e7a246d83894",
+      "promptDisclosure": "Parent supplied the exact Prompt 07 base and confirms the initial OpenAI no-browser execution constraint. The later cleanup reminder is an interruption disclosure, not reconstructed prompt text."
     }
   ],
   "prompts": [
@@ -881,6 +1124,16 @@
       "title": "Polar shelter",
       "brief": "A compact polar research shelter during clear blue twilight.",
       "version": "05-shared"
+    },
+    {
+      "id": "06",
+      "title": "Limestone cavern",
+      "brief": "A dry route around a shallow underground pool, through a broad natural arch to a raised landing."
+    },
+    {
+      "id": "07",
+      "title": "Brutalist museum",
+      "brief": "An entrance gallery and taller sculpture hall connected by a broad ramp, with three original abstract sculptures."
     }
   ],
   "promptVersions": [
@@ -937,6 +1190,42 @@
       "sha256": "617acc227f933e8005f6c34839e2721cae1458e91724fa3839709ea37e62fa71",
       "source": "Exact complete prompt supplied by parent, confirmed for all Prompt 05 entrants. UTF-8, LF, no terminal newline.",
       "note": "Complete task, grading, inspection route and shared execution rules. Parent-supplied submission record; entrant threads were not independently read."
+    },
+    {
+      "id": "06-manual",
+      "promptId": "06",
+      "label": "Opus manual handoff / base prompt",
+      "path": "prompt-06.txt",
+      "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+      "note": "Parent confirms this base prompt was handed to Opus manually. Delivery is not an independently verified Claude transcript. The OpenAI no-browser constraint is not part of this version.",
+      "sha256": "a1b16dfcad870f67018a3a2923d0509f31a9114470cdc6c14495b45e590ceedd"
+    },
+    {
+      "id": "06-openai",
+      "promptId": "06",
+      "label": "Astra / Sol / base + no-browser constraint",
+      "path": "prompt-06-openai.txt",
+      "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+      "note": "Parent confirms OpenAI 06 received this base plus the supplied execution constraint. The two supplied blocks are joined by one blank line; this records their exact wording, not independently observed message-byte framing. Browser/GPU/interactive/performance QA was prohibited for these runs.",
+      "sha256": "313338814a6b1646258b1c09c2002659b36fcb299be4cda3f43a23e152bd6d84"
+    },
+    {
+      "id": "07-manual",
+      "promptId": "07",
+      "label": "Opus manual handoff / base prompt",
+      "path": "prompt-07.txt",
+      "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+      "note": "Parent confirms this prompt was handed to Opus manually; no independently verified Claude transcript is claimed. Later OpenAI 07 handoffs are not yet imported.",
+      "sha256": "e65bc53be0330d888e10cde44606d20846fca8a5886576d17546e63e28e9f349"
+    },
+    {
+      "id": "07-openai",
+      "promptId": "07",
+      "label": "Astra / base + no-browser constraint",
+      "path": "prompt-07-openai.txt",
+      "sha256": "7c8a4459bb1ee5e71224cc13dddfaa07b117ccb4d5352878def1c94a19de48b1",
+      "source": "Exact base wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; parent confirms the initial OpenAI no-browser constraint applied. UTF-8, LF, no final newline. Entrant transcript not independently accessed.",
+      "note": "Supplied base and execution-constraint blocks joined by one blank line; exact wording, not independently observed message-byte framing. A later coordination-only cleanup reminder is disclosed separately in the run record; no deadline extension."
     }
   ]
 }
