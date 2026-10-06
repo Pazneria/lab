@@ -1,7 +1,17 @@
 // Positions in metres; the eye stays level. A circle collider slides along furniture.
 export const limits = Object.freeze({x:7.55,z:6.55,radius:.32});
+export const roomLayoutVersion = 'exhibits-2026-10-06';
+export const exhibits = Object.freeze({
+  worlds: {x:0,y:2.02,z:-1.7,width:4.2,height:1.96875,
+    footprint:{x1:-2.25,x2:2.25,z1:-2.25,z2:-1.68},
+    approach:{x:0,z:2.2,yaw:0,pitch:.08}},
+  catalog: {x:5.2,z:2.5,yaw:-Math.PI/2,sourceZ:-2.95,
+    footprint:{x1:4.25,x2:6.15,z1:-.1,z2:5.1},
+    approach:{x:3.15,z:3.05,yaw:-Math.PI/2}}
+});
 export const obstacles = Object.freeze([
-  {x1:-2.6,x2:2.6,z1:-3.9,z2:-2.0}, // central benchmark bench
+  exhibits.worlds.footprint,
+  exhibits.catalog.footprint,
   {x1:-7.85,x2:-6.2,z1:-5.9,z2:1.5}, // west apparatus bench
   {x1:-5.95,x2:-3.9,z1:-7,z2:-6.4}, // specimen case
   {x1:-2.26,x2:2.26,z1:-7,z2:-6.58}, // hall niche cabinet
@@ -17,7 +27,7 @@ export const obstacles = Object.freeze([
   {x1:6.2,x2:7.7,z1:-6.7,z2:-5.1}, // plant
   {x1:-7.45,x2:-6.55,z1:4.35,z2:5.25}, // west planter
 ]);
-export function spawn(){return {x:2.8,z:5.4,yaw:.33,pitch:-.035};}
+export function spawn(){return {x:0,z:5.4,yaw:0,pitch:.06};}
 export function blocked(x,z){return obstacles.some(b=>x>=b.x1-limits.radius-.035&&x<=b.x2+limits.radius+.035&&z>=b.z1-limits.radius-.035&&z<=b.z2+limits.radius+.035);}
 export function advance(p,actions,dt,gentle=false){
   const step=Math.min(dt,.05),speed=gentle?1.3:2.6;
@@ -34,7 +44,8 @@ export function advance(p,actions,dt,gentle=false){
   return p;
 }
 export function nearby(p){
-  if(p.z>-2.1&&p.z<.35&&Math.abs(p.x)<3.2)return 'catalog';
+  if(Math.hypot(p.x-exhibits.worlds.approach.x,p.z-exhibits.worlds.approach.z)<1.2)return 'worlds';
+  if(p.x<4&&Math.hypot(p.x-exhibits.catalog.approach.x,p.z-exhibits.catalog.approach.z)<1.25)return 'catalog';
   if(Math.hypot(p.x-5.4,p.z-6.2)<2)return 'home';
   return null;
 }
@@ -49,7 +60,7 @@ export function safeDestination(kind){
 // Route planning uses the same furniture footprints as manual movement. A small
 // extra clearance keeps smoothed paths away from corners; no diagonal cuts.
 const clearance=limits.radius+.035,spacing=.22;
-export const approaches=Object.freeze({catalog:{x:.55,z:-.85,yaw:0},home:{x:5.4,z:5.9,yaw:Math.PI}});
+export const approaches=Object.freeze({catalog:exhibits.catalog.approach,home:{x:5.4,z:5.9,yaw:Math.PI}});
 export function walkable(p){return Number.isFinite(p.x)&&Number.isFinite(p.z)&&Math.abs(p.x)<=limits.x&&Math.abs(p.z)<=limits.z&&!obstacles.some(b=>p.x>=b.x1-clearance&&p.x<=b.x2+clearance&&p.z>=b.z1-clearance&&p.z<=b.z2+clearance);}
 export function segmentFree(a,b){
   if(!walkable(a)||!walkable(b))return false;
