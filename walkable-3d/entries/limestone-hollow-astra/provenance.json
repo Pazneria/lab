@@ -1,0 +1,96 @@
+{
+  "entry": "limestone-hollow-astra",
+  "importedAt": "2026-10-06T18:07:34.507527+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-7\\limestone-hollow.zip",
+  "archiveSha256": "2edb9acd53f5b629051fb501c29c44337e362d96551b983f3bd2c9370ee1bcce",
+  "archiveKind": "Producer-supplied archive, copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/cavern.js": "dist/cavern.js",
+      "frozen/style.css": "dist/style.css",
+      "frozen/THREE-LICENSE.txt": "dist/THREE-LICENSE.txt"
+    },
+    "documentMapping": {
+      "README.md": "README.md"
+    },
+    "preview": "No preview image supplied/captured; explicit text placeholder only.",
+    "additionalUnchangedRecord": {
+      "path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-7\\RUN_RECORD.md",
+      "sha256": "fd3d4d6e838baeb6e055c8d2752d75f73379b3edc2a38f9c5b1238a397ce8201"
+    }
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt; no path substitutions are needed. Runtime bytes are copied from the original dist folder without rebuilding.",
+    "The optional 2.87 MB development source map, source duplicate, build/check/server scripts and archive stay outside Pages. No sourceMappingURL or runtime bytes were rewritten."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+    "dependencyAudit": "Bundled Three.js 0.180.0 with original license. Source-map first-party contents match the supplied source text. Scoped bundle URL inspection found only an XHTML namespace; authored modules make no external loader calls.",
+    "status": "Source-only review. Runtime NOT RUN; no independent startup, interaction, shader or performance pass is claimed."
+  },
+  "prompt": {
+    "version": "06-openai",
+    "sha256": "313338814a6b1646258b1c09c2002659b36fcb299be4cda3f43a23e152bd6d84",
+    "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+    "disclosure": "Parent confirms OpenAI 06 received this base plus the supplied execution constraint. The two supplied blocks are joined by one blank line; this records their exact wording, not independently observed message-byte framing. Browser/GPU/interactive/performance QA was prohibited for these runs."
+  },
+  "archiveRetention": "Original ZIP or host-created snapshot and full preservation source remain in the private integration queue, outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "limestone-hollow.zip": {
+      "bytes": 753127,
+      "sha256": "2edb9acd53f5b629051fb501c29c44337e362d96551b983f3bd2c9370ee1bcce"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/cavern.js": {
+      "bytes": 541595,
+      "sha256": "90e3970101905b6e00a1b03026003e90cb2e69e2819fad9b473f8db72ee86c3a"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 2836,
+      "sha256": "357c7cfbb9e1de578ef7865bfebe7be1d4f93e8b2a4f4644d5fd2a34b68fb2fb"
+    },
+    "frozen/style.css": {
+      "bytes": 4910,
+      "sha256": "7b546dc4282125e91c6536cfc117efa0422bd6d52523def9ef4f76964d0d37ed"
+    },
+    "frozen/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "host-verification.json": {
+      "bytes": 1593,
+      "sha256": "e18ecbe5bc4912519c7ad42cbe4dc980983cf527bfb474e4a3a0a0d5a17d02f9"
+    },
+    "README.md": {
+      "bytes": 4298,
+      "sha256": "97131b923f51f3118a351a3faa0958887ca8aad595e9360b40ebd1f117bbf9aa"
+    },
+    "RUN_RECORD.md": {
+      "bytes": 4056,
+      "sha256": "fd3d4d6e838baeb6e055c8d2752d75f73379b3edc2a38f9c5b1238a397ce8201"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN_RECORD.md",
+      "frozen/THREE-LICENSE.txt",
+      "frozen/cavern.js",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "host-verification.json"
+    ],
+    "retainedOutsidePages": [
+      "original archive/snapshot",
+      "source duplicates",
+      "development scripts",
+      "raw test evidence",
+      "development source maps"
+    ]
+  }
+}

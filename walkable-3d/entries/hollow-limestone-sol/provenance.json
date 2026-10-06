@@ -1,0 +1,134 @@
+{
+  "entry": "hollow-limestone-sol",
+  "importedAt": "2026-10-06T18:07:34.854613+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-8\\Hollow-Limestone.zip",
+  "archiveSha256": "f72147bfabda0d0d8192e0d04faac19fbf1fa06e59cab5ea0167ea661daa2976",
+  "archiveKind": "Producer-supplied archive, copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/styles.css": "dist/styles.css",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/noise.js": "dist/src/noise.js",
+      "frozen/src/props.js": "dist/src/props.js",
+      "frozen/src/spatial.js": "dist/src/spatial.js",
+      "frozen/src/stone.js": "dist/src/stone.js",
+      "frozen/src/water.js": "dist/src/water.js",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt"
+    },
+    "documentMapping": {
+      "README.md": "README.md",
+      "RUN_RECORD.json": "RUN_RECORD.json"
+    },
+    "preview": "No preview image supplied/captured; explicit text placeholder only."
+  },
+  "hostingAdjustments": [
+    "Original HTML is served inert as index.html.txt; no path substitutions are needed. Only required dist runtime modules/styles/license are copied unchanged. Build metadata, source duplicate, scripts and archive stay outside Pages."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+    "dependencyAudit": "Both Three.js 0.180.0 runtime modules and license match previously admitted dependency bytes. Imports are local and closed; authored modules do not call network or optional external asset loaders.",
+    "status": "Source-only review. Runtime NOT RUN; no independent startup, interaction, shader or performance pass is claimed."
+  },
+  "prompt": {
+    "version": "06-openai",
+    "sha256": "313338814a6b1646258b1c09c2002659b36fcb299be4cda3f43a23e152bd6d84",
+    "source": "Exact wording supplied by the benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. Entrant transcripts were not independently accessed.",
+    "disclosure": "Parent confirms OpenAI 06 received this base plus the supplied execution constraint. The two supplied blocks are joined by one blank line; this records their exact wording, not independently observed message-byte framing. Browser/GPU/interactive/performance QA was prohibited for these runs."
+  },
+  "archiveRetention": "Original ZIP or host-created snapshot and full preservation source remain in the private integration queue, outside the repository and Pages.",
+  "retainedOriginalFiles": {
+    "Hollow-Limestone.zip": {
+      "bytes": 457901,
+      "sha256": "f72147bfabda0d0d8192e0d04faac19fbf1fa06e59cab5ea0167ea661daa2976"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2796,
+      "sha256": "d38e3ab45c7057192cbb7181987b97178b2cc4476784ad0f064e7985f98c940d"
+    },
+    "frozen/src/main.js": {
+      "bytes": 12198,
+      "sha256": "a6bb0b170fe61f7d78a99b98e43ec30c1444995f0951114f574aca9aab3cc03a"
+    },
+    "frozen/src/noise.js": {
+      "bytes": 1299,
+      "sha256": "27e91fec65ce8d3c3dba666d2d7de6cd78db091d3bef9405429f53b34de4349c"
+    },
+    "frozen/src/props.js": {
+      "bytes": 14443,
+      "sha256": "ff92ef33d955b54c5d0823d413a3ae03cb6723b4015c7d8de501a3f7b25ca771"
+    },
+    "frozen/src/spatial.js": {
+      "bytes": 5076,
+      "sha256": "e3ad441f50192661c071da78f65dbe0628bb480514a3bd06ca39f19114a246d0"
+    },
+    "frozen/src/stone.js": {
+      "bytes": 17449,
+      "sha256": "a7d5b4d1294c3c676041bf846545744a5bfe619a8ea93059c7e2f887a237473c"
+    },
+    "frozen/src/water.js": {
+      "bytes": 4963,
+      "sha256": "9b4008ab249ff8ca1d1e6b13606defa11a0d90e94c37ff5899a97e0fd2a910e1"
+    },
+    "frozen/styles.css": {
+      "bytes": 3750,
+      "sha256": "7665b11b2de06d7d2f1541390ea10d24379fb78b880beba31bf54615f0d37a3b"
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    "frozen/vendor/three.core.js": {
+      "bytes": 1403455,
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20"
+    },
+    "frozen/vendor/three.module.js": {
+      "bytes": 603113,
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    },
+    "host-verification.json": {
+      "bytes": 1600,
+      "sha256": "87c5c800502d9a034c1c3cfb5c1c6ada3834d31bf8e569df6ad845a4ef94fe3e"
+    },
+    "README.md": {
+      "bytes": 4879,
+      "sha256": "d7dff0c388d998f4738355208eb9f3312c6a27b7ea36ad80e4f6090d26e1b911"
+    },
+    "RUN_RECORD.json": {
+      "bytes": 5123,
+      "sha256": "d95f73fe54eec42eda45312b7f39024e2061edae402410ee077f9ef4c2c4416c"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN_RECORD.json",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/noise.js",
+      "frozen/src/props.js",
+      "frozen/src/spatial.js",
+      "frozen/src/stone.js",
+      "frozen/src/water.js",
+      "frozen/styles.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json"
+    ],
+    "retainedOutsidePages": [
+      "original archive/snapshot",
+      "source duplicates",
+      "development scripts",
+      "raw test evidence",
+      "development source maps"
+    ]
+  }
+}

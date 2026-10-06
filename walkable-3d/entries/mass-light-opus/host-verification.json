@@ -1,0 +1,22 @@
+{
+  "id": "mass-light-opus",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Read-only source, dependency, source-hash and packaging inspection only. No local syntax checks, tests, builds, browser, preview server, scene/GPU execution or input automation.",
+  "sourceAudit": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+  "dependencyAudit": "All Three.js 0.169.0 module/helper/license bytes match previously admitted dependencies. Imports are local and closed; authored resources are procedural. The original transmission-target adjustment is producer code, not a host repair.",
+  "sourceUnchanged": true,
+  "preview": "Not captured; no screenshot was supplied in the imported payload. The host shows a text placeholder, not generated scene imagery.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "README reports hidden in-app browser testing, shader/texture warm-up and synchronous render timing. The host performed only source/provenance inspection and did not run the scene.",
+  "performanceEvidence": "Producer claims 1280×760, DPR 1 synchronized batches: ~6.5–7.5 ms for gallery/ramp/hall views and ~9–10 ms near resin. Hidden-pane rAF was throttled and not representative. These are unverified producer measurements, not grades.",
+  "grade": null,
+  "checkedAt": "2026-10-06T18:07:35.167513+00:00"
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172124">
+  <title>Limestone Hollow — an underground field study</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three-dimensional limestone cavern"></canvas>
+  <div id="loading"><span class="spinner"></span><p>Shaping the hollow<span>Preparing stone, light & water</span></p></div>
+  <div id="vignette" aria-hidden="true"></div>
+  <header id="identity"><span class="sigil">◈</span><span>SUBTERRANEAN STUDIES<small>FIELD SITE 07 &nbsp; / &nbsp; LIMESTONE</small></span></header>
+  <section id="welcome" aria-label="Cavern controls">
+    <p class="eyebrow">18 metres beneath the ridge</p>
+    <h1>Limestone<br><em>Hollow</em></h1>
+    <p class="description">Follow the dry shore, pass beneath the natural arch,<br>and look back from the raised landing.</p>
+    <button id="enter">Enter the hollow <span>↗</span></button>
+    <p class="entry-hint">W A S D to walk &nbsp; · &nbsp; Mouse to look &nbsp; · &nbsp; Esc to pause</p>
+  </section>
+  <section id="pause" class="hidden" aria-label="Paused menu">
+    <p class="eyebrow">Take your bearings</p><h2>The hollow waits.</h2>
+    <div class="control-grid"><span><kbd>W A S D</kbd> / arrows</span><span>Walk</span><span>Mouse</span><span>Look around</span><span><kbd>Shift</kbd></span><span>Walk faster</span><span><kbd>R</kbd></span><span>Return to entrance</span><span><kbd>H</kbd></span><span>Show / hide guide</span><span><kbd>F3</kbd></span><span>Frame-time display</span><span><kbd>Q</kbd></span><span>Change quality</span></div>
+    <button id="resume">Continue exploring <span>↗</span></button><button id="reset" class="secondary">Reset to entrance</button>
+    <p class="entry-hint">If pointer lock is unavailable, hold the mouse button to look.</p>
+  </section>
+  <div id="crosshair" class="hidden" aria-hidden="true"></div>
+  <div id="location"><span class="location-dot"></span><span id="region">Entrance recess</span><small id="elevation">FIELD SITE 07</small></div>
+  <div id="guide" class="hidden"><span><kbd>W A S D</kbd> walk</span><span>Mouse look</span><span><kbd>R</kbd> reset</span><span><kbd>Esc</kbd> pause</span><span><kbd>H</kbd> hide guide</span></div>
+  <aside id="stats" class="hidden"><strong>FRAME TIMES <span id="quality">Balanced</span></strong><div id="readout">Measuring…</div><canvas id="graph" width="240" height="48"></canvas><small>Rolling 5 s · Q changes quality · F3 hides</small></aside>
+  <div id="toast" role="status"></div>
+  <noscript>This environment requires JavaScript and WebGL2. Enable JavaScript, then reload.</noscript>
+  <script type="module" src="./cavern.js"></script>
+</body>
+</html>

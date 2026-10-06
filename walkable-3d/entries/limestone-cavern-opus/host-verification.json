@@ -1,0 +1,22 @@
+{
+  "id": "limestone-cavern-opus",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Read-only source, dependency, source-hash and packaging inspection only. No local syntax checks, tests, builds, browser, preview server, scene/GPU execution or input automation.",
+  "sourceAudit": "No malicious behavior, external runtime requests, storage, credentials, tracking, dynamic evaluation, workers or parent navigation found in scoped authored-source inspection.",
+  "dependencyAudit": "Three.js 0.170.0 minified module, pinned by supplied package-lock. Scoped renderer/loader source inspection found ordinary optional loaders; the authored scene creates local procedural resources and does not call external loaders. License matches previously admitted text.",
+  "sourceUnchanged": true,
+  "preview": "Not captured; no screenshot was supplied in the imported payload. The host shows a text placeholder, not generated scene imagery.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "README claims 16 scripted walking waypoints reached, pool/crawl collision boundaries, and shader compilation without final console errors. These are producer claims; the Lab did not run the scene.",
+  "performanceEvidence": "README reports GPU-synchronized 1280×720 render cost below measurement noise (~0–3 ms against ~8 ms synchronization overhead). Hidden-pane rAF was not measured. This is not an independently verified frame-time comparison or grade.",
+  "grade": null,
+  "checkedAt": "2026-10-06T18:07:34.925380+00:00"
+}

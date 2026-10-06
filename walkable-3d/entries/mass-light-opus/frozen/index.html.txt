@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mass and Light Museum</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #111; overflow: hidden; font-family: "Segoe UI", Helvetica, Arial, sans-serif; }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(12,12,12,0.62); color: #e8e4dc; z-index: 10; cursor: pointer; }
+  #overlay .card { max-width: 520px; padding: 28px 34px; background: rgba(20,20,19,0.86); border: 1px solid #4a4741; }
+  #overlay h1 { font-weight: 300; letter-spacing: 0.24em; font-size: 22px; margin: 0 0 4px; }
+  #overlay h2 { font-weight: 400; font-size: 13px; letter-spacing: 0.08em; color: #a9a397; margin: 0 0 18px; }
+  #overlay table { border-collapse: collapse; font-size: 13.5px; width: 100%; }
+  #overlay td { padding: 3px 0; vertical-align: top; }
+  #overlay td:first-child { color: #d9c9a8; width: 150px; font-family: Consolas, monospace; }
+  #overlay .go { margin-top: 18px; font-size: 14px; letter-spacing: 0.12em; color: #fff; text-align: center; padding: 10px; border: 1px solid #8a8274; }
+  #status { margin-top: 10px; font-size: 12px; color: #9a958b; text-align: center; min-height: 16px; }
+  #hud { position: fixed; left: 12px; bottom: 10px; color: rgba(240,236,228,0.78); font-size: 12px; z-index: 5; text-shadow: 0 1px 2px #000; pointer-events: none; }
+  #perf { position: fixed; right: 10px; top: 10px; color: #cfe; font: 12px Consolas, monospace; background: rgba(0,0,0,0.55); padding: 6px 9px; z-index: 5; display: none; white-space: pre; pointer-events: none; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,255,255,0.55); z-index: 4; pointer-events: none; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="overlay">
+  <div class="card">
+    <h1>MASS / LIGHT</h1>
+    <h2>A small brutalist museum &mdash; entrance gallery, ramp, sculpture hall</h2>
+    <table>
+      <tr><td>Mouse</td><td>Look around (click to capture pointer)</td></tr>
+      <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>R</td><td>Reset to entrance</td></tr>
+      <tr><td>1 / 2 / 3 / 4</td><td>Viewpoints: entrance &middot; ramp top &middot; hall &middot; hall looking back</td></tr>
+      <tr><td>F</td><td>Frame-time overlay</td></tr>
+      <tr><td>Q</td><td>Toggle render resolution (high / performance)</td></tr>
+      <tr><td>Esc</td><td>Release mouse / show this panel</td></tr>
+    </table>
+    <div class="go" id="go">PREPARING&hellip;</div>
+    <div id="status"></div>
+  </div>
+</div>
+<div id="cross"></div>
+<div id="hud">WASD move &middot; mouse look &middot; Shift faster &middot; R reset &middot; 1&ndash;4 viewpoints &middot; F frame time &middot; Esc menu</div>
+<div id="perf"></div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>

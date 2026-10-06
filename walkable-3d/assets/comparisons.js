@@ -1,12 +1,13 @@
 // Host metadata groups requested models; it does not assert serving-backend identity.
 export const comparisonKey = pair => pair.map(entry => entry.id).sort().join('::');
+// Unverified means admitted for manual inspection, not independently runtime-tested.
+export const isOpenable = entry => entry.availability === undefined || ['ready', 'unverified'].includes(entry.availability);
 
 function comparisonOptions(prompts, entries) {
   return prompts.map(prompt => {
     const models = new Map();
     for (const entry of entries) {
-      if (entry.promptId !== prompt.id || !entry.comparisonModel ||
-          (entry.availability !== undefined && entry.availability !== 'ready')) continue;
+      if (entry.promptId !== prompt.id || !entry.comparisonModel || !isOpenable(entry)) continue;
       if (!models.has(entry.comparisonModel)) models.set(entry.comparisonModel, []);
       models.get(entry.comparisonModel).push(entry);
     }

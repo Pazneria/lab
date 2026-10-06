@@ -1,6 +1,6 @@
 import {createViewer} from './viewer.js';
 import {createGradeForm,renderLeaderboard} from './judgments.js';
-import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.js';
+import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './comparisons.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -71,6 +71,7 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
     const dl = el('dl');
     addDefinition(dl, 'Model / effort', $('#blind').checked ? 'Model labels hidden. Uncheck “Hide model labels” to reveal the requested configuration.' : entry.requestedConfiguration);
     addDefinition(dl, 'Disclosure', $('#blind').checked ? 'The exact serving model and effort were not exposed to the producer. Reveal labels to see the parent-requested configuration and full disclosure.' : entry.modelDisclosure);
+    if(entry.runtimeVerification)addDefinition(dl,'Host runtime QA',entry.runtimeVerification+'; opening this viewer is not an independent test pass.');
     addDefinition(dl, 'Build window', entry.buildWindow);
     addDefinition(dl, 'Interruptions', entry.interruptions);
     addDefinition(dl, 'Controls', entry.controls);
@@ -93,11 +94,17 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
   function card(entry, index) {
     const article = el('article', undefined, 'entry'); article.dataset.entry = entry.id;
     const top = el('div', undefined, 'entry-top');
-    top.append(el('span', `ENTRY ${String.fromCharCode(65 + index)}`, 'slot'), el('span', 'Frozen build · ready', 'ready')); article.append(top);
+    top.append(el('span', `ENTRY ${String.fromCharCode(65 + index)}`, 'slot'), el('span', entry.availability==='unverified'?'Frozen build · runtime unverified':'Frozen build · ready', 'ready')); article.append(top);
     const preview = el('button', undefined, 'preview'); preview.type = 'button'; preview.dataset.open = entry.id; preview.setAttribute('aria-label', `Open ${entry.title}`);
-    const img = el('img'); img.src = `entries/${entry.id}/preview.jpg`; img.width = 960; img.height = 600; img.alt = entry.previewAlt; img.decoding = 'async';
-    img.addEventListener('error', () => { img.hidden = true; preview.prepend(el('span', 'Preview unavailable. You can still open the scene.', 'image-error')); }, { once: true });
-    preview.append(img, el('span', '↗ Open walkable scene', 'open-label'));
+    if(entry.previewAvailable===false){
+      preview.classList.add('no-preview');
+      preview.append(el('strong','Preview not captured'),el('span','Open the frozen build to inspect it. No scene runs until you choose to open it.','preview-note'));
+    }else{
+      const img = el('img'); img.src = `entries/${entry.id}/preview.jpg`; img.width = 960; img.height = 600; img.alt = entry.previewAlt; img.decoding = 'async';
+      img.addEventListener('error', () => { img.hidden = true; preview.prepend(el('span', 'Preview unavailable. You can still open the scene.', 'image-error')); }, { once: true });
+      preview.append(img);
+    }
+    preview.append(el('span', '↗ Open walkable scene', 'open-label'));
     preview.addEventListener('click', () => open(entry, preview)); article.append(preview);
     const body = el('div', undefined, 'entry-body'); body.append(el('h3', titleFor(entry)), el('p', entry.description));
     const meta = el('div', undefined, 'entry-meta'); meta.append(el('span', $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration), el('span', `Desktop · ${entry.webgl || 'WebGL 2'}`)); body.append(meta);
@@ -122,7 +129,8 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
       const art = el('div', undefined, 'waiting-art'); art.append(el('span', '+', 'waiting-symbol')); waiting.append(art);
       const body = el('div', undefined, 'entry-body'); body.append(el('h3', 'One world so far.'), el('p', 'Explore the completed entry now. A real comparison opens when a second frozen submission is admitted.')); waiting.append(body); $('#entries').append(waiting);
     }
-    $('#entry-count').textContent = failedEntries.length ? `${entries.length} ready · ${failedEntries.length} startup failed · ${entries.length+failedEntries.length} frozen results` : `${entries.length} finished ${entries.length === 1 ? 'entry' : 'entries'}`;
+    const unverified=entries.filter(e=>e.availability==='unverified').length;
+    $('#entry-count').textContent=`${entries.length} finished ${entries.length===1?'entry':'entries'}`+(unverified?` · ${unverified} runtime unverified`:'')+(failedEntries.length?` · ${failedEntries.length} startup failed`:'');
     $('#next-pair').hidden = !canShuffle; updateVote(); updateLeaderboard();
   }
   function updateVote() {
@@ -172,7 +180,7 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
   function selectPrompt(id,entryId,chosenPair=null){
     openedThisComparison.clear();revealed=false;
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
-    entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
+    entries=allEntries.filter(e=>e.promptId===promptId&&isOpenable(e));failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
     if(entryId)pairIndex=Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId)));
     if(chosenPair){pairIndex=Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair)));if(pairs[pairIndex])pairs[pairIndex]=chosenPair.slice();}

@@ -1,0 +1,20 @@
+{
+  "id": "mass-light-astra",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Read-only source/provenance/packaging inspection only. No local builds, syntax checks, tests, server, browser, GPU/scene execution or input automation.",
+  "sourceAudit": "Scoped authored-source/import/browser API review found local procedural resources and no external requests, storage, credentials, tracking, workers, dynamic evaluation or parent navigation. The bundle includes Three.js 0.180.0 and Vite’s ordinary module-preload helper. The HTML has no module-preload links; no authored fetch or external loader calls were found. The optional producer CSV download stays blocked by the existing sandbox; no download permission is added.",
+  "sourceUnchanged": true,
+  "preview": "Not supplied or captured; text placeholder only.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "Producer reports production build, JavaScript syntax and DOM-reference checks passed. No browser, interactive or performance checks were run.",
+  "grade": null,
+  "checkedAt": "2026-10-06T18:13:56.837038+00:00"
+}

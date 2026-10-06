@@ -1,0 +1,80 @@
+{
+  "title": "Hollow / Limestone at daybreak",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-8",
+  "artifact": "Hollow-Limestone.zip; dist/; editable src/",
+  "previewAddress": "http://127.0.0.1:4187/",
+  "previewStarted": false,
+  "model": {
+    "providedIdentity": "Codex, based on GPT-6",
+    "exactBackendVariant": null,
+    "reasoningEffort": null,
+    "verification": "The exact backend model variant and effort are not exposed in this execution environment; no specific variant/effort was supplied in the delegated prompt. The provided identity is reported without independent verification."
+  },
+  "timing": {
+    "runStartUtc": "2026-10-06T17:04:48Z",
+    "firstImplementationUtc": "2026-10-06T17:05:13.1628344Z",
+    "firstImplementationEvidence": "package.json CreationTimeUtc from workspace package initialization",
+    "firstSceneSourceWriteUtc": "2026-10-06T17:10:41Z",
+    "fixedOneHourDeadlineUtc": "2026-10-06T18:04:48Z",
+    "actualImplementationStopUtc": "2026-10-06T17:39:28.578Z",
+    "elapsedSeconds": 2081,
+    "stoppedBeforeDeadline": true
+  },
+  "interruptions": [
+    "The first npm registry fetch failed with a network-sandbox EACCES error. The pinned public registry download succeeded after automatic approval review; no credentials or purchases were used.",
+    "The coordinator reported disconnect notices during the run. Tools remained usable here; no local disconnect, work loss, or task pause was observed. The fixed deadline was not extended."
+  ],
+  "executionConstraint": "No preview servers, browsers, Playwright, CUA, native UI, mouse/keyboard automation, pointer-lock execution, GPU/scene execution, or performance benchmarks. Only local authoring and lightweight non-browser build/static checks were performed.",
+  "implementation": {
+    "library": "Three.js 0.180.0, pinned npm dependency with MIT license bundled",
+    "assets": "All cavern geometry, texture pixels, water shaders and survey props authored in this new workspace",
+    "externalAssetRequests": 0,
+    "water": "Transparent analytic ripple shader with shallow basin, approximate skylight reflection and a restrained caustic overlay",
+    "collision": "Authored analytic dry boundaries, water barrier, formation volumes, arch piers and survey equipment",
+    "performanceFeatures": [
+      "One stationary shadow map",
+      "Instanced loose stones",
+      "Props batched by material",
+      "Pixel ratio cap with three quality settings",
+      "Pre-entry material compilation and texture upload",
+      "No reflection-camera or screen-space postprocessing passes"
+    ]
+  },
+  "tests": {
+    "build": "PASS",
+    "javascriptSyntax": "PASS: six scene modules and four Node scripts",
+    "inspectionRoute": "PASS: 646 dry samples and standing clearance; maximum grade 22.0%",
+    "dryConnectivity": "PASS: 8532 connected grid cells, including four pool viewpoints and landing",
+    "collision": "PASS: pool, outer bounds, major formations, arch piers, tripod and survey case",
+    "distributedModulePaths": "PASS: local imports resolve",
+    "interactive": "NOT RUN by explicit constraint",
+    "visual": "NOT RUN by explicit constraint",
+    "gpuShaderCompilation": "NOT RUN by explicit constraint",
+    "browserCompatibility": "NOT RUN by explicit constraint",
+    "performance": "NOT RUN by explicit constraint"
+  },
+  "limitations": [
+    "GPU shader rendering and visual appearance have not been reviewed in a browser.",
+    "Interactive movement, pointer lock and browser compatibility remain untested.",
+    "Frame-time measurements are provided for later exploration; no performance result is claimed.",
+    "Water reflection is approximate and does not render the cavern into a reflection buffer.",
+    "Collision follows authored room/obstacle volumes rather than arbitrary rendered triangles.",
+    "Desktop keyboard/mouse controls are supported; touch controls are not supplied."
+  ],
+  "backgroundProcessesLeft": [],
+  "scores": "Not assigned; Jordan grades the entry.",
+  "distSha256": {
+    "build-info.json": "318e217849527f45e9b27713e7338a5e0cdae129cdf0db5523f097e5a7dc6706",
+    "index.html": "d38e3ab45c7057192cbb7181987b97178b2cc4476784ad0f064e7985f98c940d",
+    "src/main.js": "a6bb0b170fe61f7d78a99b98e43ec30c1444995f0951114f574aca9aab3cc03a",
+    "src/noise.js": "27e91fec65ce8d3c3dba666d2d7de6cd78db091d3bef9405429f53b34de4349c",
+    "src/props.js": "ff92ef33d955b54c5d0823d413a3ae03cb6723b4015c7d8de501a3f7b25ca771",
+    "src/spatial.js": "e3ad441f50192661c071da78f65dbe0628bb480514a3bd06ca39f19114a246d0",
+    "src/stone.js": "a7d5b4d1294c3c676041bf846545744a5bfe619a8ea93059c7e2f887a237473c",
+    "src/water.js": "9b4008ab249ff8ca1d1e6b13606defa11a0d90e94c37ff5899a97e0fd2a910e1",
+    "styles.css": "7665b11b2de06d7d2f1541390ea10d24379fb78b880beba31bf54615f0d37a3b",
+    "vendor/THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+    "vendor/three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+    "vendor/three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+  }
+}
