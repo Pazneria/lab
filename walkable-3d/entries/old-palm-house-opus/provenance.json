@@ -1,0 +1,99 @@
+{
+  "entry": "old-palm-house-opus",
+  "importedAt": "2026-10-06T06:05:33.086820+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\queue\\prompt-04\\old-palm-house-opus\\original.zip",
+  "archiveSha256": "870d78b55c3448cf2b1a3819579728ea3ba8a1bb14d76685dc033f1e74d29948",
+  "archiveKind": "Host preservation snapshot of completed producer source and production build; no producer ZIP supplied.",
+  "originalPreserved": true,
+  "source": {
+    "originalDirectory": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-tropical-greenhouse-entry",
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-3JCil3LM.js": "dist/assets/index-3JCil3LM.js",
+      "THREE-LICENSE.txt": "node_modules/three/LICENSE"
+    },
+    "authoredSourceFiles": {
+      "src/main.js": {
+        "bytes": 9211,
+        "sha256": "b9add22b5a23ac67e0dd81f2fb5957e8a547c3ec96dc753df49cf15bee1988a4"
+      },
+      "src/world.js": {
+        "bytes": 71726,
+        "sha256": "8e19d9926699c3b460ce817850f946b035cb3d4c9f7c4a40da5fde4ea1ee645d"
+      },
+      "src/tex.js": {
+        "bytes": 26200,
+        "sha256": "562496c1897505953e6b1d16718b1a8d11f1df40ddc72e0b6af40249fbcb4992"
+      },
+      "src/geo.js": {
+        "bytes": 6003,
+        "sha256": "24e6eb48532561ca2b55921617a609ab1ff4aa9138bda223a31468461e7662ea"
+      }
+    },
+    "preview": "Original frozen build after ordinary R reset, with its native adaptive settings. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "completionEvidence": "Parent explicitly confirms finished. Producer README records final edit/build 2026-10-06 01:56:10 EDT (05:56:10 UTC); unchanged hashes checked during capture.",
+  "hostingAdjustments": [
+    "Production HTML and bundle copied unchanged without rebuilding. Only the /assets/ script prefix becomes ./assets/ in viewer memory. Separate original Three.js MIT license included."
+  ],
+  "securityAudit": {
+    "result": "Scoped read-only authored source and bundle audit found no unsafe access or malicious behavior.",
+    "scope": "Reviewed module imports, browser APIs, controls, rendering, bounded procedural textures/geometry and shader customization. No authored external requests, storage, credentials, telemetry, workers, dynamic evaluation or parent navigation. The bundle retains an unused Vite modulepreload shim; no preload links exist in the HTML.",
+    "boundary": "Existing opaque iframe and entry-scoped CSP, one entrant at a time; no policy changes."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 2933,
+      "sha256": "df9beee419d6855a1cafb930db7ad2c2af57c591bcf3b5ac6976e24a5e43ff04"
+    },
+    "frozen/assets/index-3JCil3LM.js": {
+      "bytes": 616334,
+      "sha256": "166e39765ec0d8bdcd4dcbb3650ac91959f2edb806eff4fb199ce041ddacc7e0"
+    },
+    "THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "README.md": {
+      "bytes": 8241,
+      "sha256": "6bf7cb2ee22508e1f35dae3a3c60190735485fd8fc50b71553e08e0b3ff3cc66"
+    },
+    "preview.jpg": {
+      "bytes": 99541,
+      "sha256": "eb4cc5e4065b8d2e7a48d9ac798827f509908fb4f4108c4d63a0332f3a904eb6"
+    },
+    "host-verification.json": {
+      "bytes": 1751,
+      "sha256": "e4b00a84f7b9df9d65964e697e228c10443cf3c48f5e139b1a7b552c1280ca8a"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "THREE-LICENSE.txt",
+      "frozen/assets/index-3JCil3LM.js",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "archiveRetention": "Host preservation ZIP, authored sources, full-size screenshot and raw host evidence remain outside repository and Pages.",
+  "retainedOriginalFiles": {
+    "original.zip": {
+      "bytes": 208480,
+      "sha256": "870d78b55c3448cf2b1a3819579728ea3ba8a1bb14d76685dc033f1e74d29948"
+    },
+    "host-preview.png": {
+      "bytes": 1436306,
+      "sha256": "a28d00588f43710fa983d0a51dfa60ed5d82ad6c3d870c023710f6550f430c5f"
+    }
+  },
+  "prompt": {
+    "version": "04-shared",
+    "sha256": "3d1760548d9dfb0c48ae3d2de8916526323bd2e59e48245a31cbfe737beee396",
+    "source": "Parent confirms completed manual greenhouse received the same full Prompt 04. No separate prompt-variant record was present among the delivered project files."
+  },
+  "hostVerification": "host-verification.json",
+  "grade": null
+}
