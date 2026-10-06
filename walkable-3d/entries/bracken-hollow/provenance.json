@@ -1,0 +1,85 @@
+{
+  "entry": "bracken-hollow",
+  "importedAt": "2026-10-06",
+  "archiveSource": "task-6/Bracken-Hollow-build.zip",
+  "archiveSha256": "6c8832c25dc73678f93b0b709195964a2337c709f29c446a0eed014ce1a73d6e",
+  "originalPreserved": true,
+  "source": {
+    "archive": "task-6/Bracken-Hollow-build.zip",
+    "memberRoot": "",
+    "runtimeRoot": "dist/",
+    "preview": "Host capture of frozen production build at its original starting viewpoint.",
+    "previewNote": "Captured by a separate headless browser through the Lab sandbox at 1598 × 956; original scene UI hidden with its existing inspection hook only for the still. Resized proportionally to 960 × 574; JPEG quality 78. No scene or color edits."
+  },
+  "hostingAdjustments": [
+    "Original entry HTML is stored with .txt suffix to avoid offering an unsandboxed document route; its bytes are unchanged.",
+    "The host creates a sandboxed srcdoc with a local base URL, restrictive CSP and lifecycle/error bridge. Entrant JS, CSS, geometry, materials, controls and rendering settings are unchanged.",
+    "Bracken Hollow dist/index.html has two root-relative /assets/ references replaced with ./assets/ only in the in-memory host document."
+  ],
+  "files": {
+    "ARTIFACT_MANIFEST.json": {
+      "sha256": "edfe6d144e744f1058b7e27c8a1f2862b4288ca9eedc25cf0231cdbd29170b8c",
+      "bytes": 3335
+    },
+    "BUILD_LOG.md": {
+      "sha256": "8a041dbb5da410741ff80752722cc884c4e366d6a305a154046c6902eef2cff4",
+      "bytes": 2781
+    },
+    "evidence/controls-test.json": {
+      "sha256": "2f9458d5d8d7fe17081f43c1e86409e44d08dcc55002e120cefcded281a3b234",
+      "bytes": 246
+    },
+    "evidence/final-performance.json": {
+      "sha256": "cea18b72b1278c469392f759447dc2b9c80c1726f7c2da165eea6f58500c6cef",
+      "bytes": 49882
+    },
+    "evidence/preview-source.png": {
+      "sha256": "36b4eadcf80d166d26186190f39de7d0e2bd7f38ec22cce6762e38899f591b5e",
+      "bytes": 2222835
+    },
+    "evidence/resize-test.json": {
+      "sha256": "6ca41ab01196f2e4323653098d45494cfe1043d9b08a88191a5a40d6b05021cb",
+      "bytes": 279
+    },
+    "evidence/route-frame-times.json": {
+      "sha256": "39bdac7b2d55423c3b4afcff99321168e8e8f8c56469cbdede080f0f2b0e6d83",
+      "bytes": 77377
+    },
+    "evidence/route-test.json": {
+      "sha256": "ed01213badce256dcf66708d03553c82b0c2d969f370f1d415214d85bf96407d",
+      "bytes": 6053
+    },
+    "frozen/assets/index-BriClH9i.css": {
+      "sha256": "081b6c223c8289ec3542909563e6439a4d854eb927cecc77a7fcf8e731deb270",
+      "bytes": 3360
+    },
+    "frozen/assets/index-BT2jB9Eh.js": {
+      "sha256": "f2b1c592a6ced9fa0d18eb406b3805cf9d64c9976ad0aeccc4814e82c37f1aa9",
+      "bytes": 619058
+    },
+    "frozen/index.html.txt": {
+      "sha256": "9b5861374a6411b5af424c48ed99a22a6a2a2cf225ac949b9f5e21a91bc040a2",
+      "bytes": 2532
+    },
+    "original.zip": {
+      "sha256": "6c8832c25dc73678f93b0b709195964a2337c709f29c446a0eed014ce1a73d6e",
+      "bytes": 225258
+    },
+    "preview.jpg": {
+      "sha256": "389add8bbfe33e1d8d6344e0baae52aa5404b80f8fcdc2735410039f4c77577b",
+      "bytes": 137581
+    },
+    "README.md": {
+      "sha256": "c47ba42bc5e2fb68b9f4f7ea491db32eaa6e931a25349b5c355a0c9fe22d9e10",
+      "bytes": 2454
+    },
+    "TEST_RESULTS.md": {
+      "sha256": "89779378be82cb26af0eda611536732151d5e73feec9a576c4b081d9ab4498a2",
+      "bytes": 2877
+    },
+    "THIRD_PARTY_LICENSES.txt": {
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    }
+  }
+}

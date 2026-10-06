@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "prompt": {
+    "id": "01",
+    "brief": "An abandoned railway station in autumn woodland, delivered as a walkable 3D environment.",
+    "verbatim": "You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.\n\nYou have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.\n\nBuild an abandoned railway station in the middle of the woods in autumn.\n\nA short platform and a small station building sit beside disused tracks, with a woodland footpath returning toward the entrance. I must be able to enter the waiting room, walk beneath the platform canopy, cross the tracks safely and follow the woodland path to see the station from the trees.\n\nGive the place a readable history through weathered brick, peeling timber, rusted metal and leaves gathered where wind and rain would leave them. Include memorable details such as a broken timetable case, an old bench or roots disturbing the platform edge. These examples are suggestions; choose details that make the place convincing.\n\nLow afternoon sunlight should separate the warm autumn foliage from the cooler building interior. Keep the forest compact but convincing from inside the scene. A train and an extensive railway network are unnecessary.\n\nThe result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.\n\nMake the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, enter the building and view the station from the woodland path. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.\n\nGRADING: 100 POINTS\n\nVisual detail and overall visual quality: 45 points\n- Convincing construction and weathering of the station\n- Distinct brick, timber and metal surfaces that hold up close\n- Varied autumn foliage, believable leaf placement and forest depth\n- Effective lighting and composition from multiple viewpoints\n- Thoughtful details throughout the explorable area\n\nSmooth performance: 35 points\n- Responsive movement and camera turns\n- Consistent performance in dense foliage and other busy views\n- Smooth transitions between the waiting room, platform and woods\n- Minimal stuttering, disruptive loading or instability\n\nI will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.\n\nScene fulfillment and exploration: 20 points\n- Recognizable abandoned station, waiting room, platform, canopy and disused tracks\n- Autumn woodland, a footpath and a safe crossing\n- Connected, usable walking routes and convincing scale\n- Worthwhile views and details beyond the starting position\n\nMY INSPECTION ROUTE\n\nEntrance → waiting room → covered platform → track crossing → woodland footpath → view back toward the station.\n\nI will pay particular attention to turning toward dense foliage beneath the canopy, crossing the tracks and moving between the interior and exterior. Suggested props are optional; the core spaces and routes are required.\n\nWhen finished, provide the working build, how to launch it, its controls and any known limitations.\n\nExecution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time and one-hour deadline, stop editing at that deadline, and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.",
+    "source": "Original common prompt retrieved from the completed Astra task (01a10ebb-405f-7160-8d8b-1fab9ce2e0c3)."
+  },
+  "rubric": {
+    "visuals": 45,
+    "performance": 35,
+    "fulfillment": 20
+  },
+  "entries": [
+    {
+      "id": "alder-halt",
+      "title": "Alder Halt",
+      "description": "A forgotten branch line, a waiting room, and a path through the returning woods.",
+      "requestedConfiguration": "GPT-6.1 Sol · xhigh (requested)",
+      "modelDisclosure": "The parent requested GPT-6.1 Sol at xhigh. The producer identified only the GPT-6 family; the exact serving model and effort were not exposed. Requested configuration is not verified backend identity.",
+      "buildWindow": "First artifact 2026-10-06 01:02:55 UTC; deadline 02:02:55 UTC. Scene frozen 01:41:27 UTC. Packaging finished before the deadline; parent reports completion around 01:47 UTC.",
+      "interruptions": "No human or scheduling interruptions. Restricted dependency fetches failed; an authorized retry succeeded. Setup and retries were included in elapsed time.",
+      "controls": "WASD walk; mouse look; Shift brisk walk; arrows turn/tilt; R reset; Esc release/pause; P frame times; Q quality.",
+      "producerChecks": "13 route stops; collision, real keyboard movement, reset, and mouse release checks passed in the producer’s record.",
+      "performanceEvidence": "Producer’s headless route run: 1,684 frames at 1440 × 900, DPR 1, Balanced. Mean 17.12 ms; p95 29.20 ms; p99 33.40 ms. Shared host, not a final grade.",
+      "limitations": [
+        "Desktop keyboard and mouse only; no touch navigation.",
+        "Finite forest bounds. Small loose debris and foliage have no individual collision shapes.",
+        "Static leaves, lighting and shadows. No trains, audio, weather or day/night cycle."
+      ],
+      "documents": [
+        {
+          "label": "Build record",
+          "path": "BENCHMARK.md"
+        },
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Route evidence",
+          "path": "evidence/navigation.json"
+        }
+      ],
+      "readySelector": "#enter:not([disabled])",
+      "hostPathReplacements": [],
+      "previewAlt": "Frozen Alder Halt build: brick waiting room and open doorway under autumn trees.",
+      "archiveSha256": "26bf3c4617b4a24a33410d18c42b524752e438bcc160bf7f21b0a8b5d46da785",
+      "htmlSha256": "1bbf7cfadc04acfc13aecdd8fa3994cdfee99b8413c2bb462a8d3a91268c33b4"
+    },
+    {
+      "id": "bracken-hollow",
+      "title": "Bracken Hollow",
+      "description": "An overgrown station, a covered platform, and a woodland loop beyond the tracks.",
+      "requestedConfiguration": "GPT-6 Astra · xhigh (requested)",
+      "modelDisclosure": "The parent requested GPT-6 Astra at xhigh. The producer identified only the GPT-6 family; the exact serving model and effort were not exposed. Requested configuration is not verified backend identity.",
+      "buildWindow": "Work began 2026-10-06 01:02:10 UTC; implementation start 01:04:09 UTC. Whole-task deadline 02:02:10 UTC; implementation deadline 02:04:09 UTC. Scene frozen 01:53:08 UTC; package recorded 01:54:56 UTC.",
+      "interruptions": "No user interruptions. Initial sandbox-blocked npm download retried with automatic approval; included in elapsed work time.",
+      "controls": "WASD or arrows walk; mouse look; Shift brisk walk; R reset; Esc release/pause; F frame times; detail button. Drag-to-look fallback.",
+      "producerChecks": "15 keyboard route waypoints; collision, mouse capture/look, pause, reset, detail controls and high-DPI resize passed in the producer’s record.",
+      "performanceEvidence": "Producer’s route run: 4,951 frames, 1440 × 900, DPR 1, High. Median 10.7 ms; p95 16.0 ms; p99 21.0 ms. Separate camera-turn p95 values 36.4–40.9 ms. Shared host, not a final grade.",
+      "limitations": [
+        "Desktop keyboard and mouse only; no touch navigation.",
+        "Bounded approximately 76 × 64 metre walking area; distant forest is decorative.",
+        "Static foliage and sunlight. No trains, jumping or gameplay objectives. Procedural wind/footfall audio begins on entry."
+      ],
+      "documents": [
+        {
+          "label": "Build record",
+          "path": "BUILD_LOG.md"
+        },
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer checks",
+          "path": "TEST_RESULTS.md"
+        },
+        {
+          "label": "Route evidence",
+          "path": "evidence/route-test.json"
+        }
+      ],
+      "readySelector": "#welcome:not([hidden])",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAlt": "Frozen Bracken Hollow build: autumn woodland around the abandoned station approach.",
+      "archiveSha256": "6c8832c25dc73678f93b0b709195964a2337c709f29c446a0eed014ce1a73d6e",
+      "htmlSha256": "9b5861374a6411b5af424c48ed99a22a6a2a2cf225ac949b9f5e21a91bc040a2"
+    }
+  ]
+}

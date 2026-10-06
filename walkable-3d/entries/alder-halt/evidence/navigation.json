@@ -1,0 +1,328 @@
+{
+  "testedAt": "2026-10-06T01:44:14.576Z",
+  "viewport": "1440×900 at DPR 1, Balanced rendering",
+  "test": "Real keyboard walk along complete inspection route, plus canopy camera turn, reset and mouse release",
+  "errors": [],
+  "stops": [
+    {
+      "name": "waiting room",
+      "target": [
+        -1,
+        3
+      ],
+      "state": {
+        "x": -1,
+        "z": 2.980534666499475,
+        "y": 2.2199988873129493,
+        "yaw": 0,
+        "pitch": 0,
+        "footHeight": 0.54,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room"
+        ]
+      }
+    },
+    {
+      "name": "covered platform",
+      "target": [
+        -1,
+        -2.2
+      ],
+      "state": {
+        "x": -1,
+        "z": -2.206612607231309,
+        "y": 2.2199999999999998,
+        "yaw": 0,
+        "pitch": 0,
+        "footHeight": 0.54,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform"
+        ]
+      }
+    },
+    {
+      "name": "east platform",
+      "target": [
+        10,
+        -2.2
+      ],
+      "state": {
+        "x": 10.011202999073088,
+        "z": -2.199954470361795,
+        "y": 2.2199999999999998,
+        "yaw": -1.574860362439124,
+        "pitch": 0,
+        "footHeight": 0.54,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform"
+        ]
+      }
+    },
+    {
+      "name": "timber crossing",
+      "target": [
+        10,
+        -7
+      ],
+      "state": {
+        "x": 10.046605019858541,
+        "z": -7.005966958287409,
+        "y": 2.0800001570937803,
+        "yaw": 0.002333931764211078,
+        "pitch": 0,
+        "footHeight": 0.4,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing"
+        ]
+      }
+    },
+    {
+      "name": "woodland entrance",
+      "target": [
+        10,
+        -10
+      ],
+      "state": {
+        "x": 10.000316060227528,
+        "z": -10.017189229960868,
+        "y": 1.6800420162238296,
+        "yaw": 0.015564710086595594,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "woodland viewpoint",
+      "target": [
+        16,
+        -14
+      ],
+      "state": {
+        "x": 15.97865757319808,
+        "z": -14.029175581550597,
+        "y": 1.68,
+        "yaw": -0.9847554465235305,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "curve north",
+      "target": [
+        21,
+        -11
+      ],
+      "state": {
+        "x": 21.02069795690338,
+        "z": -11.034459989718577,
+        "y": 1.68,
+        "yaw": -2.113609518918352,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "east woods",
+      "target": [
+        24,
+        -4
+      ],
+      "state": {
+        "x": 24.03432324694216,
+        "z": -3.9780071936850208,
+        "y": 1.686113150827082,
+        "yaw": -2.741512843625171,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "curve south",
+      "target": [
+        24,
+        3
+      ],
+      "state": {
+        "x": 24.015968259979847,
+        "z": 2.974197636487919,
+        "y": 1.68,
+        "yaw": 3.1366739183142367,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "return viewpoint",
+      "target": [
+        20,
+        8
+      ],
+      "state": {
+        "x": 20.037722576284114,
+        "z": 7.998135580962566,
+        "y": 1.68,
+        "yaw": 2.46741899748187,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "return path",
+      "target": [
+        13,
+        10
+      ],
+      "state": {
+        "x": 12.997608812705442,
+        "z": 10.029266843995687,
+        "y": 1.68,
+        "yaw": 1.8479246551622108,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "approach junction",
+      "target": [
+        6,
+        11
+      ],
+      "state": {
+        "x": 6.0095721855361495,
+        "z": 11.004246762561245,
+        "y": 1.68,
+        "yaw": 1.7086401397616664,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    },
+    {
+      "name": "entrance return",
+      "target": [
+        -1,
+        11
+      ],
+      "state": {
+        "x": -0.9930904142781408,
+        "z": 11.005573031728012,
+        "y": 1.68,
+        "yaw": 1.5701904749783753,
+        "pitch": 0,
+        "footHeight": 0,
+        "blocked": false,
+        "visited": [
+          "approach",
+          "room",
+          "platform",
+          "crossing",
+          "woods"
+        ]
+      }
+    }
+  ],
+  "timing": {
+    "frames": 1684,
+    "meanMs": 17.12250593824231,
+    "p50Ms": 16.69999999999891,
+    "p95Ms": 29.19999999999709,
+    "p99Ms": 33.400000000001455,
+    "maxMs": 41.70000000000073,
+    "drawCalls": 48,
+    "triangles": 212720,
+    "trees": 125,
+    "foliageCards": 16058
+  },
+  "reset": {
+    "x": -1,
+    "z": 12.7,
+    "y": 1.68,
+    "yaw": 0,
+    "pitch": 0,
+    "footHeight": 0,
+    "blocked": false,
+    "visited": [
+      "approach",
+      "room",
+      "platform",
+      "crossing",
+      "woods"
+    ]
+  },
+  "released": true
+}

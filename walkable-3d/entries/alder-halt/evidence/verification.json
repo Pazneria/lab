@@ -1,0 +1,262 @@
+{
+  "testedAt": "2026-10-06T01:42:10.549Z",
+  "browser": "headless Chromium, installed revision 1217",
+  "viewport": "1600×1000 at DPR 1",
+  "loadMs": 4955,
+  "errors": [],
+  "passed": {
+    "roomEntered": true,
+    "platformReached": true,
+    "westWallStops": true,
+    "eastWallStops": true,
+    "crossingReachedWoods": true,
+    "loopReturns": true,
+    "keyboardMoves": true,
+    "mouseLooks": true,
+    "resetWorks": true,
+    "qualityControl": true,
+    "performancePanel": true,
+    "escapeReleases": true,
+    "noRuntimeErrors": true
+  },
+  "checks": [
+    {
+      "name": "entrance to waiting room",
+      "x": -1,
+      "z": 3.699999999999962,
+      "y": 2.2199999999999998,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0.54,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    },
+    {
+      "name": "waiting room to platform",
+      "x": -1,
+      "z": -1.3000000000000396,
+      "y": 2.2199999999999998,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0.54,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    },
+    {
+      "name": "west wall collision",
+      "x": -5.560000000000004,
+      "z": 4.64,
+      "y": 2.2199999999999998,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0.54,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    },
+    {
+      "name": "east wall collision",
+      "x": 3.560000000000002,
+      "z": 2.5,
+      "y": 2.2199999999999998,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0.54,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    },
+    {
+      "name": "crossing continuous",
+      "x": 10,
+      "z": -11.000000000000009,
+      "y": 1.68,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    },
+    {
+      "name": "woodland loop returns to entrance",
+      "x": -0.9999999999998959,
+      "z": 11.00000000000006,
+      "y": 1.68,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    },
+    {
+      "name": "reset",
+      "x": -1,
+      "z": 12.7,
+      "y": 1.68,
+      "yaw": 0,
+      "pitch": 0,
+      "footHeight": 0,
+      "blocked": false,
+      "visited": [
+        "approach"
+      ]
+    }
+  ],
+  "keyboardCheck": {
+    "x": -1,
+    "z": 10.250341549694372,
+    "y": 1.68,
+    "yaw": 0,
+    "pitch": 0,
+    "footHeight": 0,
+    "blocked": false,
+    "visited": [
+      "approach",
+      "room",
+      "platform",
+      "crossing",
+      "woods"
+    ]
+  },
+  "mouseCheck": {
+    "x": -1,
+    "z": 10.117115088984416,
+    "y": 1.68,
+    "yaw": -1.3930500000000001,
+    "pitch": 0.34225000000000005,
+    "footHeight": 0,
+    "blocked": false,
+    "visited": [
+      "approach",
+      "room",
+      "platform",
+      "crossing",
+      "woods"
+    ]
+  },
+  "resetCheck": {
+    "x": -1,
+    "z": 12.7,
+    "y": 1.68,
+    "yaw": 0,
+    "pitch": 0,
+    "footHeight": 0,
+    "blocked": false,
+    "visited": [
+      "approach",
+      "room",
+      "platform",
+      "crossing",
+      "woods"
+    ]
+  },
+  "qualityCheck": {
+    "value": "2",
+    "width": 1360
+  },
+  "released": true,
+  "frameTests": [
+    {
+      "view": "02-approach",
+      "frames": 149,
+      "meanMs": 16.718791946308727,
+      "p50Ms": 16.699999999999818,
+      "p95Ms": 20.900000000000546,
+      "p99Ms": 29.300000000000182,
+      "maxMs": 29.300000000000182,
+      "drawCalls": 80,
+      "triangles": 244044,
+      "trees": 125,
+      "foliageCards": 16058
+    },
+    {
+      "view": "03-room",
+      "frames": 166,
+      "meanMs": 15.107228915662645,
+      "p50Ms": 16.600000000000364,
+      "p95Ms": 20.799999999999272,
+      "p99Ms": 29.200000000000728,
+      "maxMs": 29.299999999999272,
+      "drawCalls": 61,
+      "triangles": 212607,
+      "trees": 125,
+      "foliageCards": 16058
+    },
+    {
+      "view": "04-canopy",
+      "frames": 138,
+      "meanMs": 18.171739130434787,
+      "p50Ms": 16.700000000000728,
+      "p95Ms": 24.899999999999636,
+      "p99Ms": 33.399999999999636,
+      "maxMs": 33.399999999999636,
+      "drawCalls": 54,
+      "triangles": 210245,
+      "trees": 125,
+      "foliageCards": 16058
+    },
+    {
+      "view": "05-crossing",
+      "frames": 146,
+      "meanMs": 17.176712328767117,
+      "p50Ms": 16.700000000000728,
+      "p95Ms": 25,
+      "p99Ms": 33.20000000000073,
+      "maxMs": 33.29999999999927,
+      "drawCalls": 41,
+      "triangles": 178965,
+      "trees": 125,
+      "foliageCards": 16058
+    },
+    {
+      "view": "06-woods",
+      "frames": 115,
+      "meanMs": 21.91478260869566,
+      "p50Ms": 20.899999999997817,
+      "p95Ms": 33.29999999999927,
+      "p99Ms": 41.70000000000073,
+      "maxMs": 42,
+      "drawCalls": 79,
+      "triangles": 245866,
+      "trees": 125,
+      "foliageCards": 16058
+    },
+    {
+      "view": "07-return",
+      "frames": 117,
+      "meanMs": 21.325641025641044,
+      "p50Ms": 20.799999999999272,
+      "p95Ms": 33.400000000001455,
+      "p99Ms": 37.5,
+      "maxMs": 37.5,
+      "drawCalls": 79,
+      "triangles": 244142,
+      "trees": 125,
+      "foliageCards": 16058
+    },
+    {
+      "view": "08-timetable",
+      "frames": 165,
+      "meanMs": 15.173333333333325,
+      "p50Ms": 16.599999999998545,
+      "p95Ms": 20.900000000001455,
+      "p99Ms": 29.299999999999272,
+      "maxMs": 29.30000000000291,
+      "drawCalls": 66,
+      "triangles": 220588,
+      "trees": 125,
+      "foliageCards": 16058
+    }
+  ],
+  "note": "Each view warms for 1 second, then records 2.5 seconds. Screenshots are taken after the timing sample. Local headless measurements are evidence for this run only; interactive performance will be judged separately."
+}

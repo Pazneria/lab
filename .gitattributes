@@ -21,3 +21,5 @@ data/frontend-research-parts-2026-10-05/*.json text eol=lf
 data/coverage-*.json text eol=lf
 data/coverage-research-2026-10-05/** text eol=lf
 assets/coverage-graphs.js text eol=lf
+# Frozen benchmark submissions and evidence must retain their exact bytes.
+walkable-3d/entries/** -text
