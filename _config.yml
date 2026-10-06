@@ -1,0 +1,19 @@
+# Preserve Jekyll's standard exclusions while keeping benchmark archives in Git.
+# These files are retained locally/in the repository, but never copied to Pages.
+exclude:
+  - ".sass-cache"
+  - ".jekyll-cache"
+  - "gemfiles"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "node_modules"
+  - "vendor/bundle"
+  - "vendor/cache"
+  - "vendor/gems"
+  - "vendor/ruby"
+  - "walkable-3d/entries/*/original.zip"
+  - "walkable-3d/entries/*/evidence"
+  - "scripts/serve-walkable.cjs"
+  - "tests/verify-walkable*"
+  - "tests/walkable-publication-allowlist.json"
+  - "docs/WALKABLE-INTEGRATION.md"

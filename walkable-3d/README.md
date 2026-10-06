@@ -15,15 +15,16 @@ $env:LAB_PLAYWRIGHT_MODULE='absolute/path/to/playwright'
 $env:CHROME_PATH='absolute/path/to/chrome.exe'
 node tests/verify-walkable.cjs
 python tests/verify-walkable-integrity.py
+python tests/verify-walkable-publication.py
 ```
 
 `LAB_WALKABLE_BASE` can point the same browser checks at the deployed `/lab/walkable-3d/` route. Tests use their own headless browser, sequentially; they do not control the user's browser. Hosting tests are separate from entrant quality grading.
 
 ## Frozen submission integrity
 
-Each `entries/<id>/original.zip` is an exact copy of the supplied finished archive. `provenance.json` records its SHA-256, original source, per-file hashes and all hosting adjustments. `.gitattributes` disables Git text conversion under `entries/`.
+Each repository file `entries/<id>/original.zip` is an exact copy of the supplied finished archive. These ZIPs and the raw `evidence/` folders are retained locally and in recoverable Git history, and explicitly excluded from Pages output. `provenance.json` records their SHA-256 values, original source, per-file hashes and all hosting adjustments, and distinguishes published files from retained records. `.gitattributes` disables Git text conversion under `entries/`.
 
-Only the frozen runtime and source evidence are served separately. Original runtime HTML is stored as `frozen/index.html.txt`, with identical bytes. The host fetches and SHA-256 verifies it only after a click, then creates an in-memory sandbox document. There is no raw entrant HTML launch link on the Lab origin. Scene JS and CSS are copied unchanged; no source is rebuilt and no entrant visuals, controls, quality settings, collisions or behavior are fixed.
+The site serves the frozen runtime, small JPEG previews, prompt, provenance, licenses and concise producer records. Full-resolution captures, raw test samples, portable ZIPs and the benchmark's development helpers are excluded by `_config.yml`. Unrelated Lab helpers and tests are outside this exclusion scope. Original runtime HTML is stored as `frozen/index.html.txt`, with identical bytes. The host fetches and SHA-256 verifies it only after a click, then creates an in-memory sandbox document. There is no raw entrant HTML launch link on the Lab origin. Scene JS and CSS are copied unchanged; no source is rebuilt and no entrant visuals, controls, quality settings, collisions or behavior are fixed.
 
 The in-memory document receives a base URL, a restrictive Content Security Policy and a small readiness/error/pointer-release bridge. Bracken Hollow additionally needs exactly two hosting path replacements: `src="/assets/` → `src="./assets/` and `href="/assets/` → `href="./assets/`. These affect the script and CSS URLs only. The original HTML and archive are preserved unchanged. Alder Halt needs no path replacements.
 
@@ -44,7 +45,7 @@ Parent messages are accepted only from the current iframe window, its opaque ori
 3. Copy the archive unchanged, hash it, and copy only its required runtime/evidence. Preserve HTML as `.txt`; document any minimal hosting path substitutions separately. Preserve original licenses.
 4. Capture a still from the completed build, record its origin, and compress it for static browsing. Do not use generated art or a mockup as evidence.
 5. Add an entry to `entries.json` with disclosures, controls, limitations, source links, original archive and HTML hashes, and a DOM readiness selector. Give every entry a unique stable ID. Never add invented grades, elapsed times or backend identifiers.
-6. Regenerate its provenance hashes and run integrity, security, lifecycle and layout checks. Publish through the existing main/root Pages PR workflow. One finished entry shows a waiting card; two unlock a pair; additional entries create selectable pairs. No backend or external service is needed.
+6. Regenerate its provenance hashes, update `tests/walkable-publication-allowlist.json`, and run integrity, publication, security, lifecycle and layout checks. ZIP and evidence exclusions apply to every entry ID. Inspect the actual Pages artifact with `python tests/verify-walkable-publication.py --artifact path/to/artifact.tar` before recording the publication receipt. Publish through the existing main/root Pages PR workflow. One finished entry shows a waiting card; two unlock a pair; additional entries create selectable pairs. No backend or external service is needed.
 
 ## Personal records
 

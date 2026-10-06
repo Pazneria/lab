@@ -22,3 +22,7 @@ See [the host design, scoped security audit and admission rules](../walkable-3d/
 Local browser: dedicated headless Chromium 147.0.7727.15, driven by the available Playwright installation. Screenshots of the desktop gallery, mobile gallery and expanded mobile inspector were reviewed. Test reports and screenshots are retained under ignored `evidence/`. Readiness and failed-asset tests explicitly activate their own headless test tab before execution. Producer performance numbers come from their original records; host checks do not assign new performance grades. Native touch movement is unsupported by both entrants and labeled accordingly.
 
 The site uses the existing main/root legacy GitHub Pages workflow; no deployment settings, backend, credentials or paid services are introduced. Publication and exact served-file checks are recorded separately in the task's deployment receipt.
+
+## Publication footprint correction
+
+The Pages exclusion list retains standard Jekyll defaults and narrowly excludes this benchmark's original ZIPs, raw evidence folders, local preview/test helpers and this development record. Public links now lead to retained provenance and concise records; per-file hashes still identify all excluded originals. Frozen entrant runtime bytes are unchanged. `verify-walkable-publication.py` checks an explicit publication allowlist, link targets, the actual Pages artifact and optional live hashes/404s. Existing unrelated Lab scripts/tests remain in their prior scope.

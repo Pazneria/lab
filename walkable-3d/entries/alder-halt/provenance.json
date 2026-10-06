@@ -64,5 +64,24 @@
       "sha256": "4296eefee9812d5d17458f542758569bc06d74211be39dfad38d50a22d31411e",
       "bytes": 3940
     }
+  },
+  "publication": {
+    "policy": "Portable ZIP and raw evidence retained in the repository; excluded from Pages. Frozen runtimes are unchanged.",
+    "publishedFiles": [
+      "BENCHMARK.md",
+      "frozen/index.html.txt",
+      "frozen/scene.js",
+      "frozen/vendor/three/BufferGeometryUtils.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js",
+      "preview.jpg",
+      "README.md"
+    ],
+    "retainedOutsidePages": [
+      "evidence/navigation.json",
+      "evidence/verification.json",
+      "original.zip"
+    ]
   }
 }

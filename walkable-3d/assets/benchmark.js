@@ -84,8 +84,8 @@
     const list = el('ul'); entry.limitations.forEach(item => list.append(el('li', item))); details.append(list);
     const links = el('div', undefined, 'source-links');
     entry.documents.forEach(doc => links.append(link(doc.label, `entries/${entry.id}/${doc.path}`)));
-    links.append(link('Original build ZIP ↓', `entries/${entry.id}/original.zip`), link('Source hashes', `entries/${entry.id}/provenance.json`)); details.append(links);
-    details.append(el('p', 'Opening source documents may reveal model information. Scenes and source archives retain their original content.', 'blind-note'), gradeForm(entry));
+    links.append(link('Source hashes', `entries/${entry.id}/provenance.json`)); details.append(links);
+    details.append(el('p', 'Opening source documents may reveal model information. Original archives and raw captures are retained in the repository, outside this site; their hashes remain in provenance.', 'blind-note'), gradeForm(entry));
     return details;
   }
   function card(entry, index) {
