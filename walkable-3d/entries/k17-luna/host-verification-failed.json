@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-06T06:02:12.083Z",
+  "kind": "Host launch/input/lifecycle verification only; no benchmark grade or comparative performance claim",
+  "entries": [],
+  "external": [],
+  "failure": "page.waitForFunction: Error: A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.\n    at eval (eval at predicate (eval at evaluate (:290:30)), <anonymous>:1:100)\n    at predicate (eval at evaluate (:290:30), <anonymous>:7:23)\n    at next (eval at evaluate (:290:30), <anonymous>:29:29)\n    at C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-11\\verify-polar-stage.cjs:11:202",
+  "entry": "k17-luna",
+  "classification": "Frozen build startup JavaScript exception: Spread syntax requires ...iterable[Symbol.iterator] to be a function. No successful rendered/input verification.",
+  "sourceChanged": false,
+  "hostResponse": "Viewer detected runtime error and destroyed the child browsing context.",
+  "admission": "Published as a failed completed result, excluded from working pairs. No repairs or fabricated preview.",
+  "hostingAdjustments": "Only original HTML stylesheet/module URLs made relative and an import map added for the unchanged absolute Three.js import. Runtime JS remains byte-identical."
+}

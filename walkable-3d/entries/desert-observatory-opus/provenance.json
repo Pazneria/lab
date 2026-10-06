@@ -1,0 +1,142 @@
+{
+  "entry": "desert-observatory-opus",
+  "importedAt": "2026-10-06T05:38:33.279467+00:00",
+  "status": "Admitted as a working frozen scene with explicit unconfirmed manual-prompt disclosure.",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-desert-observatory-entry (host preservation snapshot; no producer ZIP supplied)",
+  "archiveSha256": "c578f8c1459403eb13a936342f81471c268f7ad1400837ce77730ac99a5fdfc4",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/textures.js": "src/textures.js",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/objects/Sky.js": "node_modules/three/examples/jsm/objects/Sky.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": "node_modules/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "preview": "Captured from the frozen build after entering and its ordinary R reset, at default rendering settings. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "completionEvidence": {
+    "producerFinalStopUTC": "2026-10-06T05:19:19Z",
+    "evidence": "README explicitly records final stop/last edit; its modification time agrees. Authored source hashes and metadata remained unchanged across independent observations and before/after snapshot copying.",
+    "firstObservedAt": "2026-10-06T05:33:13.215061+00:00",
+    "secondObservedAt": "2026-10-06T05:35:39.264293+00:00",
+    "sourceFilesStable": 6
+  },
+  "hostingAdjustments": [
+    "Original HTML preserved byte-for-byte as index.html.txt. Only the import-map prefix changes from ./node_modules/three/ to ./vendor/three/ in viewer memory; all scene files and dependency bytes remain unchanged."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in scoped read-only authored runtime review.",
+    "scope": "HTML/CSS, browser API surfaces, imports, procedural geometry/material/texture generation, controls and render loop. No authored external network, telemetry, credentials, storage, workers, dynamic evaluation or parent navigation.",
+    "dependencies": {
+      "version": "0.170.0",
+      "registryUrl": "https://registry.npmjs.org/three/-/three-0.170.0.tgz",
+      "packageIntegrity": "sha512-FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ==",
+      "verifiedFiles": {
+        "build/three.module.js": {
+          "bytes": 1314681,
+          "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb"
+        },
+        "examples/jsm/objects/Sky.js": {
+          "bytes": 6819,
+          "sha256": "eacd17d5debec3b909d1208304d70024a59c38c58b6533fcd4711f8a6a0b63bc"
+        },
+        "examples/jsm/utils/BufferGeometryUtils.js": {
+          "bytes": 31768,
+          "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+        },
+        "examples/jsm/geometries/RoundedBoxGeometry.js": {
+          "bytes": 4625,
+          "sha256": "d20aeaf7077c459a8d952d215738d7b44fba028440bb862d84b622a34f0c80bb"
+        },
+        "LICENSE": {
+          "bytes": 1081,
+          "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+        }
+      },
+      "passed": true
+    },
+    "boundary": "Existing opaque iframe and entry-scoped CSP; no same-origin, downloads or network connections."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3148,
+      "sha256": "1e9b928a8ce45313f885a101bd61a2da92cb3b303fb9a9dd32d39b21a881c076"
+    },
+    "frozen/src/main.js": {
+      "bytes": 66276,
+      "sha256": "ad770a9b7edb49c99422c76ed523efbc2fd190394b19d6ae067fc8ce8a6a4c7c"
+    },
+    "frozen/src/textures.js": {
+      "bytes": 15803,
+      "sha256": "7106f62b7fc9e02a09c4e4b489585ae737fdd1dda57aeec8e65aed68da3128e6"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 1314681,
+      "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb"
+    },
+    "frozen/vendor/three/examples/jsm/objects/Sky.js": {
+      "bytes": 6819,
+      "sha256": "eacd17d5debec3b909d1208304d70024a59c38c58b6533fcd4711f8a6a0b63bc"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+      "bytes": 4625,
+      "sha256": "d20aeaf7077c459a8d952d215738d7b44fba028440bb862d84b622a34f0c80bb"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "README.md": {
+      "bytes": 6222,
+      "sha256": "5a5935668015d4bb11466db4709245fe549dcb9fc4fff15a6f4fa4a430c5d3b8"
+    },
+    "preview.jpg": {
+      "bytes": 64911,
+      "sha256": "4ef87f764badb6e6ecabef35b805a90e3bdefb0c3581aa71114957fb004755a1"
+    },
+    "host-verification.json": {
+      "bytes": 1148,
+      "sha256": "cf87b46e717856fb0a1b9096c9dab21280fdcb35955f3c617c4521e4df24bbd3"
+    }
+  },
+  "archiveRetention": "Original source, host snapshot and raw captures stay outside Git and Pages.",
+  "prompt": {
+    "version": null,
+    "status": "Filed under Prompt 03 by the parent. The exact text delivered to this manual run has not been confirmed. The shared Prompt 03 is available as the reference brief; identical submission text is not asserted."
+  },
+  "hostVerification": "host-verification.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/textures.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/three/examples/jsm/objects/Sky.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "host-preview.png": {
+      "bytes": 936143,
+      "sha256": "df63905b24d6a9aa90d2e50502944e6aaa4dfd79bb327ae377a3eb43a20a4288"
+    },
+    "original.zip": {
+      "bytes": 311086,
+      "sha256": "c578f8c1459403eb13a936342f81471c268f7ad1400837ce77730ac99a5fdfc4"
+    }
+  }
+}

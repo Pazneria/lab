@@ -21,7 +21,10 @@ for entry in json.loads((root / 'entries.json').read_text(encoding='utf-8'))['en
         count += 1
     source = provenance['source']
     if not archive_path.exists():
-        assert (folder / 'preview.jpg').stat().st_size < 180000
+        if entry.get('preview') is None and entry.get('availability') == 'failed':
+            assert not (folder / 'preview.jpg').exists()
+        else:
+            assert (folder / 'preview.jpg').stat().st_size < 180000
         continue  # Raw originals remain in producer/local queue; per-file hashes above still cover every hosted byte.
     with zipfile.ZipFile(archive_path) as archive:
         for file in (folder / 'frozen').rglob('*'):

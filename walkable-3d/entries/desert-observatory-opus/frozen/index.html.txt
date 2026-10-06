@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Desert Observatory</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #1a130d; font-family: system-ui, Segoe UI, sans-serif; }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(20,14,9,0.55); color: #f3e6d2; z-index: 5; cursor: pointer; }
+  #overlay .card { max-width: 440px; padding: 26px 30px; background: rgba(30,22,15,0.82); border: 1px solid #8a6a45; border-radius: 10px; line-height: 1.5; }
+  #overlay h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: 0.04em; font-weight: 600; }
+  #overlay p { margin: 6px 0; font-size: 14px; color: #dccbb2; }
+  #overlay table { font-size: 13px; border-collapse: collapse; margin-top: 10px; }
+  #overlay td { padding: 2px 10px 2px 0; }
+  #overlay td:first-child { color: #f0c98a; font-weight: 600; white-space: nowrap; }
+  #overlay .go { margin-top: 14px; font-size: 15px; color: #ffd9a0; font-weight: 600; }
+  #hud { position: fixed; left: 12px; bottom: 10px; color: #f6ead8; font-size: 12px; text-shadow: 0 1px 2px #000; z-index: 3; pointer-events: none; opacity: 0.85; }
+  #perf { position: fixed; right: 10px; top: 8px; color: #e9ffe0; font: 12px/1.3 Consolas, monospace; background: rgba(0,0,0,0.35); padding: 4px 8px; border-radius: 4px; z-index: 3; pointer-events: none; white-space: pre; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,255,255,0.55); z-index: 3; pointer-events: none; }
+  #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #f3e6d2; background: #1a130d; z-index: 10; font-size: 16px; letter-spacing: 0.05em; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./node_modules/three/build/three.module.js",
+  "three/addons/": "./node_modules/three/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="loading">Preparing the observatory…</div>
+<div id="overlay"><div class="card">
+  <h1>Desert Observatory</h1>
+  <p>Late afternoon on the plateau. Walk the shaded passage, circle the telescope, and look back from the terrace.</p>
+  <table>
+    <tr><td>Mouse</td><td>Look around (click to capture)</td></tr>
+    <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+    <tr><td>Shift</td><td>Walk faster</td></tr>
+    <tr><td>R</td><td>Reset to the entrance</td></tr>
+    <tr><td>1 2 3 4</td><td>Entrance · Instrument · Terrace edge · Under the dome</td></tr>
+    <tr><td>Q</td><td>Toggle render resolution (quality / speed)</td></tr>
+    <tr><td>P</td><td>Toggle frame-time readout</td></tr>
+    <tr><td>Esc</td><td>Release mouse</td></tr>
+  </table>
+  <div class="go">Click to explore</div>
+</div></div>
+<div id="cross"></div>
+<div id="hud">WASD move · Mouse look · Shift faster · R reset · 1–4 viewpoints · Q quality · P stats · Esc release</div>
+<div id="perf"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

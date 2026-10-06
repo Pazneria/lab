@@ -22,7 +22,7 @@ assert actual == set(allow['sourceFiles']), {'unexpected': sorted(actual-set(all
 blocked = [p.relative_to(root).as_posix() for p in (root / 'walkable-3d').rglob('*') if p.is_file() and excluded(p.relative_to(root).as_posix())]
 blocked += ['scripts/serve-walkable.cjs','tests/verify-walkable.cjs','tests/verify-walkable-room.cjs','tests/verify-walkable-integrity.py','tests/verify-walkable-publication.py','tests/walkable-publication-allowlist.json','docs/WALKABLE-INTEGRATION.md','docs/WALKABLE-INTEGRATION.html']
 blocked += ['tests/verify-walkable-prompts.cjs','tests/verify-walkable-skip.cjs','tests/verify-walkable-observatories.cjs']
-blocked += ['tests/verify-walkable-greenhouses.cjs']
+blocked += ['tests/verify-walkable-greenhouses.cjs','tests/verify-walkable-polar.cjs']
 manifest = json.loads((root/'walkable-3d/entries.json').read_text(encoding='utf-8'))
 for entry_id in [e['id'] for e in manifest['entries'] if e.get('archiveLocation') == 'retained-outside-repository']:
     blocked += [f'walkable-3d/entries/{entry_id}/original.zip', f'walkable-3d/entries/{entry_id}/evidence/host-preview.png']
@@ -37,7 +37,8 @@ links = parser.links + ['entries.json'] + [v['path'] for v in manifest['promptVe
 entries = manifest['entries']
 for entry in entries:
     prefix = 'entries/' + entry['id'] + '/'
-    links += [prefix + p for p in ['preview.jpg','provenance.json','frozen/index.html.txt'] + [d['path'] for d in entry['documents']]]
+    previews=[] if entry.get('availability')=='failed' and entry.get('preview') is None else ['preview.jpg']
+    links += [prefix + p for p in previews + ['provenance.json','frozen/index.html.txt'] + [d['path'] for d in entry['documents']]]
     provenance = json.loads((root/'walkable-3d'/prefix/'provenance.json').read_text())
     assert set(provenance['publication']['publishedFiles']) | set(provenance['publication']['retainedOutsidePages']) == set(provenance['files'])
     assert all(excluded('walkable-3d/'+prefix+p) for p in provenance['publication']['retainedOutsidePages'])
