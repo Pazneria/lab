@@ -1,0 +1,34 @@
+{
+  "id": "rain-courtyard-opus",
+  "checkedAt": "2026-10-06T04:44:59.471Z",
+  "scope": "Host real WebGL2 launch/input/isolation verification; no benchmark grade or performance claim.",
+  "passed": true,
+  "checks": [
+    "Completed runtime renders at its default adaptive quality",
+    "Keyboard movement, mouse look and original reset",
+    "Opaque parent boundary, pointer release, focus and complete unload"
+  ],
+  "diagnostics": {
+    "renderer": "ANGLE (Intel, Intel(R) Graphics (0x00007D67) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "drawingBuffer": [
+      1233,
+      673
+    ],
+    "defaultAdaptiveQuality": true
+  },
+  "errors": [],
+  "externalRequests": [],
+  "labIntegration": {
+    "checkedAt": "2026-10-06T04:46:38.900Z",
+    "checks": [
+      "Every full prompt version displays and downloads exact recorded UTF-8 bytes, including grading/execution rules; no scene starts",
+      "Selectors never pair across prompts; existing railway pairs and separate saved grades survive prompt changes",
+      "Actual in-world Inspect opens native controls, selects Night Market, and reaches its full prompt; Back restores room position and prompt",
+      "All four frozen market builds open from actual screen stills, walk/reset/release, block parent/storage access, produce zero Lab GL draws while active, and detach on repeated return",
+      "Preferences stay separate from grades across prompts; mobile 320–700px and WCAG A/AA pass; history/reload stays static and retains selected prompt",
+      "Missing market module unloads the child; mismatched prompt hash fails visibly without claiming reconstructed text is exact"
+    ],
+    "candidateManifest": false,
+    "passed": true
+  }
+}

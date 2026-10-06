@@ -1,0 +1,154 @@
+{
+  "entry": "rain-courtyard-opus",
+  "importedAt": "2026-10-06T04:43:22.030915+00:00",
+  "archiveSource": "task-9/opus-night-market-entry (host preservation snapshot of required runtime/license/README; no producer ZIP supplied)",
+  "archiveSha256": "079fbc0b88223dfdb0543f5f6beac9bf270e52049f33fd74d59263b654e17611",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/controls/PointerLockControls.js": "node_modules/three/examples/jsm/controls/PointerLockControls.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/EffectComposer.js": "node_modules/three/examples/jsm/postprocessing/EffectComposer.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/MaskPass.js": "node_modules/three/examples/jsm/postprocessing/MaskPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/OutputPass.js": "node_modules/three/examples/jsm/postprocessing/OutputPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/Pass.js": "node_modules/three/examples/jsm/postprocessing/Pass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/RenderPass.js": "node_modules/three/examples/jsm/postprocessing/RenderPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/ShaderPass.js": "node_modules/three/examples/jsm/postprocessing/ShaderPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/UnrealBloomPass.js": "node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "frozen/vendor/three/examples/jsm/shaders/CopyShader.js": "node_modules/three/examples/jsm/shaders/CopyShader.js",
+      "frozen/vendor/three/examples/jsm/shaders/LuminosityHighPassShader.js": "node_modules/three/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "frozen/vendor/three/examples/jsm/shaders/OutputShader.js": "node_modules/three/examples/jsm/shaders/OutputShader.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/textures.js": "src/textures.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE"
+    },
+    "preview": "Host capture from completed build at original reset view and default adaptive quality; only aspect-preserving resizing/JPEG compression."
+  },
+  "hostingAdjustments": [
+    "HTML preserved unchanged as index.html.txt and SHA-256 checked before loading.",
+    "Only required Three.js dependency closure and license copied byte-for-byte to frozen/vendor/three.",
+    "In-memory HTML import-map paths change ./node_modules/three/ to ./vendor/three/ only. No scene, lighting, reflection, quality, input or behavior fixes."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in scoped completed-runtime review.",
+    "scope": "Authored HTML/JS/texture generation and browser APIs; static dependency imports and module closure. No authored external network, storage, telemetry, credentials, dynamic evaluation, workers or parent navigation.",
+    "sandbox": "Existing opaque iframe and entry-scoped CSP; one active scene, Lab rendering suspended, child destroyed on exit/failure/navigation.",
+    "dependencies": "Three.js 0.169.0 plus locally supplied pointer controls, composer/render/bloom/output passes, shaders and geometry helper. No runtime downloads."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 3743,
+      "sha256": "05aceae8a2d3c05e6248583b0dd93f7bf248a3c6356ebc7274c76675478f5ee8"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 1304820,
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416"
+    },
+    "frozen/vendor/three/examples/jsm/controls/PointerLockControls.js": {
+      "bytes": 3555,
+      "sha256": "3bcdd5827137a5fe531735ad8785d909ba898a904829638c58f1d7961bc38888"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/EffectComposer.js": {
+      "bytes": 4651,
+      "sha256": "d234e578618fa816955ebdc059c049c577e203e650e33cf22bde3f232c29e669"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/MaskPass.js": {
+      "bytes": 2231,
+      "sha256": "328cf7db0da5d9be83ffe39d54b01d5ac1fddf108cc98182ddbb056f5c8b537f"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/OutputPass.js": {
+      "bytes": 2524,
+      "sha256": "32f879d2179087676631c799857a885586b3cdd13b9731bd3b13f06428bd58b7"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/Pass.js": {
+      "bytes": 1706,
+      "sha256": "b3c6128340eaa37e40a6a2f1b738e894c855239417d50959759b34a2b5e89f92"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/RenderPass.js": {
+      "bytes": 1941,
+      "sha256": "6c9b8a539ea16e898f65e4760f14937ef9ea94043bd9842c141e0301f41903e8"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/ShaderPass.js": {
+      "bytes": 1576,
+      "sha256": "3b28a1ee27e0eb96c0eab137a1f442ccf127a926904eced2d51e125ec44af781"
+    },
+    "frozen/vendor/three/examples/jsm/postprocessing/UnrealBloomPass.js": {
+      "bytes": 12410,
+      "sha256": "3bd23a1097af75c7002d0ffc21a6c14f45c4dd701dbaf737030dfc61fb7c64d9"
+    },
+    "frozen/vendor/three/examples/jsm/shaders/CopyShader.js": {
+      "bytes": 571,
+      "sha256": "4e3346db194db56a596cd074e9bdb39fb5eb52040c333e0d29dc4eb1324d3b1d"
+    },
+    "frozen/vendor/three/examples/jsm/shaders/LuminosityHighPassShader.js": {
+      "bytes": 1147,
+      "sha256": "9f4866f9abb2d96fd83eec46ba4bf2165b22155a7a37ff425c0f60eba18007cb"
+    },
+    "frozen/vendor/three/examples/jsm/shaders/OutputShader.js": {
+      "bytes": 1490,
+      "sha256": "4944cecd49c0d4d1520a4d927bde8a590fd43f041ee913252b9451855a01d0f0"
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "bytes": 31768,
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    },
+    "frozen/src/main.js": {
+      "bytes": 74698,
+      "sha256": "d6d54b84533440c76cbfe7462f13c5ebfae9f561c44d77ff407ecdea76005447"
+    },
+    "frozen/src/textures.js": {
+      "bytes": 21740,
+      "sha256": "470fb885f8124fcb5abe9c1471ac232f3d13cf98ea166bb4f85623e2eb1e711d"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "README.md": {
+      "bytes": 7256,
+      "sha256": "f7ffefff953260fa5801fd3c48231cb7da6c69d02e43592cad56e060a75fd8ea"
+    },
+    "preview.jpg": {
+      "bytes": 48169,
+      "sha256": "0d6300fbfc32cb66049463f7c6ce6e019fa760e30790bedcdc51cc757140edf8"
+    },
+    "host-verification.json": {
+      "bytes": 1693,
+      "sha256": "144be7d600f74dad8f21489eb7dfb82f9ec15ebadfee8311d62995b14f828556"
+    }
+  },
+  "publication": {
+    "policy": "Only frozen runtime, small JPEG, licenses, provenance and concise records. No ZIP or raw evidence in repository or Pages.",
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/textures.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/controls/PointerLockControls.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/EffectComposer.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/MaskPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/OutputPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/Pass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/RenderPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/ShaderPass.js",
+      "frozen/vendor/three/examples/jsm/postprocessing/UnrealBloomPass.js",
+      "frozen/vendor/three/examples/jsm/shaders/CopyShader.js",
+      "frozen/vendor/three/examples/jsm/shaders/LuminosityHighPassShader.js",
+      "frozen/vendor/three/examples/jsm/shaders/OutputShader.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "archiveRetention": "Host preservation ZIP retained outside repository and Pages in task-11 queue; named finished producer folder is unchanged.",
+  "prompt": {
+    "version": "02-shared",
+    "sha256": "013088621eb352cab4e9e1686c7e6c52751f636d4b81fa3b4f54e0b04e24f08f",
+    "source": "Parent confirms the manual Opus prompt was identical to the supplied Prompt 02 text; manual delivery was not independently observed."
+  }
+}

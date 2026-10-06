@@ -1,0 +1,113 @@
+{
+  "entry": "meridian-sol",
+  "importedAt": "2026-10-06T04:37:54.896556+00:00",
+  "archiveSource": "task-17/Meridian-observatory.zip",
+  "archiveSha256": "852cff20b7ef1b9c1d821468947080fc63ec170791f2745bd9591141c99aad5c",
+  "originalPreserved": true,
+  "source": {
+    "memberRoot": "Meridian-observatory/",
+    "runtimeRoot": "dist/",
+    "runtimeMapping": {
+      "frozen/index.html.txt": "Meridian-observatory/dist/index.html",
+      "frozen/assets/index-CVZfHC4g.js": "Meridian-observatory/dist/assets/index-CVZfHC4g.js",
+      "frozen/assets/index-i6LjAI14.css": "Meridian-observatory/dist/assets/index-i6LjAI14.css"
+    },
+    "preview": "Host capture from the frozen production build at its original reset view; only aspect-preserving resize/JPEG compression."
+  },
+  "hostingAdjustments": [
+    "Original HTML preserved verbatim as index.html.txt and SHA-256 checked before sandbox loading.",
+    "In-memory HTML script and CSS paths change from /assets/ to ./assets/ only.",
+    "Production bundle/CSS, producer records and license are unchanged bytes copied directly from the original ZIP; no rebuild or scene/input/quality fixes."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in the scoped runtime review.",
+    "scope": "Read-only authored source/browser APIs, production HTML/CSS/bundle, bounded procedural generation and dependency surfaces. No authored external network, telemetry, storage, credentials, workers, dynamic evaluation or parent navigation.",
+    "bundle": "Production bundle matches producer record. Its sole fetch call is Vite module-preload support; this HTML has no preload links. CSP blocks connections.",
+    "sandbox": "Existing opaque iframe, scripts and pointer lock only; entry-scoped CSP unchanged."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 1947,
+      "sha256": "a1dc7757e4123f9d2d95349198fb5e76343cc9726a0b226d4faa46e0c6af481d"
+    },
+    "frozen/assets/index-CVZfHC4g.js": {
+      "bytes": 557885,
+      "sha256": "f5c9cb5c94f3ba11fe349d6d8b741b4380c603a77dd6fffdb815796b4ea394a9"
+    },
+    "frozen/assets/index-i6LjAI14.css": {
+      "bytes": 2872,
+      "sha256": "b89994539a1d5f38318c8959dbc5fea2880e743ddc17552048e338287cbb40f8"
+    },
+    "README.md": {
+      "bytes": 4159,
+      "sha256": "e9a1a499e6cc42c3036278dfdcd584735c63858bb580eef5d72b3d73086e2396"
+    },
+    "BUILD_RECORD.json": {
+      "bytes": 2508,
+      "sha256": "530f347201be5d02d5f8cee15da165b2898703cecb4bfb9f6ed7b95bfe637e43"
+    },
+    "THIRD_PARTY_NOTICES.txt": {
+      "bytes": 1166,
+      "sha256": "d0b41d938e207234d9c5277274e2a59791e19567c4ae844e01a3f3df6a2a33c9"
+    },
+    "preview.jpg": {
+      "bytes": 57260,
+      "sha256": "0ef2c97a42f4e215cfbc54b39a9a35a2187b352e2328a6e94429f187e49b6d5b"
+    },
+    "host-verification.json": {
+      "bytes": 1450,
+      "sha256": "275342f6cea009dbe6121234b89d2124cd54f07a3ea48e6dcbdc172f75c3f82f"
+    }
+  },
+  "publication": {
+    "policy": "Only runtime, small preview, licenses, concise records and provenance; no ZIP or raw evidence copied into repository or Pages.",
+    "publishedFiles": [
+      "BUILD_RECORD.json",
+      "README.md",
+      "THIRD_PARTY_NOTICES.txt",
+      "frozen/assets/index-CVZfHC4g.js",
+      "frozen/assets/index-i6LjAI14.css",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "retainedOriginalFiles": {
+    "evidence/route-test.json": {
+      "bytes": 5501,
+      "sha256": "2e073082f7b912db5ec4702956664b3ef682fc888a643920b9ef688d7a2d4e57"
+    },
+    "evidence/functional-test.json": {
+      "bytes": 4947,
+      "sha256": "377b5eda965c5554e001cd4945604ac88a902c3c50629c141976539c0e3d71e4"
+    },
+    "evidence/performance-test.json": {
+      "bytes": 124678,
+      "sha256": "864092ec033862d94d28b2438b058fbb9294889211ef32ad1d5f3b7ff9754958"
+    },
+    "src/main.js": {
+      "bytes": 42562,
+      "sha256": "f04a26ea7376262f0b6d332166e6019c0cf5acb91a40c25d88b0369a223a87cb"
+    }
+  },
+  "archiveRetention": "Original ZIP remains untouched in the finished task-17 producer workspace, outside repository and Pages.",
+  "producerPerformance": {
+    "source": "Meridian-observatory/evidence/performance-test.json",
+    "summary": {
+      "samples": 4958,
+      "medianMs": 10.5,
+      "p95Ms": 25.299999999999272,
+      "p99Ms": 33.39999999999782,
+      "maxMs": 283.3000000000029,
+      "framesOver50ms": 12
+    },
+    "method": "requestAnimationFrame deltas during actual keyboard movement and mouse-delta turns; no screenshots during measured intervals; one browser instance. Includes automation input overhead. No score or live FPS claim.",
+    "measurementKind": "Producer diagnostic; not host verification or a final grade."
+  },
+  "prompt": {
+    "version": "03-shared",
+    "sha256": "fcc0b24af380f0d6606ff043ea3809706f927a6fe6b0e41e2568ba8c39da1560",
+    "source": "Parent confirms identical submitted text for all three models."
+  }
+}

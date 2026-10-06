@@ -1,0 +1,45 @@
+{
+  "title": "Meridian — Desert Observatory",
+  "model": "GPT-6 / Codex, as identified in system instructions; exact backend identifier is not exposed",
+  "reasoning_effort": "Not exposed by this execution environment",
+  "task_started_utc": "2026-10-06T03:41:57Z",
+  "first_implementation_utc": "2026-10-06T03:44:26.5937812Z",
+  "deadline_utc": "2026-10-06T04:41:57Z",
+  "scene_last_edit_utc": "2026-10-06T04:23:05.559283Z",
+  "actual_stop_utc": "2026-10-06T04:33:29.792Z",
+  "human_interruptions": [],
+  "environment_delays": [
+    "Initial npm registry installation and Vite optimization encountered sandbox EACCES. Approved registry installation and build/server execution resolved this inside the time limit.",
+    "The original localhost port 4387 became occupied by an unrelated server during a control-test attempt. The attempt was halted; no content from that server was inspected or reused, and no unrelated process was stopped. This entry moved to verified free port 48673."
+  ],
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-17\\observatory",
+  "port": 48673,
+  "preview_url": "http://127.0.0.1:48673/",
+  "assets": "Original procedural geometry, canvas textures and lettering authored in src/main.js. No other entrant files or existing project assets reused.",
+  "agents": "No other models or subagents used.",
+  "libraries": {
+    "vite": "7.1.7",
+    "playwright": "1.56.0",
+    "three": "0.180.0"
+  },
+  "production_bundle": "dist/assets/index-CVZfHC4g.js",
+  "production_bundle_sha256": "F5C9CB5C94F3BA11FE349D6D8B741B4380C603A77DD6FFFDB815796B4EA394A9",
+  "tests": {
+    "inspection_route": "PASS",
+    "performance_note": "Measured headless data includes outliers and automation input overhead; live judging is separate.",
+    "control_checks": "12 PASS",
+    "browser_errors": 0,
+    "performance_report": "evidence/performance-test.json",
+    "build": "PASS",
+    "external_requests": 0
+  },
+  "limitations": [
+    "Desktop keyboard/mouse, WebGL2 and pointer lock required.",
+    "Scenic outer terrain and static dome/instrument; no touch controls.",
+    "Automated final run contained 12 frames over 50 ms, maximum 283.3 ms.",
+    "Exact backend model identifier and reasoning effort unavailable; not guessed."
+  ],
+  "stop_definition": "Final artifact metadata finalization, after implementation, production build, all tests and archive creation.",
+  "within_one_hour_deadline": true,
+  "elapsed_seconds": 3092.793
+}

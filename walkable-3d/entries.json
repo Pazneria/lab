@@ -346,6 +346,104 @@
       ],
       "previewAlt": "Unchanged Asterion reset view: shallow steps enter a long shaded passage toward the observatory instrument.",
       "promptVersion": "03-shared"
+    },
+    {
+      "id": "meridian-sol",
+      "title": "Meridian Observatory",
+      "description": "A vaulted south passage, an equatorial refractor beneath an open dome, and a guarded horizon terrace.",
+      "requestedConfiguration": "GPT-6.1 Sol / xhigh (requested)",
+      "modelDisclosure": "Parent requested GPT-6.1 Sol at xhigh. Producer could verify only GPT-6 / Codex; exact backend identity and effort were not exposed.",
+      "buildWindow": "Task start 2026-10-06 03:41:57 UTC; first implementation 03:44:26.5937812 UTC; deadline 04:41:57 UTC; actual stop 04:33:29.792 UTC. Producer records 3,092.793 seconds elapsed from task start, within its deadline.",
+      "interruptions": "No human interruption. Initial registry installation and Vite optimization hit sandbox restrictions; authorized retries completed within the time limit. An occupied original port was abandoned without inspecting or reusing the unrelated server; the completed build uses port 48673.",
+      "controls": "WASD or arrows walk; mouse look; Shift brisk walk; R reset; Esc releases/pauses; F frame-time panel; quality button while paused.",
+      "producerChecks": "Production build and complete keyboard/mouse inspection route passed; 12 control/collision checks, zero browser errors and zero external requests. Host verification is recorded separately.",
+      "performanceEvidence": "Producer 1920 x 1080, DPR 1, headless Chromium / Intel Graphics: 4,958 frames, median 10.5 ms, p95 25.3 ms, p99 33.4 ms, maximum 283.3 ms; 12 frames over 50 ms. Automated input overhead included. Diagnostics, not a standardized physical-hardware grade.",
+      "limitations": [
+        "Desktop keyboard/mouse, pointer lock and WebGL 2 required; no touch navigation.",
+        "Instrument and dome are static; outer dunes/mesas are scenery beyond the protected walking area.",
+        "Long frames remain in the producer report, including the 283.3 ms maximum.",
+        "The in-scene rolling HUD excludes intervals of 300 ms or more; use the separate raw producer report or independent measurements when judging long frames."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Timing & interruptions",
+          "path": "BUILD_RECORD.json"
+        },
+        {
+          "label": "Runtime license",
+          "path": "THIRD_PARTY_NOTICES.txt"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#enter:not([disabled])",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAlt": "Frozen Meridian Observatory reset view: a shaded vaulted passage frames the bronze instrument and open dome.",
+      "webgl": "WebGL 2",
+      "promptId": "03",
+      "promptVersion": "03-shared",
+      "archiveSha256": "852cff20b7ef1b9c1d821468947080fc63ec170791f2745bd9591141c99aad5c",
+      "htmlSha256": "a1dc7757e4123f9d2d95349198fb5e76343cc9726a0b226d4faa46e0c6af481d",
+      "archiveLocation": "retained-outside-repository"
+    },
+    {
+      "id": "rain-courtyard-opus",
+      "title": "After-Rain Courtyard Night Market",
+      "description": "Four distinct stalls around wet paving, with a covered east passage to a small tea counter.",
+      "requestedConfiguration": "Claude Opus (manual run)",
+      "modelDisclosure": "Producer README reports Claude Opus 5.5 (claude-opus-5-5) in Claude Code desktop. This identity is producer-reported, not independently verified; reasoning effort was not visible in the record.",
+      "buildWindow": "Producer README: start 2026-10-05 23:28:03 -04:00 (03:28:03 UTC); first implementation about 23:30 (03:30 UTC); deadline 2026-10-06 00:28:03 -04:00 (04:28:03 UTC); last edit 00:05:06 -04:00 (04:05:06 UTC). These are supplied manual-run records, not independently observed timestamps.",
+      "interruptions": "Producer reports no interruptions, other models, subagents, paid services or external assets.",
+      "controls": "Click the panel for mouse look; WASD/arrows walk; Shift faster; hold C crouch; R reset; Esc release; F frame times; G toggles HIGH/PERF quality.",
+      "producerChecks": "Producer reports full-route collision checks and keyboard-driven controls, crouch and reset checks, with no console errors. No raw machine test record accompanied this handoff. Host verification is recorded separately.",
+      "performanceEvidence": "Producer reports 18.9-22.3 ms per synchronously GPU-flushed frame at 1280 x 720 on Intel integrated graphics. The method adds about 7 ms of readPixels synchronization and the pane throttles hidden requestAnimationFrame. These values are not live frame-time measurements, standardized results or a final grade.",
+      "limitations": [
+        "Desktop keyboard and mouse with WebGL 2 and pointer lock; no touch movement UI.",
+        "No shadow maps; lantern light passes through stall bodies and canopies.",
+        "One-time environment cube is not position-correct; wet ground uses a live planar reflection.",
+        "CJK lettering depends on available system fonts. Steam and smoke are unlit camera-facing sprites.",
+        "Built-in adaptive resolution steps down during slow exploration and does not automatically step back up.",
+        "Manual model/version and timing records are producer-reported; reasoning effort is unavailable."
+      ],
+      "documents": [
+        {
+          "label": "Producer record, controls & limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#start[style*=\"block\"]",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAlt": "Completed Opus night market: wet courtyard paving beneath colorful canopies and lanterns.",
+      "webgl": "WebGL 2",
+      "promptId": "02",
+      "promptVersion": "02-shared",
+      "archiveSha256": "079fbc0b88223dfdb0543f5f6beac9bf270e52049f33fd74d59263b654e17611",
+      "htmlSha256": "05aceae8a2d3c05e6248583b0dd93f7bf248a3c6356ebc7274c76675478f5ee8",
+      "archiveLocation": "retained-outside-repository"
     }
   ],
   "prompts": [
