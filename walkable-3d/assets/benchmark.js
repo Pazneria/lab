@@ -1,4 +1,5 @@
 import {createViewer} from './viewer.js';
+import {createGradeForm,renderLeaderboard} from './judgments.js';
 import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
@@ -8,8 +9,8 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
   const blank = () => ({ version: 1, grades: {}, preferences: {}, opened: {} });
   let record = blank(), persistent = true, entries = [], failedEntries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
   const openedThisComparison=new Set();
-  let canShuffle=false;
-  const viewer=createViewer({onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
+  let canShuffle=false,revealed=false;
+  const viewer=createViewer({gradeForm,gradeLabelFor:entry=>`${selected()[0]?.id===entry.id?'A':selected()[1]?.id===entry.id?'B':'Scene'} / ${entry.title} — ${modelVisible(entry)?entry.requestedConfiguration:'Model hidden until reveal'}`,onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null');
@@ -23,12 +24,13 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
   }
   function save() {
     try { localStorage.setItem(key, JSON.stringify(record)); } catch { persistent = false; }
-    storageState();
+    storageState(); updateLeaderboard();
   }
   function refresh() {
+    if(!persistent)return;
     try {const saved=JSON.parse(localStorage.getItem(key));if(saved?.version===1)for(const field of ['grades','preferences','opened'])if(saved[field]&&typeof saved[field]==='object'&&!Array.isArray(saved[field]))record[field]=saved[field];}catch{persistent=false;}
   }
-  addEventListener('storage',event=>{if(event.key===key){refresh();updateVote();storageState();}});
+  addEventListener('storage',event=>{if(event.key===key){refresh();updateVote();storageState();updateLeaderboard();}});
   function el(tag, text, className) {
     const node = document.createElement(tag);
     if (text !== undefined) node.textContent = text;
@@ -46,37 +48,22 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
     dl.append(el('dt', label), el('dd', value));
   }
   function gradeForm(entry) {
-    const form = el('form', undefined, 'grade-form');
-    form.append(el('h4', "Jordan's rubric"), el('p', 'Your own points and notes. Saved only in this browser.', 'small muted'));
-    const fields = el('div', undefined, 'grade-fields');
-    const old = record.grades[entry.id] || {};
-    for (const [name, max] of [['Visuals', 45], ['Performance', 35], ['Fulfillment', 20]]) {
-      const label = el('label', `${name} / ${max}`), input = el('input');
-      input.type = 'number'; input.name = name.toLowerCase(); input.min = '0'; input.max = String(max); input.step = '.5';
-      input.value = typeof old[input.name] === 'number' ? old[input.name] : '';
-      label.append(input); fields.append(label);
+    return createGradeForm(entry,{getRecord:()=>record,refresh,save,isPersistent:()=>persistent,onChange:updateLeaderboard});
+  }
+  function updateLeaderboard(){renderLeaderboard($('#model-leaderboard'),allEntries,record,persistent);}
+  const modelVisible=entry=>!$('#blind').checked||(revealed&&selected().some(e=>e.id===entry.id));
+  function updateLabels(){
+    const choice=record.preferences[pairKey()]?.choice;
+    for(const entry of [...selected(),...failedEntries]){
+      const article=document.querySelector(`[data-entry="${entry.id}"]`);if(!article)continue;
+      const visible=modelVisible(entry);
+      article.querySelector('.entry-meta span').textContent=visible?entry.requestedConfiguration:'Model label hidden';
+      const definitions=article.querySelectorAll('dd');
+      definitions[0].textContent=visible?entry.requestedConfiguration:'Model labels hidden until voting or an explicit reveal.';
+      definitions[1].textContent=visible?entry.modelDisclosure:'Reveal labels to see the recorded configuration and model/effort disclosure.';
+      article.dataset.preferred=String(revealed&&choice===entry.id);
+      article.dataset.tied=String(revealed&&choice==='tie'&&selected().some(e=>e.id===entry.id));
     }
-    form.append(fields);
-    const noteLabel = el('label', 'Inspection notes', 'small'), notes = el('textarea');
-    notes.name = 'notes'; notes.maxLength = 8000; notes.placeholder = 'What held up while walking? What did you notice?';
-    notes.value = typeof old.notes === 'string' ? old.notes : ''; noteLabel.append(notes); form.append(noteLabel);
-    const actions = el('div', undefined, 'actions'), submit = el('button', 'Save grade'), clear = el('button', 'Clear grade', 'quiet');
-    submit.type = 'submit'; clear.type = 'button'; actions.append(submit, clear); form.append(actions);
-    const result = el('p', undefined, 'grade-result'); result.setAttribute('role', 'status'); form.append(result);
-    const updateResult = () => {
-      const g = record.grades[entry.id];
-      result.textContent = g ? (Number.isFinite(g.total) ? `Your grade: ${g.total} / 100. ` : 'Partial grade saved. ') + (persistent ? 'Browser-local.' : 'Session only.') : 'Not graded.';
-    };
-    updateResult();
-    form.addEventListener('submit', event => {
-      event.preventDefault(); if (!form.reportValidity()) return;
-      const g = { notes: notes.value, savedAt: new Date().toISOString() };
-      for (const name of ['visuals', 'performance', 'fulfillment']) g[name] = form.elements[name].value === '' ? null : Number(form.elements[name].value);
-      g.total = ['visuals', 'performance', 'fulfillment'].every(n => Number.isFinite(g[n])) ? g.visuals + g.performance + g.fulfillment : null;
-      refresh(); record.grades[entry.id] = g; save(); updateResult();
-    });
-    clear.addEventListener('click', () => { refresh(); delete record.grades[entry.id]; for (const input of form.querySelectorAll('input,textarea')) input.value = ''; save(); updateResult(); });
-    return form;
   }
   function inspector(entry) {
     const details = el('details', undefined, 'inspector');
@@ -136,18 +123,26 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
       const body = el('div', undefined, 'entry-body'); body.append(el('h3', 'One world so far.'), el('p', 'Explore the completed entry now. A real comparison opens when a second frozen submission is admitted.')); waiting.append(body); $('#entries').append(waiting);
     }
     $('#entry-count').textContent = failedEntries.length ? `${entries.length} ready · ${failedEntries.length} startup failed · ${entries.length+failedEntries.length} frozen results` : `${entries.length} finished ${entries.length === 1 ? 'entry' : 'entries'}`;
-    $('#next-pair').hidden = !canShuffle; updateVote();
+    $('#next-pair').hidden = !canShuffle; updateVote(); updateLeaderboard();
   }
   function updateVote() {
     const pair = selected(), ready = pair.length === 2;
     $('#vote-buttons').hidden = !ready;
     const bothOpened = hasOpenedBoth();
-    $('#vote-instruction').textContent = !ready ? 'Waiting for a second finished entry before comparison opens.' : bothOpened ? 'You have opened both worlds in this comparison. Which do you prefer?' : 'Open both scenes in this comparison, then return to vote. Next skips without recording a vote.';
+    $('#vote-instruction').textContent = !ready ? 'Waiting for a second finished entry before comparison opens.' : revealed ? 'Models revealed. Your comparison stays here until you choose Next comparison.' : bothOpened ? 'You have opened both worlds in this comparison. Which do you prefer?' : 'Open both scenes in this comparison, then return to vote. Next skips without recording a vote.';
     for (const button of document.querySelectorAll('[data-choice]')) button.disabled = button.dataset.choice==='skip'?!canShuffle:!bothOpened;
     const saved = record.preferences[pairKey()];
     $('#clear-vote').disabled = !bothOpened || !saved;
     const choice = saved?.choice;
     $('#vote-status').textContent = !saved ? 'No preference recorded.' : choice === 'tie' ? 'Your preference: tie.' : choice === 'skip' ? 'This pair is skipped.' : `Your preference: entry ${pair.findIndex(e => e.id === choice) === 0 ? 'A' : 'B'}.`;
+    $('#vote-reveal').hidden=!revealed;$('#reveal-next').hidden=!revealed;$('#reveal-next').disabled=!canShuffle;
+    $('#next-pair').textContent=revealed?'Next comparison':'Next random pair';
+    document.querySelector('[data-choice="skip"]').hidden=revealed;
+    if(revealed){
+      const result=el('strong',choice==='tie'?'Your choice: tie':pair.some(e=>e.id===choice)?`Your choice: ${choice===pair[0].id?'A':'B'}`:'Choice cleared. Models remain revealed.');
+      $('#vote-reveal').replaceChildren(result,...pair.map((entry,index)=>el('p',`${index?'B':'A'} / ${entry.title} — ${entry.requestedConfiguration}`)),el('p','The previews and sides above are unchanged. Choose Next comparison when ready.','small'));
+    }
+    updateLabels();
   }
   document.querySelectorAll('[data-choice]').forEach(button => button.addEventListener('click', () => {
     if(button.dataset.choice==='skip'){nextComparison();return;}
@@ -155,26 +150,19 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
     const pair = selected(); if (!hasOpenedBoth() || !['a','b','tie'].includes(button.dataset.choice)) return;
     const previous=pairKey();
     record.preferences[previous] = { entries: pair.map(e => e.id), choice: button.dataset.choice === 'a' ? pair[0].id : button.dataset.choice === 'b' ? pair[1].id : button.dataset.choice, savedAt: new Date().toISOString() };
-    save();
-    nextComparison('Preference saved. A random prompt and model pair are ready to inspect.');
+    revealed=true;save();updateVote();$('#notice').textContent='Preference saved. Both models are revealed; this comparison stays in place.';
   }));
   $('#clear-vote').addEventListener('click', () => { if(!hasOpenedBoth())return;refresh(); delete record.preferences[pairKey()]; save(); updateVote(); });
   $('#blind').checked = true;
-  $('#blind').addEventListener('change', () => {
-    // Preserve unsaved grading input and details state when revealing model labels.
-    for (const entry of [...selected(),...failedEntries]) {
-      const article = document.querySelector(`[data-entry="${entry.id}"]`);
-      article.querySelector('.entry-meta span').textContent = $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration;
-      article.querySelector('dd').textContent = $('#blind').checked ? 'Model labels hidden. Uncheck “Hide model labels” to reveal the requested configuration.' : entry.requestedConfiguration;
-      article.querySelectorAll('dd')[1].textContent = $('#blind').checked ? 'The exact serving model and effort were not exposed to the producer. Reveal labels to see the parent-requested configuration and full disclosure.' : entry.modelDisclosure;
-    }
-  });
-  function nextComparison(message='Skipped without recording a vote. A random prompt and model pair are ready.'){
+  $('#blind').addEventListener('change', updateLabels);
+  function nextComparison(){
+    const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
     const next=randomComparison(prompts,allEntries,pairKey());if(!next){updateVote();return;}
     if(viewer.isOpen)close(false);
     selectPrompt(next.promptId,undefined,next.entries);const url=new URL(location.href);url.search='?prompt='+promptId;url.hash='';history.replaceState(history.state,'',url);$('#notice').textContent=message;
   }
   $('#next-pair').addEventListener('click', () => nextComparison());
+  $('#reveal-next').addEventListener('click', () => nextComparison());
   $('#export').addEventListener('click', () => {
     refresh();
     const blob = new Blob([JSON.stringify({ ...record, exportedAt: new Date().toISOString(), benchmark: 'Jordan walkable 3D', promptVersions: versions.map(({id,sha256})=>({id,sha256})), storageScope: 'personal browser-local judgments', rubric: { visuals: 45, performance: 35, fulfillment: 20 } }, null, 2)], { type: 'application/json' });
@@ -182,7 +170,7 @@ import {comparisonKey,randomComparison,hasRandomComparison} from './comparisons.
   });
 
   function selectPrompt(id,entryId,chosenPair=null){
-    openedThisComparison.clear();
+    openedThisComparison.clear();revealed=false;
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
     entries=allEntries.filter(e=>e.promptId===promptId&&e.availability!=='failed');failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);

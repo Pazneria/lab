@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/room-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/space.css">
   <link rel="stylesheet" href="assets/walkable-screen.css">
+  <link rel="stylesheet" href="../walkable-3d/assets/judgments.css">
   <script type="module" src="assets/space.js"></script>
 </head>
 <body>
@@ -49,7 +50,7 @@
     <form method="dialog"><button class="close" aria-label="Close help">×</button></form>
     <p class="eyebrow">Research room</p><h2 id="help-title">Move around</h2>
     <p id="navigation-help">Click or tap the floor to walk there. Select an instrument or piece of furniture to approach it. Select the catalog exhibit or home door to walk over and open its controls. Drag to look.</p>
-    <p>The world display faces the entrance. Click a still to enter; open both scenes in the current comparison to vote. Next skips to a random prompt and model pair without recording a vote. Exit scene returns to the same room position and pair. Compare worlds opens accessible controls; the standalone notebook includes build inspectors and personal grades. The catalog exhibit is to the right, facing the hall.</p>
+    <p>The world display faces the entrance. Click a still to enter; open both scenes in the current comparison to vote. Next skips to a random prompt and model pair without recording a vote. Exit scene returns to the same room position and pair. Compare worlds opens accessible controls; voting reveals both models without changing the pair. Grade this scene opens your rubric inside the viewer; Compare worlds includes your browser-local leaderboard. The standalone notebook also includes inspectors and grades. The catalog exhibit is to the right, facing the hall.</p>
     <p>Focus the room to walk with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>. Arrow keys walk and turn. <kbd>Enter</kbd> or <kbd>E</kbd> opens a nearby station. Manual movement or dragging stops a route; a new tap replaces it. <kbd>Esc</kbd> stops walking and releases room focus.</p>
     <div class="destinations"><button id="visit-bench" type="button" disabled>Walk to catalog exhibit</button><button id="visit-home" type="button" disabled>Walk to home exit</button><button id="reset" type="button" disabled>Return to entrance</button></div>
     <label class="motion-setting"><input type="checkbox" id="show-pad">Show direction buttons</label>
@@ -69,19 +70,28 @@
     <p>Static previews. Open one scene, explore, then exit back to this Lab. Desktop keyboard + mouse required for the submitted scenes.</p>
     <label class="prompt-picker">Benchmark prompt <select id="screen-prompt" aria-label="Benchmark prompt"></select></label>
     <div class="screen-toolbar"><button id="screen-prev" aria-label="Previous pair within this prompt">← Previous</button><strong id="screen-pair" role="status">Loading entries</strong><button id="screen-next" aria-label="Skip to a random prompt and model pair">Next random pair →</button></div>
-    <p id="screen-boundary"></p><label><input id="screen-blind" type="checkbox" checked> Hide model labels</label>
+    <p id="screen-boundary"></p><label><input id="screen-blind" type="checkbox" checked> Hide model labels until voting</label>
     <div id="screen-cards"></div>
     <div class="screen-choices"><button data-screen-choice="a">Prefer A</button><button data-screen-choice="tie">Tie</button><button data-screen-choice="b">Prefer B</button><button id="screen-clear">Clear choice</button></div>
-    <p id="screen-vote" role="status"></p><p id="screen-storage"></p>
+    <p id="screen-vote" role="status"></p><div id="screen-reveal" class="model-reveal" role="status" hidden></div><button id="screen-reveal-next" type="button" hidden>Next comparison</button><p id="screen-storage"></p>
     <p>Jordan's separate rubric: visuals 45 / performance 35 / fulfillment 20. One-hour build cap; timing disclosures in each inspector. No scores prefilled.</p>
+    <section id="screen-leaderboard" class="local-leaderboard" aria-label="Your browser-local model leaderboard"></section>
     <p><a id="screen-full-prompt" href="../walkable-3d/#full-prompt">View full prompt</a></p><a id="screen-notebook" href="../walkable-3d/">Build inspectors &amp; personal grading notebook →</a>
   </dialog>
   <p id="notice" role="status" class="room-notice"></p>
   <dialog id="viewer" aria-labelledby="viewer-title">
-    <div class="viewer-bar"><div><strong id="viewer-title">Walkable scene</strong><p>Esc releases the mouse · exit to return to the Lab screen</p></div><button id="close-viewer">Exit scene → Lab</button></div>
+    <div class="viewer-bar"><div><strong id="viewer-title">Walkable scene</strong><p>Esc releases the mouse · exit to return to the Lab screen</p></div><div class="viewer-actions"><button id="grade-scene" type="button" disabled>Grade this scene</button><button id="close-viewer">Exit scene → Lab</button></div></div>
     <div id="viewer-message" role="status">Preparing the frozen entry…</div>
     <div id="scene-mount"></div>
     <div class="viewer-foot"><span>Desktop keyboard + mouse · WebGL 2 required</span><button id="retry-viewer" class="quiet" hidden>Try again</button><button id="return-focus" class="quiet">Focus scene</button></div>
+  </dialog>
+  <dialog id="scene-grade-dialog" aria-labelledby="scene-grade-title" aria-describedby="scene-grade-help">
+    <h2 id="scene-grade-title">Grade this scene</h2>
+    <p id="scene-grade-label"></p>
+    <p id="scene-grade-help" class="small">The same scene stays open behind this sheet; its input is released. Save your points and notes, then resume exploring. Unsaved edits stay here until you close the scene.</p>
+    <div id="scene-grade-content"></div>
+    <div class="grade-sheet-actions"><button id="resume-grade" type="button">Resume scene</button><button id="grade-close-scene" type="button" class="quiet">Close scene &amp; return</button></div>
+    <p class="small">Resume (or Esc) returns to the scene. Click its own control to capture the mouse again.</p>
   </dialog>
 </body>
 </html>
