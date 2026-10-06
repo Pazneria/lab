@@ -258,6 +258,94 @@
       "archiveSha256": "9a1770ab5723de4972a49ada90a5662b10c3693cd634b1878d3a03b2a7ec00d9",
       "htmlSha256": "4958019f384b8d76e2468108bc1492d809a40c87dff7b8d1fb9869968c7070da",
       "archiveLocation": "retained-outside-repository"
+    },
+    {
+      "id": "saffron-observatory-astra",
+      "title": "Saffron Observatory",
+      "readySelector": "#loading[hidden]",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "htmlSha256": "a1a7325e0c9c91dca5806c262fc153dc435287218eb10c617244d3854f3af05f",
+      "archiveSha256": "058474dcf784d3df517ef6549827141ae91b3ec8c3d4841fe62cd30a46f27fd2",
+      "archiveLocation": "retained-outside-repository",
+      "webgl": "WebGL 2",
+      "promptId": "03",
+      "description": "A vaulted entrance, a bronze telescope beneath an open dome, and a sheltered viewing terrace.",
+      "requestedConfiguration": "GPT-6 Astra (parent-reported selection)",
+      "modelDisclosure": "Parent identifies the completed run as Astra. Producer could verify only the GPT-6 family; exact backend model and reasoning effort were not exposed. No unverified effort value is asserted.",
+      "buildWindow": "First implementation 2026-10-06 03:31:06 UTC; actual stop 04:07:01.749 UTC. Recorded session start 03:30:09 UTC and deadline 04:30:09 UTC. Producer reports 2,156 seconds from first implementation and completion before that deadline; initial setup clock was earlier.",
+      "interruptions": "No user interruption or deadline extension. Initial dependency installation was blocked, then succeeded with authorized escalation while work continued. A standard npm diagnostic unexpectedly exposed another task’s package name, path and version in a shared cache log; producer declares that no referenced project files or assets were opened or reused.",
+      "controls": "WASD or arrows walk; mouse look or drag; Shift faster; R reset; Esc releases; P frame times; render quality selector.",
+      "producerChecks": "Producer route record: 40/40 checks passed, no browser errors; route, collisions, mouse capture/look, reset, quality and measurement export. Host separately verified unchanged rendering and input in the isolated viewer; see Host verification.",
+      "performanceEvidence": "Producer headless Chrome / ANGLE Intel Graphics, 1440 x 1000: final rolling sample of 703 intervals, average 14.24 ms, p95 25 ms, p99 35.7 ms. Development diagnostics, not a standardized run or final grade. Host launch validation assigns no performance score.",
+      "limitations": [
+        "Desktop keyboard and mouse; WebGL 2 required; no touch navigation.",
+        "Telescope, sundial and dome shutters are static; distant landscape is outside the walking area.",
+        "The original JSON measurement download is blocked by the hosted sandbox download restriction.",
+        "Producer disclosure: shared npm diagnostic log exposed unrelated task metadata; producer says no other project files/assets were opened or reused."
+      ],
+      "documents": [
+        {
+          "label": "Controls & limits",
+          "path": "README.md"
+        },
+        {
+          "label": "Timing & provenance disclosure",
+          "path": "BUILD_RECORD.json"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "previewAlt": "Unchanged Saffron Observatory reset view: shaded stone arches, turquoise trim and a bronze telescope.",
+      "promptVersion": "03-shared"
+    },
+    {
+      "id": "asterion-luna",
+      "title": "The Asterion",
+      "readySelector": "#scene[data-frame-estimate]",
+      "hostPathReplacements": [
+        [
+          "<script type=\"module\" src=\"/src/main.js\">",
+          "<script type=\"importmap\">{\"imports\":{\"/node_modules/three/build/three.module.js\":\"./vendor/three/build/three.module.js\"}}</script><script type=\"module\" src=\"./src/main.js\">"
+        ]
+      ],
+      "htmlSha256": "6e975aa96de120bcd30c00096d27fa8112bbe7ef8ca88fc32e76cd6b834a5139",
+      "archiveSha256": "b57cd6d15e1f195ef80e02a871fd3d79bb8284d5e1f0a39c6e68dd35cb678d71",
+      "archiveLocation": "retained-outside-repository",
+      "webgl": "WebGL 2",
+      "promptId": "03",
+      "description": "A stepped south passage leads to a circular instrument room and an east-facing desert terrace.",
+      "requestedConfiguration": "GPT-6 Luna (parent-reported selection)",
+      "modelDisclosure": "Parent identifies the completed run as Luna. Producer could verify only the GPT-6 family; exact backend model and reasoning effort were not exposed. No unverified effort value is asserted.",
+      "buildWindow": "First implementation 2026-10-06 03:20:29 UTC; actual stop 04:10:38 UTC; recorded deadline 04:20:29 UTC. Producer README records these timestamps.",
+      "interruptions": "Producer could not inspect raster output: its headless Chrome 154 GPU process failed before a screenshot, and the in-app browser was unavailable. It used a renderer stub for construction checks. No deadline extension is reported.",
+      "controls": "WASD or arrows walk; mouse look; Shift faster; R or Reset view returns to the entrance; Esc releases the mouse; Enter the observatory resumes.",
+      "producerChecks": "Producer reports 10/10 route, collision, steps, controls and construction unit checks plus syntax/HTTP checks. Construction used a renderer stub and is not visual proof. Host separately verified the unchanged build rendering in real WebGL 2 and tested movement, mouse look, reset and unload; see Host verification.",
+      "performanceEvidence": "Producer supplied no visual or FPS verification. Host confirmed real raster output using headless Chromium / ANGLE Intel Graphics; this is launch/input verification, not a performance benchmark or grade. The internal frame estimate clamps long intervals and must not be used as a benchmark score.",
+      "limitations": [
+        "Desktop keyboard and mouse; WebGL 2 required; no touch navigation.",
+        "Producer did not see the rendered image or verify in-browser performance. Host verification is separately identified.",
+        "Host observed the supplied Three.js warning that PCFSoftShadowMap is deprecated and falls back to PCFShadowMap; the original code and dependency are unchanged.",
+        "The internal frame estimate is not suitable for scoring long-frame behavior."
+      ],
+      "documents": [
+        {
+          "label": "Controls & producer limitations",
+          "path": "README.md"
+        },
+        {
+          "label": "Host verification",
+          "path": "host-verification.json"
+        }
+      ],
+      "previewAlt": "Unchanged Asterion reset view: shallow steps enter a long shaded passage toward the observatory instrument.",
+      "promptVersion": "03-shared"
     }
   ],
   "prompts": [
@@ -272,6 +360,12 @@
       "title": "Night market",
       "brief": "A courtyard night market, just after rain.",
       "version": "02-shared"
+    },
+    {
+      "id": "03",
+      "title": "Desert observatory",
+      "brief": "A desert observatory on a rocky plateau in late afternoon.",
+      "version": "03-shared"
     }
   ],
   "promptVersions": [
@@ -301,6 +395,15 @@
       "sha256": "013088621eb352cab4e9e1686c7e6c52751f636d4b81fa3b4f54e0b04e24f08f",
       "source": "Identical initial task text verified in completed Luna (01a10f18-0a01-7264-89d5-1225c8cc60ec), Astra (01a10f17-5ffc-7695-8fbc-112c655ae0cd), and Sol (01a10f17-b29d-75b6-8bb7-bf5b46ace0c1) runs. UTF-8; no added final newline.",
       "note": "Complete task, grading and shared execution rules."
+    },
+    {
+      "id": "03-shared",
+      "promptId": "03",
+      "label": "Astra / Luna / Sol submitted prompt",
+      "path": "prompt-03.txt",
+      "sha256": "fcc0b24af380f0d6606ff043ea3809706f927a6fe6b0e41e2568ba8c39da1560",
+      "source": "Exact submitted Prompt 03 supplied verbatim by the benchmark parent in thread 01a0f08d-645b-72a9-9d18-0d86e8b950c4. Parent confirms identical text for Astra, Luna and Sol, with no entrant-specific content variants. UTF-8; no added final newline.",
+      "note": "Complete task, grading and shared execution rules. Parent-supplied submission record; no independent thread access in this import turn."
     }
   ]
 }

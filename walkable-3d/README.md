@@ -18,6 +18,7 @@ $env:CHROME_PATH='absolute/path/to/chrome.exe'
 node tests/verify-walkable.cjs
 node tests/verify-walkable-room.cjs
 node tests/verify-walkable-prompts.cjs
+node tests/verify-walkable-observatories.cjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py
 ```
@@ -73,3 +74,15 @@ After Rain needs no path substitutions and uses WebGL 1. Raincourt uses WebGL 2;
 The three new stills were captured sequentially from their completed sandboxed builds at the original reset view, then resized with aspect ratio preserved and JPEG compression. Raw captures, producer validation records and ZIPs remain outside Pages. `LAB_SITE_BASE` runs `verify-walkable-prompts.cjs` against a deployed site root; optional `AXE_PATH` enables WCAG A/AA checks. This test covers prompt text/download equality, hash failure, same-prompt pairing, real screen launches, isolated input, suspension, unloading and history. Existing stored railway judgments are preserved.
 
 Lantern Court uses WebGL 2 and needs no path substitutions. Its frozen runtime is copied directly from the ZIP's `dist/` tree; the original archive and raw evidence were not copied. Source hashes and archive-member mapping provide provenance. As with Raincourt, the original JSON measurement download stays blocked inside the hosted sandbox.
+
+## Prompt 03 / Desert observatory
+
+**Saffron Observatory** (parent-selected Astra) and **The Asterion** (parent-selected Luna) are completed, frozen submissions. The parent supplied their exact shared submitted prompt, including all grading and execution rules, in `prompt-03.txt`; version `03-shared` records its source and SHA-256. The parent confirms Sol received identical text, but this publication contains only the two finished handoffs. Exact backend identities and reasoning effort were not exposed. No scores are assigned.
+
+Thirteen runtime/license files match their frozen source files byte for byte. Host preservation snapshots, raw producer route evidence and full-size host captures remain outside the repository and Pages. Only runtime, two small JPEGs, provenance, licenses and concise producer/host records are hosted. Saffron's original `BUILD_RECORD.json` retains the disclosure that an npm diagnostic exposed another task's package metadata; the producer states that it opened or reused no referenced project files or assets. This disclosure is also visible in its inspector.
+
+The Asterion producer could not inspect actual raster output or frame behavior: its headless GPU failed and the in-app browser was unavailable. Its construction test used a renderer stub. The separate host verification used real WebGL 2 / ANGLE Intel Graphics, captured the unchanged reset view, and checked movement, mouse look, reset, pointer release and context destruction. It is not a performance score. The supplied Three.js deprecated-shadow warning and native fallback remain unchanged; its internal clamped frame estimate is unsuitable for judging long frames.
+
+Saffron's in-memory HTML import map changes only `./node_modules/three/` to `./vendor/three/`. The Asterion's in-memory HTML receives a local import-map mapping for its original absolute Three.js module import, and its module script URL becomes relative. The original HTML and all authored JavaScript remain unchanged. The scoped review found no authored external requests, telemetry, credentials, storage or parent navigation. The existing opaque sandbox and entry-scoped CSP remain in force; Saffron's JSON measurement download stays blocked. Both entries require desktop keyboard/mouse and WebGL 2.
+
+`verify-walkable-observatories.cjs` checks the actual room screen, static initial loads, one active scene, suspended Lab rendering, repeat opens/returns, pointer release, separate saved preferences/grades, prompt isolation, 320–700 px controls, history and a forced missing module. Optional `LAB_CANDIDATE_MANIFEST` supports local staging only and is forbidden for live checks. `LAB_SITE_BASE` runs the admitted pair checks against the deployed site.

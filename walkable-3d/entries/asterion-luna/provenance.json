@@ -1,0 +1,100 @@
+{
+  "entry": "asterion-luna",
+  "importedAt": "2026-10-06T04:15:01.068713+00:00",
+  "archiveSource": "task-15 (host preservation snapshot, no producer ZIP supplied)",
+  "archiveSha256": "b57cd6d15e1f195ef80e02a871fd3d79bb8284d5e1f0a39c6e68dd35cb678d71",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/collision.js": "src/collision.js",
+      "frozen/vendor/three/LICENSE": "node_modules/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js": "node_modules/three/build/three.module.js",
+      "frozen/vendor/three/build/three.core.js": "node_modules/three/build/three.core.js"
+    },
+    "preview": "Captured from the frozen build after entering and pressing its own reset key; original viewpoint. Aspect-preserving resize to 960 pixels wide and JPEG quality 78 only."
+  },
+  "hostingAdjustments": [
+    "Original HTML preserved verbatim as index.html.txt; SHA-256 checked before opaque sandbox loading.",
+    "Only required Three.js files and its license copied byte-for-byte into frozen/vendor/three.",
+    "In-memory HTML path changes only; no scene, input, geometry, lighting, quality, timing or behavior repairs.",
+    "In-memory import map maps the original absolute Three.js import to its local vendor copy; module script URL becomes relative. Authored JavaScript bytes stay unchanged."
+  ],
+  "securityAudit": {
+    "result": "No malicious behavior or unsafe access found in the reviewed runtime.",
+    "scope": "Read-only authored HTML/CSS/JavaScript review, local dependency imports, browser API use and bounded procedural asset generation. No external asset requests, telemetry, storage, credentials, dynamic evaluation or parent navigation in authored code.",
+    "sandbox": "Existing Lab opaque sandbox: scripts and pointer lock only, no same-origin, downloads, navigation or external network.",
+    "dependencyReview": "Three 0.185.1 module/core and license from the frozen local installation; only relative core-module dependency. Library network loaders are unused by this scene and network connections remain denied."
+  },
+  "files": {
+    "frozen/index.html.txt": {
+      "bytes": 6451,
+      "sha256": "6e975aa96de120bcd30c00096d27fa8112bbe7ef8ca88fc32e76cd6b834a5139"
+    },
+    "frozen/src/main.js": {
+      "bytes": 36737,
+      "sha256": "c32cb450b44ecac7023441ffe036fd9ba641a102d53e37fad77ca600ccba492a"
+    },
+    "frozen/src/collision.js": {
+      "bytes": 2149,
+      "sha256": "8751a5b3c0015a42b85fc332330a3c99f3828df3286581a61eff3c0bd5f83d47"
+    },
+    "frozen/vendor/three/LICENSE": {
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "bytes": 650153,
+      "sha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7"
+    },
+    "frozen/vendor/three/build/three.core.js": {
+      "bytes": 1443056,
+      "sha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759"
+    },
+    "README.md": {
+      "bytes": 2440,
+      "sha256": "d424745e1b33c22e2f8be2a45502ec5fddc5a7ecf2aea1b6545fee426b9c1120"
+    },
+    "preview.jpg": {
+      "bytes": 45051,
+      "sha256": "b76683ab2d56d18caf1a2e60f06594150ac233a680324d24a33bf893baca23d4"
+    },
+    "host-verification.json": {
+      "bytes": 2073,
+      "sha256": "e2225c0c34845cdccfdd876c8ad068b09071c60e3b4c834810d4283145a11822"
+    }
+  },
+  "publication": {
+    "policy": "Runtime, small still, provenance, licenses and concise records only. No ZIP or raw evidence in repository or Pages.",
+    "publishedFiles": [
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/collision.js",
+      "frozen/src/main.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.core.js",
+      "frozen/vendor/three/build/three.module.js",
+      "host-verification.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
+  },
+  "archiveRetention": "Host preservation snapshot retained outside repository and Pages in task-11 queue; producer source is untouched.",
+  "retainedOriginalFiles": {
+    "original.zip": {
+      "bytes": 435719,
+      "sha256": "b57cd6d15e1f195ef80e02a871fd3d79bb8284d5e1f0a39c6e68dd35cb678d71"
+    },
+    "host-preview.png": {
+      "bytes": 754093,
+      "sha256": "d9a42a38f878bef2a72424fa876dc14ba3927f6dc05e6863a196728022a55a77"
+    }
+  },
+  "hostVerification": "host-verification.json",
+  "prompt": {
+    "version": "03-shared",
+    "sha256": "fcc0b24af380f0d6606ff043ea3809706f927a6fe6b0e41e2568ba8c39da1560",
+    "source": "Parent-supplied exact submitted text; confirmed shared with no variants."
+  }
+}
