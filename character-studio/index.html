@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src blob:; worker-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self' blob:; worker-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-src 'none'">
   <title>CharacterBench — Inspection Studio</title>
   <meta name="description" content="One shared stage for close, consistent inspection of local character assets.">
   <link rel="stylesheet" href="./studio.css">
@@ -26,7 +26,11 @@
       <p class="file-hint">Or drop files anywhere in the studio.<br>64 MiB per file · 12 files · 192 MiB total</p>
       <ul id="asset-list" class="asset-list" aria-label="Local character files"></ul>
       <div id="collection-empty" class="collection-empty">Your collection is empty.<br>Import a character to begin.</div>
-      <button id="demo-button" class="button quiet">Load calibration dummy</button>
+      <div class="demo-tools">
+        <button id="demo-button" class="button quiet">Load demo asset</button>
+        <button id="calibration-button" class="text-button">Load calibration dummy</button>
+        <p class="demo-credit">Demo: RobotExpressive by Tomás Laulhé (Quaternius). CC0. <a href="./assets/demo/CREDITS.md">Credits &amp; source</a></p>
+      </div>
       <div class="local-note"><span aria-hidden="true">↳</span><p>Files stay in this tab. No uploads or saved copies. Reloading clears the collection.</p></div>
       <div class="contract-note"><p class="eyebrow">Asset, not an app</p><p>One complete character, multiple meshes welcome. Materials included. Skeleton optional.</p><p class="muted">Static inspection only. No animation playback or automatic scores.</p></div>
     </aside>
@@ -37,7 +41,7 @@
         <div id="canvas-host"></div>
         <div class="empty-stage" id="empty-stage"><div class="specimen" aria-hidden="true"><span></span><i></i><b></b></div><p class="eyebrow">A common frame of reference</p><h2>Every character.<br>One shared stage.</h2><p>Inspect shape, surfaces, and small details<br>under the same lighting and camera.</p><button class="button" id="empty-import">Choose a GLB file <span aria-hidden="true">↗</span></button></div>
         <div class="stage-corner top-left" aria-hidden="true">CHARACTER / <span id="stage-index">—</span></div>
-        <div class="stage-corner bottom-left" id="stage-mode">Viewport starts when you load an asset</div>
+        <div class="stage-corner bottom-left" id="stage-mode">Preparing bundled demo asset</div>
         <div class="stage-corner bottom-right" aria-hidden="true">Y ↑ &nbsp; Z FRONT</div>
         <div id="drop-cue" class="drop-cue" hidden>Drop GLB files to add to the collection</div>
       </div>

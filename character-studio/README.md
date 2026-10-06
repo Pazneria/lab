@@ -1,12 +1,13 @@
 # CharacterBench inspection studio
 
-A common browser-local stage for character assets. This is product work, **not a benchmark entrant**, scoring system, autorigger, or animation editor. The calibration dummy is an engineering fixture made of nine boxes, clearly labeled throughout the interface. No competing character assets are included.
+A common browser-local stage for character assets. This is product work, **not a benchmark entrant**, scoring system, autorigger, or animation editor. The studio starts with the bundled CC0 **RobotExpressive demo asset**, credited to Tomás Laulhé (Quaternius), with modifications by Don McCurdy. It is clearly labeled as unjudged. The separate calibration dummy remains an engineering fixture made of nine boxes. Neither is a competing CharacterBench submission. See [demo license, provenance and pinned hash](./assets/demo/CREDITS.md).
 
 The entire implementation lives under `character-studio/`. It adds no homepage link, route change, root dependency, build system, service, account, storage backend, or deployment configuration. The intended eventual path is `/lab/character-studio/`; it has **not been published**. Parent coordination is required before integration/publication.
 
 ## Shared inspection
 
 - Add multiple local GLB files, then switch the selected entrant in one viewport. Only one model is rendered; a replacement is validated/prepared before the old one is released. Camera orientation, relative target offset, distance, lighting, exposure, backdrop and material mode carry across selections. Spin stops on selection and interaction.
+- On startup, download the fixed bundled demo from the studio's own origin, verify its 463,988-byte size and SHA-256, then use the same validation worker, static parser, material handling and disposal path as local imports. The demo can be removed or reselected with Load demo asset; the calibration dummy has a separate control. Importing or selecting another asset cancels a pending demo load. Neither demo bypasses validation or requires animation playback.
 - Three lighting presets: neutral studio, raking light, and contrasting warm key/cool rim. A small procedural neutral reflection environment supports metallic materials; no remote HDR image is required. Exposure is in stops with Neutral tone mapping and sRGB output.
 - Stable Y-up orbit, screen-space pan, zoom, frame, reset, front/side/back/top views, and double-click surface focus. No pointer lock, global mouse hooks, keyboard capture, external window, or held-input tooling.
 - Original materials are the default. Optional neutral clay and wireframe views show both sides as explicitly labeled diagnostics. Returning to Original restores the exact loaded material references, alpha settings and sidedness.
@@ -15,7 +16,7 @@ The entire implementation lives under `character-studio/`. It adds no homepage l
 
 The first file is framed automatically. Switching models normalizes their **largest dimension to 2.6 display units**, centers X/Z, and grounds the preview. Geometry, textures, skin bindings and relative transforms remain intact inside that display wrapper. Metadata reports the original scene dimensions in glTF meters. These are authored dimensions, not independently measured real-world scale. The normalized grid is a display reference, not a meter ruler or evidence of contract compliance. Frame recenters the current view; Reset restores the original three-quarter view. Front looks toward -Z at the character's +Z front.
 
-The file collection lives only in the current tab. Removing files or closing/reloading the page releases references; there is no IndexedDB, localStorage, upload, analytics, image export, or automatic Git operation. Multiple entrant files can be imported, but no entrant HTML/JavaScript is accepted.
+The file collection lives only in the current tab. Removing files or closing/reloading the page releases references; there is no IndexedDB, localStorage, upload, analytics, image export, or automatic Git operation. The bundled demo is a normal static website resource and may use the browser's HTTP cache; user imports are never uploaded or placed in that cache. Multiple entrant files can be imported, but no entrant HTML/JavaScript is accepted. The demo counts toward the collection's file/byte budgets and can be removed to free its slot.
 
 ## Provisional asset compatibility
 
@@ -51,11 +52,11 @@ Unsupported extensions produce an explicit error, including Draco, Meshopt, KTX2
 
 These are conservative operational guardrails, **not benchmark polycaps or quality scores**. An allowed asset can still be expensive on low-end hardware; the profile is not a GPU memory guarantee. No browser-side validator can guarantee recovery from a driver failure. Renderer/context failures are surfaced with a reload instruction.
 
-GLB headers, chunk boundaries, dependency references, accessor ranges/alignment, floating-point data, triangle indices, hierarchy cycles, skins, texture dimensions and supported extensions are checked before scene parsing. Exporter position bounds are recomputed. Texture decoding runs sequentially in the cancellable worker. Bitmaps transfer to the main thread; a scoped pinned-loader adapter injects those images directly. The loader's URL modifier rejects any attempted resource request. The page CSP separately disallows external scripts, frames and network destinations. File names and metadata use `textContent`, never HTML interpolation.
+GLB headers, chunk boundaries, dependency references, accessor ranges/alignment, floating-point data, triangle indices, hierarchy cycles, skins, texture dimensions and supported extensions are checked before scene parsing. Exporter position bounds are recomputed. Texture decoding runs sequentially in the cancellable worker. Bitmaps transfer to the main thread; a scoped pinned-loader adapter injects those images directly. The loader's URL modifier rejects any attempted resource request. The page CSP separately disallows external scripts, frames and external network destinations; `connect-src 'self'` permits the bundled demo fetch. That fetch uses a fixed same-origin URL, omits credentials, rejects redirects, bounds streamed bytes to the pinned file size, and supports cancellation/timeout. User imports still cannot supply dependency URLs. File names and metadata use `textContent`, never HTML interpolation.
 
 This is defensive preflight for the viewer, **not a full Khronos conformance validator or a security certification**. The main-thread Three.js parser is serialized and bounded but not independently interruptible once parsing starts; Cancel prevents installation of a stale result and releases it when parsing settles. A previous model stays visible on validation/parse failure. New files do not execute code.
 
-Idle rendering is demand-driven. Visibility loss stops spin; an offscreen viewport suspends its loop. Reduced motion disables automatic spin while retaining direct camera interaction. Model replacement/removal releases geometries, materials, textures, skeleton allocations and transferred ImageBitmaps. Failed/stale parses settle tracked branches before cleanup. Page exit disconnects observers, cancels frames/workers, clears the collection and releases the renderer/context. Returning from the browser's page cache shows an empty, restartable studio.
+Idle rendering is demand-driven. Visibility loss stops spin; an offscreen viewport suspends its loop. Reduced motion disables automatic spin while retaining direct camera interaction. Model replacement/removal releases geometries, materials, textures, skeleton allocations and transferred ImageBitmaps. Failed/stale parses settle tracked branches before cleanup. Page exit disconnects observers, cancels the demo request/frames/workers, clears the collection and releases the renderer/context. Returning from the browser's page cache reloads the bundled demo; private user files must be selected again.
 
 ## Observed facts
 
@@ -63,11 +64,11 @@ Triangle and vertex-reference counts describe the selected scene with repeated m
 
 ## Serving and review
 
-This is a buildless static folder. It requires HTTP(S), JavaScript modules, module workers, WebGL 2 and worker ImageBitmap decoding for textured models. `file://` is unsupported. No package install or build is needed. `package.json` only identifies ESM for the deferred dependency-free data tests; it has no browser runtime dependencies.
+This is a buildless static folder. It requires HTTP(S), JavaScript modules, module workers, WebGL 2 and worker ImageBitmap decoding for textured models. The bundled demo integrity check needs Web Crypto on HTTPS or localhost. `file://` is unsupported. No package install or build is needed. `package.json` only identifies ESM for the deferred dependency-free data tests; it has no browser runtime dependencies.
 
 **Local QA pause is still in force. Do not start a server, browser, Playwright, CUA, WebGL scene, or local test runner until the parent/user lifts it.** No existing checked-in remote test workflow was found at base `0fd498f03891b8f0d5f511dcf524a7a79eaec8fe`; a new remote runner was not created. See [review record](./REVIEW.md) for what was actually verified and the deferred checklist.
 
-Prepared data-only tests, for a future authorized session with Node 22+: `node --test character-studio/tests/glb-policy.test.js`. This command was **not run**. Browser lifecycle, image color, camera framing, accessibility, mobile layout and GPU behavior remain unverified.
+Data-only tests with Node 22+: `node --test character-studio/tests/glb-policy.test.js`. No test runner has been run on the local laptop. The parent reports that all 13 baseline cases passed in cloud QA. The additional bundled-demo hash/compatibility case and its startup/lifecycle browser behavior require cloud QA against the new review commit. Browser lifecycle, image color, camera framing, accessibility, mobile layout and GPU behavior are not claimed as verified here.
 
 ## Source references
 

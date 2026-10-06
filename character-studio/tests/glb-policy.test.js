@@ -2,8 +2,11 @@
 // These tests do not create a browser, WebGL context, server, or Three.js scene.
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { inspectGLB, LIMITS } from '../glb-policy.js';
 import { calibrationFile } from '../calibration.js';
+import { BUNDLED_DEMO } from '../bundled-demo.js';
 
 async function fixture(edit = () => {}) {
   const original = await calibrationFile().arrayBuffer(), view = new DataView(original);
@@ -19,6 +22,16 @@ async function fixture(edit = () => {}) {
   return buffer;
 }
 function readJSON(buffer) { return JSON.parse(new TextDecoder().decode(new Uint8Array(buffer, 20, new DataView(buffer).getUint32(12, true)))); }
+
+test('bundled CC0 demo matches its pinned bytes and uses the unchanged static import profile', async () => {
+  const bytes = await readFile(new URL('../assets/demo/RobotExpressive.glb', import.meta.url));
+  assert.equal(bytes.byteLength, BUNDLED_DEMO.bytes);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), BUNDLED_DEMO.sha256);
+  const result = inspectGLB(bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength));
+  assert.equal(result.stats.skins, 2); assert.equal(result.stats.animations, 14);
+  assert.equal(readJSON(result.buffer).animations, undefined);
+  assert.ok(result.stats.triangles > 0);
+});
 
 test('accepts the skeleton-free engineering fixture and counts displayed instances honestly', async () => {
   const result = inspectGLB(await fixture());

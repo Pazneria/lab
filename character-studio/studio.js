@@ -1,5 +1,6 @@
 import { LIMITS } from './glb-policy.js';
 import { calibrationFile } from './calibration.js';
+import { BUNDLED_DEMO, loadBundledDemo } from './bundled-demo.js';
 
 const $ = id => document.getElementById(id);
 const collection = [];
@@ -28,7 +29,7 @@ function renderCollection() {
     const select = document.createElement('button'); select.className = 'asset-select'; select.setAttribute('aria-pressed', String(asset.id === activeId)); select.title = asset.file.name; select.dataset.asset = asset.id;
     const number = document.createElement('span'); number.className = 'asset-number'; number.textContent = String(index + 1).padStart(2, '0');
     const info = document.createElement('span'), title = document.createElement('strong'), detail = document.createElement('small');
-    title.textContent = nameLabel(asset.file); detail.textContent = `${asset.id === pendingId ? 'Loading · ' : ''}${asset.demo ? 'TEST FIXTURE · ' : ''}${sizeLabel(asset.file.size)}`;
+    title.textContent = nameLabel(asset.file); detail.textContent = `${asset.id === pendingId ? 'Loading · ' : ''}${asset.demo === 'robot' ? 'DEMO ASSET · ' : asset.demo === 'calibration' ? 'TEST FIXTURE · ' : ''}${sizeLabel(asset.file.size)}`;
     info.append(title, detail); select.append(number, info); select.addEventListener('click', () => selectAsset(asset.id));
     const remove = document.createElement('button'); remove.className = 'remove-asset'; remove.textContent = '×'; remove.dataset.removeAsset = asset.id; remove.setAttribute('aria-label', `Remove ${nameLabel(asset.file)}`); remove.addEventListener('click', () => removeAsset(asset.id));
     row.append(select, remove); fragment.append(row);
@@ -77,14 +78,15 @@ function selectAsset(id) {
   cancelLoad(false); viewer?.setSpin(false); error();
   const token = sequence, controller = new AbortController(); job = { controller }; pendingId = id;
   $('cancel-load').hidden = false; $('viewport').setAttribute('aria-busy', 'true');
-  status(`Checking ${nameLabel(asset.file)} locally…`); renderCollection();
+  status(asset.demo === 'robot' ? 'Loading bundled demo asset…' : `Checking ${nameLabel(asset.file)} locally…`); renderCollection();
   // Serial ownership also prevents overlapping GPU allocations during rapid selection changes.
   serialLoad = serialLoad.catch(() => {}).then(async () => {
     let decoded, prepared, owner;
     const stale = () => token !== sequence || controller.signal.aborted || disposed;
     try {
       if (stale()) return;
-      const buffer = await asset.file.arrayBuffer(); if (stale()) return;
+      const buffer = asset.demo === 'robot' ? await loadBundledDemo(controller.signal) : await asset.file.arrayBuffer(); if (stale()) return;
+      if (asset.demo === 'robot') status('Checking the bundled demo with the shared GLB validator…');
       decoded = await preflight(buffer, controller.signal); if (stale()) return;
       status(`Preparing ${nameLabel(asset.file)} for inspection…`);
       owner = await getViewer(); if (stale()) return;
@@ -95,12 +97,12 @@ function selectAsset(id) {
       const preserveView = activeId !== null;
       owner.show(prepared, preserveView); prepared = null;
       activeId = id; asset.stats = decoded.stats;
-      $('active-name').textContent = nameLabel(asset.file); $('asset-kind').textContent = asset.demo ? 'CALIBRATION · NOT AN ENTRANT' : 'LOCAL GLB';
+      $('active-name').textContent = nameLabel(asset.file); $('asset-kind').textContent = asset.demo === 'robot' ? 'DEMO ASSET · NOT JUDGED' : asset.demo === 'calibration' ? 'CALIBRATION · NOT AN ENTRANT' : 'LOCAL GLB';
       $('stage-index').textContent = String(collection.indexOf(asset) + 1).padStart(2, '0');
       $('stage-mode').textContent = 'View scale normalized · static pose';
       $('empty-stage').hidden = true;
       metadata(asset, owner.active);
-      status(`${nameLabel(asset.file)} ready. ${preserveView ? 'Shared camera and lighting retained.' : 'Framed for inspection.'}${asset.demo ? ' This is a test fixture, not an entrant.' : ''}`);
+      status(`${nameLabel(asset.file)} ready. ${preserveView ? 'Shared camera and lighting retained.' : 'Framed for inspection.'}${asset.demo === 'robot' ? ' This is a demo asset, not a judged entrant.' : asset.demo === 'calibration' ? ' This is a test fixture, not an entrant.' : ''}`);
     } catch (problem) {
       if (!stale() && problem.name !== 'AbortError') { error(problem.message || 'Could not open this asset. Re-export a self-contained GLB.'); status(activeId ? 'Import failed. The previous character is still available.' : 'Import failed. Choose another GLB to continue.'); }
     } finally {
@@ -110,7 +112,7 @@ function selectAsset(id) {
     }
   });
 }
-function addFiles(files, demo = false) {
+function addFiles(files, demo = null) {
   const issues = []; let added;
   for (const file of files) {
     if (!/\.glb$/i.test(file.name)) { issues.push(`${file.name.slice(0, 90)}: use a .glb file.`); continue; }
@@ -123,6 +125,18 @@ function addFiles(files, demo = false) {
   if (added) selectAsset(added.id);
   if (issues.length) error(issues.join(' '));
   else if (!added) status('No new GLB files were added.');
+}
+function openBundledDemo() {
+  if (disposed) return;
+  const existing = collection.find(item => item.demo === 'robot');
+  if (existing) { selectAsset(existing.id); return; }
+  if (collection.length >= LIMITS.files || collection.reduce((total, item) => total + item.file.size, 0) + BUNDLED_DEMO.bytes > LIMITS.collectionBytes) {
+    error('Remove a file from the collection before adding the bundled demo.'); return;
+  }
+  // Metadata is available immediately; the pinned bytes are fetched inside the same
+  // cancellable, serialized selection job as local files, then use the same preflight.
+  const asset = { id: String(nextId++), file: { name: BUNDLED_DEMO.name, size: BUNDLED_DEMO.bytes, lastModified: 0 }, demo: 'robot' };
+  collection.push(asset); selectAsset(asset.id);
 }
 function removeAsset(id) {
   const index = collection.findIndex(item => item.id === id); if (index < 0) return;
@@ -143,7 +157,8 @@ function metadata(asset, displayed) {
   for (const [label, value] of rows) { const row = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd'); dt.textContent = label; dd.textContent = value; row.append(dt, dd); fragment.append(row); }
   $('metadata').replaceChildren(fragment);
   const notes = [...stats.notes];
-  if (asset.demo) notes.unshift('Calibration fixture only: nine boxes, 108 displayed triangles. Not a submitted character or benchmark result.');
+  if (asset.demo === 'robot') notes.unshift('Demo asset: RobotExpressive by Tomás Laulhé (Quaternius), modified by Don McCurdy. CC0 1.0. Not a submitted character or benchmark result. Its exported static pose is shown.');
+  if (asset.demo === 'calibration') notes.unshift('Calibration fixture only: nine boxes, 108 displayed triangles. Not a submitted character or benchmark result.');
   if (!stats.skins) notes.push('No skin data. A skeleton is optional for static inspection.');
   notes.push('Dimensions assume the glTF meter convention. Original geometry is unchanged; only its display frame is normalized.');
   if (Math.abs(displayed.originalMin[1]) > .01) notes.push(`Original lowest Y: ${displayed.originalMin[1].toPrecision(4)} m. The preview is grounded for inspection; this is not a pass/fail judgment.`);
@@ -154,7 +169,8 @@ function metadata(asset, displayed) {
 function applySettings() { viewer?.configure(settings); const asset = collection.find(item => item.id === activeId); if (asset && viewer?.active) metadata(asset, viewer.active); }
 $('file-input').addEventListener('change', event => { addFiles([...event.target.files]); event.target.value = ''; });
 $('empty-import').addEventListener('click', () => $('file-input').click());
-$('demo-button').addEventListener('click', () => { const existing = collection.find(item => item.demo); if (existing) selectAsset(existing.id); else addFiles([calibrationFile()], true); });
+$('demo-button').addEventListener('click', openBundledDemo);
+$('calibration-button').addEventListener('click', () => { const existing = collection.find(item => item.demo === 'calibration'); if (existing) selectAsset(existing.id); else addFiles([calibrationFile()], 'calibration'); });
 $('cancel-load').addEventListener('click', () => cancelLoad());
 $('frame-button').addEventListener('click', () => viewer?.frame()); $('reset-button').addEventListener('click', () => viewer?.reset());
 for (const button of document.querySelectorAll('[data-view]')) button.addEventListener('click', () => viewer?.view(button.dataset.view));
@@ -173,6 +189,7 @@ document.addEventListener('dragleave', event => { if (isFileDrag(event) && --dra
 document.addEventListener('drop', event => { if (isFileDrag(event)) { event.preventDefault(); dragDepth = 0; $('drop-cue').hidden = true; addFiles([...event.dataTransfer.files]); } });
 window.addEventListener('blur', () => { dragDepth = 0; $('drop-cue').hidden = true; viewer?.setSpin(false); });
 window.addEventListener('pagehide', () => { disposed = true; cancelLoad(false); viewer?.dispose(); viewer = null; collection.length = 0; });
-window.addEventListener('pageshow', event => { if (event.persisted) { disposed = false; activeId = null; pendingId = null; $('empty-stage').hidden = false; $('active-name').textContent = 'No character selected'; $('metadata').replaceChildren(); $('asset-notes').replaceChildren(); $('stage-index').textContent = '—'; $('asset-kind').textContent = 'STATIC INSPECTION'; renderCollection(); controlsState(); status('Studio restored. Reopen your files to resume inspection.'); } });
+window.addEventListener('pageshow', event => { if (event.persisted) { disposed = false; activeId = null; pendingId = null; $('empty-stage').hidden = false; $('active-name').textContent = 'No character selected'; $('metadata').replaceChildren(); $('asset-notes').replaceChildren(); $('stage-index').textContent = '—'; $('asset-kind').textContent = 'STATIC INSPECTION'; renderCollection(); controlsState(); status('Studio restored. Reopen your files to resume inspection.'); openBundledDemo(); } });
 if (location.protocol === 'file:') error('Open this studio through an HTTP(S) static host. Browser module and worker restrictions prevent file:// operation.');
 controlsState();
+if (location.protocol === 'https:' || location.protocol === 'http:') openBundledDemo();
