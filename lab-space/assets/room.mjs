@@ -1,13 +1,14 @@
 import * as T from './vendor/three.module.min.js';
 import {exhibits} from './navigation.mjs';
 import {canvasPointer,firstVisibleHit} from './interaction.mjs';
+import {roomViewport} from './viewport.mjs';
 
 // One level room in three volumes: a tall top-lit benchmark hall on the axis, a
 // bright west apparatus bay with an oriel, and a low timber study alcove to the east.
 // A lower south gallery compresses the entrance before the hall opens up.
 export function createRoom(canvas,onLost){
   const renderer=new T.WebGLRenderer({canvas,antialias:true,powerPreference:'low-power'});
-  renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));
+  let lastViewport=null;
   renderer.shadowMap.enabled=true;
   renderer.shadowMap.type=T.PCFSoftShadowMap;
   renderer.shadowMap.autoUpdate=false;
@@ -250,7 +251,15 @@ export function createRoom(canvas,onLost){
   const lost=(event)=>{event.preventDefault();onLost();};canvas.addEventListener('webglcontextlost',lost);
   return {
     comparison(source){if(disposed)return;comparisonSource.getContext('2d').drawImage(source,0,0);comparisonTexture.needsUpdate=true;},
-    draw(p){if(disposed)return;const w=canvas.clientWidth,h=canvas.clientHeight;const size=renderer.getSize(new T.Vector2());if(size.x!==w||size.y!==h){renderer.setSize(w,h,false);camera.aspect=w/h;camera.fov=w/h<1?78:65;camera.updateProjectionMatrix();}camera.position.set(p.x,1.68,p.z);camera.rotation.set(p.pitch,p.yaw,0);renderer.render(scene,camera);},
+    draw(p){
+      if(disposed)return;
+      const viewport=roomViewport(canvas.clientWidth,canvas.clientHeight,devicePixelRatio);if(!viewport)return;
+      if(!lastViewport||['width','height','pixelRatio'].some(key=>viewport[key]!==lastViewport[key])){
+        if(renderer.getPixelRatio()!==viewport.pixelRatio)renderer.setPixelRatio(viewport.pixelRatio);
+        renderer.setSize(viewport.width,viewport.height,false);camera.aspect=viewport.aspect;camera.fov=viewport.fov;camera.updateProjectionMatrix();lastViewport=viewport;
+      }
+      camera.position.set(p.x,1.68,p.z);camera.rotation.set(p.pitch,p.yaw,0);renderer.render(scene,camera);
+    },
     pick(clientX,clientY){
       if(disposed)return null;
       const point=canvasPointer(clientX,clientY,canvas.getBoundingClientRect());if(!point)return null;
