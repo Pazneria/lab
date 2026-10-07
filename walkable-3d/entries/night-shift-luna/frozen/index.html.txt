@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#100e18" />
+  <title>Night Shift Arcade</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="scene.js"></script>
+</head>
+<body>
+  <div id="stage" aria-label="Walkable 3D arcade scene"></div>
+  <div id="intro" class="panel">
+    <div class="eyebrow">AFTER HOURS · EST. 1987</div>
+    <h1>Night Shift <span>Arcade</span></h1>
+    <p>A small neighborhood room, still humming after midnight.</p>
+    <button id="enter">Step inside</button>
+    <small>Click to lock mouse and begin</small>
+  </div>
+  <div id="hud" class="hud hidden">
+    <div class="brand"><i></i>NIGHT SHIFT <b>ARCADE</b></div>
+    <div class="controls"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk <span>·</span> mouse look <span>·</span> <kbd>Shift</kbd> stroll <span>·</span> <kbd>Esc</kbd> release</div>
+    <button id="reset" title="Return to the entrance">Reset view</button>
+  </div>
+  <div id="toast" class="toast hidden">Click to look around</div>
+  <div id="reticle" class="reticle hidden"><i></i></div>
+  <script>
+    document.querySelector('#enter').addEventListener('click', () => window.dispatchEvent(new Event('arcade-enter')));
+    document.querySelector('#reset').addEventListener('click', () => window.dispatchEvent(new Event('arcade-reset')));
+  </script>
+</body>
+</html>

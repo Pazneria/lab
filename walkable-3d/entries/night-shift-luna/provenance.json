@@ -1,0 +1,191 @@
+{
+  "entry": "night-shift-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\night-shift-luna\\original.zip",
+  "archiveSha256": "6d125f5cbcd90ae3a419bda0fafb7cf766b511b2acf9d61a71304dc8ef0998be",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/scene.js": "scene.js",
+      "frozen/style.css": "style.css"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "dbd7a95f4385e87e5873cb9c16800021d19bcecc6c29ec9d675951b23b91c002",
+        "bytes": 1612
+      },
+      "README.md": {
+        "sha256": "9894826949cdb219d72897ba2766bb0c6611a0ab6f45c39c459ef8c292136f47",
+        "bytes": 1386
+      },
+      "scene.js": {
+        "sha256": "096b9a4fb3e92abf0f33e0c154d6bd02fdd279f40ea3167a6b0dae68294140c4",
+        "bytes": 24993
+      },
+      "style.css": {
+        "sha256": "d92bc033a70ed73c37b1fe87e27f21eb30b131088fa68bebe73f0e1d923ac8d6",
+        "bytes": 2864
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\night-shift-luna\\original.zip",
+    "sourceArchiveSha256": "6d125f5cbcd90ae3a419bda0fafb7cf766b511b2acf9d61a71304dc8ef0998be"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [
+    {
+      "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "version": "0.180.0",
+      "status": "Downloaded exact declared pinned CDN module and upstream license; source bytes unchanged; in-memory HTML URL adapter required.",
+      "files": [
+        {
+          "path": "frozen\\vendor\\three.module.js",
+          "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+          "bytes": 603113,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\saffron-observatory-astra\\frozen\\vendor\\three\\build\\three.module.js",
+            "walkable-3d\\entries\\raincourt-astra\\frozen\\vendor\\three\\build\\three.module.js",
+            "walkable-3d\\entries\\lantern-court-sol\\frozen\\vendor\\three.module.js",
+            "walkable-3d\\entries\\icefield-astra\\frozen\\vendor\\three\\three.module.js",
+            "walkable-3d\\entries\\hollow-limestone-sol\\frozen\\vendor\\three.module.js",
+            "walkable-3d\\entries\\hearth-folio-astra\\frozen\\vendor\\three.module.js",
+            "walkable-3d\\entries\\fern-house-astra\\frozen\\vendor\\three.module.js",
+            "walkable-3d\\entries\\boreal-sol\\frozen\\vendor\\three.module.js",
+            "walkable-3d\\entries\\aster-reading-house-sol\\frozen\\vendor\\three.module.js",
+            "walkable-3d\\entries\\alder-halt\\frozen\\vendor\\three\\three.module.js"
+          ]
+        },
+        {
+          "path": "frozen\\vendor\\THREE-LICENSE.txt",
+          "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+          "bytes": 1081,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\fernery-sol\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\mora-sol\\frozen\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\limestone-hollow-astra\\frozen\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\lantern-court-sol\\frozen\\vendor\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\kestrel-maintenance-sol\\frozen\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\hollow-limestone-sol\\frozen\\vendor\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\hearth-folio-astra\\frozen\\vendor\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\fern-house-astra\\frozen\\vendor\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\boreal-sol\\frozen\\vendor\\THREE-LICENSE.txt",
+            "walkable-3d\\entries\\aster-reading-house-sol\\frozen\\vendor\\THREE-LICENSE.txt"
+          ]
+        },
+        {
+          "path": "frozen\\vendor\\three.core.js",
+          "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+          "bytes": 1403455,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\saffron-observatory-astra\\frozen\\vendor\\three\\build\\three.core.js",
+            "walkable-3d\\entries\\raincourt-astra\\frozen\\vendor\\three\\build\\three.core.js",
+            "walkable-3d\\entries\\lantern-court-sol\\frozen\\vendor\\three.core.js",
+            "walkable-3d\\entries\\icefield-astra\\frozen\\vendor\\three\\three.core.js",
+            "walkable-3d\\entries\\hollow-limestone-sol\\frozen\\vendor\\three.core.js",
+            "walkable-3d\\entries\\hearth-folio-astra\\frozen\\vendor\\three.core.js",
+            "walkable-3d\\entries\\fern-house-astra\\frozen\\vendor\\three.core.js",
+            "walkable-3d\\entries\\boreal-sol\\frozen\\vendor\\three.core.js",
+            "walkable-3d\\entries\\aster-reading-house-sol\\frozen\\vendor\\three.core.js",
+            "walkable-3d\\entries\\alder-halt\\frozen\\vendor\\three\\three.core.js"
+          ]
+        }
+      ]
+    }
+  ],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:01:53",
+    "stop": "04:16:53",
+    "deadline": "05:01:53",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "87a205db0cd5ddd69312f0d65065182456d17ed803876be6e1cdc5c3033f8857",
+      "bytes": 681
+    },
+    "launch-prompt.txt": {
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "bytes": 7716
+    },
+    "preview-capture.json": {
+      "sha256": "8656a3030b8022137c6426db6d26cdb8e0fd801e6d384cdb94c35359dad37cc4",
+      "bytes": 2175
+    },
+    "preview.jpg": {
+      "sha256": "d048aa8a0e6758b0387932965d9c55f886765517f545d991d8d2e5695b514d84",
+      "bytes": 53948
+    },
+    "README.md": {
+      "sha256": "9894826949cdb219d72897ba2766bb0c6611a0ab6f45c39c459ef8c292136f47",
+      "bytes": 1386
+    },
+    "frozen/index.html.txt": {
+      "sha256": "dbd7a95f4385e87e5873cb9c16800021d19bcecc6c29ec9d675951b23b91c002",
+      "bytes": 1612
+    },
+    "frozen/scene.js": {
+      "sha256": "096b9a4fb3e92abf0f33e0c154d6bd02fdd279f40ea3167a6b0dae68294140c4",
+      "bytes": 24993
+    },
+    "frozen/style.css": {
+      "sha256": "d92bc033a70ed73c37b1fe87e27f21eb30b131088fa68bebe73f0e1d923ac8d6",
+      "bytes": 2864
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "12-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/scene.js",
+      "frozen/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

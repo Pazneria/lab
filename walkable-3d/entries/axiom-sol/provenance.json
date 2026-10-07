@@ -1,0 +1,210 @@
+{
+  "entry": "axiom-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\axiom-sol\\original.zip",
+  "archiveSha256": "2500259984db361400f0375130cd9eb51c136e2e7863cbc4cae850b66fdb9f1d",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-BWXltC6H.js": "dist/assets/index-BWXltC6H.js",
+      "frozen/assets/index-C9K7Psuk.css": "dist/assets/index-C9K7Psuk.css"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "BUILD-MANIFEST.json": {
+        "sha256": "a03d23cf88c06a9c29f2b5b91d4e0ba77f797a894cd06d8660d2d9a88b5953e2",
+        "bytes": 612
+      },
+      "BUILD.txt": {
+        "sha256": "65e09086241224edefa42ceda105436c801f31e8e60f3c4781cf51ba008dddcf",
+        "bytes": 749
+      },
+      "CHECKS-CPU.txt": {
+        "sha256": "f7343303fcce5a0201cb4d32e7fff4f4b70c1861b3b31c390782a8a9b01aeca6",
+        "bytes": 804
+      },
+      "CHECKS.md": {
+        "sha256": "e1c4f6cb9d6114791e95808db259b2f71fe36701683e36505bacee41fb10e6f5",
+        "bytes": 2433
+      },
+      "dist/assets/index-BWXltC6H.js": {
+        "sha256": "05b94feab27fc0fbf10dce73aed724c6ca3610be8c98a00042fe5903eefba0bf",
+        "bytes": 544392
+      },
+      "dist/assets/index-C9K7Psuk.css": {
+        "sha256": "e8e46b2323b29a116a78417c618f9799ebf61d3e39731294cc2402638470948f",
+        "bytes": 3729
+      },
+      "dist/index.html": {
+        "sha256": "dab02544a769b3257f889add882b2381b6611c6415e237588bb72ec9b85e36f3",
+        "bytes": 2724
+      },
+      "index.html": {
+        "sha256": "66d027bc52f52ac4cd14d53408598acc0b7c1f6d4329dce828b47ef15874f330",
+        "bytes": 2625
+      },
+      "package-lock.json": {
+        "sha256": "4e4886019cdaf6f402425dbe0a82d84b82d7067d2d342c4b223a428bf8e894a9",
+        "bytes": 35206
+      },
+      "package.json": {
+        "sha256": "c02287574a0646922d705356e59fe580ddc5f07c01079c26e60a220761656773",
+        "bytes": 547
+      },
+      "README.md": {
+        "sha256": "608fb5675d7c0c2b3f49d1f93f9e8004c561a01c6de309c6e5ea01299b59969b",
+        "bytes": 4734
+      },
+      "RUN_RECORD.json": {
+        "sha256": "c81ddbed6c0a13bd277897b3d25e326be8691497493e239b907a58373cb1b157",
+        "bytes": 1867
+      },
+      "scripts/check-geometry.mjs": {
+        "sha256": "3724b84d0ca648a588cc5812238118951f1c1166a42514212483f0f0240e8f17",
+        "bytes": 2124
+      },
+      "scripts/check-layout.mjs": {
+        "sha256": "c845f68529d797e9daf957943512be5ee4776549fc5eff1bca660e2f288a213a",
+        "bytes": 1492
+      },
+      "src/graphics.js": {
+        "sha256": "f7aea4dcbc6598c79b7e1a9f2750fca81c8431a272e8123855c3aaecee183338",
+        "bytes": 7903
+      },
+      "src/layout.js": {
+        "sha256": "abda15ab46126b474380af6e7dbddb63afed6493117e690a0b645d2db6be10c5",
+        "bytes": 2782
+      },
+      "src/main.js": {
+        "sha256": "df2173a2084475113892248b8ef12a5e06ab5399c7a2e32e11ca1d74bc7cd9ec",
+        "bytes": 8529
+      },
+      "src/scene.js": {
+        "sha256": "598cd143a700d4f13a8da61b8018b944243a60d8c6779f08c27d86b18d685c12",
+        "bytes": 32092
+      },
+      "src/style.css": {
+        "sha256": "f2fc4d958c0e1b5df9a2205403721f8201fc79bc48567683ec72d9aa6728356f",
+        "bytes": 4328
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\axiom-sol\\original.zip",
+    "sourceArchiveSha256": "2500259984db361400f0375130cd9eb51c136e2e7863cbc4cae850b66fdb9f1d"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6.1 Sol / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "03:56:43.6548776",
+    "stop": "04:18:37.8703862",
+    "deadline": "04:56:43.6548776",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "BUILD-MANIFEST.json": {
+      "sha256": "a03d23cf88c06a9c29f2b5b91d4e0ba77f797a894cd06d8660d2d9a88b5953e2",
+      "bytes": 612
+    },
+    "BUILD.txt": {
+      "sha256": "65e09086241224edefa42ceda105436c801f31e8e60f3c4781cf51ba008dddcf",
+      "bytes": 749
+    },
+    "CHECKS-CPU.txt": {
+      "sha256": "f7343303fcce5a0201cb4d32e7fff4f4b70c1861b3b31c390782a8a9b01aeca6",
+      "bytes": 804
+    },
+    "CHECKS.md": {
+      "sha256": "e1c4f6cb9d6114791e95808db259b2f71fe36701683e36505bacee41fb10e6f5",
+      "bytes": 2433
+    },
+    "host-verification.json": {
+      "sha256": "30b2331d0a9618fd7afa5a11ce0db891ff5ec36c18ccc46dd12d5f8763d04d5d",
+      "bytes": 674
+    },
+    "launch-prompt.txt": {
+      "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
+      "bytes": 7738
+    },
+    "preview-capture.json": {
+      "sha256": "141513ee60f159583da5a572fc1f35056f2ec1077cd02f61d2e6a15aa6c0bcce",
+      "bytes": 2159
+    },
+    "preview.jpg": {
+      "sha256": "efafde92e0c1cb76599dbaff33c977f9b69f0d2fb57e957a0613e8d661ae7531",
+      "bytes": 63178
+    },
+    "README.md": {
+      "sha256": "608fb5675d7c0c2b3f49d1f93f9e8004c561a01c6de309c6e5ea01299b59969b",
+      "bytes": 4734
+    },
+    "RUN_RECORD.json": {
+      "sha256": "c81ddbed6c0a13bd277897b3d25e326be8691497493e239b907a58373cb1b157",
+      "bytes": 1867
+    },
+    "frozen/index.html.txt": {
+      "sha256": "dab02544a769b3257f889add882b2381b6611c6415e237588bb72ec9b85e36f3",
+      "bytes": 2724
+    },
+    "frozen/assets/index-BWXltC6H.js": {
+      "sha256": "05b94feab27fc0fbf10dce73aed724c6ca3610be8c98a00042fe5903eefba0bf",
+      "bytes": 544392
+    },
+    "frozen/assets/index-C9K7Psuk.css": {
+      "sha256": "e8e46b2323b29a116a78417c618f9799ebf61d3e39731294cc2402638470948f",
+      "bytes": 3729
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "11-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "BUILD-MANIFEST.json",
+      "BUILD.txt",
+      "CHECKS-CPU.txt",
+      "CHECKS.md",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "RUN_RECORD.json",
+      "frozen/index.html.txt",
+      "frozen/assets/index-BWXltC6H.js",
+      "frozen/assets/index-C9K7Psuk.css"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

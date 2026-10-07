@@ -1,0 +1,102 @@
+{
+  "entry": "holloway-halt-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\holloway-halt-luna\\original.zip",
+  "archiveSha256": "c16024492c4361071fe8dff349e54faf5d8d2cad83417b0cfc194e29e7a87868",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/scene.js": "scene.js"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "47831b85a535bc4a95f760f3b59e3d5f24f5edda97e6064c05b150626f17d82d",
+        "bytes": 2800
+      },
+      "README.md": {
+        "sha256": "240418e71320ea2749ebaa256edd5a843836448a9ab71c48d3be267203b8e1f5",
+        "bytes": 1450
+      },
+      "scene.js": {
+        "sha256": "5116a21734aa49dc67fd87f3a13cf7d22c16d775355f4b615ad3aed0cdfaeb19",
+        "bytes": 33652
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\holloway-halt-luna\\original.zip",
+    "sourceArchiveSha256": "c16024492c4361071fe8dff349e54faf5d8d2cad83417b0cfc194e29e7a87868"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:01:16",
+    "stop": "04:09:00",
+    "deadline": "05:01:16",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "412f3fa4f4c7a8dc6f07dc29878c56a077891d0f5b8b5ce484cefc7c5b91c217",
+      "bytes": 683
+    },
+    "launch-prompt.txt": {
+      "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",
+      "bytes": 6668
+    },
+    "preview-capture.json": {
+      "sha256": "ed288a6270d2a237d107a51f1e0a3679e51c01997aa859fa463452021da98fdf",
+      "bytes": 2186
+    },
+    "preview.jpg": {
+      "sha256": "aff09cece4314ee03ea4d4cb73d948230d6d339e907f75e6fcc39f7081bfac5d",
+      "bytes": 78569
+    },
+    "README.md": {
+      "sha256": "240418e71320ea2749ebaa256edd5a843836448a9ab71c48d3be267203b8e1f5",
+      "bytes": 1450
+    },
+    "frozen/index.html.txt": {
+      "sha256": "47831b85a535bc4a95f760f3b59e3d5f24f5edda97e6064c05b150626f17d82d",
+      "bytes": 2800
+    },
+    "frozen/scene.js": {
+      "sha256": "5116a21734aa49dc67fd87f3a13cf7d22c16d775355f4b615ad3aed0cdfaeb19",
+      "bytes": 33652
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "01-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/scene.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

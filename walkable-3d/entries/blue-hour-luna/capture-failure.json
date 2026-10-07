@@ -1,0 +1,24 @@
+{
+  "authorization": "User approved 2026-10-07 04:28:15 UTC: one background browser, one scene at a time, full cleanup AFTER all builds finish. Parent cleared batch capture 2026-10-07 04:39 UTC.",
+  "evidence": {
+    "id": "blue-hour-luna",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?entry=blue-hour-luna",
+    "startedAt": "2026-10-07T04:44:12.262Z",
+    "status": "failed",
+    "consoleErrors": [],
+    "pageErrors": [
+      "parent.add is not a function"
+    ],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "controls": [],
+    "frozenHtmlSha256": "61a56548d651c88b786a87955b8d542544f8681ae7da6ae0dddd823759ad04a6",
+    "viewerMessage": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "error": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "contextClosed": true,
+    "finishedAt": "2026-10-07T04:44:13.648Z"
+  },
+  "sourceChanged": false,
+  "entrantRebuilt": false,
+  "grade": null
+}

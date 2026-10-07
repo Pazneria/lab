@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#11191c" />
+  <title>Bay 03 // Orbital Service</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <canvas id="scene" aria-label="First-person orbital station maintenance bay"></canvas>
+
+  <div class="corner-mark" aria-hidden="true">
+    <span class="mark">O·S</span>
+    <span class="mark-copy"><b>ORBITAL SERVICE</b><small>MAINTENANCE BAY 03</small></span>
+  </div>
+
+  <div class="reticle" aria-hidden="true"><i></i><i></i></div>
+  <div class="surface-caption" id="surfaceCaption">MAIN WORK FLOOR <span>·</span> GYRO CORE</div>
+
+  <div class="control-strip" id="controlStrip">
+    <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> WALK</span>
+    <span><kbd>MOUSE</kbd> LOOK</span>
+    <span><kbd>SHIFT</kbd> MOVE QUICKLY</span>
+    <span><kbd>R</kbd> RESET</span>
+    <span><kbd>H</kbd> HELP</span>
+  </div>
+
+  <button class="reset-button" id="resetButton" title="Return to the bay entrance">RESET POSITION <span>↺</span></button>
+  <div class="lock-hint" id="lockHint">CLICK TO LOOK AROUND <span>·</span> ESC TO RELEASE</div>
+
+  <section class="intro" id="intro">
+    <div class="intro-card">
+      <div class="eyebrow"><span class="status-dot"></span> STATION MAINTENANCE / PRESSURIZED</div>
+      <h1>Bay <em>03</em></h1>
+      <p class="intro-sub">GYROCORE SERVICE CELL <span>//</span> DECK 04</p>
+      <p class="intro-copy">The primary attitude-control rotor is offline for a coolant manifold service. Walk the work floor, enter the open service alcove, then take the inspection stairs for a high-side view.</p>
+      <div class="intro-controls">
+        <div><strong>W A S D</strong><small>MOVE</small></div>
+        <div><strong>MOUSE</strong><small>LOOK</small></div>
+        <div><strong>SHIFT</strong><small>QUICK STEP</small></div>
+      </div>
+      <button class="enter-button" id="enterButton">ENTER BAY <span>→</span></button>
+      <div class="intro-foot"><span>ENVIRONMENTAL SEAL</span><span>98.6 kPa <i></i> NOMINAL</span></div>
+    </div>
+  </section>
+
+  <section class="help-panel hidden" id="helpPanel">
+    <div class="help-heading">FIELD CONTROLS <button id="closeHelp" aria-label="Close controls">×</button></div>
+    <div class="help-row"><kbd>W A S D</kbd><span>Walk across the floor and through the alcove</span></div>
+    <div class="help-row"><kbd>MOUSE</kbd><span>Look around</span></div>
+    <div class="help-row"><kbd>SHIFT</kbd><span>Move quickly</span></div>
+    <div class="help-row"><kbd>R</kbd><span>Reset to the entrance</span></div>
+    <div class="help-row"><kbd>ESC</kbd><span>Release mouse look</span></div>
+    <div class="help-note">The inspection deck is reached by the marked stair flight at the back-left of the bay.</div>
+  </section>
+
+  <div class="loading" id="loading"><span class="loader"></span><b>INITIALIZING SERVICE BAY</b></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

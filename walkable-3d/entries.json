@@ -1686,6 +1686,732 @@
       "archiveSha256": "5de5f1bc0a7cd7305e5ec4e1caadc9f951474c8fa1ebd8ae3ce2aefa719e4294",
       "archiveKind": "Host-created preservation snapshot of finished folder; not a producer archive; retained outside Git and Pages.",
       "htmlSha256": "5579f88429d6f6f0c0dcdf86b2871919784a595f1135715d2af1f2ff84f44beb"
+    },
+    {
+      "id": "holloway-halt-luna",
+      "title": "Holloway Halt - Last Light",
+      "description": "An abandoned railway station, reclaimed by autumn woodland.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:01:16 UTC; stop 04:09:00 UTC; deadline 05:01:16 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click the scene to capture the mouse; move the mouse to look around.\n- `W A S D` move; hold `Shift` to walk briskly.\n- `Esc` releases the mouse; click the scene to recapture it.\n- `R` or **Reset walk** returns to the entrance.\n\nFollow the path from the entrance through the waiting room, use the platform-side doorway, continue to the timber crossing at the end of the tracks, then take the loop through the trees.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Holloway Halt - Last Light scene at its authored starting viewpoint.",
+      "archiveSha256": "c16024492c4361071fe8dff349e54faf5d8d2cad83417b0cfc194e29e7a87868",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "47831b85a535bc4a95f760f3b59e3d5f24f5edda97e6064c05b150626f17d82d",
+      "promptId": "01",
+      "promptVersion": "01-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "blue-hour-luna",
+      "title": "Blue Hour - Polar Field Shelter",
+      "description": "A compact polar research shelter during clear blue twilight.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 03:59:53 UTC; stop 04:14:54 UTC; deadline 04:59:53 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. Installer canceled; cached Three.js bundled.",
+      "controls": "- Click **Enter the Shelter**, then move the mouse to look.\n- **W/A/S/D** to walk; hold **Shift** to walk slowly.\n- **Escape** releases the mouse and pauses; click **Resume Walk** to continue.\n- **R** or the ↺ button returns to the starting snow apron.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "No performance measurement. Frozen scene could not start during authorized capture; see capture-failure.json.",
+      "limitations": [
+        "Frozen startup failure: parent.add is not a function No entrant repair or rebuild applied.",
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "/src/style.css",
+          "./src/style.css"
+        ],
+        [
+          "/src/main.js",
+          "./src/main.js"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No captured preview supplied.",
+      "archiveSha256": "3bc25f371d0790a1bf41baa285acfbb82f441863225f4aebeaac955d087789d4",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "61a56548d651c88b786a87955b8d542544f8681ae7da6ae0dddd823759ad04a6",
+      "promptId": "05",
+      "promptVersion": "05-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "failed",
+      "completionStatus": "Frozen completed handoff; startup failed during separate authorized screenshot capture",
+      "failureKind": "startup",
+      "failureSummary": "parent.add is not a function"
+    },
+    {
+      "id": "understone-luna",
+      "title": "Understone: Limestone Cavern",
+      "description": "A dry route around a shallow underground pool, through a broad natural arch to a raised landing.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 03:59:16 UTC; stop 04:12:32 UTC; deadline 04:59:16 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click **Enter the Cavern** (or click the scene) to capture the mouse.\n- **W A S D** to walk; mouse to look.\n- **Esc** to release the mouse.\n- **R** or **Reset** to return to the entrance.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Producer checks / record",
+          "path": "benchmark-log.txt"
+        },
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Understone: Limestone Cavern scene at its authored starting viewpoint.",
+      "archiveSha256": "89309f40bda2db770e80501a65ed9f97c507380bf806a6f10c09e18fcaf8d4f7",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "16c1ab31c556c0ed6efd54dd44f2c1bbe49bd5711b8d0a75c52a6c42168d28ad",
+      "promptId": "06",
+      "promptVersion": "06-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "stillroom-luna",
+      "title": "The Stillroom",
+      "description": "An entrance gallery and taller sculpture hall connected by a broad ramp, with three original abstract sculptures.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:00:03 UTC; stop 04:07:06 UTC; deadline 05:00:03 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click **Enter the gallery**, then use the mouse to look.\n- **W A S D** to walk; **Shift** to move faster.\n- **Esc** releases the mouse and pauses; click the scene to resume.\n- **Reset to entrance** returns to the starting point; **R** also resets while exploring.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen The Stillroom scene at its authored starting viewpoint.",
+      "archiveSha256": "647fd52f9bb35f329b5df6e53f8466c0288b1709a9248debedcf822e5b41f706",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "4ff65e0b07421686ae3b95ec737edc7b4cff716bc168cc8212b95865c36ca8c7",
+      "promptId": "07",
+      "promptVersion": "07-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "bay-03-luna",
+      "title": "Bay 03 - Orbital Service",
+      "description": "A main work floor, service alcove and elevated inspection walkway connected by ordinary stairs.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 03:58:57 UTC; stop 04:06:20 UTC; deadline 04:58:57 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click **Enter Bay** to start and enable mouse look; press **Esc** to release the pointer.\n- **W / A / S / D** move; arrow keys also work.\n- Mouse looks around; **Shift** increases walking speed.\n- **R** or **Reset Position** returns to the entrance; **H** opens/closes the controls panel.\n- Follow the marked back-left stairs to the inspection deck. Walk back down the same stairs to return to the floor.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Bay 03 - Orbital Service scene at its authored starting viewpoint.",
+      "archiveSha256": "b178dcaf7b4febd703d78b1f9e7ac0f87097d5a6629b986987be696d5d828476",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "9c72a2aaab9c4cf8fa83a7b7b1f039975070729591e7096adf41a433f19431f4",
+      "promptId": "09",
+      "promptVersion": "09-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "hearthmere-luna",
+      "title": "Hearthmere Library",
+      "description": "Lower shelves, a window reading alcove and broad stairs to a partial upper gallery.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:00:51 UTC; stop 04:04:39 UTC; deadline 05:00:51 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click the room to capture the mouse and enable mouse look.\n- W/A/S/D moves; hold Shift to walk slowly.\n- Escape releases the mouse.\n- R or **Reset view** returns to the starting position and direction.\n- **Controls** toggles the on-screen control card.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Hearthmere Library scene at its authored starting viewpoint.",
+      "archiveSha256": "ed17a21862b1225c46006270a05febbdcee6f8f5a9d457d2765c857d06963041",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "0748db475c8436ac3999aa32f54b3dec8775360d659c89aeec328866a425a8c0",
+      "promptId": "10",
+      "promptVersion": "10-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "axiom-sol",
+      "title": "Axiom",
+      "description": "One exhibition hall with a central instrument, perception-testing bench and motion-testing alcove.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 03:56:43.6548776 UTC; stop 04:18:37.8703862 UTC; deadline 04:56:43.6548776 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. Initial sandbox registry install failed; authorized retry completed within the same timer.",
+      "controls": "- Click **Enter the laboratory** to capture the mouse.\n- Mouse: look. **WASD** or arrow keys: move. **Shift**: faster walking.\n- **R**: reset position and view to the entrance.\n- **Esc**: release the cursor and show the controls. Click Resume to continue.\n- **Q**: cycle economy / balanced / high pixel resolution. Geometry stays the same.\n- **F**: toggle live frame-interval diagnostics during the later inspection. They show requestAnimationFrame intervals, draw calls, and triangles; they are not GPU timings.\n\nEye height is 1.68 m. Movement has acceleration, short collision substeps, and sliding around obstacles. The floors, room boundaries, major furniture, central instrument, and test platform block movement. There is no gravity, jumping, or way to fall through the floor.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Producer checks / record",
+          "path": "BUILD-MANIFEST.json"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "BUILD.txt"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "CHECKS-CPU.txt"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "CHECKS.md"
+        },
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "RUN_RECORD.json"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Axiom scene at its authored starting viewpoint.",
+      "archiveSha256": "2500259984db361400f0375130cd9eb51c136e2e7863cbc4cae850b66fdb9f1d",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "dab02544a769b3257f889add882b2381b6611c6415e237588bb72ec9b85e36f3",
+      "promptId": "11",
+      "promptVersion": "11-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "sol",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "night-shift-luna",
+      "title": "Night Shift Arcade",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:01:53 UTC; stop 04:16:53 UTC; deadline 05:01:53 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click **Step inside** to capture the mouse.\n- **W A S D** move; mouse moves the view.\n- Hold **Shift** to walk more slowly.\n- **Esc** releases the pointer; click the scene to resume.\n- **Reset view** returns to the entrance.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Night Shift Arcade scene at its authored starting viewpoint.",
+      "archiveSha256": "6d125f5cbcd90ae3a419bda0fafb7cf766b511b2acf9d61a71304dc8ef0998be",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "dbd7a95f4385e87e5873cb9c16800021d19bcecc6c29ec9d675951b23b91c002",
+      "promptId": "12",
+      "promptVersion": "12-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "lumen-astra",
+      "title": "LUMEN - Open Lab",
+      "description": "One exhibition hall with a central instrument, perception-testing bench and motion-testing alcove.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 03:56:38 UTC; stop 04:23:55 UTC; deadline 04:56:38 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. Registry permission, transient connection, and build configuration issues recovered without timer pause; exact interruption record in RUN-RECORD.json.",
+      "controls": "| Input | Action |\n|---|---|\n| Click **Enter the lab** | Capture the mouse and begin exploring |\n| Mouse | Look around |\n| W A S D / arrow keys | Walk, with normalized diagonal movement |\n| Shift | Walk faster |\n| Esc | Release mouse, pause and show the menu |\n| R / **Reset position** | Return to the entrance |\n| H | Show or hide help |\n| F | Show or hide live frame-interval diagnostics |\n| Menu **Render detail** | Balanced, High resolution or Economy |\n\nThe instrument is straight ahead. Walk around its circular floor mark, enter the left perception bay, cross to the right motion bay, and return through either side aisle. The eye height is 1.68 m. The player uses a 0.26 m collision radius, remains on the floor, and cannot pass through the principal walls or equipment. No jump is needed.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "RUN-RECORD.json"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "THIRD-PARTY-NOTICES.txt"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen LUMEN - Open Lab scene at its authored starting viewpoint.",
+      "archiveSha256": "dcabf9eb9cb61f8847231ac94c3de48452b3827135f7eab12418d5596ac7e72b",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "c817af6e31440ed9da37346c3e205d1fe835d97bde3af625556d37623f60ba3c",
+      "promptId": "11",
+      "promptVersion": "11-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "astra",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "fieldworks-luna",
+      "title": "Fieldworks - AI & Perception Lab",
+      "description": "One exhibition hall with a central instrument, perception-testing bench and motion-testing alcove.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:03:37 UTC; stop 04:24:37 UTC; deadline 05:03:37 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. Offline install failed on shared-cache write. No complete entrant install verified; host packaged independently verified exact pinned dependency as disclosed adapter.",
+      "controls": "- Click **Enter the lab** to capture the mouse; move the mouse to look around.\n- **W A S D** or **arrow keys** to walk. Hold **Shift** to move faster.\n- **Escape** releases the mouse and returns to the entry card.\n- Click **Reset view** or press **R** to return to the entrance and starting view.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "No performance measurement. Frozen scene could not start during authorized capture; see capture-failure.json.",
+      "limitations": [
+        "Frozen startup failure: parent.add is not a function No entrant repair or rebuild applied.",
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "src=\"/main.js\"",
+          "src=\"./main.js\""
+        ],
+        [
+          "\"three\": \"/node_modules/three/build/three.module.js\"",
+          "\"three\": \"./vendor/three.module.js\", \"/node_modules/three/examples/jsm/utils/BufferGeometryUtils.js\": \"./vendor/BufferGeometryUtils.js\", \"/node_modules/three/examples/jsm/environments/RoomEnvironment.js\": \"./vendor/RoomEnvironment.js\""
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No captured preview supplied.",
+      "archiveSha256": "9b421dcd10c34e5ec18234fc6e2df2c993c7b8ec270956bffbedbc0929e2e0b8",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "e909965cbfa8b751a6fcd5fb86e5f6e09054bd4a6e3934d377ecc2d981b56b45",
+      "promptId": "11",
+      "promptVersion": "11-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "failed",
+      "completionStatus": "Frozen completed handoff; startup failed during separate authorized screenshot capture",
+      "failureKind": "startup",
+      "failureSummary": "parent.add is not a function"
+    },
+    {
+      "id": "applied-sensing-opus",
+      "title": "Applied Sensing Lab",
+      "description": "One exhibition hall with a central instrument, perception-testing bench and motion-testing alcove.",
+      "requestedConfiguration": "Claude (manual); exact version/effort unknown",
+      "modelDisclosure": "User reports manually completed Claude scene. Exact variant, version, effort and serving backend unknown. Comparison group uses the existing Claude key; this does not verify Opus identity.",
+      "buildWindow": "Actual implementation start, stop and deadline not supplied; no independent timing/run record found.",
+      "interruptions": "Not documented in supplied manual artifact.",
+      "controls": "| Input | Action |\n|---|---|\n| Click | Capture mouse for mouse-look (Esc releases; click-drag also looks around if pointer lock is unavailable) |\n| W A S D / arrows | Walk |\n| Shift | Walk faster |\n| C | Crouch toggle (inspect low equipment) |\n| R | Reset to entrance |\n| 1 2 3 4 | Jump to entrance / instrument / perception bench / motion rig |\n| F | Frame-time statistics (avg, p99, max, draw calls, triangles) |\n| P | Cycle render resolution scale |\n| H | Help overlay |",
+      "producerChecks": "No producer test results supplied; README documents controls and layout. Importer CPU/static checks are recorded separately.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Applied Sensing Lab scene at its authored starting viewpoint.",
+      "archiveSha256": "2d210253fa4c169ec00b30ec0d5b46e179a22c37f6a3af48524b04937b07b484",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "5d88c6bae5937bf7705afc88f0efd07d92bf4310c72969d200edf7aa8299c54e",
+      "promptId": "11",
+      "promptVersion": "11-base",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "opus",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "lantern-arcade-sol",
+      "title": "Lantern Arcade",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:00:37.6365812 UTC; stop 04:30:07.2913960 UTC; deadline 05:00:37.6365812 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "| Action | Control |\n| --- | --- |\n| Begin / resume | Click **Step inside** / **Continue exploring** |\n| Walk | **W A S D**, or arrow keys |\n| Look around | Mouse, with pointer lock |\n| Faster walk | Hold **Shift** |\n| Pause / release mouse | **Esc** |\n| Return to entrance | **R**, or **Reset view** button |\n| Rendering resolution | **Quality** button while paused |\n| Optional frame interval display | **F3** |\n\nIf the browser denies pointer lock, movement still works and **hold the left mouse button and drag** to look. In that mode Esc or H pauses. The player remains at a 1.67 m eye height. Collision uses a 0.21 m radius and blocks walls, cabinet bodies, the counter, stool and bench. No jumping is needed.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Producer checks / record",
+          "path": "execution-record.json"
+        },
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Lantern Arcade scene at its authored starting viewpoint.",
+      "archiveSha256": "086776b3f6534304fa053d557f7ebabecabd0d9cec1076c5503600089aca9d4c",
+      "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "68cf06905a0609d5bb334af6e36f53f245536f4fcc2b555af0bc983d69910eab",
+      "promptId": "12",
+      "promptVersion": "12-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "sol",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "after-hours-astra",
+      "title": "After Hours",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:01:01.8938918 UTC; stop 04:31:52.8831904 UTC; deadline 05:01:01.8938918 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "See README.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Producer checks / record",
+          "path": "build-validation.json"
+        },
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "README.txt"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "validation.json"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen After Hours scene at its authored starting viewpoint.",
+      "archiveSha256": "bc81649d4fe2e4d760c51aa5654a21a42c8c385d5518cda9bcd300d9efe296e9",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "33ae4e1f498239cd0be378aae78ef15c352667ebc32cac64b83e4350a442732d",
+      "promptId": "12",
+      "promptVersion": "12-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "astra",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "starlite-arcade-claude",
+      "title": "Starlite Arcade",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "requestedConfiguration": "Claude (manual); exact version/effort unknown",
+      "modelDisclosure": "User reports manually completed Claude scene. Exact variant, version, effort and serving backend unknown. Comparison group uses the existing Claude key; this does not verify Opus identity.",
+      "buildWindow": "Actual implementation start, stop and deadline not supplied; no independent timing/run record found.",
+      "interruptions": "Not documented in supplied manual artifact.",
+      "controls": "| Input | Action |\n|---|---|\n| Mouse | Look around |\n| W A S D / arrow keys | Walk |\n| Shift | Walk faster |\n| C or Left Ctrl | Toggle crouch (lower eye height for inspecting control panels) |\n| R | Reset to the entrance |\n| F | Frame-time overlay: average and p95/max ms, draw calls, render scale |\n| Q | Render scale: auto, 0.75, 1.0, 1.5, 2.0 |\n| Esc | Release the mouse and show the controls panel |",
+      "producerChecks": "No producer test results supplied; README documents controls and layout. Importer CPU/static checks are recorded separately.",
+      "performanceEvidence": "README claims Intel integrated GPU render times around4-7ms at1920x1080. Raw measurements, methodology and timing not supplied; claim independently unverified and not a host benchmark. Host checks CPU/static only.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Starlite Arcade scene at its authored starting viewpoint.",
+      "archiveSha256": "dc3a7903de3fcd7f10286997fe1594be2c1a16b5cdc9fbbbe6938b99da4c6d8c",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "06418de0ac9942173479aa2303ef7896ea368c2ad36a3dd3e68714847e255005",
+      "promptId": "12",
+      "promptVersion": "12-base",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "opus",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "tideline-luna",
+      "title": "Tideline - Boathouse at Low Water",
+      "description": "A timber workshop, short pier and exposed shoreline beside a quiet tidal inlet.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:03:04 UTC; stop 04:39:19 UTC; deadline 05:03:04 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click **Step Inside** to capture the mouse and begin.\n- **W A S D** or arrow keys to walk; hold **Shift** for a brisk walk.\n- Move the mouse to look around.\n- Press **Esc** to release the mouse. Click the scene to resume looking.\n- Press **R** or select **Reset** to return to the workshop starting point.\n\nThe route begins in the workshop, passes through its open front to the pier, then branches down a gently sloped railed ramp to the exposed beach. The shoreline and pier corridor constrain walking so the viewer cannot enter the inlet or step off the dock.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "No performance measurement. Frozen scene could not start during authorized capture; see capture-failure.json.",
+      "limitations": [
+        "Frozen startup failure: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of \"text/css\". Strict MIME type checking is enforced for module scripts per HTML spec. No entrant repair or rebuild applied.",
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "RUN-NOTES.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "/src/main.js",
+          "./src/main.js"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No captured preview supplied.",
+      "archiveSha256": "d40afaf47953ec34ac135ce48bcd91302dadca02eeb29b3b771f47e9b9286d88",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "a6083b28b833148699d3699999a724a58ae0b414cc5c4f5354ea5f6084341b25",
+      "promptId": "08",
+      "promptVersion": "08-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "failed",
+      "completionStatus": "Frozen completed handoff; startup failed during separate authorized screenshot capture",
+      "failureKind": "startup",
+      "failureSummary": "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of \"text/css\". Strict MIME type checking is enforced for module scripts per HTML spec."
     }
   ],
   "prompts": [
@@ -1743,6 +2469,16 @@
       "id": "10",
       "title": "Hillside library",
       "brief": "Lower shelves, a window reading alcove and broad stairs to a partial upper gallery."
+    },
+    {
+      "id": "11",
+      "title": "Science and AI lab",
+      "brief": "One exhibition hall with a central instrument, perception-testing bench and motion-testing alcove."
+    },
+    {
+      "id": "12",
+      "title": "Neighborhood arcade",
+      "brief": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes."
     }
   ],
   "promptVersions": [
@@ -1889,6 +2625,105 @@
       "sha256": "833f25008ecb32307072c418e51a5dc731129fd34cef099a718c187403c715bb",
       "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
       "note": "Parent confirms this exact base plus initial execution restriction. Supplied blocks are joined by one blank line; original message-byte framing is not independently observed. No later coordination messages were sent for OpenAI08-10."
+    },
+    {
+      "id": "01-expanded-openai",
+      "promptId": "01",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-01-expanded-openai.txt",
+      "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "05-expanded-openai",
+      "promptId": "05",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-05-expanded-openai.txt",
+      "sha256": "3105a31098ecf4ff4e1e92cbb2058d292440555c6690f6c5150db2b079103d67",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "11-expanded-openai",
+      "promptId": "11",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-11-expanded-openai.txt",
+      "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "12-expanded-openai",
+      "promptId": "12",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-12-expanded-openai.txt",
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "11-base",
+      "promptId": "11",
+      "label": "Shared base / manual Opus reference",
+      "path": "prompt-11-base.txt",
+      "sha256": "34e88e88c93cc73b405baca85ee727feb4663e146d38a3ebbae8e23d88217de2",
+      "source": "Base scene text from parent-supplied exact OpenAI launch; manual Claude delivery not independently observed or confirmed.",
+      "note": "Reference brief only; exact manual launch and execution conditions unverified."
+    },
+    {
+      "id": "06-expanded-openai",
+      "promptId": "06",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-06-expanded-openai.txt",
+      "sha256": "2ffabaa281b0fc6b348c8ca3f410e0b3d6df4808fb8265f01b09611a53c3407b",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "07-expanded-openai",
+      "promptId": "07",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-07-expanded-openai.txt",
+      "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "08-expanded-openai",
+      "promptId": "08",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-08-expanded-openai.txt",
+      "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "09-expanded-openai",
+      "promptId": "09",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-09-expanded-openai.txt",
+      "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "10-expanded-openai",
+      "promptId": "10",
+      "label": "Expanded batch exact initial launch / no-browser conditions",
+      "path": "prompt-10-expanded-openai.txt",
+      "sha256": "66abbb54666f190fe4ed3987d00e7619b1cf36ba1bb34dd8fca169cedcadf442",
+      "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
+      "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "12-base",
+      "promptId": "12",
+      "label": "Shared base / manual Claude reference",
+      "path": "prompt-12-base.txt",
+      "sha256": "0e548df86b88c91ca010053fba19b84f5ef84ce919cc3b12ed35d4d55842f0fe",
+      "source": "Parent confirms this exact base-only prompt supplied as a manual Claude attachment; unchanged user delivery not independently verified.",
+      "note": "OpenAI no-browser execution conditions absent from manual prompt."
     }
   ]
 }

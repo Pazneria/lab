@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="theme-color" content="#d9ddd6" />
+  <title>LUMEN — Open Lab</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23243130'/%3E%3Ccircle cx='20' cy='20' r='11' fill='none' stroke='%23d5bb72' stroke-width='3'/%3E%3Ccircle cx='20' cy='20' r='3' fill='%23d5bb72'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/index-BaKPT9m6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CphOmD5d.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Walkable three-dimensional science demonstration laboratory"></canvas>
+  <div id="loading"><span class="loading-mark">◌</span><span>Preparing the laboratory</span></div>
+  <header id="brand"><div class="logo">L<span>U</span>MEN<span class="brand-dot">®</span></div><div class="brand-sub">RESEARCH IN THE OPEN</div></header>
+  <div id="location"><span class="zone-number">00</span><div><span id="zone-name">WELCOME HALL</span><small id="zone-desc">Optics · perception · motion</small></div></div>
+  <main id="welcome" class="overlay">
+    <section class="welcome-card">
+      <div class="eyebrow"><span class="status-dot"></span> THE OPEN LAB / EXHIBITION 04</div>
+      <h1>A closer look<br>at intelligence.</h1>
+      <p class="intro">Step inside a working demonstration lab.<br>Circle the optical array. Explore how machines<br>see, measure and move.</p>
+      <div class="route"><span>01 <b>Optical array</b></span><i>→</i><span>02 <b>Perception</b></span><i>→</i><span>03 <b>Motion</b></span></div>
+      <button id="enter" class="primary">Enter the lab <span>↗</span></button>
+      <div class="key-guide"><span><kbd>W A S D</kbd> walk</span><span><kbd>MOUSE</kbd> look</span><span><kbd>ESC</kbd> pause</span></div>
+      <div class="settings"><label for="quality">Render detail</label><select id="quality"><option value="balanced" selected>Balanced</option><option value="high">High resolution</option><option value="economy">Economy</option></select><button id="reset">Reset position</button></div>
+      <p class="technical">Human-scale exhibits · Free exploration · Desktop keyboard + mouse</p>
+      <p id="lock-note" role="status"></p>
+    </section>
+    <div class="overlay-note"><span>DESIGNED TO BE EXAMINED.</span><span>All exhibits are fictional and static.</span></div>
+  </main>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="bottom-hud"><span><span class="status-dot"></span> VISITOR ACCESS</span><div><kbd>WASD</kbd> Walk <kbd>SHIFT</kbd> Faster <kbd>R</kbd> Reset <kbd>H</kbd> Help <kbd>ESC</kbd> Pause</div></div>
+  <div id="map" aria-label="Lab floor plan"><svg viewBox="0 0 140 120"><path d="M35 8H105V30H132V76H105V112H35V76H8V30H35Z"/><path class="map-divider" d="M35 30V76M105 30V76"/><circle class="map-array" cx="70" cy="55" r="12"/><rect class="map-bench" x="12" y="33" width="18" height="29"/><rect class="map-bench" x="110" y="33" width="18" height="29"/><path id="map-player" d="M0 -4L3 4L0 2L-3 4Z"/></svg><span>FLOOR 01</span></div>
+  <aside id="help" hidden><h2>Explore at your own pace.</h2><p><kbd>W A S D</kbd> or arrow keys to walk<br><kbd>Mouse</kbd> to look · <kbd>Shift</kbd> to walk faster<br><kbd>R</kbd> reset to entrance · <kbd>F</kbd> frame timing<br><kbd>H</kbd> close help · <kbd>Esc</kbd> release mouse</p><p>Walk around the central array, then into each open side alcove. The exhibits are static; their controls are scenic.</p></aside>
+  <output id="stats" hidden></output>
+  <div id="error" hidden><h2>The lab could not start.</h2><p id="error-message"></p><p>Use a desktop browser with WebGL 2 enabled. Launch with the command in README.md.</p></div>
+</body>
+</html>

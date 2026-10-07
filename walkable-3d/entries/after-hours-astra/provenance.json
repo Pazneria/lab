@@ -1,0 +1,253 @@
+{
+  "entry": "after-hours-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\after-hours-astra\\original.zip",
+  "archiveSha256": "bc81649d4fe2e4d760c51aa5654a21a42c8c385d5518cda9bcd300d9efe296e9",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/src/art.js": "dist/src/art.js",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/movement.js": "dist/src/movement.js",
+      "frozen/src/style.css": "dist/src/style.css",
+      "frozen/src/world.js": "dist/src/world.js",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js": "dist/vendor/addons/utils/BufferGeometryUtils.js"
+    },
+    "perFileSourceHashes": {
+      "build-validation.json": {
+        "sha256": "7bb84b21b4e5ad2114729acd7f77e9ab5147972ba4160c2189537493607d63e5",
+        "bytes": 164
+      },
+      "build.mjs": {
+        "sha256": "e028b4d522d690a9785b5b61067311f9392e8064a76d5b730046810dc83e0abe",
+        "bytes": 938
+      },
+      "checks.mjs": {
+        "sha256": "17c4a80470b3fa999d3a98f6377956729d75bcfc4f52f0c6faddce9daa62b310",
+        "bytes": 5146
+      },
+      "dist/index.html": {
+        "sha256": "33ae4e1f498239cd0be378aae78ef15c352667ebc32cac64b83e4350a442732d",
+        "bytes": 2662
+      },
+      "dist/src/art.js": {
+        "sha256": "f69298628910e377548c4dd78521aac9f803ddac5187f5ec996ac84a2acdda0f",
+        "bytes": 16122
+      },
+      "dist/src/main.js": {
+        "sha256": "914806d52663430823930af5523743c545a0a9367033ce23cc3b76a55256282e",
+        "bytes": 4712
+      },
+      "dist/src/movement.js": {
+        "sha256": "05d92865e4f237e98f560f4d586ccac97e294bb206fbe4354bbed6cc364b09cf",
+        "bytes": 4874
+      },
+      "dist/src/style.css": {
+        "sha256": "0d4ccaed75570d8142b47d400d8c5bc7e20b7e842faaf7f4dea62e98d1a44d30",
+        "bytes": 3954
+      },
+      "dist/src/world.js": {
+        "sha256": "fac257ce68fbda29ce921627cf4848eb1a2cf6c5d1ec6c1adec4471dff48fff1",
+        "bytes": 28934
+      },
+      "dist/vendor/addons/utils/BufferGeometryUtils.js": {
+        "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+        "bytes": 35539
+      },
+      "dist/vendor/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "dist/vendor/three.core.js": {
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      "dist/vendor/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      "index.html": {
+        "sha256": "33ae4e1f498239cd0be378aae78ef15c352667ebc32cac64b83e4350a442732d",
+        "bytes": 2662
+      },
+      "package-lock.json": {
+        "sha256": "d4577621c023ac5980a7079fd44aced8ebee54d90a53918be7f5951e5e3e6b64",
+        "bytes": 535
+      },
+      "package.json": {
+        "sha256": "891428b71a9b5f63221c57f2e06cedb126318a07a7014477cb506eb27db018ba",
+        "bytes": 493
+      },
+      "README.txt": {
+        "sha256": "e20bfbd4d84ef7af3afc5d8a22ee3725b8140233cbcb175f43011956776a4960",
+        "bytes": 5314
+      },
+      "run-record.json": {
+        "sha256": "5db30c4fe37a6f15b75af23b85d60073867a6a07def6eb8843ac6ad380ebd94b",
+        "bytes": 1862
+      },
+      "server.mjs": {
+        "sha256": "b3b9b9918f896c4bf5bf3d93bff546157de9de9f46d90c862c4a9cf7c5eca368",
+        "bytes": 1426
+      },
+      "src/art.js": {
+        "sha256": "f69298628910e377548c4dd78521aac9f803ddac5187f5ec996ac84a2acdda0f",
+        "bytes": 16122
+      },
+      "src/main.js": {
+        "sha256": "914806d52663430823930af5523743c545a0a9367033ce23cc3b76a55256282e",
+        "bytes": 4712
+      },
+      "src/movement.js": {
+        "sha256": "05d92865e4f237e98f560f4d586ccac97e294bb206fbe4354bbed6cc364b09cf",
+        "bytes": 4874
+      },
+      "src/style.css": {
+        "sha256": "0d4ccaed75570d8142b47d400d8c5bc7e20b7e842faaf7f4dea62e98d1a44d30",
+        "bytes": 3954
+      },
+      "src/world.js": {
+        "sha256": "fac257ce68fbda29ce921627cf4848eb1a2cf6c5d1ec6c1adec4471dff48fff1",
+        "bytes": 28934
+      },
+      "validation.json": {
+        "sha256": "f7b07337f1fa46bfcadbe97e7544f740bf43647146278741286fdba43cdd1b1a",
+        "bytes": 1149
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\after-hours-astra\\original.zip",
+    "sourceArchiveSha256": "bc81649d4fe2e4d760c51aa5654a21a42c8c385d5518cda9bcd300d9efe296e9"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Astra / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:01:01.8938918",
+    "stop": "04:31:52.8831904",
+    "deadline": "05:01:01.8938918",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "build-validation.json": {
+      "sha256": "7bb84b21b4e5ad2114729acd7f77e9ab5147972ba4160c2189537493607d63e5",
+      "bytes": 164
+    },
+    "host-verification.json": {
+      "sha256": "13f57b76b557b1cdf02ab234eb56aca59de056b7c57ff62098f154ea29432448",
+      "bytes": 682
+    },
+    "launch-prompt.txt": {
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "bytes": 7716
+    },
+    "preview-capture.json": {
+      "sha256": "b9f75c2db64557af88edda20c1619b7f0a17a88e1c5c4874086481c48e9104e9",
+      "bytes": 2184
+    },
+    "preview.jpg": {
+      "sha256": "5db50b0f9f366a989cbe47e46ef6c6a4e3f06184d9b1457551efe8bbbb2de904",
+      "bytes": 100289
+    },
+    "README.txt": {
+      "sha256": "e20bfbd4d84ef7af3afc5d8a22ee3725b8140233cbcb175f43011956776a4960",
+      "bytes": 5314
+    },
+    "run-record.json": {
+      "sha256": "5db30c4fe37a6f15b75af23b85d60073867a6a07def6eb8843ac6ad380ebd94b",
+      "bytes": 1862
+    },
+    "validation.json": {
+      "sha256": "f7b07337f1fa46bfcadbe97e7544f740bf43647146278741286fdba43cdd1b1a",
+      "bytes": 1149
+    },
+    "frozen/index.html.txt": {
+      "sha256": "33ae4e1f498239cd0be378aae78ef15c352667ebc32cac64b83e4350a442732d",
+      "bytes": 2662
+    },
+    "frozen/src/art.js": {
+      "sha256": "f69298628910e377548c4dd78521aac9f803ddac5187f5ec996ac84a2acdda0f",
+      "bytes": 16122
+    },
+    "frozen/src/main.js": {
+      "sha256": "914806d52663430823930af5523743c545a0a9367033ce23cc3b76a55256282e",
+      "bytes": 4712
+    },
+    "frozen/src/movement.js": {
+      "sha256": "05d92865e4f237e98f560f4d586ccac97e294bb206fbe4354bbed6cc364b09cf",
+      "bytes": 4874
+    },
+    "frozen/src/style.css": {
+      "sha256": "0d4ccaed75570d8142b47d400d8c5bc7e20b7e842faaf7f4dea62e98d1a44d30",
+      "bytes": 3954
+    },
+    "frozen/src/world.js": {
+      "sha256": "fac257ce68fbda29ce921627cf4848eb1a2cf6c5d1ec6c1adec4471dff48fff1",
+      "bytes": 28934
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "frozen/vendor/addons/utils/BufferGeometryUtils.js": {
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "bytes": 35539
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "12-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "build-validation.json",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.txt",
+      "run-record.json",
+      "validation.json",
+      "frozen/index.html.txt",
+      "frozen/src/art.js",
+      "frozen/src/main.js",
+      "frozen/src/movement.js",
+      "frozen/src/style.css",
+      "frozen/src/world.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

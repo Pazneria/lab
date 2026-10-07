@@ -1,0 +1,150 @@
+{
+  "entry": "applied-sensing-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\applied-sensing-opus\\original.zip",
+  "archiveSha256": "2d210253fa4c169ec00b30ec0d5b46e179a22c37f6a3af48524b04937b07b484",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/app.js": "dist/app.js",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      "dist/app.js": {
+        "sha256": "9a5cf5ced7004d20572ffef290145ab74fd268bf8675b57944d1d8d12da141e2",
+        "bytes": 659826
+      },
+      "dist/index.html": {
+        "sha256": "5d88c6bae5937bf7705afc88f0efd07d92bf4310c72969d200edf7aa8299c54e",
+        "bytes": 3435
+      },
+      "package-lock.json": {
+        "sha256": "4dc5d04fc78130348424e9e8124c1f646a023322347d4f62152a5d67e1e443ef",
+        "bytes": 14846
+      },
+      "package.json": {
+        "sha256": "9225ef37a5ac38efc89ca0dc2cb41c1ff0c51b7d79cfc0f153d6dc4bc2db9e21",
+        "bytes": 405
+      },
+      "README.md": {
+        "sha256": "6fc1735ff5f66926c375b20cd3656e38af0ef51e7166fa4b2779c60384990a54",
+        "bytes": 1084
+      },
+      "server.js": {
+        "sha256": "4abdbc3998d18b1fe23b666f0949208f32687463242ac9c698de24eebab2d470",
+        "bytes": 980
+      },
+      "src/builder.js": {
+        "sha256": "6cbc608e38e585b40d106263052e55dd099674fb597b3b0ffdadb0ad0484219f",
+        "bytes": 9962
+      },
+      "src/hall.js": {
+        "sha256": "6fa639ffeaa34443e00b2e8351ada5c6fbe94ae963e860357a8e0942c601c198",
+        "bytes": 18028
+      },
+      "src/instrument.js": {
+        "sha256": "9a2c5f432ea158799f4fe073de0bebbaf9a4a6552c794a40dd160aa63b481b55",
+        "bytes": 14548
+      },
+      "src/main.js": {
+        "sha256": "c7c63d7adda7a18f64f7c87d07a1b1c2479a40f95fe0f6b6a5293bbe984136fd",
+        "bytes": 13631
+      },
+      "src/mats.js": {
+        "sha256": "d5abb1f952c2f6948c77752df196756ab3829cc87d661f14a852144a4b736cfc",
+        "bytes": 4895
+      },
+      "src/motion.js": {
+        "sha256": "4a3cf09e3fc07f4d94de248390966d538245b22fd07f14f3dffe138cc7c15432",
+        "bytes": 17571
+      },
+      "src/perception.js": {
+        "sha256": "2885cb8badaf1395d365f09c9d371961021a46f4d4b23fc8e2e9f9010e874a46",
+        "bytes": 19957
+      },
+      "src/screens.js": {
+        "sha256": "ea65586375854b9d41e7b5cd8a501d0d46448a87cc2939b88b7b90c2b9ac50e4",
+        "bytes": 10910
+      },
+      "src/textures.js": {
+        "sha256": "2effcf1fbb531a8f5b2f03b4922c047ed097146de299107963b45e65435ec142",
+        "bytes": 10622
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\applied-sensing-opus\\original.zip",
+    "sourceArchiveSha256": "2d210253fa4c169ec00b30ec0d5b46e179a22c37f6a3af48524b04937b07b484"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "Claude (manual); exact version/effort unknown",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "README supplies controls and layout only; no producer test report or browser/GPU/performance evidence supplied. Host checks are CPU/static only.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": null,
+    "stop": null,
+    "deadline": null,
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "4a297197f5a99fca7991874dde14f51c6860dbbc9a325a9678cb0542bd1a44f7",
+      "bytes": 685
+    },
+    "launch-prompt.txt": {
+      "sha256": "34e88e88c93cc73b405baca85ee727feb4663e146d38a3ebbae8e23d88217de2",
+      "bytes": 5355
+    },
+    "preview-capture.json": {
+      "sha256": "b4487cf6a81fe59851a198f030cc735e85093e24d8ec740feb5b28c6f51957a9",
+      "bytes": 2189
+    },
+    "preview.jpg": {
+      "sha256": "45186debe8c7def38121ee1ea1d586ed9d7ae47ec141270624e2525450864c15",
+      "bytes": 94466
+    },
+    "README.md": {
+      "sha256": "6fc1735ff5f66926c375b20cd3656e38af0ef51e7166fa4b2779c60384990a54",
+      "bytes": 1084
+    },
+    "frozen/app.js": {
+      "sha256": "9a5cf5ced7004d20572ffef290145ab74fd268bf8675b57944d1d8d12da141e2",
+      "bytes": 659826
+    },
+    "frozen/index.html.txt": {
+      "sha256": "5d88c6bae5937bf7705afc88f0efd07d92bf4310c72969d200edf7aa8299c54e",
+      "bytes": 3435
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "11-base",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "frozen/app.js",
+      "frozen/index.html.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

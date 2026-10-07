@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171918" />
+    <title>Understone — Limestone Cavern</title>
+    <script type="module" crossorigin src="/assets/index-vumo0OLi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BK9I-pKT.css">
+  </head>
+  <body>
+    <div id="scene" aria-label="Explorable limestone cavern"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="brand"><span class="brand-mark"></span><span>UNDERSTONE</span><small>FIELD STUDY 04</small></div>
+    <div class="crosshair" aria-hidden="true"></div>
+    <section class="intro" id="intro">
+      <div class="intro-kicker">A WALK THROUGH THE LIMESTONE</div>
+      <h1>Quiet water,<br><em>older stone.</em></h1>
+      <p>Follow the dry shelf around the pool. The pale arch leads to a raised survey landing.</p>
+      <button id="enter">ENTER THE CAVERN <span>↗</span></button>
+      <div class="intro-hint">MOUSE LOOK <i>·</i> WASD MOVE</div>
+    </section>
+    <aside class="controls" id="controls" aria-label="Controls">
+      <span><b>W A S D</b> WALK</span><span><b>MOUSE</b> LOOK</span><span><b>ESC</b> RELEASE</span><button id="reset" title="Return to entrance">RESET <kbd>R</kbd></button>
+    </aside>
+    <div class="location" id="location"><span></span><b>ENTRANCE RECESS</b></div>
+    <div class="loading" id="loading"><span></span> PREPARING THE CAVERN</div>
+  </body>
+</html>

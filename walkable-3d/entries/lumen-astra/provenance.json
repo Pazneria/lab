@@ -1,0 +1,182 @@
+{
+  "entry": "lumen-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\lumen-astra\\original.zip",
+  "archiveSha256": "dcabf9eb9cb61f8847231ac94c3de48452b3827135f7eab12418d5596ac7e72b",
+  "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-BaKPT9m6.js": "dist/assets/index-BaKPT9m6.js",
+      "frozen/assets/index-CphOmD5d.css": "dist/assets/index-CphOmD5d.css"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "dist/assets/index-BaKPT9m6.js": {
+        "sha256": "25af0628b2bc52f380812853982461634253012dcbae40dc8434261d8d3dba48",
+        "bytes": 542104
+      },
+      "dist/assets/index-CphOmD5d.css": {
+        "sha256": "52c0c33dc08431ab370138787906fbec97bda996dd0ff43cd5be3106d01fa5c5",
+        "bytes": 5642
+      },
+      "dist/index.html": {
+        "sha256": "c817af6e31440ed9da37346c3e205d1fe835d97bde3af625556d37623f60ba3c",
+        "bytes": 3891
+      },
+      "index.html": {
+        "sha256": "c6a57d2148b52547c0886761ddd4017ba6071c2827f8fe320234553bde9db855",
+        "bytes": 3792
+      },
+      "launch.cmd": {
+        "sha256": "8358c225a36eda9242d436f6ee0eb4b04eb06a1cddb925c022b216ca8d92f9f3",
+        "bytes": 49
+      },
+      "package-lock.json": {
+        "sha256": "352fcd1bc4da23d71376adefeef227f8afc65e2b1ca757712c2dd2c871f32d3b",
+        "bytes": 35188
+      },
+      "package.json": {
+        "sha256": "079452e2c760678a43a71eae608df721e12a2d7a9ff95358682d1c236d57700f",
+        "bytes": 709
+      },
+      "README.md": {
+        "sha256": "641cfdfe650baa771295ae43b8a48d805fef34991b83a1650fa984a38efd6038",
+        "bytes": 6218
+      },
+      "RUN-RECORD.json": {
+        "sha256": "e9035729fe1065eae96514c6287d3da3400998934ee5b6660ec927f0bfaa2350",
+        "bytes": 3101
+      },
+      "scripts/check-geometry.mjs": {
+        "sha256": "647f7fced42490ed6b21393a8cb244f100d526caf917ac375562e2363478582a",
+        "bytes": 1400
+      },
+      "scripts/check-layout.mjs": {
+        "sha256": "85dc522b44789d665d6283769c15f73de92a6153e079bd506a8fdbf278f3522e",
+        "bytes": 2050
+      },
+      "src/main.js": {
+        "sha256": "ae13b4d0ea37cb73bd88ff2f996f7eb98da84368c17fbb01accb7f0c208f536d",
+        "bytes": 6826
+      },
+      "src/movement.js": {
+        "sha256": "3f1518c1aa6900504988a1b1f9d811138ce4e4093f1402ff35b909c145093499",
+        "bytes": 2124
+      },
+      "src/scene.js": {
+        "sha256": "ae3feb6dc088496120e12d4165277ac58980723ce2743a716d3862ce79af2f90",
+        "bytes": 28929
+      },
+      "src/style.css": {
+        "sha256": "22954bc3aa34f8dc7095b3519c828b533cc4302285a437a98715b6359f84f281",
+        "bytes": 5661
+      },
+      "src/surfaces.js": {
+        "sha256": "62660ee701c52de357d4318a0a58dea1e648e710c29b896bec433c52aae3e18f",
+        "bytes": 12326
+      },
+      "THIRD-PARTY-NOTICES.txt": {
+        "sha256": "5c8ae183e19f015a1ad46a73dbbe7abab1901040c5f7bbffc640ba31afd7dd96",
+        "bytes": 1282
+      },
+      "vite.config.js": {
+        "sha256": "3c049e6dc0788b5c1177d2be773b004d83dae2685d72a1f3f2f75858b46b3c77",
+        "bytes": 129
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\lumen-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "3cee237f5c49671677eb983d895c02e88ec307d11123cf3c9d64ed01c7261c9c"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Astra / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "03:56:38",
+    "stop": "04:23:55",
+    "deadline": "04:56:38",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "f572765d76e79fa2d97cb5372a905ba38ee6775783170f608fd3ab26a26ec654",
+      "bytes": 676
+    },
+    "launch-prompt.txt": {
+      "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
+      "bytes": 7738
+    },
+    "preview-capture.json": {
+      "sha256": "cbde2d4ea8e8943904388f7aa23b93d150f006d7458ebaff1b74c06cabcec10e",
+      "bytes": 2165
+    },
+    "preview.jpg": {
+      "sha256": "0c64ad394739c20d89e8fee31524c4b56c7e27cd7a42937e80157e0119339710",
+      "bytes": 76710
+    },
+    "README.md": {
+      "sha256": "641cfdfe650baa771295ae43b8a48d805fef34991b83a1650fa984a38efd6038",
+      "bytes": 6218
+    },
+    "RUN-RECORD.json": {
+      "sha256": "e9035729fe1065eae96514c6287d3da3400998934ee5b6660ec927f0bfaa2350",
+      "bytes": 3101
+    },
+    "THIRD-PARTY-NOTICES.txt": {
+      "sha256": "5c8ae183e19f015a1ad46a73dbbe7abab1901040c5f7bbffc640ba31afd7dd96",
+      "bytes": 1282
+    },
+    "frozen/index.html.txt": {
+      "sha256": "c817af6e31440ed9da37346c3e205d1fe835d97bde3af625556d37623f60ba3c",
+      "bytes": 3891
+    },
+    "frozen/assets/index-BaKPT9m6.js": {
+      "sha256": "25af0628b2bc52f380812853982461634253012dcbae40dc8434261d8d3dba48",
+      "bytes": 542104
+    },
+    "frozen/assets/index-CphOmD5d.css": {
+      "sha256": "52c0c33dc08431ab370138787906fbec97bda996dd0ff43cd5be3106d01fa5c5",
+      "bytes": 5642
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "11-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "RUN-RECORD.json",
+      "THIRD-PARTY-NOTICES.txt",
+      "frozen/index.html.txt",
+      "frozen/assets/index-BaKPT9m6.js",
+      "frozen/assets/index-CphOmD5d.css"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

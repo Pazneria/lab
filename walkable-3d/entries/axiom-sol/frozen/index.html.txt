@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#15252a" />
+    <title>Axiom — Applied Intelligence Lab</title>
+    <script type="module" crossorigin src="/assets/index-BWXltC6H.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C9K7Psuk.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable three-dimensional science and AI demonstration laboratory"></canvas>
+    <div id="loading">ASSEMBLING THE LAB<span></span></div>
+    <div id="welcome" class="overlay">
+      <section class="welcome-card">
+        <div class="eyebrow">AXIOM / OPEN LABORATORY</div>
+        <h1>Intelligence,<br><em>made tangible.</em></h1>
+        <p class="intro">Step inside a working exhibition of sensing and motion. Circle the spectral instrument, explore the two test bays, and take a closer look.</p>
+        <div class="route"><span>01<br><b>Spectral array</b></span><span>02<br><b>Perception</b></span><span>03<br><b>Motion</b></span></div>
+        <button id="enter" type="button">Enter the laboratory <span>↗</span></button>
+        <div class="control-notes"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move</span><span>Mouse · look</span><span><kbd>Shift</kbd> walk faster</span><span><kbd>R</kbd> reset</span><span><kbd>Esc</kbd> release cursor</span></div>
+        <p class="small-print">A standalone 3D scene. All exhibits are scenic. Click to capture the mouse.</p>
+      </section>
+    </div>
+    <header id="hud" class="hidden">
+      <div class="brand"><span class="brand-mark">A</span><span>AXIOM<small>APPLIED INTELLIGENCE LAB</small></span></div>
+      <div class="location"><span id="zone">Exhibition hall</span><small>OPEN LAB / EXHIBIT 07</small></div>
+    </header>
+    <div id="crosshair" class="hidden" aria-hidden="true"></div>
+    <div id="bottom-hud" class="hidden"><span><kbd>WASD</kbd> move <span class="separator">/</span> mouse look <span class="separator">/</span> <kbd>Shift</kbd> faster <span class="separator">/</span> <kbd>Q</kbd> quality <span class="separator">/</span> <kbd>F</kbd> diagnostics</span><div><button id="quality" title="Change render resolution">Quality: balanced</button><button id="reset">Reset <kbd>R</kbd></button><button id="help">Controls <kbd>Esc</kbd></button></div></div>
+    <div id="diagnostics" class="hidden" aria-live="off"></div>
+    <div id="hint" class="hidden">Circle the array. Both test bays are open.</div>
+    <div id="fallback" hidden><h2>The 3D renderer could not start.</h2><p>Please use a browser with WebGL 2 enabled.</p><pre id="error-text"></pre></div>
+  </body>
+</html>

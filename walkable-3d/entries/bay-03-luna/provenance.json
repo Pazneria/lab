@@ -1,0 +1,152 @@
+{
+  "entry": "bay-03-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\bay-03-luna\\original.zip",
+  "archiveSha256": "b178dcaf7b4febd703d78b1f9e7ac0f87097d5a6629b986987be696d5d828476",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/app.js": "app.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/styles.css": "styles.css"
+    },
+    "perFileSourceHashes": {
+      "app.js": {
+        "sha256": "95a5b509c98f3fa0b34b2c6eb9a0f71f3257c847112afa6a566beff2ffb5580f",
+        "bytes": 41104
+      },
+      "index.html": {
+        "sha256": "9c72a2aaab9c4cf8fa83a7b7b1f039975070729591e7096adf41a433f19431f4",
+        "bytes": 3236
+      },
+      "README.md": {
+        "sha256": "27c8c6c7aa9f4fb1d6e074e16f8cba6a9187216e364aaa609e9a060a895acca5",
+        "bytes": 1332
+      },
+      "styles.css": {
+        "sha256": "b067331be75ade500fab03cc13abbaf73f6ed79b075e007691ee0bdd5a3f622b",
+        "bytes": 7994
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\bay-03-luna\\original.zip",
+    "sourceArchiveSha256": "b178dcaf7b4febd703d78b1f9e7ac0f87097d5a6629b986987be696d5d828476"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [
+    {
+      "url": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "version": "0.170.0",
+      "status": "Downloaded exact declared pinned CDN module and upstream license; source bytes unchanged; in-memory HTML URL adapter required.",
+      "files": [
+        {
+          "path": "frozen\\vendor\\three.module.js",
+          "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+          "bytes": 1314681,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\orbital-maintenance-opus\\frozen\\vendor\\three\\build\\three.module.js",
+            "walkable-3d\\entries\\desert-observatory-opus\\frozen\\vendor\\three\\build\\three.module.js"
+          ]
+        },
+        {
+          "path": "frozen\\vendor\\THREE-LICENSE.txt",
+          "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+          "bytes": 1081,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\hillside-library-opus\\THREE-LICENSE.txt"
+          ]
+        }
+      ]
+    }
+  ],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "03:58:57",
+    "stop": "04:06:20",
+    "deadline": "04:58:57",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "d1d7cce92fe22b3a293f293fe03f4f2fbb96bd104306744d0b1f433bc95a2714",
+      "bytes": 676
+    },
+    "launch-prompt.txt": {
+      "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+      "bytes": 7164
+    },
+    "preview-capture.json": {
+      "sha256": "15ba8faa3bafdb185fa5e2741fb9ba76714d34ee4430c8c547739c78367c9b83",
+      "bytes": 2171
+    },
+    "preview.jpg": {
+      "sha256": "42105250d3a7b57f39f77f8617f7f511aee97514f41bddc071cf076a3ba92e8d",
+      "bytes": 96949
+    },
+    "README.md": {
+      "sha256": "27c8c6c7aa9f4fb1d6e074e16f8cba6a9187216e364aaa609e9a060a895acca5",
+      "bytes": 1332
+    },
+    "frozen/app.js": {
+      "sha256": "95a5b509c98f3fa0b34b2c6eb9a0f71f3257c847112afa6a566beff2ffb5580f",
+      "bytes": 41104
+    },
+    "frozen/index.html.txt": {
+      "sha256": "9c72a2aaab9c4cf8fa83a7b7b1f039975070729591e7096adf41a433f19431f4",
+      "bytes": 3236
+    },
+    "frozen/styles.css": {
+      "sha256": "b067331be75ade500fab03cc13abbaf73f6ed79b075e007691ee0bdd5a3f622b",
+      "bytes": 7994
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+      "bytes": 1314681
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "09-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "frozen/app.js",
+      "frozen/index.html.txt",
+      "frozen/styles.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

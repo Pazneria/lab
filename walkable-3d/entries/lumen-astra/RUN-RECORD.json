@@ -1,0 +1,47 @@
+{
+  "entry": "LUMEN — Open Lab",
+  "model": "This execution context identifies the assistant as Codex, based on GPT-6. The exact model variant is not exposed to the executor.",
+  "reasoning_effort": "Not exposed to the executor; no model or effort overrides used.",
+  "first_implementation_action": "Created the isolated lumen-lab workspace.",
+  "first_implementation_timestamp": "2026-10-07T03:56:38Z",
+  "deadline": "2026-10-07T04:56:38Z",
+  "actual_stop_timestamp": "2026-10-07T04:23:55Z",
+  "interruptions": [
+    {
+      "observed_at": "2026-10-07T04:07:21Z",
+      "detail": "Initial registry install failed under sandbox network permissions; authorized registry dependency installation then succeeded. Coding continued while dependency work ran. No timer pause."
+    },
+    {
+      "recovered_by": "2026-10-07T04:11:48Z",
+      "detail": "One exec process creation failed with a transient transport disconnect. The next invocation succeeded. Onset was not separately timestamped; no deadline extension."
+    },
+    {
+      "resolved_by": "2026-10-07T04:13:36Z",
+      "detail": "Two initial builds failed because the config bundler attempted a sandbox-denied ancestor directory read. Switching to the native configuration loader resolved it. No timer pause."
+    }
+  ],
+  "execution_conditions": "No browser, browser automation, renderer, GPU test, server, performance benchmark, subagent, external model, or comparison-entry inspection. CPU-only checks and a non-serving build permitted.",
+  "preview": "Not started. Suggested launch address only: http://127.0.0.1:5187/",
+  "checks_performed": [
+    "JavaScript syntax checks passed.",
+    "CPU collision checks passed: spawn, 10 colliders, 360-degree inspection circuit, both bays, console and return route, anti-tunnelling; 5223 connected grid cells.",
+    "CPU geometry validation with no-op canvas passed: 1731 source meshes, 34 resulting meshes, 150482 triangles, 38 label atlas entries, finite vertices and UVs.",
+    "Final non-serving Vite production build passed in 1.59 seconds.",
+    "Production HTML asset references checked; files present.",
+    "Read-only TCP listener check: port 5187 unoccupied at final cleanup."
+  ],
+  "checks_not_performed": [
+    "Browser launch",
+    "Visual inspection",
+    "Interactive testing",
+    "Screenshot or video rendering",
+    "GPU tests",
+    "Performance benchmarks",
+    "HTTP or preview server launch"
+  ],
+  "process_cleanup": "All launched install/check/build processes exited. After the final build, a command-line-scoped process query confirmed no entry-owned node.exe, esbuild.exe or cmd.exe processes remained. No server, watcher or browser was started. Packaging used a bounded shell command that exits on completion. No unrelated process was terminated.",
+  "artifact_path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-25\\lumen-lab",
+  "portable_bundle": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-25\\lumen-lab\\LUMEN-lab.zip",
+  "source_frozen_before": "2026-10-07T04:22:43Z",
+  "duration_seconds": 1637
+}

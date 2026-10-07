@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hearthmere Library — an explorable room</title>
+<style>
+:root{color-scheme:dark;font-family:Georgia,"Times New Roman",serif}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#171a1d}canvas{display:block;width:100%;height:100%;outline:none}
+#hud{position:fixed;inset:0;pointer-events:none;color:#f3e9d5}#brand{position:absolute;top:20px;left:24px;text-shadow:0 2px 8px #000;font-size:15px;letter-spacing:.13em;text-transform:uppercase}#brand small{display:block;margin-top:5px;color:#d3b98f;font-size:11px;letter-spacing:.2em}
+#controls{position:absolute;left:22px;bottom:18px;padding:10px 14px;background:#141716b8;border:1px solid #cfb37d50;border-radius:4px;color:#d8d1c2;font:12px/1.6 system-ui,sans-serif}#controls b{color:#f0d3a0;font-weight:600}
+#buttons{position:absolute;right:20px;top:18px;display:flex;gap:8px;pointer-events:auto}button{background:#221f1aeb;color:#f4e6cc;border:1px solid #b99b685e;padding:9px 13px;border-radius:4px;font:12px system-ui,sans-serif;cursor:pointer}button:hover{background:#403523}
+#hint{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);font:13px system-ui,sans-serif;color:#f7e9d0;text-align:center;text-shadow:0 2px 8px #000;transition:opacity .4s}#hint div{padding:11px 17px;background:#111b;border:1px solid #ead5ae44;border-radius:4px}#reticle{position:absolute;left:50%;top:50%;width:3px;height:3px;background:#f2dfbd99;border-radius:50%;transform:translate(-50%,-50%)}
+</style></head><body>
+<canvas id="scene" tabindex="0" aria-label="Interactive 3D library"></canvas>
+<div id="hud"><div id="brand">HEARTHMERE <small>THE HILLSIDE LIBRARY</small></div>
+<div id="buttons"><button id="reset">Reset view · R</button><button id="help">Controls</button></div>
+<div id="controls"><b>W A S D</b> walk &nbsp; <b>Mouse</b> look &nbsp; <b>Shift</b> slow walk<br><b>Click</b> enter mouse look &nbsp; <b>Esc</b> release &nbsp; <b>R</b> reset</div>
+<div id="hint"><div>Click the room to explore<br><span style="color:#d8c29d;font-size:11px">WASD to walk · mouse to look · R to reset</span></div></div><div id="reticle"></div></div>
+<script>
+"use strict";
+(() => {
+const canvas=document.getElementById("scene"),gl=canvas.getContext("webgl",{antialias:true,alpha:false,powerPreference:"high-performance"});
+if(!gl){document.getElementById("hint").innerHTML="<div>This browser does not support WebGL.</div>";return;}
+const VERT=`
+attribute vec3 aPosition;attribute vec3 aNormal;attribute vec4 aColor;
+uniform mat4 uViewProjection;uniform vec3 uCamera;
+varying vec3 vNormal;varying vec3 vWorld;varying vec4 vColor;
+void main(){vWorld=aPosition;vNormal=aNormal;vColor=aColor;gl_Position=uViewProjection*vec4(aPosition,1.0);}
+`;
+const FRAG=`
+precision mediump float;
+uniform vec3 uCamera;uniform vec3 uLampPos[4];uniform vec3 uLampColor[4];uniform int uLampCount;uniform vec3 uSunDir;
+varying vec3 vNormal;varying vec3 vWorld;varying vec4 vColor;
+void main(){
+ vec3 n=normalize(vNormal);
+ float sun=max(dot(n,normalize(uSunDir)),0.0);
+ vec3 light=vec3(0.50,0.48,0.44)+sun*vec3(0.68,0.52,0.34);
+ for(int i=0;i<4;i++){if(i<uLampCount){vec3 d=uLampPos[i]-vWorld;float dist=length(d);float att=1.0/(1.0+0.12*dist+0.025*dist*dist);light+=uLampColor[i]*max(dot(n,normalize(d)),0.0)*att;}}
+ float fog=clamp((length(uCamera-vWorld)-24.0)/55.0,0.0,0.26);
+ vec3 col=vColor.rgb*light;
+ col=mix(col,vec3(0.30,0.33,0.34),fog);
+ gl_FragColor=vec4(col,vColor.a);
+}
+`;
+function shader(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s}
+const prog=gl.createProgram();gl.attachShader(prog,shader(gl.VERTEX_SHADER,VERT));gl.attachShader(prog,shader(gl.FRAGMENT_SHADER,FRAG));gl.linkProgram(prog);if(!gl.getProgramParameter(prog,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(prog));gl.useProgram(prog);
+const loc={p:gl.getAttribLocation(prog,"aPosition"),n:gl.getAttribLocation(prog,"aNormal"),c:gl.getAttribLocation(prog,"aColor"),vp:gl.getUniformLocation(prog,"uViewProjection"),cam:gl.getUniformLocation(prog,"uCamera"),sun:gl.getUniformLocation(prog,"uSunDir"),lampPos:gl.getUniformLocation(prog,"uLampPos"),lampColor:gl.getUniformLocation(prog,"uLampColor"),lampCount:gl.getUniformLocation(prog,"uLampCount")};
+let opaque=[],trans=[];const rnd=(()=>{let s=739391;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}})();
+const mat=(r,g,b,a=1)=>[r,g,b,a],wood=mat(.31,.19,.105),woodLight=mat(.47,.30,.16),woodDark=mat(.20,.12,.072),plaster=mat(.70,.58,.42),plaster2=mat(.76,.66,.51),iron=mat(.12,.14,.14),stone=mat(.36,.34,.29),gold=mat(.62,.43,.18),leather=mat(.31,.115,.075),rug=mat(.42,.19,.10);
+function pushTri(arr,a,b,c,color){let ux=b[0]-a[0],uy=b[1]-a[1],uz=b[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2],nx=uy*vz-uz*vy,ny=uz*vx-ux*vz,nz=ux*vy-uy*vx,l=Math.hypot(nx,ny,nz)||1;nx/=l;ny/=l;nz/=l;for(const p of [a,b,c])arr.push(p[0],p[1],p[2],nx,ny,nz,color[0],color[1],color[2],color[3]??1)}
+function box(x,y,z,w,h,d,color,rot=0,alpha=1){const arr=alpha<.99?trans:opaque,c=[color[0],color[1],color[2],alpha],co=Math.cos(rot),si=Math.sin(rot),pts=[[-w/2,-h/2,-d/2],[w/2,-h/2,-d/2],[w/2,h/2,-d/2],[-w/2,h/2,-d/2],[-w/2,-h/2,d/2],[w/2,-h/2,d/2],[w/2,h/2,d/2],[-w/2,h/2,d/2]],faces=[[0,1,2,3],[5,4,7,6],[4,0,3,7],[1,5,6,2],[3,2,6,7],[4,5,1,0]],shades=[.77,.88,.73,.80,1,.65];for(let f=0;f<6;f++){const q=faces[f],shade=shades[f],fc=[c[0]*shade,c[1]*shade,c[2]*shade,c[3]];for(const id of [[0,1,2],[0,2,3]]){const vv=id.map(i=>pts[q[i]]).map(p=>[x+p[0]*co+p[2]*si,y+p[1],z-p[0]*si+p[2]*co]);pushTri(arr,vv[0],vv[1],vv[2],fc)}}}
+function cyl(x,y,z,r,h,color,sides=10){const arr=opaque,base=y-h/2,top=y+h/2;for(let i=0;i<sides;i++){let a=i*Math.PI*2/sides,b=(i+1)*Math.PI*2/sides,p1=[x+Math.cos(a)*r,base,z+Math.sin(a)*r],p2=[x+Math.cos(b)*r,base,z+Math.sin(b)*r],p3=[p2[0],top,p2[2]],p4=[p1[0],top,p1[2]];pushTri(arr,p1,p2,p3,color);pushTri(arr,p1,p3,p4,color);pushTri(arr,[x,base,z],p2,p1,color);pushTri(arr,[x,top,z],p4,p3,color)}}
+function sphere(x,y,z,r,color,lat=6,lon=9){for(let i=0;i<lat;i++){let v1=-Math.PI/2+i*Math.PI/lat,v2=-Math.PI/2+(i+1)*Math.PI/lat;for(let j=0;j<lon;j++){let u1=j*2*Math.PI/lon,u2=(j+1)*2*Math.PI/lon,p=(v,u)=>[x+r*Math.cos(v)*Math.cos(u),y+r*Math.sin(v),z+r*Math.cos(v)*Math.sin(u)],a=p(v1,u1),b=p(v1,u2),c=p(v2,u2),d=p(v2,u1);pushTri(opaque,a,b,c,color);pushTri(opaque,a,c,d,color)}}}
+function addWall(x,y,z,w,h,d,col=plaster){box(x,y,z,w,h,d,col)}
+box(0,-.16,0,21,.32,25,mat(.26,.23,.19));for(let x=-10.3;x<=10.3;x+=1.25)box(x,-.035,0,1.22,.045,24.5,mat(.33,.27,.20));
+addWall(-10.35,6.1,0,.5,12.2,24.8,plaster);addWall(10.35,6.1,0,.5,12.2,24.8,plaster2);
+for(let z=-10.8;z<=10.8;z+=5.35){box(-10.03,6,z,.15,11.4,.26,plaster2);box(10.03,6,z,.15,11.4,.26,plaster)}
+for(let side of [-1,1]){box(side*9.95,.25,0,.20,.45,22,woodDark);box(side*9.96,11.65,0,.36,.40,22,woodDark);box(side*9.95,11.38,0,.26,.12,22,gold)}
+const rear=-12.2;for(let x of [-10.2,10.2])addWall(x,6,rear,1,12,1,plaster);for(let x of [-8.5,-4.45,0,4.45,8.5])box(x,6,rear,.38,12,1,woodDark);
+for(let [cx,w] of [[-6.45,3.7],[-2.15,4.25],[2.15,4.25],[6.45,3.7]]){box(cx,6.05,rear,w,11.7,.14,mat(.74,.80,.80),0,.13);box(cx,1.05,rear-.06,w,.35,.52,stone);box(cx,11.55,rear-.03,w,.42,.62,woodDark);for(let y of [1.3,6.15,11.35])box(cx,y,rear-.08,w,.11,.27,woodLight);for(let xx of [cx-w/2+.10,cx+w/2-.10])box(xx,6.25,rear-.08,.17,10.1,.34,woodDark);box(cx-.15,6.25,rear-.12,.10,9.8,.24,woodLight);box(cx+.15,6.25,rear-.12,.10,9.8,.24,woodLight);box(cx,6.25,rear-.12,w-.2,.11,.28,woodLight)}
+box(-8.1,5.9,12.25,4.5,11.8,.55,plaster2);box(8.1,5.9,12.25,4.5,11.8,.55,plaster);box(0,11.7,12.25,12,.45,.55,woodDark);for(let x of [-5.85,-4.4,4.4,5.85])box(x,5.4,12.0,.18,10.8,.35,woodDark);
+for(let z=-10;z<=10;z+=3.1){box(0,11.75,z,20.4,.36,.30,woodDark);box(0,11.50,z,20.2,.11,.17,woodLight)}for(let x of [-9,-6,-3,0,3,6,9])box(x,11.86,0,.22,.25,22,woodDark);
+function hillStrip(z,base,amp,col,phase){const xs=[-19,-14,-9,-4,1,6,11,16,21];for(let i=0;i<xs.length-1;i++){let x1=xs[i],x2=xs[i+1],y1=base+amp*(.5+.5*Math.sin(i*1.1+phase)),y2=base+amp*(.5+.5*Math.sin((i+1)*1.1+phase));pushTri(opaque,[x1,-2,z],[x2,-2,z],[x2,y2,z],col);pushTri(opaque,[x1,-2,z],[x2,y2,z],[x1,y1,z],col)}}
+hillStrip(-22,1.2,3.2,mat(.26,.38,.28),.4);hillStrip(-25,4.0,3.1,mat(.38,.45,.36),1.6);hillStrip(-28,6.5,2.4,mat(.44,.47,.43),.2);box(0,-1.9,-24,44,.3,24,mat(.31,.38,.27));
+const bookColors=[mat(.40,.12,.085),mat(.12,.24,.23),mat(.50,.31,.12),mat(.25,.18,.35),mat(.20,.30,.18),mat(.52,.42,.29),mat(.30,.12,.16),mat(.12,.19,.30),mat(.58,.25,.12)];let shelfBoxes=[];
+function bookcase(x,z,len=6.1,levels=4,rot=0){box(x,levels*.35,z,.66,levels*.70,len,woodDark,rot);for(let ly=0;ly<levels;ly++){const sy=.28+ly*.70;box(x,sy,z,.88,.105,len+.12,woodLight,rot);let uprights=Math.floor(len/1.55)+1;for(let j=0;j<=uprights;j++){let along=-len/2+j*len/uprights;box(x+Math.sin(rot)*along,sy+.25,z+Math.cos(rot)*along,.12,.54,.13,wood,rot)}for(let side of [-1,1]){let u=-len/2+.12;while(u<len/2-.12){u+=rnd()<.12?.11+rnd()*.18:0;let cluster=3+Math.floor(rnd()*6);for(let q=0;q<cluster&&u<len/2-.10;q++){let bw=.12+rnd()*.16,bh=.39+rnd()*.23,bd=.26+rnd()*.09,lean=rnd()<.09?(rnd()-.5)*.13:0,px=x+Math.sin(rot)*u+Math.cos(rot)*(side*.29),pz=z+Math.cos(rot)*u-Math.sin(rot)*(side*.29),c=bookColors[Math.floor(rnd()*bookColors.length)];box(px,sy+.105+bh/2,pz,bw,bh,bd,c,rot+lean);if(rnd()<.27)box(px,sy+.105+bh*.78,pz-side*.105,bw*.98,.022,.018,gold,rot);if(rnd()<.15)box(px,sy+.105+bh*.2,pz-side*.105,bw*.98,.018,.018,gold,rot);u+=bw+.018}if(rnd()<.22&&u<len/2-.6){let sw=.5+rnd()*.34;box(x+Math.sin(rot)*(u+sw/2)+Math.cos(rot)*(.29),sy+.15,z+Math.cos(rot)*(u+sw/2)-Math.sin(rot)*(.29),sw,.13,.25,bookColors[Math.floor(rnd()*bookColors.length)],rot);u+=sw+.05}}}}}
+for(let x of [-3.25,.8,4.85]){bookcase(x,3.2,6.8,4,0);shelfBoxes.push([x,3.2,.95,7.0])}bookcase(-9.45,-6.2,6.7,5,0);shelfBoxes.push([-9.45,-6.2,.95,7.0]);bookcase(9.45,-6.2,6.7,5,0);shelfBoxes.push([9.45,-6.2,.95,7.0]);
+box(5.55,.82,-8.9,.25,1.64,2.6,woodDark);box(5.55,.82,-1.8,.25,1.64,1.8,woodDark);box(5.42,1.75,-8.9,.42,.15,2.6,woodLight);for(let i=0;i<10;i++){let z=-10+i*.19;box(5.42,1.95,z,.28,.27+rnd()*.14,.15,bookColors[i%bookColors.length])}
+const stairX=-7.2,zStart=8.2,zEnd=-3.15,stairsN=19,stairH=5.7,stairRun=(zStart-zEnd)/stairsN,stairRise=stairH/stairsN;
+for(let i=0;i<stairsN;i++){let z=zStart-(i+.5)*stairRun,y=(i+.5)*stairRise;box(stairX,y,z,3.75,stairRise,stairRun+.04,stone);box(stairX,y-.045,z,3.92,.10,stairRun+.09,woodLight);box(stairX,y+stairRise/2-.05,z,3.75,.11,.14,woodDark)}
+for(let x of [-9.2,-5.22]){for(let i=0;i<stairsN;i++){let z=zStart-(i+.5)*stairRun,y=(i+.5)*stairRise;box(x,y+.52,z,.11,1.0,.12,iron)}}for(let x of [-9.2,-5.22]){box(x,1.06,2.6,.13,.12,11.2,woodDark);box(x,6.02,-2.8,.13,.12,.9,woodDark)}for(let i=0;i<=stairsN;i++){let z=zStart-i*stairRun,y=i*stairRise;box(-7.2,y+1.03,z,3.97,.10,.12,woodDark)}
+box(-3.25,5.58,-4.95,11.5,.32,4.25,woodDark);box(-7.8,5.76,-4.95,2.4,.08,4.4,woodLight);for(let x=-4.8;x<=2.25;x+=1.05){box(x,6.12,-2.82,.10,.72,.10,iron);cyl(x,6.51,-2.82,.075,.07,gold,8)}box(-1.275,6.47,-2.82,7.05,.15,.14,woodLight);for(let z=-6.65;z<=-3.0;z+=.85){box(2.42,6.08,z,.10,.65,.10,iron);cyl(2.42,6.43,z,.075,.07,gold,8)}box(2.42,6.45,-4.85,.14,.15,3.7,woodLight);for(let x=-8.7;x<=2.2;x+=1.0){box(x,6.12,-7.05,.10,.72,.10,iron);cyl(x,6.51,-7.05,.07,.07,gold,8)}box(-3.25,6.47,-7.05,11.0,.15,.14,woodLight);
+bookcase(-8.85,-5.0,3.3,3,0);shelfBoxes.push([-8.85,-5.0,.95,3.7]);bookcase(-5.45,-5.15,2.8,3,0);shelfBoxes.push([-5.45,-5.15,.95,3.0]);
+box(0,.025,2.1,8.4,.045,7.0,rug);box(0,.052,2.1,7.9,.018,6.5,mat(.49,.27,.14));for(let x of [-3.95,3.95])box(x,.07,2.1,.08,.02,6.45,gold);for(let z of [-1.1,5.3])box(0,.07,z,7.95,.02,.08,gold);
+box(-.2,1.02,8.45,5.4,.20,1.55,woodLight);box(-.2,.89,8.45,5.45,.09,1.62,woodDark);for(let x of [-2.45,2.05]){box(x,.47,8.45,.24,.84,.24,woodDark);box(x,.12,8.45,.65,.13,1.05,wood)}for(let i=0;i<9;i++){let x=-2.45+i*.57;box(x,1.19,8.42,.40,.12,.27,bookColors[i%bookColors.length],(rnd()-.5)*.08)}for(let x of [-2.1,1.7])box(x,1.27,8.45,.22,.035,.23,gold);
+function chair(x,z,rot=0,col=leather){const spot=(dx,dz)=>[x+Math.cos(rot)*dx+Math.sin(rot)*dz,z-Math.sin(rot)*dx+Math.cos(rot)*dz];const part=(dx,y,dz,w,h,d,c)=>{const p=spot(dx,dz);box(p[0],y,p[1],w,h,d,c,rot)};part(0,.56,0,.83,.17,.77,col);part(0,.98,-.27,.84,.88,.20,col);for(let s of [-1,1]){part(s*.36,.79,0,.12,.48,.70,woodDark);part(s*.36,.78,0,.16,.12,.62,woodLight)}for(let s of [-1,1])for(let q of [-1,1])part(s*.31,.25,q*.28,.09,.52,.09,woodDark);part(0,.83,-.39,.49,.08,.03,gold)}
+chair(-3.7,7.9,.12);chair(3.2,7.85,-.12);chair(4.0,5.95,Math.PI/2);box(-3.75,1.0,6.78,.95,.12,.8,woodLight);cyl(-3.75,.53,6.78,.075,.88,woodDark,10);cyl(-3.75,.12,6.78,.42,.1,wood,12);
+box(7.8,.56,-10.45,3.3,.65,.90,leather);box(7.8,.92,-10.45,3.42,.16,1.02,mat(.43,.20,.12));for(let x of [6.3,9.2])box(x,.34,-10.45,.13,.60,.76,woodDark);box(7.45,.83,-8.55,2.45,.16,1.0,woodLight);for(let x of [6.55,8.35])for(let z of [-8.9,-8.22])box(x,.43,z,.10,.78,.10,woodDark);chair(7.65,-7.2,Math.PI,mat(.28,.12,.08));box(7.9,1.32,-8.5,.62,.055,.40,mat(.80,.72,.54));box(7.9,1.37,-8.5,.42,.012,.28,mat(.32,.38,.34));
+function lamp(x,z,y=2.5){cyl(x,y,z,.17,.10,iron,12);cyl(x,y+.14,z,.045,.25,gold,9);box(x,y+.28,z,.36,.055,.30,iron);sphere(x,y+.05,z,.22,mat(.93,.67,.30))}
+lamp(-3.8,6.75,1.45);lamp(3.9,5.95,1.50);lamp(8.8,-8.6,1.55);lamp(-1.8,8.35,1.45);
+cyl(4.7,1.12,8.4,.23,.30,woodDark);sphere(4.7,1.60,8.4,.38,mat(.17,.34,.31),9,13);cyl(4.7,1.98,8.4,.20,.12,gold);
+box(-4.65,.45,-.35,.92,.75,.72,woodDark);box(-4.65,.86,-.35,1.02,.11,.81,woodLight);box(-4.65,.93,-.35,.63,.025,.47,mat(.66,.52,.32));
+for(let i=0;i<6;i++){let a=i*Math.PI/3;cyl(1.9,1.25,6.4,.025,.65,mat(.30,.42,.25),6);box(1.9+Math.cos(a)*.14,1.42,6.4+Math.sin(a)*.14,.15,.06,.10,mat(.30,.42,.25),a)}for(let i=0;i<7;i++)box(-2.0+i*.10,1.23,8.45,.08,.14,.21,bookColors[(i+2)%bookColors.length],(rnd()-.5)*.1);
+for(let x of [-9.7,9.7])for(let z of [-9,0,9]){cyl(x,5.9,z,.20,11.5,woodDark,8);cyl(x,11.65,z,.32,.18,gold,8);cyl(x,.25,z,.30,.35,woodLight,8)}for(let x of [-9.82,9.82])for(let z of [-7,-2,4,9]){box(x,4.8,z,.32,.58,.30,iron);box(x,5.15,z,.46,.08,.44,gold);sphere(x,5.45,z,.16,mat(.91,.59,.28))}
+cyl(0,10.75,0,.07,1.8,iron,10);cyl(0,9.85,0,.74,.11,iron,12);for(let i=0;i<8;i++){let a=i*Math.PI/4,x=Math.cos(a)*.65,z=Math.sin(a)*.65;cyl(x,9.45,z,.035,.72,iron,7);sphere(x,9.10,z,.18,mat(.94,.63,.29))}
+for(let x of [-9.15,-5.25])for(let z of [8.05,-3.2]){box(x,1.35,z,.29,2.7,.29,woodDark);cyl(x,2.8,z,.22,.25,gold,8)}box(-5.18,3.2,2.45,.10,.10,10.6,woodLight);
+box(-5.3,6.17,-4.55,2.2,.17,.55,leather);for(let x of [-6.2,-4.4])box(x,5.88,-4.55,.12,.52,.12,woodDark);box(-1.45,6.02,-5.85,.70,.56,.64,woodDark);box(-1.45,6.33,-5.85,.92,.12,.84,woodLight);box(-1.45,6.42,-5.85,.52,.045,.56,mat(.64,.54,.39));
+for(let [x,z,c] of [[-9.98,3.0,mat(.52,.27,.12)],[9.98,2.5,mat(.25,.34,.39)],[-9.98,-3.4,mat(.39,.28,.18)],[9.98,8.0,mat(.45,.32,.18)]]){box(x,8.15,z,.10,2.35,1.75,woodDark);box(x*.999,8.15,z,.08,1.98,1.40,c);box(x*.998,8.15,z,.05,1.72,1.15,mat(.55,.48,.34));box(x,8.15,z-.12,.06,.05,.94,gold)}
+for(let x of [-8,8]){box(x,10.15,5.0,.62,.10,.62,iron);cyl(x,10.25,5,.06,.36,gold,8);sphere(x,10.45,5,.20,mat(.93,.61,.25))}
+for(let i=0;i<95;i++){let x=-2+rnd()*11,y=1+rnd()*9,z=-9+rnd()*11;sphere(x,y,z,.012+rnd()*.014,mat(.82,.69,.44),3,4)}
+function makeBuffer(data){const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.STATIC_DRAW);return {b,count:data.length/10}}const opaqueBuf=makeBuffer(opaque),transBuf=makeBuffer(trans);
+function bindBuffer(buf){gl.bindBuffer(gl.ARRAY_BUFFER,buf.b);const stride=40;gl.enableVertexAttribArray(loc.p);gl.vertexAttribPointer(loc.p,3,gl.FLOAT,false,stride,0);gl.enableVertexAttribArray(loc.n);gl.vertexAttribPointer(loc.n,3,gl.FLOAT,false,stride,12);gl.enableVertexAttribArray(loc.c);gl.vertexAttribPointer(loc.c,4,gl.FLOAT,false,stride,24);gl.drawArrays(gl.TRIANGLES,0,buf.count)}
+const blocks=[[-10.35,0,.7,25],[10.35,0,.7,25],[-8.1,12.15,4.7,.8],[8.1,12.15,4.7,.8],[-10.2,-12.2,1,1],[10.2,-12.2,1,1],...shelfBoxes,[5.55,-8.9,.4,2.8],[5.55,-1.8,.4,2.0],[-.2,8.45,5.7,1.85],[7.8,-10.45,3.5,1.0],[7.45,-8.55,2.7,1.2],[-4.65,-.35,1.2,1.0],[-1.45,-5.85,1.1,1.0]];
+function onRamp(x,z){return x>-9.1&&x<-5.25&&z<8.38&&z>-3.4}function onGallery(x,z){return x>-9.45&&x<2.55&&z>-7.15&&z<-2.85}function floorY(x,z){if(onRamp(x,z))return Math.max(0,Math.min(5.7,(8.2-z)/(8.2+3.15)*5.7));if(onGallery(x,z))return 5.7;return 0}
+function collides(x,z){const r=.31;for(const b of blocks){let dx=Math.max(Math.abs(x-b[0])-b[2]/2,0),dz=Math.max(Math.abs(z-b[1])-b[3]/2,0);if(dx*dx+dz*dz<r*r)return true}if(x<-9.8||x>9.8||z>11.7||z<-11.55)return true;return false}
+let px=0,py=0,pz=10.0,yaw=0,pitch=0,keys={},locked=false,last=performance.now();
+function reset(){px=0;pz=10.0;yaw=0;pitch=0;keys={}}
+document.getElementById("reset").addEventListener("click",()=>{reset();canvas.requestPointerLock?.()});document.getElementById("help").addEventListener("click",()=>{let el=document.getElementById("controls");el.style.display=el.style.display==="none"?"block":"none"});canvas.addEventListener("click",()=>canvas.requestPointerLock?.());
+document.addEventListener("pointerlockchange",()=>{locked=document.pointerLockElement===canvas;document.getElementById("hint").style.opacity=locked?0:1});document.addEventListener("mousemove",e=>{if(!locked)return;yaw-=e.movementX*.0023;pitch=Math.max(-1.15,Math.min(1.15,pitch-e.movementY*.0021))});
+document.addEventListener("keydown",e=>{keys[e.code]=true;if(["KeyW","KeyA","KeyS","KeyD","ShiftLeft","ShiftRight","Space"].includes(e.code))e.preventDefault();if(e.code==="KeyR")reset()});document.addEventListener("keyup",e=>keys[e.code]=false);
+function resize(){let dpr=Math.min(window.devicePixelRatio||1,1.6),w=Math.floor(canvas.clientWidth*dpr),h=Math.floor(canvas.clientHeight*dpr);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h)}}
+function perspective(fovy,aspect,near,far){let f=1/Math.tan(fovy/2),nf=1/(near-far);return [f/aspect,0,0,0,0,f,0,0,0,0,(far+near)*nf,-1,0,0,2*far*near*nf,0]}
+function viewMatrix(x,y,z,ya,pi){let cp=Math.cos(pi),sp=Math.sin(pi),fx=Math.sin(ya)*cp,fy=sp,fz=-Math.cos(ya)*cp,rx=Math.cos(ya),ry=0,rz=Math.sin(ya),ux=ry*fz-rz*fy,uy=rz*fx-rx*fz,uz=rx*fy-ry*fx;return [rx,ux,-fx,0,ry,uy,-fy,0,rz,uz,-fz,0,-(rx*x+ry*y+rz*z),-(ux*x+uy*y+uz*z),fx*x+fy*y+fz*z,1]}
+function mul(a,b){let o=new Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)o[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];return o}
+function frame(now){resize();let dt=Math.min((now-last)/1000,.045);last=now;let f=(keys.KeyW?1:0)-(keys.KeyS?1:0),s=(keys.KeyD?1:0)-(keys.KeyA?1:0),speed=(keys.ShiftLeft||keys.ShiftRight)?2.0:3.45,len=Math.hypot(f,s)||1,dx=(Math.sin(yaw)*f+Math.cos(yaw)*s)/len*speed*dt,dz=(-Math.cos(yaw)*f+Math.sin(yaw)*s)/len*speed*dt,nx=px+dx,nz=pz+dz,cur=floorY(px,pz);if(!collides(nx,pz)&&Math.abs(floorY(nx,pz)-cur)<.42)px=nx;if(!collides(px,nz)&&Math.abs(floorY(px,nz)-cur)<.42)pz=nz;py=floorY(px,pz)+1.62;
+ gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.clearColor(.34,.39,.41,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(prog);const proj=perspective(Math.PI/3,canvas.width/canvas.height,.08,120),view=viewMatrix(px,py,pz,yaw,pitch),vp=mul(proj,view);gl.uniformMatrix4fv(loc.vp,false,new Float32Array(vp));gl.uniform3f(loc.cam,px,py,pz);gl.uniform3f(loc.sun,-.28,.44,-.85);
+ const lampPositions=[[-3.8,1.9,6.75],[3.9,1.95,5.95],[8.8,2.0,-8.6],[-1.8,1.9,8.35]],lampColors=[[.50,.27,.10],[.48,.24,.08],[.55,.31,.12],[.40,.20,.08]];gl.uniform1i(loc.lampCount,4);gl.uniform3fv(loc.lampPos,new Float32Array(lampPositions.flat()));gl.uniform3fv(loc.lampColor,new Float32Array(lampColors.flat()));gl.disable(gl.BLEND);gl.depthMask(true);bindBuffer(opaqueBuf);if(transBuf.count){gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);bindBuffer(transBuf);gl.depthMask(true);gl.disable(gl.BLEND)}requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+})();
+</script></body></html>
+
+
+

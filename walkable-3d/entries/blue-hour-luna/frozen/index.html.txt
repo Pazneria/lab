@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1d39" />
+    <title>BLUE HOUR — Polar Field Shelter</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="scene"></div>
+    <div id="hud">
+      <div class="brand"><span class="mark">◈</span><span>POLAR FIELD STATION <b>07</b></span></div>
+      <div class="readout"><span class="live"></span><span id="zone">OUTSIDE · BLUE HOUR</span><span id="coords">64° 09′ S&nbsp; / &nbsp; 58° 22′ W</span></div>
+      <div class="reticle"><i></i></div>
+      <div class="bottom-left"><div class="hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span><kbd>SHIFT</kbd><span>WALK</span><kbd>ESC</kbd><span>PAUSE</span></div></div>
+      <button id="reset" title="Return to the sheltered snow">↺ <span>RESET</span></button>
+      <div id="toast"></div>
+    </div>
+    <div id="welcome" class="overlay">
+      <div class="card">
+        <div class="eyebrow"><span>FIELD LOG · 18:42 LOCAL</span><span>−18°C</span></div>
+        <div class="badge">07</div>
+        <h1>Last light<br/><em>at the station.</em></h1>
+        <p>A quiet shift at the edge of the ice. Walk the drift, step through the airlock, and take a look around the lab.</p>
+        <button id="enter">ENTER THE SHELTER <span>→</span></button>
+        <div class="keys-note">CLICK TO BEGIN <i>·</i> MOUSE TO LOOK <i>·</i> WASD TO WALK</div>
+      </div>
+      <div class="welcome-foot"><span>ANTARCTIC PENINSULA</span><span>64° 09′ S &nbsp; 58° 22′ W</span></div>
+    </div>
+    <div id="pause" class="overlay hidden">
+      <div class="card pause-card"><span class="eyebrow">FIELD LOG PAUSED</span><h2>Take your time.</h2><p>The station will be here when you're ready.</p><button id="resume">RESUME WALK <span>→</span></button><button id="reset-pause" class="text-button">RETURN TO THE SNOW</button></div>
+    </div>
+    <div id="crossfade"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

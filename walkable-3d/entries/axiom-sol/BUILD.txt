@@ -1,0 +1,18 @@
+
+> axiom-demonstration-lab@1.0.0 build
+> vite build
+
+vite v7.1.9 building for production...
+transforming...
+Γ£ô 11 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   2.72 kB Γöé gzip:   1.21 kB
+dist/assets/index-C9K7Psuk.css    3.73 kB Γöé gzip:   1.42 kB
+dist/assets/index-BWXltC6H.js   544.39 kB Γöé gzip: 142.69 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+Γ£ô built in 1.67s
