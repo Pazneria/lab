@@ -1,0 +1,34 @@
+{
+  "id": "gilded-tankard-loft-opus",
+  "scene": 17,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude17",
+  "completionClearedByOwner": true,
+  "completionEvidence": "Jordan reports Claude15/16/17 completed and authorizes screenshot previews in verified voice evidence at 2026-10-07 22:06–22:07 UTC. Sequential exact-entry background capture only; no foreground/native input or performance benchmark.",
+  "ownerReportedModel": "Claude Opus 5.5",
+  "verifiedBackendModel": null,
+  "requestedEffort": null,
+  "effectiveEffort": null,
+  "producerEffortClaim": "Producer README says effort setting was not shown; unknown.",
+  "producerReportedTiming": {
+    "firstImplementation": "2026-10-07T20:43:33Z",
+    "deadline": "2026-10-07T21:43:33Z",
+    "stop": "2026-10-07T21:14Z",
+    "stopPrecision": "minute"
+  },
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "interruptions": "Producer reports none; no subagents or other models, and no persistent process started.",
+  "producerChecks": "Producer reports successful esbuild bundle, CPU-only scene construction and collision-circle flood fill using a canvas stub. No producer browser, visual, GPU or frame-rate checks.",
+  "authority": "Completed producer records copied unchanged; normalized claims are attributed, not independently verified backend/effort/timing.",
+  "qa": {
+    "static": "HTML/runtime byte preservation and first-party network/storage/navigation audit; JS syntax only.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Prepared locally for draft PR; matching service publication requires supported existing source authorization."
+}

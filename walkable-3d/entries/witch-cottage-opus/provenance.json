@@ -1,0 +1,152 @@
+{
+  "entry": "witch-cottage-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\frozen-originals\\witch-cottage-opus\\source-preservation.zip",
+  "archiveSha256": "aa49ccad89f5704e2e04f52de785d82e9123e7cb431accad83d773a4a042e364",
+  "archiveKind": "Host-created source/build/record/license preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/scene.js": "dist/scene.js",
+      "README.md": "README.md",
+      "timelog.txt": "timelog.txt",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      "dist/index.html": {
+        "sha256": "12bce02056cbc2d18c9d095a7a3df12aa635236185443eb955a03ea73186ee0a",
+        "bytes": 3877
+      },
+      "dist/scene.js": {
+        "sha256": "a6a92d44eae94f23b4691d38fd64471a8e1b090af1040d553f8b2715a8c85d05",
+        "bytes": 579181
+      },
+      "index.html": {
+        "sha256": "12bce02056cbc2d18c9d095a7a3df12aa635236185443eb955a03ea73186ee0a",
+        "bytes": 3877
+      },
+      "package-lock.json": {
+        "sha256": "db58ce9238e6f8e3f867380c940d22ca9f912d6fb80ce4539cfcb98f8dc91498",
+        "bytes": 13226
+      },
+      "package.json": {
+        "sha256": "ba409703e309e711725503ad1291ebacb39c5c9765f73759a20e82fa2d3de460",
+        "bytes": 488
+      },
+      "README.md": {
+        "sha256": "70447806db44403794e5121375ba378359f5e5d5d14831b9ecb4232d7eb54253",
+        "bytes": 3531
+      },
+      "src/batch.js": {
+        "sha256": "ae75f1aadd241a04656ea7806edbf038cd122b14987316fcafe61b204f919985",
+        "bytes": 7215
+      },
+      "src/main.js": {
+        "sha256": "bb9ca6366768637d6c2237e9b532cff4ba0a4314f3d1eaa360f80da7d9e45085",
+        "bytes": 12041
+      },
+      "src/plants.js": {
+        "sha256": "1ac378dfab3affaff9944959157df0dff66e450689b3d5a8ae8e123b7253a8ee",
+        "bytes": 8440
+      },
+      "src/tex.js": {
+        "sha256": "ee738c723f06748ec02bc15cd8e94e3f6a69cfb1b169b75a1db63dd69e9fe910",
+        "bytes": 12023
+      },
+      "src/world.js": {
+        "sha256": "46476a7319bc454c9408e1619a47fc3bb577a9bdc50c249a1153df625a998243",
+        "bytes": 51897
+      },
+      "timelog.txt": {
+        "sha256": "65be766d2c75949d0d5341fedb14a6dc387e744be37b6d7f891674bdc9c57e1b",
+        "bytes": 77
+      },
+      "dependency-licenses/three-LICENSE": {
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "bytes": 1081,
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude16\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "bytes": 1069,
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude16\\node_modules\\esbuild\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\frozen-originals\\witch-cottage-opus\\source-preservation.zip",
+    "sourceArchiveSha256": "aa49ccad89f5704e2e04f52de785d82e9123e7cb431accad83d773a4a042e364"
+  },
+  "timing": "Producer claims retained unchanged; independent actual timing unknown.",
+  "qa": "Frozen byte integrity and actual hosted startup/default canvas observed. No entrant rebuild, repair, interactive route QA, performance benchmark or score.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Unchanged host supplies base URL, CSP, opaque iframe and readiness/error bridge. HTML, classic bundle, original records and licenses byte-preserved; no additional adaptation required."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes": 1069
+    },
+    "frozen/index.html.txt": {
+      "sha256": "12bce02056cbc2d18c9d095a7a3df12aa635236185443eb955a03ea73186ee0a",
+      "bytes": 3877
+    },
+    "frozen/scene.js": {
+      "sha256": "a6a92d44eae94f23b4691d38fd64471a8e1b090af1040d553f8b2715a8c85d05",
+      "bytes": 579181
+    },
+    "launch-prompt.txt": {
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "bytes": 7573
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "8ca0861bd4a4c9d682780f42cb17362ebc025a67444a10be7fdddad5c68723d5",
+      "bytes": 1717
+    },
+    "preview-capture.json": {
+      "sha256": "b70af9df451ea918951a0ada15367feb0740120f58d7105d8945073aff9c9b01",
+      "bytes": 3138
+    },
+    "preview.jpg": {
+      "sha256": "60e39eb44fb8bb6e800e8bc4884e0d8fadaadc265d6221d82c82798431abcf42",
+      "bytes": 91767
+    },
+    "README.md": {
+      "sha256": "70447806db44403794e5121375ba378359f5e5d5d14831b9ecb4232d7eb54253",
+      "bytes": 3531
+    },
+    "run-record.json": {
+      "sha256": "77e00210a7b739bc384c7fb1cabfa56769ec3fb4c98b4e988f353f1bbcb6e12a",
+      "bytes": 1886
+    },
+    "three-LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "timelog.txt": {
+      "sha256": "65be766d2c75949d0d5341fedb14a6dc387e744be37b6d7f891674bdc9c57e1b",
+      "bytes": 77
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/index.html.txt",
+      "frozen/scene.js",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE",
+      "timelog.txt"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build snapshot and original workspace hashes in task45/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

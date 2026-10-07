@@ -1,0 +1,134 @@
+{
+  "entry": "gilded-tankard-loft-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\frozen-originals\\gilded-tankard-loft-opus\\source-preservation.zip",
+  "archiveSha256": "3a92bac8866995c92d8d624e5cb0ed19798c3ae79b853ac1db4c905d5bd887b9",
+  "archiveKind": "Host-created source/build/record/license preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/bundle.js": "dist/bundle.js",
+      "README.md": "README.md",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      "dist/bundle.js": {
+        "sha256": "703abce933ed03988e1897b5b171e0854a467cbb4cfc12ba1557a66e407dc809",
+        "bytes": 608329
+      },
+      "dist/index.html": {
+        "sha256": "826854ac69b6ab7306f92f5d07d50c077ea52ff034e01f08a1e6b666265d7c89",
+        "bytes": 4792
+      },
+      "package-lock.json": {
+        "sha256": "98a4d4928e951d55547f5696ebf636053cfbd8816557d5d18f7cb0a230f468f3",
+        "bytes": 14831
+      },
+      "package.json": {
+        "sha256": "3d374fa7505a53dcc5bc447e2343bb0230bc5a7ac5a1ab4f6d2f59c868a6eda2",
+        "bytes": 395
+      },
+      "README.md": {
+        "sha256": "0eb97be6f48733fb677005d48bfcdd577f43be974b0f1d4ce3842e476aa783fc",
+        "bytes": 6014
+      },
+      "src/kit.js": {
+        "sha256": "456bb38074a188ff878fb31d41facffd2e35fd4839418a3685dc9792fc761f99",
+        "bytes": 6255
+      },
+      "src/main.js": {
+        "sha256": "75d555f74d34905a27545398ae3bba7b06f7e87c76eb9d98b1ac6ba5eb03f922",
+        "bytes": 19797
+      },
+      "src/scene.js": {
+        "sha256": "4dd42300935fea8509c6ce2fc40c074322386f1d4e22a22b427f4f033f542096",
+        "bytes": 62162
+      },
+      "src/textures.js": {
+        "sha256": "043f2a6b99a70d985d9d04e9a60aafb3822141b78b099203ba08e7e55f5dd628",
+        "bytes": 23590
+      },
+      "dependency-licenses/three-LICENSE": {
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "bytes": 1081,
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude17\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "bytes": 1069,
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude17\\node_modules\\esbuild\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\frozen-originals\\gilded-tankard-loft-opus\\source-preservation.zip",
+    "sourceArchiveSha256": "3a92bac8866995c92d8d624e5cb0ed19798c3ae79b853ac1db4c905d5bd887b9"
+  },
+  "timing": "Producer claims retained unchanged; independent actual timing unknown.",
+  "qa": "Frozen byte integrity and actual hosted startup/default canvas observed. No entrant rebuild, repair, interactive route QA, performance benchmark or score.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Unchanged host supplies base URL, CSP, opaque iframe and readiness/error bridge. HTML, classic bundle, original records and licenses byte-preserved; no additional adaptation required."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes": 1069
+    },
+    "frozen/bundle.js": {
+      "sha256": "703abce933ed03988e1897b5b171e0854a467cbb4cfc12ba1557a66e407dc809",
+      "bytes": 608329
+    },
+    "frozen/index.html.txt": {
+      "sha256": "826854ac69b6ab7306f92f5d07d50c077ea52ff034e01f08a1e6b666265d7c89",
+      "bytes": 4792
+    },
+    "launch-prompt.txt": {
+      "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
+      "bytes": 7743
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "ff48b915244f9a33d5947762f8444fcdd581e806ba8283b61eed09cf11bd644f",
+      "bytes": 1835
+    },
+    "preview-capture.json": {
+      "sha256": "a7d9283591e47e2a40faec9ef646e71fcbc913e78f79f9d52dc8f83678a6386e",
+      "bytes": 3162
+    },
+    "preview.jpg": {
+      "sha256": "b69a2a1549db3a36169f61b533515a0d548852d1e971854b288a008d5006bbc6",
+      "bytes": 109310
+    },
+    "README.md": {
+      "sha256": "0eb97be6f48733fb677005d48bfcdd577f43be974b0f1d4ce3842e476aa783fc",
+      "bytes": 6014
+    },
+    "run-record.json": {
+      "sha256": "7f8a7751f8677de4fd0f7f6fe3672585058f02a404076ad0be00cfba97fcede0",
+      "bytes": 2004
+    },
+    "three-LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/bundle.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build snapshot and original workspace hashes in task45/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

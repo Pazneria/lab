@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Loft Above the Tankard</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #120d0a; font-family: Georgia, 'Times New Roman', serif; color: #f1e6d0; }
+  canvas { display: block; }
+  .hidden { display: none !important; }
+  #intro { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(40,26,16,0.82), rgba(10,7,5,0.94)); z-index: 10; }
+  .card { max-width: 560px; padding: 28px 32px; border: 1px solid rgba(220,180,120,0.35); background: rgba(24,16,11,0.85); border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+  h1 { margin: 0 0 6px; font-size: 26px; font-weight: normal; letter-spacing: 0.5px; color: #f3d9a4; }
+  .sub { margin: 0 0 16px; color: #c9b48f; font-style: italic; }
+  table { border-collapse: collapse; font-size: 14px; margin-bottom: 14px; }
+  td { padding: 3px 14px 3px 0; vertical-align: top; }
+  td:first-child { color: #f3d9a4; white-space: nowrap; }
+  ol { margin: 0 0 16px 18px; padding: 0; font-size: 14px; color: #dccbaa; }
+  button { font: inherit; font-size: 16px; padding: 10px 22px; background: #8a5a2a; color: #fff6e6; border: 1px solid #c89a5a; border-radius: 4px; cursor: pointer; }
+  button:disabled { opacity: 0.6; cursor: wait; }
+  #status { font-size: 12px; color: #a8957a; margin-top: 10px; }
+  #hud { position: fixed; left: 16px; top: 14px; font-size: 14px; color: #f3e2c0; text-shadow: 0 1px 3px #000; pointer-events: none; }
+  #area { font-size: 15px; letter-spacing: 0.4px; }
+  #keys { font-size: 12px; color: #d8c7a4; opacity: 0.8; margin-top: 3px; }
+  #caption { position: fixed; left: 50%; bottom: 46px; transform: translateX(-50%); max-width: min(680px, calc(100vw - 32px)); text-align: center; font-style: italic; font-size: 16px; padding: 8px 16px; background: rgba(20,13,9,0.55); border-radius: 4px; opacity: 0; transition: opacity 0.35s; pointer-events: none; text-shadow: 0 1px 2px #000; }
+  #caption.off { display: none; }
+  #hint { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); font-size: 12px; color: #d8c7a4; pointer-events: none; transition: opacity 0.3s; text-shadow: 0 1px 2px #000; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,240,210,0.55); pointer-events: none; }
+  #stats { position: fixed; right: 12px; top: 12px; font: 12px/1.4 Consolas, monospace; white-space: pre; background: rgba(0,0,0,0.55); padding: 6px 9px; border-radius: 4px; pointer-events: none; }
+  #help { position: fixed; right: 12px; bottom: 12px; font-size: 12px; background: rgba(20,13,9,0.7); padding: 8px 12px; border-radius: 4px; line-height: 1.5; pointer-events: none; }
+  #flash { position: fixed; left: 50%; top: 40%; transform: translateX(-50%); font-size: 16px; opacity: 0; transition: opacity 0.3s; pointer-events: none; text-shadow: 0 1px 3px #000; }
+</style>
+</head>
+<body>
+<div id="intro">
+  <div class="card">
+    <h1>The Loft Above the Gilded Tankard</h1>
+    <p class="sub">Where an old adventurer finally unpacked.</p>
+    <table>
+      <tr><td>Mouse</td><td>Look around (click the view to capture the mouse; Esc releases it). Dragging also works.</td></tr>
+      <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>Q / E</td><td>Turn without the mouse</td></tr>
+      <tr><td>R</td><td>Reset to the entrance</td></tr>
+      <tr><td>H · F · C</td><td>Toggle help · frame-time panel · object captions</td></tr>
+      <tr><td>P · [ ]</td><td>Cycle render scale · exposure down/up</td></tr>
+    </table>
+    <ol>
+      <li>From the entrance, approach the hearth, the shield tea table and the antler sock-rack.</li>
+      <li>Step through the low opening into the study &amp; storage alcove.</li>
+      <li>Go out past the spear-rod curtains onto the covered balcony.</li>
+      <li>Turn back for the view toward the bed and sitting area, then return to the door.</li>
+    </ol>
+    <button id="start" disabled>Preparing…</button>
+    <div id="status">Loading…</div>
+  </div>
+</div>
+<div id="hud"><div id="area"></div><div id="keys">WASD move · Shift faster · R reset · H help</div></div>
+<div id="cross"></div>
+<div id="caption"></div>
+<div id="hint">Click the view to look around</div>
+<div id="flash"></div>
+<div id="stats" class="hidden">measuring…</div>
+<div id="help" class="hidden">Mouse look · WASD/Arrows walk · Shift faster · Q/E turn<br>R reset · F frame-time panel · C captions · P render scale · [ ] exposure</div>
+<script src="bundle.js"></script>
+</body>
+</html>
