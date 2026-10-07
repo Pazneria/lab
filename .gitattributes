@@ -23,6 +23,7 @@ data/coverage-research-2026-10-05/** text eol=lf
 assets/coverage-graphs.js text eol=lf
 # Frozen benchmark submissions and evidence must retain their exact bytes.
 walkable-3d/entries/** -text
+walkable-3d/entries.json text eol=lf
 
 # Prompt records retain exact UTF-8 bytes, including original final whitespace.
 walkable-3d/prompt-*.txt -text

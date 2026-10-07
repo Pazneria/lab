@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Starlite Arcade</title>
+<style>
+  html,body{margin:0;height:100%;background:#05040a;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif;color:#eee}
+  canvas{display:block}
+  #overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(4,3,10,.74);z-index:10;cursor:pointer;transition:opacity .25s}
+  #overlay.hidden{opacity:0;pointer-events:none}
+  #panel{max-width:540px;margin:16px;padding:26px 30px;border:1px solid #ff4fa8;border-radius:14px;background:rgba(12,8,28,.93);box-shadow:0 0 40px rgba(255,80,170,.25),inset 0 0 30px rgba(60,220,255,.06)}
+  #panel h1{margin:0 0 2px;font:900 italic 30px/1.1 "Arial Black",Impact,sans-serif;letter-spacing:.06em;color:#ffd166;text-shadow:0 0 12px rgba(255,120,200,.6)}
+  #panel .sub{margin:0 0 16px;color:#9fe8ff;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  #panel table{border-collapse:collapse;font-size:14px;width:100%}
+  #panel td{padding:3px 6px;vertical-align:top}
+  #panel td:first-child{color:#ffd166;white-space:nowrap;font-family:ui-monospace,Consolas,monospace}
+  #go{margin-top:16px;text-align:center;font-weight:700;color:#fff;letter-spacing:.1em;padding:10px;border-radius:8px;background:linear-gradient(90deg,#ff3fa4,#7b3cff,#33d6ff)}
+  #status{margin-top:10px;text-align:center;color:#aaa;font-size:12px}
+  #hud{position:fixed;left:10px;bottom:10px;font:12px/1.45 ui-monospace,Consolas,monospace;background:rgba(0,0,0,.5);padding:6px 9px;border-radius:6px;pointer-events:none;z-index:5;white-space:pre;display:none}
+  #hint{position:fixed;right:10px;bottom:10px;font:12px/1.4 "Segoe UI",sans-serif;color:rgba(255,255,255,.55);pointer-events:none;z-index:5}
+  #cross{position:fixed;left:50%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none;z-index:5}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}</script>
+</head>
+<body>
+<div id="overlay"><div id="panel">
+  <h1>STARLITE ARCADE</h1>
+  <div class="sub">A neighborhood arcade, after dark</div>
+  <table>
+    <tr><td>Mouse</td><td>Look around (click to capture the mouse)</td></tr>
+    <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+    <tr><td>Shift</td><td>Walk faster</td></tr>
+    <tr><td>C / Ctrl</td><td>Crouch to inspect controls up close</td></tr>
+    <tr><td>R</td><td>Reset to the entrance</td></tr>
+    <tr><td>F</td><td>Frame-time overlay</td></tr>
+    <tr><td>Q</td><td>Render scale (performance / sharpness)</td></tr>
+    <tr><td>Esc</td><td>Release mouse / show this panel</td></tr>
+  </table>
+  <div id="go">CLICK TO ENTER</div>
+  <div id="status">Building the arcade…</div>
+</div></div>
+<div id="cross"></div>
+<div id="hud"></div>
+<div id="hint">Esc: controls · R: reset · F: frame time</div>
+<script type="module">

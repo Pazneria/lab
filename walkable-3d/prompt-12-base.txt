@@ -1,0 +1,44 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact neighborhood arcade at night, contained within one main room and a small open counter alcove. A distinctive feature cabinet at the far end should be clearly visible from the entrance and draw the viewer into the room. Arrange four additional upright cabinets in two short banks, leaving a central aisle and a connected route around the feature cabinet. Let the viewer approach every cabinet, visit the counter and return to the entrance with a different view of the room.
+
+Give the feature cabinet a memorable silhouette and original marquee, while the two cabinet banks have distinct visual identities through their shapes, control layouts and artwork. Use original, fictional game names and attract-screen graphics, with no branded game characters, logos or borrowed game assets. Painted cabinet panels, molded plastic controls, screen glass, metal trim and patterned carpet should remain distinct at close range. Restrained screen glow and colored accent lighting should illuminate nearby surfaces while leaving the room and walking routes readable. A token counter, a stool or a small prize shelf can suggest everyday use. Keep the arcade cozy and cared for, with wear where hands and feet would leave it. Static screens or simple looping attract graphics are sufficient; playable games, crowds and additional rooms are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will approach both cabinet banks, inspect the feature cabinet from the front and sides, visit the counter and look back toward the entrance. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; full games, website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A memorable feature cabinet and two recognizable cabinet banks with original artwork
+- Distinct painted panels, plastic controls, screen glass, metal trim and carpet
+- Credible cabinet construction and purposeful wear at close range
+- Restrained screen glow and colored lighting that preserve the room's readability
+- Coherent detail across the cabinet fronts, exposed sides, counter and return view
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while looking along several illuminated cabinets together
+- Smooth movement around the feature cabinet and between the aisle and counter alcove
+- Minimal screen-related slowdown, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A compact arcade room with a distinctive feature cabinet clearly visible from the entrance
+- Four additional upright cabinets arranged in two distinct banks, plus an open counter alcove
+- Access to every cabinet front, a route around the feature cabinet and a connected return path
+- Convincing human scale, comfortable aisle clearance and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → first cabinet bank → around the feature cabinet → second cabinet bank → counter alcove → return view toward the entrance.
+
+I will pay particular attention to approaching the controls and screens, turning along the cabinet banks, and inspecting the feature cabinet from several angles. Cabinets, stools and counter edges should leave the route usable without jumping or squeezing through gaps. Suggested small props and particular lighting effects are optional; the core spaces, cabinet arrangement and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.

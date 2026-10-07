@@ -46,8 +46,8 @@
   },
   "files": {
     "host-verification.json": {
-      "sha256": "b45fb58a2463590822d3717a1746b5494b1eadb56f8e1131d2ae957c513ab2b6",
-      "bytes": 412
+      "sha256": "e23dd8d002f24433e69ffd980e54f86c3b40081bea567fd7114f0a7893f4e0ec",
+      "bytes": 402
     },
     "launch-prompt.txt": {
       "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",

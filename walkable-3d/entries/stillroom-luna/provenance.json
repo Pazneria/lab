@@ -80,8 +80,8 @@
   },
   "files": {
     "host-verification.json": {
-      "sha256": "2d22126b43d05c2e0d0bcbff43a2235244734d478592da351b80230290c554ef",
-      "bytes": 408
+      "sha256": "0e2369245770cac124bf8c7229491045916249e1db9ab2dd39c215b71656227d",
+      "bytes": 398
     },
     "launch-prompt.txt": {
       "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",

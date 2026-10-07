@@ -2296,6 +2296,50 @@
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "astra",
       "availability": "unverified"
+    },
+    {
+      "id": "starlite-arcade-claude",
+      "title": "Starlite Arcade",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "requestedConfiguration": "Claude (manual); exact version/effort unknown",
+      "modelDisclosure": "User reports manually completed Claude scene. Exact variant, version, effort and serving backend unknown. Comparison group uses the existing Claude key; this does not verify Opus identity.",
+      "buildWindow": "Actual implementation start, stop and deadline not supplied; no independent timing/run record found.",
+      "interruptions": "Not documented in supplied manual artifact.",
+      "controls": "| Input | Action |\n|---|---|\n| Mouse | Look around |\n| W A S D / arrow keys | Walk |\n| Shift | Walk faster |\n| C or Left Ctrl | Toggle crouch (lower eye height for inspecting control panels) |\n| R | Reset to the entrance |\n| F | Frame-time overlay: average and p95/max ms, draw calls, render scale |\n| Q | Render scale: auto, 0.75, 1.0, 1.5, 2.0 |\n| Esc | Release the mouse and show the controls panel |",
+      "producerChecks": "No producer test results supplied; README documents controls and layout. Importer CPU/static checks are recorded separately.",
+      "performanceEvidence": "README claims Intel integrated GPU render times around4-7ms at1920x1080. Raw measurements, methodology and timing not supplied; claim independently unverified and not a host benchmark. Host checks CPU/static only.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No captured preview supplied.",
+      "archiveSha256": "dc3a7903de3fcd7f10286997fe1594be2c1a16b5cdc9fbbbe6938b99da4c6d8c",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "06418de0ac9942173479aa2303ef7896ea368c2ad36a3dd3e68714847e255005",
+      "promptId": "12",
+      "promptVersion": "12-base",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "opus",
+      "availability": "unverified"
     }
   ],
   "prompts": [
@@ -2599,6 +2643,15 @@
       "sha256": "66abbb54666f190fe4ed3987d00e7619b1cf36ba1bb34dd8fca169cedcadf442",
       "source": "Exact launch wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8, LF, no terminal newline. No entrant transcript independently accessed.",
       "note": "Sent once before implementation; no mid-run messages. Parent create arguments confirm requested model and XHIGH; serving backend unverified."
+    },
+    {
+      "id": "12-base",
+      "promptId": "12",
+      "label": "Shared base / manual Claude reference",
+      "path": "prompt-12-base.txt",
+      "sha256": "0e548df86b88c91ca010053fba19b84f5ef84ce919cc3b12ed35d4d55842f0fe",
+      "source": "Parent confirms this exact base-only prompt supplied as a manual Claude attachment; unchanged user delivery not independently verified.",
+      "note": "OpenAI no-browser execution conditions absent from manual prompt."
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "id": "understone-luna",
+  "id": "starlite-arcade-claude",
   "hostRuntimeVerification": "NOT RUN",
   "passed": null,
   "scope": "Source/runtime hash equality, JS parsing, HTML asset references and disclosed adapter resolution passed. No execution or rendering.",

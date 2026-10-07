@@ -1,0 +1,195 @@
+{
+  "entry": "starlite-arcade-claude",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\starlite-arcade-claude\\original.zip",
+  "archiveSha256": "dc3a7903de3fcd7f10286997fe1594be2c1a16b5cdc9fbbbe6938b99da4c6d8c",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/00_setup.js": "src/00_setup.js",
+      "frozen/src/10_textures.js": "src/10_textures.js",
+      "frozen/src/20_screens.js": "src/20_screens.js",
+      "frozen/src/30_cabinets.js": "src/30_cabinets.js",
+      "frozen/src/40_room.js": "src/40_room.js",
+      "frozen/src/90_main.js": "src/90_main.js",
+      "frozen/src/head.html": "src/head.html"
+    },
+    "perFileSourceHashes": {
+      "build.sh": {
+        "sha256": "a3543f4e8096f72332e9975f75604f6d3dd48a9d3e1f062ce13aef3dd682ce08",
+        "bytes": 343
+      },
+      "index.html": {
+        "sha256": "06418de0ac9942173479aa2303ef7896ea368c2ad36a3dd3e68714847e255005",
+        "bytes": 144746
+      },
+      "README.md": {
+        "sha256": "e4448bf4e89f9afbc8461ac5991c925fd649a20c957d9b4a049e7d535de9ff74",
+        "bytes": 3351
+      },
+      "src/00_setup.js": {
+        "sha256": "a6ce800b7b74fbf6e4125dc257acd8b1c8b62402e1a5c28bf100ea785cca2a99",
+        "bytes": 7494
+      },
+      "src/10_textures.js": {
+        "sha256": "3eacb0e81fbc122a4a216b115133bc0794d7f97beae922c81ad1280bbd077834",
+        "bytes": 44249
+      },
+      "src/20_screens.js": {
+        "sha256": "d32d3d56808917489eadff17ad875aafc39b1d7a5d6dfd9fb6ff444c5d576558",
+        "bytes": 17469
+      },
+      "src/30_cabinets.js": {
+        "sha256": "69517651824670a1b6429bd9136af1d9b72fb86d8fef95b9bf5cce3d95d11d5c",
+        "bytes": 27466
+      },
+      "src/40_room.js": {
+        "sha256": "2975daf3c9edbd5a7071cbbdee3f6af3dbd4cd04451888a69144fc910dfea2e0",
+        "bytes": 32052
+      },
+      "src/90_main.js": {
+        "sha256": "a3bb93bb136b58ed99e1543f43f164dba7cba5930eaead3287c17bb7a29ead22",
+        "bytes": 12988
+      },
+      "src/head.html": {
+        "sha256": "4baca0683fa6bbc5226f67b1b5f581cd24a39b79098ef67259c9ffd604f9d309",
+        "bytes": 3002
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\starlite-arcade-claude\\original.zip",
+    "sourceArchiveSha256": "dc3a7903de3fcd7f10286997fe1594be2c1a16b5cdc9fbbbe6938b99da4c6d8c"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [
+    {
+      "url": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "version": "0.169.0",
+      "status": "Downloaded exact declared pinned CDN module and upstream license; source bytes unchanged; in-memory HTML URL adapter required.",
+      "files": [
+        {
+          "path": "frozen\\vendor\\three.module.js",
+          "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+          "bytes": 1304820,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\rain-courtyard-opus\\frozen\\vendor\\three\\build\\three.module.js",
+            "walkable-3d\\entries\\mass-light-opus\\frozen\\vendor\\three\\build\\three.module.js",
+            "walkable-3d\\entries\\coastal-boathouse-opus\\frozen\\vendor\\three\\build\\three.module.js",
+            "walkable-3d\\entries\\bracken-hollow-opus\\frozen\\vendor\\three\\build\\three.module.js"
+          ]
+        },
+        {
+          "path": "frozen\\vendor\\THREE-LICENSE.txt",
+          "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+          "bytes": 1081,
+          "priorAdmittedMatches": [
+            "walkable-3d\\entries\\hillside-library-opus\\THREE-LICENSE.txt"
+          ]
+        }
+      ]
+    }
+  ],
+  "requestedConfiguration": "Claude (manual); exact version/effort unknown",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "README claims Intel integrated GPU render times around4-7ms at1920x1080. Raw measurements, methodology and timing not supplied; claim independently unverified and not a host benchmark. Host checks CPU/static only.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": null,
+    "stop": null,
+    "deadline": null,
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "fcff6e603aafc94787a75b52ff6851e3dead9a1aba684e215436fac8f8c50204",
+      "bytes": 406
+    },
+    "launch-prompt.txt": {
+      "sha256": "0e548df86b88c91ca010053fba19b84f5ef84ce919cc3b12ed35d4d55842f0fe",
+      "bytes": 5333
+    },
+    "README.md": {
+      "sha256": "e4448bf4e89f9afbc8461ac5991c925fd649a20c957d9b4a049e7d535de9ff74",
+      "bytes": 3351
+    },
+    "frozen/index.html.txt": {
+      "sha256": "06418de0ac9942173479aa2303ef7896ea368c2ad36a3dd3e68714847e255005",
+      "bytes": 144746
+    },
+    "frozen/src/00_setup.js": {
+      "sha256": "a6ce800b7b74fbf6e4125dc257acd8b1c8b62402e1a5c28bf100ea785cca2a99",
+      "bytes": 7494
+    },
+    "frozen/src/10_textures.js": {
+      "sha256": "3eacb0e81fbc122a4a216b115133bc0794d7f97beae922c81ad1280bbd077834",
+      "bytes": 44249
+    },
+    "frozen/src/20_screens.js": {
+      "sha256": "d32d3d56808917489eadff17ad875aafc39b1d7a5d6dfd9fb6ff444c5d576558",
+      "bytes": 17469
+    },
+    "frozen/src/30_cabinets.js": {
+      "sha256": "69517651824670a1b6429bd9136af1d9b72fb86d8fef95b9bf5cce3d95d11d5c",
+      "bytes": 27466
+    },
+    "frozen/src/40_room.js": {
+      "sha256": "2975daf3c9edbd5a7071cbbdee3f6af3dbd4cd04451888a69144fc910dfea2e0",
+      "bytes": 32052
+    },
+    "frozen/src/90_main.js": {
+      "sha256": "a3bb93bb136b58ed99e1543f43f164dba7cba5930eaead3287c17bb7a29ead22",
+      "bytes": 12988
+    },
+    "frozen/src/head.html": {
+      "sha256": "4baca0683fa6bbc5226f67b1b5f581cd24a39b79098ef67259c9ffd604f9d309",
+      "bytes": 3002
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+      "bytes": 1304820
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "12-base",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/00_setup.js",
+      "frozen/src/10_textures.js",
+      "frozen/src/20_screens.js",
+      "frozen/src/30_cabinets.js",
+      "frozen/src/40_room.js",
+      "frozen/src/90_main.js",
+      "frozen/src/head.html",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  }
+}
