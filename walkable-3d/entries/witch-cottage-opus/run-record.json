@@ -1,0 +1,34 @@
+{
+  "id": "witch-cottage-opus",
+  "scene": 16,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude16",
+  "completionClearedByOwner": true,
+  "completionEvidence": "Jordan reports Claude15/16/17 completed and authorizes screenshot previews in verified voice evidence at 2026-10-07 22:06–22:07 UTC. Sequential exact-entry background capture only; no foreground/native input or performance benchmark.",
+  "ownerReportedModel": "Claude Opus 5.5",
+  "verifiedBackendModel": null,
+  "requestedEffort": null,
+  "effectiveEffort": null,
+  "producerEffortClaim": "Effective and configured effort unknown; no effort record supplied.",
+  "producerReportedTiming": {
+    "firstImplementation": "2026-10-07T20:43:37.816Z",
+    "deadline": null,
+    "stop": "2026-10-07T21:07:18Z"
+  },
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "interruptions": "No interruption record supplied; unknown.",
+  "producerChecks": "README says no browser, GPU, screenshot or performance benchmark was run. No separate producer CPU-check receipt supplied; build files are present.",
+  "authority": "Completed producer records copied unchanged; normalized claims are attributed, not independently verified backend/effort/timing.",
+  "qa": {
+    "static": "HTML/runtime byte preservation and first-party network/storage/navigation audit; JS syntax only.",
+    "visual": "Actual unchanged authored default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED",
+    "captureRecord": "preview-capture.json"
+  },
+  "publication": "Prepared locally for draft PR; matching service publication requires supported existing source authorization."
+}

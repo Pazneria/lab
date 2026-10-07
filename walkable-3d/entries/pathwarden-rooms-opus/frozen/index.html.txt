@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pathwarden's Rooms</title>
+<style>
+  :root { --ink: #f3e8d2; --dim: #c9b896; --accent: #d9a24a; --bg: rgba(18, 14, 10, 0.86); }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #120e0a; color: var(--ink); font-family: Georgia, 'Palatino Linotype', serif; }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(30, 22, 14, 0.72), rgba(10, 8, 6, 0.92)); z-index: 10; }
+  #card { max-width: 560px; margin: 16px; padding: 28px 32px; background: var(--bg); border: 1px solid rgba(217, 162, 74, 0.45); border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+  h1 { margin: 0 0 4px; font-size: 26px; font-weight: normal; letter-spacing: 0.5px; color: var(--accent); }
+  .sub { margin: 0 0 14px; color: var(--dim); font-style: italic; font-size: 14px; }
+  p { line-height: 1.5; font-size: 14.5px; margin: 0 0 12px; }
+  table { border-collapse: collapse; font-size: 13.5px; width: 100%; margin: 6px 0 16px; }
+  td { padding: 3px 6px; vertical-align: top; }
+  td:first-child { color: var(--accent); white-space: nowrap; font-family: Consolas, monospace; }
+  button { font: inherit; font-size: 16px; padding: 10px 22px; background: #7a4a22; color: var(--ink); border: 1px solid var(--accent); border-radius: 4px; cursor: pointer; }
+  button:disabled { opacity: 0.5; cursor: wait; }
+  #status { margin-left: 12px; font-size: 13px; color: var(--dim); }
+  #hint { position: fixed; left: 12px; bottom: 10px; font: 12px Consolas, monospace; color: rgba(243, 232, 210, 0.75); text-shadow: 0 1px 2px #000; pointer-events: none; z-index: 5; }
+  #stats { display: none; position: fixed; right: 10px; top: 10px; white-space: pre; font: 12px Consolas, monospace; background: rgba(0,0,0,0.55); padding: 6px 8px; border-radius: 4px; z-index: 5; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div id="card">
+    <h1>The Pathwarden's Rooms</h1>
+    <div class="sub">Home of Ilse Varrow, mountain guide and route-cartographer of the Thornreach passes</div>
+    <p>Ilse leads caravans over the high passes and maps each new crossing. She keeps a feather and a pebble from every pass, knits through snowed-in evenings, drinks too much tea from chipped blue mugs, and still weighs her maps down with her late mentor's brass compass.</p>
+    <table>
+      <tr><td>Mouse</td><td>Look (click to capture the pointer; Esc releases). Drag-to-look also works.</td></tr>
+      <tr><td>W A S D / ↑ ↓</td><td>Walk &nbsp;·&nbsp; <b>Shift</b> walk faster &nbsp;·&nbsp; ← → turn</td></tr>
+      <tr><td>C</td><td>Crouch / stand (for bedside and shelf details)</td></tr>
+      <tr><td>R</td><td>Reset to the entrance</td></tr>
+      <tr><td>1 – 5</td><td>Jump to: entrance · bedside · wardrobe · map desk · look-back from the study</td></tr>
+      <tr><td>F &nbsp; H</td><td>Frame-time overlay &nbsp;·&nbsp; hide/show hint line</td></tr>
+      <tr><td>[ &nbsp; ]</td><td>Exposure down / up</td></tr>
+    </table>
+    <button id="start" disabled>Loading…</button><span id="status">Loading…</span>
+  </div>
+</div>
+<div id="hint">WASD move · mouse look · Shift faster · C crouch · R reset · 1-5 viewpoints · F stats · Esc menu</div>
+<div id="stats"></div>
+<script src="dist/bundle.js"></script>
+</body>
+</html>

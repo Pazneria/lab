@@ -1,0 +1,142 @@
+{
+  "entry": "pathwarden-rooms-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\frozen-originals\\pathwarden-rooms-opus\\source-preservation.zip",
+  "archiveSha256": "018f5b980c4b9d86699b490cc2f697844d9805d41a646b87955b74af3df2c4b2",
+  "archiveKind": "Host-created source/build/record/license preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/dist/bundle.js": "dist/bundle.js",
+      "README.md": "README.md",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      "dist/bundle.js": {
+        "sha256": "4ec791f4954e20d23db1334d99986a5ebbd9868996d26d1f12092ed85c94ffb3",
+        "bytes": 568164
+      },
+      "index.html": {
+        "sha256": "3b75bced7880cd9f08514edae7083b1167a5b8a7711b7fcc1640cf66ea89eedc",
+        "bytes": 3511
+      },
+      "package-lock.json": {
+        "sha256": "0c3689aaf8baed16dba9394701cf32b3cf488ad9ddde8278f1b7362c80f8a63a",
+        "bytes": 13226
+      },
+      "package.json": {
+        "sha256": "c7a85fcdf220551aa132184b16c45f71cd7a500a3bf2ad25163cfe65a14bd382",
+        "bytes": 420
+      },
+      "README.md": {
+        "sha256": "1983f9482d1a96b110bfd12b0f6a7c728d38a8a61875d777a9caccac76842a82",
+        "bytes": 6557
+      },
+      "src/builder.js": {
+        "sha256": "8ddb55271faf60c58a684b6e56262c1be9ce46ba20d927c80c2e9426c9744061",
+        "bytes": 13623
+      },
+      "src/main.js": {
+        "sha256": "100d5be732d2a71c7ed81e6f73698db5e5fac22fbc6acdf6181fdc33ce863f04",
+        "bytes": 15065
+      },
+      "src/scene.js": {
+        "sha256": "94ac9b2be60bef80bc43adc37f497d07827b4c18ceb5944a7eb1a7178e6d94a5",
+        "bytes": 51241
+      },
+      "src/textures.js": {
+        "sha256": "ab2cc6369a96cf90b15519ece30db4068ce4a7c8b851d63ca3425377c4d82728",
+        "bytes": 24754
+      },
+      "tools/check-geometry.mjs": {
+        "sha256": "4573079511a59b88c6e6ec3250db7fa8660020cdbe375e68b4139be13cfc4cef",
+        "bytes": 1393
+      },
+      "tools/check-textures.mjs": {
+        "sha256": "52b4f87b911aae4faaba7a40f67528124500c2a631dc7fc6435cffa630cb644f",
+        "bytes": 977
+      },
+      "dependency-licenses/three-LICENSE": {
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "bytes": 1081,
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude15\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "bytes": 1069,
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-44\\claude-entries\\Claude15\\node_modules\\esbuild\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\frozen-originals\\pathwarden-rooms-opus\\source-preservation.zip",
+    "sourceArchiveSha256": "018f5b980c4b9d86699b490cc2f697844d9805d41a646b87955b74af3df2c4b2"
+  },
+  "timing": "Producer claims retained unchanged; independent actual timing unknown.",
+  "qa": "Frozen byte integrity and actual hosted startup/default canvas observed. No entrant rebuild, repair, interactive route QA, performance benchmark or score.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Unchanged host supplies base URL, CSP, opaque iframe and readiness/error bridge. HTML, classic bundle, original records and licenses byte-preserved; no additional adaptation required."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes": 1069
+    },
+    "frozen/dist/bundle.js": {
+      "sha256": "4ec791f4954e20d23db1334d99986a5ebbd9868996d26d1f12092ed85c94ffb3",
+      "bytes": 568164
+    },
+    "frozen/index.html.txt": {
+      "sha256": "3b75bced7880cd9f08514edae7083b1167a5b8a7711b7fcc1640cf66ea89eedc",
+      "bytes": 3511
+    },
+    "launch-prompt.txt": {
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "bytes": 7673
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "986de73ce920a0cb88e00405baa3b687cd977a24fbc768956bf4d28a664d1fb1",
+      "bytes": 1834
+    },
+    "preview-capture.json": {
+      "sha256": "9a3cbc00b8d96baca00b0b66e815dc7ef839073b8e35d77ef365fb60364f17cf",
+      "bytes": 3150
+    },
+    "preview.jpg": {
+      "sha256": "6664ff74f59c93e2d0b3a4e357f08c33d4ad861d8c5486078f5295b3adb88868",
+      "bytes": 120092
+    },
+    "README.md": {
+      "sha256": "1983f9482d1a96b110bfd12b0f6a7c728d38a8a61875d777a9caccac76842a82",
+      "bytes": 6557
+    },
+    "run-record.json": {
+      "sha256": "73eca309e69d002668af9969e3db8050e7940d92401cd237ec07eacae9f47261",
+      "bytes": 2003
+    },
+    "three-LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/dist/bundle.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build snapshot and original workspace hashes in task45/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

@@ -1,0 +1,83 @@
+{
+  "entry": "gilded-tankard-loft-opus",
+  "method": "Actual frozen scene in existing host opaque sandbox; authored default viewpoint and existing start control only. Canvas cropped/resized to 960x600 JPEG, excluding DOM chrome. No entrant source changes.",
+  "authorization": "Jordan reports Claude15/16/17 completed and authorizes screenshot previews in verified voice evidence at 2026-10-07 22:06–22:07 UTC. Sequential exact-entry background capture only; no foreground/native input or performance benchmark.",
+  "frozenHtmlSha256": "826854ac69b6ab7306f92f5d07d50c077ea52ff034e01f08a1e6b666265d7c89",
+  "output": {
+    "width": 960,
+    "height": 600,
+    "sha256": "b69a2a1549db3a36169f61b533515a0d548852d1e971854b288a008d5006bbc6",
+    "bytes": 109310
+  },
+  "sourceUnchanged": true,
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "completionStatusPreserved": "completed",
+  "availabilityBeforeCapture": "unverified",
+  "availabilityAfterCapture": "ready",
+  "runtimeErrorsObserved": false,
+  "runtimeFatalErrorsObserved": false,
+  "documentedNonfatalGeometryErrors": [],
+  "performanceBenchmark": false,
+  "interactiveRouteQa": false,
+  "foregroundInputUsed": false,
+  "capture": {
+    "id": "gilded-tankard-loft-opus",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=17&entry=gilded-tankard-loft-opus",
+    "startedAt": "2026-10-07T22:15:22.699Z",
+    "status": "captured",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "unexpectedExternalRequests": [],
+    "controls": [
+      "Click existing #start start control"
+    ],
+    "frozenHtmlSha256": "826854ac69b6ab7306f92f5d07d50c077ea52ff034e01f08a1e6b666265d7c89",
+    "hostVisibility": "visible",
+    "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+    "readyObserved": true,
+    "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+    "viewport": {
+      "width": 1280,
+      "height": 972
+    },
+    "iframeBounds": {
+      "x": 19,
+      "y": 125.4375,
+      "width": 1242,
+      "height": 776.515625
+    },
+    "capture": {
+      "quality": 0.88,
+      "canvas": {
+        "id": "",
+        "width": 1242,
+        "height": 777,
+        "cssWidth": 1242,
+        "cssHeight": 777
+      },
+      "crop": {
+        "x": 0,
+        "y": 0.375,
+        "width": 1242,
+        "height": 776.25
+      },
+      "output": {
+        "width": 960,
+        "height": 600
+      },
+      "pointerLocked": true
+    },
+    "bytes": 109310,
+    "sha256": "b69a2a1549db3a36169f61b533515a0d548852d1e971854b288a008d5006bbc6",
+    "filename": "gilded-tankard-loft-opus.jpg",
+    "capturedAt": "2026-10-07T22:15:25.275Z",
+    "viewerUnloaded": true,
+    "contextClosed": true,
+    "finishedAt": "2026-10-07T22:15:25.309Z"
+  },
+  "imageContent": "Actual frozen scene canvas. DOM overlays excluded; centered crop/rescale and JPEG compression only. No generated imagery or color edits."
+}

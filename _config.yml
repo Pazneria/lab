@@ -18,3 +18,4 @@ exclude:
   - "tests/walkable-publication-allowlist.json"
   - "docs/WALKABLE-INTEGRATION.md"
   - "docs/WALKABLE-MORNING-INTEGRATION.md"
+  - "docs/WALKABLE-CLAUDE15-17-INTEGRATION.md"

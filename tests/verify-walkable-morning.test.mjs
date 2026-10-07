@@ -8,7 +8,7 @@ import vm from 'node:vm';
 const root=new URL('../',import.meta.url),base='8cf432acad7ed30074928e49654043c64bd2a673';
 const catalog=JSON.parse(readFileSync(new URL('walkable-3d/entries.json',root)));
 const baseline=JSON.parse(execFileSync('git',['show',`${base}:walkable-3d/entries.json`],{cwd:root}));
-const ids=new Set(baseline.entries.map(e=>e.id)),fresh=catalog.entries.filter(e=>!ids.has(e.id));
+const ids=new Set(baseline.entries.map(e=>e.id)),fresh=catalog.entries.filter(e=>!ids.has(e.id)&&e.comparisonModel!=='opus');
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const launchHashes=['8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2','854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d','ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776','c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df','7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf','06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a','04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c','afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02'];
 
@@ -19,16 +19,16 @@ test('PR50 records, failures, authentic previews and old prompt versions remain 
  assert.deepEqual(catalog.promptVersions.slice(0,baseline.promptVersions.length),baseline.promptVersions);
  assert.deepEqual(catalog.entries.filter(e=>ids.has(e.id)&&e.availability==='failed').map(e=>e.id),baseline.entries.filter(e=>e.availability==='failed').map(e=>e.id));
  assert.equal(baseline.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,53);
- assert.equal(catalog.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,73);
+ assert.equal(catalog.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,76);
  const changes=execFileSync('git',['diff',base,'--name-only','--','walkable-3d/entries/'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
  assert.ok(changes.every(p=>!ids.has(p.split('/')[2])),'Existing frozen tree changed');
 });
 
 test('morning entries preserve frozen files and requested/runtime distinctions with truthful capture outcomes',()=>{
- assert.equal(fresh.length,24);assert.equal(catalog.entries.length,81);assert.equal(catalog.prompts.length,22);
+ assert.equal(fresh.length,24);assert.equal(catalog.entries.length,84);assert.equal(catalog.prompts.length,22);
  for(let scene=15;scene<=22;scene++)assert.deepEqual(fresh.filter(e=>e.promptId===String(scene)).map(e=>e.comparisonModel).sort(),['astra','luna','sol']);
  assert.equal(new Set(catalog.entries.map(e=>e.id)).size,catalog.entries.length);
- const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,73);
+ const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,76);
  assert.equal(new Set(eligible.map(e=>`${e.promptId}/${e.comparisonModel}`)).size,eligible.length);
  for(const e of fresh){
   assert.ok(Number(e.promptId)>=15&&Number(e.promptId)<=22);

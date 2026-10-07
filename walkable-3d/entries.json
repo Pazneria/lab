@@ -4460,6 +4460,202 @@
       "completionStatus": "completed",
       "previewCapture": "preview-capture.json",
       "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
+    },
+    {
+      "id": "pathwarden-rooms-opus",
+      "title": "The Pathwarden's Rooms",
+      "description": "An original hero’s bedroom, usable wardrobe and small map-and-work study.",
+      "promptId": "15",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (owner-reported model)",
+      "modelDisclosure": "Owner reports Claude Opus 5.5. Exact serving backend, model version and effective reasoning effort are unknown and not independently verified. Producer README claims harness reasoning-effort setting 40; independently unverified.",
+      "buildWindow": "Timing in original producer records is self-reported and not independently verified. See attributed timing record; no inferred elapsed time or deadline compliance.",
+      "interruptions": "Producer reports no user interruptions; a self-started command hung about 60 seconds and was terminated, without deadline extension.",
+      "controls": "| Input | Action |\n|---|---|\n| Mouse | Look (pointer lock; click-drag also works if pointer lock is unavailable) |\n| W A S D / ↑ ↓ | Walk; **Shift** walks faster; ← → turn |\n| C | Crouch / stand (for bedside and shelf details) |\n| R | Reset to the entrance |\n| 1 2 3 4 5 | Viewpoints: entrance, bedside, inside the wardrobe, map desk, look-back from the study |\n| F | Frame-time overlay (fps, avg / p95 / worst ms, draw calls, triangles, pixel ratio) |\n| H | Hide/show the hint line |\n| [ ] | Exposure down / up |",
+      "producerChecks": "Producer reports CPU-only geometry/texture checks and successful esbuild bundling. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry/draw-call estimates are design claims, not measured frame-time evidence.",
+      "limitations": [
+        "Actual hosted startup and authored default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer visual limitations remain in the unchanged README.",
+        "Effective backend identity, effort and actual run timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "The Pathwarden's Rooms — actual unchanged starting-view scene canvas.",
+      "archiveSha256": "018f5b980c4b9d86699b490cc2f697844d9805d41a646b87955b74af3df2c4b2",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "3b75bced7880cd9f08514edae7083b1167a5b8a7711b7fcc1640cf66ea89eedc",
+      "promptVersion": "15-claude",
+      "webgl": "WebGL2 (host startup/default view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Host startup, original entry control and authored default canvas captured only. Routes, movement, collision feel, full geometry, shaders and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "witch-cottage-opus",
+      "title": "Witch's Cottage",
+      "description": "A cozy kitchen, crowded magical workroom and little framed greenhouse.",
+      "promptId": "16",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (owner-reported model)",
+      "modelDisclosure": "Owner reports Claude Opus 5.5. Exact serving backend, model version and effective reasoning effort are unknown and not independently verified. Effective and configured effort unknown; no effort record supplied.",
+      "buildWindow": "Timing in original producer records is self-reported and not independently verified. See attributed timing record; no inferred elapsed time or deadline compliance.",
+      "interruptions": "No interruption record supplied; unknown.",
+      "controls": "| Input | Action |\n|---|---|\n| Click | Capture the mouse for mouse-look (Esc releases it). If pointer lock is unavailable, drag to look |\n| W A S D / ↑ ↓ | Walk (Shift to hurry) |\n| ← → | Turn without the mouse |\n| R | Reset to the entrance |\n| 1–6 | Viewpoints: entrance, kitchen work surface, workbench, workroom shelves, greenhouse, return view |\n| F | Frame-time readout (fps, average ms, p99 ms, draw calls, triangles) |\n| P | Cycle render scale (1.0 / min(DPR, 1.5) [default] / min(DPR, 2)) |\n| [ / ] | Exposure down / up |\n| H | Hide or show the key hints |",
+      "producerChecks": "README says no browser, GPU, screenshot or performance benchmark was run. No separate producer CPU-check receipt supplied; build files are present.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry/draw-call estimates are design claims, not measured frame-time evidence.",
+      "limitations": [
+        "Actual hosted startup and authored default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer visual limitations remain in the unchanged README.",
+        "Effective backend identity, effort and actual run timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer timelog.txt",
+          "path": "timelog.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Witch's Cottage — actual unchanged starting-view scene canvas.",
+      "archiveSha256": "aa49ccad89f5704e2e04f52de785d82e9123e7cb431accad83d773a4a042e364",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "12bce02056cbc2d18c9d095a7a3df12aa635236185443eb955a03ea73186ee0a",
+      "promptVersion": "16-claude",
+      "webgl": "WebGL2 (host startup/default view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Host startup, original entry control and authored default canvas captured only. Routes, movement, collision feel, full geometry, shaders and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "gilded-tankard-loft-opus",
+      "title": "The Loft Above the Gilded Tankard",
+      "description": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor.",
+      "promptId": "17",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (owner-reported model)",
+      "modelDisclosure": "Owner reports Claude Opus 5.5. Exact serving backend, model version and effective reasoning effort are unknown and not independently verified. Producer README says effort setting was not shown; unknown.",
+      "buildWindow": "Timing in original producer records is self-reported and not independently verified. See attributed timing record; no inferred elapsed time or deadline compliance.",
+      "interruptions": "Producer reports none; no subagents or other models, and no persistent process started.",
+      "controls": "| Input | Action |\n|---|---|\n| Mouse | Look. Click the view to capture the mouse and Esc to release it. Dragging also works. |\n| W A S D / Arrow keys | Walk |\n| Shift | Walk faster |\n| Q / E | Turn without the mouse |\n| R | Reset to the entrance |\n| H | Toggle the help overlay |\n| F | Toggle the frame-time panel (fps, avg/p99/max ms, draw calls, triangles) |\n| C | Toggle object captions |\n| P | Cycle render scale (default min(DPR,1.5) → 1.0 → min(DPR,2)) |\n| [ / ] | Lower or raise exposure |",
+      "producerChecks": "Producer reports successful esbuild bundle, CPU-only scene construction and collision-circle flood fill using a canvas stub. No producer browser, visual, GPU or frame-rate checks.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry/draw-call estimates are design claims, not measured frame-time evidence.",
+      "limitations": [
+        "Actual hosted startup and authored default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer visual limitations remain in the unchanged README.",
+        "Effective backend identity, effort and actual run timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "The Loft Above the Gilded Tankard — actual unchanged starting-view scene canvas.",
+      "archiveSha256": "3a92bac8866995c92d8d624e5cb0ed19798c3ae79b853ac1db4c905d5bd887b9",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "826854ac69b6ab7306f92f5d07d50c077ea52ff034e01f08a1e6b666265d7c89",
+      "promptVersion": "17-claude",
+      "webgl": "WebGL2 (host startup/default view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Host startup, original entry control and authored default canvas captured only. Routes, movement, collision feel, full geometry, shaders and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     }
   ],
   "prompts": [
@@ -5002,6 +5198,33 @@
       "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
       "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
       "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "15-claude",
+      "promptId": "15",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-15-claude.txt",
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "source": "Exact task44 launch TXT verified against original handoff receipt and task43 canonical hash. Owner reports completed run.",
+      "note": "Exact launch bytes preserved; receipt preparation time is not an implementation start. Delivery itself was not independently observed."
+    },
+    {
+      "id": "16-claude",
+      "promptId": "16",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-16-claude.txt",
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "source": "Exact task44 launch TXT verified against original handoff receipt and task43 canonical hash. Owner reports completed run.",
+      "note": "Exact launch bytes preserved; receipt preparation time is not an implementation start. Delivery itself was not independently observed."
+    },
+    {
+      "id": "17-claude",
+      "promptId": "17",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-17-claude.txt",
+      "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
+      "source": "Exact task44 launch TXT verified against original handoff receipt and task43 canonical hash. Owner reports completed run.",
+      "note": "Exact launch bytes preserved; receipt preparation time is not an implementation start. Delivery itself was not independently observed."
     }
   ]
 }
