@@ -13,37 +13,51 @@ const validPoint = (value, max) => Number.isFinite(value) && value >= 0 && value
 // Both hosts use the same rubric and existing browser-local record format.
 export function createGradeForm(entry, {getRecord, refresh, save, isPersistent, onChange = () => {}}) {
   refresh();
-  const form = el('form', undefined, 'grade-form');
+  const form = el('form', undefined, 'grade-form rubric-surface');
   let dirty = false;
   form.addEventListener('input', () => { dirty = true; });
-  form.append(el('h4', "Jordan's rubric"), el('p', 'Your points and notes. Independent of pairwise votes. Blank fields stay ungraded.', 'small muted'));
+  form.append(el('h4', 'Your scene grade'), el('p', 'A considered score, at your pace. Saved privately in this browser. Blank fields stay ungraded.', 'rubric-intro'));
   const fields = el('div', undefined, 'grade-fields'), old = getRecord().grades[entry.id] || {};
+  const controls = [];
+  const descriptions = {visuals:'Composition, atmosphere and visual craft.',performance:'Smooth movement and stability while exploring.',fulfillment:'How fully the scene delivers the prompt.'};
   for (const [name, labelText, max] of dimensions) {
-    const label = el('label', `${labelText} / ${max}`), input = el('input');
+    const row = el('div', undefined, 'score-row'), label = el('label', labelText, 'score-label'), input = el('input');
     input.type = 'number'; input.name = name; input.min = '0'; input.max = String(max); input.step = '.5';
+    input.placeholder = '—'; input.setAttribute('aria-label', `${labelText}, 0 to ${max} points`);
     input.value = validPoint(old[name], max) ? old[name] : '';
-    label.append(input); fields.append(label);
+    const value = el('span', undefined, 'score-value'); value.append(input,el('span', `/ ${max}`)); label.append(value);
+    const slider = el('input'); slider.type = 'range'; slider.min = '0'; slider.max = String(max); slider.step = '.5';
+    slider.setAttribute('aria-label', `${labelText} score slider, 0 to ${max} points`);
+    const hint = el('p', descriptions[name], 'score-description');
+    const sync = () => {const blank=input.value===''; row.dataset.ungraded=String(blank);slider.value=blank?'0':input.value;slider.setAttribute('aria-valuetext',blank?'Unscored':`${input.value} of ${max} points`);input.setAttribute('aria-invalid',String(!blank&&!input.validity.valid));};
+    input.addEventListener('input',sync); slider.addEventListener('input',()=>{input.value=slider.value;input.dispatchEvent(new Event('input',{bubbles:true}));});
+    row.append(label,hint,slider);fields.append(row);controls.push(sync);sync();
   }
   form.append(fields);
-  const noteLabel = el('label', 'Inspection notes', 'small'), notes = el('textarea');
+  const summary = el('div', undefined, 'rubric-total');summary.setAttribute('aria-live','polite');form.append(summary);
+  const updateTotal=()=>{const complete=dimensions.every(([name,,max])=>form.elements[name].value!==''&&validPoint(Number(form.elements[name].value),max));summary.textContent=complete?`${dimensions.reduce((sum,[name])=>sum+Number(form.elements[name].value),0)} / 100 · Total score`:'45 / 35 / 20 · Enter all three scores for a total';};
+  form.addEventListener('input',updateTotal);
+  const noteLabel = el('label', 'Notes · optional', 'rubric-notes'), notes = el('textarea');
   notes.name = 'notes'; notes.maxLength = 8000; notes.placeholder = 'What held up while walking? What did you notice?';
   notes.value = typeof old.notes === 'string' ? old.notes : ''; noteLabel.append(notes); form.append(noteLabel);
-  const actions = el('div', undefined, 'actions'), submit = el('button', 'Save grade'), clear = el('button', 'Clear grade', 'quiet');
+  const actions = el('div', undefined, 'actions'), submit = el('button', 'Save private grade'), clear = el('button', 'Clear grade', 'quiet');
   submit.type = 'submit'; clear.type = 'button'; actions.append(submit, clear); form.append(actions);
   const publicUrl=publicRubricUrl(entry);
-  if(publicUrl){const publicLink=el('a','Submit a separate public rubric');publicLink.href=publicUrl;publicLink.target='_blank';publicLink.rel='noopener';form.append(publicLink,el('p','Public rubric submission requires sign-in and a new explicit score entry. These private points and notes are not uploaded. Quick A/B voting stays anonymous.','small muted'));}
+  if(publicUrl){const publicSection=el('div',undefined,'rubric-public');const publicLink=el('a','Grade publicly ↗');publicLink.href=publicUrl;publicLink.target='_blank';publicLink.rel='noopener';publicSection.append(publicLink,el('p','A separate signed-in submission. Your private points and notes stay here. Public rubric scores are separate from A/B Elo.','small muted'));form.append(publicSection);}
   const result = el('p', undefined, 'grade-result'); result.setAttribute('role', 'status'); form.append(result);
   const updateResult = () => {
     const g = getRecord().grades[entry.id], complete = g && dimensions.every(([name,, max]) => validPoint(g[name], max));
+    result.dataset.state = g ? 'saved' : 'blank'; submit.textContent = 'Save private grade';
     result.textContent = (g ? complete ? `Your grade: ${dimensions.reduce((sum, [name]) => sum + g[name], 0)} / 100. ` : 'Partial grade or notes saved. ' : 'Not graded. ') + (isPersistent() ? 'Saved in this browser only.' : 'Session only; browser storage is unavailable.');
   };
-  updateResult();
+  form.addEventListener('input', () => {result.dataset.state='editing';result.textContent='Unsaved changes. Save when you are ready.';submit.textContent='Save changes';});
+  updateResult();updateTotal();
   form.refreshGrade = () => {
     if (dirty) return; // Preserve an in-progress edit in either copy of the sheet.
     const saved = getRecord().grades[entry.id] || {};
     for (const [name,, max] of dimensions) form.elements[name].value = validPoint(saved[name], max) ? saved[name] : '';
     notes.value = typeof saved.notes === 'string' ? saved.notes : '';
-    updateResult();
+    controls.forEach(sync=>sync());updateTotal();updateResult();
   };
   form.addEventListener('submit', event => {
     event.preventDefault(); if (!form.reportValidity()) return;
@@ -55,7 +69,7 @@ export function createGradeForm(entry, {getRecord, refresh, save, isPersistent, 
   clear.addEventListener('click', () => {
     refresh(); delete getRecord().grades[entry.id];
     for (const input of form.querySelectorAll('input,textarea')) input.value = '';
-    dirty = false; save(); updateResult(); onChange();
+    dirty = false; controls.forEach(sync=>sync());updateTotal();save(); updateResult(); onChange();
   });
   return form;
 }

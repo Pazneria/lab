@@ -1,7 +1,7 @@
 import {createViewer} from '../../walkable-3d/assets/viewer.js';
 import {comparisonLayout,comparisonTargetAt,fitPreview} from './interaction.mjs';
 import {createGradeForm,renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
-import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from '../../walkable-3d/assets/comparisons.js';
+import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable} from '../../walkable-3d/assets/comparisons.js';
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
@@ -20,7 +20,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   const bothOpened=()=>pair().length===2&&pair().every(e=>openedThisComparison.has(e.id));
   function updateLeaderboard(){renderLeaderboard($('screen-leaderboard'),allEntries,record,persistent);}
   function gradeForm(entry){return createGradeForm(entry,{getRecord:()=>record,refresh,save,isPersistent:()=>persistent,onChange:updateLeaderboard});}
-  const viewer=createViewer({base,gradeForm,gradeLabelFor:entry=>`${pair()[0]?.id===entry.id?'A':'B'} / ${entry.title} — ${!blind||revealed?entry.requestedConfiguration:'Model hidden until reveal'}`,onOpen:suspend,onReady(entry){if(pair().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();render();},onClose(){render();resume();}});
+  const viewer=createViewer({base,gradeForm,gradeLabelFor:entry=>`${pair()[0]?.id===entry.id?'A':'B'} / ${entry.title} — ${!blind||revealed?modelName(entry):'Model hidden until reveal'}`,onOpen:suspend,onReady(entry){if(pair().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();render();},onClose(){render();resume();}});
   function box(x,y,w,h,label,disabled=false){ctx.fillStyle=disabled?'#41584b':'#f3efdf';ctx.fillRect(x,y,w,h);ctx.fillStyle=disabled?'#bec9be':'#1c3c30';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+8);}
   function render(){
     const current=pair(),both=bothOpened(),hideModel=blind&&!revealed;
@@ -28,14 +28,14 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     const vote=record.preferences[pairKey()]?.choice;
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
-    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Autumn station').toUpperCase()}  /  STATIC PREVIEWS  /  CLICK TO EXPLORE`,40,82);
+    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Autumn station').toUpperCase()}  /  CLICK TO EXPLORE`,40,82,920);
     previewRects=[];
     for(let slot=0;slot<2;slot++){
       const bounds=comparisonLayout.previews[slot],x=bounds.x,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,bounds.y,bounds.width,bounds.height);
       const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const fit=fitPreview(bounds,img.naturalWidth,img.naturalHeight);previewRects[slot]=fit;ctx.drawImage(img,fit.x,fit.y,fit.width,fit.height);}
       else if(e?.previewAvailable===false){ctx.fillStyle='#f6f0dc';ctx.font='28px Georgia';ctx.fillText('Preview not captured',x+32,232,510);ctx.font='18px Arial';ctx.fillText('Click to inspect the frozen build.',x+32,271,510);ctx.fillText('Host runtime QA has not been run.',x+32,302,510);}
       ctx.fillStyle='#f6f0dc';ctx.font='25px Georgia';ctx.fillText(e?`${slot?'B':'A'}  /  ${e.title}`:'Awaiting a finished build',x,461,565);
-      ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?((e.completionStatus==='partial'?'Partial handoff · ':'')+(hideModel?'Model label hidden · Desktop keyboard + mouse':e.requestedConfiguration)+(e.availability==='unverified'?' · Runtime unverified':'')):'A real pair needs two entries.',x,491,565);
+      ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?(hideModel?'Model label hidden · Desktop keyboard + mouse':modelName(e)):'A real pair needs two entries.',x,491,565);
     }
     for(const bounds of comparisonLayout.buttons)box(bounds.x,bounds.y,bounds.width,bounds.height,bounds.label,
       bounds.kind==='previous'?index===0:bounds.kind==='next'?!canShuffle:bounds.kind==='vote'?!both:false);
@@ -51,7 +51,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
       button.type='button';button.dataset.screenOpen=entry.id;button.setAttribute('aria-label',`Open entry ${slot?'B':'A'}: ${entry.title}`);
       if(entry.previewAvailable===false){const placeholder=document.createElement('span');placeholder.className='screen-placeholder';placeholder.textContent='Preview not captured. Open the frozen build to inspect it.';button.append(placeholder);}
       else{img.src=new URL(`entries/${entry.id}/preview.jpg`,base);img.alt=entry.previewAlt;img.width=960;img.height=600;button.append(img);}
-      button.addEventListener('click',()=>open(entry));h.textContent=`${slot?'B':'A'} / ${entry.title}`;model.textContent=(entry.completionStatus==='partial'?'Partial handoff · ':'')+(hideModel?'Model label hidden':entry.requestedConfiguration)+(entry.availability==='unverified'?' · Runtime unverified':'');card.dataset.preferred=String(revealed&&vote===entry.id);card.dataset.tied=String(revealed&&vote==='tie');details.href=new URL(`?entry=${entry.id}#compare-title`,base);details.textContent='Build inspector & personal grade';card.append(button,h,model,details);return card;});
+      button.addEventListener('click',()=>open(entry));h.textContent=`${slot?'B':'A'} / ${entry.title}`;model.textContent=hideModel?'Model label hidden':modelName(entry);card.dataset.preferred=String(revealed&&vote===entry.id);card.dataset.tied=String(revealed&&vote==='tie');details.href=new URL(`?entry=${entry.id}#compare-title`,base);details.textContent='Build inspector & personal grade';card.append(button,h,model,details);return card;});
     $('screen-cards').replaceChildren(...cards);
     for(const button of document.querySelectorAll('[data-screen-choice]'))button.disabled=!both;
     $('screen-vote').textContent=error||(revealed?'Models revealed. Choose Next comparison when ready.':both?'Both opened for this comparison. Choose your preference.':'Open both scenes in this comparison to vote.')+(vote?(vote==='tie'?' Saved preference: tie.':vote==='skip'?' Previously skipped.':` Saved preference: entry ${current[0]?.id===vote?'A':'B'}.`):'');
@@ -61,7 +61,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     $('screen-reveal').hidden=!revealed;$('screen-reveal-next').hidden=!revealed;$('screen-reveal-next').disabled=!canShuffle;
     if(revealed){
       const result=document.createElement('strong');result.textContent=vote==='tie'?'Your choice: tie':current.some(e=>e.id===vote)?`Your choice: ${vote===current[0].id?'A':'B'}`:'Choice cleared. Models remain revealed.';
-      $('screen-reveal').replaceChildren(result,...current.map((entry,slot)=>{const p=document.createElement('p');p.textContent=`${slot?'B':'A'} / ${entry.title} — ${entry.requestedConfiguration}`;return p;}));
+      $('screen-reveal').replaceChildren(result,...current.map((entry,slot)=>{const p=document.createElement('p');p.textContent=`${slot?'B':'A'} — ${modelName(entry)}`;return p;}));
     }
     updateLeaderboard();
     changed(source);
@@ -106,14 +106,17 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
   function hitTest(point){
     const bounds=comparisonLayout.previews.map((rect,slot)=>previewRects[slot]||(pair()[slot]?.previewAvailable===false?rect:null));
-    const hit=comparisonTargetAt(point,bounds);if(!hit)return null;
+    if(!point||point.x<0||point.y<0||point.x>=comparisonLayout.width||point.y>=comparisonLayout.height||!Number.isFinite(point.x)||!Number.isFinite(point.y))return null;
+    const hit=comparisonTargetAt(point,bounds)||{kind:'inspect'};
     if(hit.kind==='entry'){const entry=pair()[hit.slot];return entry?{...hit,key:'entry:'+entry.id}:null;}
     if(hit.kind==='vote'&&!bothOpened()||hit.kind==='previous'&&index===0||hit.kind==='next'&&!canShuffle)return null;
     return {...hit,key:hit.kind+(hit.choice?':'+hit.choice:'')};
   }
   function activate(point){const hit=hitTest(point);if(!hit)return;
-    if(hit.kind==='entry')open(pair()[hit.slot]);else if(hit.kind==='previous')step(-1);else if(hit.kind==='next')nextComparison();else if(hit.kind==='vote')vote(hit.choice);else if(hit.kind==='inspect')inspect();
+    if(hit.kind==='entry')open(pair()[hit.slot]);else if(hit.kind==='previous')step(-1);else if(hit.kind==='next')nextComparison();else if(hit.kind==='vote')vote(hit.choice);else if(hit.kind==='inspect')inspect();else if(hit.kind==='leaderboard')showLeaderboard();
   }
+  function showLeaderboard(){inspect();const target=$(publicVotingEnabled?'screen-public-leaderboard':'screen-leaderboard');target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'auto'});}
+  $('screen-leaderboard-button').addEventListener('click',showLeaderboard);
   subscribePublicJudgments(()=>renderPublicLeaderboard($('screen-public-leaderboard')));
   renderPublicLeaderboard($('screen-public-leaderboard'));loadPublicLeaderboard();
   render();

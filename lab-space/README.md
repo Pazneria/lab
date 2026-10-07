@@ -108,3 +108,35 @@ The common host viewer lives in `walkable-3d/assets/viewer.js`. The screen adds 
 The entrance starts on the central axis facing the Worlds display. Its shared placement record in `navigation.mjs` controls the display, collision footprint and approach point. The original catalog bench and its props are rotated together into the east gallery, facing the hall; their transformed footprint and approach point use the same record. The home exit and architectural volumes remain in place. The orientation inset reflects both exhibit locations. A layout version prevents an old room-position history record from restoring a visitor behind the relocated display.
 
 The Lab keeps its existing render-on-demand behavior, low-power renderer preference and pixel cap. The display contains stills; a submitted scene starts only after an explicit open. The parent room pauses while the isolated viewer is active and resumes after the child is unloaded. Recorded failures are excluded from random playable pairs.
+
+## Board and grading refinements (2026-10-07)
+
+The visible Worlds board uses its real plane and narrow frame for ray picking,
+with CSS pointer coordinates converted to normalized camera coordinates and the
+face UVs converted to the drawn 1280 × 600 canvas. Board whitespace opens
+Compare worlds; actual preview-image rectangles open the corresponding scene.
+Disabled votes remain disabled. Gaps outside the physical board, its cabinet,
+posts, and unrelated furniture never activate the exhibit. The signs above
+retain their existing shortcut. Visible geometry in front blocks picking.
+Click-versus-drag intent, approach routing, and native keyboard controls remain.
+
+Leaderboard is visible on the board beside its heading and beside the native
+A/B vote controls. It opens the comparison panel and focuses the public tally
+(or the local tally when public voting is disabled), without recording a vote.
+Reveal labels show only model names parsed from the requested configuration;
+full effort, version certainty, serving-backend and timing provenance remains
+in the build inspectors and benchmark documentation. No catalog data changed.
+
+Grade this scene uses the shared `walkable-3d/assets/rubric.css` design with
+system typography, restrained neutral surfaces, score rows, sliders and precise
+half-point number inputs. Sliders start unscored; they do not create default
+points. A live total requires all three scores. Private partial grades and
+notes, explicit save/clear, dirty revisions, and 45/35/20 limits are preserved.
+Public rubric submission remains a separate signed-in action; no private values
+or notes are uploaded and rubric scores do not affect pairwise Elo.
+
+CPU checks (no browser, renderer or scene):
+`node --experimental-vm-modules --test tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs`
+The ray tests construct the exact production board geometry and cover face UVs,
+frame edges, outside gaps, and occlusion. Rendering and real assistive-technology
+review are intentionally not claimed by these checks.

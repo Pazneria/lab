@@ -1,3 +1,4 @@
+import {modelName} from './comparisons.js';
 import {createViewer} from './viewer.js';
 import {createGradeForm,renderLeaderboard} from './judgments.js';
 import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './comparisons.js';
@@ -12,7 +13,7 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
   const openedThisComparison=new Set();
   const publicStatus=new Map();
   let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
-  const viewer=createViewer({gradeForm,gradeLabelFor:entry=>`${selected()[0]?.id===entry.id?'A':selected()[1]?.id===entry.id?'B':'Scene'} / ${entry.title} — ${modelVisible(entry)?entry.requestedConfiguration:'Model hidden until reveal'}`,onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
+  const viewer=createViewer({gradeForm,gradeLabelFor:entry=>`${selected()[0]?.id===entry.id?'A':selected()[1]?.id===entry.id?'B':'Scene'} / ${entry.title} — ${modelVisible(entry)?modelName(entry):'Model hidden until reveal'}`,onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
     const saved = JSON.parse(localStorage.getItem(key) || 'null');
@@ -59,7 +60,7 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
     for(const entry of [...selected(),...failedEntries]){
       const article=document.querySelector(`[data-entry="${entry.id}"]`);if(!article)continue;
       const visible=modelVisible(entry);
-      article.querySelector('.entry-meta span').textContent=visible?entry.requestedConfiguration:'Model label hidden';
+      article.querySelector('.entry-meta span').textContent=visible?modelName(entry):'Model label hidden';
       const definitions=article.querySelectorAll('dd');
       definitions[0].textContent=visible?entry.requestedConfiguration:'Model labels hidden until voting or an explicit reveal.';
       definitions[1].textContent=visible?entry.modelDisclosure:'Reveal labels to see the recorded configuration and model/effort disclosure.';
@@ -109,14 +110,14 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
     preview.append(el('span', '↗ Open walkable scene', 'open-label'));
     preview.addEventListener('click', () => open(entry, preview)); article.append(preview);
     const body = el('div', undefined, 'entry-body'); body.append(el('h3', titleFor(entry)), el('p', entry.description));
-    const meta = el('div', undefined, 'entry-meta'); meta.append(el('span', $('#blind').checked ? 'Model label hidden' : entry.requestedConfiguration), el('span', `Desktop · ${entry.webgl || 'WebGL 2'}`)); body.append(meta);
+    const meta = el('div', undefined, 'entry-meta'); meta.append(el('span', $('#blind').checked ? 'Model label hidden' : modelName(entry)), el('span', `Desktop · ${entry.webgl || 'WebGL 2'}`)); body.append(meta);
     article.append(body, inspector(entry)); return article;
   }
   function failedCard(entry) {
     const article=el('article',undefined,'entry failed-entry');article.dataset.entry=entry.id;
     const top=el('div',undefined,'entry-top');top.append(el('span','FROZEN RESULT','slot'),el('span','Startup failed'));article.append(top);
     const body=el('div',undefined,'entry-body');body.append(el('h3',entry.title),el('p',entry.failureSummary));
-    const meta=el('div',undefined,'entry-meta');meta.append(el('span',$('#blind').checked?'Model label hidden':entry.requestedConfiguration));body.append(meta);
+    const meta=el('div',undefined,'entry-meta');meta.append(el('span',$('#blind').checked?'Model label hidden':modelName(entry)));body.append(meta);
     body.append(el('p','No successful scene preview or walkthrough was captured. This result is excluded from working pairs. No automatic grade is assigned.','small muted'));
     const attempt=el('button','Attempt frozen build','quiet');attempt.type='button';attempt.dataset.open=entry.id;attempt.addEventListener('click',()=>open(entry,attempt));body.append(attempt);
     article.append(body,inspector(entry));return article;
@@ -152,7 +153,7 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
     document.querySelector('[data-choice="skip"]').hidden=revealed;
     if(revealed){
       const result=el('strong',choice==='tie'?'Your choice: tie':pair.some(e=>e.id===choice)?`Your choice: ${choice===pair[0].id?'A':'B'}`:'Choice cleared. Models remain revealed.');
-      $('#vote-reveal').replaceChildren(result,...pair.map((entry,index)=>el('p',`${index?'B':'A'} / ${entry.title} — ${entry.requestedConfiguration}`)),el('p','The previews and sides above are unchanged. Choose Next comparison when ready.','small'));
+      $('#vote-reveal').replaceChildren(result,...pair.map((entry,index)=>el('p',`${index?'B':'A'} — ${modelName(entry)}`)),el('p','The previews and sides above are unchanged. Choose Next comparison when ready.','small'));
     }
     updateLabels();
   }

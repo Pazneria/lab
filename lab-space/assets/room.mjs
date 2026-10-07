@@ -1,6 +1,7 @@
 import * as T from './vendor/three.module.min.js';
 import {exhibits} from './navigation.mjs';
 import {canvasPointer,firstVisibleHit} from './interaction.mjs';
+import {createWorldsBoard} from './worlds-board.mjs';
 import {roomViewport} from './viewport.mjs';
 
 // One level room in three volumes: a tall top-lit benchmark hall on the axis, a
@@ -126,11 +127,11 @@ export function createRoom(canvas,onLost){
   const comparisonSource=document.createElement('canvas');comparisonSource.width=1280;comparisonSource.height=600;
   const comparisonTexture=new T.CanvasTexture(comparisonSource);comparisonTexture.colorSpace=T.SRGBColorSpace;
   const world=exhibits.worlds;
-  const worldStand=[box(world.x,.45,world.z-.28,4.5,.9,.54,'sage'),box(world.x,.94,world.z-.28,4.5,.08,.54,'oak'),box(world.x,world.y,world.z-.07,world.width+.14,world.height+.14,.12,'dark'),text(['01 / WALKABLE WORLDS'],world.x,3.58,world.z-.02,4.4,.46),text(['OPEN A WORLD · RETURN · VOTE'],world.x,3.23,world.z-.02,4.1,.22,'#49634e')];
+  const worldStand=[box(world.x,.45,world.z-.28,4.5,.9,.54,'sage'),box(world.x,.94,world.z-.28,4.5,.08,.54,'oak'),text(['01 / WALKABLE WORLDS'],world.x,3.58,world.z-.02,4.4,.46),text(['OPEN A WORLD · RETURN · VOTE'],world.x,3.23,world.z-.02,4.1,.22,'#49634e')];
   for(const side of [-1,1])worldStand.push(box(world.x+side*2.16,2.25,world.z-.12,.06,2.65,.08,'brass'));
-  worldStand.forEach(part=>{part.userData.worlds=true;});
-  const comparisonScreen=plain(new T.PlaneGeometry(world.width,world.height),new T.MeshBasicMaterial({map:comparisonTexture}),world.x,world.y,world.z);
-  comparisonScreen.userData.comparison=true;
+  // Cabinet and posts stay furniture; only board and signs activate the exhibit.
+  worldStand.slice(2,4).forEach(part=>{part.userData.worlds=true;});
+  const board=createWorldsBoard(T,world,comparisonTexture);scene.add(board.frame,board.face);
   // Preserve the existing bench and props, rotated together into the east gallery.
   const catalogStart=scene.children.length;
   ext(-2.35,2.35,0,.12,-3.72,-2.18,'dark');
@@ -263,6 +264,7 @@ export function createRoom(canvas,onLost){
     pick(clientX,clientY){
       if(disposed)return null;
       const point=canvasPointer(clientX,clientY,canvas.getBoundingClientRect());if(!point)return null;
+      scene.updateMatrixWorld(true);camera.updateMatrixWorld(true);
       pointer.set(point.x,point.y);raycaster.setFromCamera(pointer,camera);
       // Intersect all room geometry so a wall or prop in front blocks a target.
       const first=firstVisibleHit(raycaster.intersectObjects(scene.children,false),targetMarker);

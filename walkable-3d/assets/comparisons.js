@@ -1,3 +1,5 @@
+// Clean reveal labels; full provenance remains in inspectors.
+export const modelName = entry => (entry.requestedConfiguration || entry.comparisonModel || 'Unknown model').split(/\s*(?:\/|\(|;|·)\s*/)[0].trim();
 // Host metadata groups requested models; it does not assert serving-backend identity.
 export const comparisonKey = pair => pair.map(entry => entry.id).sort().join('::');
 // Unverified means admitted for manual inspection, not independently runtime-tested.
