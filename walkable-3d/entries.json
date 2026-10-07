@@ -1650,14 +1650,14 @@
         "Desktop keyboard and mouse controls; no touch controls recorded.",
         "Windows omit glass; stylized light shafts/dust; point lamps do not cast shadows and may bleed through shelves.",
         "Outdoor hillside is an unlit decorative backdrop; abstract book-spine marks.",
-        "No supplied screenshot; host launch, navigation, collisions, shader coverage and performance remain unverified. Original automatic render-scale reductions are preserved."
+        "Post-freeze host screenshot available; startup observed. Navigation, collisions, input reliability, shader coverage and performance remain unverified. Original automatic render-scale reductions are preserved."
       ],
       "promptId": "10",
       "promptVersion": "10-base",
       "promptDisclosure": "Exact existing shared Prompt 10 base preserved unchanged. Parent confirms finished manual handoff; manual prompt delivery transcript was not independently observed.",
       "availability": "unverified",
       "completionStatus": "completed handoff",
-      "runtimeVerification": "NOT RUN. Static source, paths, hashes and syntax checked; no browser, scene, GPU or input execution.",
+      "runtimeVerification": "Post-freeze screenshot captured; startup observed. Navigation, collision, input reliability, shader coverage and performance QA remain unrun.",
       "documents": [
         {
           "label": "Original controls / benchmark record",
@@ -1666,6 +1666,10 @@
         {
           "label": "Host source audit / verification limits",
           "path": "host-verification.json"
+        },
+        {
+          "label": "Post-freeze screenshot capture",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading.hide",
@@ -1675,9 +1679,9 @@
           "src=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "preview": null,
-      "previewAlt": "Preview not captured; no supplied screenshot.",
+      "previewAvailable": true,
+      "preview": "preview.jpg",
+      "previewAlt": "Original library starting view with sunlit reading tables, green desk lamps, tall windows, walnut bookshelves and an upper gallery.",
       "webgl": "WebGL 2",
       "archiveSha256": "5de5f1bc0a7cd7305e5ec4e1caadc9f951474c8fa1ebd8ae3ce2aefa719e4294",
       "archiveKind": "Host-created preservation snapshot of finished folder; not a producer archive; retained outside Git and Pages.",

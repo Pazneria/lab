@@ -1,0 +1,48 @@
+{
+  "entry": "hillside-library-opus",
+  "capturedAt": "2026-10-07T01:09:54.402Z",
+  "sourceUrl": "https://pazneria.github.io/lab/walkable-3d/?entry=hillside-library-opus",
+  "frozenHtmlSha256": "5579f88429d6f6f0c0dcdf86b2871919784a595f1135715d2af1f2ff84f44beb",
+  "scope": "Screenshot capture only, after the submission was frozen. Startup readiness was observed. Navigation, collisions, input reliability, shader coverage and performance were not validated; no grade or vote was submitted.",
+  "sourceUnchanged": true,
+  "viewpoint": "Original authored starting viewpoint; no walking or camera adjustment.",
+  "controls": [
+    "Click existing #overlay start control"
+  ],
+  "captureMethod": "Actual scene canvas copied directly to JPEG in the existing sandboxed Lab viewer. Separate DOM overlays/model labels are absent from canvas pixels. No synthesized content, source edits, lighting adjustment or scene repair.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "canvas": {
+    "id": "c",
+    "width": 1242,
+    "height": 777,
+    "cssWidth": 1242,
+    "cssHeight": 777
+  },
+  "centerCrop": {
+    "x": 0,
+    "y": 0.375,
+    "width": 1242,
+    "height": 776.25
+  },
+  "output": {
+    "path": "preview.jpg",
+    "width": 960,
+    "height": 600,
+    "format": "JPEG",
+    "quality": 0.88,
+    "bytes": 149884,
+    "sha256": "67bfc97531f7ebdf4694b3701a4b8d9a070dfecb7d73b57c2d8ef6e8ee6b99d2"
+  },
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "runtimeErrorsObserved": [],
+  "consoleObservations": [],
+  "captureHarnessNote": "Captured with normal automation context defaults and unchanged sandbox/CSP. An earlier prompt-only navigation selected another random pair and timed out before opening a scene; its browser closed before this entry-specific retry.",
+  "completionStatusPreserved": "completed handoff",
+  "availabilityPreserved": "unverified",
+  "browserCleanup": "Sequential capture browser sessions closed; no concurrent browsers, preview server, performance suite, votes or grades."
+}
