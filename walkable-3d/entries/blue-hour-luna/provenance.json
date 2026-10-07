@@ -1,0 +1,136 @@
+{
+  "entry": "blue-hour-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\blue-hour-luna\\original.zip",
+  "archiveSha256": "3bc25f371d0790a1bf41baa285acfbb82f441863225f4aebeaac955d087789d4",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/style.css": "src/style.css",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/three.module.js": "vendor/three.module.js"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "61a56548d651c88b786a87955b8d542544f8681ae7da6ae0dddd823759ad04a6",
+        "bytes": 2143
+      },
+      "README.md": {
+        "sha256": "528e24325e2bb61628911f164de2aa1c22590587fde75198e0ae23dd955bde5a",
+        "bytes": 1468
+      },
+      "src/main.js": {
+        "sha256": "2b5d6a0d541aaf963df2e092c7c0f548fc008e40ede00174058b116a71c4dd83",
+        "bytes": 31384
+      },
+      "src/style.css": {
+        "sha256": "29c11e1a4efc5cb8387adabc41bb2c0010821cde97b331b00281902d0625a997",
+        "bytes": 4540
+      },
+      "vendor/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.core.js": {
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      "vendor/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      }
+    }
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "/src/style.css",
+          "./src/style.css"
+        ],
+        [
+          "/src/main.js",
+          "./src/main.js"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "03:59:53",
+    "stop": "04:14:54",
+    "deadline": "04:59:53",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "3aca63a790a2446798c5a4b6a9758e5ae1788a819bc0306894537077c1a388a8",
+      "bytes": 408
+    },
+    "launch-prompt.txt": {
+      "sha256": "3105a31098ecf4ff4e1e92cbb2058d292440555c6690f6c5150db2b079103d67",
+      "bytes": 6979
+    },
+    "README.md": {
+      "sha256": "528e24325e2bb61628911f164de2aa1c22590587fde75198e0ae23dd955bde5a",
+      "bytes": 1468
+    },
+    "frozen/index.html.txt": {
+      "sha256": "61a56548d651c88b786a87955b8d542544f8681ae7da6ae0dddd823759ad04a6",
+      "bytes": 2143
+    },
+    "frozen/src/main.js": {
+      "sha256": "2b5d6a0d541aaf963df2e092c7c0f548fc008e40ede00174058b116a71c4dd83",
+      "bytes": 31384
+    },
+    "frozen/src/style.css": {
+      "sha256": "29c11e1a4efc5cb8387adabc41bb2c0010821cde97b331b00281902d0625a997",
+      "bytes": 4540
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "05-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  }
+}

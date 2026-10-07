@@ -1,0 +1,77 @@
+{
+  "entry": "hearthmere-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\hearthmere-luna\\original.zip",
+  "archiveSha256": "ed17a21862b1225c46006270a05febbdcee6f8f5a9d457d2765c857d06963041",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "0748db475c8436ac3999aa32f54b3dec8775360d659c89aeec328866a425a8c0",
+        "bytes": 20457
+      },
+      "README.md": {
+        "sha256": "69a0bc8fa64077bd74e903b656bb5b9b03896cd437b81c61e2a6c1d63a090888",
+        "bytes": 2377
+      }
+    }
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:00:51",
+    "stop": "04:04:39",
+    "deadline": "05:00:51",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "03807de36483d542aa0bf5a85ed8a9dc7e9558d8523239674dd7d2e3bcae2503",
+      "bytes": 409
+    },
+    "launch-prompt.txt": {
+      "sha256": "66abbb54666f190fe4ed3987d00e7619b1cf36ba1bb34dd8fca169cedcadf442",
+      "bytes": 7098
+    },
+    "README.md": {
+      "sha256": "69a0bc8fa64077bd74e903b656bb5b9b03896cd437b81c61e2a6c1d63a090888",
+      "bytes": 2377
+    },
+    "frozen/index.html.txt": {
+      "sha256": "0748db475c8436ac3999aa32f54b3dec8775360d659c89aeec328866a425a8c0",
+      "bytes": 20457
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "10-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  }
+}

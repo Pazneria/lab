@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#252a29" />
+    <meta name="description" content="A small, walkable concrete museum for three abstract forms." />
+    <title>The Stillroom — Museum of Form</title>
+    <script type="module" crossorigin src="/assets/index-BkGHSvyd.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-OXnwtA9i.css">
+  </head>
+  <body>
+    <main id="scene" aria-label="The Stillroom 3D museum"></main>
+    <div id="vignette" aria-hidden="true"></div>
+    <div id="reticle" aria-hidden="true"><i></i></div>
+    <aside id="compass" aria-live="polite">
+      <span class="compass-rule"></span>
+      <span id="room-name">ENTRY GALLERY</span>
+      <span class="compass-dot"></span>
+    </aside>
+    <section id="intro" class="panel" aria-labelledby="title">
+      <div class="panel-mark"><span></span><span></span><span></span></div>
+      <p class="eyebrow">A walkable study in light and mass</p>
+      <h1 id="title">THE<br />STILLROOM</h1>
+      <p class="intro-copy">Three forms, held in concrete and daylight.</p>
+      <button id="enter" type="button">Enter the gallery <span>↗</span></button>
+      <div class="controls">
+        <div><b>W A S D</b><span>Move</span></div>
+        <div><b>MOUSE</b><span>Look</span></div>
+        <div><b>SHIFT</b><span>Walk faster</span></div>
+        <div><b>ESC</b><span>Pause</span></div>
+      </div>
+      <button id="reset" type="button">Reset to entrance <span>↺</span></button>
+      <p class="panel-foot">MUSEUM OF FORM <span>·</span> OPEN TO THE SKY</p>
+    </section>
+    <div id="toast" aria-live="polite"></div>
+  </body>
+</html>

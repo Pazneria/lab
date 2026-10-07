@@ -1,0 +1,168 @@
+{
+  "entry": "fieldworks-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\fieldworks-luna\\original.zip",
+  "archiveSha256": "9b421dcd10c34e5ec18234fc6e2df2c993c7b8ec270956bffbedbc0929e2e0b8",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "index.html": {
+        "sha256": "e909965cbfa8b751a6fcd5fb86e5f6e09054bd4a6e3934d377ecc2d981b56b45",
+        "bytes": 5508
+      },
+      "main.js": {
+        "sha256": "b951a636a6064e16c0edde34a341dd71df29d97b15c8f38a369ec446f8c454f4",
+        "bytes": 42088
+      },
+      "package.json": {
+        "sha256": "446c6b64300602b125f4763a5097af1ab1af4b804abbc4dbc627972fd9891aef",
+        "bytes": 194
+      },
+      "README.md": {
+        "sha256": "6b28e215640d9da0b539a68343ba50e6a6fabd4d7e44babc9f6afd09554e2773",
+        "bytes": 1600
+      },
+      "server.mjs": {
+        "sha256": "26e66270bbbebce12e087a7679b4dc0149c04c7d14574635c91243cd553f1ffa",
+        "bytes": 1254
+      }
+    }
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/main.js\"",
+          "src=\"./main.js\""
+        ],
+        [
+          "\"three\": \"/node_modules/three/build/three.module.js\"",
+          "\"three\": \"./vendor/three.module.js\", \"/node_modules/three/examples/jsm/utils/BufferGeometryUtils.js\": \"./vendor/BufferGeometryUtils.js\", \"/node_modules/three/examples/jsm/environments/RoomEnvironment.js\": \"./vendor/RoomEnvironment.js\""
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [
+    {
+      "version": "0.186.1",
+      "source": "https://registry.npmjs.org/three/-/three-0.186.1.tgz",
+      "integrity": "sha512-blFeqb49wRCSGUGj7gtpfnSGHy2lwDk94RhUmS1c/hTby70kvChbWpkJ4Pm1390LqzzvTmzgXKHPEafJwCb8jA==",
+      "packageSha256": "8cd068708ea44f2c73c944b1cead2ba2f0d5c15c8fc194e5700f4e4f4a033fe7",
+      "files": [
+        {
+          "path": "frozen\\vendor\\three.module.js",
+          "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+          "bytes": 662772
+        },
+        {
+          "path": "frozen\\vendor\\three.core.js",
+          "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+          "bytes": 1458113
+        },
+        {
+          "path": "frozen\\vendor\\BufferGeometryUtils.js",
+          "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+          "bytes": 37712
+        },
+        {
+          "path": "frozen\\vendor\\RoomEnvironment.js",
+          "sha256": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4",
+          "bytes": 4960
+        },
+        {
+          "path": "frozen\\vendor\\THREE-LICENSE.txt",
+          "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+          "bytes": 1081
+        }
+      ],
+      "status": "Exact pinned package independently available; original offline install failure preserved. HTML import-map adapter resolves unchanged absolute addon imports."
+    }
+  ],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:03:37",
+    "stop": "04:24:37",
+    "deadline": "05:03:37",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "26de0947eb419808ff90f2f0fd712032ceb04bbb9eb45025c3f1279bf8d465d0",
+      "bytes": 409
+    },
+    "launch-prompt.txt": {
+      "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
+      "bytes": 7738
+    },
+    "README.md": {
+      "sha256": "6b28e215640d9da0b539a68343ba50e6a6fabd4d7e44babc9f6afd09554e2773",
+      "bytes": 1600
+    },
+    "frozen/index.html.txt": {
+      "sha256": "e909965cbfa8b751a6fcd5fb86e5f6e09054bd4a6e3934d377ecc2d981b56b45",
+      "bytes": 5508
+    },
+    "frozen/main.js": {
+      "sha256": "b951a636a6064e16c0edde34a341dd71df29d97b15c8f38a369ec446f8c454f4",
+      "bytes": 42088
+    },
+    "frozen/vendor/BufferGeometryUtils.js": {
+      "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+      "bytes": 37712
+    },
+    "frozen/vendor/RoomEnvironment.js": {
+      "sha256": "55f466192cc84298755a424c5e040345006b2ee1455589b3b54126c2ea4123f4",
+      "bytes": 4960
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+      "bytes": 1458113
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+      "bytes": 662772
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "11-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/vendor/BufferGeometryUtils.js",
+      "frozen/vendor/RoomEnvironment.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  }
+}

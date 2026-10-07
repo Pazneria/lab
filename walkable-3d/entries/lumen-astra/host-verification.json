@@ -1,0 +1,10 @@
+{
+  "id": "lumen-astra",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "scope": "Source/runtime hash equality, JS parsing, HTML asset references and disclosed adapter resolution passed. No execution or rendering.",
+  "sourceUnchanged": true,
+  "preview": "Not supplied or captured",
+  "grade": null,
+  "ownedProcesses": "Finite CPU commands completed; no browser/server/watcher"
+}

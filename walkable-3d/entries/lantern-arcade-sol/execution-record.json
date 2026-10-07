@@ -1,0 +1,28 @@
+{
+  "entry": "Lantern Arcade",
+  "firstImplementation": "2026-10-07T04:00:37.6365812+00:00",
+  "deadline": "2026-10-07T05:00:37.6365812+00:00",
+  "model": "Assigned GPT-6 model; exact runtime model identifier is not exposed in the provided context",
+  "reasoningEffort": "Not exposed in the provided context",
+  "interruptions": [],
+  "restrictions": "No browser, server, renderer, GPU test, benchmark, external models or subagents",
+  "actualStop": "2026-10-07T04:30:07.2913960+00:00",
+  "elapsedSeconds": 1769.655,
+  "checks": {
+    "syntax": "passed",
+    "layout": "passed: 1125 route samples, all five cabinet fronts, room boundaries and counter opening",
+    "geometry": "passed: 51948 triangles, 163 opaque batches, 195 total meshes, 1288 source meshes, finite coordinates, normals and UVs",
+    "sightlines": "passed: all five screen centers plus feature marquee from entrance",
+    "productionBuild": "passed: Vite 7.1.7",
+    "archive": "verified: 158229 bytes, build index, JS, CSS, static launcher and README",
+    "browserVisualInteractivePerformance": "not performed, per execution conditions"
+  },
+  "processCleanup": "All dependency/build/check tool sessions ended. Final read-only process scan found zero Node/esbuild processes referencing this entry. No server, watcher, browser, screenshot or benchmark process was started. No unrelated process was terminated.",
+  "executionIssues": [
+    "Initial npm registry access was restricted; approved dependency installation succeeded.",
+    "Default Vite config bundler hit filesystem restrictions; native config loader succeeded.",
+    "Initial geometry budget check found 219 meshes; shared materials reduced the final total to 195.",
+    "Exact model identifier and reasoning-effort metadata were unavailable in the supplied context and environment."
+  ],
+  "suggestedLaunchAddress": "http://127.0.0.1:4317/ (not running)"
+}

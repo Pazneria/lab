@@ -1,0 +1,162 @@
+{
+  "entry": "lantern-arcade-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\lantern-arcade-sol\\original.zip",
+  "archiveSha256": "086776b3f6534304fa053d557f7ebabecabd0d9cec1076c5503600089aca9d4c",
+  "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-BX6GUm9t.js": "dist/assets/index-BX6GUm9t.js",
+      "frozen/assets/index-Coy1xZAw.css": "dist/assets/index-Coy1xZAw.css"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "eaf03774d9dbf16c693782104ea727678fbd45aea9c7dfc602111c2786e5f5ba",
+        "bytes": 38
+      },
+      "checks/geometry.mjs": {
+        "sha256": "61dbd0d0952a4c1588c958e8d24cee7950d1702a11622f703f7923df4253a037",
+        "bytes": 2937
+      },
+      "checks/layout.mjs": {
+        "sha256": "0812e712cde1bbf0c7f48345c6e13b4be107f56d85cb804b51a26318482c0f52",
+        "bytes": 1389
+      },
+      "dist/assets/index-BX6GUm9t.js": {
+        "sha256": "69b3018c7e64d1cc36cbbaed662e909d533efe784a57f8fc6b4ffb080b5d8757",
+        "bytes": 562747
+      },
+      "dist/assets/index-Coy1xZAw.css": {
+        "sha256": "bd0c2e5aee2bf2b0f7b2179568f8dd87288d918da587051819cd19b07696264c",
+        "bytes": 3199
+      },
+      "dist/index.html": {
+        "sha256": "68cf06905a0609d5bb334af6e36f53f245536f4fcc2b555af0bc983d69910eab",
+        "bytes": 1873
+      },
+      "execution-record.json": {
+        "sha256": "7a28ec5ecfc43a889c4c2161c6c17a1115a1cc21f5472d08452283917144c636",
+        "bytes": 1919
+      },
+      "index.html": {
+        "sha256": "5682bb69bf076bdc89274d42dec9aa164c1805554fee5e707339b6ad2e097085",
+        "bytes": 1772
+      },
+      "package-lock.json": {
+        "sha256": "4ce53910f2ed3fb09c1983a8f9d309df4bfcfd507f55510d5894ba55d649182b",
+        "bytes": 35188
+      },
+      "package.json": {
+        "sha256": "bfb78cbc8d5eb079d16c6d4aa94f5391acb6f5d9d7b10cd8624ba4ad19b725d5",
+        "bytes": 586
+      },
+      "README.md": {
+        "sha256": "97027f11af03e0f67cfe1cc8a8f73eaf08f6605f6331f2e2bf40f6aa773900cf",
+        "bytes": 6678
+      },
+      "serve.mjs": {
+        "sha256": "b78ea17cc367e7ff7280ca3384fa50225435b5525c17fb92cc838d7d0da6d9d4",
+        "bytes": 2131
+      },
+      "src/art.js": {
+        "sha256": "173948deaf189f15adb589735ed7391d49ff7455a70937f90ae533543f20d235",
+        "bytes": 19060
+      },
+      "src/explore.js": {
+        "sha256": "6adaf16f8f001bf4544b71e99fa0dda856e459f307e8a0534a16594d475992a5",
+        "bytes": 3927
+      },
+      "src/layout.js": {
+        "sha256": "a380048fe52fd4b1845c63eec16e34d8f107f009233ae207b37dc1e9f01b9ec1",
+        "bytes": 1756
+      },
+      "src/main.js": {
+        "sha256": "e53ef8a43edb558352da60beae18a94e4eeebc407aea0c5025abe9fa646ccfa7",
+        "bytes": 4388
+      },
+      "src/scene.js": {
+        "sha256": "b9ffd17ab08a0759df60c8ee60e371efb40a56175c5e24d3d76d127c9d3a8e00",
+        "bytes": 28725
+      },
+      "src/style.css": {
+        "sha256": "5aa45fe3db738f68f6e66d8f0b6d32e99d19ae8e0165b7fc45f4a6d1fd5081f7",
+        "bytes": 3205
+      },
+      "vite.config.js": {
+        "sha256": "e7ddb1e61c1d7f782c2fc90432aa20c3ed8a3b98be42b9a1c1167d5aaaaaf9ab",
+        "bytes": 139
+      }
+    }
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6.1 Sol / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:00:37.6365812",
+    "stop": "04:30:07.2913960",
+    "deadline": "05:00:37.6365812",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "execution-record.json": {
+      "sha256": "7a28ec5ecfc43a889c4c2161c6c17a1115a1cc21f5472d08452283917144c636",
+      "bytes": 1919
+    },
+    "host-verification.json": {
+      "sha256": "fa682ab7486e7d6e721ea3a9ed4552db64b6d8ca8e4247faf5b2e9184e64d689",
+      "bytes": 412
+    },
+    "launch-prompt.txt": {
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "bytes": 7716
+    },
+    "README.md": {
+      "sha256": "97027f11af03e0f67cfe1cc8a8f73eaf08f6605f6331f2e2bf40f6aa773900cf",
+      "bytes": 6678
+    },
+    "frozen/index.html.txt": {
+      "sha256": "68cf06905a0609d5bb334af6e36f53f245536f4fcc2b555af0bc983d69910eab",
+      "bytes": 1873
+    },
+    "frozen/assets/index-BX6GUm9t.js": {
+      "sha256": "69b3018c7e64d1cc36cbbaed662e909d533efe784a57f8fc6b4ffb080b5d8757",
+      "bytes": 562747
+    },
+    "frozen/assets/index-Coy1xZAw.css": {
+      "sha256": "bd0c2e5aee2bf2b0f7b2179568f8dd87288d918da587051819cd19b07696264c",
+      "bytes": 3199
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "12-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "execution-record.json",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/assets/index-BX6GUm9t.js",
+      "frozen/assets/index-Coy1xZAw.css"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  }
+}

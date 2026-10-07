@@ -1,0 +1,126 @@
+{
+  "entry": "stillroom-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\stillroom-luna\\original.zip",
+  "archiveSha256": "647fd52f9bb35f329b5df6e53f8466c0288b1709a9248debedcf822e5b41f706",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-BkGHSvyd.js": "dist/assets/index-BkGHSvyd.js",
+      "frozen/assets/index-OXnwtA9i.css": "dist/assets/index-OXnwtA9i.css"
+    },
+    "perFileSourceHashes": {
+      "dist/assets/index-BkGHSvyd.js": {
+        "sha256": "64da295ac4edac3c6097e4dc4c83a1b4c18ee681f771ee93eefec992ca601b7a",
+        "bytes": 523713
+      },
+      "dist/assets/index-OXnwtA9i.css": {
+        "sha256": "882e6fbcd39ee5b5c2e31ad8afa4b713825842fa1a11e4d7f9ae38806e850bc3",
+        "bytes": 3539
+      },
+      "dist/index.html": {
+        "sha256": "4ff65e0b07421686ae3b95ec737edc7b4cff716bc168cc8212b95865c36ca8c7",
+        "bytes": 1775
+      },
+      "index.html": {
+        "sha256": "09ec75129595c78f3202630db76be8dd3d0f270ad5d2e31baa87f45ca8736011",
+        "bytes": 1676
+      },
+      "package-lock.json": {
+        "sha256": "b95831dba56b0bc8719bd8a40bfa43bec6306be16577ddcd37560885285eb736",
+        "bytes": 35175
+      },
+      "package.json": {
+        "sha256": "2bc0d575d83ce29a59b93923407096f939eee7cb14674d07b8829259a1fe7b23",
+        "bytes": 317
+      },
+      "README.md": {
+        "sha256": "4ab0d0f67f96cfea83bd6e1fefd48c4a70a7f9779a1d072b7498e6fd4170c8fd",
+        "bytes": 1626
+      },
+      "src/main.js": {
+        "sha256": "aa9af684cbd2c26a07c3e822197bcea07756e7ce9c727fed9fc4e388ff786568",
+        "bytes": 29701
+      },
+      "src/style.css": {
+        "sha256": "792f635f0e5e5edcf9ef99c9300cb09732221f70fe4542251c89c60b75b167d9",
+        "bytes": 4028
+      }
+    }
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:00:03",
+    "stop": "04:07:06",
+    "deadline": "05:00:03",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "host-verification.json": {
+      "sha256": "2d22126b43d05c2e0d0bcbff43a2235244734d478592da351b80230290c554ef",
+      "bytes": 408
+    },
+    "launch-prompt.txt": {
+      "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",
+      "bytes": 7098
+    },
+    "README.md": {
+      "sha256": "4ab0d0f67f96cfea83bd6e1fefd48c4a70a7f9779a1d072b7498e6fd4170c8fd",
+      "bytes": 1626
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4ff65e0b07421686ae3b95ec737edc7b4cff716bc168cc8212b95865c36ca8c7",
+      "bytes": 1775
+    },
+    "frozen/assets/index-BkGHSvyd.js": {
+      "sha256": "64da295ac4edac3c6097e4dc4c83a1b4c18ee681f771ee93eefec992ca601b7a",
+      "bytes": 523713
+    },
+    "frozen/assets/index-OXnwtA9i.css": {
+      "sha256": "882e6fbcd39ee5b5c2e31ad8afa4b713825842fa1a11e4d7f9ae38806e850bc3",
+      "bytes": 3539
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "07-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/assets/index-BkGHSvyd.js",
+      "frozen/assets/index-OXnwtA9i.css"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  }
+}

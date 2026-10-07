@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11191e" />
+    <title>Lantern — a neighborhood arcade</title>
+    <script type="module" crossorigin src="./assets/index-BX6GUm9t.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Coy1xZAw.css">
+  </head>
+  <body>
+    <div id="scene" aria-label="Explorable three-dimensional neighborhood arcade"></div>
+    <header class="wordmark"><span class="brand-orbit">◒</span><div>LANTERN<small>NEIGHBORHOOD ARCADE · AFTER HOURS</small></div></header>
+    <div id="veil">
+      <main id="welcome" class="card">
+        <div class="eyebrow">A SMALL PLACE FOR BIG NIGHTS</div>
+        <h1>One more token.</h1>
+        <p>Five cabinets. A quiet counter.<br />Take your time finding your favorite.</p>
+        <button id="enter">Step inside <span>↗</span></button>
+        <div class="key-guide"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> move <i>·</i> mouse to look</div>
+        <div class="fine-guide">Shift — walk faster &nbsp; / &nbsp; Esc — release mouse &nbsp; / &nbsp; R — entrance</div>
+        <div id="loading">Warming up the cabinets…</div>
+      </main>
+    </div>
+    <footer id="hud">
+      <div class="hud-guide"><span class="status-dot"></span><span id="hint">Click “Step inside” to explore</span></div>
+      <div class="hud-actions"><button id="quality" title="Toggle rendering resolution">Quality: balanced</button><button id="reset" title="Return to the entrance (R)">Reset view <span>R</span></button><button id="help" title="Controls and pause">Controls <span>?</span></button></div>
+    </footer>
+    <aside id="metrics" hidden></aside>
+    <div id="crosshair" hidden></div>
+    <div id="error" hidden></div>
+  </body>
+</html>

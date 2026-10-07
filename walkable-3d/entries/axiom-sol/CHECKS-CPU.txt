@@ -1,0 +1,29 @@
+
+> axiom-demonstration-lab@1.0.0 check
+> node --check src/main.js && node --check src/scene.js && node --check src/graphics.js && node scripts/check-layout.mjs && node scripts/check-geometry.mjs
+
+PASS: entrance, collision, full instrument orbit, and sampled inspection route (CPU-only).
+{
+  "status": "PASS",
+  "check": "CPU-only geometry construction with mocked drawing calls",
+  "triangles": 50548,
+  "mergedMeshes": 25,
+  "materials": 20,
+  "lights": 6,
+  "totalTriangles": 50682,
+  "totalMeshes": 92,
+  "labelAndScreenPlanes": 67,
+  "transparentMeshes": 11,
+  "bounds": {
+    "min": [
+      -12.330000023841858,
+      -0.1599999964237213,
+      -8.520000457763672
+    ],
+    "max": [
+      12.319999694824219,
+      4.71999979019165,
+      8.319999694824219
+    ]
+  }
+}
