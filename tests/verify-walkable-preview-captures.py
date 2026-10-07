@@ -39,5 +39,5 @@ for entry in catalog['entries']:
     assert not record['runtimeErrorsObserved']
     assert any(d['path']=='preview-capture.json' for d in entry['documents'])
     captured+=1;total+=len(data)
-assert captured==15
+assert captured==16
 print(f'PASS: {captured} capture records and genuine JPEG dimensions/hashes; {total:,} bytes total; {pending} explicitly disclosed pending previews. Failed entries retain their failure state.')

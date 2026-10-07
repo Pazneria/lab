@@ -66,6 +66,14 @@
     "frozen/assets/index-BOOL8BFv.js": {
       "bytes": 531260,
       "sha256": "308ac5626f23426f07f9e518fa62e169520a0c49a4e1c6d2a3ae902e716a2d92"
+    },
+    "preview.jpg": {
+      "bytes": 149884,
+      "sha256": "67bfc97531f7ebdf4694b3701a4b8d9a070dfecb7d73b57c2d8ef6e8ee6b99d2"
+    },
+    "preview-capture.json": {
+      "bytes": 2068,
+      "sha256": "c5937b3ca0bd0c8af1461543487ab0d1e8af2c690b0912397fcf4467c2ea5aaf"
     }
   },
   "publication": {
@@ -75,8 +83,11 @@
       "VITE-LICENSE.txt",
       "frozen/assets/index-BOOL8BFv.js",
       "frozen/index.html.txt",
-      "host-verification.json"
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": []
-  }
+  },
+  "previewCapture": "preview-capture.json"
 }
