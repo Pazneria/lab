@@ -9,17 +9,18 @@ const catalog=JSON.parse(readFileSync(new URL('walkable-3d/entries.json',root)))
 const ids=['pathwarden-rooms-opus','witch-cottage-opus','gilded-tankard-loft-opus'];
 const hash=b=>createHash('sha256').update(b).digest('hex');
 test('all 81 prior records, frozen trees, prompt definitions and original versions remain unchanged',()=>{
- assert.deepEqual(catalog.entries.filter(e=>!ids.includes(e.id)),baseline.entries);
+ const priorIds=new Set(baseline.entries.map(e=>e.id));
+ assert.deepEqual(catalog.entries.filter(e=>priorIds.has(e.id)),baseline.entries);
  assert.deepEqual(catalog.prompts,baseline.prompts);
  assert.deepEqual(catalog.promptVersions.slice(0,baseline.promptVersions.length),baseline.promptVersions);
  const paths=execFileSync('git',['diff',base,'--name-only','--','walkable-3d/entries/'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
- assert.ok(paths.every(p=>ids.includes(p.split('/')[2])));
+ assert.ok(paths.every(p=>!priorIds.has(p.split('/')[2])));
  for(const p of ['walkable-3d/assets/viewer.js','walkable-3d/assets/judgments.js','walkable-3d/assets/public-judgments.js','walkable-3d/assets/public-config.js']){
   assert.equal(readFileSync(new URL(p,root),'utf8').replaceAll('\r\n','\n'),execFileSync('git',['show',`${base}:${p}`],{cwd:root,encoding:'utf8'}));
  }
 });
 test('three owner-cleared entries preserve canonical launches, genuine captures and unknown backend/effort/timing',()=>{
- assert.equal(catalog.entries.length,84);assert.equal(catalog.entries.filter(e=>e.availability!=='failed').length,76);
+ assert.equal(catalog.entries.length,86);assert.equal(catalog.entries.filter(e=>e.availability!=='failed').length,78);
  for(const [i,id] of ids.entries()){
   const e=catalog.entries.find(e=>e.id===id),dir=new URL(`walkable-3d/entries/${id}/`,root);
   assert.equal(e.promptId,String(i+15));assert.equal(e.comparisonModel,'opus');assert.equal(e.availability,'ready');assert.equal(e.completionStatus,'completed');

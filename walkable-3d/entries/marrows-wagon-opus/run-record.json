@@ -1,0 +1,35 @@
+{
+  "id": "marrows-wagon-opus",
+  "scene": 20,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\claude-entries\\Claude20",
+  "completionClearedByOwner": true,
+  "completionEvidence": "Owner reports 'claude 18/20 are ready' in current recovery context. No independent producer transcript observed.",
+  "ownerReportedModel": null,
+  "producerReportedModel": "Claude Opus 5.5 (claude-opus-5-5)",
+  "verifiedBackendModel": null,
+  "requestedEffort": null,
+  "effectiveEffort": null,
+  "producerEffortClaim": "README claims reasoning effort 40 as configured by session/harness; independently unverified.",
+  "producerReportedTiming": {
+    "firstImplementation": "2026-10-07T22:52:32Z",
+    "deadline": "2026-10-07T23:52:32Z",
+    "stop": "2026-10-07T23:20:14Z",
+    "stopPrecision": "second"
+  },
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "interruptions": "Producer reports none; not independently verified.",
+  "producerChecks": "Producer README reports esbuild bundling and a CPU-only smoke test with DOM/WebGL stubs, route/step checks and two collision checks. No browser, GPU, headless rendering, screenshot, server or measured frame-rate check.",
+  "authority": "Original producer bytes preserved. Backend, effective effort and actual timing remain unknown; producer claims are attributed.",
+  "qa": {
+    "static": "Byte preservation, canonical hash, required runtime paths, and first-party network/storage/navigation review.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Prepared locally; no browser/GPU/screenshot capture or publication authorized in this recovery turn."
+}
