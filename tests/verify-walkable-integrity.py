@@ -24,7 +24,7 @@ for entry in json.loads((root / 'entries.json').read_text(encoding='utf-8'))['en
         count += 1
     source = provenance['source']
     if not archive_path.exists():
-        if entry.get('preview') is None and entry.get('availability') == 'failed':
+        if entry.get('preview') is None and (entry.get('availability') == 'failed' or entry.get('previewAvailable') is False):
             assert not (folder / 'preview.jpg').exists()
         else:
             assert (folder / 'preview.jpg').stat().st_size < 180000

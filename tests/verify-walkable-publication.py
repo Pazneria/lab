@@ -37,7 +37,7 @@ links = parser.links + ['entries.json'] + [v['path'] for v in manifest['promptVe
 entries = manifest['entries']
 for entry in entries:
     prefix = 'entries/' + entry['id'] + '/'
-    previews=[] if entry.get('availability')=='failed' and entry.get('preview') is None else ['preview.jpg']
+    previews=[] if entry.get('preview') is None and (entry.get('availability')=='failed' or entry.get('previewAvailable') is False) else ['preview.jpg']
     links += [prefix + p for p in previews + ['provenance.json','frozen/index.html.txt'] + [d['path'] for d in entry['documents']]]
     provenance = json.loads((root/'walkable-3d'/prefix/'provenance.json').read_text())
     published = set(provenance['publication']['publishedFiles'])

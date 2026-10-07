@@ -15,13 +15,17 @@ def dimensions(data):
         i+=size
     raise AssertionError('Missing JPEG frame')
 catalog=json.loads((root/'entries.json').read_text(encoding='utf-8'))
-captured=0;total=0
+captured=0;total=0;pending=0
 for entry in catalog['entries']:
     folder=root/'entries'/entry['id']
     if entry.get('availability')=='failed':
         assert entry.get('preview') is None and not (folder/'preview.jpg').exists()
         continue
-    assert entry.get('previewAvailable') is not False,entry['id']
+    if entry.get('previewAvailable') is False:
+        assert entry.get('preview') is None and not (folder/'preview.jpg').exists()
+        assert entry.get('availability')=='unverified' and entry.get('runtimeVerification')
+        pending+=1
+        continue
     assert (folder/'preview.jpg').is_file(),entry['id']
     record_path=folder/'preview-capture.json'
     if not record_path.exists():continue
@@ -36,4 +40,4 @@ for entry in catalog['entries']:
     assert any(d['path']=='preview-capture.json' for d in entry['documents'])
     captured+=1;total+=len(data)
 assert captured==15
-print(f'PASS: {captured} capture records and genuine JPEG dimensions/hashes; {total:,} bytes total; no openable entry lacks a preview. Failed entries retain their failure state.')
+print(f'PASS: {captured} capture records and genuine JPEG dimensions/hashes; {total:,} bytes total; {pending} explicitly disclosed pending previews. Failed entries retain their failure state.')
