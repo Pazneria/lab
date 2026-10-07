@@ -5,7 +5,7 @@ const root=path.resolve(__dirname,'..');
  const {modelName}=await import(pathToFileURL(path.join(root,'walkable-3d/assets/comparisons.js')));
  const entries=JSON.parse(fs.readFileSync(path.join(root,'walkable-3d/entries.json'),'utf8')).entries;
  const opus=entries.filter(e=>e.comparisonModel==='opus');
- for(const entry of opus)assert.equal(modelName(entry),'Claude Opus5.5');
+ for(const entry of opus)assert.equal(modelName(entry),'Claude Opus 5.5');
  assert(opus.some(e=>/medium/.test(e.requestedConfiguration)),'Known medium effort retained');
  assert(opus.some(e=>/40/.test(e.requestedConfiguration)),'Known effort40 retained');
  assert(opus.some(e=>/unknown/.test(e.requestedConfiguration)),'Unknown effort retained');
