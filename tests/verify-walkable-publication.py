@@ -19,6 +19,13 @@ def published_bytes(name):
     # Git normalizes host-authored text. Entrant trees are explicitly -text.
     return data if name.startswith('walkable-3d/entries/') else data.replace(b'\r\n',b'\n')
 assert actual == set(allow['sourceFiles']), {'unexpected': sorted(actual-set(allow['sourceFiles'])), 'missing': sorted(set(allow['sourceFiles'])-actual)}
+# GitHub Pages converts admitted Markdown; its README plugin emits index.html
+# unless a source index already exists. Keep the generated-doc list source-derived.
+generated_docs = {
+    str(pathlib.PurePosixPath(name).parent / ('index.html' if pathlib.PurePosixPath(name).name.lower() == 'readme.md' else pathlib.PurePosixPath(name).stem + '.html'))
+    for name in actual if name.lower().endswith('.md')
+} - actual
+assert set(allow['generatedFiles']) == generated_docs, 'Generated documentation allowlist differs from admitted Markdown'
 blocked = [p.relative_to(root).as_posix() for p in (root / 'walkable-3d').rglob('*') if p.is_file() and excluded(p.relative_to(root).as_posix())]
 blocked += ['scripts/serve-walkable.cjs','tests/verify-walkable.cjs','tests/verify-walkable-room.cjs','tests/verify-walkable-integrity.py','tests/verify-walkable-publication.py','tests/walkable-publication-allowlist.json','docs/WALKABLE-INTEGRATION.md','docs/WALKABLE-INTEGRATION.html']
 blocked += ['tests/verify-walkable-prompts.cjs','tests/verify-walkable-skip.cjs','tests/verify-walkable-observatories.cjs']
