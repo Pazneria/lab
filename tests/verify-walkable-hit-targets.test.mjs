@@ -69,7 +69,7 @@ async function screenFixture({placeholder=false,failedImage=false}={}){
   const drawing=new Proxy({},{get:()=>()=>{}});
   function element(){return {dataset:{},children:[],listeners:{},hidden:false,disabled:false,checked:true,
     getContext:()=>drawing,append(...children){this.children.push(...children);},replaceChildren(...children){this.children=children;},
-    setAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},close(){},showModal(){this.shown=true;},focus(){}};}
+    setAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},close(){},showModal(){this.shown=true;},focus(){this.focused=true;},scrollIntoView(){this.scrolled=true;}};}
   const byId=id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);};
   const entries=['a','b'].map((id,i)=>({id,promptId:'01',title:'Scene '+id,htmlSha256:'a'.repeat(64),comparisonModel:'model'+i,requestedConfiguration:'model'+i,...placeholder?{previewAvailable:false}:{}}));
   const context=vm.createContext({URL,URLSearchParams,console,
@@ -89,9 +89,12 @@ async function screenFixture({placeholder=false,failedImage=false}={}){
   return {api,byId,opened,entries,images,storage,ready:entry=>viewerOptions.onReady(entry)};
 }
 
-test('screen integration rejects captions, gaps, failed images and gated votes; explicit buttons still work',async()=>{
+test('the whole board opens controls while scene actions and gated votes stay precise',async()=>{
   const f=await screenFixture();assert.ok(f.api.ready);
-  for(const point of [{x:640,y:200},{x:100,y:461},{x:40,y:200},{x:420,y:540},{x:200,y:540}]){assert.equal(f.api.hitTest(point),null);f.api.activate(point);}
+  for(const point of [{x:640,y:200},{x:100,y:461},{x:40,y:200},{x:420,y:540}]){assert.equal(f.api.hitTest(point).kind,'inspect');f.api.activate(point);}
+  assert.equal(f.byId('comparison-dialog').shown,true);
+  for(const point of [{x:-1,y:200},{x:1280,y:200},{x:200,y:600},{x:200,y:-1},{x:NaN,y:200}])assert.equal(f.api.hitTest(point),null);
+  assert.equal(f.api.hitTest({x:200,y:540}),null);
   assert.equal(f.opened.length,0);
   f.api.activate({x:100,y:200});assert.deepEqual(f.opened,['a']);
   f.ready(f.entries[0]);assert.equal(f.api.hitTest({x:200,y:540}),null);
@@ -100,12 +103,37 @@ test('screen integration rejects captions, gaps, failed images and gated votes; 
   assert.equal(f.byId('screen-reveal').hidden,false);
   f.byId('screen-cards').children[1].children[0].listeners.click();assert.deepEqual(f.opened,['a','b']);
   f.byId('screen-controls').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);
-  const failed=await screenFixture({failedImage:true});assert.equal(failed.api.hitTest({x:100,y:200}),null);
+  const failed=await screenFixture({failedImage:true});assert.equal(failed.api.hitTest({x:100,y:200}).kind,'inspect');
   failed.byId('screen-cards').children[0].children[0].listeners.click();assert.deepEqual(failed.opened,['a']);
 });
 
-test('both explicit missing-preview placeholders remain clickable without broad fallback',async()=>{
+test('missing-preview placeholders open scenes and board whitespace opens controls',async()=>{
   const f=await screenFixture({placeholder:true});
   f.api.activate({x:100,y:200});f.api.activate({x:800,y:200});assert.deepEqual(f.opened,['a','b']);
-  assert.equal(f.api.hitTest({x:640,y:200}),null);assert.equal(f.api.hitTest({x:100,y:490}),null);
+  assert.equal(f.api.hitTest({x:640,y:200}).kind,'inspect');assert.equal(f.api.hitTest({x:100,y:490}).kind,'inspect');
+});
+
+import {createWorldsBoard} from '../lab-space/assets/worlds-board.mjs';
+import {exhibits} from '../lab-space/assets/navigation.mjs';
+test('actual board geometry: all face quadrants, exact UVs, frame, outside gaps and furniture occlusion',()=>{
+ const world=exhibits.worlds,{face,frame}=createWorldsBoard(T,world,null),scene=new T.Scene();scene.add(frame,face);scene.updateMatrixWorld(true);
+ const camera=new T.PerspectiveCamera(65,1.7,.08,70);camera.position.set(0,1.68,5.4);camera.lookAt(0,world.y,world.z);camera.updateMatrixWorld(true);
+ const ray=new T.Raycaster();
+ const hitAt=(x,y)=>{const pixel=new T.Vector3(x,y,world.z).project(camera);ray.setFromCamera(new T.Vector2(pixel.x,pixel.y),camera);return firstVisibleHit(ray.intersectObjects(scene.children,false));};
+ for(const u of [.001,.25,.5,.75,.999])for(const v of [.001,.25,.5,.75,.999]){
+  const hit=hitAt(world.x+(u-.5)*world.width,world.y+(v-.5)*world.height);assert.equal(hit.object,face);assert(Math.abs(hit.uv.x-u)<1e-7);assert(Math.abs(hit.uv.y-v)<1e-7);
+ }
+ assert.equal(hitAt(world.width/2+.04,world.y).object,frame);
+ for(const [x,y] of [[world.width/2+.2,world.y],[0,world.y+world.height/2+.2],[-world.width/2-.2,world.y]])assert.equal(hitAt(x,y),null);
+ const furniture=new T.Mesh(new T.BoxGeometry(.5,.5,.3),new T.MeshBasicMaterial());furniture.position.set(0,world.y,world.z+.6);scene.add(furniture);scene.updateMatrixWorld(true);
+ assert.equal(hitAt(0,world.y).object,furniture);assert.equal(furniture.userData.worlds,undefined);assert.equal(furniture.userData.comparison,undefined);
+ for(const mesh of [face,frame,furniture]){mesh.geometry.dispose();mesh.material.dispose();}
+});
+test('leaderboard works from both board and keyboard-accessible native button without a vote',async()=>{
+ const f=await screenFixture();f.api.activate({x:1100,y:75});assert.equal(f.byId('screen-leaderboard').focused,true);assert.equal(f.byId('screen-leaderboard').scrolled,true);
+ f.byId('screen-leaderboard-button').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);assert.deepEqual(f.opened,[]);assert.deepEqual(JSON.parse(f.storage.get('lab.walkable3d.judgments.v1')).preferences,{});
+});
+test('model reveal labels contain model names only; requested configuration is retained',async()=>{
+ const f=await screenFixture();f.entries[0].requestedConfiguration='Model Zero / XHIGH (backend unknown)';f.ready(f.entries[0]);f.ready(f.entries[1]);f.api.activate({x:200,y:540});
+ assert.equal(f.byId('screen-reveal').children[1].textContent,'A — Model Zero');assert.equal(f.byId('screen-reveal').children[2].textContent,'B — model1');assert.equal(f.entries[0].requestedConfiguration,'Model Zero / XHIGH (backend unknown)');
 });

@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../walkable-3d/assets/judgments.css">
   <link rel="stylesheet" href="assets/viewport.css">
   <script type="module" src="assets/space.js"></script>
+  <link rel="stylesheet" href="../walkable-3d/assets/rubric.css">
 </head>
 <body>
   <a class="skip" href="#navigation-toggle">Skip to Lab navigation</a>
@@ -76,7 +77,7 @@
     <div class="screen-toolbar"><button id="screen-prev" aria-label="Previous pair within this prompt">← Previous</button><strong id="screen-pair" role="status">Loading entries</strong><button id="screen-next" aria-label="Skip to a random prompt and model pair">Next random pair →</button></div>
     <p id="screen-boundary"></p><label><input id="screen-blind" type="checkbox" checked> Hide model labels until voting</label>
     <div id="screen-cards"></div>
-    <div class="screen-choices"><button data-screen-choice="a">Prefer A</button><button data-screen-choice="tie">Tie</button><button data-screen-choice="b">Prefer B</button><button id="screen-clear">Clear choice</button></div>
+    <div class="screen-choices"><button data-screen-choice="a">Prefer A</button><button data-screen-choice="tie">Tie</button><button data-screen-choice="b">Prefer B</button><button id="screen-leaderboard-button" type="button">Leaderboard</button><button id="screen-clear">Clear choice</button></div>
     <p id="screen-vote" role="status"></p><p id="screen-public-vote" role="status"></p><div id="screen-reveal" class="model-reveal" role="status" hidden></div><button id="screen-reveal-next" type="button" hidden>Next comparison</button><p id="screen-storage"></p>
     <p>Jordan's separate rubric: visuals 45 / performance 35 / fulfillment 20. One-hour build cap; timing disclosures in each inspector. No scores prefilled.</p>
     <section id="screen-public-leaderboard" class="local-leaderboard" aria-label="Public model leaderboard" hidden></section>

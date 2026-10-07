@@ -8,6 +8,7 @@ export const comparisonLayout=Object.freeze({
     {kind:'vote',choice:'a',x:180,y:522,width:230,height:48,label:'Prefer A'},
     {kind:'vote',choice:'tie',x:450,y:522,width:170,height:48,label:'Tie'},
     {kind:'vote',choice:'b',x:660,y:522,width:230,height:48,label:'Prefer B'},
+    {kind:'leaderboard',x:1000,y:62,width:240,height:34,label:'Leaderboard'},
     {kind:'inspect',x:930,y:522,width:170,height:48,label:'Inspect'},
   ].map(Object.freeze)),
 });
