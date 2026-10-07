@@ -64,6 +64,14 @@
     "README.md": {
       "bytes": 5641,
       "sha256": "ea7f38b9a64c3e9acff58119e9372f799c72fed5f099b18a52d3d40bb41bb2af"
+    },
+    "preview.jpg": {
+      "bytes": 43411,
+      "sha256": "5d010e298e2bbde3014f664e3f433f9fdd2c2d14d2457ca2be8414c1dc57ac18"
+    },
+    "preview-capture.json": {
+      "bytes": 2095,
+      "sha256": "7bf24e1604ee618cbba86f9dc469e83357e37d6752a4a416abfdc3677facdb83"
     }
   },
   "publication": {
@@ -73,7 +81,9 @@
       "frozen/main.js",
       "frozen/vendor/three/LICENSE",
       "frozen/vendor/three/build/three.module.min.js",
-      "host-verification.json"
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "original archive/snapshot",
@@ -82,5 +92,6 @@
       "raw test evidence",
       "development source maps"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json"
 }

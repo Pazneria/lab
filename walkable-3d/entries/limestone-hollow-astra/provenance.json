@@ -73,6 +73,14 @@
     "RUN_RECORD.md": {
       "bytes": 4056,
       "sha256": "fd3d4d6e838baeb6e055c8d2752d75f73379b3edc2a38f9c5b1238a397ce8201"
+    },
+    "preview.jpg": {
+      "bytes": 66542,
+      "sha256": "478074123ddc3a25a8d0ce01450c04f7e1579b6ef1f0d18689f25db67f4ca616"
+    },
+    "preview-capture.json": {
+      "bytes": 2100,
+      "sha256": "54db29f5a547d90559818a6d3b0190a521d9e5cef9a9b72da35580b2b1d8b2bc"
     }
   },
   "publication": {
@@ -83,7 +91,9 @@
       "frozen/cavern.js",
       "frozen/index.html.txt",
       "frozen/style.css",
-      "host-verification.json"
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "original archive/snapshot",
@@ -92,5 +102,6 @@
       "raw test evidence",
       "development source maps"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json"
 }

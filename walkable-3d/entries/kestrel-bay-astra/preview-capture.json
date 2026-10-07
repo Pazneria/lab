@@ -1,0 +1,48 @@
+{
+  "entry": "kestrel-bay-astra",
+  "capturedAt": "2026-10-06T23:52:49.027Z",
+  "sourceUrl": "https://pazneria.github.io/lab/walkable-3d/?entry=kestrel-bay-astra",
+  "frozenHtmlSha256": "2e8aa49f75a025ed3e24e4c3dbf3f6b98870c71b80588ccb731899ffe99a9069",
+  "scope": "Screenshot capture only, after the submission was frozen. Startup readiness was observed. Navigation, collisions, input reliability, shader coverage and performance were not validated; no grade or vote was submitted.",
+  "sourceUnchanged": true,
+  "viewpoint": "Original authored starting viewpoint; no walking or camera adjustment.",
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "captureMethod": "Actual scene canvas copied directly to JPEG in the existing sandboxed Lab viewer. Separate DOM overlays/model labels are absent from canvas pixels. No synthesized content, source edits, lighting adjustment or scene repair.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "canvas": {
+    "id": "",
+    "width": 1242,
+    "height": 777,
+    "cssWidth": 1242,
+    "cssHeight": 777
+  },
+  "centerCrop": {
+    "x": 0,
+    "y": 0.375,
+    "width": 1242,
+    "height": 776.25
+  },
+  "output": {
+    "path": "preview.jpg",
+    "width": 960,
+    "height": 600,
+    "format": "JPEG",
+    "quality": 0.88,
+    "bytes": 130458,
+    "sha256": "38cbb9e7d186f740a0e82dadb45fea0fbf99f84512390c1acca6a0bf3d3c4a26"
+  },
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "runtimeErrorsObserved": [],
+  "consoleObservations": [],
+  "captureHarnessNote": "The first capture harness injected a service-worker blocker that touched an API unavailable in opaque sandboxed frames. This was an automation-only exception, unrelated to entrant source. This capture reached readiness and rendered successfully; the frame was unloaded normally.",
+  "completionStatusPreserved": null,
+  "availabilityPreserved": "unverified",
+  "browserCleanup": "Capture browser sessions ran sequentially and were closed. No owned browser/test processes remained after capture."
+}

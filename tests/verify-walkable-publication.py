@@ -40,8 +40,14 @@ for entry in entries:
     previews=[] if entry.get('availability')=='failed' and entry.get('preview') is None else ['preview.jpg']
     links += [prefix + p for p in previews + ['provenance.json','frozen/index.html.txt'] + [d['path'] for d in entry['documents']]]
     provenance = json.loads((root/'walkable-3d'/prefix/'provenance.json').read_text())
-    assert set(provenance['publication']['publishedFiles']) | set(provenance['publication']['retainedOutsidePages']) == set(provenance['files'])
-    assert all(excluded('walkable-3d/'+prefix+p) for p in provenance['publication']['retainedOutsidePages'])
+    published = set(provenance['publication']['publishedFiles'])
+    recorded = set(provenance['files'])
+    assert published <= recorded
+    # Later import records also describe external archive/source categories here;
+    # only actual recorded paths participate in the Pages exclusion check.
+    retained = recorded - published
+    assert retained <= set(provenance['publication']['retainedOutsidePages'])
+    assert all(excluded('walkable-3d/'+prefix+p) for p in retained)
 for link in links:
     url = urlsplit(urljoin('https://example.test/walkable-3d/', link))
     if url.netloc != 'example.test': continue

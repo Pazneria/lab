@@ -134,6 +134,36 @@
     "RUN_RECORD.json": {
       "bytes": 2960,
       "sha256": "e1e8d2ccfa5fb4ce771209ca4fb916a3e9b5958943f277bb688d25c573d92e8b"
+    },
+    "preview.jpg": {
+      "bytes": 98154,
+      "sha256": "ac00fe83fb98a0d8e4e3b6d36a8901d0f11c55fd7f21219897eeaa8fb5bd7be6"
+    },
+    "preview-capture.json": {
+      "bytes": 2163,
+      "sha256": "32267245ee09c8a6b8c291560c96d18bbbf9ebda5dae259362dd35137a9f5e9f"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN_RECORD.json",
+      "frozen/index.html.txt",
+      "frozen/src/layout.js",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/navigation.js",
+      "frozen/src/world.js",
+      "frozen/style.css",
+      "frozen/vendor/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
   }
 }

@@ -92,6 +92,14 @@
     "RUN_RECORD.md": {
       "bytes": 5733,
       "sha256": "44b6bc440659393671523df24ca7ba6a7acfa263999b9b8547bd8d56cc98bf77"
+    },
+    "preview.jpg": {
+      "bytes": 47145,
+      "sha256": "3fc97ff404193fecd437f7e7ef63efd416045830eab23ebd3ef0db895bf7d797"
+    },
+    "preview-capture.json": {
+      "bytes": 1869,
+      "sha256": "4aa6e1f56a567de5d0538678af0cb95f9da99f1ca7cd5bc68c2bd572a81d3689"
     }
   },
   "publication": {
@@ -103,7 +111,9 @@
       "frozen/assets/index-9ZYEDvBu.js",
       "frozen/assets/index-Cd2Rd43a.css",
       "frozen/index.html.txt",
-      "host-verification.json"
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "original ZIP",
@@ -111,5 +121,6 @@
       "check scripts",
       "raw validation and artifact receipt"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json"
 }

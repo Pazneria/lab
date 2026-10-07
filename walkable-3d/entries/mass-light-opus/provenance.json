@@ -79,6 +79,14 @@
     "README.md": {
       "bytes": 5347,
       "sha256": "cea121c898ffbd5cf25f52d4c06412e11bd08e9dc1ec9ac252b1779a21e0eebf"
+    },
+    "preview.jpg": {
+      "bytes": 81832,
+      "sha256": "ae57b2af79693dc4ed44681011c9b7d7247545271de7d45f5e26105f0fdce0c7"
+    },
+    "preview-capture.json": {
+      "bytes": 2078,
+      "sha256": "c81af0c17a18e20047b390e5006fcfc577fec8d60a1ce034ef10ab116c76e04f"
     }
   },
   "publication": {
@@ -91,7 +99,9 @@
       "frozen/vendor/three/build/three.module.js",
       "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
       "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
-      "host-verification.json"
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "original archive/snapshot",
@@ -100,5 +110,6 @@
       "raw test evidence",
       "development source maps"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json"
 }

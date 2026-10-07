@@ -1,0 +1,50 @@
+{
+  "entry": "stillwater-astra",
+  "capturedAt": "2026-10-06T23:52:44.134Z",
+  "sourceUrl": "https://pazneria.github.io/lab/walkable-3d/?entry=stillwater-astra",
+  "frozenHtmlSha256": "39b82503bdeee86b9297935c2e7d8f351d802f82ba645497c5ecd2d03dc02af0",
+  "scope": "Screenshot capture only, after the submission was frozen. Startup readiness was observed. Navigation, collisions, input reliability, shader coverage and performance were not validated; no grade or vote was submitted.",
+  "sourceUnchanged": true,
+  "viewpoint": "Original authored starting viewpoint; no walking or camera adjustment.",
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "captureMethod": "Actual scene canvas copied directly to JPEG in the existing sandboxed Lab viewer. Separate DOM overlays/model labels are absent from canvas pixels. No synthesized content, source edits, lighting adjustment or scene repair.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "canvas": {
+    "id": "",
+    "width": 1242,
+    "height": 777,
+    "cssWidth": 1242,
+    "cssHeight": 777
+  },
+  "centerCrop": {
+    "x": 0,
+    "y": 0.375,
+    "width": 1242,
+    "height": 776.25
+  },
+  "output": {
+    "path": "preview.jpg",
+    "width": 960,
+    "height": 600,
+    "format": "JPEG",
+    "quality": 0.88,
+    "bytes": 98154,
+    "sha256": "ac00fe83fb98a0d8e4e3b6d36a8901d0f11c55fd7f21219897eeaa8fb5bd7be6"
+  },
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "runtimeErrorsObserved": [],
+  "consoleObservations": [
+    "Blocked autofocusing on a <button> element in a cross-origin subframe."
+  ],
+  "captureHarnessNote": "The first capture harness injected a service-worker blocker that touched an API unavailable in opaque sandboxed frames. This was an automation-only exception, unrelated to entrant source. This capture reached readiness and rendered successfully; the frame was unloaded normally.",
+  "completionStatusPreserved": null,
+  "availabilityPreserved": "unverified",
+  "browserCleanup": "Capture browser sessions ran sequentially and were closed. No owned browser/test processes remained after capture."
+}

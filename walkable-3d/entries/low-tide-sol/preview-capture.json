@@ -1,0 +1,48 @@
+{
+  "entry": "low-tide-sol",
+  "capturedAt": "2026-10-06T23:52:39.334Z",
+  "sourceUrl": "https://pazneria.github.io/lab/walkable-3d/?entry=low-tide-sol",
+  "frozenHtmlSha256": "cf1782ade07d28b6a414179aa2806bfae270f90443dc1617b5424cd76e882900",
+  "scope": "Screenshot capture only, after the submission was frozen. Startup readiness was observed. Navigation, collisions, input reliability, shader coverage and performance were not validated; no grade or vote was submitted.",
+  "sourceUnchanged": true,
+  "viewpoint": "Original authored starting viewpoint; no walking or camera adjustment.",
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "captureMethod": "Actual scene canvas copied directly to JPEG in the existing sandboxed Lab viewer. Separate DOM overlays/model labels are absent from canvas pixels. No synthesized content, source edits, lighting adjustment or scene repair.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "canvas": {
+    "id": "",
+    "width": 1242,
+    "height": 777,
+    "cssWidth": 1242,
+    "cssHeight": 777
+  },
+  "centerCrop": {
+    "x": 0,
+    "y": 0.375,
+    "width": 1242,
+    "height": 776.25
+  },
+  "output": {
+    "path": "preview.jpg",
+    "width": 960,
+    "height": 600,
+    "format": "JPEG",
+    "quality": 0.88,
+    "bytes": 86159,
+    "sha256": "0dffc3d2e71b5af27ce98d8169043a40c3e6001fb1621eb0d28b31ab298845bc"
+  },
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "runtimeErrorsObserved": [],
+  "consoleObservations": [],
+  "captureHarnessNote": "The first capture harness injected a service-worker blocker that touched an API unavailable in opaque sandboxed frames. This was an automation-only exception, unrelated to entrant source. This capture reached readiness and rendered successfully; the frame was unloaded normally.",
+  "completionStatusPreserved": null,
+  "availabilityPreserved": "unverified",
+  "browserCleanup": "Capture browser sessions ran sequentially and were closed. No owned browser/test processes remained after capture."
+}

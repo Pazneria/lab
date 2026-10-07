@@ -77,6 +77,29 @@
     "RUN_RECORD.md": {
       "bytes": 3546,
       "sha256": "71d8d82058db518ad842e4c9f9be35023810adf3f7f9c3ee36b1ca19d9cb55b0"
+    },
+    "preview.jpg": {
+      "bytes": 130458,
+      "sha256": "38cbb9e7d186f740a0e82dadb45fea0fbf99f84512390c1acca6a0bf3d3c4a26"
+    },
+    "preview-capture.json": {
+      "bytes": 2086,
+      "sha256": "aa8d455156ca3485c3f7006fd93ffde7d9c2982def8f5837207d080828219848"
     }
+  },
+  "previewCapture": "preview-capture.json",
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "RUN_RECORD.md",
+      "frozen/THIRD_PARTY_NOTICES.txt",
+      "frozen/assets/index-C1zaKrud.js",
+      "frozen/assets/index-CGm4A21a.css",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "preview-capture.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": []
   }
 }
