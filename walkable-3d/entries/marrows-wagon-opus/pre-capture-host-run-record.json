@@ -25,12 +25,11 @@
   "authority": "Original producer bytes preserved. Backend, effective effort and actual timing remain unknown; producer claims are attributed.",
   "qa": {
     "static": "Byte preservation, canonical hash, required runtime paths, and first-party network/storage/navigation review.",
-    "visual": "Actual unchanged authored default-view canvas captured; no full visual-quality assessment.",
+    "visual": "NOT RUN",
     "interactive": "NOT RUN",
-    "gpu": "Host startup/default-view rendering observed only.",
+    "gpu": "NOT RUN",
     "performance": "NOT RUN",
-    "preview": "CAPTURED",
-    "captureRecord": "preview-capture.json"
+    "preview": "UNCAPTURED"
   },
-  "publication": "Owner-approved capture succeeded; coordinated publication awaits the required fresh Site source credential approval through parent."
+  "publication": "Prepared locally; no browser/GPU/screenshot capture or publication authorized in this recovery turn."
 }

@@ -4671,7 +4671,7 @@
       "producerChecks": "Producer README reports esbuild bundling, JS syntax parsing, and a CPU-only Node smoke test with WebGL/canvas stubs and a route/collision check. No browser, GPU, screenshot, or measured frame-rate check.",
       "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
       "limitations": [
-        "Startup, authored default view, visual correctness and real GPU shader compilation remain unverified; no screenshot capture run.",
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
         "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
         "Original producer limitations remain in the unchanged README.",
         "Actual backend, effective effort and independently verified timing remain unknown."
@@ -4696,21 +4696,31 @@
         {
           "label": "Attributed model, timing and importer QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captain's Private Quarters - actual unchanged starting-view scene canvas.",
       "archiveSha256": "c7671c92d2c4f778266fecab3a570b2b6b7ab8cc3e4b58bf4585ab228a77fbcb",
       "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "59ddcfe52f220e20d405d0d718f8fd2455e7da094622c14d839a62929461dc77",
       "promptVersion": "18-claude",
-      "webgl": "WebGL (startup not independently verified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await separately authorized genuine capture."
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "marrows-wagon-opus",
@@ -4726,7 +4736,7 @@
       "producerChecks": "Producer README reports esbuild bundling and a CPU-only smoke test with DOM/WebGL stubs, route/step checks and two collision checks. No browser, GPU, headless rendering, screenshot, server or measured frame-rate check.",
       "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
       "limitations": [
-        "Startup, authored default view, visual correctness and real GPU shader compilation remain unverified; no screenshot capture run.",
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
         "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
         "Original producer limitations remain in the unchanged README.",
         "Actual backend, effective effort and independently verified timing remain unknown."
@@ -4751,21 +4761,31 @@
         {
           "label": "Attributed model, timing and importer QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Marrow's Wagon - actual unchanged starting-view scene canvas.",
       "archiveSha256": "ab4d988b736b54b4bc2bd8f3cffe0c15c85d204a7ab00e92ed587e1ae96cbfaa",
       "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "e04a3a586c02810b81db2114f857d19baff51785dadba2efda6e240ea3f368e8",
       "promptVersion": "20-claude",
-      "webgl": "WebGL (startup not independently verified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await separately authorized genuine capture."
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     }
   ],
   "prompts": [
