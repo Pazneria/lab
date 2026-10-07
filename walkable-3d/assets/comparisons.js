@@ -1,6 +1,6 @@
 // Claude identity is owner-confirmed; this display override does not assert backend evidence.
 // Recorded provenance remains unchanged.
-export const modelName = entry => entry.comparisonModel === 'opus' ? 'Claude Opus5.5' : (entry.requestedConfiguration || entry.comparisonModel || 'Unknown model').split(/\s*(?:\/|\(|;|·)\s*/)[0].trim();
+export const modelName = entry => entry.comparisonModel === 'opus' ? 'Claude Opus 5.5' : (entry.requestedConfiguration || entry.comparisonModel || 'Unknown model').split(/\s*(?:\/|\(|;|·)\s*/)[0].trim();
 // Host metadata groups requested models; it does not assert serving-backend identity.
 export const comparisonKey = pair => pair.map(entry => entry.id).sort().join('::');
 // Unverified means admitted for manual inspection, not independently runtime-tested.
