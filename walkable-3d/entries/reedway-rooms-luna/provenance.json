@@ -1,0 +1,116 @@
+{
+  "entry": "reedway-rooms-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source-preservation.zip",
+  "archiveSha256": "326a1598c1d9d6f828b2c694ebbea734be4ab66f7ca2f6963245896172209eb2",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/vendor/three/three.module.js": "dependency/three/build/three.module.js",
+      "frozen/vendor/three/three.core.js": "dependency/three/build/three.core.js",
+      "frozen/vendor/three/LICENSE": "dependency/three/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "f8c571a8b761570ef775e338c55d5d2d9a94e0d8e18bfd9ab93f834ce7328306",
+        "bytes": 39882
+      },
+      "package.json": {
+        "sha256": "21b635099de6446d3eea4c9bd2d6a916c203c630b00e60b87fb28466537cb507",
+        "bytes": 218
+      },
+      "README.md": {
+        "sha256": "7023eb8dda4dfb870d66622a9f4e0cee5c3228162050be7415eb77934982e2a1",
+        "bytes": 1445
+      },
+      "dependency/three/build/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      "dependency/three/build/three.core.js": {
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      "dependency/three/LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "dependency/three/package.json": {
+        "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+        "bytes": 4635
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "326a1598c1d9d6f828b2c694ebbea734be4ab66f7ca2f6963245896172209eb2",
+    "supplementalDependencies": []
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:01:19Z",
+    "deadlineUtc": "2026-10-07T10:01:19Z",
+    "stopUtc": "2026-10-07T09:11:33Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/build/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "f8c571a8b761570ef775e338c55d5d2d9a94e0d8e18bfd9ab93f834ce7328306",
+      "bytes": 39882
+    },
+    "frozen/vendor/three/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "launch-prompt.txt": {
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "bytes": 7673
+    },
+    "README.md": {
+      "sha256": "7023eb8dda4dfb870d66622a9f4e0cee5c3228162050be7415eb77934982e2a1",
+      "bytes": 1445
+    },
+    "run-record.json": {
+      "sha256": "ef66824a781798873c40d9b9fdd5a312ff9c3e1017e4c618c44cb6bbace6320b",
+      "bytes": 2522
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": [
+    "The supplied build references missing relative module(s): ./node_modules/three/build/three.module.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+  ]
+}

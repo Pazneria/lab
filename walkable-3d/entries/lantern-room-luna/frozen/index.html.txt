@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#181411" />
+    <title>The Lantern Room</title>
+    <script type="module" crossorigin src="/assets/index-D7LEpy_0.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BqZZCEz_.css">
+  </head>
+  <body>
+    <main id="scene" aria-label="The Lantern Room, a small explorable 3D scene"></main>
+    <aside class="hud">
+      <div class="brand"><span class="brand-mark">✦</span><div><div class="eyebrow">THE OLD WAYFARER'S</div><h1>Lantern Room</h1></div></div>
+      <div class="route"><i></i><span>HOME ABOVE THE COPPER KETTLE</span></div>
+      <div class="controls"><b>W A S D</b> walk <b>Mouse</b> look <b>Shift</b> brisk walk<br><b>Click</b> enter look mode <b>Esc</b> release <b>R</b> reset</div>
+    </aside>
+    <button id="reset" type="button" aria-label="Reset position">↺ <span>RESET</span></button>
+    <div id="hint" aria-live="polite"></div>
+    <div id="reticle" aria-hidden="true"><i></i></div>
+    <div id="start-card"><div class="start-sigil">✦</div><div class="start-kicker">A QUIET PLACE AT THE END OF THE ROAD</div><h2>Come in from the light.</h2><p>Wander through the room, find the writing nook, and step into the evening air.</p><button id="enter">STEP INSIDE&nbsp; ↗</button><small>Mouse to look · WASD to walk</small></div>
+  </body>
+</html>

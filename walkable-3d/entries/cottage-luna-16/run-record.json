@@ -1,0 +1,60 @@
+{
+  "id": "cottage-luna-16",
+  "title": "Witch's Cottage",
+  "scene": 16,
+  "model": "luna",
+  "workspace": "task-22",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6 Luna",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:02:51Z",
+  "firstSuccessfulFileUtc": "2026-10-07T09:07:52Z",
+  "deadlineUtc": "2026-10-07T10:02:51Z",
+  "stopUtc": "2026-10-07T09:15:48Z",
+  "producerChecks": "Inline JavaScript syntax check and Python HTML parser passed. No browser, server, visual, movement or performance QA.",
+  "interruptions": "No external interruption. First implementation attempt failed before creating files. Task creation returned an internal error; parent verified admission without a duplicate or interruption.",
+  "cleanupClaim": "No server or browser started; all static-check processes exited.",
+  "handoffSource": "Parent completed handoff; original producer README retained.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Inline JavaScript syntax check and Python HTML parser passed. No browser, server, visual, movement or performance QA.",
+    "importerStaticChecks": {
+      "id": "cottage-luna-16",
+      "syntax": [
+        {
+          "file": "index.html",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [
+        {
+          "file": "index.html",
+          "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        }
+      ],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

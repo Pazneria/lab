@@ -1,0 +1,45 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact dragon caretaker's quarters arranged as a modest bedroom, a connected gear/service passage and one large warm roost. Contrast a human's ordinary home with architecture built for a much larger resident, while keeping the entire scene bounded and quick to explore. From the entrance, lead me past the bed, through the service passage and onto a safe floor-level route inside the roost before returning toward the small quarters.
+
+Give the caretaker a practical and affectionate relationship to the work through the arrangement of daily-use belongings and care equipment. The passage should contain believable stored tools or gear with a clear walking lane. Make the roost feel substantially larger through its opening, supports, a heavy perch or resting platform, scratches and oversized care fittings rather than through a huge empty map. The human route should allow close inspection of the roost's construction and a view back toward the small doorway. Distinguish rough masonry, worn timber, iron hardware, bedding or straw and heat-darkened surfaces. Warm indirect roost light should contrast with gentler bedroom lighting while revealing structural depth. The dragon itself is optional and earns no separate requirement; no animal AI, creature animation, fire simulation or expansive cave network is required.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will approach the bedroom furniture, inspect the care gear, walk into the roost, approach its perch or resting platform from the floor and turn back toward the human-scale doorway. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A convincing contrast between modest human quarters and a large dragon roost
+- Believable roost supports, perch or resting platform and visible evidence of large-scale use
+- Distinct masonry, timber, iron, bedding and heat-darkened surfaces at close range
+- Readable warm roost light and gentler domestic lighting that reveal scale and structure
+- Purposeful caretaker detail visible along the passage and from inside the roost
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing large roost structures, surface wear and the furnished service passage together
+- Smooth movement between the bedroom, gear/service passage and floor-level roost route
+- Minimal slowdown from oversized geometry, repeated bedding detail or warm lighting effects, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A modest caretaker bedroom and connected gear/service passage with a clear walking lane
+- One connected large warm roost with a substantial perch or resting platform and signs of its intended resident
+- Safe floor-level access into the roost and up to its structural features, with a clear return route
+- Human-scale controls and access, readable architectural scale contrast, safe edges and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → modest bedroom → care gear in the service passage → floor-level roost route → perch or resting-platform construction → view back toward the small doorway → entrance.
+
+I will pay particular attention to how architecture and wear establish scale, how the care equipment belongs to the setting and whether the warm roost remains readable up close. Particular tools and the dragon itself are optional; the three core spaces, scale contrast, perch or resting platform and safe route are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+

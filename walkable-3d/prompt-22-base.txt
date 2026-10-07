@@ -1,0 +1,45 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact royal tailor's atelier arranged as a fitting room, a connected fabric archive and a workshop containing one extraordinary unfinished outfit. Give it the lively, inventive feeling of skilled people making a remarkable commission, with a clear original visual identity. From the entrance, lead me around the fitting area, along the archive shelves and to several viewpoints around the unfinished outfit and workbench before returning.
+
+The fitting room should have a raised or otherwise defined fitting area and useful furnishings with room to move; a mirror is optional and need not use real-time reflection. Organize the fabric archive as a believable collection of bolts, folded cloth and samples, varying thickness, drape and pattern scale without filling every shelf with unique objects. In the workshop, make the extraordinary unfinished outfit the focal point, supported on a dress form, stand or equivalent structure. Its construction should be legible through layered pieces, seams, exposed lining or unfinished edges; choose the wearer, silhouette and fantastical embellishment yourself. Distinguish cloth, polished or worn wood, small metal fittings and paper patterns. Broad cool daylight should illuminate the fabrics, with warmer work lighting around the commission. Keep everything within these three connected spaces; no actual tailoring, cloth simulation, dressing interface or animated staff is required.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect the fitting area, approach fabric samples and archive storage, then examine the unfinished outfit from more than one side and look across the workshop bench. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A coherent original royal atelier with a striking unfinished outfit as its focal point
+- Legible garment construction through layered pieces, seams, lining or unfinished edges
+- Distinct fabric weights and finishes, wood, metal fittings and paper at close range
+- Readable broad daylight and warmer work lighting that reveal drape and workmanship
+- Purposeful detail across the fitting room, organized archive, outfit and workbench
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing dense fabric storage, layered garment geometry and workshop detail together
+- Smooth movement between the fitting room, fabric archive and workshop
+- Minimal slowdown from layered cloth surfaces, fine trim or repeated archive objects, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A fitting room with a defined fitting area and useful furnishings
+- A connected fabric archive and workshop with one extraordinary unfinished outfit and workbench
+- Walkable access along the archive and to more than one side of the outfit, with a clear return route
+- Convincing human scale, comfortable inspection clearances, safe walking surfaces and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → fitting area → fabric archive and samples → unfinished outfit from several sides → workshop bench → return view through the atelier → entrance.
+
+I will pay particular attention to the difference between fabric types, the outfit’s unfinished construction and how practical workshop tools support its making. Specific fashion, decorations, tools and mirror effects are your choice; the three core spaces, fabric archive, extraordinary unfinished outfit, workbench and route are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+

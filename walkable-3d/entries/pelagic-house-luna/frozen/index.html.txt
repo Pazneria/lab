@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#10191b">
+<title>Pelagic House — 04</title>
+<style>
+  :root{color-scheme:dark;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#10191b;color:#dfe6df}
+  *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{background:#10191b}
+  #view{display:block;width:100%;height:100%;outline:0}
+  #hud{position:fixed;inset:0;pointer-events:none}
+  #brand{position:absolute;left:25px;top:21px;display:flex;gap:12px;align-items:center;color:#d9e2dd;text-shadow:0 2px 8px #000}
+  #brand .mark{width:30px;height:30px;border:1px solid #99bcb0;border-radius:50%;display:grid;place-items:center;color:#aad0bf;font-size:15px;box-shadow:inset 0 0 14px #5b9a8750}
+  #brand strong{display:block;font-size:12px;letter-spacing:.17em;font-weight:650}#brand small{display:block;margin-top:3px;font-size:9px;letter-spacing:.16em;color:#93aaa4}
+  #room-label{position:absolute;top:25px;right:26px;text-align:right;font-size:10px;letter-spacing:.17em;color:#b6c8c0;text-shadow:0 2px 8px #000}
+  #crosshair{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;opacity:.58}
+  #crosshair:before,#crosshair:after{content:"";position:absolute;background:#e5efdc;box-shadow:0 0 4px #001}
+  #crosshair:before{width:1px;height:9px;left:4px;top:0}#crosshair:after{width:9px;height:1px;left:0;top:4px}
+  #status{position:absolute;bottom:22px;left:25px;font-size:10px;letter-spacing:.14em;color:#bac7bf;text-shadow:0 2px 8px #000}
+  #controls{position:absolute;right:24px;bottom:20px;padding:11px 13px;border:1px solid #82918b55;border-radius:5px;background:#101719a6;backdrop-filter:blur(5px);font-size:10px;line-height:1.8;color:#d0d9d3;letter-spacing:.03em}
+  #controls b{color:#95c5b4;font-weight:600}#controls .muted{color:#84948d}
+  #welcome{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,#192c2caa,#071012e8);z-index:2;transition:opacity .35s}
+  #welcome.hidden{opacity:0;pointer-events:none}
+  .card{width:min(480px,calc(100vw - 36px));padding:28px 32px 25px;border:1px solid #97b1a354;border-radius:7px;background:#172122e8;box-shadow:0 22px 80px #0009}
+  .eyebrow{font-size:9px;letter-spacing:.24em;color:#9dc6b8}.card h1{font-size:24px;line-height:1.2;font-weight:530;letter-spacing:.015em;margin:10px 0 10px}.card p{font-size:12px;line-height:1.65;color:#b8c4bd;margin:0 0 18px}.card .small{font-size:10px;color:#82938b;margin:14px 0 0}
+  button{font:inherit;color:#15201d;background:#b5d1c3;border:0;border-radius:4px;padding:11px 17px;letter-spacing:.08em;font-size:10px;font-weight:700;cursor:pointer}button:hover{background:#d2e4da}
+  @media(max-width:600px){#brand{left:13px;top:13px}#room-label{right:13px;top:16px}#status{left:13px;bottom:12px}#controls{right:11px;bottom:11px;font-size:9px;padding:8px}.card{padding:23px}}
+</style>
+</head>
+<body>
+<canvas id="view" aria-label="First-person 3D underwater research apartment"></canvas>
+<div id="hud" aria-hidden="true">
+  <div id="brand"><div class="mark">◌</div><div><strong>PELAGIC HOUSE</strong><small>HABITAT 04 · ABYSSAL RIM</small></div></div>
+  <div id="room-label">PRESSURE ZONE <span id="zone">01 / DOMESTIC</span></div>
+  <div id="crosshair"></div>
+  <div id="status">GLASS: 42 CM LAMINATE&nbsp;&nbsp; · &nbsp;&nbsp;HABITAT PRESSURE: 4.8 MPa</div>
+  <div id="controls"><b>W A S D</b> move &nbsp; <b>MOUSE</b> look<br><b>SHIFT</b> slow walk &nbsp; <b>R</b> reset<br><b>F</b> fullscreen &nbsp; <span class="muted">ESC releases mouse</span></div>
+</div>
+<div id="welcome">
+  <div class="card">
+    <div class="eyebrow">PELAGIC HABITAT · FIELD RESIDENCE 04</div>
+    <h1>A quiet room at the edge of the reef.</h1>
+    <p>Walk from the warm domestic cabin through the research nook to the pressure window. The reef is close; the ocean beyond it is not.</p>
+    <button id="enter">ENTER HABITAT</button>
+    <p class="small">WASD to walk · Mouse to look · R to return to the entrance</p>
+  </div>
+</div>
+<script>
+(()=>{'use strict';
+const canvas=document.getElementById('view'),gl=canvas.getContext('webgl',{antialias:true,alpha:false,powerPreference:'high-performance'});
+if(!gl){document.querySelector('.card p').textContent='This scene needs a browser with WebGL enabled.';return;}
+const $=s=>document.querySelector(s), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const materials={
+  hull:{c:[.27,.34,.33],r:.48,m:.69}, trim:{c:[.48,.55,.50],r:.32,m:.72}, darkmetal:{c:[.095,.13,.13],r:.34,m:.78}, gasket:{c:[.035,.05,.05],r:.78,m:.05},
+  floor:{c:[.19,.24,.23],r:.88,m:.08}, wall:{c:[.34,.40,.37],r:.78,m:.16}, warmwall:{c:[.43,.36,.27],r:.88,m:.04}, wood:{c:[.30,.20,.13],r:.72,m:.08}, woodedge:{c:[.52,.36,.22],r:.48,m:.16},
+  fabric:{c:[.22,.32,.31],r:.98,m:0}, fabriclight:{c:[.39,.46,.41],r:.99,m:0}, rustfabric:{c:[.48,.24,.13],r:.96,m:0}, creamfabric:{c:[.63,.55,.41],r:.94,m:0}, rubber:{c:[.07,.08,.075],r:.66,m:.04},
+  ceramic:{c:[.69,.64,.52],r:.25,m:.03}, paper:{c:[.68,.62,.48],r:.92,m:0}, brass:{c:[.56,.34,.13],r:.28,m:.72}, copper:{c:[.43,.22,.10],r:.34,m:.68}, wear:{c:[.20,.083,.040],r:.96,m:.01}, glass:{c:[.19,.45,.49],r:.1,m:.38,transparent:true,alpha:.15},
+  litwarm:{c:[1,.69,.34],r:.22,m:.05,em:[.75,.34,.08]}, screen:{c:[.09,.42,.39],r:.2,m:.18,em:[.10,.36,.30]}, reef:{c:[.055,.12,.12],r:.98,m:.02}, reef2:{c:[.11,.18,.16],r:.94,m:.02}, coral:{c:[.25,.18,.13],r:.9,m:0}, bioglow:{c:[.28,.78,.57],r:.25,m:.05,em:[.16,.50,.32]}, seabed:{c:[.045,.09,.09],r:1,m:0}, water:{c:[.018,.055,.068],r:.95,m:.02}, glare:{c:[.52,.77,.72],r:.12,m:.15,transparent:true,alpha:.10}
+};
+const batches={};for(const k in materials)batches[k]=[];
+const V=(x,y,z)=>[x,y,z], add=(a,b)=>[a[0]+b[0],a[1]+b[1],a[2]+b[2]], sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]], mul=(a,s)=>[a[0]*s,a[1]*s,a[2]*s], dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2], cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]], norm=a=>{let l=Math.hypot(...a)||1;return mul(a,1/l)};
+function tri(mat,a,b,c,na,nb,nc){const out=batches[mat];if(!out)return;const n=na||norm(cross(sub(b,a),sub(c,a)));for(const [p,q] of [[a,n||na],[b,nb||n],[c,nc||n]])out.push(p[0],p[1],p[2],q[0],q[1],q[2]);}
+function quad(mat,a,b,c,d,n){tri(mat,a,b,c,n);tri(mat,a,c,d,n);}
+function box(mat,x,y,z,w,h,d){const x0=x-w/2,x1=x+w/2,y0=y-h/2,y1=y+h/2,z0=z-d/2,z1=z+d/2;
+  quad(mat,V(x0,y0,z1),V(x1,y0,z1),V(x1,y1,z1),V(x0,y1,z1),V(0,0,1));quad(mat,V(x1,y0,z0),V(x0,y0,z0),V(x0,y1,z0),V(x1,y1,z0),V(0,0,-1));
+  quad(mat,V(x1,y0,z1),V(x1,y0,z0),V(x1,y1,z0),V(x1,y1,z1),V(1,0,0));quad(mat,V(x0,y0,z0),V(x0,y0,z1),V(x0,y1,z1),V(x0,y1,z0),V(-1,0,0));
+  quad(mat,V(x0,y1,z1),V(x1,y1,z1),V(x1,y1,z0),V(x0,y1,z0),V(0,1,0));quad(mat,V(x0,y0,z0),V(x1,y0,z0),V(x1,y0,z1),V(x0,y0,z1),V(0,-1,0));}
+function sphere(mat,cx,cy,cz,rx,ry,rz,seg=12,rings=8){let grid=[];for(let j=0;j<=rings;j++){let row=[],v=j/rings*Math.PI;for(let i=0;i<=seg;i++){let u=i/seg*Math.PI*2,n=[Math.sin(v)*Math.cos(u),Math.cos(v),Math.sin(v)*Math.sin(u)];row.push({p:V(cx+rx*n[0],cy+ry*n[1],cz+rz*n[2]),n:norm([n[0]/rx,n[1]/ry,n[2]/rz])});}grid.push(row);}for(let j=0;j<rings;j++)for(let i=0;i<seg;i++){let a=grid[j][i],b=grid[j+1][i],c=grid[j+1][i+1],d=grid[j][i+1];tri(mat,a.p,b.p,d.p,a.n,b.n,d.n);tri(mat,d.p,b.p,c.p,d.n,b.n,c.n);}}
+function cylinder(mat,x,y,z,r0,r1,h,segments=12,axis='y'){const p0=axis==='y'?V(x,y-h/2,z):axis==='z'?V(x,y,z-h/2):V(x-h/2,y,z),p1=axis==='y'?V(x,y+h/2,z):axis==='z'?V(x,y,z+h/2):V(x+h/2,y,z),dir=norm(sub(p1,p0));let u=norm(cross(dir,Math.abs(dir[1])<.9?V(0,1,0):V(1,0,0))),v=norm(cross(dir,u));for(let i=0;i<segments;i++){let a=i/segments*2*Math.PI,b=(i+1)/segments*2*Math.PI,off=(p,r,t)=>add(p,add(mul(u,Math.cos(t)*r),mul(v,Math.sin(t)*r)));let a0=off(p0,r0,a),a1=off(p0,r0,b),b0=off(p1,r1,a),b1=off(p1,r1,b);let n0=norm(add(mul(u,Math.cos(a)),mul(v,Math.sin(a)))),n1=norm(add(mul(u,Math.cos(b)),mul(v,Math.sin(b))));tri(mat,a0,b0,a1,n0,n0,n1);tri(mat,a1,b0,b1,n1,n0,n1);tri(mat,p0,a1,a0,mul(dir,-1));tri(mat,p1,b0,b1,dir);}}
+function rod(mat,a,b,r0,r1,seg=8){const d=sub(b,a),len=Math.hypot(...d);let dir=norm(d),u=norm(cross(dir,Math.abs(dir[1])<.92?V(0,1,0):V(1,0,0))),v=norm(cross(dir,u));for(let i=0;i<seg;i++){let t0=i/seg*2*Math.PI,t1=(i+1)/seg*2*Math.PI,pt=(base,r,t)=>add(base,add(mul(u,Math.cos(t)*r),mul(v,Math.sin(t)*r)));let a0=pt(a,r0,t0),a1=pt(a,r0,t1),b0=pt(b,r1,t0),b1=pt(b,r1,t1),n0=norm(add(mul(u,Math.cos(t0)),mul(v,Math.sin(t0)))),n1=norm(add(mul(u,Math.cos(t1)),mul(v,Math.sin(t1))));tri(mat,a0,b0,a1,n0,n0,n1);tri(mat,a1,b0,b1,n1,n0,n1);}}
+function torusXY(mat,cx,cy,cz,R,r,seg=32,tube=8){let g=[];for(let i=0;i<=seg;i++){let a=i/seg*2*Math.PI,row=[];for(let j=0;j<=tube;j++){let b=j/tube*2*Math.PI,n=[Math.cos(a)*Math.cos(b),Math.sin(a)*Math.cos(b),Math.sin(b)];row.push({p:V(cx+(R+r*Math.cos(b))*Math.cos(a),cy+(R+r*Math.cos(b))*Math.sin(a),cz+r*Math.sin(b)),n});}g.push(row);}for(let i=0;i<seg;i++)for(let j=0;j<tube;j++){let a=g[i][j],b=g[i+1][j],c=g[i+1][j+1],d=g[i][j+1];tri(mat,a.p,b.p,d.p,a.n,b.n,d.n);tri(mat,d.p,b.p,c.p,d.n,b.n,c.n);}}
+function addArch(z){box('darkmetal',-3.48,1.61,z,.18,3.18,.22);box('darkmetal',3.48,1.61,z,.18,3.18,.22);box('trim',0,3.12,z,7.05,.16,.24);box('hull',-3.28,1.61,z+.02,.08,2.8,.25);box('hull',3.28,1.61,z+.02,.08,2.8,.25);for(let x of [-3.35,3.35])for(let y of [.35,2.88]){cylinder('brass',x,y,z-.14,.043,.043,.035,10,'z');cylinder('darkmetal',x,y,z-.17,.015,.015,.03,8,'z');}}
+
+// Pressure hull and the three linked room bays.
+box('floor',0,-.14,2.1,8.35,.28,13.35);box('wall',-4.06,1.62,2.1,.28,3.24,13.35);box('wall',4.06,1.62,2.1,.28,3.24,13.35);box('hull',0,3.25,2.1,8.4,.25,13.4);
+// Front bulkhead with a genuine entrance opening.
+box('hull',-2.88,1.58,8.62,2.52,3.16,.32);box('hull',2.88,1.58,8.62,2.52,3.16,.32);box('hull',0,2.84,8.62,3.3,.64,.32);box('darkmetal',0,1.58,8.39,3.1,2.85,.17);box('trim',0,1.58,8.28,2.82,2.58,.08);
+// The observation wall is built around the aperture, with a deep pressure coffer.
+box('wall',-3.34,1.62,-4.05,1.58,3.24,.46);box('wall',3.34,1.62,-4.05,1.58,3.24,.46);box('wall',0,3.02,-4.05,5.1,.44,.46);box('wall',0,.30,-4.05,5.1,.60,.46);
+// Weighted bulkhead rails divide the apartment without closing its route.
+addArch(2.36);addArch(-.80);
+// Hull seam bands and damp-weather wear below the cabin trim.
+for(let x of [-3.90,3.90]){box('darkmetal',x,.28,2.2,.065,.10,12.3);box('trim',x,.36,2.2,.035,.035,12.3);for(let z=-3.8;z<8;z+=1.8){cylinder('brass',x,.29,z,.026,.026,.035,8,'x');}}
+// Small, dry mineral/rust marks cluster where fasteners meet the lower hull seams.
+for(let side of [-1,1])for(let i=0;i<13;i++){let z=-3.15+i*.91,y=.43+(i%4)*.045,h=.035+(i%3)*.024;box('wear',side*3.906,y,z,.012,h,.035+(i%2)*.02);}
+for(let z of [5.5,4.8,1.8,-1.2]){box('darkmetal',0,.035,z,7.85,.07,.06);}
+// Pressure-hull utility lines follow ceiling ribs and disappear into sealed collars.
+for(let x of [-3.66,3.66]){cylinder('darkmetal',x,3.02,1.98,.075,.075,11.8,12,'z');cylinder('brass',x,3.02,.8,.105,.105,.10,12,'z');cylinder('brass',x,3.02,-2.1,.105,.105,.10,12,'z');}
+// Flush, caged ceiling luminaires: warm cabin light shifts to a cooler observatory bay.
+for(const [z,mat] of [[5.75,'litwarm'],[2.20,'litwarm'],[-1.72,'screen']]){cylinder('darkmetal',0,3.08,z,.32,.32,.12,20);cylinder('trim',0,3.005,z,.27,.27,.045,20);cylinder(mat,0,2.96,z,.23,.23,.075,20);for(let a=0;a<8;a++){let t=a*Math.PI/4;cylinder('darkmetal',Math.cos(t)*.285,2.99,z+Math.sin(t)*.285,.018,.018,.18,8);}}
+
+// Large viewing panel: inner sill, steel-reinforced deep reveals, elastomer seals, keeper plates.
+for(let z of [-3.79,-4.02,-4.29,-4.53]){
+  const dep=.18;
+  box(z===-4.02?'trim':'hull',-2.79,1.68,z,.42,2.65,dep);box(z===-4.02?'trim':'hull',2.79,1.68,z,.42,2.65,dep);
+  box(z===-4.02?'trim':'hull',0,2.80,z,5.98,.38,dep);box(z===-4.02?'trim':'hull',0,.56,z,5.98,.42,dep);
+}
+for(let z of [-3.94,-4.34]){box('gasket',-2.54,1.68,z,.09,1.92,.10);box('gasket',2.54,1.68,z,.09,1.92,.10);box('gasket',0,2.65,z,5.0,.09,.10);box('gasket',0,.71,z,5.0,.10,.10);}
+// Exterior corner gussets and structural vertical ribs.
+for(let x of [-3.17,3.17]){box('darkmetal',x,1.67,-3.84,.15,2.87,.48);box('trim',x,1.65,-3.56,.055,2.56,.08);box('darkmetal',x,1.68,-4.53,.10,2.3,.11);}
+box('darkmetal',0,3.11,-3.83,6.35,.18,.5);box('darkmetal',0,.22,-3.83,6.35,.18,.5);
+// Seal rails, segmented compression shoes and visible fasteners.
+for(let side of [-1,1])for(let y=.85;y<=2.5;y+=.41){box('gasket',side*2.50,y,-4.12,.07,.10,.48);cylinder('brass',side*2.78,y,-3.665,.052,.052,.055,12,'z');cylinder('darkmetal',side*2.78,y,-3.626,.018,.018,.02,8,'z');}
+for(let x=-2.42;x<=2.43;x+=.42)for(let y of [.50,2.86]){cylinder('brass',x,y,-3.66,.048,.048,.06,12,'z');cylinder('darkmetal',x,y,-3.62,.017,.017,.02,8,'z');}
+// A broad bezel and secondary pressure ring give the glazing an unmistakable depth.
+box('trim',-2.72,1.67,-3.48,.22,2.62,.20);box('trim',2.72,1.67,-3.48,.22,2.62,.20);box('trim',0,2.88,-3.48,5.65,.22,.20);box('trim',0,.46,-3.48,5.65,.22,.20);
+box('gasket',-2.42,1.67,-4.47,.12,2.0,.14);box('gasket',2.42,1.67,-4.47,.12,2.0,.14);box('gasket',0,2.62,-4.47,4.82,.12,.14);box('gasket',0,.72,-4.47,4.82,.12,.14);
+// Thick laminated glass, set at the rear of the pressure coffer.
+box('glass',0,1.67,-4.60,4.68,1.78,.12);
+// A faint laminated reflection catches cabin light without hiding the reef.
+quad('glare',V(-1.80,.83,-4.515),V(-1.66,.83,-4.515),V(-.55,2.50,-4.515),V(-.67,2.50,-4.515),V(0,0,1));
+quad('glare',V(.86,.83,-4.515),V(.93,.83,-4.515),V(1.37,2.50,-4.515),V(1.28,2.50,-4.515),V(0,0,1));
+// Small engraved-looking maker plates and latches on the inner side of the ring.
+box('darkmetal',-2.74,1.02,-3.34,.20,.34,.055);box('brass',-2.74,1.02,-3.305,.12,.055,.012);box('darkmetal',2.74,1.02,-3.34,.20,.34,.055);box('brass',2.74,1.02,-3.305,.12,.055,.012);
+for(let side of [-1,1]){box('hull',side*3.42,2.98,-3.77,.48,.14,.72);rod('trim',V(side*3.48,.34,-3.48),V(side*3.48,2.95,-3.48),.06,.06,8);}
+
+// Domestic zone: a compact cabin sofa, soft bedding, bedside storage, lamp and personal objects.
+// Sofa feet and timber plinth.
+for(let x of [-2.86,-.87])for(let z of [3.88,5.05])cylinder('darkmetal',x,.16,z,.065,.055,.30,10);
+box('wood',-1.86,.34,4.46,2.30,.32,1.40);box('fabric',-1.86,.55,4.39,2.12,.34,1.20);box('fabriclight',-1.86,.73,4.27,2.06,.20,.72);box('fabric',-1.86,1.10,4.92,2.18,.90,.26);box('fabric',-3.02,.76,4.44,.22,.62,1.10);box('fabric',-.70,.76,4.44,.22,.62,1.10);
+for(let x of [-2.54,-1.85,-1.17]){box('fabriclight',x,.86,4.21,.61,.17,.62);box('fabric',x,.96,4.20,.62,.035,.64);}
+// Pillows, piping and a rumpled rust-colored throw.
+for(let [x,z,mat] of [[-2.57,4.79,'creamfabric'],[-1.40,4.79,'rustfabric']]){box(mat,x,1.28,z,.68,.36,.26);box('fabriclight',x,1.47,z,.63,.025,.21);}
+box('rustfabric',-1.32,.86,3.93,.78,.085,.55);for(let i=0;i<6;i++)box('creamfabric',-1.61+i*.12,.912,3.93,.018,.012,.52);
+// Bed alcove tucked to the right, with quilt folds and a simple wooden headboard.
+for(let x of [1.94,3.28])for(let z of [4.75,7.34])cylinder('darkmetal',x,.14,z,.055,.05,.25,8);
+box('wood',2.61,.32,6.02,1.67,.32,2.83);box('creamfabric',2.61,.55,6.00,1.60,.24,2.74);box('fabriclight',2.61,.73,5.83,1.56,.20,2.02);box('rustfabric',2.61,.86,4.96,1.58,.09,.72);box('woodedge',2.61,1.12,7.36,1.78,1.08,.16);
+for(let x of [2.21,3.02]){box('creamfabric',x,.92,6.79,.67,.30,.44);box('fabriclight',x,.99,6.80,.60,.035,.34);}
+for(let x=1.93;x<3.31;x+=.14)box('fabric',x,.923,5.12,.025,.014,.66);
+// Low coffee table and domestic mug, journal and a small keepsake.
+for(let x of [-.50,.50])for(let z of [3.45,4.22])cylinder('wood',x,.35,z,.045,.04,.62,8);
+box('woodedge',0,.69,3.83,1.35,.13,1.02);box('wood',0,.61,3.83,1.24,.08,.92);
+cylinder('ceramic',-.33,.84,3.63,.11,.105,.14,16);cylinder('woodedge',-.33,.91,3.63,.085,.085,.012,16);torusXY('ceramic',-.20,.84,3.63,.055,.018,16,6);
+box('paper',.26,.79,3.97,.38,.035,.28);box('woodedge',.26,.813,3.97,.31,.009,.22);box('paper',.27,.83,3.96,.29,.018,.20);
+sphere('brass',.46,.84,3.55,.075,.075,.075,12,8);box('darkmetal',.46,.84,3.55,.06,.16,.06);
+// Bedside locker, reading lamp and framed snapshot.
+box('wood',3.25,.53,7.68,.73,.90,.62);box('woodedge',3.25,.98,7.35,.76,.11,.66);box('darkmetal',3.25,.54,7.35,.48,.025,.04);cylinder('brass',3.48,.52,7.30,.035,.035,.06,10,'z');
+cylinder('woodedge',3.25,1.13,7.67,.045,.05,.22);sphere('litwarm',3.25,1.31,7.67,.20,.23,.20,12,8);cylinder('darkmetal',3.25,.99,7.67,.12,.12,.03,12);
+box('woodedge',2.62,1.55,7.43,.62,.48,.08);box('paper',2.62,1.55,7.385,.49,.35,.025);sphere('fabric',2.54,1.56,7.36,.09,.12,.02,10,6);sphere('creamfabric',2.70,1.56,7.36,.09,.12,.02,10,6);
+
+// Research nook: fixed steel bench, drawers, service rails and overhead shelving.
+box('darkmetal',-3.27,.71,.53,.20,.22,2.67);for(let z of [-.60,.35,1.57])for(let x of [-3.58,-1.98])cylinder('darkmetal',x,.39,z,.045,.04,.66,8);
+box('woodedge',-2.78,.98,.52,1.66,.15,2.72);box('wood',-2.78,.90,.52,1.53,.09,2.60);
+box('darkmetal',-3.16,.64,.52,.75,.42,2.10);for(let z of [-.37,.29,.95,1.34]){box('hull',-2.77,.69,z,.05,.16,.54);box('brass',-2.74,.69,z,.035,.025,.11);}
+for(let x of [-3.66,-1.90])box('hull',x,1.30,.51,.12,.12,2.86);
+box('hull',-2.78,2.26,.55,1.68,.12,2.53);for(let z of [-.59,.53,1.65])box('wood',-2.78,1.97,z,1.56,.48,.12);
+// Shelved books, sample boxes, rolled charts and labeled bins.
+for(let i=0;i<8;i++){let z=-.12+i*.22,h=.35+(i%3)*.06;box(['woodedge','paper','fabric','rustfabric'][i%4],-2.25,1.82,z,.28,h,.14);box('paper',-2.25,1.82,z-.077,.18,.018,.012);}
+box('hull',-3.22,1.85,.32,.42,.26,.55);box('woodedge',-3.22,1.85,.02,.34,.19,.03);for(let i=0;i<4;i++)box('brass',-3.28+i*.04,1.86,.0,.014,.06,.012);
+for(let z of [1.18,1.46]){box('darkmetal',-2.55,1.82,z,.56,.32,.32);box('trim',-2.55,1.99,z,.58,.025,.34);box('paper',-2.55,1.82,z-.17,.15,.08,.015);}
+// Sample carousel with three labeled sealed vials (liquid is below the cap).
+for(let i=0;i<3;i++){let x=-2.29+i*.36; cylinder('darkmetal',x,1.10,-.39,.12,.12,.055,14);cylinder('glass',x,1.30,-.39,.075,.075,.36,14);cylinder(i===1?'bioglow':'reef2',x,1.25,-.39,.057,.057,.20,14);cylinder('brass',x,1.50,-.39,.083,.083,.055,14);box('paper',x,1.10,-.47,.13,.065,.018);}
+// Work light with articulated arm.
+cylinder('darkmetal',-3.33,1.10,.74,.17,.17,.05,14);rod('brass',V(-3.33,1.12,.74),V(-3.33,1.73,.74),.028,.025);rod('brass',V(-3.33,1.73,.74),V(-2.91,1.92,.74),.025,.024);cylinder('darkmetal',-2.88,1.87,.74,.15,.10,.22,12,'z');sphere('litwarm',-2.88,1.87,.60,.115,.11,.055,12,8);
+// Portable microscope: broad foot, stage, post, barrel and fine focus knobs.
+box('darkmetal',-2.42,1.09,.45,.36,.065,.36);box('trim',-2.42,1.17,.45,.28,.065,.27);rod('darkmetal',V(-2.42,1.19,.53),V(-2.43,1.54,.53),.052,.041);rod('trim',V(-2.43,1.54,.53),V(-2.61,1.79,.53),.085,.072);cylinder('darkmetal',-2.68,1.82,.53,.10,.085,.30,12,'x');cylinder('brass',-2.43,1.39,.53,.14,.14,.05,12,'x');sphere('screen',-2.42,1.20,.45,.07,.025,.07,10,6);
+// Notebook, specimen tray, calipers and handwritten chart.
+box('paper',-2.95,1.105,.93,.50,.04,.44);box('woodedge',-2.95,1.13,.93,.44,.012,.38);for(let i=0;i<5;i++)box('woodedge',-3.12+i*.07,1.139,.94,.012,.006,.27);
+box('darkmetal',-3.38,1.09,-.05,.38,.06,.48);for(let i=0;i<3;i++)sphere(['coral','reef2','brass'][i],-3.48+i*.10,1.17,-.13+(i%2)*.12,.055,.055,.065,10,6);
+rod('brass',V(-2.02,1.08,.0),V(-2.02,1.08,.64),.014,.014);rod('brass',V(-2.02,1.08,.0),V(-2.02,1.08,.64),.009,.009);cylinder('hull',-2.02,1.08,.30,.025,.025,.40,8,'z');
+// Cable conduit follows the wall; terminal and a compact data display face the room.
+rod('darkmetal',V(-3.86,2.75,-.1),V(-3.86,2.75,1.9),.045,.045);for(let z of [.1,.45,.8,1.15,1.5])box('brass',-3.80,2.75,z,.07,.06,.06);
+box('darkmetal',-3.25,1.70,1.47,.60,.40,.10);box('screen',-3.25,1.71,1.405,.49,.27,.025);for(let i=0;i<4;i++)box('bioglow',-3.37+i*.08,1.72,1.385,.035,.02,.009);box('paper',-3.25,1.94,1.405,.18,.018,.01);
+// Stools and a wall-mounted hanging coat / field bag, making the lab feel inhabited.
+cylinder('darkmetal',-1.70,.48,1.03,.31,.26,.12,16);cylinder('wood',-1.70,.25,1.03,.045,.035,.44,10);for(let a=0;a<3;a++){let t=a*2.094;rod('darkmetal',V(-1.70,.28,1.03),V(-1.70+Math.cos(t)*.31,.06,1.03+Math.sin(t)*.31),.035,.024);}
+box('woodedge',3.86,2.12,1.48,.04,.68,.64);box('fabric',3.77,2.07,1.49,.22,.50,.43);box('rustfabric',3.75,1.93,1.49,.24,.12,.46);torusXY('brass',3.79,2.46,1.49,.11,.024,16,6);
+
+// Observation-room instrument stand, but preserve a broad safe approach to the glass.
+box('hull',3.31,.62,-2.14,.95,1.16,.78);box('darkmetal',3.31,1.23,-2.14,1.05,.10,.86);box('screen',3.31,.98,-1.72,.64,.36,.025);for(let i=0;i<5;i++)box('bioglow',3.12+i*.09,.99,-1.70,.035,.025,.012);cylinder('brass',3.31,.77,-1.68,.07,.07,.06,12,'z');
+// A closed maintenance hatch and a readable pressure gauge on the right wall.
+box('darkmetal',3.89,1.52,-2.65,.08,1.18,1.20);box('hull',3.83,1.52,-2.65,.08,1.03,1.04);box('trim',3.77,1.52,-2.65,.06,.89,.90);torusXY('trim',3.70,1.72,-2.65,.20,.035,24,8);sphere('glass',3.70,1.72,-2.65,.17,.17,.035,16,10);rod('brass',V(3.70,1.72,-2.60),V(3.80,1.80,-2.60),.012,.012);cylinder('brass',3.86,1.52,-2.65,.07,.07,.08,12,'z');
+
+// Bounded, dim reef outside the glass: no horizon or endless ocean volume.
+box('seabed',0,-.75,-7.15,15,.28,8.2);box('water',0,1.55,-11.3,18,8,1.0);
+// broken basalt shoulders and small ridge lumps
+for(const [x,y,z,rx,ry,rz] of [[-4,.15,-6.1,1.2,.9,1.15],[-3.0,.20,-7.2,.8,.63,.7],[-1.8,.02,-7.7,1.2,.48,.72],[.2,.16,-7.0,1.0,.68,.82],[2.35,.04,-7.8,1.5,.54,.9],[4.0,.22,-6.4,.9,.78,.85],[5.0,.0,-8.3,1.1,.43,.6],[-.6,-.03,-9.0,1.4,.55,.65]])sphere('reef',x,y,z,rx,ry,rz,12,7);
+// Two muted branching corals and a fan silhouette on the darker ridge.
+for(let i=0;i<8;i++){let x=-3.55+(i%4)*.23,base=-6.7+Math.floor(i/4)*.45,h=.38+(i%3)*.15;rod('coral',V(x,-.05,base),V(x+.05,.18+h,base-.1),.085,.057);for(let j=0;j<2;j++)rod('coral',V(x+.04,.18+h*.45,base-.05),V(x+(j?1:-1)*.18,.24+h*.83,base-.12),.05,.018);}
+for(let i=0;i<7;i++){let x=1.4+i*.13,y=.15+i*.04,z=-7.3;rod(i%3===0?'reef2':'coral',V(x,y,z),V(x+.10,y+.26+(i%2)*.10,z-.09),.042,.012);}
+for(let j=0;j<6;j++){let x=-.25+j*.18,y=.25+(j%3)*.12;rod('reef2',V(x,y,-8.05),V(x-.16,y+.5+(j%2)*.17,-8.20),.045,.01);rod('reef2',V(x,y,-8.05),V(x+.22,y+.43,-8.18),.045,.01);}
+// Sparse pinpoints of bioluminescence.
+for(const [x,y,z] of [[-3.7,.64,-6.5],[-3.2,.52,-6.6],[-2.85,.45,-6.8],[1.72,.49,-7.26],[2.31,.61,-7.3],[4.42,.39,-7.1],[-.3,.62,-8.1]])sphere('bioglow',x,y,z,.055,.075,.045,8,6);
+// A handful of tiny, low-contrast fish profiles; still silhouettes behind the glass.
+function fish(x,y,z,s,dir){sphere('reef2',x,y,z,.21*s,.075*s,.055*s,10,6);let p=V(x-dir*.18*s,y,z);tri('reef2',V(p[0],y,z-.02*s),V(p[0]-dir*.14*s,y+.095*s,z),V(p[0]-dir*.14*s,y-.095*s,z));}
+fish(-1.5,1.93,-7.2,.76,1);fish(1.14,2.1,-8.15,.62,-1);fish(2.25,1.45,-6.9,.50,-1);fish(-.68,1.2,-8.6,.52,1);
+
+// Rectangle lights and straightforward collision bounds keep the scene responsive and walkable.
+const obstacles=[
+  [-3.15,-.58,3.68,5.18],[-.77,.73,3.38,4.30],[1.68,3.53,4.48,7.43],[-3.75,-1.84,-.88,1.88],[2.78,3.86,-2.65,-1.68]
+];
+const basePos=[0,1.62,7.58];let pos=basePos.slice(),yaw=0,pitch=0,keys={},locked=false,last=performance.now();
+function collide(x,z){const r=.24;if(x<-3.72+r||x>3.72-r||z>8.20-r||z< -4.27)return true;
+  // The broad aperture is walk-up accessible; the heavy side members remain solid.
+  if(z< -3.12&&Math.abs(x)>2.10)return true;
+  for(const b of obstacles)if(x+r>b[0]&&x-r<b[1]&&z+r>b[2]&&z-r<b[3])return true;return false;}
+function reset(){pos=basePos.slice();yaw=0;pitch=0;}
+document.getElementById('enter').addEventListener('click',()=>{document.getElementById('welcome').classList.add('hidden');canvas.requestPointerLock?.();});
+document.addEventListener('pointerlockchange',()=>{locked=document.pointerLockElement===canvas;});
+document.addEventListener('mousemove',e=>{if(!locked)return;yaw-=e.movementX*.00215;pitch=clamp(pitch-e.movementY*.0018,-1.42,1.42);});
+document.addEventListener('keydown',e=>{keys[e.code]=true;if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','Space'].includes(e.code))e.preventDefault();if(e.code==='KeyR'&&!e.repeat){reset();}if(e.code==='KeyF'&&!e.repeat){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();}});
+document.addEventListener('keyup',e=>keys[e.code]=false);
+document.addEventListener('pointerlockerror',()=>document.getElementById('welcome').classList.remove('hidden'));
+canvas.addEventListener('click',()=>{if(!locked&&document.getElementById('welcome').classList.contains('hidden'))canvas.requestPointerLock?.();});
+
+const vs=`attribute vec3 aPosition;attribute vec3 aNormal;uniform mat4 uVP;varying vec3 vPos;varying vec3 vNormal;void main(){vPos=aPosition;vNormal=aNormal;gl_Position=uVP*vec4(aPosition,1.0);}`;
+const fs=`precision mediump float;uniform vec3 uColor;uniform vec3 uEye;uniform float uRough;uniform float uMetal;uniform vec3 uEmit;uniform float uAlpha;uniform float uTime;varying vec3 vPos;varying vec3 vNormal;
+float hash(vec3 p){p=fract(p*.1031);p+=dot(p,p.yxz+33.33);return fract((p.x+p.y)*p.z);}void main(){vec3 N=normalize(vNormal);vec3 V=normalize(uEye-vPos);vec3 L0=normalize(vec3(-.35,.83,.42));float d0=max(dot(N,L0),0.0);vec3 color=uColor*(.32+.68*d0);vec3 lp1=vec3(-.2,2.75,2.8);vec3 ld1=lp1-vPos;float att1=1.0/(1.0+.17*dot(ld1,ld1));color+=uColor*vec3(1.0,.63,.34)*max(dot(N,normalize(ld1)),0.0)*att1*.68;vec3 lp2=vec3(-2.8,1.85,.65);vec3 ld2=lp2-vPos;float att2=1.0/(1.0+.30*dot(ld2,ld2));color+=uColor*vec3(1.0,.73,.44)*max(dot(N,normalize(ld2)),0.0)*att2*.58;vec3 lp3=vec3(0.0,1.8,-4.35);vec3 ld3=lp3-vPos;float att3=1.0/(1.0+.12*dot(ld3,ld3));color+=uColor*vec3(.18,.57,.68)*max(dot(N,normalize(ld3)),0.0)*att3*.76;vec3 H=normalize(L0+V);float sp=pow(max(dot(N,H),0.0),mix(64.0,7.0,uRough));color+=vec3(.28,.33,.30)*sp*(.12+uMetal*.4);float grain=hash(floor(vPos*17.0));float pat=0.965+0.045*sin(vPos.x*7.0+sin(vPos.z*3.0))*sin(vPos.y*11.0+vPos.z*2.0);color*=pat*(.985+grain*.028);color+=uEmit;float fog=clamp((length(uEye-vPos)-11.0)/19.0,0.0,.48);vec3 fogC=vec3(.018,.064,.075);color=mix(color,fogC,fog);gl_FragColor=vec4(pow(max(color,vec3(0.0)),vec3(.4545)),uAlpha);}`;
+function shader(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(s));return s;}
+let program;try{program=gl.createProgram();gl.attachShader(program,shader(gl.VERTEX_SHADER,vs));gl.attachShader(program,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(program);if(!gl.getProgramParameter(program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(program));}catch(e){console.error(e);document.querySelector('.card p').textContent='WebGL setup failed: '+e.message;return;}
+gl.useProgram(program);const loc={pos:gl.getAttribLocation(program,'aPosition'),normal:gl.getAttribLocation(program,'aNormal'),vp:gl.getUniformLocation(program,'uVP'),color:gl.getUniformLocation(program,'uColor'),eye:gl.getUniformLocation(program,'uEye'),rough:gl.getUniformLocation(program,'uRough'),metal:gl.getUniformLocation(program,'uMetal'),emit:gl.getUniformLocation(program,'uEmit'),alpha:gl.getUniformLocation(program,'uAlpha'),time:gl.getUniformLocation(program,'uTime')};
+const drawList=[];for(const [name,mat] of Object.entries(materials)){let data=batches[name];if(data.length===0)continue;const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(data),gl.STATIC_DRAW);drawList.push({name,mat,buffer,count:data.length/6});}
+function mat4(){return new Float32Array(16)}function perspective(out,fovy,aspect,near,far){let f=1/Math.tan(fovy/2),nf=1/(near-far);out[0]=f/aspect;out[1]=0;out[2]=0;out[3]=0;out[4]=0;out[5]=f;out[6]=0;out[7]=0;out[8]=0;out[9]=0;out[10]=(far+near)*nf;out[11]=-1;out[12]=0;out[13]=0;out[14]=2*far*near*nf;out[15]=0;return out;}
+function viewMatrix(out,p,yaw,pitch){const cp=Math.cos(pitch),sp=Math.sin(pitch),cy=Math.cos(yaw),sy=Math.sin(yaw);let fx=-sy*cp,fy=sp,fz=-cy*cp,rx=cy,ry=0,rz=-sy,ux=ry*fz-rz*fy,uy=rz*fx-rx*fz,uz=rx*fy-ry*fx;out[0]=rx;out[1]=ux;out[2]=-fx;out[3]=0;out[4]=ry;out[5]=uy;out[6]=-fy;out[7]=0;out[8]=rz;out[9]=uz;out[10]=-fz;out[11]=0;out[12]=-dot([rx,ry,rz],p);out[13]=-dot([ux,uy,uz],p);out[14]=dot([fx,fy,fz],p);out[15]=1;return out;}
+const proj=mat4(),view=mat4(),vp=mat4();function multiply(out,a,b){for(let c=0;c<4;c++)for(let r=0;r<4;r++)out[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];return out;}
+function resize(){const dpr=Math.min(window.devicePixelRatio||1,1.6),w=Math.max(1,Math.floor(innerWidth*dpr)),h=Math.max(1,Math.floor(innerHeight*dpr));if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;gl.viewport(0,0,w,h);}perspective(proj,Math.PI/3,w/h,.06,70);}
+function updateZone(){let z=pos[2],label=z>2.35?'01 / DOMESTIC':z>-.80?'02 / RESEARCH NOOK':'03 / OBSERVATORY';document.getElementById('zone').textContent=label;}
+function draw(item){gl.bindBuffer(gl.ARRAY_BUFFER,item.buffer);gl.enableVertexAttribArray(loc.pos);gl.vertexAttribPointer(loc.pos,3,gl.FLOAT,false,24,0);gl.enableVertexAttribArray(loc.normal);gl.vertexAttribPointer(loc.normal,3,gl.FLOAT,false,24,12);gl.uniform3fv(loc.color,item.mat.c);gl.uniform1f(loc.rough,item.mat.r);gl.uniform1f(loc.metal,item.mat.m);gl.uniform3fv(loc.emit,item.mat.em||[0,0,0]);gl.uniform1f(loc.alpha,item.mat.alpha??1);gl.drawArrays(gl.TRIANGLES,0,item.count);}
+function frame(now){requestAnimationFrame(frame);resize();let dt=Math.min((now-last)/1000,.05);last=now;let f=(keys.KeyW||keys.ArrowUp?1:0)-(keys.KeyS||keys.ArrowDown?1:0),s=(keys.KeyD?1:0)-(keys.KeyA?1:0);if(keys.ArrowLeft)s-=1;if(keys.ArrowRight)s+=1;let mag=Math.hypot(f,s)||1,speed=keys.ShiftLeft||keys.ShiftRight?1.35:2.55;f=f/mag*speed*dt;s=s/mag*speed*dt;let dx=-Math.sin(yaw)*f+Math.cos(yaw)*s,dz=-Math.cos(yaw)*f-Math.sin(yaw)*s;if(!collide(pos[0]+dx,pos[2]))pos[0]+=dx;if(!collide(pos[0],pos[2]+dz))pos[2]+=dz;
+  updateZone();viewMatrix(view,pos,yaw,pitch);multiply(vp,proj,view);gl.useProgram(program);gl.uniformMatrix4fv(loc.vp,false,vp);gl.uniform3fv(loc.eye,pos);gl.uniform1f(loc.time,now*.001);gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.disable(gl.CULL_FACE);gl.disable(gl.BLEND);gl.depthMask(true);gl.clearColor(.008,.025,.031,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);for(const item of drawList)if(!item.mat.transparent)draw(item);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.depthMask(false);for(const item of drawList)if(item.mat.transparent)draw(item);gl.depthMask(true);gl.disable(gl.BLEND);
+}
+window.addEventListener('resize',resize);resize();requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

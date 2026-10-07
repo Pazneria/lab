@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#26332f">
+<title>The Reedway Rooms</title>
+<style>
+  :root { color-scheme: dark; --ink:#f4ead4; --muted:#c9c2ad; --gold:#e7bb72; --glass:rgba(24,31,28,.78); }
+  * { box-sizing:border-box; }
+  html,body { width:100%;height:100%;margin:0;overflow:hidden;background:#b9b69d;font-family:Georgia,"Palatino Linotype",serif;color:var(--ink); }
+  #view { width:100%;height:100%;display:block;outline:none; }
+  #vignette { position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 140px rgba(23,30,28,.35);z-index:1; }
+  #hud { position:fixed;z-index:2;left:18px;top:16px;padding:10px 14px;border:1px solid rgba(240,217,172,.28);border-radius:4px;background:linear-gradient(110deg,rgba(27,35,31,.76),rgba(27,35,31,.22));text-shadow:0 2px 4px #101713;pointer-events:none; }
+  #hud .eyebrow { color:#ddba7e;font:10px/1.4 system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase; }
+  #hud .room { font-size:20px;line-height:1.2; }
+  #hud .owner { color:#d8cfba;font:11px/1.4 system-ui,sans-serif;letter-spacing:.04em;margin-top:3px; }
+  #crosshair { position:fixed;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:#f4ecd9;box-shadow:0 0 4px #1c211d;z-index:2;opacity:.78;pointer-events:none; }
+  #controls { position:fixed;z-index:2;left:18px;bottom:17px;padding:9px 12px;border:1px solid rgba(240,217,172,.23);border-radius:4px;background:rgba(25,32,29,.66);font:11px/1.55 system-ui,sans-serif;color:#e6dfcf;text-shadow:0 1px 2px #151b18;pointer-events:none; }
+  #controls b { color:#edc982;font-weight:600; }
+  #hint { position:fixed;z-index:2;right:18px;bottom:18px;padding:7px 10px;border-radius:3px;background:rgba(25,32,29,.6);font:10px/1.4 system-ui,sans-serif;color:#eee6d6;opacity:.78;pointer-events:none; }
+  #veil { position:fixed;inset:0;z-index:5;display:grid;place-items:center;background:linear-gradient(90deg,rgba(19,28,25,.72),rgba(19,28,25,.36) 60%,rgba(19,28,25,.49));transition:opacity .35s ease; }
+  #veil.hidden { opacity:0;pointer-events:none; }
+  .card { width:min(470px,calc(100vw - 36px));padding:28px 30px 25px;border:1px solid rgba(237,204,148,.46);background:linear-gradient(145deg,rgba(36,46,41,.96),rgba(30,37,34,.93));box-shadow:0 16px 50px #141c18a8; }
+  .kicker { color:var(--gold);font:10px/1.4 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.2em; }
+  h1 { font-weight:400;font-size:36px;letter-spacing:.015em;line-height:1.04;margin:8px 0 8px; }
+  .deck { color:#d7cebb;font-size:15px;line-height:1.5;margin:0 0 17px; }
+  .story { border-left:2px solid #c79f64;padding:1px 0 1px 13px;color:#e8ddc7;font-size:14px;line-height:1.55;margin:15px 0 19px; }
+  .keyline { display:flex;gap:8px;align-items:center;color:#d4cdbd;font:11px/1.8 system-ui,sans-serif; }
+  kbd { display:inline-block;min-width:23px;padding:1px 5px;border:1px solid #c8b99077;border-radius:3px;background:#454c43;color:#fff0d4;text-align:center;font:10px/1.6 system-ui,sans-serif;box-shadow:0 1px #101714; }
+  button { border:1px solid #e7c381;background:#c3985c;color:#201f19;padding:10px 16px;font:600 12px system-ui,sans-serif;letter-spacing:.04em;cursor:pointer;border-radius:2px; }
+  button:hover { background:#edce91; }
+  .actions { display:flex;justify-content:space-between;align-items:center;gap:15px;margin-top:20px; }
+  #reset { font:11px/1.2 system-ui,sans-serif;color:#a99f8a; }
+  @media(max-width:600px) { #hud{left:10px;top:10px}.room{font-size:17px!important}#controls{left:10px;bottom:10px}#hint{display:none}.card{padding:23px}h1{font-size:31px} }
+</style>
+</head>
+<body>
+<canvas id="view" aria-label="Walkable first-person view of a fantasy courier's private rooms"></canvas>
+<div id="vignette"></div>
+<div id="hud"><div class="eyebrow">Reedway rooms · early spring</div><div class="room" id="room-name">The bedroom</div><div class="owner">Mara Quill · reedway courier & pathfinder</div></div>
+<div id="crosshair"></div>
+<div id="controls"><b>W A S D</b> walk &nbsp; <b>Mouse</b> look<br><b>Shift</b> slow steps &nbsp; <b>R</b> return to the door<br><b>Esc</b> pause / release mouse</div>
+<div id="hint">Follow the little brass reed marks through the rooms.</div>
+<div id="veil"><div class="card">
+  <div class="kicker">A small home between journeys</div>
+  <h1>The Reedway<br>Rooms</h1>
+  <p class="deck">Morning finds Mara Quill at home between ferry runs.</p>
+  <div class="story">She carries letters across the marsh by skiff, marks the safe channels before dawn, and keeps a brass token from every village that trusts her with its mail.</div>
+  <div class="keyline"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk <span>·</span> mouse to look <span>·</span> <kbd>R</kbd> reset</div>
+  <div class="actions"><button id="enter">Walk the rooms</button><span id="reset">Press Esc to pause</span></div>
+</div></div>
+<script type="module">
+import * as THREE from './node_modules/three/build/three.module.js';
+
+// A room-sized first-person set. The geometry is deliberately low-poly and shared;
+// the close detail lives in a few procedural fabric, timber and map textures.
+const canvas = document.querySelector('#view');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.6));
+renderer.setSize(innerWidth, innerHeight, false);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.08;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#bbc3b2');
+scene.fog = new THREE.Fog('#bbc3b2', 18, 34);
+const camera = new THREE.PerspectiveCamera(74, innerWidth/innerHeight, .06, 75);
+camera.rotation.order = 'YXZ';
+const world = new THREE.Group(); scene.add(world);
+const boxGeo = new THREE.BoxGeometry(1,1,1);
+const sphereGeo = new THREE.SphereGeometry(1,12,9);
+const cylGeo = new THREE.CylinderGeometry(1,1,1,12,1);
+const mats = {};
+function mat(name,color,rough=.82,extra={}) { return mats[name] = new THREE.MeshStandardMaterial({color,roughness:rough,...extra}); }
+const woodDark=mat('woodDark','#594231'), wood=mat('wood','#94704c'), woodLight=mat('woodLight','#b08b5e'), woodEdge=mat('woodEdge','#70533a');
+const plaster=mat('plaster','#d6c8a9'), plasterGreen=mat('plasterGreen','#929d83'), trim=mat('trim','#594835'), metal=mat('metal','#83704a',.38,{metalness:.7}), brass=mat('brass','#c39a50',.34,{metalness:.65}), iron=mat('iron','#514f44',.42,{metalness:.55});
+const linen=mat('linen','#e6dcc6'), cream=mat('cream','#d7c7a5'), teal=mat('teal','#487b76'), tealDark=mat('tealDark','#315c59'), rust=mat('rust','#ad694a'), mustard=mat('mustard','#c39857'), plum=mat('plum','#80636a'), indigo=mat('indigo','#50657a'), sage=mat('sage','#849078'), leather=mat('leather','#775340',.92), paper=mat('paper','#dbc594'), dark=mat('dark','#333a34');
+const glass= new THREE.MeshStandardMaterial({color:'#c1d0c2',roughness:.2,metalness:.12,transparent:true,opacity:.28,side:THREE.DoubleSide});
+const noShadowMat = new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.08,depthWrite:false,side:THREE.DoubleSide});
+
+function canvasTexture(w,h,draw,repeat=[1,1]) {
+  const c=document.createElement('canvas'); c.width=w;c.height=h; const g=c.getContext('2d'); draw(g,w,h);
+  const t=new THREE.CanvasTexture(c); t.colorSpace=THREE.SRGBColorSpace; t.wrapS=t.wrapT=THREE.RepeatWrapping; t.repeat.set(...repeat); t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy()); return t;
+}
+const floorTex=canvasTexture(512,512,(g,w,h)=>{
+  g.fillStyle='#8b704f';g.fillRect(0,0,w,h);
+  for(let row=0;row<8;row++) for(let col=0;col<2;col++) {
+    const x=col*256,y=row*64, hue=(row*13+col*7)%20;
+    g.fillStyle=`rgb(${132+hue},${105+hue*.7},${74+hue*.45})`;g.fillRect(x+1,y+1,254,62);
+    g.strokeStyle='rgba(53,39,28,.38)';g.lineWidth=2;g.strokeRect(x+2,y+2,252,60);
+    for(let k=0;k<7;k++){g.beginPath();g.strokeStyle=`rgba(222,188,137,${.055+k*.004})`;g.lineWidth=1;let yy=y+7+k*8;g.moveTo(x+10,yy);g.bezierCurveTo(x+70,yy-4,x+155,yy+4,x+245,yy-2);g.stroke();}
+    if((row+col)%3===0){g.beginPath();g.ellipse(x+146,y+31,13,6,0,0,Math.PI*2);g.strokeStyle='rgba(61,44,30,.35)';g.stroke();g.beginPath();g.ellipse(x+146,y+31,7,3,0,0,Math.PI*2);g.stroke();}
+  }
+},[1.6,1.6]);
+const floorMat=new THREE.MeshStandardMaterial({map:floorTex,roughness:.92});
+const quiltTex=canvasTexture(256,256,(g,w,h)=>{
+  g.fillStyle='#456e69';g.fillRect(0,0,w,h);
+  const cs=['#bd9970','#d6c294','#607a75','#a6654a','#d9cfac','#6d7c8a'];
+  for(let y=0;y<4;y++)for(let x=0;x<4;x++){
+    let xx=x*64,yy=y*64;g.fillStyle=cs[(x*2+y*3)%cs.length];g.fillRect(xx+2,yy+2,60,60);
+    g.strokeStyle='rgba(44,55,48,.55)';g.lineWidth=2;g.strokeRect(xx+5,yy+5,54,54);
+    g.beginPath();g.moveTo(xx+11,yy+49);g.lineTo(xx+32,yy+12);g.lineTo(xx+53,yy+49);g.closePath();g.stroke();
+    g.beginPath();g.arc(xx+32,yy+32,7,0,Math.PI*2);g.stroke();
+  }
+},[1,1]);
+const mapTex=canvasTexture(768,512,(g,w,h)=>{
+  g.fillStyle='#d6c89f';g.fillRect(0,0,w,h);
+  for(let i=0;i<3600;i++){const x=Math.random()*w,y=Math.random()*h;g.fillStyle=i%2?'rgba(91,69,44,.035)':'rgba(255,247,218,.09)';g.fillRect(x,y,1+Math.random()*2,1);}
+  g.strokeStyle='rgba(85,99,82,.35)';g.lineWidth=1;
+  for(let x=28;x<w;x+=42){g.beginPath();g.moveTo(x,0);g.lineTo(x,h);g.stroke();}
+  for(let y=25;y<h;y+=42){g.beginPath();g.moveTo(0,y);g.lineTo(w,y);g.stroke();}
+  // Marsh islands and nested contour channels, without relying on legible text.
+  const islands=[[130,115,95,53],[295,235,135,70],[532,110,150,66],[620,350,99,68],[110,385,100,59],[390,75,67,42]];
+  islands.forEach(([cx,cy,rx,ry],n)=>{
+    g.beginPath();g.ellipse(cx,cy,rx,ry,(n%3)*.18,0,Math.PI*2);g.fillStyle=n%2?'#879078':'#8c997b';g.fill();
+    for(let r=0;r<4;r++){g.beginPath();g.ellipse(cx,cy,rx-r*13,ry-r*8,(n%3)*.18,0,Math.PI*2);g.strokeStyle=`rgba(61,83,67,${.47-r*.05})`;g.lineWidth=1.4;g.stroke();}
+  });
+  g.beginPath();g.moveTo(24,437);g.bezierCurveTo(145,330,226,388,306,280);g.bezierCurveTo(385,171,492,275,560,179);g.bezierCurveTo(623,90,709,143,757,42);g.strokeStyle='#526f79';g.lineWidth=13;g.stroke();
+  g.beginPath();g.moveTo(24,437);g.bezierCurveTo(145,330,226,388,306,280);g.bezierCurveTo(385,171,492,275,560,179);g.bezierCurveTo(623,90,709,143,757,42);g.strokeStyle='#b5c4ac';g.lineWidth=4;g.stroke();
+  g.setLineDash([5,8]);g.beginPath();g.moveTo(54,380);g.bezierCurveTo(155,355,217,302,277,307);g.bezierCurveTo(367,314,392,194,470,190);g.bezierCurveTo(539,186,598,239,666,193);g.strokeStyle='#ad634d';g.lineWidth=4;g.stroke();g.setLineDash([]);
+  // compass rose
+  g.save();g.translate(686,418);g.strokeStyle='#70543d';g.fillStyle='#70543d';g.lineWidth=2;g.beginPath();g.moveTo(0,-28);g.lineTo(7,0);g.lineTo(0,28);g.lineTo(-7,0);g.closePath();g.fill();g.beginPath();g.moveTo(-28,0);g.lineTo(0,-7);g.lineTo(28,0);g.lineTo(0,7);g.closePath();g.stroke();g.restore();
+},[1,1]);
+const paperMat=new THREE.MeshStandardMaterial({map:mapTex,roughness:.9,side:THREE.DoubleSide});
+const clothTex=canvasTexture(128,128,(g,w,h)=>{g.fillStyle='#a98259';g.fillRect(0,0,w,h);for(let i=0;i<120;i++){g.strokeStyle=i%2?'rgba(243,218,173,.1)':'rgba(54,48,39,.09)';g.beginPath();g.moveTo(i,0);g.lineTo(i,h);g.stroke();g.beginPath();g.moveTo(0,i);g.lineTo(w,i);g.stroke();}},[1,1]);
+
+function mesh(geo,material,x=0,y=0,z=0,parent=world){const m=new THREE.Mesh(geo,material);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;}
+function box(material,x,y,z,w,h,d,parent=world,rx=0,ry=0,rz=0,collide=false){const m=mesh(boxGeo,material,x,y,z,parent);m.scale.set(w,h,d);m.rotation.set(rx,ry,rz);m.castShadow=Math.min(w,h,d)>=.045&&Math.max(w,h,d)>.18;if(collide) solids.push({x,z,w,d});return m;}
+function cylinder(material,x,y,z,r,h,parent=world,segments=12,rotateX=0){const m=mesh(cylGeo,material,x,y,z,parent);m.scale.set(r,h,r);m.rotation.x=rotateX;m.castShadow=r>.025&&h>.12;return m;}
+function sphere(material,x,y,z,sx,sy,sz,parent=world){const m=mesh(sphereGeo,material,x,y,z,parent);m.scale.set(sx,sy,sz);m.castShadow=false;return m;}
+function rod(material,a,b,r=.025,parent=world){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),v=new THREE.Vector3().subVectors(B,A),m=mesh(cylGeo,material,...A.clone().add(B).multiplyScalar(.5).toArray(),parent);m.scale.set(r,v.length(),r);m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());m.castShadow=false;return m;}
+function plate(material,x,y,z,w,d,thick=.035,parent=world){const m=box(material,x,y,z,w,thick,d,parent);return m;}
+function instancedBoxes(material,items,parent=world){const im=new THREE.InstancedMesh(boxGeo,material,items.length);const dummy=new THREE.Object3D();items.forEach((it,i)=>{dummy.position.set(it[0],it[1],it[2]);dummy.rotation.set(it[3]||0,it[4]||0,it[5]||0);dummy.scale.set(it[6],it[7],it[8]);dummy.updateMatrix();im.setMatrixAt(i,dummy.matrix);});im.castShadow=im.receiveShadow=true;parent.add(im);return im;}
+
+const solids=[];
+const room={bedroom:{z0:0,z1:7,x:3.6},wardrobe:{z0:7,z1:11.15,x:2.75},study:{z0:11.15,z1:16.4,x:3.6}};
+function floorSegment(x,z,w,d,texMat=floorMat){const f=mesh(new THREE.PlaneGeometry(w,d),texMat,x,.003,z);f.rotation.x=-Math.PI/2;f.castShadow=false;f.receiveShadow=true;return f;}
+floorSegment(0,3.5,7.2,7);floorSegment(0,9.075,5.5,4.15);floorSegment(0,13.775,7.2,5.25);
+// Uneven, repeated boards at the door thresholds add a little joinery without a mesh per plank.
+instancedBoxes(woodDark,[-.96,-.32,.32,.96].map(x=>[x,.042,7,0,0,0,.60,.06,.11]));
+instancedBoxes(woodDark,[-.96,-.32,.32,.96].map(x=>[x,.042,11.15,0,0,0,.60,.06,.11]));
+
+const wallT=.22, wallH=3.55;
+function wallAtSide(side,z0,z1,xPos,material=plaster){
+  const cx=side*(xPos-wallT/2),len=z1-z0;
+  box(material,cx,wallH/2,(z0+z1)/2,wallT,wallH,len,world,0,0,0,true);
+  box(trim,cx,wallH-.12,(z0+z1)/2,wallT+.035,.22,len,world);
+  box(woodEdge,cx,.12,(z0+z1)/2,wallT+.04,.24,len,world);
+  box(woodLight,cx,.53,(z0+z1)/2,wallT+.025,.055,len,world);
+}
+function sideWall(side,z0,z1,xPos,window=null,material=plaster){
+  if(!window){wallAtSide(side,z0,z1,xPos,material);return;}
+  const [a,b,bot=1.05,top=2.77]=window;
+  wallAtSide(side,z0,a,xPos,material);wallAtSide(side,b,z1,xPos,material);
+  const x=side*(xPos-wallT/2),mid=(a+b)/2;
+  box(material,x,(bot)/2,mid,wallT,bot,b-a);
+  box(material,x,(wallH+top)/2,mid,wallT,wallH-top,b-a);
+  // oak window frame, crossbars and pale morning glass
+  box(trim,side*(xPos-.02),(bot+top)/2,mid,.12,top-bot+.22,.10);
+  box(woodLight,side*(xPos-.02),bot,mid,.17,.11,b-a+.18);
+  box(woodLight,side*(xPos-.02),top,mid,.17,.10,b-a+.18);
+  for(let zz=a+.05;zz<b;zz+=(b-a-.1)/3){box(woodEdge,side*(xPos-.07),(bot+top)/2,zz,.10,top-bot,.055);}
+  const pane=box(glass,side*(xPos-.095),(bot+top)/2,mid, .018,top-bot-.12,b-a-.12);pane.castShadow=false;
+  // open linen curtains, tied back on the two window jambs
+  for(const s of [-1,1]){
+    const g=box(linen,side*(xPos-.16),(bot+top)/2,mid+s*(b-a)*.45,.10,top-bot-.05,(b-a)*.22);g.material=linen;
+    rod(brass,[side*(xPos-.22),1.4,mid+s*.45],[side*(xPos-.22),1.47,mid+s*.45],.018);
+    box(mustard,side*(xPos-.24),1.8,mid+s*.30,.035,.06,.32);
+  }
+}
+sideWall(-1,0,7,3.6);
+sideWall(1,0,3.9,3.6);sideWall(1,6.0,7,3.6);sideWall(1,3.9,6.0,3.6,[4.0,5.9]);
+sideWall(-1,7,11.15,2.75, null, plasterGreen);sideWall(1,7,11.15,2.75,null,plasterGreen);
+sideWall(-1,11.15,13.0,3.6);sideWall(-1,14.85,16.4,3.6);sideWall(-1,13.0,14.85,3.6,[13.1,14.75],plasterGreen);
+sideWall(1,11.15,16.4,3.6,null,plasterGreen);
+
+function endWall(z,xHalf,openingHalf=null,material=plaster){
+  if(openingHalf===null){box(material,0,wallH/2,z,2*xHalf,wallH,wallT,world,0,0,0,true);}
+  else {
+    const len=xHalf-openingHalf;
+    for(const s of [-1,1]){
+      box(material,s*(openingHalf+len/2),wallH/2,z,len,wallH,wallT,world,0,0,0,true);
+      box(trim,s*(openingHalf+len/2),wallH-.12,z,len,.22,wallT+.03);
+      box(woodEdge,s*(openingHalf+len/2),.12,z,len,.24,wallT+.04);
+      box(woodLight,s*(openingHalf+len/2),.53,z,len,.055,wallT+.03);
+    }
+    // Threshold reveal and squared timber casing, left open as a generous walk-through.
+    for(const s of [-1,1])box(woodLight,s*openingHalf,1.42,z, .12,2.84,.19);
+    box(wood,s*0,2.91,z,2*openingHalf+.15,.16,.24);
+  }
+}
+// Entry, both connected openings, and the quiet north wall of the study.
+endWall(0,3.6,1.05,plasterGreen);endWall(7,3.6,1.35,plaster);endWall(11.15,2.75,1.2,plasterGreen);endWall(16.4,3.6,null,plaster);
+
+// A few rafters cast long morning shadows; most of the ceiling stays open for easy inspection.
+for(const z of [1.0,6.65,7.35,10.85,11.45,15.95])box(woodDark,0,3.48,z,7.1,.12,.14);
+for(const z of [7.5,10.9])box(woodLight,0,3.25,z,5.3,.07,.08);
+
+// Lighting: cool ambient fill, low east-morning sun, then quiet practical pools near bed and desk.
+scene.add(new THREE.HemisphereLight('#e2e4d1','#594936',1.08));
+const sun=new THREE.DirectionalLight('#f5dba9',2.15);sun.position.set(8,7,4);sun.target.position.set(-.5,0,8);sun.castShadow=true;sun.shadow.mapSize.set(1536,1536);sun.shadow.camera.left=-10;sun.shadow.camera.right=10;sun.shadow.camera.top=18;sun.shadow.camera.bottom=-4;sun.shadow.bias=-.00024;sun.shadow.normalBias=.035;sun.shadow.radius=3;scene.add(sun,sun.target);
+function pointLight(color,intensity,distance,x,y,z){const l=new THREE.PointLight(color,intensity,distance,2);l.position.set(x,y,z);scene.add(l);return l;}
+pointLight('#ffd796',20,5,-.2,2.2,4.25);pointLight('#f4bd77',17,4,.4,2.1,14.45);
+// Simple brass lamp shades make the warm pools feel attached to real lamps.
+
+// Bedroom: a repaired elm bed, layered patchwork quilt and the little route tokens Mara keeps.
+// Threadbare woven runner and round heel-polished bedside rug.
+const rugMat=new THREE.MeshStandardMaterial({map:clothTex,color:'#798373',roughness:1,side:THREE.DoubleSide});
+const rug=mesh(new THREE.PlaneGeometry(3.8,4.5),rugMat,-.15,.012,3.45);rug.rotation.x=-Math.PI/2;
+for(let i=0;i<13;i++){box((i%2?cream:rust),-1.98+i*.31,.019,3.45, .018,.009,4.35);}
+// Bed feet, rails, slats, box spring, mattress, headboard and braces.
+const bedX=-1.72,bedZ=3.78,bw=2.48,bl=3.1;
+for(const x of [-2.77,-.67])for(const z of [2.38,5.18])box(woodDark,x,.30,z,.19,.58,.19,world,0,0,0,true);
+box(wood,bedX,.50,bedZ,bw,.23,bl,world,0,0,0,true);
+box(woodDark,bedX,.45,2.33,bw,.32,.16);box(woodDark,bedX,.45,5.23,bw,.32,.17);
+for(let i=0;i<8;i++)box(woodLight,bedX,.65,2.50+i*.36,bw-.16,.07,.075);
+box(cream,bedX,.80,bedZ,bw-.12,.43,bl-.18);
+box(wood,bedX,1.23,5.32,bw+.15,1.22,.18,world,0,0,0,true);
+box(woodLight,bedX,1.83,5.30,bw+.20,.15,.21);
+for(const x of [-2.65,-.79]){box(woodDark,x,1.23,5.32,.12,.9,.23);sphere(brass,x,1.78,5.32,.09,.10,.06);}
+// Slightly lofted cloth sheet and cover, draping off the mattress edges.
+function clothSurface(name,color,cx,z0,z1,width,baseY,amp,overhang=0.16,materialTex=null){
+  const nx=22,nz=28,positions=[],uv=[],indices=[];
+  for(let j=0;j<=nz;j++)for(let i=0;i<=nx;i++){
+    const u=i/nx,v=j/nz,x=(u-.5)*(width+overhang*2),z=z0+v*(z1-z0),edge=Math.max(0,Math.abs(u-.5)*2-.70),end=Math.max(0,Math.abs(v-.5)*2-.86);
+    const y=baseY+amp*(.27*Math.sin(u*22+v*9)+.14*Math.sin(v*45-u*11)+.18*Math.cos(u*9+v*8))-.20*Math.pow(edge,1.6)-.14*Math.pow(end,1.6);
+    positions.push(x,y,z);uv.push(u*1.9,v*2.3);
+  }
+  for(let j=0;j<nz;j++)for(let i=0;i<nx;i++){const a=j*(nx+1)+i,b=a+1,c=a+nx+1,d=c+1;indices.push(a,c,b,b,c,d);}
+  const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));geo.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));geo.setIndex(indices);geo.computeVertexNormals();
+  const m=new THREE.MeshStandardMaterial({color,roughness:.98,map:materialTex,side:THREE.DoubleSide});const o=mesh(geo,m,cx,0,0);return o;
+}
+clothSurface('sheet','#e9e1d0',bedX,4.00,5.10,bw-.18,1.065,.018,.12);
+clothSurface('patchwork','#ffffff',bedX,2.28,4.58,bw-.02,1.12,.026,.21,new THREE.MeshStandardMaterial({map:quiltTex,roughness:.98,side:THREE.DoubleSide}));
+// Hand-stitched cover channels at close range.
+for(let i=0;i<7;i++){const z=2.55+i*.26;const seam=box(cream,bedX,1.132,z,2.24,.006,.012);seam.rotation.y=(i%2?-.035:.025);}
+// Linen pillows with soft raised centre and hand-bound piping.
+function pillow(x,z,rot=0){const p=box(linen,x,1.075,z,.79,.20,.48,world,0,rot,0);p.scale.set(.79,.20,.48);box(cream,x,1.183,z,.70,.018,.39,world,0,rot,0);for(const s of [-1,1])rod(cream,[x+s*.36,1.19,z-.18],[x+s*.30,1.19,z+.18],.012);}
+pillow(-2.26,4.88,-.12);pillow(-1.35,4.91,.10);
+// Folded wool throw and its tasselled edge.
+box(mustard,-1.72,1.08,2.56,2.33,.12,.65,world,0,.02,0);
+for(let i=0;i<10;i++)rod(cream,[-2.79+i*.238,.97,2.24],[-2.79+i*.238,.91,2.12],.012);
+// Bedside table on the free side of the bed.
+const tx=-.05,tz=4.65;
+for(const x of [-.43,.33])for(const z of [4.35,4.95])box(woodDark,x,.39,z,.075,.78,.075,world,0,0,0,true);
+box(wood,tx,.80,tz,.95,.13,.83,world,0,0,0,true);box(woodLight,tx,.66,tz,.80,.20,.68);box(woodDark,tx,.64,tz+.41,.87,.08,.055);
+box(wood,tx,.92,tz,.88,.07,.76);box(brass,tx,.66,tz+.45,.10,.055,.055);
+// Trinket tray, chipped tea cup, toast, and morning correspondence.
+plate(woodLight,-.04,.97,4.61,.45,.33,.035);cylinder(cream,.03,1.055,4.59,.085,.12,world,16);cylinder(woodDark,.03,1.12,4.59,.082,.018,world,16);rod(cream,[.12,1.05,4.59],[.19,1.04,4.59],.023);
+box(paper,-.26,.99,4.86,.30,.022,.21,world,0,.04,0);box(rust,-.26,1.013,4.86,.18,.018,.075,world,0,.03,0);
+// Bedtime book open, stitched red spine, a tiny sketch of a reed skiff on the page.
+box(woodDark,-.29,1.005,4.38,.34,.045,.23,world,.02,-.12,0);box(paper,-.29,1.035,4.38,.31,.015,.205,world,.02,-.12,0);
+for(let i=0;i<4;i++)box(woodEdge,-.30,1.046,4.32+i*.035,.20,.003,.004,world,0,-.12,0);
+// A window ledge growing tray: clipped herbs, pottery saucer and hanging drying sprig.
+box(woodLight,3.35,1.05,5.0,.40,.12,2.0);
+for(const z of [4.35,5.0,5.58]){cylinder(rust,3.20,1.17,z,.13,.17,world,12);for(let i=0;i<5;i++){const a=i*1.25;rod(sage,[3.2,1.28,z],[3.2+Math.cos(a)*.13,1.45+((i%2)*.04),z+Math.sin(a)*.13],.018);sphere(sage,3.2+Math.cos(a)*.13,1.47+(i%2)*.04,z+Math.sin(a)*.13,.045,.014,.025);}}
+
+// The keepsake wall: route tokens on a rail, a ferry lantern, folded-letter pigeonhole.
+box(wood,0.05,2.15,6.79,2.0,.72,.11);box(woodDark,.05,2.53,6.78,2.12,.10,.16);
+for(let i=0;i<8;i++){
+  const x=-.78+i*.235;
+  cylinder(brass,x,2.27,6.69,.064,.034,world,12,Math.PI/2);
+  sphere(mustard,x,2.28,6.65,.021,.021,.015);
+}
+// Family portrait in a handmade oval frame; simple stylized faces, no external characters.
+box(woodEdge,1.75,2.08,6.78,.73,.88,.12);box(brass,1.75,2.08,6.70,.61,.75,.035);
+box(plum,1.75,2.04,6.67,.52,.64,.025);sphere(cream,1.62,2.18,6.63,.11,.12,.045);sphere(teal,1.88,2.18,6.63,.11,.12,.045);
+box(rust,1.62,1.94,6.63,.16,.22,.035);box(tealDark,1.88,1.94,6.63,.16,.22,.035);rod(cream,[1.76,1.76,6.62],[1.76,1.95,6.62],.016);
+// Built-in mail slots with tied letters, thimble, and a comb.
+for(let i=0;i<3;i++){
+  box(woodDark,2.66,1.65+i*.43,6.82,.98,.07,.35);box(wood,2.66,1.87+i*.43,6.80,.95,.34,.29);
+  box(paper,2.49,1.83+i*.43,6.62,.38,.025,.22,world,0,(i-1)*.09,0);rod(rust,[2.62,1.84+i*.43,6.60],[2.82,1.84+i*.43,6.60],.012);
+}
+box(dark,2.56,1.2,6.56,.52,.19,.43);box(brass,2.30,1.2,6.56,.08,.17,.06);
+
+// Wardrobe: enter a walk-in aisle between a hanging rail and deep cubbies.
+// Raised threshold rug is long enough to stand on while facing each side.
+const wardRug=mesh(new THREE.PlaneGeometry(2.7,3.7),new THREE.MeshStandardMaterial({color:'#8d7860',map:clothTex,roughness:1,side:THREE.DoubleSide}),.05,.014,9.12);wardRug.rotation.x=-Math.PI/2;
+for(let i=0;i<11;i++)box(brass,-1.25+i*.25,.02,9.12,.018,.009,3.5);
+// Rail, upper shelf, cleated supports, built-in drawers and cubbies along west wall.
+box(woodDark,-2.48,2.95,9.10,.26,.14,3.55);box(woodLight,-2.45,3.13,9.10,.38,.12,3.68);
+for(const z of [7.52,8.55,9.6,10.64])box(wood,-2.43,1.46,z,.42,1.45,.075,world,0,0,0,true);
+for(const y of [.68,1.48,2.17])box(woodLight,-2.30,y,9.12,.70,.08,3.2);
+for(const z of [8.32,9.36,10.4])box(woodDark,-2.25,1.72,z,.76,.65,.055);
+// drawer pulls and folded textiles, each textile uses a short low-poly stack.
+for(let i=0;i<3;i++){
+  box(wood,-2.23,.44,7.78+i*.72,.64,.50,.56,world,0,0,0,true);
+  box(brass,-1.86,.47,7.78+i*.72,.035,.045,.045);
+  const colors=[linen,teal,mustard,plum,rust];
+  for(let fold=0;fold<3;fold++){
+    const f=box(colors[(i+fold)%colors.length],-2.25,1.60+fold*.105,8.0+i*.95,.46,.105,.55);
+    f.rotation.z=(fold%2?-.035:.025);
+    for(let line=0;line<3;line++)box(cream,-2.25,1.655+fold*.105,7.79+line*.12,.35,.006,.008);
+  }
+}
+// Long brass hanging rail and a row of solid wood hangers.
+rod(brass,[-2.30,2.68,7.52],[-2.30,2.68,10.69],.035);
+function garmentShape(width,height,hemColor,shoulder='coat'){
+  const sh=new THREE.Shape();
+  if(shoulder==='cape'){
+    sh.moveTo(-width*.30,height*.70);sh.lineTo(-width*.50,height*.93);sh.lineTo(-width*.23,height);sh.lineTo(0,height*.90);sh.lineTo(width*.23,height);sh.lineTo(width*.50,height*.93);sh.lineTo(width*.30,height*.70);sh.lineTo(width*.36,.08);sh.quadraticCurveTo(0,-.06,-width*.36,.08);sh.closePath();
+  }else if(shoulder==='shirt'){
+    sh.moveTo(-width*.28,height*.72);sh.lineTo(-width*.50,height*.91);sh.lineTo(-width*.34,height*.75);sh.lineTo(-width*.38,.06);sh.quadraticCurveTo(0,-.02,width*.38,.06);sh.lineTo(width*.34,height*.75);sh.lineTo(width*.50,height*.91);sh.lineTo(width*.28,height*.72);sh.lineTo(width*.17,height*.79);sh.lineTo(0,height*.77);sh.lineTo(-width*.17,height*.79);sh.closePath();
+  }else {
+    sh.moveTo(-width*.22,height*.76);sh.lineTo(-width*.48,height*.97);sh.lineTo(-width*.29,height*.79);sh.lineTo(-width*.34,.05);sh.quadraticCurveTo(0,-.025,width*.34,.05);sh.lineTo(width*.29,height*.79);sh.lineTo(width*.48,height*.97);sh.lineTo(width*.22,height*.76);sh.lineTo(0,height*.84);sh.closePath();
+  }
+  const g=new THREE.ExtrudeGeometry(sh,{depth:.065,bevelEnabled:true,bevelSegments:1,steps:1,bevelSize:.018,bevelThickness:.018});
+  return mesh(g,hemColor,-2.27,1.68,7.6);
+}
+const coats=[
+  {z:7.82,c:teal,w:.62,h:.91,s:'coat'}, {z:8.23,c:rust,w:.69,h:1.09,s:'cape'},
+  {z:8.65,c:mustard,w:.58,h:.80,s:'shirt'}, {z:9.06,c:indigo,w:.66,h:1.0,s:'coat'},
+  {z:9.49,c:plum,w:.72,h:1.13,s:'cape'}, {z:9.94,c:sage,w:.56,h:.75,s:'shirt'},
+  {z:10.34,c:leather,w:.68,h:.94,s:'coat'}
+];
+coats.forEach((c,i)=>{
+  const g=garmentShape(c.w,c.h,c.c,c.s);g.position.z=c.z;
+  // Hanger shoulders, hook, front seam and 2-3 restrained fabric folds.
+  const zz=c.z;
+  rod(woodLight,[-2.47,2.55,zz],[-2.27,2.46,zz],.024);rod(woodLight,[-2.27,2.46,zz],[-2.06,2.55,zz],.024);rod(brass,[-2.27,2.46,zz],[-2.27,2.68,zz],.012);
+  rod(cream,[-2.28,2.45,zz],[-2.28,1.80,zz],.008);
+  if(c.s==='coat'){
+    rod(brass,[-2.48,2.38,zz+.012],[-2.47,1.78,zz+.012],.012);
+    for(let k=0;k<4;k++)sphere(brass,-2.47,2.26-k*.12,zz+.05,.018,.018,.012);
+  }
+  const seed=i+1;
+  for(let f=0;f<2;f++)rod(cream,[-2.27+(f?1:-1)*.08,1.85,zz-.023],[-2.27+(f?1:-1)*.10,2.35,zz-.023],.008);
+  box(i===0?mustard:cream,-2.22,1.82,zz+.045,.10,.08,.025);
+});
+// Rain cloak cuff patches, a repaired seam and an old route badge stitched to the everyday coat.
+box(mustard,-2.02,1.97,9.09,.10,.22,.045,world,0,0,-.05);
+box(rust,-2.31,2.14,7.83,.11,.13,.08);sphere(brass,-2.31,2.14,7.77,.035,.035,.018);
+// Pairs of kept shoes/boots on the lowest shelf, plus a worn boot brush.
+function boot(x,z,color=leather,mirror=1){
+  box(color,x, .37,z,.21,.22,.39,world,0,0,0,true);
+  box(color,x,.53,z-.08,.20,.42,.17,world,-.10,0,0);
+  box(woodDark,x,.26,z,.24,.06,.43);for(let i=0;i<3;i++)rod(brass,[x-.075,.49+i*.07,z-.17],[x+.075,.49+i*.07,z-.17],.008);
+}
+boot(-2.05,8.0);boot(-2.45,8.0);boot(-2.04,8.66,tealDark);boot(-2.45,8.66,tealDark);
+// Folded satchel, buckles and an undelivered ribbon-tied parcel.
+box(leather,-1.92,.87,10.2,.54,.45,.61,world,.06,0,0,true);box(woodDark,-1.92,.97,9.88,.39,.05,.06);
+rod(brass,[-2.15,1.14,10.2],[-1.69,1.14,10.2],.018);box(brass,-1.92,.89,9.87,.11,.12,.035);
+box(paper,-1.58,.57,10.04,.42,.33,.34,world,.03,.08,.03);rod(rust,[-1.81,.75,10.01],[-1.40,.74,10.01],.014);sphere(rust,-1.62,.74,10.0,.035,.035,.025);
+// Cedar sachet ring, comb, spool, needle box on a narrow pull-out shelf.
+box(woodLight,-1.86,2.03,10.38,.94,.09,.39);cylinder(plum,-1.98,2.14,10.34,.07,.13,world,12);cylinder(cream,-1.98,2.14,10.34,.026,.15,world,8);
+box(woodDark,-1.66,2.11,10.34,.30,.12,.18);for(let i=0;i<5;i++)rod(brass,[-1.78+i*.055,2.17,10.25],[-1.78+i*.055,2.17,10.43],.009);
+
+// Opposite wall shelf: parcel twine, route token jar and a drying reed bundle.
+box(wood,2.38,2.74,9.1,.64,.14,3.15);box(woodLight,2.38,2.87,9.1,.72,.10,3.22);
+for(let i=0;i<6;i++){
+  const z=7.85+i*.48;sphere(brass,2.18,2.98,z,.045,.045,.04);
+}
+box(woodDark,2.31,2.35,8.25,.68,.12,.53);cylinder(cream,2.27,2.56,8.24,.13,.27,world,12);cylinder(brass,2.27,2.70,8.24,.15,.035,world,12);
+for(let i=0;i<7;i++){const a=i*.89;rod(sage,[2.28,2.74,8.24],[2.28+Math.cos(a)*.23,3.0,8.24+Math.sin(a)*.23],.014);}
+box(woodLight,2.34,1.60,9.9,.65,.09,1.8);
+for(let i=0;i<4;i++){box([teal,rust,mustard,plum][i],2.33,1.80,9.32+i*.35,.48,.27,.29);box(cream,2.33,1.95,9.32+i*.35,.46,.018,.27);}
+
+// Study: scarred map table, working tools and an active wall chart.
+const studyRug=mesh(new THREE.PlaneGeometry(4.1,3.45),new THREE.MeshStandardMaterial({color:'#817a66',map:clothTex,roughness:1,side:THREE.DoubleSide}),0,.015,13.92);studyRug.rotation.x=-Math.PI/2;
+for(let i=0;i<13;i++)box(rust,-1.92+i*.32,.019,13.92,.018,.008,3.30);
+const deskX=0,deskZ=15.20;
+// Treated table legs, two apron rails, end framing, thick top and cleats.
+const deskStart=world.children.length, deskLegs=[];
+for(const x of [-1.32,1.32])for(const z of [14.63,15.72]){
+  deskLegs.push(box(woodDark,x,.47,z,.15,.94,.15,world,.025,0,0,true));box(woodLight,x,.83,z,.22,.12,.22);
+}
+box(wood,0,.91,14.68,2.76,.15,.14);box(woodDark,0,.91,15.67,2.76,.15,.14);
+box(woodLight,deskX,1.07,deskZ,3.02,.20,1.42,world,0,0,0,true);
+// A distinct front edge, small pegged joinery and repeated old score marks.
+box(woodDark,0,1.10,14.48,2.88,.065,.07);
+for(let i=0;i<9;i++)sphere(brass,-1.25+i*.31,1.105,14.46,.018,.018,.014);
+// Upper work surface map, gently lifted paper corners, leather map weights.
+const map=mesh(new THREE.PlaneGeometry(2.12,1.26,1,1),paperMat,-.10,1.186,15.15);map.rotation.x=-Math.PI/2;map.rotation.z=.025;
+// Rolled chart tubes at map edges.
+for(const x of [-1.24,1.05]){const tube=cylinder(paper,x,1.205,15.15,.055,1.30,world,12,Math.PI/2);tube.rotation.z=Math.PI/2;}
+// Four brass weights sit directly on paper margins.
+for(const [x,z] of [[-1.08,14.61],[.86,14.61],[-1.08,15.67],[.86,15.67]]){
+  cylinder(brass,x,1.22,z,.07,.07,world,12);sphere(metal,x,1.27,z,.025,.03,.025);
+}
+// Route pins following the winding red path, brass heads with colored enamel.
+for(const [x,z,c] of [[-.80,14.97,rust],[-.42,15.13,mustard],[.09,15.02,teal],[.46,15.36,rust],[.74,15.68,plum]]){
+  rod(brass,[x,1.20,z],[x,1.31,z],.014);sphere(c,x,1.33,z,.038,.034,.035);
+}
+// Compass, dividers, pencils, ink, wax seal, string loops and a cup ring on table.
+cylinder(brass,-1.14,1.23,15.74,.18,.045,world,20);cylinder(woodDark,-1.14,1.26,15.74,.135,.012,world,20);sphere(mustard,-1.14,1.28,15.74,.075,.015,.03);
+rod(metal,[.99,1.22,14.88],[.68,1.22,15.29],.018);rod(metal,[.99,1.22,14.88],[.85,1.22,15.34],.014);sphere(brass,.99,1.23,14.88,.045,.03,.045);
+for(let i=0;i<3;i++)rod([rust,indigo,woodDark][i],[-1.12+i*.14,1.24,14.75],[-.48+i*.14,1.24,14.67],.022);
+cylinder(dark,1.14,1.29,15.63,.10,.19,world,12);cylinder(rust,1.14,1.39,15.63,.085,.025,world,12);cylinder(brass,1.14,1.40,15.63,.035,.018,world,12);
+box(wood,-.89,1.23,14.98,.30,.04,.20);box(paper,-.89,1.26,14.98,.28,.012,.18);
+// brass astrolabe-inspired hand tool
+const torus=mesh(new THREE.TorusGeometry(.17,.018,6,20),brass,-.72,1.30,15.72);torus.rotation.x=Math.PI/2;rod(brass,[-.89,1.30,15.72],[-.55,1.30,15.72],.009);sphere(metal,-.72,1.30,15.72,.025,.025,.025);
+// folded notes tucked under map lip; quill and maker's knife.
+box(paper,1.11,1.19,14.94,.46,.022,.35,world,0,.08,0);box(cream,1.10,1.205,14.94,.43,.008,.32,world,0,.08,0);
+rod(woodDark,[.89,1.24,14.89],[1.32,1.24,15.12],.018);rod(brass,[.86,1.24,14.86],[.75,1.24,14.80],.012);
+// Keep the worktop at a human desk height while shortening its legs to the floor.
+const deskRig=new THREE.Group();world.add(deskRig);
+for(const item of world.children.slice(deskStart).filter(o=>!deskLegs.includes(o)))deskRig.attach(item);
+deskRig.position.y=-.38;
+deskLegs.forEach(l=>{l.position.y=.325;l.scale.y=.59;});
+// Desk stool offset to the side so the route remains clear.
+const sx=1.83,sz=13.66;
+cylinder(woodDark,sx,.61,sz,.32,.12,world,16);cylinder(woodLight,sx,.69,sz,.34,.08,world,16);
+for(let i=0;i<4;i++){const a=i*Math.PI/2+.3;rod(woodDark,[sx+Math.cos(a)*.19,.59,sz+Math.sin(a)*.19],[sx+Math.cos(a)*.29,.08,sz+Math.sin(a)*.29],.045);}
+rod(woodLight,[sx-.28,.28,sz],[sx+.28,.28,sz],.028);rod(woodLight,[sx,.28,sz-.28],[sx,.28,sz+.28],.028);
+// Wall map board with clipped route scraps, thread, brass ring pegs and a dry reed marker.
+box(woodDark,0,2.33,16.20,2.92,1.25,.16);box(paper,0,2.33,16.09,2.67,1.06,.025);
+// Make two wall charts using simple paper cards and fine map strokes as geometry.
+const wallPaper=mat('wallPaper','#d7c89f');box(wallPaper,-.06,2.34,16.05,1.42,.86,.018);
+for(let i=0;i<9;i++)rod(plum,[-.69+i*.15,2.04,16.035],[-.61+i*.15,2.64,16.035],.006);
+for(let i=0;i<5;i++)rod(teal,[-.70,2.12+i*.13,16.036],[.60,2.11+i*.13,16.036],.006);
+// A tide strip with colored ceramic weights and twine connecting two safe moorings.
+box(cream,.98,2.32,16.03,.70,.82,.028);
+for(let i=0;i<5;i++)box(i<2?teal:rust,.98,2.03+i*.13,16.01,.38,.018,.016);
+for(const [x,y] of [[-.86,2.73],[.56,2.56],[1.17,2.57]]){sphere(brass,x,y,16.00,.055,.055,.03);}
+rod(rust,[-.86,2.73,15.99],[.56,2.56,15.99],.012);rod(rust,[.56,2.56,15.99],[1.17,2.57,15.99],.012);
+box(woodLight,0,2.99,16.05,3.0,.10,.12);
+// A pinned sketch of her ferry and a small route token sewn to the wall edge.
+box(paper,-1.03,1.72,16.03,.56,.43,.022);box(teal,-1.02,1.79,16.01,.35,.07,.02);rod(woodDark,[-1.29,1.76,15.99],[-.77,1.76,15.99],.014);rod(linen,[-1.02,1.80,15.99],[-1.02,2.10,15.99],.01);
+sphere(brass,1.53,2.85,16.0,.06,.06,.025);rod(rust,[1.52,2.84,15.99],[1.72,2.97,15.99],.012);rod(rust,[1.72,2.97,15.99],[1.83,2.78,15.99],.012);
+// Side shelf at west wall holds chart tube, paperweights, spare lamp oil and route ledger.
+box(wood, -3.30,1.80,12.06,.38,.13,2.6);box(woodLight,-3.27,1.93,12.06,.48,.10,2.68);
+for(const z of [11.25,12.08,12.91]){box(leather,-3.10,2.21,z,.23,.45,.60,world,.02,0,0);box(woodDark,-2.98,2.21,z,.04,.19,.40);}
+cylinder(paper,-3.14,2.39,13.70,.095,.92,world,12,Math.PI/2);cylinder(woodLight,-3.14,2.39,13.70,.105,.06,world,12,Math.PI/2);
+box(brass,-3.19,2.09,11.58,.08,.20,.07);sphere(teal,-3.02,2.08,11.78,.09,.08,.08);
+// A small joined drawer under the worktop keeps the center approach unobstructed.
+box(woodDark,0,.72,15.63,1.16,.20,.42);box(woodLight,0,.73,15.40,1.13,.16,.045);
+box(woodDark,0,.74,15.37,.10,.055,.025);sphere(brass,0,.74,15.34,.035,.035,.022);
+
+// Decorative small-footprint lighting: hooded wick lamps with a visible warm glass.
+function lamp(x,y,z,parent=world){
+  cylinder(woodDark,x,y-.12,z,.10,.20,parent,12);cylinder(brass,x,y,z,.13,.045,parent,12);
+  const shade=mesh(new THREE.ConeGeometry(.15,.12,12),brass,x,y+.13,z,parent);shade.rotation.z=Math.PI;
+  sphere(mustard,x,y+.045,z,.046,.065,.046,parent);
+}
+lamp(-.05,1.24,4.65);lamp(.48,1.02,14.67);
+// Wall-mounted map-room task light and angled brass arm.
+rod(brass,[-1.3,2.75,15.94],[-1.03,3.0,15.94],.024);lamp(-.98,2.97,15.91);
+
+// Painted reed-shaped wayfinding marks at ankle height; tiny brass studs guide the return route.
+function reedMark(x,z,angle=0){
+  const g=new THREE.Group();world.add(g);g.position.set(x,.055,z);g.rotation.y=angle;
+  box(brass,0,0,0,.13,.025,.07,g);rod(teal,[0,.02,0],[0,.16,0],.012,g);rod(teal,[0,.09,0],[-.06,.14,.025],.009,g);rod(teal,[0,.12,0],[.055,.17,-.018],.009,g);
+}
+reedMark(.89,1.15,0);reedMark(.90,6.62,0);reedMark(1.95,8.35,Math.PI/2);reedMark(.96,10.82,0);reedMark(-2.9,13.55,Math.PI/2);
+
+// Footstep boundaries and furniture collision. Movement sweeps on each axis to glide at corners.
+function collisionBounds(x,z){
+  let half=z<7?3.42:z<11.15?2.57:3.42;
+  if(z<.25||z>16.14)return false;
+  if(Math.abs(x)>half)return false;
+  if((z>6.87&&z<7.13)&&Math.abs(x)>1.20)return false;
+  if((z>11.02&&z<11.28)&&Math.abs(x)>1.08)return false;
+  if(z>=7&&z<=11.15&&Math.abs(x)>2.57)return false;
+  const r=.27;
+  for(const o of solids)if(Math.abs(x-o.x)<o.w/2+r&&Math.abs(z-o.z)<o.d/2+r)return false;
+  return true;
+}
+// Coarse furniture blockers are intentionally a little smaller than decorative overhangs.
+solids.push(
+  {x:bedX,z:bedZ,w:2.35,d:2.78},{x:-.05,z:4.65,w:.88,d:.77},
+  {x:2.35,z:2.1,w:.9,d:.5},{x:2.35,z:3.5,w:.9,d:.4},
+  {x:-2.30,z:9.15,w:.60,d:3.55},{x:2.34,z:9.15,w:.66,d:3.55},
+  {x:0,z:15.2,w:2.88,d:1.28},{x:sx,z:sz,w:.58,d:.58},
+  {x:-3.28,z:12.08,w:.48,d:2.75}
+);
+
+// Camera start and look controls.
+let px=0,pz=.62,yaw=0,pitch=-.015,locked=false;
+const keys=new Set();let last=performance.now(),walkPhase=0;
+function resetWalk(){px=0;pz=.62;yaw=0;pitch=-.015;camera.position.set(px,1.68,pz);camera.rotation.set(pitch,yaw,0);}
+resetWalk();
+function updateRoom(){let name=pz<7?'The bedroom':pz<11.15?'Walk-in wardrobe':'The map study';document.querySelector('#room-name').textContent=name;}
+document.querySelector('#enter').addEventListener('click',()=>{canvas.requestPointerLock?.();});
+document.addEventListener('pointerlockchange',()=>{locked=document.pointerLockElement===canvas;document.querySelector('#veil').classList.toggle('hidden',locked);});
+document.addEventListener('mousemove',e=>{if(!locked)return;yaw-=e.movementX*.0021;pitch-=e.movementY*.0018;pitch=THREE.MathUtils.clamp(pitch,-1.42,1.42);});
+document.addEventListener('keydown',e=>{const k=e.key.toLowerCase();keys.add(k);if(['arrowup','arrowdown','arrowleft','arrowright',' '].includes(k))e.preventDefault();if(k==='r'){resetWalk();canvas.requestPointerLock?.();}});
+document.addEventListener('keyup',e=>keys.delete(e.key.toLowerCase()));
+document.addEventListener('pointerlockerror',()=>{document.querySelector('.deck').textContent='Click to walk; if pointer lock is unavailable, use WASD with the mouse.';});
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6));renderer.setSize(innerWidth,innerHeight,false);});
+
+function frame(now){requestAnimationFrame(frame);const dt=Math.min(.04,(now-last)/1000||0);last=now;
+  if(locked){
+    let f=(keys.has('w')||keys.has('arrowup')?1:0)-(keys.has('s')||keys.has('arrowdown')?1:0);
+    let side=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0);
+    const mag=Math.hypot(f,side)||1;f/=mag;side/=mag;
+    const speed=(keys.has('shift')?1.35:2.65)*dt;
+    const dx=(Math.sin(yaw)*f+Math.cos(yaw)*side)*speed;
+    const dz=(Math.cos(yaw)*f-Math.sin(yaw)*side)*speed;
+    if(collisionBounds(px+dx,pz))px+=dx;
+    if(collisionBounds(px,pz+dz))pz+=dz;
+    if(f||side)walkPhase+=dt*8;
+  }
+  const walking=keys.has('w')||keys.has('s')||keys.has('a')||keys.has('d');
+  const bob=locked&&walking?Math.sin(walkPhase)*.012:0;
+  camera.position.set(px,1.68+bob,pz);
+  camera.rotation.set(pitch,yaw,0);updateRoom();renderer.render(scene,camera);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

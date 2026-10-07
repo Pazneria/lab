@@ -1,0 +1,71 @@
+{
+  "entry": "miras-wayfarer-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\miras-wayfarer-luna\\source-preservation.zip",
+  "archiveSha256": "9446400a602a4d63055927e298b58ac643292b700ea3aec2c029eac88536669d",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "d933b6242c17ca5bcfd35d2bd397220b089af0bd48f83d9bdddff8b0cba6ca7e",
+        "bytes": 37517
+      },
+      "README.md": {
+        "sha256": "bd8cac9aaa7ffed5b443d20849f4bd66d279721204d385dbad48c81e030a588c",
+        "bytes": 2572
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\miras-wayfarer-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "9446400a602a4d63055927e298b58ac643292b700ea3aec2c029eac88536669d",
+    "supplementalDependencies": []
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:06:02Z",
+    "deadlineUtc": "2026-10-07T10:06:02Z",
+    "stopUtc": "2026-10-07T09:12:29Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "d933b6242c17ca5bcfd35d2bd397220b089af0bd48f83d9bdddff8b0cba6ca7e",
+      "bytes": 37517
+    },
+    "launch-prompt.txt": {
+      "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "bytes": 7830
+    },
+    "README.md": {
+      "sha256": "bd8cac9aaa7ffed5b443d20849f4bd66d279721204d385dbad48c81e030a588c",
+      "bytes": 2572
+    },
+    "run-record.json": {
+      "sha256": "7c3a091499d0bd1ff1d62dfea281d4da7781f8595ddfde4408764efdf80814bb",
+      "bytes": 2251
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}

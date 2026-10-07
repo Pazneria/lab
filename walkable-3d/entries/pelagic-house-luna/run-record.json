@@ -1,0 +1,55 @@
+{
+  "id": "pelagic-house-luna",
+  "title": "Pelagic House — 04",
+  "scene": 19,
+  "model": "luna",
+  "workspace": "task-31",
+  "completionClearedByParent": true,
+  "threadId": "01a1159b-69e8-7081-a7ff-c99ea92a4006",
+  "requestedModel": "GPT-6 Luna",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:07:25Z",
+  "deadlineUtc": "2026-10-07T10:07:25Z",
+  "stopUtc": "2026-10-07T09:13:00Z",
+  "producerChecks": "Node.js v24.14.0 parsed inline JavaScript. No browser/server; visual appearance, movement, pointer lock, shader compilation and performance unverified. No measured frame times.",
+  "interruptions": "None reported.",
+  "cleanupClaim": "No persistent processes started; syntax process exited.",
+  "handoffSource": "Parent completed handoff; original README and BUILD_LOG retained.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Node.js v24.14.0 parsed inline JavaScript. No browser/server; visual appearance, movement, pointer lock, shader compilation and performance unverified. No measured frame times.",
+    "importerStaticChecks": {
+      "id": "pelagic-house-luna",
+      "syntax": [
+        {
+          "file": "index.html",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

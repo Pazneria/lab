@@ -1,0 +1,45 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact witch's cottage arranged as a cozy kitchen, a connected crowded magical workroom and a little greenhouse. Give it the welcoming, slightly mischievous character of an original home where practical daily routines and quiet magic coexist. From the entrance, lead me past the kitchen work surface, alongside the magical workbench and into the greenhouse, then back toward the kitchen.
+
+Give the kitchen a believable place to cook and sit, with a few signs that its resident has just stepped away. The workroom should feel richly occupied through shelves, containers and a distinct working surface without becoming an obstacle course. Suggest subtle environmental magic with restrained visual choices, such as an improbable arrangement, an unusual plant or a softly luminous object; movement and functioning spells are unnecessary. Build a small greenhouse with recognizable framing, glazing, planting surfaces and varied plant silhouettes. Distinguish ceramic, aged wood, glass, leaves and worn stone. A cool overcast garden light should meet warm kitchen light and a restrained magical accent, keeping all three spaces readable. Keep the world bounded to the cottage and greenhouse; a large garden, particle simulation and spell mechanics are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect the kitchen work surface, approach the crowded workbench, look along the shelves and step inside the greenhouse before looking back. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A cozy original cottage with a coherent mixture of domestic routines and subtle magic
+- Distinct ceramic, aged wood, glass, leaves and worn stone at close range
+- Believable kitchen, workbench and greenhouse construction with purposeful clutter
+- Readable cool daylight, warm kitchen light and restrained magical accents
+- Layered detail that remains convincing at the workbench and among greenhouse plants
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing the crowded workroom shelves and greenhouse plants through the glazed connection
+- Smooth movement between the kitchen, workroom and greenhouse
+- Minimal slowdown from overlapping leaves, glazing or numerous small props, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A cozy kitchen with a cooking/work surface and a place to sit
+- A connected crowded magical workroom and little framed greenhouse
+- Walkable access to the kitchen surface, workbench and greenhouse plants, with a clear return route
+- Convincing human scale, clutter-free walking clearances, safe surfaces and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → kitchen work surface → magical workbench → workroom shelves → inside the little greenhouse → return view toward the kitchen → entrance.
+
+I will pay particular attention to the balance between cozy clutter and usable space, close-range material differences and the view back through the greenhouse glazing. Specific magical objects, recipes and plants are optional; the three core spaces, subtle magical character and route are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+

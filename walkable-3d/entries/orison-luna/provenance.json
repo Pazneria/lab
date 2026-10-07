@@ -1,0 +1,162 @@
+{
+  "entry": "orison-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\orison-luna\\source-preservation.zip",
+  "archiveSha256": "dc6f785f622106f90570fb42fd3e8db1e8884d1686e64ba9fc5a18a233702705",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/style.css": "dist/src/style.css",
+      "frozen/THREE-LICENSE.txt": "dist/THREE-LICENSE.txt",
+      "frozen/three.module.js": "dist/three.module.js"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "3a3bcf768c25d0483b1e4b81f5a2879def4f8160c994929ae3a997511dbd84ae",
+        "bytes": 30
+      },
+      "build.mjs": {
+        "sha256": "158ddda2e207cc9ea932d133e9d8de739034f2dfc4d2a2ba5177bfa34748a2e6",
+        "bytes": 953
+      },
+      "dist/index.html": {
+        "sha256": "3bd2a38efae7040d8aec27de1482960d07d205a25a2c976f37a5a791a4757b85",
+        "bytes": 2104
+      },
+      "dist/src/main.js": {
+        "sha256": "fb873668d0d008db04b222b602c0966e0b96991491ed75d0da2a0b291eb7a9b4",
+        "bytes": 30093
+      },
+      "dist/src/style.css": {
+        "sha256": "8f546523cc746f25aea316d4e8b85afed55f60590e9829e92b84b22a5b2f78f2",
+        "bytes": 5195
+      },
+      "dist/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "dist/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      "index.html": {
+        "sha256": "8d7ae41d2fb440d8ec4b1730d819c799a95a527a4ce51b9ee55ebaaf6ff2d7bb",
+        "bytes": 2111
+      },
+      "package.json": {
+        "sha256": "9881304940f43b8057c4346d5623744f6a25022cd1433a8193c9df89acda5e4c",
+        "bytes": 221
+      },
+      "README.md": {
+        "sha256": "8d5d26a1b24abd6e28d2de61df57290184f84588571e82d8a126d12e16b682e4",
+        "bytes": 1690
+      },
+      "serve.mjs": {
+        "sha256": "c4fc15665399fd0f5680d0f5d8081ca1f06efba9922a5454f64a0f32a6376825",
+        "bytes": 1473
+      },
+      "src/main.js": {
+        "sha256": "fb873668d0d008db04b222b602c0966e0b96991491ed75d0da2a0b291eb7a9b4",
+        "bytes": 30093
+      },
+      "src/style.css": {
+        "sha256": "8f546523cc746f25aea316d4e8b85afed55f60590e9829e92b84b22a5b2f78f2",
+        "bytes": 5195
+      },
+      "vendor/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\orison-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "dc6f785f622106f90570fb42fd3e8db1e8884d1686e64ba9fc5a18a233702705",
+    "supplementalDependencies": []
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:04:53Z",
+    "deadlineUtc": "2026-10-07T10:04:53Z",
+    "stopUtc": "2026-10-07T09:26:30Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/src/",
+          "href=\"./src/"
+        ],
+        [
+          "\"/three.module.js\"",
+          "\"./three.module.js\""
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "3bd2a38efae7040d8aec27de1482960d07d205a25a2c976f37a5a791a4757b85",
+      "bytes": 2104
+    },
+    "frozen/src/main.js": {
+      "sha256": "fb873668d0d008db04b222b602c0966e0b96991491ed75d0da2a0b291eb7a9b4",
+      "bytes": 30093
+    },
+    "frozen/src/style.css": {
+      "sha256": "8f546523cc746f25aea316d4e8b85afed55f60590e9829e92b84b22a5b2f78f2",
+      "bytes": 5195
+    },
+    "frozen/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "launch-prompt.txt": {
+      "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
+      "bytes": 7611
+    },
+    "README.md": {
+      "sha256": "8d5d26a1b24abd6e28d2de61df57290184f84588571e82d8a126d12e16b682e4",
+      "bytes": 1690
+    },
+    "run-record.json": {
+      "sha256": "4a8876fbd49d445dc658be4c3fa232d9f8d1df4274d4ec7e8664bb101b71e59d",
+      "bytes": 3138
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/style.css",
+      "frozen/THREE-LICENSE.txt",
+      "frozen/three.module.js",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": [
+    "The supplied build references missing relative module(s): ./three.core.js, ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+  ]
+}

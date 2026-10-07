@@ -2805,6 +2805,421 @@
       "availability": "unverified",
       "previewCapture": "preview-capture.json",
       "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
+    },
+    {
+      "id": "reedway-rooms-luna",
+      "title": "The Reedway Rooms",
+      "description": "An original hero’s bedroom, usable wardrobe and small map-and-work study.",
+      "promptId": "15",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6 family; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:01:19Z; deadline 2026-10-07T10:01:19Z; stop 2026-10-07T09:11:33Z.",
+      "interruptions": "No user interruptions. Cache write issue; used cached dependency package.",
+      "controls": "- Click **Walk the rooms** to enter and capture the mouse.\n- **W A S D** or arrow keys move; **mouse** looks around.\n- Hold **Shift** for slower steps.\n- **R** returns to the entrance and resets the view.\n- **Esc** releases the mouse and shows the entry panel again.",
+      "producerChecks": "Inline JavaScript syntax, package JSON and module presence passed; no visual, interactive or performance tests.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations.",
+        "The supplied build references missing relative module(s): ./node_modules/three/build/three.module.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/build/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "326a1598c1d9d6f828b2c694ebbea734be4ab66f7ca2f6963245896172209eb2",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "f8c571a8b761570ef775e338c55d5d2d9a94e0d8e18bfd9ab93f834ce7328306",
+      "promptVersion": "15-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "cottage-luna-16",
+      "title": "Thistlewick Cottage",
+      "description": "A cozy kitchen, crowded magical workroom and little framed greenhouse.",
+      "promptId": "16",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:02:51Z; deadline 2026-10-07T10:02:51Z; stop 2026-10-07T09:15:48Z.",
+      "interruptions": "No external interruption. First implementation attempt failed before creating files. Task creation returned an internal error; parent verified admission without a duplicate or interruption.",
+      "controls": "- Click the scene to capture the mouse; move the mouse to look.\n- W, A, S, D or arrow keys to walk; hold Shift to walk faster.\n- Esc releases the mouse.\n- Press R or the on-screen button to reset to the entrance.",
+      "producerChecks": "Inline JavaScript syntax check and Python HTML parser passed. No browser, server, visual, movement or performance QA.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three/three.module.js"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "4c928e731f7a2eed3ddf5c716e4849d77e6d834179eb0c4b4005af709e80ad73",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "480efa1a389b197dbf25977544933ec38b076876da6512d5b1694baf7f52a4e0",
+      "promptVersion": "16-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "lantern-room-luna",
+      "title": "The Lantern Room",
+      "description": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor.",
+      "promptId": "17",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:03:27Z; deadline 2026-10-07T10:03:27Z; stop 2026-10-07T09:14:49Z.",
+      "interruptions": "No user or external interruptions. Optional Vite chunk splitting config hit sandbox access error; producer removed it and standard build passed.",
+      "controls": "- **W A S D** — walk\n- **Mouse** — look around (click **Step Inside** or the scene to capture the mouse; press **Esc** to release)\n- **Shift** — brisk walk\n- **R** or **Reset** — return to the entrance",
+      "producerChecks": "node --check src/main.js and npm run build passed. Bundle 525.47 KB minified / 136.93 KB gzip; Vite 500 KB chunk warning. No visual, interactive or frame-time checks.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "54ccc31be04151d59cea03c88a52e04c042308a602654b20eb9c7752ebec8377",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "1c0d2754a2844b5cc827751f08c93b371983c0b91c2094755d4619f16dfbf80b",
+      "promptVersion": "17-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "pelagic-house-luna",
+      "title": "Pelagic House — 04",
+      "description": "A domestic room, research work nook and substantial observation window onto a bounded dark reef.",
+      "promptId": "19",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:07:25Z; deadline 2026-10-07T10:07:25Z; stop 2026-10-07T09:13:00Z.",
+      "interruptions": "None reported.",
+      "controls": "- Click **Enter Habitat** to begin and capture the mouse.\n- **W A S D** walk; **mouse** looks around.\n- **Shift** moves more slowly.\n- **R** returns to the entrance and resets the view.\n- **F** toggles fullscreen; **Esc** releases the mouse. Click the scene to recapture it.\n\nUse the center aisle to pass the sofa and bed, approach the bench from its open side, then walk up to the glazing through the center of the observation room. The status label identifies the current room bay.",
+      "producerChecks": "Node.js v24.14.0 parsed inline JavaScript. No browser/server; visual appearance, movement, pointer lock, shader compilation and performance unverified. No measured frame times.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer BUILD LOG",
+          "path": "BUILD_LOG.md"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "1065574ed5ab62f82a8d50a47a65539d6089ea6f28b63fd570fd7187038cee53",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "4169cc00fc6e676280f7f43b79aa3a08cef37d1f8c9fcf041d86e6ba96b3c443",
+      "promptVersion": "19-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "miras-wayfarer-luna",
+      "title": "Mira's Wayfarer — A Tiny Merchant's Wagon",
+      "description": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp.",
+      "promptId": "20",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:06:02Z; deadline 2026-10-07T10:06:02Z; stop 2026-10-07T09:12:29Z.",
+      "interruptions": "None.",
+      "controls": "and route\n\n- **W / A / S / D** or **arrow keys**: walk\n- **Mouse**: look; click **Step inside** (or click the scene) to capture the pointer. Drag-look is also wired as a fallback.\n- **Shift**: move a little faster\n- **Esc**: release pointer capture\n- **R**: reset to the camp starting position\n\nStart on the camp side of the wagon. Walk around to the east end, climb the three broad fixed steps through the open doorway, and follow the open aisle through the home and its partition doorway into the storeroom/workshop. Return through the end door and circle to the front, where the supported canvas shop awning shades the counter. The small camp is directly beside the wagon.\n\nThe wagon is approximately 4.8 m long and 2.6 m wide, with about 2.1 m of interior headroom. The steps are ordinary fixed treads. The opening and awning stay in their displayed open positions.",
+      "producerChecks": "node --check passed. No browser/server; visual correctness, interactive movement and frame time unverified. Shader-based shade without dynamic shadow maps; simple collision bounds.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "9446400a602a4d63055927e298b58ac643292b700ea3aec2c029eac88536669d",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "d933b6242c17ca5bcfd35d2bd397220b089af0bd48f83d9bdddff8b0cba6ca7e",
+      "promptVersion": "20-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "emberward-luna",
+      "title": "The Emberward — Dragon Caretaker's Quarters",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:09:38Z; deadline 2026-10-07T10:09:38Z; stop 2026-10-07T09:15:47Z.",
+      "interruptions": "None.",
+      "controls": "- Click the scene to capture the mouse; move the mouse to look around.\n- **W/A/S/D** or arrow keys to walk; **Shift** to move faster.\n- **Esc** releases mouse-look.\n- **R** or **Reset to Entrance** returns to the bedroom entrance.",
+      "producerChecks": "node --check scene.js passed. No browser/server; visual appearance, interactive behavior and frame time unverified. Collision covers room bounds and major furnishing, not small decorative props.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations.",
+        "Original CSS imports Google Fonts. The unchanged entry-scoped viewer CSP blocks external styles/fonts and treats policy violations as failures. Hosted startup is untested and may fail. Original CSS is preserved; no fonts packaged, CSP relaxed or behavior repaired."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three/three.module.js"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "03c877b2c11e74b41fb88d60b9db939221652f2178be72daa99bc01d73014de4",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "865c4ee004b24e74e64b1d88211c129450c00a080bf94a8c61a16a55105dd909",
+      "promptVersion": "21-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "failed",
+      "completionStatus": "completed",
+      "failureCategory": "host-policy",
+      "admissionWithheld": true,
+      "failureSummary": "Original CSS imports Google Fonts. The unchanged entry-scoped viewer CSP blocks external styles/fonts and treats policy violations as failures. Hosted startup is untested and may fail. Original CSS is preserved; no fonts packaged, CSP relaxed or behavior repaired. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested."
+    },
+    {
+      "id": "vesper-vale-luna",
+      "title": "Vesper & Vale — Royal Atelier",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:07:26Z; deadline 2026-10-07T10:07:26Z; stop 2026-10-07T09:17:46Z.",
+      "interruptions": "None.",
+      "controls": "- Click **Enter the atelier** to begin and capture the mouse.\n- **W/A/S/D** or the arrow keys to walk; hold **Shift** to walk briskly.\n- Move the mouse to look around. **Esc** releases the mouse and pauses; click the scene or Resume to continue.\n- Press **R** to return to the entrance and reset the view.\n\nThe room labels in the upper-right corner follow the fitting room, archive, and workshop regions. Major furniture and the room dividers have conservative axis-aligned walking collisions.",
+      "producerChecks": "node --check main.js passed; local page references checked. No browser, interactive/visual check or performance benchmark.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "#loading.hidden",
+      "hostPathReplacements": [
+        [
+          "</head>",
+          "<script type=\"importmap\">{\"imports\":{\"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js\":\"./vendor/three/three.module.js\"}}</script></head>"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "900ee745dfef1d0537d237791c49a295f9d67841899643b699e35c71ad50995c",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "aced3f895ec221b094995775be9fa0c00facb2e5bf4aa5d1559443e6c128e281",
+      "promptVersion": "22-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "orison-luna",
+      "title": "Orison — Captain's Quarters",
+      "description": "A captain’s bedroom, private study and observation nook onto space.",
+      "promptId": "18",
+      "comparisonModel": "luna",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Luna, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:04:53Z; deadline 2026-10-07T10:04:53Z; stop 2026-10-07T09:26:30Z.",
+      "interruptions": "None.",
+      "controls": "- Click **Enter Quarters** to capture the mouse.\n- **W A S D** move; **arrow keys** also work.\n- Move the mouse to look around.\n- Hold **Shift** to move faster.\n- Press **R** to return to the entry position and initial view.\n- Press **Esc** to release the mouse; click the scene to recapture it.",
+      "producerChecks": "npm run build, JavaScript syntax, package JSON and built-asset reference checks passed. No browser, visual, interactive, WebGL compatibility or frame-time checks. Static planet/starfield, fixed-height movement and simplified 2D collision.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations.",
+        "The supplied build references missing relative module(s): ./three.core.js, ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/src/",
+          "href=\"./src/"
+        ],
+        [
+          "\"/three.module.js\"",
+          "\"./three.module.js\""
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "dc6f785f622106f90570fb42fd3e8db1e8884d1686e64ba9fc5a18a233702705",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "3bd2a38efae7040d8aec27de1482960d07d205a25a2c976f37a5a791a4757b85",
+      "promptVersion": "18-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "failed",
+      "completionStatus": "completed",
+      "failureCategory": "static-dependency",
+      "admissionWithheld": true,
+      "failureSummary": "The supplied build references missing relative module(s): ./three.core.js, ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested."
     }
   ],
   "prompts": [
@@ -2882,6 +3297,46 @@
       "id": "14",
       "title": "Ceramics workshop",
       "brief": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard."
+    },
+    {
+      "id": "15",
+      "title": "RPG hero’s bedroom and walk-in wardrobe",
+      "brief": "An original hero’s bedroom, usable wardrobe and small map-and-work study."
+    },
+    {
+      "id": "16",
+      "title": "Witch’s cottage with little greenhouse",
+      "brief": "A cozy kitchen, crowded magical workroom and little framed greenhouse."
+    },
+    {
+      "id": "17",
+      "title": "Retired adventurer’s tavern room",
+      "brief": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor."
+    },
+    {
+      "id": "18",
+      "title": "Starship captain’s private quarters",
+      "brief": "A captain’s bedroom, private study and observation nook onto space."
+    },
+    {
+      "id": "19",
+      "title": "Underwater researcher’s apartment",
+      "brief": "A domestic room, research work nook and substantial observation window onto a bounded dark reef."
+    },
+    {
+      "id": "20",
+      "title": "Traveling merchant’s wagon and camp",
+      "brief": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp."
+    },
+    {
+      "id": "21",
+      "title": "Dragon caretaker’s quarters and warm roost",
+      "brief": "A modest bedroom, gear/service passage and one large warm roost."
+    },
+    {
+      "id": "22",
+      "title": "Royal tailor’s atelier and unfinished outfit",
+      "brief": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit."
     }
   ],
   "promptVersions": [
@@ -3163,6 +3618,150 @@
       "sha256": "f5aae43a1ca1fd129ab6cd8c5ddbff1147598a4c03e68846f463ca9ff6c4f5cd",
       "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b; UTF-8 LF. Entrant transcripts not independently accessed.",
       "note": "Manual base attachment; actual unchanged user paste not independently verified."
+    },
+    {
+      "id": "15-base",
+      "promptId": "15",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-15-base.txt",
+      "sha256": "5c7d77c716f4c3a78b01b738f00816690c18ade151e26a18f1c0740b7a61cd38",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "15-openai",
+      "promptId": "15",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-15-openai.txt",
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "16-base",
+      "promptId": "16",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-16-base.txt",
+      "sha256": "3ac88fdef77fd9c68a9ff3646e0dce834d5e149dadb18b9402be9c08299a131f",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "16-openai",
+      "promptId": "16",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-16-openai.txt",
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "17-base",
+      "promptId": "17",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-17-base.txt",
+      "sha256": "5589f86032a1a51182ca1c65fde1116a6b1a4fc9e6b103b788c153e8cf1348f2",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "17-openai",
+      "promptId": "17",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-17-openai.txt",
+      "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "18-base",
+      "promptId": "18",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-18-base.txt",
+      "sha256": "fe5e127913fb745afb74afb34af0bd4a6112de5e1df92bf4b510688d23b48c31",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "18-openai",
+      "promptId": "18",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-18-openai.txt",
+      "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "19-base",
+      "promptId": "19",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-19-base.txt",
+      "sha256": "3365f3728913502108726a77596474878271842a8fbf6b6d620657c5af681c94",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "19-openai",
+      "promptId": "19",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-19-openai.txt",
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "20-base",
+      "promptId": "20",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-20-base.txt",
+      "sha256": "537eeb47306d95d2e254d50fa5f18ab723e562dcebacb67779da788fa3b29213",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "20-openai",
+      "promptId": "20",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-20-openai.txt",
+      "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "21-base",
+      "promptId": "21",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-21-base.txt",
+      "sha256": "4e391857c9ec69d17aab4b86eaf40a3e4808c3ad08d159899718e1393688366b",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "21-openai",
+      "promptId": "21",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-21-openai.txt",
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
+    },
+    {
+      "id": "22-base",
+      "promptId": "22",
+      "label": "Shared base reference / no manual entrant admitted",
+      "path": "prompt-22-base.txt",
+      "sha256": "c17dd97dfc3ff58ae8512633416b1598860f9c4c48fb244bb32ca3d5abf3e280",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Parent-supplied base reference; not evidence of a manual Claude run."
+    },
+    {
+      "id": "22-openai",
+      "promptId": "22",
+      "label": "Initial OpenAI launch / no-browser conditions",
+      "path": "prompt-22-openai.txt",
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
+      "source": "Exact parent-supplied manifest text handoff; local UTF-8 LF bytes verified against supplied SHA-256. Entrant transcripts not accessed.",
+      "note": "Supplied in full before implementation; no mid-run coordination or deadline extension."
     }
   ]
 }

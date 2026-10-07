@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101820" />
+    <meta name="description" content="An explorable starship captain's private quarters." />
+    <title>Orison — Captain's Quarters</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <script type="importmap">
+      { "imports": { "three": "/three.module.js" } }
+    </script>
+    <main id="scene" aria-label="Explorable starship captain's quarters">
+      <div class="brand"><span class="brand-mark">O</span><span>ORISON <i>·</i> PRIVATE DECK</span></div>
+      <div class="location" id="location">SLEEPING CABIN</div>
+      <div class="reticle" aria-hidden="true"><span></span></div>
+      <section class="welcome" id="welcome">
+        <div class="eyebrow">CAPTAIN MARA VENN · PERSONAL DECK</div>
+        <h1>A quiet place<br /><em>between stars.</em></h1>
+        <p>Walk the cabin, review the captain’s desk, and find a seat by the glass.</p>
+        <button id="enter" type="button"><span>ENTER QUARTERS</span><b>↗</b></button>
+        <div class="welcome-controls">WASD <span>MOVE</span><i>·</i> MOUSE <span>LOOK</span><i>·</i> R <span>RESET</span></div>
+      </section>
+      <aside class="controls" aria-label="Controls">
+        <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> <span>MOVE</span></div>
+        <div><kbd>SHIFT</kbd> <span>WALK FASTER</span></div>
+        <div><kbd>R</kbd> <span>RESET POSITION</span></div>
+        <div class="esc"><kbd>ESC</kbd> <span>RELEASE MOUSE</span></div>
+      </aside>
+      <div class="caption" id="caption">A place kept in order, with a few things out of place.</div>
+      <div class="toast" id="toast" role="status"></div>
+      <div class="loading" id="loading"><span class="loader"></span><span>PREPARING YOUR CABIN</span></div>
+      <noscript>This scene requires JavaScript and a WebGL-capable browser.</noscript>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

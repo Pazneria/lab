@@ -1,0 +1,80 @@
+{
+  "entry": "pelagic-house-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\pelagic-house-luna\\source-preservation.zip",
+  "archiveSha256": "1065574ed5ab62f82a8d50a47a65539d6089ea6f28b63fd570fd7187038cee53",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html"
+    },
+    "perFileSourceHashes": {
+      "BUILD_LOG.md": {
+        "sha256": "1fa8c53e6fd656e53853d9b109726a7d8170f996f8b5a73b97f8f711b8a0995c",
+        "bytes": 1060
+      },
+      "index.html": {
+        "sha256": "4169cc00fc6e676280f7f43b79aa3a08cef37d1f8c9fcf041d86e6ba96b3c443",
+        "bytes": 31001
+      },
+      "README.md": {
+        "sha256": "f164edceca9bfd414682a0dfbcdca5cefeb1ab55e949cbe56d99358fdef502a8",
+        "bytes": 1896
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\pelagic-house-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "1065574ed5ab62f82a8d50a47a65539d6089ea6f28b63fd570fd7187038cee53",
+    "supplementalDependencies": []
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:07:25Z",
+    "deadlineUtc": "2026-10-07T10:07:25Z",
+    "stopUtc": "2026-10-07T09:13:00Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "BUILD_LOG.md": {
+      "sha256": "1fa8c53e6fd656e53853d9b109726a7d8170f996f8b5a73b97f8f711b8a0995c",
+      "bytes": 1060
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4169cc00fc6e676280f7f43b79aa3a08cef37d1f8c9fcf041d86e6ba96b3c443",
+      "bytes": 31001
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "README.md": {
+      "sha256": "f164edceca9bfd414682a0dfbcdca5cefeb1ab55e949cbe56d99358fdef502a8",
+      "bytes": 1896
+    },
+    "run-record.json": {
+      "sha256": "478b40671475e348aaf6ad521019e2f37ea2e134fc175b39e516adca7b0372d7",
+      "bytes": 2205
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "BUILD_LOG.md",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}
