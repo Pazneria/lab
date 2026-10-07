@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#202d32" />
+  <title>Karst Ridge · Upper Terminal</title>
+  <script type="module" crossorigin src="./assets/index-Bm9ox1X3.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Dg3YOQox.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable mountain cable car station"></canvas>
+  <div id="error" hidden></div>
+  <div id="loading"><span class="eyebrow">KARST RIDGE / 1840 M</span><p>Preparing the upper station…</p></div>
+  <div id="intro" class="overlay" hidden>
+    <div class="intro-card">
+      <div class="badge">KR <span>ALPINE TRANSPORT</span></div>
+      <span class="eyebrow">UPPER TERMINAL · RAIN / 06°C</span>
+      <h1>Above the<br>cloud line.</h1>
+      <p class="lead">A quiet stop at Karst Ridge. Follow the sheltered platform past cabin 04, then step onto the mountain lookout.</p>
+      <button id="enter">Enter station <span>↗</span></button>
+      <div class="controls-grid"><span><b>W A S D</b> Walk</span><span><b>MOUSE</b> Look</span><span><b>SHIFT</b> Walk faster</span><span><b>R</b> Return to entrance</span><span><b>ESC</b> Release mouse</span><span><b>F</b> Frame-time readout</span></div>
+      <small>Click to capture the mouse. Headphones optional; the scene has no audio.</small>
+    </div>
+  </div>
+  <div id="hud" hidden>
+    <div class="station-label"><span class="dot"></span><span>KARST RIDGE <b>1840 M</b></span></div>
+    <div class="location"><span id="zone">TERMINAL</span><span class="location-rule"></span><span id="route">PLATFORM & LOOKOUT ↗</span></div>
+    <div id="reticle"></div>
+    <div class="bottom-bar"><span>WASD · MOUSE LOOK <i>SHIFT · FASTER</i></span><div><button id="help">Controls</button><button id="reset">Reset <kbd>R</kbd></button></div></div>
+    <div id="telemetry" hidden></div>
+  </div>
+  <div id="pause" class="overlay" hidden><div class="pause-card"><span class="eyebrow">KARST RIDGE</span><h2>Take your time.</h2><p>WASD to walk · Mouse to look · Shift to walk faster<br>R to reset · F for frame-time readout · Esc to pause</p><button id="resume">Continue exploring <span>↗</span></button><button id="pause-reset" class="secondary">Return to entrance</button></div></div>
+</body>
+</html>

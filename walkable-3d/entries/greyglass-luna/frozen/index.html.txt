@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#18232a">
+  <title>Greyglass — Mountain Cable Station</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <canvas id="view" aria-label="First person 3D mountain cable station"></canvas>
+  <div class="vignette"></div>
+  <header class="hud">
+    <div class="brand"><span class="mark">◉</span><span>GREYGLASS <small>· HIGH STATION 02</small></span></div>
+    <div class="weather"><i></i> 4° C <span>·</span> RAIN / MIST</div>
+  </header>
+  <div class="reticle"><b></b></div>
+  <aside class="location"><span id="zone">ARRIVAL HALL</span><span id="coords">ALT 1,842 M&nbsp; · &nbsp;SERVICE 08:42</span></aside>
+  <div class="help" id="help">
+    <div class="help-card">
+      <div class="eyebrow">ALPINE TRANSIT · STATION 02</div>
+      <h1>Between the weather<br>and the ridge.</h1>
+      <p>A quiet moment at Greyglass high station. The haul rope is parked for the storm.</p>
+      <p class="route-note">Inspect the sheave, follow the amber boarding edge beside the cabin, and continue beneath the ridge canopy.</p>
+      <div class="keys"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> WALK</span><span><kbd>SHIFT</kbd> MOVE FASTER</span><span><kbd>MOUSE</kbd> LOOK</span><span><kbd>R</kbd> RESET VIEW</span></div>
+      <button id="enter">ENTER STATION <span>↗</span></button>
+      <div class="hint">CLICK TO CAPTURE MOUSE · ESC TO RELEASE</div>
+    </div>
+  </div>
+  <div class="toast" id="toast">Mouse released · click to continue</div>
+  <script type="module" src="scene.js"></script>
+</body>
+</html>

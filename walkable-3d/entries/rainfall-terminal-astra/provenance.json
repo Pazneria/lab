@@ -1,0 +1,170 @@
+{
+  "entry": "rainfall-terminal-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\rainfall-terminal-astra\\original.zip",
+  "archiveSha256": "d40301b38b3e5c4c1483b2cb310e8a0d4d7504a7819e411c7c01a8e01c8e562a",
+  "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-dbRieUgw.js": "dist/assets/index-dbRieUgw.js",
+      "frozen/assets/index-DgI7HBgM.css": "dist/assets/index-DgI7HBgM.css"
+    },
+    "perFileSourceHashes": {
+      "CHECKS.md": {
+        "sha256": "737e76655c30d63d72ee08a39d918da4f358072bb5e0b1e0a334b0b5ce646d23",
+        "bytes": 3854
+      },
+      "index.html": {
+        "sha256": "1183f997cb6cdf920562f1c3bf534764e687d91c0783133888c70c2f32d0d820",
+        "bytes": 2311
+      },
+      "launch.mjs": {
+        "sha256": "76b3424dedee4eb81882f453d0871229d35bb3804c222506ed6ea598919e1720",
+        "bytes": 2067
+      },
+      "LAUNCH.txt": {
+        "sha256": "a51b50bdb16c5763cf89078aea84d91a60796766ebf98c1dcfaa19f30a724feb",
+        "bytes": 1290
+      },
+      "package-lock.json": {
+        "sha256": "b5375f5f3c7a9370c0e871af85c822be98812126e995928c78b6a5ace33a198f",
+        "bytes": 35194
+      },
+      "package.json": {
+        "sha256": "ee9b5e24bbbd972e067ad877bd914adda839ff97360c510b9dcfb7d823fd8bdd",
+        "bytes": 636
+      },
+      "README.md": {
+        "sha256": "ef506bdff72c45add3c4e4934f4b49992520f132142f52293113e84b0de77173",
+        "bytes": 4180
+      },
+      "run-record.json": {
+        "sha256": "d7b68988ef15a2d87efb3dc8538fecb71e018b8a96586b9be0a9a6db010df5b5",
+        "bytes": 1753
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "131e31267d8c580400b93466a251c2aa59cfcf0793af3009ae168cbbd098fca2",
+        "bytes": 98
+      },
+      "vite.config.js": {
+        "sha256": "38d9adf009c8df2061ff2daf859a67dd89a90d67a820ea1241bfcec8deccb4a5",
+        "bytes": 243
+      },
+      "dist/index.html": {
+        "sha256": "6449d2ecd22e8451351376ae1daf90aeacc03538d1737327227660514fbe0fdf",
+        "bytes": 2412
+      },
+      "LICENSES/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "scripts/check-route.mjs": {
+        "sha256": "32d961385c00189a58c162c944de558950ece5b6e0c52eb550b1be6082332654",
+        "bytes": 3276
+      },
+      "src/landscape.js": {
+        "sha256": "c12722559b3c0de9e3a63dfd6544dd2911725183e6a4892ab85edb1557176538",
+        "bytes": 8270
+      },
+      "src/main.js": {
+        "sha256": "e0f92e6f917135190d9a5b1f17b5bbbf41561024b5cf401e93530c525cda952b",
+        "bytes": 4286
+      },
+      "src/materials.js": {
+        "sha256": "37400cef502843e276bafb7c3be80f3ff9bfdfdfecfeb89100018d9ccec91e87",
+        "bytes": 6455
+      },
+      "src/station.js": {
+        "sha256": "0d03588ebbb0c9906f90f7eacebe502dbdb1fc1534955a9c27fe261b61d533b0",
+        "bytes": 29097
+      },
+      "src/style.css": {
+        "sha256": "fec3c8b10e57f7dd3e7618fb24038a0f0b8c87fcb3222af9a07c1f9f7d948cb1",
+        "bytes": 4203
+      },
+      "src/walk.js": {
+        "sha256": "886c382dcf6d5d3568c95645938e321fdb65b970956c9e57b419c4b7916e4980",
+        "bytes": 4110
+      },
+      "dist/assets/index-dbRieUgw.js": {
+        "sha256": "551bcf02aff51e9865fe16c897153b5d7fdad3878e2475f28e7b871cebd9cbc3",
+        "bytes": 557431
+      },
+      "dist/assets/index-DgI7HBgM.css": {
+        "sha256": "6c62fd6fca1dda07df91e76c3010752988a01d79432a7f34fbc5b51bddb98e49",
+        "bytes": 4201
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\rainfall-terminal-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "81a6fe4ba7bec854fe3ac5db3c655d695f2139daf10e7708170a818f4ce8fcef"
+  },
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:48:37.6120333",
+    "deadline": "05:48:37.6120333",
+    "stop": "05:18:36.3440467",
+    "authority": "Parent completed handoff; original producer records retained."
+  },
+  "qa": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
+  ],
+  "files": {
+    "CHECKS.md": {
+      "sha256": "737e76655c30d63d72ee08a39d918da4f358072bb5e0b1e0a334b0b5ce646d23",
+      "bytes": 3854
+    },
+    "launch-prompt.txt": {
+      "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+      "bytes": 7656
+    },
+    "LAUNCH.txt": {
+      "sha256": "a51b50bdb16c5763cf89078aea84d91a60796766ebf98c1dcfaa19f30a724feb",
+      "bytes": 1290
+    },
+    "README.md": {
+      "sha256": "ef506bdff72c45add3c4e4934f4b49992520f132142f52293113e84b0de77173",
+      "bytes": 4180
+    },
+    "run-record.json": {
+      "sha256": "d7b68988ef15a2d87efb3dc8538fecb71e018b8a96586b9be0a9a6db010df5b5",
+      "bytes": 1753
+    },
+    "SHA256SUMS.txt": {
+      "sha256": "131e31267d8c580400b93466a251c2aa59cfcf0793af3009ae168cbbd098fca2",
+      "bytes": 98
+    },
+    "frozen/index.html.txt": {
+      "sha256": "6449d2ecd22e8451351376ae1daf90aeacc03538d1737327227660514fbe0fdf",
+      "bytes": 2412
+    },
+    "frozen/assets/index-dbRieUgw.js": {
+      "sha256": "551bcf02aff51e9865fe16c897153b5d7fdad3878e2475f28e7b871cebd9cbc3",
+      "bytes": 557431
+    },
+    "frozen/assets/index-DgI7HBgM.css": {
+      "sha256": "6c62fd6fca1dda07df91e76c3010752988a01d79432a7f34fbc5b51bddb98e49",
+      "bytes": 4201
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "CHECKS.md",
+      "launch-prompt.txt",
+      "LAUNCH.txt",
+      "README.md",
+      "run-record.json",
+      "SHA256SUMS.txt",
+      "frozen/index.html.txt",
+      "frozen/assets/index-dbRieUgw.js",
+      "frozen/assets/index-DgI7HBgM.css"
+    ],
+    "retainedOutsidePages": [
+      "Original archives in task-16/frozen-originals"
+    ]
+  }
+}

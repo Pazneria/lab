@@ -1,0 +1,163 @@
+{
+  "entry": "stillwater-ceramics-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\stillwater-ceramics-astra\\original.zip",
+  "archiveSha256": "046d298b3bff14fb04f36b776b5805f227ffe8c83e8622494b80cff8c25b75a7",
+  "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-CpbI54sv.js": "dist/assets/index-CpbI54sv.js",
+      "frozen/assets/index-DZkXkEWG.css": "dist/assets/index-DZkXkEWG.css"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "index.html": {
+        "sha256": "be9fc2c6f5f163a49c85ce2bc15d440f047b9577c9f71bb8fbf5dbf95a60dc84",
+        "bytes": 3444
+      },
+      "package-lock.json": {
+        "sha256": "71cf372fa8d28a93018f898bdfb0520c9e7278324e57f8a7c4e7c5a34be065eb",
+        "bytes": 35198
+      },
+      "package.json": {
+        "sha256": "b50804774eda9b6f17dc4b527210943ac39aaeba6474d43aa0070ddd6a6085fe",
+        "bytes": 638
+      },
+      "README.md": {
+        "sha256": "1169cbb4bce35834da101163923d055b6918fdddd7b77cac96bbb445da9efcfc",
+        "bytes": 5343
+      },
+      "run-record.json": {
+        "sha256": "1fd34edc7b858f0967062806e47455c7ccf954b71ffc922c13d180e7ea25fdb0",
+        "bytes": 2706
+      },
+      "vite.config.js": {
+        "sha256": "27efb5d999852324387b0b638a1539e1696a41d4b63d76f97c3b5605f94280ed",
+        "bytes": 242
+      },
+      "checks/asset-linkage.json": {
+        "sha256": "e48c2fe4f360e8ffc82e2ed5a1974f7e4ec385c32c8b3fe2eb997e7fa9695547",
+        "bytes": 184
+      },
+      "checks/build-output.txt": {
+        "sha256": "27194cda26e61653b0bedfe8e7fc14e51f364373583be1d1eacc51e2684d47fc",
+        "bytes": 767
+      },
+      "checks/finalize-record.mjs": {
+        "sha256": "bfae96187d1a31953158c4b074ae20c3bc685d077f3b6a771cbafad0bc9570ef",
+        "bytes": 2461
+      },
+      "checks/static-check-output.txt": {
+        "sha256": "f29ba086bb06bb80e5651f7372ae7eb85bc5657f545595a64f3e6cdcb3a878c8",
+        "bytes": 650
+      },
+      "checks/static-checks.json": {
+        "sha256": "57644f29a1b9ea1763b809378f4f6ead99591f514825b8edf842713c454975c3",
+        "bytes": 555
+      },
+      "checks/syntax-check.txt": {
+        "sha256": "a4dfce4ae880041f4c61233b6645ec3d02de0afdcbdee7465d8dd1281e63b167",
+        "bytes": 193
+      },
+      "dist/index.html": {
+        "sha256": "bcd3a6933a25cde3b64a8e6067abe2e3ba9e4543f4de43404b7855fb6c514983",
+        "bytes": 3543
+      },
+      "src/collision.js": {
+        "sha256": "b7c2f9f90b9595e6c00c66a767f3e89a4ec298a661e1979119f9fcd4455137c7",
+        "bytes": 2437
+      },
+      "src/main.js": {
+        "sha256": "1fd7f295e819afd8c6d2c7d94d178bdb493e3749a46d58b255c171ad86488790",
+        "bytes": 9902
+      },
+      "src/materials.js": {
+        "sha256": "ba95833e7164d5cbb41026ca93bc201a567557022349471a8f15b83c9bcaa92c",
+        "bytes": 8089
+      },
+      "src/pottery.js": {
+        "sha256": "267475471de271244a9fc57bdd81a81744acb1bed01c7ac99ba2991127852b86",
+        "bytes": 5267
+      },
+      "src/style.css": {
+        "sha256": "5bb15166fc39d2c53741f92a4e9fa198f46acdbeb997f2b17744e38a04624f62",
+        "bytes": 5347
+      },
+      "src/world.js": {
+        "sha256": "e0edaff68f5bf6ccc160ea4c17f5db60a56a62f94c802dcb8deeff411e894e3b",
+        "bytes": 29222
+      },
+      "tests/static-checks.mjs": {
+        "sha256": "4df3d1646d85f97352a75dce8489dbb434c435c64f2d58aabdbf198a34e27d92",
+        "bytes": 3983
+      },
+      "dist/assets/index-CpbI54sv.js": {
+        "sha256": "ff4f819259f966eedd08b1fd6fcc727e932c503fe4d2442799f3ced85281ddb4",
+        "bytes": 557836
+      },
+      "dist/assets/index-DZkXkEWG.css": {
+        "sha256": "2ee65785e345ddd002138bfcd5e6378228348758d755403913a2f46fdf58c4ab",
+        "bytes": 5335
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\stillwater-ceramics-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "301446dea8a4d15b806687bc406a3ab982b8f889b22b2a450f12779b04d4a1e9"
+  },
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:49:58.9488365",
+    "deadline": "05:49:58.9488365",
+    "stop": "05:20:32.844",
+    "authority": "Parent completed handoff; original producer records retained."
+  },
+  "qa": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
+  ],
+  "files": {
+    "launch-prompt.txt": {
+      "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
+      "bytes": 7673
+    },
+    "README.md": {
+      "sha256": "1169cbb4bce35834da101163923d055b6918fdddd7b77cac96bbb445da9efcfc",
+      "bytes": 5343
+    },
+    "run-record.json": {
+      "sha256": "1fd34edc7b858f0967062806e47455c7ccf954b71ffc922c13d180e7ea25fdb0",
+      "bytes": 2706
+    },
+    "frozen/index.html.txt": {
+      "sha256": "bcd3a6933a25cde3b64a8e6067abe2e3ba9e4543f4de43404b7855fb6c514983",
+      "bytes": 3543
+    },
+    "frozen/assets/index-CpbI54sv.js": {
+      "sha256": "ff4f819259f966eedd08b1fd6fcc727e932c503fe4d2442799f3ced85281ddb4",
+      "bytes": 557836
+    },
+    "frozen/assets/index-DZkXkEWG.css": {
+      "sha256": "2ee65785e345ddd002138bfcd5e6378228348758d755403913a2f46fdf58c4ab",
+      "bytes": 5335
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json",
+      "frozen/index.html.txt",
+      "frozen/assets/index-CpbI54sv.js",
+      "frozen/assets/index-DZkXkEWG.css"
+    ],
+    "retainedOutsidePages": [
+      "Original archives in task-16/frozen-originals"
+    ]
+  }
+}

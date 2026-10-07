@@ -1,0 +1,111 @@
+{
+  "entry": "hearth-earth-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\hearth-earth-luna\\original.zip",
+  "archiveSha256": "6d818d7757656db285d4870160b03e7812648afeeab568037b8fe9f7de9135b0",
+  "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-CDlc1hcM.js": "dist/assets/index-CDlc1hcM.js",
+      "frozen/assets/index-uHvi10e1.css": "dist/assets/index-uHvi10e1.css"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "38c7dc96093dfef8bc1ea25849c65ae8b8b2b888862c13f4cc0e8183616ba43f",
+        "bytes": 1248
+      },
+      "package-lock.json": {
+        "sha256": "79d30254da342cc625271bb6adb9816c3d4889de43f2bbd9c0981cf8ff37f0f4",
+        "bytes": 35180
+      },
+      "package.json": {
+        "sha256": "bd394adb63a57a7f3848530a3e5eeb0895644a53d38680dfbe64dc8df6a017b3",
+        "bytes": 323
+      },
+      "README.md": {
+        "sha256": "f99f47a13ff6924504f32666e56a80afac843f44e054ba18f24dcf0febed7bab",
+        "bytes": 1552
+      },
+      "dist/index.html": {
+        "sha256": "4898e34198e157919a222f0c7f785276a75a1f9d86069dcbacff3b24f043e096",
+        "bytes": 1347
+      },
+      "src/main.js": {
+        "sha256": "954993152cafeebdb09ab8d95c8f8b339f3147ad8bfb8259016e5e1dc1ec4265",
+        "bytes": 36792
+      },
+      "src/style.css": {
+        "sha256": "6d8cdc84d0dd392104e8126e7fbcf7dd194144ded24c127c176031fa3ef7ecc2",
+        "bytes": 2943
+      },
+      "dist/assets/index-CDlc1hcM.js": {
+        "sha256": "0907c7bcc8bc392e6816abbcfe50107ccd4863c1d89f69ddb2769def0c448614",
+        "bytes": 533790
+      },
+      "dist/assets/index-uHvi10e1.css": {
+        "sha256": "c09e0bf6bd7d4edd382705f3776265cbac9ee09de7bd03664ad731732a073464",
+        "bytes": 2575
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\hearth-earth-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "6d818d7757656db285d4870160b03e7812648afeeab568037b8fe9f7de9135b0"
+  },
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:48:55",
+    "deadline": "05:48:55",
+    "stop": "05:00:46",
+    "authority": "Parent completed handoff; original producer records retained."
+  },
+  "qa": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
+  ],
+  "files": {
+    "launch-prompt.txt": {
+      "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
+      "bytes": 7673
+    },
+    "README.md": {
+      "sha256": "f99f47a13ff6924504f32666e56a80afac843f44e054ba18f24dcf0febed7bab",
+      "bytes": 1552
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4898e34198e157919a222f0c7f785276a75a1f9d86069dcbacff3b24f043e096",
+      "bytes": 1347
+    },
+    "frozen/assets/index-CDlc1hcM.js": {
+      "sha256": "0907c7bcc8bc392e6816abbcfe50107ccd4863c1d89f69ddb2769def0c448614",
+      "bytes": 533790
+    },
+    "frozen/assets/index-uHvi10e1.css": {
+      "sha256": "c09e0bf6bd7d4edd382705f3776265cbac9ee09de7bd03664ad731732a073464",
+      "bytes": 2575
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/assets/index-CDlc1hcM.js",
+      "frozen/assets/index-uHvi10e1.css"
+    ],
+    "retainedOutsidePages": [
+      "Original archives in task-16/frozen-originals"
+    ]
+  }
+}

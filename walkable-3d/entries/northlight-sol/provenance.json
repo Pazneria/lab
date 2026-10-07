@@ -1,0 +1,157 @@
+{
+  "entry": "northlight-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\northlight-sol\\original.zip",
+  "archiveSha256": "a6d228b549a9da1f5b4a4e6fefecff95c1c3a2a30e1c3c80a59e63d748e5c45c",
+  "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-B-Xg74cA.css": "dist/assets/index-B-Xg74cA.css",
+      "frozen/assets/index-ywEaOb-D.js": "dist/assets/index-ywEaOb-D.js"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "CHECKS.json": {
+        "sha256": "b0894640064691350b92703bdade5356b997800321fdeee8d2e0ccac9cabdebf",
+        "bytes": 654
+      },
+      "index.html": {
+        "sha256": "d3eb98b22a71855105f8f98f018def99b85321894a276291ed8c1697443bb4bb",
+        "bytes": 2396
+      },
+      "package-lock.json": {
+        "sha256": "06361f06cf3edf58f919c076198697b1138b2c25010f7921aa653f3846327bf5",
+        "bytes": 35216
+      },
+      "package.json": {
+        "sha256": "2502d1047c7d83302c59355e401a7f69060af91cf87ccfda2b3e334084a25653",
+        "bytes": 417
+      },
+      "README.md": {
+        "sha256": "25de804660e56f65801e0b22bcfdd65328da0c73b6aa4e31ab7679cd83908351",
+        "bytes": 4988
+      },
+      "RUN-RECORD.md": {
+        "sha256": "db1fc6086582aa07704e01981579051d0c81989f6400f6fb8dca9ae70d619c30",
+        "bytes": 2922
+      },
+      "serve.mjs": {
+        "sha256": "a1ed1d30db9afa4eded334793f33cb4b4467ea7d2d899eaa16120cb4e63beba6",
+        "bytes": 2114
+      },
+      "verify-scene.mjs": {
+        "sha256": "94bc37632c17286df496096c9b0070f728c08304a9ddc05044fcfd4f29cda558",
+        "bytes": 3533
+      },
+      "dist/index.html": {
+        "sha256": "4128d143c10978f6bdf52da80e7e67f63b430aead89c0b25f62ad23847c4cbf8",
+        "bytes": 2495
+      },
+      "src/geometry.js": {
+        "sha256": "613470e2a789ceeccb4342e248eb5d7b645393881329cc5473e0dc8066025176",
+        "bytes": 9143
+      },
+      "src/main.js": {
+        "sha256": "f69513a38ca25e8ebbb5a0462322dd6aa3959d9c56e35064720bb8078e6bab31",
+        "bytes": 5324
+      },
+      "src/materials.js": {
+        "sha256": "380088576655b8e3be75f722128571ce9821e462a645b2663ebba56b2cadb48d",
+        "bytes": 7828
+      },
+      "src/navigation.js": {
+        "sha256": "1194e5b306a7834cd91fe99bdde74727fd0549ff29cc293b7d6f630117a2be2e",
+        "bytes": 5253
+      },
+      "src/style.css": {
+        "sha256": "1920f852da49dcb638d916df61b63cf4c8e54b7bd13575ed16ecb4f7ec4efc94",
+        "bytes": 4047
+      },
+      "src/world.js": {
+        "sha256": "0c99833d50fd2e15f366b5d4be2a6ae90ce7cb9208b903f8c90c3105dcd18699",
+        "bytes": 26732
+      },
+      "dist/assets/index-B-Xg74cA.css": {
+        "sha256": "77e692f42532672bb46a3e9513da7be9b45ae09d7d7894265e452e257930e6ae",
+        "bytes": 4030
+      },
+      "dist/assets/index-ywEaOb-D.js": {
+        "sha256": "336b6529db04d3f8ba4155cae53d7e4dd7e1075e7695170d9c582d7ad4bc7c6e",
+        "bytes": 563305
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\northlight-sol\\source-preservation.zip",
+    "sourceArchiveSha256": "a6d228b549a9da1f5b4a4e6fefecff95c1c3a2a30e1c3c80a59e63d748e5c45c"
+  },
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:49:42",
+    "deadline": "05:49:42",
+    "stop": "05:18:55",
+    "authority": "Parent completed handoff; original producer records retained."
+  },
+  "qa": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
+  ],
+  "files": {
+    "CHECKS.json": {
+      "sha256": "b0894640064691350b92703bdade5356b997800321fdeee8d2e0ccac9cabdebf",
+      "bytes": 654
+    },
+    "launch-prompt.txt": {
+      "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
+      "bytes": 7673
+    },
+    "README.md": {
+      "sha256": "25de804660e56f65801e0b22bcfdd65328da0c73b6aa4e31ab7679cd83908351",
+      "bytes": 4988
+    },
+    "RUN-RECORD.md": {
+      "sha256": "db1fc6086582aa07704e01981579051d0c81989f6400f6fb8dca9ae70d619c30",
+      "bytes": 2922
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4128d143c10978f6bdf52da80e7e67f63b430aead89c0b25f62ad23847c4cbf8",
+      "bytes": 2495
+    },
+    "frozen/assets/index-B-Xg74cA.css": {
+      "sha256": "77e692f42532672bb46a3e9513da7be9b45ae09d7d7894265e452e257930e6ae",
+      "bytes": 4030
+    },
+    "frozen/assets/index-ywEaOb-D.js": {
+      "sha256": "336b6529db04d3f8ba4155cae53d7e4dd7e1075e7695170d9c582d7ad4bc7c6e",
+      "bytes": 563305
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "CHECKS.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN-RECORD.md",
+      "frozen/index.html.txt",
+      "frozen/assets/index-B-Xg74cA.css",
+      "frozen/assets/index-ywEaOb-D.js"
+    ],
+    "retainedOutsidePages": [
+      "Original archives in task-16/frozen-originals"
+    ]
+  }
+}

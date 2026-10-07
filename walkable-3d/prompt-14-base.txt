@@ -1,0 +1,45 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact ceramics workshop arranged as a working pottery studio, a sheltered glazing area and a connected kiln courtyard. From the entrance, a substantial workbench with pieces at different stages of making should draw the viewer into the studio. Leave room to walk around the bench, approach the pottery shelves, continue through the glazing area to the courtyard and return with a different view of the workshop.
+
+Give the studio a believable arrangement of tools, work surfaces and shelves holding handmade vessels. Vary their proportions, rims and finishes so the pottery feels individually made rather than perfectly repeated. The sheltered glazing area should have a preparation bench, containers and glaze samples, while the courtyard contains a recognizable brick kiln with a door, fittings and a chimney. Use raw clay, glazed ceramic, dusty work surfaces, brick and timber with restrained signs of use. Sunlight in the courtyard should contrast with the cooler shelter of the studio and glazing area while keeping the pottery readable up close. Keep everything within these three connected spaces; actual crafting, firing and dust or smoke particle simulations are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will circle the workbench, inspect the pottery shelves, approach the glazing bench and kiln, and look back through the connected spaces. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; crafting mechanics, website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Handmade pottery with varied shapes, rims and finishes rather than identical repetition
+- Distinct raw clay, glazed ceramic, dusty work surfaces, brick and timber at close range
+- Believable benches, shelves and kiln construction with purposeful tools and signs of use
+- Sunlit courtyard and sheltered interior lighting that reveal materials without obscuring the route
+- Coherent detail across the workbench, glazing area, kiln and return view
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing the densest pottery shelves and looking through the connected spaces
+- Smooth movement around the workbench and between the glazing area and kiln courtyard
+- Minimal geometry- or material-related slowdown, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A working pottery studio with a central workbench and approachable pottery shelves
+- A distinct sheltered glazing area and a connected courtyard with a recognizable brick kiln
+- Walkable access around the workbench and up to the glazing bench and kiln, with a clear return route
+- Convincing human scale, comfortable work-area clearances, safe walking surfaces and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → around the workbench → pottery shelves → sheltered glazing area → kiln courtyard → return view through the workshop → entrance.
+
+I will pay particular attention to handmade irregularities, changes between clay and glazed surfaces, the kiln's construction and the light transition into the courtyard. Tools, vessels and shelving should support the working setting without obstructing the route. Suggested small props and particular vessel designs are guidance; the core spaces, workshop equipment and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.

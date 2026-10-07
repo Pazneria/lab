@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#13282c" />
+    <title>Rainfall Terminal — mountain station</title>
+    <script type="module" crossorigin src="./assets/index-dbRieUgw.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DgI7HBgM.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable three-dimensional mountain cable car station"></canvas>
+    <div id="vignette" aria-hidden="true"></div>
+    <header class="identity">
+      <div class="crest" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M4 31 16 9 24 23 29 15 37 31M12 31l7-13 8 13M3 35h34"/></svg></div>
+      <div><span class="eyebrow">HAUT VALAIS / 2,148 M</span><h1>Rainfall Terminal</h1><p>Mountain cableway · upper station</p></div>
+    </header>
+    <div class="weather"><span class="weather-dot"></span> Rain · 6°C <span class="weather-divider">/</span> <span>Cabin 04 at rest</span></div>
+    <div id="crosshair" aria-hidden="true"></div>
+    <section id="welcome" class="welcome">
+      <span class="eyebrow">A QUIET ARRIVAL</span>
+      <h2>Above the rain.</h2>
+      <p>Step inside the mountain station. Follow the platform past the wheel and cabin, then take in the valley from the covered lookout.</p>
+      <button id="enter" class="primary">Enter the station <span>↗</span></button>
+      <div class="instructions"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Walk</span><span>Mouse Look</span><span><kbd>Esc</kbd> Release</span></div>
+      <p class="secondary-instructions">Arrow keys also move. Hold Shift to walk faster. R resets your position.</p>
+      <p id="status" role="status">Preparing the station…</p>
+    </section>
+    <footer id="hud">
+      <div class="location"><span class="locator"></span><div><span class="eyebrow" id="zone-kicker">01 / THE TERMINAL</span><span id="zone-name">Drive hall</span></div></div>
+      <div class="hud-actions"><span class="hint" id="hint">Click Enter to explore</span><button id="quality" title="Toggle render resolution">Quality: High</button><button id="reset" title="Reset position (R)">Reset <span>R</span></button><button id="help" title="Show controls">Controls <span>?</span></button></div>
+    </footer>
+    <div id="error" role="alert" hidden></div>
+  </body>
+</html>

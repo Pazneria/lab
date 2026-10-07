@@ -1,0 +1,58 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact mountain cable-car station during rain, arranged as an enclosed terminal, a connected loading platform with one stationary cabin, and a short covered exterior lookout. From the entrance, the large cable wheel and the cabin beyond it should establish the station's purpose. Provide a clear walking route past the wheel equipment, along the cabin's platform side and out to the lookout, then back through the terminal.
+
+Give the terminal's wheel and cable equipment recognizable supports, housings and cable paths, with a safe visitor route alongside. The stationary cabin should have a convincing frame, windows, door and suspension connection, all visible from the loading platform. Use wet metal, rain-marked glass, timber sheltering and concrete floors with wear appropriate to a working mountain station. Cool, misty daylight and a few warm interior lights should reveal the equipment and wet surfaces while keeping the route readable. The covered lookout should frame a mountain view, which can be a simple backdrop. Keep the station small; operating cable cars, simulated cable physics and an extensive mountain landscape are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will approach the wheel equipment, inspect the cabin from several positions along the platform, visit the covered lookout and turn back toward the terminal. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Rain can be suggested through surfaces and atmosphere; a particle simulation is unnecessary. Build only the standalone scene; transport controls, website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Recognizable wheel and cable equipment with convincing physical construction
+- A stationary cabin with coherent framing, glazing and suspension details
+- Distinct wet metal, rain-marked glass, timber and concrete at close range
+- Readable misty daylight and restrained interior lighting that convey a rainy mountain setting
+- Purposeful station detail that holds up from the platform, lookout and return view
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing the cabin, wheel equipment and mountain backdrop together
+- Smooth movement between the terminal, loading platform and covered lookout
+- Minimal glass- or atmosphere-related slowdown, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- An enclosed terminal with visible wheel and cable equipment
+- A connected loading platform with one stationary cabin and a short covered exterior lookout
+- Walkable access alongside the equipment and cabin, with a clear route to the lookout and back
+- Convincing human scale, safe platform and lookout edges, usable clearances and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → wheel equipment → along the stationary cabin's loading platform → covered lookout → return view toward the terminal → entrance.
+
+I will pay particular attention to the equipment's construction, the cabin at close range and the transition from the sheltered terminal to the wet exterior view. Railings, supports and cables should make the station believable without obstructing the walking route. Suggested small props and particular rain effects are optional; the core spaces, stationary cabin and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

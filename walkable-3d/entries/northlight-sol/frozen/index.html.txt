@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#263c39" />
+    <title>Northlight — a ceramics workshop</title>
+    <script type="module" crossorigin src="/assets/index-ywEaOb-D.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B-Xg74cA.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable three dimensional ceramics workshop"></canvas>
+    <div id="identity"><span class="mark">N<span>·</span>L</span><div><h1>Northlight</h1><p>A CERAMICS WORKSHOP</p></div></div>
+    <div id="location"><span class="dot"></span><span id="room-label">THE STUDIO</span><span class="room-num" id="room-num">01 / 03</span></div>
+    <div id="crosshair" aria-hidden="true"></div>
+    <section id="welcome">
+      <div class="eyebrow">A PLACE FOR MAKING</div>
+      <h2>Clay, light<br>& a little patience.</h2>
+      <p>Step inside. Circle the workbench, inspect the shelves, and follow the glaze shed into the kiln yard.</p>
+      <button id="enter">Enter the workshop <span>↗</span></button>
+      <div class="welcome-controls"><b>W A S D</b> move &nbsp; <b>MOUSE</b> look<br><b>SHIFT</b> walk faster &nbsp; <b>ESC</b> release mouse</div>
+      <div id="load-status">Preparing the workshop…</div>
+    </section>
+    <div id="pause" hidden><h2>Take your time.</h2><p>Click to continue exploring.</p><button id="resume">Continue <span>↗</span></button></div>
+    <div id="controls"><span><b>WASD / ARROWS</b> move</span><span><b>MOUSE</b> look</span><span><b>SHIFT</b> faster</span><button id="reset">Reset <kbd>R</kbd></button><button id="help">Controls <kbd>H</kbd></button><button id="stats-toggle">Frame times <kbd>F</kbd></button></div>
+    <aside id="help-panel" hidden><h3>Explore at your own pace</h3><p>WASD or arrow keys to walk. Mouse to look. Hold Shift to walk faster. Esc releases the pointer. Click the scene to resume.</p><p>If pointer lock is unavailable, drag on the scene to look around. R resets your position. H opens these controls. F toggles frame-time statistics.</p><p class="route">STUDIO → GLAZE SHED → KILN YARD → STUDIO</p></aside>
+    <aside id="stats" hidden><h3>Frame intervals</h3><pre id="stats-text">Collecting samples…</pre><p>Rolling 240 rendered frames. Intervals include browser scheduling. No benchmark has been run.</p></aside>
+    <div id="hint" hidden></div>
+  </body>
+</html>

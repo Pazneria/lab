@@ -1,0 +1,39 @@
+{
+  "firstImplementation": "2026-10-07T04:48:08.2895818+00:00",
+  "deadline": "2026-10-07T05:48:08.2895818+00:00",
+  "actualStop": "2026-10-07T05:16:28.4123697+00:00",
+  "model": "Runtime model identifier not exposed by task API",
+  "effort": "Runtime effort setting not exposed by task API",
+  "interruptions": [],
+  "conditions": "No browser, server, UI, GPU or performance tests permitted",
+  "hostConfiguredModel": "gpt-6.1-sol",
+  "hostConfiguredEffort": "low",
+  "metadataCertainty": "Host configuration values are verified; effective per-run overrides cannot be verified.",
+  "implementationNotes": [
+    "Initial registry install blocked by sandbox network/cache access. Authorized retry using the entry-local cache succeeded.",
+    "Final config bundling encountered ancestor directory sandbox access restrictions. Native config loading resolved this without a server or browser.",
+    "No pauses, interruptions, extensions, model-backed tools or subagents."
+  ],
+  "processCleanup": "All entry-owned tool sessions completed and exited. No server/browser/watcher was started. Path-based Get-Process check found zero entry-local esbuild processes. Read-only netstat found no TCP endpoint on 5187. No unrelated process terminated. Broad CIM inventory was restricted.",
+  "checks": {
+    "productionBuild": "PASS",
+    "syntaxCheck": "PASS",
+    "cpuGeometryAndRouteCheck": "PASS",
+    "sceneMeshes": 68,
+    "triangles": 83510,
+    "opaqueBatches": 39,
+    "transparentMeshes": 26,
+    "inspectionRouteWaypoints": 11,
+    "colliders": 25,
+    "webGLRendererUsed": false,
+    "browserUsed": false,
+    "serverStarted": false,
+    "interactiveTestPerformed": false,
+    "performanceMeasured": false,
+    "suggestedLaunchAddress": "http://127.0.0.1:5187/",
+    "launchCommand": "npm.cmd run preview",
+    "bundleSHA256": "6D946941F57549D259BBF0A5D4FB034B624266BD7D953671A30745543F74D244",
+    "buildWarning": "JavaScript chunk is 548.67 kB uncompressed; gzip estimate 145.25 kB."
+  },
+  "durationSeconds": 1700.123
+}

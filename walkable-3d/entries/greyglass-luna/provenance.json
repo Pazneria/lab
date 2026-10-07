@@ -1,0 +1,111 @@
+{
+  "entry": "greyglass-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\greyglass-luna\\original.zip",
+  "archiveSha256": "3445c12716fc59ff0d88b4adf9434bc33babbaeebc790bc64bfd2c49dc0d67a8",
+  "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/scene.js": "scene.js",
+      "frozen/style.css": "style.css"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "10940a136cdbe81d07c88d066d7398b720008d199e63ea40d2f1d0fdefc40228",
+        "bytes": 1878
+      },
+      "README.md": {
+        "sha256": "2e54301c8e88df629465fc8df1535c27af948be31ee05a5a996b0a09096694ed",
+        "bytes": 2156
+      },
+      "scene.js": {
+        "sha256": "905c0b637648cec999ac66914299e9f592fa884a39b7641e0bfd605e93f45ae0",
+        "bytes": 29933
+      },
+      "style.css": {
+        "sha256": "ad0297d4d6aa75b35e06883f2014623f43b68c508a22bc6e92abaf1c8b6a56d1",
+        "bytes": 4023
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\greyglass-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "3445c12716fc59ff0d88b4adf9434bc33babbaeebc790bc64bfd2c49dc0d67a8"
+  },
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:48:15",
+    "deadline": "05:48:15",
+    "stop": "05:11:29",
+    "authority": "Parent completed handoff; original producer records retained."
+  },
+  "qa": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three.module.js"
+        ]
+      ]
+    },
+    "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
+  ],
+  "files": {
+    "launch-prompt.txt": {
+      "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+      "bytes": 7656
+    },
+    "README.md": {
+      "sha256": "2e54301c8e88df629465fc8df1535c27af948be31ee05a5a996b0a09096694ed",
+      "bytes": 2156
+    },
+    "frozen/index.html.txt": {
+      "sha256": "10940a136cdbe81d07c88d066d7398b720008d199e63ea40d2f1d0fdefc40228",
+      "bytes": 1878
+    },
+    "frozen/scene.js": {
+      "sha256": "905c0b637648cec999ac66914299e9f592fa884a39b7641e0bfd605e93f45ae0",
+      "bytes": 29933
+    },
+    "frozen/style.css": {
+      "sha256": "ad0297d4d6aa75b35e06883f2014623f43b68c508a22bc6e92abaf1c8b6a56d1",
+      "bytes": 4023
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "launch-prompt.txt",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/scene.js",
+      "frozen/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Original archives in task-16/frozen-originals"
+    ]
+  },
+  "dependencyEvidence": {
+    "version": "Three.js 0.180.0",
+    "source": "Previously independently fetched dependency-reference from completed integration task-5; local modules and license copied byte-for-byte. No entrant content reused.",
+    "files": {
+      "THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
+    }
+  }
+}
