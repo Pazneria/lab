@@ -123,9 +123,21 @@
     "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
   ],
   "files": {
+    "host-verification.json": {
+      "sha256": "626bba7e380d524580b811745efacee11a5e97e845b4d42db96f97fb458decf3",
+      "bytes": 359
+    },
     "launch-prompt.txt": {
       "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
       "bytes": 7656
+    },
+    "preview-capture.json": {
+      "sha256": "7ec777f871d8b4f828395702f4c907e926506e96c8f87f2fdb5e2a04700447e9",
+      "bytes": 2211
+    },
+    "preview.jpg": {
+      "sha256": "ea4e7ad7aa335ec784c7d804a977ff8dc7c8793927cc3bcaee0ba5da3d2dc244",
+      "bytes": 116483
     },
     "README.md": {
       "sha256": "021930eab3920a5aa059a5acc4a50db23005dd3513c0000d7582733d572c9a20",
@@ -154,7 +166,10 @@
   },
   "publication": {
     "publishedFiles": [
+      "host-verification.json",
       "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "run-record.json",
       "frozen/index.html.txt",
@@ -165,5 +180,7 @@
     "retainedOutsidePages": [
       "Original archives in task-16/frozen-originals"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured"
 }

@@ -51,9 +51,21 @@
     "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
   ],
   "files": {
+    "host-verification.json": {
+      "sha256": "1bff04065aa79c720f9a059924fd305785db4c6dccaeb221d7ec044d13a35396",
+      "bytes": 358
+    },
     "launch-prompt.txt": {
       "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
       "bytes": 7656
+    },
+    "preview-capture.json": {
+      "sha256": "cecf42a1014749bbd0a044b2a6bc715a66f527f00329671364173243ef3739b9",
+      "bytes": 2206
+    },
+    "preview.jpg": {
+      "sha256": "d90d3c27ffbdcdcdff17d76f03fe4278c95840abc8f0103a877a066abf58da2d",
+      "bytes": 59784
     },
     "README.md": {
       "sha256": "2e54301c8e88df629465fc8df1535c27af948be31ee05a5a996b0a09096694ed",
@@ -86,7 +98,10 @@
   },
   "publication": {
     "publishedFiles": [
+      "host-verification.json",
       "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "frozen/index.html.txt",
       "frozen/scene.js",
@@ -107,5 +122,7 @@
       "three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
       "three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
     }
-  }
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured"
 }

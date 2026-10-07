@@ -1,0 +1,123 @@
+{
+  "entry": "grauhorn-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\grauhorn-opus\\original.zip",
+  "archiveSha256": "bd8799c324e5cc9d8bfd403ef8fa38ba94d01efc3f8a1a505f337b9d38e633ec",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "b72625c9a1aca0368ab1fc03736412ca743cfeb5d363643e7e726f03d5baab0e",
+        "bytes": 3506
+      },
+      "main.js": {
+        "sha256": "983f774243b376a29bb19caa9db40489252b6b4289697dee47d77115b523018a",
+        "bytes": 97099
+      },
+      "package-lock.json": {
+        "sha256": "3c7f2068c0d2ef7e11746149948f1207db8c69484b51e947f90fdd43e64116b0",
+        "bytes": 582
+      },
+      "package.json": {
+        "sha256": "58ac93d3a194080e95f774912eee18a704fad46a4f67e5e69cd3ffdcfe3f5879",
+        "bytes": 313
+      },
+      "README.md": {
+        "sha256": "cb8f4adce37500ed6e5d53534343a6ca8f2b6d0e96db65e59025445453c70ac5",
+        "bytes": 7219
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\grauhorn-opus\\original.zip",
+    "sourceArchiveSha256": "bd8799c324e5cc9d8bfd403ef8fa38ba94d01efc3f8a1a505f337b9d38e633ec"
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Installed pinned Three.js library/addons/license copied unchanged to vendor; exact main module independently matches previously verified task-5 reference. No scene repairs or rebuilding."
+  ],
+  "dependencyEvidence": {
+    "version": "0.169.0",
+    "source": "Entrant installed registry package; main module verified against prior independent exact-version reference",
+    "files": {
+      "build/three.module.js": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+      "LICENSE": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "examples/jsm/utils/BufferGeometryUtils.js": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6"
+    }
+  },
+  "timing": "Original README retained; exact actual stop unavailable",
+  "prompt": {
+    "version": "13-base",
+    "authority": "Parent supplied base attachment; actual unchanged user paste not independently verified"
+  },
+  "qa": "Producer claims are README-only. Host static/hash checks; no route or performance judging.",
+  "files": {
+    "host-verification.json": {
+      "sha256": "3b75cfd1d966b8a66cebe0efa01a07578279fab2bfb5aa3b5f152a6955fab229",
+      "bytes": 357
+    },
+    "launch-prompt.txt": {
+      "sha256": "962cd1dfb2e76a697ab50d308b4b9447786f8aab18868652e9963027a9428a76",
+      "bytes": 5273
+    },
+    "preview-capture.json": {
+      "sha256": "6369f06ee88d3a6a84caff593b4235ed4e5ae123e13d90919e3baa82df0d0bcb",
+      "bytes": 2202
+    },
+    "preview.jpg": {
+      "sha256": "2ad6f6c62e1a7e390e296a7dc58e3c3f9499f7fc8fc6ee9f49a1729eb7a8dce1",
+      "bytes": 135094
+    },
+    "README.md": {
+      "sha256": "cb8f4adce37500ed6e5d53534343a6ca8f2b6d0e96db65e59025445453c70ac5",
+      "bytes": 7219
+    },
+    "frozen/index.html.txt": {
+      "sha256": "b72625c9a1aca0368ab1fc03736412ca743cfeb5d363643e7e726f03d5baab0e",
+      "bytes": 3506
+    },
+    "frozen/main.js": {
+      "sha256": "983f774243b376a29bb19caa9db40489252b6b4289697dee47d77115b523018a",
+      "bytes": 97099
+    },
+    "frozen/vendor/three/LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "sha256": "0a3368c165eea773490aec7b77c22de70e3eac288503409256fdbf4d12578416",
+      "bytes": 1304820
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+      "bytes": 31768
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+    ],
+    "retainedOutsidePages": [
+      "Original preservation ZIP outside Git/Pages"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured"
+}

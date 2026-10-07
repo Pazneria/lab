@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ceramics Workshop</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#1d1b19;font-family:Georgia,'Times New Roman',serif;color:#eee4d6}
+  canvas{display:block}
+  #overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,16,12,.62);cursor:pointer;z-index:5}
+  #overlay .card{max-width:440px;padding:26px 30px;background:rgba(32,26,21,.92);border:1px solid #6d5a45;border-radius:6px;line-height:1.5}
+  #overlay h1{margin:0 0 6px;font-size:26px;font-weight:normal;letter-spacing:.5px}
+  #overlay p{margin:6px 0;font-size:14px;color:#cdbda8}
+  #overlay table{font-size:13.5px;border-collapse:collapse;margin-top:8px}
+  #overlay td{padding:2px 12px 2px 0}
+  #overlay td:first-child{color:#f0c890;white-space:nowrap}
+  #overlay .go{margin-top:14px;font-size:15px;color:#fff;text-align:center}
+  #loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#1d1b19;z-index:6;font-size:18px}
+  #hud{position:fixed;left:12px;bottom:10px;font-size:13px;color:#f4ead8;text-shadow:0 1px 2px #000;pointer-events:none;z-index:3}
+  #zone{position:fixed;left:50%;top:14px;transform:translateX(-50%);font-size:15px;letter-spacing:1px;color:#f6ecdc;text-shadow:0 1px 3px #000;pointer-events:none;z-index:3;transition:opacity .6s}
+  #stats{position:fixed;right:10px;top:8px;font:12px monospace;color:#d9f0c8;background:rgba(0,0,0,.4);padding:3px 6px;border-radius:3px;pointer-events:none;z-index:3;white-space:pre}
+  #cross{position:fixed;left:50%;top:50%;width:4px;height:4px;margin:-2px 0 0 -2px;border-radius:50%;background:rgba(255,255,255,.7);pointer-events:none;z-index:3}
+</style>
+<script type="importmap">
+{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="loading">Firing up the workshop…</div>
+<div id="overlay"><div class="card">
+  <h1>The Clay Yard Workshop</h1>
+  <p>A working pottery studio, a sheltered glazing area and a kiln courtyard.</p>
+  <table>
+    <tr><td>Mouse</td><td>Look around (click to capture)</td></tr>
+    <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+    <tr><td>Shift</td><td>Walk faster</td></tr>
+    <tr><td>C (hold)</td><td>Crouch to inspect low shelves</td></tr>
+    <tr><td>R</td><td>Reset to the entrance</td></tr>
+    <tr><td>1 – 5</td><td>Jump: entrance, bench, shelves, glazing, kiln</td></tr>
+    <tr><td>F</td><td>Toggle frame-time readout</td></tr>
+    <tr><td>Q</td><td>Toggle render resolution (quality / speed)</td></tr>
+    <tr><td>Esc</td><td>Release mouse / show this panel</td></tr>
+  </table>
+  <div class="go">Click to enter</div>
+</div></div>
+<div id="zone"></div>
+<div id="hud">WASD move · Mouse look · Shift fast · C crouch · R reset · Esc menu</div>
+<div id="stats"></div>
+<div id="cross"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

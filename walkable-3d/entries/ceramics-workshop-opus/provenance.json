@@ -1,0 +1,153 @@
+{
+  "entry": "ceramics-workshop-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\ceramics-workshop-opus\\original.zip",
+  "archiveSha256": "ceaa87317c3a3397b0e6629ee47ecb5909ac99219118672ad6e989c0b2d1d02e",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/pottery.js": "src/pottery.js",
+      "frozen/src/textures.js": "src/textures.js"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "3cf0c03a0cfea432629c1c349bae35d780540f9fe1dbf9394654232fe946c621",
+        "bytes": 3074
+      },
+      "package-lock.json": {
+        "sha256": "cbe6ba163fe8a158f026d82177c145ec4ad1f8df7e0f232c364654baea9888fb",
+        "bytes": 582
+      },
+      "package.json": {
+        "sha256": "9b5f7f2074a7b25518185ff3dd906c89cea57deee58a00940f8b290ff11dba7d",
+        "bytes": 313
+      },
+      "README.md": {
+        "sha256": "de0656aa6e2ea703e741fd603e296f73a014319c3f7bbdf586b5803849a66bf3",
+        "bytes": 6025
+      },
+      "start.bat": {
+        "sha256": "7d52ea8c7277a55b8437b2b5a8195356467876f13f7bc6c38f9f775501474633",
+        "bytes": 130
+      },
+      "src/main.js": {
+        "sha256": "689c5a76098e81463e259570bfd68db1ac82a104be425fd34c0de644a2d69efa",
+        "bytes": 66298
+      },
+      "src/pottery.js": {
+        "sha256": "c41214f8cc393623adb91d84e6b22dbdab48bd548d917adf23c32c9b224b9a71",
+        "bytes": 15990
+      },
+      "src/textures.js": {
+        "sha256": "fc5f7f252a230ace6e3c4ee69a8a9aa1e521c8057c7a83e958e0fd189167055b",
+        "bytes": 13750
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\ceramics-workshop-opus\\original.zip",
+    "sourceArchiveSha256": "ceaa87317c3a3397b0e6629ee47ecb5909ac99219118672ad6e989c0b2d1d02e"
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Installed pinned Three.js library/addons/license copied unchanged to vendor; exact main module independently matches previously verified task-5 reference. No scene repairs or rebuilding."
+  ],
+  "dependencyEvidence": {
+    "version": "0.170.0",
+    "source": "Entrant installed registry package; main module verified against prior independent exact-version reference",
+    "files": {
+      "build/three.module.js": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+      "LICENSE": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "examples/jsm/utils/BufferGeometryUtils.js": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+      "examples/jsm/environments/RoomEnvironment.js": "85869bdd22f7cf0b22e68dcefe6cb710480af0f5c901a76f7a7764fd07fc8014"
+    }
+  },
+  "timing": "Original README retained; exact actual stop unavailable",
+  "prompt": {
+    "version": "14-base",
+    "authority": "Parent supplied base attachment; actual unchanged user paste not independently verified"
+  },
+  "qa": "Producer claims are README-only. Host static/hash checks; no route or performance judging.",
+  "files": {
+    "host-verification.json": {
+      "sha256": "f11f6c4c9cbb57d7be310f69d7e47d99c2bd0b303256db5891076fdd2b61b4b6",
+      "bytes": 366
+    },
+    "launch-prompt.txt": {
+      "sha256": "f5aae43a1ca1fd129ab6cd8c5ddbff1147598a4c03e68846f463ca9ff6c4f5cd",
+      "bytes": 5290
+    },
+    "preview-capture.json": {
+      "sha256": "845b172b386938fecef26b202122cbafb2490fc9830a01f247dc19b0dcb9d6f8",
+      "bytes": 2229
+    },
+    "preview.jpg": {
+      "sha256": "f17da14f4e91daabcf17f324c922c5faf8722bcdbd95f07f8c8a31600671ab8d",
+      "bytes": 105246
+    },
+    "README.md": {
+      "sha256": "de0656aa6e2ea703e741fd603e296f73a014319c3f7bbdf586b5803849a66bf3",
+      "bytes": 6025
+    },
+    "frozen/index.html.txt": {
+      "sha256": "3cf0c03a0cfea432629c1c349bae35d780540f9fe1dbf9394654232fe946c621",
+      "bytes": 3074
+    },
+    "frozen/src/main.js": {
+      "sha256": "689c5a76098e81463e259570bfd68db1ac82a104be425fd34c0de644a2d69efa",
+      "bytes": 66298
+    },
+    "frozen/src/pottery.js": {
+      "sha256": "c41214f8cc393623adb91d84e6b22dbdab48bd548d917adf23c32c9b224b9a71",
+      "bytes": 15990
+    },
+    "frozen/src/textures.js": {
+      "sha256": "fc5f7f252a230ace6e3c4ee69a8a9aa1e521c8057c7a83e958e0fd189167055b",
+      "bytes": 13750
+    },
+    "frozen/vendor/three/LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "sha256": "ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb",
+      "bytes": 1314681
+    },
+    "frozen/vendor/three/examples/jsm/environments/RoomEnvironment.js": {
+      "sha256": "85869bdd22f7cf0b22e68dcefe6cb710480af0f5c901a76f7a7764fd07fc8014",
+      "bytes": 3606
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "sha256": "c25b7930e570e9ec56173cd3b866ec8d2e10016630db3937efb439daf1cedbf6",
+      "bytes": 31768
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/pottery.js",
+      "frozen/src/textures.js",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/examples/jsm/environments/RoomEnvironment.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+    ],
+    "retainedOutsidePages": [
+      "Original preservation ZIP outside Git/Pages"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured"
+}

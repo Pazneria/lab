@@ -2423,7 +2423,7 @@
       "buildWindow": "First implementation 2026-10-07 04:48:15 UTC; deadline 05:48:15 UTC; stop 05:11:29 UTC.",
       "interruptions": "Continuous timer; no deadline extensions. Dependency/configuration events, where reported, are preserved in producer records.",
       "controls": "- Click **Enter Station** to capture the mouse; move the mouse to look.\n- **W A S D** to walk; **Shift** to move faster.\n- **R** resets to the arrival hall facing the sheave.\n- **Esc** releases the mouse; click the view to capture it again.\n\nMovement stays at human eye height, clamps to the floors and guarded deck, and collides with the machine footprint, cabin and boarding gate. The opening view starts near the arrival threshold, facing the large sheave. Approach its front, then move around to the marked visitor lane on its right as you face it; continue beside the cabin to the lookout, then return through the hall.",
-      "producerChecks": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+      "producerChecks": "Original producer CPU/static/build checks preserved. Separate host startup screenshot capture passed; no route, collision feel or performance judging.",
       "performanceEvidence": "Not measured. No frame-time evidence or grade supplied.",
       "limitations": [
         "Runtime, appearance, interaction, collision feel and performance remain unverified.",
@@ -2446,16 +2446,18 @@
           "./vendor/three.module.js"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Greyglass scene at its authored starting viewpoint.",
       "archiveSha256": "3445c12716fc59ff0d88b4adf9434bc33babbaeebc790bc64bfd2c49dc0d67a8",
       "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "10940a136cdbe81d07c88d066d7398b720008d199e63ea40d2f1d0fdefc40228",
       "promptVersion": "13-openai",
-      "webgl": "WebGL (runtime unverified)",
+      "webgl": "WebGL (actual startup captured)",
       "availability": "unverified",
-      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout."
+      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout.",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
     },
     {
       "id": "karst-ridge-sol",
@@ -2467,7 +2469,7 @@
       "buildWindow": "First implementation 2026-10-07 04:48:08.2895818 UTC; deadline 05:48:08.2895818 UTC; stop 05:16:28.4123697 UTC.",
       "interruptions": "Continuous timer; no deadline extensions. Dependency/configuration events, where reported, are preserved in producer records.",
       "controls": "| Input | Action |\n| --- | --- |\n| Click **Enter station** | Capture mouse and begin walking |\n| Mouse | Look around |\n| WASD or arrow keys | Walk |\n| Shift | Walk faster |\n| R | Reset position and view to the entrance |\n| Esc | Release mouse and show controls/resume menu |\n| F | Toggle live frame-interval information |\n\nThe eye height is 1.68 m. Walking speed is 1.75 m/s; Shift increases it to 3.0 m/s. The flat route uses a 0.24 m player radius, floor boundaries, obstacle collision and movement substeps with wall sliding. There is no jumping. The cabin remains closed and stationary.\n\nThe optional F readout reports rolling requestAnimationFrame intervals, their mean and 95th percentile, rendered calls/triangles and canvas resolution. It is CPU-side frame interval information, **not GPU timing**, and no measurements were collected for this entry.",
-      "producerChecks": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+      "producerChecks": "Original producer CPU/static/build checks preserved. Separate host startup screenshot capture passed; no route, collision feel or performance judging.",
       "performanceEvidence": "Not measured. No frame-time evidence or grade supplied.",
       "limitations": [
         "Runtime, appearance, interaction, collision feel and performance remain unverified.",
@@ -2489,16 +2491,18 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Karst Ridge scene at its authored starting viewpoint.",
       "archiveSha256": "a628dd7fc63c8b4132123636d082582245209e88feef81f2e73db4f1abf8c468",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "7fce6d1d10b6043d21a0a94960999ff5e45bb6ac6c2bf2a6067b727b2fe183f5",
       "promptVersion": "13-openai",
-      "webgl": "WebGL (runtime unverified)",
+      "webgl": "WebGL (actual startup captured)",
       "availability": "unverified",
-      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout."
+      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout.",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
     },
     {
       "id": "rainfall-terminal-astra",
@@ -2510,7 +2514,7 @@
       "buildWindow": "First implementation 2026-10-07 04:48:37.6120333 UTC; deadline 05:48:37.6120333 UTC; stop 05:18:36.3440467 UTC.",
       "interruptions": "Continuous timer; no deadline extensions. Dependency/configuration events, where reported, are preserved in producer records.",
       "controls": "- **Enter the station / click the scene:** capture the mouse.\n- **Mouse:** look around.\n- **W A S D** or **arrow keys:** walk.\n- **Shift:** faster walk.\n- **Esc:** release the mouse and show controls.\n- **R** or **Reset:** return to the entrance.\n- **Quality:** switch between High (pixel ratio capped at 1.5) and Balanced (capped at 1).\n\nThe camera stays at 1.68 metres, with stable eye height and no head bob. There is no jumping, climbing, operating machinery or entering the closed cabin. The scene is designed for desktop keyboard and mouse.",
-      "producerChecks": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+      "producerChecks": "Original producer CPU/static/build checks preserved. Separate host startup screenshot capture passed; no route, collision feel or performance judging.",
       "performanceEvidence": "Not measured. No frame-time evidence or grade supplied.",
       "limitations": [
         "Runtime, appearance, interaction, collision feel and performance remain unverified.",
@@ -2544,16 +2548,18 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Rainfall Terminal scene at its authored starting viewpoint.",
       "archiveSha256": "d40301b38b3e5c4c1483b2cb310e8a0d4d7504a7819e411c7c01a8e01c8e562a",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "6449d2ecd22e8451351376ae1daf90aeacc03538d1737327227660514fbe0fdf",
       "promptVersion": "13-openai",
-      "webgl": "WebGL (runtime unverified)",
+      "webgl": "WebGL (actual startup captured)",
       "availability": "unverified",
-      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout."
+      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout.",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
     },
     {
       "id": "hearth-earth-luna",
@@ -2565,7 +2571,7 @@
       "buildWindow": "First implementation 2026-10-07 04:48:55 UTC; deadline 05:48:55 UTC; stop 05:00:46 UTC.",
       "interruptions": "Continuous timer; no deadline extensions. Dependency/configuration events, where reported, are preserved in producer records.",
       "controls": "- Click **Step inside** to capture the mouse. Move the mouse to look.\n- **W A S D** or the arrow keys move at walking speed.\n- **R** resets to the entrance; **Esc** releases the mouse. Click in the scene to recapture it.",
-      "producerChecks": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+      "producerChecks": "Original producer CPU/static/build checks preserved. Separate host startup screenshot capture passed; no route, collision feel or performance judging.",
       "performanceEvidence": "Not measured. No frame-time evidence or grade supplied.",
       "limitations": [
         "Runtime, appearance, interaction, collision feel and performance remain unverified.",
@@ -2592,16 +2598,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Hearth & Earth scene at its authored starting viewpoint.",
       "archiveSha256": "6d818d7757656db285d4870160b03e7812648afeeab568037b8fe9f7de9135b0",
       "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4898e34198e157919a222f0c7f785276a75a1f9d86069dcbacff3b24f043e096",
       "promptVersion": "14-openai",
-      "webgl": "WebGL (runtime unverified)",
+      "webgl": "WebGL (actual startup captured)",
       "availability": "unverified",
-      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard."
+      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard.",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
     },
     {
       "id": "northlight-sol",
@@ -2613,7 +2621,7 @@
       "buildWindow": "First implementation 2026-10-07 04:49:42 UTC; deadline 05:49:42 UTC; stop 05:18:55 UTC.",
       "interruptions": "Continuous timer; no deadline extensions. Dependency/configuration events, where reported, are preserved in producer records.",
       "controls": "| Input | Action |\n|---|---|\n| Enter the workshop / click scene | Capture the mouse and explore |\n| WASD or arrow keys | Walk |\n| Mouse | Look |\n| Shift | Walk faster |\n| Esc | Release the mouse / pause |\n| R or Reset | Return to the entrance |\n| H or Controls | Show control help |\n| F or Frame times | Show rolling frame intervals |\n| Drag on scene | Look fallback when pointer lock is unavailable |\n\nThe camera is 1.66m above the level floor. A 0.25m collision radius and bounded movement substeps prevent crossing major walls, tables, shelves, roof posts and the kiln. Small tools and foliage do not have individual collision. There is no jumping, crouching or crafting.",
-      "producerChecks": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+      "producerChecks": "Original producer CPU/static/build checks preserved. Separate host startup screenshot capture passed; no route, collision feel or performance judging.",
       "performanceEvidence": "Not measured. No frame-time evidence or grade supplied.",
       "limitations": [
         "Runtime, appearance, interaction, collision feel and performance remain unverified.",
@@ -2648,16 +2656,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Northlight scene at its authored starting viewpoint.",
       "archiveSha256": "a6d228b549a9da1f5b4a4e6fefecff95c1c3a2a30e1c3c80a59e63d748e5c45c",
       "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4128d143c10978f6bdf52da80e7e67f63b430aead89c0b25f62ad23847c4cbf8",
       "promptVersion": "14-openai",
-      "webgl": "WebGL (runtime unverified)",
+      "webgl": "WebGL (actual startup captured)",
       "availability": "unverified",
-      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard."
+      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard.",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
     },
     {
       "id": "stillwater-ceramics-astra",
@@ -2669,7 +2679,7 @@
       "buildWindow": "First implementation 2026-10-07 04:49:58.9488365 UTC; deadline 05:49:58.9488365 UTC; stop 05:20:32.844 UTC.",
       "interruptions": "Continuous timer; no deadline extensions. Dependency/configuration events, where reported, are preserved in producer records.",
       "controls": "| Input | Action |\n| --- | --- |\n| Enter the workshop | Capture the mouse and begin |\n| Mouse | Look around |\n| WASD or arrow keys | Walk |\n| Shift | Brisk walk |\n| Esc / Pause | Release mouse; show controls and settings |\n| R | Reset position and orientation to the entrance |\n| H | Hide/show the interface |\n| Hold left mouse + move | Fallback look control if pointer lock is unavailable |\n\nThe pause menu includes sensitivity and render-scale choices. High caps device pixel ratio at 1.5; Balanced at 1.15; Light at 0.85. Geometry and materials remain the same. Movement has no head bob, gravity surprises, or jumping. Focus loss clears held keys and pauses movement.",
-      "producerChecks": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+      "producerChecks": "Original producer CPU/static/build checks preserved. Separate host startup screenshot capture passed; no route, collision feel or performance judging.",
       "performanceEvidence": "Not measured. No frame-time evidence or grade supplied.",
       "limitations": [
         "Runtime, appearance, interaction, collision feel and performance remain unverified.",
@@ -2691,16 +2701,110 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Stillwater Ceramics scene at its authored starting viewpoint.",
       "archiveSha256": "046d298b3bff14fb04f36b776b5805f227ffe8c83e8622494b80cff8c25b75a7",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "bcd3a6933a25cde3b64a8e6067abe2e3ba9e4543f4de43404b7855fb6c514983",
       "promptVersion": "14-openai",
-      "webgl": "WebGL (runtime unverified)",
+      "webgl": "WebGL (actual startup captured)",
       "availability": "unverified",
-      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard."
+      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard.",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
+    },
+    {
+      "id": "grauhorn-opus",
+      "title": "Grauhorn Bergstation",
+      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout.",
+      "requestedConfiguration": "Claude Opus5.5 / effort unknown (user-confirmed model; producer-reported backend)",
+      "modelDisclosure": "User confirms Claude Opus5.5; README reports claude-opus-5-5. Session default effort is not exposed; actual serving backend independently unverified.",
+      "buildWindow": "Producer README supplies session start and deadline, approximate first implementation only; actual stop timestamp not supplied. Exact README retained.",
+      "interruptions": "Not documented independently; original producer record retained.",
+      "controls": "See original README; mouse look or drag fallback, WASD/arrows, R reset and Esc release.",
+      "producerChecks": "README reports producer browser measurements; no raw logs supplied, independently unverified. Importer static/hash checks and screenshot capture recorded separately.",
+      "performanceEvidence": "Producer-reported synchronous readPixels measurements retained verbatim in README. Not independently verified, not comparable live frame-time judging and not a grade.",
+      "limitations": [
+        "Actual implementation timing and effort are incompletely documented.",
+        "See original README for collision, rendering and route limitations."
+      ],
+      "documents": [
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        },
+        {
+          "label": "Initial manual prompt reference",
+          "path": "launch-prompt.txt"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Grauhorn Bergstation scene at its authored starting viewpoint.",
+      "archiveSha256": "bd8799c324e5cc9d8bfd403ef8fa38ba94d01efc3f8a1a505f337b9d38e633ec",
+      "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "b72625c9a1aca0368ab1fc03736412ca743cfeb5d363643e7e726f03d5baab0e",
+      "promptId": "13",
+      "promptVersion": "13-base",
+      "webgl": "WebGL (actual startup captured)",
+      "comparisonModel": "opus",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
+    },
+    {
+      "id": "ceramics-workshop-opus",
+      "title": "Ceramics Workshop",
+      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard.",
+      "requestedConfiguration": "Claude Opus5.5 / effort unknown (user-confirmed model; producer-reported backend)",
+      "modelDisclosure": "User confirms Claude Opus5.5; README reports claude-opus-5-5. Session default effort is not exposed; actual serving backend independently unverified.",
+      "buildWindow": "Producer README supplies session start and deadline, approximate first implementation only; actual stop timestamp not supplied. Exact README retained.",
+      "interruptions": "Not documented independently; original producer record retained.",
+      "controls": "See original README; mouse look or drag fallback, WASD/arrows, R reset and Esc release.",
+      "producerChecks": "README reports producer browser measurements; no raw logs supplied, independently unverified. Importer static/hash checks and screenshot capture recorded separately.",
+      "performanceEvidence": "Producer-reported synchronous readPixels measurements retained verbatim in README. Not independently verified, not comparable live frame-time judging and not a grade.",
+      "limitations": [
+        "Actual implementation timing and effort are incompletely documented.",
+        "See original README for collision, rendering and route limitations."
+      ],
+      "documents": [
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        },
+        {
+          "label": "Initial manual prompt reference",
+          "path": "launch-prompt.txt"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Ceramics Workshop scene at its authored starting viewpoint.",
+      "archiveSha256": "ceaa87317c3a3397b0e6629ee47ecb5909ac99219118672ad6e989c0b2d1d02e",
+      "archiveKind": "Host-created source preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "3cf0c03a0cfea432629c1c349bae35d780540f9fe1dbf9394654232fe946c621",
+      "promptId": "14",
+      "promptVersion": "14-base",
+      "webgl": "WebGL (actual startup captured)",
+      "comparisonModel": "opus",
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized actual startup and default-view screenshot capture passed; route, collision feel and performance not judged"
     }
   ],
   "prompts": [

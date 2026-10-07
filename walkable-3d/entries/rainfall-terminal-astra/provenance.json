@@ -118,6 +118,10 @@
       "sha256": "737e76655c30d63d72ee08a39d918da4f358072bb5e0b1e0a334b0b5ce646d23",
       "bytes": 3854
     },
+    "host-verification.json": {
+      "sha256": "8334ebc9d77dbd8660ca60051daaabf5daa5e0427c9b2fc98ebbcfe81ea0f7e2",
+      "bytes": 367
+    },
     "launch-prompt.txt": {
       "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
       "bytes": 7656
@@ -125,6 +129,14 @@
     "LAUNCH.txt": {
       "sha256": "a51b50bdb16c5763cf89078aea84d91a60796766ebf98c1dcfaa19f30a724feb",
       "bytes": 1290
+    },
+    "preview-capture.json": {
+      "sha256": "4c5c450ea770f36664eeda68777423de801a3ef025b8f96fcc4d7df07ff6346f",
+      "bytes": 2235
+    },
+    "preview.jpg": {
+      "sha256": "42ecf25c6ca664273e055f5bc0d068c2ddbf92bcff873f41e94af696136e50ba",
+      "bytes": 104247
     },
     "README.md": {
       "sha256": "ef506bdff72c45add3c4e4934f4b49992520f132142f52293113e84b0de77173",
@@ -154,8 +166,11 @@
   "publication": {
     "publishedFiles": [
       "CHECKS.md",
+      "host-verification.json",
       "launch-prompt.txt",
       "LAUNCH.txt",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "run-record.json",
       "SHA256SUMS.txt",
@@ -166,5 +181,7 @@
     "retainedOutsidePages": [
       "Original archives in task-16/frozen-originals"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured"
 }
