@@ -1,0 +1,85 @@
+{
+  "id": "larkspur-house-sol",
+  "title": "Larkspur House",
+  "scene": 15,
+  "model": "sol",
+  "workspace": "task-20/larkspur-rooms",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6.1 Sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:02:25.9378600Z",
+  "deadlineUtc": "2026-10-07T10:02:25.9378600Z",
+  "stopUtc": "2026-10-07T09:50:51.0652836Z",
+  "producerChecks": "Syntax, production build and CPU geometry/collision checks passed: 20 connected inspection points, 19 walking segments, 178856 triangles and 52 material groups. Browser, visual, interactive and GPU performance verification not performed. Cloth static; mirror has no real reflection.",
+  "interruptions": "No interruptions or deadline extension.",
+  "cleanupClaim": "All started commands finished; zero entry Node processes remained. No server, browser or watcher started.",
+  "handoffSource": "Parent final completed receipt and original run-record.json. All 24 entrants explicitly cleared for freezing/static checks.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, production build and CPU geometry/collision checks passed: 20 connected inspection points, 19 walking segments, 178856 triangles and 52 material groups. Browser, visual, interactive and GPU performance verification not performed. Cloth static; mirror has no real reflection.",
+    "importerStaticChecks": {
+      "id": "larkspur-house-sol",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:8ea02993cb304443f71203a8dca781c10c96d15472c7b7fb455f69469e70b2c1",
+      "syntax": [
+        {
+          "file": "scripts/static-check.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/geometry.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/scene.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

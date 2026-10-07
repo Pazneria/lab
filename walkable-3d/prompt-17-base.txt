@@ -1,0 +1,45 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact retired adventurer's home above a tavern, arranged as a living/sleeping room, a small connected study-and-storage alcove and a short covered balcony or inn corridor. Choose one of those exterior-facing connections and keep it bounded. From the entrance, lead me around the main living furniture, into the alcove and out onto the covered connection before returning with a fresh view of the room.
+
+The room should feel like a comfortable life built after the adventures, with useful cozy objects and a personal history visible in their arrangement. Show at least one old trophy or piece of expedition equipment repurposed for an ordinary household use; choose the object and its new role yourself. Companion portraits and one unopened letter are suggested storytelling details, not requirements for readable documents or elaborate portrait art. Give the study/storage alcove a believable working surface and stored belongings rather than a wall of anonymous boxes. Distinguish softened wool, worn leather, dark timber, tarnished metal and patched plaster. Late-afternoon light from the covered connection should meet a warm interior glow while preserving detail in the alcove. Keep everything within these three connected spaces; a whole tavern, NPCs, dialogue and quests are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will approach the living furniture and repurposed keepsake, inspect the study alcove, visit the covered connection and turn back toward the bed and sitting area. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A comfortable original retirement setting with personal history visible in everyday use
+- Convincing repurposing of an adventuring object within domestic life
+- Distinct wool, worn leather, timber, tarnished metal and patched plaster at close range
+- Readable late-afternoon and warm interior lighting, including the small alcove
+- Purposeful lived-in detail from the sitting area, study and covered return viewpoint
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing the layered living furniture, stored belongings and covered connection together
+- Smooth movement between the living/sleeping room, study/storage alcove and covered connection
+- Minimal slowdown from dense furnishing or layered shadow detail, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A living/sleeping room with comfortable domestic furniture and a repurposed adventuring object
+- A small connected study/storage alcove and short covered balcony or inn corridor
+- Walkable access around the main furniture, into the alcove and along the covered connection, with a return route
+- Convincing human scale, usable alcove clearance, safe edges and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → living furniture and repurposed keepsake → study/storage alcove → covered balcony or inn corridor → return view toward the living/sleeping room → entrance.
+
+I will pay particular attention to how former adventures have become part of ordinary life, the wear of different materials and the change of view from the covered connection. Particular trophies, portraits and the unopened letter are optional choices; the three core spaces, repurposed object and route are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+

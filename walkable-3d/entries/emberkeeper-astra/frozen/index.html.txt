@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#241d18" />
+    <title>Emberkeeper · The caretaker's quarters</title>
+    <script type="module" crossorigin src="./assets/index-Hn2wZQwv.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BvQNVull.css">
+  </head>
+  <body>
+    <div id="viewport"></div>
+    <div id="hud" class="hidden">
+      <div class="place"><span class="eyebrow">EMBERKEEPER</span><span id="room">Caretaker’s quarters</span></div>
+      <div id="crosshair" aria-hidden="true"></div>
+      <div id="hint"></div>
+      <div class="controls"><span><b>W A S D</b> walk</span><span><b>MOUSE</b> look</span><span><b>SHIFT</b> brisk walk</span><span><b>E</b> inspect</span><span><b>R</b> reset</span><span><b>ESC</b> pause</span></div>
+    </div>
+    <div id="menu" class="veil">
+      <main class="card">
+        <div class="crest" aria-hidden="true">✦</div>
+        <p class="eyebrow">AN INHABITED PLACE · A SMALL EXPLORATION</p>
+        <h1>Emberkeeper</h1>
+        <p class="subtitle">The caretaker’s quarters</p>
+        <div class="rule"></div>
+        <p class="intro">One narrow bed. A well-used passage.<br>A home for something much larger.</p>
+        <p class="route">Walk from the bedroom through the service passage into the warm roost. Follow the floor around the resting platform, then look back for the little doorway.</p>
+        <button id="start" class="primary">Enter the quarters <span>→</span></button>
+        <div class="menu-actions"><button id="reset">Return to entrance</button><button id="quality">Quality: balanced</button></div>
+        <p class="instructions">WASD or arrow keys to walk · Mouse to look<br>Shift to walk faster · E to inspect · R to reset · Esc to pause</p>
+        <p class="fine">Mouse capture begins on entry. If unavailable, hold the left mouse button to look. No jumping is needed.</p>
+        <p id="status" role="status">Preparing the quarters…</p>
+      </main>
+    </div>
+    <aside id="note" class="hidden" aria-live="polite"><span class="eyebrow" id="note-kind">CARETAKER’S NOTE</span><h2 id="note-title"></h2><p id="note-body"></p><small>E to put down</small></aside>
+  </body>
+</html>

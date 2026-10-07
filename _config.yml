@@ -17,3 +17,4 @@ exclude:
   - "tests/verify-walkable*"
   - "tests/walkable-publication-allowlist.json"
   - "docs/WALKABLE-INTEGRATION.md"
+  - "docs/WALKABLE-MORNING-INTEGRATION.md"

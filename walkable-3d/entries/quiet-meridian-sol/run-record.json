@@ -1,0 +1,96 @@
+{
+  "id": "quiet-meridian-sol",
+  "title": "The Quiet Meridian",
+  "scene": 18,
+  "model": "sol",
+  "workspace": "task-29/captain-ilyra-quarters",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6.1 Sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:04:43.2170782Z",
+  "deadlineUtc": "2026-10-07T10:04:43.2170782Z",
+  "stopUtc": "2026-10-07T09:38:28.825Z",
+  "producerChecks": "Syntax, CPU geometry/collision/sightline and production build passed. No browser, rendering, interactive or performance QA. Desktop controls, approximate furniture collision and static scenery.",
+  "interruptions": "No interruptions or extension. Two access failures resolved by retries within clock.",
+  "cleanupClaim": "All entry processes exited; cleanup verified.",
+  "handoffSource": "Parent completed handoff and original execution-record.json.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, CPU geometry/collision/sightline and production build passed. No browser, rendering, interactive or performance QA. Desktop controls, approximate furniture collision and static scenery.",
+    "importerStaticChecks": {
+      "id": "quiet-meridian-sol",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:6825327c3b28b7439fdfff2e9f5bff0d492b419309a8ed2f1105d6370c21c932",
+      "syntax": [
+        {
+          "file": "scripts/check.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/layout.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/world.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "Authorized authored-default-view capture only; no quality judgment",
+    "interactive": "Existing start control only; no movement/route/collision test",
+    "gpu": "Rendering for authorized screenshot only; no GPU/performance test",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "quiet-meridian-sol",
+    "passed": true,
+    "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+    "sourceUnchanged": true,
+    "captureEvidence": "preview-capture.json",
+    "grade": null,
+    "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+    "performanceTest": false,
+    "foregroundInputUsed": false
+  }
+}

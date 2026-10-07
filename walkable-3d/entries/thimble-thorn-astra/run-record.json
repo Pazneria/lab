@@ -1,0 +1,96 @@
+{
+  "id": "thimble-thorn-astra",
+  "title": "The Thimble & Thorn",
+  "scene": 20,
+  "model": "astra",
+  "workspace": "task-36/merchant-wagon",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6 Astra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "Codex based on GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:06:43.3932637Z",
+  "deadlineUtc": "2026-10-07T10:06:43.3932637Z",
+  "stopUtc": "2026-10-07T09:37:43.8591291Z",
+  "producerChecks": "Syntax, CPU collision-route, geometry/headroom and production build passed. No browser, visual, interactive or performance QA. Desktop controls, simplified collision and static mechanisms.",
+  "interruptions": "No external interruptions or extensions.",
+  "cleanupClaim": "All started processes exited; none remain.",
+  "handoffSource": "Parent completed handoff and original execution-record.json.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, CPU collision-route, geometry/headroom and production build passed. No browser, visual, interactive or performance QA. Desktop controls, simplified collision and static mechanisms.",
+    "importerStaticChecks": {
+      "id": "thimble-thorn-astra",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:5caf45a0df3accac4a1c026aea6be96e66844422eca366cfe1940608f2da1f59",
+      "syntax": [
+        {
+          "file": "vite.config.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/check-route.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/check-scene.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/world.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "Authorized authored-default-view capture only; no quality judgment",
+    "interactive": "Existing start control only; no movement/route/collision test",
+    "gpu": "Rendering for authorized screenshot only; no GPU/performance test",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "thimble-thorn-astra",
+    "passed": true,
+    "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+    "sourceUnchanged": true,
+    "captureEvidence": "preview-capture.json",
+    "grade": null,
+    "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+    "performanceTest": false,
+    "foregroundInputUsed": false
+  }
+}

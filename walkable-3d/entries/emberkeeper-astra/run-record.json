@@ -1,0 +1,96 @@
+{
+  "id": "emberkeeper-astra",
+  "title": "Emberkeeper",
+  "scene": 21,
+  "model": "astra",
+  "workspace": "task-39/ember-keeper",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6 Astra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6 / Codex",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:07:28.4661751Z",
+  "deadlineUtc": "2026-10-07T10:07:28.4661751Z",
+  "stopUtc": "2026-10-07T09:45:57.4956465Z",
+  "producerChecks": "Syntax, production build, CPU geometry/collision and 12-point route checks passed. No browser, renderer or performance benchmark. Visual quality, interactive behavior and performance unverified. Floor-level exploration, no jumping/climbing/dragon model.",
+  "interruptions": "No interruptions or extensions; permission retries documented in original execution record.",
+  "cleanupClaim": "All entry processes finished; read-only query confirmed no entry-owned Node/esbuild residue.",
+  "handoffSource": "Parent completed handoff and original execution-record.json.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, production build, CPU geometry/collision and 12-point route checks passed. No browser, renderer or performance benchmark. Visual quality, interactive behavior and performance unverified. Floor-level exploration, no jumping/climbing/dragon model.",
+    "importerStaticChecks": {
+      "id": "emberkeeper-astra",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:550af64cf0b9d47f78e569aa8e6855325fa905a3ae752f73a944a8e2e9b82fea",
+      "syntax": [
+        {
+          "file": "checks/scene-check.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/geometry.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/movement.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/world.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "Authorized authored-default-view capture only; no quality judgment",
+    "interactive": "Existing start control only; no movement/route/collision test",
+    "gpu": "Rendering for authorized screenshot only; no GPU/performance test",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "emberkeeper-astra",
+    "passed": true,
+    "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+    "sourceUnchanged": true,
+    "captureEvidence": "preview-capture.json",
+    "grade": null,
+    "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+    "performanceTest": false,
+    "foregroundInputUsed": false
+  }
+}

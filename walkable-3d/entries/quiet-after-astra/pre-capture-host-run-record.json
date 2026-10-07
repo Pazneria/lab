@@ -1,0 +1,85 @@
+{
+  "id": "quiet-after-astra",
+  "title": "The Quiet After",
+  "scene": 17,
+  "model": "astra",
+  "workspace": "task-27/quiet-after",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6 Astra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6-based Codex",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:04:11.5411623Z",
+  "deadlineUtc": "2026-10-07T10:04:11.5411623Z",
+  "stopUtc": "2026-10-07T09:42:03.1097686Z",
+  "producerChecks": "Syntax, ten-point collision route, CPU-only geometry and production build passed. No browser, visual, interactive, GPU or frame-time QA. Desktop WebGL2; fire and plants static.",
+  "interruptions": "No user interruptions or extensions. Registry retry, Vite config workaround and logging retry resolved sandbox issues within the unchanged clock.",
+  "cleanupClaim": "All tracked install/check/build commands completed. Own-directory executable scan found no Node/esbuild; no server/browser/watcher. CIM query unavailable to producer.",
+  "handoffSource": "Parent completed handoff and original run-record.json.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, ten-point collision route, CPU-only geometry and production build passed. No browser, visual, interactive, GPU or frame-time QA. Desktop WebGL2; fire and plants static.",
+    "importerStaticChecks": {
+      "id": "quiet-after-astra",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:bbbc2199f2576e101960afb4ca71f082a3beb922f037d3d1dd65e7dea9841d63",
+      "syntax": [
+        {
+          "file": "scripts/check-navigation.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/check-scene.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/scene.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

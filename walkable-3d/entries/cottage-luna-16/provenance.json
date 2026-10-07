@@ -1,0 +1,132 @@
+{
+  "entry": "cottage-luna-16",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\cottage-luna-16\\source-preservation.zip",
+  "archiveSha256": "4c928e731f7a2eed3ddf5c716e4849d77e6d834179eb0c4b4005af709e80ad73",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "480efa1a389b197dbf25977544933ec38b076876da6512d5b1694baf7f52a4e0",
+        "bytes": 38479
+      },
+      "README.md": {
+        "sha256": "390eb0f6790b9a5fb9cb6a2c122ec1a4b528eabffe75dc3e321aaf76bf83dcf5",
+        "bytes": 1538
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\cottage-luna-16\\source-preservation.zip",
+    "sourceArchiveSha256": "4c928e731f7a2eed3ddf5c716e4849d77e6d834179eb0c4b4005af709e80ad73",
+    "supplementalDependencies": [
+      {
+        "file": "frozen/vendor/three/three.module.js",
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source\\dependency\\three\\build\\three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113,
+        "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
+      },
+      {
+        "file": "frozen/vendor/three/three.core.js",
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source\\dependency\\three\\build\\three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455,
+        "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
+      },
+      {
+        "file": "frozen/vendor/three/LICENSE",
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source\\dependency\\three\\LICENSE",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
+      }
+    ],
+    "supplementalLicenses": []
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:02:51Z",
+    "deadlineUtc": "2026-10-07T10:02:51Z",
+    "stopUtc": "2026-10-07T09:15:48Z"
+  },
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: captured. No movement/route/collision/full-scene or performance judgment.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three/three.module.js"
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "480efa1a389b197dbf25977544933ec38b076876da6512d5b1694baf7f52a4e0",
+      "bytes": 38479
+    },
+    "frozen/vendor/three/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "host-verification.json": {
+      "sha256": "61d457322accadd33cd6b782e0706c45daf29e3946a1c2bc6aade61f563b2719",
+      "bytes": 512
+    },
+    "launch-prompt.txt": {
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "bytes": 7573
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "0250e3e8387ccc9ab936a669c6ae4d655ad65323b224b4946b71f440f7a6bc68",
+      "bytes": 2547
+    },
+    "preview-capture.json": {
+      "sha256": "5aac9ad8f4434078425f35fd3889b0d3245531fcc9355febe2171ab70aa0a74b",
+      "bytes": 3375
+    },
+    "preview.jpg": {
+      "sha256": "1197bab8dc6577c0335b906d72e8cecc468af58cbce2206f46b83589acc0fe54",
+      "bytes": 57850
+    },
+    "README.md": {
+      "sha256": "390eb0f6790b9a5fb9cb6a2c122ec1a4b528eabffe75dc3e321aaf76bf83dcf5",
+      "bytes": 1538
+    },
+    "run-record.json": {
+      "sha256": "35a17be4c0ebfdd6f4979bc701816de630046d24eaa7ae19a22cb75910013938",
+      "bytes": 3317
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "staticHostingConcerns": [],
+  "hostCaptureOutcome": "captured"
+}

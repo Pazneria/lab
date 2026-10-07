@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Thistlewick Cottage</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#202724;color:#efe6d4;font:14px/1.4 system-ui,sans-serif}#scene{width:100vw;height:100vh;display:block;touch-action:none}
+.brand{position:fixed;top:18px;left:22px;z-index:2;font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 2px 5px #111}.brand strong{display:block;font:600 18px Georgia,serif;letter-spacing:.03em;text-transform:none}
+.card{position:fixed;z-index:3;right:18px;bottom:18px;width:min(340px,calc(100vw - 36px));padding:14px 16px;background:rgba(24,28,27,.84);border:1px solid #efe6d433;border-radius:10px;box-shadow:0 10px 32px #0006;backdrop-filter:blur(8px)}.card h2{margin:0 0 8px;font:600 17px Georgia,serif;color:#f4e6ca}.route{margin:0 0 10px;color:#d2c7b0;font-size:12px}.keys{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;font-size:12px}.keys b{color:#fff1cc}.hint{margin:10px 0 0;padding-top:9px;border-top:1px solid #efe6d433;font-size:11px;color:#bcb7ab}.actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.actions span{font-size:11px;color:#c9c0af}button{border:1px solid #b59b71;background:#403b30;color:#fff1d8;border-radius:6px;padding:6px 10px;font:inherit;cursor:pointer}
+.toast{position:fixed;z-index:2;top:18px;left:50%;transform:translateX(-50%);padding:8px 13px;border-radius:20px;background:#1b211fd9;opacity:0;transition:opacity .25s;pointer-events:none}.toast.show{opacity:1}body.locked .card{opacity:0;visibility:hidden;pointer-events:none}#fatal{display:none;position:fixed;inset:0;place-items:center;background:#19201e;padding:24px;z-index:10}
+</style></head><body>
+<canvas id="scene"></canvas><div class="brand">A little place in the rain<strong>Thistlewick Cottage</strong></div>
+<div class="toast" id="toast">Click into the cottage to explore</div><aside class="card"><h2>A home for ordinary wonders</h2><p class="route">Entrance → kitchen → workroom → greenhouse → back again</p><div class="keys"><span><b>W A S D</b> move</span><span><b>Mouse</b> look</span><span><b>Shift</b> faster</span><span><b>Esc</b> release</span></div><div class="actions"><span>Click room to capture mouse</span><button id="reset">Reset view <b>R</b></button></div><p class="hint">Mind the sleeping cat. The blue seed has never touched the table.</p></aside><div id="fatal"></div>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+const canvas=document.querySelector('#scene'),toast=document.querySelector('#toast'),fatal=document.querySelector('#fatal');
+try{
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight,false);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#aebdc0');scene.fog=new THREE.Fog('#b8c1be',14,35);
+const camera=new THREE.PerspectiveCamera(72,innerWidth/innerHeight,.06,55),rig=new THREE.Object3D();rig.position.set(-5.3,1.62,1.15);rig.rotation.order='YXZ';rig.rotation.y=-Math.PI/2;rig.add(camera);scene.add(rig);const world=new THREE.Group();scene.add(world);
+let seed=48391;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296},range=(a,b)=>a+(b-a)*rnd(),clamp=THREE.MathUtils.clamp;
+function makeTex(kind){const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d');if(kind==='wood'){const g=x.createLinearGradient(0,0,512,0);g.addColorStop(0,'#513a29');g.addColorStop(.28,'#8b6743');g.addColorStop(.52,'#65472e');g.addColorStop(.8,'#92704a');g.addColorStop(1,'#523a29');x.fillStyle=g;x.fillRect(0,0,512,512);for(let i=0;i<170;i++){let y=rnd()*512;x.strokeStyle='rgba(26,17,10,'+range(.02,.12)+')';x.lineWidth=range(.5,3);x.beginPath();x.moveTo(0,y);x.bezierCurveTo(120,y+range(-8,8),330,y+range(-12,12),512,y+range(-8,8));x.stroke()}}else if(kind==='plaster'){x.fillStyle='#bcb19a';x.fillRect(0,0,512,512);for(let i=0;i<8000;i++){x.fillStyle='rgba(38,30,20,'+range(.01,.07)+')';x.fillRect(rnd()*512,rnd()*512,range(1,8),range(1,7))}}else{x.fillStyle='#817c68';x.fillRect(0,0,512,512);for(let n=0;n<512;n+=5){x.strokeStyle='rgba(235,220,184,.055)';x.beginPath();x.moveTo(n,0);x.lineTo(n,512);x.stroke()}}const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());return t}
+const woodTex=makeTex('wood'),wallTex=makeTex('plaster'),linenTex=makeTex('linen'),mat=(color,roughness=.8,more={})=>new THREE.MeshStandardMaterial({color,roughness,...more});
+const M={stone:mat('#77776e',.95),mortar:mat('#424844',1),wood:mat('#a27e53',.82,{map:woodTex}),dark:mat('#49372a',.9,{map:woodTex}),pale:mat('#c3a276',.82,{map:woodTex}),wall:mat('#ddd1b8',.97,{map:wallTex}),shade:mat('#a79b83',.98,{map:wallTex}),iron:mat('#343b39',.4,{metalness:.7}),copper:mat('#a66942',.34,{metalness:.72}),brass:mat('#b18a4c',.3,{metalness:.68}),ceramic:new THREE.MeshPhysicalMaterial({color:'#e9dfc8',roughness:.24,clearcoat:.65}),cream:new THREE.MeshPhysicalMaterial({color:'#c7bba1',roughness:.32,clearcoat:.45}),glass:new THREE.MeshPhysicalMaterial({color:'#b8dad4',roughness:.1,transparent:true,opacity:.2,side:THREE.DoubleSide,depthWrite:false}),leaf:mat('#65834e',.78),glow:mat('#82dbcf',.25,{emissive:'#4db7b5',emissiveIntensity:2.1}),amber:mat('#ffd694',.25,{emissive:'#f79b42',emissiveIntensity:1.3}),black:mat('#191d1c',.27),paper:mat('#d7c7a1',.95),brick:mat('#914f3d',.92),tile:mat('#87775d',.68),cloth:mat('#777d65',1,{map:linenTex}),red:mat('#804b3f',1,{map:linenTex})};
+scene.add(new THREE.HemisphereLight('#dbe7e7','#453b2f',1.45));const daylight=new THREE.DirectionalLight('#e1e9df',1.2);daylight.position.set(2,8,-5);scene.add(daylight);
+const kitchenLight=new THREE.PointLight('#ffc37e',19,7,2);kitchenLight.position.set(-3.7,2.82,-1.05);scene.add(kitchenLight);const benchLight=new THREE.PointLight('#ef9e59',12,4.7,2);benchLight.position.set(1.1,2.52,-1.4);scene.add(benchLight);const blueLight=new THREE.PointLight('#86d6d0',4,2.8,2);blueLight.position.set(1.85,1.8,-2.3);scene.add(blueLight);
+const unitBox=new THREE.BoxGeometry(1,1,1);function box(x,y,z,w,h,d,m,rx=0,ry=0,rz=0,parent=world){const o=new THREE.Mesh(unitBox,m);o.position.set(x,y,z);o.scale.set(w,h,d);o.rotation.set(rx,ry,rz);parent.add(o);return o}
+function cyl(x,y,z,top,bottom,h,m,seg=12){const o=new THREE.Mesh(new THREE.CylinderGeometry(top,bottom,h,seg),m);o.position.set(x,y,z);world.add(o);return o}
+function ball(x,y,z,sx,sy,sz,m,parent=world){const o=new THREE.Mesh(new THREE.SphereGeometry(1,12,8),m);o.position.set(x,y,z);o.scale.set(sx,sy,sz);parent.add(o);return o}
+function ring(x,y,z,r,t,m){const o=new THREE.Mesh(new THREE.TorusGeometry(r,t,6,18),m);o.position.set(x,y,z);o.rotation.x=Math.PI/2;world.add(o);return o}
+function bar(x1,y1,z1,x2,y2,z2,r,m){const a=new THREE.Vector3(x1,y1,z1),b=new THREE.Vector3(x2,y2,z2),d=b.clone().sub(a),o=new THREE.Mesh(new THREE.CylinderGeometry(r*.72,r,d.length(),7),m);o.position.copy(a.add(b).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());world.add(o);return o}
+const colliders=[],col=(x1,x2,z1,z2)=>colliders.push({x1,x2,z1,z2});
+// Worn flagstones use one instanced mesh for low draw overhead.
+box(.55,-.08,0,13.55,.16,8.05,M.mortar);const tileGeo=new THREE.BoxGeometry(.72,.065,.72),tiles=new THREE.InstancedMesh(tileGeo,M.stone,209),dummy=new THREE.Object3D(),tileColors=['#777a72','#686e69','#878174','#73766d','#666b67','#817e73'];let ti=0;
+for(let ix=0;ix<19;ix++)for(let iz=0;iz<11;iz++){dummy.position.set(-6.05+ix*.72,-.012,-3.62+iz*.72);dummy.rotation.y=(rnd()-.5)*.035;dummy.updateMatrix();tiles.setMatrixAt(ti,dummy.matrix);tiles.setColorAt(ti,new THREE.Color(tileColors[Math.floor(rnd()*tileColors.length)]));ti++}tiles.instanceMatrix.needsUpdate=true;if(tiles.instanceColor)tiles.instanceColor.needsUpdate=true;world.add(tiles);
+// Cottage shell, open passage and the little glazed greenhouse.
+box(-5.84,1.62,-3.78,.32,3.24,.18,M.wall);box(-4.48,.54,-3.78,2.4,1.08,.18,M.wall);box(-4.48,2.86,-3.78,2.4,.76,.18,M.wall);box(.06,1.62,-3.78,6.68,3.24,.18,M.wall);box(-3.55,1.62,3.78,4.9,3.24,.18,M.wall);box(.95,1.62,3.78,3.7,3.24,.18,M.wall);
+for(const z of [-3.68,3.68]){box(5.25,.06,z,3.55,.1,.05,M.iron);box(5.25,3.17,z,3.55,.13,.12,M.dark);box(5.25,1.72,z,3.38,2.72,.025,M.glass);for(const x of [3.53,4.36,5.22,6.08,6.96])box(x,1.64,z,.075,3.08,.11,M.dark);for(const y of [.46,1.42,2.36,2.72])box(5.25,y,z,3.4,.045,.055,y===2.72?M.brass:M.dark)}
+box(7.08,1.62,0,.18,3.24,7.55,M.glass);box(6.97,1.68,0,.025,2.72,6.9,M.glass);for(const z of [-3.55,-2.35,-1.15,.05,1.25,2.45,3.55])box(6.91,1.62,z,.18,3.12,.075,M.dark);box(6.95,.14,0,.3,.16,7.6,M.iron);box(6.95,3.2,0,.3,.16,7.6,M.dark);
+// Entrance, kitchen/workroom arch and greenhouse divider door.
+box(-5.98,1.62,-1.93,.18,3.24,3.72,M.wall);box(-5.98,1.62,2.87,.18,3.24,1.74,M.wall);box(-5.98,3.08,.68,.18,.28,2.05,M.dark);box(-5.83,.09,.68,.48,.18,2.08,M.dark);for(const z of [-.34,1.70])box(-5.84,1.57,z,.055,3.08,.09,M.brass);
+box(-1.30,1.62,-2.27,.18,3.24,3.05,M.wall);box(-1.30,1.62,2.35,.18,3.24,2.7,M.wall);box(-1.30,3.04,.04,.2,.4,1.76,M.dark);box(-1.20,.06,.04,.22,.12,1.84,M.dark);for(const z of [-.89,.97])box(-1.18,1.47,z,.15,2.94,.14,M.dark);
+const gx=3.42;box(gx,1.62,-2.30,.14,3.24,2.92,M.wall);box(gx,1.62,2.66,.14,3.24,2.28,M.wall);box(gx,1.61,-.16,.055,2.92,.035,M.glass);box(gx,1.61,1.35,.055,2.92,.035,M.glass);for(const z of [-3.72,-.73,1.92,3.73])box(gx,1.62,z,.19,3.12,.12,M.dark);box(gx,3.13,.58,.19,.14,2.78,M.dark);box(gx,.1,.58,.23,.2,2.8,M.dark);for(const z of [-2.95,-2.15,-1.35,2.3,3.05])box(gx,1.63,z,.09,2.86,.06,M.brass);
+// Timbers, high rafters, baseboards and the cool kitchen window.
+for(const x of [-5.65,-3.85,-2.05,-.9,.65,2.2,3.05]){box(x,1.62,-3.66,.13,3.12,.22,M.dark);if(x<3.2)box(x,1.62,3.62,.13,3.12,.22,M.dark)}for(const z of [-3.59,3.59])box(-1.15,.24,z,9.35,.19,.22,M.dark);
+for(const x of [-5.7,-3.2,-.7,1.8,3])box(x,3.36,-.02,.11,.18,7.35,M.dark);
+box(-4.48,1.78,-3.66,2.28,1.22,.035,M.glass);for(const x of [-5.63,-4.48,-3.33])box(x,1.78,-3.62,.075,1.43,.12,M.pale);for(const y of [1.08,2.48])box(-4.48,y,-3.61,2.4,.08,.15,M.pale);box(-4.48,1.78,-3.59,.065,1.37,.11,M.brass);
+box(.55,3.52,-3.63,13.55,.16,.35,M.dark);box(.55,3.52,3.63,13.55,.16,.35,M.dark);
+// Low oak ceiling closes the cottage rooms; the greenhouse keeps its clear glazed roof.
+box(-3.65,3.17,-.02,4.65,.12,7.18,M.dark);box(1.05,3.17,-.02,4.68,.12,7.18,M.dark);
+for(const x of [-5.6,-3.3,-1.15,1.15,3.2])box(x,3.10,-.02,.14,.16,7.12,M.pale);
+box(5.25,3.115,0,3.55,.025,7.15,M.glass);
+for(const x of [3.55,4.36,5.22,6.08,6.96])box(x,3.16,0,.075,.09,7.15,M.dark);
+for(const z of [-3.58,-2.35,-1.15,.05,1.25,2.45,3.58])box(5.25,3.16,z,3.55,.09,.065,M.dark);
+// Kitchen cabinetry and an old oak worktop.
+box(-3.66,.42,-2.82,4.05,.82,1.02,M.wood);box(-3.66,.88,-2.82,4.24,.13,1.15,M.dark);box(-3.66,.97,-2.82,4.18,.075,1.12,M.pale);box(-3.66,.12,-2.82,4.13,.18,1.05,M.dark);
+for(const x of [-5.28,-4.47,-3.65,-2.83,-2.02]){box(x,.43,-2.82,.76,.68,.035,M.pale);box(x,.43,-2.79,.62,.53,.045,M.wood);box(x,.57,-2.74,.16,.025,.05,M.brass)}
+// Cast iron range with four separate burners and warm oven door.
+box(-4.82,1.015,-2.82,.92,.055,.66,M.iron);box(-4.82,.52,-2.295,.97,.72,.075,M.iron);box(-4.82,.75,-2.27,.62,.25,.018,M.black);
+for(const x of [-5.08,-4.57])for(const z of [-3.04,-2.57]){ring(x,1.055,z,.145,.025,M.iron);cyl(x,1.035,z,.11,.11,.025,M.black,16)}
+for(const x of [-5.13,-4.82,-4.51])cyl(x,.78,-2.22,.055,.055,.05,M.brass);
+// Enamel sink with a bent copper tap.
+box(-2.52,.982,-2.82,.72,.04,.70,M.iron);box(-2.52,.99,-2.82,.53,.032,.5,M.cream);box(-2.52,.974,-2.82,.36,.035,.32,M.iron);
+bar(-2.52,1,-2.49,-2.52,1.28,-2.49,.027,M.copper);bar(-2.52,1.28,-2.49,-2.32,1.28,-2.49,.027,M.copper);bar(-2.32,1.28,-2.49,-2.32,1.14,-2.49,.022,M.copper);
+box(-4.82,2.02,-3.04,1.26,.10,.58,M.iron);box(-4.82,2.33,-3.17,.18,.58,.18,M.iron);bar(-3.98,2.52,-3.3,-2.56,2.52,-3.3,.022,M.brass);
+for(let i=0;i<5;i++){const x=-3.9+i*.27;bar(x,2.52,-3.29,x,2.28,-3.29,.015,M.brass);ball(x,2.23,-3.29,.045,.045,.045,M.iron)}
+for(const x of [-2.26,-1.82]){cyl(x,1.72,-3.38,.24,.24,.075,M.copper,20);ring(x,1.76,-3.38,.22,.018,M.brass);bar(x,1.73,-3.16,x+.2,1.73,-3.06,.025,M.iron)}
+// Counter clutter: breadboard and loaf, knife, produce and a crock with a brass rim.
+box(-3.72,1.03,-2.33,.76,.035,.42,M.pale,.02,.12,-.04);box(-3.72,1.10,-2.33,.43,.12,.27,M.brick,.04,.08,0);box(-3.55,1.18,-2.34,.49,.018,.045,M.iron,.01,.08,.14);
+ball(-2.94,1.02,-2.5,.1,.08,.11,M.glow);cyl(-3.04,1.08,-2.65,.10,.10,.12,M.brass,12);cyl(-3.23,1.055,-2.59,.09,.09,.10,M.brick,12);
+cyl(-2.25,1.14,-2.91,.18,.23,.30,M.ceramic,20);ring(-2.25,1.29,-2.91,.175,.018,M.brass);cyl(-2.23,1.29,-2.91,.155,.155,.022,M.paper,20);
+cyl(-4.02,1.08,-2.75,.19,.23,.16,M.cream,20);ring(-4.02,1.17,-2.75,.19,.018,M.brass);
+// Hearth nook: soot-dark masonry, iron opening, a tiny steady ember and kettle.
+box(-5.45,1.03,-.55,.72,1.44,.56,M.brick);box(-5.45,.75,-.25,.56,.7,.04,M.black);box(-5.45,1.12,-.21,.48,.06,.07,M.iron);bar(-5.6,.62,-.22,-5.32,.67,-.22,.035,M.wood);ball(-5.46,.83,-.28,.065,.09,.06,M.amber);
+box(-5.45,1.81,-.55,.78,.12,.65,M.pale);box(-5.45,2,-.55,.16,.29,.16,M.iron);cyl(-5.43,1.19,-.55,.22,.25,.33,M.iron,18);ring(-5.43,1.37,-.55,.22,.025,M.brass);
+// A set table, pulled-out chair, untouched mug and open notes.
+box(-4.76,.82,1.63,1.55,.12,1.10,M.dark);box(-4.76,.91,1.63,1.52,.06,1.07,M.pale);
+for(const x of [-5.38,-4.15])for(const z of [1.23,2.03])box(x,.43,z,.10,.78,.11,M.dark);
+for(const x of [-5.83,-3.72,-4.76]){const z=x===-4.76?2.62:1.6;box(x,.51,z,.55,.1,.52,M.wood);for(const dx of [-.21,.21])for(const dz of [-.19,.19])box(x+dx,.26,z+dz,.055,.48,.055,M.dark);box(x,.99,z+.22,.55,.88,.075,M.dark);box(x,.98,z+.17,.4,.63,.03,M.wood)}
+box(-4.98,.99,1.35,.62,.02,.39,M.cloth,.03,.08,.02);cyl(-4.37,1.02,1.54,.09,.10,.16,M.cream,18);ring(-4.37,1.1,1.54,.085,.012,M.brass);box(-4.86,1.04,1.71,.45,.018,.3,M.paper,.05,.04,-.08);
+box(-4.75,.035,.05,2.25,.045,1.03,M.red);
+// Sleeping familiar beside the hearth rug.
+const cat=new THREE.Group();cat.position.set(-5.08,.18,.02);world.add(cat);ball(0,.16,0,.34,.17,.48,M.dark,cat);ball(-.08,.3,-.3,.22,.2,.22,M.dark,cat);
+for(const s of [-1,1]){const e=new THREE.Mesh(new THREE.ConeGeometry(.09,.19,5),M.dark);e.position.set(-.08+s*.13,.48,-.38);cat.add(e);ball(-.08+s*.1,.33,-.48,.025,.025,.025,M.amber,cat)}bar(-5.43,.19,.1,-5.66,.25,.22,.035,M.dark);
+// Clock, pinned errand note and drying rosemary.
+cyl(-2.57,2.32,-3.62,.31,.31,.065,M.dark,24);cyl(-2.57,2.32,-3.575,.25,.25,.025,M.paper,24);ring(-2.57,2.32,-3.55,.27,.018,M.brass);bar(-2.57,2.32,-3.53,-2.57,2.48,-3.53,.012,M.iron);bar(-2.57,2.32,-3.52,-2.43,2.32,-3.52,.012,M.iron);
+box(-3.18,1.75,-3.56,.52,.64,.07,M.dark);box(-3.18,1.75,-3.51,.43,.53,.025,M.paper);for(let i=0;i<4;i++)box(-3.31+i*.075,1.71,-3.49,.008,.26-i*.025,.012,M.wood,0,0,-.2);
+for(let i=0;i<6;i++){bar(-2.12+i*.18,2.56,-3.4,-2.12+i*.18,2.23,-3.4,.012,M.leaf);ball(-2.12+i*.18,2.36,-3.4,.055,.1,.04,M.leaf)}
+// Workshop trestle bench with five drawers and a sturdy clutter-friendly surface.
+box(1.05,.91,-2.18,3.72,.14,.95,M.dark);box(1.05,1.005,-2.18,3.78,.07,.99,M.pale);
+for(const x of [-.65,2.75])box(x,.48,-2.18,.16,.86,.82,M.dark);box(1.05,.46,-2.17,3.25,.46,.63,M.wood);
+for(let i=0;i<5;i++){const x=-.38+i*.72;box(x,.48,-1.838,.64,.34,.035,M.pale);box(x,.49,-1.806,.1,.035,.05,M.brass)}
+box(1.05,.13,-2.18,3.68,.14,.9,M.dark);box(1.05,2.04,-3.10,3.55,1.48,.14,M.shade);
+box(1.05,2.79,-3,3.7,.10,.28,M.dark);box(1.05,1.33,-3,3.7,.12,.28,M.dark);box(1.05,2.55,-3,3.54,.07,.18,M.brass);
+for(let i=0;i<8;i++){const x=-.52+i*.44;bar(x,2.53,-2.88,x,2.25,-2.88,.018,M.iron);bar(x,2.25,-2.88,x+.025,2.07,-2.88,.012,i%2?M.leaf:M.brick)}
+// Paired shelves and distinctive little containers.
+for(const y of [1.72,2.43]){box(1.05,y,-3.24,3.5,.11,.66,M.dark);box(1.05,y+.07,-3.22,3.52,.035,.62,M.pale);for(const x of [-.53,1.05,2.63])box(x,y-.18,-3.36,.085,.39,.22,M.brass)}
+function book(x,y,z,w,h,d,color,tilt=0){const g=new THREE.Group();g.position.set(x,y,z);g.rotation.y=tilt;world.add(g);box(0,h/2,0,w,h,d,mat(color,.87),0,0,0,g);box(0,h/2,d/2+.002,w*.75,h*.84,.009,M.paper,0,0,0,g);box(-w*.36,h/2,d/2+.009,.025,h*.74,.012,M.brass,0,0,0,g)}
+function bottle(x,y,z,s,color,label=true){const p=[new THREE.Vector2(0,0),new THREE.Vector2(.14,0),new THREE.Vector2(.17,.08),new THREE.Vector2(.17,.34),new THREE.Vector2(.12,.43),new THREE.Vector2(.066,.48),new THREE.Vector2(.06,.62),new THREE.Vector2(.073,.65),new THREE.Vector2(.052,.68),new THREE.Vector2(0,.68)],g=new THREE.LatheGeometry(p,10),b=new THREE.Mesh(g,new THREE.MeshPhysicalMaterial({color,roughness:.22,metalness:.12,clearcoat:.8}));b.scale.setScalar(s);b.position.set(x,y,z);world.add(b);cyl(x,y+s*.72,z,.053*s,.052*s,.12*s,M.pale,8);if(label)box(x,y+s*.29,z+s*.173,.19*s,.13*s,.012,M.paper,0,range(-.08,.08),0)}
+// A mix of leather-bound recipes, colored glass and corked field samples.
+const bookColors=['#7b4e42','#54675b','#b18e5b','#675c75','#665549','#8a5947'];
+for(let i=0;i<16;i++){const x=-.56+i*.215;if(i%3===0)book(x,1.79,-3.01,.16,range(.25,.42),.28,bookColors[i%bookColors.length],range(-.12,.12));else if(i%3===1)bottle(x,1.79,-3.08,range(.48,.72),['#597866','#967248','#694f72','#a55c42'][i%4],i%2===0);else{cyl(x,1.98,-3.03,.09,.11,.32,M.cream,12);ring(x,2.145,-3.03,.09,.012,M.brass)}}
+for(let i=0;i<12;i++){const x=-.48+i*.28;if(i%4===0)book(x,2.5,-3.03,.2,range(.3,.43),.29,bookColors[(i+2)%bookColors.length],range(-.08,.08));else bottle(x,2.5,-3.05,range(.47,.76),['#557260','#a27742','#5c6880','#775144'][i%4],i%3!==0)}
+for(let i=0;i<7;i++){const x=-.63+i*.52;cyl(x,1.12,-2.1,.1,.13,.24,i%2?M.ceramic:M.copper,14);ring(x,1.25,-2.1,.095,.012,M.brass);box(x,1.28,-2.1,.08,.035,.08,M.pale)}
+// Field journal spread open; stained notes and a heavy stone mortar.
+box(1,1.055,-1.89,.82,.025,.47,M.red,.01,.08);box(1,1.077,-1.89,.36,.012,.42,M.paper,.02,.08);box(1.36,1.077,-1.89,.36,.012,.42,M.paper,.02,.08);
+for(let i=0;i<6;i++)bar(.82+i*.065,1.086,-2.06,.82+i*.065,1.086,-1.94,.004,M.wood);cyl(1.95,1.13,-2.08,.17,.18,.23,M.cream,18);cyl(1.95,1.27,-2.08,.15,.15,.03,M.brass,18);ball(1.95,1.29,-2.08,.08,.045,.08,M.paper);
+cyl(2.33,1.21,-2.4,.08,.1,.22,M.copper,12);cyl(2.33,1.34,-2.4,.04,.04,.1,M.brass,10);
+// Three-legged retort and a clear cloche around a seed that refuses gravity.
+for(let a=0;a<3;a++){const ang=a*Math.PI*2/3;bar(.1,1.05,-2.5,.1+Math.cos(ang)*.36,1.62,-2.5+Math.sin(ang)*.36,.026,M.brass)}
+ball(.1,1.52,-2.5,.32,.38,.32,M.glass);ball(.1,1.52,-2.5,.19,.22,.19,mat('#66a397',.16,{metalness:.18}));cyl(.1,1.92,-2.5,.1,.12,.13,M.brass);ring(.1,1.97,-2.5,.11,.018,M.brass);
+cyl(1.84,1.12,-2.62,.28,.31,.16,M.dark,20);ring(1.84,1.21,-2.62,.29,.025,M.brass);const cloche=new THREE.Mesh(new THREE.SphereGeometry(.24,16,10,0,Math.PI*2,0,Math.PI*.52),M.glass);cloche.position.set(1.84,1.22,-2.62);world.add(cloche);ball(1.84,1.65,-2.62,.105,.12,.105,M.glow);bar(1.84,1.34,-2.62,1.84,1.53,-2.62,.012,M.brass);
+// South-wall shelves hold the practical overflow: jars, cloth-wrapped folios and tall bottles.
+for(const y of [.48,1.34,2.2]){box(1.14,y,3.18,3.18,.11,.52,M.dark);box(1.14,y+.07,3.16,3.2,.03,.49,M.pale)}
+for(const x of [-.35,1.15,2.65])box(x,1.34,3.27,.09,2.5,.12,M.brass);
+for(let level=0;level<3;level++)for(let i=0;i<9;i++){const x=-.28+i*.35,y=.56+level*.86;if((i+level)%3===0)book(x,y,2.98,.21,range(.25,.38),.25,bookColors[(i+level)%bookColors.length],range(-.1,.1));else if((i+level)%3===1)bottle(x,y,2.98,range(.4,.7),['#527462','#93724b','#6b5570','#ac6a4b'][(i+level)%4],i%2===0);else{cyl(x,y+.12,2.98,.11,.13,.24,M.cream,14);ring(x,y+.245,2.98,.11,.012,M.brass)}}
+box(-.1,.91,3.02,.5,.6,.36,M.cloth,.02);box(2.42,1.77,3,.46,.72,.33,M.red,.02,.1);
+// Lantern cage, hanging bundles, wall diagrams and an empty work stool.
+bar(-.65,2.95,-1.82,2.62,2.95,-1.82,.027,M.iron);
+for(let i=0;i<5;i++){const x=-.4+i*.68;bar(x,2.94,-1.82,x,2.48,-1.82,.012,M.brass);for(let j=0;j<3;j++)bar(x,2.62-j*.08,-1.82,x+(j%2?.08:-.08),2.52-j*.08,-1.82,.01,M.leaf)}
+box(.58,2.73,-1.9,.38,.37,.3,M.brass);box(.58,2.73,-1.9,.28,.27,.23,M.amber);bar(.4,2.96,-1.9,.76,2.96,-1.9,.022,M.iron);
+for(const x of [-.43,2.55]){ring(x,2.16,-3,.24,.025,M.brass);bar(x-.2,2.16,-3,x+.2,2.16,-3,.009,M.brass);bar(x,1.96,-3,x,2.36,-3,.009,M.brass)}
+cyl(2.65,.47,-.68,.31,.31,.14,M.wood,16);for(const a of [0,2.1,4.2])bar(2.65+Math.cos(a)*.18,.42,-.68+Math.sin(a)*.18,2.65+Math.cos(a)*.28,.07,-.68+Math.sin(a)*.28,.035,M.dark);
+// Greenhouse work benches and varied plants. Shared leaf instances keep the foliage light.
+box(5.15,.69,-3.05,3.18,.12,.84,M.dark);box(5.15,.77,-3.05,3.12,.08,.77,M.wood);for(const x of [3.75,6.55])for(const z of [-3.36,-2.74])box(x,.36,z,.09,.64,.09,M.dark);box(5.15,.87,-3.05,2.88,.11,.57,M.tile);
+for(const y of [.55,1.3]){box(6.55,y,.48,.73,.10,3.55,M.dark);box(6.55,y+.07,.48,.74,.035,3.56,M.pale)}for(const z of [-1.18,.45,2.08])box(6.83,.68,z,.08,1.3,.08,M.dark);
+function pot(x,y,z,s,m){cyl(x,y+s*.36,z,.23*s,.18*s,.62*s,m,14);ring(x,y+s*.67,z,.23*s,.025*s,M.brass);cyl(x,y+s*.67,z,.205*s,.205*s,.018*s,M.dark,14)}
+const leafData=[],stemData=[];
+function foliage(x,y,z,h,kind,count,tint){for(let i=0;i<count;i++){const a=i*2.399+range(-.14,.14),spread=h*(kind==='upright'?.12:kind==='fern'?.34:.27),len=h*(kind==='upright'?range(.48,.98):range(.43,.88)),base=new THREE.Vector3(x+Math.cos(a)*spread*.22,y+.15,z+Math.sin(a)*spread*.22),dir=kind==='upright'?new THREE.Vector3(Math.cos(a)*.12,1,Math.sin(a)*.12).normalize():new THREE.Vector3(Math.cos(a),range(.45,.92),Math.sin(a)).normalize(),center=base.clone().addScaledVector(dir,len*.45);leafData.push({p:center,d:dir,len:len*.62,w:h*(kind==='fern'?.17:.20),color:new THREE.Color(tint).multiplyScalar(range(.76,1.2))});if(i%2===0)stemData.push({a:base,b:base.clone().addScaledVector(dir,len*.72),r:.008+h*.012})}}
+function plant(x,z,s,kind,count,potmat,tint){pot(x,.82,z,s,potmat);cyl(x,.82+s*.67,z,.19*s,.19*s,.025*s,M.dark,14);foliage(x,.9,z,s*1.15,kind,count,tint)}
+plant(4,-3.03,.83,'leafy',12,M.cream,'#678851');plant(4.7,-3.02,.62,'upright',7,M.brick,'#557a57');plant(5.6,-3.03,.77,'fern',15,M.ceramic,'#72915a');plant(6.36,-3.02,.74,'upright',9,M.cream,'#4c7655');
+plant(6.62,-.88,.70,'leafy',10,M.brick,'#748c51');plant(6.61,.56,.56,'upright',8,M.cream,'#617f59');plant(6.62,1.95,.72,'fern',13,M.ceramic,'#71945d');
+// Long troughs at the far end: strong rosettes and broad leaves against the glass.
+box(4.52,.2,2.81,1.8,.35,.66,M.dark);box(4.52,.39,2.81,1.82,.07,.68,M.pale);box(4.52,.435,2.81,1.68,.025,.54,M.tile);
+box(6.12,.2,2.78,1.34,.35,.7,M.dark);box(6.12,.39,2.78,1.36,.07,.72,M.pale);box(6.12,.435,2.78,1.23,.025,.58,M.tile);
+foliage(4.15,.48,2.8,.95,'fern',16,'#638b56');foliage(4.76,.48,2.8,.72,'leafy',10,'#799353');foliage(5.62,.48,2.8,1.05,'upright',11,'#557d59');foliage(6.15,.48,2.8,.85,'leafy',13,'#6f8a4d');foliage(6.62,.48,2.8,1.14,'upright',10,'#56805b');
+// Sparse hanging ivy traces the frame without hiding the view back to the cottage.
+for(const [x,z] of [[3.78,-3.55],[6.79,3.55],[4.35,3.53]]){bar(x,3.02,z,x+.03,2.25,z,.014,M.leaf);for(let i=0;i<5;i++){const side=i%2?1:-1;leafData.push({p:new THREE.Vector3(x+side*(.08+i*.018),2.84-i*.13,z),d:new THREE.Vector3(side,.38,0).normalize(),len:.22,w:.16,color:new THREE.Color(i%2?'#5c8350':'#779257')})}}
+const up=new THREE.Vector3(0,1,0),q=new THREE.Quaternion(),sc=new THREE.Vector3(),mat4=new THREE.Matrix4(),leafGeo=new THREE.SphereGeometry(1,7,5),leafMat=mat('#6d8c53',.82),leafMesh=new THREE.InstancedMesh(leafGeo,leafMat,leafData.length);
+leafData.forEach((v,i)=>{q.setFromUnitVectors(up,v.d);sc.set(v.w,v.len,v.w*.34);mat4.compose(v.p,q,sc);leafMesh.setMatrixAt(i,mat4);leafMesh.setColorAt(i,v.color)});leafMesh.instanceMatrix.needsUpdate=true;if(leafMesh.instanceColor)leafMesh.instanceColor.needsUpdate=true;world.add(leafMesh);
+const stemGeo=new THREE.CylinderGeometry(1,.7,1,5),stems=new THREE.InstancedMesh(stemGeo,mat('#657d4a',.95),stemData.length);
+stemData.forEach((v,i)=>{const d=v.b.clone().sub(v.a);q.setFromUnitVectors(up,d.clone().normalize());sc.set(v.r,d.length(),v.r);mat4.compose(v.a.clone().add(v.b).multiplyScalar(.5),q,sc);stems.setMatrixAt(i,mat4)});stems.instanceMatrix.needsUpdate=true;world.add(stems);
+// Seed trays, labels, watering can and greenhouse hand fork.
+for(let i=0;i<5;i++){const x=4.1+i*.51;cyl(x,.97,-2.86,.13,.16,.27,i%2?M.ceramic:M.brick,14);ring(x,1.11,-2.86,.13,.014,M.brass)}
+box(5.43,.97,-2.69,.58,.06,.35,M.wood,.02,.04);for(let i=0;i<7;i++)ball(5.2+i*.075,1.02,-2.68,.024,.026,.024,M.paper);
+for(let i=0;i<4;i++)bar(3.95+i*.13,.96,-2.72,3.95+i*.13,1.15,-2.67,.009,M.iron);
+cyl(6.52,1.58,-.82,.18,.2,.35,M.copper,16);ring(6.52,1.76,-.82,.18,.02,M.brass);bar(6.68,1.64,-.82,6.86,1.74,-.82,.035,M.copper);
+box(6.5,1.76,.15,.42,.06,.27,M.wood);cyl(6.5,1.95,.15,.10,.12,.35,M.glass,16);ball(6.5,2.14,.15,.14,.13,.14,M.leaf);
+box(5.62,1.08,-2.47,.05,.31,.02,M.brass);box(5.62,1.14,-2.44,.23,.12,.025,M.paper);box(5.62,1.15,-2.42,.01,.07,.008,M.brick);
+// Subtle wall lanterns; the blue seed and greenhouse daylight keep their own color.
+function lantern(x,y,z,hot){box(x,y,z,.2,.28,.16,M.brass);box(x,y,z-.09,.12,.18,.035,hot?M.amber:M.glow);box(x,y+.17,z,.28,.035,.21,M.dark);bar(x,y+.25,z,x,y+.42,z,.018,M.iron)}
+lantern(-3.15,2.65,-3.39,true);lantern(.05,2.58,-3.27,true);lantern(3.14,2.65,-3.25,false);
+// Collision footprints: walls, furniture and planting beds, leaving a human-width route.
+col(-5.78,-5.67,-3.75,.1);col(-5.78,-5.67,1.75,3.75);col(-5.92,-1.4,-3.9,-3.62);col(-5.92,3.32,3.62,3.9);col(6.86,7.18,-3.75,3.75);
+col(-1.43,-1.18,-3.7,-.91);col(-1.43,-1.18,.99,3.7);col(3.30,3.55,-3.7,-.75);col(3.30,3.55,1.95,3.7);
+col(-5.48,-1.76,-3.45,-2.25);col(-5.7,-5.05,-.92,-.16);col(-5.65,-3.88,1.08,2.2);col(-.92,2.98,-2.74,-1.65);col(-.68,2.9,2.86,3.48);
+col(3.72,6.78,-3.48,-2.62);col(6.16,6.96,-1.55,2.33);col(3.5,4.05,2.4,3.22);col(4.15,5.02,2.46,3.22);col(5.3,6.95,2.38,3.2);
+// Soft painted contact pools ground the large furniture without real-time shadow maps.
+const shadowCanvas=document.createElement('canvas');shadowCanvas.width=shadowCanvas.height=128;const shctx=shadowCanvas.getContext('2d'),grad=shctx.createRadialGradient(64,64,8,64,64,64);grad.addColorStop(0,'rgba(23,18,13,.38)');grad.addColorStop(.58,'rgba(23,18,13,.19)');grad.addColorStop(1,'rgba(23,18,13,0)');shctx.fillStyle=grad;shctx.fillRect(0,0,128,128);
+const shadowTex=new THREE.CanvasTexture(shadowCanvas),shadowMat=new THREE.MeshBasicMaterial({map:shadowTex,transparent:true,depthWrite:false,opacity:.58}),shadowMesh=new THREE.InstancedMesh(new THREE.PlaneGeometry(1,1),shadowMat,8),shadowPlaces=[[-3.66,-2.82,4.8,1.45],[-4.76,1.63,2.1,1.45],[-5.45,-.55,1.05,.95],[1.05,-2.18,4.1,1.5],[1.1,3.15,3.6,.85],[5.15,-3.05,3.5,1.2],[6.55,.48,1.2,4],[5.3,2.8,4,1.2]];
+const shadowDummy=new THREE.Object3D();for(let i=0;i<shadowPlaces.length;i++){const [x,z,w,d]=shadowPlaces[i];shadowDummy.position.set(x,.027,z);shadowDummy.rotation.x=-Math.PI/2;shadowDummy.scale.set(w,d,1);shadowDummy.updateMatrix();shadowMesh.setMatrixAt(i,shadowDummy.matrix)}shadowMesh.instanceMatrix.needsUpdate=true;world.add(shadowMesh);
+// Mouse-look; axis-separated circle/AABB collision keeps the route forgiving at corners.
+let yaw=-Math.PI/2,pitch=0;const held=new Set(),radius=.24;
+function reset(){rig.position.set(-5.3,1.62,-.5);yaw=-Math.PI/2;pitch=0;rig.rotation.set(0,yaw,0);toast.textContent='Threshold → kitchen → workbench → glasshouse';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+document.querySelector('#reset').addEventListener('click',reset);
+window.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(['w','a','s','d','arrowup','arrowdown','arrowleft','arrowright','shift','r'].includes(k))e.preventDefault();if(k==='r'&&!e.repeat)reset();held.add(k)});
+window.addEventListener('keyup',e=>held.delete(e.key.toLowerCase()));window.addEventListener('blur',()=>held.clear());
+canvas.addEventListener('click',()=>{if(document.pointerLockElement!==canvas)canvas.requestPointerLock?.()});
+document.addEventListener('pointerlockchange',()=>{const locked=document.pointerLockElement===canvas;document.body.classList.toggle('locked',locked);if(locked)toast.classList.remove('show');else{held.clear();toast.textContent='Click into the cottage to begin exploring';toast.classList.add('show')}});
+document.addEventListener('mousemove',e=>{if(document.pointerLockElement!==canvas)return;yaw-=e.movementX*.0022;pitch=clamp(pitch-e.movementY*.0022,-1.42,1.42);rig.rotation.set(pitch,yaw,0)});
+const forward=new THREE.Vector3(),right=new THREE.Vector3();
+function moveAxis(axis,delta){if(!delta)return;const min=axis==='x'?-5.7:-3.48,max=axis==='x'?6.82:3.48;rig.position[axis]=clamp(rig.position[axis]+delta,min,max);
+for(let pass=0;pass<2;pass++)for(const c of colliders){const px=clamp(rig.position.x,c.x1,c.x2),pz=clamp(rig.position.z,c.z1,c.z2),dx=rig.position.x-px,dz=rig.position.z-pz;if(dx*dx+dz*dz<radius*radius){if(axis==='x'){const side=rig.position.x>=(c.x1+c.x2)/2?1:-1;rig.position.x=px+side*radius}else{const side=rig.position.z>=(c.z1+c.z2)/2?1:-1;rig.position.z=pz+side*radius}}}}
+const clock=new THREE.Clock();
+function animate(){requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.04);if(document.pointerLockElement===canvas){let f=(held.has('w')||held.has('arrowup')?1:0)-(held.has('s')||held.has('arrowdown')?1:0),r=(held.has('d')||held.has('arrowright')?1:0)-(held.has('a')||held.has('arrowleft')?1:0),n=Math.hypot(f,r)||1;f/=n;r/=n;const speed=held.has('shift')?3.1:2.2;forward.set(-Math.sin(yaw),0,-Math.cos(yaw));right.set(Math.cos(yaw),0,-Math.sin(yaw));moveAxis('x',(forward.x*f+right.x*r)*speed*dt);moveAxis('z',(forward.z*f+right.z*r)*speed*dt)}renderer.render(scene,camera)}
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight,false)});
+reset();animate();
+}catch(err){fatal.style.display='grid';fatal.textContent='WebGL scene setup failed: '+String(err?.message||err)}
+</script></body></html>
+
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.5));renderer.setSize(innerWidth,innerHeight,false);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.1;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#aebdc0');scene.fog=new THREE.Fog('#b8c1be',14,35);
+const camera=new THREE.PerspectiveCamera(72,innerWidth/innerHeight,.06,55),rig=new THREE.Object3D();rig.position.set(-5.3,1.62,1.15);rig.rotation.order='YXZ';rig.rotation.y=-Math.PI/2;rig.add(camera);scene.add(rig);
+const world=new THREE.Group();scene.add(world);let seed=48391;const rnd=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296},range=(a,b)=>a+(b-a)*rnd(),clamp=THREE.MathUtils.clamp;
+function makeTex(kind){const c=document.createElement('canvas');c.width=c.height=512;const x=c.getContext('2d');if(kind==='wood'){const g=x.createLinearGradient(0,0,512,0);g.addColorStop(0,'#513a29');g.addColorStop(.28,'#8b6743');g.addColorStop(.52,'#65472e');g.addColorStop(.8,'#92704a');g.addColorStop(1,'#523a29');x.fillStyle=g;x.fillRect(0,0,512,512);for(let i=0;i<170;i++){let y=rnd()*512;x.strokeStyle='rgba(26,17,10,'+range(.02,.12)+')';x.lineWidth=range(.5,3);x.beginPath();x.moveTo(0,y);x.bezierCurveTo(120,y+range(-8,8),330,y+range(-12,12),512,y+range(-8,8));x.stroke()}}else if(kind==='plaster'){x.fillStyle='#bcb19a';x.fillRect(0,0,512,512);for(let i=0;i<8000;i++){x.fillStyle='rgba(38,30,20,'+range(.01,.07)+')';x.fillRect(rnd()*512,rnd()*512,range(1,8),range(1,7))}}else{x.fillStyle='#817c68';x.fillRect(0,0,512,512);for(let n=0;n<512;n+=5){x.strokeStyle='rgba(235,220,184,.055)';x.beginPath();x.moveTo(n,0);x.lineTo(n,512);x.stroke()}}const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.wrapS=t.wrapT=THREE.RepeatWrapping;t.anisotropy=Math.min(4,renderer.capabilities.getMaxAnisotropy());return t}
+const woodTex=makeTex('wood'),wallTex=makeTex('plaster'),linenTex=makeTex('linen'),mat=(color,roughness=.8,more={})=>new THREE.MeshStandardMaterial({color,roughness,...more});
+const M={stone:mat('#77776e',.95),mortar:mat('#424844',1),wood:mat('#a27e53',.82,{map:woodTex}),dark:mat('#49372a',.9,{map:woodTex}),pale:mat('#c3a276',.82,{map:woodTex}),wall:mat('#ddd1b8',.97,{map:wallTex}),shade:mat('#a79b83',.98,{map:wallTex}),iron:mat('#343b39',.4,{metalness:.7}),copper:mat('#a66942',.34,{metalness:.72}),brass:mat('#b18a4c',.3,{metalness:.68}),ceramic:new THREE.MeshPhysicalMaterial({color:'#e9dfc8',roughness:.24,clearcoat:.65}),cream:new THREE.MeshPhysicalMaterial({color:'#c7bba1',roughness:.32,clearcoat:.45}),glass:new THREE.MeshPhysicalMaterial({color:'#b8dad4',roughness:.1,transparent:true,opacity:.2,side:THREE.DoubleSide,depthWrite:false}),leaf:mat('#65834e',.78),glow:mat('#82dbcf',.25,{emissive:'#4db7b5',emissiveIntensity:2.1}),amber:mat('#ffd694',.25,{emissive:'#f79b42',emissiveIntensity:1.3}),black:mat('#191d1c',.27),paper:mat('#d7c7a1',.95),brick:mat('#914f3d',.92),tile:mat('#87775d',.68),cloth:mat('#777d65',1,{map:linenTex}),red:mat('#804b3f',1,{map:linenTex})};
+scene.add(new THREE.HemisphereLight('#dbe7e7','#453b2f',1.45));const daylight=new THREE.DirectionalLight('#e1e9df',1.2);daylight.position.set(2,8,-5);scene.add(daylight);
+const kitchenLight=new THREE.PointLight('#ffc37e',19,7,2);kitchenLight.position.set(-3.7,2.82,-1.05);scene.add(kitchenLight);const benchLight=new THREE.PointLight('#ef9e59',12,4.7,2);benchLight.position.set(1.1,2.52,-1.4);scene.add(benchLight);const blueLight=new THREE.PointLight('#86d6d0',4,2.8,2);blueLight.position.set(1.85,1.8,-2.3);scene.add(blueLight);
+const unitBox=new THREE.BoxGeometry(1,1,1);function box(x,y,z,w,h,d,m,rx=0,ry=0,rz=0,parent=world){const o=new THREE.Mesh(unitBox,m);o.position.set(x,y,z);o.scale.set(w,h,d);o.rotation.set(rx,ry,rz);parent.add(o);return o}
+function cyl(x,y,z,top,bottom,h,m,seg=12){const o=new THREE.Mesh(new THREE.CylinderGeometry(top,bottom,h,seg),m);o.position.set(x,y,z);world.add(o);return o}
+function ball(x,y,z,sx,sy,sz,m,parent=world){const o=new THREE.Mesh(new THREE.SphereGeometry(1,12,8),m);o.position.set(x,y,z);o.scale.set(sx,sy,sz);parent.add(o);return o}
+function ring(x,y,z,r,t,m){const o=new THREE.Mesh(new THREE.TorusGeometry(r,t,6,18),m);o.position.set(x,y,z);o.rotation.x=Math.PI/2;world.add(o);return o}
+function bar(x1,y1,z1,x2,y2,z2,r,m){const a=new THREE.Vector3(x1,y1,z1),b=new THREE.Vector3(x2,y2,z2),d=b.clone().sub(a),o=new THREE.Mesh(new THREE.CylinderGeometry(r*.72,r,d.length(),7),m);o.position.copy(a.add(b).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());world.add(o);return o}
+const colliders=[],col=(x1,x2,z1,z2)=>colliders.push({x1,x2,z1,z2});
+// Flagstone floor: one instanced mesh keeps its many worn blocks inexpensive.
+box(.55,-.08,0,13.55,.16,8.05,M.mortar);const tileGeo=new THREE.BoxGeometry(.72,.065,.72),tiles=new THREE.InstancedMesh(tileGeo,M.stone,209),dummy=new THREE.Object3D(),tileColors=['#777a72','#686e69','#878174','#73766d','#666b67','#817e73'];let ti=0;
+for(let ix=0;ix<19;ix++)for(let iz=0;iz<11;iz++){dummy.position.set(-6.05+ix*.72,-.012,-3.62+iz*.72);dummy.rotation.y=(rnd()-.5)*.035;dummy.updateMatrix();tiles.setMatrixAt(ti,dummy.matrix);tiles.setColorAt(ti,new THREE.Color(tileColors[Math.floor(rnd()*tileColors.length)]));ti++}world.add(tiles);
+// Cottage walls and the greenhouse's three sides of cool, framed glazing.
+box(.55,1.62,-3.78,13.5,3.24,.18,M.wall);box(-3.55,1.62,3.78,4.9,3.24,.18,M.wall);box(.95,1.62,3.78,3.7,3.24,.18,M.wall);
+for(const z of [-3.68,3.68]){box(5.25,.06,z,3.55,.1,.05,M.iron);box(5.25,3.17,z,3.55,.13,.12,M.dark);box(5.25,1.72,z,3.38,2.72,.025,M.glass);for(const x of [3.53,4.36,5.22,6.08,6.96])box(x,1.64,z,.075,3.08,.11,M.dark);for(const y of [.46,1.42,2.36,2.72])box(5.25,y,z,3.4,.045,.055,y===2.72?M.brass:M.dark)}
+box(7.08,1.62,0,.18,3.24,7.55,M.dark);box(6.97,1.68,0,.025,2.72,6.9,M.glass);for(const z of [-3.55,-2.35,-1.15,.05,1.25,2.45,3.55])box(6.91,1.62,z,.18,3.12,.075,M.dark);box(6.95,.14,0,.3,.16,7.6,M.iron);box(6.95,3.2,0,.3,.16,7.6,M.dark);
+// Open entrance with bounded landing, kitchen/workroom arch, and greenhouse opening.
+box(-5.98,1.62,-1.93,.18,3.24,3.72,M.wall);box(-5.98,1.62,2.87,.18,3.24,1.74,M.wall);box(-5.98,3.08,.68,.18,.28,2.05,M.dark);box(-5.83,.09,.68,.48,.18,2.08,M.dark);for(const z of [-.34,1.70])box(-5.84,1.57,z,.055,3.08,.09,M.brass);
+box(-1.30,1.62,-2.27,.18,3.24,3.05,M.wall);box(-1.30,1.62,2.35,.18,3.24,2.7,M.wall);box(-1.30,3.04,.04,.2,.4,1.76,M.dark);box(-1.20,.06,.04,.22,.12,1.84,M.dark);for(const z of [-.89,.97])box(-1.18,1.47,z,.15,2.94,.14,M.dark);
+const gx=3.42;box(gx,1.62,-2.30,.14,3.24,2.92,M.wall);box(gx,1.62,2.66,.14,3.24,2.28,M.wall);box(gx,1.61,-.16,.055,2.92,.035,M.glass);box(gx,1.61,1.35,.055,2.92,.035,M.glass);for(const z of [-3.72,-.73,1.92,3.73])box(gx,1.62,z,.19,3.12,.12,M.dark);box(gx,3.13,.58,.19,.14,2.78,M.dark);box(gx,.1,.58,.23,.2,2.8,M.dark);for(const z of [-2.95,-2.15,-1.35,2.3,3.05])box(gx,1.63,z,.09,2.86,.06,M.brass);
+// Timber ribs, baseboards and broad kitchen window.
+for(const x of [-5.65,-3.85,-2.05,-.9,.65,2.2,3.05]){box(x,1.62,-3.66,.13,3.12,.22,M.dark);if(x<3.2)box(x,1.62,3.62,.13,3.12,.22,M.dark)}for(const z of [-3.59,3.59])box(-1.15,.24,z,9.35,.19,.22,M.dark);
+for(const x of [-5.7,-3.2,-.7,1.8,3])box(x,3.36,-.02,.11,.18,7.35,M.dark);
+box(-4.48,1.78,-3.66,2.28,1.22,.035,M.glass);for(const x of [-5.63,-4.48,-3.33])box(x,1.78,-3.62,.075,1.43,.12,M.pale);for(const y of [1.08,2.48])box(-4.48,y,-3.61,2.4,.08,.15,M.pale);box(-4.48,1.78,-3.59,.065,1.37,.11,M.brass);
+box(.55,3.52,-3.63,13.55,.16,.35,M.dark);box(.55,3.52,3.63,13.55,.16,.35,M.dark);

@@ -1,0 +1,106 @@
+{
+  "id": "moss-ember-sol",
+  "title": "Moss & Ember",
+  "scene": 16,
+  "model": "sol",
+  "workspace": "task-23/moss-and-ember",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6.1 Sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "observedHostConfiguration": {
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "authority": "Producer read host configuration. Configured values are not independently confirmed live-run metadata; per-run overrides were not exposed."
+  },
+  "firstImplementationUtc": "2026-10-07T09:03:23.9110681Z",
+  "deadlineUtc": "2026-10-07T10:03:23.9110681Z",
+  "stopUtc": "2026-10-07T09:43:55.3897418Z",
+  "producerChecks": "Syntax, CPU geometry, collision/connectivity and production build passed. Nine inspection stops connected. No browser, visual, interactive or measured frame times. Desktop controls and approximate glass.",
+  "interruptions": "No external interruptions. Registry, native config loader and approved cleanup inventory retries remained within unchanged clock.",
+  "cleanupClaim": "All commands exited; read-only query confirmed zero remaining entry Node/esbuild processes. No browser/server/watcher or unrelated process termination.",
+  "handoffSource": "Parent completed handoff and original run-record.json, including configured-versus-runtime metadata distinction.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, CPU geometry, collision/connectivity and production build passed. Nine inspection stops connected. No browser, visual, interactive or measured frame times. Desktop controls and approximate glass.",
+    "importerStaticChecks": {
+      "id": "moss-ember-sol",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:73328905dc912617c7402df16e97d528c53ebb952892ddaec23203ee53b3e2fb",
+      "syntax": [
+        {
+          "file": "vite.config.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/check-geometry.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/check-world.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/layout.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/world.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [
+        {
+          "file": "index.html",
+          "url": "http://www.w3.org/2000/svg"
+        }
+      ],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "Authorized authored-default-view capture only; no quality judgment",
+    "interactive": "Existing start control only; no movement/route/collision test",
+    "gpu": "Rendering for authorized screenshot only; no GPU/performance test",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "moss-ember-sol",
+    "passed": true,
+    "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+    "sourceUnchanged": true,
+    "captureEvidence": "preview-capture.json",
+    "grade": null,
+    "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+    "performanceTest": false,
+    "foregroundInputUsed": false
+  }
+}

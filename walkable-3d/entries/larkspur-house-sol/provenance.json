@@ -1,0 +1,189 @@
+{
+  "entry": "larkspur-house-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\larkspur-house-sol\\source-preservation.zip",
+  "archiveSha256": "0bda4bf715e01ab8cf2cc50551058202d042dedfec47231fac610d0be9c4a18a",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-BNR9a94g.css": "dist/assets/index-BNR9a94g.css",
+      "frozen/assets/index-BoLoN2y5.js": "dist/assets/index-BoLoN2y5.js",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "dist/assets/index-BNR9a94g.css": {
+        "sha256": "643ff5fa3f895df5172821a4b6d095e89e2a18f9fd6d92daeddc598d7eebffd3",
+        "bytes": 3916
+      },
+      "dist/assets/index-BoLoN2y5.js": {
+        "sha256": "228d3fa5a0e33dfde9508aa7ecd264de0af22c96e6c88a4a199fa881af8ad53c",
+        "bytes": 568304
+      },
+      "dist/index.html": {
+        "sha256": "ad747a792093b2c0b0ba09bb9dcb86302c362a6e74016f1132843c244218dd5c",
+        "bytes": 2682
+      },
+      "index.html": {
+        "sha256": "2f935f1cf30cf25d03b82630ffca78379486139140c709201e07b695baacba29",
+        "bytes": 2583
+      },
+      "package-lock.json": {
+        "sha256": "a3c855bc8372ebd1cade2a0fe6dc0eb83508f4ef9ad0cfc37890886c7b2e7541",
+        "bytes": 35177
+      },
+      "package.json": {
+        "sha256": "fe5a2d2e92193d1d3d538ce6f34fbddbae1936717983cd9bb71569969591d43d",
+        "bytes": 577
+      },
+      "README.md": {
+        "sha256": "5018765504bd4662c6bac85c1695da83c310e49123c990aad20758a21dc3b316",
+        "bytes": 5414
+      },
+      "run-record.json": {
+        "sha256": "956b066cc3e293f5a1de7230187dba5643e1d21e1f6770311646c73cdc0f2161",
+        "bytes": 2006
+      },
+      "scripts/static-check.mjs": {
+        "sha256": "62cd062ad9c2bd6a174844e957c0778b5168ad73849b9cf9c0504e3bd1e15d76",
+        "bytes": 5033
+      },
+      "src/geometry.js": {
+        "sha256": "215ba2b9d4d138b34b1c97505b27ba1aee93f919fd728c1e6b51b8b1b981a6be",
+        "bytes": 11286
+      },
+      "src/main.js": {
+        "sha256": "6df803021e57584f53ef895b36c7b3987b5faf4f2c1d28954ef0d74a9a0bc098",
+        "bytes": 4973
+      },
+      "src/materials.js": {
+        "sha256": "c9c8c50a4b99986b91e256fea7b08da557d5dfa6488f113503c8a1ef9b03b793",
+        "bytes": 12869
+      },
+      "src/navigation.js": {
+        "sha256": "25dfb11f360a2eb97bf38715d57f223b6ec8ac5613b2d380a96069143d461577",
+        "bytes": 3815
+      },
+      "src/scene.js": {
+        "sha256": "3f9dccfb9f7359c585d7534fb47377b4521ec84ea116bbe3586431a1226eceb2",
+        "bytes": 28595
+      },
+      "src/style.css": {
+        "sha256": "d196969d0c13aba900007baf393da21acee31dd4a0672f8a63dc32a052dc6b18",
+        "bytes": 3856
+      },
+      "static-check-results.json": {
+        "sha256": "36aaaf9907ff734c94207cf5c94cf70f28a4067dac99fdf5b69c290ccb970360",
+        "bytes": 547
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\larkspur-house-sol\\source-preservation.zip",
+    "sourceArchiveSha256": "0bda4bf715e01ab8cf2cc50551058202d042dedfec47231fac610d0be9c4a18a",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-20\\larkspur-rooms\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\larkspur-house-sol\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:02:25.9378600Z",
+    "deadlineUtc": "2026-10-07T10:02:25.9378600Z",
+    "stopUtc": "2026-10-07T09:50:51.0652836Z"
+  },
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: captured. No movement/route/collision/full-scene or performance judgment.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/assets/index-BNR9a94g.css": {
+      "sha256": "643ff5fa3f895df5172821a4b6d095e89e2a18f9fd6d92daeddc598d7eebffd3",
+      "bytes": 3916
+    },
+    "frozen/assets/index-BoLoN2y5.js": {
+      "sha256": "228d3fa5a0e33dfde9508aa7ecd264de0af22c96e6c88a4a199fa881af8ad53c",
+      "bytes": 568304
+    },
+    "frozen/index.html.txt": {
+      "sha256": "ad747a792093b2c0b0ba09bb9dcb86302c362a6e74016f1132843c244218dd5c",
+      "bytes": 2682
+    },
+    "host-verification.json": {
+      "sha256": "77e1072edccbb98769df8a58fbfd95d931724d005e4a600ccc1f3092c467ffd2",
+      "bytes": 515
+    },
+    "launch-prompt.txt": {
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "bytes": 7673
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "290934bc7747a99289838c3c5b1bdfe86fac4e222142bd34d99a3383903a63e4",
+      "bytes": 3375
+    },
+    "preview-capture.json": {
+      "sha256": "2570a4f4ad2cd16700a5d7c560269c24317cfce16d538afa49d93c18288b89e5",
+      "bytes": 3465
+    },
+    "preview.jpg": {
+      "sha256": "83f21accdb72a335080a5025199d9ee9ca47c35ef133729a218c61347765cab7",
+      "bytes": 94559
+    },
+    "producer-run-record.json": {
+      "sha256": "956b066cc3e293f5a1de7230187dba5643e1d21e1f6770311646c73cdc0f2161",
+      "bytes": 2006
+    },
+    "README.md": {
+      "sha256": "5018765504bd4662c6bac85c1695da83c310e49123c990aad20758a21dc3b316",
+      "bytes": 5414
+    },
+    "run-record.json": {
+      "sha256": "bc4345784f2071c62e5991e1c3fcd2dd7f0790d3e2cc7769d14b89491f58c099",
+      "bytes": 4148
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/assets/index-BNR9a94g.css",
+      "frozen/assets/index-BoLoN2y5.js",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "producer-run-record.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "staticHostingConcerns": [],
+  "hostCaptureOutcome": "captured"
+}

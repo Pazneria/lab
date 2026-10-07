@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17120f">
+  <title>The Emberward — Dragon Caretaker's Quarters</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <main id="frame">
+    <div id="view" aria-label="Explorable 3D dragon caretaker quarters"></div>
+    <section class="hud" aria-label="Scene controls">
+      <div class="brand"><span class="sigil">✦</span><div><b>EMBERWARD</b><small>THE KEEPER'S ROOMS</small></div></div>
+      <p class="route"><i></i> BEDROOM <span>›</span> GEAR PASSAGE <span>›</span> GREAT ROOST</p>
+      <div class="controls"><b>WASD</b> move <b>mouse</b> look <b>Shift</b> walk faster <b>Esc</b> release</div>
+      <div class="foot"><span>Click the scene to look around</span><button id="reset" type="button" title="Return to the entrance">RESET TO ENTRANCE <kbd>R</kbd></button></div>
+    </section>
+    <div class="reticle" aria-hidden="true"><i></i></div>
+    <div id="notice" role="status">A home for two very different scales.</div>
+    <noscript>This 3D scene requires JavaScript and a browser that supports WebGL.</noscript>
+  </main>
+  <script type="module" src="./scene.js"></script>
+</body>
+</html>

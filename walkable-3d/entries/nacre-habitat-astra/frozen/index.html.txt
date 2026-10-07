@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10272b" />
+  <title>Nacre — Habitat 04</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23162f32'/%3E%3Cpath d='M16 44V20l32 24V20' stroke='%23eadbc0' stroke-width='5' fill='none'/%3E%3C/svg%3E" />
+  <script type="module" crossorigin src="./assets/index-rMBXUbcA.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-F_btR9dO.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-DyQZF1qB.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable underwater apartment"></canvas>
+  <div id="vignette" aria-hidden="true"></div>
+  <header class="identity"><span class="mark">n.</span><div>NACRE<span>HABITAT 04 · BENTHIC RESIDENCE</span></div></header>
+  <div id="location"><span class="status-dot"></span><span id="room-name">LIVING QUARTERS</span><small>DEPTH 146 M</small></div>
+  <main id="welcome" class="overlay">
+    <section class="intro">
+      <div class="eyebrow">A HOME BELOW THE SURFACE</div>
+      <h1>The quiet<br>between tides.</h1>
+      <p>A small apartment on the edge of the reef.<br>Come in, follow the light, stay a while.</p>
+      <button id="enter" disabled>Preparing habitat <span>…</span></button>
+      <div class="control-grid"><div><kbd>W A S D</kbd><span>Walk</span></div><div><kbd>MOUSE</kbd><span>Look around</span></div><div><kbd>SHIFT</kbd><span>Move faster</span></div><div><kbd>ESC</kbd><span>Release cursor</span></div></div>
+      <p class="minor">Arrow keys also move · R resets · Q toggles rendering quality<br>Click and drag to look if cursor capture is unavailable.</p>
+    </section>
+    <div class="intro-foot">01 LIVING &nbsp; / &nbsp; 02 RESEARCH &nbsp; / &nbsp; 03 OBSERVATION</div>
+  </main>
+  <div id="crosshair" aria-hidden="true"></div>
+  <footer id="toolbar"><span id="hint">WASD walk · Mouse look · Shift faster · Esc releases cursor</span><div><button id="quality" title="Switch rendering quality (Q)">QUALITY: HIGH</button><button id="help">CONTROLS</button><button id="reset">RESET <span>R</span></button></div></footer>
+  <div id="toast" role="status"></div>
+  <section id="error" hidden><h2>The habitat could not start.</h2><p id="error-message"></p><p>Use a current desktop browser with WebGL 2 enabled. See README.md for launch instructions.</p></section>
+</body>
+</html>

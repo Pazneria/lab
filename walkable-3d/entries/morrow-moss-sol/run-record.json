@@ -1,0 +1,124 @@
+{
+  "id": "morrow-moss-sol",
+  "title": "Morrow & Moss",
+  "scene": 20,
+  "model": "sol",
+  "workspace": "task-35/morrow-moss-wagon",
+  "completionClearedByParent": true,
+  "producerArchive": "morrow-moss-build.zip",
+  "requestedModel": "GPT-6.1 Sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6 / Codex",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:06:26.3280723Z",
+  "deadlineUtc": "2026-10-07T10:06:26.3280723Z",
+  "stopUtc": "2026-10-07T09:50:47.9342479Z",
+  "producerChecks": "Syntax, CPU geometry, collision-route checks and production build passed. Browser visuals, interactive controls and frame times unverified. Static mechanisms; desktop keyboard/mouse required.",
+  "interruptions": "No interruptions or deadline extension.",
+  "cleanupClaim": "No entry processes remain running; no preview server currently running.",
+  "handoffSource": "Parent completed final receipt and original RUN.json; producer build ZIP preserved unchanged.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, CPU geometry, collision-route checks and production build passed. Browser visuals, interactive controls and frame times unverified. Static mechanisms; desktop keyboard/mouse required.",
+    "importerStaticChecks": {
+      "id": "morrow-moss-sol",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:a76fed388be55488c3d0320518169ca5ed6a70b946bcdd01a209fd31ae13dab3",
+      "syntax": [
+        {
+          "file": "launch.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/controls.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/geometry.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/scene.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/world.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "tests/geometry.test.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "tests/world.test.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [
+        {
+          "file": "launch.mjs",
+          "url": "http://127.0.0.1:5187"
+        },
+        {
+          "file": "launch.mjs",
+          "url": "http://127.0.0.1:5187/\\nPress"
+        }
+      ],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "Authorized authored-default-view capture only; no quality judgment",
+    "interactive": "Existing start control only; no movement/route/collision test",
+    "gpu": "Rendering for authorized screenshot only; no GPU/performance test",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "morrow-moss-sol",
+    "passed": true,
+    "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+    "sourceUnchanged": true,
+    "captureEvidence": "preview-capture.json",
+    "grade": null,
+    "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+    "performanceTest": false,
+    "foregroundInputUsed": false
+  }
+}

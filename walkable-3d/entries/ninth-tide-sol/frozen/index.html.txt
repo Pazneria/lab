@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#182b2e" />
+    <title>Atelier of the Ninth Tide</title>
+    <script type="module" crossorigin src="./assets/index-BMjZcBPs.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BnqZ_q08.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable three dimensional royal tailor atelier"></canvas>
+    <div id="reticle" aria-hidden="true"></div>
+    <header id="identity"><span class="crest">IX</span><div><small>THE ROYAL COMMISSION</small><h1>Atelier of the Ninth Tide</h1></div></header>
+    <div id="room-label"><span id="room-name">The fitting salon</span><small id="room-note">A commission measured in tides</small></div>
+    <div id="detail" hidden><span id="detail-title"></span><p id="detail-copy"></p></div>
+    <div id="hud"><span><kbd>W A S D</kbd> walk <span class="divider">·</span> mouse look <span class="divider">·</span> <kbd>Shift</kbd> brisk walk</span><div><button id="reset">Reset <kbd>R</kbd></button><button id="help-button">Controls <kbd>H</kbd></button><button id="quality">Quality: balanced</button><button id="stats-toggle" title="Show frame timing from this browser session">Timing <kbd>F</kbd></button></div></div>
+    <aside id="stats" hidden aria-live="off"><b>LIVE FRAME TIMING</b><span id="frame-times">Waiting for frames</span><small>Browser frame intervals · not a GPU benchmark</small></aside>
+    <section id="welcome" class="overlay">
+      <div class="intro-card"><span class="eyebrow">EST. UNDER THE NINTH MOON</span><h2>Made for a<br /><em>sovereign of the sea.</em></h2><p>Enter a working royal atelier. Follow the silk archive to the unfinished Meridian Mantle, then circle the commission and study its making.</p><div class="route"><span>01 <b>Fitting salon</b></span><span>02 <b>Cloth archive</b></span><span>03 <b>Commission room</b></span></div><button id="enter">Enter the atelier <span>→</span></button><p class="instructions"><kbd>W A S D</kbd> move &nbsp; · &nbsp; mouse to look<br /><kbd>Esc</kbd> release cursor &nbsp; · &nbsp; <kbd>R</kbd> return to entrance</p><small class="fallback">If cursor lock is unavailable, hold the left mouse button and drag to look.</small></div>
+    </section>
+    <section id="help" class="overlay" hidden><div class="help-card"><span class="eyebrow">YOUR VISIT</span><h2>Walk, linger, look closer.</h2><p><kbd>W A S D</kbd> or <kbd>↑ ↓ ← →</kbd> — walk<br /><kbd>Shift</kbd> — brisk walk<br />Mouse — turn and look up or down<br />Left mouse + drag — alternative mouse look<br /><kbd>Esc</kbd> — release cursor / pause movement<br /><kbd>R</kbd> — reset position<br /><kbd>H</kbd> — show or hide controls<br /><kbd>F</kbd> — live frame timing<br /><kbd>I</kbd> — hide or show labels</p><p class="subtle">A brass line leads from the salon through the archive and into the workshop. The mantle can be approached from every side. Read small object notes by looking toward them nearby.</p><button id="resume">Continue exploring →</button></div></section>
+    <div id="error" hidden></div>
+  </body>
+</html>

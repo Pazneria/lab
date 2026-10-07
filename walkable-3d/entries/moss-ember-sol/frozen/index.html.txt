@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#282c28" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b3b30'/%3E%3Cpath d='M32 8L36 27L55 32L36 37L32 56L27 37L8 32L27 27Z' fill='%23d6c391'/%3E%3C/svg%3E" />
+  <title>Moss & Ember — a witch's cottage</title>
+  <script type="module" crossorigin src="./assets/index-Ct0dnaq1.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-Cybinkh9.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-Itdq2hcD.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="vignette"></div>
+  <div id="crosshair" aria-hidden="true"></div>
+  <header id="identity"><span class="sigil">✶</span><div><strong>Moss & Ember</strong><small>A home for small, useful magic</small></div></header>
+  <div id="place"><span id="room-name">THE KITCHEN</span><span id="room-note">The kettle is still warm.</span></div>
+  <div id="panel" class="visible">
+    <div class="panel-inner">
+      <p class="eyebrow">AN EXPLORABLE COTTAGE</p>
+      <h1>Come in.<br>The kettle’s on.</h1>
+      <p class="intro">A kitchen for everyday things, a room for unlikely ones, and a little greenhouse between them.</p>
+      <button id="enter">Step inside <span>↗</span></button>
+      <div class="controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span>Mouse · look</span><span><kbd>Shift</kbd> brisk walk</span><span><kbd>Esc</kbd> release mouse</span></div>
+      <p class="route">Kitchen → workroom → greenhouse → kitchen</p>
+    </div>
+  </div>
+  <footer><span id="walk-hint">Click to explore</span><div><button id="quality" title="Switch render resolution">Quality: balanced</button><button id="help" title="Show controls">Controls</button><button id="reset" title="Return to the entrance (R)">Reset <kbd>R</kbd></button></div></footer>
+  <div id="error" hidden></div>
+</body>
+</html>

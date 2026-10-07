@@ -1,0 +1,184 @@
+{
+  "entry": "selene-atelier-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\selene-atelier-astra\\source-preservation.zip",
+  "archiveSha256": "d4f206b7d1024f590bbd93d1c4e1626fbfb43582a960cb98833349b7e0eb27a3",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-C7jsoPuj.js": "dist/assets/index-C7jsoPuj.js",
+      "frozen/assets/index-DOlNeI0n.css": "dist/assets/index-DOlNeI0n.css",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "7f635eae031954dedf627986371418a805af18a065d4f7d409d4762605c91c71",
+        "bytes": 38
+      },
+      "dist/assets/index-C7jsoPuj.js": {
+        "sha256": "c942e87389c669f39763f0cfc9a8adf313ae9e2b4d46f36dbb1dcae8f8c5735d",
+        "bytes": 568905
+      },
+      "dist/assets/index-DOlNeI0n.css": {
+        "sha256": "24606684de623d91fb437018a8ef3a003155c65d11afbe742682e8624892eb40",
+        "bytes": 5375
+      },
+      "dist/index.html": {
+        "sha256": "ec9beda538208e4c81c2f2b295736f74529f8b5911aa20999871abb183d13733",
+        "bytes": 3413
+      },
+      "index.html": {
+        "sha256": "35f339d87f48de3ba9ab1e886c2c3ffe3e3025630f8eef644c2c0eadb6f35a50",
+        "bytes": 3314
+      },
+      "package-lock.json": {
+        "sha256": "d9c9e5c8c3506ef417e7bef83e6500830074f4d0490b5881ec5076fae09d00b5",
+        "bytes": 35200
+      },
+      "package.json": {
+        "sha256": "1777250e66a27849955cab5569ce1ad1ffbecb500bbc02d531754ece00783c92",
+        "bytes": 619
+      },
+      "README.md": {
+        "sha256": "bea5a4cb959baa1bcfc376cb407be8130ebc3b6e72a3d33e124a4cbbade2a9b5",
+        "bytes": 5977
+      },
+      "run-record.json": {
+        "sha256": "1cd88dd1d9fbf4d093343a8391cc8f1f7913f2323692cc926cf6328ab0d3dfb9",
+        "bytes": 2187
+      },
+      "scripts/validate.mjs": {
+        "sha256": "071f49f11f417c310b2743d131646eacca6ed4e16550e672fb5b78daf12f1cc4",
+        "bytes": 3780
+      },
+      "src/atelier.js": {
+        "sha256": "6db5eb644a8588948bf015f1aa9cbd4744bc906f5f842544bb7be928ea8c3f24",
+        "bytes": 25179
+      },
+      "src/garment.js": {
+        "sha256": "4d1058ab1913f4fb1f78a87bf8d159064c16d77217ef00562b666989ce5b861e",
+        "bytes": 8516
+      },
+      "src/geometry.js": {
+        "sha256": "89312c313903c525471ef41b1123196bbe67121463a7e1e7815839db105cfcd4",
+        "bytes": 3565
+      },
+      "src/main.js": {
+        "sha256": "25ce84beebefb5b45e69c9c8e702f048b4eb1da05b7258c400b01578922e557e",
+        "bytes": 6071
+      },
+      "src/materials.js": {
+        "sha256": "cd6ceefde495323f319bbff791d14d0594cd9130d7bc957fd79441989a559669",
+        "bytes": 7250
+      },
+      "src/navigation.js": {
+        "sha256": "e0cb12035c3ef95dcfc48e6a3ac1169185cd7940713f8e8d921a3d30e92204e5",
+        "bytes": 4431
+      },
+      "src/style.css": {
+        "sha256": "b7a33ccb47fe72462e4a79047d971f44607b87efe95e438402cceb1c03b40bdb",
+        "bytes": 5343
+      },
+      "static-check-results.json": {
+        "sha256": "1e3ae2d35731a9d1fdcdb42c8a78abffa366ced78823f9f463d82767af0b9c34",
+        "bytes": 641
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\selene-atelier-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "d4f206b7d1024f590bbd93d1c4e1626fbfb43582a960cb98833349b7e0eb27a3",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-42\\selene-atelier\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\selene-atelier-astra\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:07:59.0810208Z",
+    "deadlineUtc": "2026-10-07T10:07:59.0810208Z",
+    "stopUtc": "2026-10-07T09:40:12.6916169Z"
+  },
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: captured. No movement/route/collision/full-scene or performance judgment.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/assets/index-C7jsoPuj.js": {
+      "sha256": "c942e87389c669f39763f0cfc9a8adf313ae9e2b4d46f36dbb1dcae8f8c5735d",
+      "bytes": 568905
+    },
+    "frozen/assets/index-DOlNeI0n.css": {
+      "sha256": "24606684de623d91fb437018a8ef3a003155c65d11afbe742682e8624892eb40",
+      "bytes": 5375
+    },
+    "frozen/index.html.txt": {
+      "sha256": "ec9beda538208e4c81c2f2b295736f74529f8b5911aa20999871abb183d13733",
+      "bytes": 3413
+    },
+    "host-verification.json": {
+      "sha256": "ded3ba2e74b1d4daf29832575098bdf0e6eda9fc04f1bdd144ff842d7b4a8d82",
+      "bytes": 517
+    },
+    "launch-prompt.txt": {
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
+      "bytes": 7901
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "cf31d373960d0565a5734eda3d4a92eb9473027580c93c480f5874971f1d13c7",
+      "bytes": 3681
+    },
+    "preview-capture.json": {
+      "sha256": "c7f0ace83a03f2785f1f35253edc9de36ffc54f08a3e83f0f67b87f3b43011ff",
+      "bytes": 3473
+    },
+    "preview.jpg": {
+      "sha256": "2d793da098bc03e9a4a0054e53dec8f9329a2bfffd6d15fb75bb5a4cf9bae50b",
+      "bytes": 93397
+    },
+    "producer-run-record.json": {
+      "sha256": "1cd88dd1d9fbf4d093343a8391cc8f1f7913f2323692cc926cf6328ab0d3dfb9",
+      "bytes": 2187
+    },
+    "README.md": {
+      "sha256": "bea5a4cb959baa1bcfc376cb407be8130ebc3b6e72a3d33e124a4cbbade2a9b5",
+      "bytes": 5977
+    },
+    "run-record.json": {
+      "sha256": "333bd4d3962a79e3358dc2ada4a1063bb0197af7aca9d1f0e01f6f4256769bdb",
+      "bytes": 4456
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/assets/index-C7jsoPuj.js",
+      "frozen/assets/index-DOlNeI0n.css",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "producer-run-record.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "staticHostingConcerns": [],
+  "hostCaptureOutcome": "captured"
+}

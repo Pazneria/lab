@@ -1,7 +1,7 @@
 import {modelName} from './comparisons.js';
 import {createViewer} from './viewer.js';
 import {createGradeForm,renderLeaderboard} from './judgments.js';
-import {comparisonKey,randomComparison,hasRandomComparison,isOpenable} from './comparisons.js';
+import {comparisonKey,randomComparison,hasRandomComparison,isOpenable,unavailableLabel,unavailableSummary} from './comparisons.js';
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from './public-judgments.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
@@ -115,11 +115,11 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
   }
   function failedCard(entry) {
     const article=el('article',undefined,'entry failed-entry');article.dataset.entry=entry.id;
-    const top=el('div',undefined,'entry-top');top.append(el('span','FROZEN RESULT','slot'),el('span','Startup failed'));article.append(top);
+    const top=el('div',undefined,'entry-top');top.append(el('span','FROZEN RESULT','slot'),el('span',unavailableLabel(entry)));article.append(top);
     const body=el('div',undefined,'entry-body');body.append(el('h3',entry.title),el('p',entry.failureSummary));
     const meta=el('div',undefined,'entry-meta');meta.append(el('span',$('#blind').checked?'Model label hidden':modelName(entry)));body.append(meta);
     body.append(el('p','No successful scene preview or walkthrough was captured. This result is excluded from working pairs. No automatic grade is assigned.','small muted'));
-    const attempt=el('button','Attempt frozen build','quiet');attempt.type='button';attempt.dataset.open=entry.id;attempt.addEventListener('click',()=>open(entry,attempt));body.append(attempt);
+    if(!entry.admissionWithheld){const attempt=el('button','Attempt frozen build','quiet');attempt.type='button';attempt.dataset.open=entry.id;attempt.addEventListener('click',()=>open(entry,attempt));body.append(attempt);}
     article.append(body,inspector(entry));return article;
   }
   function render() {
@@ -134,7 +134,7 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
     }
     const unverified=entries.filter(e=>e.availability==='unverified').length;
     const partial=entries.filter(e=>e.completionStatus==='partial').length;
-    $('#entry-count').textContent=`${entries.length+failedEntries.length} saved ${entries.length+failedEntries.length===1?'result':'results'}`+(unverified?` · ${unverified} runtime unverified`:'')+(partial?` · includes ${partial} partial handoff`:'')+(failedEntries.length?` · ${failedEntries.length} startup failed`:'');
+    $('#entry-count').textContent=`${entries.length+failedEntries.length} saved ${entries.length+failedEntries.length===1?'result':'results'}`+(unverified?` · ${unverified} runtime unverified`:'')+(partial?` · includes ${partial} partial handoff`:'')+(failedEntries.length?` · ${unavailableSummary(failedEntries)}`:'');
     $('#next-pair').hidden = !canShuffle; updateVote(); updateLeaderboard();
   }
   function updateVote() {

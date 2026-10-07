@@ -1,0 +1,31 @@
+{
+  "id": "miras-wayfarer-luna",
+  "passed": false,
+  "scope": "Actual existing opaque-sandbox host startup attempt; no successful preview, route or performance test.",
+  "sourceUnchanged": true,
+  "observedStartupFailure": true,
+  "attempt": {
+    "id": "miras-wayfarer-luna",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=20",
+    "startedAt": "2026-10-07T20:39:41.003Z",
+    "status": "startup-failed",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "unexpectedExternalRequests": [],
+    "controls": [],
+    "frozenHtmlSha256": "d933b6242c17ca5bcfd35d2bd397220b089af0bd48f83d9bdddff8b0cba6ca7e",
+    "hostVisibility": "visible",
+    "viewerMessage": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "observedStartupFailure": true,
+    "error": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "viewerUnloaded": true,
+    "contextClosed": true,
+    "finishedAt": "2026-10-07T20:39:41.351Z",
+    "evidenceSession": 0,
+    "imageRoot": "preview-captures"
+  },
+  "grade": null,
+  "ownedProcesses": "Owned background browser/context/server/helper exited; read-only cleanup verified."
+}

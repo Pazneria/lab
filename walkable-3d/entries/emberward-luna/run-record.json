@@ -1,0 +1,77 @@
+{
+  "id": "emberward-luna",
+  "title": "Emberward — Dragon Caretaker's Quarters",
+  "scene": 21,
+  "model": "luna",
+  "workspace": "task-37",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6 Luna",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:09:38Z",
+  "deadlineUtc": "2026-10-07T10:09:38Z",
+  "stopUtc": "2026-10-07T09:15:47Z",
+  "producerChecks": "node --check scene.js passed. No browser/server; visual appearance, interactive behavior and frame time unverified. Collision covers room bounds and major furnishing, not small decorative props.",
+  "interruptions": "None.",
+  "cleanupClaim": "Port 5187 had no listener; no server/browser started; no entry-owned process remained running.",
+  "handoffSource": "Parent completed handoff; original producer README retained.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "node --check scene.js passed. No browser/server; visual appearance, interactive behavior and frame time unverified. Collision covers room bounds and major furnishing, not small decorative props.",
+    "importerStaticChecks": {
+      "id": "emberward-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:93da3d08cf9b3541ce76f4e03a63494206480120777c8901adf240d3f6af4a7c",
+      "syntax": [
+        {
+          "file": "scene.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [
+        {
+          "file": "index.html",
+          "url": "https://cdn.jsdelivr.net"
+        },
+        {
+          "file": "index.html",
+          "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+        },
+        {
+          "file": "style.css",
+          "url": "https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Marcellus&display=swap"
+        }
+      ],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "emberward-luna",
+    "passed": null,
+    "attempted": false,
+    "scope": "Parent-directed static withhold retained; not launched for capture.",
+    "reason": "Original CSS imports Google Fonts. The unchanged entry-scoped viewer CSP blocks external styles/fonts and treats policy violations as failures. Hosted startup is untested and may fail. Original CSS is preserved; no fonts packaged, CSP relaxed or behavior repaired. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested.",
+    "sourceUnchanged": true,
+    "grade": null
+  }
+}

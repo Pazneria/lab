@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#211e19" />
+    <title>The Quiet After — an upstairs home</title>
+    <script type="module" crossorigin src="./assets/index-DPL7F6D0.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BSg1VaOk.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="An explorable three dimensional retired adventurer's apartment"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="masthead" id="masthead"><span class="smallcaps">A room above the Copper Kettle</span><span class="wordmark">The Quiet After</span></header>
+    <section id="welcome" class="veil">
+      <div class="intro">
+        <div class="chapter"><span></span> A life, unpacked <span></span></div>
+        <h1>The Quiet<br /><em>After.</em></h1>
+        <p class="intro-copy">The road ends here. A kettle on the hearth, the last of the afternoon, and a room full of things worth keeping.</p>
+        <button id="enter" class="primary">Come upstairs <span>↗</span></button>
+        <p class="loading" id="loading">Preparing your room…</p>
+        <div class="intro-controls"><span><kbd>W A S D</kbd> walk</span><span><kbd>Mouse</kbd> look</span><span><kbd>Esc</kbd> pause</span></div>
+        <p class="hint">Explore the sitting room, the little study, and the covered balcony.</p>
+      </div>
+      <div class="intro-note"><span>17</span><p>Private rooms<br />Please mind the herbs.</p></div>
+    </section>
+    <section id="pause" class="veil hidden">
+      <div class="pause-card">
+        <div class="chapter">Take your time</div>
+        <h2>Still at home.</h2>
+        <p>Nothing here needs saving.</p>
+        <button id="resume" class="primary">Return to the room <span>↗</span></button>
+        <div class="setting"><label for="sensitivity">Mouse sensitivity</label><input id="sensitivity" type="range" min="0.4" max="2" value="1" step="0.1" /></div>
+        <div class="setting"><label for="quality">Render quality</label><select id="quality"><option value="balanced">Balanced</option><option value="high">Fine</option><option value="low">Light</option></select></div>
+        <button id="reset-menu" class="text-button">Return to the entrance <span>R</span></button>
+        <div class="pause-controls"><kbd>W A S D</kbd> or arrow keys · <kbd>Shift</kbd> brisk walk<br /><kbd>R</kbd> reset · <kbd>Esc</kbd> release mouse<br />Drag to look if mouse capture is unavailable.</div>
+      </div>
+    </section>
+    <div id="hud" class="hidden">
+      <div class="location"><span class="location-mark"></span><div><span id="room-name">The sitting room</span><small id="room-subtitle">A good place to stop.</small></div></div>
+      <div id="crosshair" aria-hidden="true"></div>
+      <div id="object-note" class="object-note"><span id="object-heading"></span><p id="object-copy"></p></div>
+      <div class="bottom-controls"><span><kbd>W A S D</kbd> walk</span><span><kbd>Mouse</kbd> look</span><button id="reset-hud">Reset <kbd>R</kbd></button><button id="pause-hud">Pause <kbd>Esc</kbd></button></div>
+    </div>
+    <div id="error" class="error hidden" role="alert"></div>
+  </body>
+</html>

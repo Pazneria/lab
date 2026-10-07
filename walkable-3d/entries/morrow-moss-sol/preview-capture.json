@@ -1,0 +1,97 @@
+{
+  "entry": "morrow-moss-sol",
+  "method": "Actual frozen scene in existing host opaque sandbox; authored default viewpoint and existing start control only. Canvas cropped/resized to 960x600 JPEG, excluding DOM chrome. No entrant source changes.",
+  "authorization": "Owner yes-of-course approval, relayed by parent thread 01a10ff2-2238-7405-b646-fd99c65d100b at 2026-10-07 20:32 UTC; authorized connected computer; sequential background capture only. No native foreground input, performance tests or entrant repair.",
+  "frozenHtmlSha256": "70fe14a00b72c4be8f12e6cdca7b0373b27abec173034d47030132975e00506d",
+  "output": {
+    "width": 960,
+    "height": 600,
+    "sha256": "5f4c046438ab76dd77caf440218286d45d50bb8dbedfd6d9e48519326bd66c64",
+    "bytes": 72029
+  },
+  "sourceUnchanged": true,
+  "hostReadinessObserved": true,
+  "viewerUnloadedAfterCapture": true,
+  "captureContextClosed": true,
+  "completionStatusPreserved": "completed",
+  "availabilityBeforeCapture": "unverified",
+  "availabilityAfterCapture": "ready",
+  "runtimeErrorsObserved": false,
+  "runtimeFatalErrorsObserved": false,
+  "documentedNonfatalGeometryErrors": [],
+  "performanceBenchmark": false,
+  "interactiveRouteQa": false,
+  "foregroundInputUsed": false,
+  "capture": {
+    "id": "morrow-moss-sol",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=20&entry=morrow-moss-sol",
+    "startedAt": "2026-10-07T20:45:39.352Z",
+    "status": "captured",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "unexpectedExternalRequests": [],
+    "controls": [
+      "Click existing #enter start control"
+    ],
+    "frozenHtmlSha256": "70fe14a00b72c4be8f12e6cdca7b0373b27abec173034d47030132975e00506d",
+    "hostVisibility": "visible",
+    "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+    "readyObserved": true,
+    "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+    "viewport": {
+      "width": 1280,
+      "height": 972
+    },
+    "iframeBounds": {
+      "x": 19,
+      "y": 125.4375,
+      "width": 1242,
+      "height": 776.515625
+    },
+    "capture": {
+      "quality": 0.88,
+      "canvas": {
+        "id": "scene",
+        "width": 1242,
+        "height": 777,
+        "cssWidth": 1242,
+        "cssHeight": 777
+      },
+      "crop": {
+        "x": 0,
+        "y": 0.375,
+        "width": 1242,
+        "height": 776.25
+      },
+      "output": {
+        "width": 960,
+        "height": 600
+      },
+      "pointerLocked": true
+    },
+    "bytes": 72029,
+    "sha256": "5f4c046438ab76dd77caf440218286d45d50bb8dbedfd6d9e48519326bd66c64",
+    "filename": "morrow-moss-sol.jpg",
+    "capturedAt": "2026-10-07T20:45:41.804Z",
+    "viewerUnloaded": true,
+    "contextClosed": true,
+    "finishedAt": "2026-10-07T20:45:41.855Z",
+    "evidenceSession": 1,
+    "imageRoot": "preview-captures-recovery",
+    "cpuImageContentCheck": {
+      "size": [
+        960,
+        600
+      ],
+      "rgbStandardDeviation": [
+        57.24708292359271,
+        57.80907855663193,
+        63.83723386690629
+      ],
+      "result": "Nonuniform pixel content; no visual quality grade"
+    }
+  },
+  "imageContent": "Actual frozen scene canvas; DOM overlays excluded, resized/cropped to 960x600. No generated imagery."
+}

@@ -6,6 +6,13 @@ export const comparisonKey = pair => pair.map(entry => entry.id).sort().join('::
 // Unverified means admitted for manual inspection, not independently runtime-tested.
 export const isOpenable = entry => entry.availability === undefined || ['ready', 'unverified'].includes(entry.availability);
 
+export const unavailableLabel = entry => entry.failureCategory === 'static-dependency' ? 'Static dependency incomplete' : entry.failureCategory === 'host-policy' ? 'Withheld: host policy compatibility' : 'Startup failed';
+export function unavailableSummary(entries) {
+  const withheld = entries.filter(entry => entry.admissionWithheld === true).length;
+  const startup = entries.length - withheld;
+  return [startup ? `${startup} startup failed` : '', withheld ? `${withheld} withheld after static review` : ''].filter(Boolean).join(' · ');
+}
+
 function comparisonOptions(prompts, entries) {
   return prompts.map(prompt => {
     const models = new Map();

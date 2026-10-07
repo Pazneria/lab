@@ -1,0 +1,147 @@
+{
+  "entry": "emberward-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\emberward-luna\\source-preservation.zip",
+  "archiveSha256": "03c877b2c11e74b41fb88d60b9db939221652f2178be72daa99bc01d73014de4",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/scene.js": "scene.js",
+      "frozen/style.css": "style.css"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "865c4ee004b24e74e64b1d88211c129450c00a080bf94a8c61a16a55105dd909",
+        "bytes": 1497
+      },
+      "README.md": {
+        "sha256": "02eddb52abe7851369152976116ca863da526e59abebacaea7b583a955fc6d8f",
+        "bytes": 1439
+      },
+      "scene.js": {
+        "sha256": "9180be2182a61513d3742b86932d078c873758e8eec6987640e498f41dbe65f6",
+        "bytes": 27272
+      },
+      "style.css": {
+        "sha256": "cf9d7d799b1f9ea6a6543e3b24863a9491d5406acd613304cc78ce22406fe915",
+        "bytes": 2787
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\emberward-luna\\source-preservation.zip",
+    "sourceArchiveSha256": "03c877b2c11e74b41fb88d60b9db939221652f2178be72daa99bc01d73014de4",
+    "supplementalDependencies": [
+      {
+        "file": "frozen/vendor/three/three.module.js",
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source\\dependency\\three\\build\\three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113,
+        "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
+      },
+      {
+        "file": "frozen/vendor/three/three.core.js",
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source\\dependency\\three\\build\\three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455,
+        "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
+      },
+      {
+        "file": "frozen/vendor/three/LICENSE",
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source\\dependency\\three\\LICENSE",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
+      }
+    ],
+    "supplementalLicenses": []
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:09:38Z",
+    "deadlineUtc": "2026-10-07T10:09:38Z",
+    "stopUtc": "2026-10-07T09:15:47Z"
+  },
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: not-launched-static-withhold. No movement/route/collision/full-scene or performance judgment.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+          "./vendor/three/three.module.js"
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "865c4ee004b24e74e64b1d88211c129450c00a080bf94a8c61a16a55105dd909",
+      "bytes": 1497
+    },
+    "frozen/scene.js": {
+      "sha256": "9180be2182a61513d3742b86932d078c873758e8eec6987640e498f41dbe65f6",
+      "bytes": 27272
+    },
+    "frozen/style.css": {
+      "sha256": "cf9d7d799b1f9ea6a6543e3b24863a9491d5406acd613304cc78ce22406fe915",
+      "bytes": 2787
+    },
+    "frozen/vendor/three/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "host-verification.json": {
+      "sha256": "97d7e6ab81786ff02c56a8ef83e958270cec441bd1e6a76ba0d907d711249a85",
+      "bytes": 569
+    },
+    "launch-prompt.txt": {
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "bytes": 7870
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "e0817ea523581bfecbdd08c28d8eedcdf5d604488b5056c359bc744e6d301fee",
+      "bytes": 2777
+    },
+    "README.md": {
+      "sha256": "02eddb52abe7851369152976116ca863da526e59abebacaea7b583a955fc6d8f",
+      "bytes": 1439
+    },
+    "run-record.json": {
+      "sha256": "a5062e9be10ee54e1c789ede5033283d0530ac08f45d09878e4bfb41c8d6741a",
+      "bytes": 3431
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/scene.js",
+      "frozen/style.css",
+      "frozen/vendor/three/LICENSE",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "README.md",
+      "run-record.json"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Parent-directed static exclusion; never launched for capture."
+  },
+  "staticHostingConcerns": [
+    "Original CSS imports Google Fonts. The unchanged entry-scoped viewer CSP blocks external styles/fonts and treats policy violations as failures. Hosted startup is untested and may fail. Original CSS is preserved; no fonts packaged, CSP relaxed or behavior repaired."
+  ],
+  "hostCaptureOutcome": "not-launched-static-withhold"
+}

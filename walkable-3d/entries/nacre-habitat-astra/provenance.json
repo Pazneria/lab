@@ -1,0 +1,202 @@
+{
+  "entry": "nacre-habitat-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\nacre-habitat-astra\\producer-original.zip",
+  "archiveSha256": "350349c6f3fc29c5681563942186802c10ec94d44b2500840c679c70f1d68301",
+  "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-DyQZF1qB.css": "dist/assets/index-DyQZF1qB.css",
+      "frozen/assets/index-rMBXUbcA.js": "dist/assets/index-rMBXUbcA.js",
+      "frozen/assets/three-F_btR9dO.js": "dist/assets/three-F_btR9dO.js",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "ae7fc9a51269d7231a9d54e038eb3304fff3b0ba50c6464f95f921bf6e2a5694",
+        "bytes": 32
+      },
+      "checks/build.txt": {
+        "sha256": "88571973102b45d15530681d97d8b22d0598e4ea47da3b43ffd33ca7c82cdc37",
+        "bytes": 503
+      },
+      "checks/results.json": {
+        "sha256": "72afc1fc7255a112a02d506b2d31214161aa8f5ae312dd4e44f490b6318c0248",
+        "bytes": 373
+      },
+      "checks/scene-check.mjs": {
+        "sha256": "87f26eb615bced834b06f88f1313fb29e40cb090ae17ed7b75620c2318d555c4",
+        "bytes": 3385
+      },
+      "checks/syntax.txt": {
+        "sha256": "d656c6a3b59568732b98ad81a53efe24c0c6582fcb2639b9f0d4c4a216d65477",
+        "bytes": 201
+      },
+      "dist/assets/index-DyQZF1qB.css": {
+        "sha256": "cdea36f1a6af281c923c78e96413d958eaac4668256610ba6cc187df61b21a67",
+        "bytes": 4054
+      },
+      "dist/assets/index-rMBXUbcA.js": {
+        "sha256": "de8795a95a65f1507d005ac8cd077ec5ed97f294b105a3ab3e25143fa7111a05",
+        "bytes": 48360
+      },
+      "dist/assets/three-F_btR9dO.js": {
+        "sha256": "3dd32bf975481967af224f09d2d4e6090a47e06d36de4412e82becb56ec35484",
+        "bytes": 520672
+      },
+      "dist/index.html": {
+        "sha256": "5d5142fe46820a492db06c23a9eb53d9c6ae78f2f69d0aa30f875812450b4909",
+        "bytes": 2567
+      },
+      "execution-record.json": {
+        "sha256": "7570f3231da9169199390170c2472e22a6985bc152ab685d8f0660d9d7bafe2d",
+        "bytes": 2351
+      },
+      "index.html": {
+        "sha256": "7cd95a1c173b5e76c49b14e55d775f665ba2081addc336e737c695c87bfa6b8e",
+        "bytes": 2393
+      },
+      "nacre-habitat-04.zip": {
+        "sha256": "350349c6f3fc29c5681563942186802c10ec94d44b2500840c679c70f1d68301",
+        "bytes": 197219
+      },
+      "package-lock.json": {
+        "sha256": "2b49e407e0d61eda26bef421fc8f77f9fc5b4dd5c99dee52caa852f139214755",
+        "bytes": 35212
+      },
+      "package.json": {
+        "sha256": "adf2bc885b5b045261939f1c323ef6f5f5aa59d2e74649aad7bac9542e5c9a96",
+        "bytes": 602
+      },
+      "README.md": {
+        "sha256": "9a6652cb2a5e8b0108340b78b290307d40c24c97e3f80ae3a33678f575aa72af",
+        "bytes": 4423
+      },
+      "src/main.js": {
+        "sha256": "be2e4df037b6b6e3c625b9ae8a95def2f6a384efd74ef4ac538dbcbfc03910b7",
+        "bytes": 4655
+      },
+      "src/materials.js": {
+        "sha256": "f459490a4151d94df8d88d4b0aa9b0f284f0972e98b91fe45bdc9a90998cf494",
+        "bytes": 6635
+      },
+      "src/navigation.js": {
+        "sha256": "e5c16f117865b32cd64d8255d7b40cf990509504b54a5f7f839293c0f4ea5d03",
+        "bytes": 5566
+      },
+      "src/style.css": {
+        "sha256": "3b83b42642fa8220484eab5e2a1310ac4755539abb0649e3e0b579ebcdd6a7dd",
+        "bytes": 4025
+      },
+      "src/world.js": {
+        "sha256": "5420876f9379e8d6a48ff45e30915d8cb4288c031e4047402bbf28fd9709ce06",
+        "bytes": 41891
+      },
+      "vite.config.js": {
+        "sha256": "21060d2689e66fceeac92d33a8a0eaacd56432afdcf9bea61edb35269e6fd34e",
+        "bytes": 361
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\nacre-habitat-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "6c9f156380eab25d52eef60eeadde394abf177dc76e1a0fc045911ce6d64a1fc",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-33\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\nacre-habitat-astra\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:05:49.1697265Z",
+    "deadlineUtc": "2026-10-07T10:05:49.1697265Z",
+    "stopUtc": "2026-10-07T09:44:06.431457Z"
+  },
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: captured. No movement/route/collision/full-scene or performance judgment.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/assets/index-DyQZF1qB.css": {
+      "sha256": "cdea36f1a6af281c923c78e96413d958eaac4668256610ba6cc187df61b21a67",
+      "bytes": 4054
+    },
+    "frozen/assets/index-rMBXUbcA.js": {
+      "sha256": "de8795a95a65f1507d005ac8cd077ec5ed97f294b105a3ab3e25143fa7111a05",
+      "bytes": 48360
+    },
+    "frozen/assets/three-F_btR9dO.js": {
+      "sha256": "3dd32bf975481967af224f09d2d4e6090a47e06d36de4412e82becb56ec35484",
+      "bytes": 520672
+    },
+    "frozen/index.html.txt": {
+      "sha256": "5d5142fe46820a492db06c23a9eb53d9c6ae78f2f69d0aa30f875812450b4909",
+      "bytes": 2567
+    },
+    "host-verification.json": {
+      "sha256": "e8d01ae33ce99e74a33adb8f3108143df6a37a3a90809c8e7c69975d2958b939",
+      "bytes": 516
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "d2413190bd13bb042abdf6536582a5453247b2419a6a1589de599e7976bb83fb",
+      "bytes": 3385
+    },
+    "preview-capture.json": {
+      "sha256": "ff8eb5588d3e574d2e54cd5c0eaf545a8635dc79d9403f45f2e2b4f29c219d92",
+      "bytes": 3471
+    },
+    "preview.jpg": {
+      "sha256": "e7c4cbd1d3fffe4ee7e48920c7720b335b7ccc8a6daa9d2d2aefb8a71fe114ba",
+      "bytes": 99377
+    },
+    "producer-execution-record.json": {
+      "sha256": "7570f3231da9169199390170c2472e22a6985bc152ab685d8f0660d9d7bafe2d",
+      "bytes": 2351
+    },
+    "README.md": {
+      "sha256": "9a6652cb2a5e8b0108340b78b290307d40c24c97e3f80ae3a33678f575aa72af",
+      "bytes": 4423
+    },
+    "run-record.json": {
+      "sha256": "3f15dc798687fcb3d64664c040c94df2bc36200be920b1630290dd23d62fcaed",
+      "bytes": 4159
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/assets/index-DyQZF1qB.css",
+      "frozen/assets/index-rMBXUbcA.js",
+      "frozen/assets/three-F_btR9dO.js",
+      "frozen/index.html.txt",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "producer-execution-record.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "staticHostingConcerns": [],
+  "hostCaptureOutcome": "captured"
+}

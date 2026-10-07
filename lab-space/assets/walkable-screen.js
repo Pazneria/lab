@@ -1,7 +1,7 @@
 import {createViewer} from '../../walkable-3d/assets/viewer.js';
 import {comparisonLayout,comparisonTargetAt,fitPreview} from './interaction.mjs';
 import {createGradeForm,renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
-import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable} from '../../walkable-3d/assets/comparisons.js';
+import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable,unavailableSummary} from '../../walkable-3d/assets/comparisons.js';
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
@@ -43,10 +43,10 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
     $('screen-prev').disabled=index===0;$('screen-next').disabled=!canShuffle;
-    const failed=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed').length;
+    const failed=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');
     const unverified=entries.filter(e=>e.availability==='unverified').length;
     const partial=entries.filter(e=>e.completionStatus==='partial').length;
-    $('screen-boundary').textContent=(canShuffle?(revealed?'Your choice and both model labels remain visible. Next comparison uses the random picker.':'Next skips to a random prompt and model pair without recording a vote.'):'Waiting for two admitted models to compare.')+(unverified?` ${unverified} ${unverified===1?'entry has':'entries have'} no independent host runtime verification. Inspect producer evidence and limitations in the notebook.`:'')+(partial?` Includes ${partial} partial handoff stopped early; no completion or repair was made.`:'')+(failed?` ${failed} saved result failed at startup; inspect its record in the notebook.`:'');
+    $('screen-boundary').textContent=(canShuffle?(revealed?'Your choice and both model labels remain visible. Next comparison uses the random picker.':'Next skips to a random prompt and model pair without recording a vote.'):'Waiting for two admitted models to compare.')+(unverified?` ${unverified} ${unverified===1?'entry has':'entries have'} no independent host runtime verification. Inspect producer evidence and limitations in the notebook.`:'')+(partial?` Includes ${partial} partial handoff stopped early; no completion or repair was made.`:'')+(failed.length?` ${unavailableSummary(failed)}; inspect the records in the notebook.`:'');
     const cards=current.map((entry,slot)=>{const card=document.createElement('article'),button=document.createElement('button'),img=document.createElement('img'),h=document.createElement('h3'),model=document.createElement('p'),details=document.createElement('a');
       button.type='button';button.dataset.screenOpen=entry.id;button.setAttribute('aria-label',`Open entry ${slot?'B':'A'}: ${entry.title}`);
       if(entry.previewAvailable===false){const placeholder=document.createElement('span');placeholder.className='screen-placeholder';placeholder.textContent='Preview not captured. Open the frozen build to inspect it.';button.append(placeholder);}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#283b32" />
+  <title>Hearth & Hemlock — a small home for quiet magic</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <canvas id="scene" aria-label="An explorable three-dimensional witch's cottage"></canvas>
+  <div class="frame" aria-hidden="true"></div>
+  <header id="masthead">
+    <span class="brand-mark" aria-hidden="true">☽</span>
+    <div><span class="eyebrow">A SMALL HOME FOR QUIET MAGIC</span><h1>Hearth <i>&</i> Hemlock</h1></div>
+  </header>
+  <div id="location" aria-live="polite"><span id="room-number">01</span><div><h2 id="room-name">The kitchen</h2><p id="room-description">The kettle was just on</p></div></div>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="welcome" class="overlay">
+    <section class="welcome-card" aria-labelledby="welcome-title">
+      <div class="sprig" aria-hidden="true">✧</div>
+      <p class="eyebrow">THE DOOR WAS LEFT ON THE LATCH</p>
+      <h2 id="welcome-title">Come in.<br>The kettle is warm.</h2>
+      <p class="intro">A cottage full of useful things,<br>and a few that haven't explained themselves.</p>
+      <div class="route"><span>Kitchen</span><b>—</b><span>Workroom</span><b>—</b><span>Glasshouse</span></div>
+      <button id="enter" disabled>Making room for you…</button>
+      <p class="hint"><kbd>W A S D</kbd> move &nbsp; · &nbsp; mouse to look<br><kbd>Shift</kbd> walk faster &nbsp; · &nbsp; <kbd>Esc</kbd> release mouse</p>
+      <p id="fallback-note">If mouse capture is unavailable, hold the left mouse button to look.</p>
+    </section>
+  </div>
+  <div id="toolbar">
+    <span class="control-summary"><kbd>WASD</kbd> move <span>·</span> Mouse look <span>·</span> <kbd>R</kbd> reset</span>
+    <div class="toolbar-buttons"><button id="help" title="Show controls (H)">Controls <span>H</span></button><button id="quality" title="Toggle render resolution and shadow quality">Quality: High</button><button id="reset" title="Return to the entrance (R)">Reset <span>R</span></button></div>
+  </div>
+  <div id="help-panel" hidden>
+    <h2>Make yourself at home.</h2>
+    <dl><dt>W A S D / arrows</dt><dd>Walk</dd><dt>Mouse</dt><dd>Look around</dd><dt>Shift</dt><dd>Walk faster</dd><dt>R</dt><dd>Return to the entrance</dd><dt>Esc</dt><dd>Release the mouse</dd><dt>H</dt><dd>Show or hide these controls</dd><dt>Q</dt><dd>Switch High / Light quality</dd></dl>
+    <p>Follow the counter to the timber passage. The workbench is on the right; the glasshouse is straight ahead.</p>
+    <button id="resume">Continue exploring</button>
+  </div>
+  <div id="message" role="status"></div>
+  <div id="error" hidden><h2>The cottage couldn't open.</h2><p id="error-text"></p><p>This scene needs a desktop browser with WebGL 2. Use the included local launch command.</p></div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

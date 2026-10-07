@@ -1,0 +1,92 @@
+{
+  "id": "reedway-rooms-luna",
+  "title": "The Reedway Rooms",
+  "scene": 15,
+  "model": "luna",
+  "workspace": "task-19",
+  "completionClearedByParent": true,
+  "threeLocal": true,
+  "threadId": "01a11598-4621-76a2-9e8b-386550d2002b",
+  "completedTurnId": "01a11598-4d83-733f-a857-ab6d1da4670e",
+  "requestedModel": "GPT-6 Luna",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6 family",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:01:19Z",
+  "deadlineUtc": "2026-10-07T10:01:19Z",
+  "stopUtc": "2026-10-07T09:11:33Z",
+  "producerChecks": "Inline JavaScript syntax, package JSON and module presence passed; no visual, interactive or performance tests.",
+  "interruptions": "No user interruptions. Cache write issue; used cached dependency package.",
+  "cleanupClaim": "No server, browser or watcher left running.",
+  "expectedLaunchSha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+  "handoffSource": "Parent completed handoff; original producer README retained.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Inline JavaScript syntax, package JSON and module presence passed; no visual, interactive or performance tests.",
+    "importerStaticChecks": {
+      "id": "reedway-rooms-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:2309472e770b76fda59bbeffec90d20519174767ab5892c95512554ceec4c208",
+      "syntax": [
+        {
+          "file": "index.html",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "Authorized startup attempt failed; no usable preview",
+    "interactive": "NOT RUN",
+    "gpu": "Startup/render initialization attempted only; no GPU/performance test",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "reedway-rooms-luna",
+    "passed": false,
+    "scope": "Actual existing opaque-sandbox host startup attempt; no successful preview, route or performance test.",
+    "sourceUnchanged": true,
+    "observedStartupFailure": true,
+    "attempt": {
+      "id": "reedway-rooms-luna",
+      "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=15",
+      "startedAt": "2026-10-07T20:39:31.599Z",
+      "status": "startup-failed",
+      "consoleErrors": [],
+      "pageErrors": [
+        "s is not defined"
+      ],
+      "requestFailures": [],
+      "nonReadRequests": [],
+      "unexpectedExternalRequests": [],
+      "controls": [],
+      "frozenHtmlSha256": "f8c571a8b761570ef775e338c55d5d2d9a94e0d8e18bfd9ab93f834ce7328306",
+      "hostVisibility": "visible",
+      "viewerMessage": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+      "observedStartupFailure": true,
+      "error": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+      "viewerUnloaded": true,
+      "contextClosed": true,
+      "finishedAt": "2026-10-07T20:39:33.123Z",
+      "evidenceSession": 0,
+      "imageRoot": "preview-captures"
+    },
+    "grade": null,
+    "ownedProcesses": "Owned background browser/context/server/helper exited; read-only cleanup verified."
+  }
+}

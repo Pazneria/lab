@@ -1,0 +1,50 @@
+{
+  "title": "The Quiet Standard",
+  "available_model_identity": "GPT-6 / Codex",
+  "exact_model_identifier": null,
+  "reasoning_effort": null,
+  "model_metadata_limitation": "The exact serving model ID and effort setting are not exposed to this executor. Requested clarification; no values were supplied before stop. No guessed identifier or effort is reported.",
+  "first_implementation_timestamp": "2026-10-07T09:04:38.1739582+00:00",
+  "first_implementation_timestamp_source": "CreationTimeUtc of the new isolated workspace directory, the first implementation action",
+  "deadline": "2026-10-07T10:04:38.1739582+00:00",
+  "stop_timestamp": "2026-10-07T09:37:06.7094505+00:00",
+  "wall_clock_elapsed_seconds": 1948.535,
+  "deadline_met": true,
+  "interruption_history": [],
+  "environment_delays": [
+    "Initial restricted npm download failed; the permitted registry retry succeeded.",
+    "Initial restricted esbuild resolver attempts failed; the permitted non-serving build succeeded.",
+    "Restricted OS port/process queries were denied; a permitted query confirmed no entry processes and no listener on port 47831."
+  ],
+  "deadline_reset_or_extended": false,
+  "other_models_or_subagents_used": false,
+  "browser_gpu_screenshot_or_performance_test_started": false,
+  "server_or_watcher_started": false,
+  "process_cleanup_confirmed": true,
+  "process_cleanup_evidence": "cleanup-results.json",
+  "all_entry_shell_commands_completed": true,
+  "artifact_path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-26\\quiet-standard\\dist",
+  "archive_path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-26\\quiet-standard\\quiet-standard-build.zip",
+  "archive_sha256": "B51256040349A8FA1DC7AFDBD91BBBDE177A11A647C0C2CF70A29D51051EC8CE",
+  "suggested_launch_address": "http://127.0.0.1:47831/",
+  "preview_is_running": false,
+  "checks": [
+    "Node syntax checks",
+    "CPU-only geometry construction with no-op Canvas2D",
+    "Geometric collision and route connectivity checks",
+    "Geometric sunlight-ray check",
+    "Non-serving esbuild production bundle",
+    "Archive required-file validation"
+  ],
+  "check_evidence": [
+    "static-check-results.json",
+    "build-results.json",
+    "cleanup-results.json"
+  ],
+  "not_performed": [
+    "Browser/WebGL execution",
+    "Visual verification",
+    "Interactive controls testing",
+    "GPU or performance benchmarking"
+  ]
+}

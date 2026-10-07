@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101923" />
+  <title>Vesper &amp; Vale — Royal Atelier</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="atelier" aria-label="Explore the Vesper and Vale royal tailor's atelier">
+    <div id="loading" class="veil"><div class="loading-card"><span class="sigil">✦</span><p>Unfolding the atelier…</p></div></div>
+    <section id="welcome" class="veil" aria-label="Scene controls">
+      <div class="welcome-card">
+        <div class="eyebrow">HOUSE OF VESPER &amp; VALE</div>
+        <h1>The Comet Mantle</h1>
+        <p class="lede">An unfinished commission for the Astral Regent, in a tailor's rooms just before dusk.</p>
+        <div class="route"><span>FITTING ROOM</span><i>→</i><span>FABRIC ARCHIVE</span><i>→</i><span>WORKSHOP</span></div>
+        <button id="enter" type="button">Enter the atelier <span>↗</span></button>
+        <div class="controls-grid">
+          <div><b>W A S D</b><small>walk</small></div><div><b>MOUSE</b><small>look around</small></div>
+          <div><b>SHIFT</b><small>walk briskly</small></div><div><b>R</b><small>reset to entrance</small></div>
+          <div><b>ESC</b><small>release mouse</small></div><div><b>CLICK</b><small>resume exploring</small></div>
+        </div>
+        <div class="quiet-note">A quiet walk-through · no staff, no errands · take your time</div>
+      </div>
+    </section>
+    <div id="hud" aria-hidden="true">
+      <div class="brand"><span>✦</span><div><b>VESPER &amp; VALE</b><small>ROYAL ATELIER</small></div></div>
+      <div class="room-tag" id="room-tag">FITTING ROOM</div>
+      <div class="reticle"><i></i><i></i></div>
+      <div class="hud-bottom"><span>WASD <i>MOVE</i></span><span>MOUSE <i>LOOK</i></span><span>SHIFT <i>BRISK</i></span><span>R <i>RESET</i></span><span>ESC <i>PAUSE</i></span></div>
+      <button id="resume" type="button" aria-label="Resume exploring">RESUME <kbd>CLICK</kbd></button>
+    </div>
+    <div id="error" role="status" aria-live="polite"></div>
+    <canvas id="view" aria-label="First-person 3D atelier"></canvas>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1e3436" />
+    <title>Larkspur House — Mira's private rooms</title>
+    <script type="module" crossorigin src="/assets/index-BoLoN2y5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BNR9a94g.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable three dimensional private rooms"></canvas>
+    <div id="veil">
+      <section class="welcome" id="welcome">
+        <div class="eyebrow">A morning at Larkspur House</div>
+        <h1>The way<br />home.</h1>
+        <p class="intro">Mira Vale carries letters across the reed marshes. Here, she charts tomorrow's crossings, patches yesterday's coat, and keeps a little of every place she's loved.</p>
+        <div class="rule"></div>
+        <p class="route">Bedroom <span>→</span> Walk-in wardrobe <span>→</span> Map study</p>
+        <button id="enter">Step inside <span>↗</span></button>
+        <p class="keys"><b>W A S D</b> move · <b>Mouse</b> look · <b>Shift</b> brisk walk<br /><b>Esc</b> pause · <b>R</b> return to entrance</p>
+        <p class="footnote">An original room-sized character study. Take your time.</p>
+      </section>
+    </div>
+    <div id="hud" class="hidden">
+      <div class="identity"><span class="emblem">✦</span><div><strong>Larkspur House</strong><small id="room-name">Mira's bedroom</small></div></div>
+      <div class="hint" id="hint">WASD to move · mouse to look · Esc to pause</div>
+      <div id="crosshair"></div>
+    </div>
+    <section id="pause" class="hidden">
+      <div class="pause-card"><div class="eyebrow">Larkspur House</div><h2>A moment's rest.</h2>
+      <p>WASD or arrow keys to walk. Mouse to look.<br />Shift to walk briskly. R to return to the entrance.</p>
+      <button id="resume">Keep exploring <span>↗</span></button>
+      <div class="settings"><label>Image quality <select id="quality"><option value="balanced">Balanced</option><option value="high">High</option><option value="low">Light</option></select></label>
+      <label>Mouse sensitivity <input id="sensitivity" type="range" min="0.5" max="2" step="0.1" value="1" /></label>
+      <label class="checkbox"><input id="metrics-toggle" type="checkbox" /> Show live frame timing</label></div>
+      <button id="reset" class="secondary">Return to entrance</button><small id="lock-message">Click Keep exploring to capture the mouse.</small></div>
+    </section>
+    <div id="metrics" class="hidden"></div>
+    <div id="error" class="hidden" role="alert"></div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "model": "GPT-6 (system identity; exact deployment identifier is not exposed)",
+  "effort": "Not exposed by the execution environment",
+  "firstImplementation": "2026-10-07T09:02:25.9378600+00:00",
+  "deadline": "2026-10-07T10:02:25.9378600+00:00",
+  "actualStop": "2026-10-07T09:50:51.0652836+00:00",
+  "interruptions": [],
+  "executionConditions": "CPU-only checks. No browser, server, screenshot renderer, GPU test, or benchmark.",
+  "exactDeploymentIdentifier": null,
+  "exactReasoningEffort": null,
+  "ownRunTitle": "Build Sol scene 15",
+  "metadataLimitation": "System identity exposes GPT-6. Exact deployment identifier and effort were not exposed by environment variables, own session metadata, or own thread metadata; not guessed.",
+  "dependencySetupNote": "Initial restricted fetch failed; scoped npm registry retry with workspace-local cache succeeded. No deadline reset or extension.",
+  "checks": {
+    "syntax": "passed",
+    "productionBuild": "passed",
+    "sceneData": "passed",
+    "connectedInspectionPoints": 20,
+    "walkedLoopSegments": 19,
+    "triangles": 178856,
+    "staticMaterialGroups": 52,
+    "browser": "not run",
+    "visual": "not run",
+    "GPU": "not run",
+    "performanceBenchmark": "not run",
+    "measuredFrameRate": null
+  },
+  "cleanup": {
+    "allInstallBuildAndCheckCommandsFinished": true,
+    "remainingEntryNodeProcesses": 0,
+    "processCheck": "Read-only OS query filtered to this entry path",
+    "serversStarted": 0,
+    "browsersStarted": 0,
+    "watchersStarted": 0,
+    "unrelatedProcessesTerminated": 0,
+    "suggestedLaunchAddress": "http://127.0.0.1:4327/",
+    "port4327ListeningAtHandoff": 0
+  },
+  "constraints": {
+    "isolatedWorkspace": true,
+    "otherEntrantFilesRead": false,
+    "reusedProjectAssets": false,
+    "otherModelsUsed": false,
+    "subagentsUsed": false,
+    "modelBackedExternalToolsUsed": false,
+    "externalArtAssetsUsed": false
+  },
+  "elapsedWallSeconds": 2905.127
+}

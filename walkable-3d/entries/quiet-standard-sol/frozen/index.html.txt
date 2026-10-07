@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#22231f">
+  <title>The Quiet Standard · An Adventurer at Home</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three-dimensional home above a tavern"></canvas>
+  <div id="loading"><span class="mark">✦</span><p>Opening the upper room…</p></div>
+  <main id="welcome" class="panel">
+    <span class="eyebrow">AN ADVENTURER AT HOME</span>
+    <h1>The Quiet<br><em>Standard</em></h1>
+    <div class="rule"></div>
+    <p class="intro">The roads grew shorter. The kettle stayed warm.<br>A quiet room above the inn, late in the afternoon.</p>
+    <p class="route">Hearth & tea → Study → Covered balcony → Home</p>
+    <button id="enter">Enter the upper room <span>↗</span></button>
+    <div class="keys"><span><kbd>W A S D</kbd> walk</span><span><kbd>Mouse</kbd> look</span><span><kbd>Shift</kbd> brisk walk</span><span><kbd>C</kbd> crouch</span><span><kbd>Esc</kbd> pause</span><span><kbd>R</kbd> return to entrance</span><span><kbd>F</kbd> live frame intervals</span></div>
+    <button id="reset-paused" class="reset-paused">Reset to the entrance ↺</button>
+    <p class="small">A self-contained visit. Everything here was made for this room.</p>
+  </main>
+  <div id="hud" class="hidden">
+    <div class="identity"><span class="star">✦</span><div><span class="eyebrow">THE QUIET STANDARD</span><span id="space">The upper room</span></div></div>
+    <span id="crosshair">·</span>
+    <div id="object-note" aria-live="polite"><span id="note-title"></span><span id="note-copy"></span></div>
+    <div class="bottom"><span>WASD move &nbsp; · &nbsp; Mouse look &nbsp; · &nbsp; Esc pause</span><div><button id="measure" title="Show frame timing during a later interactive judging session">Frame times</button><button id="reset">Reset ↺</button></div></div>
+    <div id="metrics" class="hidden"></div>
+  </div>
+  <div id="error" class="panel hidden"><span class="eyebrow">UNABLE TO OPEN THE ROOM</span><h2>A WebGL browser is required.</h2><p id="error-copy"></p><p>Use a current desktop browser with hardware acceleration, launched from the local address in README.md.</p></div>
+  <script type="module" src="./scene.js"></script>
+</body>
+</html>
