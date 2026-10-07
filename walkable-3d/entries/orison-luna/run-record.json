@@ -78,5 +78,14 @@
     "performance": "NOT RUN",
     "preview": "UNCAPTURED"
   },
-  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "orison-luna",
+    "passed": null,
+    "attempted": false,
+    "scope": "Parent-directed static withhold retained; not launched for capture.",
+    "reason": "The supplied build references missing relative module(s): ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested.",
+    "sourceUnchanged": true,
+    "grade": null
+  }
 }

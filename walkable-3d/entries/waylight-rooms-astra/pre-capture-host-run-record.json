@@ -1,0 +1,92 @@
+{
+  "id": "waylight-rooms-astra",
+  "title": "The Waylight Rooms",
+  "scene": 15,
+  "model": "astra",
+  "workspace": "task-21/waylight-rooms",
+  "completionClearedByParent": true,
+  "producerArchive": "waylight-rooms-build.zip",
+  "requestedModel": "GPT-6 Astra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "Codex based on GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:02:03.0631271Z",
+  "deadlineUtc": "2026-10-07T10:02:03.0631271Z",
+  "stopUtc": "2026-10-07T09:36:26.3634286Z",
+  "producerChecks": "Syntax, CPU geometry/collision, inspection-route connectivity and production build passed. No browser, visual, interactive, GPU or frame-time QA. Decorative mirror; static equipment.",
+  "interruptions": "No user interruption or external pause. Registry retry and Vite native-config workaround were resolved within the unchanged budget. Exact model/effort clarification was requested but no answer arrived before stop; no values inferred.",
+  "cleanupClaim": "All command sessions completed; final process query found no entry Node/esbuild processes. No browser/server/watcher started; no unrelated process terminated.",
+  "handoffSource": "Parent completed handoff and original RUN-RECORD.json; producer build ZIP preserved unchanged.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, CPU geometry/collision, inspection-route connectivity and production build passed. No browser, visual, interactive, GPU or frame-time QA. Decorative mirror; static equipment.",
+    "importerStaticChecks": {
+      "id": "waylight-rooms-astra",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:1b1f46b8a88ece81091a691e26d48529ae9e99d547bad9ab8a62cce9ae93bf6c",
+      "syntax": [
+        {
+          "file": "vite.config.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/geometry.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/scene.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "tests/layout.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

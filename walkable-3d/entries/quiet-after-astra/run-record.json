@@ -75,11 +75,22 @@
       "capture": false,
       "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
     },
-    "visual": "NOT RUN",
-    "interactive": "NOT RUN",
-    "gpu": "NOT RUN",
+    "visual": "Authorized authored-default-view capture only; no quality judgment",
+    "interactive": "Existing start control only; no movement/route/collision test",
+    "gpu": "Rendering for authorized screenshot only; no GPU/performance test",
     "performance": "NOT RUN",
-    "preview": "UNCAPTURED"
+    "preview": "CAPTURED"
   },
-  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+  "publication": "Owner approved capture and publication of the unchanged frozen result; no entrant rebuild, repair or score.",
+  "hostStartupCapture": {
+    "id": "quiet-after-astra",
+    "passed": true,
+    "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+    "sourceUnchanged": true,
+    "captureEvidence": "preview-capture.json",
+    "grade": null,
+    "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+    "performanceTest": false,
+    "foregroundInputUsed": false
+  }
 }

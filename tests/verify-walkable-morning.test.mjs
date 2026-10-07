@@ -18,28 +18,31 @@ test('PR50 records, failures, authentic previews and old prompt versions remain 
  assert.deepEqual(catalog.prompts.slice(0,baseline.prompts.length),baseline.prompts);
  assert.deepEqual(catalog.promptVersions.slice(0,baseline.promptVersions.length),baseline.promptVersions);
  assert.deepEqual(catalog.entries.filter(e=>ids.has(e.id)&&e.availability==='failed').map(e=>e.id),baseline.entries.filter(e=>e.availability==='failed').map(e=>e.id));
- assert.equal(catalog.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,53);
+ assert.equal(baseline.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,53);
+ assert.equal(catalog.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,73);
  const changes=execFileSync('git',['diff',base,'--name-only','--','walkable-3d/entries/'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
  assert.ok(changes.every(p=>!ids.has(p.split('/')[2])),'Existing frozen tree changed');
 });
 
-test('morning entries preserve hashed frozen files, exact launches, requested/runtime distinctions and uncaptured previews',()=>{
+test('morning entries preserve frozen files and requested/runtime distinctions with truthful capture outcomes',()=>{
  assert.equal(fresh.length,24);assert.equal(catalog.entries.length,81);assert.equal(catalog.prompts.length,22);
  for(let scene=15;scene<=22;scene++)assert.deepEqual(fresh.filter(e=>e.promptId===String(scene)).map(e=>e.comparisonModel).sort(),['astra','luna','sol']);
  assert.equal(new Set(catalog.entries.map(e=>e.id)).size,catalog.entries.length);
- const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,75);
+ const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,73);
  assert.equal(new Set(eligible.map(e=>`${e.promptId}/${e.comparisonModel}`)).size,eligible.length);
  for(const e of fresh){
   assert.ok(Number(e.promptId)>=15&&Number(e.promptId)<=22);
   assert.ok(['luna','sol','astra'].includes(e.comparisonModel));
-  assert.equal(e.availability,e.admissionWithheld?'failed':'unverified');assert.equal(e.completionStatus,'completed');
-  assert.equal(e.previewAvailable,false);assert.equal(e.preview,undefined);
+  const unavailable=['orison-luna','emberward-luna','reedway-rooms-luna','miras-wayfarer-luna'].includes(e.id);
+  assert.equal(e.availability,unavailable?'failed':'ready');assert.equal(e.completionStatus,'completed');
+  assert.equal(e.previewAvailable,!unavailable);
+  if(unavailable)assert.equal(e.preview,undefined);else assert.equal(e.previewCapture,'preview-capture.json');
   const dir=new URL(`walkable-3d/entries/${e.id}/`,root);
-  assert.equal(existsSync(new URL('preview.jpg',dir)),false);
+  assert.equal(existsSync(new URL('preview.jpg',dir)),!unavailable);
   assert.equal(existsSync(new URL('frozen/cleanup-results.json',dir)),false);
   assert.equal(existsSync(new URL('frozen/static-check-results.json',dir)),false);
   const p=JSON.parse(readFileSync(new URL('provenance.json',dir)));
-  assert.equal(p.previewCapture.status,'uncaptured');
+  if(unavailable)assert.equal(p.previewCapture.status,'uncaptured');else assert.equal(p.previewCapture,'preview-capture.json');
   for(const [name,record] of Object.entries(p.files)){
    const bytes=readFileSync(new URL(name,dir));assert.equal(hash(bytes),record.sha256,`${e.id}/${name}`);assert.equal(bytes.length,record.bytes);
   }
@@ -50,8 +53,11 @@ test('morning entries preserve hashed frozen files, exact launches, requested/ru
   assert.match(e.modelDisclosure,/not independently verified|unverified/i);
   assert.equal(Date.parse(run.deadlineUtc)-Date.parse(run.firstImplementationUtc),3600000);
   assert.ok(Date.parse(run.stopUtc)<=Date.parse(run.deadlineUtc),e.id);
-  for(const key of ['visual','interactive','gpu','performance'])assert.equal(run.qa[key],'NOT RUN');
-  assert.equal(run.qa.preview,'UNCAPTURED');
+  assert.equal(run.qa.performance,'NOT RUN');
+  const before=JSON.parse(readFileSync(new URL('pre-capture-host-run-record.json',dir)));
+  for(const key of ['visual','interactive','gpu','performance'])assert.equal(before.qa[key],'NOT RUN');
+  assert.equal(before.qa.preview,'UNCAPTURED');
+  assert.equal(run.qa.preview,unavailable?'UNCAPTURED':'CAPTURED');
  }
 });
 
@@ -59,13 +65,13 @@ test('new prompt comparisons and public model names retain the existing host con
  const context=vm.createContext({}),module=new vm.SourceTextModule(readFileSync(new URL('walkable-3d/assets/comparisons.js',root),'utf8'),{context});
  await module.link(()=>{});await module.evaluate();
  for(const e of fresh){
-  assert.equal(module.namespace.isOpenable(e),!e.admissionWithheld);
+  assert.equal(module.namespace.isOpenable(e),e.availability!=='failed');
   assert.equal(module.namespace.modelName(e),e.requestedConfiguration.split('/')[0].trim());
   assert.ok(!/XHIGH|standard/.test(module.namespace.modelName(e)));
  }
  for(const e of catalog.entries.filter(e=>e.comparisonModel==='opus'))assert.equal(module.namespace.modelName(e),'Claude Opus 5.5');
  for(let scene=15;scene<=22;scene++){
-  const entries=fresh.filter(e=>e.promptId===String(scene)&&!e.admissionWithheld);
+  const entries=fresh.filter(e=>e.promptId===String(scene)&&e.availability!=='failed');
   assert.equal(module.namespace.hasRandomComparison(catalog.prompts.filter(p=>p.id===String(scene)),entries),new Set(entries.map(e=>e.comparisonModel)).size>=2);
  }
  const withheld=fresh.filter(e=>e.admissionWithheld);

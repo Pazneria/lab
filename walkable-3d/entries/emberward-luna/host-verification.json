@@ -1,0 +1,9 @@
+{
+  "id": "emberward-luna",
+  "passed": null,
+  "attempted": false,
+  "scope": "Parent-directed static withhold retained; not launched for capture.",
+  "reason": "Original CSS imports Google Fonts. The unchanged entry-scoped viewer CSP blocks external styles/fonts and treats policy violations as failures. Hosted startup is untested and may fail. Original CSS is preserved; no fonts packaged, CSP relaxed or behavior repaired. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested.",
+  "sourceUnchanged": true,
+  "grade": null
+}

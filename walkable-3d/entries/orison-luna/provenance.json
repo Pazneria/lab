@@ -84,7 +84,7 @@
     "deadlineUtc": "2026-10-07T10:04:53Z",
     "stopUtc": "2026-10-07T09:26:30Z"
   },
-  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: not-launched-static-withhold. No movement/route/collision/full-scene or performance judgment.",
   "hostingAdjustments": [
     {
       "inMemoryHtmlPathSubstitutions": [
@@ -125,17 +125,25 @@
       "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
       "bytes": 603113
     },
+    "host-verification.json": {
+      "sha256": "396585880be833fcd865d5f28791874e0515fddd102008dd661c7a6e0d68290a",
+      "bytes": 476
+    },
     "launch-prompt.txt": {
       "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
       "bytes": 7611
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "44c25af3e82afd4955abf5d374355a63eba2971e5037448d69d086f8db2d3cdd",
+      "bytes": 3088
     },
     "README.md": {
       "sha256": "8d5d26a1b24abd6e28d2de61df57290184f84588571e82d8a126d12e16b682e4",
       "bytes": 1690
     },
     "run-record.json": {
-      "sha256": "44c25af3e82afd4955abf5d374355a63eba2971e5037448d69d086f8db2d3cdd",
-      "bytes": 3088
+      "sha256": "1aa356244e12b60f78167eec3b6a86cbffa32273b3b7ebd79ae8a6ac456b65ce",
+      "bytes": 3649
     }
   },
   "publication": {
@@ -145,7 +153,9 @@
       "frozen/src/style.css",
       "frozen/THREE-LICENSE.txt",
       "frozen/three.module.js",
+      "host-verification.json",
       "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
       "README.md",
       "run-record.json"
     ],
@@ -155,9 +165,10 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+    "reason": "Parent-directed static exclusion; never launched for capture."
   },
   "staticHostingConcerns": [
     "The supplied build references missing relative module(s): ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
-  ]
+  ],
+  "hostCaptureOutcome": "not-launched-static-withhold"
 }

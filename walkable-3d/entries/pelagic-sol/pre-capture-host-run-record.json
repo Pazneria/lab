@@ -1,0 +1,80 @@
+{
+  "id": "pelagic-sol",
+  "title": "Pelagic",
+  "scene": 19,
+  "model": "sol",
+  "workspace": "task-32/pelagic-home",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6.1 Sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6 / Codex",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:05:25.0265576Z",
+  "deadlineUtc": "2026-10-07T10:05:25.0265576Z",
+  "stopUtc": "2026-10-07T09:34:48.9715546Z",
+  "producerChecks": "Syntax, 940 collision-route samples, CPU geometry audit and production build passed. Browser, visual, interactive and performance QA not performed. Simplified glazing, decorative instruments and no individual collision for small props.",
+  "interruptions": "No interruptions or extensions. Dependency retry time included in the one-hour budget.",
+  "cleanupClaim": "All started commands exited; no background server/browser/watcher launched. Producer process inventory was sandbox-denied; completed command sessions are its cleanup evidence.",
+  "handoffSource": "Parent completed handoff; original README, run-record.json and geometry-audit.json retained.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, 940 collision-route samples, CPU geometry audit and production build passed. Browser, visual, interactive and performance QA not performed. Simplified glazing, decorative instruments and no individual collision for small props.",
+    "importerStaticChecks": {
+      "id": "pelagic-sol",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:029c46e378050d4ae61523019dd92ee979a95d8295f072ef78df836d5f9e99b2",
+      "syntax": [
+        {
+          "file": "scripts/check-geometry.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/check-layout.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/layout.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [
+        {
+          "file": "scripts/check-geometry.mjs",
+          "scope": "Preserved producer helper; not hosted or executed",
+          "line": 17,
+          "text": "xAnisotropy:()=>4}};\nconst compile=new Function('THREE','mergeGeometries','RoundedBoxGeometry','renderer','document','"
+        }
+      ],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

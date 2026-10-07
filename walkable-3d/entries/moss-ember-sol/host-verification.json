@@ -1,0 +1,11 @@
+{
+  "id": "moss-ember-sol",
+  "passed": true,
+  "scope": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested.",
+  "sourceUnchanged": true,
+  "captureEvidence": "preview-capture.json",
+  "grade": null,
+  "ownedProcesses": "Background capture browser/context/server/helper closed; read-only cleanup verified.",
+  "performanceTest": false,
+  "foregroundInputUsed": false
+}

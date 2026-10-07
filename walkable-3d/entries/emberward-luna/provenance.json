@@ -60,7 +60,7 @@
     "deadlineUtc": "2026-10-07T10:09:38Z",
     "stopUtc": "2026-10-07T09:15:47Z"
   },
-  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: not-launched-static-withhold. No movement/route/collision/full-scene or performance judgment.",
   "hostingAdjustments": [
     {
       "inMemoryHtmlPathSubstitutions": [
@@ -97,17 +97,25 @@
       "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
       "bytes": 603113
     },
+    "host-verification.json": {
+      "sha256": "97d7e6ab81786ff02c56a8ef83e958270cec441bd1e6a76ba0d907d711249a85",
+      "bytes": 569
+    },
     "launch-prompt.txt": {
       "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
       "bytes": 7870
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "e0817ea523581bfecbdd08c28d8eedcdf5d604488b5056c359bc744e6d301fee",
+      "bytes": 2777
     },
     "README.md": {
       "sha256": "02eddb52abe7851369152976116ca863da526e59abebacaea7b583a955fc6d8f",
       "bytes": 1439
     },
     "run-record.json": {
-      "sha256": "e0817ea523581bfecbdd08c28d8eedcdf5d604488b5056c359bc744e6d301fee",
-      "bytes": 2777
+      "sha256": "a5062e9be10ee54e1c789ede5033283d0530ac08f45d09878e4bfb41c8d6741a",
+      "bytes": 3431
     }
   },
   "publication": {
@@ -118,7 +126,9 @@
       "frozen/vendor/three/LICENSE",
       "frozen/vendor/three/three.core.js",
       "frozen/vendor/three/three.module.js",
+      "host-verification.json",
       "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
       "README.md",
       "run-record.json"
     ],
@@ -128,9 +138,10 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+    "reason": "Parent-directed static exclusion; never launched for capture."
   },
   "staticHostingConcerns": [
     "Original CSS imports Google Fonts. The unchanged entry-scoped viewer CSP blocks external styles/fonts and treats policy violations as failures. Hosted startup is untested and may fail. Original CSS is preserved; no fonts packaged, CSP relaxed or behavior repaired."
-  ]
+  ],
+  "hostCaptureOutcome": "not-launched-static-withhold"
 }

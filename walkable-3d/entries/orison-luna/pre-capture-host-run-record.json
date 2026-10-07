@@ -1,0 +1,82 @@
+{
+  "id": "orison-luna",
+  "title": "Orison — Captain's Quarters",
+  "scene": 18,
+  "model": "luna",
+  "workspace": "task-28",
+  "completionClearedByParent": true,
+  "requestedModel": "GPT-6 Luna",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:04:53Z",
+  "deadlineUtc": "2026-10-07T10:04:53Z",
+  "stopUtc": "2026-10-07T09:26:30Z",
+  "producerChecks": "npm run build, JavaScript syntax, package JSON and built-asset reference checks passed. No browser, visual, interactive, WebGL compatibility or frame-time checks. Static planet/starfield, fixed-height movement and simplified 2D collision.",
+  "interruptions": "None.",
+  "cleanupClaim": "Port 5187 had no listener; no server, browser or test process remains running.",
+  "handoffSource": "Parent completed handoff; original producer README retained.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "npm run build, JavaScript syntax, package JSON and built-asset reference checks passed. No browser, visual, interactive, WebGL compatibility or frame-time checks. Static planet/starfield, fixed-height movement and simplified 2D collision.",
+    "importerStaticChecks": {
+      "id": "orison-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:95e9be3cfa521749faf29345d911508e948a66f7f13c81d895096fd1950fd89a",
+      "syntax": [
+        {
+          "file": "build.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "serve.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [
+        {
+          "file": "serve.mjs",
+          "url": "http://127.0.0.1:5187/"
+        },
+        {
+          "file": "serve.mjs",
+          "url": "http://localhost"
+        }
+      ],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [
+        {
+          "file": "dist/three.module.js",
+          "import": "./three.core.js",
+          "status": "Missing in supplied frozen build; no dependency supplied or source repaired."
+        }
+      ],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

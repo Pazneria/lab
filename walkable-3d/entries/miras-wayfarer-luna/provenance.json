@@ -28,7 +28,7 @@
     "deadlineUtc": "2026-10-07T10:06:02Z",
     "stopUtc": "2026-10-07T09:12:29Z"
   },
-  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: observed-startup-failure. No movement/route/collision/full-scene or performance judgment.",
   "hostingAdjustments": [
     {
       "inMemoryHtmlPathSubstitutions": []
@@ -40,23 +40,33 @@
       "sha256": "d933b6242c17ca5bcfd35d2bd397220b089af0bd48f83d9bdddff8b0cba6ca7e",
       "bytes": 37517
     },
+    "host-verification.json": {
+      "sha256": "93bb6f0ceafe879b274993972c054655a92c0b37cee71817597fe18c7a9f8e3f",
+      "bytes": 1302
+    },
     "launch-prompt.txt": {
       "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
       "bytes": 7830
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "e4f267aa8b60d0d2449fc401c95fd0ef1358f81ef4b4c9b679f321669c971ab6",
+      "bytes": 2402
     },
     "README.md": {
       "sha256": "bd8cac9aaa7ffed5b443d20849f4bd66d279721204d385dbad48c81e030a588c",
       "bytes": 2572
     },
     "run-record.json": {
-      "sha256": "e4f267aa8b60d0d2449fc401c95fd0ef1358f81ef4b4c9b679f321669c971ab6",
-      "bytes": 2402
+      "sha256": "8b596b5bb55881a1796f9d356382c3d9ccaed3aee02164d601ba97ea0571751e",
+      "bytes": 3940
     }
   },
   "publication": {
     "publishedFiles": [
       "frozen/index.html.txt",
+      "host-verification.json",
       "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
       "README.md",
       "run-record.json"
     ],
@@ -66,7 +76,8 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+    "reason": "Authorized actual host startup attempt unloaded this scene; no successful scene preview exists."
   },
-  "staticHostingConcerns": []
+  "staticHostingConcerns": [],
+  "hostCaptureOutcome": "observed-startup-failure"
 }

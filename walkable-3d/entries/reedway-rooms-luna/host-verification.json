@@ -1,0 +1,33 @@
+{
+  "id": "reedway-rooms-luna",
+  "passed": false,
+  "scope": "Actual existing opaque-sandbox host startup attempt; no successful preview, route or performance test.",
+  "sourceUnchanged": true,
+  "observedStartupFailure": true,
+  "attempt": {
+    "id": "reedway-rooms-luna",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=15",
+    "startedAt": "2026-10-07T20:39:31.599Z",
+    "status": "startup-failed",
+    "consoleErrors": [],
+    "pageErrors": [
+      "s is not defined"
+    ],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "unexpectedExternalRequests": [],
+    "controls": [],
+    "frozenHtmlSha256": "f8c571a8b761570ef775e338c55d5d2d9a94e0d8e18bfd9ab93f834ce7328306",
+    "hostVisibility": "visible",
+    "viewerMessage": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "observedStartupFailure": true,
+    "error": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "viewerUnloaded": true,
+    "contextClosed": true,
+    "finishedAt": "2026-10-07T20:39:33.123Z",
+    "evidenceSession": 0,
+    "imageRoot": "preview-captures"
+  },
+  "grade": null,
+  "ownedProcesses": "Owned background browser/context/server/helper exited; read-only cleanup verified."
+}

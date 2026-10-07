@@ -2820,7 +2820,7 @@
       "producerChecks": "Inline JavaScript syntax, package JSON and module presence passed; no visual, interactive or performance tests.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "Authorized actual host startup attempt unloaded this frozen scene with the runtime/asset failure message. Browser reported ReferenceError: s is not defined. Source remains unchanged; no repair, successful preview or grade.",
         "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
         "See original producer README for implementation limitations."
       ],
@@ -2840,6 +2840,14 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -2856,9 +2864,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "f8c571a8b761570ef775e338c55d5d2d9a94e0d8e18bfd9ab93f834ce7328306",
       "promptVersion": "15-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (host startup failed; no usable preview captured)",
+      "availability": "failed",
+      "completionStatus": "completed",
+      "failureCategory": "runtime-startup",
+      "failureSummary": "Authorized actual host startup attempt unloaded this frozen scene with the runtime/asset failure message. Browser reported ReferenceError: s is not defined. Source remains unchanged; no repair, successful preview or grade.",
+      "runtimeVerification": "Observed host startup failure during owner-authorized background capture; see host-verification.json."
     },
     {
       "id": "cottage-luna-16",
@@ -2874,8 +2885,8 @@
       "producerChecks": "Inline JavaScript syntax check and Python HTML parser passed. No browser, server, visual, movement or performance QA.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -2890,6 +2901,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -2899,16 +2922,18 @@
           "./vendor/three/three.module.js"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Thistlewick Cottage scene at its authored default viewpoint.",
       "archiveSha256": "4c928e731f7a2eed3ddf5c716e4849d77e6d834179eb0c4b4005af709e80ad73",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "480efa1a389b197dbf25977544933ec38b076876da6512d5b1694baf7f52a4e0",
       "promptVersion": "16-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "lantern-room-luna",
@@ -2924,8 +2949,8 @@
       "producerChecks": "node --check src/main.js and npm run build passed. Bundle 525.47 KB minified / 136.93 KB gzip; Vite 500 KB chunk warning. No visual, interactive or frame-time checks.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -2944,6 +2969,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -2957,16 +2994,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen The Lantern Room scene at its authored default viewpoint.",
       "archiveSha256": "54ccc31be04151d59cea03c88a52e04c042308a602654b20eb9c7752ebec8377",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "1c0d2754a2844b5cc827751f08c93b371983c0b91c2094755d4619f16dfbf80b",
       "promptVersion": "17-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "pelagic-house-luna",
@@ -2982,8 +3021,8 @@
       "producerChecks": "Node.js v24.14.0 parsed inline JavaScript. No browser/server; visual appearance, movement, pointer lock, shader compilation and performance unverified. No measured frame times.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3002,20 +3041,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Pelagic House — 04 scene at its authored default viewpoint.",
       "archiveSha256": "1065574ed5ab62f82a8d50a47a65539d6089ea6f28b63fd570fd7187038cee53",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4169cc00fc6e676280f7f43b79aa3a08cef37d1f8c9fcf041d86e6ba96b3c443",
       "promptVersion": "19-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "miras-wayfarer-luna",
@@ -3031,7 +3084,7 @@
       "producerChecks": "node --check passed. No browser/server; visual correctness, interactive movement and frame time unverified. Shader-based shade without dynamic shadow maps; simple collision bounds.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "Authorized actual host startup attempt unloaded this frozen scene with the runtime/asset failure message. No narrower script/asset cause was exposed in the captured browser log; an intrinsic standalone defect is not claimed. Source remains unchanged; no repair, successful preview or grade.",
         "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
         "See original producer README for implementation limitations."
       ],
@@ -3047,6 +3100,14 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
         }
       ],
       "readySelector": "canvas",
@@ -3058,9 +3119,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "d933b6242c17ca5bcfd35d2bd397220b089af0bd48f83d9bdddff8b0cba6ca7e",
       "promptVersion": "20-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (host startup failed; no usable preview captured)",
+      "availability": "failed",
+      "completionStatus": "completed",
+      "failureCategory": "runtime-startup",
+      "failureSummary": "Authorized actual host startup attempt unloaded this frozen scene with the runtime/asset failure message. No narrower script/asset cause was exposed in the captured browser log; an intrinsic standalone defect is not claimed. Source remains unchanged; no repair, successful preview or grade.",
+      "runtimeVerification": "Observed host startup failure during owner-authorized background capture; see host-verification.json."
     },
     {
       "id": "emberward-luna",
@@ -3093,6 +3157,14 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -3130,9 +3202,10 @@
       "producerChecks": "node --check main.js passed; local page references checked. No browser, interactive/visual check or performance benchmark.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
-        "See original producer README for implementation limitations."
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
+        "See original producer README for implementation limitations.",
+        "The capture logged four Three.js computeBoundingSphere NaN geometry errors. Host readiness and canvas capture succeeded. No geometry repair or completeness claim was made."
       ],
       "documents": [
         {
@@ -3146,6 +3219,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "#loading.hidden",
@@ -3155,16 +3240,18 @@
           "<script type=\"importmap\">{\"imports\":{\"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js\":\"./vendor/three/three.module.js\"}}</script></head>"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Vesper & Vale — Royal Atelier scene at its authored default viewpoint.",
       "archiveSha256": "900ee745dfef1d0537d237791c49a295f9d67841899643b699e35c71ad50995c",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "aced3f895ec221b094995775be9fa0c00facb2e5bf4aa5d1559443e6c128e281",
       "promptVersion": "22-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested. Four nonfatal Three.js NaN bounding-sphere geometry errors were observed; the rendered view remains captured unchanged."
     },
     {
       "id": "orison-luna",
@@ -3197,6 +3284,14 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -3242,8 +3337,8 @@
       "producerChecks": "Syntax, 940 collision-route samples, CPU geometry audit and production build passed. Browser, visual, interactive and performance QA not performed. Simplified glazing, decorative instruments and no individual collision for small props.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3266,6 +3361,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -3279,16 +3386,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Pelagic — a home below the surface scene at its authored default viewpoint.",
       "archiveSha256": "5202d94e7c9147597aeef208a922a86379536c5ca6cc153b113ef1b7e4b21799",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "e10428e70aca81e0bc44469a95f968bd82a119d22486d9f282edfdb70e0ebd69",
       "promptVersion": "19-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "waylight-rooms-astra",
@@ -3304,8 +3413,8 @@
       "producerChecks": "Syntax, CPU geometry/collision, inspection-route connectivity and production build passed. No browser, visual, interactive, GPU or frame-time QA. Decorative mirror; static equipment.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3328,20 +3437,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen The Waylight Rooms — Mara Venn scene at its authored default viewpoint.",
       "archiveSha256": "d92b5b0c9fc59be5228c701ebefaa47a3191a50889ef6e550627d63b2bb95f01",
       "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "a13f1c91729d1bd3efef93cd7abc96466d4cb14e84eadae1fd91c936e3b9f71e",
       "promptVersion": "15-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "aster-quarters-astra",
@@ -3357,8 +3480,8 @@
       "producerChecks": "Syntax, CPU geometry, collision-route checks and production build passed. Build 807.90 KB JS / 251.44 KB gzip, with standard chunk-size warning. No browser, visual, interactive, GPU or performance QA.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3385,6 +3508,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -3398,16 +3533,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen ASTER — The captain's quarters scene at its authored default viewpoint.",
       "archiveSha256": "1bfc85f56ed5a7c8de4ad3c633d015516c8b49eb97b0117a099c946f47bceb04",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "a225dba1c45e8fc1c792156ce13aa89892409e973495c43d4ea5b07b9bfd3715",
       "promptVersion": "18-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "ninth-tide-sol",
@@ -3423,8 +3560,8 @@
       "producerChecks": "Syntax, production build and CPU geometry passed; all 15 inspection points passed static reachability. JS 573041 bytes and CSS 4488 bytes; chunk-size warning. No browser, visual, interactive or performance QA. Cloth/mirror effects static; desktop WebGL2.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3447,20 +3584,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Atelier of the Ninth Tide scene at its authored default viewpoint.",
       "archiveSha256": "29c3c49239b97f0d2c50ea06a007189789168b4ef4ba1a5c18b13ff7b4d2d56a",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "5324f3cb5c162c035a1b633b0a8331f63191f4a7d3c94b20816b67c079e4a3fa",
       "promptVersion": "22-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "quiet-standard-sol",
@@ -3476,8 +3627,8 @@
       "producerChecks": "Syntax, CPU geometry, route connectivity, collision containment, daylight-ray and production build passed. No browser, visual, interactive or performance QA. Static furnishings and simple balcony sky backdrop.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3500,20 +3651,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen The Quiet Standard · An Adventurer at Home scene at its authored default viewpoint.",
       "archiveSha256": "b51256040349a8fa1dc7afdbd91bbbde177a11a647c0c2cf70a29d51051ec8ce",
       "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "7012e8af0a7bc1a985e6f1c5f0d553561a20ca23947d65e0df48a2fabae26a8e",
       "promptVersion": "17-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "hearth-hemlock-astra",
@@ -3529,8 +3694,8 @@
       "producerChecks": "Syntax, CPU scene construction, collision, eight reachable inspection targets, build and local imports passed. No browser rendering, interactive or performance QA. Approximate glass and desktop controls.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3553,20 +3718,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Hearth & Hemlock — a small home for quiet magic scene at its authored default viewpoint.",
       "archiveSha256": "141ec8b44b9d2057df36705a6d9d9747c5f13170f525e1ea7aa9786784479b96",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "15362c29f3d3a3835c4e2a7171d443a9f52b70a3ba5186672af46780afe6036e",
       "promptVersion": "16-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "quiet-meridian-sol",
@@ -3582,8 +3761,8 @@
       "producerChecks": "Syntax, CPU geometry/collision/sightline and production build passed. No browser, rendering, interactive or performance QA. Desktop controls, approximate furniture collision and static scenery.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3606,6 +3785,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -3619,16 +3810,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen The Quiet Meridian — Captain's Quarters scene at its authored default viewpoint.",
       "archiveSha256": "6e8aa63b88373f8bacfe6e52431ed188e0eeb4b61d4746e50fc7d59a67bb39d9",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "797069b03f2be41a709e7943849879a75136de8a5bf0cedf81651a1e8b47f01a",
       "promptVersion": "18-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "thimble-thorn-astra",
@@ -3644,8 +3837,8 @@
       "producerChecks": "Syntax, CPU collision-route, geometry/headroom and production build passed. No browser, visual, interactive or performance QA. Desktop controls, simplified collision and static mechanisms.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3668,20 +3861,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen The Thimble & Thorn · A home on the road scene at its authored default viewpoint.",
       "archiveSha256": "8e5d0caca3f764a995ff0620374a7c8eb6d7d2229973f20d78118a5bfab00af3",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "5c47b67b51611b5c2c3c48e6f063b04a1203ea188553c1ea29c1917c398c6d2e",
       "promptVersion": "20-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "selene-atelier-astra",
@@ -3697,8 +3904,8 @@
       "producerChecks": "Syntax, production build and CPU geometry/collision checks passed; eleven reachable inspection positions. Single JS bundle 568905 bytes / 151.68 KB gzip; optional chunk-size warning. No browser, visual, interactive or performance QA. Static/stylized mirrors; desktop controls.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3721,20 +3928,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen SELENE — The Moonwake Commission scene at its authored default viewpoint.",
       "archiveSha256": "d4f206b7d1024f590bbd93d1c4e1626fbfb43582a960cb98833349b7e0eb27a3",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "ec9beda538208e4c81c2f2b295736f74529f8b5911aa20999871abb183d13733",
       "promptVersion": "22-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "quiet-after-astra",
@@ -3750,8 +3971,8 @@
       "producerChecks": "Syntax, ten-point collision route, CPU-only geometry and production build passed. No browser, visual, interactive, GPU or frame-time QA. Desktop WebGL2; fire and plants static.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3778,20 +3999,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen The Quiet After — an upstairs home scene at its authored default viewpoint.",
       "archiveSha256": "d17d82f22496a7228044e22260247a961227ffd63e9fa3a273ac8676907ec546",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "df8e8db7234242e17f707be1db79fae8d0cc02a62bcd23c9d9cc91a339384a45",
       "promptVersion": "17-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "nacre-habitat-astra",
@@ -3807,8 +4042,8 @@
       "producerChecks": "Syntax, CPU scene construction, 21-waypoint collision route and production build passed. No browser appearance, interactive input or measured frame time. Desktop WebGL2; approximate reflections and decorative instruments.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3831,20 +4066,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Nacre — Habitat 04 scene at its authored default viewpoint.",
       "archiveSha256": "350349c6f3fc29c5681563942186802c10ec94d44b2500840c679c70f1d68301",
       "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "5d5142fe46820a492db06c23a9eb53d9c6ae78f2f69d0aa30f875812450b4909",
       "promptVersion": "19-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "moss-ember-sol",
@@ -3860,8 +4109,8 @@
       "producerChecks": "Syntax, CPU geometry, collision/connectivity and production build passed. Nine inspection stops connected. No browser, visual, interactive or measured frame times. Desktop controls and approximate glass.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3884,20 +4133,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Moss & Ember — a witch's cottage scene at its authored default viewpoint.",
       "archiveSha256": "c5059743cff27bfb60799399927ab35207e2ce6146a0fadb864e2ac50182922c",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "0622fef7a46c3e2d0ea65dd3c98c5360fb4304704d93372f6f0710c321cb630e",
       "promptVersion": "16-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "emberkeeper-astra",
@@ -3913,8 +4176,8 @@
       "producerChecks": "Syntax, production build, CPU geometry/collision and 12-point route checks passed. No browser, renderer or performance benchmark. Visual quality, interactive behavior and performance unverified. Floor-level exploration, no jumping/climbing/dragon model.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3937,20 +4200,34 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Emberkeeper · The caretaker's quarters scene at its authored default viewpoint.",
       "archiveSha256": "d7b759a548a474953628edd77e05ca1b81a3aa9c5db1d990f07b466c99d1f60d",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "dd5073395ceeef10103a9d4d32e90d0c6b061f96f9b18e75b9ea3dc5697ab840",
       "promptVersion": "21-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "ember-rest-sol",
@@ -3966,8 +4243,8 @@
       "producerChecks": "Syntax, production build, archive and CPU-only connectivity checks passed for all 14 inspection waypoints. Browser, visual, interactive and performance tests not performed. Floor-level exploration; no dragon or climbing.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -3990,6 +4267,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -4003,16 +4292,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Ember Rest · The Keeper's Quarters scene at its authored default viewpoint.",
       "archiveSha256": "48a2a879fcbc1382c80c36247b1638fd31488514bd00ceaa4db4e041c62538ac",
       "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "56632288d8a41f49389b05c0406d56b1cf5943b1443c0b3007af467febfbcc31",
       "promptVersion": "21-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "morrow-moss-sol",
@@ -4028,8 +4319,8 @@
       "producerChecks": "Syntax, CPU geometry, collision-route checks and production build passed. Browser visuals, interactive controls and frame times unverified. Static mechanisms; desktop keyboard/mouse required.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -4056,6 +4347,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -4069,16 +4372,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Morrow & Moss — A home on the road scene at its authored default viewpoint.",
       "archiveSha256": "4d1504c8d2e904c216cb52c5095548dd7f8f9dc0e6d57b725eae3e25021dd85d",
       "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "70fe14a00b72c4be8f12e6cdca7b0373b27abec173034d47030132975e00506d",
       "promptVersion": "20-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     },
     {
       "id": "larkspur-house-sol",
@@ -4094,8 +4399,8 @@
       "producerChecks": "Syntax, production build and CPU geometry/collision checks passed: 20 connected inspection points, 19 walking segments, 178856 triangles and 52 material groups. Browser, visual, interactive and GPU performance verification not performed. Cloth static; mirror has no real reflection.",
       "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
       "limitations": [
-        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
-        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "Startup/default-view capture passed; movement, collision feel, complete scene/shader coverage and performance remain untested.",
+        "Capture covers the authored default viewpoint and existing start control only; it is not a quality grade or route/fulfillment test.",
         "See original producer README for implementation limitations."
       ],
       "documents": [
@@ -4118,6 +4423,18 @@
         {
           "label": "Timing, requested/runtime model and QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Original pre-capture host timing/model/QA record",
+          "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Authorized host startup/capture outcome",
+          "path": "host-verification.json"
+        },
+        {
+          "label": "Authentic preview capture and disclosed errors",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -4131,16 +4448,18 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "previewAvailable": true,
+      "previewAlt": "Authentic frozen Larkspur House — Mira's private rooms scene at its authored default viewpoint.",
       "archiveSha256": "0bda4bf715e01ab8cf2cc50551058202d042dedfec47231fac610d0be9c4a18a",
       "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "ad747a792093b2c0b0ba09bb9dcb86302c362a6e74016f1132843c244218dd5c",
       "promptVersion": "15-openai",
-      "webgl": "WebGL (runtime unverified)",
-      "availability": "unverified",
-      "completionStatus": "completed"
+      "webgl": "WebGL (authorized startup/default-view captured)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "previewCapture": "preview-capture.json",
+      "runtimeVerification": "Authorized background host startup and default-view capture passed. Only the existing start control was used; route, collision feel, full scene/shader coverage and performance remain untested."
     }
   ],
   "prompts": [

@@ -102,7 +102,7 @@
     "deadlineUtc": "2026-10-07T10:07:59.0810208Z",
     "stopUtc": "2026-10-07T09:40:12.6916169Z"
   },
-  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "qa": "Original producer and pre-capture host QA records preserved. Authorized startup/default-view outcome: captured. No movement/route/collision/full-scene or performance judgment.",
   "hostingAdjustments": [
     {
       "inMemoryHtmlPathSubstitutions": []
@@ -122,9 +122,25 @@
       "sha256": "ec9beda538208e4c81c2f2b295736f74529f8b5911aa20999871abb183d13733",
       "bytes": 3413
     },
+    "host-verification.json": {
+      "sha256": "ded3ba2e74b1d4daf29832575098bdf0e6eda9fc04f1bdd144ff842d7b4a8d82",
+      "bytes": 517
+    },
     "launch-prompt.txt": {
       "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
       "bytes": 7901
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "cf31d373960d0565a5734eda3d4a92eb9473027580c93c480f5874971f1d13c7",
+      "bytes": 3681
+    },
+    "preview-capture.json": {
+      "sha256": "c7f0ace83a03f2785f1f35253edc9de36ffc54f08a3e83f0f67b87f3b43011ff",
+      "bytes": 3473
+    },
+    "preview.jpg": {
+      "sha256": "2d793da098bc03e9a4a0054e53dec8f9329a2bfffd6d15fb75bb5a4cf9bae50b",
+      "bytes": 93397
     },
     "producer-run-record.json": {
       "sha256": "1cd88dd1d9fbf4d093343a8391cc8f1f7913f2323692cc926cf6328ab0d3dfb9",
@@ -135,8 +151,8 @@
       "bytes": 5977
     },
     "run-record.json": {
-      "sha256": "cf31d373960d0565a5734eda3d4a92eb9473027580c93c480f5874971f1d13c7",
-      "bytes": 3681
+      "sha256": "333bd4d3962a79e3358dc2ada4a1063bb0197af7aca9d1f0e01f6f4256769bdb",
+      "bytes": 4456
     },
     "three-LICENSE.txt": {
       "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
@@ -148,7 +164,11 @@
       "frozen/assets/index-C7jsoPuj.js",
       "frozen/assets/index-DOlNeI0n.css",
       "frozen/index.html.txt",
+      "host-verification.json",
       "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
       "producer-run-record.json",
       "README.md",
       "run-record.json",
@@ -158,9 +178,7 @@
       "Original source/build/dependency snapshots in task-43/frozen-originals"
     ]
   },
-  "previewCapture": {
-    "status": "uncaptured",
-    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
-  },
-  "staticHostingConcerns": []
+  "previewCapture": "preview-capture.json",
+  "staticHostingConcerns": [],
+  "hostCaptureOutcome": "captured"
 }
