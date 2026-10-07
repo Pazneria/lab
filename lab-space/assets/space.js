@@ -3,6 +3,7 @@ import {clickSlop,movedBeyondClick,intentionalClick} from './interaction.mjs';
 import {advance,spawn,nearby,safeDestination,planRoute,followRoute,approaches,walkable,exhibits,roomLayoutVersion} from './navigation.mjs';
 const byId=id=>document.getElementById(id);
 const canvas=byId('room'),enterButton=byId('enter-room'),gentle=byId('gentle'),dialog=byId('station-dialog'),helpDialog=byId('help-dialog');
+const roomMenu=byId('room-menu');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');gentle.checked=reduced.matches;
 let position=spawn(),engine=null,active=false,failed=false,loading=false,roomRequest=0,frame=0,lastTime=0,drag=null,route=null,restoreFocus=null,pendingTarget=null;
 const restored=history.state?.labPosition;
@@ -121,6 +122,7 @@ function targetKey(target){
 }
 canvas.addEventListener('pointerdown',event=>{
   if(event.button!==0||!active||suspended||!event.isPrimary)return;
+  if(roomMenu.open){roomMenu.open=false;return;}
   canvas.focus({preventScroll:true});canvas.setPointerCapture(event.pointerId);
   cancelRoute();
   drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,
@@ -163,7 +165,15 @@ window.addEventListener('blur',()=>stop());
 window.addEventListener('pagehide',()=>{preservePosition();suspended=true;stop();});
 window.addEventListener('pageshow',event=>{if(event.persisted){suspended=false;draw();}});
 document.addEventListener('visibilitychange',()=>{stop();if(!document.hidden)draw();});
-window.addEventListener('resize',()=>{stop();draw();});
+function resizeRoom(){stop();draw();}
+window.addEventListener('resize',resizeRoom);
+window.visualViewport?.addEventListener('resize',resizeRoom);
+new ResizeObserver(resizeRoom).observe(canvas);
+function watchResolution(){matchMedia(`(resolution: ${devicePixelRatio}dppx)`).addEventListener('change',()=>{resizeRoom();watchResolution();},{once:true});}
+watchResolution();
+roomMenu.addEventListener('toggle',()=>{if(roomMenu.open)stop();});
+roomMenu.addEventListener('keydown',event=>{if(event.key==='Escape'&&roomMenu.open){event.preventDefault();roomMenu.open=false;byId('navigation-toggle').focus();}});
+document.addEventListener('pointerdown',event=>{if(roomMenu.open&&!roomMenu.contains(event.target))roomMenu.open=false;});
 reduced.addEventListener('change',event=>{gentle.checked=event.matches;if(event.matches){roomRequest++;showRoom(false);engine?.dispose();engine=null;byId('access-message').textContent='Reduced motion is on. Open an exhibit directly, or enter the room with gentle movement.';enterButton.hidden=failed;}});
 gentle.addEventListener('change',()=>{stop();draw();});
 showRoom(false);

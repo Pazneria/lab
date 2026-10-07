@@ -10,17 +10,20 @@
   <link rel="stylesheet" href="assets/space.css">
   <link rel="stylesheet" href="assets/walkable-screen.css">
   <link rel="stylesheet" href="../walkable-3d/assets/judgments.css">
+  <link rel="stylesheet" href="assets/viewport.css">
   <script type="module" src="assets/space.js"></script>
 </head>
 <body>
-  <a class="skip" href="#tools">Skip to catalog and home links</a>
+  <a class="skip" href="#navigation-toggle">Skip to Lab navigation</a>
   <header class="masthead">
     <a class="wordmark" href="https://pazneria.github.io/" aria-label="Jordan's home">J<sup>2</sup></a>
     <div class="identity"><span>LAB</span><h1>Research room</h1></div>
-    <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="infrastructure-link" href="/lab/infrastructure/">AI infrastructure ↗</a><a href="../walkable-3d/">Walkable 3D</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
+    <details class="room-menu" id="room-menu">
+      <summary id="navigation-toggle">Menu</summary>
+      <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="infrastructure-link" href="/lab/infrastructure/">AI infrastructure ↗</a><a href="../walkable-3d/">Walkable 3D</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
+    </details>
   </header>
   <main>
-    <div class="room-heading"><p><span class="dot"></span> The workshop</p><span>01 / Walkable worlds</span></div>
     <div class="workspace">
       <section class="view is-access" aria-label="Research room view">
         <div class="room-access" id="room-access">
@@ -30,7 +33,7 @@
           <button id="enter-room" type="button" hidden>Enter 3D with gentle movement</button>
         </div>
         <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable research workshop. The world display is ahead and the catalog exhibit is to the right. Click or tap floor or furniture to walk there; drag to look. Keyboard navigation is available." aria-describedby="navigation-help"></canvas>
-        <div class="view-top"><span>LAB / EXHIBITS</span><div class="view-actions"><button id="visit-screen" type="button" hidden>Walk to worlds</button><button id="screen-controls" type="button" aria-haspopup="dialog" hidden>Compare worlds</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
+        <div class="view-top"><div class="view-actions"><button id="visit-screen" type="button" hidden>Walk to worlds</button><button id="screen-controls" type="button" aria-haspopup="dialog" hidden>Compare worlds</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
         <div class="orientation" id="orientation" hidden>
           <svg viewBox="0 0 100 96" aria-hidden="true"><path d="M12 14H88V82H12V52H4V25H12Z" fill="#edece2" stroke="#929b90"/><path d="M67 14H88V45H67Z" fill="#d0b48e"/><path d="M13 20H21V55H13Z" fill="#687d70"/><path d="M38 37H62V41H38Z" fill="#447268"/><path d="M70 48H80V73H70Z" fill="#a8b8a1"/><path d="M68 45H88M67 14V21" stroke="#8b6c48" stroke-width="2"/><path d="M5 27V50" stroke="#b9d4da" stroke-width="3"/><path d="M71 81H79" stroke="#be8a46" stroke-width="4"/><g fill="#aaa88f"><circle cx="33" cy="24" r="2"/><circle cx="33" cy="45" r="2"/><circle cx="33" cy="62" r="2"/><circle cx="33" cy="69" r="2"/><circle cx="67" cy="45" r="2"/><circle cx="67" cy="69" r="2"/></g><text x="47" y="10">N</text><path id="map-player" d="M0 -5L-4 4L4 4Z" fill="#193f37"/></svg>
           <p id="position">Entrance · facing north</p>
@@ -43,8 +46,8 @@
         </div>
       </section>
     </div>
-    <footer><p>Lab <span>/</span> Research room</p><details><summary>Design references</summary><p>Visible apparatus and work surfaces from <a href="https://www.rigb.org/visit/faraday-museum">Faraday's laboratory at the Royal Institution</a>; daylight and open circulation from <a href="https://www.salk.edu/about/visiting-salk/virtual-architecture-tour/">Salk's architecture</a>; quiet instrument work from <a href="https://www.nokia.com/bell-labs/about/history/">Bell Labs' historical photographs</a>. An original room, with no institutional affiliation. The instruments are decorative; the benchmark bench opens the public catalog. The entrance-facing display compares walkable worlds; the catalog bench sits in the east gallery.</p></details></footer>
-    <noscript><p class="noscript">JavaScript is off. Use the exhibit links above to reach the catalog, world records and infrastructure.</p></noscript>
+
+    <noscript><p class="noscript">JavaScript is off. Use the exhibit links or Lab menu to reach the catalog, world records and infrastructure.</p></noscript>
   </main>
   <dialog id="help-dialog" aria-labelledby="help-title">
     <form method="dialog"><button class="close" aria-label="Close help">×</button></form>
@@ -55,7 +58,8 @@
     <div class="destinations"><button id="visit-bench" type="button" disabled>Walk to catalog exhibit</button><button id="visit-home" type="button" disabled>Walk to home exit</button><button id="reset" type="button" disabled>Return to entrance</button></div>
     <label class="motion-setting"><input type="checkbox" id="show-pad">Show direction buttons</label>
     <label class="motion-setting"><input type="checkbox" id="gentle">Gentle movement</label>
-    <p class="hint">Direction buttons support holds and small taps. The catalog and home links are always available above the room.</p>
+    <p class="hint">Direction buttons support holds and small taps. The catalog and home links are always available in the Lab menu.</p>
+    <details class="design-references"><summary>Design references</summary><p>Visible apparatus and work surfaces from <a href="https://www.rigb.org/visit/faraday-museum">Faraday's laboratory at the Royal Institution</a>; daylight and open circulation from <a href="https://www.salk.edu/about/visiting-salk/virtual-architecture-tour/">Salk's architecture</a>; quiet instrument work from <a href="https://www.nokia.com/bell-labs/about/history/">Bell Labs' historical photographs</a>. An original room, with no institutional affiliation. The instruments are decorative; the benchmark bench opens the public catalog. The entrance-facing display compares walkable worlds; the catalog bench sits in the east gallery.</p></details>
   </dialog>
   <dialog id="station-dialog" aria-labelledby="dialog-title">
     <form method="dialog"><button class="close" aria-label="Close station">×</button></form>
