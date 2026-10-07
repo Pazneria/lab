@@ -62,7 +62,7 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
       const visible=modelVisible(entry);
       article.querySelector('.entry-meta span').textContent=visible?modelName(entry):'Model label hidden';
       const definitions=article.querySelectorAll('dd');
-      definitions[0].textContent=visible?entry.requestedConfiguration:'Model labels hidden until voting or an explicit reveal.';
+      definitions[0].textContent=visible?(entry.comparisonModel==='opus'?modelName(entry):entry.requestedConfiguration):'Model labels hidden until voting or an explicit reveal.';
       definitions[1].textContent=visible?entry.modelDisclosure:'Reveal labels to see the recorded configuration and model/effort disclosure.';
       article.dataset.preferred=String(revealed&&choice===entry.id);
       article.dataset.tied=String(revealed&&choice==='tie'&&selected().some(e=>e.id===entry.id));
@@ -72,7 +72,7 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
     const details = el('details', undefined, 'inspector');
     details.append(el('summary', 'Inspect build & add your grade'));
     const dl = el('dl');
-    addDefinition(dl, 'Model / effort', $('#blind').checked ? 'Model labels hidden. Uncheck “Hide model labels” to reveal the requested configuration.' : entry.requestedConfiguration);
+    addDefinition(dl, 'Model / effort', $('#blind').checked ? 'Model labels hidden. Uncheck “Hide model labels” to reveal the requested configuration.' : entry.comparisonModel==='opus'?modelName(entry):entry.requestedConfiguration);
     addDefinition(dl, 'Disclosure', $('#blind').checked ? 'The exact serving model and effort were not exposed to the producer. Reveal labels to see the parent-requested configuration and full disclosure.' : entry.modelDisclosure);
     if(entry.runtimeVerification)addDefinition(dl,'Host runtime QA',entry.runtimeVerification+'; opening this viewer is not an independent test pass.');
     addDefinition(dl, 'Build window', entry.buildWindow);

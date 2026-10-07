@@ -83,9 +83,9 @@ export function renderPublicLeaderboard(target){
   const counts=snapshot.counts||{},rows=snapshot.rows||[];
   target.append(node('p',`${counts.votes||0} current public pairwise judgments from ${counts.browsers||0} anonymous browser credentials. A credential is not a verified person. Latest preference per browser/pair only; retries add no matches.`,'small'));
   if(!Number(counts.votes))target.append(node('p','No public votes yet. Existing private votes have not been imported.'));
-  target.append(table('Elo-style preference ratings',['Model','Rating','Wins','Ties','Losses','Matches','Voting browsers','Prompts','Status'],rows.map(r=>[r.model,r.rating??'—',r.wins,r.ties,r.losses,r.matches,r.votingBrowsers,r.prompts,r.matches?(r.provisional?'Provisional':'Sample threshold met'):'Unranked'])));
+  target.append(table('Elo-style preference ratings',['Model','Rating','Wins','Ties','Losses','Matches','Voting browsers','Prompts','Status'],rows.map(r=>[r.model==='opus'?'Claude Opus 5.5':r.model,r.rating??'—',r.wins,r.ties,r.losses,r.matches,r.votingBrowsers,r.prompts,r.matches?(r.provisional?'Provisional':'Sample threshold met'):'Unranked'])));
   const grades=snapshot.rubric?.rows||[];
-  target.append(table('Separate public rubric averages · signed-in submissions',['Model','Submitted grades','Accounts','Visuals /45','Performance /35','Fulfillment /20','Total /100'],grades.map(r=>[r.model,r.grades,r.accounts,...['visuals','performance','fulfillment','total'].map(key=>Number(r[key]).toFixed(1))])));
+  target.append(table('Separate public rubric averages · signed-in submissions',['Model','Submitted grades','Accounts','Visuals /45','Performance /35','Fulfillment /20','Total /100'],grades.map(r=>[r.model==='opus'?'Claude Opus 5.5':r.model,r.grades,r.accounts,...['visuals','performance','fulfillment','total'].map(key=>Number(r[key]).toFixed(1))])));
   if(!grades.length)target.append(node('p','No public rubric submissions yet. Your private notebook scores are unchanged.','small'));
   const details=node('details'),summary=node('summary','Rating method, coverage and privacy');details.append(summary);
   for(const text of snapshot.disclosures||[])details.append(node('p',text,'small muted'));
