@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#30251e" />
+    <title>Hearth & Earth — a potter's walk</title>
+    <script type="module" crossorigin src="/assets/index-CDlc1hcM.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-uHvi10e1.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="world" aria-label="Interactive 3D pottery workshop"></canvas>
+      <section id="splash" class="splash" aria-live="polite">
+        <div class="eyebrow">A SMALL WORKING STUDIO</div>
+        <h1>Hearth <i>&</i> Earth</h1>
+        <p>Clay on the bench. Glaze in the shade. A warm kiln in the yard.</p>
+        <button id="enter">Step inside</button>
+        <small>Click to look around</small>
+      </section>
+      <aside class="hud" aria-label="Controls">
+        <div class="brand">HEARTH <span>&</span> EARTH</div>
+        <div class="controls"><b>W A S D</b> move <i>·</i> <b>Mouse</b> look <i>·</i> <b>R</b> reset <i>·</i> <b>Esc</b> release</div>
+        <div class="location" id="location">THE WORKROOM</div>
+      </aside>
+      <div class="crosshair" aria-hidden="true"><span></span></div>
+      <div class="vignette" aria-hidden="true"></div>
+    </div>
+  </body>
+</html>

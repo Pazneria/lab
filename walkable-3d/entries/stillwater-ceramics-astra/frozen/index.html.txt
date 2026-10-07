@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#222d2a" />
+  <title>Stillwater — Ceramics workshop</title>
+  <script type="module" crossorigin src="./assets/index-CpbI54sv.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DZkXkEWG.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three-dimensional pottery workshop"></canvas>
+  <div id="vignette"></div>
+  <header id="identity"><span class="seal">s.</span><div><strong>STILLWATER</strong><span>A POTTER’S WORKSHOP</span></div></header>
+  <div id="location"><span class="tiny">01 / THE WORKSHOP</span><span id="room-name">Clay &amp; quiet</span></div>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="caption"><span id="caption-category"></span><h2 id="caption-title"></h2><p id="caption-text"></p></div>
+  <div id="welcome" class="screen">
+    <section class="intro-card">
+      <div class="eyebrow">AN EXPLORABLE PLACE</div>
+      <h1>Earth, water.<br>Time, fire.</h1>
+      <p>A working ceramics studio, held between the cool of the workshop and the afternoon sun.</p>
+      <div class="route"><span>01 &nbsp; Form</span><i></i><span>02 &nbsp; Glaze</span><i></i><span>03 &nbsp; Fire</span></div>
+      <button id="enter" disabled>Preparing the workshop… <span>↗</span></button>
+      <div class="intro-controls"><span><kbd>W A S D</kbd> walk</span><span><kbd>MOUSE</kbd> look</span><span><kbd>ESC</kbd> pause</span></div>
+      <p class="small">Take your time. Circle the bench. Follow the light.</p>
+      <p id="load-error" role="alert"></p>
+    </section>
+    <div class="cover-note">HAND-THROWN FORMS<br>STONEWARE / OXIDES / ASH</div>
+  </div>
+  <div id="pause" class="screen hidden">
+    <section class="pause-card"><div class="eyebrow">STILLWATER</div><h1>Take a breath.</h1><p>Continue exploring the workshop.</p><button id="resume">Return to the studio <span>↗</span></button><button id="reset-pause" class="secondary">Reset to entrance</button><div class="settings"><label>Render detail<select id="quality"><option value="balanced">Balanced</option><option value="high" selected>High</option><option value="low">Light</option></select></label><label>Mouse sensitivity<input id="sensitivity" type="range" min="0.5" max="1.8" value="1" step="0.1"></label></div><p class="small">WASD / arrows · mouse look · Shift brisk walk<br>R reset · H hide interface · Esc release cursor<br>Pointer lock unavailable? Hold left mouse to look.</p></section>
+  </div>
+  <footer id="controls"><span><kbd>WASD</kbd> walk</span><span><kbd>MOUSE</kbd> look</span><span><kbd>SHIFT</kbd> brisk walk</span><span><kbd>R</kbd> reset</span><button id="pause-button">Pause <kbd>ESC</kbd></button></footer>
+  <div id="map" aria-label="Workshop plan"><svg viewBox="0 0 144 122"><path d="M8 8H136V114H8Z" class="plan-outline"/><path d="M77 8V20M77 41V75M77 99V114M77 53H110M132 53H136" class="plan-wall"/><rect x="33" y="50" width="17" height="27" rx="2" class="plan-object"/><rect x="110" y="74" width="24" height="24" rx="2" class="plan-object"/><rect x="79" y="10" width="51" height="8" rx="1" class="plan-object"/><rect x="10" y="27" width="7" height="61" rx="1" class="plan-object"/><text x="22" y="22">STUDIO</text><text x="83" y="28">GLAZE</text><text x="82" y="109">COURT</text><g id="map-player"><path d="M0 -5L-3 3L3 3Z"/><circle r="2"/></g></svg></div>
+  <div id="status" role="status"></div>
+</body>
+</html>

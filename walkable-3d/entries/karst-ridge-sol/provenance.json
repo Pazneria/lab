@@ -1,0 +1,186 @@
+{
+  "entry": "karst-ridge-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\karst-ridge-sol\\original.zip",
+  "archiveSha256": "a628dd7fc63c8b4132123636d082582245209e88feef81f2e73db4f1abf8c468",
+  "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/THIRD_PARTY_NOTICES.txt": "dist/THIRD_PARTY_NOTICES.txt",
+      "frozen/assets/index-Bm9ox1X3.js": "dist/assets/index-Bm9ox1X3.js",
+      "frozen/assets/index-Dg3YOQox.css": "dist/assets/index-Dg3YOQox.css"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "ae7fc9a51269d7231a9d54e038eb3304fff3b0ba50c6464f95f921bf6e2a5694",
+        "bytes": 32
+      },
+      "index.html": {
+        "sha256": "56c1ded5f7d483d7c95f403d4a52f6788750a85eb7ad347a49f8689d9b6cf505",
+        "bytes": 2282
+      },
+      "package-lock.json": {
+        "sha256": "e5af9bf0ac52d25f76cd8699908e9762ed185fb84cd6970c35ded0df56fcb751",
+        "bytes": 35200
+      },
+      "package.json": {
+        "sha256": "e7148f345775f8096fc3caaf6a3617e819b3586da7b08b5374e33db9113863d7",
+        "bytes": 650
+      },
+      "README.md": {
+        "sha256": "021930eab3920a5aa059a5acc4a50db23005dd3513c0000d7582733d572c9a20",
+        "bytes": 6046
+      },
+      "run-record.json": {
+        "sha256": "f3583ac35914f631f1b957652fe8cd0f5519055ad77b610a7635e73cb34049b7",
+        "bytes": 2060
+      },
+      "vite.config.js": {
+        "sha256": "f679e4834914776268bf8a98b24d48bacc106634beabdee739ce386f52da5dd1",
+        "bytes": 280
+      },
+      "checks/build.txt": {
+        "sha256": "4fb45b472f52ef4c725f40ef09dbd36198e36952f08fb301a3bc0b5b85913f81",
+        "bytes": 768
+      },
+      "checks/geometry-and-route.txt": {
+        "sha256": "37969660fa89daf37483843dcb8cd79d0722c8070035783b5d66518a5dce95e1",
+        "bytes": 451
+      },
+      "checks/manifest.json": {
+        "sha256": "72cc0a6ee61a9159c2ca70f5250cf2445973e278306f97e82aaa49b523d56953",
+        "bytes": 682
+      },
+      "checks/syntax.txt": {
+        "sha256": "20bb99b3ad5d4e1195b2bc9a43077820d17bfec956eda7def556af659a402f0a",
+        "bytes": 193
+      },
+      "checks/validate.mjs": {
+        "sha256": "96c8d42be9be3d34b3fe9db8e66062e752fe667ccecc2b11610d18a653496e4c",
+        "bytes": 3656
+      },
+      "dist/index.html": {
+        "sha256": "7fce6d1d10b6043d21a0a94960999ff5e45bb6ac6c2bf2a6067b727b2fe183f5",
+        "bytes": 2381
+      },
+      "dist/THIRD_PARTY_NOTICES.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "public/THIRD_PARTY_NOTICES.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "src/layout.js": {
+        "sha256": "8e0058c6769cfe377344913adb032bb9fc5c74e13b15986ab17b250fedd81a9d",
+        "bytes": 2616
+      },
+      "src/main.js": {
+        "sha256": "702f6ec80208b666a998cf40e41eb4d006e7c7dbd873676b8f5b95e3d879f905",
+        "bytes": 4501
+      },
+      "src/navigation.js": {
+        "sha256": "0a194e2f8662e096e99d8235bd4fdaa5518716681cd0820707b30042d9d4dfb7",
+        "bytes": 3162
+      },
+      "src/scene.js": {
+        "sha256": "ee828a5009c9a546d2483a4baa854382bc20c01258db85f50b286b59b2992a0a",
+        "bytes": 30100
+      },
+      "src/style.css": {
+        "sha256": "0d78a0edc3b5721263faead77679c3d6e4f50d1b714a60f46a0148fb02249802",
+        "bytes": 4211
+      },
+      "src/textures.js": {
+        "sha256": "0e5bc391a6191dd6727339b6ae45dc35ac361e3f078b2753e270775e190119d4",
+        "bytes": 5214
+      },
+      "dist/assets/index-Bm9ox1X3.js": {
+        "sha256": "6d946941f57549d259bbf0a5d4fb034b624266bd7d953671a30745543f74d244",
+        "bytes": 548673
+      },
+      "dist/assets/index-Dg3YOQox.css": {
+        "sha256": "e38c7fd8bd65a0510d3734cf2d05ea621b7c82907bfd8d9cc01b7c076260b495",
+        "bytes": 4167
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-16\\frozen-originals\\karst-ridge-sol\\source-preservation.zip",
+    "sourceArchiveSha256": "88c3b644b6699c1c3d5b17ba3d1460e1176d2fb9b55482393cb57aed403ddb2c"
+  },
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:48:08.2895818",
+    "deadline": "05:48:08.2895818",
+    "stop": "05:16:28.4123697",
+    "authority": "Parent completed handoff; original producer records retained."
+  },
+  "qa": "Producer CPU/static/build checks reported; runtime, browser, visual, interactive, GPU and performance QA not run.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Original HTML retained inert; entrant JS/CSS/dist bytes unchanged. No rebuild or behavior repair."
+  ],
+  "files": {
+    "host-verification.json": {
+      "sha256": "626bba7e380d524580b811745efacee11a5e97e845b4d42db96f97fb458decf3",
+      "bytes": 359
+    },
+    "launch-prompt.txt": {
+      "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+      "bytes": 7656
+    },
+    "preview-capture.json": {
+      "sha256": "7ec777f871d8b4f828395702f4c907e926506e96c8f87f2fdb5e2a04700447e9",
+      "bytes": 2211
+    },
+    "preview.jpg": {
+      "sha256": "ea4e7ad7aa335ec784c7d804a977ff8dc7c8793927cc3bcaee0ba5da3d2dc244",
+      "bytes": 116483
+    },
+    "README.md": {
+      "sha256": "021930eab3920a5aa059a5acc4a50db23005dd3513c0000d7582733d572c9a20",
+      "bytes": 6046
+    },
+    "run-record.json": {
+      "sha256": "f3583ac35914f631f1b957652fe8cd0f5519055ad77b610a7635e73cb34049b7",
+      "bytes": 2060
+    },
+    "frozen/index.html.txt": {
+      "sha256": "7fce6d1d10b6043d21a0a94960999ff5e45bb6ac6c2bf2a6067b727b2fe183f5",
+      "bytes": 2381
+    },
+    "frozen/THIRD_PARTY_NOTICES.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/assets/index-Bm9ox1X3.js": {
+      "sha256": "6d946941f57549d259bbf0a5d4fb034b624266bd7d953671a30745543f74d244",
+      "bytes": 548673
+    },
+    "frozen/assets/index-Dg3YOQox.css": {
+      "sha256": "e38c7fd8bd65a0510d3734cf2d05ea621b7c82907bfd8d9cc01b7c076260b495",
+      "bytes": 4167
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-verification.json",
+      "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "frozen/index.html.txt",
+      "frozen/THIRD_PARTY_NOTICES.txt",
+      "frozen/assets/index-Bm9ox1X3.js",
+      "frozen/assets/index-Dg3YOQox.css"
+    ],
+    "retainedOutsidePages": [
+      "Original archives in task-16/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured"
+}

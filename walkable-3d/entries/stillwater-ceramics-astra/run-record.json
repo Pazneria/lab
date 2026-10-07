@@ -1,0 +1,59 @@
+{
+  "entry": "Stillwater Ceramics",
+  "threadId": "01a114b1-b7d6-744e-95cd-41b40a91c005",
+  "actualModelId": null,
+  "actualReasoningEffort": null,
+  "runtimeIdentity": "Codex, based on GPT-6",
+  "taskTitle": "Build Astra ceramics workshop",
+  "modelMetadataStatus": "The task title identifies Astra. Exact backend model ID and reasoning effort were not exposed by this run tools or environment. Clarification was requested without response. No other model or subagent was used.",
+  "firstImplementationUtc": "2026-10-07T04:49:58.9488365+00:00",
+  "deadlineUtc": "2026-10-07T05:49:58.9488365+00:00",
+  "actualStopUtc": "2026-10-07T05:20:32.844Z",
+  "implementationStartDefinition": "First successful creation of the isolated entry workspace and first file write. A preceding PowerShell command failed during parsing without writing files.",
+  "interruptions": [
+    "No user interruption, suspension, clock restart or deadline extension.",
+    "Initial dependency download encountered sandbox network denial. A registry-only escalation succeeded within the original time budget.",
+    "The default Vite config bundler encountered a filesystem permission error. Native config loading resolved it without broader file access."
+  ],
+  "executionConditions": {
+    "browserLaunched": false,
+    "serverStarted": false,
+    "screenshotsRendered": false,
+    "gpuTestsRun": false,
+    "performanceBenchmarksRun": false,
+    "otherModelsOrSubagentsUsed": false,
+    "otherEntryAssetsReadOrReused": false,
+    "published": false
+  },
+  "allowedChecks": "Bounded CPU-only syntax, static geometry, collision, asset linkage and non-serving production build checks.",
+  "checks": {
+    "checks": "PASS",
+    "testType": "CPU-only static geometry and collision checks; no rendering or timing benchmark",
+    "vesselProfilesChecked": 9,
+    "routeWaypointsChecked": 23,
+    "routeSamplesPerSegment": 101,
+    "collisionBoxes": 26,
+    "batches": 65,
+    "sourceObjects": 2069,
+    "triangles": 457140,
+    "potteryPieces": 91,
+    "meshCount": 65,
+    "bounds": {
+      "min": [
+        -6.699999809265137,
+        -0.2800000011920929,
+        -5.800000190734863
+      ],
+      "max": [
+        6.699999809265137,
+        4.599999904632568,
+        5.800000190734863
+      ]
+    }
+  },
+  "suggestedLaunchAddress": "http://127.0.0.1:5187/",
+  "previewRunning": false,
+  "launchCommand": "npm.cmd run preview",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-13\\stillwater-ceramics",
+  "processCleanup": "All dependency, syntax, static test and build commands completed. Final workspace-specific process query found no remaining entry process. No server, watcher, browser or GPU test was started."
+}

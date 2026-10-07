@@ -1,0 +1,9 @@
+{
+  "id": "stillwater-ceramics-astra",
+  "passed": true,
+  "scope": "Actual hosted opaque-sandbox WebGL startup/default-view screenshot only; no keyboard route or performance benchmark.",
+  "sourceUnchanged": true,
+  "captureEvidence": "preview-capture.json",
+  "grade": null,
+  "ownedProcesses": "One background browser and capture server closed; cleanup verified."
+}

@@ -1,0 +1,31 @@
+{
+  "check": "CPU structural checks",
+  "potteryProfiles": 8,
+  "seedsPerProfile": 3,
+  "geometry": {
+    "objects": 2998,
+    "batches": 41,
+    "triangles": 515582,
+    "vertices": 407373,
+    "bufferBytes": 16129428
+  },
+  "sceneMeshes": 78,
+  "colliders": 48,
+  "reachableInspectionPoints": [
+    "benchWest",
+    "benchNorth",
+    "benchEast",
+    "benchSouth",
+    "potteryShelf",
+    "glazeBench",
+    "kilnDoor",
+    "kilnLeft",
+    "kilnRight",
+    "kilnBack",
+    "returnPortal"
+  ],
+  "connectedGridCells": 11517,
+  "visualInspection": false,
+  "interactiveBrowserTest": false,
+  "performanceBenchmark": false
+}

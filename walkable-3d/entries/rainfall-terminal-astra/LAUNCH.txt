@@ -1,0 +1,30 @@
+RAINFALL TERMINAL — PORTABLE PRODUCTION BUILD
+
+1. Extract this entire archive, keeping the dist folder intact.
+2. Open a terminal in the extracted folder.
+3. Run: node launch.mjs
+4. Open http://127.0.0.1:5187 yourself.
+
+That URL is a suggested launch address, not a running preview. The launcher
+does not open a browser. Press Ctrl+C in the terminal to stop the local server.
+Node.js 20.19+ or 22.12+ is recommended. No npm installation is required.
+
+CONTROLS
+Click Enter: capture mouse. Mouse: look. WASD / arrows: move.
+Shift: faster walk. Esc: release mouse. R: reset to entrance.
+The Quality button switches between High and Balanced resolution.
+
+ROUTE
+Entrance > wheel equipment > stationary cabin platform > covered lookout
+> turn back through the terminal > entrance.
+
+THIS RUN'S LIMITS
+The build passed CPU-only syntax, geometry, route and bundling checks.
+No browser, renderer, server, interactive test or performance benchmark was
+launched during implementation. Visuals, interactive controls and frame times
+must be checked in the separate judging session. No measured FPS is claimed.
+
+The complete source, CHECKS.md and timing record remain in the source artifact:
+C:\Users\jmore\Documents\Codex\2026-10-07\task-10\rainfall-terminal
+
+Three.js license is included in LICENSES.
