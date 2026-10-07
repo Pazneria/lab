@@ -1,0 +1,82 @@
+{
+  "entry": "hillside-library-opus",
+  "importedAt": "2026-10-07T00:33:40.904654+00:00",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-hillside-library-entry",
+  "archiveSha256": "5de5f1bc0a7cd7305e5ec4e1caadc9f951474c8fa1ebd8ae3ce2aefa719e4294",
+  "archiveKind": "Host-created preservation snapshot of finished folder; not a producer archive; retained outside Git and Pages.",
+  "archiveRetention": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-06\\task-21\\preservation\\hillside-library-opus.zip",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/assets/index-BOOL8BFv.js": "dist/assets/index-BOOL8BFv.js"
+    },
+    "documentSources": {
+      "README.md": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-hillside-library-entry\\README.md",
+      "THREE-LICENSE.txt": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-hillside-library-entry\\node_modules\\three\\LICENSE",
+      "VITE-LICENSE.txt": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-05\\task-9\\opus-hillside-library-entry\\node_modules\\vite\\LICENSE.md"
+    }
+  },
+  "hostingAdjustments": [
+    "HTML retained inert as .txt; all runtime and producer bytes unchanged.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ]
+      ]
+    }
+  ],
+  "securityAudit": {
+    "scope": "Static source only; runtime NOT RUN",
+    "finding": "Source-only inspection of authored JavaScript, HTML, bundle startup and pinned dependencies found no authored external requests, credentials, tracking, storage, workers, dynamic evaluation or parent navigation. Scene assets are procedural. Vite module-preload fallback and optional Three.js loaders remain constrained by the existing sandbox/CSP. Production HTML asset prefix is replaced only in viewer memory. No source rebuilding or runtime execution."
+  },
+  "prompt": {
+    "version": "10-base",
+    "sha256": "f52ab25d650da8b21f04cd103f8c24ddff4ebcbee9bd9346d2d26e36837cad44",
+    "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed."
+  },
+  "requestedConfiguration": "Claude Opus 5.5 / default session effort (producer-recorded)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "completionStatus": "completed handoff",
+  "hostVerification": "host-verification.json",
+  "grade": null,
+  "files": {
+    "host-verification.json": {
+      "bytes": 1333,
+      "sha256": "f0efa01aa671a34e39a1599bb2baf06b705a3c56ad0ec435b3bf4cbd52775cec"
+    },
+    "README.md": {
+      "bytes": 5635,
+      "sha256": "93abb28a71922fe5e1d0ac52a7edfcfb65e21cb87e73b48f9f5476b9b6827d3b"
+    },
+    "THREE-LICENSE.txt": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    },
+    "VITE-LICENSE.txt": {
+      "bytes": 162419,
+      "sha256": "04d9940b3b8b372bff74437c3b153eda8a89642669c4209a4f67135eb3132bc9"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 3853,
+      "sha256": "5579f88429d6f6f0c0dcdf86b2871919784a595f1135715d2af1f2ff84f44beb"
+    },
+    "frozen/assets/index-BOOL8BFv.js": {
+      "bytes": 531260,
+      "sha256": "308ac5626f23426f07f9e518fa62e169520a0c49a4e1c6d2a3ae902e716a2d92"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "README.md",
+      "THREE-LICENSE.txt",
+      "VITE-LICENSE.txt",
+      "frozen/assets/index-BOOL8BFv.js",
+      "frozen/index.html.txt",
+      "host-verification.json"
+    ],
+    "retainedOutsidePages": []
+  }
+}

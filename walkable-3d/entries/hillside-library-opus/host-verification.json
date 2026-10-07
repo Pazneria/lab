@@ -1,0 +1,20 @@
+{
+  "id": "hillside-library-opus",
+  "checkedAt": "2026-10-07T00:33:40.904654+00:00",
+  "hostRuntimeVerification": "NOT RUN",
+  "passed": null,
+  "sourceUnchanged": true,
+  "scope": "Byte hashes, static paths, source inspection and JavaScript syntax only; no browser/server/GPU/input execution.",
+  "sourceAudit": "Source-only inspection of authored JavaScript, HTML, bundle startup and pinned dependencies found no authored external requests, credentials, tracking, storage, workers, dynamic evaluation or parent navigation. Scene assets are procedural. Vite module-preload fallback and optional Three.js loaders remain constrained by the existing sandbox/CSP. Production HTML asset prefix is replaced only in viewer memory. No source rebuilding or runtime execution.",
+  "preview": "No screenshot supplied or captured. Capture requires fresh user authorization for a browser/GPU session.",
+  "runtime": {
+    "launch": "NOT RUN",
+    "shaderCompatibility": "NOT RUN",
+    "keyboardMouse": "NOT RUN",
+    "pointerLock": "NOT RUN",
+    "collisionFeel": "NOT RUN",
+    "framePerformance": "NOT RUN"
+  },
+  "producerEvidence": "README records hidden-preview synchronous GPU timing claims; no separate test evidence supplied. Producer cleanup is not recorded; importer launched no owned process.",
+  "grade": null
+}

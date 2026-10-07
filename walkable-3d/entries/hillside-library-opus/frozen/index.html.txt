@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hillside Library</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #16110d; font-family: Georgia, 'Times New Roman', serif; color: #f1e6d2; }
+  #c { display: block; width: 100vw; height: 100vh; }
+  #vignette { position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(20,10,0,0.38) 100%); }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(18,12,8,0.55); cursor: pointer; transition: opacity .3s; }
+  #overlay.hide { opacity: 0; pointer-events: none; }
+  .card { max-width: 460px; padding: 28px 34px; background: rgba(30,20,14,0.88); border: 1px solid rgba(214,170,100,0.45); border-radius: 6px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .card h1 { margin: 0 0 4px; font-weight: normal; font-size: 30px; letter-spacing: .5px; color: #f4dcae; }
+  .card p { margin: 6px 0 16px; color: #cdb998; font-style: italic; }
+  .card table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .card td { padding: 3px 0; } .card td:first-child { color: #f4dcae; width: 44%; font-family: ui-monospace, Consolas, monospace; font-size: 13px; }
+  .go { margin-top: 18px; text-align: center; color: #f4dcae; letter-spacing: 2px; font-size: 14px; text-transform: uppercase; }
+  #help { position: fixed; left: 14px; bottom: 12px; font: 12px ui-monospace, Consolas, monospace; color: rgba(245,230,205,0.82); background: rgba(20,12,6,0.45); padding: 6px 10px; border-radius: 4px; pointer-events: none; }
+  #help.hide { display: none; }
+  #stats { position: fixed; right: 12px; top: 10px; font: 12px ui-monospace, Consolas, monospace; white-space: pre; color: #d8f0c8; background: rgba(0,0,0,0.5); padding: 6px 9px; border-radius: 4px; display: none; pointer-events: none; }
+  #stats.show { display: block; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px; border-radius: 50%; background: rgba(255,240,220,0.65); pointer-events: none; }
+  #toast { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); padding: 6px 14px; background: rgba(25,15,8,0.7); border-radius: 4px; font-size: 15px; opacity: 0; transition: opacity .4s; pointer-events: none; color: #f4dcae; }
+  #toast.show { opacity: 1; }
+  #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #16110d; color: #cdb998; font-style: italic; font-size: 18px; }
+  #loading.hide { display: none; }
+</style>
+  <script type="module" crossorigin src="/assets/index-BOOL8BFv.js"></script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="vignette"></div>
+<div id="cross"></div>
+<div id="toast"></div>
+<div id="stats"></div>
+<div id="help">WASD move · Mouse look · Shift run · C crouch · 1–5 viewpoints · R reset · F frame stats · H hide</div>
+<div id="overlay">
+  <div class="card">
+    <h1>The Hillside Library</h1>
+    <p>Late afternoon. The reading room is quiet.</p>
+    <table>
+      <tr><td>Mouse</td><td>Look around (click to capture; Esc releases)</td></tr>
+      <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>C</td><td>Crouch toggle (browse low shelves)</td></tr>
+      <tr><td>1 – 5</td><td>Hearth · Stacks · Alcove · Stair foot · Gallery</td></tr>
+      <tr><td>R</td><td>Reset to the entrance view</td></tr>
+      <tr><td>F</td><td>Frame-time / FPS overlay</td></tr>
+      <tr><td>P</td><td>Cycle render scale</td></tr>
+      <tr><td>H</td><td>Hide hint bar</td></tr>
+    </table>
+    <div class="go">Click to enter</div>
+  </div>
+</div>
+<div id="loading">Shelving the books…</div>
+</body>
+</html>

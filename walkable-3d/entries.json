@@ -1633,6 +1633,55 @@
       "readyTextPrefix": "Click to enter",
       "promptDisclosure": "Parent-supplied base prompt for the manual entry; no independently accessed manual transcript or OpenAI execution restriction is claimed.",
       "preview": "preview.jpg"
+    },
+    {
+      "id": "hillside-library-opus",
+      "title": "The Hillside Library",
+      "comparisonModel": "opus",
+      "description": "A sunlit hillside reading room with tall walnut stacks, an upper gallery, broad stairs and a window-side alcove.",
+      "requestedConfiguration": "Claude Opus 5.5 / default session effort (producer-recorded)",
+      "modelDisclosure": "README records Claude Opus 5.5 (claude-opus-5-5), Claude Code desktop, effort default session setting, not changed. No numeric or named effort is inferred; serving backend and effort were not independently verified.",
+      "buildWindow": "Producer records session start 2026-10-06 19:57:41 -04:00; first implementation about 20:05; deadline 20:57:41; stop/last edit 20:30:15. Recorded session-to-stop duration 32m34s, within the one-hour window; independently observed timing is unavailable.",
+      "interruptions": "Producer records no interruptions. Cleanup is not recorded. Importer started no browser, preview server, scene or GPU process.",
+      "controls": "Click to capture / drag fallback; mouse look; WASD/arrows walk; Shift faster; C crouch; 1–5 viewpoints; R reset; F stats; P render scale; H hints; Esc release.",
+      "producerChecks": "Supplied finished dist build. README records synchronized GPU timing per view in a hidden preview pane; no separate route, collision or console test report supplied. Host runtime QA NOT RUN.",
+      "performanceEvidence": "Producer claims Intel integrated graphics ANGLE/D3D11, 1920x1080, 100% scale: windows ~12ms, stacks ~16–21ms, gallery ~15–21ms, entrance/stair ~18–24ms. Hidden-pane measurements are noisy and unverified; no grade assigned.",
+      "limitations": [
+        "Desktop keyboard and mouse controls; no touch controls recorded.",
+        "Windows omit glass; stylized light shafts/dust; point lamps do not cast shadows and may bleed through shelves.",
+        "Outdoor hillside is an unlit decorative backdrop; abstract book-spine marks.",
+        "No supplied screenshot; host launch, navigation, collisions, shader coverage and performance remain unverified. Original automatic render-scale reductions are preserved."
+      ],
+      "promptId": "10",
+      "promptVersion": "10-base",
+      "promptDisclosure": "Exact existing shared Prompt 10 base preserved unchanged. Parent confirms finished manual handoff; manual prompt delivery transcript was not independently observed.",
+      "availability": "unverified",
+      "completionStatus": "completed handoff",
+      "runtimeVerification": "NOT RUN. Static source, paths, hashes and syntax checked; no browser, scene, GPU or input execution.",
+      "documents": [
+        {
+          "label": "Original controls / benchmark record",
+          "path": "README.md"
+        },
+        {
+          "label": "Host source audit / verification limits",
+          "path": "host-verification.json"
+        }
+      ],
+      "readySelector": "#loading.hide",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "preview": null,
+      "previewAlt": "Preview not captured; no supplied screenshot.",
+      "webgl": "WebGL 2",
+      "archiveSha256": "5de5f1bc0a7cd7305e5ec4e1caadc9f951474c8fa1ebd8ae3ce2aefa719e4294",
+      "archiveKind": "Host-created preservation snapshot of finished folder; not a producer archive; retained outside Git and Pages.",
+      "htmlSha256": "5579f88429d6f6f0c0dcdf86b2871919784a595f1135715d2af1f2ff84f44beb"
     }
   ],
   "prompts": [
@@ -1822,11 +1871,11 @@
     {
       "id": "10-base",
       "promptId": "10",
-      "label": "Shared base / no manual result supplied",
+      "label": "Shared base / manual Opus reference",
       "path": "prompt-10.txt",
       "sha256": "f52ab25d650da8b21f04cd103f8c24ddff4ebcbee9bd9346d2d26e36837cad44",
       "source": "Exact wording supplied by benchmark parent in thread 01a10ff2-2238-7405-b646-fd99c65d100b. UTF-8, LF, no terminal newline. No entrant transcript was independently accessed.",
-      "note": "Parent-supplied reference base. No Opus10 artifact was supplied or imported."
+      "note": "Parent-supplied exact base for completed Opus 10 handoff. Manual delivery transcript was not independently observed."
     },
     {
       "id": "10-openai",
