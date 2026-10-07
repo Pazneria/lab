@@ -111,12 +111,20 @@
   },
   "files": {
     "host-verification.json": {
-      "sha256": "b13cec8c08e7845606355a72da9788402ce735caf14080cfc7337e80ca08c32a",
-      "bytes": 395
+      "sha256": "f572765d76e79fa2d97cb5372a905ba38ee6775783170f608fd3ab26a26ec654",
+      "bytes": 676
     },
     "launch-prompt.txt": {
       "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
       "bytes": 7738
+    },
+    "preview-capture.json": {
+      "sha256": "cbde2d4ea8e8943904388f7aa23b93d150f006d7458ebaff1b74c06cabcec10e",
+      "bytes": 2165
+    },
+    "preview.jpg": {
+      "sha256": "0c64ad394739c20d89e8fee31524c4b56c7e27cd7a42937e80157e0119339710",
+      "bytes": 76710
     },
     "README.md": {
       "sha256": "641cfdfe650baa771295ae43b8a48d805fef34991b83a1650fa984a38efd6038",
@@ -155,6 +163,8 @@
     "publishedFiles": [
       "host-verification.json",
       "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "RUN-RECORD.json",
       "THIRD-PARTY-NOTICES.txt",
@@ -165,5 +175,8 @@
     "retainedOutsidePages": [
       "Original source preservation archive outside repository"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
 }

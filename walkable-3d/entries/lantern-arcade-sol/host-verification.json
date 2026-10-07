@@ -1,10 +1,13 @@
 {
   "id": "lantern-arcade-sol",
-  "hostRuntimeVerification": "NOT RUN",
-  "passed": null,
+  "hostRuntimeVerification": "Authorized screenshot startup only; no route or performance QA",
+  "passed": true,
   "scope": "Source/runtime hash equality, JS parsing, HTML asset references and disclosed adapter resolution passed. No execution or rendering.",
   "sourceUnchanged": true,
   "preview": "Not supplied or captured",
   "grade": null,
-  "ownedProcesses": "Finite CPU commands completed; no browser/server/watcher"
+  "ownedProcesses": "Finite CPU commands completed; no browser/server/watcher",
+  "captureOutcome": "captured",
+  "captureEvidence": "preview-capture.json",
+  "runtimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
 }

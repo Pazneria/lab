@@ -1,0 +1,196 @@
+{
+  "entry": "tideline-luna",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\tideline-luna\\original.zip",
+  "archiveSha256": "d40afaf47953ec34ac135ce48bcd91302dadca02eeb29b3b771f47e9b9286d88",
+  "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/style.css": "dist/src/style.css",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js",
+      "frozen/vendor/examples/jsm/controls/PointerLockControls.js": "dist/vendor/examples/jsm/controls/PointerLockControls.js"
+    },
+    "perFileSourceHashes": {
+      "dist/index.html": {
+        "sha256": "a6083b28b833148699d3699999a724a58ae0b414cc5c4f5354ea5f6084341b25",
+        "bytes": 1735
+      },
+      "dist/src/main.js": {
+        "sha256": "a34caf5e2dbfbd0806b97cc7e992d337fd0dd1cfde2d7c84596c97e50960df38",
+        "bytes": 54471
+      },
+      "dist/src/style.css": {
+        "sha256": "9ff4103f2cfb5e588ec98a6f3a88adeec0540d3c708fec577ac56db235e663b3",
+        "bytes": 5342
+      },
+      "dist/vendor/examples/jsm/controls/PointerLockControls.js": {
+        "sha256": "e0b1ae287c85827d1bc013b51579c9fdb5cfc5ef7bb2db73ae59a632a68a2374",
+        "bytes": 5909
+      },
+      "dist/vendor/THREE-LICENSE.txt": {
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "bytes": 1081
+      },
+      "dist/vendor/three.core.js": {
+        "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+        "bytes": 1458113
+      },
+      "dist/vendor/three.module.js": {
+        "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+        "bytes": 662772
+      },
+      "index.html": {
+        "sha256": "a6083b28b833148699d3699999a724a58ae0b414cc5c4f5354ea5f6084341b25",
+        "bytes": 1735
+      },
+      "package.json": {
+        "sha256": "c95292a11bd76442921662f7147ccb5e4ee7aeaa22a757fe2453d94bbb4f6eee",
+        "bytes": 336
+      },
+      "README.md": {
+        "sha256": "b87eae2f9fc0a5adb4bba1a2a5bc0f34bf9ca1c4708316d358b8c8d9d369930f",
+        "bytes": 1856
+      },
+      "RUN-NOTES.md": {
+        "sha256": "8e79cb2785d9e8f0d6b31bed15c473f822f6111fdfded721a785708c160aa6df",
+        "bytes": 714
+      },
+      "scripts/build.mjs": {
+        "sha256": "800c36cd8c4d8b74d60e78d9784c64de4c2d29ff101bdef4beccb220455ce758",
+        "bytes": 610
+      },
+      "src/main.js": {
+        "sha256": "a34caf5e2dbfbd0806b97cc7e992d337fd0dd1cfde2d7c84596c97e50960df38",
+        "bytes": 54471
+      },
+      "src/style.css": {
+        "sha256": "9ff4103f2cfb5e588ec98a6f3a88adeec0540d3c708fec577ac56db235e663b3",
+        "bytes": 5342
+      },
+      "vendor/examples/jsm/controls/PointerLockControls.js": {
+        "sha256": "e0b1ae287c85827d1bc013b51579c9fdb5cfc5ef7bb2db73ae59a632a68a2374",
+        "bytes": 5909
+      },
+      "vendor/THREE-LICENSE.txt": {
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "bytes": 1081
+      },
+      "vendor/three.core.js": {
+        "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+        "bytes": 1458113
+      },
+      "vendor/three.module.js": {
+        "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+        "bytes": 662772
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\tideline-luna\\original.zip",
+    "sourceArchiveSha256": "d40afaf47953ec34ac135ce48bcd91302dadca02eeb29b3b771f47e9b9286d88"
+  },
+  "hostingAdjustments": [
+    "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "/src/main.js",
+          "./src/main.js"
+        ]
+      ]
+    },
+    "Declared CDN dependency modules and licenses packaged locally; exact versions fetched independently. Only sandbox HTML URL resolution changes; benchmark implementation unchanged."
+  ],
+  "dependencyEvidence": [],
+  "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+  "backendIdentityOrEffortIndependentlyVerified": false,
+  "qa": "Producer CPU/static/build checks only as documented; browser, runtime, visual, GPU, interactive and performance QA not run.",
+  "timing": {
+    "date": "2026-10-07",
+    "start": "04:03:04",
+    "stop": "04:39:19",
+    "deadline": "05:03:04",
+    "authority": "Parent completed handoff; entrant records preserved separately where present"
+  },
+  "files": {
+    "capture-failure.json": {
+      "sha256": "15fb8b68b1d33d4faec796ce7732a620faec2035d4a89dcf3613d4af64075540",
+      "bytes": 1233
+    },
+    "host-verification.json": {
+      "sha256": "065a28ad16d60f3a17aceabe448835fa4ea27ebfc82c4ec98f6163ad43a65a96",
+      "bytes": 905
+    },
+    "launch-prompt.txt": {
+      "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
+      "bytes": 6967
+    },
+    "README.md": {
+      "sha256": "b87eae2f9fc0a5adb4bba1a2a5bc0f34bf9ca1c4708316d358b8c8d9d369930f",
+      "bytes": 1856
+    },
+    "RUN-NOTES.md": {
+      "sha256": "8e79cb2785d9e8f0d6b31bed15c473f822f6111fdfded721a785708c160aa6df",
+      "bytes": 714
+    },
+    "frozen/index.html.txt": {
+      "sha256": "a6083b28b833148699d3699999a724a58ae0b414cc5c4f5354ea5f6084341b25",
+      "bytes": 1735
+    },
+    "frozen/src/main.js": {
+      "sha256": "a34caf5e2dbfbd0806b97cc7e992d337fd0dd1cfde2d7c84596c97e50960df38",
+      "bytes": 54471
+    },
+    "frozen/src/style.css": {
+      "sha256": "9ff4103f2cfb5e588ec98a6f3a88adeec0540d3c708fec577ac56db235e663b3",
+      "bytes": 5342
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+      "bytes": 1458113
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+      "bytes": 662772
+    },
+    "frozen/vendor/examples/jsm/controls/PointerLockControls.js": {
+      "sha256": "e0b1ae287c85827d1bc013b51579c9fdb5cfc5ef7bb2db73ae59a632a68a2374",
+      "bytes": 5909
+    }
+  },
+  "securityAudit": {
+    "scope": "Static authored source scan and frozen path/hash inspection; runtime NOT RUN",
+    "finding": "Authored sources contain no observed external requests, tracking, storage, eval, workers or parent navigation; procedural geometry/textures. Third-party bundles parsed but not executed."
+  },
+  "prompt": {
+    "version": "08-expanded-openai",
+    "source": "Parent launch record; entry transcript not read."
+  },
+  "publication": {
+    "publishedFiles": [
+      "capture-failure.json",
+      "host-verification.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN-NOTES.md",
+      "frozen/index.html.txt",
+      "frozen/src/main.js",
+      "frozen/src/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "frozen/vendor/examples/jsm/controls/PointerLockControls.js"
+    ],
+    "retainedOutsidePages": [
+      "Original source preservation archive outside repository"
+    ]
+  },
+  "hostCaptureOutcome": "failed",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
+}

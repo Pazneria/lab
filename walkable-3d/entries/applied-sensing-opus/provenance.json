@@ -94,12 +94,20 @@
   },
   "files": {
     "host-verification.json": {
-      "sha256": "684e634428055a34cf96435ede095b87bf79025d4fdcb0242f7dc7acef9a46e9",
-      "bytes": 404
+      "sha256": "4a297197f5a99fca7991874dde14f51c6860dbbc9a325a9678cb0542bd1a44f7",
+      "bytes": 685
     },
     "launch-prompt.txt": {
       "sha256": "34e88e88c93cc73b405baca85ee727feb4663e146d38a3ebbae8e23d88217de2",
       "bytes": 5355
+    },
+    "preview-capture.json": {
+      "sha256": "b4487cf6a81fe59851a198f030cc735e85093e24d8ec740feb5b28c6f51957a9",
+      "bytes": 2189
+    },
+    "preview.jpg": {
+      "sha256": "45186debe8c7def38121ee1ea1d586ed9d7ae47ec141270624e2525450864c15",
+      "bytes": 94466
     },
     "README.md": {
       "sha256": "6fc1735ff5f66926c375b20cd3656e38af0ef51e7166fa4b2779c60384990a54",
@@ -126,6 +134,8 @@
     "publishedFiles": [
       "host-verification.json",
       "launch-prompt.txt",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "frozen/app.js",
       "frozen/index.html.txt"
@@ -133,5 +143,8 @@
     "retainedOutsidePages": [
       "Original source preservation archive outside repository"
     ]
-  }
+  },
+  "previewCapture": "preview-capture.json",
+  "hostCaptureOutcome": "captured",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
 }

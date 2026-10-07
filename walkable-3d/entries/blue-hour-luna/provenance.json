@@ -74,9 +74,13 @@
     "authority": "Parent completed handoff; entrant records preserved separately where present"
   },
   "files": {
+    "capture-failure.json": {
+      "sha256": "4d215cfcb7bdb40170933bf33a5d4fddd52d6d0ae6ff875488aff3485d70d1af",
+      "bytes": 1059
+    },
     "host-verification.json": {
-      "sha256": "1d3f7545b56aa7d200121180844cb03db4009c67b3f8d7de0de20a8447f18011",
-      "bytes": 398
+      "sha256": "db51e11dddc27a42d498d1ca33aaf38323eee97c6c5a708edc0d55e14843dfd1",
+      "bytes": 730
     },
     "launch-prompt.txt": {
       "sha256": "3105a31098ecf4ff4e1e92cbb2058d292440555c6690f6c5150db2b079103d67",
@@ -121,6 +125,7 @@
   },
   "publication": {
     "publishedFiles": [
+      "capture-failure.json",
       "host-verification.json",
       "launch-prompt.txt",
       "README.md",
@@ -134,5 +139,7 @@
     "retainedOutsidePages": [
       "Original source preservation archive outside repository"
     ]
-  }
+  },
+  "hostCaptureOutcome": "failed",
+  "hostRuntimeScope": "Real WebGL context/startup attempted for screenshot; no keyboard route, native input, GPU benchmark or frame-time measurements."
 }

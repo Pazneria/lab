@@ -1,0 +1,24 @@
+{
+  "authorization": "User approved 2026-10-07 04:28:15 UTC: one background browser, one scene at a time, full cleanup AFTER all builds finish. Parent cleared batch capture 2026-10-07 04:39 UTC.",
+  "evidence": {
+    "id": "fieldworks-luna",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?entry=fieldworks-luna",
+    "startedAt": "2026-10-07T04:44:38.957Z",
+    "status": "failed",
+    "consoleErrors": [],
+    "pageErrors": [
+      "parent.add is not a function"
+    ],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "controls": [],
+    "frozenHtmlSha256": "e909965cbfa8b751a6fcd5fb86e5f6e09054bd4a6e3934d377ecc2d981b56b45",
+    "viewerMessage": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "error": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "contextClosed": true,
+    "finishedAt": "2026-10-07T04:44:40.833Z"
+  },
+  "sourceChanged": false,
+  "entrantRebuilt": false,
+  "grade": null
+}

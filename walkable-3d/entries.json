@@ -1714,8 +1714,8 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Holloway Halt - Last Light scene at its authored starting viewpoint.",
       "archiveSha256": "c16024492c4361071fe8dff349e54faf5d8d2cad83417b0cfc194e29e7a87868",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -1724,7 +1724,8 @@
       "promptVersion": "01-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "blue-hour-luna",
@@ -1736,8 +1737,9 @@
       "interruptions": "No mid-run messages or deadline extensions. Installer canceled; cached Three.js bundled.",
       "controls": "- Click **Enter the Shelter**, then move the mouse to look.\n- **W/A/S/D** to walk; hold **Shift** to walk slowly.\n- **Escape** releases the mouse and pauses; click **Resume Walk** to continue.\n- **R** or the ↺ button returns to the starting snow apron.",
       "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
-      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "performanceEvidence": "No performance measurement. Frozen scene could not start during authorized capture; see capture-failure.json.",
       "limitations": [
+        "Frozen startup failure: parent.add is not a function No entrant repair or rebuild applied.",
         "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
         "Desktop keyboard/mouse scene; see original README for implementation limits."
       ],
@@ -1772,7 +1774,10 @@
       "promptVersion": "05-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "failed",
+      "completionStatus": "Frozen completed handoff; startup failed during separate authorized screenshot capture",
+      "failureKind": "startup",
+      "failureSummary": "parent.add is not a function"
     },
     {
       "id": "understone-luna",
@@ -1814,8 +1819,8 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Understone: Limestone Cavern scene at its authored starting viewpoint.",
       "archiveSha256": "89309f40bda2db770e80501a65ed9f97c507380bf806a6f10c09e18fcaf8d4f7",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -1824,7 +1829,8 @@
       "promptVersion": "06-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "stillroom-luna",
@@ -1862,8 +1868,8 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen The Stillroom scene at its authored starting viewpoint.",
       "archiveSha256": "647fd52f9bb35f329b5df6e53f8466c0288b1709a9248debedcf822e5b41f706",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -1872,7 +1878,8 @@
       "promptVersion": "07-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "bay-03-luna",
@@ -1906,8 +1913,8 @@
           "./vendor/three.module.js"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Bay 03 - Orbital Service scene at its authored starting viewpoint.",
       "archiveSha256": "b178dcaf7b4febd703d78b1f9e7ac0f87097d5a6629b986987be696d5d828476",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -1916,7 +1923,8 @@
       "promptVersion": "09-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "hearthmere-luna",
@@ -1945,8 +1953,8 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Hearthmere Library scene at its authored starting viewpoint.",
       "archiveSha256": "ed17a21862b1225c46006270a05febbdcee6f8f5a9d457d2765c857d06963041",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -1955,7 +1963,8 @@
       "promptVersion": "10-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "axiom-sol",
@@ -2013,8 +2022,8 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Axiom scene at its authored starting viewpoint.",
       "archiveSha256": "2500259984db361400f0375130cd9eb51c136e2e7863cbc4cae850b66fdb9f1d",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2023,7 +2032,8 @@
       "promptVersion": "11-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "sol",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "night-shift-luna",
@@ -2057,8 +2067,8 @@
           "./vendor/three.module.js"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Night Shift Arcade scene at its authored starting viewpoint.",
       "archiveSha256": "6d125f5cbcd90ae3a419bda0fafb7cf766b511b2acf9d61a71304dc8ef0998be",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2067,7 +2077,8 @@
       "promptVersion": "12-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "lumen-astra",
@@ -2104,8 +2115,8 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen LUMEN - Open Lab scene at its authored starting viewpoint.",
       "archiveSha256": "dcabf9eb9cb61f8847231ac94c3de48452b3827135f7eab12418d5596ac7e72b",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2114,7 +2125,8 @@
       "promptVersion": "11-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "astra",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "fieldworks-luna",
@@ -2126,8 +2138,9 @@
       "interruptions": "No mid-run messages or deadline extensions. Offline install failed on shared-cache write. No complete entrant install verified; host packaged independently verified exact pinned dependency as disclosed adapter.",
       "controls": "- Click **Enter the lab** to capture the mouse; move the mouse to look around.\n- **W A S D** or **arrow keys** to walk. Hold **Shift** to move faster.\n- **Escape** releases the mouse and returns to the entry card.\n- Click **Reset view** or press **R** to return to the entrance and starting view.",
       "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
-      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "performanceEvidence": "No performance measurement. Frozen scene could not start during authorized capture; see capture-failure.json.",
       "limitations": [
+        "Frozen startup failure: parent.add is not a function No entrant repair or rebuild applied.",
         "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
         "Desktop keyboard/mouse scene; see original README for implementation limits."
       ],
@@ -2162,7 +2175,10 @@
       "promptVersion": "11-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "luna",
-      "availability": "unverified"
+      "availability": "failed",
+      "completionStatus": "Frozen completed handoff; startup failed during separate authorized screenshot capture",
+      "failureKind": "startup",
+      "failureSummary": "parent.add is not a function"
     },
     {
       "id": "applied-sensing-opus",
@@ -2191,8 +2207,8 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Applied Sensing Lab scene at its authored starting viewpoint.",
       "archiveSha256": "2d210253fa4c169ec00b30ec0d5b46e179a22c37f6a3af48524b04937b07b484",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2201,7 +2217,8 @@
       "promptVersion": "11-base",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "opus",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "lantern-arcade-sol",
@@ -2234,8 +2251,8 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Lantern Arcade scene at its authored starting viewpoint.",
       "archiveSha256": "086776b3f6534304fa053d557f7ebabecabd0d9cec1076c5503600089aca9d4c",
       "archiveKind": "Producer ZIP copied unchanged; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2244,7 +2261,8 @@
       "promptVersion": "12-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "sol",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "after-hours-astra",
@@ -2285,8 +2303,8 @@
       ],
       "readySelector": "body",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen After Hours scene at its authored starting viewpoint.",
       "archiveSha256": "bc81649d4fe2e4d760c51aa5654a21a42c8c385d5518cda9bcd300d9efe296e9",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2295,7 +2313,8 @@
       "promptVersion": "12-expanded-openai",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "astra",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "starlite-arcade-claude",
@@ -2329,8 +2348,8 @@
           "./vendor/three.module.js"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "No captured preview supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Captured frozen Starlite Arcade scene at its authored starting viewpoint.",
       "archiveSha256": "dc3a7903de3fcd7f10286997fe1594be2c1a16b5cdc9fbbbe6938b99da4c6d8c",
       "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
@@ -2339,7 +2358,60 @@
       "promptVersion": "12-base",
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "opus",
-      "availability": "unverified"
+      "availability": "unverified",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "tideline-luna",
+      "title": "Tideline - Boathouse at Low Water",
+      "description": "A timber workshop, short pier and exposed shoreline beside a quiet tidal inlet.",
+      "requestedConfiguration": "GPT-6 Luna / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:03:04 UTC; stop 04:39:19 UTC; deadline 05:03:04 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "- Click **Step Inside** to capture the mouse and begin.\n- **W A S D** or arrow keys to walk; hold **Shift** for a brisk walk.\n- Move the mouse to look around.\n- Press **Esc** to release the mouse. Click the scene to resume looking.\n- Press **R** or select **Reset** to return to the workshop starting point.\n\nThe route begins in the workshop, passes through its open front to the pier, then branches down a gently sloped railed ramp to the exposed beach. The shoreline and pier corridor constrain walking so the viewer cannot enter the inlet or step off the dock.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "No performance measurement. Frozen scene could not start during authorized capture; see capture-failure.json.",
+      "limitations": [
+        "Frozen startup failure: Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of \"text/css\". Strict MIME type checking is enforced for module scripts per HTML spec. No entrant repair or rebuild applied.",
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Controls and producer record",
+          "path": "README.md"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "RUN-NOTES.md"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [
+        [
+          "/src/main.js",
+          "./src/main.js"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No captured preview supplied.",
+      "archiveSha256": "d40afaf47953ec34ac135ce48bcd91302dadca02eeb29b3b771f47e9b9286d88",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "a6083b28b833148699d3699999a724a58ae0b414cc5c4f5354ea5f6084341b25",
+      "promptId": "08",
+      "promptVersion": "08-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "luna",
+      "availability": "failed",
+      "completionStatus": "Frozen completed handoff; startup failed during separate authorized screenshot capture",
+      "failureKind": "startup",
+      "failureSummary": "Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of \"text/css\". Strict MIME type checking is enforced for module scripts per HTML spec."
     }
   ],
   "prompts": [

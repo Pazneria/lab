@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#a8c0bf" />
+    <title>Tideline — Boathouse at Low Water</title>
+  </head>
+  <body>
+    <div id="scene" aria-label="Explorable 3D boathouse environment"></div>
+    <div id="grain" aria-hidden="true"></div>
+    <div id="reticle" aria-hidden="true"><i></i></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">T</span><span>TIDELINE <small>FIELD STUDY 01</small></span></div>
+      <button id="reset" class="reset" title="Reset position and view"><span>↺</span> RESET</button>
+    </header>
+    <div class="location"><span class="status-dot"></span><span>LOW WATER</span><b>·</b><span>EAST INLET BOATHOUSE</span></div>
+    <div class="hud-bottom"><span class="hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> WALK</span><span class="hint"><kbd>MOUSE</kbd> LOOK</span><span class="hint"><kbd>SHIFT</kbd> BRISK WALK</span><span class="hint"><kbd>ESC</kbd> RELEASE</span></div>
+    <div id="intro" class="intro">
+      <div class="intro-card">
+        <div class="eyebrow">EAST INLET · 06:42 AM</div>
+        <h1>Between the<br /><em>tides.</em></h1>
+        <p>A quiet morning at the working shore.</p>
+        <button id="enter" class="enter">STEP INSIDE <span>↗</span></button>
+        <div class="intro-controls"><span><kbd>W A S D</kbd> move</span><span><kbd>MOUSE</kbd> look</span><span><kbd>R</kbd> reset</span></div>
+      </div>
+    </div>
+    <div id="toast" class="toast">Click to look around · Esc releases the mouse</div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
