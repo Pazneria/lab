@@ -122,8 +122,8 @@ export function renderLeaderboard(target, entries, record, persistent) {
     }
     table.append(body); wrapper.append(table); return wrapper;
   };
-  const votesTable = table('Pairwise preferences', ['Model', 'Wins', 'Ties', 'Losses', 'Matches', 'Win rate'], rows.map(r => [r.model, r.wins, r.ties, r.losses, r.matches, r.matches ? `${(100 * r.wins / r.matches).toFixed(1)}%` : '—']));
-  const gradesTable = table('Separate rubric averages · complete scene grades only', ['Model', 'Graded scenes', 'Partial / notes', 'Visuals /45', 'Performance /35', 'Fulfillment /20', 'Total /100'], rows.map(r => [r.model, r.complete, r.partial, ...dimensions.map(([name]) => r.complete ? (r[name] / r.complete).toFixed(1) : '—'), r.complete ? ((r.visuals + r.performance + r.fulfillment) / r.complete).toFixed(1) : '—']));
+  const votesTable = table('Pairwise preferences', ['Model', 'Wins', 'Ties', 'Losses', 'Matches', 'Win rate'], rows.map(r => [r.model==='opus'?'Claude Opus 5.5':r.model, r.wins, r.ties, r.losses, r.matches, r.matches ? `${(100 * r.wins / r.matches).toFixed(1)}%` : '—']));
+  const gradesTable = table('Separate rubric averages · complete scene grades only', ['Model', 'Graded scenes', 'Partial / notes', 'Visuals /45', 'Performance /35', 'Fulfillment /20', 'Total /100'], rows.map(r => [r.model==='opus'?'Claude Opus 5.5':r.model, r.complete, r.partial, ...dimensions.map(([name]) => r.complete ? (r[name] / r.complete).toFixed(1) : '—'), r.complete ? ((r.visuals + r.performance + r.fulfillment) / r.complete).toFixed(1) : '—']));
   const gradeNote = el('p', 'One latest grade per scene. Partial sheets and notes are counted separately and excluded from averages. No entered grade means no score.', 'small muted');
   target.replaceChildren(heading, scope, note, disclosure, votesTable, gradesTable, gradeNote);
   if (!persistent) target.append(el('p', 'Browser storage is unavailable. This table contains this page session’s judgments only; export from the notebook before leaving.', 'small'));
