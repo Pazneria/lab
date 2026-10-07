@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08222b" />
+  <title>Pelagic — a home below the surface</title>
+  <script type="module" crossorigin src="/assets/index-ugO4FyX9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CR6csf2p.css">
+</head>
+<body>
+  <main id="scene" aria-label="Explorable underwater researcher's apartment"></main>
+  <div id="crosshair" aria-hidden="true"><i></i></div>
+  <div id="hud">
+    <div class="identity"><b>PELAGIC</b><span>RESIDENCE 04 <i></i> 176 m</span></div>
+    <div id="room-label">LIVING QUARTERS</div>
+    <div class="hud-bottom"><span>W A S D <em>move</em> &nbsp; MOUSE <em>look</em> &nbsp; SHIFT <em>brisk pace</em> &nbsp; ESC <em>pause</em></span><button id="reset">Reset · R</button><button id="settings">Settings</button></div>
+  </div>
+  <section id="welcome" class="overlay">
+    <div class="intro">
+      <span class="eyebrow">NEREID FIELD STATION / NORTH ATLANTIC</span>
+      <h1>Pelagic<span>A home below the surface.</span></h1>
+      <p>The last cup of tea is still warm. Sample trays wait at the bench. Beyond the pressure glass, the reef keeps its own time.</p>
+      <div class="route">LIVING QUARTERS <span>→</span> RESEARCH NOOK <span>→</span> OBSERVATION</div>
+      <button id="enter" class="primary">Enter the apartment <span>↗</span></button>
+      <div class="keys"><b>WASD / arrows</b> walk &nbsp; · &nbsp; <b>Mouse</b> look<br/><b>Shift</b> brisk pace &nbsp; · &nbsp; <b>R</b> reset &nbsp; · &nbsp; <b>Esc</b> release mouse</div>
+      <div class="options"><label>Render quality <select id="quality"><option value="balanced" selected>Balanced</option><option value="high">High</option><option value="low">Low</option></select></label><label><input id="bob" type="checkbox"/> Gentle walking sway</label><label><input id="stats-toggle" type="checkbox"/> Frame-time display</label><button id="pause-reset">Reset to entrance</button></div>
+      <small id="status">Preparing the apartment…</small>
+    </div>
+  </section>
+  <aside id="stats" hidden></aside>
+  <div id="error" hidden></div>
+</body>
+</html>

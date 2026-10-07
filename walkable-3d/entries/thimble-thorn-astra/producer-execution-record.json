@@ -1,0 +1,48 @@
+{
+  "title": "The Thimble & Thorn — traveling merchant wagon",
+  "model": "GPT-6 (identity supplied in session; exact backend model identifier not exposed)",
+  "effort": "Not exposed by this execution environment",
+  "first_implementation_utc": "2026-10-07T05:06:43.3932637-04:00",
+  "deadline_utc": "2026-10-07T06:06:43.3932637-04:00",
+  "actual_stop_utc": "2026-10-07T09:37:43.8591291+00:00",
+  "interruptions": [],
+  "execution_conditions": "No browser, no server, no UI/GPU/performance tests; bounded CPU-only checks only.",
+  "model_identity_provided": "Codex, based on GPT-6",
+  "exact_backend_model_variant": "Unavailable in session metadata",
+  "reasoning_effort_setting": "Unavailable in session metadata",
+  "subagents_or_other_models_used": false,
+  "artifact_path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-36\\merchant-wagon\\dist",
+  "suggested_launch_address": "http://127.0.0.1:5187/",
+  "preview_running": false,
+  "launch_command": "npm.cmd run preview",
+  "checks": [
+    "PASS: JavaScript syntax checks",
+    "PASS: CPU-only full inspection-route collision simulation, 31 colliders",
+    "PASS: finite Three.js geometry attributes",
+    "PASS: authored support surfaces and 1.82 m standing clearance at 12 route samples via CPU ray casts",
+    "PASS: Vite production build",
+    "PASS: read-only port check found no listener on 5187 at 2026-10-07T09:37:06Z"
+  ],
+  "geometry_counts": {
+    "batched_triangles": 177428,
+    "static_material_batches": 41,
+    "total_meshes": 61
+  },
+  "not_performed": [
+    "Browser launch or automation",
+    "Server startup",
+    "Screenshot or visual inspection",
+    "Interactive testing",
+    "GPU testing",
+    "Performance benchmarking"
+  ],
+  "process_cleanup": "All npm, Node, build and check command sessions exited. Final read-only check found no remaining Node/esbuild processes referencing this workspace. No server, watcher, browser or test process was left running; no unrelated process was terminated.",
+  "interruption_history": "No external interruptions or clock extensions. Initial npm access restriction, one CSS build error and one config-loader restriction were resolved within the original time window.",
+  "production_sha256": {
+    "dist\\assets\\index-BCkG7dRS.js": "B66C6B84AB141A76A165CAC7EFAA45A50B1AF1F37994D16AFE105A81BBD42874",
+    "dist\\assets\\index-C8ZqM_US.css": "01B34AD10C409B4590D22F42AC350DC28698CBEC110C1BA152CDDB3BA6AB10A6",
+    "dist\\assets\\three-D2pxnZeo.js": "6B8EFC19CF400B8E8880AF326A87B134A4E4F8869C2D3273FE850170FFC2242F",
+    "dist\\index.html": "5C47B67B51611B5C2C3C48E6F063B04A1203EA188553C1EA29C1917C398C6D2E"
+  },
+  "elapsed_minutes": 31.014
+}

@@ -27,6 +27,7 @@
     "producerChecks": "Inline JavaScript syntax, package JSON and module presence passed; no visual, interactive or performance tests.",
     "importerStaticChecks": {
       "id": "reedway-rooms-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:2309472e770b76fda59bbeffec90d20519174767ab5892c95512554ceec4c208",
       "syntax": [
         {
           "file": "index.html",
@@ -37,13 +38,7 @@
       ],
       "externalReferences": [],
       "authoredApiMatches": [],
-      "missingRelativeRuntimeModules": [
-        {
-          "file": "index.html",
-          "import": "./node_modules/three/build/three.module.js",
-          "status": "Missing in supplied frozen build; no dependency supplied or source repaired."
-        }
-      ],
+      "missingRelativeRuntimeModules": [],
       "sourceArchiveAndFilesMatch": true,
       "browser": false,
       "server": false,

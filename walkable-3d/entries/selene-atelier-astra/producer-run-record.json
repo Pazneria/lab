@@ -1,0 +1,36 @@
+{
+  "entry": "Selene / The Moonwake Commission",
+  "firstImplementation": "2026-10-07T05:07:59.0810208-04:00",
+  "deadline": "2026-10-07T06:07:59.0810208-04:00",
+  "model": null,
+  "effort": null,
+  "interruptions": [],
+  "stopTimestamp": "2026-10-07T09:40:12.6916169+00:00",
+  "conditions": "No browser, server, screenshots, GPU tests, or performance benchmarking",
+  "runtimeIdentification": "Codex based on GPT-6; exact deployment model ID and reasoning-effort setting are not exposed to this worker.",
+  "platformTaskTitle": "Build Astra scene 22",
+  "threadId": "01a1159e-0f1e-72b9-a661-4e711295703d",
+  "modelMetadataLimitation": "Task title is not treated as proof of exact model or effort. Authoritative run configuration is required to complete these two fields.",
+  "executionEvents": [
+    "Initial npm dependency fetch blocked by sandbox network access; approved pinned registry installation succeeded without stopping or resetting the clock.",
+    "A temporary Vite config loader attempted inaccessible parent-directory resolution; moved the relative-base option to the build command and removed that config. Final build passed.",
+    "Sandbox process enumeration was denied; a read-only approved cleanup check then confirmed no entry-owned processes remained.",
+    "No user pauses, model switches, delegated work, browser launches, servers, visual tests, GPU tests, or performance benchmarks."
+  ],
+  "checks": {
+    "syntax": "passed",
+    "productionBuild": "passed",
+    "buildWarning": "Single JavaScript bundle exceeds the optional 500 kB chunk warning threshold; 568905 bytes, 151.68 kB gzip.",
+    "cpuStructure": "passed",
+    "batchedTriangles": 247473,
+    "materialBatches": 61,
+    "reachableInspectionPoints": 11,
+    "browserVisualInteractive": "not performed",
+    "frameTimeMeasurement": "not performed",
+    "processCleanup": "Verified no entry-owned node, npm, esbuild or command processes remained; all tool command sessions completed.",
+    "suggestedPort": 5187,
+    "suggestedPortStatus": "Verified no active TCP listener; no server started."
+  },
+  "elapsedSeconds": 1933.692,
+  "completedBeforeDeadline": true
+}

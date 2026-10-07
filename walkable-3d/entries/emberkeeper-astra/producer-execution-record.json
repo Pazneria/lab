@@ -1,0 +1,33 @@
+{
+  "entry": "Emberkeeper — Dragon Caretaker Quarters",
+  "first_implementation_timestamp": "2026-10-07T09:07:28.4661751+00:00",
+  "deadline": "2026-10-07T10:07:28.4661751+00:00",
+  "model": "GPT-6 (assigned Codex runtime; exact deployment identifier is not exposed to this agent)",
+  "effort": "Not exposed to this agent",
+  "interruption_history": [],
+  "actual_stop_timestamp": "2026-10-07T09:45:57.4956465+00:00",
+  "conditions": "CPU-only checks; no browser, renderer, benchmark, or server",
+  "exact_model_identifier": "Unavailable: not exposed by the selected execution environment",
+  "exact_effort_setting": "Unavailable: not exposed by the selected execution environment",
+  "process_cleanup": "All install/build/check commands completed. Read-only process inspection filtered to this entry confirmed no Node or esbuild process remains. No server, browser, watcher or GPU process was started. No unrelated processes were terminated.",
+  "execution_notes": [
+    "No session or user interruptions; the one-hour clock was not paused or extended.",
+    "The first npm registry request was blocked by the restricted network. A permitted registry-install retry succeeded within the original window.",
+    "An optional Vite configuration triggered a sandbox ancestor-directory access failure; the optional configuration was removed and the final build passed.",
+    "The restricted process-list query was denied; a permitted read-only query filtered to this entry succeeded and confirmed cleanup."
+  ],
+  "verification": {
+    "syntax": "passed",
+    "cpu_scene_construction": "passed",
+    "route_connectivity": "12 anchors reached",
+    "collision_checks": "passed",
+    "production_build": "passed",
+    "browser_launched": false,
+    "server_started": false,
+    "rendering_verified": false,
+    "performance_measured": false,
+    "suggested_launch_address": "http://127.0.0.1:43139/",
+    "address_status": "not running; read-only listener check found the port unused"
+  },
+  "elapsed_seconds": 2309.029471
+}

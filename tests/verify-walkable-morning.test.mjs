@@ -24,9 +24,10 @@ test('PR50 records, failures, authentic previews and old prompt versions remain 
 });
 
 test('morning entries preserve hashed frozen files, exact launches, requested/runtime distinctions and uncaptured previews',()=>{
- assert.ok(fresh.length>0);assert.ok(fresh.length<=24);
+ assert.equal(fresh.length,24);assert.equal(catalog.entries.length,81);assert.equal(catalog.prompts.length,22);
+ for(let scene=15;scene<=22;scene++)assert.deepEqual(fresh.filter(e=>e.promptId===String(scene)).map(e=>e.comparisonModel).sort(),['astra','luna','sol']);
  assert.equal(new Set(catalog.entries.map(e=>e.id)).size,catalog.entries.length);
- const eligible=catalog.entries.filter(e=>e.availability!=='failed');
+ const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,75);
  assert.equal(new Set(eligible.map(e=>`${e.promptId}/${e.comparisonModel}`)).size,eligible.length);
  for(const e of fresh){
   assert.ok(Number(e.promptId)>=15&&Number(e.promptId)<=22);
@@ -35,6 +36,8 @@ test('morning entries preserve hashed frozen files, exact launches, requested/ru
   assert.equal(e.previewAvailable,false);assert.equal(e.preview,undefined);
   const dir=new URL(`walkable-3d/entries/${e.id}/`,root);
   assert.equal(existsSync(new URL('preview.jpg',dir)),false);
+  assert.equal(existsSync(new URL('frozen/cleanup-results.json',dir)),false);
+  assert.equal(existsSync(new URL('frozen/static-check-results.json',dir)),false);
   const p=JSON.parse(readFileSync(new URL('provenance.json',dir)));
   assert.equal(p.previewCapture.status,'uncaptured');
   for(const [name,record] of Object.entries(p.files)){

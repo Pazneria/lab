@@ -1,0 +1,163 @@
+{
+  "entry": "pelagic-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\pelagic-sol\\source-preservation.zip",
+  "archiveSha256": "5202d94e7c9147597aeef208a922a86379536c5ca6cc153b113ef1b7e4b21799",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-CR6csf2p.css": "dist/assets/index-CR6csf2p.css",
+      "frozen/assets/index-ugO4FyX9.js": "dist/assets/index-ugO4FyX9.js",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "1ddd9ac19d54ed8c1900c5740ee27d7a8807dabe6af93763d52dacf8e950dce0",
+        "bytes": 32
+      },
+      "dist/assets/index-CR6csf2p.css": {
+        "sha256": "613c2ccff4ffc43559e5dcdcf901d65d02b4d61c71bb6523654c72c7515e24c1",
+        "bytes": 3542
+      },
+      "dist/assets/index-ugO4FyX9.js": {
+        "sha256": "2b37c57a7da01c8a02ca8f58f283ba23653a1c8ef1c66949a7d54845181d062c",
+        "bytes": 575098
+      },
+      "dist/index.html": {
+        "sha256": "e10428e70aca81e0bc44469a95f968bd82a119d22486d9f282edfdb70e0ebd69",
+        "bytes": 2236
+      },
+      "geometry-audit.json": {
+        "sha256": "eb0cae9195114054f662586056c548a5872a3038a8d7be779b38a344b8d4af00",
+        "bytes": 366
+      },
+      "index.html": {
+        "sha256": "46c9b637d3052a14561904be4f76c25179bf2e710cf2c3ef6cd539973af0f48e",
+        "bytes": 2139
+      },
+      "package-lock.json": {
+        "sha256": "502ec51f46264f82ab97b47b1b60833d98ef810adc9d9611761a1b9bfbd007a7",
+        "bytes": 35184
+      },
+      "package.json": {
+        "sha256": "1f2ff92837d2f9eeee9c032b1e6dfd884979227278805f102a76a93200b83de2",
+        "bytes": 475
+      },
+      "README.md": {
+        "sha256": "1ca898f145e3e90c998cdc5d0b812565070ad8b8f33333c20f4da736503bd115",
+        "bytes": 5165
+      },
+      "run-record.json": {
+        "sha256": "d5b7d94fd32e55c930901e74c1fc4f56a493e731605ad777d1be5961941d7238",
+        "bytes": 1785
+      },
+      "scripts/check-geometry.mjs": {
+        "sha256": "3178c79e070450fdd048de18b552e8c041d460d76c0cd5ba19344156417e18d0",
+        "bytes": 2996
+      },
+      "scripts/check-layout.mjs": {
+        "sha256": "b4da39b7ca341110da87efa6d10d2eed24511432aff1695e8b848db1d5a1afe0",
+        "bytes": 1635
+      },
+      "src/layout.js": {
+        "sha256": "b214517099d71d01b7c84999bae90a350827ef5d6942cf235ab23403bd97a2d5",
+        "bytes": 2004
+      },
+      "src/main.js": {
+        "sha256": "f3b7029f14c6e591ffe6157c0e68b4325a4f23d5ae2240ab531aca94495bd3eb",
+        "bytes": 56165
+      },
+      "src/style.css": {
+        "sha256": "3b47817b4bcd571950d9d282735b1e8c090d4ae4f6909e74afc6446e609ac880",
+        "bytes": 3508
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\pelagic-sol\\source-preservation.zip",
+    "sourceArchiveSha256": "5202d94e7c9147597aeef208a922a86379536c5ca6cc153b113ef1b7e4b21799",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-32\\pelagic-home\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\pelagic-sol\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:05:25.0265576Z",
+    "deadlineUtc": "2026-10-07T10:05:25.0265576Z",
+    "stopUtc": "2026-10-07T09:34:48.9715546Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/assets/index-CR6csf2p.css": {
+      "sha256": "613c2ccff4ffc43559e5dcdcf901d65d02b4d61c71bb6523654c72c7515e24c1",
+      "bytes": 3542
+    },
+    "frozen/assets/index-ugO4FyX9.js": {
+      "sha256": "2b37c57a7da01c8a02ca8f58f283ba23653a1c8ef1c66949a7d54845181d062c",
+      "bytes": 575098
+    },
+    "frozen/index.html.txt": {
+      "sha256": "e10428e70aca81e0bc44469a95f968bd82a119d22486d9f282edfdb70e0ebd69",
+      "bytes": 2236
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "producer-run-record.json": {
+      "sha256": "d5b7d94fd32e55c930901e74c1fc4f56a493e731605ad777d1be5961941d7238",
+      "bytes": 1785
+    },
+    "README.md": {
+      "sha256": "1ca898f145e3e90c998cdc5d0b812565070ad8b8f33333c20f4da736503bd115",
+      "bytes": 5165
+    },
+    "run-record.json": {
+      "sha256": "1561dbdd30cae01d65a29fc4208c39b2faebdcd8b53556a1813669df75f21e3d",
+      "bytes": 3396
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/assets/index-CR6csf2p.css",
+      "frozen/assets/index-ugO4FyX9.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "producer-run-record.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}

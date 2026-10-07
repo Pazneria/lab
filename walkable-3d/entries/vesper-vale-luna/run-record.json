@@ -23,6 +23,7 @@
     "producerChecks": "node --check main.js passed; local page references checked. No browser, interactive/visual check or performance benchmark.",
     "importerStaticChecks": {
       "id": "vesper-vale-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:e40d123192cb3e245753644e3f0099adac79437762880e8cbd13aaf23c854672",
       "syntax": [
         {
           "file": "main.js",

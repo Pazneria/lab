@@ -43,7 +43,16 @@
     },
     "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\source-preservation.zip",
     "sourceArchiveSha256": "326a1598c1d9d6f828b2c694ebbea734be4ab66f7ca2f6963245896172209eb2",
-    "supplementalDependencies": []
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-19\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\reedway-rooms-luna\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
   },
   "timing": {
     "firstImplementationUtc": "2026-10-07T09:01:19Z",
@@ -88,8 +97,12 @@
       "bytes": 1445
     },
     "run-record.json": {
-      "sha256": "ef66824a781798873c40d9b9fdd5a312ff9c3e1017e4c618c44cb6bbace6320b",
-      "bytes": 2522
+      "sha256": "109ae1a32290ea98bc96586ec29c7329f50723715fbf9a5bb7a373ceb7259425",
+      "bytes": 2449
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
     }
   },
   "publication": {
@@ -100,7 +113,8 @@
       "frozen/vendor/three/three.module.js",
       "launch-prompt.txt",
       "README.md",
-      "run-record.json"
+      "run-record.json",
+      "three-LICENSE.txt"
     ],
     "retainedOutsidePages": [
       "Original source/build/dependency snapshots in task-43/frozen-originals"
@@ -110,7 +124,5 @@
     "status": "uncaptured",
     "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
   },
-  "staticHostingConcerns": [
-    "The supplied build references missing relative module(s): ./node_modules/three/build/three.module.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
-  ]
+  "staticHostingConcerns": []
 }

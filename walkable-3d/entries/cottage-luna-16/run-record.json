@@ -24,6 +24,7 @@
     "producerChecks": "Inline JavaScript syntax check and Python HTML parser passed. No browser, server, visual, movement or performance QA.",
     "importerStaticChecks": {
       "id": "cottage-luna-16",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:41d5796dcdf053322a9cc127636310cb39b75c71df318ba3329785addf46ed14",
       "syntax": [
         {
           "file": "index.html",

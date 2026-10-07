@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#252923"/><title>The Waylight Rooms — Mara Venn</title>  <script type="module" crossorigin src="./assets/index-D7eKyZ23.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-Co1_aSmd.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-Bb5hPQqE.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three-dimensional private rooms of Mara Venn"></canvas>
+  <div id="loading"><span class="emblem">✧</span><p>Opening the shutters…</p></div>
+  <header id="identity"><span class="eyebrow">A HOME ABOVE THE CLOUDS</span><h1>The Waylight Rooms</h1><p>Mara Venn · keeper of the mountain lights</p></header>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div id="room-label">MARA’S BEDROOM</div>
+  <aside id="welcome" class="panel">
+    <span class="eyebrow">THE MORNING AFTER A LONG WALK</span>
+    <h2>Every light leads home.</h2>
+    <p>A storm coat drying. A route half plotted. Two cups, though only one is warm. Walk through the private rooms of a mountain waylight keeper.</p>
+    <button id="enter">Step inside <span>↗</span></button>
+    <div class="instructions"><span><kbd>W A S D</kbd> walk</span><span><kbd>Mouse</kbd> look</span><span><kbd>Shift</kbd> brisk walk</span><span><kbd>R</kbd> return to entrance</span><span><kbd>Esc</kbd> release mouse</span></div>
+    <p class="drag-hint">You can also drag to look and use the arrow keys to walk.</p>
+  </aside>
+  <footer id="toolbar"><span id="hint">Click to explore · WASD to walk</span><div><button id="quality" title="Switch rendering resolution">Quality: high</button><button id="help" title="Show controls">Controls</button><button id="reset" title="Return to the entrance">Reset view <span>↺</span></button></div></footer>
+  <div id="error" hidden></div>
+</body>
+</html>

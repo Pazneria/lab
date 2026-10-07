@@ -1,0 +1,44 @@
+{
+  "title": "The Quiet After",
+  "model": "GPT-6-based Codex, as stated in session instructions; exact runtime model identifier not exposed",
+  "effort": "Exact reasoning-effort setting not exposed in session metadata or model-related environment variables",
+  "firstImplementation": "2026-10-07T05:04:11.5411623-04:00",
+  "deadline": "2026-10-07T06:04:11.5411623-04:00",
+  "actualStop": "2026-10-07T09:42:03.1097686+00:00",
+  "interruptions": [],
+  "rules": "No browser, renderer, GPU/performance test, or server launched. Local coding and bounded CPU-only checks only.",
+  "elapsedMinutes": 37.868,
+  "deadlineExtended": false,
+  "checks": {
+    "javascriptSyntax": "passed",
+    "connectedRouteTargets": 10,
+    "collisionBodies": 33,
+    "boundaryAndTunnellingChecks": "passed",
+    "cpuOnlySceneAssembly": "passed, with no-op Canvas 2D context",
+    "productionBuild": "passed",
+    "browser": "not launched",
+    "renderer": "not launched",
+    "gpu": "not tested",
+    "interactive": "not tested",
+    "performance": "not measured",
+    "server": "never started",
+    "suggestedLaunchAddress": "http://127.0.0.1:5187/",
+    "suggestedPortListenerCheck": "no listener observed"
+  },
+  "cleanup": "All tracked install, check and build command sessions completed. No Node or esbuild executable was running from this entry directory at final inspection. No server, watcher, browser or test process was left running; no unrelated processes were terminated. CIM command-line enumeration was denied, so executable-path inspection and tracked session completion were used.",
+  "buildIssuesResolved": [
+    "Initial npm install failed with sandbox EACCES; authorized registry retry using an entry-local cache succeeded. Work continued; deadline unchanged.",
+    "Vite config-file bundling encountered an ancestor-directory sandbox restriction; replaced the config with the equivalent --base=./ build argument. Final build passed.",
+    "PowerShell Tee-Object logging parameter combination failed; replaced with captured output and Add-Content. Final verification log saved.",
+    "No user or external-task interruption occurred. No deadline reset or extension."
+  ],
+  "deliverables": [
+    "dist/",
+    "src/",
+    "README.md",
+    "BUILD-REPORT.md",
+    "verification.txt",
+    "package.json",
+    "package-lock.json"
+  ]
+}

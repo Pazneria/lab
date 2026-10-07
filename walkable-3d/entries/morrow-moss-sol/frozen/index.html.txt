@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#183d3c" />
+    <title>Morrow & Moss — A home on the road</title>
+    <script type="module" crossorigin src="/assets/index-BDzTfLVi.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-l1DYdEoA.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable three dimensional merchant wagon and camp"></canvas>
+    <div id="loading"><span class="smallcaps">Morrow & Moss</span><p>Unpacking a little home…</p></div>
+    <div id="welcome" class="veil" hidden>
+      <section class="intro">
+        <p class="eyebrow">A HOME ON THE ROAD</p>
+        <h1>Morrow <em>&</em> Moss</h1>
+        <div class="rule"></div>
+        <p class="story">Tea, useful things, and a bed beneath the eaves.<br>A traveling merchant’s small, well-loved world.</p>
+        <p class="route">Follow the steps into the home. Wander through to the workshop.<br>Come back outside to see the open shop.</p>
+        <button id="enter">Explore the wagon <span>↗</span></button>
+        <button id="reset" class="reset" hidden>Return to camp</button>
+        <div class="keys"><span><kbd>W A S D</kbd> walk</span><span><kbd>Mouse</kbd> look</span><span><kbd>Esc</kbd> pause</span></div>
+        <p class="fine">Arrow keys also move · Shift for a brisk walk · R to return to camp</p>
+        <p id="inputNotice" class="fine" role="status"></p>
+      </section>
+    </div>
+    <header id="hud" hidden><div><strong>MORROW <i>&</i> MOSS</strong><span id="place">THE CAMP</span></div><button id="help" title="Pause and show controls">Controls / pause</button></header>
+    <div id="reticle" hidden></div>
+    <footer id="foot" hidden><span>WASD · Mouse look · Esc pause · R reset</span><span id="hint">A small home, an open shop, a patch of evening.</span></footer>
+    <div id="error" class="veil" hidden><section class="intro"><h1>Unable to unpack</h1><p id="errorText"></p><p>Use a current browser with WebGL enabled and launch using the command in README.md.</p></section></div>
+  </body>
+</html>

@@ -50,7 +50,16 @@
     },
     "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\lantern-room-luna\\source-preservation.zip",
     "sourceArchiveSha256": "54ccc31be04151d59cea03c88a52e04c042308a602654b20eb9c7752ebec8377",
-    "supplementalDependencies": []
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-25\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\lantern-room-luna\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
   },
   "timing": {
     "firstImplementationUtc": "2026-10-07T09:03:27Z",
@@ -95,8 +104,12 @@
       "bytes": 1163
     },
     "run-record.json": {
-      "sha256": "b91a3bfc29e04f5df9aa067ce3ef357c4017c49db3b921cd87e12cb356373684",
-      "bytes": 2295
+      "sha256": "553b97037c46c6436b10e8a750c24520f1a18a75a39a1f2706bde0ab7e56dba5",
+      "bytes": 2446
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
     }
   },
   "publication": {
@@ -106,7 +119,8 @@
       "frozen/index.html.txt",
       "launch-prompt.txt",
       "README.md",
-      "run-record.json"
+      "run-record.json",
+      "three-LICENSE.txt"
     ],
     "retainedOutsidePages": [
       "Original source/build/dependency snapshots in task-43/frozen-originals"

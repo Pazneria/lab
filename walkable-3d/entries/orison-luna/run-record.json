@@ -23,6 +23,7 @@
     "producerChecks": "npm run build, JavaScript syntax, package JSON and built-asset reference checks passed. No browser, visual, interactive, WebGL compatibility or frame-time checks. Static planet/starfield, fixed-height movement and simplified 2D collision.",
     "importerStaticChecks": {
       "id": "orison-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:95e9be3cfa521749faf29345d911508e948a66f7f13c81d895096fd1950fd89a",
       "syntax": [
         {
           "file": "build.mjs",
@@ -55,11 +56,6 @@
       ],
       "authoredApiMatches": [],
       "missingRelativeRuntimeModules": [
-        {
-          "file": "dist/three.module.js",
-          "import": "./three.core.js",
-          "status": "Missing in supplied frozen build; no dependency supplied or source repaired."
-        },
         {
           "file": "dist/three.module.js",
           "import": "./three.core.js",

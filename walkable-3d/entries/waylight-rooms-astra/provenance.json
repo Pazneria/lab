@@ -1,0 +1,184 @@
+{
+  "entry": "waylight-rooms-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\waylight-rooms-astra\\producer-original.zip",
+  "archiveSha256": "d92b5b0c9fc59be5228c701ebefaa47a3191a50889ef6e550627d63b2bb95f01",
+  "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-Bb5hPQqE.css": "dist/assets/index-Bb5hPQqE.css",
+      "frozen/assets/index-D7eKyZ23.js": "dist/assets/index-D7eKyZ23.js",
+      "frozen/assets/three-Co1_aSmd.js": "dist/assets/three-Co1_aSmd.js",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "ae7fc9a51269d7231a9d54e038eb3304fff3b0ba50c6464f95f921bf6e2a5694",
+        "bytes": 32
+      },
+      "BUILD-MANIFEST.json": {
+        "sha256": "efcc982d4d5f3eb16bfa9226fd9df8ae0c5760c66bcb07af149278dbb0affe17",
+        "bytes": 638
+      },
+      "dist/assets/index-Bb5hPQqE.css": {
+        "sha256": "80fa6cbd9ee1f7cc32e690958fd6c3531fc003c91cb68d938756cbc0930fbc4e",
+        "bytes": 2999
+      },
+      "dist/assets/index-D7eKyZ23.js": {
+        "sha256": "bf799d7929c7e28b2261efb91800fdae65031f107eeaf8e48278ceea6ac64df8",
+        "bytes": 52750
+      },
+      "dist/assets/three-Co1_aSmd.js": {
+        "sha256": "e5c9d8ff0a1f7c9f77d6bc75b542ac225108e6a9a80d250d5f1f063b8e9c2ef1",
+        "bytes": 524088
+      },
+      "dist/index.html": {
+        "sha256": "a13f1c91729d1bd3efef93cd7abc96466d4cb14e84eadae1fd91c936e3b9f71e",
+        "bytes": 1958
+      },
+      "index.html": {
+        "sha256": "a6a8e2773f7afc622c7dde901d3d1149f44358a8de4dd6c94c23ad2cca2b0f08",
+        "bytes": 1784
+      },
+      "package-lock.json": {
+        "sha256": "25ba10fde08214e8cb9ee74ea870198fc3f0e7652ec5206d1c81d0eece936295",
+        "bytes": 35188
+      },
+      "package.json": {
+        "sha256": "6572b164a92b3d55270b35d9186352a33fc7ecddf6e1e2b43069ef43b48fb660",
+        "bytes": 635
+      },
+      "README.md": {
+        "sha256": "f1ea6a773eabcad859fa01b4a32e3f4053ddfede4bbf4f5a5cbf9e83eee3713d",
+        "bytes": 4629
+      },
+      "RUN-RECORD.json": {
+        "sha256": "b915b3a774d434b29d90cc9fc5b819b5f7a922a132ba30dcc16bb34c26a0c2da",
+        "bytes": 1729
+      },
+      "src/geometry.js": {
+        "sha256": "f9ad0b4fc43ca9b0ff58da52aa879a0e4f10b52299d4085b41ba05185ce37d2f",
+        "bytes": 5081
+      },
+      "src/main.js": {
+        "sha256": "86d2341fcd1b9d9a9df74462b89a4ec8c4043083d6ea786f44fc81aac6b494dc",
+        "bytes": 3120
+      },
+      "src/materials.js": {
+        "sha256": "e716e1c580746ac829e19c67cc635ddc942e022241de284842b5d7aadfb7459c",
+        "bytes": 8582
+      },
+      "src/navigation.js": {
+        "sha256": "ba11b10b810ce76f6a3c05e7f83d9880355b3b3ce72d907a3538ec13841261b0",
+        "bytes": 4680
+      },
+      "src/scene.js": {
+        "sha256": "13dd57eca508e24fcb8d5df94a122496f9635abc8ac792fb186672bdd09f2b00",
+        "bytes": 36519
+      },
+      "src/style.css": {
+        "sha256": "2bd9400d75984101131168f2b30519738a11a91d0ec73165dd24c6d4902a6d42",
+        "bytes": 2966
+      },
+      "TEST-RESULTS.json": {
+        "sha256": "52b76638b8b6ee747fa420087e39a842fff0329a37e76b75075437d02fbc81da",
+        "bytes": 850
+      },
+      "tests/layout.mjs": {
+        "sha256": "b453e77bb956358776c5f0e0d6ca064a77a4d5ac762136fcb1d4d88ddbea6d05",
+        "bytes": 4233
+      },
+      "vite.config.js": {
+        "sha256": "5b55ae7fc3a38328ca800b3ccb079e952fc5b52f221862614996e1d6e93e0e13",
+        "bytes": 260
+      },
+      "waylight-rooms-build.zip": {
+        "sha256": "d92b5b0c9fc59be5228c701ebefaa47a3191a50889ef6e550627d63b2bb95f01",
+        "bytes": 156827
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\waylight-rooms-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "94e5da09f46b8c308ef2ac89ad8e5f8ae39943d89fc1c8071529f53bf02ec25f",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-21\\waylight-rooms\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\waylight-rooms-astra\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:02:03.0631271Z",
+    "deadlineUtc": "2026-10-07T10:02:03.0631271Z",
+    "stopUtc": "2026-10-07T09:36:26.3634286Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/assets/index-Bb5hPQqE.css": {
+      "sha256": "80fa6cbd9ee1f7cc32e690958fd6c3531fc003c91cb68d938756cbc0930fbc4e",
+      "bytes": 2999
+    },
+    "frozen/assets/index-D7eKyZ23.js": {
+      "sha256": "bf799d7929c7e28b2261efb91800fdae65031f107eeaf8e48278ceea6ac64df8",
+      "bytes": 52750
+    },
+    "frozen/assets/three-Co1_aSmd.js": {
+      "sha256": "e5c9d8ff0a1f7c9f77d6bc75b542ac225108e6a9a80d250d5f1f063b8e9c2ef1",
+      "bytes": 524088
+    },
+    "frozen/index.html.txt": {
+      "sha256": "a13f1c91729d1bd3efef93cd7abc96466d4cb14e84eadae1fd91c936e3b9f71e",
+      "bytes": 1958
+    },
+    "launch-prompt.txt": {
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "bytes": 7673
+    },
+    "producer-RUN-RECORD.json": {
+      "sha256": "b915b3a774d434b29d90cc9fc5b819b5f7a922a132ba30dcc16bb34c26a0c2da",
+      "bytes": 1729
+    },
+    "README.md": {
+      "sha256": "f1ea6a773eabcad859fa01b4a32e3f4053ddfede4bbf4f5a5cbf9e83eee3713d",
+      "bytes": 4629
+    },
+    "run-record.json": {
+      "sha256": "f2159664f155545167ad94903fd4940ba51d51c98448f582fa5de87130b5a794",
+      "bytes": 3595
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/assets/index-Bb5hPQqE.css",
+      "frozen/assets/index-D7eKyZ23.js",
+      "frozen/assets/three-Co1_aSmd.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "producer-RUN-RECORD.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}

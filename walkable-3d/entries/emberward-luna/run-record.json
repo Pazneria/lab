@@ -23,6 +23,7 @@
     "producerChecks": "node --check scene.js passed. No browser/server; visual appearance, interactive behavior and frame time unverified. Collision covers room bounds and major furnishing, not small decorative props.",
     "importerStaticChecks": {
       "id": "emberward-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:93da3d08cf9b3541ce76f4e03a63494206480120777c8901adf240d3f6af4a7c",
       "syntax": [
         {
           "file": "scene.js",

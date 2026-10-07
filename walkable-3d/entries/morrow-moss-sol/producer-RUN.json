@@ -1,0 +1,36 @@
+{
+  "model": "GPT-6 (Codex; exact variant not exposed to this session)",
+  "reasoning_effort": "Not exposed to this session",
+  "first_implementation_timestamp": "2026-10-07T09:06:26.3280723+00:00",
+  "deadline": "2026-10-07T10:06:26.3280723+00:00",
+  "actual_stop_timestamp": "2026-10-07T09:50:47.9342479+00:00",
+  "interruptions": [],
+  "conditions": "No browsers, UI, screenshots, GPU, benchmarks or servers; CPU-only static checks permitted",
+  "initial_clock_capture": "2026-10-07T05:06:26.3304455-04:00",
+  "first_implementation_action": "Created the isolated entry directory; exact filesystem creation timestamp is used.",
+  "elapsed_seconds": 2661.606176,
+  "exact_metadata_limitation": "System identifies the assigned assistant as GPT-6 / Codex. Exact model variant and reasoning-effort setting were not exposed. No other model or subagent was used.",
+  "setup_notes": "Initial dependency install failed under sandbox restrictions; the authorized registry retry completed. All setup and checks remained inside the continuously running deadline.",
+  "process_cleanup": {
+    "managed_commands": "Every install, check, build and packaging command has completed.",
+    "entry_esbuild_processes_found": 0,
+    "entry_esbuild_processes_stopped": 0,
+    "servers_started": 0,
+    "watchers_started": 0,
+    "browsers_started": 0,
+    "tests_running": 0,
+    "unrelated_processes_terminated": 0,
+    "supplemental_query": "CIM process query was denied by the OS. A targeted Get-Process check for entry-owned esbuild processes succeeded."
+  },
+  "suggested_launch_address": "http://127.0.0.1:5187/ (not running)",
+  "suggested_port_listening_at_stop": false,
+  "artifact": {
+    "archive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-35\\morrow-moss-wagon\\morrow-moss-build.zip",
+    "archive_sha256": "4D1504C8D2E904C216CB52C5095548DD7F8F9DC0E6D57B725EAE3E25021DD85D",
+    "archive_bytes": 154206,
+    "production_build": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-35\\morrow-moss-wagon\\dist",
+    "authored_parts": 2824,
+    "mesh_batches": 62,
+    "vertices": 309700
+  }
+}

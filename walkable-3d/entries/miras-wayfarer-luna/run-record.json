@@ -24,6 +24,7 @@
     "producerChecks": "node --check passed. No browser/server; visual correctness, interactive movement and frame time unverified. Shader-based shade without dynamic shadow maps; simple collision bounds.",
     "importerStaticChecks": {
       "id": "miras-wayfarer-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:54fdbb75f17f5ea3d59471873be1035b84ce8e3d0533c40ee78f8fa62289a82a",
       "syntax": [
         {
           "file": "index.html",

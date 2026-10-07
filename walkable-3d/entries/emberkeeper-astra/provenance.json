@@ -1,0 +1,166 @@
+{
+  "entry": "emberkeeper-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\emberkeeper-astra\\source-preservation.zip",
+  "archiveSha256": "d7b759a548a474953628edd77e05ca1b81a3aa9c5db1d990f07b466c99d1f60d",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-BvQNVull.css": "dist/assets/index-BvQNVull.css",
+      "frozen/assets/index-Hn2wZQwv.js": "dist/assets/index-Hn2wZQwv.js",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "965b162e7908f89058860c7f0ad1e11f0225818d96fafb9df501d6b4050d9241",
+        "bytes": 27
+      },
+      "artifact-manifest.json": {
+        "sha256": "1bc05bd6c2288f1048203ed31e098598527fe939dcec96c0d8e8b653a16f8cee",
+        "bytes": 1659
+      },
+      "check-results.json": {
+        "sha256": "449e337464ad40f863b9c82d8174095c728a3e845f386fce9d0e03aad9f441a1",
+        "bytes": 1774
+      },
+      "checks/scene-check.mjs": {
+        "sha256": "64b212ae2f3adeea3ebbb6ece788ddd90325f6e146321b65c4941a90f51c824d",
+        "bytes": 3757
+      },
+      "dist/assets/index-BvQNVull.css": {
+        "sha256": "5cfb30e835a7402e3312e6430785b75b9d48981ba74c6c38d7aa6531200466f4",
+        "bytes": 3549
+      },
+      "dist/assets/index-Hn2wZQwv.js": {
+        "sha256": "afe01451af6ce110ba03f4a6f86200299e1cb59aaa7fe37695766e63dd2b616e",
+        "bytes": 543043
+      },
+      "dist/index.html": {
+        "sha256": "dd5073395ceeef10103a9d4d32e90d0c6b061f96f9b18e75b9ea3dc5697ab840",
+        "bytes": 2335
+      },
+      "execution-record.json": {
+        "sha256": "22ec64b70d86c3993fde600415aab080a11eb9087fd9dfb6d13ab7439b3954d2",
+        "bytes": 2053
+      },
+      "index.html": {
+        "sha256": "772f1fd53f42ff20232c28b4f5d427e3283815c578744e5e739ca1c63627d565",
+        "bytes": 2234
+      },
+      "package-lock.json": {
+        "sha256": "785b276abe521b10affbcdcd950864441c2d1417e35d2f2cd3dfea21858679b4",
+        "bytes": 35184
+      },
+      "package.json": {
+        "sha256": "228659b4fdc45cf5b1689ec1888b9ae8ac9b7754c01f300c1135898aa042b37c",
+        "bytes": 583
+      },
+      "README.md": {
+        "sha256": "c23b8bf634aa8479190a130255245423eebb66f148ad746059dff19466f23fa2",
+        "bytes": 5964
+      },
+      "src/geometry.js": {
+        "sha256": "5cd0321c4f59457ddb496007a5a6c61afc862f933f6565145b06bd652722577b",
+        "bytes": 4091
+      },
+      "src/main.js": {
+        "sha256": "9958504a1b5fb320d16d80a5be6ff5d13ae6860d6290ceea5e66b1d81175d7d2",
+        "bytes": 7597
+      },
+      "src/materials.js": {
+        "sha256": "4a695b3ab15bfdac476d0b9f6c4945c2be6fc90ce6a5891a3d000c78d5e1f340",
+        "bytes": 10461
+      },
+      "src/movement.js": {
+        "sha256": "64496d2b6891c913e3a9267a6f35b378c0c91f11f83f0d959d3d4ce48c2c5f95",
+        "bytes": 872
+      },
+      "src/style.css": {
+        "sha256": "3bfe945188472090e277f1d57355d4a8b1d74c133a89ae9bc68818f97d51e3f9",
+        "bytes": 3511
+      },
+      "src/world.js": {
+        "sha256": "f7903946f9eb3bd431cf0911f50677976791455a3334e8e4daf72eb3a288de95",
+        "bytes": 28788
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\emberkeeper-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "d7b759a548a474953628edd77e05ca1b81a3aa9c5db1d990f07b466c99d1f60d",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-39\\ember-keeper\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\emberkeeper-astra\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:07:28.4661751Z",
+    "deadlineUtc": "2026-10-07T10:07:28.4661751Z",
+    "stopUtc": "2026-10-07T09:45:57.4956465Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/assets/index-BvQNVull.css": {
+      "sha256": "5cfb30e835a7402e3312e6430785b75b9d48981ba74c6c38d7aa6531200466f4",
+      "bytes": 3549
+    },
+    "frozen/assets/index-Hn2wZQwv.js": {
+      "sha256": "afe01451af6ce110ba03f4a6f86200299e1cb59aaa7fe37695766e63dd2b616e",
+      "bytes": 543043
+    },
+    "frozen/index.html.txt": {
+      "sha256": "dd5073395ceeef10103a9d4d32e90d0c6b061f96f9b18e75b9ea3dc5697ab840",
+      "bytes": 2335
+    },
+    "launch-prompt.txt": {
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "bytes": 7870
+    },
+    "producer-execution-record.json": {
+      "sha256": "22ec64b70d86c3993fde600415aab080a11eb9087fd9dfb6d13ab7439b3954d2",
+      "bytes": 2053
+    },
+    "README.md": {
+      "sha256": "c23b8bf634aa8479190a130255245423eebb66f148ad746059dff19466f23fa2",
+      "bytes": 5964
+    },
+    "run-record.json": {
+      "sha256": "95e8f265f7b0c2bc5e569a4e76c1f10ec26c2cdb33387231943758e8bcf99053",
+      "bytes": 3292
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/assets/index-BvQNVull.css",
+      "frozen/assets/index-Hn2wZQwv.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "producer-execution-record.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}

@@ -24,7 +24,8 @@
     },
     "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\pelagic-house-luna\\source-preservation.zip",
     "sourceArchiveSha256": "1065574ed5ab62f82a8d50a47a65539d6089ea6f28b63fd570fd7187038cee53",
-    "supplementalDependencies": []
+    "supplementalDependencies": [],
+    "supplementalLicenses": []
   },
   "timing": {
     "firstImplementationUtc": "2026-10-07T09:07:25Z",
@@ -56,8 +57,8 @@
       "bytes": 1896
     },
     "run-record.json": {
-      "sha256": "478b40671475e348aaf6ad521019e2f37ea2e134fc175b39e516adca7b0372d7",
-      "bytes": 2205
+      "sha256": "07d1bbc28eb2c0300a19e2a3bf66985e9a3bd9efa1b88aa8bfb9bf7e4903c13f",
+      "bytes": 2356
     }
   },
   "publication": {

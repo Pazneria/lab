@@ -42,7 +42,8 @@
         "bytes": 1081,
         "authority": "Exact local Three.js 0.180.0 modules from the completed Luna15 dependency package; version and hashes verified. No independent upstream/CDN byte verification claimed."
       }
-    ]
+    ],
+    "supplementalLicenses": []
   },
   "timing": {
     "firstImplementationUtc": "2026-10-07T09:02:51Z",
@@ -87,8 +88,8 @@
       "bytes": 1538
     },
     "run-record.json": {
-      "sha256": "ed9b7942cd8db253a40e92fcf2c407d6f9196dce513ba973f64efe67402a74b7",
-      "bytes": 2396
+      "sha256": "0250e3e8387ccc9ab936a669c6ae4d655ad65323b224b4946b71f440f7a6bc68",
+      "bytes": 2547
     }
   },
   "publication": {

@@ -24,6 +24,7 @@
     "producerChecks": "Node.js v24.14.0 parsed inline JavaScript. No browser/server; visual appearance, movement, pointer lock, shader compilation and performance unverified. No measured frame times.",
     "importerStaticChecks": {
       "id": "pelagic-house-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:28546e9522c89eab7a43e2364cb46d011bf448cced82d94b5875e3a60d8226f2",
       "syntax": [
         {
           "file": "index.html",

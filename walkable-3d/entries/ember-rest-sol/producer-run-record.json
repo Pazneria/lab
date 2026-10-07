@@ -1,0 +1,41 @@
+{
+  "entry": "Ember Rest — caretaker quarters",
+  "model": "GPT-6 (assigned model family exposed to this session)",
+  "reasoning_effort": "Unavailable: not exposed to this session",
+  "first_implementation": "2026-10-07T09:07:34.8909405+00:00",
+  "deadline": "2026-10-07T10:07:34.8909405+00:00",
+  "stop_timestamp": "2026-10-07T09:49:56.9742819+00:00",
+  "interruptions": [],
+  "conditions": "Local code only; no browser, renderer, server, GPU or performance test.",
+  "exact_model_identifier": null,
+  "model_metadata_note": "Exact model ID and reasoning effort were not present in session context or own local session metadata. A clarification was requested while independent work continued; no answer was received before completion. No other models or agents were used.",
+  "elapsed_seconds": 2542.083,
+  "interruption_history": [],
+  "dependency_history": "Initial restricted npm fetch failed. Authorized registry retry completed successfully. Implementation continued during both operations; the deadline was not reset or extended.",
+  "verification": {
+    "javascript_syntax": "passed for all source modules",
+    "production_build": "passed",
+    "cpu_geometry_and_floor_connectivity": "passed; 14 inspection waypoints",
+    "archive_file_verification": "passed",
+    "visual_review": "not performed",
+    "interactive_test": "not performed",
+    "gpu_test": "not performed",
+    "performance_measurement": "not performed"
+  },
+  "final_scene": {
+    "triangles": 129080,
+    "static_material_batches": 81,
+    "authored_pieces": 4867,
+    "colliders": 39,
+    "inspectable_details": 16
+  },
+  "process_cleanup": {
+    "complete": true,
+    "initial_install_session": "97590: confirmed exited, code 1",
+    "successful_install_session": "33835: confirmed exited, code 0",
+    "build_check_and_packaging_processes": "all foreground commands completed and exited",
+    "server_browser_watcher_gpu_processes_started": 0,
+    "processes_left_running_for_this_entry": 0,
+    "unrelated_processes_terminated": 0
+  }
+}

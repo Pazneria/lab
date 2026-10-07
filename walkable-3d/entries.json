@@ -2822,13 +2822,16 @@
       "limitations": [
         "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
         "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
-        "See original producer README for implementation limitations.",
-        "The supplied build references missing relative module(s): ./node_modules/three/build/three.module.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+        "See original producer README for implementation limitations."
       ],
       "documents": [
         {
           "label": "Original producer README",
           "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
         },
         {
           "label": "Exact initial launch prompt",
@@ -2929,6 +2932,10 @@
         {
           "label": "Original producer README",
           "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
         },
         {
           "label": "Exact initial launch prompt",
@@ -3176,7 +3183,7 @@
         "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
         "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
         "See original producer README for implementation limitations.",
-        "The supplied build references missing relative module(s): ./three.core.js, ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+        "The supplied build references missing relative module(s): ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
       ],
       "documents": [
         {
@@ -3219,7 +3226,921 @@
       "completionStatus": "completed",
       "failureCategory": "static-dependency",
       "admissionWithheld": true,
-      "failureSummary": "The supplied build references missing relative module(s): ./three.core.js, ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested."
+      "failureSummary": "The supplied build references missing relative module(s): ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed. Parent-directed exclusion from eligible/openable comparisons; runtime startup was not tested."
+    },
+    {
+      "id": "pelagic-sol",
+      "title": "Pelagic — a home below the surface",
+      "description": "A domestic room, research work nook and substantial observation window onto a bounded dark reef.",
+      "promptId": "19",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6 / Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:05:25.0265576Z; deadline 2026-10-07T10:05:25.0265576Z; stop 2026-10-07T09:34:48.9715546Z.",
+      "interruptions": "No interruptions or extensions. Dependency retry time included in the one-hour budget.",
+      "controls": "- Click **Enter the apartment** to capture the mouse.\n- **Mouse:** look. **WASD / arrow keys:** walk.\n- **Shift:** brisk pace. Diagonal movement is normalized.\n- **R:** reset to the entrance. **Esc:** release the mouse and open settings.\n- **F:** toggle the optional frame-interval display.\n- The pause panel provides **Balanced / High / Low** render quality and optional gentle walking sway. Sway is off by default.\n\nThe camera stays at a 1.64 m eye height. There is no jumping, swimming or floor gravity. Circle-versus-box collision slides along the hull, partitions and major furniture, with substeps to prevent tunnelling. The observation sill remains a solid boundary.",
+      "producerChecks": "Syntax, 940 collision-route samples, CPU geometry audit and production build passed. Browser, visual, interactive and performance QA not performed. Simplified glazing, decorative instruments and no individual collision for small props.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "5202d94e7c9147597aeef208a922a86379536c5ca6cc153b113ef1b7e4b21799",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "e10428e70aca81e0bc44469a95f968bd82a119d22486d9f282edfdb70e0ebd69",
+      "promptVersion": "19-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "waylight-rooms-astra",
+      "title": "The Waylight Rooms — Mara Venn",
+      "description": "An original hero’s bedroom, usable wardrobe and small map-and-work study.",
+      "promptId": "15",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports Codex based on GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:02:03.0631271Z; deadline 2026-10-07T10:02:03.0631271Z; stop 2026-10-07T09:36:26.3634286Z.",
+      "interruptions": "No user interruption or external pause. Registry retry and Vite native-config workaround were resolved within the unchanged budget. Exact model/effort clarification was requested but no answer arrived before stop; no values inferred.",
+      "controls": "- Click **Step inside** or the scene to capture the mouse.\n- **Mouse:** look around. If pointer lock is unavailable, hold the left mouse button and drag.\n- **W A S D** or **arrow keys:** walk and strafe.\n- **Shift:** brisk walk.\n- **R** or **Reset view:** return to the entrance and restore the original view.\n- **Esc:** release the mouse and show the controls.\n- **Quality:** toggle between high and balanced rendering resolution.\n\nSuggested inspection route: approach the right bedside and window keepsakes, enter the wardrobe through the south arch, walk forward through its north arch to the study desk, and return through the study's west arch to the bedroom. The room names update unobtrusively while moving.",
+      "producerChecks": "Syntax, CPU geometry/collision, inspection-route connectivity and production build passed. No browser, visual, interactive, GPU or frame-time QA. Decorative mirror; static equipment.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN RECORD",
+          "path": "producer-RUN-RECORD.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "d92b5b0c9fc59be5228c701ebefaa47a3191a50889ef6e550627d63b2bb95f01",
+      "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "a13f1c91729d1bd3efef93cd7abc96466d4cb14e84eadae1fd91c936e3b9f71e",
+      "promptVersion": "15-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "aster-quarters-astra",
+      "title": "ASTER — The captain's quarters",
+      "description": "A captain’s bedroom, private study and observation nook onto space.",
+      "promptId": "18",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports GPT-6 / Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:04:59.6383833Z; deadline 2026-10-07T10:04:59.6383833Z; stop 2026-10-07T09:38:12.2533705Z.",
+      "interruptions": "No user or system pause. One dependency-install retry within the original deadline.",
+      "controls": "| Input | Action |\n| --- | --- |\n| Click **Enter the quarters** | Start exploration and capture the mouse |\n| W / A / S / D | Walk forward / left / backward / right |\n| Mouse | Look around |\n| Shift | Brisk walk |\n| R | Reset position and view to the entrance |\n| Esc | Release mouse capture and pause |\n| Continue exploring | Resume mouse capture |\n| Reset button | Return to the entrance |\n| Balanced / Detail / Economy button | Change rendering quality |\n| Arrow up / down | Move forward / backward |\n| Arrow left / right | Turn without the mouse |\n\nIf the browser rejects mouse capture, exploration automatically falls back to **hold the left mouse button and drag to look**. Esc still pauses. Click Continue to try capture again.",
+      "producerChecks": "Syntax, CPU geometry, collision-route checks and production build passed. Build 807.90 KB JS / 251.44 KB gzip, with standard chunk-size warning. No browser, visual, interactive, GPU or performance QA.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN RECORD",
+          "path": "producer-RUN-RECORD.json"
+        },
+        {
+          "label": "Original producer THIRD-PARTY-NOTICES",
+          "path": "THIRD-PARTY-NOTICES.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "1bfc85f56ed5a7c8de4ad3c633d015516c8b49eb97b0117a099c946f47bceb04",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "a225dba1c45e8fc1c792156ce13aa89892409e973495c43d4ea5b07b9bfd3715",
+      "promptVersion": "18-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "ninth-tide-sol",
+      "title": "Atelier of the Ninth Tide",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6 family; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:08:19.5445893Z; deadline 2026-10-07T10:08:19.5445893Z; stop 2026-10-07T09:38:11.3040478Z.",
+      "interruptions": "No interruptions or extension. Registry retry, removed empty CSS import after initial build failure, and removed optional config after sandbox restriction; final build used a relative base.",
+      "controls": "| Input | Action |\n| --- | --- |\n| Enter the atelier / click the scene | Capture mouse and explore |\n| Mouse | Look around |\n| WASD or arrow keys | Walk |\n| Shift | Brisk walk |\n| Escape | Release cursor and stop movement |\n| Left mouse + drag | Alternative look if pointer lock is unavailable |\n| R / Reset button | Return to entrance |\n| H / Controls button | Open or close controls |\n| F / Timing button | Show live frame interval statistics |\n| I | Hide or show room and object labels |\n| Quality button | Cycle economy, balanced and fine |\n\nEye height is 1.67 m. Movement has smooth acceleration, a 23 cm collision radius, axis sliding and bounded steps. The player stays on the continuous walking surface. The fitting circle is intentionally almost flush. The route goes left around it, through the archive, across the side arch and around the mantle, past the workbench, then back through the wide salon arch. A fine brass line in the floor marks this loop.\n\nThe timing panel reports frame intervals from the actual future browser session, including mean, p95 and intervals over 33.4 ms. It does not measure GPU duration. It is provided for inspection; no values were measured during this build.",
+      "producerChecks": "Syntax, production build and CPU geometry passed; all 15 inspection points passed static reachability. JS 573041 bytes and CSS 4488 bytes; chunk-size warning. No browser, visual, interactive or performance QA. Cloth/mirror effects static; desktop WebGL2.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "29c3c49239b97f0d2c50ea06a007189789168b4ef4ba1a5c18b13ff7b4d2d56a",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "5324f3cb5c162c035a1b633b0a8331f63191f4a7d3c94b20816b67c079e4a3fa",
+      "promptVersion": "22-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "quiet-standard-sol",
+      "title": "The Quiet Standard · An Adventurer at Home",
+      "description": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor.",
+      "promptId": "17",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6 / Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:04:38.1739582Z; deadline 2026-10-07T10:04:38.1739582Z; stop 2026-10-07T09:37:06.7094505Z.",
+      "interruptions": "No session interruptions. Registry/build and restricted port/process-query retries stayed within the clock. Exact model/effort clarification requested but no values supplied.",
+      "controls": "| Input | Action |\n| --- | --- |\n| Click **Enter the upper room** | Start exploring and capture the mouse |\n| Mouse | Look around |\n| WASD or arrow keys | Walk |\n| Hold Shift | Brisk walk |\n| Hold C | Crouch to inspect lower objects |\n| R | Reset position and view to the entrance |\n| Esc | Release mouse and pause |\n| **Reset to the entrance** in the pause panel | Reset without mouse capture |\n| F | Toggle live frame-interval statistics |\n\nIf pointer lock is unavailable, hold the left mouse button and drag to look. The fallback has not been tested interactively.\n\nSuggested inspection route: walk toward the hearth and chair, approach the shield table, pass along the open side of the sitting area to the study doorway at the back right, inspect the desk and shelves, return to the main room and step through the open balcony doorway. Visit the bench and herb pots, turn toward the bed and sitting area, then return to the entrance. There is no automatic tour.",
+      "producerChecks": "Syntax, CPU geometry, route connectivity, collision containment, daylight-ray and production build passed. No browser, visual, interactive or performance QA. Static furnishings and simple balcony sky backdrop.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer execution record",
+          "path": "producer-execution-record.json"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "b51256040349a8fa1dc7afdbd91bbbde177a11a647c0c2cf70a29d51051ec8ce",
+      "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "7012e8af0a7bc1a985e6f1c5f0d553561a20ca23947d65e0df48a2fabae26a8e",
+      "promptVersion": "17-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "hearth-hemlock-astra",
+      "title": "Hearth & Hemlock — a small home for quiet magic",
+      "description": "A cozy kitchen, crowded magical workroom and little framed greenhouse.",
+      "promptId": "16",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:03:32.6909098Z; deadline 2026-10-07T10:03:32.6909098Z; stop 2026-10-07T09:39:40.383Z.",
+      "interruptions": "No interruptions or extensions. Initial registry attempt retried within the same budget.",
+      "controls": "| Input | Action |\n| --- | --- |\n| Click **Step inside** | Enter and capture the mouse |\n| Mouse | Look around |\n| WASD / arrow keys | Walk |\n| Shift | Walk faster |\n| R / **Reset** | Return to the entrance |\n| Esc | Release the mouse and stop movement |\n| Click the scene | Resume |\n| H / **Controls** | Show or hide help |\n| Q / **Quality** | Switch High / Light rendering |\n\nIf mouse capture is unavailable, hold the left mouse button and drag to look; the movement keys still work. There is no automatic tour or camera movement. Movement uses a fixed eye height, a 22 cm collision radius, axis sliding and substeps to prevent crossing a wall after a long frame.",
+      "producerChecks": "Syntax, CPU scene construction, collision, eight reachable inspection targets, build and local imports passed. No browser rendering, interactive or performance QA. Approximate glass and desktop controls.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN RECORD",
+          "path": "producer-RUN-RECORD.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "141ec8b44b9d2057df36705a6d9d9747c5f13170f525e1ea7aa9786784479b96",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "15362c29f3d3a3835c4e2a7171d443a9f52b70a3ba5186672af46780afe6036e",
+      "promptVersion": "16-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "quiet-meridian-sol",
+      "title": "The Quiet Meridian — Captain's Quarters",
+      "description": "A captain’s bedroom, private study and observation nook onto space.",
+      "promptId": "18",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:04:43.2170782Z; deadline 2026-10-07T10:04:43.2170782Z; stop 2026-10-07T09:38:28.825Z.",
+      "interruptions": "No interruptions or extension. Two access failures resolved by retries within clock.",
+      "controls": "Click **Enter the quarters** to capture the mouse. This requires a normal desktop browser tab with WebGL 2 and pointer-lock support.\n\n| Input | Action |\n| --- | --- |\n| Mouse | Look freely |\n| W A S D / arrow keys | Move |\n| Shift | Walk faster |\n| R | Reset position and orientation to the entrance |\n| Esc | Release the mouse and pause |\n| H | Toggle the small interface |\n| Controls button | Pause and show controls |\n\nMovement stays on the level deck at an eye height of 1.66 metres. A 0.24-metre collision radius blocks the hull, bulkheads, window ledge and major furniture. Diagonal movement is normalized, movement is frame-time based and collision uses small substeps. There is no jumping, crouching, furniture interaction or automatic tour.",
+      "producerChecks": "Syntax, CPU geometry/collision/sightline and production build passed. No browser, rendering, interactive or performance QA. Desktop controls, approximate furniture collision and static scenery.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer execution record",
+          "path": "producer-execution-record.json"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "6e8aa63b88373f8bacfe6e52431ed188e0eeb4b61d4746e50fc7d59a67bb39d9",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "797069b03f2be41a709e7943849879a75136de8a5bf0cedf81651a1e8b47f01a",
+      "promptVersion": "18-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "thimble-thorn-astra",
+      "title": "The Thimble & Thorn · A home on the road",
+      "description": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp.",
+      "promptId": "20",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports Codex based on GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:06:43.3932637Z; deadline 2026-10-07T10:06:43.3932637Z; stop 2026-10-07T09:37:43.8591291Z.",
+      "interruptions": "No external interruptions or extensions.",
+      "controls": "| Control | Action |\n| --- | --- |\n| Click **Step into camp** | Begin and request mouse lock |\n| Mouse | Look around |\n| W A S D / arrow keys | Walk |\n| Shift | Brisk walk |\n| Esc | Release the mouse and pause |\n| H | Controls / resume |\n| R | Reset position and view to camp |\n| Drag the scene | Look when mouse lock is unavailable |\n| F2 | Optional live frame-interval diagnostics |\n\nThe pause card also offers reset and three shadow-detail settings. Balanced is the default. The renderer caps pixel ratio at 1.65 in Balanced, 1 in Low and 2 in High. Movement is independent of frame rate, diagonal movement is normalized, long frames are clamped, and collision movement is divided into short swept steps.",
+      "producerChecks": "Syntax, CPU collision-route, geometry/headroom and production build passed. No browser, visual, interactive or performance QA. Desktop controls, simplified collision and static mechanisms.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer execution record",
+          "path": "producer-execution-record.json"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "8e5d0caca3f764a995ff0620374a7c8eb6d7d2229973f20d78118a5bfab00af3",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "5c47b67b51611b5c2c3c48e6f063b04a1203ea188553c1ea29c1917c398c6d2e",
+      "promptVersion": "20-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "selene-atelier-astra",
+      "title": "SELENE — The Moonwake Commission",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports Codex based on GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:07:59.0810208Z; deadline 2026-10-07T10:07:59.0810208Z; stop 2026-10-07T09:40:12.6916169Z.",
+      "interruptions": "No user interruption or extension. Registry retry, removed temporary config loader and final approved cleanup query resolved sandbox issues within the original clock.",
+      "controls": "| Input | Action |\n| --- | --- |\n| Click **Enter the atelier** | Capture mouse and begin exploring |\n| Mouse | Look around |\n| W A S D or arrow keys | Walk |\n| Shift | Walk faster |\n| Q / E | Turn with keyboard |\n| R | Reset position and view to the entrance |\n| Esc | Release mouse and show settings |\n| Drag on the scene | Look when mouse capture is unavailable |\n\nSettings include render detail, look sensitivity, object notes, the floor plan and a reset button. The default balanced setting caps pixel ratio at 1.25 and uses one cached 2048² shadow map. High caps pixel ratio at 1.75. Light caps it at 1 and disables shadows. These are implementation settings, not measured performance results.",
+      "producerChecks": "Syntax, production build and CPU geometry/collision checks passed; eleven reachable inspection positions. Single JS bundle 568905 bytes / 151.68 KB gzip; optional chunk-size warning. No browser, visual, interactive or performance QA. Static/stylized mirrors; desktop controls.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "d4f206b7d1024f590bbd93d1c4e1626fbfb43582a960cb98833349b7e0eb27a3",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "ec9beda538208e4c81c2f2b295736f74529f8b5911aa20999871abb183d13733",
+      "promptVersion": "22-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "quiet-after-astra",
+      "title": "The Quiet After — an upstairs home",
+      "description": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor.",
+      "promptId": "17",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports GPT-6-based Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:04:11.5411623Z; deadline 2026-10-07T10:04:11.5411623Z; stop 2026-10-07T09:42:03.1097686Z.",
+      "interruptions": "No user interruptions or extensions. Registry retry, Vite config workaround and logging retry resolved sandbox issues within the unchanged clock.",
+      "controls": "- **Come upstairs / Return to the room:** enter and capture the mouse.\n- **W A S D** or **arrow keys:** move.\n- **Mouse:** look. Click-drag also works when pointer capture is unavailable.\n- **Shift:** brisk walk.\n- **Esc:** pause and release the mouse.\n- **R:** return to the entrance, restoring position and viewing direction.\n- **Pause menu:** sensitivity, render quality and reset controls.\n\nDesktop keyboard and mouse are required. There is no jumping, crouching or climbing. Movement stays at human eye height above the flat floors. Major walls and furnishings have collision, and the balcony edges are blocked. Furnishings are for inspection rather than manipulation.",
+      "producerChecks": "Syntax, ten-point collision route, CPU-only geometry and production build passed. No browser, visual, interactive, GPU or frame-time QA. Desktop WebGL2; fire and plants static.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer BUILD-REPORT",
+          "path": "BUILD-REPORT.md"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "d17d82f22496a7228044e22260247a961227ffd63e9fa3a273ac8676907ec546",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "df8e8db7234242e17f707be1db79fae8d0cc02a62bcd23c9d9cc91a339384a45",
+      "promptVersion": "17-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "nacre-habitat-astra",
+      "title": "Nacre — Habitat 04",
+      "description": "A domestic room, research work nook and substantial observation window onto a bounded dark reef.",
+      "promptId": "19",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports GPT-6 / Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:05:49.1697265Z; deadline 2026-10-07T10:05:49.1697265Z; stop 2026-10-07T09:44:06.431457Z.",
+      "interruptions": "No pauses or extensions; sandbox retries recorded in original execution record.",
+      "controls": "| Input | Action |\n|---|---|\n| Enter the habitat | Capture the cursor and begin exploring |\n| Mouse | Look around |\n| W A S D / arrow keys | Walk |\n| Shift | Move faster |\n| Esc | Release the cursor and show controls |\n| R / Reset button | Return to the entrance |\n| Q / Quality button | Toggle High / Eco rendering |\n| Left-button drag | Mouse-look fallback if cursor capture is unavailable |\n\nHigh caps the device pixel ratio at 1.6 and enables one cached soft shadow map. Eco caps it at 1 and disables that shadow map. The eye height is 1.65 m; movement remains on the dry floor. There is no jumping or swimming. Major furniture, bulkheads, the hull, braces and window sill have collision.\n\nThe route is entrance → berth/sofa → forward bulkhead → workbench on the left → next bulkhead → observation frame and reef → return through the two open bulkheads. The entrance hatch is sealed.",
+      "producerChecks": "Syntax, CPU scene construction, 21-waypoint collision route and production build passed. No browser appearance, interactive input or measured frame time. Desktop WebGL2; approximate reflections and decorative instruments.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer execution record",
+          "path": "producer-execution-record.json"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "350349c6f3fc29c5681563942186802c10ec94d44b2500840c679c70f1d68301",
+      "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "5d5142fe46820a492db06c23a9eb53d9c6ae78f2f69d0aa30f875812450b4909",
+      "promptVersion": "19-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "moss-ember-sol",
+      "title": "Moss & Ember — a witch's cottage",
+      "description": "A cozy kitchen, crowded magical workroom and little framed greenhouse.",
+      "promptId": "16",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified. Producer reports host configuration gpt-6.1-sol / low; effective per-run overrides were unavailable. Neither configured low nor requested XHIGH is independently confirmed as actual serving effort.",
+      "buildWindow": "First implementation 2026-10-07T09:03:23.9110681Z; deadline 2026-10-07T10:03:23.9110681Z; stop 2026-10-07T09:43:55.3897418Z.",
+      "interruptions": "No external interruptions. Registry, native config loader and approved cleanup inventory retries remained within unchanged clock.",
+      "controls": "- Click **Step inside** to capture the mouse.\n- **Mouse:** look around. **WASD** or **arrow keys:** walk.\n- **Shift:** brisk walk. **Esc:** release the mouse and pause.\n- **R** or **Reset:** return to the entrance.\n- **Quality:** change resolution between efficient, balanced, and fine. Balanced is the default.\n\nA desktop browser with WebGL 2 and pointer lock is required. There are no touch controls. The movement uses a 19 cm collision radius, axis sliding, bounded substeps, a fixed 1.64 m eye height, and continuous flat floors. There is no jump or fall mechanic.",
+      "producerChecks": "Syntax, CPU geometry, collision/connectivity and production build passed. Nine inspection stops connected. No browser, visual, interactive or measured frame times. Desktop controls and approximate glass.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "c5059743cff27bfb60799399927ab35207e2ce6146a0fadb864e2ac50182922c",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "0622fef7a46c3e2d0ea65dd3c98c5360fb4304704d93372f6f0710c321cb630e",
+      "promptVersion": "16-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "emberkeeper-astra",
+      "title": "Emberkeeper · The caretaker's quarters",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "astra",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6 Astra, XHIGH and standard service. Runtime reports GPT-6 / Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:07:28.4661751Z; deadline 2026-10-07T10:07:28.4661751Z; stop 2026-10-07T09:45:57.4956465Z.",
+      "interruptions": "No interruptions or extensions; permission retries documented in original execution record.",
+      "controls": "| Control | Action |\n| --- | --- |\n| WASD / arrow keys | Walk |\n| Mouse | Look after mouse capture |\n| Hold left mouse button and drag | Look if mouse capture is unavailable |\n| Shift | Brisk walk |\n| E | Read or put down a nearby care note |\n| R | Reset position and view to the entrance |\n| Esc | Pause and release the mouse |\n| F3 | Toggle optional frame-interval diagnostics |\n\nThe pause menu also offers reset and three quality settings. Balanced is the default: device pixel ratio capped at 1.5 with static shadows. Performance caps it at 1 and disables shadows; High caps it at 2.\n\nF3 reports recent **animation-frame intervals**, not GPU timings. No measurements have been collected by the implementation agent. The optional meter is provided for a later authorized inspection session. No animation-frame results are claimed here.",
+      "producerChecks": "Syntax, production build, CPU geometry/collision and 12-point route checks passed. No browser, renderer or performance benchmark. Visual quality, interactive behavior and performance unverified. Floor-level exploration, no jumping/climbing/dragon model.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer execution record",
+          "path": "producer-execution-record.json"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "d7b759a548a474953628edd77e05ca1b81a3aa9c5db1d990f07b466c99d1f60d",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "dd5073395ceeef10103a9d4d32e90d0c6b061f96f9b18e75b9ea3dc5697ab840",
+      "promptVersion": "21-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "ember-rest-sol",
+      "title": "Ember Rest · The Keeper's Quarters",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:07:34.8909405Z; deadline 2026-10-07T10:07:34.8909405Z; stop 2026-10-07T09:49:56.9742819Z.",
+      "interruptions": "No interruptions or deadline extension.",
+      "controls": "| Input | Action |\n|---|---|\n| Click **Step inside** | Begin; request mouse lock |\n| Mouse | Look around |\n| WASD or arrow keys | Walk |\n| Shift | Brisk walk |\n| E | Inspect a nearby detail under the aim point; close the note |\n| Escape | Pause and release the mouse |\n| R | Reset to the entrance |\n| P | Toggle high/standard pixel density |\n| F3 | Show or hide frame-interval diagnostics |\n\nIf mouse lock is unavailable, hold the left mouse button to look. Walking remains available. The reset button duplicates R. Eye height is 1.64 m; normal walking speed is 2.05 m/s. The camera has no head bob. The full inspection route stays on level floor; climbing, jumping and flying are not implemented.\n\nThe F3 display reports recent animation-frame intervals, p95, draw calls and triangles when the scene is actually running. Those readings are not GPU timings. No frame-time or performance measurements were taken during this entry.",
+      "producerChecks": "Syntax, production build, archive and CPU-only connectivity checks passed for all 14 inspection waypoints. Browser, visual, interactive and performance tests not performed. Floor-level exploration; no dragon or climbing.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "48a2a879fcbc1382c80c36247b1638fd31488514bd00ceaa4db4e041c62538ac",
+      "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "56632288d8a41f49389b05c0406d56b1cf5943b1443c0b3007af467febfbcc31",
+      "promptVersion": "21-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "morrow-moss-sol",
+      "title": "Morrow & Moss — A home on the road",
+      "description": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp.",
+      "promptId": "20",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6 / Codex; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:06:26.3280723Z; deadline 2026-10-07T10:06:26.3280723Z; stop 2026-10-07T09:50:47.9342479Z.",
+      "interruptions": "No interruptions or deadline extension.",
+      "controls": "- Click **Explore the wagon** to begin and capture the mouse.\n- **Mouse**: look around.\n- **WASD** or **arrow keys**: walk; diagonal movement is normalized.\n- **Shift**: brisk walk.\n- **Esc**: release the mouse and pause movement; click Resume to continue.\n- **R**: reset position and view to the camp.\n- **Return to camp** on the pause screen also resets the scene.\n\nNo jumping, crouching or teleport is needed to enter. The five ordinary steps rise 0.192 m per step, with 0.32 m treads and handrails. The wagon floor is 0.96 m above ground; eye height is 1.62 m above the current floor.",
+      "producerChecks": "Syntax, CPU geometry, collision-route checks and production build passed. Browser visuals, interactive controls and frame times unverified. Static mechanisms; desktop keyboard/mouse required.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer BUILD-README",
+          "path": "BUILD-README.txt"
+        },
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN",
+          "path": "producer-RUN.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "4d1504c8d2e904c216cb52c5095548dd7f8f9dc0e6d57b725eae3e25021dd85d",
+      "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "70fe14a00b72c4be8f12e6cdca7b0373b27abec173034d47030132975e00506d",
+      "promptVersion": "20-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
+    },
+    {
+      "id": "larkspur-house-sol",
+      "title": "Larkspur House — Mira's private rooms",
+      "description": "An original hero’s bedroom, usable wardrobe and small map-and-work study.",
+      "promptId": "15",
+      "comparisonModel": "sol",
+      "requestedConfiguration": "GPT-6.1 Sol / XHIGH / standard service (parent-requested)",
+      "modelDisclosure": "Parent confirms requested GPT-6.1 Sol, XHIGH and standard service. Runtime reports GPT-6; exact serving variant and effective effort were not exposed and are not independently verified.",
+      "buildWindow": "First implementation 2026-10-07T09:02:25.9378600Z; deadline 2026-10-07T10:02:25.9378600Z; stop 2026-10-07T09:50:51.0652836Z.",
+      "interruptions": "No interruptions or deadline extension.",
+      "controls": "Click **Step inside** to capture the mouse.\n\n| Input | Action |\n| --- | --- |\n| Mouse | Look around |\n| W A S D or arrow keys | Walk |\n| Shift | Brisk walk |\n| Esc | Release mouse and open pause/settings |\n| R | Reset to the entrance while exploring |\n| Return to entrance button | Reset from the pause panel |\n\nPause settings provide Balanced, High, and Light image quality; mouse sensitivity; and an optional live frame-time display. The display reports browser frame intervals, including display scheduling, and is not a prior performance measurement.\n\nThe eye height is 1.62 m and the collision radius is 0.205 m. Floors are continuous and the eye height stays fixed, so there is no falling. Wall and major furniture collision use circular player clearance, substeps, and sliding. There is no jumping, avatar, inventory, quest system, or equipment interaction.",
+      "producerChecks": "Syntax, production build and CPU geometry/collision checks passed: 20 connected inspection points, 19 walking segments, 178856 triangles and 52 material groups. Browser, visual, interactive and GPU performance verification not performed. Cloth static; mirror has no real reflection.",
+      "performanceEvidence": "Not measured. No frame-time evidence or benchmark score supplied.",
+      "limitations": [
+        "Visual appearance, runtime startup, interactive movement, shaders, collision feel and performance remain unverified.",
+        "DOM readiness is hosting bookkeeping; it is not independent runtime or quality QA.",
+        "See original producer README for implementation limitations."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run record",
+          "path": "producer-run-record.json"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE.txt"
+        },
+        {
+          "label": "Exact initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Timing, requested/runtime model and QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "No authentic screenshot supplied; preview uncaptured.",
+      "archiveSha256": "0bda4bf715e01ab8cf2cc50551058202d042dedfec47231fac610d0be9c4a18a",
+      "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "ad747a792093b2c0b0ba09bb9dcb86302c362a6e74016f1132843c244218dd5c",
+      "promptVersion": "15-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed"
     }
   ],
   "prompts": [

@@ -76,7 +76,8 @@
     },
     "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\orison-luna\\source-preservation.zip",
     "sourceArchiveSha256": "dc6f785f622106f90570fb42fd3e8db1e8884d1686e64ba9fc5a18a233702705",
-    "supplementalDependencies": []
+    "supplementalDependencies": [],
+    "supplementalLicenses": []
   },
   "timing": {
     "firstImplementationUtc": "2026-10-07T09:04:53Z",
@@ -133,8 +134,8 @@
       "bytes": 1690
     },
     "run-record.json": {
-      "sha256": "4a8876fbd49d445dc658be4c3fa232d9f8d1df4274d4ec7e8664bb101b71e59d",
-      "bytes": 3138
+      "sha256": "44c25af3e82afd4955abf5d374355a63eba2971e5037448d69d086f8db2d3cdd",
+      "bytes": 3088
     }
   },
   "publication": {
@@ -157,6 +158,6 @@
     "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
   },
   "staticHostingConcerns": [
-    "The supplied build references missing relative module(s): ./three.core.js, ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
+    "The supplied build references missing relative module(s): ./three.core.js. Static finding only; browser startup not tested. No missing module fetched and no repair performed."
   ]
 }

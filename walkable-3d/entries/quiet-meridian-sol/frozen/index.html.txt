@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#121d24" />
+    <title>The Quiet Meridian — Captain's Quarters</title>
+    <script type="module" crossorigin src="/assets/index-8lLfBVoK.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D7DZGcBp.css">
+  </head>
+  <body>
+    <div id="scene" aria-label="Explorable three-dimensional captain's quarters"></div>
+    <div id="crosshair" aria-hidden="true"><i></i></div>
+    <div id="hud">
+      <div class="identity"><span class="mark">M</span><div><strong>THE QUIET MERIDIAN</strong><small>PRIVATE QUARTERS · ILYRA VENN</small></div></div>
+      <div class="location"><span id="room-name">VESTIBULE</span><small id="room-note">An ordered life, far from home</small></div>
+      <button id="help-button" title="Pause and show controls">Controls <kbd>Esc</kbd></button>
+    </div>
+    <div id="welcome" class="veil">
+      <section class="welcome-card" aria-label="Controls and start">
+        <p class="eyebrow">VESSEL 07 / DECK 04 / CABIN 01</p>
+        <h1>The Quiet<br /><em>Meridian.</em></h1>
+        <p class="intro">Captain Ilyra Venn keeps pressed leaves from every inhabited world. Here, her brass instruments, wool blankets and unfinished correspondence share a little space with command.</p>
+        <div class="route"><span>Rest</span><i></i><span>Reflect</span><i></i><span>Look outward</span></div>
+        <button id="enter-button" class="primary">Enter the quarters <span>↗</span></button>
+        <div class="controls"><p><kbd>W A S D</kbd> Move <kbd>Mouse</kbd> Look</p><p><kbd>Shift</kbd> Walk faster <kbd>Esc</kbd> Release mouse</p><p><kbd>R</kbd> Return to entrance <kbd>H</kbd> Hide interface</p></div>
+        <div class="card-footer"><span>Human scale · free exploration</span><button id="reset-button">Reset position</button></div>
+        <p id="status" aria-live="polite">Preparing the quarters…</p>
+      </section>
+    </div>
+    <div id="mini-controls"><span>WASD · MOVE</span><span>MOUSE · LOOK</span><span>R · RESET</span><span>ESC · PAUSE</span></div>
+    <div id="error" role="alert" hidden></div>
+  </body>
+</html>

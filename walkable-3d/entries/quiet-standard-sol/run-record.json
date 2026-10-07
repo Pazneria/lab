@@ -1,0 +1,87 @@
+{
+  "id": "quiet-standard-sol",
+  "title": "The Quiet Standard",
+  "scene": 17,
+  "model": "sol",
+  "workspace": "task-26/quiet-standard",
+  "completionClearedByParent": true,
+  "producerArchive": "quiet-standard-build.zip",
+  "requestedModel": "GPT-6.1 Sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "GPT-6 / Codex",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:04:38.1739582Z",
+  "deadlineUtc": "2026-10-07T10:04:38.1739582Z",
+  "stopUtc": "2026-10-07T09:37:06.7094505Z",
+  "producerChecks": "Syntax, CPU geometry, route connectivity, collision containment, daylight-ray and production build passed. No browser, visual, interactive or performance QA. Static furnishings and simple balcony sky backdrop.",
+  "interruptions": "No session interruptions. Registry/build and restricted port/process-query retries stayed within the clock. Exact model/effort clarification requested but no values supplied.",
+  "cleanupClaim": "No server/browser/watcher started; completed commands and cleanup-results.json confirm no residual entry process.",
+  "handoffSource": "Parent completed handoff, original execution-record.json and producer build ZIP.",
+  "producerArchiveExpectedSha256": "b51256040349a8fa1dc7afdbd91bbbde177a11a647c0c2cf70a29d51051ec8ce",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, CPU geometry, route connectivity, collision containment, daylight-ray and production build passed. No browser, visual, interactive or performance QA. Static furnishings and simple balcony sky backdrop.",
+    "importerStaticChecks": {
+      "id": "quiet-standard-sol",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:d56b5f20b3a8dd1abd0139d8269b79aa987aca605f02e20fe9a02218f9332f3a",
+      "syntax": [
+        {
+          "file": "build.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "scripts/static-check.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/world.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

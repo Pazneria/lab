@@ -1,0 +1,39 @@
+{
+  "entry": "Moss & Ember — witch cottage",
+  "assigned_model": "GPT-6 (system-provided family; exact backend identifier not exposed)",
+  "reasoning_effort": "Not exposed by execution environment",
+  "first_implementation_utc": "2026-10-07T09:03:23.9110681+00:00",
+  "deadline_utc": "2026-10-07T10:03:23.9110681+00:00",
+  "actual_stop_utc": "2026-10-07T09:43:55.3897418+00:00",
+  "interruptions": [],
+  "constraints": "No browser, renderer, server, GPU test, benchmark, external models, or delegated workers.",
+  "configured_model": "gpt-6.1-sol",
+  "configured_reasoning_effort": "low",
+  "model_metadata_source": "Host C:\\Users\\jmore\\.codex\\config.toml. Live-run backend model and effort were not exposed; configured values are not independently confirmed live-run metadata.",
+  "technical_delays": [
+    "Initial npm registry fetch failed under network restrictions; authorized registry download then succeeded.",
+    "Default Vite config bundler encountered ancestor-directory sandbox restriction; native config loading resolved it.",
+    "Initial final process inventory was denied by sandbox; a successful authorized read-only inventory confirmed zero remaining entry processes."
+  ],
+  "verification": {
+    "syntax": "passed",
+    "collision_connectivity": "9 inspection stations connected at 0.19 m radius",
+    "scene_construction": "CPU-only: 3217 instances, 122 instance batches, 130 meshes, 230837 triangles, 9 lights",
+    "production_build": "passed",
+    "browser": "not run",
+    "visual": "not run",
+    "gpu": "not run",
+    "performance": "not measured"
+  },
+  "process_cleanup": {
+    "owned_processes_terminated": 0,
+    "remaining_owned_processes": 0,
+    "npm_and_check_commands": "completed and exited",
+    "servers_started": 0,
+    "browsers_started": 0,
+    "watchers_started": 0,
+    "unrelated_processes_terminated": 0,
+    "inventory_verification": "Confirmed zero remaining entry Node/esbuild processes using a successful read-only process inventory. Initial sandbox inventory was denied; no unrelated process was terminated."
+  },
+  "wall_clock_minutes": 40.525
+}

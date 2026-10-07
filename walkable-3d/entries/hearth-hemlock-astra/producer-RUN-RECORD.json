@@ -1,0 +1,24 @@
+{
+  "title": "Hearth & Hemlock",
+  "model": "GPT-6 (identity supplied in runtime instructions; exact deployment identifier not exposed)",
+  "effort": "Not exposed by execution environment",
+  "firstImplementation": "2026-10-07T09:03:32.6909098+00:00",
+  "deadline": "2026-10-07T10:03:32.6909098+00:00",
+  "actualStop": "2026-10-07T09:39:40.383Z",
+  "interruptions": [],
+  "conditions": "No browsers, servers, UI, GPU or performance tests. CPU-only checks.",
+  "elapsedSeconds": 2167.693,
+  "exactModelIdentifier": null,
+  "exactEffortSetting": null,
+  "metadataLimitation": "The runtime instructions identify GPT-6, but do not expose the exact deployment identifier or reasoning-effort setting. These values were not guessed.",
+  "processCleanup": "All entry-owned command sessions returned completed exit codes. No browser, server, watcher, UI test, GPU test or background benchmark was started. No unrelated process was terminated. An optional scoped Windows process-list query was denied by the environment; process completion is established by the tracked command results, not by that unavailable query.",
+  "dependencyHistory": "Initial npm registry attempt failed under the sandbox; the permitted retry succeeded. Elapsed time counted continuously, with no deadline extension.",
+  "finalChecks": [
+    "JavaScript syntax checks",
+    "CPU-only scene construction and finite attributes",
+    "Eight inspection targets reachable",
+    "Large-step collision checks",
+    "Non-serving build",
+    "Twelve static imports and eleven build files verified"
+  ]
+}

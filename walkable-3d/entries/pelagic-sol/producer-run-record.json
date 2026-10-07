@@ -1,0 +1,35 @@
+{
+  "supplied_model_identity": "GPT-6 / Codex",
+  "exact_model_id": "Not exposed by execution environment",
+  "reasoning_effort": "Not exposed by execution environment",
+  "first_implementation_timestamp": "2026-10-07T05:05:25.0265576-04:00",
+  "deadline": "2026-10-07T06:05:25.0265576-04:00",
+  "actual_stop_timestamp": "2026-10-07T09:34:48.9715546+00:00",
+  "interruptions": [],
+  "execution_conditions": "No browser, server, UI, GPU or performance tests",
+  "elapsed_minutes": 29.4,
+  "completed_before_deadline": true,
+  "checks": {
+    "syntax": "passed",
+    "collision_route": "passed: 940 samples",
+    "geometry_audit": {
+      "check": "CPU-only generated geometry audit",
+      "passed": true,
+      "elapsed_ms": 250,
+      "mesh_or_points_objects": 108,
+      "unique_geometries": 108,
+      "transparent_objects": 13,
+      "lights": 13,
+      "renderable_triangles": 117646,
+      "merged_static_triangles": 114820,
+      "validated_attributes": 319,
+      "visual_verification": false,
+      "gpu_or_performance_test": false
+    },
+    "production_build": "passed; bundle-size advisory only",
+    "visual_interactive_gpu_performance": "not performed"
+  },
+  "process_cleanup": "All npm install, check, build and shell tool sessions exited. No server, browser, watcher, UI renderer or benchmark was started. No unrelated process was terminated. Optional system process inventory was denied by the sandbox; cleanup evidence is completed command sessions.",
+  "suggested_launch_address": "http://127.0.0.1:4317/ (not running; no listener at availability check)",
+  "dependency_history": "Initial sandbox npm fetch/cache attempt failed; authorized registry download succeeded. This time was included in the original one-hour deadline."
+}

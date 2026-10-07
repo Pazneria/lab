@@ -1,0 +1,200 @@
+{
+  "entry": "morrow-moss-sol",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\morrow-moss-sol\\producer-original.zip",
+  "archiveSha256": "4d1504c8d2e904c216cb52c5095548dd7f8f9dc0e6d57b725eae3e25021dd85d",
+  "archiveKind": "Producer build ZIP copied byte-for-byte; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-BDzTfLVi.js": "dist/assets/index-BDzTfLVi.js",
+      "frozen/assets/index-l1DYdEoA.css": "dist/assets/index-l1DYdEoA.css",
+      "frozen/index.html.txt": "dist/index.html"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "3d5db7d312b2d8bb22c326c51e85f0650830e6dcfe0aa786f3c1b69596930a3a",
+        "bytes": 32
+      },
+      "BUILD-README.txt": {
+        "sha256": "80e93c6bb97522667e16d7b13c033caea7ae4b7bbd0b0333379042dc15cb6be5",
+        "bytes": 1208
+      },
+      "CHECKS.txt": {
+        "sha256": "14dc685770b7b028781c13b4f7a6595c4b48da26d76200ffb7303d62e0fcd4b3",
+        "bytes": 1747
+      },
+      "dist/assets/index-BDzTfLVi.js": {
+        "sha256": "831e0b6d632327d72f9e446d9dc359b417c89e1dc8dd32f0dfbd415e9357f89d",
+        "bytes": 560171
+      },
+      "dist/assets/index-l1DYdEoA.css": {
+        "sha256": "5c275decdc9972441acfb4bda2b230bbc0e12d6db36906a12a9afc8d5ee214f7",
+        "bytes": 3119
+      },
+      "dist/index.html": {
+        "sha256": "70fe14a00b72c4be8f12e6cdca7b0373b27abec173034d47030132975e00506d",
+        "bytes": 2188
+      },
+      "FINAL-BUILD.txt": {
+        "sha256": "5d1192facec8c6787a5ced4ebf0c8ab1913e5f27c5cfbfc8521748061d20572f",
+        "bytes": 475
+      },
+      "index.html": {
+        "sha256": "4cd6506cadd79827d33ea6f79029ae5c23a8174894cf0d1c4b139723d5926c95",
+        "bytes": 2089
+      },
+      "launch.mjs": {
+        "sha256": "2c651ed38808ebd94ed32eaea858afd6612fd558a6588a1612af9fd1f5fe0b96",
+        "bytes": 1797
+      },
+      "morrow-moss-build.zip": {
+        "sha256": "4d1504c8d2e904c216cb52c5095548dd7f8f9dc0e6d57b725eae3e25021dd85d",
+        "bytes": 154206
+      },
+      "package-lock.json": {
+        "sha256": "134fa544b65b0135472d5aa9a452aaac13dd055f624bd2220cb250b729e8750b",
+        "bytes": 35194
+      },
+      "package.json": {
+        "sha256": "8c81eb7e3bcf53c2d629d1be4365f083bad8ae0556dabc31d65e615c9f647a09",
+        "bytes": 675
+      },
+      "README.md": {
+        "sha256": "0c9be6b60563a199b83b698189648760e2316b195aa0d9b3d2bed716da416baa",
+        "bytes": 4764
+      },
+      "RUN.json": {
+        "sha256": "47d1018823cae8ae9c81f215f8611d737923dfeae9f239a88f3b8a3173a55f50",
+        "bytes": 2136
+      },
+      "src/controls.js": {
+        "sha256": "bc1bbdd9b5b91b87bcb0312b4c9d970f7f1c603b3f2b28cb736556987005f89d",
+        "bytes": 3085
+      },
+      "src/geometry.js": {
+        "sha256": "5c61d4464eacdcc598842a008a694c0fe274206dbfbf0dae7ab50f8dad6d56dc",
+        "bytes": 5119
+      },
+      "src/main.js": {
+        "sha256": "bf1313990974fbe2ba492560f25605e3d97915a68d3d23aa8d6cae209482ace7",
+        "bytes": 2903
+      },
+      "src/materials.js": {
+        "sha256": "697e1620c8304111a4c9d1d7adf3638b784ba4c8fc37a5b96793cf0ba77dbca4",
+        "bytes": 9134
+      },
+      "src/scene.js": {
+        "sha256": "0464d3c2a2e4ba6d1a02eb474dfd5f3e9d19053d4ab2ac3cad2b40814c1c29a1",
+        "bytes": 38142
+      },
+      "src/style.css": {
+        "sha256": "ad3ab63a3b6ed8856852543c1e686f7e698b662cfda85a433f5c390c6895bee5",
+        "bytes": 3115
+      },
+      "src/world.js": {
+        "sha256": "00ad2d43d6a61191ea211fe7581e6ff6fec4c31efffdc095c7ded1553d67ff47",
+        "bytes": 3989
+      },
+      "tests/geometry.test.mjs": {
+        "sha256": "c8ff7a525f9405c5bad8d5aeae8e06ffe639bed05c269dab0e778dab942bc5f8",
+        "bytes": 1491
+      },
+      "tests/world.test.mjs": {
+        "sha256": "5282f007ccb6a8f6729636cb024a7d2131eb8feeed21db25215fbf4a1c86019b",
+        "bytes": 2537
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\morrow-moss-sol\\source-preservation.zip",
+    "sourceArchiveSha256": "ee71c4558285233a3d25349b6463ff5e034dbcac9662aa35ec7c035515e17c40",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-35\\morrow-moss-wagon\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\morrow-moss-sol\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:06:26.3280723Z",
+    "deadlineUtc": "2026-10-07T10:06:26.3280723Z",
+    "stopUtc": "2026-10-07T09:50:47.9342479Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "BUILD-README.txt": {
+      "sha256": "80e93c6bb97522667e16d7b13c033caea7ae4b7bbd0b0333379042dc15cb6be5",
+      "bytes": 1208
+    },
+    "frozen/assets/index-BDzTfLVi.js": {
+      "sha256": "831e0b6d632327d72f9e446d9dc359b417c89e1dc8dd32f0dfbd415e9357f89d",
+      "bytes": 560171
+    },
+    "frozen/assets/index-l1DYdEoA.css": {
+      "sha256": "5c275decdc9972441acfb4bda2b230bbc0e12d6db36906a12a9afc8d5ee214f7",
+      "bytes": 3119
+    },
+    "frozen/index.html.txt": {
+      "sha256": "70fe14a00b72c4be8f12e6cdca7b0373b27abec173034d47030132975e00506d",
+      "bytes": 2188
+    },
+    "launch-prompt.txt": {
+      "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "bytes": 7830
+    },
+    "producer-RUN.json": {
+      "sha256": "47d1018823cae8ae9c81f215f8611d737923dfeae9f239a88f3b8a3173a55f50",
+      "bytes": 2136
+    },
+    "README.md": {
+      "sha256": "0c9be6b60563a199b83b698189648760e2316b195aa0d9b3d2bed716da416baa",
+      "bytes": 4764
+    },
+    "run-record.json": {
+      "sha256": "3030e6174d845090327f98aa39f1c1f7eb369fa0087ac43e43e3cdedcb484198",
+      "bytes": 3787
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "BUILD-README.txt",
+      "frozen/assets/index-BDzTfLVi.js",
+      "frozen/assets/index-l1DYdEoA.css",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "producer-RUN.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}

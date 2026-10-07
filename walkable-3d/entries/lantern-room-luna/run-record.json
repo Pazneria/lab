@@ -23,6 +23,7 @@
     "producerChecks": "node --check src/main.js and npm run build passed. Bundle 525.47 KB minified / 136.93 KB gzip; Vite 500 KB chunk warning. No visual, interactive or frame-time checks.",
     "importerStaticChecks": {
       "id": "lantern-room-luna",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:5175c98075dc427d80cee8af9629a33f257129d9a8d8c6a1ba063d55a829a214",
       "syntax": [
         {
           "file": "src/main.js",

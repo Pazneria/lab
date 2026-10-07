@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="theme-color" content="#243b37"/><title>The Thimble & Thorn · A home on the road</title>  <script type="module" crossorigin src="./assets/index-BCkG7dRS.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-D2pxnZeo.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-C8ZqM_US.css">
+</head>
+<body>
+  <canvas id="world" aria-label="Explorable three-dimensional traveling merchant wagon"></canvas>
+  <div id="loading"><span class="loading-mark">T<span>&</span>T</span><p>Unpacking a small world…</p></div>
+  <main id="welcome" class="veil">
+    <section class="welcome-card">
+      <p class="eyebrow">A HOME ON THE ROAD</p>
+      <h1>The Thimble<br/><em>&amp; Thorn</em></h1>
+      <div class="rule"><span>✦</span></div>
+      <p class="intro">Mara Fen’s traveling mending shop.<br/>Small remedies. Good thread. A place for everything.</p>
+      <p class="invitation">The steps are around the back. Come in, follow the worn runner to the workbench, then wander out to the open shop.</p>
+      <button id="enter">Step into camp <span>↗</span></button>
+      <div class="control-grid"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span><b>Mouse</b> look</span><span><kbd>Shift</kbd> brisk walk</span><span><kbd>Esc</kbd> release mouse</span></div>
+      <p class="quiet">A small world. No hurry.</p>
+    </section>
+  </main>
+  <div id="hud" class="hidden"><div class="place"><span class="place-dot"></span><span id="place-name">THE CAMP</span></div><div class="crosshair"></div><div class="bottom-hud"><span id="hint">WASD · walk &nbsp; MOUSE · look &nbsp; ESC · pause</span><button id="reset" title="Reset to camp (R)">Reset <kbd>R</kbd></button><button id="help" title="Show controls (H)">Controls <kbd>H</kbd></button></div></div>
+  <aside id="pause" class="pause-card hidden"><p class="eyebrow">THE THIMBLE &amp; THORN</p><h2>A moment’s rest.</h2><p>WASD or arrow keys to walk. Mouse to look.<br/>Shift for a brisk walk. R returns to camp.<br/>H opens this card. Esc releases the mouse.<br/>F2 shows live frame intervals.</p><p class="quiet">Without mouse lock, drag the scene to look around.</p><div class="pause-actions"><button id="resume">Continue exploring ↗</button><button id="reset-pause">Return to camp</button></div><label class="quality-label">Shadow detail <select id="quality"><option value="balanced">Balanced</option><option value="high">High</option><option value="low">Low</option></select></label></aside>
+  <div id="error" class="hidden" role="alert"></div>
+</body>
+</html>

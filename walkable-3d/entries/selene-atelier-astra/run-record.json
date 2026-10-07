@@ -1,0 +1,92 @@
+{
+  "id": "selene-atelier-astra",
+  "title": "SELENE — The Moonwake Commission",
+  "scene": 22,
+  "model": "astra",
+  "workspace": "task-42/selene-atelier",
+  "completionClearedByParent": true,
+  "threadId": "01a1159e-0f1e-72b9-a661-4e711295703d",
+  "requestedModel": "GPT-6 Astra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "runtimeModel": "Codex based on GPT-6",
+  "runtimeVariant": null,
+  "runtimeEffort": null,
+  "firstImplementationUtc": "2026-10-07T09:07:59.0810208Z",
+  "deadlineUtc": "2026-10-07T10:07:59.0810208Z",
+  "stopUtc": "2026-10-07T09:40:12.6916169Z",
+  "producerChecks": "Syntax, production build and CPU geometry/collision checks passed; eleven reachable inspection positions. Single JS bundle 568905 bytes / 151.68 KB gzip; optional chunk-size warning. No browser, visual, interactive or performance QA. Static/stylized mirrors; desktop controls.",
+  "interruptions": "No user interruption or extension. Registry retry, removed temporary config loader and final approved cleanup query resolved sandbox issues within the original clock.",
+  "cleanupClaim": "All commands completed; read-only verification found no entry-owned Node/npm/esbuild/command process. No server/browser/watcher started.",
+  "handoffSource": "Parent completed handoff and original run-record.json.",
+  "authority": "Normalized fields from parent completed handoff; original producer files retained unchanged. Exact runtime variant and effort unavailable unless explicitly recorded.",
+  "qa": {
+    "producerChecks": "Syntax, production build and CPU geometry/collision checks passed; eleven reachable inspection positions. Single JS bundle 568905 bytes / 151.68 KB gzip; optional chunk-size warning. No browser, visual, interactive or performance QA. Static/stylized mirrors; desktop controls.",
+    "importerStaticChecks": {
+      "id": "selene-atelier-astra",
+      "cacheKey": "3ab2fe58e725316ec32e24d5ec499867409acde7538c1f7fc356740f578caecf:2bf35ab60d0d7d935cfa8ad5cb914cd6d181135363cb354739a0a0216b23f05b",
+      "syntax": [
+        {
+          "file": "scripts/validate.mjs",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/atelier.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/garment.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/geometry.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/main.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/materials.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        },
+        {
+          "file": "src/navigation.js",
+          "inlineIndex": 0,
+          "pass": true,
+          "diagnostic": ""
+        }
+      ],
+      "externalReferences": [],
+      "authoredApiMatches": [],
+      "missingRelativeRuntimeModules": [],
+      "sourceArchiveAndFilesMatch": true,
+      "browser": false,
+      "server": false,
+      "runtimeExecuted": false,
+      "gpu": false,
+      "performance": false,
+      "visual": false,
+      "capture": false,
+      "notes": "Syntax parsing and source observations only. DOM/readiness and rendering are unverified."
+    },
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "HELD FOR PARENT REVIEW; no entrant launch/rebuild/repair/score."
+}

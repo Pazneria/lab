@@ -1,0 +1,46 @@
+{
+  "entry": "ASTER / Captain Mara Venn",
+  "model": "GPT-6 (Codex identity supplied by system; exact runtime model identifier not exposed)",
+  "effort": "Not exposed by the execution interface",
+  "firstImplementation": "2026-10-07T09:04:59.6383833+00:00",
+  "deadline": "2026-10-07T10:04:59.6383833+00:00",
+  "stop": "2026-10-07T09:38:12.2533705+00:00",
+  "interruptions": [
+    "No user or system pause. The first npm registry installation failed with EACCES; a subsequent approved registry installation succeeded. The original deadline continued unchanged."
+  ],
+  "constraints": "No browser, server, UI test, renderer, GPU test, benchmark, model tools, or subagents.",
+  "checks": {
+    "syntax": "PASS: main.js, scene.js, materials.js, navigation.js",
+    "collision": "PASS: 19 colliders; 1717 inspection-route samples; 17 movement segments; 4 anti-tunnelling cases; 6385 reachable floor cells; 7 fitting approaches",
+    "geometry": "PASS: finite attributes, transforms and bounds; 108 meshes; 6 transparent meshes; 423479 vertices; 8 lights; 100 static batches; 140157 static triangles",
+    "productionBuild": "PASS: Vite 7.1.7; 13 modules; 807.90 kB JS / 251.44 kB gzip",
+    "buildWarning": "JavaScript bundle exceeds the default 500 kB chunk warning threshold",
+    "notPerformed": [
+      "browser launch",
+      "server launch",
+      "UI testing",
+      "screenshot rendering",
+      "visual inspection",
+      "GPU testing",
+      "frame-time measurement",
+      "performance benchmarking"
+    ]
+  },
+  "processCleanup": {
+    "status": "Confirmed: no Node or esbuild processes with this entry workspace in their command line remain",
+    "method": "Read-only Win32_Process query filtered to this own workspace",
+    "serverOrBrowserStarted": false,
+    "unrelatedProcessesTerminated": false,
+    "suggestedPort": 4317,
+    "portCheck": "Confirmed unbound using .NET GetActiveTcpListeners; address is suggested, not running"
+  },
+  "artifact": {
+    "project": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-30\\captains-quarters",
+    "production": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-30\\captains-quarters\\dist",
+    "launch": "npm.cmd run preview",
+    "suggestedAddress": "http://127.0.0.1:4317/",
+    "runningPreview": false
+  },
+  "wallClockSeconds": 1992.615,
+  "deadlineMet": true
+}

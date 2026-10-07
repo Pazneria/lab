@@ -1,0 +1,254 @@
+{
+  "entry": "hearth-hemlock-astra",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\hearth-hemlock-astra\\source-preservation.zip",
+  "archiveSha256": "141ec8b44b9d2057df36705a6d9d9747c5f13170f525e1ea7aa9786784479b96",
+  "archiveKind": "Host-created source/build/dependency and parent-handoff preservation ZIP; retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/main.js": "dist/main.js",
+      "frozen/materials.js": "dist/materials.js",
+      "frozen/navigation.js": "dist/navigation.js",
+      "frozen/style.css": "dist/style.css",
+      "frozen/vendor/addons/geometries/RoundedBoxGeometry.js": "dist/vendor/addons/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js": "dist/vendor/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js",
+      "frozen/world.js": "dist/world.js"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "BUILD-CHECK.json": {
+        "sha256": "351dc3693d51a0b4aa271d4dedee56a7f22cebc5ee164c17929dfd78cf033818",
+        "bytes": 2025
+      },
+      "CHECK-RESULTS.json": {
+        "sha256": "97fcec4b44c5bed89a601dfbd34751890b5428f94d15c11d25252c3f9f0739e7",
+        "bytes": 1422
+      },
+      "dist/index.html": {
+        "sha256": "15362c29f3d3a3835c4e2a7171d443a9f52b70a3ba5186672af46780afe6036e",
+        "bytes": 3137
+      },
+      "dist/main.js": {
+        "sha256": "17e8388aa602fe6ed95d479efa32b1aa28d62475b6ed4b3ffc7cb057121f8b97",
+        "bytes": 7078
+      },
+      "dist/materials.js": {
+        "sha256": "e0e37d4be2572f68bab4193b30988659d7d641442c84ae3a765a2d6c25b53d2e",
+        "bytes": 10497
+      },
+      "dist/navigation.js": {
+        "sha256": "d42f8e361ac8f5e86dc617dc5e5ea9ce4fc089644088c76cb95823ab1354abda",
+        "bytes": 1496
+      },
+      "dist/style.css": {
+        "sha256": "154a8faea526e46c9d34a8ac9c6ce7167797a55ad7cff22ea1a4fc82a444a289",
+        "bytes": 5296
+      },
+      "dist/vendor/addons/geometries/RoundedBoxGeometry.js": {
+        "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8",
+        "bytes": 6476
+      },
+      "dist/vendor/addons/utils/BufferGeometryUtils.js": {
+        "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+        "bytes": 35539
+      },
+      "dist/vendor/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "dist/vendor/three.core.js": {
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      "dist/vendor/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      "dist/world.js": {
+        "sha256": "b054e49043102ae2ba87fe2fb924838c1e62d1f0b5fa26a015498ab2b1966b78",
+        "bytes": 37128
+      },
+      "package-lock.json": {
+        "sha256": "c77483a4cb10d3ae9b2e9ae2d22dcbf4dc3f15e9263d41ef580d6a75963283c3",
+        "bytes": 537
+      },
+      "package.json": {
+        "sha256": "8d84e91b8c2226d848800fc94469f1ee695312ef70acd45bd6ff37d43ecc0b5b",
+        "bytes": 491
+      },
+      "README.md": {
+        "sha256": "fbbba4772b00ccb8b473249188bbd3cbbf00cf142300a0986c1e2c3676ea003f",
+        "bytes": 6047
+      },
+      "RUN-RECORD.json": {
+        "sha256": "cbb50817af4be7f5f6ebeb4ac7fdddffcf5a92e5523957054f148e4961bb0a88",
+        "bytes": 1561
+      },
+      "scripts/build.mjs": {
+        "sha256": "7e4cf2a0a264cc29f6fc62f1a06da95c1383b28a021b72a0404d8558914fbf27",
+        "bytes": 1343
+      },
+      "scripts/check.mjs": {
+        "sha256": "1a817dc2f2179b273043775ac08cfc85acbb1cf2605cf5420d671e47012936a7",
+        "bytes": 3987
+      },
+      "scripts/serve.mjs": {
+        "sha256": "77db612b7c9a249afac3f9513b716ef157696707ad628ee56b57af769c6389ab",
+        "bytes": 1435
+      },
+      "scripts/verify-build.mjs": {
+        "sha256": "ecfd68549c9087565cef9d469531cc0cf37abb62e9351562759508cb5bc21163",
+        "bytes": 2307
+      },
+      "src/index.html": {
+        "sha256": "15362c29f3d3a3835c4e2a7171d443a9f52b70a3ba5186672af46780afe6036e",
+        "bytes": 3137
+      },
+      "src/main.js": {
+        "sha256": "17e8388aa602fe6ed95d479efa32b1aa28d62475b6ed4b3ffc7cb057121f8b97",
+        "bytes": 7078
+      },
+      "src/materials.js": {
+        "sha256": "e0e37d4be2572f68bab4193b30988659d7d641442c84ae3a765a2d6c25b53d2e",
+        "bytes": 10497
+      },
+      "src/navigation.js": {
+        "sha256": "d42f8e361ac8f5e86dc617dc5e5ea9ce4fc089644088c76cb95823ab1354abda",
+        "bytes": 1496
+      },
+      "src/style.css": {
+        "sha256": "154a8faea526e46c9d34a8ac9c6ce7167797a55ad7cff22ea1a4fc82a444a289",
+        "bytes": 5296
+      },
+      "src/world.js": {
+        "sha256": "b054e49043102ae2ba87fe2fb924838c1e62d1f0b5fa26a015498ab2b1966b78",
+        "bytes": 37128
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\hearth-hemlock-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "141ec8b44b9d2057df36705a6d9d9747c5f13170f525e1ea7aa9786784479b96",
+    "supplementalDependencies": [],
+    "supplementalLicenses": [
+      {
+        "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-24\\hearth-and-hemlock\\node_modules\\three\\LICENSE",
+        "localPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\hearth-hemlock-astra\\supplemental-licenses\\three-LICENSE.txt",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "kind": "Original installed dependency license; supplemental to immutable first freeze archive."
+      }
+    ]
+  },
+  "timing": {
+    "firstImplementationUtc": "2026-10-07T09:03:32.6909098Z",
+    "deadlineUtc": "2026-10-07T10:03:32.6909098Z",
+    "stopUtc": "2026-10-07T09:39:40.383Z"
+  },
+  "qa": "CPU syntax and preservation checked only; browser, server, runtime, visual, interactive, GPU, performance and capture NOT RUN.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Frozen HTML, JS, CSS and supplied build are byte-preserved. No rebuild or behavior repair."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "15362c29f3d3a3835c4e2a7171d443a9f52b70a3ba5186672af46780afe6036e",
+      "bytes": 3137
+    },
+    "frozen/main.js": {
+      "sha256": "17e8388aa602fe6ed95d479efa32b1aa28d62475b6ed4b3ffc7cb057121f8b97",
+      "bytes": 7078
+    },
+    "frozen/materials.js": {
+      "sha256": "e0e37d4be2572f68bab4193b30988659d7d641442c84ae3a765a2d6c25b53d2e",
+      "bytes": 10497
+    },
+    "frozen/navigation.js": {
+      "sha256": "d42f8e361ac8f5e86dc617dc5e5ea9ce4fc089644088c76cb95823ab1354abda",
+      "bytes": 1496
+    },
+    "frozen/style.css": {
+      "sha256": "154a8faea526e46c9d34a8ac9c6ce7167797a55ad7cff22ea1a4fc82a444a289",
+      "bytes": 5296
+    },
+    "frozen/vendor/addons/geometries/RoundedBoxGeometry.js": {
+      "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8",
+      "bytes": 6476
+    },
+    "frozen/vendor/addons/utils/BufferGeometryUtils.js": {
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "bytes": 35539
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "frozen/world.js": {
+      "sha256": "b054e49043102ae2ba87fe2fb924838c1e62d1f0b5fa26a015498ab2b1966b78",
+      "bytes": 37128
+    },
+    "launch-prompt.txt": {
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "bytes": 7573
+    },
+    "producer-RUN-RECORD.json": {
+      "sha256": "cbb50817af4be7f5f6ebeb4ac7fdddffcf5a92e5523957054f148e4961bb0a88",
+      "bytes": 1561
+    },
+    "README.md": {
+      "sha256": "fbbba4772b00ccb8b473249188bbd3cbbf00cf142300a0986c1e2c3676ea003f",
+      "bytes": 6047
+    },
+    "run-record.json": {
+      "sha256": "51edf7baa90737ec86c333ac82a2e17beec7dc04831905fe992821bd014c16df",
+      "bytes": 3752
+    },
+    "three-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/materials.js",
+      "frozen/navigation.js",
+      "frozen/style.css",
+      "frozen/vendor/addons/geometries/RoundedBoxGeometry.js",
+      "frozen/vendor/addons/utils/BufferGeometryUtils.js",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "frozen/world.js",
+      "launch-prompt.txt",
+      "producer-RUN-RECORD.json",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE.txt"
+    ],
+    "retainedOutsidePages": [
+      "Original source/build/dependency snapshots in task-43/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "No supplied authentic screenshot. Browser/GPU/screenshots prohibited for this integration."
+  },
+  "staticHostingConcerns": []
+}

@@ -1,0 +1,67 @@
+{
+  "entry": "Captain Ilyra Venn — private quarters",
+  "first_implementation_utc": "2026-10-07T09:04:43.2170782+00:00",
+  "deadline_utc": "2026-10-07T10:04:43.2170782+00:00",
+  "model": "GPT-6 (system identity); exact runtime model slug not exposed",
+  "effort": "Not exposed by this execution environment",
+  "interruptions": [],
+  "constraints": "No browser, server, GPU test, screenshot, benchmark, external model, or subagent.",
+  "model_metadata_note": "Own session environment and own thread metadata were checked. Neither exposed a model slug or effort. App defaults and task title were not treated as evidence.",
+  "execution_obstacles": [
+    "Initial npm registry access failed with sandbox EACCES; the explicitly authorized registry install succeeded on retry with an entry-local cache. Work continued and the clock was not paused.",
+    "Initial read-only process inventory was denied in the sandbox; an approved narrow read-only retry verified no processes belonging to this entry remained."
+  ],
+  "dependencies": {
+    "three": "0.180.0",
+    "vite": "7.1.7",
+    "node": "24.14.0",
+    "npm": "11.9.0",
+    "external_scene_assets": false
+  },
+  "checks": {
+    "syntax": "PASS - five application modules",
+    "cpu_geometry": "PASS - static construction, consolidation, finite vertices",
+    "cpu_navigation": "PASS - berth, wardrobe, study desk, observation seat, window and return route; major barriers",
+    "cpu_sightlines": "PASS - clear entrance-to-window ray and exposed niche/book geometry",
+    "shader_includes": "PASS - names resolve; actual WebGL compilation was not performed",
+    "production_build": "PASS - Vite build, 12 modules, final bundle 538.74 kB / gzip 141.42 kB",
+    "warnings": [
+      "Non-fatal Vite warning: single application chunk exceeds 500 kB"
+    ],
+    "evidence_files": [
+      "CHECKS.txt",
+      "BUILD.txt"
+    ],
+    "opaque_static_batches": 56,
+    "total_mesh_objects": 66,
+    "triangles": 116144,
+    "lights": 7,
+    "shadow_lights": 1,
+    "not_performed": [
+      "browser launch",
+      "server launch",
+      "rendering or screenshots",
+      "visual review",
+      "interactive input testing",
+      "GPU testing",
+      "performance benchmark",
+      "FPS or frame-time measurement"
+    ]
+  },
+  "suggested_launch": {
+    "command": "npm.cmd run preview",
+    "address": "http://127.0.0.1:4387/",
+    "status": "Suggested address only; not running",
+    "listener_check": "No active listener at read-only check; no socket was bound"
+  },
+  "artifacts": {
+    "directory": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-29\\captain-ilyra-quarters",
+    "production": "dist/",
+    "source": "src/",
+    "instructions": "README.md"
+  },
+  "process_cleanup": "All tracked install/build/check command sessions exited. A narrow process inventory filtered to the exact entry path confirmed no Node, esbuild or cmd processes from this entry remained. No server, watcher, browser or test process is left running. This final record-writing command exits normally.",
+  "actual_stop_utc": "2026-10-07T09:38:28.825Z",
+  "elapsed_seconds": 2025.608,
+  "deadline_extended": false
+}

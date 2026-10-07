@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#21170f" />
+    <title>Ember Rest · The Keeper's Quarters</title>
+    <script type="module" crossorigin src="/assets/index-c8zsAgZ-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DIrQNKXZ.css">
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Explorable dragon caretaker's quarters"></canvas>
+    <div id="loading">Building Ember Rest<span>Timber, stone, and a place to come home.</span></div>
+    <div id="welcome" class="veil">
+      <section class="welcome-card">
+        <p class="eyebrow">A small home for a very large friendship</p>
+        <h1>Ember Rest</h1>
+        <p class="subtitle">The keeper's quarters</p>
+        <div class="rule"></div>
+        <p class="intro">A narrow bed. A mended harness. Beyond the little door, a resting place built for someone much larger.</p>
+        <p class="route">BEDROOM <span>→</span> SERVICE PASSAGE <span>→</span> WARM ROOST</p>
+        <button id="enter">Step inside <span>↗</span></button>
+        <div class="keys"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> walk</span><span>Mouse · look</span><span><kbd>Shift</kbd> brisk walk</span><span><kbd>Esc</kbd> pause</span></div>
+        <p class="quiet">Take the floor-level path around the resting deck. Look back for the little doorway.</p>
+      </section>
+    </div>
+    <div id="hud" hidden>
+      <div class="identity"><span class="sigil">✧</span><div>EMBER REST<small id="zone">THE KEEPER'S ROOM</small></div></div>
+      <div id="crosshair"></div>
+      <div id="hint" hidden><span id="hint-text"></span><small><kbd>E</kbd> inspect</small></div>
+      <div class="bottom-ui"><span>WASD · walk &nbsp; MOUSE · look &nbsp; E · inspect &nbsp; R · reset &nbsp; ESC · pause</span><button id="reset">Reset</button><button id="quality" title="Toggle rendered pixel density">Detail: high</button></div>
+      <div id="toast" hidden></div>
+    </div>
+    <aside id="inspection" hidden><button id="close-note" aria-label="Close inspection">×</button><p class="eyebrow" id="note-kind">KEEPER'S NOTES</p><h2 id="note-title"></h2><p id="note-copy"></p><small>E or Escape to close</small></aside>
+    <div id="error" hidden></div>
+  </body>
+</html>

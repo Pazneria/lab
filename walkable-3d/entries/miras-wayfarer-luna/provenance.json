@@ -20,7 +20,8 @@
     },
     "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-43\\frozen-originals\\miras-wayfarer-luna\\source-preservation.zip",
     "sourceArchiveSha256": "9446400a602a4d63055927e298b58ac643292b700ea3aec2c029eac88536669d",
-    "supplementalDependencies": []
+    "supplementalDependencies": [],
+    "supplementalLicenses": []
   },
   "timing": {
     "firstImplementationUtc": "2026-10-07T09:06:02Z",
@@ -48,8 +49,8 @@
       "bytes": 2572
     },
     "run-record.json": {
-      "sha256": "7c3a091499d0bd1ff1d62dfea281d4da7781f8595ddfde4408764efdf80814bb",
-      "bytes": 2251
+      "sha256": "e4f267aa8b60d0d2449fc401c95fd0ef1358f81ef4b4c9b679f321669c971ab6",
+      "bytes": 2402
     }
   },
   "publication": {

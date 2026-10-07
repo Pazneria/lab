@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#122d32"><title>SELENE — The Moonwake Commission</title>  <script type="module" crossorigin src="./assets/index-C7jsoPuj.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DOlNeI0n.css">
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable three dimensional royal tailor's atelier"></canvas>
+  <div id="vignette"></div>
+  <header id="masthead"><div class="sigil">☾</div><div><b>SELENE</b><span>ROYAL ATELIER · EST. 1748</span></div></header>
+  <div id="room-label"><span id="room-index">01 / FITTING ROOM</span><h1 id="room-title">A commission for the moon.</h1><p id="room-description">A quiet threshold, before the extraordinary.</p></div>
+  <div id="crosshair"></div>
+  <div id="inspection" hidden><span>ATELIER NOTES</span><h2></h2><p></p></div>
+  <aside id="map"><svg viewBox="0 0 140 170" aria-label="Floor plan: fitting room, archive, workshop"><path class="map-floor" d="M4 4H136V166H4Z"/><path class="map-wall" d="M4 105H24M54 105H87M117 105H136M58 4V29M58 58V105"/><text x="29" y="71">II</text><text x="98" y="68">III</text><text x="68" y="143">I</text><path class="map-route" d="M93 147L29 137L29 44L91 44L106 89L106 139"/><g id="map-player"><circle r="3"/><path d="M0 -9L-3 -3H3Z"/></g></svg><span>THE ATELIER</span></aside>
+  <footer id="controls"><span><kbd>W A S D</kbd> walk</span><span><kbd>MOUSE</kbd> look</span><span><kbd>SHIFT</kbd> brisk walk</span><span><kbd>R</kbd> reset</span><span><kbd>ESC</kbd> release</span><button id="settings-button" aria-label="Open settings">Settings</button></footer>
+  <div id="welcome" class="overlay"><section class="welcome-card"><span class="eyebrow">AN EXPLORABLE ROYAL ATELIER</span><div class="moon-mark">☾</div><h1>The Moonwake<br><em>Commission</em></h1><p>The sovereign’s coronation mantle is almost ready.<br>Follow the cloth, from the archive to the last unfinished seam.</p><div class="route"><span>I · FITTING</span><i>→</i><span>II · ARCHIVE</span><i>→</i><span>III · WORKSHOP</span></div><button id="enter">Enter the atelier <span>↗</span></button><small>WASD to walk · Mouse to look · R to return to the entrance<br>Click to capture your mouse. Esc releases it.</small></section></div>
+  <div id="pause" class="overlay" hidden><section class="pause-card"><span class="eyebrow">SELENE · ROYAL ATELIER</span><h2>A moment between stitches.</h2><p>Explore at your own pace. Approach objects to read their notes.</p><button id="resume">Continue exploring ↗</button><div class="settings"><label>Render detail<select id="quality"><option value="high">High · soft shadows</option><option value="balanced" selected>Balanced · soft shadows</option><option value="low">Light · no shadows</option></select></label><label>Look sensitivity<input id="sensitivity" type="range" min="0.4" max="1.8" value="0.9" step="0.1"></label><label class="check"><input id="show-notes" type="checkbox" checked> Object notes</label><label class="check"><input id="show-map" type="checkbox" checked> Floor plan</label></div><button id="reset-button" class="secondary">Return to entrance</button><small>Arrow keys also move · Q / E turn · Drag to look if mouse capture is unavailable</small></section></div>
+  <div id="error" hidden></div>
+</body></html>
