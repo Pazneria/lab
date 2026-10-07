@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101924">
+  <title>After Hours • Neighborhood Arcade</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body>
+  <canvas id="scene" aria-label="Explorable 3D neighborhood arcade"></canvas>
+  <div id="load" role="status">Warming up the cabinets<span></span></div>
+  <section id="welcome" aria-label="Scene controls">
+    <div class="eyebrow">A SMALL PLACE TO STAY A LITTLE LONGER</div>
+    <h1>AFTER<br><em>HOURS</em><span>ARCADE</span></h1>
+    <p class="intro">Five cabinets. A pocketful of tokens.<br>A quiet corner of the city, after dark.</p>
+    <button id="enter" disabled>Enter the arcade <span>↗</span></button>
+    <div class="instructions"><span><kbd>W A S D</kbd> / <kbd>↑ ↓ ← →</kbd> walk</span><span><i>Mouse</i> look around</span><span><kbd>R</kbd> return to entrance</span><span><kbd>Esc</kbd> release mouse</span></div>
+    <p class="small">Click to capture the mouse. If capture is unavailable,<br>hold the left mouse button and drag to look.</p>
+    <div class="edition">EST. 1987 <span>•</span> OPEN LATE <span>•</span> TAKE YOUR TIME</div>
+  </section>
+  <div id="hud" hidden>
+    <div class="brand">AFTER HOURS <span>NEIGHBORHOOD ARCADE</span></div>
+    <div id="crosshair" aria-hidden="true"></div>
+    <div id="location"><span>01 / ENTRY</span><small>WELCOME BACK</small></div>
+    <div class="toolbar"><button id="help" title="Show controls">Controls <kbd>H</kbd></button><button id="quality" title="Toggle rendering quality">Quality: high</button><button id="reset" title="Return to entrance">Reset <kbd>R</kbd></button></div>
+    <div id="hint">WASD to walk <b>·</b> Mouse to look <b>·</b> Esc to pause</div>
+    <aside id="helpbox" hidden><strong>Take a look around.</strong><p><kbd>W A S D</kbd> or arrows — move<br>Mouse — turn and look<br><kbd>Shift</kbd> — walk faster<br><kbd>R</kbd> — reset position<br><kbd>H</kbd> — show / hide these controls<br><kbd>Esc</kbd> — pause & release the mouse</p><p class="small">Walk the center aisle, circle MOONWAKE, then stop at the token counter. The cabinets are exhibits with original attract screens.</p></aside>
+    <div id="paused" hidden><strong>TAKE YOUR TIME</strong><button id="resume">Continue exploring ↗</button></div>
+  </div>
+  <div id="error" hidden role="alert"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

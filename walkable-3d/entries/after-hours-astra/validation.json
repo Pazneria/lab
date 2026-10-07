@@ -1,0 +1,30 @@
+{
+  "finalSyntaxChecks": "PASS: main.js, art.js, world.js, movement.js, server.mjs, build.mjs",
+  "nonServingBuild": "PASS: npm run build",
+  "structuralChecks": {
+    "kind": "CPU-only Three.js geometry with inert canvas drawing calls",
+    "result": "PASS",
+    "cabinets": 5,
+    "meshesBeforeBatching": 1079,
+    "opaqueBatches": 113,
+    "transparentMeshes": 22,
+    "opaqueStaticTriangles": 56934,
+    "totalMeshes": 135,
+    "totalVertices": 173495,
+    "sceneLights": 9,
+    "shadowCastingLights": 1,
+    "reachableGridCellsAt10cm": 5853,
+    "reachableInspectionPoints": [
+      "TIDAL CIRCUIT front", "DEEP SIGNAL front", "MOONWAKE front",
+      "MOONWAKE left", "MOONWAKE rear", "MOONWAKE right",
+      "SWITCHYARD front", "SUNSET RUNNER front", "Token counter", "Return view"
+    ],
+    "unoccludedScreenSamples": 45,
+    "collisionDirectionsChecked": 8
+  },
+  "notPerformed": [
+    "Browser launch", "HTTP server launch", "Interactive UI testing",
+    "Visual verification", "Screenshot rendering", "GPU testing", "Frame-time or FPS measurement"
+  ],
+  "performanceClaim": "None. Static geometry counts are not measured performance."
+}

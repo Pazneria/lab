@@ -2245,6 +2245,57 @@
       "webgl": "WebGL (runtime unverified)",
       "comparisonModel": "sol",
       "availability": "unverified"
+    },
+    {
+      "id": "after-hours-astra",
+      "title": "After Hours",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "requestedConfiguration": "GPT-6 Astra / XHIGH / normal service (parent-requested)",
+      "modelDisclosure": "Producer execution exposed GPT-6 only; exact variant, reasoning effort and service tier independently unverified. Parent confirms requested model and XHIGH creation arguments; requested normal service is parent-reported. Initial prompt sent once; no mid-run messages.",
+      "buildWindow": "First implementation 2026-10-07 04:01:01.8938918 UTC; stop 04:31:52.8831904 UTC; deadline 05:01:01.8938918 UTC. Parent completed receipt; original entrant records retained where supplied.",
+      "interruptions": "No mid-run messages or deadline extensions. No interruptions reported.",
+      "controls": "See README.",
+      "producerChecks": "Checks actually performed are preserved in README and producer records. CPU/static/build only; no runtime, browser, GPU or performance checks.",
+      "performanceEvidence": "Not measured. No rendering, browser, GPU or frame-time benchmark was run.",
+      "limitations": [
+        "Runtime, appearance, interactive route, collision feel and frame-time stability remain unverified.",
+        "Desktop keyboard/mouse scene; see original README for implementation limits."
+      ],
+      "documents": [
+        {
+          "label": "Producer checks / record",
+          "path": "build-validation.json"
+        },
+        {
+          "label": "Launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "README.txt"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Producer checks / record",
+          "path": "validation.json"
+        }
+      ],
+      "readySelector": "body",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "No captured preview supplied.",
+      "archiveSha256": "bc81649d4fe2e4d760c51aa5654a21a42c8c385d5518cda9bcd300d9efe296e9",
+      "archiveKind": "Host-created source preservation ZIP; not a producer-supplied archive; retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "33ae4e1f498239cd0be378aae78ef15c352667ebc32cac64b83e4350a442732d",
+      "promptId": "12",
+      "promptVersion": "12-expanded-openai",
+      "webgl": "WebGL (runtime unverified)",
+      "comparisonModel": "astra",
+      "availability": "unverified"
     }
   ],
   "prompts": [
