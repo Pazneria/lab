@@ -17,7 +17,9 @@
         "sha256": "69a0bc8fa64077bd74e903b656bb5b9b03896cd437b81c61e2a6c1d63a090888",
         "bytes": 2377
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\hearthmere-luna\\original.zip",
+    "sourceArchiveSha256": "ed17a21862b1225c46006270a05febbdcee6f8f5a9d457d2765c857d06963041"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

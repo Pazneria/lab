@@ -70,7 +70,9 @@
         "sha256": "2effcf1fbb531a8f5b2f03b4922c047ed097146de299107963b45e65435ec142",
         "bytes": 10622
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\applied-sensing-opus\\original.zip",
+    "sourceArchiveSha256": "2d210253fa4c169ec00b30ec0d5b46e179a22c37f6a3af48524b04937b07b484"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

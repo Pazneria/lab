@@ -91,7 +91,9 @@
         "sha256": "f2fc4d958c0e1b5df9a2205403721f8201fc79bc48567683ec72d9aa6728356f",
         "bytes": 4328
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\axiom-sol\\original.zip",
+    "sourceArchiveSha256": "2500259984db361400f0375130cd9eb51c136e2e7863cbc4cae850b66fdb9f1d"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

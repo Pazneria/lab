@@ -118,7 +118,9 @@
         "sha256": "f7b07337f1fa46bfcadbe97e7544f740bf43647146278741286fdba43cdd1b1a",
         "bytes": 1149
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\after-hours-astra\\original.zip",
+    "sourceArchiveSha256": "bc81649d4fe2e4d760c51aa5654a21a42c8c385d5518cda9bcd300d9efe296e9"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

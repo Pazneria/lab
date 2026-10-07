@@ -87,7 +87,9 @@
         "sha256": "e7ddb1e61c1d7f782c2fc90432aa20c3ed8a3b98be42b9a1c1167d5aaaaaf9ab",
         "bytes": 139
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\lantern-arcade-sol\\source-preservation.zip",
+    "sourceArchiveSha256": "eb5f6f2ea33b0394533630525adc60f59bb56bf67b9b71ba9e0d534aac30a5a6"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

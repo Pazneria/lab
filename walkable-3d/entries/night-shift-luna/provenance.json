@@ -27,7 +27,9 @@
         "sha256": "d92bc033a70ed73c37b1fe87e27f21eb30b131088fa68bebe73f0e1d923ac8d6",
         "bytes": 2864
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\night-shift-luna\\original.zip",
+    "sourceArchiveSha256": "6d125f5cbcd90ae3a419bda0fafb7cf766b511b2acf9d61a71304dc8ef0998be"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

@@ -22,7 +22,9 @@
         "sha256": "5116a21734aa49dc67fd87f3a13cf7d22c16d775355f4b615ad3aed0cdfaeb19",
         "bytes": 33652
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\holloway-halt-luna\\original.zip",
+    "sourceArchiveSha256": "c16024492c4361071fe8dff349e54faf5d8d2cad83417b0cfc194e29e7a87868"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

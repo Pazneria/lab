@@ -47,7 +47,9 @@
         "sha256": "792f635f0e5e5edcf9ef99c9300cb09732221f70fe4542251c89c60b75b167d9",
         "bytes": 4028
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\stillroom-luna\\original.zip",
+    "sourceArchiveSha256": "647fd52f9bb35f329b5df6e53f8466c0288b1709a9248debedcf822e5b41f706"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

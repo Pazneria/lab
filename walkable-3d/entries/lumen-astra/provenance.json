@@ -87,7 +87,9 @@
         "sha256": "3c049e6dc0788b5c1177d2be773b004d83dae2685d72a1f3f2f75858b46b3c77",
         "bytes": 129
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\lumen-astra\\source-preservation.zip",
+    "sourceArchiveSha256": "3cee237f5c49671677eb983d895c02e88ec307d11123cf3c9d64ed01c7261c9c"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

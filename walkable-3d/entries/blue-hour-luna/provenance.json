@@ -42,7 +42,9 @@
         "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
         "bytes": 603113
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\blue-hour-luna\\original.zip",
+    "sourceArchiveSha256": "3bc25f371d0790a1bf41baa285acfbb82f441863225f4aebeaac955d087789d4"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

@@ -51,7 +51,9 @@
         "sha256": "942f6e1e47d0398e723fcf3d921496a03d0bdc9e75a1ad1e6c01cdbe9f6c0c42",
         "bytes": 4155
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\understone-luna\\original.zip",
+    "sourceArchiveSha256": "89309f40bda2db770e80501a65ed9f97c507380bf806a6f10c09e18fcaf8d4f7"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

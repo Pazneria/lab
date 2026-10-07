@@ -27,7 +27,9 @@
         "sha256": "b067331be75ade500fab03cc13abbaf73f6ed79b075e007691ee0bdd5a3f622b",
         "bytes": 7994
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\bay-03-luna\\original.zip",
+    "sourceArchiveSha256": "b178dcaf7b4febd703d78b1f9e7ac0f87097d5a6629b986987be696d5d828476"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",

@@ -34,7 +34,9 @@
         "sha256": "26e66270bbbebce12e087a7679b4dc0149c04c7d14574635c91243cd553f1ffa",
         "bytes": 1254
       }
-    }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-5\\expanded-queue\\fieldworks-luna\\original.zip",
+    "sourceArchiveSha256": "9b421dcd10c34e5ec18234fc6e2df2c993c7b8ec270956bffbedbc0929e2e0b8"
   },
   "hostingAdjustments": [
     "Original HTML served inert as index.html.txt; scene JS/CSS and completed dist bytes unchanged. No rebuilding or entrant fixes.",
