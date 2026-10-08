@@ -20,7 +20,7 @@ test('all 81 prior records, frozen trees, prompt definitions and original versio
  }
 });
 test('three owner-cleared entries preserve canonical launches, genuine captures and unknown backend/effort/timing',()=>{
- assert.equal(catalog.entries.length,86);assert.equal(catalog.entries.filter(e=>e.availability!=='failed').length,78);
+ assert.equal(catalog.entries.length,89);assert.equal(catalog.entries.filter(e=>e.availability!=='failed').length,81);
  for(const [i,id] of ids.entries()){
   const e=catalog.entries.find(e=>e.id===id),dir=new URL(`walkable-3d/entries/${id}/`,root);
   assert.equal(e.promptId,String(i+15));assert.equal(e.comparisonModel,'opus');assert.equal(e.availability,'ready');assert.equal(e.completionStatus,'completed');

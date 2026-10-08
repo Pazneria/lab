@@ -25,10 +25,10 @@ test('PR50 records, failures, authentic previews and old prompt versions remain 
 });
 
 test('morning entries preserve frozen files and requested/runtime distinctions with truthful capture outcomes',()=>{
- assert.equal(fresh.length,24);assert.equal(catalog.entries.length,86);assert.equal(catalog.prompts.length,22);
+ assert.equal(fresh.length,24);assert.equal(catalog.entries.length,89);assert.equal(catalog.prompts.length,22);
  for(let scene=15;scene<=22;scene++)assert.deepEqual(fresh.filter(e=>e.promptId===String(scene)).map(e=>e.comparisonModel).sort(),['astra','luna','sol']);
  assert.equal(new Set(catalog.entries.map(e=>e.id)).size,catalog.entries.length);
- const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,78);
+ const eligible=catalog.entries.filter(e=>e.availability!=='failed');assert.equal(eligible.length,81);
  assert.equal(new Set(eligible.map(e=>`${e.promptId}/${e.comparisonModel}`)).size,eligible.length);
  for(const e of fresh){
   assert.ok(Number(e.promptId)>=15&&Number(e.promptId)<=22);

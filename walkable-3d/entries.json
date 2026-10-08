@@ -4786,6 +4786,171 @@
       "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
       "preview": "preview.jpg",
       "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "underwater-apartment-opus",
+      "title": "Underwater Researcher's Apartment",
+      "description": "A domestic room, research work nook and substantial observation window onto a bounded dark reef.",
+      "promptId": "19",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (producer-reported model)",
+      "modelDisclosure": "Producer README identifies Claude Opus 5.5. Producer says effort was configured for the session; actual value was not stated. Actual serving backend and effective effort are unknown and not independently verified. Owner reports this Claude run complete.",
+      "buildWindow": "Timing is producer-reported and not independently verified. Original README and attributed run record preserve its claims; no inferred deadline compliance.",
+      "interruptions": "Producer reports none; not independently verified.",
+      "controls": "| Input | Action |\n|---|---|\n| Click the intro card or the canvas | Capture the mouse (pointer lock). Dragging with the button held also works as a fallback |\n| Mouse | Look |\n| W A S D / arrow keys | Walk (about 1.7 m/s) |\n| Shift | Walk faster |\n| C | Toggle crouch (eye height 1.08 m) for low shelves and the bench top |\n| R | Reset to the entrance |\n| [ / ] | Exposure darker / brighter |\n| P | Cycle the render-resolution cap (1.0 / 1.5 / 2.0 × device pixels; default 1.5) |\n| F | Frame-time readout (avg / worst ms, fps, draw calls) |\n| H | Show help again. Esc releases the pointer |",
+      "producerChecks": "Producer reports esbuild bundling, node syntax parsing, and an offline DOM/WebGL-stub smoke test and scripted collision route; no browser, GPU, screenshot or measured performance.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
+      "limitations": [
+        "Startup, authored default view, visual correctness and GPU shader compilation await approved capture.",
+        "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
+        "Original producer limitations remain in the unchanged README.",
+        "Actual backend, effective effort and independently verified timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README and run record",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "archiveSha256": "7d89741d783a2aa982002a512b378717ef277c906528ad28aecf39d43d11aff8",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "3f35c3b3bd1440ae068c592562728fed77ab2da2deb1670f461b6db70c8505d0",
+      "promptVersion": "19-claude",
+      "webgl": "WebGL (startup not independently verified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await approved genuine capture."
+    },
+    {
+      "id": "dragon-caretaker-opus",
+      "title": "Dragon Caretaker's Quarters and Warm Roost",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (producer-reported model)",
+      "modelDisclosure": "Producer README identifies Claude Opus 5.5. Producer claims harness reasoning-effort setting 40; independently unverified. Actual serving backend and effective effort are unknown and not independently verified. Owner reports this Claude run complete.",
+      "buildWindow": "Timing is producer-reported and not independently verified. Original README and attributed run record preserve its claims; no inferred deadline compliance.",
+      "interruptions": "Producer reports none; not independently verified.",
+      "controls": "| Input | Action |\n|---|---|\n| Click | Capture the mouse (pointer lock). Click-dragging also works as a fallback. |\n| Mouse | Look |\n| W A S D / arrow keys | Walk (←/→ also turn) |\n| Shift | Hurry |\n| C | Crouch (eye height 1.0 m) to inspect low details |\n| R or the \"Reset to entrance\" button | Return to the entrance |\n| F | Frame-time overlay: fps, avg/p95/max ms over 0.5 s, draw calls, triangles |\n| G | Cycle render scale (1×, 1.5×, up to 2×). The default is 1.5× on HiDPI and 1× otherwise. |\n| H | Hide or show the help line |\n| Esc | Release the mouse |",
+      "producerChecks": "Producer reports esbuild and a CPU scene-graph smoke test, geometry/collider counts and sampled route points; no browser, GPU, screenshot or measured performance.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
+      "limitations": [
+        "Startup, authored default view, visual correctness and GPU shader compilation await approved capture.",
+        "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
+        "Original producer limitations remain in the unchanged README.",
+        "Actual backend, effective effort and independently verified timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README and run record",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "archiveSha256": "75483079f6a22fdedb4a2eb612312132c4688e20815059841d783d799f52c3e9",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "e59ae93a934718ce2e84c7b7179c75f314ea35001b6cedd1ced775c9e1dbcaed",
+      "promptVersion": "21-claude",
+      "webgl": "WebGL (startup not independently verified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await approved genuine capture."
+    },
+    {
+      "id": "royal-tailor-opus",
+      "title": "Royal Tailor's Atelier and Unfinished Outfit",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (producer-reported model)",
+      "modelDisclosure": "Producer README identifies Claude Opus 5.5. Producer says the reasoning-effort setting was not shown in this session. Actual serving backend and effective effort are unknown and not independently verified. Owner reports this Claude run complete.",
+      "buildWindow": "Timing is producer-reported and not independently verified. Original README and attributed run record preserve its claims; no inferred deadline compliance.",
+      "interruptions": "Producer reports none; not independently verified.",
+      "controls": "| Input | Action |\n|---|---|\n| Click | Enter and capture the mouse (Esc releases it). If pointer lock is unavailable, drag to look |\n| Mouse | Look |\n| W A S D / arrow keys | Walk (Shift = brisk walk); Q / E turn |\n| C | Toggle crouch, for low detail such as the hem, train and lower shelves |\n| 1 – 9 | Viewpoints: entrance, fitting dais, archive shelves, archive samples, outfit front, outfit side-back, outfit train, workbench, return view |\n| R | Reset to the entrance |\n| F | Frame-time overlay (average and worst ms, fps, draw calls, triangles) |\n| G | Cycle render scale (1×, 0.75×, 1.5× of the device pixel ratio, capped at 1.5) |\n| H | Hide or show the help strip |\n\nSuggested route: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → R. You can also walk it freely: entrance → dais → east doorway → archive aisles → workshop doorway → around the gown → bench → back west through both doorways.",
+      "producerChecks": "Producer reports esbuild, a CPU-only mocked-canvas world smoke test and a grid walkability flood-fill; no browser, GPU, screenshot or measured performance.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
+      "limitations": [
+        "Startup, authored default view, visual correctness and GPU shader compilation await approved capture.",
+        "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
+        "Original producer limitations remain in the unchanged README.",
+        "Actual backend, effective effort and independently verified timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README and run record",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "archiveSha256": "475a834eba31583db7569ada3a60ca3840850ec4a5af55dede8303c3b7e067ee",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "790c0bbcb7e89d40865b4309e11b72c4f9b13bde6e60cd7b14114385169eb03f",
+      "promptVersion": "22-claude",
+      "webgl": "WebGL (startup not independently verified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await approved genuine capture."
     }
   ],
   "prompts": [
@@ -5372,6 +5537,33 @@
       "path": "prompt-20-claude.txt",
       "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
       "source": "Exact task45 launch TXT verified against original handoff and task43 canonical hashes. Owner reports the run complete.",
+      "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
+    },
+    {
+      "id": "19-claude",
+      "promptId": "19",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-19-claude.txt",
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "source": "Exact launch TXT verified against task50 handoff, task43 canonical and existing OpenAI launch hashes. Owner reports completion.",
+      "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
+    },
+    {
+      "id": "21-claude",
+      "promptId": "21",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-21-claude.txt",
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "source": "Exact launch TXT verified against task50 handoff, task43 canonical and existing OpenAI launch hashes. Owner reports completion.",
+      "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
+    },
+    {
+      "id": "22-claude",
+      "promptId": "22",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-22-claude.txt",
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
+      "source": "Exact launch TXT verified against task50 handoff, task43 canonical and existing OpenAI launch hashes. Owner reports completion.",
       "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
     }
   ]

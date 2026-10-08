@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember's Roost — Caretaker's Quarters</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0908; font-family: Georgia, 'Times New Roman', serif; color: #f1e2c6; }
+  #c { display: block; width: 100vw; height: 100vh; }
+  #loading { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #0b0908; font-size: 18px; letter-spacing: 0.04em; }
+  #overlay { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(8,6,5,0.62); cursor: pointer; }
+  .card { max-width: 520px; padding: 26px 30px; background: rgba(30,20,14,0.92); border: 1px solid #6a4a2c; border-radius: 6px; box-shadow: 0 8px 40px rgba(0,0,0,0.6); }
+  .card h1 { margin: 0 0 6px; font-size: 26px; color: #ffcf8a; font-weight: normal; }
+  .card p { margin: 6px 0 12px; font-size: 14px; line-height: 1.45; color: #d9c6a4; }
+  .card table { font-size: 14px; border-collapse: collapse; }
+  .card td { padding: 2px 12px 2px 0; }
+  .card td:first-child { color: #ffcf8a; white-space: nowrap; }
+  .go { margin-top: 14px; font-size: 16px; color: #fff3dd; text-align: center; }
+  #hud { position: fixed; left: 14px; bottom: 12px; font-size: 13px; text-shadow: 0 1px 3px #000; pointer-events: none; }
+  #zone { font-size: 18px; color: #ffd59a; margin-bottom: 4px; }
+  #help { opacity: 0.85; }
+  #resetBtn { position: fixed; right: 14px; bottom: 12px; background: rgba(30,20,14,0.85); color: #f1e2c6; border: 1px solid #6a4a2c; border-radius: 4px; padding: 6px 12px; font-family: inherit; cursor: pointer; }
+  #stats { position: fixed; right: 12px; top: 10px; font: 12px/1.4 Consolas, monospace; background: rgba(0,0,0,0.55); padding: 6px 9px; border-radius: 4px; white-space: pre; display: none; }
+  #flash { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); font-size: 14px; background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 4px; opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,240,220,0.55); pointer-events: none; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="cross"></div>
+<div id="hud"><div id="zone">Caretaker's room</div><div id="help">WASD / arrows move · mouse look · Shift run · C crouch · R reset · F frame stats · G render scale · H hide help · Esc release mouse</div></div>
+<button id="resetBtn" title="Return to the entrance (R)">Reset to entrance</button>
+<div id="stats"></div>
+<div id="flash"></div>
+<div id="overlay"><div class="card">
+  <h1>Ember's Roost</h1>
+  <p>A keeper's small room, the gear passage where the care tools live, and the great warm roost beyond the little door. Walk past the bed, through the passage, along the boardwalk to the perch and the resting platform, then look back at the doorway you came through.</p>
+  <table>
+    <tr><td>Mouse</td><td>Look around (click to capture; drag also works)</td></tr>
+    <tr><td>W A S D / arrows</td><td>Walk · ←/→ also turn</td></tr>
+    <tr><td>Shift</td><td>Hurry</td></tr>
+    <tr><td>C</td><td>Crouch to inspect low details</td></tr>
+    <tr><td>R / button</td><td>Reset to the entrance</td></tr>
+    <tr><td>F · G · H</td><td>Frame-time stats · render scale · help text</td></tr>
+    <tr><td>Esc</td><td>Release the mouse</td></tr>
+  </table>
+  <div class="go">Click to explore</div>
+</div></div>
+<div id="loading"><span id="loadmsg">Loading…</span></div>
+<script src="bundle.js"></script>
+</body>
+</html>

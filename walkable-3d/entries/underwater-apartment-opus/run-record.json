@@ -1,0 +1,34 @@
+{
+  "id": "underwater-apartment-opus",
+  "scene": 19,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\claude-entries\\Claude19",
+  "completionClearedByOwner": true,
+  "completionEvidence": "Owner reports all three final Claude scenes finished. Required source/build/README exist and two whole-workspace hashes matched. No independently observed producer transcript.",
+  "ownerReportedModel": null,
+  "producerReportedModel": "Claude Opus 5.5 (claude-opus-5-5)",
+  "verifiedBackendModel": null,
+  "requestedEffort": null,
+  "effectiveEffort": null,
+  "producerEffortClaim": "Producer says effort was configured for the session; actual value was not stated.",
+  "producerReportedTiming": {
+    "firstImplementation": "2026-10-08T02:22:17Z",
+    "deadline": "2026-10-08T03:22:17Z",
+    "stop": "2026-10-08T02:49:22Z"
+  },
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "interruptions": "Producer reports none; not independently verified.",
+  "producerChecks": "Producer reports esbuild bundling, node syntax parsing, and an offline DOM/WebGL-stub smoke test and scripted collision route; no browser, GPU, screenshot or measured performance.",
+  "authority": "Original producer bytes preserved. Backend, effective effort and actual timing remain unknown; producer claims are attributed.",
+  "qa": {
+    "static": "Byte preservation, canonical hash, required runtime paths, first-party network/storage/navigation review.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Prepared locally; owner-approved bounded captures and coordinated publication pending."
+}

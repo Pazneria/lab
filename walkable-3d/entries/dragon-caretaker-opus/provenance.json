@@ -1,0 +1,122 @@
+{
+  "entry": "dragon-caretaker-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-54\\frozen-originals\\dragon-caretaker-opus\\source-preservation.zip",
+  "archiveSha256": "75483079f6a22fdedb4a2eb612312132c4688e20815059841d783d799f52c3e9",
+  "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/bundle.js": "dist/bundle.js",
+      "README.md": "README.md",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      "dist/bundle.js": {
+        "bytes": 586937,
+        "sha256": "9fb9cc570d81eca88f39a84e3efd9610b0d4371b19b40967674d0c06d391e43b"
+      },
+      "dist/index.html": {
+        "bytes": 3723,
+        "sha256": "e59ae93a934718ce2e84c7b7179c75f314ea35001b6cedd1ced775c9e1dbcaed"
+      },
+      "package-lock.json": {
+        "bytes": 13226,
+        "sha256": "086b054857b5a376bf66dee9ce86de67ecddafc3e230a1c09d31d31dd248a72f"
+      },
+      "package.json": {
+        "bytes": 403,
+        "sha256": "1e1e91f324fef4c82859ae358abcf62d7b0780c99ff4f7787a4caac2946eb610"
+      },
+      "README.md": {
+        "bytes": 8299,
+        "sha256": "f5620bef9ac02396810332d7f6d83c56004f9d252422d52f97af6e7c7b6f7992"
+      },
+      "src/main.js": {
+        "bytes": 19310,
+        "sha256": "aad7c66e52f43bedb2b3c3e5a2417d30a1a636bf4a39e341a2efa48e8ef8331d"
+      },
+      "src/tex.js": {
+        "bytes": 19229,
+        "sha256": "51555934e2257426a7e0fc0a5286861aeaa92c4e09aca70fecb5b1c40b39a8e8"
+      },
+      "src/world.js": {
+        "bytes": 55607,
+        "sha256": "169f985ffdd722f86a191dc6b1649551b88c8af6e123ecb8914e9bb4d3ca2a2f"
+      },
+      "tools/check.mjs": {
+        "bytes": 2375,
+        "sha256": "15aa4bfb8ae17d7ada8606b5cba9c2365a568110214f656e5a135930814db770"
+      },
+      "dependency-licenses/three-LICENSE": {
+        "bytes": 1081,
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-50\\claude-entries\\Claude21\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "bytes": 1069,
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-50\\claude-entries\\Claude21\\node_modules\\esbuild\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-54\\frozen-originals\\dragon-caretaker-opus\\source-preservation.zip",
+    "sourceArchiveSha256": "75483079f6a22fdedb4a2eb612312132c4688e20815059841d783d799f52c3e9"
+  },
+  "timing": "Producer claims preserved; independently verified actual timing unknown.",
+  "qa": "Static review only; no source repair, rebuild, scene evaluation, capture or performance measurement.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Existing host supplies base URL, opaque iframe, entry-scoped CSP and readiness/error bridge. Original HTML and classic bundle copied unchanged."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "bytes": 1069,
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+    },
+    "frozen/bundle.js": {
+      "bytes": 586937,
+      "sha256": "9fb9cc570d81eca88f39a84e3efd9610b0d4371b19b40967674d0c06d391e43b"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 3723,
+      "sha256": "e59ae93a934718ce2e84c7b7179c75f314ea35001b6cedd1ced775c9e1dbcaed"
+    },
+    "launch-prompt.txt": {
+      "bytes": 7870,
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c"
+    },
+    "README.md": {
+      "bytes": 8299,
+      "sha256": "f5620bef9ac02396810332d7f6d83c56004f9d252422d52f97af6e7c7b6f7992"
+    },
+    "run-record.json": {
+      "bytes": 1744,
+      "sha256": "a2fe76f4623353f8ab06b716f3420e4eb4f5aac523d13bd7d6d8c016886fd199"
+    },
+    "three-LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/bundle.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build snapshot, archive and workspace hashes retained in task54/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Approved sequential genuine capture pending."
+  }
+}

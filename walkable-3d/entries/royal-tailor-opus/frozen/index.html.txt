@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verdigris Atelier</title>
+<style>
+  :root { --ink: #f3ead6; --gold: #d8b062; --teal: #12302e; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #14110e; font-family: Georgia, 'Times New Roman', serif; color: var(--ink); }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(18,48,46,0.82), rgba(10,9,8,0.92)); cursor: pointer; z-index: 5; }
+  #overlay.hidden { display: none; }
+  .card { max-width: 560px; padding: 28px 34px; border: 1px solid var(--gold); background: rgba(12,20,19,0.85); box-shadow: 0 0 60px rgba(0,0,0,0.6); }
+  h1 { margin: 0 0 4px; font-weight: normal; letter-spacing: 0.06em; color: var(--gold); font-size: 30px; }
+  .sub { font-style: italic; opacity: 0.85; margin-bottom: 16px; }
+  table { border-collapse: collapse; font-size: 14px; width: 100%; }
+  td { padding: 3px 8px 3px 0; vertical-align: top; }
+  td:first-child { color: var(--gold); white-space: nowrap; }
+  #enter { margin-top: 18px; font: inherit; font-size: 16px; padding: 8px 22px; background: var(--gold); color: #1a140c; border: 0; cursor: pointer; }
+  #enter:disabled { opacity: 0.5; }
+  #status { font-size: 13px; opacity: 0.75; margin-top: 8px; }
+  #hud { position: fixed; left: 14px; bottom: 12px; font-size: 13px; line-height: 1.5; background: rgba(10,12,12,0.55); padding: 8px 12px; border-left: 2px solid var(--gold); pointer-events: none; z-index: 3; }
+  #hud.hidden { display: none; }
+  #room { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); font-size: 15px; letter-spacing: 0.12em; color: var(--gold); text-shadow: 0 1px 4px #000; pointer-events: none; z-index: 3; }
+  #flash { position: fixed; top: 40px; left: 50%; transform: translateX(-50%); font-style: italic; font-size: 14px; opacity: 0; transition: opacity 0.4s; text-shadow: 0 1px 4px #000; pointer-events: none; z-index: 3; }
+  #perf { position: fixed; right: 12px; top: 10px; font: 12px/1.4 monospace; white-space: pre; background: rgba(0,0,0,0.6); padding: 6px 8px; display: none; z-index: 3; }
+  #dot { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,240,210,0.7); pointer-events: none; z-index: 3; }
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div class="card">
+    <h1>The Verdigris Atelier</h1>
+    <div class="sub">Royal tailors · Commission No. 47 — a coronation gown for the young Queen Isaude, half-made</div>
+    <table>
+      <tr><td>Click</td><td>enter / capture mouse (Esc releases)</td></tr>
+      <tr><td>Mouse</td><td>look around</td></tr>
+      <tr><td>W A S D / arrows</td><td>walk · <b>Shift</b> brisk walk · Q / E turn</td></tr>
+      <tr><td>C</td><td>crouch to inspect low detail</td></tr>
+      <tr><td>1 – 9</td><td>viewpoints: entrance, fitting dais, archive shelves, samples, outfit front, side-back, train, workbench, return view</td></tr>
+      <tr><td>R</td><td>reset to entrance</td></tr>
+      <tr><td>F / G / H</td><td>frame-time readout · render scale · hide help</td></tr>
+    </table>
+    <button id="enter" disabled>Enter the atelier</button>
+    <div id="status">Cutting cloth and polishing brass…</div>
+  </div>
+</div>
+<div id="room"></div>
+<div id="flash"></div>
+<div id="perf"></div>
+<div id="dot"></div>
+<div id="hud">WASD move · mouse look · Shift faster · C crouch<br>1–9 viewpoints · R reset · F frame time · G render scale · H hide</div>
+<script src="dist/atelier.js"></script>
+</body>
+</html>

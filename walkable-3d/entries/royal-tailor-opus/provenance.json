@@ -1,0 +1,142 @@
+{
+  "entry": "royal-tailor-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-54\\frozen-originals\\royal-tailor-opus\\source-preservation.zip",
+  "archiveSha256": "475a834eba31583db7569ada3a60ca3840850ec4a5af55dede8303c3b7e067ee",
+  "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/dist/atelier.js": "dist/atelier.js",
+      "README.md": "README.md",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      "dist/atelier.js": {
+        "bytes": 584494,
+        "sha256": "ea161842019973f69825bd4aa9f1c486258572daa738f5f6d1ba57216d6f0635"
+      },
+      "index.html": {
+        "bytes": 3713,
+        "sha256": "790c0bbcb7e89d40865b4309e11b72c4f9b13bde6e60cd7b14114385169eb03f"
+      },
+      "package-lock.json": {
+        "bytes": 14277,
+        "sha256": "5518aa28bae114b977b7a9e41c9e68fb3d4150be9423d30300a9e024f4d8ea6a"
+      },
+      "package.json": {
+        "bytes": 319,
+        "sha256": "8c06e93d837a456bfaf968d0f51613d0df9efa6a46359fd7771c68e608009358"
+      },
+      "README.md": {
+        "bytes": 7033,
+        "sha256": "af3b19e08b7e988cd8d37f4664d26b0a8fa51b8ce5f5903d95a59395c75ba862"
+      },
+      "src/archive.js": {
+        "bytes": 17925,
+        "sha256": "60ea64f548344e126aa9da6ce8e9c9e1c048b7054299af7199f6424e47dd8ed4"
+      },
+      "src/fitting.js": {
+        "bytes": 10245,
+        "sha256": "ecc31f01765ef6e93626bd40f56c37efdead2a154f0bdec44439de9b739b6d86"
+      },
+      "src/main.js": {
+        "bytes": 8194,
+        "sha256": "879b208407b735f4b3b429605f8c181f0ad5b5fc03fa0e113f4dfe82bab400ba"
+      },
+      "src/materials.js": {
+        "bytes": 6623,
+        "sha256": "3f0e7b7b0e3879ea036be55d9e434986cd2f2c67a262af6d621db5683a22a875"
+      },
+      "src/outfit.js": {
+        "bytes": 17592,
+        "sha256": "456fdd34b7d4ec4bea00efd752c034f99109361e291d3895981531d5eaca2056"
+      },
+      "src/textures.js": {
+        "bytes": 21149,
+        "sha256": "c42bcd922eb9886b80957d896eb14f3b54b23254516a0ac2f607031e92207d56"
+      },
+      "src/util.js": {
+        "bytes": 6812,
+        "sha256": "03ac3dbfdec334b2d8f56e115b9d858f7e45f5c9c690536b0f20bb436d90c0b7"
+      },
+      "src/workshop.js": {
+        "bytes": 17690,
+        "sha256": "63e47d703e24b96bfe0285e00fda3f3a117c986ffbe842cd4b9c5db9ae94017d"
+      },
+      "src/world.js": {
+        "bytes": 11805,
+        "sha256": "9db66799369ac84802ef4c8bb26d690ff9d8e909e8b06946841a38af73a373f8"
+      },
+      "dependency-licenses/three-LICENSE": {
+        "bytes": 1081,
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-50\\claude-entries\\Claude22\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "bytes": 1069,
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-50\\claude-entries\\Claude22\\node_modules\\esbuild\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-54\\frozen-originals\\royal-tailor-opus\\source-preservation.zip",
+    "sourceArchiveSha256": "475a834eba31583db7569ada3a60ca3840850ec4a5af55dede8303c3b7e067ee"
+  },
+  "timing": "Producer claims preserved; independently verified actual timing unknown.",
+  "qa": "Static review only; no source repair, rebuild, scene evaluation, capture or performance measurement.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Existing host supplies base URL, opaque iframe, entry-scoped CSP and readiness/error bridge. Original HTML and classic bundle copied unchanged."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "bytes": 1069,
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+    },
+    "frozen/dist/atelier.js": {
+      "bytes": 584494,
+      "sha256": "ea161842019973f69825bd4aa9f1c486258572daa738f5f6d1ba57216d6f0635"
+    },
+    "frozen/index.html.txt": {
+      "bytes": 3713,
+      "sha256": "790c0bbcb7e89d40865b4309e11b72c4f9b13bde6e60cd7b14114385169eb03f"
+    },
+    "launch-prompt.txt": {
+      "bytes": 7901,
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02"
+    },
+    "README.md": {
+      "bytes": 7033,
+      "sha256": "af3b19e08b7e988cd8d37f4664d26b0a8fa51b8ce5f5903d95a59395c75ba862"
+    },
+    "run-record.json": {
+      "bytes": 1728,
+      "sha256": "6d9c9c29ccffc2dd16b11b2955574bdbcf20f3aa54293c2bd971aeb7380954bb"
+    },
+    "three-LICENSE": {
+      "bytes": 1081,
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/dist/atelier.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build snapshot, archive and workspace hashes retained in task54/frozen-originals"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Approved sequential genuine capture pending."
+  }
+}
