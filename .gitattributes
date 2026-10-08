@@ -27,3 +27,15 @@ walkable-3d/entries.json text eol=lf
 
 # Prompt records retain exact UTF-8 bytes, including original final whitespace.
 walkable-3d/prompt-*.txt -text
+
+# Host-owned production derivative and its unchanged binary display copy.
+lab-space/assets/claude11/** text eol=lf
+lab-space/assets/production* text eol=lf
+lab-space/characters/*.glb -text
+lab-space/characters/*.json text eol=lf
+lab-space/index.html text eol=lf
+tests/verify-production* text eol=lf
+scripts/build-production-lab.cjs text eol=lf
+docs/PRODUCTION-LAB* text eol=lf
+# Generated upstream GLSL template strings retain their original whitespace.
+lab-space/assets/production-room.mjs whitespace=-blank-at-eol,-space-before-tab
