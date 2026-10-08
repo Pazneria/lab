@@ -1,0 +1,34 @@
+{
+  "id": "royal-tailor-opus",
+  "scene": 22,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-50\\claude-entries\\Claude22",
+  "completionClearedByOwner": true,
+  "completionEvidence": "Owner reports all three final Claude scenes finished. Required source/build/README exist and two whole-workspace hashes matched. No independently observed producer transcript.",
+  "ownerReportedModel": null,
+  "producerReportedModel": "Claude Opus 5.5 (claude-opus-5-5)",
+  "verifiedBackendModel": null,
+  "requestedEffort": null,
+  "effectiveEffort": null,
+  "producerEffortClaim": "Producer says the reasoning-effort setting was not shown in this session.",
+  "producerReportedTiming": {
+    "firstImplementation": "2026-10-08T02:19:41Z",
+    "deadline": "2026-10-08T03:19:41Z",
+    "stop": "2026-10-08T02:49:44Z"
+  },
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "interruptions": "Producer reports none; not independently verified.",
+  "producerChecks": "Producer reports esbuild, a CPU-only mocked-canvas world smoke test and a grid walkability flood-fill; no browser, GPU, screenshot or measured performance.",
+  "authority": "Original producer bytes preserved. Backend, effective effort and actual timing remain unknown; producer claims are attributed.",
+  "qa": {
+    "static": "Byte preservation, canonical hash, required runtime paths, first-party network/storage/navigation review.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Prepared locally; owner-approved bounded captures and coordinated publication pending."
+}

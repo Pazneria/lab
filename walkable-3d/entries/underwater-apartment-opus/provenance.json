@@ -1,0 +1,142 @@
+{
+  "entry": "underwater-apartment-opus",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-54\\frozen-originals\\underwater-apartment-opus\\source-preservation.zip",
+  "archiveSha256": "7d89741d783a2aa982002a512b378717ef277c906528ad28aecf39d43d11aff8",
+  "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/dist/bundle.js": "dist/bundle.js",
+      "README.md": "README.md",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      ".timelog": {
+        "bytes": 75,
+        "sha256": "9cef5d6f248e7ffa0a8920721b85414089259496ead8c95a88738a221d71cf21"
+      },
+      "dist/bundle.js": {
+        "bytes": 760316,
+        "sha256": "8807b3b40a729de5c1cfd2626cc872d4d8b815248d39941322ab5bb7a2aaf188"
+      },
+      "index.html": {
+        "bytes": 3390,
+        "sha256": "3f35c3b3bd1440ae068c592562728fed77ab2da2deb1670f461b6db70c8505d0"
+      },
+      "package-lock.json": {
+        "bytes": 13226,
+        "sha256": "b20868d6c52ba47e7c532e773c90d55ec111667b8f4197e0517a1f53e4f83721"
+      },
+      "package.json": {
+        "bytes": 426,
+        "sha256": "aaa995e9a5af18b5afb70e1f3c693bd491c4a9adbd2ad5d39671b539091f79a7"
+      },
+      "README.md": {
+        "bytes": 7244,
+        "sha256": "e57654ff8763236545651e60aade17f80687bedf60cadb18471d2be603a19a4c"
+      },
+      "src/core.js": {
+        "bytes": 11951,
+        "sha256": "671686f703730b116ee6c43b60f390d59f43fa131bb87873e2a201a4e94c3373"
+      },
+      "src/exterior.js": {
+        "bytes": 22228,
+        "sha256": "5b251c334781f07d10ca65af502ce41a2094fc4007bb968c53b25858f72df45c"
+      },
+      "src/interior.js": {
+        "bytes": 47699,
+        "sha256": "33eb1c3da59a25c2794ec1bdb61297075f6a75ad693c2bbfa3ea3c0ef6f3bde4"
+      },
+      "src/main.js": {
+        "bytes": 9392,
+        "sha256": "8437a3203e9efc61415a5597d2670c3ebe5edbd22cafa7479b554e1bb26d6429"
+      },
+      "src/textures.js": {
+        "bytes": 12700,
+        "sha256": "0115eefcf9acd5112863c6f8078a3ca5171f729f9f1d5b73e1abc317aeddab04"
+      },
+      "dependency-licenses/three-LICENSE": {
+        "bytes": 1081,
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\claude-entries\\Claude19\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "bytes": 1069,
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "original": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\claude-entries\\Claude19\\node_modules\\esbuild\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-54\\frozen-originals\\underwater-apartment-opus\\source-preservation.zip",
+    "sourceArchiveSha256": "7d89741d783a2aa982002a512b378717ef277c906528ad28aecf39d43d11aff8"
+  },
+  "timing": "Producer claims preserved; independently verified actual timing unknown.",
+  "qa": "Frozen byte integrity and actual hosted startup/default canvas captured and inspected. No entrant rebuild/repair, interactive route QA, performance benchmark, grades or votes.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "Existing host supplies base URL, opaque iframe, entry-scoped CSP and readiness/error bridge. Original HTML and classic bundle copied unchanged."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes": 1069
+    },
+    "frozen/dist/bundle.js": {
+      "sha256": "8807b3b40a729de5c1cfd2626cc872d4d8b815248d39941322ab5bb7a2aaf188",
+      "bytes": 760316
+    },
+    "frozen/index.html.txt": {
+      "sha256": "3f35c3b3bd1440ae068c592562728fed77ab2da2deb1670f461b6db70c8505d0",
+      "bytes": 3390
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "837e6c53ff0f93a0be2d861f23bbe1e559b05c103d11953bbc2702381a6a80ec",
+      "bytes": 1768
+    },
+    "preview-capture.json": {
+      "sha256": "71dae4090b21134c545c389953246c25a3086b2461ea6a3a49b5f26ab2db8ccd",
+      "bytes": 3147
+    },
+    "preview.jpg": {
+      "sha256": "384d4136012171de16d5d8e02a3ee69ebf6cc4387f92a9c0da69bb8f2791df70",
+      "bytes": 109914
+    },
+    "README.md": {
+      "sha256": "e57654ff8763236545651e60aade17f80687bedf60cadb18471d2be603a19a4c",
+      "bytes": 7244
+    },
+    "run-record.json": {
+      "sha256": "14526c7902b31ab910c0853ec1118c310d2efa55984be8120ecea1951df9c045",
+      "bytes": 2118
+    },
+    "three-LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/dist/bundle.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "three-LICENSE"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build snapshot, archive and workspace hashes retained in task54/frozen-originals"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habitat Quarters</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #020809; font-family: system-ui, -apple-system, Segoe UI, sans-serif; color: #dfe9e6; }
+  canvas#c { display: block; width: 100vw; height: 100vh; }
+  #intro { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(4,28,32,0.82), rgba(1,6,8,0.95)); z-index: 5; cursor: pointer; }
+  #intro .card { max-width: 520px; padding: 28px 34px; border: 1px solid rgba(140,210,200,0.25); border-radius: 10px; background: rgba(3,16,19,0.85); }
+  #intro h1 { margin: 0 0 4px; font-size: 22px; font-weight: 600; letter-spacing: 0.04em; }
+  #intro p.sub { margin: 0 0 16px; color: #8fb8b0; font-size: 13px; }
+  #intro table { border-collapse: collapse; font-size: 13px; width: 100%; }
+  #intro td { padding: 3px 0; vertical-align: top; }
+  #intro td:first-child { color: #ffd59a; width: 44%; font-family: ui-monospace, Consolas, monospace; }
+  #intro .go { margin-top: 18px; text-align: center; padding: 10px; border-radius: 6px; background: rgba(255,200,130,0.14); color: #ffe2b8; font-weight: 600; }
+  #intro .status { margin-top: 10px; font-size: 12px; color: #7fa39c; text-align: center; }
+  #hud { position: fixed; left: 14px; bottom: 12px; font-size: 12px; color: rgba(220,235,230,0.75); text-shadow: 0 1px 2px #000; pointer-events: none; z-index: 3; }
+  #room { position: fixed; left: 14px; top: 12px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,226,184,0.85); text-shadow: 0 1px 3px #000; pointer-events: none; z-index: 3; }
+  #fps { position: fixed; right: 12px; top: 10px; font: 12px ui-monospace, Consolas, monospace; color: #9fe0d0; text-shadow: 0 1px 2px #000; pointer-events: none; display: none; z-index: 3; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,255,255,0.55); pointer-events: none; z-index: 3; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="room"></div>
+<div id="cross"></div>
+<div id="fps"></div>
+<div id="hud">Click to look · WASD / arrows move · Shift faster · C crouch · R reset · H help</div>
+<div id="intro">
+  <div class="card">
+    <h1>Habitat Quarters, 108 m</h1>
+    <p class="sub">A researcher's apartment on the reef floor. Living quarters → work nook → observation room.</p>
+    <table>
+      <tr><td>Mouse</td><td>Look around (click to capture pointer; drag also works)</td></tr>
+      <tr><td>W A S D / Arrows</td><td>Walk</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>C</td><td>Toggle crouch (inspect low shelves, work surface)</td></tr>
+      <tr><td>R</td><td>Reset to entrance</td></tr>
+      <tr><td>[ / ]</td><td>Exposure darker / brighter</td></tr>
+      <tr><td>P</td><td>Cycle render resolution (1.0 / 1.5 / 2.0 × cap)</td></tr>
+      <tr><td>F</td><td>Toggle frame-time readout</td></tr>
+      <tr><td>H</td><td>Show this help (Esc releases the pointer)</td></tr>
+    </table>
+    <div class="go" id="go">Building habitat…</div>
+    <div class="status" id="status"></div>
+  </div>
+</div>
+<script src="dist/bundle.js"></script>
+</body>
+</html>
