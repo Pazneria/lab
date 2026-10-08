@@ -18,15 +18,26 @@ IDs are strings; leading zeroes are significant.
 An unknown ID shows an honest empty state. Different prompt versions need
 different IDs and exact hashes, even when their titles are similar.
 
-The draft includes four unchanged completed Sol/Astra asset copies and six source
-records, including two excluded malformed Luna attempts. Each character has one
-admitted Sol/Astra pair. Exact shared contract/brief text matches between the
+The draft includes six unchanged completed Sol/Astra/Claude asset copies and eight
+source records, including two excluded malformed Luna attempts. Each character
+has three CPU-compatible entries, giving three possible same-prompt pairs.
+Runtime review remains pending. Exact Sol/Astra shared contract/brief text matches between the
 parent-supplied original Sol launch messages recovered by supported cloud thread
 reads and the directly-read completed Astra launch messages. Only requested-model
 metadata differs in their full initial constraints. Original prompt draft-file bytes
 were not independently verified. See [admission evidence](data/ADMISSION.md) and
 [original launch records](data/prompt-sources.json). Only verified, frozen,
 self-contained records form pairs. No screenshots or previews are fabricated.
+
+The parent maps the completed frozen Claude01/02 attempts to the original Mara/Ivo
+prompts; exact Claude launch text was not independently present in their frozen
+receipts. [Claude evidence](data/claude-source-evidence.json) preserves that boundary,
+unknown reasoning effort, receipt/session model identifiers, source timing and
+filesystem discrepancies. CPU compatibility does not certify browser/mobile/GPU
+runtime admission or performance. The two dense files exceed the old Studio's
+one-million-triangle ceiling, which was a host capacity restriction; the benchmark
+has no arbitrary polygon cap. They fit the current byte/accessor/vertex budgets
+unchanged. No budget increase, decimation or repair was needed.
 
 ## Experience
 
@@ -142,12 +153,12 @@ node --check character-bench/assets/preflight.mjs
 node --check character-bench/assets/preflight-worker.mjs
 ```
 
-The 25 data/wiring/catalog tests cover same-prompt pairing, admission failures,
+The 26 data/wiring/catalog tests cover same-prompt pairing, admission failures,
 linked/unlinked controls, current-import voting/reveal, pair/departure reset,
 loader cancellation/disposal, worker success/error/timeout, partial allocations,
-hierarchy/accessor bounds, image decode budgets, all four copied asset hashes,
+hierarchy/accessor bounds, image decode budgets, all six copied asset hashes,
 canonical text hashes and original run disclosures. DOM, workers and rendering
-are mocked in wiring tests. Native CPU-only loading of all four completed Sol/Astra
+are mocked in wiring tests. Native CPU-only loading of all six completed Sol/Astra/Claude
 GLBs was separately checked using the pinned importer without a renderer. The two
 saved Luna containers failed before importer parse and remain untouched in the
 parent's preservation archive. [CPU results](data/cpu-import-evidence.json) establish

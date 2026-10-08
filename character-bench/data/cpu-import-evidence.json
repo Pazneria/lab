@@ -117,6 +117,55 @@
       "error": "Expected a complete glTF 2 GLB.",
       "sourceHashUnchanged": true,
       "id": "entry-02-03"
+    },
+    {
+      "byteLength": 33483700,
+      "sha256": "0bde90f1dbb08f07dabd50d6cb2ea1ec057707c70b7142f5a5fafdcf28d3f3e7",
+      "preflight": true,
+      "parser": true,
+      "embeddedBuffers": 1,
+      "meshes": 17,
+      "vertices": 644130,
+      "bounds": {
+        "min": [
+          -0.6809525489807129,
+          0.00039945554453879595,
+          -0.1637483388185501
+        ],
+        "max": [
+          0.6809525489807129,
+          1.572211742401123,
+          0.18722431361675262
+        ]
+      },
+      "meshNodes": 17,
+      "sourceHashUnchanged": true,
+      "id": "entry-01-04"
+    },
+    {
+      "byteLength": 31063096,
+      "sha256": "94c1b58b49012027925afb51327f373382200a4e3f3b8c2c0610c650f7f460d8",
+      "preflight": true,
+      "parser": true,
+      "embeddedBuffers": 1,
+      "meshes": 17,
+      "vertices": 597564,
+      "bounds": {
+        "min": [
+          -0.7702327370643616,
+          -1.733039129454496e-18,
+          -0.1819932907819748
+        ],
+        "max": [
+          0.7702414989471436,
+          1.9210848808288574,
+          0.22612231969833374
+        ]
+      },
+      "meshNodes": 17,
+      "sourceHashUnchanged": true,
+      "id": "entry-02-04"
     }
-  ]
+  ],
+  "runtimeReview": "Pending browser/mobile/GPU QA; CPU compatibility is not runtime admission."
 }

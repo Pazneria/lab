@@ -7,7 +7,7 @@
       "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Mara Vale, a 67-year-old woman who spent most of her working life maintaining a small rural railway stop. Passenger service ended years ago, but she still clears the drains and repairs what she can. She knows which repairs matter and which only make a place look busy. Her ambition is to keep the old station useful to local walkers without turning it into a monument to her own past.\n\nMara is short and solidly built, with a broad torso, strong forearms and an age-softened face. She moves deliberately and has the settled physical confidence of someone who has spent decades carrying, lifting and working outdoors. She is particular about promises, fond of very dry jokes and more comfortable teaching someone a task than accepting their sympathy. She has begun letting a younger volunteer make decisions, though she finds this harder than the heavy work.\n\nGive her a specific, lived-in identity rather than a generic elderly worker. Her practical habits and attachment to useful things should inform your design, while leaving room for pride, humor and personal taste. Choose how those qualities appear; no particular garment, tool or keepsake is required.",
       "sha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
       "source": "Exact shared contract and brief matched between parent-supplied original Sol launch-message text from supported cloud thread reads and directly-read completed Astra launch-message text. Original prompt draft-file bytes not independently verified. Requested-model metadata is separate.",
-      "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. No numeric rubric was supplied for this prompt version."
+      "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. Some frozen files are dense; browser/mobile/GPU performance review remains pending. No numeric rubric was supplied for this prompt version."
     },
     {
       "id": "02",
@@ -15,7 +15,7 @@
       "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Ivo Renn, a 32-year-old man who runs a tiny late-night food stall. He began as a delivery rider, learned to cook while helping a relative and eventually built a loyal following of workers finishing awkward shifts. He remembers what people like to eat more easily than their names. He wants to train someone who can run the stall without him, but keeps stepping in before the trainee has a chance to finish.\n\nIvo is tall and heavyset, with a full middle, substantial upper arms and a broad, expressive face. His hands are quick and precise. His presence is sociable and assured, with the mild fatigue of a person whose busiest hours begin when other people go home. He enjoys playful bargaining and can make a stranger feel included, yet becomes unusually quiet when he is concentrating on a difficult job.\n\nDesign a person with tastes and routines beyond the role of vendor. His appearance should accommodate heat, rain and long hours without turning into a catalog of cooking equipment. You decide his clothes and visual language; warmth, dexterity and the tension between generosity and control are the important character cues.",
       "sha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
       "source": "Exact shared contract and brief matched between parent-supplied original Sol launch-message text from supported cloud thread reads and directly-read completed Astra launch-message text. Original prompt draft-file bytes not independently verified. Requested-model metadata is separate.",
-      "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. No numeric rubric was supplied for this prompt version."
+      "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. Some frozen files are dense; browser/mobile/GPU performance review remains pending. No numeric rubric was supplied for this prompt version."
     }
   ],
   "entries": [
@@ -27,7 +27,14 @@
         "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence.",
+        "basis": "CPU static compatibility only",
+        "runtimeReview": {
+          "status": "pending",
+          "browser": false,
+          "mobile": false,
+          "gpuPerformance": false
+        }
       },
       "asset": {
         "path": "./entries/entry-01-01.glb",
@@ -138,7 +145,14 @@
         "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence.",
+        "basis": "CPU static compatibility only",
+        "runtimeReview": {
+          "status": "pending",
+          "browser": false,
+          "mobile": false,
+          "gpuPerformance": false
+        }
       },
       "asset": {
         "path": "./entries/entry-01-02.glb",
@@ -242,7 +256,14 @@
         "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence.",
+        "basis": "CPU static compatibility only",
+        "runtimeReview": {
+          "status": "pending",
+          "browser": false,
+          "mobile": false,
+          "gpuPerformance": false
+        }
       },
       "asset": {
         "path": "./entries/entry-02-01.glb",
@@ -335,7 +356,14 @@
         "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence.",
+        "basis": "CPU static compatibility only",
+        "runtimeReview": {
+          "status": "pending",
+          "browser": false,
+          "mobile": false,
+          "gpuPerformance": false
+        }
       },
       "asset": {
         "path": "./entries/entry-02-02.glb",
@@ -559,6 +587,260 @@
           "path": "data/prompt-sources.json",
           "sourceDraftBytesVerified": false
         }
+      }
+    },
+    {
+      "id": "entry-01-04",
+      "promptId": "01",
+      "promptSha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
+      "admission": {
+        "status": "verified",
+        "frozen": true,
+        "selfContained": true,
+        "basis": "CPU static compatibility only",
+        "reason": "Parent-authorized same-prompt catalog mapping; frozen hash/size and current viewer CPU preflight/native importer verified. Browser/mobile/GPU runtime admission and performance remain pending.",
+        "runtimeReview": {
+          "status": "pending",
+          "browser": false,
+          "mobile": false,
+          "gpuPerformance": false
+        }
+      },
+      "asset": {
+        "path": "./entries/entry-01-04.glb",
+        "sha256": "0bde90f1dbb08f07dabd50d6cb2ea1ec057707c70b7142f5a5fafdcf28d3f3e7",
+        "byteLength": 33483700,
+        "vertexCount": 644130,
+        "triangleCount": 1285962
+      },
+      "provenance": {
+        "modelLabel": "Claude Opus 5.5 (receipt-reported)",
+        "requestedModel": "Claude Opus 5.5",
+        "requestedModelEvidence": "Original handoff explicitly records requested Claude Opus 5.5.",
+        "sourceModelTruth": {
+          "requested": "Claude Opus 5.5",
+          "session_reported_identifier": "claude-opus-5-5",
+          "evidence": "Completed local handoff reports the session/system identifier; not an independent serving-backend receipt.",
+          "actual_model_independently_verified": null,
+          "requested_reasoning_effort_recorded": null,
+          "actual_reasoning_effort_independently_verified": null
+        },
+        "requestedReasoning": null,
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "sessionReportedModel": "claude-opus-5-5",
+        "modelEvidence": "Completed local handoff reports the session/system identifier; not an independent serving-backend receipt.",
+        "timing": {
+          "implementationStart": "2026-10-08T21:13:57Z",
+          "deadline": "2026-10-08T22:13:57Z",
+          "actualStop": "2026-10-08T21:46:29Z",
+          "timezone": "UTC",
+          "sourceTimezone": "America/New_York (EDT, explicit UTC-04:00)",
+          "elapsedSeconds": 1952,
+          "clockPaused": false,
+          "stopwatchIndependentlyReconstructed": false
+        },
+        "timingDisclosure": "Receipt time zone America/New_York (EDT, explicit UTC-04:00); normalized UTC start 2026-10-08T21:13:57Z; one-hour deadline 2026-10-08T22:13:57Z; final stop 2026-10-08T21:46:29Z; 1952 seconds by receipt arithmetic, not independently reconstructed stopwatch. Receipt states no interruptions.",
+        "sourceTimingEvidence": {
+          "receipt_timezone": "America/New_York (EDT, explicit UTC-04:00)",
+          "receipt_start_local": "2026-10-08 17:13:57 -04:00",
+          "receipt_final_stop_local": "2026-10-08 17:46:29 -04:00",
+          "implementation_start_utc": "2026-10-08T21:13:57Z",
+          "implementation_final_stop_utc": "2026-10-08T21:46:29Z",
+          "deadline_utc": "2026-10-08T22:13:57Z",
+          "elapsed_seconds_from_receipt": 1952,
+          "asset_editing_stop_utc_claim": null,
+          "last_asset_write_receipt_claim": "2026-10-08 ~17:45:30 -04:00 / ~21:45:30 UTC (clean rebuild, receipt claim)",
+          "actual_asset_file_last_write_utc": "2026-10-08T21:42:03.9243217Z",
+          "interruptions_note": "Receipt states no interruptions.",
+          "stopwatch_independently_reconstructed": false
+        },
+        "sourceFileTimestamps": {
+          "length": 33483700,
+          "creation_time_utc": "2026-10-08T21:29:06.5247713Z",
+          "last_write_time_utc": "2026-10-08T21:42:03.9243217Z",
+          "last_access_time_utc": "2026-10-08T21:42:03.9243217Z",
+          "attributes": "Archive"
+        },
+        "runConditions": "Independent attempt with original receipt disclosures. Basic-format and later CPU importer success do not establish equivalent unconstrained execution, complete hidden anatomy, production topology, visual quality or runtime performance.",
+        "limitations": [
+          "Dense uniform surface-nets topology lacks animation loops; production deformation needs retopology. Thin features retain non-manifold edges: producer reports hair/brows 307, head 17, jumper 10, each boot 9 and waistcoat 3. Analytic cap/seam vertices are unwelded/open; producer topology assertions were not independently rerun here.",
+          "Solid layered garments contain hidden interior faces and overlap. Torso/leg skin under clothes is not modeled; upper-arm skin continues inside sleeves. Grooved hair shell has no strands/cards; knot is blobby, fine wrinkles voxel-limited, hands described as slim. 8-bit vertex colour, no textures or normal maps.",
+          "33,483,700 bytes / 1,285,962 triangles. No decimation, LODs, compression, rig/skins/animation/deformation validation. No original real viewer/engine, official validator or interactive/browser inspection. Point-sampled software previews may differ from host PBR appearance; original preview images were not viewed or rerendered here.",
+          "Blender/DCC unavailable; Python/numpy/local sdfkit required for generation, which was not rerun. Receipt states no interruptions. Claimed final GLB write ~21:45:30 UTC differs from actual saved last-write 21:42:03.9243217 UTC. Handoff last-write 21:46:33.0302666 UTC follows claimed final stop 21:46:29 UTC by about four seconds. Both evidence types retained; chronology not inferred.",
+          "Reasoning effort and actual serving backend independently unexposed. Producer reports build cache deleted and owned runs exited; parent scoped process snapshot found no exact-path owned matches, with relative/unavailable command-line and snapshot-time limits. Runtime/mobile/GPU performance remains untested."
+        ],
+        "producerChecks": "Producer: custom final-file GLB/accessor/finite geometry/normals/index/topology/bounds checks and approximate point-sampled CPU front/back/both sides/top/three-quarter/head/hand/torso images. Producer inspection assertions and topology limitations remain claims, not rerun quality findings.",
+        "hostChecks": "Parent independently checked frozen container/resource/accessor/finite scalars/normals/index bounds with no errors/warnings; current host checks verify exact SHA-256/size, bounded preflight and pinned Three r180 CPU GLTFLoader parse, source hash unchanged. No source generator/check/render script executed. No browser, renderer, GPU, screenshot, performance, topology, rigging or deformation check by this task.",
+        "sourceHandoff": "# Mara Vale — character handoff\n\n**Deliverable:** `mara_vale.glb` (33.48 MB, glTF 2.0 binary, SHA-256 `0BDE90F1DBB08F07DABD50D6CB2EA1EC057707C70B7142F5A5FAFDCF28D3F3E7`)\n\n## Timing (America/New_York, EDT, UTC-04:00)\n| | |\n|---|---|\n| Implementation start | 2026-10-08 17:13:57 -04:00 |\n| One-hour deadline | 2026-10-08 18:13:57 -04:00 |\n| Final GLB written (clean rebuild) | 2026-10-08 ~17:45:30 -04:00 |\n| Actual stop (asset work + handoff finished) | 2026-10-08 17:46:29 -04:00 (about 32.5 min used) |\n\nThere were no interruptions. All timestamps come from the system clock (`Get-Date`), not from estimates.\n\n## Art direction\nThe style is stylized semi-realism, like a clay-soft animated feature: chunky, solid proportions with matte painted materials. There are no textures; colour is baked into vertex colours (COLOR_0) and multiplied with plain PBR factors.\n\n- **Build:** about 1.57 m tall, short and broad, with a heavy torso, a slight belly and rounded upper back, strong forearms with a few raised veins, and thick, knuckly hands.\n- **Face:** soft and age-heavy. It has jowls, a soft under-chin, a broad slightly bulbous nose with ruddy cheeks and nose tip, nasolabial folds, faint forehead creases and sun spots. The eyelids are heavy and the brows thick and grey. The mouth is a little asymmetric, with her left corner raised, for her very dry humour. The eyes are grey-green.\n- **Hair:** grey-white and combed straight back into a low twisted bun, with **a pencil pushed through the bun** (practical habit, a little humour).\n- **Clothing:**\n  - Oatmeal wool jumper, sleeves pushed up above the elbow to show the forearms.\n  - Faded railway-navy waistcoat with a duller back panel and welt pockets.\n  - Four front buttons: three brass and **one mismatched dark horn replacement button** (she fixes what matters, not what looks smart).\n  - Brass watch chain from a button to the pocket, and a small enamel long-service pin on the left chest (quiet pride).\n  - Brick-red polka-dot neckerchief knotted at the side (personal taste).\n  - Olive-brown canvas work trousers with turned-up cuffs, plus a **tan corduroy knee patch with visible hand stitching** on the left knee.\n  - Laced oxblood work boots with dark soles, pull loops and scuffed toes.\n  - **Sticking plaster** on her left index finger.\n- **Pose:** neutral A-pose with arms about 43° below horizontal. Palms face down and in, thumbs point forward, and the fingers are slightly spread and relaxed. Legs are apart and the feet sit flat on Y=0.\n\n## Technical summary\n- Y up, +Z forward, metres. Her left is +X. There is one root node, `Mara_Vale`, with 17 child mesh nodes and 13 materials.\n- 644,130 vertices and 1,285,962 triangles. Attributes are POSITION, NORMAL (smooth, from the SDF gradient), COLOR_0 (normalized RGBA8) and uint32 indices.\n- Meshes:\n  - `Head` (head and neck)\n  - `Hair_Brows`\n  - `Eye_L` / `Eye_R`\n  - `Arm_Hand_L` / `Arm_Hand_R` (upper arm inside the sleeve, forearm and full five-finger hand)\n  - `Jumper`, `Waistcoat`, `Trousers`, `Knee_Patch_L`\n  - `Boot_L` / `Boot_R`\n  - `Neckerchief`\n  - `Waistcoat_Buttons_Brass` (with the chain), `Waistcoat_Button_Odd`\n  - `Enamel_Pin`, `Pencil_In_Bun`\n- Self-contained: one embedded BIN chunk, no images, no external URIs. No skeleton, skins or animations.\n- **How it was made:** Blender and other DCC tools were not available. The asset is generated procedurally by `mara_vale.py`, using the helpers in `sdfkit.py`:\n  1. Numpy signed-distance functions define each part.\n  2. A vectorised surface-nets mesher converts them to meshes, then projects vertices onto the iso-surface.\n  3. A hand-written GLB exporter writes the file.\n- Small hard parts (eyes, buttons, chain beads, pin, pencil) are analytic meshes.\n- Regenerate with `python mara_vale.py all` (Python 3 + numpy only, about 75 s on this machine).\n\n## Checks actually performed\n1. **Independent GLB parse** (`check_glb.py` reads the written file, not the in-memory data):\n   - Header, magic and version; JSON and BIN chunks.\n   - Every accessor fits inside its bufferView.\n   - No external buffer or image URIs.\n   - All positions and normals are finite, normals are unit length, and indices are in range.\n2. **Per-mesh topology stats:** open edges, non-manifold edges and unused vertices.\n   - The SDF meshes are closed.\n   - Small numbers of non-manifold edges remain where the surface is thin. Hair/brows has the most (307). Head (17), jumper (10), boots (9 each) and waistcoat (3) have a few each.\n   - The analytic parts (eyes, buttons, pin, pencil) report open edges because cap and UV-seam vertices are duplicated rather than welded. They are visually closed.\n3. **Overall bounds:** height 1.572 m, arm span 1.362 m, feet on the ground (min Y 0.0004).\n4. **Headless software renders of the exported GLB** (my own numpy orthographic rasteriser, Lambert shading; no browser or GPU). These are in `checks/`:\n   - front, back, left side, right side, top, three-quarter\n   - head front / ¾ / side / back\n   - hand front / top / underside\n   - torso front / ¾\n\n   I inspected these images to confirm all of the following:\n   - Every body part is present and separate: head, torso, arms, five-finger hands, legs and feet.\n   - Arms are clear of the torso and the legs are clear of each other.\n   - Fingers are separate and the thumb is distinct.\n   - The waistcoat straps, V-neck, sleeves, collar, cuffs and boots read correctly.\n   - The back, top and the bun/pencil are finished.\n\n## Not performed / not claimed\n- No rigging, skinning or deformation test of any kind. Riggability is a design intention only.\n- No check in a real glTF viewer, game engine or the Khronos glTF-Validator. The validation is my own lightweight script, and the \"renders\" come from a simple point-sampled rasteriser, not a PBR viewer. Materials, roughness and metalness may look different in the host studio.\n- No interactive or browser-based inspection.\n\n## Known limitations\n- **Topology:** dense, uniform isosurface triangulation (surface nets), not animation edge loops. Joints are anatomically placed and visually identifiable, but a production rig would want retopology first.\n- **Interior geometry:** garments are solid offset volumes, so some faces are hidden inside other garments. Examples are the inside of the waistcoat V/hem walls and the trouser tops under the jumper. The body under the clothes is not modelled: the clothing is the torso and leg surface. The upper arm skin continues inside the sleeve.\n- **File size:** about 33 MB. No decimation, no LODs, no mesh compression.\n- **Hair:** a sculpted shell with procedural grooves and no strands or cards. The brows are a separate shape inside the hair mesh.\n- **Detail fidelity:** the neckerchief knot is blobby. Fine wrinkles are subtle at this voxel resolution (1.6–1.7 mm on head and hands, 3.6–4.3 mm on clothing). Hands are a little slim for \"strong\"; the forearms carry most of that.\n- **Colour:** vertex colours are 8-bit, with no texture maps and no normal maps.\n\n## Environment and process notes\n- Model: requested Claude Opus 5.5; the session reports `claude-opus-5-5`. The reasoning-effort setting and serving backend are not independently visible to me from inside the session, so I can't confirm them.\n- No subagents, other models, browsers, preview servers, paid services or network access were used. No other entrants' or project assets were read.\n- Cleanup:\n  - The intermediate `build_cache/` was deleted.\n  - All Python runs were foreground runs that exited. The one earlier background build ended with exit code 0.\n  - One `python` process, PID 46796, was already running before this session (started 14:17:34, three hours before my start). It is not workspace-owned, so I left it alone.\n- **Files:** `mara_vale.glb` (asset), `mara_vale.py` + `sdfkit.py` (generation source), `check_glb.py` (validator and renderer), `checks/*.png` (check renders), `timing.txt`, `HANDOFF.md`.\n",
+        "sourceTiming": "﻿START 2026-10-08 17:13:57 -04:00 (America/New_York, EDT)\nDEADLINE 2026-10-08 18:13:57 -04:00\r\nSTOP 2026-10-08 17:46:29 -04:00 (asset final at ~17:45:30; handoff written; no interruptions)\r\n",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.md",
+            "byteLength": 7944,
+            "sha256": "843f73e833c843e9e3449420c0ce66930da0652f442820ed181939ee8cccbea8",
+            "role": "original handoff"
+          },
+          {
+            "file": "timing.txt",
+            "byteLength": 192,
+            "sha256": "e8415f139a08b30f0f0311e56197c6154459475c60aeea2847dbf6b00aa3d307",
+            "role": "original timing"
+          },
+          {
+            "file": "mara_vale.py",
+            "byteLength": 30938,
+            "sha256": "f1d51900ca009486d39bfccf6c2221a4b61957d6a3147f27747120d68e224bc0",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "sdfkit.py",
+            "byteLength": 15196,
+            "sha256": "23ee9af0515d1f0242e1b51a912186084d136e73979bddbdd08b09fd239c6c2e",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "check_glb.py",
+            "byteLength": 8655,
+            "sha256": "394713046c6c54995b2c99a77698bda4568b95d057bb18d9049fbe52c4740158",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Exact Claude launch text is not independently present in the frozen receipt snapshot. Parent associates this completed attempt with the original canonical character prompt. Original handoff/timing disclose tools, checks and constraints; no requested reasoning value is inferred.",
+        "sourcePromptEvidence": "Parent-authorized frozen Claude01-Mara comparison-manifest mapping to canonical prompt 01. Character identity and original pre-Farid-v2 contract are parent-provided; exact Claude launch-message/draft-file bytes not independently read by this task.",
+        "promptSourceRecord": {
+          "source": "Parent delegation and frozen comparison_manifest.json",
+          "sourceLaunchTextVerified": false,
+          "sourceDraftBytesVerified": false
+        },
+        "runtimeReview": "Pending actual browser/mobile/GPU QA. File density is a host capacity/performance concern, not an automatic entrant failure; original benchmark has no arbitrary polygon cap."
+      }
+    },
+    {
+      "id": "entry-02-04",
+      "promptId": "02",
+      "promptSha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
+      "admission": {
+        "status": "verified",
+        "frozen": true,
+        "selfContained": true,
+        "basis": "CPU static compatibility only",
+        "reason": "Parent-authorized same-prompt catalog mapping; frozen hash/size and current viewer CPU preflight/native importer verified. Browser/mobile/GPU runtime admission and performance remain pending.",
+        "runtimeReview": {
+          "status": "pending",
+          "browser": false,
+          "mobile": false,
+          "gpuPerformance": false
+        }
+      },
+      "asset": {
+        "path": "./entries/entry-02-04.glb",
+        "sha256": "94c1b58b49012027925afb51327f373382200a4e3f3b8c2c0610c650f7f460d8",
+        "byteLength": 31063096,
+        "vertexCount": 597564,
+        "triangleCount": 1192940
+      },
+      "provenance": {
+        "modelLabel": "Claude Opus 5.5 (receipt-reported)",
+        "requestedModel": null,
+        "requestedModelEvidence": "Original handoff names Claude Opus 5.5 from session/system context; a separate requested-model setting is not independently recorded. Parent preservation records this as receipt/environment disclosure.",
+        "sourceModelTruth": {
+          "requested": "Claude Opus 5.5 (receipt/environment disclosure)",
+          "session_reported_identifier": "claude-opus-5-5",
+          "evidence": "Completed local handoff reports the session/system identifier; not an independent serving-backend receipt.",
+          "actual_model_independently_verified": null,
+          "requested_reasoning_effort_recorded": null,
+          "actual_reasoning_effort_independently_verified": null
+        },
+        "requestedReasoning": null,
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "sessionReportedModel": "claude-opus-5-5",
+        "modelEvidence": "Completed local handoff reports the session/system identifier; not an independent serving-backend receipt.",
+        "timing": {
+          "implementationStart": "2026-10-08T21:14:16Z",
+          "deadline": "2026-10-08T22:14:16Z",
+          "actualStop": "2026-10-08T21:46:21Z",
+          "timezone": "UTC",
+          "sourceTimezone": "America/New_York (EDT, explicit UTC-04:00)",
+          "elapsedSeconds": 1925,
+          "clockPaused": false,
+          "stopwatchIndependentlyReconstructed": false
+        },
+        "timingDisclosure": "Receipt time zone America/New_York (EDT, explicit UTC-04:00); normalized UTC start 2026-10-08T21:14:16Z; one-hour deadline 2026-10-08T22:14:16Z; final stop 2026-10-08T21:46:21Z; 1925 seconds by receipt arithmetic, not independently reconstructed stopwatch. Receipt states no interruptions; also records a self-stopped slow preview pass lasting about 10 minutes (17:32-17:42 EDT), counted against the hour.",
+        "sourceTimingEvidence": {
+          "receipt_timezone": "America/New_York (EDT, explicit UTC-04:00)",
+          "receipt_start_local": "2026-10-08 17:14:16 -04:00",
+          "receipt_final_stop_local": "2026-10-08 17:46:21 -04:00",
+          "implementation_start_utc": "2026-10-08T21:14:16Z",
+          "implementation_final_stop_utc": "2026-10-08T21:46:21Z",
+          "deadline_utc": "2026-10-08T22:14:16Z",
+          "elapsed_seconds_from_receipt": 1925,
+          "asset_editing_stop_utc_claim": "2026-10-08T21:45:34Z",
+          "last_asset_write_receipt_claim": "2026-10-08 17:44 EDT / 21:44 UTC (receipt claim)",
+          "actual_asset_file_last_write_utc": "2026-10-08T21:44:13.3705023Z",
+          "interruptions_note": "Receipt states no interruptions; also records a self-stopped slow preview pass lasting about 10 minutes (17:32-17:42 EDT), counted against the hour.",
+          "stopwatch_independently_reconstructed": false
+        },
+        "sourceFileTimestamps": {
+          "length": 31063096,
+          "creation_time_utc": "2026-10-08T21:28:54.1507286Z",
+          "last_write_time_utc": "2026-10-08T21:44:13.3705023Z",
+          "last_access_time_utc": "2026-10-08T21:44:13.3705023Z",
+          "attributes": "Archive"
+        },
+        "runConditions": "Independent attempt with original receipt disclosures. Basic-format and later CPU importer success do not establish equivalent unconstrained execution, complete hidden anatomy, production topology, visual quality or runtime performance.",
+        "limitations": [
+          "31,063,096 bytes / 1,192,940 triangles. Uniform surface-nets topology has no animation loops and is not validated for production deformation. No decimation/retopology, rig, skin or animation. Neck and shoulder surfaces end inside clothing; analytic caps/poles and apron edges are open. Thin features have producer-reported non-manifold edges up to 37 per mesh; original check log retained, not rerun.",
+          "Layered offset clothing has hidden overlaps, no cloth simulation; overshirt is an 11 mm shell with a dark inner face. Torso/leg/foot skin under clothes is not modeled. Vertex-colour plaid/dots/stitches at 2–5 mm spacing can be soft/stair-stepped; no normal maps. Beard is a noisy shell with hard border/diagonal back; arm-hair tint can speckle hands. Apron floats ahead of thighs; back ties not visible.",
+          "No original real glTF viewer/engine/Three.js/Blender, official validator, rigging/deformation, interactive/turntable or varied-lighting check. Software preview speckle/hatching may result from point sampling; source topology/zero-degenerate assertions were not independently rerun. Design interpretation is producer intent only.",
+          "Receipt states no interruptions but records a self-stopped slow preview pass lasting about ten minutes (17:32–17:42 EDT), counted against the hour. Asset-editing stop 21:45:34 UTC is separate from final stop/cleanup 21:46:21 UTC. Actual saved GLB last write 21:44:13.3705023 UTC; approximate receipt write claim ~21:44 UTC retained.",
+          "Python/numpy required for generation; scipy reportedly installed but unused. Generation/previews were not rerun. Receipt/session model identifier is not independent backend evidence; requested reasoning effort unknown. Parent scoped snapshot found no exact-path owned process matches, subject to command-line/snapshot limits. Runtime/mobile/GPU performance remains untested."
+        ],
+        "producerChecks": "Producer: custom written-file container/resource/accessor/min-max/finite geometry/index/bounds/degeneracy/open-edge checks and point-sampled CPU character/detail previews; producer zero-degenerate/topology/visual assertions retained in original check log, not independently rerun.",
+        "hostChecks": "Parent independently checked frozen container/resource/accessor/finite scalars/normals/index bounds with no errors/warnings; current host checks verify exact SHA-256/size, bounded preflight and pinned Three r180 CPU GLTFLoader parse, source hash unchanged. No source generator/check/render script executed. No browser, renderer, GPU, screenshot, performance, topology, rigging or deformation check by this task.",
+        "sourceHandoff": "# Ivo Renn: character handoff\n\n## Deliverable\n- **GLB:** `IvoRenn.glb` (31,063,096 bytes, SHA-256 `94c1b58b49012027925afb51327f373382200a4e3f3b8c2c0610c650f7f460d8`)\n- **Generation source:** `ivo_build.py` (rebuilds the GLB deterministically with `python ivo_build.py`; needs only Python 3 and numpy)\n- **Check script:** `check_glb.py`. Its output is in `checks/check_log.txt`, and the preview PNGs it rendered are in `checks/*.png`.\n\n## Timing (America/New_York, EDT = UTC-04:00)\n| | Local (EDT) | UTC |\n|---|---|---|\n| Implementation start | 2026-10-08 17:14:16 | 21:14:16 |\n| One-hour deadline | 2026-10-08 18:14:16 | 22:14:16 |\n| Last GLB write | 2026-10-08 17:44 | 21:44 |\n| Asset editing stopped | 2026-10-08 17:45:34 | 21:45:34 |\n| Final stop (handoff written, cleanup verified) | see `TIMING.txt` | |\n\nThere were no interruptions. One tool wait ran long: a preview-render pass I had made too slow took about 10 minutes (17:32 to 17:42), and I stopped it myself. That time counts against the hour.\n\n## Art direction\nThe style is stylized-realistic, with soft, sculpted forms and somewhat exaggerated proportions. All colour is per-vertex, so the file contains no texture images.\n\nIvo is 1.92 m tall and heavyset. He has a full, rounded belly, thick upper arms and forearms, and a broad face with full cheeks. He is in a neutral A-pose: arms about 42° below horizontal, legs apart, and clear gaps between the arms and torso and between the legs.\n\nHow the brief's cues are carried:\n- **Warmth and sociability:** a slightly lopsided closed-mouth smile with lifted cheek \"apples\", a playful asymmetric brow (his left brow is raised), and a warm mustard-and-rust plaid camp shirt worn open.\n- **Fatigue:** heavy upper lids covering the top of the iris, puffiness under the eyes, and darker skin tone around the eyes.\n- **Heat, rain and long hours:** short sleeves rolled at the cuff, a breathable charcoal tee, and a red polka-dot bandana as a sweatband, knotted at the back with short tails. Below the waist: olive work trousers with rolled hems, darker knee panels and thigh cargo pockets, and waterproof dark-brown Chelsea-style boots with gum soles and red pull tabs.\n- **Work, kept to one cue:** a short teal canvas waist apron with a stitched pocket and an enamel pin, tied under the belly.\n- **Life outside the stall:** a black rubber digital watch on his left wrist, kept from his delivery-rider days and from timing night shifts, and a bead bracelet on his right wrist, the kind of gift a regular customer might give.\n- **Quick, precise hands:** large hands with fully separated fingers, a relaxed natural curl, a separate opposable thumb and fingernails.\n- **Generosity and control:** shown through the contrast between the open, loose shirt and the neat, tightly boxed beard and tied bandana. This reading is design intent only and is not spelled out in the geometry.\n\n## Mesh organisation\nThere are 17 meshes under one root node, `Ivo_Renn`. Units are metres, Y is up, the character faces +Z and the feet rest on y = 0. His left side is +X.\n\nThe meshes are `Ivo_Head` (which includes the neck, ears and eyelids), `Ivo_Eyes`, `Ivo_Hair_Brows`, `Ivo_Beard`, `Ivo_Bandana`, `Ivo_Arm_L`, `Ivo_Arm_R` (each arm includes its hand), `Ivo_Tee`, `Ivo_Overshirt`, `Ivo_Shirt_Buttons`, `Ivo_Trousers`, `Ivo_Boot_L`, `Ivo_Boot_R`, `Ivo_Apron`, `Ivo_Watch_Strap`, `Ivo_Watch_Case` and `Ivo_Bracelet`.\n\nThe file has 597,564 vertices, 1,192,940 triangles and 8 PBR materials. Base colour comes from `COLOR_0`. Only the watch case is metallic.\n\nHow it was made: analytic signed-distance fields, meshed with naive surface nets and projected back onto the surface, with normals taken from the SDF gradient. The eyes, buttons, watch, beads and apron are analytic or parametric meshes.\n\nThe major joints are placed so they can be identified for rigging: shoulders at about (±0.228, 1.505), elbows, wrists, hips at (±0.105, 0.92), knees at (±0.145, 0.52) and ankles at (±0.17, 0.12). Each limb is one continuous tube with no fusions to the torso or to clothing.\n\n## Checks actually performed (headless, no browser or GPU)\n1. **Re-parsing the GLB with my own reader (`check_glb.py`):**\n   - The header, chunk lengths, total length and GLB version 2 are valid.\n   - There are no external URIs, no images and no textures, so the file is fully self-contained.\n   - Every accessor decodes. There are no NaN or Inf values, all indices are in range, and the stored POSITION min/max match the data.\n   - Counts are reported for degenerate triangles (0 in the final file), boundary edges and non-manifold edges per mesh. See \"Known limitations\".\n2. **Overall size:** the bounding box spans 1.921 m in height and ±0.77 m in arm span.\n3. **Visual inspection:** I software-rasterised orthographic views with my own numpy z-buffer: front, back, left, right, top, three-quarter, face front, face side, face three-quarter, the left hand from above, the right hand from below, and the torso. I looked at them myself and made fixes based on them (beard size, smile, apron offset, collar, mesh density).\n   - These are crude previews, not renders in a real glTF viewer. Speckle and hatching on some surfaces in the PNGs come from the point-sampling rasteriser.\n\n## Checks NOT performed\n- No loading in a real glTF viewer, engine, three.js or Blender, and no Khronos glTF-Validator run.\n- No rigging, skinning or deformation tests. There is no skeleton, and none was requested. \"Riggable\" here means only clean A-pose separation and identifiable joints. It has not been validated by deformation.\n- No interactive or turntable inspection, and no checks under different lighting.\n\n## Known limitations\n- **Heavy file:** about 31 MB and about 1.19M triangles, because the surface-nets output was not decimated or retopologised. The topology is a dense, uniform triangle mesh with no edge loops, so it is not production-ready for deformation.\n- **Intentional open edges, hidden inside the clothing:**\n  - `Ivo_Head` is cut off at the neck base inside the tee.\n  - Each arm is cut off at the shoulder inside the shirt sleeve.\n  - The cylinder caps on the buttons, watch case and apron pin, and the UV-sphere poles on the eyes and beads, use duplicated vertices. They are visually closed.\n  - A few non-manifold edges (≤ 37 per mesh) come from surface nets at thin features.\n- **Clothing is layered, not tailored:** the clothes are separate offset shells, so their interior surfaces and the body inside them overlap where they are hidden. There are no cloth simulation folds. The overshirt has an 11 mm-thick shell with a darker inner face.\n- **Hidden body:** body parts under the clothes (torso, legs and feet) are not modelled as skin. Only the head, neck, arms and hands are skin.\n- **Colour detail is vertex-based:** plaid, polka dots and stitching are vertex colours at 2 to 5 mm vertex spacing, so their edges are soft and slightly stair-stepped up close. There are no normal maps.\n- **Beard:** it is a smooth shell with noise and a hard outer border, not hair cards. In side view its back edge is a straight diagonal.\n- **Hand speckle:** the fine noise used for arm-hair tint may show as speckle up close.\n- **Apron:** it hangs a few centimetres in front of the thighs, as a stiff canvas apron would. There are no apron ties visible at the back, where the overshirt covers the waistband.\n\n## Environment disclosure\n- The model is Claude Opus 5.5 (`claude-opus-5-5`), as stated in my system context. The reasoning-effort setting and the serving backend are not exposed to me in this session, so I cannot confirm them independently.\n- Tools used: Python 3.14 with numpy (scipy was installed but not used). No Blender, no network or paid services, no subagents, no browser and no preview server.\n",
+        "sourceTiming": "Implementation start: 2026-10-08 17:14:16 EDT (UTC-04:00) / 21:14:16 UTC; Deadline: 2026-10-08 18:14:16 EDT / 22:14:16 UTC\nAsset editing stopped: 2026-10-08 17:45:34 EDT / 21:45:34 UTC (last GLB write 17:44 EDT)\r\nFinal stop (handoff written, cleanup verified): 2026-10-08 17:46:21 EDT (UTC-04:00)\r\nInterruptions: none. Note: a self-inflicted slow preview render ran ~17:32-17:42 EDT and was stopped; counted in the hour.\r\n",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.md",
+            "byteLength": 7776,
+            "sha256": "30f03dfa0f3db43138d43ea150e8fc9025028159677b2e59d27e32aae9d4331b",
+            "role": "original handoff"
+          },
+          {
+            "file": "TIMING.txt",
+            "byteLength": 422,
+            "sha256": "fc57dd601e3d97415c71ffd8869c7af553a69cb54af3331ff8d1cf5896e38a48",
+            "role": "original timing"
+          },
+          {
+            "file": "ivo_build.py",
+            "byteLength": 42981,
+            "sha256": "9395d1b3076ae96dc8cc47c1c8322fb4b37550aa6ca36faaf2e28515fc92b57d",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "check_glb.py",
+            "byteLength": 7174,
+            "sha256": "9d191eb0a1de9b74f1747e9b3f15a3e568f752c72604c0282cca800457f40ae8",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "checks/check_log.txt",
+            "byteLength": 2915,
+            "sha256": "e225a2c424cb0959a14ae8bad24bbc38f0d150eb395f052fb5b0dbb411e0c5cf",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Exact Claude launch text is not independently present in the frozen receipt snapshot. Parent associates this completed attempt with the original canonical character prompt. Original handoff/timing disclose tools, checks and constraints; no requested reasoning value is inferred.",
+        "sourcePromptEvidence": "Parent-authorized frozen Claude02-Ivo comparison-manifest mapping to canonical prompt 02. Character identity and original pre-Farid-v2 contract are parent-provided; exact Claude launch-message/draft-file bytes not independently read by this task.",
+        "promptSourceRecord": {
+          "source": "Parent delegation and frozen comparison_manifest.json",
+          "sourceLaunchTextVerified": false,
+          "sourceDraftBytesVerified": false
+        },
+        "runtimeReview": "Pending actual browser/mobile/GPU QA. File density is a host capacity/performance concern, not an automatic entrant failure; original benchmark has no arbitrary polygon cap."
       }
     }
   ]
