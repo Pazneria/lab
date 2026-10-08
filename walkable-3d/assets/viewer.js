@@ -1,5 +1,5 @@
 // Shared host boundary; entrant source is never evaluated in the Lab page.
-export function createViewer({base=new URL('../',import.meta.url),titleFor=entry=>entry.title,gradeLabelFor=titleFor,gradeForm=null,onOpen=()=>{},onReady=()=>{},onClose=()=>{}}={}) {
+export function createViewer({base=new URL('../',import.meta.url),titleFor=entry=>entry.title,gradeLabelFor=titleFor,gradeForm=null,onOpen=()=>{},onReady=()=>{},onClose=()=>{},onExit=null}={}) {
   const $=s=>document.querySelector(s),el=tag=>document.createElement(tag);
   let active=null,lastButton=null,sequence=0;
   // Only a click can allocate the child browsing context. History never starts a scene.
@@ -43,8 +43,8 @@ export function createViewer({base=new URL('../',import.meta.url),titleFor=entry
   function close(back = true) {
     destroy();
     if ($('#viewer').open) $('#viewer').close();
-    if (back && history.state?.walkableScene) history.back();
     lastButton?.focus({ preventScroll: true }); onClose();
+    if (back) { if (onExit) onExit(); else if (history.state?.walkableScene) history.back(); }
   }
   function fail(message) {
     const entry = active?.entry;

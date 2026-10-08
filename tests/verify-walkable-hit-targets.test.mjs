@@ -64,30 +64,7 @@ test('actual CPU raycast keeps visible occluders and ignores hidden geometry',()
   for(const mesh of [target,occluder,marker]){mesh.geometry.dispose();mesh.material.dispose();}
 });
 
-async function screenFixture({placeholder=false,failedImage=false}={}){
-  const elements=new Map(),opened=[],images=[],storage=new Map();let viewerOptions;
-  const drawing=new Proxy({},{get:()=>()=>{}});
-  function element(){return {dataset:{},children:[],listeners:{},hidden:false,disabled:false,checked:true,
-    getContext:()=>drawing,append(...children){this.children.push(...children);},replaceChildren(...children){this.children=children;},
-    setAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},close(){},showModal(){this.shown=true;},focus(){this.focused=true;},scrollIntoView(){this.scrolled=true;}};}
-  const byId=id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);};
-  const entries=['a','b'].map((id,i)=>({id,promptId:'01',title:'Scene '+id,htmlSha256:'a'.repeat(64),comparisonModel:'model'+i,requestedConfiguration:'model'+i,...placeholder?{previewAvailable:false}:{}}));
-  const context=vm.createContext({URL,URLSearchParams,console,
-    document:{getElementById:byId,createElement:element,querySelectorAll:()=>[]},
-    localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,value)},
-    history:{state:{},replaceState(state){this.state=state;}},location:{href:'https://example.test/lab-space/',search:''},addEventListener(){},
-    Image:class {constructor(){images.push(this);}set src(value){this.url=value;this.complete=!failedImage;this.naturalWidth=failedImage?0:960;this.naturalHeight=failedImage?0:600;}},
-    fetch:async()=>({ok:true,json:async()=>({entries,prompts:[{id:'01',title:'Test prompt'}]})})
-  });
-  const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [key,value]of Object.entries(values))this.setExport(key,value);},{context});
-  const comparisons=new vm.SourceTextModule(readFileSync(new URL('../walkable-3d/assets/comparisons.js',import.meta.url),'utf8'),{context});
-  const module=new vm.SourceTextModule(readFileSync(new URL('../lab-space/assets/walkable-screen.js',import.meta.url),'utf8'),{context,initializeImportMeta(meta){meta.url='https://example.test/lab-space/assets/walkable-screen.js';}});
-  await module.link(path=>path.endsWith('interaction.mjs')?synthetic(input):path.endsWith('viewer.js')?synthetic({createViewer(options){viewerOptions=options;return {isOpen:false,open(entry){opened.push(entry.id);},close(){}};}}):path.endsWith('public-judgments.js')?synthetic({publicVotingEnabled:false,submitPublicVote(){throw Error('Unexpected public write');},hasPublicVote:()=>false,loadPublicLeaderboard(){},renderPublicLeaderboard(){},subscribePublicJudgments(){}}):path.endsWith('comparisons.js')?comparisons:synthetic({createGradeForm(){},renderLeaderboard(){}}));
-  await module.evaluate();
-  const api=module.namespace.createWalkableScreen({changed(){},suspend(){},resume(){},approach(){}});
-  await new Promise(resolve=>setImmediate(resolve));
-  return {api,byId,opened,entries,images,storage,ready:entry=>viewerOptions.onReady(entry)};
-}
+import {screenFixture} from './verify-walkable-lab-fixture.mjs';
 
 test('the whole board opens controls while scene actions and gated votes stay precise',async()=>{
   const f=await screenFixture();assert.ok(f.api.ready);
@@ -97,11 +74,11 @@ test('the whole board opens controls while scene actions and gated votes stay pr
   assert.equal(f.api.hitTest({x:200,y:540}),null);
   assert.equal(f.opened.length,0);
   f.api.activate({x:100,y:200});assert.deepEqual(f.opened,['a']);
-  f.ready(f.entries[0]);assert.equal(f.api.hitTest({x:200,y:540}),null);
-  f.ready(f.entries[1]);assert.equal(f.api.hitTest({x:200,y:540}).kind,'vote');
+  await f.ready();assert.equal(f.api.hitTest({x:200,y:540}),null);
+  f.api.activate({x:800,y:200});await f.ready();assert.equal(f.api.hitTest({x:200,y:540}).kind,'vote');
   f.api.activate({x:200,y:540});assert.equal(JSON.parse(f.storage.get('lab.walkable3d.judgments.v1')).preferences['a::b'].choice,'a');
   assert.equal(f.byId('screen-reveal').hidden,false);
-  f.byId('screen-cards').children[1].children[0].listeners.click();assert.deepEqual(f.opened,['a','b']);
+  f.byId('screen-cards').children[1].children[0].listeners.click();assert.deepEqual(f.opened,['a','b','b']);await f.ready();
   f.byId('screen-controls').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);
   const failed=await screenFixture({failedImage:true});assert.equal(failed.api.hitTest({x:100,y:200}).kind,'inspect');
   failed.byId('screen-cards').children[0].children[0].listeners.click();assert.deepEqual(failed.opened,['a']);
@@ -109,7 +86,7 @@ test('the whole board opens controls while scene actions and gated votes stay pr
 
 test('missing-preview placeholders open scenes and board whitespace opens controls',async()=>{
   const f=await screenFixture({placeholder:true});
-  f.api.activate({x:100,y:200});f.api.activate({x:800,y:200});assert.deepEqual(f.opened,['a','b']);
+  f.api.activate({x:100,y:200});await f.returnVisit();f.api.activate({x:800,y:200});await f.returnVisit();assert.deepEqual(f.opened,['a','b']);
   assert.equal(f.api.hitTest({x:640,y:200}).kind,'inspect');assert.equal(f.api.hitTest({x:100,y:490}).kind,'inspect');
 });
 
@@ -134,6 +111,6 @@ test('leaderboard works from both board and keyboard-accessible native button wi
  f.byId('screen-leaderboard-button').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);assert.deepEqual(f.opened,[]);assert.deepEqual(JSON.parse(f.storage.get('lab.walkable3d.judgments.v1')).preferences,{});
 });
 test('model reveal labels contain model names only; requested configuration is retained',async()=>{
- const f=await screenFixture();f.entries[0].requestedConfiguration='Model Zero / XHIGH (backend unknown)';f.ready(f.entries[0]);f.ready(f.entries[1]);f.api.activate({x:200,y:540});
+ const f=await screenFixture();f.entries[0].requestedConfiguration='Model Zero / XHIGH (backend unknown)';f.api.activate({x:100,y:200});await f.ready();f.api.activate({x:800,y:200});await f.ready();f.api.activate({x:200,y:540});
  assert.equal(f.byId('screen-reveal').children[1].textContent,'A — Model Zero');assert.equal(f.byId('screen-reveal').children[2].textContent,'B — model1');assert.equal(f.entries[0].requestedConfiguration,'Model Zero / XHIGH (backend unknown)');
 });

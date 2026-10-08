@@ -9,6 +9,9 @@
     "walkable-3d/assets/public-config.js",
     "walkable-3d/assets/public-judgments.js",
     "walkable-3d/assets/rubric.css",
+    "walkable-3d/assets/scene-navigation.js",
+    "walkable-3d/assets/scene.css",
+    "walkable-3d/assets/scene.js",
     "walkable-3d/assets/viewer.js",
     "walkable-3d/entries.json",
     "walkable-3d/entries/after-hours-astra/README.txt",
@@ -1105,7 +1108,8 @@
     "walkable-3d/prompt-21-base.txt",
     "walkable-3d/prompt-21-openai.txt",
     "walkable-3d/prompt-22-base.txt",
-    "walkable-3d/prompt-22-openai.txt"
+    "walkable-3d/prompt-22-openai.txt",
+    "walkable-3d/scene.html"
   ],
   "generatedFiles": [
     "walkable-3d/entries/after-rain-luna/index.html",
