@@ -22,13 +22,13 @@ test('all 86 prior records, frozen trees, prompts, host code and auth configurat
  }
 });
 
-test('the three completed sources have exact canonical launches and honest pending verification',()=>{
+test('the three completed sources preserve canonical launches, actual default-view captures and remaining QA limits',()=>{
  assert.equal(catalog.entries.length,89);
  assert.equal(catalog.entries.filter(e=>e.availability==='failed').length,8);
  for(const [scene,id] of cases){
   const e=catalog.entries.find(e=>e.id===id),dir=new URL(`walkable-3d/entries/${id}/`,root);
   assert.equal(e.promptId,String(scene));assert.equal(e.comparisonModel,'opus');assert.equal(e.completionStatus,'completed');
-  assert.equal(e.availability,'unverified');assert.equal(e.previewAvailable,false);assert.equal(existsSync(new URL('preview.jpg',dir)),false);
+  assert.equal(e.availability,'ready');assert.equal(e.previewAvailable,true);assert.equal(existsSync(new URL('preview.jpg',dir)),true);
   const version=catalog.promptVersions.find(v=>v.id===e.promptVersion),canonical=catalog.promptVersions.find(v=>v.id===`${scene}-openai`);
   assert.equal(version.sha256,canonical.sha256);
   assert.equal(hash(readFileSync(new URL(version.path,new URL('walkable-3d/',root)))),canonical.sha256);
@@ -37,8 +37,16 @@ test('the three completed sources have exact canonical launches and honest pendi
   const run=JSON.parse(readFileSync(new URL('run-record.json',dir)));
   assert.equal(run.verifiedBackendModel,null);assert.equal(run.effectiveEffort,null);assert.equal(run.independentlyVerifiedTiming,false);
   for(const key of ['firstImplementationUtc','deadlineUtc','stopUtc'])assert.equal(run[key],null);
-  for(const key of ['visual','interactive','gpu','performance'])assert.equal(run.qa[key],'NOT RUN');
-  assert.equal(run.qa.preview,'UNCAPTURED');
+  for(const key of ['interactive','performance'])assert.equal(run.qa[key],'NOT RUN');
+  assert.equal(run.qa.preview,'CAPTURED');
+  const before=JSON.parse(readFileSync(new URL('pre-capture-host-run-record.json',dir)));
+  for(const key of ['visual','interactive','gpu','performance'])assert.equal(before.qa[key],'NOT RUN');
+  assert.equal(before.qa.preview,'UNCAPTURED');
+  const capture=JSON.parse(readFileSync(new URL('preview-capture.json',dir)));
+  assert.equal(capture.capture.status,'captured');assert.equal(capture.capture.url,`http://127.0.0.1:5197/lab/walkable-3d/?prompt=${scene}&entry=${id}`);
+  assert.equal(capture.foregroundInputUsed,false);assert.equal(capture.performanceBenchmark,false);assert.equal(capture.interactiveRouteQa,false);
+  assert.equal(capture.output.sha256,hash(readFileSync(new URL('preview.jpg',dir))));
+  assert.equal(capture.sourceUnchanged,true);assert.equal(capture.capture.contextClosed,true);assert.equal(capture.capture.viewerUnloaded,true);
  }
  assert.equal(new Set(catalog.entries.filter(e=>e.availability!=='failed').map(e=>`${e.promptId}/${e.comparisonModel}`)).size,81);
 });

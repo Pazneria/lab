@@ -19,7 +19,7 @@ test('PR50 records, failures, authentic previews and old prompt versions remain 
  assert.deepEqual(catalog.promptVersions.slice(0,baseline.promptVersions.length),baseline.promptVersions);
  assert.deepEqual(catalog.entries.filter(e=>ids.has(e.id)&&e.availability==='failed').map(e=>e.id),baseline.entries.filter(e=>e.availability==='failed').map(e=>e.id));
  assert.equal(baseline.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,53);
- assert.equal(catalog.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,78);
+ assert.equal(catalog.entries.filter(e=>existsSync(new URL(`walkable-3d/entries/${e.id}/preview.jpg`,root))).length,81);
  const changes=execFileSync('git',['diff',base,'--name-only','--','walkable-3d/entries/'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
  assert.ok(changes.every(p=>!ids.has(p.split('/')[2])),'Existing frozen tree changed');
 });

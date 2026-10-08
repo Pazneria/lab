@@ -53,5 +53,5 @@ for entry in catalog['entries']:
     assert hashlib.sha256((folder/'frozen/index.html.txt').read_bytes()).hexdigest()==entry['htmlSha256']
     if 'entry' in record:assert any(d['path']=='preview-capture.json' for d in entry['documents'])
     captured+=1;total+=len(data)
-assert captured==61 and previews==78 and pending==3
+assert captured==64 and previews==81 and pending==0
 print(f'PASS: {captured} capture records and genuine JPEG dimensions/hashes; {total:,} bytes total; {pending} explicitly disclosed pending previews. Failed entries retain their failure state.')

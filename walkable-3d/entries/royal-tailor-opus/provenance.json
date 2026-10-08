@@ -84,7 +84,7 @@
     "sourceArchiveSha256": "475a834eba31583db7569ada3a60ca3840850ec4a5af55dede8303c3b7e067ee"
   },
   "timing": "Producer claims preserved; independently verified actual timing unknown.",
-  "qa": "Static review only; no source repair, rebuild, scene evaluation, capture or performance measurement.",
+  "qa": "Frozen byte integrity and actual hosted startup/default canvas captured and inspected. No entrant rebuild/repair, interactive route QA, performance benchmark, grades or votes.",
   "hostingAdjustments": [
     {
       "inMemoryHtmlPathSubstitutions": []
@@ -93,32 +93,44 @@
   ],
   "files": {
     "esbuild-LICENSE.md": {
-      "bytes": 1069,
-      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681"
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes": 1069
     },
     "frozen/dist/atelier.js": {
-      "bytes": 584494,
-      "sha256": "ea161842019973f69825bd4aa9f1c486258572daa738f5f6d1ba57216d6f0635"
+      "sha256": "ea161842019973f69825bd4aa9f1c486258572daa738f5f6d1ba57216d6f0635",
+      "bytes": 584494
     },
     "frozen/index.html.txt": {
-      "bytes": 3713,
-      "sha256": "790c0bbcb7e89d40865b4309e11b72c4f9b13bde6e60cd7b14114385169eb03f"
+      "sha256": "790c0bbcb7e89d40865b4309e11b72c4f9b13bde6e60cd7b14114385169eb03f",
+      "bytes": 3713
     },
     "launch-prompt.txt": {
-      "bytes": 7901,
-      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02"
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
+      "bytes": 7901
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "6d9c9c29ccffc2dd16b11b2955574bdbcf20f3aa54293c2bd971aeb7380954bb",
+      "bytes": 1728
+    },
+    "preview-capture.json": {
+      "sha256": "4e812583ee68a77ac7b15566a793f305670ead6a2a5d5ae5cfc4d210fdff5aa0",
+      "bytes": 3117
+    },
+    "preview.jpg": {
+      "sha256": "2f3335d04022988b7d4157bd7459f79ecaa619c7f54902da819e50af5d8ca912",
+      "bytes": 120633
     },
     "README.md": {
-      "bytes": 7033,
-      "sha256": "af3b19e08b7e988cd8d37f4664d26b0a8fa51b8ce5f5903d95a59395c75ba862"
+      "sha256": "af3b19e08b7e988cd8d37f4664d26b0a8fa51b8ce5f5903d95a59395c75ba862",
+      "bytes": 7033
     },
     "run-record.json": {
-      "bytes": 1728,
-      "sha256": "6d9c9c29ccffc2dd16b11b2955574bdbcf20f3aa54293c2bd971aeb7380954bb"
+      "sha256": "5972a9c38d709d50965fb08c7d6d511bab90cfe4bdfa3faf118cd82db44a1cf7",
+      "bytes": 2078
     },
     "three-LICENSE": {
-      "bytes": 1081,
-      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454"
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
     }
   },
   "publication": {
@@ -127,6 +139,9 @@
       "frozen/dist/atelier.js",
       "frozen/index.html.txt",
       "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "run-record.json",
       "three-LICENSE"
@@ -135,8 +150,5 @@
       "Full source/build snapshot, archive and workspace hashes retained in task54/frozen-originals"
     ]
   },
-  "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Approved sequential genuine capture pending."
-  }
+  "previewCapture": "preview-capture.json"
 }

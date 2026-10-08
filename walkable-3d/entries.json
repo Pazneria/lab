@@ -4801,7 +4801,7 @@
       "producerChecks": "Producer reports esbuild bundling, node syntax parsing, and an offline DOM/WebGL-stub smoke test and scripted collision route; no browser, GPU, screenshot or measured performance.",
       "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
       "limitations": [
-        "Startup, authored default view, visual correctness and GPU shader compilation await approved capture.",
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
         "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
         "Original producer limitations remain in the unchanged README.",
         "Actual backend, effective effort and independently verified timing remain unknown."
@@ -4826,21 +4826,31 @@
         {
           "label": "Attributed model, timing and importer QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Underwater Researcher's Apartment - actual unchanged starting-view scene canvas.",
       "archiveSha256": "7d89741d783a2aa982002a512b378717ef277c906528ad28aecf39d43d11aff8",
       "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "3f35c3b3bd1440ae068c592562728fed77ab2da2deb1670f461b6db70c8505d0",
       "promptVersion": "19-claude",
-      "webgl": "WebGL (startup not independently verified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await approved genuine capture."
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "dragon-caretaker-opus",
@@ -4856,7 +4866,7 @@
       "producerChecks": "Producer reports esbuild and a CPU scene-graph smoke test, geometry/collider counts and sampled route points; no browser, GPU, screenshot or measured performance.",
       "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
       "limitations": [
-        "Startup, authored default view, visual correctness and GPU shader compilation await approved capture.",
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
         "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
         "Original producer limitations remain in the unchanged README.",
         "Actual backend, effective effort and independently verified timing remain unknown."
@@ -4881,21 +4891,31 @@
         {
           "label": "Attributed model, timing and importer QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Dragon Caretaker's Quarters and Warm Roost - actual unchanged starting-view scene canvas.",
       "archiveSha256": "75483079f6a22fdedb4a2eb612312132c4688e20815059841d783d799f52c3e9",
       "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "e59ae93a934718ce2e84c7b7179c75f314ea35001b6cedd1ced775c9e1dbcaed",
       "promptVersion": "21-claude",
-      "webgl": "WebGL (startup not independently verified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await approved genuine capture."
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "royal-tailor-opus",
@@ -4911,7 +4931,7 @@
       "producerChecks": "Producer reports esbuild, a CPU-only mocked-canvas world smoke test and a grid walkability flood-fill; no browser, GPU, screenshot or measured performance.",
       "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
       "limitations": [
-        "Startup, authored default view, visual correctness and GPU shader compilation await approved capture.",
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
         "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
         "Original producer limitations remain in the unchanged README.",
         "Actual backend, effective effort and independently verified timing remain unknown."
@@ -4936,21 +4956,31 @@
         {
           "label": "Attributed model, timing and importer QA record",
           "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Preview uncaptured; no generated image supplied.",
+      "previewAvailable": true,
+      "previewAlt": "Royal Tailor's Atelier and Unfinished Outfit - actual unchanged starting-view scene canvas.",
       "archiveSha256": "475a834eba31583db7569ada3a60ca3840850ec4a5af55dede8303c3b7e067ee",
       "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "790c0bbcb7e89d40865b4309e11b72c4f9b13bde6e60cd7b14114385169eb03f",
       "promptVersion": "22-claude",
-      "webgl": "WebGL (startup not independently verified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Static preservation only. Owner reports completion; startup/default view await approved genuine capture."
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     }
   ],
   "prompts": [
