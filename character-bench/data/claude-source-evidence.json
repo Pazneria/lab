@@ -1,0 +1,135 @@
+{
+  "source": "Parent completed Claude preservation report",
+  "checks": "Bounded independent CPU structural checks, plus current pinned importer checks; no runtime/quality certification.",
+  "ownedProcessMatches": 0,
+  "processObservedUtc": "2026-10-08T22:12:38.8920344Z",
+  "processOwnershipLimits": "Exact absolute entry-path command-line matches only. Relative/unavailable command lines and snapshot gaps remain unverified. Existing user review process untouched.",
+  "entries": [
+    {
+      "id": "entry-01-04",
+      "promptId": "01",
+      "sha256": "0bde90f1dbb08f07dabd50d6cb2ea1ec057707c70b7142f5a5fafdcf28d3f3e7",
+      "byteLength": 33483700,
+      "counts": {
+        "scenes": 1,
+        "buffers": 1,
+        "buffer_storage": "BIN chunk",
+        "nodes": 18,
+        "meshes": 17,
+        "materials": 13,
+        "vertices": 644130,
+        "triangles": 1285962,
+        "images": 0,
+        "textures": 0,
+        "skins": 0,
+        "animations": 0,
+        "cameras": 0
+      },
+      "basicFormatChecks": {
+        "one_scene": true,
+        "one_embedded_buffer": true,
+        "self_contained": true,
+        "embedded_png_jpeg_if_textured": true,
+        "no_external_references": true,
+        "glb2_structural_pass": true,
+        "meets_recorded_basic_format": true
+      },
+      "timing": {
+        "receipt_timezone": "America/New_York (EDT, explicit UTC-04:00)",
+        "receipt_start_local": "2026-10-08 17:13:57 -04:00",
+        "receipt_final_stop_local": "2026-10-08 17:46:29 -04:00",
+        "implementation_start_utc": "2026-10-08T21:13:57Z",
+        "implementation_final_stop_utc": "2026-10-08T21:46:29Z",
+        "deadline_utc": "2026-10-08T22:13:57Z",
+        "elapsed_seconds_from_receipt": 1952,
+        "asset_editing_stop_utc_claim": null,
+        "last_asset_write_receipt_claim": "2026-10-08 ~17:45:30 -04:00 / ~21:45:30 UTC (clean rebuild, receipt claim)",
+        "actual_asset_file_last_write_utc": "2026-10-08T21:42:03.9243217Z",
+        "interruptions_note": "Receipt states no interruptions.",
+        "stopwatch_independently_reconstructed": false
+      },
+      "modelTruth": {
+        "requested": "Claude Opus 5.5",
+        "session_reported_identifier": "claude-opus-5-5",
+        "evidence": "Completed local handoff reports the session/system identifier; not an independent serving-backend receipt.",
+        "actual_model_independently_verified": null,
+        "requested_reasoning_effort_recorded": null,
+        "actual_reasoning_effort_independently_verified": null
+      },
+      "sourceFileTimestamps": {
+        "length": 33483700,
+        "creation_time_utc": "2026-10-08T21:29:06.5247713Z",
+        "last_write_time_utc": "2026-10-08T21:42:03.9243217Z",
+        "last_access_time_utc": "2026-10-08T21:42:03.9243217Z",
+        "attributes": "Archive"
+      },
+      "originalHandoffSha256": "843f73e833c843e9e3449420c0ce66930da0652f442820ed181939ee8cccbea8",
+      "runtimeReview": "pending",
+      "sourceLaunchTextVerified": false,
+      "sourceDraftBytesVerified": false
+    },
+    {
+      "id": "entry-02-04",
+      "promptId": "02",
+      "sha256": "94c1b58b49012027925afb51327f373382200a4e3f3b8c2c0610c650f7f460d8",
+      "byteLength": 31063096,
+      "counts": {
+        "scenes": 1,
+        "buffers": 1,
+        "buffer_storage": "BIN chunk",
+        "nodes": 18,
+        "meshes": 17,
+        "materials": 8,
+        "vertices": 597564,
+        "triangles": 1192940,
+        "images": 0,
+        "textures": 0,
+        "skins": 0,
+        "animations": 0,
+        "cameras": 0
+      },
+      "basicFormatChecks": {
+        "one_scene": true,
+        "one_embedded_buffer": true,
+        "self_contained": true,
+        "embedded_png_jpeg_if_textured": true,
+        "no_external_references": true,
+        "glb2_structural_pass": true,
+        "meets_recorded_basic_format": true
+      },
+      "timing": {
+        "receipt_timezone": "America/New_York (EDT, explicit UTC-04:00)",
+        "receipt_start_local": "2026-10-08 17:14:16 -04:00",
+        "receipt_final_stop_local": "2026-10-08 17:46:21 -04:00",
+        "implementation_start_utc": "2026-10-08T21:14:16Z",
+        "implementation_final_stop_utc": "2026-10-08T21:46:21Z",
+        "deadline_utc": "2026-10-08T22:14:16Z",
+        "elapsed_seconds_from_receipt": 1925,
+        "asset_editing_stop_utc_claim": "2026-10-08T21:45:34Z",
+        "last_asset_write_receipt_claim": "2026-10-08 17:44 EDT / 21:44 UTC (receipt claim)",
+        "actual_asset_file_last_write_utc": "2026-10-08T21:44:13.3705023Z",
+        "interruptions_note": "Receipt states no interruptions; also records a self-stopped slow preview pass lasting about 10 minutes (17:32-17:42 EDT), counted against the hour.",
+        "stopwatch_independently_reconstructed": false
+      },
+      "modelTruth": {
+        "requested": "Claude Opus 5.5 (receipt/environment disclosure)",
+        "session_reported_identifier": "claude-opus-5-5",
+        "evidence": "Completed local handoff reports the session/system identifier; not an independent serving-backend receipt.",
+        "actual_model_independently_verified": null,
+        "requested_reasoning_effort_recorded": null,
+        "actual_reasoning_effort_independently_verified": null
+      },
+      "sourceFileTimestamps": {
+        "length": 31063096,
+        "creation_time_utc": "2026-10-08T21:28:54.1507286Z",
+        "last_write_time_utc": "2026-10-08T21:44:13.3705023Z",
+        "last_access_time_utc": "2026-10-08T21:44:13.3705023Z",
+        "attributes": "Archive"
+      },
+      "originalHandoffSha256": "30f03dfa0f3db43138d43ea150e8fc9025028159677b2e59d27e32aae9d4331b",
+      "runtimeReview": "pending",
+      "sourceLaunchTextVerified": false,
+      "sourceDraftBytesVerified": false
+    }
+  ]
+}
