@@ -19,13 +19,14 @@ An unknown ID shows an honest empty state. Different prompt versions need
 different IDs and exact hashes, even when their titles are similar.
 
 The draft includes four unchanged completed Sol/Astra asset copies and six source
-records, including two excluded malformed Luna attempts. Sol/Astra admission is
-pending original Sol canonical-prompt identity confirmation; no pending or invalid
-record forms a pair. The exact shared contract/brief is preserved from the completed
-supported Astra launch records. The local Sol handoffs contain no exact launch text,
-so source equality has not been invented. See [admission evidence](data/ADMISSION.md).
-Once the parent supplies that identity evidence, only records marked verified,
-frozen and self-contained can form pairs. No screenshots or previews are fabricated.
+records, including two excluded malformed Luna attempts. Each character has one
+admitted Sol/Astra pair. Exact shared contract/brief text matches between the
+parent-supplied original Sol launch messages recovered by supported cloud thread
+reads and the directly-read completed Astra launch messages. Only requested-model
+metadata differs in their full initial constraints. Original prompt draft-file bytes
+were not independently verified. See [admission evidence](data/ADMISSION.md) and
+[original launch records](data/prompt-sources.json). Only verified, frozen,
+self-contained records form pairs. No screenshots or previews are fabricated.
 
 ## Experience
 
@@ -141,7 +142,7 @@ node --check character-bench/assets/preflight.mjs
 node --check character-bench/assets/preflight-worker.mjs
 ```
 
-The 23 data/wiring/catalog tests cover same-prompt pairing, admission failures,
+The 25 data/wiring/catalog tests cover same-prompt pairing, admission failures,
 linked/unlinked controls, current-import voting/reveal, pair/departure reset,
 loader cancellation/disposal, worker success/error/timeout, partial allocations,
 hierarchy/accessor bounds, image decode budgets, all four copied asset hashes,

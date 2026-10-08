@@ -6,7 +6,7 @@
       "title": "Mara Vale",
       "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Mara Vale, a 67-year-old woman who spent most of her working life maintaining a small rural railway stop. Passenger service ended years ago, but she still clears the drains and repairs what she can. She knows which repairs matter and which only make a place look busy. Her ambition is to keep the old station useful to local walkers without turning it into a monument to her own past.\n\nMara is short and solidly built, with a broad torso, strong forearms and an age-softened face. She moves deliberately and has the settled physical confidence of someone who has spent decades carrying, lifting and working outdoors. She is particular about promises, fond of very dry jokes and more comfortable teaching someone a task than accepting their sympathy. She has begun letting a younger volunteer make decisions, though she finds this harder than the heavy work.\n\nGive her a specific, lived-in identity rather than a generic elderly worker. Her practical habits and attachment to useful things should inform your design, while leaving room for pride, humor and personal taste. Choose how those qualities appear; no particular garment, tool or keepsake is required.",
       "sha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
-      "source": "Completed Astra launch record; shared character contract and brief. Model-specific initial execution constraints are preserved separately.",
+      "source": "Exact shared contract and brief matched between parent-supplied original Sol launch-message text from supported cloud thread reads and directly-read completed Astra launch-message text. Original prompt draft-file bytes not independently verified. Requested-model metadata is separate.",
       "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. No numeric rubric was supplied for this prompt version."
     },
     {
@@ -14,7 +14,7 @@
       "title": "Ivo Renn",
       "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Ivo Renn, a 32-year-old man who runs a tiny late-night food stall. He began as a delivery rider, learned to cook while helping a relative and eventually built a loyal following of workers finishing awkward shifts. He remembers what people like to eat more easily than their names. He wants to train someone who can run the stall without him, but keeps stepping in before the trainee has a chance to finish.\n\nIvo is tall and heavyset, with a full middle, substantial upper arms and a broad, expressive face. His hands are quick and precise. His presence is sociable and assured, with the mild fatigue of a person whose busiest hours begin when other people go home. He enjoys playful bargaining and can make a stranger feel included, yet becomes unusually quiet when he is concentrating on a difficult job.\n\nDesign a person with tastes and routines beyond the role of vendor. His appearance should accommodate heat, rain and long hours without turning into a catalog of cooking equipment. You decide his clothes and visual language; warmth, dexterity and the tension between generosity and control are the important character cues.",
       "sha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
-      "source": "Completed Astra launch record; shared character contract and brief. Model-specific initial execution constraints are preserved separately.",
+      "source": "Exact shared contract and brief matched between parent-supplied original Sol launch-message text from supported cloud thread reads and directly-read completed Astra launch-message text. Original prompt draft-file bytes not independently verified. Requested-model metadata is separate.",
       "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. No numeric rubric was supplied for this prompt version."
     }
   ],
@@ -24,10 +24,10 @@
       "promptId": "01",
       "promptSha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
       "admission": {
-        "status": "pending",
+        "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
       },
       "asset": {
         "path": "./entries/entry-01-01.glb",
@@ -120,8 +120,14 @@
             "role": "source/check evidence"
           }
         ],
-        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
-        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6.1-sol, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
+        "sourcePromptEvidence": "Original Sol launch-message text supplied by parent from supported cloud thread reads; exact substantive text matched Astra; parent links source message to completed original asset, whose hash matches its handoff. Original draft-file bytes not independently verified.",
+        "promptSourceRecord": {
+          "path": "data/prompt-sources.json",
+          "threadId": "01a112fd-7dc6-7511-8a55-40325f5220c7",
+          "messageId": "01a112fd-92bc-7198-8608-17be8bef77f3",
+          "sourceDraftBytesVerified": false
+        }
       }
     },
     {
@@ -129,10 +135,10 @@
       "promptId": "01",
       "promptSha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
       "admission": {
-        "status": "pending",
+        "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
       },
       "asset": {
         "path": "./entries/entry-01-02.glb",
@@ -221,7 +227,11 @@
           }
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-astra, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
-        "sourcePromptEvidence": "Completed supported Astra launch record."
+        "sourcePromptEvidence": "Direct supported completed Astra thread read; substantive prompt and full launch constraints match original Sol text except requested-model metadata.",
+        "promptSourceRecord": {
+          "path": "data/prompt-sources.json",
+          "sourceDraftBytesVerified": false
+        }
       }
     },
     {
@@ -229,10 +239,10 @@
       "promptId": "02",
       "promptSha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
       "admission": {
-        "status": "pending",
+        "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
       },
       "asset": {
         "path": "./entries/entry-02-01.glb",
@@ -307,8 +317,14 @@
             "role": "source/check evidence"
           }
         ],
-        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
-        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6.1-sol, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
+        "sourcePromptEvidence": "Original Sol launch-message text supplied by parent from supported cloud thread reads; exact substantive text matched Astra; parent links source message to completed original asset, whose hash matches its handoff. Original draft-file bytes not independently verified.",
+        "promptSourceRecord": {
+          "path": "data/prompt-sources.json",
+          "threadId": "01a112fd-b7dd-72f0-8800-08e522faf0f1",
+          "messageId": "01a112fd-d3fe-72ce-a083-3b53c48651dd",
+          "sourceDraftBytesVerified": false
+        }
       }
     },
     {
@@ -316,10 +332,10 @@
       "promptId": "02",
       "promptSha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
       "admission": {
-        "status": "pending",
+        "status": "verified",
         "frozen": true,
         "selfContained": true,
-        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+        "reason": "Unchanged frozen bytes, viewer CPU compatibility and substantive launch-prompt identity verified. This is import admission, not visual quality, performance or unconstrained-run equivalence."
       },
       "asset": {
         "path": "./entries/entry-02-02.glb",
@@ -396,7 +412,11 @@
           }
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-astra, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
-        "sourcePromptEvidence": "Completed supported Astra launch record."
+        "sourcePromptEvidence": "Direct supported completed Astra thread read; substantive prompt and full launch constraints match original Sol text except requested-model metadata.",
+        "promptSourceRecord": {
+          "path": "data/prompt-sources.json",
+          "sourceDraftBytesVerified": false
+        }
       }
     },
     {
@@ -462,8 +482,12 @@
             "role": "source/check evidence"
           }
         ],
-        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
-        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-luna, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
+        "sourcePromptEvidence": "Parent confirms identical substantive launch text with Luna requested-model metadata replacement; original Luna launch text not independently read by this task.",
+        "promptSourceRecord": {
+          "path": "data/prompt-sources.json",
+          "sourceDraftBytesVerified": false
+        }
       }
     },
     {
@@ -529,8 +553,12 @@
             "role": "source/check evidence"
           }
         ],
-        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
-        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-luna, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
+        "sourcePromptEvidence": "Parent confirms identical substantive launch text with Luna requested-model metadata replacement; original Luna launch text not independently read by this task.",
+        "promptSourceRecord": {
+          "path": "data/prompt-sources.json",
+          "sourceDraftBytesVerified": false
+        }
       }
     }
   ]

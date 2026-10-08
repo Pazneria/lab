@@ -8,7 +8,8 @@ credentials created or preview servers started.
 ## Canonical prompt identity
 
 `01` is Mara Vale; `02` is Ivo Renn. Their exact shared contract and character
-brief text come from supported reads of completed Astra launch records.
+brief text match parent-supplied original Sol launch messages recovered by supported
+cloud thread reads and directly-read completed Astra launch records.
 Model-specific `INITIAL EXECUTION CONSTRAINTS` are separate run disclosures;
 they are not erased or treated as identical execution conditions.
 
@@ -17,11 +18,16 @@ they are not erased or treated as identical execution conditions.
 | 01 | 90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4 |
 | 02 | e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a |
 
-The parent authorized preparing original Sol plus structurally passing frozen
-Astra for each character. The original Sol handoff/timing artifacts do not include
-exact launch text. Until the parent supplies or confirms that identity, the four
-compatible asset records remain `pending`; no load or vote is enabled. A new
-prompt version needs a separate ID and hash. No later Farid rubric applies here.
+The parent authorized original Sol plus structurally passing frozen Astra for each
+character and supplied the exact original user-facing Sol launch messages with
+thread/message provenance in [prompt-sources.json](prompt-sources.json). Their full
+texts match Astra except requested-model metadata. The parent links those source
+messages to the original completed Sol assets; local original asset hashes match
+the original handoffs. Original prompt draft-file bytes were not independently
+verified, and no draft-file hash is inferred. Both Sol/Astra pairs are admitted for
+inspection, without a visual-quality or performance claim. Pending/invalid records
+cannot load, pair or vote. A new prompt version needs a separate ID and hash.
+No later Farid rubric applies here.
 
 ## Exact-byte copied assets
 

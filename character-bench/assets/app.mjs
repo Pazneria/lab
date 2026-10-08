@@ -34,7 +34,7 @@ function renderProvenance(){
   $('provenance').replaceChildren(...s.pair.map((entry,index)=>{
     const section=document.createElement('section');section.append(textNode('h3',sides[index].toUpperCase()+' / '+entry.provenance.modelLabel));
     const p=entry.provenance,dl=document.createElement('dl');
-    for(const [label,value] of [['Requested model',p.requestedModel||'Not recorded'],['Requested reasoning',p.requestedReasoning||'Not recorded'],['Verified model',p.verifiedModel||'Not independently exposed'],['Verified reasoning',p.verifiedReasoning||'Not independently exposed'],['Source timing',p.timingDisclosure||'Not recorded'],['Run conditions',p.runConditions||'Not recorded'],['Limitations',Array.isArray(p.limitations)?p.limitations.join(' · '):p.limitations||'No disclosure supplied'],['Producer checks',p.producerChecks||'Not recorded'],['Host checks',p.hostChecks||'Not recorded'],['Frozen SHA-256',entry.asset.sha256]]) {
+    for(const [label,value] of [['Requested model',p.requestedModel||'Not recorded'],['Requested reasoning',p.requestedReasoning||'Not recorded'],['Verified model',p.verifiedModel||'Not independently exposed'],['Verified reasoning',p.verifiedReasoning||'Not independently exposed'],['Prompt source',p.sourcePromptEvidence||'Not recorded'],['Source timing',p.timingDisclosure||'Not recorded'],['Run conditions',p.runConditions||'Not recorded'],['Limitations',Array.isArray(p.limitations)?p.limitations.join(' · '):p.limitations||'No disclosure supplied'],['Producer checks',p.producerChecks||'Not recorded'],['Host checks',p.hostChecks||'Not recorded'],['Frozen SHA-256',entry.asset.sha256]]) {
       dl.append(textNode('dt',label),textNode('dd',value));
     }
     section.append(dl);

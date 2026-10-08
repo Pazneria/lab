@@ -6,12 +6,33 @@ import {createHash} from 'node:crypto';
 import {validateManifest,validateGLB,eligiblePairs,createComparisonState} from '../assets/contracts.mjs';
 const raw=JSON.parse(readFileSync(new URL('../data/admission.json',import.meta.url)));
 const catalog=validateManifest(raw);
+const sourceRecords=JSON.parse(readFileSync(new URL('../data/prompt-sources.json',import.meta.url))).records;
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 test('actual canonical prompt text matches exact hashes and keeps Mara and Ivo separate',()=>{
   assert.deepEqual(catalog.prompts.map(p=>p.id),['01','02']);
   for(const p of catalog.prompts)assert.equal(hash(p.text),p.sha256);
   assert.notEqual(catalog.prompts[0].sha256,catalog.prompts[1].sha256);
   for(const e of catalog.entries)assert.equal(e.promptSha256,catalog.prompts.find(p=>p.id===e.promptId).sha256);
+});
+test('supported original launch-message evidence matches substantive text and requested-model-only constraints',()=>{
+  assert.equal(sourceRecords.length,2);
+  for(const original of sourceRecords){
+    const prompt=catalog.prompts.find(p=>p.id===original.promptId);
+    assert.equal(original.text.split(/\n+INITIAL EXECUTION CONSTRAINTS\n/)[0],prompt.text);
+    assert.equal(original.sourceDraftBytesVerified,false);assert.ok(original.threadId&&original.messageId);
+    const astra=catalog.entries.find(e=>e.promptId===original.promptId&&e.provenance.requestedModel==='gpt-6-astra');
+    const reconstructed=prompt.text+'\n\n\nINITIAL EXECUTION CONSTRAINTS\n'+astra.provenance.executionConstraints;
+    assert.equal(original.text.replace('Requested model gpt-6.1-sol,','Requested model gpt-6-astra,'),reconstructed);
+  }
+});
+test('actual catalog offers exactly one same-prompt admitted pair per character with guarded blind preferences',()=>{
+  assert.equal(catalog.entries.filter(e=>e.admission.status==='verified').length,4);
+  for(const prompt of catalog.prompts){
+    const pairs=eligiblePairs(catalog,prompt.id);assert.equal(pairs.length,1);
+    const pair=pairs[0];assert.equal(new Set(pair.map(e=>e.promptId)).size,1);assert.equal(new Set(pair.map(e=>e.provenance.requestedModel)).size,2);
+    const state=createComparisonState(pair);assert.equal(state.label(0),'Attempt A');assert.equal(state.vote('a'),false);
+    state.setReady(0,true);state.setReady(1,true);assert.equal(state.vote('tie'),true);assert.match(state.label(0),/requested/);
+  }
 });
 test('four copied completed GLBs retain source hashes and pass the current compatibility profile',()=>{
   const assets=catalog.entries.filter(e=>e.asset.path);assert.equal(assets.length,4);
