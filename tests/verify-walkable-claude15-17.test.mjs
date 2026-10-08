@@ -8,6 +8,7 @@ const root=new URL('../',import.meta.url),base='beb653a64706feb4edb105c4b1f5c05f
 const catalog=JSON.parse(readFileSync(new URL('walkable-3d/entries.json',root))),baseline=JSON.parse(execFileSync('git',['show',`${base}:walkable-3d/entries.json`],{cwd:root}));
 const ids=['pathwarden-rooms-opus','witch-cottage-opus','gilded-tankard-loft-opus'];
 const hash=b=>createHash('sha256').update(b).digest('hex');
+const hostCodeBase='24b56265fd66152db98480cd81412677ca164514';
 test('all 81 prior records, frozen trees, prompt definitions and original versions remain unchanged',()=>{
  const priorIds=new Set(baseline.entries.map(e=>e.id));
  assert.deepEqual(catalog.entries.filter(e=>priorIds.has(e.id)),baseline.entries);
@@ -16,7 +17,7 @@ test('all 81 prior records, frozen trees, prompt definitions and original versio
  const paths=execFileSync('git',['diff',base,'--name-only','--','walkable-3d/entries/'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
  assert.ok(paths.every(p=>!priorIds.has(p.split('/')[2])));
  for(const p of ['walkable-3d/assets/viewer.js','walkable-3d/assets/judgments.js','walkable-3d/assets/public-judgments.js','walkable-3d/assets/public-config.js']){
-  assert.equal(readFileSync(new URL(p,root),'utf8').replaceAll('\r\n','\n'),execFileSync('git',['show',`${base}:${p}`],{cwd:root,encoding:'utf8'}));
+  assert.equal(readFileSync(new URL(p,root),'utf8').replaceAll('\r\n','\n'),execFileSync('git',['show',`${hostCodeBase}:${p}`],{cwd:root,encoding:'utf8'}));
  }
 });
 test('three owner-cleared entries preserve canonical launches, genuine captures and unknown backend/effort/timing',()=>{

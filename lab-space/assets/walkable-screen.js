@@ -1,16 +1,18 @@
-import {createViewer} from '../../walkable-3d/assets/viewer.js';
+import {createSceneNavigation} from '../../walkable-3d/assets/scene-navigation.js';
 import {comparisonLayout,comparisonTargetAt,fitPreview} from './interaction.mjs';
-import {createGradeForm,renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
+import {renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
 import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable,unavailableSummary} from '../../walkable-3d/assets/comparisons.js';
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
-export function createWalkableScreen({changed,suspend,resume,approach}) {
+export function createWalkableScreen({changed,suspend,resume,approach,depart=suspend}) {
   const $=id=>document.getElementById(id),base=new URL('../../walkable-3d/',import.meta.url);
   const source=document.createElement('canvas');source.width=comparisonLayout.width;source.height=comparisonLayout.height;
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
-  let entries=[],allEntries=[],prompts=[],promptId='01',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
+  let entries=[],allEntries=[],prompts=[],promptId='',pairs=[],index=0,blind=true,record={version:1,grades:{},preferences:{},opened:{}},persistent=true,error='';
   const openedThisComparison=new Set();
+  const navigation=createSceneNavigation(base);
+  let comparisonId='',leaving=false;
   const publicStatus=new Map();
   let canShuffle=false,revealed=false,labelsSeenThisComparison=false,previewRects=[];
   function refresh(){if(!persistent)return;try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
@@ -19,8 +21,6 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   const save=()=>{try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}};
   const bothOpened=()=>pair().length===2&&pair().every(e=>openedThisComparison.has(e.id));
   function updateLeaderboard(){renderLeaderboard($('screen-leaderboard'),allEntries,record,persistent);}
-  function gradeForm(entry){return createGradeForm(entry,{getRecord:()=>record,refresh,save,isPersistent:()=>persistent,onChange:updateLeaderboard});}
-  const viewer=createViewer({base,gradeForm,gradeLabelFor:entry=>`${pair()[0]?.id===entry.id?'A':'B'} / ${entry.title} — ${!blind||revealed?modelName(entry):'Model hidden until reveal'}`,onOpen:suspend,onReady(entry){if(pair().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();render();},onClose(){render();resume();}});
   function box(x,y,w,h,label,disabled=false){ctx.fillStyle=disabled?'#41584b':'#f3efdf';ctx.fillRect(x,y,w,h);ctx.fillStyle=disabled?'#bec9be':'#1c3c30';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+8);}
   function render(){
     const current=pair(),both=bothOpened(),hideModel=blind&&!revealed;
@@ -28,7 +28,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     const vote=record.preferences[pairKey()]?.choice;
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
-    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Autumn station').toUpperCase()}  /  CLICK TO EXPLORE`,40,82,920);
+    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Loading comparisons').toUpperCase()}  /  CLICK TO EXPLORE`,40,82,920);
     previewRects=[];
     for(let slot=0;slot<2;slot++){
       const bounds=comparisonLayout.previews[slot],x=bounds.x,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,bounds.y,bounds.width,bounds.height);
@@ -39,7 +39,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     }
     for(const bounds of comparisonLayout.buttons)box(bounds.x,bounds.y,bounds.width,bounds.height,bounds.label,
       bounds.kind==='previous'?index===0:bounds.kind==='next'?!canShuffle:bounds.kind==='vote'?!both:false);
-    $('screen-prompt-label').textContent=`Worlds exhibit / Prompt ${promptId}`;
+    $('screen-prompt-label').textContent=promptId?`Worlds exhibit / Prompt ${promptId}`:'Worlds exhibit / Loading comparison';
     $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
     $('screen-prev').disabled=index===0;$('screen-next').disabled=!canShuffle;
@@ -67,17 +67,20 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
     changed(source);
   }
   function loadPreviews(){for(const entry of pair()){if(entry.previewAvailable===false||images.has(entry.id))continue;const img=new Image();images.set(entry.id,img);img.onload=()=>render();img.onerror=()=>render();img.src=new URL(`entries/${entry.id}/preview.jpg`,base);}}
-  function rememberPair(){const url=new URL(location.href);url.searchParams.set('prompt',promptId);history.replaceState({...history.state,labPair:pairKey(),labPairOrder:pair().map(e=>e.id),labPrompt:promptId},'',url);}
-  function step(delta){const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;rememberPair();loadPreviews();render();}
+  function snapshot(){return {comparisonId,pair:pair().map(e=>e.id),promptId,opened:[...openedThisComparison],blind,revealed,labelsSeenThisComparison};}
+  function rememberPair(){const url=new URL(location.href);url.searchParams.set('prompt',promptId);url.searchParams.delete('return');history.replaceState({...history.state,labPair:pairKey(),labPairOrder:pair().map(e=>e.id),labPrompt:promptId,labComparison:snapshot()},'',url);}
+  function resetComparison(){comparisonId=crypto.randomUUID();openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;}
+  function step(delta){if(leaving)return;const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;resetComparison();rememberPair();loadPreviews();render();}
   function nextComparison(){
+    if(leaving)return;
     const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
     const next=randomComparison(prompts,allEntries,pairKey());if(!next){render();return;}
-    if(viewer.isOpen)viewer.close(false);
     selectPrompt(next.promptId,false,next.entries);$('notice').textContent=message;
   }
   async function vote(choice){
-    refresh();const current=pair();if(!bothOpened()||!['a','b','tie'].includes(choice))return;
+    refresh();const current=pair();if(leaving||!bothOpened()||!['a','b','tie'].includes(choice))return;
     const previous=pairKey(),reportedBlind=blind&&!revealed&&!labelsSeenThisComparison&&!record.preferences[pairKey()];record.preferences[previous]={entries:current.map(e=>e.id),choice:choice==='a'?current[0].id:choice==='b'?current[1].id:choice,savedAt:new Date().toISOString()};revealed=true;save();render();$('notice').textContent='Preference saved. Both models are revealed; this comparison stays in place.';
+    rememberPair();
     if(publicVotingEnabled){
       publicStatus.set(previous,'Sending your anonymous public preference…');render();
       try{await submitPublicVote(current,record.preferences[previous].choice,reportedBlind);publicStatus.set(previous,'Public preference saved. Repeating this pair replaces the same match.');}
@@ -85,17 +88,22 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
       if(pairKey()===previous)render();
     }
   }
-  function open(entry){if(!entry)return;$('comparison-dialog').close();viewer.open(entry,$('screen-controls'));}
-  function inspect(){suspend();refresh();render();$('comparison-dialog').showModal();}
+  function open(entry){
+    if(leaving||!entry||!isOpenable(entry))return;
+    leaving=true;const returnToControls=$('comparison-dialog').open;
+    rememberPair();depart();$('comparison-dialog').close();
+    navigation.launch(entry,{...snapshot(),returnToControls,modelLabel:!blind||revealed?modelName(entry):'Model hidden until reveal'});
+  }
+  function inspect(){if(leaving)return;suspend();refresh();render();$('comparison-dialog').showModal();}
   $('screen-controls').addEventListener('click',inspect);
   $('visit-screen').addEventListener('click',approach);
-  $('comparison-dialog').addEventListener('close',()=>{if(!viewer.isOpen)resume();$('screen-controls').focus({preventScroll:true});});
+  $('comparison-dialog').addEventListener('close',()=>{if(!leaving)resume();$('screen-controls').focus({preventScroll:true});});
   $('screen-prev').addEventListener('click',()=>step(-1));$('screen-next').addEventListener('click',()=>nextComparison());
   $('screen-reveal-next').addEventListener('click',()=>nextComparison());
-  $('screen-blind').addEventListener('change',e=>{blind=e.target.checked;if(!blind)labelsSeenThisComparison=true;render();});
+  $('screen-blind').addEventListener('change',e=>{blind=e.target.checked;if(!blind)labelsSeenThisComparison=true;rememberPair();render();});
   for(const button of document.querySelectorAll('[data-screen-choice]'))button.addEventListener('click',()=>vote(button.dataset.screenChoice));
   $('screen-clear').addEventListener('click',async()=>{
-    if(!bothOpened())return;const current=pair(),previous=pairKey(),published=hasPublicVote(current);refresh();delete record.preferences[previous];save();render();
+    if(leaving||!bothOpened())return;const current=pair(),previous=pairKey(),published=hasPublicVote(current);refresh();delete record.preferences[previous];save();render();
     if(publicVotingEnabled&&published){
       publicStatus.set(previous,'Withdrawing this browser’s public preference…');render();
       try{await submitPublicVote(current,'withdraw',false);publicStatus.set(previous,'Public preference withdrawn.');}
@@ -106,7 +114,7 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
   function hitTest(point){
     const bounds=comparisonLayout.previews.map((rect,slot)=>previewRects[slot]||(pair()[slot]?.previewAvailable===false?rect:null));
-    if(!point||point.x<0||point.y<0||point.x>=comparisonLayout.width||point.y>=comparisonLayout.height||!Number.isFinite(point.x)||!Number.isFinite(point.y))return null;
+    if(leaving||!point||point.x<0||point.y<0||point.x>=comparisonLayout.width||point.y>=comparisonLayout.height||!Number.isFinite(point.x)||!Number.isFinite(point.y))return null;
     const hit=comparisonTargetAt(point,bounds)||{kind:'inspect'};
     if(hit.kind==='entry'){const entry=pair()[hit.slot];return entry?{...hit,key:'entry:'+entry.id}:null;}
     if(hit.kind==='vote'&&!bothOpened()||hit.kind==='previous'&&index===0||hit.kind==='next'&&!canShuffle)return null;
@@ -120,20 +128,41 @@ export function createWalkableScreen({changed,suspend,resume,approach}) {
   subscribePublicJudgments(()=>renderPublicLeaderboard($('screen-public-leaderboard')));
   renderPublicLeaderboard($('screen-public-leaderboard'));loadPublicLeaderboard();
   render();
-  function selectPrompt(id,restore=false,chosenPair=null){
-    openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;
+  function selectPrompt(id,restore=false,chosenPair=null,entryId=null){
+    resetComparison();
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId&&isOpenable(e));pairs=[];
     for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
-    index=chosenPair?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair))):restore?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===history.state?.labPair)):0;
+    index=chosenPair?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair))):entryId?Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId))):restore?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===history.state?.labPair)):0;
     const order=chosenPair?.map(e=>e.id)||(restore?history.state?.labPairOrder:null);
     if(pairs[index]&&Array.isArray(order)&&order.length===2&&order[0]!==order[1]&&order.every(id=>pairs[index].some(e=>e.id===id)))pairs[index]=order.map(id=>pairs[index].find(e=>e.id===id));
+    if(restore)restoreSnapshot(history.state?.labComparison);
     $('screen-prompt').value=promptId;rememberPair();loadPreviews();render();
   }
+  function restoreSnapshot(saved){
+    if(!saved?.comparisonId||saved.promptId!==promptId||!Array.isArray(saved.pair)||saved.pair.join('::')!==pair().map(e=>e.id).join('::'))return;
+    comparisonId=saved.comparisonId;openedThisComparison.clear();
+    for(const id of saved.opened||[])if(pair().some(e=>e.id===id))openedThisComparison.add(id);
+    blind=saved.blind!==false;revealed=saved.revealed===true;labelsSeenThisComparison=saved.labelsSeenThisComparison===true;$('screen-blind').checked=blind;
+  }
+  function receiveReturn(visit=navigation.receipt()){
+    leaving=false;
+    if(!visit||visit.comparisonId!==comparisonId||visit.pair.join('::')!==pair().map(e=>e.id).join('::'))return;
+    if(visit.ready){openedThisComparison.add(visit.entryId);refresh();record.opened[visit.entryId]=new Date().toISOString();save();}
+    rememberPair();render();
+    if(visit.returnToControls)inspect();else $('screen-controls').focus({preventScroll:true});
+  }
+  addEventListener('pageshow',event=>{if(event.persisted){receiveReturn();refresh();render();}});
   $('screen-prompt').addEventListener('change',()=>selectPrompt($('screen-prompt').value));
   fetch(new URL('entries.json',base),{credentials:'omit'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
     allEntries=data.entries;if(!Array.isArray(allEntries)||allEntries.some(e=>!/^[a-z0-9-]+$/.test(e.id)||!/^[a-f0-9]{64}$/.test(e.htmlSha256)))throw Error();prompts=data.prompts;canShuffle=hasRandomComparison(prompts,allEntries);
     $('screen-prompt').replaceChildren(...prompts.map(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=`${p.id} / ${p.title}`;return o;}));
-    selectPrompt(history.state?.labPrompt||new URLSearchParams(location.search).get('prompt')||'01',true);
+    const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry')),visit=navigation.receipt();
+    if(visit&&!history.state?.labComparison)history.replaceState({...history.state,labPrompt:visit.promptId,labPairOrder:visit.pair,labPair:visit.pair.slice().sort().join('::'),labComparison:visit},'');
+    if(history.state?.labPrompt)selectPrompt(history.state.labPrompt,true);
+    else if(requestedEntry)selectPrompt(requestedEntry.promptId,false,null,requestedEntry.id);
+    else if(params.has('prompt'))selectPrompt(params.get('prompt'));
+    else {const initial=randomComparison(prompts,allEntries);selectPrompt(initial?.promptId||prompts[0]?.id,false,initial?.entries);}
+    receiveReturn(visit);
   }).catch(()=>{error='The entry index could not load. Use the standalone benchmark link or reload.';render();});
   return {source,hitTest,activate,inspect,get ready(){return entries.length>0;}};
 }

@@ -1,16 +1,18 @@
 import {createWalkableScreen} from './walkable-screen.js';
+import {createSceneNavigation} from '../../walkable-3d/assets/scene-navigation.js';
 import {clickSlop,movedBeyondClick,intentionalClick} from './interaction.mjs';
 import {advance,spawn,nearby,safeDestination,planRoute,followRoute,approaches,walkable,exhibits,roomLayoutVersion} from './navigation.mjs';
 const byId=id=>document.getElementById(id);
 const canvas=byId('room'),enterButton=byId('enter-room'),gentle=byId('gentle'),dialog=byId('station-dialog'),helpDialog=byId('help-dialog');
 const roomMenu=byId('room-menu');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');gentle.checked=reduced.matches;
+createSceneNavigation(new URL('../../walkable-3d/',import.meta.url)).restore();
 let position=spawn(),engine=null,active=false,failed=false,loading=false,roomRequest=0,frame=0,lastTime=0,drag=null,route=null,restoreFocus=null,pendingTarget=null;
 const restored=history.state?.labPosition;
 if(history.state?.labLayoutVersion===roomLayoutVersion&&restored&&walkable(restored)&&Number.isFinite(restored.yaw)&&Number.isFinite(restored.pitch))position={...restored};
 function preservePosition(){history.replaceState({...history.state,labPosition:{...position},labLayoutVersion:roomLayoutVersion},'');}
 let suspended=false;
-const screen=createWalkableScreen({changed(source){engine?.comparison(source);draw();},suspend(){suspended=true;stop();preservePosition();},resume(){suspended=false;stop();draw();},approach(){if(active&&innerWidth>=700)requestWalk({point:exhibits.worlds.approach,screen:true});else screen.inspect();}});
+const screen=createWalkableScreen({changed(source){engine?.comparison(source);draw();},suspend(){suspended=true;stop();preservePosition();},resume(){suspended=false;stop();draw();},depart(){suspended=true;stop();preservePosition();roomRequest++;engine?.dispose();engine=null;},approach(){if(active&&innerWidth>=700)requestWalk({point:exhibits.worlds.approach,screen:true});else screen.inspect();}});
 byId('visit-screen').hidden=false;byId('screen-controls').hidden=false;
 const actions=new Set(),keys=new Set(),heldPointers=new Map();
 const keyMap={KeyW:'forward',KeyS:'backward',KeyA:'left',KeyD:'right',ArrowUp:'forward',ArrowDown:'backward',ArrowLeft:'turnLeft',ArrowRight:'turnRight'};
@@ -163,7 +165,7 @@ for(const button of document.querySelectorAll('[data-move]')){
 }
 window.addEventListener('blur',()=>stop());
 window.addEventListener('pagehide',()=>{preservePosition();suspended=true;stop();});
-window.addEventListener('pageshow',event=>{if(event.persisted){suspended=false;draw();}});
+window.addEventListener('pageshow',event=>{if(event.persisted){suspended=byId('comparison-dialog').open;if(!engine&&!failed&&!reduced.matches)enter();else draw();}});
 document.addEventListener('visibilitychange',()=>{stop();if(!document.hidden)draw();});
 function resizeRoom(){stop();draw();}
 window.addEventListener('resize',resizeRoom);

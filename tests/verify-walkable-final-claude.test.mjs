@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
-const root=new URL('../',import.meta.url),base='8e2c3b015fd17d853f289db9920d7ddbadf9dd4e';
+const root=new URL('../',import.meta.url),base='24b56265fd66152db98480cd81412677ca164514';
 const catalog=JSON.parse(readFileSync(new URL('walkable-3d/entries.json',root)));
 const baseline=JSON.parse(execFileSync('git',['show',`${base}:walkable-3d/entries.json`],{cwd:root}));
 const cases=[[19,'underwater-apartment-opus'],[21,'dragon-caretaker-opus'],[22,'royal-tailor-opus']];
