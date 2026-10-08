@@ -26,8 +26,8 @@ async function fixture({empty=false}={}) {
   const document={hidden:false,getElementById:id=>ids.get(id),createElement:tag=>new Element(tag),addEventListener:(type,fn)=>(documentEvents[type]??=[]).push(fn),
     querySelectorAll(selector){return elements.filter(el=>selector.split(',').some(part=>{part=part.trim();if(part==='[data-vote]')return el.dataset.vote!==undefined;if(part==='[data-view]')return el.dataset.view!==undefined;return part.startsWith('.')&&(el.attrs.class||'').split(' ').includes(part.slice(1));}));}};
   const location={href:'https://fixture.example/lab/character-bench/?prompt=02',origin:'https://fixture.example'};
-  const prompt={id:'02',title:'Same fixture character',text:'Exact same fixture brief',sha256:createHash('sha256').update('Exact same fixture brief').digest('hex')};
-  const entries=['one','two','three'].map(id=>({id,promptId:'02',promptSha256:prompt.sha256,admission:{status:'verified',frozen:true,selfContained:true},asset:{path:'./entries/'+id+'.glb',sha256:'a'.repeat(64),byteLength:100},provenance:{modelLabel:'Secret '+id}}));
+  const prompt={id:'02',title:'Same fixture character',text:'Exact same fixture brief',sha256:createHash('sha256').update('Exact same fixture brief').digest('hex'),comparisonDisclosure:'Run conditions differ. Receipts follow your choice.'};
+  const entries=['one','two','three'].map(id=>({id,promptId:'02',promptSha256:prompt.sha256,admission:{status:'verified',frozen:true,selfContained:true},asset:{path:'./entries/'+id+'.glb',sha256:'a'.repeat(64),byteLength:100},provenance:{modelLabel:'Secret '+id,sourceHandoff:'Original receipt for Secret '+id,sourceTiming:'Original timer for Secret '+id,requestedReasoning:'XHIGH',producerChecks:'Source-run check',hostChecks:'CPU check only'}}));
   let params,clears=0,disposed=0,creates=0;
   const engine={loadPair(pair,token){return new Promise(resolve=>loads.push({pair,token,resolve}));},clear(){clears++;},dispose(){disposed++;},invalidate(){},setMode(){},setLight(){},setGrid(){}};
   const context=vm.createContext({document,location,URL,AbortController,TextEncoder,crypto:webcrypto,history:{state:null,replaceState(_state,_title,url){if(url)location.href=String(url);}},
@@ -46,8 +46,10 @@ test('empty admission starts no viewer and exposes an honest usable fallback',as
 });
 test('actual controls keep identity blind until both current imports are ready and a vote occurs',async()=>{
   const f=await fixture(),{pending}=await f.start();assert.equal(f.creates,1);assert.equal(f.params.state.snapshot.linked,true);assert.equal(f.ids.get('label-a').textContent,'Attempt A');
+  assert.equal(f.ids.get('run-note').hidden,false);assert.equal(f.ids.get('provenance').textContent,'');
   f.ready(0);await f.vote('a');assert.equal(f.ids.get('reveal').hidden,true);f.ready(1);f.loads[0].resolve([true,true]);await pending;
   assert.equal(f.button('a').disabled,false);await f.vote('a');assert.equal(f.ids.get('reveal').hidden,false);assert.match(f.ids.get('label-a').textContent,/Secret /);assert.match(f.ids.get('provenance').textContent,/Not independently exposed/);
+  assert.match(f.ids.get('provenance').textContent,/Original receipt/);assert.match(f.ids.get('provenance').textContent,/Original timer/);assert.match(f.ids.get('provenance').textContent,/Source-run check/);assert.match(f.ids.get('provenance').textContent,/CPU check only/);
   assert.equal(f.button('b').disabled,true);
 });
 test('linked/unlinked UI, next-pair reset and departure connect to lifecycle guards',async()=>{

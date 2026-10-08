@@ -1,6 +1,537 @@
 {
   "version": 1,
-  "prompts": [],
-  "entries": [],
-  "note": "Awaiting the parent-supplied verified admission manifest. No fixture or unverified asset is admitted."
+  "prompts": [
+    {
+      "id": "01",
+      "title": "Mara Vale",
+      "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Mara Vale, a 67-year-old woman who spent most of her working life maintaining a small rural railway stop. Passenger service ended years ago, but she still clears the drains and repairs what she can. She knows which repairs matter and which only make a place look busy. Her ambition is to keep the old station useful to local walkers without turning it into a monument to her own past.\n\nMara is short and solidly built, with a broad torso, strong forearms and an age-softened face. She moves deliberately and has the settled physical confidence of someone who has spent decades carrying, lifting and working outdoors. She is particular about promises, fond of very dry jokes and more comfortable teaching someone a task than accepting their sympathy. She has begun letting a younger volunteer make decisions, though she finds this harder than the heavy work.\n\nGive her a specific, lived-in identity rather than a generic elderly worker. Her practical habits and attachment to useful things should inform your design, while leaving room for pride, humor and personal taste. Choose how those qualities appear; no particular garment, tool or keepsake is required.",
+      "sha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
+      "source": "Completed Astra launch record; shared character contract and brief. Model-specific initial execution constraints are preserved separately.",
+      "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. No numeric rubric was supplied for this prompt version."
+    },
+    {
+      "id": "02",
+      "title": "Ivo Renn",
+      "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Ivo Renn, a 32-year-old man who runs a tiny late-night food stall. He began as a delivery rider, learned to cook while helping a relative and eventually built a loyal following of workers finishing awkward shifts. He remembers what people like to eat more easily than their names. He wants to train someone who can run the stall without him, but keeps stepping in before the trainee has a chance to finish.\n\nIvo is tall and heavyset, with a full middle, substantial upper arms and a broad, expressive face. His hands are quick and precise. His presence is sociable and assured, with the mild fatigue of a person whose busiest hours begin when other people go home. He enjoys playful bargaining and can make a stranger feel included, yet becomes unusually quiet when he is concentrating on a difficult job.\n\nDesign a person with tastes and routines beyond the role of vendor. His appearance should accommodate heat, rain and long hours without turning into a catalog of cooking equipment. You decide his clothes and visual language; warmth, dexterity and the tension between generosity and control are the important character cues.",
+      "sha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
+      "source": "Completed Astra launch record; shared character contract and brief. Model-specific initial execution constraints are preserved separately.",
+      "comparisonDisclosure": "These attempts ran under different infrastructure conditions. Exact timing, checks and limitations are disclosed after your preference. No numeric rubric was supplied for this prompt version."
+    }
+  ],
+  "entries": [
+    {
+      "id": "entry-01-01",
+      "promptId": "01",
+      "promptSha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
+      "admission": {
+        "status": "pending",
+        "frozen": true,
+        "selfContained": true,
+        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+      },
+      "asset": {
+        "path": "./entries/entry-01-01.glb",
+        "sha256": "e03e697b9793778f49cb57f78c7b17537d9a18b3338774ce707880cbfdfe5fe6",
+        "byteLength": 22737356
+      },
+      "provenance": {
+        "modelLabel": "gpt-6.1-sol (requested)",
+        "requestedModel": "gpt-6.1-sol",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "timing": {
+          "implementationStart": "2026-10-06T20:53:25.440Z",
+          "deadline": "2026-10-06T21:53:25.440Z",
+          "actualStop": "2026-10-06T21:41:47.607Z",
+          "timezone": "UTC",
+          "elapsedSeconds": 2902.167172,
+          "clockPaused": false
+        },
+        "timingDisclosure": "UTC start 2026-10-06T20:53:25.440Z; one-hour deadline 2026-10-06T21:53:25.440Z; actual stop 2026-10-06T21:41:47.607Z; elapsed 2902.167172 seconds. None reported; clock not paused.",
+        "runConditions": "Runs were independent but infrastructure and troubleshooting differed. Compare the static outputs with the original disclosures; no claim of equivalent unconstrained execution.",
+        "limitations": [
+          "No external interruptions; ordinary tool waits and troubleshooting counted against the hour. CIM process enumeration was denied and was not retried or escalated; permitted Get-Process and completed sessions supported producer cleanup.",
+          "Dense triangular skin and overlapping garment/detail layers may need production retopology. No UVs, rig, weights or animations. No interactive/GPU, rigging, deformation or formal Khronos Validator checks."
+        ],
+        "producerChecks": "Producer: final-file reload; geometry/normals, indices, manifold closure, winding, signed volume, triangle area and dependency checks; approximate CPU front/both sides/back/above/detail images. These producer checks were not independently rerun here.",
+        "hostChecks": "Read-only frozen SHA-256/size, current viewer preflight and pinned Three r180 CPU GLTFLoader parse succeeded; source hash unchanged. No renderer, browser, screenshot, GPU, performance or deformation checks.",
+        "sourceHandoff": "MARA VALE — STATIC CHARACTER HANDOFF\r\n\r\nAsset: Mara_Vale.glb (22,737,356 bytes). Embedded geometry and PBR colours; no textures or external dependencies. Character only; no environment, cameras or lights.\r\n\r\nArt direction: rounded sculptural Mara, short and solid, with silver cropped hair, an older face, a restrained wry mouth and strong forearms. Moss jacket, stitched elbow repair, small daisy pin, russet knit, navy trousers and oxblood lace boots. Complete five-digit hands; neutral separated A-pose.\r\n\r\nTiming — UTC:\r\nImplementation start: 2026-10-06T20:53:25.440Z\r\nOne-hour deadline: 2026-10-06T21:53:25.440Z\r\nActual implementation stop: 2026-10-06T21:41:47.607Z\r\nInterruptions: none; tool waits and troubleshooting remained inside the running time window.\r\n\r\nChecks: reloaded the final GLB and checked finite geometry/normals, index bounds, manifold closure, winding, signed volume, triangle areas, normal lengths and dependency absence. No issues remained. Reviewed CPU renders: front, both sides, back, above, three-quarter, face, hand and boots. Shading is approximate. Generation/inspection processes exited; permitted Get-Process found zero Python processes. CIM enumeration was denied and was not retried or escalated.\r\n\r\nLimitations: dense triangular skin and separate overlapping garment/detail layers may need production retopology. No UVs, rig, weights or animations. No interactive, GPU, rigging, deformation or formal Khronos Validator checks. Static character complete; no unfinished parts or blockers.\r\n\r\nCoordinates: metres; exported glTF Y-up, front +Z, soles at Y=0. Height about 1.516 m; 17 named meshes, 61 material primitives, 944,372 triangles.\r\n\r\nSource: create_mara.py, sculpt_refinements.py; checks in inspect_mara.py. Rebuild: `python create_mara.py`. NumPy 2.4.3, SciPy 1.17.1, Python 3.14.3. Original independent geometry; no other assets, models, subagents, paid services or external communication used.\r\n\r\nRequested configuration: gpt-6.1-sol / XHIGH. Serving backend and effective reasoning configuration were not independently exposed, so they cannot be verified here.\r\n\r\nSHA-256: e03e697b9793778f49cb57f78c7b17537d9a18b3338774ce707880cbfdfe5fe6\r\n",
+        "sourceTiming": "{\r\n  \"implementation_start\": \"2026-10-06T20:53:25.440Z\",\r\n  \"deadline\": \"2026-10-06T21:53:25.440Z\",\r\n  \"timezone\": \"UTC\",\r\n  \"actual_stop\": \"2026-10-06T21:41:47.607Z\",\r\n  \"interruptions\": [],\r\n  \"constraints\": \"Headless independent generation; no browser, native UI, subagents, external model/service, rig or animation.\",\r\n  \"elapsed_seconds\": 2902.167172,\r\n  \"final_asset_sha256\": \"e03e697b9793778f49cb57f78c7b17537d9a18b3338774ce707880cbfdfe5fe6\",\r\n  \"cleanup_confirmed\": true,\r\n  \"access_limitations\": [\r\n    \"CIM process enumeration was denied by Windows; it was not retried or escalated. Cleanup was verified using permitted Get-Process and completed execution sessions.\"\r\n  ]\r\n}",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.txt",
+            "byteLength": 2191,
+            "sha256": "d4ccec17808566d8011f22432035d363dd6ea19562394f914e206054d84ac6cd",
+            "role": "original handoff"
+          },
+          {
+            "file": "timing.json",
+            "byteLength": 684,
+            "sha256": "d4222bd77b3f61119b4929cc89c25dc9b41a7145d9fd09621266cd3dedce5532",
+            "role": "original timing"
+          },
+          {
+            "file": "create_mara.py",
+            "byteLength": 37135,
+            "sha256": "7fa8dfbebe2988537b10faa1f36afe57155ddb674f1ca9f00d1a415073222e1e",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "sculpt_refinements.py",
+            "byteLength": 21054,
+            "sha256": "5c8dda43952bda247b1769be016fcee8e75aa9ce1de499908426a6b267145b1d",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "inspect_mara.py",
+            "byteLength": 8643,
+            "sha256": "9c0213b04bce802dc06978e151a9038e1231dcd75c4564f643804a668fb5b7f6",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "validation_report.json",
+            "byteLength": 1274,
+            "sha256": "91677f5a9d32c0149a90ff65e39b999cd33327fcac63490254bace58186fcbc0",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "generation_report.json",
+            "byteLength": 2136,
+            "sha256": "8c59bfac413e5831c8facbd2ef8194a26e25047b422c13a81a4733ece9f6bee9",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "render_report.json",
+            "byteLength": 1772,
+            "sha256": "3684b02d2f2b706a4a8e1be308e08898d6063b304650199247ff31b692e19442",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "cleanup_report.json",
+            "byteLength": 407,
+            "sha256": "f7b3827c51e9cf6d7b51fd86beb9dfa4fad37db31af464d24b3c36fc754b3710",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "source_info.json",
+            "byteLength": 358,
+            "sha256": "8843ef5411d05f55ae03b976ba0309fb0aa34ebbca24f8c73b09b2ed88c83341",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
+        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+      }
+    },
+    {
+      "id": "entry-01-02",
+      "promptId": "01",
+      "promptSha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
+      "admission": {
+        "status": "pending",
+        "frozen": true,
+        "selfContained": true,
+        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+      },
+      "asset": {
+        "path": "./entries/entry-01-02.glb",
+        "sha256": "4a5af4af51ce3cc81ce62002b70b70a5bd0ea50bb7c608cf04b7ee3b2264465c",
+        "byteLength": 720916
+      },
+      "provenance": {
+        "modelLabel": "gpt-6-astra (requested)",
+        "requestedModel": "gpt-6-astra",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "timing": {
+          "implementationStart": "2026-10-08T20:06:23Z",
+          "deadline": "2026-10-08T21:06:23Z",
+          "actualStop": "2026-10-08T21:04:23Z",
+          "timezone": "UTC",
+          "elapsedSeconds": 3480,
+          "clockPaused": false
+        },
+        "timingDisclosure": "UTC start 2026-10-08T20:06:23Z; one-hour deadline 2026-10-08T21:06:23Z; actual stop 2026-10-08T21:04:23Z; elapsed 3480 seconds. Shell startup unavailable throughout; interrupted large write reported 1,923.1 seconds; detailed export lost; compact recovery; clock not paused.",
+        "runConditions": "Runs were independent but infrastructure and troubleshooting differed. Compare the static outputs with the original disclosures; no claim of equivalent unconstrained execution.",
+        "limitations": [
+          "Shell startup failed throughout. A large export write was interrupted after 1,923.1 seconds; the detailed GLB was not saved. This delivered GLB is a compact recovery asset written in 20 bounded chunks. The clock continued.",
+          "Earlier detailed source files are retained but are not the source of the delivered compact GLB. Minor clothing-overlay intersections and simplified finish; component assembly is not a continuous deformation-ready surface. Consolidation, retopology and weighting may be needed.",
+          "No third-party importer, formal Khronos Validator, independent full binary disk read, interactive viewer, rigging, animation or deformation tests during the source run. No OS process was started; shell failure prevented independent OS cleanup enumeration. Later host CPU import evidence is separate."
+        ],
+        "producerChecks": "Producer: serialized container checks, all 177 embedded buffers decoded, accessor bounds/indices/finite geometry/normalized normals checked; software front/right/back/above views from the same cleaned export geometry. File write confirmation used patch contexts, not an independent full disk read.",
+        "hostChecks": "Read-only frozen SHA-256/size, current viewer preflight and pinned Three r180 CPU GLTFLoader parse succeeded; source hash unchanged. No renderer, browser, screenshot, GPU, performance or deformation checks.",
+        "sourceHandoff": "MARA VALE — STATIC CHARACTER HANDOFF\n\nDelivered asset: Mara_Vale.glb\nSelf-contained glTF 2.0 binary container. All geometry data is embedded as data URIs inside the GLB JSON chunk. No external files, textures, URLs, cameras, lights, environment, skeleton or animation are required.\nSize: 720,916 bytes as serialized; 9,480 vertices; 18,203 triangles; 177 named component meshes; 19 PBR materials. Y up, +Z front, metre units. Neutral A-pose.\n\nART DIRECTION\nA compact, rounded storybook sculpture of a short, solid older woman: a broad waistcoat, substantial forearms, quiet grey-green eyes, softened jaw, silver swept hair and low bun. Petrol wool, marigold rolled cotton sleeves, plum neckerchief, patched slate trousers, brass ear studs and maintained oxblood ankle boots suggest useful things kept in service.\n\nTIMING — UTC\nActual implementation start: 2026-10-08T20:06:23Z\nOne-hour deadline: 2026-10-08T21:06:23Z\nActual implementation stop: 2026-10-08T21:04:23Z\nElapsed implementation window: 58 minutes. Timing recorded with the clock tool.\nThe clock was not paused. Shell startup failed throughout. A large export-write call was interrupted after the tool reported 1,923.1 seconds; its detailed GLB was not saved. A compact complete recovery asset was generated and written in 20 bounded chunks.\n\nSOURCE\ngenerate_compact.mjs is the entry point for the delivered compact character, using compact_mara.mjs and export_compact.mjs. It requires only Node.js built-ins. The geometry and exporter functions were executed in the tool JavaScript runtime; the Node entry point itself could not be run because shell startup was unavailable.\nThe earlier detailed attempt is retained separately in mara_vale.mjs, generate.mjs and mesh_tools.mjs. It is not the source of the delivered compact GLB.\n\nCHECKS ACTUALLY PERFORMED\n- Custom GLB JSON/header/chunk-length checks on the serialized export.\n- Decoded all 177 embedded buffers; checked 9,480 vertex positions against accessor bounds and checked triangle index ranges.\n- Checked finite source geometry and normalized normals; no reported failures.\n- Verified no external buffers or textures, scene lights, cameras, skins or animations.\n- Completed all 20 file-write chunks and matched the written GLB header through a filesystem patch context check.\n- Headless software renders inspected from front, right side, back and above.\nFull results: asset_checks.json.\n\nLIMITATIONS / INCOMPLETE WORK\nThe higher-detail export was lost during the stalled write; this is the completed compact recovery version. Small clothing overlays have minor intersections and simplified finish. The component construction is intended for a later rigging pass, but it is not a single continuous deformation-ready surface. Consolidation, retopology and skin weighting may be needed.\nNo third-party GLB importer, Khronos validator, independent full-file binary readback, interactive viewer, rigging, animation or deformation tests were run. The software visual check used the same cleaned geometry as the serialized compact export.\n\nCLEANUP\nNo workspace-owned background, test, preview-server, browser or native UI process was launched. Every shell request failed before process creation. A final process-list check was attempted and failed for the same shell startup reason, so independent OS-level cleanup verification was unavailable. Both yielded tool cells completed. Temporary write_probe.glb and initial partial mara_geometry.mjs were removed.\n\nMODEL\nRequested: gpt-6-astra, XHIGH reasoning. The actual serving backend and reasoning setting were not independently exposed, so they cannot be verified.\n\n",
+        "sourceTiming": "{\n  \"implementation_start_utc\": \"2026-10-08T20:06:23Z\",\n  \"deadline_utc\": \"2026-10-08T21:06:23Z\",\n  \"implementation_stop_utc\": \"2026-10-08T21:04:23Z\",\n  \"elapsed_seconds\": 3480,\n  \"clock_paused\": false,\n  \"interrupted_write_tool_elapsed_seconds\": 1923.1,\n  \"backend_independently_exposed\": false\n}\n",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.txt",
+            "byteLength": 3632,
+            "sha256": "b4739405d40a5c31eff86a79cb19064ed9a7a1a0ffe87d302940b0451005b02e",
+            "role": "original handoff"
+          },
+          {
+            "file": "timing.json",
+            "byteLength": 298,
+            "sha256": "e74da604321a7fb82b99a0813fe8669e23945a6a338f3ebcd8b6fdcdf36afd0d",
+            "role": "original timing"
+          },
+          {
+            "file": "generate_compact.mjs",
+            "byteLength": 450,
+            "sha256": "8dd9dfa5739d2a640e3c83735b1b805850aa76c6c8beade7d21962551eb5dd34",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "compact_mara.mjs",
+            "byteLength": 11302,
+            "sha256": "4b30d676758e2fa851376405499540908bc84af6b330ddd687011ac6283c83d8",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "export_compact.mjs",
+            "byteLength": 3820,
+            "sha256": "408a777e45149f4e22cbc00f01d0c1df3804c98b4fd0f2a20090d1cdb5c5751e",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "asset_checks.json",
+            "byteLength": 1057,
+            "sha256": "d464ea557f3303f1bf48797b57734f358b5ca4d3886a66ea36821753153441db",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "mara_vale.mjs",
+            "byteLength": 24321,
+            "sha256": "029e40439e0ffbe63671e4bde2ca5cb984f5b3fa12aa0b7ff5e34cca5eeaad80",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "generate.mjs",
+            "byteLength": 7979,
+            "sha256": "77ff50b0d0f674c6d0bf3c8073253df3f2698aed465155b55fc4cd958cd76a5b",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "mesh_tools.mjs",
+            "byteLength": 4488,
+            "sha256": "36540e87cc06a0ba25c6e2470a2f933f73cff4e295a3d6783e64ffe644b4be4b",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-astra, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
+        "sourcePromptEvidence": "Completed supported Astra launch record."
+      }
+    },
+    {
+      "id": "entry-02-01",
+      "promptId": "02",
+      "promptSha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
+      "admission": {
+        "status": "pending",
+        "frozen": true,
+        "selfContained": true,
+        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+      },
+      "asset": {
+        "path": "./entries/entry-02-01.glb",
+        "sha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1",
+        "byteLength": 6629216
+      },
+      "provenance": {
+        "modelLabel": "gpt-6.1-sol (requested)",
+        "requestedModel": "gpt-6.1-sol",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "timing": {
+          "implementationStart": "2026-10-06T20:53:26.964Z",
+          "deadline": "2026-10-06T21:53:26.964Z",
+          "actualStop": "2026-10-06T21:20:51.526Z",
+          "timezone": "UTC",
+          "elapsedSeconds": 1644.562483,
+          "clockPaused": false
+        },
+        "timingDisclosure": "UTC start 2026-10-06T20:53:26.964Z; one-hour deadline 2026-10-06T21:53:26.964Z; actual stop 2026-10-06T21:20:51.526Z; elapsed 1644.562483 seconds. None external. Godot log-path crash/retry, certificate-store warning and denied CIM inventory remained inside the running hour.",
+        "runConditions": "Runs were independent but infrastructure and troubleshooting differed. Compare the static outputs with the original disclosures; no claim of equivalent unconstrained execution.",
+        "limitations": [
+          "No external interruption; clock not paused. Initial Godot default-log attempt crashed due to an unwritable user log directory; owned process terminated and workspace-log rerun succeeded. Certificate-store startup warning did not prevent local import. CIM inventory denied; tracked PID/Get-Process cleanup without expanded permissions.",
+          "Triangulated assemblies overlap at anatomical/facial joins; production rigging may need welding, retopology and joint adjustments. Embedded material values and facial vertex color, no image textures or UV workflow. No skeleton, weights, animation/deformation validation, browser/native interactive viewport or GPU/performance checks."
+        ],
+        "producerChecks": "Producer: final binary/dependency/accessor/index/finite geometry/normals/scene/material/degeneracy/welded-edge checks; Godot 4.6.1 headless GLTFDocument import matching the final hash; read-only CPU front/three-quarter/both sides/back/above/face/hand images. Producer checks were not independently rerun here.",
+        "hostChecks": "Read-only frozen SHA-256/size, current viewer preflight and pinned Three r180 CPU GLTFLoader parse succeeded; source hash unchanged. No renderer, browser, screenshot, GPU, performance or deformation checks.",
+        "sourceHandoff": "IVO RENN — FINAL HANDOFF\r\n\r\nAsset: Ivo_Renn.glb (6,629,216 bytes), self-contained glTF 2.0 binary.\r\nSHA-256: 9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1\r\nArt direction: Warm sculpted stylization: a tall, heavyset adult with a broad, quietly amused face, tired lids, swept espresso hair, a sea-pine camp shirt, midnight trousers, brick rain-ready sneakers and a worn coral wristband.\r\nPose and coordinates: neutral A-pose; metres; +Y up; +Z front; soles at Y=0.\r\nComplete modeled head, torso, arms, five-finger hands, legs and feet. Named meshes,\r\nembedded PBR materials and facial vertex color. No external textures, URLs,\r\nenvironment, lights, cameras, props, rig or animation in the GLB.\r\n\r\nACTUAL RUN TIMING (UTC)\r\nImplementation start: 2026-10-06T20:53:26.964Z\r\nOne-hour deadline:    2026-10-06T21:53:26.964Z\r\nActual stop:          2026-10-06T21:20:51.526Z\r\nElapsed: 1644.562 seconds. Clock was never paused.\r\nNo external interruptions. Godot's first default-log attempt crashed; its process\r\nwas terminated and a workspace-log rerun succeeded. A certificate-store startup\r\nwarning did not prevent the final local import. CIM inventory access was denied;\r\ntracked PID/Get-Process cleanup succeeded without expanding permissions.\r\n\r\nCHECKS ACTUALLY PERFORMED\r\nBinary header/length/chunk alignment, embedded resource check, accessor and index\r\nbounds, finite positions, unit normals, scene reachability/material assignment,\r\ntriangle degeneracy and welded edge incidence/winding checks: passed, no warnings.\r\nGodot 4.6.1 headless GLTFDocument import and scene generation: succeeded, matching\r\nfinal hash; 322 mesh instances, 132,526 vertices,\r\n250,542 triangles; no invalid meshes or missing materials.\r\nCPU software images inspected: front, three-quarter, both sides, back, above,\r\nface detail and palm/back hand detail. They are diagnostics in checks/, not scene\r\nobjects. Owned generation/test processes exited or were terminated; tracked PIDs\r\nand absence of Godot processes were verified before this receipt.\r\n\r\nKNOWN LIMITATIONS\r\n- Static A-pose; no skeleton, skin weights, animations or deformation validation.\r\n- Triangulated procedural assemblies meet through intentional overlaps at anatomical and facial joins. Production rigging may require welding, retopology and joint adjustments.\r\n- No UV texture workflow: appearance is embedded PBR material values and facial vertex color; no image textures are used.\r\n- Visual checks were read-only CPU software renders. No browser, native interactive viewport, GPU render/benchmark or interactive inspection was performed.\r\n- The requested gpt-6.1-sol / XHIGH serving backend was not independently exposed or verifiable.\r\n\r\nNo known unfinished static-character work or remaining execution blockers.\r\nSource: generate_ivo.py; dependencies: requirements.txt (already available during\r\nthis run). Checks: inspect_asset.py and checks/import_check.gd. Timing and detailed\r\nevidence: timing.json, generation_manifest.json, RUN_REPORT.json, checks/*.json.\r\nOnly Ivo_Renn.glb is needed to use the finished asset.\r\n",
+        "sourceTiming": "{\r\n  \"implementation_start_utc\": \"2026-10-06T20:53:26.964Z\",\r\n  \"deadline_utc\": \"2026-10-06T21:53:26.964Z\",\r\n  \"timezone\": \"UTC\",\r\n  \"stop_utc\": \"2026-10-06T21:20:51.526Z\",\r\n  \"interruptions\": [],\r\n  \"backend\": \"Requested gpt-6.1-sol / XHIGH; serving backend not independently exposed.\",\r\n  \"elapsed_seconds\": 1644.562483,\r\n  \"clock_paused\": false,\r\n  \"troubleshooting\": [\r\n    \"Initial Godot headless run crashed because its default user log directory was not writable. That owned process was terminated; subsequent runs used an explicit workspace log path and imported successfully.\",\r\n    \"Godot emitted a certificate-store startup warning. Final local GLTFDocument import succeeded without network access.\",\r\n    \"CIM process command-line inventory was denied. Cleanup was verified with tracked process IDs and Get-Process instead; no permissions were expanded.\"\r\n  ]\r\n}",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.txt",
+            "byteLength": 3084,
+            "sha256": "7b3230b5daa5c59a5a5c61db6737f48a9289b43cefa886ea762ca3093d40aa7d",
+            "role": "original handoff"
+          },
+          {
+            "file": "timing.json",
+            "byteLength": 874,
+            "sha256": "a7e3689d32c27302da5befc1b8d410749cdb154562b848f1af6675e272c1921a",
+            "role": "original timing"
+          },
+          {
+            "file": "generate_ivo.py",
+            "byteLength": 48357,
+            "sha256": "7f4071ac1de7ee2a8864c5f19ae6cda716a6f4c6f1193150492e0c22bcfa1118",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "inspect_asset.py",
+            "byteLength": 10782,
+            "sha256": "fc62f9d8133aa7c1838bb1b33184f24994a4ec102f28fd0eade13ea0226116fd",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "RUN_REPORT.json",
+            "byteLength": 5992,
+            "sha256": "ef58cb0bb924dc125bea0c11b5c8427d44d974318a740532184dedc3dc1b5919",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "generation_manifest.json",
+            "byteLength": 534,
+            "sha256": "f0f22dd4b070701b607260978f0d81ece7a1fbca7cc9aa28d1ff3f00cb3bce40",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "checks/import_check.gd",
+            "byteLength": 2505,
+            "sha256": "16dd5b4b8411c212b96185769218cfb4922dead23d3f56c419b92a1191abdb5d",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
+        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+      }
+    },
+    {
+      "id": "entry-02-02",
+      "promptId": "02",
+      "promptSha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
+      "admission": {
+        "status": "pending",
+        "frozen": true,
+        "selfContained": true,
+        "reason": "CPU compatibility and unchanged bytes verified; waiting for original Sol canonical-prompt identity evidence."
+      },
+      "asset": {
+        "path": "./entries/entry-02-02.glb",
+        "sha256": "fd3f6f09642fb054996b8c7247489dd435078fc05f6cb46c4c40a068dcb73c7d",
+        "byteLength": 6029332
+      },
+      "provenance": {
+        "modelLabel": "gpt-6-astra (requested)",
+        "requestedModel": "gpt-6-astra",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "timing": {
+          "implementationStart": "2026-10-08T20:05:53Z",
+          "deadline": "2026-10-08T21:05:53Z",
+          "actualStop": "2026-10-08T20:57:44Z",
+          "timezone": "UTC",
+          "elapsedSeconds": 3111,
+          "clockPaused": false
+        },
+        "timingDisclosure": "UTC start 2026-10-08T20:05:53Z; one-hour deadline 2026-10-08T21:05:53Z; actual stop 2026-10-08T20:57:44Z; elapsed 3111 seconds. Shell initialization unavailable; 202.5-second interrupted write and rebuilt transient state; 28 bounded writes; clock not paused.",
+        "runConditions": "Runs were independent but infrastructure and troubleshooting differed. Compare the static outputs with the original disclosures; no claim of equivalent unconstrained execution.",
+        "limitations": [
+          "Headless shell creation failed throughout. One large GLB write reported \"aborted by user after 202.5s\"; no follow-up steering message arrived. Temporary calculation state was lost and rebuilt. Saved with 28 confirmed bounded writes; clock not paused.",
+          "Layered triangulated joins intentionally overlap and are not a tested deformation cage. May need welding/retopology. No skeleton, weights, animation, UV layout, interactive inspection or deformation testing.",
+          "No Blender/importer test, formal glTF validator or independent full binary disk read during the run due to shell initialization failures. No OS/background/test process started; all tool cells completed, OS enumeration unavailable. Later host CPU import evidence is separate."
+        ],
+        "producerChecks": "Producer: custom re-parse of exact serialized stream; container/buffer lengths, indices, finite positions, normals and triangle areas; zero errors/warnings/degenerates reported; 28 bounded writes confirmed with saved header/EOF/selected mesh-name readbacks. CPU views from decoded serialized buffers: front/both sides/back/above.",
+        "hostChecks": "Read-only frozen SHA-256/size, current viewer preflight and pinned Three r180 CPU GLTFLoader parse succeeded; source hash unchanged. No renderer, browser, screenshot, GPU, performance or deformation checks.",
+        "sourceHandoff": "IVO RENN\nFinal asset: Ivo_Renn.glb\n6,029,332 bytes; 168,864 triangles; 86,836 vertices; 256 named meshes; 25 materials.\nStanding height: approximately 2.022 m. Y up, front +Z, feet at Y=0.\nSelf-contained GLB 2.0 with embedded data-URI buffers in its JSON chunk. No external files or textures are required.\n\nArt direction:\nA warm, sculpted animation character: broad expressive face, substantial arms and middle, swept espresso hair, a gently asymmetric smile and tired eyelids. Burnt-clay camp shirt over an oat striped tee, petrol cuffed trousers and mustard canvas sneakers. A small ginkgo embroidery and visible mending give him tastes and habits beyond the food stall. Neutral A-pose, with individually modeled fingers and separated limbs.\n\nChecks actually performed:\nCustom independent re-parse of the exact serialized GLB stream; container lengths, embedded buffer lengths, index bounds, finite positions, unit normals and triangle areas checked. Zero errors, warnings or degenerate triangles. All 28 file writes confirmed; saved header, EOF and selected mesh-name readbacks matched. CPU-rendered decoded buffers inspected from front, both sides, back and above.\nSee CHECKS.json for the detailed report and serialized-stream CRC32 e0b5caa4.\n\nLimitations:\nNo skeleton, weights, animation, UV layout, interactive inspection or deformation testing. The triangulated, layered construction has deliberate overlaps at garment and detail joins; it is not a tested deformation cage and may need welding or retopology for production rigging.\nNo Blender/importer test, official glTF validator, or independent full binary disk read was available because shell initialization failed. CPU views used the decoded serialized asset. No geometry is intentionally unfinished.\n\nSource:\ngenerate_ivo.js creates the asset using dependency-free Node.js.\nverify_ivo.js independently checks the GLB.\ncheck_render.js can render CPU inspection PNGs from the GLB.\nNo other entrants, project assets, models or subagents were used.\n\nUTC timing:\nStart: 2026-10-08 20:05:53 UTC\nDeadline: 2026-10-08 21:05:53 UTC\nActual implementation/export/checks stop: 2026-10-08 20:57:44 UTC\nElapsed: 51 minutes 51 seconds. See TIMING.txt for actual timing evidence and interruptions.\n\nOne large write call was interrupted after 202.5 seconds and transient state was rebuilt; the timer continued. Shell access remained unavailable. No task-owned OS/background/test processes were started; all tool cells completed. OS process enumeration was unavailable.\nRequested gpt-6-astra / XHIGH; the serving backend was not independently exposed.\n\n",
+        "sourceTiming": "Ivo Renn - actual timing evidence\nTime zone: UTC\nImplementation start: 2026-10-08 20:05:53 UTC\nOne-hour deadline: 2026-10-08 21:05:53 UTC\nActual implementation/export/checks stop: 2026-10-08 20:57:44 UTC\nElapsed implementation window: 51 minutes 51 seconds.\nThe start and stop were obtained from clock__curr_time tool results.\nNo character geometry, GLB, source, or validation changes were made after the stop timestamp. Handoff receipts were written afterward.\n\nInterruptions:\n- Headless shell creation failed throughout with setup-refresh errors. No escalation or permission expansion was attempted.\n- One large GLB write call reported \"aborted by user after 202.5s\"; no follow-up steering message arrived. Temporary calculation state was lost and rebuilt. The GLB was subsequently saved with 28 confirmed bounded writes.\n- The clock was not paused for failures, waits, or recovery.\n\nRequested model/reasoning: gpt-6-astra, XHIGH.\nThe serving backend/model and reasoning setting were not independently exposed and cannot be verified.\n\nCleanup:\n- No operating-system background process, test process, preview server, native UI, browser, or subagent was started.\n- All implementation and verification tool cells completed. No tool session remained running at the stop timestamp.\n- An operating-system process listing could not be run because shell initialization failed.\n\n",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.txt",
+            "byteLength": 2599,
+            "sha256": "b8c23690b87410d27ef1b1bcf6cc097b570aad7e46e6a64078f66e0ec2b5be6a",
+            "role": "original handoff"
+          },
+          {
+            "file": "TIMING.txt",
+            "byteLength": 1372,
+            "sha256": "948a90acec6289f8771153e4be024d8e25a6decf84265b05f0d7e0a965ac1dff",
+            "role": "original timing"
+          },
+          {
+            "file": "generate_ivo.js",
+            "byteLength": 26127,
+            "sha256": "5e154addf87d6ff68815067b6fe99a58be94677e0899328eeb532b8e02ec4c87",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "verify_ivo.js",
+            "byteLength": 4575,
+            "sha256": "802addae3de9e8e9acd58243db2f73ed643b4af1238b6b1e845bd242268f0ec7",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "check_render.js",
+            "byteLength": 3971,
+            "sha256": "b10d3d57118015c78827bd4491085183a5a245fe59da1e35f3cacb4ac6d6efd7",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "CHECKS.json",
+            "byteLength": 1979,
+            "sha256": "0901b6e64fb2837d3526b70f7affc7f658abd5fb6e3b3fe530cfdaff9735a999",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "EXPORT_STATUS.txt",
+            "byteLength": 139,
+            "sha256": "fcb45b7d4d292f047ea3f89c022e68e00c77a225e3fe2e481c402813768fe622",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-astra, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed.",
+        "sourcePromptEvidence": "Completed supported Astra launch record."
+      }
+    },
+    {
+      "id": "entry-01-03",
+      "promptId": "01",
+      "promptSha256": "90fd47bd30dd6d99d8d8aca75ced7a8f908def096e88fc1a6b4e52f787a0b5a4",
+      "admission": {
+        "status": "invalid",
+        "frozen": true,
+        "selfContained": false,
+        "reason": "Frozen container header/length is malformed (saved 37,020 bytes); binary bytes were expanded through UTF-8. Diagnostic JSON extraction also found six bufferViews without required buffer fields. No repair, regeneration or admission."
+      },
+      "asset": {
+        "sha256": "6c4b948a67f55e592c0caf637fe4ac4d8ba32e5f79583bd7017c0114e26574d3",
+        "byteLength": 37020
+      },
+      "provenance": {
+        "modelLabel": "gpt-6-luna (requested)",
+        "requestedModel": "gpt-6-luna",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "timing": {
+          "implementationStart": "2026-10-08T20:05:20Z",
+          "deadline": "2026-10-08T21:05:20Z",
+          "actualStop": "2026-10-08T20:38:22Z",
+          "timezone": "UTC",
+          "elapsedSeconds": 1982,
+          "clockPaused": false
+        },
+        "timingDisclosure": "UTC start 2026-10-08T20:05:20Z; one-hour deadline 2026-10-08T21:05:20Z; actual stop 2026-10-08T20:38:22Z; elapsed 1982 seconds. Shell setup-refresh failures; clock not paused.",
+        "runConditions": "Runs were independent but infrastructure and troubleshooting differed. Compare the static outputs with the original disclosures; no claim of equivalent unconstrained execution.",
+        "limitations": [
+          "Shell startup failed; independent filesystem readback and cleanup unavailable. Rounded low-poly overlapping joins; deformation untested. Tiny binary probe and unused alternate generator remained because deletion failed. No background/test process started."
+        ],
+        "producerChecks": "Producer: JavaScript generation and successful workspace write; no independent parser/exporter, visual, turntable, rigging or deformation check. Producer reported a 37,016-byte payload; frozen saved file is 37,020 bytes.",
+        "hostChecks": "Read-only SHA-256, exact size and GLB container rejection. No importer parse or repair.",
+        "sourceHandoff": "Mara Vale character handoff\n\nAsset: MaraVale.glb\nGeneration source: MaraVale-source.js (run with Node.js to regenerate the GLB)\nImplementation start: 2026-10-08 20:05:20 UTC\nOne-hour deadline: 2026-10-08 21:05:20 UTC\nActual implementation stop: 2026-10-08 20:38:22 UTC\nTime zone: UTC\n\nArt direction: compact, rounded stylized character with a broad, grounded silhouette. Mara wears a faded teal waxed work jacket over ochre wool and oatmeal shirt, a brick scarf, repaired moleskin trousers and dark leather boots. Silver hair is swept into a low bun. Her raised brows and small dry half-smile, face creases, elbow darns, knee repair, brass buttons and simple service pin establish a specific working life without a prop pose.\n\nConstruction: glTF 2.0 with named character-part nodes, shared low-poly sphere and box meshes, 20 simple color materials and no external textures or image files. The geometry buffer is embedded in the GLB as a data URI. No environment, cameras or lights are included. No skeleton, skin weights or animation.\n\nChecks performed: executed the JavaScript generator in the available JS runtime; it assembled a 37,016-byte GLB payload and the workspace write succeeded. The generator computes and pads the GLB JSON chunk and total length from the serialized content. No independent GLB parser or Blender exporter was available: shell startup failed with an executor setup-refresh error. No visual inspection, turntable, rigging or deformation check was performed.\n\nLimitations: rounded low-poly forms and small modeled facial details; seams and clothing joins use overlapping shapes. Deformation is untested and not guaranteed. The executor did not allow filesystem readback or cleanup by shell. No background or test process was started. A tiny binary write probe and an unused alternate Blender generator remain in the workspace because file deletion attempts were rejected by the available patch tool.\n",
+        "sourceTiming": "Implementation start: 2026-10-08 20:05:20 UTC\nDeadline: 2026-10-08 21:05:20 UTC\nTime zone: UTC\nActual implementation stop: 2026-10-08 20:38:22 UTC\nInterruption: A large geometry serialization tool call was aborted after 1,442 seconds; work resumed using instanced low-poly geometry.\n",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.txt",
+            "byteLength": 1926,
+            "sha256": "0a54d838374346f48435580c8e8f05b83f88737ea7032f29133576b530c80adf",
+            "role": "original handoff"
+          },
+          {
+            "file": "TIMING.txt",
+            "byteLength": 283,
+            "sha256": "d5e25aadde183ded72742ccad24fec4be309f9a3bd52e61e2c26bb7cac12b723",
+            "role": "original timing"
+          },
+          {
+            "file": "MaraVale-source.js",
+            "byteLength": 11475,
+            "sha256": "28bcd56411a4dc6d9e1315b99e8b494fd7ad3a56f607572f7fb93891a75f2ccf",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "generate_mara.py",
+            "byteLength": 13162,
+            "sha256": "2766fbb3d701ffc17d6c5da7631827b4d17948f95efa918434c676cf1e5a3c7b",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
+        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+      }
+    },
+    {
+      "id": "entry-02-03",
+      "promptId": "02",
+      "promptSha256": "e464c96cf1652cf01a3beb8282a85bab32a59bac9f3dbe325d4f47ec979aae3a",
+      "admission": {
+        "status": "invalid",
+        "frozen": true,
+        "selfContained": false,
+        "reason": "Frozen saved file is 69,165 bytes while GLB header declares 69,164; trailing 0a byte violates the exact-length/alignment container contract. No byte strip, repair, regeneration or admission."
+      },
+      "asset": {
+        "sha256": "8ccf4b114a255d0396743c9e5c7a1415383e923bdbc2a67267cbe17192067f3e",
+        "byteLength": 69165
+      },
+      "provenance": {
+        "modelLabel": "gpt-6-luna (requested)",
+        "requestedModel": "gpt-6-luna",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "timing": {
+          "implementationStart": "2026-10-08T20:05:32Z",
+          "deadline": "2026-10-08T21:05:32Z",
+          "actualStop": "2026-10-08T20:15:43Z",
+          "timezone": "UTC",
+          "elapsedSeconds": 611,
+          "clockPaused": false
+        },
+        "timingDisclosure": "UTC start 2026-10-08T20:05:32Z; one-hour deadline 2026-10-08T21:05:32Z; actual stop 2026-10-08T20:15:43Z; elapsed 611 seconds. Shell setup-refresh failures; clock not paused.",
+        "runConditions": "Runs were independent but infrastructure and troubleshooting differed. Compare the static outputs with the original disclosures; no claim of equivalent unconstrained execution.",
+        "limitations": [
+          "Shell startup unavailable. No independent importer, browser, GPU/performance, rigging or deformation verification. No background processes reported. Original frozen artifact and receipts remain untouched."
+        ],
+        "producerChecks": "Producer: assembled glTF JSON parsed in memory; header/chunk sizes, position-buffer size, node/material counts, named body parts, scene references and absence of external resources checked. Saved container independently fails exact-length/alignment checks; original producer claims remain in the handoff.",
+        "hostChecks": "Read-only SHA-256, exact size and GLB container rejection. No importer parse or repair.",
+        "sourceHandoff": "# Ivo Renn — asset handoff\n\n- **GLB:** `Ivo_Renn.glb` — self-contained, with 19 solid-color PBR materials and no external images or URLs.\n- **Generation source:** `generate_ivo_glb.js` — standalone Node.js source using only built-in modules.\n- **Art direction:** Warm, faceted low-poly sculpt with a broad expressive face and full middle; short chestnut curls and neat stubble; storm-teal rain shell over ochre knit, ink-blue trousers and worn oxblood boots. A small crescent pin and mended elbow add personal history beyond the stall.\n- **Structure:** Named, separate body forms for head, torso, sleeves, palms, individual fingers, legs and feet. Neutral lowered A-pose; Z up; face toward -Y. No skeleton, weights or animation.\n- **Checks performed:** Parsed assembled glTF JSON in memory; checked GLB magic/version and chunk sizes, position-buffer size, node/material counts, named head/palm/boot parts, absence of external resource references and scene references.\n- **Limitations:** The shell runner failed before process launch with a helper setup-refresh error, so the file could not be reopened in Blender or passed to an independent GLB validator. No rendered front/side/back/top inspection, interactive inspection or deformation/rigging check was performed. This is a static faceted assembly. Positions use required KHR_mesh_quantization.\n- **Requested backend:** The serving model/backend is not independently exposed in this execution context.\n\nTiming (UTC):\n- Implementation start: 2026-10-08 20:05:32 UTC\n- One-hour deadline: 2026-10-08 21:05:32 UTC\n- Actual stop: 2026-10-08 20:15:43 UTC\n",
+        "sourceTiming": "Implementation start: 2026-10-08 20:05:32 UTC\nOne-hour deadline: 2026-10-08 21:05:32 UTC\nActual stop: 2026-10-08 20:15:43 UTC\nTime zone: UTC\nInterruption: PowerShell process launch repeatedly failed before startup with a helper setup-refresh error. The clock continued running; generation and structural checks continued through the workspace patch tool.\n",
+        "sourceFiles": [
+          {
+            "file": "HANDOFF.md",
+            "byteLength": 1608,
+            "sha256": "fa56ea15aec5f4379fefaa7a7c5f2f60f1be3814f9e8b6003fe366bf46f787d9",
+            "role": "original handoff"
+          },
+          {
+            "file": "timing.txt",
+            "byteLength": 355,
+            "sha256": "8f9990bfa5bf3d1d8e52a6e15b45c628f53741fdb274245a7bfa1c78b7496611",
+            "role": "original timing"
+          },
+          {
+            "file": "generate_ivo_glb.js",
+            "byteLength": 37337,
+            "sha256": "d73749f23ce5ca85f32b84917a9c2b251fd5339a938f7be203ec436307ff7511",
+            "role": "source/check evidence"
+          },
+          {
+            "file": "build_ivo.py",
+            "byteLength": 17290,
+            "sha256": "58291e161f422b2c6bd02c4a4b540081e7f533565eaa1430c56bc6c88d7cc045",
+            "role": "source/check evidence"
+          }
+        ],
+        "executionConstraints": "Headless independent generation and existing permissions; consult original handoff/timing. Exact Sol launch text awaiting source confirmation.",
+        "sourcePromptEvidence": "Parent requested same-character Sol/Astra pairing; original Sol exact launch record awaiting confirmation."
+      }
+    }
+  ]
 }

@@ -1,0 +1,122 @@
+{
+  "cpuOnly": true,
+  "rendererCreated": false,
+  "gpuChecks": false,
+  "noAdmissionQualityClaim": true,
+  "results": [
+    {
+      "byteLength": 22737356,
+      "sha256": "e03e697b9793778f49cb57f78c7b17537d9a18b3338774ce707880cbfdfe5fe6",
+      "preflight": true,
+      "parser": true,
+      "embeddedBuffers": 1,
+      "meshes": 17,
+      "vertices": 472970,
+      "bounds": {
+        "min": [
+          -0.5128730535507202,
+          0,
+          -0.14259694516658783
+        ],
+        "max": [
+          0.5128730535507202,
+          1.516385555267334,
+          0.18700000643730164
+        ]
+      },
+      "meshNodes": 61,
+      "sourceHashUnchanged": true,
+      "id": "entry-01-01"
+    },
+    {
+      "byteLength": 6629216,
+      "sha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1",
+      "preflight": true,
+      "parser": true,
+      "embeddedBuffers": 1,
+      "meshes": 322,
+      "vertices": 132526,
+      "bounds": {
+        "min": [
+          -1.0878714323043823,
+          0,
+          -0.239839568734169
+        ],
+        "max": [
+          1.0878714323043823,
+          2.1721105575561523,
+          0.29803237318992615
+        ]
+      },
+      "meshNodes": 322,
+      "sourceHashUnchanged": true,
+      "id": "entry-02-01"
+    },
+    {
+      "byteLength": 720916,
+      "sha256": "4a5af4af51ce3cc81ce62002b70b70a5bd0ea50bb7c608cf04b7ee3b2264465c",
+      "preflight": true,
+      "parser": true,
+      "embeddedBuffers": 177,
+      "meshes": 177,
+      "vertices": 9480,
+      "bounds": {
+        "min": [
+          -0.7008943557739258,
+          0.009999999776482582,
+          -0.1995875984430313
+        ],
+        "max": [
+          0.7008943557739258,
+          1.6549999713897705,
+          0.20000000298023224
+        ]
+      },
+      "meshNodes": 177,
+      "sourceHashUnchanged": true,
+      "id": "entry-01-02"
+    },
+    {
+      "byteLength": 6029332,
+      "sha256": "fd3f6f09642fb054996b8c7247489dd435078fc05f6cb46c4c40a068dcb73c7d",
+      "preflight": true,
+      "parser": true,
+      "embeddedBuffers": 770,
+      "meshes": 256,
+      "vertices": 86836,
+      "bounds": {
+        "min": [
+          -0.9685633778572083,
+          0,
+          -0.2679775655269623
+        ],
+        "max": [
+          0.9685158729553223,
+          2.0220000743865967,
+          0.2901867926120758
+        ]
+      },
+      "meshNodes": 256,
+      "sourceHashUnchanged": true,
+      "id": "entry-02-02"
+    },
+    {
+      "byteLength": 37020,
+      "sha256": "6c4b948a67f55e592c0caf637fe4ac4d8ba32e5f79583bd7017c0114e26574d3",
+      "preflight": false,
+      "parser": false,
+      "error": "Expected a complete glTF 2 GLB.",
+      "sourceHashUnchanged": true,
+      "id": "entry-01-03"
+    },
+    {
+      "byteLength": 69165,
+      "sha256": "8ccf4b114a255d0396743c9e5c7a1415383e923bdbc2a67267cbe17192067f3e",
+      "preflight": false,
+      "parser": false,
+      "error": "Expected a complete glTF 2 GLB.",
+      "sourceHashUnchanged": true,
+      "id": "entry-02-03"
+    }
+  ]
+}

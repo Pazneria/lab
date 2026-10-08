@@ -13,15 +13,19 @@ it is never an asset URL or model selector. The return link is `../lab-space/`.
 The lobby owner must dispose its renderer before navigation. This route creates
 no renderer until the visitor selects **Load comparison**.
 
-Parent integration may use canonical IDs `01` for Mara and `02` for Ivo when
-supplying those records. IDs are strings; leading zeroes are significant.
+The prepared catalog uses canonical IDs `01` for Mara and `02` for Ivo.
+IDs are strings; leading zeroes are significant.
 An unknown ID shows an honest empty state. Different prompt versions need
 different IDs and exact hashes, even when their titles are similar.
 
-The shipped `data/admission.json` is deliberately empty. No fixtures, screenshots,
-private Studio metadata, unverified characters or malformed assets are published.
-Parent supplies admitted assets and exact source provenance separately. Only
-entries marked verified, frozen and self-contained can form pairs.
+The draft includes four unchanged completed Sol/Astra asset copies and six source
+records, including two excluded malformed Luna attempts. Sol/Astra admission is
+pending original Sol canonical-prompt identity confirmation; no pending or invalid
+record forms a pair. The exact shared contract/brief is preserved from the completed
+supported Astra launch records. The local Sol handoffs contain no exact launch text,
+so source equality has not been invented. See [admission evidence](data/ADMISSION.md).
+Once the parent supplies that identity evidence, only records marked verified,
+frozen and self-contained can form pairs. No screenshots or previews are fabricated.
 
 ## Experience
 
@@ -43,7 +47,10 @@ diagnostics are double-sided; returning to original restores exact references.
 Submitted cameras and lights are not used; no animation mixer is created.
 
 Preferences require both current imports to complete. A preference reveals model
-identities and the supplied source timing/infrastructure disclosures. Pair changes
+identities and the source timing/infrastructure disclosures, with original handoff
+and timing text, requested/verified reasoning, producer versus host checks and
+source-file fingerprints. Run conditions differed, and that fact is stated before
+preference without identifying models. Pair changes
 and page departure clear it. No localStorage, IndexedDB, public vote API,
 leaderboard, aggregate score, rubric weights, winner claim or private Studio
 access is added. **Public CharacterBench voting persistence is absent.** Adding it
@@ -134,13 +141,16 @@ node --check character-bench/assets/preflight.mjs
 node --check character-bench/assets/preflight-worker.mjs
 ```
 
-The 19 data/wiring tests cover same-prompt pairing, admission failures,
+The 23 data/wiring/catalog tests cover same-prompt pairing, admission failures,
 linked/unlinked controls, current-import voting/reveal, pair/departure reset,
 loader cancellation/disposal, worker success/error/timeout, partial allocations,
-hierarchy/accessor bounds and image decode budgets. DOM, workers and rendering
-are mocked in the wiring tests. Native CPU-only loading of the parent's completed
-frozen multi-buffer files was separately checked without a renderer; that result
-does not admit the files or compare different characters.
+hierarchy/accessor bounds, image decode budgets, all four copied asset hashes,
+canonical text hashes and original run disclosures. DOM, workers and rendering
+are mocked in wiring tests. Native CPU-only loading of all four completed Sol/Astra
+GLBs was separately checked using the pinned importer without a renderer. The two
+saved Luna containers failed before importer parse and remain untouched in the
+parent's preservation archive. [CPU results](data/cpu-import-evidence.json) establish
+compatibility and unchanged bytes, not visual quality or equivalent execution.
 
 **Browser/GPU/performance sessions, screenshots, merge and publication remain
 held for parent integrated review.** No preview server was started. No active

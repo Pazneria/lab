@@ -34,10 +34,16 @@ function renderProvenance(){
   $('provenance').replaceChildren(...s.pair.map((entry,index)=>{
     const section=document.createElement('section');section.append(textNode('h3',sides[index].toUpperCase()+' / '+entry.provenance.modelLabel));
     const p=entry.provenance,dl=document.createElement('dl');
-    for(const [label,value] of [['Requested model',p.requestedModel||'Not recorded'],['Verified model',p.verifiedModel||'Not independently exposed'],['Source timing',p.timingDisclosure||'Not recorded'],['Infrastructure',Array.isArray(p.limitations)?p.limitations.join(' · '):p.limitations||'No disclosure supplied'],['Frozen SHA-256',entry.asset.sha256]]) {
+    for(const [label,value] of [['Requested model',p.requestedModel||'Not recorded'],['Requested reasoning',p.requestedReasoning||'Not recorded'],['Verified model',p.verifiedModel||'Not independently exposed'],['Verified reasoning',p.verifiedReasoning||'Not independently exposed'],['Source timing',p.timingDisclosure||'Not recorded'],['Run conditions',p.runConditions||'Not recorded'],['Limitations',Array.isArray(p.limitations)?p.limitations.join(' · '):p.limitations||'No disclosure supplied'],['Producer checks',p.producerChecks||'Not recorded'],['Host checks',p.hostChecks||'Not recorded'],['Frozen SHA-256',entry.asset.sha256]]) {
       dl.append(textNode('dt',label),textNode('dd',value));
     }
-    section.append(dl);return section;
+    section.append(dl);
+    for(const [label,value] of [['Original handoff',p.sourceHandoff],['Original timing record',p.sourceTiming],['Initial execution constraints',p.executionConstraints]]) {
+      if(typeof value==='string'&&value){const details=document.createElement('details');details.append(textNode('summary',label),textNode('pre',value,'source-receipt'));section.append(details);}
+    }
+    if(Array.isArray(p.sourceFiles)&&p.sourceFiles.length){const details=document.createElement('details');details.append(textNode('summary','Preserved source and check fingerprints'));
+      details.append(textNode('pre',p.sourceFiles.map(file=>file.file+' / '+file.byteLength+' bytes / SHA-256 '+file.sha256).join('\n'),'source-receipt'));section.append(details);}
+    return section;
   }));
 }
 function restorePaneLayout(){expanded=null;stages.classList.remove('is-expanded');document.querySelectorAll('.pane').forEach(p=>p.hidden=false);
@@ -49,6 +55,7 @@ function selectPrompt(id,{updateUrl=true}={}){
   $('prompt-text').textContent=prompt?.text||'This prompt has no verified admission record. Choose an available prompt to continue.';
   $('prompt-hash').textContent=prompt?'Canonical prompt SHA-256 · '+prompt.sha256:'';
   $('prompt-select').value=id;
+  $('run-note').textContent=prompt?.comparisonDisclosure||'';$('run-note').hidden=!prompt?.comparisonDisclosure;
   const count=eligiblePairs(manifest,id).length;
   $('pair-count').textContent=count?count+' admitted pair'+(count===1?'':'s')+' · one canonical prompt':'Awaiting two verified attempts of this prompt.';
   $('inspection-status').textContent=pair?'Both panes use the same lighting and unit-sphere framing. Load this pair to begin.':'No two verified attempts of this prompt are available. Other character prompts are never substituted.';
