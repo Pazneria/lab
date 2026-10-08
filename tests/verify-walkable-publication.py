@@ -39,7 +39,9 @@ class Links(HTMLParser):
     links = []
     def handle_starttag(self, tag, attrs):
         self.links += [value for key, value in attrs if key in ('href','src') and value]
-parser = Links(); parser.feed((root/'walkable-3d/index.html').read_text(encoding='utf-8'))
+parser = Links()
+for page in ['index.html', 'scene.html']:
+    parser.feed((root/'walkable-3d'/page).read_text(encoding='utf-8'))
 links = parser.links + ['entries.json'] + [v['path'] for v in manifest['promptVersions']]
 entries = manifest['entries']
 for entry in entries:
