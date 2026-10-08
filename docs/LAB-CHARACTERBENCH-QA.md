@@ -2,14 +2,18 @@
 
 Prepared from Lab PR #57 (`1e04963fc6969bc77f3df2f28b30d4896a557ca2`) and
 CharacterBench PR #58 (`0b559b1085e0126b90159c8d703792c144c8d5f3`).
+Also includes the parent-approved SceneBench return-route fix
+`055b1f090e8d47f7a196615063fc2aa0bc2f94c1`, which accepts both the Lab directory
+and explicit `index.html` return paths while retaining origin/path validation.
 The isolated branch is `integration-lab-characterbench`; its checkout is the
 task-10 `combined-lab` directory. No browser, GPU session or preview server has
 been started. GitHub merge and deployment remain held by parent coordination.
 
 ## CPU evidence
 
-The existing focused suites pass together: 56 Lab/SceneBench cases and 26
-CharacterBench cases. Seven cross-route cases bring the total to **89 passed**.
+The existing focused suites pass together: 60 Lab/SceneBench cases (including
+four approved return-route regressions) and 26 CharacterBench cases. Seven
+cross-route cases bring the total to **93 passed**.
 Independent integration and importer/viewer reviews found no material issues;
 the small diagnostics reconciliation was separately reviewed. These checks cover
 input/focus/return lifecycle, geometry/collision
@@ -25,7 +29,7 @@ See [combined CPU receipt](LAB-CHARACTERBENCH-CPU-EVIDENCE.json).
 The exact focused combined command, from the checkout root, is:
 
 ```text
-node --experimental-vm-modules --test tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs tests/verify-walkable-lab-navigation.test.mjs tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs tests/verify-lab-characterbench-integration.test.mjs character-bench/tests/app.test.mjs character-bench/tests/catalog.test.mjs character-bench/tests/contracts.test.mjs character-bench/tests/lifecycle.test.mjs
+node --experimental-vm-modules --test tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs tests/verify-walkable-lab-navigation.test.mjs tests/verify-walkable-return-route.test.mjs tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs tests/verify-lab-characterbench-integration.test.mjs character-bench/tests/app.test.mjs character-bench/tests/catalog.test.mjs character-bench/tests/contracts.test.mjs character-bench/tests/lifecycle.test.mjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py
 node tests/verify-voting-catalog-parity.cjs

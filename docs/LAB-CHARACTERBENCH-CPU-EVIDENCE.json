@@ -4,13 +4,14 @@
   "baseCommit": "17170c4f6210f2a93245e6a6cb94adcb1c6c0335",
   "sourceHeads": {
     "labPr57": "1e04963fc6969bc77f3df2f28b30d4896a557ca2",
-    "characterBenchPr58": "0b559b1085e0126b90159c8d703792c144c8d5f3"
+    "characterBenchPr58": "0b559b1085e0126b90159c8d703792c144c8d5f3",
+    "approvedSceneBenchReturnFix": "055b1f090e8d47f7a196615063fc2aa0bc2f94c1"
   },
   "checks": {
-    "labAndSceneBenchCases": 56,
+    "labAndSceneBenchCases": 60,
     "characterBenchCases": 26,
     "crossRouteCases": 7,
-    "totalPassed": 89,
+    "totalPassed": 93,
     "failed": 0,
     "frozenRecordedFilesVerified": 1000,
     "publicAdmittedFilesVerified": 1146,
@@ -44,10 +45,12 @@
   "independentReviews": {
     "integration": "No material findings; seven actual-route/catalog/guard/lifecycle cases pass",
     "importerViewer": "No material findings; nineteen small contract/lifecycle/app cases independently pass",
-    "diagnosticsReconciliation": "No material findings; read-only, combined-pane totals, actual buffer size, CPU-only submit timing"
+    "diagnosticsReconciliation": "No material findings; read-only, combined-pane totals, actual buffer size, CPU-only submit timing",
+    "approvedSceneReturnFix": "No material findings; fourteen return-route/navigation cases independently pass, including unrelated-path and other-origin rejection"
   },
   "reconciliation": [
     "Source PRs combine without conflicts; canonical prompt 02 and return routes agree",
+    "Includes the approved SceneBench directory/index.html return-receipt alias fix without changing origin/path guards",
     "Read-only CharacterBench diagnostics exposed only with the labqa query flag",
     "Renderer metrics aggregate both scissored panes and distinguish CPU submission from GPU timing",
     "Capped DPR participates in the resize signature, including DPR-only changes",
