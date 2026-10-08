@@ -6,7 +6,7 @@ export function createSceneNavigation(base, {storage = () => sessionStorage} = {
     try {
       const visit = JSON.parse(storage().getItem(key));
       const back = new URL(visit?.returnUrl);
-      if (!token || visit?.token !== token || back.origin !== labUrl.origin || back.pathname !== labUrl.pathname ||
+      if (!token || visit?.token !== token || back.origin !== labUrl.origin || ![labUrl.pathname, labUrl.pathname + 'index.html'].includes(back.pathname) ||
           !Array.isArray(visit.pair) || !visit.pair.includes(visit.entryId)) return null;
       return visit;
     } catch { return null; }
