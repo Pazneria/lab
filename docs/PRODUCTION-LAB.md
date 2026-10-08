@@ -27,6 +27,45 @@ Back/Forward recreates disposed renderers, including reduced-motion opt-in and
 pending-load races. A scoped, one-use session pose restores the Lab after a
 same-origin CharacterBench return when the normal history entry is unavailable.
 
+## Functional room map
+
+Visitors spawn at `(x=0, z=7.3)` facing north (negative Z). The main hall is
+14 by 15.5 world units, with west/east alcoves extending to X = -12/+12.
+This is a schematic, not a scale drawing:
+
+```text
+                         NORTH (-Z)
+       Catalog plaque     SceneBench north-wall screen
+        (-3, -6.85)              (0, -6.915)
+
+  West perception        CharacterBench camera ring       East motion
+  testing alcove               Ivo (0, -0.6)              testing alcove
+  (negative X)                                           (positive X)
+                                     Lectern (2.3, 2.1)
+
+                          Entrance spawn (0, 7.3)
+                          Home doorway (0, 8.5)
+                         SOUTH (+Z)
+```
+
+| Physical station | Existing feature and interaction |
+| --- | --- |
+| Central camera ring | Ivo stands on the original drum. His real mesh silhouette, drum and adjacent lectern open `../character-bench/?prompt=02`. The dedicated route compares two attempts of the same character prompt; the single Lab exhibit does not declare a winner. The walk shortcut approaches from the southeast at `(2.3, 3.05)`. |
+| North-wall data screen | Hosts the existing SceneBench comparison canvas. A distant selection walks to `(0, -4.6)`; nearby selections use the screen's physical UV coordinates. Preview entry, same-pair return, viewed-both voting, reveal, grading and leaderboard retain their existing modules. Compare scenes also opens the native accessible controls. |
+| North-west Catalog plaque | Approaches `(-3, -5.8)`, then opens the public catalog/evidence station dialog. This reuses the public catalog destination. |
+| South Home doorway | Approaches `(0, 7.3)`, then opens the exit dialog and existing home destination. |
+| West perception / east motion alcoves | Preserve the original machine-vision bench and motion-test apparatus as explorable room content. They do not claim additional website features. |
+| Host menu and fallback links | Keep Catalog, AI infrastructure, SceneBench, CharacterBench and Home discoverable; fallback links provide direct access when 3D is unavailable. AI infrastructure remains a menu destination. |
+
+Geometry and directions come from [`hall.js`](../lab-space/assets/claude11/hall.js),
+[`instrument.js`](../lab-space/assets/claude11/instrument.js),
+[`perception.js`](../lab-space/assets/claude11/perception.js) and
+[`motion.js`](../lab-space/assets/claude11/motion.js). Station positions and safe
+approaches share [`layout.mjs`](../lab-space/assets/claude11/layout.mjs).
+Actual picking and feature wiring are in
+[`room-source.mjs`](../lab-space/assets/claude11/room-source.mjs) and
+[`production-space.js`](../lab-space/assets/production-space.js).
+
 ## Preservation and rights
 
 Frozen `app.js` SHA-256:
