@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Captain's Quarters</title>
+<style>
+  :root { --ink: #e9e4d8; --dim: #a9b4bd; --panel: rgba(12, 16, 20, 0.78); --line: rgba(160, 200, 230, 0.25); --warm: #f0b878; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; font-family: "Segoe UI", system-ui, sans-serif; color: var(--ink); }
+  canvas { display: block; }
+  #overlay { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, rgba(10,14,20,0.55), rgba(0,0,0,0.85)); z-index: 5; }
+  #overlay.hidden { display: none; }
+  .card { max-width: 520px; margin: 16px; padding: 26px 30px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; backdrop-filter: blur(4px); }
+  h1 { margin: 0 0 4px; font-weight: 600; font-size: 22px; letter-spacing: 0.04em; }
+  .sub { color: var(--dim); font-size: 13px; margin-bottom: 16px; }
+  table { border-collapse: collapse; font-size: 13px; width: 100%; margin-bottom: 18px; }
+  td { padding: 3px 6px; vertical-align: top; }
+  td:first-child { color: var(--warm); white-space: nowrap; width: 38%; }
+  button { font: inherit; font-size: 15px; padding: 10px 18px; width: 100%; cursor: pointer; color: #10161b; background: #cfe2ee; border: 0; border-radius: 6px; }
+  button:disabled { opacity: 0.5; cursor: wait; }
+  #loading { font-size: 12px; color: var(--dim); margin-top: 8px; text-align: center; }
+  #hud { position: fixed; left: 14px; bottom: 12px; font-size: 12px; color: var(--dim); background: rgba(0,0,0,0.35); padding: 6px 10px; border-radius: 6px; pointer-events: none; z-index: 3; }
+  #hud.hidden { display: none; }
+  #stats { position: fixed; right: 12px; top: 10px; font: 12px ui-monospace, Consolas, monospace; color: #bfe3c8; background: rgba(0,0,0,0.5); padding: 4px 8px; border-radius: 4px; display: none; z-index: 3; pointer-events: none; }
+  #toast { position: fixed; left: 50%; top: 18px; transform: translateX(-50%); font-size: 14px; background: rgba(0,0,0,0.45); padding: 6px 14px; border-radius: 6px; transition: opacity 0.4s; pointer-events: none; z-index: 3; }
+  #cross { position: fixed; left: 50%; top: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; border-radius: 50%; background: rgba(255,255,255,0.45); pointer-events: none; z-index: 2; }
+</style>
+</head>
+<body>
+<div id="overlay">
+  <div class="card">
+    <h1>Captain's Private Quarters</h1>
+    <div class="sub">Bedroom · private study · observation nook. Walk in from the entrance, past the bed, along the desk and up to the window.</div>
+    <table>
+      <tr><td>Mouse</td><td>Look (click the view to capture the pointer; Esc releases it). Without capture, drag to look.</td></tr>
+      <tr><td>W A S D / ↑ ↓</td><td>Walk and strafe</td></tr>
+      <tr><td>Shift</td><td>Walk faster</td></tr>
+      <tr><td>Q / E · ← →</td><td>Turn with the keyboard</td></tr>
+      <tr><td>C</td><td>Crouch toggle (inspect low fittings)</td></tr>
+      <tr><td>R</td><td>Reset to the entrance</td></tr>
+      <tr><td>1 – 5</td><td>Jump to: entrance, sleeping area, study desk, window, return view</td></tr>
+      <tr><td>[ / ]</td><td>Exposure down / up</td></tr>
+      <tr><td>F · H</td><td>Frame-time readout · hide this hint bar</td></tr>
+    </table>
+    <button id="start" disabled>Preparing quarters…</button>
+    <div id="loading">Generating textures and geometry…</div>
+  </div>
+</div>
+<div id="cross"></div>
+<div id="hud">WASD move · Mouse look · Shift fast · C crouch · R reset · 1–5 viewpoints · F stats · H hide</div>
+<div id="stats"></div>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>

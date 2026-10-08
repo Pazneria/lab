@@ -1,0 +1,36 @@
+{
+  "id": "captains-quarters-opus",
+  "scene": 18,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-07\\task-45\\claude-entries\\Claude18",
+  "completionClearedByOwner": true,
+  "completionEvidence": "Owner reports 'claude 18/20 are ready' in current recovery context. No independent producer transcript observed.",
+  "ownerReportedModel": null,
+  "producerReportedModel": "Claude Opus 5.5 (claude-opus-5-5)",
+  "verifiedBackendModel": null,
+  "requestedEffort": null,
+  "effectiveEffort": null,
+  "producerEffortClaim": "README claims reasoning effort 40 as configured by session/harness; independently unverified.",
+  "producerReportedTiming": {
+    "firstImplementation": "2026-10-07T22:49:55Z",
+    "deadline": "2026-10-07T23:49:55Z",
+    "stop": "2026-10-07T23:22Z",
+    "stopPrecision": "minute"
+  },
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "interruptions": "Producer reports none; not independently verified.",
+  "producerChecks": "Producer README reports esbuild bundling, JS syntax parsing, and a CPU-only Node smoke test with WebGL/canvas stubs and a route/collision check. No browser, GPU, screenshot, or measured frame-rate check.",
+  "authority": "Original producer bytes preserved. Backend, effective effort and actual timing remain unknown; producer claims are attributed.",
+  "qa": {
+    "static": "Byte preservation, canonical hash, required runtime paths, and first-party network/storage/navigation review.",
+    "visual": "Actual unchanged authored default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED",
+    "captureRecord": "preview-capture.json"
+  },
+  "publication": "Owner-approved capture succeeded; coordinated publication awaits the required fresh Site source credential approval through parent."
+}

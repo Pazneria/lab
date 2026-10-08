@@ -4656,6 +4656,136 @@
       "runtimeVerification": "Host startup, original entry control and authored default canvas captured only. Routes, movement, collision feel, full geometry, shaders and performance remain unverified.",
       "preview": "preview.jpg",
       "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "captains-quarters-opus",
+      "title": "Captain's Private Quarters",
+      "description": "A captain’s bedroom, private study and observation nook onto space.",
+      "promptId": "18",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (producer-reported model)",
+      "modelDisclosure": "Producer README identifies Claude Opus 5.5 and claims harness/session reasoning effort 40. Actual serving backend and effective effort are unknown and not independently verified. Owner reports this Claude run complete.",
+      "buildWindow": "Timing is producer-reported and not independently verified. Original README and attributed run record preserve its claims; no inferred deadline compliance.",
+      "interruptions": "Producer reports none; not independently verified.",
+      "controls": "| Input | Action |\n|---|---|\n| Click the view | Capture the mouse for mouse-look (Esc releases it). Without capture you can drag to look. |\n| W A S D / ↑ ↓ | Walk forward and back, strafe |\n| Shift | Walk faster |\n| Q / E or ← / → | Turn with the keyboard |\n| C | Toggle crouch, for inspecting low fittings (bed drawers, nightstands, grille) |\n| R | Reset to the entrance |\n| 1 – 5 | Jump to a viewpoint: entrance, sleeping area, study desk, observation window, return view |\n| [ / ] | Lower or raise exposure |\n| F | Show frame time, FPS, render scale and draw calls |\n| H | Hide or show the hint bar |",
+      "producerChecks": "Producer README reports esbuild bundling, JS syntax parsing, and a CPU-only Node smoke test with WebGL/canvas stubs and a route/collision check. No browser, GPU, screenshot, or measured frame-rate check.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
+      "limitations": [
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
+        "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
+        "Original producer limitations remain in the unchanged README.",
+        "Actual backend, effective effort and independently verified timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README and run record",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Captain's Private Quarters - actual unchanged starting-view scene canvas.",
+      "archiveSha256": "c7671c92d2c4f778266fecab3a570b2b6b7ab8cc3e4b58bf4585ab228a77fbcb",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "59ddcfe52f220e20d405d0d718f8fd2455e7da094622c14d839a62929461dc77",
+      "promptVersion": "18-claude",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "marrows-wagon-opus",
+      "title": "Marrow's Wagon",
+      "description": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp.",
+      "promptId": "20",
+      "comparisonModel": "opus",
+      "requestedConfiguration": "Claude Opus 5.5 / unknown effective effort (producer-reported model)",
+      "modelDisclosure": "Producer README identifies Claude Opus 5.5 and claims harness/session reasoning effort 40. Actual serving backend and effective effort are unknown and not independently verified. Owner reports this Claude run complete.",
+      "buildWindow": "Timing is producer-reported and not independently verified. Original README and attributed run record preserve its claims; no inferred deadline compliance.",
+      "interruptions": "Producer reports none; not independently verified.",
+      "controls": "| Input | Action |\n|---|---|\n| Click \"Click to explore\" | Capture the mouse (pointer lock). Esc releases it and shows the menu. |\n| Mouse | Look |\n| W A S D / Arrow keys | Walk (1.7 m/s) |\n| Shift | Walk faster (3.4 m/s) |\n| Q / E | Turn without the mouse |\n| R | Reset to the starting spot in the camp |\n| F | Toggle the on-screen frame-time readout (average/worst ms, fps, draw calls, triangles) |\n| P | Cycle the render-scale cap (1.5 → 1.0 → 0.75) |\n| \"Drag-to-look mode\" button | Fallback if pointer lock is unavailable: hold the mouse button and drag to look |\n\n**Suggested route:** start in the camp. Go round the fire to the steps at the back of the wagon (the +X end, with the door standing open). Go up onto the porch, then inside the living area. Go through the curtained arch to the storage/work area. Then go back out and down the steps, walk round to the front of the striped awning, and stand at the counter to look back into the wagon.",
+      "producerChecks": "Producer README reports esbuild bundling and a CPU-only smoke test with DOM/WebGL stubs, route/step checks and two collision checks. No browser, GPU, headless rendering, screenshot, server or measured frame-rate check.",
+      "performanceEvidence": "No importer performance measurement or score. Producer geometry counts, CPU route checks and design estimates are claims, separate from real frame-time measurements.",
+      "limitations": [
+        "Actual hosted startup and authored default-view capture succeeded. No full visual-quality, movement, route, collision or performance QA.",
+        "Movement, routes, collision feel, full geometry and performance remain unverified by importer.",
+        "Original producer limitations remain in the unchanged README.",
+        "Actual backend, effective effort and independently verified timing remain unknown."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README and run record",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact canonical launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Attributed model, timing and importer QA record",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Marrow's Wagon - actual unchanged starting-view scene canvas.",
+      "archiveSha256": "ab4d988b736b54b4bc2bd8f3cffe0c15c85d204a7ab00e92ed587e1ae96cbfaa",
+      "archiveKind": "Host-created source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "e04a3a586c02810b81db2114f857d19baff51785dadba2efda6e240ea3f368e8",
+      "promptVersion": "20-claude",
+      "webgl": "WebGL (host startup/default view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     }
   ],
   "prompts": [
@@ -5225,6 +5355,24 @@
       "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
       "source": "Exact task44 launch TXT verified against original handoff receipt and task43 canonical hash. Owner reports completed run.",
       "note": "Exact launch bytes preserved; receipt preparation time is not an implementation start. Delivery itself was not independently observed."
+    },
+    {
+      "id": "18-claude",
+      "promptId": "18",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-18-claude.txt",
+      "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
+      "source": "Exact task45 launch TXT verified against original handoff and task43 canonical hashes. Owner reports the run complete.",
+      "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
+    },
+    {
+      "id": "20-claude",
+      "promptId": "20",
+      "label": "Claude canonical launch / no-browser conditions",
+      "path": "prompt-20-claude.txt",
+      "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "source": "Exact task45 launch TXT verified against original handoff and task43 canonical hashes. Owner reports the run complete.",
+      "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
     }
   ]
 }
