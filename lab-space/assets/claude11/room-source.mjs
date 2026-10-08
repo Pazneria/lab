@@ -14,6 +14,7 @@ import {canvasPointer,firstVisibleHit} from '../interaction.mjs';
 import {exhibits} from './layout.mjs';
 import {colliders as expectedColliders} from './colliders.mjs';
 import {batchStaticCharacter,fitCharacter,disposeGraph} from './character.mjs';
+import {createLabCamera,poseLabCamera} from './camera.mjs';
 export {exhibits} from './layout.mjs';
 
 export function createRoom(canvas,onLost,options={}){
@@ -22,7 +23,7 @@ export function createRoom(canvas,onLost,options={}){
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFShadowMap;
   renderer.shadowMap.autoUpdate=false;renderer.shadowMap.needsUpdate=true;
   const scene=new T.Scene();scene.background=new T.Color(0x1a1d21);
-  const camera=new T.PerspectiveCamera(70,1,.04,80);camera.rotation.order='YXZ';
+  const camera=createLabCamera(T.PerspectiveCamera);
   const pmrem=new T.PMREMGenerator(renderer),environmentRoom=new RoomEnvironment();
   const environment=pmrem.fromScene(environmentRoom,.04);
   scene.environment=environment.texture;scene.environmentIntensity=.42;
@@ -134,7 +135,6 @@ export function createRoom(canvas,onLost,options={}){
   }
   // Upload shared material textures once; avoid duplicate preparation per batch.
   scene.updateMatrixWorld(true);scene.matrixWorldAutoUpdate=false;
-  camera.matrixWorldAutoUpdate=false;
   const prepared=new Set();scene.traverse(object=>{for(const material of [].concat(object.material||[]))for(const value of Object.values(material))if(value?.isTexture&&!prepared.has(value)){prepared.add(value);renderer.initTexture(value);}});
   renderer.compile(scene,camera);
   return {
@@ -146,8 +146,7 @@ export function createRoom(canvas,onLost,options={}){
       if(!lastViewport||lastViewport.width!==width||lastViewport.height!==height||lastViewport.pixelRatio!==pixelRatio){
         renderer.setPixelRatio(pixelRatio);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();lastViewport={width,height,pixelRatio};
       }
-      camera.position.set(position.x,position.eye??(position.crouch?1.12:1.62),position.z);camera.rotation.set(position.pitch,position.yaw,0);
-      camera.updateMatrixWorld(true);
+      poseLabCamera(camera,position);
       updateScreens(dt,time);loadCharacter();
       renderer.render(scene,camera);renderedFrames++;
     },

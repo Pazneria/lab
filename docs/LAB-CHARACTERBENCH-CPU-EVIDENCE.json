@@ -5,13 +5,14 @@
   "sourceHeads": {
     "labPr57": "1e04963fc6969bc77f3df2f28b30d4896a557ca2",
     "characterBenchPr58": "0b559b1085e0126b90159c8d703792c144c8d5f3",
-    "approvedSceneBenchReturnFix": "055b1f090e8d47f7a196615063fc2aa0bc2f94c1"
+    "approvedSceneBenchReturnFix": "055b1f090e8d47f7a196615063fc2aa0bc2f94c1",
+    "reconciledMain": "cde02f5f0222cac2c092a4b12ea0b26b33ffdad7"
   },
   "checks": {
     "labAndSceneBenchCases": 60,
     "characterBenchCases": 26,
     "crossRouteCases": 7,
-    "totalPassed": 93,
+    "totalPassed": 96,
     "failed": 0,
     "frozenRecordedFilesVerified": 1000,
     "publicAdmittedFilesVerified": 1146,
@@ -20,7 +21,8 @@
     "characterCopiedHashesVerified": 6,
     "sourceManifestAndCopiedEntriesUnchangedFromPr58": true,
     "sceneBenchCatalogEntrantsVotesOrBackendChanged": false,
-    "privateStudioAccessOrAudienceChanged": false
+    "privateStudioAccessOrAudienceChanged": false,
+    "actualThreeCameraCases": 3
   },
   "labExhibit": {
     "path": "lab-space/characters/ivo-renn-sol.glb",
@@ -32,12 +34,15 @@
     "rankingClaim": false
   },
   "characterScope": {
-    "canonicalPrompts": ["01", "02"],
+    "canonicalPrompts": [
+      "01",
+      "02"
+    ],
     "cpuCompatibleCopies": 6,
     "samePromptPairsPerCharacter": 3,
     "excludedMalformedRecords": 2,
     "excludedViewerAssetPaths": 0,
-    "runtimeAdmission": "pending browser/mobile/GPU review",
+    "runtimeAdmission": "all six rendered in bounded desktop Chrome; physical mobile and other GPU selection remain unverified",
     "preferences": "guarded session-only, cleared on pair changes and departure",
     "persistentPublicVotes": false,
     "globalRanking": false
@@ -46,7 +51,9 @@
     "integration": "No material findings; seven actual-route/catalog/guard/lifecycle cases pass",
     "importerViewer": "No material findings; nineteen small contract/lifecycle/app cases independently pass",
     "diagnosticsReconciliation": "No material findings; read-only, combined-pane totals, actual buffer size, CPU-only submit timing",
-    "approvedSceneReturnFix": "No material findings; fourteen return-route/navigation cases independently pass, including unrelated-path and other-origin rejection"
+    "approvedSceneReturnFix": "No material findings; fourteen return-route/navigation cases independently pass, including unrelated-path and other-origin rejection",
+    "actualCamera": "Actual r186 matrix behavior reviewed; three real camera/raycast regressions pass",
+    "recordedImages": "No material visual/layout failures apparent. Skip-to-comparison link in full-page captures may be a focus/capture artifact; source CSS places it above the viewport except while focused. Still images do not establish performance or physical mobile behavior."
   },
   "reconciliation": [
     "Source PRs combine without conflicts; canonical prompt 02 and return routes agree",
@@ -54,15 +61,19 @@
     "Read-only CharacterBench diagnostics exposed only with the labqa query flag",
     "Renderer metrics aggregate both scissored panes and distinguish CPU submission from GPU timing",
     "Capped DPR participates in the resize signature, including DPR-only changes",
-    "QA plan profiles the host derivative and never executes frozen benchmark entrants"
+    "QA plan profiles the host derivative and never executes frozen benchmark entrants",
+    "Fixed moving-camera matrix freeze while retaining static room freeze; regenerated pinned bundle and actual Three camera tests"
   ],
   "runtimeQa": {
-    "status": "held by explicit parent graphics coordination",
+    "status": "completed bounded background Chrome QA after explicit clearance; owned sessions closed and graphics slot released",
     "plan": "docs/LAB-CHARACTERBENCH-QA.md",
-    "browserOrGpuSessionStarted": false,
-    "previewServerStarted": false,
-    "rendererAndFrameMetricsMeasured": false,
-    "visualOrMobileQualityVerified": false,
+    "evidence": "docs/LAB-CHARACTERBENCH-RUNTIME-EVIDENCE.json",
+    "browserOrGpuSessionStarted": true,
+    "previewServerStarted": true,
+    "rendererAndFrameMetricsMeasured": true,
+    "recordedVisualReview": true,
+    "responsiveDesktopEmulationVerified": true,
+    "physicalMobileVerified": false,
     "githubMergeOrDeploymentPerformed": false,
     "nativeSettingsOrDriversChanged": false,
     "libraryPreviewTouched": false,

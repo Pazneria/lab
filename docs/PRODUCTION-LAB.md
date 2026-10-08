@@ -117,12 +117,22 @@ This reduces unnecessary updates without reducing the room's geometry or lights.
 Navigation uses the exact 34 generated scene colliders and a spatial index.
 Bounded CPU measurements on the user's machine: first detour/grid setup 12.46 ms;
 600 warm routes median 0.0053 ms, p95 0.3861 ms, maximum 2.0727 ms.
-These measure navigation CPU work only. **No FPS, GPU, visual-regression or
-AAA-performance claim is made.** Browser/GPU sessions remain on hold while
-separate authorized character attempts are active; parent clearance is required.
+These measure navigation CPU work only. **No AAA-performance claim is made.**
+After explicit clearance, bounded Chrome QA established a 1440x900 / DPR 1
+baseline on the automatically selected RTX 5070 Ti Laptop GPU. Active RAF
+intervals were 4.2 ms median, 16.7/16.8 ms p95/p99 with none over 25 ms across
+four 10-second samples. These are headless browser scheduling measurements,
+not presented FPS, GPU durations or an improvement versus the frozen entrant.
+Cold loading costs and remaining platform limits are recorded separately in
+[the combined runtime receipt](LAB-CHARACTERBENCH-RUNTIME-EVIDENCE.json).
 
 Independent controller and renderer/navigation reviews found no remaining
-material correctness or requirement failures. All 56 CPU regression cases pass.
+material correctness or requirement failures. The original 56 CPU cases are
+retained; the combined change now passes 96 focused cases. Runtime QA exposed a
+detached camera transform bug, fixed by keeping its matrix updates enabled while
+the static room remains frozen. Three new tests use actual pinned Three r186
+camera transforms and board intersections. Final recorded images show the room
+and stage correctly; independent image review found no material visual failure.
 
 ## Reproduction and validation
 
@@ -131,7 +141,7 @@ directory containing exact `three@0.186.1` and `esbuild@0.28.2`, then run:
 
 ```text
 node scripts/build-production-lab.cjs
-node --experimental-vm-modules --test tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs
+node --experimental-vm-modules --test tests/verify-production-camera.test.mjs tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs
 node --experimental-vm-modules --test tests/verify-walkable-lab-navigation.test.mjs tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py

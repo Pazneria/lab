@@ -6,14 +6,18 @@ Also includes the parent-approved SceneBench return-route fix
 `055b1f090e8d47f7a196615063fc2aa0bc2f94c1`, which accepts both the Lab directory
 and explicit `index.html` return paths while retaining origin/path validation.
 The isolated branch is `integration-lab-characterbench`; its checkout is the
-task-10 `combined-lab` directory. No browser, GPU session or preview server has
-been started. GitHub merge and deployment remain held by parent coordination.
+task-10 `combined-lab` directory. Bounded background Chrome QA was completed on
+2026-10-08 after explicit graphics clearance. All owned browser/server sessions
+are closed. GitHub merge and deployment remain held by parent coordination.
+The resolved SceneBench fix also arrived through main commit
+`cde02f5f0222cac2c092a4b12ea0b26b33ffdad7`, merged into this branch before QA.
 
 ## CPU evidence
 
 The existing focused suites pass together: 60 Lab/SceneBench cases (including
-four approved return-route regressions) and 26 CharacterBench cases. Seven
-cross-route cases bring the total to **93 passed**.
+four approved return-route regressions), three actual Three r186 camera cases,
+and 26 CharacterBench cases. Seven cross-route cases bring the total to
+**96 passed**.
 Independent integration and importer/viewer reviews found no material issues;
 the small diagnostics reconciliation was separately reviewed. These checks cover
 input/focus/return lifecycle, geometry/collision
@@ -23,17 +27,63 @@ All six character copies pass the current static compatibility profile unchanged
 The recorded frozen SceneBench file count is 1,000; admitted publication count
 is 1,146. Voting parity remains 89 records with catalog SHA-256
 `6dba31abbabc2ba3f63b2db19df878aca5cc61936b01d0179e0198278ee1cbe3`.
-Browser/mobile/GPU compatibility and appearance remain pending.
+All six files rendered in the bounded desktop browser. Responsive stacking was
+checked at 390x844; physical phone, Intel-selected user Chrome, live service
+submission and complete inspection of every possible pair remain unverified.
 See [combined CPU receipt](LAB-CHARACTERBENCH-CPU-EVIDENCE.json).
+Measured results and limitations are in
+[the runtime receipt](LAB-CHARACTERBENCH-RUNTIME-EVIDENCE.json).
 
 The exact focused combined command, from the checkout root, is:
 
 ```text
-node --experimental-vm-modules --test tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs tests/verify-walkable-lab-navigation.test.mjs tests/verify-walkable-return-route.test.mjs tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs tests/verify-lab-characterbench-integration.test.mjs character-bench/tests/app.test.mjs character-bench/tests/catalog.test.mjs character-bench/tests/contracts.test.mjs character-bench/tests/lifecycle.test.mjs
+node --experimental-vm-modules --test tests/verify-production-camera.test.mjs tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs tests/verify-walkable-lab-navigation.test.mjs tests/verify-walkable-return-route.test.mjs tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs tests/verify-lab-characterbench-integration.test.mjs character-bench/tests/app.test.mjs character-bench/tests/catalog.test.mjs character-bench/tests/contracts.test.mjs character-bench/tests/lifecycle.test.mjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py
 node tests/verify-voting-catalog-parity.cjs
 ```
+
+Set `LAB_PRODUCTION_DEPENDENCIES` to a developer `node_modules` with exact
+`three@0.186.1` before the camera suite; the production build additionally needs
+`esbuild@0.28.2`. The new camera cases create real Three cameras and raycasters
+without a renderer. They protect against freezing the detached moving camera
+when the static room matrices are frozen.
+
+## Completed bounded runtime checks
+
+Chrome 154.0.8037.98 selected the RTX 5070 Ti Laptop GPU automatically. At an
+actual 1440x900 drawing buffer, DPR 1, four 10-second active look samples gave
+4.2 ms median and 16.7/16.8 ms p95/p99 RAF intervals, with no interval over
+25 ms and no active long task. These are headless browser scheduling intervals,
+not direct GPU durations or presented-display FPS. They establish a derivative
+baseline; no frozen entrant was executed for a before/after comparison.
+
+Runtime QA caught and fixed a host camera bug: setting
+`matrixWorldAutoUpdate=false` on the moving r186 camera left its world/inverse
+matrices at the origin despite changing its position. Static room matrices stay
+frozen, while the camera now updates through a small tested shared helper.
+Final entrance/stage images show the preserved room, cameras and actual Ivo.
+
+Movement, sprint, crouch, reset, Explore capture, Help pause, actual mesh picking,
+same-tab CharacterBench launch, deferred comparison loading, all six GLB imports,
+keyboard inspection, camera-link control, surface modes, light/grid/reset and
+mobile stacking passed. SceneBench used controlled local scene fixtures with
+the real navigation receipt module: A-only return kept choices locked; B return
+unlocked the same pair; the public leaderboard opened using mocked read data.
+No scene entrant code ran and no vote/grade request was submitted.
+
+Cold initialization still produced 1,166 ms and 557 ms long tasks, plus 53 ms;
+first character/surface shader submission can also exceed one display interval.
+These costs are disclosed separately from steady exploration. Physical mobile,
+user-browser GPU selection, pinch gestures, reduced-motion hardware behavior,
+context loss, all pair combinations and live service writes remain outside this
+bounded runtime certification. Preference/reveal guards pass CPU tests;
+automatic approval review rejected browser preference-click QA because it could
+not verify interception, so that check was omitted.
+
+Owned ports 51841, 61753 and 56888 and harness processes were verified absent at
+23:40:28 UTC. The Library preview, drivers, settings, private Studio and all
+entrant workspaces were untouched. The exclusive graphics slot is released.
 
 ## Routes and assets
 
