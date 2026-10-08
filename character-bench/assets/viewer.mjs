@@ -36,6 +36,8 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
   try {renderer=new T.WebGLRenderer({canvas,antialias:true,powerPreference:'low-power'});}
   catch(error){canvas.remove();throw Error('3D inspection is unavailable on this device. The prompt and admission records remain accessible.');}
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1;
+  // Count both scissored panes as one host draw instead of only the last pane.
+  renderer.info.autoReset=false;
   renderer.setClearColor('#e9edeb');renderer.setScissorTest(true);
   const environmentScene=new T.Scene();environmentScene.background=new T.Color('#bfc4c2');
   const room=new T.Mesh(new T.BoxGeometry(12,12,12),new T.MeshBasicMaterial({color:'#c9cecb',side:T.BackSide}));environmentScene.add(room);
@@ -50,7 +52,7 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
   finally {pmrem?.dispose();disposeObject(environmentScene);}
   const neutral=new T.MeshStandardMaterial({color:'#c9cfcb',roughness:.72,metalness:0,side:T.DoubleSide});
   const wire=new T.MeshBasicMaterial({color:'#25463c',wireframe:true,side:T.DoubleSide});
-  let mode='pbr',lightAngle=35,gridVisible=true,frame=0,closed=false,lastSize='';
+  let mode='pbr',lightAngle=35,gridVisible=true,frame=0,closed=false,lastSize='',renderedFrames=0,lastDrawCpuMilliseconds=0;
   const panes=surfaces.map(surface=>{
     const scene=new T.Scene();scene.background=new T.Color('#e9edeb');scene.environment=environment.texture;
     scene.add(new T.HemisphereLight('#ffffff','#b9c3bd',1.5));
@@ -109,9 +111,11 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
   function draw() {
     frame=0;if(closed||document.hidden)return;
     try {
+      const started=performance.now();
       const parent=mount.getBoundingClientRect(),width=Math.max(1,Math.round(parent.width)),height=Math.max(1,Math.round(parent.height));
-      const size=width+'x'+height,ratio=Math.min(devicePixelRatio||1,1.25,Math.sqrt(1800000/(width*height)));
+      const ratio=Math.min(devicePixelRatio||1,1.25,Math.sqrt(1800000/(width*height))),size=width+'x'+height+'@'+ratio;
       if(lastSize!==size){renderer.setPixelRatio(ratio);renderer.setSize(width,height,false);lastSize=size;}
+      renderer.info.reset();
       renderer.setScissorTest(false);renderer.setViewport(0,0,width,height);renderer.clear();renderer.setScissorTest(true);
       const snapshot=state.snapshot;
       panes.forEach((pane,index)=>{
@@ -124,6 +128,7 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
         const angle=lightAngle*Math.PI/180;pane.key.position.set(Math.sin(angle)*4,3,Math.cos(angle)*4);
         pane.grid.visible=gridVisible;renderer.render(pane.scene,pane.camera);
       });
+      renderedFrames++;lastDrawCpuMilliseconds=performance.now()-started;
     }catch(error){onFailure('The 3D renderer stopped. Retry inspection or continue with the source records.');dispose();}
   }
   function invalidate(){if(!closed&&!frame&&!document.hidden)frame=requestAnimationFrame(draw);}
@@ -145,6 +150,12 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
     resize.disconnect();document.removeEventListener('visibilitychange',visibility);canvas.removeEventListener('webglcontextlost',contextLost);
     slots.forEach(s=>s.close());panes.forEach(p=>disposeObject(p.grid));environment.dispose();neutral.dispose();wire.dispose();renderer.renderLists.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   invalidate();
-  return {loadPair,clear,dispose,invalidate,setMode(value){if(['pbr','clay','wire'].includes(value)){mode=value;panes.forEach(materialMode);invalidate();}},
+  return {loadPair,clear,dispose,invalidate,
+    get diagnostics(){return {threeRevision:T.REVISION,closed,pendingFrame:!!frame,renderedFrames,lastDrawCpuMilliseconds,
+      drawingBuffer:{width:canvas.width,height:canvas.height},pixelRatio:renderer.getPixelRatio(),
+      drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,
+      geometryCount:renderer.info.memory.geometries,textureCount:renderer.info.memory.textures,
+      paneReady:panes.map(p=>!!p.object)};},
+    setMode(value){if(['pbr','clay','wire'].includes(value)){mode=value;panes.forEach(materialMode);invalidate();}},
     setLight(value){lightAngle=Number(value);invalidate();},setGrid(value){gridVisible=!!value;invalidate();}};
 }

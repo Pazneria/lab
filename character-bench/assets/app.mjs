@@ -149,6 +149,10 @@ function depart(){bootRequest++;loading=false;loadAbort?.abort();engine?.dispose
 window.addEventListener('pagehide',depart);
 document.addEventListener('visibilitychange',()=>{if(document.hidden){bootRequest++;loading=false;sides.forEach((_,i)=>message(i,'paused','Inspection paused while this tab was hidden. Reload both frozen attempts to continue.'));}});
 window.addEventListener('popstate',()=>{if(manifest){const query=new URL(location.href).searchParams.get('prompt');selectPrompt(query||manifest.prompts[0]?.id,{updateUrl:false});}});
+// Read-only host measurements for a cleared QA session; no preference/admission API.
+if(new URL(location.href).searchParams.has('labqa'))Object.defineProperty(window,'__characterBench',{
+  configurable:true,value:Object.freeze({get diagnostics(){return engine?.diagnostics??null;}})
+});
 async function boot(){
   try {
     const response=await fetch(new URL('../data/admission.json',import.meta.url),{credentials:'same-origin',cache:'no-cache',redirect:'error'});

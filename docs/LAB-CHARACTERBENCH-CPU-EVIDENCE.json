@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-08",
+  "branch": "integration-lab-characterbench",
+  "baseCommit": "17170c4f6210f2a93245e6a6cb94adcb1c6c0335",
+  "sourceHeads": {
+    "labPr57": "1e04963fc6969bc77f3df2f28b30d4896a557ca2",
+    "characterBenchPr58": "0b559b1085e0126b90159c8d703792c144c8d5f3"
+  },
+  "checks": {
+    "labAndSceneBenchCases": 56,
+    "characterBenchCases": 26,
+    "crossRouteCases": 7,
+    "totalPassed": 89,
+    "failed": 0,
+    "frozenRecordedFilesVerified": 1000,
+    "publicAdmittedFilesVerified": 1146,
+    "votingCatalogRecords": 89,
+    "votingCatalogHash": "6dba31abbabc2ba3f63b2db19df878aca5cc61936b01d0179e0198278ee1cbe3",
+    "characterCopiedHashesVerified": 6,
+    "sourceManifestAndCopiedEntriesUnchangedFromPr58": true,
+    "sceneBenchCatalogEntrantsVotesOrBackendChanged": false,
+    "privateStudioAccessOrAudienceChanged": false
+  },
+  "labExhibit": {
+    "path": "lab-space/characters/ivo-renn-sol.glb",
+    "comparisonCopy": "character-bench/entries/entry-02-01.glb",
+    "identicalBytes": true,
+    "sha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1",
+    "bytes": 6629216,
+    "characterPrompt": "02",
+    "rankingClaim": false
+  },
+  "characterScope": {
+    "canonicalPrompts": ["01", "02"],
+    "cpuCompatibleCopies": 6,
+    "samePromptPairsPerCharacter": 3,
+    "excludedMalformedRecords": 2,
+    "excludedViewerAssetPaths": 0,
+    "runtimeAdmission": "pending browser/mobile/GPU review",
+    "preferences": "guarded session-only, cleared on pair changes and departure",
+    "persistentPublicVotes": false,
+    "globalRanking": false
+  },
+  "independentReviews": {
+    "integration": "No material findings; seven actual-route/catalog/guard/lifecycle cases pass",
+    "importerViewer": "No material findings; nineteen small contract/lifecycle/app cases independently pass",
+    "diagnosticsReconciliation": "No material findings; read-only, combined-pane totals, actual buffer size, CPU-only submit timing"
+  },
+  "reconciliation": [
+    "Source PRs combine without conflicts; canonical prompt 02 and return routes agree",
+    "Read-only CharacterBench diagnostics exposed only with the labqa query flag",
+    "Renderer metrics aggregate both scissored panes and distinguish CPU submission from GPU timing",
+    "Capped DPR participates in the resize signature, including DPR-only changes",
+    "QA plan profiles the host derivative and never executes frozen benchmark entrants"
+  ],
+  "runtimeQa": {
+    "status": "held by explicit parent graphics coordination",
+    "plan": "docs/LAB-CHARACTERBENCH-QA.md",
+    "browserOrGpuSessionStarted": false,
+    "previewServerStarted": false,
+    "rendererAndFrameMetricsMeasured": false,
+    "visualOrMobileQualityVerified": false,
+    "githubMergeOrDeploymentPerformed": false,
+    "nativeSettingsOrDriversChanged": false,
+    "libraryPreviewTouched": false,
+    "activeEntrantsInspectedOrContacted": false
+  }
+}

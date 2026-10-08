@@ -147,9 +147,14 @@ room and are not evidence for this derivative.
 After clearance, visual QA must cover entrance, stage/camera clearance, character
 silhouette, north-wall previews/buttons/letterboxing and occlusion, alcoves,
 desktop/touch/fallback, mouse capture, resizing, reduced motion and both return
-flows. Compare original and derivative under identical renderer, resolution,
-camera positions, warm-up and sample duration; record median/p95/p99 frame times,
-draw calls, triangles, actual renderer and drawing-buffer size. Preserve the
+flows. Establish a baseline for the prepared host derivative, then compare any
+subsequent optimization under identical renderer, resolution, camera positions,
+warm-up and sample duration. Frozen benchmark entrants are not executed for this
+QA. Record median/p95/p99 frame times, draw calls, triangles, actual renderer and
+drawing-buffer size. Preserve the
 user's driver/settings and Library preview process. Close only owned test
 browser/server processes. Publication must verify the integrated commit,
 successful Pages deployment and exact served assets.
+
+The combined Lab/CharacterBench clearance checklist and exact public asset paths
+are in [LAB-CHARACTERBENCH-QA.md](LAB-CHARACTERBENCH-QA.md).
