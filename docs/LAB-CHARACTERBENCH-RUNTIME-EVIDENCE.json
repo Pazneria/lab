@@ -1,0 +1,513 @@
+{
+  "date": "2026-10-08",
+  "branch": "integration-lab-characterbench",
+  "testedBaseCommit": "b32236fa7b37d502a028d770b60fae86edb4a58e",
+  "reconciledMain": "cde02f5f0222cac2c092a4b12ea0b26b33ffdad7",
+  "testedPatch": "camera.mjs helper, room-source call sites, regenerated production-room bundle, real Three camera regression tests",
+  "testedCodeHashes": {
+    "lab-space/assets/claude11/camera.mjs": "3a069853135ef6ee428592d8202993d14dcae2ee8020299a08c53ce2f95474d7",
+    "lab-space/assets/claude11/room-source.mjs": "b6ee609ccd35442dd392e8d1525ff70dbee95ec4e4feb3758615cae71f237acf",
+    "lab-space/assets/production-room.mjs": "3ee94a6022b5d2ff859aacabcd7b377f978757127268dd66c74ffaf6a8ff6aee",
+    "lab-space/assets/production-space.js": "883a046abc919a3adc8d7b836bafbee0c97760167d7feaf1e82705d282e3ef45",
+    "character-bench/assets/app.mjs": "42cb091b368fa9067b5aae799b870dabd88a063e72793d2c0869b6fed2474588",
+    "character-bench/assets/viewer.mjs": "0c49d6545d3cf8232e744254547a55adbd07c10893ad7c412297badd5f10a38d"
+  },
+  "browser": {
+    "name": "owned background headless Chrome",
+    "version": "154.0.8037.98",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "webgl": {
+      "vendor": "WebKit",
+      "renderer": "WebKit WebGL",
+      "unmaskedVendor": "Google Inc. (NVIDIA)",
+      "unmaskedRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti Laptop GPU (0x00002F58) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    },
+    "settingsOrDriverChanges": false,
+    "isolatedMachine": false
+  },
+  "lab": {
+    "threeRevision": "186",
+    "drawingBuffer": {
+      "width": 1440,
+      "height": 900,
+      "pixelRatio": 1
+    },
+    "shadowSize": 4096,
+    "sampling": "Four 10-second samples in one browser; teleport once per pose, active Explore pointer capture and smooth repeatable mouse movement through production input handler. Steady dt and visible screen updates retained. Stage repeated under same conditions.",
+    "interpretation": "RAF scheduling intervals in a headless browser. Neither GPU execution time nor presented-display FPS. Baseline of the derivative after camera repair; no frozen entrant execution or measured pre/post optimization claim.",
+    "samples": [
+      {
+        "pose": "entrance",
+        "sampleCount": 1794,
+        "medianMs": 4.19999999999709,
+        "p95Ms": 16.69999999999709,
+        "p99Ms": 16.80000000000291,
+        "intervalsOver25Ms": 0,
+        "renderedFrames": 1795,
+        "textureUpdates": 226,
+        "drawCalls": 147,
+        "triangles": 306080,
+        "geometryCount": 163,
+        "textureCount": 42,
+        "activeLongTasks": []
+      },
+      {
+        "pose": "stage",
+        "sampleCount": 1779,
+        "medianMs": 4.19999999999709,
+        "p95Ms": 16.69999999999709,
+        "p99Ms": 16.80000000000291,
+        "intervalsOver25Ms": 0,
+        "renderedFrames": 1780,
+        "textureUpdates": 157,
+        "drawCalls": 128,
+        "triangles": 300664,
+        "geometryCount": 163,
+        "textureCount": 42,
+        "activeLongTasks": []
+      },
+      {
+        "pose": "scenebench",
+        "sampleCount": 1767,
+        "medianMs": 4.19999999999709,
+        "p95Ms": 16.69999999999709,
+        "p99Ms": 16.80000000000291,
+        "intervalsOver25Ms": 0,
+        "renderedFrames": 1768,
+        "textureUpdates": 0,
+        "drawCalls": 26,
+        "triangles": 6604,
+        "geometryCount": 163,
+        "textureCount": 42,
+        "activeLongTasks": []
+      },
+      {
+        "pose": "stage-repeat",
+        "sampleCount": 1638,
+        "medianMs": 4.19999999999709,
+        "p95Ms": 16.70000000001164,
+        "p99Ms": 16.80000000000291,
+        "intervalsOver25Ms": 0,
+        "renderedFrames": 1639,
+        "textureUpdates": 157,
+        "drawCalls": 128,
+        "triangles": 300664,
+        "geometryCount": 163,
+        "textureCount": 42,
+        "activeLongTasks": []
+      }
+    ],
+    "coldLongTasksMs": [
+      1166,
+      557,
+      53
+    ],
+    "coldLimit": "Observed fixed-camera cold initialization still has synchronous construction/shader preparation costs. These are separate from warmed exploration; no startup latency improvement claimed.",
+    "characterBatch": {
+      "sourceMeshes": 322,
+      "displayMeshes": 29,
+      "triangles": 250542,
+      "vertices": 132526
+    },
+    "controls": {
+      "walked": {
+        "x": 0,
+        "z": 5.618320000000018,
+        "yaw": 0,
+        "pitch": -0.04,
+        "eye": 1.62
+      },
+      "crouched": {
+        "x": 0,
+        "z": 5.618320000000018,
+        "yaw": 0,
+        "pitch": -0.04,
+        "eye": 1.12,
+        "crouch": true
+      },
+      "helpStopped": true,
+      "position": {
+        "x": 2.3,
+        "z": 3.05,
+        "yaw": 0.56,
+        "pitch": -0.08,
+        "eye": 1.62,
+        "vx": 0,
+        "vz": 0
+      },
+      "picks": [
+        {
+          "x": 720,
+          "y": 380,
+          "target": {
+            "destination": "character"
+          }
+        },
+        {
+          "x": 720,
+          "y": 420,
+          "target": {
+            "destination": "character"
+          }
+        },
+        {
+          "x": 720,
+          "y": 450,
+          "target": {
+            "destination": "character"
+          }
+        },
+        {
+          "x": 720,
+          "y": 480,
+          "target": {
+            "point": {
+              "x": -3.9933193802432996,
+              "z": -6.987999916076659
+            },
+            "approach": true
+          }
+        }
+      ]
+    },
+    "physicalCharacterTarget": {
+      "clickedY": 380
+    },
+    "preComparisonLoad": {
+      "url": "http://127.0.0.1:61753/lab/character-bench/?prompt=02",
+      "canvasCount": 0,
+      "prompt": "02",
+      "loadEnabled": true,
+      "blind": [
+        "Attempt A",
+        "Attempt B"
+      ]
+    }
+  },
+  "characterBench": {
+    "threeRevision": "180",
+    "allSixRendered": true,
+    "loadedAssets": [
+      "entry-02-01.glb",
+      "entry-02-02.glb",
+      "entry-02-04.glb",
+      "entry-01-02.glb",
+      "entry-01-04.glb",
+      "entry-01-01.glb"
+    ],
+    "fourRandomPairLoads": [
+      {
+        "prompt": "02",
+        "assets": [
+          "entry-02-01.glb",
+          "entry-02-02.glb"
+        ],
+        "blind": [
+          "Attempt A",
+          "Attempt B"
+        ],
+        "loadMs": 799.7000000029802,
+        "diagnostics": {
+          "threeRevision": "180",
+          "closed": false,
+          "pendingFrame": false,
+          "renderedFrames": 7,
+          "lastDrawCpuMilliseconds": 5.199999995529652,
+          "drawingBuffer": {
+            "width": 1360,
+            "height": 709
+          },
+          "pixelRatio": 1,
+          "drawCalls": 580,
+          "triangles": 419406,
+          "geometryCount": 580,
+          "textureCount": 1,
+          "paneReady": [
+            true,
+            true
+          ]
+        },
+        "revealHidden": true,
+        "voteDisabled": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "prompt": "02",
+        "assets": [
+          "entry-02-01.glb",
+          "entry-02-02.glb",
+          "entry-02-04.glb"
+        ],
+        "blind": [
+          "Attempt A",
+          "Attempt B"
+        ],
+        "loadMs": 694.1999999955297,
+        "diagnostics": {
+          "threeRevision": "180",
+          "closed": false,
+          "pendingFrame": false,
+          "renderedFrames": 10,
+          "lastDrawCpuMilliseconds": 92.10000000149012,
+          "drawingBuffer": {
+            "width": 1360,
+            "height": 709
+          },
+          "pixelRatio": 1,
+          "drawCalls": 341,
+          "triangles": 1443482,
+          "geometryCount": 341,
+          "textureCount": 1,
+          "paneReady": [
+            true,
+            true
+          ]
+        },
+        "revealHidden": true,
+        "voteDisabled": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "prompt": "01",
+        "assets": [
+          "entry-01-02.glb",
+          "entry-01-04.glb"
+        ],
+        "blind": [
+          "Attempt A",
+          "Attempt B"
+        ],
+        "loadMs": 736.7000000029802,
+        "diagnostics": {
+          "threeRevision": "180",
+          "closed": false,
+          "pendingFrame": false,
+          "renderedFrames": 13,
+          "lastDrawCpuMilliseconds": 61.69999999552965,
+          "drawingBuffer": {
+            "width": 1360,
+            "height": 709
+          },
+          "pixelRatio": 1,
+          "drawCalls": 196,
+          "triangles": 1304165,
+          "geometryCount": 196,
+          "textureCount": 1,
+          "paneReady": [
+            true,
+            true
+          ]
+        },
+        "revealHidden": true,
+        "voteDisabled": [
+          false,
+          false,
+          false
+        ]
+      },
+      {
+        "prompt": "01",
+        "assets": [
+          "entry-01-02.glb",
+          "entry-01-04.glb",
+          "entry-01-01.glb"
+        ],
+        "blind": [
+          "Attempt A",
+          "Attempt B"
+        ],
+        "loadMs": 691.6999999955297,
+        "diagnostics": {
+          "threeRevision": "180",
+          "closed": false,
+          "pendingFrame": false,
+          "renderedFrames": 16,
+          "lastDrawCpuMilliseconds": 10.899999998509884,
+          "drawingBuffer": {
+            "width": 1360,
+            "height": 709
+          },
+          "pixelRatio": 1,
+          "drawCalls": 80,
+          "triangles": 2230334,
+          "geometryCount": 80,
+          "textureCount": 1,
+          "paneReady": [
+            true,
+            true
+          ]
+        },
+        "revealHidden": true,
+        "voteDisabled": [
+          false,
+          false,
+          false
+        ]
+      }
+    ],
+    "loadTimingLimit": "Recorded loop durations include 400 ms deliberate settling after readiness; they are not isolated download/parse/shader timings.",
+    "readinessAndBlindLabels": "Both current panes ready; labels still Attempt A/B and reveal hidden. Guarded preference buttons enabled only after readiness.",
+    "controls": {
+      "clay": {
+        "threeRevision": "180",
+        "closed": false,
+        "pendingFrame": false,
+        "renderedFrames": 17,
+        "lastDrawCpuMilliseconds": 71.70000000298023,
+        "drawingBuffer": {
+          "width": 1360,
+          "height": 709
+        },
+        "pixelRatio": 1,
+        "drawCalls": 80,
+        "triangles": 2230334,
+        "geometryCount": 80,
+        "textureCount": 1,
+        "paneReady": [
+          true,
+          true
+        ]
+      },
+      "camerasLinked": "false",
+      "grid": "false",
+      "light": "-45°",
+      "diagnostics": {
+        "threeRevision": "180",
+        "closed": false,
+        "pendingFrame": false,
+        "renderedFrames": 20,
+        "lastDrawCpuMilliseconds": 0.6000000014901161,
+        "drawingBuffer": {
+          "width": 1360,
+          "height": 709
+        },
+        "pixelRatio": 1,
+        "drawCalls": 78,
+        "triangles": 2230334,
+        "geometryCount": 80,
+        "textureCount": 1,
+        "paneReady": [
+          true,
+          true
+        ]
+      },
+      "overflow": false
+    },
+    "responsive": {
+      "overflow": false,
+      "panes": [
+        {
+          "x": 19,
+          "y": 574.421875,
+          "width": 352,
+          "height": 360
+        },
+        {
+          "x": 19,
+          "y": 1069.421875,
+          "width": 352,
+          "height": 360
+        }
+      ],
+      "diagnostics": {
+        "threeRevision": "180",
+        "closed": false,
+        "pendingFrame": false,
+        "renderedFrames": 21,
+        "lastDrawCpuMilliseconds": 6,
+        "drawingBuffer": {
+          "width": 354,
+          "height": 990
+        },
+        "pixelRatio": 1,
+        "drawCalls": 78,
+        "triangles": 2230334,
+        "geometryCount": 80,
+        "textureCount": 1,
+        "paneReady": [
+          true,
+          true
+        ]
+      }
+    },
+    "return": {
+      "url": "http://127.0.0.1:61753/lab/lab-space/",
+      "historyState": null,
+      "canvas": true,
+      "oldCharacterCanvas": false
+    },
+    "submissionTimingLimit": "The CPU submission samples include first-use shader/material costs (up to 92.1 ms in these draws). They are not GPU durations or continuous viewer frame statistics.",
+    "browserPreferenceClicked": false,
+    "preferenceGuardCpuTested": true,
+    "approvalReview": "Browser preference-click QA rejected because reviewer could not verify interception. No workaround used; rendering/navigation QA continued without choices."
+  },
+  "sceneBench": {
+    "entrantsExecuted": false,
+    "fixture": "Local controlled scene document imports the real navigation receipt module. It produces ready receipts and history-back return without entrant code.",
+    "explicitIndexReturnVerified": true,
+    "aOnlyChoicesDisabled": [
+      true,
+      true,
+      true
+    ],
+    "bothReturnedChoicesDisabled": [
+      false,
+      false,
+      false
+    ],
+    "samePairPreserved": true,
+    "publicLeaderboardOpened": true,
+    "leaderboardRead": "Mocked external read response; live leaderboard contents not certified."
+  },
+  "consoleAndNetwork": {
+    "firstSessionErrors": [],
+    "navigationSessionErrors": [],
+    "writeRequestsIntercepted": 0,
+    "externalRequestsBlockedOrMocked": true,
+    "liveWrites": 0
+  },
+  "visualReview": {
+    "recordedImages": [
+      "lab-camera-fixed-entrance.png",
+      "lab-fixed-stage.png",
+      "character-mara-desktop.png",
+      "character-mara-mobile.png"
+    ],
+    "independentReview": "No material visual/layout failures apparent. Skip-to-comparison link in full-page captures may be a focus/capture artifact; source CSS places it above the viewport except while focused. Still images do not establish performance or physical mobile behavior."
+  },
+  "cleanup": {
+    "checkedAtUtc": "2026-10-08T23:40:28.3112605Z",
+    "listeningOwnedPorts": [],
+    "remainingHarnessPids": [],
+    "libraryPreviewTouched": false
+  },
+  "graphicsSlotReleased": true,
+  "limits": [
+    "User Chrome selecting Intel not tested or changed",
+    "Physical phones and pinch gestures not tested",
+    "No direct GPU timer, presented FPS or before/after FPS improvement",
+    "Cold construction and first-use shader costs remain disclosed",
+    "All six assets rendered across four pairs, not exhaustive inspection of all six pair combinations",
+    "Reduced-motion and context-loss runtime scenarios not covered in this bounded session; focus/hidden/retry/disposal covered by CPU tests",
+    "Browser preference/reveal clicks omitted after approval-review rejection; guarded behavior covered by CPU tests",
+    "Live votes/grades/private access never changed",
+    "Publication held for parent release coordination; no live commit or served-asset claim"
+  ],
+  "publication": {
+    "githubMergePerformed": false,
+    "deploymentPerformed": false,
+    "privateStudioChanged": false,
+    "frozenEntrantsChanged": false,
+    "libraryPreviewTouched": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "asset": "ivo-renn-sol.glb",
+  "character": "Ivo Renn",
+  "purpose": "Single character exhibit on the Lab camera-ring stage; no benchmark result or winner is implied.",
+  "ownership": "Procedurally generated for Jordan's own CharacterBench prompt; original generation handoff and source inspected. No third-party model, texture or external resource is included.",
+  "completedAt": "2026-10-06T21:20:51.526Z",
+  "requestedConfiguration": "gpt-6.1-sol / XHIGH",
+  "servingConfigurationIndependentlyVerified": false,
+  "sha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1",
+  "bytes": 6629216,
+  "originalUnchanged": true,
+  "format": "Self-contained glTF 2.0 GLB; +Y up, +Z front, static A-pose",
+  "sourceMeshCount": 322,
+  "sourceMaterialCount": 29,
+  "sourceTriangleCount": 250542,
+  "textures": "None. Embedded PBR material values and facial vertex color.",
+  "limits": "No skeleton, skin weights or animations. Intentional overlapping procedural assemblies. The character is fitted and batched at runtime for this exhibit; the preserved GLB bytes are unchanged.",
+  "access": "Owner explicitly requested this owned character in the public Lab. Private Studio access, responses and data remain outside this publication."
+}

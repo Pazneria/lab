@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-08",
+  "baseCommit": "17170c4f6210f2a93245e6a6cb94adcb1c6c0335",
+  "scope": "CPU-only production implementation, source review, geometry, controller/navigation and benchmark preservation checks",
+  "originalScene": {
+    "entry": "applied-sensing-opus",
+    "frozenTree": "4c3426259714641da3a54ba9ed80b808823475b0",
+    "appSha256": "9a5cf5ced7004d20572ffef290145ab74fd268bf8675b57944d1d8d12da141e2",
+    "htmlSha256": "5d88c6bae5937bf7705afc88f0efd07d92bf4310c72969d200edf7aa8299c54e",
+    "unchanged": true
+  },
+  "character": {
+    "name": "Ivo Renn",
+    "originalSha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1",
+    "bytes": 6629216,
+    "originalMeshes": 322,
+    "displayMeshes": 29,
+    "materialsPreserved": 29,
+    "trianglesPreserved": 250542,
+    "indexedVerticesPreserved": 132526,
+    "displayY": [0.66, 2.01],
+    "projectedBoundsSampleRays": 121,
+    "actualSilhouetteHits": 47,
+    "emptySpaceMisses": 74,
+    "originalFileUnchanged": true,
+    "externalResources": []
+  },
+  "checks": {
+    "controllerCases": 22,
+    "navigationCases": 8,
+    "retainedSceneBenchRegressionCases": 26,
+    "independentReview": "Controller and renderer/navigation reviews completed with no remaining material findings",
+    "allPassed": true,
+    "frozenRecordedFilesVerified": 1000,
+    "publicAdmittedFilesVerified": 1146,
+    "votingCatalogRecords": 89,
+    "votingCatalogHash": "6dba31abbabc2ba3f63b2db19df878aca5cc61936b01d0179e0198278ee1cbe3"
+  },
+  "navigationCpuOnly": {
+    "exactColliders": 34,
+    "movementStepsChecked": 8000,
+    "coldFirstRouteMilliseconds": 12.46,
+    "warmRouteSamples": 600,
+    "warmMedianMilliseconds": 0.0053,
+    "warmP95Milliseconds": 0.3861,
+    "warmMaxMilliseconds": 2.0727
+  },
+  "runtimeQa": {
+    "status": "held",
+    "reason": "Explicit parent coordination while authorized character attempts are active",
+    "browserStarted": false,
+    "gpuSessionStarted": false,
+    "framesPerSecondMeasured": false,
+    "visualRegressionVerified": false,
+    "rendererVerified": false,
+    "nativeSettingsChanged": false
+  },
+  "integration": {
+    "labRoute": "/lab/lab-space/",
+    "characterComparisonRoute": "../character-bench/?prompt=02",
+    "characterComparisonOwner": "Separate CharacterBench integration task",
+    "requiresCoordinatedRouteAndRuntimeQaBeforeMerge": true,
+    "privateStudioAudienceChanged": false,
+    "benchmarkCatalogOrBackendChanged": false
+  },
+  "cleanup": {
+    "ownedBrowsersServersWatchersStarted": 0,
+    "lingeringTaskDeveloperProcesses": 0,
+    "libraryPreviewTouched": false,
+    "activeEntrantsInspected": false
+  }
+}
