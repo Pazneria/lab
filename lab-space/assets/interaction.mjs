@@ -2,14 +2,13 @@
 export const comparisonLayout=Object.freeze({
   width:1280,height:600,
   previews:Object.freeze([{x:40,y:105,width:575,height:322},{x:665,y:105,width:575,height:322}].map(Object.freeze)),
+  cards:Object.freeze([{x:40,y:105,width:575,height:400},{x:665,y:105,width:575,height:400}].map(Object.freeze)),
   buttons:Object.freeze([
     {kind:'previous',x:40,y:522,width:100,height:48,label:'←'},
     {kind:'next',x:1140,y:522,width:100,height:48,label:'Next'},
     {kind:'vote',choice:'a',x:180,y:522,width:230,height:48,label:'Prefer A'},
     {kind:'vote',choice:'tie',x:450,y:522,width:170,height:48,label:'Tie'},
     {kind:'vote',choice:'b',x:660,y:522,width:230,height:48,label:'Prefer B'},
-    {kind:'leaderboard',x:1000,y:62,width:240,height:34,label:'Leaderboard'},
-    {kind:'inspect',x:930,y:522,width:170,height:48,label:'Inspect'},
   ].map(Object.freeze)),
 });
 
@@ -22,7 +21,7 @@ export function fitPreview(bounds,width,height){
   const scale=Math.min(bounds.width/width,bounds.height/height),w=width*scale,h=height*scale;
   return {x:bounds.x+(bounds.width-w)/2,y:bounds.y+(bounds.height-h)/2,width:w,height:h};
 }
-export function comparisonTargetAt(point,previews=comparisonLayout.previews){
+export function comparisonTargetAt(point,previews=comparisonLayout.cards){
   for(let slot=0;slot<previews.length;slot++)if(containsPoint(previews[slot],point))return {kind:'entry',slot};
   return comparisonLayout.buttons.find(bounds=>containsPoint(bounds,point))||null;
 }

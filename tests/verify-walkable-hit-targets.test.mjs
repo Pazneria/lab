@@ -8,9 +8,9 @@ import * as T from '../lab-space/assets/vendor/three.module.min.js';
 import * as input from '../lab-space/assets/interaction.mjs';
 const {comparisonLayout,comparisonTargetAt,fitPreview,canvasPointer,firstVisibleHit,clickSlop,movedBeyondClick,intentionalClick}=input;
 
-test('only the drawn preview or button bounds are interactive',()=>{
-  const previews=comparisonLayout.previews.map(rect=>fitPreview(rect,960,600));
-  for(const [x,y] of [[20,200],[40,200],[614,200],[640,200],[666,200],[1241,200],[200,104],[200,427],[200,461],[900,491],[145,545],[420,545],[640,545],[910,545],[1120,545],[200,580],[200,82]])
+test('only the drawn scene cards or physical action buttons are interactive',()=>{
+  const previews=comparisonLayout.cards;
+  for(const [x,y] of [[20,200],[615,200],[640,200],[1241,200],[200,104],[200,505],[145,545],[420,545],[640,545],[910,545],[1120,545],[200,580],[200,82],[1100,75],[1000,545]])
     assert.equal(comparisonTargetAt({x,y},previews),null,`${x},${y}`);
   assert.deepEqual(comparisonTargetAt({x:100,y:200},previews),{kind:'entry',slot:0});
   assert.deepEqual(comparisonTargetAt({x:800,y:200},previews),{kind:'entry',slot:1});
@@ -66,10 +66,11 @@ test('actual CPU raycast keeps visible occluders and ignores hidden geometry',()
 
 import {screenFixture} from './verify-walkable-lab-fixture.mjs';
 
-test('the whole board opens controls while scene actions and gated votes stay precise',async()=>{
+test('physical whitespace never opens a panel while whole scene cards and gated votes act directly',async()=>{
   const f=await screenFixture();assert.ok(f.api.ready);
-  for(const point of [{x:640,y:200},{x:100,y:461},{x:40,y:200},{x:420,y:540}]){assert.equal(f.api.hitTest(point).kind,'inspect');f.api.activate(point);}
-  assert.equal(f.byId('comparison-dialog').shown,true);
+  for(const point of [{x:640,y:200},{x:420,y:540},{x:1100,y:75},{x:1000,y:545}]){assert.equal(f.api.hitTest(point),null);f.api.activate(point);}
+  assert.equal(f.byId('comparison-dialog').open,false);assert.equal(f.byId('comparison-dialog').shown,undefined);
+  for(const point of [{x:100,y:461},{x:40,y:200},{x:610,y:200}])assert.equal(f.api.hitTest(point).kind,'entry');
   for(const point of [{x:-1,y:200},{x:1280,y:200},{x:200,y:600},{x:200,y:-1},{x:NaN,y:200}])assert.equal(f.api.hitTest(point),null);
   assert.equal(f.api.hitTest({x:200,y:540}),null);
   assert.equal(f.opened.length,0);
@@ -80,14 +81,13 @@ test('the whole board opens controls while scene actions and gated votes stay pr
   assert.equal(f.byId('screen-reveal').hidden,false);
   f.byId('screen-cards').children[1].children[0].listeners.click();assert.deepEqual(f.opened,['a','b','b']);await f.ready();
   f.byId('screen-controls').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);
-  const failed=await screenFixture({failedImage:true});assert.equal(failed.api.hitTest({x:100,y:200}).kind,'inspect');
-  failed.byId('screen-cards').children[0].children[0].listeners.click();assert.deepEqual(failed.opened,['a']);
+  for(const options of [{failedImage:true},{pendingImage:true}]){const failed=await screenFixture(options);assert.equal(failed.api.hitTest({x:100,y:200}).kind,'entry');failed.api.activate({x:100,y:200});assert.deepEqual(failed.opened,['a']);assert.equal(failed.byId('comparison-dialog').open,false);}
 });
 
-test('missing-preview placeholders open scenes and board whitespace opens controls',async()=>{
+test('missing-preview placeholders open scenes and board whitespace stays in the room',async()=>{
   const f=await screenFixture({placeholder:true});
   f.api.activate({x:100,y:200});await f.returnVisit();f.api.activate({x:800,y:200});await f.returnVisit();assert.deepEqual(f.opened,['a','b']);
-  assert.equal(f.api.hitTest({x:640,y:200}).kind,'inspect');assert.equal(f.api.hitTest({x:100,y:490}).kind,'inspect');
+  assert.equal(f.api.hitTest({x:640,y:200}),null);assert.equal(f.api.hitTest({x:100,y:490}).kind,'entry');assert.equal(f.byId('comparison-dialog').open,false);
 });
 
 import {createWorldsBoard} from '../lab-space/assets/worlds-board.mjs';
@@ -106,9 +106,9 @@ test('actual board geometry: all face quadrants, exact UVs, frame, outside gaps 
  assert.equal(hitAt(0,world.y).object,furniture);assert.equal(furniture.userData.worlds,undefined);assert.equal(furniture.userData.comparison,undefined);
  for(const mesh of [face,frame,furniture]){mesh.geometry.dispose();mesh.material.dispose();}
 });
-test('leaderboard works from both board and keyboard-accessible native button without a vote',async()=>{
- const f=await screenFixture();f.api.activate({x:1100,y:75});assert.equal(f.byId('screen-leaderboard').focused,true);assert.equal(f.byId('screen-leaderboard').scrolled,true);
- f.byId('screen-leaderboard-button').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);assert.deepEqual(f.opened,[]);assert.deepEqual(JSON.parse(f.storage.get('lab.walkable3d.judgments.v1')).preferences,{});
+test('leaderboard is an explicit accessible fallback and physical screen clicks cannot open its panel',async()=>{
+ const f=await screenFixture();f.api.activate({x:1100,y:75});assert.equal(f.byId('comparison-dialog').open,false);assert.equal(f.byId('screen-leaderboard').focused,undefined);
+ f.byId('screen-leaderboard-button').listeners.click();assert.equal(f.byId('comparison-dialog').shown,true);assert.equal(f.byId('screen-leaderboard').focused,true);assert.equal(f.byId('screen-leaderboard').scrolled,true);assert.deepEqual(f.opened,[]);assert.deepEqual(JSON.parse(f.storage.get('lab.walkable3d.judgments.v1')).preferences,{});
 });
 test('model reveal labels contain model names only; requested configuration is retained',async()=>{
  const f=await screenFixture();f.entries[0].requestedConfiguration='Model Zero / XHIGH (backend unknown)';f.api.activate({x:100,y:200});await f.ready();f.api.activate({x:800,y:200});await f.ready();f.api.activate({x:200,y:540});

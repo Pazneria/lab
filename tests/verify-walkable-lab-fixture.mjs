@@ -9,8 +9,8 @@ export async function moduleIn(context,path) {
   return new vm.SourceTextModule(readFileSync(url,'utf8'),{context,initializeImportMeta(meta){meta.url='https://example.test/lab/'+path;}});
 }
 export async function screenFixture({placeholder=false,failedImage=false,pendingImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false,initialPrompt=null,departurePose={x:1,z:2,yaw:.3,pitch:.1},physicalReturn=false}={}) {
-  const elements=new Map(),opened=[],images=[],events=new Map(),assigned=[];let departures=0,resumes=0,returns=0;
-  const drawing=new Proxy({},{get:()=>()=>{}});
+  const elements=new Map(),opened=[],images=[],events=new Map(),assigned=[],drawingCalls=[];let departures=0,resumes=0,returns=0;
+  const drawing=new Proxy({},{get:(target,kind)=>(...args)=>drawingCalls.push({kind,args,fillStyle:target.fillStyle,font:target.font})});
   function element(){return {dataset:{},children:[],listeners:{},hidden:false,disabled:false,checked:true,open:false,
     getContext:()=>drawing,append(...children){this.children.push(...children);},replaceChildren(...children){this.children=children;},
     setAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},close(){this.open=false;this.listeners.close?.();},showModal(){this.shown=true;this.open=true;},focus(){for(const node of elements.values())node.focused=false;this.focused=true;},scrollIntoView(){this.scrolled=true;}};}
@@ -43,5 +43,5 @@ export async function screenFixture({placeholder=false,failedImage=false,pending
     return {nav,visit};
   }
   async function returnVisit(options={}) {await sceneVisit(options);for(const listener of events.get('pageshow')||[])listener({persisted:true});}
-  return {api,byId,opened,entries,images,storage,session,choices,history,location,assigned,sceneVisit,returnVisit,events,get departures(){return departures;},get resumes(){return resumes;},get returns(){return returns;},ready:()=>returnVisit({ready:true})};
+  return {api,byId,opened,entries,images,storage,session,choices,history,location,assigned,drawingCalls,sceneVisit,returnVisit,events,get departures(){return departures;},get resumes(){return resumes;},get returns(){return returns;},ready:()=>returnVisit({ready:true})};
 }

@@ -43,8 +43,8 @@ function finishLoading(){if(roomReady)return;roomReady=true;$('lab-loading').cla
 if(handoffEntry){handoffObserver=new MutationObserver(handoffChanged);handoffObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-room-handoff']});}
 function invalidate(){dirty=true;schedule();}
 function schedule(){if(available()&&!frame)frame=requestAnimationFrame(tick);}
-function targetKey(target){if(target?.comparison)return screen.hitTest(target.comparison)?.key||'worlds';if(target?.destination)return 'station:'+target.destination;return null;}
-function status(){const kind=nearby(position);$('nearby').hidden=!kind||document.pointerLockElement===canvas;$('nearby').textContent=kind==='character'?'CharacterBench':kind==='worlds'?'Compare scenes':kind==='home'?'Exit to home':'Open catalog';}
+function targetKey(target){if(target?.comparison)return screen.hitTest(target.comparison)?.key||null;if(target?.destination)return 'station:'+target.destination;return null;}
+function status(){const kind=nearby(position);$('nearby').hidden=!kind||document.pointerLockElement===canvas;$('nearby').textContent=kind==='character'?'CharacterBench':kind==='worlds'?'Use SceneBench screen':kind==='home'?'Exit to home':'Open catalog';}
 function draw(dt=0,time=performance.now()/1000,interactive=false){if(!available())return;try{const rendered=engine.draw(position,{dt,time,interactive});if(rendered===false)return;status();if(!roomReady){const state=engine.diagnostics?.characterState;if(state==='failed')fallback('The character could not load. Try again or open a destination below.');else if((!state||state==='ready')&&(!handoff?.active||screen.ready))finishLoading();else loadingStage(state==='loading'?'Placing character':'Preparing exhibits');}}catch{fallback('The 3D Lab stopped. Try again or open a destination below.');}}
 function tick(time){
   frame=0;if(!available()){lastTime=0;return;}
@@ -93,7 +93,7 @@ const screen=createWalkableScreen({
   resume(){suspended=false;stop();invalidate();},
   depart(){suspended=true;releaseLook();stop();position={...spawn(),...exhibits.worlds.approach};preserve();request++;engine?.dispose();engine=null;},
   returned(){if(active&&!failed&&!document.hidden)canvas.focus({preventScroll:true});invalidate();},
-  approach(){screen.inspect();}
+  approach:focusWorlds
 });
 
 function showRoom(value){active=value;canvas.hidden=!value;$('room-access').hidden=value;canvas.parentElement.classList.toggle('is-access',!value);$('explore').hidden=!value;for(const id of ['visit-bench','visit-home','visit-character','reset'])$(id).disabled=!value;if(value)invalidate();}
@@ -114,9 +114,13 @@ function characterDestination(){
   return url.href;
 }
 function preserveCharacterReturn(){preserve();try{const {x,z,yaw,pitch,crouch=false}=position;sessionStorage.setItem('lab.production.character-return.v1',JSON.stringify({layout:roomLayoutVersion,position:{x,z,yaw,pitch,crouch}}));}catch{}}
+function focusWorlds(){
+  if(!active||!roomReady||failed||handoff?.active)return;
+  releaseLook();stop();help.close();menu.open=false;position={...spawn(),...exhibits.worlds.approach,crouch:false};preserve();canvas.focus({preventScroll:true});invalidate();
+}
 function openStation(kind){
+  if(kind==='worlds'){focusWorlds();return;}
   if(!kind||handoff?.active)return;releaseLook();stop();preserve();
-  if(kind==='worlds'){screen.inspect();return;}
   if(kind==='character'){
     const destination=characterDestination();
     if(destination){preserveCharacterReturn();suspended=true;request++;engine?.dispose();engine=null;location.assign(destination);return;}
@@ -127,6 +131,7 @@ function openStation(kind){
 function activate(target){if(target?.comparison)screen.activate(target.comparison);else if(['character','catalog','home','worlds'].includes(target?.destination))openStation(target.destination);}
 
 $('visit-screen').hidden=false;$('screen-controls').hidden=false;$('help').hidden=false;
+$('worlds-link').addEventListener('click',event=>{if(active&&roomReady&&!failed){event.preventDefault();focusWorlds();}});
 enterButton.addEventListener('click',enter);
 function openHelp(){if(!inputReady())return;releaseLook();stop();help.showModal();$('resume-look').focus({preventScroll:true});}
 $('help').addEventListener('click',openHelp);
@@ -158,7 +163,7 @@ canvas.addEventListener('keydown',event=>{
   if(!inputReady())return;
   if(keyMap[event.code]){event.preventDefault();message();keys.add(event.code);actions.add(keyMap[event.code]);schedule();}
   else if(event.code==='Enter'&&!locked){event.preventDefault();if(!event.repeat)requestLook();}
-  else if(event.code==='KeyE'||event.code==='Enter'){event.preventDefault();if(!event.repeat){const rect=canvas.getBoundingClientRect(),target=engine.pick(rect.left+rect.width/2,rect.top+rect.height/2);if(target?.comparison||target?.destination)activate(target);else openStation(nearby(position));}}
+  else if(event.code==='KeyE'||event.code==='Enter'){event.preventDefault();if(!event.repeat){const rect=canvas.getBoundingClientRect(),target=engine.pick(rect.left+rect.width/2,rect.top+rect.height/2);if(target?.comparison||target?.destination)activate(target);else {const kind=nearby(position);if(kind!=='worlds')openStation(kind);}}}
   else if(event.code==='KeyC'&&!event.repeat){event.preventDefault();position.crouch=!position.crouch;invalidate();}
   else if(event.code==='KeyR'&&!event.repeat){event.preventDefault();stop();position=spawn();invalidate();}
   else if(event.code==='Escape'&&!event.repeat){event.preventDefault();openHelp();}
