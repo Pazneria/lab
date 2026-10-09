@@ -1,14 +1,13 @@
 # Homepage entry handoff
 
-This draft consumes the exact prepared canonical `assets/js/room-handoff.js`
-from homepage baseline `30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de` plus the
-coordinated Lab v2 patch. Its prepared Git blob is
+This draft consumes the exact canonical `assets/js/room-handoff.js` from the
+homepage owner's local commit `39d91163736ed0242a3c381e87de401582c33b4b`, based
+on `30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de`. Its Git blob is
 `3a5aff4177e65fc68ddf74be4d0d09c71778f68a`, 6,569 LF bytes, SHA-256
 `711b2e813bbf790c53bed4b66aaa163380b2a9f7c59ebc2caf806723d381f4b6`.
-No homepage commit containing this prepared source is claimed. The inline
-provenance comment and CPU assertions pin that baseline-plus-patch honestly;
-the owner should pin the actual resulting homepage commit after coordinated
-publication. The bootstrap runs immediately after charset and viewport metadata,
+The exact local commit was inspected before pinning it in the inline provenance
+comment and CPU assertions. Publication is pending; this does not claim that
+commit is pushed, merged or deployed. The bootstrap runs immediately after charset and viewport metadata,
 before external styles or runtime scripts.
 
 The per-room frozen camera map is Arcade `default-entry-v1`, Lab
@@ -37,7 +36,13 @@ bootstrap/controller tests pass. Existing Arcade/Library metadata is preserved.
 Source snapshots, exact changed-file hashes and application instructions are in
 the bundle's `HANDOFF.md`, `snapshot.json` and `prepared.json`. Publish the
 coordinated homepage and Lab changes only through the owning threads; this
-draft does not change the homepage or publish its capture.
+draft does not change the homepage or publish its capture. The homepage owner
+has now adopted these bytes in the exact local commit pinned above and supplied
+the complete eight-file binary patch `homepage-lab-v2.patch`, SHA-256
+`a5b76c5b3c0851d46c1fe8f064c30071a75e3a237466e04efd76a81a0d955e8b`,
+with 27 CPU checks passing. Its owner handoff is in
+`task-20/homepage-v2-validation/HANDOFF.md`. Coordinated publication approval
+remains with the parent; deploy the Lab v2 consumer before the homepage producer.
 
 Only a valid incoming Lab cover bypasses restored history/character-return pose
 for this visit. It uses `spawn()`: x=0, z=7.3, eye=1.62, yaw=0, pitch=-0.04,

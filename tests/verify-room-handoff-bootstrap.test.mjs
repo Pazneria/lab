@@ -103,11 +103,11 @@ function assertClean(f){
   assert.ok(f.observers.every(observer=>!observer.connected));
 }
 
-test('exact prepared canonical source and early classic-script order are pinned to the coordinated homepage blob',()=>{
+test('exact canonical source and early classic-script order are pinned to the homepage owner commit',()=>{
   const bytes=Buffer.from(canonical);
   assert.equal(createHash('sha256').update(bytes).digest('hex'),'711b2e813bbf790c53bed4b66aaa163380b2a9f7c59ebc2caf806723d381f4b6');
   assert.equal(createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex'),'3a5aff4177e65fc68ddf74be4d0d09c71778f68a');
-  assert.match(html,/Pazneria\/pazneria\.github\.io baseline @ 30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de plus coordinated Lab default-entry-v2 patch; Git blob 3a5aff4177e65fc68ddf74be4d0d09c71778f68a/);
+  assert.match(html,/Pazneria\/pazneria\.github\.io @ 39d91163736ed0242a3c381e87de401582c33b4b; Git blob 3a5aff4177e65fc68ddf74be4d0d09c71778f68a; owner-prepared local commit, publication pending/);
   assert.equal(scripts[0],bootstrap[0]);assert.match(bootstrap[0][1],/^\s+id="room-handoff-bootstrap"\s*$/);
   assert.ok(bootstrap[0].index>html.indexOf('<head>')&&bootstrap[0].index<html.indexOf('</head>'));
   assert.ok(bootstrap[0].index<html.indexOf('<link rel="stylesheet"'));

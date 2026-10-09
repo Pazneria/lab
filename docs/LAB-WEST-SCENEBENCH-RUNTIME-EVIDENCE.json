@@ -116,6 +116,8 @@
     "portableTextPatch": "homepage.patch",
     "image": "prepared/assets/images/rooms/lab-entry.jpg",
     "homepageBaseline": "30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de",
+    "subsequentOwnerPreparedCommit": "39d91163736ed0242a3c381e87de401582c33b4b",
+    "subsequentOwnerHandoff": "task-20/homepage-v2-validation/HANDOFF.md; exact canonical blob inspected and pinned in Lab comment/test; 27 owner CPU checks pass; no graphics or publication in the provenance follow-up",
     "canonicalGitBlob": "3a5aff4177e65fc68ddf74be4d0d09c71778f68a",
     "canonicalSha256": "711b2e813bbf790c53bed4b66aaa163380b2a9f7c59ebc2caf806723d381f4b6",
     "entryCamera": "default-entry-v2",
@@ -124,7 +126,7 @@
     "jpegSha256": "a2328ea468562b7827f2e9daaffec1edd7ac3b6990f3cac4c667e1ec5e0b263c",
     "homepageCpuTestsPassed": 22,
     "labBootstrapControllerTestsPassed": 64,
-    "publicationDependency": "Homepage owner applies matching producer/canonical/manifest/image patch; pin resulting homepage commit and verify exact served JPEG and cache/Back behavior during coordinated publication"
+    "publicationDependency": "Exact owner local homepage commit is now pinned; parent approval and coordinated Lab-first publication remain pending, followed by exact served JPEG and cache/Back verification"
   },
   "cleanup": {
     "firstSession": {"nodePid": 52460, "port": 63325, "closed": true},
