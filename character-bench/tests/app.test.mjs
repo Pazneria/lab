@@ -37,7 +37,7 @@ async function fixture({empty=false}={}) {
   const module=new vm.SourceTextModule(source,{context,identifier:'https://fixture.example/lab/character-bench/assets/app.mjs',initializeImportMeta(meta){meta.url=module.identifier;},importModuleDynamically:async()=>viewer});
   await module.link(()=>core);await module.evaluate();await waitFor(()=>empty?ids.get('inspection-status').textContent.includes('Awaiting'):ids.get('prompt-title').textContent===prompt.title);
   return {ids,loads,document,documentEvents,windowEvents,get params(){return params;},get creates(){return creates;},get clears(){return clears;},get disposed(){return disposed;},
-    async start(){const pending=ids.get('load-pair').emit('click');await waitFor(()=>loads.length>0);return {pending};},
+    async start(){const count=loads.length,pending=ids.get('load-pair').emit('click');await waitFor(()=>loads.length>count);return {pending,load:loads.at(-1)};},
     ready(side){params.onStatus(side,'ready','Ready');},vote(choice){return elements.find(el=>el.dataset.vote===choice).emit('click');},
     button(choice){return elements.find(el=>el.dataset.vote===choice);}};
 }
@@ -57,4 +57,43 @@ test('linked/unlinked UI, next-pair reset and departure connect to lifecycle gua
   await f.ids.get('link-cameras').emit('click');assert.equal(f.params.state.snapshot.linked,false);assert.equal(f.ids.get('link-cameras').getAttribute('aria-pressed'),'false');
   await f.vote('tie');await f.ids.get('next-pair').emit('click');assert.equal(f.clears,1);assert.equal(f.ids.get('reveal').hidden,true);assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.button('a').disabled,true);
   for(const fn of f.windowEvents.pagehide)fn();assert.equal(f.disposed,1);assert.equal(f.params.state.snapshot.choice,null);
+});
+
+test('hide/show and same-pair asset reload preserve a completed preference, revealed identities and provenance',async()=>{
+  for(const choice of ['a','b','tie']){
+    const f=await fixture(),first=await f.start();f.ready(0);f.ready(1);first.load.resolve([true,true]);await first.pending;await f.vote(choice);
+    const before=f.params.state.snapshot,labels=['a','b'].map(side=>f.ids.get('label-'+side).textContent),provenance=f.ids.get('provenance').textContent;
+    f.document.hidden=true;for(const fn of f.documentEvents.visibilitychange)fn();
+    assert.deepEqual(f.params.state.snapshot.ready,[false,false]);assert.equal(f.params.state.snapshot.canVote,false);
+    assert.equal(f.params.state.snapshot.choice,choice);assert.equal(f.ids.get('reveal').hidden,false);assert.equal(f.ids.get('provenance').textContent,provenance);
+    f.document.hidden=false;for(const fn of f.documentEvents.visibilitychange)fn();
+    const retry=await f.start();assert.equal(retry.load.token,before.generation);assert.deepEqual(retry.load.pair,before.pair);
+    f.ready(0);assert.equal(f.button('a').disabled,true);f.ready(1);retry.load.resolve([true,true]);await retry.pending;
+    assert.equal(f.params.state.snapshot.choice,choice);assert.equal(f.params.state.snapshot.canVote,false);
+    assert.deepEqual(['a','b'].map(side=>f.ids.get('label-'+side).textContent),labels);assert.equal(f.ids.get('provenance').textContent,provenance);
+    assert.equal(f.ids.get('reveal').hidden,false);assert.equal(f.button(choice).classList.contains('selected'),true);
+    await f.vote(choice==='a'?'b':'a');assert.equal(f.params.state.snapshot.choice,choice,'Reimporting assets cannot submit a second preference');
+    assert.equal(f.creates,1);assert.equal(f.disposed,0);
+  }
+});
+
+test('hiding an unvoted inspection locks readiness until both retry imports complete',async()=>{
+  const f=await fixture(),first=await f.start();f.ready(0);f.ready(1);first.load.resolve([true,true]);await first.pending;
+  f.document.hidden=true;for(const fn of f.documentEvents.visibilitychange)fn();
+  assert.equal(f.button('a').disabled,true);assert.equal(f.ids.get('reveal').hidden,true);assert.equal(f.ids.get('label-a').textContent,'Attempt A');
+  f.document.hidden=false;for(const fn of f.documentEvents.visibilitychange)fn();assert.equal(f.button('a').disabled,true);
+  const retry=await f.start();f.ready(0);await f.vote('a');assert.equal(f.ids.get('reveal').hidden,true);
+  f.ready(1);retry.load.resolve([true,true]);await retry.pending;
+  assert.equal(f.button('a').disabled,false);assert.equal(f.ids.get('provenance').textContent,'');assert.equal(f.ids.get('reveal').hidden,true);
+});
+
+test('departure and a full document reload clear the voted session and require a new blind inspection',async()=>{
+  const f=await fixture(),first=await f.start();f.ready(0);f.ready(1);first.load.resolve([true,true]);await first.pending;await f.vote('tie');
+  for(const fn of f.windowEvents.pagehide)fn();
+  assert.equal(f.params.state.snapshot.choice,null);assert.equal(f.ids.get('reveal').hidden,true);
+  assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.ids.get('provenance').textContent,'');assert.equal(f.disposed,1);
+  const fresh=await fixture(),next=await fresh.start();assert.equal(fresh.params.state.snapshot.choice,null);
+  assert.equal(fresh.ids.get('reveal').hidden,true);assert.equal(fresh.ids.get('label-a').textContent,'Attempt A');assert.equal(fresh.ids.get('provenance').textContent,'');
+  assert.equal(fresh.button('a').disabled,true);fresh.ready(0);assert.equal(fresh.button('a').disabled,true);
+  fresh.ready(1);next.load.resolve([true,true]);await next.pending;assert.equal(fresh.button('a').disabled,false);
 });

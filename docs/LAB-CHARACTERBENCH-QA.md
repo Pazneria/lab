@@ -160,8 +160,12 @@ metrics under ignored `evidence/integration/`, then close only owned processes.
    locked; do not repair, decimate or substitute an entrant.
 7. Confirm A/B labels stay blind until both current imports complete and an
    explicit preference. After choosing, check original timing/infrastructure,
-   unknown backend/reasoning and producer-versus-host limitations. Change pair,
-   prompt, hide/show and depart: stale readiness/preference must not carry over.
+   unknown backend/reasoning and producer-versus-host limitations. Changing pair
+   or prompt, departing, or reloading the full page clears the preference/reveal
+   and starts a blind inspection. Hide/show unloads imports and locks readiness
+   while preserving a completed same-pair preference/reveal. Reload comparison
+   reimports those assets within the same inspection and preserves that choice;
+   an unvoted inspection unlocks only after both current imports complete again.
    There is no persistent public CharacterBench vote or aggregate result.
 8. Return via the native Back to Lab link and browser Back. Verify the preserved
    room pose and clean reinitialization without duplicate contexts/frame loops.
