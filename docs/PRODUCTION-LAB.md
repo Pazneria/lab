@@ -19,10 +19,13 @@ departure disposes this Lab renderer before loading the submitted scene.
 The catalog and home exit remain available in the minimal host menu.
 
 Claude's overlay, crosshair, area label, HUD and statistics UI are removed.
-The host provides Explore, Help, navigation and optional direction buttons.
+The host provides Explore, Help and native destination controls.
 Mouse look uses direct movement deltas, adjustable sensitivity and bounded pitch.
 Keyboard input is canvas-scoped. Focus loss, capture release, dialogs and hidden
-documents clear held input and routes; inactive pages render no frames.
+documents clear held input and velocity; inactive pages render no frames.
+Movement uses only WASD or arrow keys; floor clicks do not start automatic routes.
+Clicks still acquire mouse look and use physical stations. Help shortcuts open
+the destination controls directly, preserving keyboard access and manual exits.
 Back/Forward recreates disposed renderers, including gentle reduced motion and
 pending-load races. A scoped, one-use session pose restores the Lab after a
 same-origin CharacterBench return when the normal history entry is unavailable.
@@ -55,9 +58,9 @@ This is a schematic, not a scale drawing:
 
 | Physical station | Existing feature and interaction |
 | --- | --- |
-| Central camera ring | Ivo stands on the original drum. His real mesh silhouette, drum and adjacent lectern open `../character-bench/?prompt=02`. The dedicated route compares two attempts of the same character prompt; the single Lab exhibit does not declare a winner. The walk shortcut approaches from the southeast at `(2.3, 3.05)`. |
-| North-wall data screen | Hosts the existing SceneBench comparison canvas. A distant selection walks to `(0, -4.6)`; nearby selections use the screen's physical UV coordinates. Preview entry, same-pair return, viewed-both voting, reveal, grading and leaderboard retain their existing modules. Compare scenes also opens the native accessible controls. |
-| North-west Catalog plaque | Approaches `(-3, -5.8)`, then opens the public catalog/evidence station dialog. This reuses the public catalog destination. |
+| Central camera ring | Ivo stands on the original drum. His real mesh silhouette, drum, adjacent lectern and direct Help shortcut open `../character-bench/?prompt=02`. The dedicated route compares two attempts of the same character prompt; the single Lab exhibit does not declare a winner. |
+| North-wall data screen | Hosts the existing SceneBench comparison canvas. A distant selection opens its native controls; nearby selections use the screen's physical UV coordinates. Preview entry, same-pair return, viewed-both voting, reveal, grading and leaderboard retain their existing modules. Compare scenes also opens the native accessible controls. |
+| North-west Catalog plaque | Opens the public catalog/evidence station dialog directly. This reuses the public catalog destination. |
 | South Home doorway | Approaching opens the first sliding set; continuing through the vestibule opens the second. Crossing the landing exit plane navigates Home once in the same tab. The plaque, Help shortcut and menu retain a manual accessible exit. |
 | West perception / east motion alcoves | Preserve the original machine-vision bench and motion-test apparatus as explorable room content. They do not claim additional website features. |
 | Host menu and fallback links | Keep Catalog, AI infrastructure, SceneBench, CharacterBench and Home discoverable; fallback links provide direct access when 3D is unavailable. AI infrastructure remains a menu destination. |

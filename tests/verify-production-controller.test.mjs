@@ -44,9 +44,8 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     });
   }
   const byId=id=>{if(!elements.has(id))elements.set(id,element(id));return elements.get(id);};
-  const pad=['forward','backward','left','right','turnLeft','turnRight'].map(action=>{const button=element('pad-'+action);button.dataset.move=action;return button;});
   document=target({hidden:false,pointerLockElement:null,activeElement:null,referrer,hasFocus:()=>focused,
-    getElementById:byId,querySelectorAll:selector=>selector==='[data-move]'?pad:selector==='a[href*="character-bench/"]'?[byId('character-link'),byId('access-character')]:[],
+    getElementById:byId,querySelectorAll:selector=>selector==='a[href*="character-bench/"]'?[byId('character-link'),byId('access-character')]:[],
     exitPointerLock(){this.pointerLockElement=null;},
   });
   const canvas=byId('room');
@@ -80,8 +79,8 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     approaches:{character:{x:2.3,z:3.05,yaw:.4,pitch:-.42},catalog:{x:-3,z:-5.8,yaw:0,pitch:.08},home:{x:0,z:7.3,yaw:Math.PI,pitch:0}},
     advance(position,actions,dt){advances.push({actions:[...actions].sort(),dt});if(actions.has('forward'))position.z-=dt;
       if(settleEye){const desired=position.crouch?1:1.62;position.eye+=(desired-position.eye)*(1-Math.exp(-10*dt));}},
-    planRoute:(position,point)=>[{x:point.x,z:point.z}],
-    followRoute(position,points,dt){routes.push({points:copy(points),dt});if(dt>0)position.z-=dt;return 'walking';},
+    planRoute(){routes.push('plan');throw Error('The FPS controller must not plan automatic routes');},
+    followRoute(){routes.push('follow');throw Error('The FPS controller must not follow automatic routes');},
   });
   const screens=synthetic({createWalkableScreen(callbacks){
     screenCallbacks=callbacks;
@@ -109,7 +108,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   });
   await module.link(path=>path.endsWith('walkable-screen.js')?screens:path.endsWith('scene-navigation.js')?synthetic({createSceneNavigation:()=>({restore(){}})}):path.endsWith('interaction.mjs')?synthetic(interaction):path.endsWith('production-exit.mjs')?synthetic(exit):navigation);
   await module.evaluate();if(!deferImport){await settle();const pending=[...frames];frames.clear();for(const [,callback]of pending)callback(clock);}
-  return {canvas,document,window,byId,pad,history,location,renderers,log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,
+  return {canvas,document,window,byId,history,location,renderers,log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,
     get qa(){return window.__productionLab;},get maxFrames(){return maxFrames;},
     get engine(){return renderers.at(-1);},get clock(){return clock;},set clock(value){clock=value;},
     set focused(value){focused=value;},set picked(value){picked=value;},
@@ -117,8 +116,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     async acquireLock(){document.pointerLockElement=canvas;await document.emit('pointerlockchange');},
     flush(time=clock+16){clock=time;const pending=[...frames];frames.clear();for(const [id,callback]of pending)callback(time);return pending.length;},
     fireTimer(delay){for(const [id,timer]of timers)if(timer.delay===delay){timers.delete(id);timer.callback();return true;}return false;},
-    async startRoute(){await byId('help').emit('click');await byId('visit-character').emit('click');await settle();},
-    async heldInput(){await canvas.emit('keydown',{code:'KeyW'});await pad[0].emit('pointerdown',{button:0,pointerId:42});},
+    async heldInput(){await canvas.emit('keydown',{code:'KeyW'});await canvas.emit('keydown',{code:'ArrowUp'});},
   };
 }
 
@@ -147,14 +145,14 @@ test('capture loss cancels held controls before the next frame',async()=>{
   assert.deepEqual(f.advances.at(-1).actions,[]);assert.equal(f.frames.size,0);
 });
 
-test('window blur cancels keys, touch holds, route and RAF; regaining focus starts with no held input',async()=>{
+test('window blur cancels shared movement keys and RAF; regaining focus starts with no held input',async()=>{
   const f=await controllerFixture({animate:true});await f.heldInput();f.flush();
   f.focused=false;await f.window.emit('blur');assert.equal(f.frames.size,0);assert.equal(f.qa.running,false);
   const draws=f.engine.draws.length;f.engine.changed();f.flush();assert.equal(f.engine.draws.length,draws);
   f.focused=true;await f.window.emit('focus');f.flush();assert.deepEqual(f.advances.at(-1).actions,[]);
-  await f.startRoute();f.flush();const walked=f.routes.length;
-  f.focused=false;await f.window.emit('blur');assert.equal(f.engine.targets.at(-1),null);assert.equal(f.frames.size,0);
-  f.focused=true;await f.window.emit('focus');f.flush();assert.equal(f.routes.length,walked);
+  await f.heldInput();f.flush();const position=f.qa.position;
+  f.focused=false;await f.window.emit('blur');assert.equal(f.engine.targets.length,0);assert.equal(f.frames.size,0);
+  f.focused=true;await f.window.emit('focus');f.flush();assert.equal(f.qa.position.z,position.z);assert.equal(f.routes.length,0);
 });
 
 test('moving focus out of the canvas during a drag cancels look and movement',async()=>{
@@ -166,14 +164,14 @@ test('moving focus out of the canvas during a drag cancels look and movement',as
   f.flush();assert.deepEqual(f.advances.at(-1).actions,[]);assert.equal(f.frames.size,0);
 });
 
-test('hidden documents stop rendering and cancel held actions/routes, including renderer invalidations',async()=>{
+test('hidden documents stop rendering and cancel held actions, including renderer invalidations',async()=>{
   const f=await controllerFixture({animate:true});await f.heldInput();f.flush();
   f.document.hidden=true;await f.document.emit('visibilitychange');assert.equal(f.frames.size,0);
   const draws=f.engine.draws.length;f.engine.changed();await f.window.emit('resize');f.flush();assert.equal(f.engine.draws.length,draws);
   f.document.hidden=false;await f.document.emit('visibilitychange');f.flush();assert.deepEqual(f.advances.at(-1).actions,[]);
-  await f.startRoute();f.flush();const walked=f.routes.length;
-  f.document.hidden=true;await f.document.emit('visibilitychange');assert.equal(f.engine.targets.at(-1),null);
-  f.document.hidden=false;await f.document.emit('visibilitychange');f.flush();assert.equal(f.routes.length,walked);
+  await f.heldInput();f.flush();const position=f.qa.position;
+  f.document.hidden=true;await f.document.emit('visibilitychange');assert.equal(f.engine.targets.length,0);
+  f.document.hidden=false;await f.document.emit('visibilitychange');f.flush();assert.equal(f.qa.position.z,position.z);assert.equal(f.routes.length,0);
 });
 
 test('help, comparison dialog and navigation menu stop RAF and resume without held inputs',async()=>{
@@ -314,6 +312,7 @@ test('host markup exposes named exhibit links, help, motion choices, and no nonp
   assert.match(html,/<html lang="en">/);assert.match(html,/href="\.\.\/character-bench\/\?prompt=02"/);
   assert.match(html,/aria-label="Direct exhibit access"/);assert.match(html,/id="room"[^>]*tabindex="0"[^>]*aria-describedby="navigation-help"/);
   assert.match(html,/id="help-dialog" aria-labelledby="help-title"/);assert.match(html,/id="gentle"/);assert.match(html,/id="sensitivity"[^>]*type="range"/);
+  assert.doesNotMatch(html,/Walk to|cancel-walk|click-to-move|show-pad|data-move|id="movement"/i,'Retired automatic and pointer movement controls must not remain in the host UI');
   assert.doesNotMatch(html,/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/,'Host controls must not use nonprinting C0 characters as arrow glyphs');
 });
 
@@ -469,4 +468,55 @@ test('reduced-motion walking exit uses a zero-delay departure and never acquires
   f.qa.teleport({...realNavigation.spawn(),yaw:Math.PI});f.flush();await f.canvas.emit('keydown',{code:'KeyW'});
   until(f,()=>f.qa.exit.navigating,900);assert.equal(f.fireTimer(0),true);
   assert.equal(f.log.at(-1).url,exit.HOME_URL);assert.equal(f.captureRequests.length,0);
+});
+
+test('captured, drag-fallback and touch floor clicks never move, plan a route or expose a destination marker',async()=>{
+  for(const mode of ['captured','fallback','touch']){
+    const f=await controllerFixture({requestLock:mode==='captured'?undefined:null});f.picked={point:{x:3,z:3}};
+    if(mode!=='touch')await f.byId('explore').emit('click');const before=f.qa.position;
+    const event={button:0,pointerId:9,clientX:500,clientY:300,isPrimary:true,pointerType:mode==='touch'?'touch':'mouse'};
+    await f.canvas.emit('pointerdown',event);await f.canvas.emit('pointerup',event);
+    for(let i=0;i<5;i++)f.flush();
+    assert.equal(f.qa.position.x,before.x,mode);assert.equal(f.qa.position.z,before.z,mode);
+    assert.equal(f.routes.length,0);assert.equal(f.engine.targets.length,0);assert.equal(f.log.some(e=>e.event==='assign'),false);
+    if(mode==='captured')assert.equal(f.document.pointerLockElement,f.canvas);
+  }
+});
+
+test('floor clicks during mouse capture preserve held WASD input and manual FPS movement',async()=>{
+  const f=await controllerFixture();f.picked={point:{x:3,z:3}};await f.byId('explore').emit('click');
+  await f.canvas.emit('keydown',{code:'KeyW'});f.flush();const before=f.qa.position;
+  await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});f.flush();
+  assert.deepEqual(f.advances.at(-1).actions,['forward']);assert.ok(f.qa.position.z<before.z);assert.equal(f.routes.length,0);
+});
+
+test('intentional catalog and Home object clicks open their manual controls without moving the camera',async()=>{
+  for(const kind of ['catalog','home']){
+    const f=await controllerFixture({requestLock:null});await f.byId('explore').emit('click');f.picked={destination:kind};const before=f.qa.position;
+    const event={button:0,pointerId:7,clientX:500,clientY:300,pointerType:'mouse'};
+    await f.canvas.emit('pointerdown',event);await f.canvas.emit('pointerup',event);f.flush();
+    assert.equal(f.byId('station-dialog').open,true);assert.equal(f.byId('dialog-title').textContent,kind==='home'?'Return home':'Catalog & evidence');
+    assert.equal(f.byId('dialog-link').href,kind==='home'?'https://example.test/':'https://example.test/lab/');
+    assert.equal(f.qa.position.x,before.x);assert.equal(f.qa.position.z,before.z);assert.equal(f.routes.length,0);assert.equal(f.engine.targets.length,0);
+  }
+});
+
+test('distant SceneBench clicks open its native controls; nearby preview selection still departs once without automatic walking',async()=>{
+  const distant=await controllerFixture();distant.picked={comparison:{key:'preview-a'}};await distant.byId('explore').emit('click');const before=distant.qa.position;
+  await distant.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
+  assert.equal(distant.byId('comparison-dialog').open,true);assert.equal(distant.qa.position.z,before.z);assert.equal(distant.routes.length,0);
+  assert.equal(distant.log.some(e=>e.event==='assign'),false);
+  const near=await controllerFixture();near.qa.teleport({x:0,z:-4.6});near.flush();near.picked={comparison:{key:'preview-a'}};await near.byId('explore').emit('click');
+  await near.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
+  assert.deepEqual(near.log.slice(-2).map(e=>e.event),['dispose','assign']);assert.match(near.log.at(-1).url,/walkable-3d\/scene.html/);assert.equal(near.routes.length,0);
+});
+
+test('Help station shortcuts open directly without automatic movement and keep reset accessible',async()=>{
+  for(const [id,kind]of [['visit-bench','catalog'],['visit-home','home'],['visit-character','character']]){
+    const f=await controllerFixture();const before=f.qa.position;await f.byId('help').emit('click');await f.byId(id).emit('click');
+    assert.equal(f.byId('help-dialog').open,false);assert.equal(f.qa.position.x,before.x);assert.equal(f.qa.position.z,before.z);assert.equal(f.routes.length,0);
+    if(kind==='character')assert.match(f.log.at(-1).url,/character-bench\/\?prompt=02$/);else assert.equal(f.byId('station-dialog').open,true);
+  }
+  const f=await controllerFixture();f.qa.teleport({x:1,z:6});f.flush();await f.byId('help').emit('click');await f.byId('reset').emit('click');f.flush();
+  assert.equal(f.qa.position.x,0);assert.equal(f.qa.position.z,7.3);assert.equal(f.routes.length,0);
 });

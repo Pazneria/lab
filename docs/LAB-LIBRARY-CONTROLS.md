@@ -22,14 +22,16 @@ The hashes identify the inspected working files as well as the commit.
 | Entry | Load automatically; keyboard movement after readiness; deliberate click or Explore/Enter acquires mouse capture. |
 | Mouse look | Direct counts at 0.0026 radians per count, sensitivity 40–220% in 5% steps, default 100%; pitch clamps at ±(pi/2 − 0.02). Camera pose/picking updates immediately. |
 | Capture fallback | Request raw input; retry plain capture only on `NotSupportedError`. Denial/missing/legacy errors enable stable client-coordinate left-button drag. First capture gesture consumes its click. |
-| Capture lifecycle | Gain preserves walking keys; loss/pause clears keys, touch holds, route and velocity. Request IDs reject late results. Focus/show/close do not recapture; explicit Return to room does. |
+| Capture lifecycle | Gain preserves walking keys; loss/pause clears keys and velocity. Request IDs reject late results. Focus/show/close do not recapture; explicit Return to room does. |
 | Keyboard | WASD/arrows walk/strafe, Shift sprint, C crouch, E physical station. Enter captures when uncaptured and interacts after capture; Escape opens paused controls. |
 | Movement | Walk 2.5, sprint 4.6 world units/second; crouch multiplier 0.55, normalized diagonals, velocity blend `1-exp(-12*dt)`, bounded 50ms steps. |
 | Eye | Standing 1.62, crouch 1.0; blend `1-exp(-10*dt)` and settle. Gentle movement remains 1.3 world units/second. |
 
-Lab floor collision, click-to-walk routing, direction buttons, station actions and
+Lab floor collision, native station actions and
 SceneBench integration remain Lab-specific. Library book shortcuts and stair
-physics were not imported. Automatic routes retain their existing 3.1 speed.
+physics were not imported. Movement uses only WASD or arrow keys, with no automatic
+click-to-walk routes. Floor clicks acquire mouse look without moving; station
+clicks and Help shortcuts open their controls directly.
 
 ## Readiness and access
 
