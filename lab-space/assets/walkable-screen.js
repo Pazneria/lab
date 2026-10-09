@@ -5,7 +5,7 @@ import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable,
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
-export function createWalkableScreen({changed,suspend,resume,approach,depart=suspend,initialPrompt=null}) {
+export function createWalkableScreen({changed,suspend,resume,approach,depart=suspend,returned=null,initialPrompt=null}) {
   const $=id=>document.getElementById(id),base=new URL('../../walkable-3d/',import.meta.url);
   const source=document.createElement('canvas');source.width=comparisonLayout.width;source.height=comparisonLayout.height;
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
@@ -27,7 +27,7 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     $('screen-public-vote').textContent=publicStatus.get(pairKey())||'';
     const vote=record.preferences[pairKey()]?.choice;
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
-    ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('WALKABLE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
+    ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('COMPARE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
     ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Loading comparisons').toUpperCase()}  /  CLICK TO EXPLORE`,40,82,920);
     previewRects=[];
     for(let slot=0;slot<2;slot++){
@@ -149,7 +149,7 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     if(!visit||visit.comparisonId!==comparisonId||visit.pair.join('::')!==pair().map(e=>e.id).join('::'))return;
     if(visit.ready){openedThisComparison.add(visit.entryId);refresh();record.opened[visit.entryId]=new Date().toISOString();save();}
     rememberPair();render();
-    if(visit.returnToControls)inspect();else $('screen-controls').focus({preventScroll:true});
+    if(visit.returnToControls)inspect();else if(returned)returned();else $('screen-controls').focus({preventScroll:true});
   }
   addEventListener('pageshow',event=>{if(event.persisted){receiveReturn();refresh();render();}});
   $('screen-prompt').addEventListener('change',()=>selectPrompt($('screen-prompt').value));

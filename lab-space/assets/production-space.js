@@ -91,7 +91,8 @@ const screen=createWalkableScreen({
   changed(source){engine?.comparison(source);invalidate();},
   suspend(){suspended=true;releaseLook();stop();preserve();},
   resume(){suspended=false;stop();invalidate();},
-  depart(){suspended=true;releaseLook();stop();preserve();request++;engine?.dispose();engine=null;},
+  depart(){suspended=true;releaseLook();stop();position={...spawn(),...exhibits.worlds.approach};preserve();request++;engine?.dispose();engine=null;},
+  returned(){if(active&&!failed&&!document.hidden)canvas.focus({preventScroll:true});invalidate();},
   approach(){screen.inspect();}
 });
 
@@ -123,7 +124,7 @@ function openStation(kind){
   }
   restoreFocus=document.activeElement;const home=kind==='home';$('dialog-number').textContent=home?'Exit':'Catalog';$('dialog-title').textContent=home?'Return home':'Catalog & evidence';$('dialog-copy').textContent=home?"Return to Jordan’s home page.":'Browse the public benchmark catalog, sources, and graphs.';$('dialog-link').href=safeDestination(kind);$('dialog-link').textContent=home?'Exit to home':'Open catalog';$('dialog-link').hidden=false;station.showModal();
 }
-function activate(target){if(target?.comparison){const close=Math.hypot(position.x-exhibits.worlds.approach.x,position.z-exhibits.worlds.approach.z)<=1.25;if(close){releaseLook();stop();screen.activate(target.comparison);}else openStation('worlds');}else if(['character','catalog','home','worlds'].includes(target?.destination))openStation(target.destination);}
+function activate(target){if(target?.comparison)screen.activate(target.comparison);else if(['character','catalog','home','worlds'].includes(target?.destination))openStation(target.destination);}
 
 $('visit-screen').hidden=false;$('screen-controls').hidden=false;$('help').hidden=false;
 enterButton.addEventListener('click',enter);

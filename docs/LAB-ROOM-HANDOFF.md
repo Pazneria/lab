@@ -9,7 +9,11 @@ image allowlist, 15-second lifetime, one-shot consumption and recovery controls
 are owned by that canonical bootstrap; the Lab introduces no second transport.
 
 The public cover uses `/assets/images/rooms/lab-entry.jpg` on the homepage origin.
-The capture remains unchanged and is not duplicated in this repository.
+The capture is not duplicated in this repository. The west Compare Worlds
+relocation changes the entrance view: before publishing that change, the
+homepage owner must recapture this image and update the canonical view version
+with the destination contract. This draft leaves the shared transport intact;
+the old image does not establish visual continuity with the relocated board.
 The source contract and capture manifest are
 [room-handoff.md](https://github.com/Pazneria/pazneria.github.io/blob/715d292a94ddda4f92eaf3c67b3f18edb073ed47/docs/room-handoff.md)
 and [entry-views.json](https://github.com/Pazneria/pazneria.github.io/blob/715d292a94ddda4f92eaf3c67b3f18edb073ed47/assets/images/rooms/entry-views.json).

@@ -8,12 +8,12 @@ export async function moduleIn(context,path) {
   const url=new URL('../'+path,import.meta.url);
   return new vm.SourceTextModule(readFileSync(url,'utf8'),{context,initializeImportMeta(meta){meta.url='https://example.test/lab/'+path;}});
 }
-export async function screenFixture({placeholder=false,failedImage=false,pendingImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false,initialPrompt=null}={}) {
-  const elements=new Map(),opened=[],images=[],events=new Map(),assigned=[];let departures=0,resumes=0;
+export async function screenFixture({placeholder=false,failedImage=false,pendingImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false,initialPrompt=null,departurePose={x:1,z:2,yaw:.3,pitch:.1},physicalReturn=false}={}) {
+  const elements=new Map(),opened=[],images=[],events=new Map(),assigned=[];let departures=0,resumes=0,returns=0;
   const drawing=new Proxy({},{get:()=>()=>{}});
   function element(){return {dataset:{},children:[],listeners:{},hidden:false,disabled:false,checked:true,open:false,
     getContext:()=>drawing,append(...children){this.children.push(...children);},replaceChildren(...children){this.children=children;},
-    setAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},close(){this.open=false;this.listeners.close?.();},showModal(){this.shown=true;this.open=true;},focus(){this.focused=true;},scrollIntoView(){this.scrolled=true;}};}
+    setAttribute(){},addEventListener(type,fn){this.listeners[type]=fn;},close(){this.open=false;this.listeners.close?.();},showModal(){this.shown=true;this.open=true;},focus(){for(const node of elements.values())node.focused=false;this.focused=true;},scrollIntoView(){this.scrolled=true;}};}
   const byId=id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);};
   const choices=['a','b','tie'].map(choice=>({...element(),dataset:{screenChoice:choice}}));
   const entries=catalog?.entries||['a','b'].map((id,i)=>({id,promptId:'01',title:'Scene '+id,htmlSha256:'a'.repeat(64),comparisonModel:'model'+i,requestedConfiguration:'model'+i,...placeholder?{previewAvailable:false}:{}}));
@@ -33,7 +33,7 @@ export async function screenFixture({placeholder=false,failedImage=false,pending
   const module=await moduleIn(context,'lab-space/assets/walkable-screen.js');
   await module.link(path=>path.endsWith('interaction.mjs')?synthetic(input):path.endsWith('scene-navigation.js')?navigation:path.endsWith('public-judgments.js')?synthetic({publicVotingEnabled:false,submitPublicVote(){throw Error('Unexpected public write');},hasPublicVote:()=>false,loadPublicLeaderboard(){},renderPublicLeaderboard(){},subscribePublicJudgments(){}}):path.endsWith('comparisons.js')?comparisons:synthetic({renderLeaderboard(){}}));
   await module.evaluate();
-  const api=module.namespace.createWalkableScreen({initialPrompt,changed(){},suspend(){},resume(){resumes++;},depart(){departures++;history.state.labPosition={x:1,z:2,yaw:.3,pitch:.1};},approach(){}});
+  const api=module.namespace.createWalkableScreen({initialPrompt,changed(){},suspend(){},resume(){resumes++;},depart(){departures++;history.state.labPosition={...departurePose};},returned:physicalReturn?()=>{returns++;byId('room').focus();}:null,approach(){}});
   await new Promise(resolve=>setImmediate(resolve));
   async function sceneVisit({ready=false}={}) {
     const sceneHref=assigned.at(-1),sceneContext=vm.createContext({URL,URLSearchParams,sessionStorage:memoryStorage(session),location:{href:sceneHref,search:new URL(sceneHref).search}});
@@ -43,5 +43,5 @@ export async function screenFixture({placeholder=false,failedImage=false,pending
     return {nav,visit};
   }
   async function returnVisit(options={}) {await sceneVisit(options);for(const listener of events.get('pageshow')||[])listener({persisted:true});}
-  return {api,byId,opened,entries,images,storage,session,choices,history,location,assigned,sceneVisit,returnVisit,events,get departures(){return departures;},get resumes(){return resumes;},ready:()=>returnVisit({ready:true})};
+  return {api,byId,opened,entries,images,storage,session,choices,history,location,assigned,sceneVisit,returnVisit,events,get departures(){return departures;},get resumes(){return resumes;},get returns(){return returns;},ready:()=>returnVisit({ready:true})};
 }

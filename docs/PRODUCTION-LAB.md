@@ -12,10 +12,13 @@ The private inspection Studio, its audience, responses, credentials and backend
 are outside this change. The coordinated Lab and comparison route were released
 in PR #59 at commit `55a102e8262e80677c461dfe4f64918aba4aa4e8`.
 
-SceneBench occupies the existing north-wall screen. Its original comparison
-modules and native controls preserve random first selection, viewed-both gating,
-model reveal, public leaderboard, votes and same-tab scene departure. A scene
-departure disposes this Lab renderer before loading the submitted scene.
+SceneBench occupies the lower **Compare Worlds** console in the west alcove,
+left of the south entrance. Physical preview, Next and voting buttons use the
+screen's UV coordinates directly. Its original comparison modules and explicit
+native controls preserve random first selection, viewed-both gating, model
+reveal, public leaderboard, votes and same-tab scene departure. A scene
+departure disposes this Lab renderer before loading the submitted scene; exiting
+returns in front of the west screen with the same ordered pair and viewed gates.
 The catalog and home exit remain available in the minimal host menu.
 
 Claude's overlay, crosshair, area label, HUD and statistics UI are removed.
@@ -44,12 +47,15 @@ This is a schematic, not a scale drawing:
 
 ```text
                          NORTH (-Z)
-       Catalog plaque     SceneBench north-wall screen
-        (-3, -6.85)              (0, -6.915)
+       Catalog plaque
+        (-3, -6.85)
 
   West perception        CharacterBench camera ring       East motion
   testing alcove               Ivo (0, -0.6)              testing alcove
   (negative X)                                           (positive X)
+  Compare Worlds
+  screen (-9.3, 3.245)
+  return (-9.3, 0.9)
                                      Lectern (2.3, 2.1)
 
                           Entrance spawn (0, 7.3)
@@ -61,7 +67,7 @@ This is a schematic, not a scale drawing:
 | Physical station | Existing feature and interaction |
 | --- | --- |
 | Central camera ring | Ivo stands on the original drum. His real mesh silhouette, drum, adjacent lectern and direct Help shortcut open `../character-bench/?prompt=02`. The dedicated route compares two attempts of the same character prompt; the single Lab exhibit does not declare a winner. |
-| North-wall data screen | Hosts the existing SceneBench comparison canvas. A distant selection opens its native controls; nearby selections use the screen's physical UV coordinates. Preview entry, same-pair return, viewed-both voting, reveal, grading and leaderboard retain their existing modules. Compare scenes also opens the native accessible controls. |
+| West Compare Worlds console | Screen center `(-9.3, 1.6, 3.245)`, dimensions `3.2 × 1.8`, facing north. It is 0.85 m lower than the old board. Physical preview selection opens the scene full-screen in the same tab; return restores `(-9.3, 0.9)` facing the screen. Next and viewed-both votes operate in the room. Reveal, grading and leaderboard keep their existing modules. SceneBench controls remain an explicit accessible fallback. |
 | North-west Catalog plaque | Opens the public catalog/evidence station dialog directly. This reuses the public catalog destination. |
 | South Home doorway | Approaching opens the first sliding set; continuing through the vestibule opens the second. Crossing the landing exit plane navigates Home once in the same tab. The plaque, Help shortcut and menu retain a manual accessible exit. |
 | West perception / east motion alcoves | Preserve the original machine-vision bench and motion-test apparatus as explorable room content. They do not claim additional website features. |
@@ -168,7 +174,7 @@ no renderer, browser or server. Existing room browser tests describe the older
 room and are not evidence for this derivative.
 
 After clearance, visual QA must cover entrance, stage/camera clearance, character
-silhouette, north-wall previews/buttons/letterboxing and occlusion, alcoves,
+silhouette, west-screen previews/buttons/letterboxing and occlusion, alcoves,
 desktop/touch/fallback, mouse capture, resizing, reduced motion and both return
 flows. Establish a baseline for the prepared host derivative, then compare any
 subsequent optimization under identical renderer, resolution, camera positions,

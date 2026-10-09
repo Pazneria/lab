@@ -6,7 +6,7 @@ export {exhibits};
 // The floor and collider records come from the derivative's authored geometry.
 // A small clearance protects the 30 cm player from numerical contact at corners.
 export const limits=Object.freeze({x:12,z:12.35,minZ:-7,maxZ:12.35,radius:.30});
-export const roomLayoutVersion='claude11-production-exit-2026-10-09';
+export const roomLayoutVersion='claude11-production-west-scenebench-2026-10-09';
 export const clearance=limits.radius+.015;
 export const obstacles=colliders;
 export const collisionObstacles=Object.freeze([...colliders.filter(c=>!isOriginalDoorCollider(c)),...exitStaticColliders]);
