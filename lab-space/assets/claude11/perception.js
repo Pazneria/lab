@@ -2,6 +2,7 @@
 // calibration chart, lighting panels and test-pattern displays.
 import * as THREE from 'three';
 import { cableGeo } from './builder.js';
+import { exhibits } from './layout.mjs';
 
 const D = Math.PI / 180;
 
@@ -168,19 +169,26 @@ export function buildPerception(ctx) {
   b.add(A.sign(0.8, 0.12, { bg: '#2d5f8c', lines: [{ t: 'REFERENCE SAMPLES', size: 0.5, color: '#fff', weight: 700 }] }), M.label, [SHX, 2.02, -3.38]);
   b.collideBox(SHX - 0.9, SHX + 0.9, -3.4, -2.92);
 
-  // ---- Side wall (south, z=+3.4): whiteboard ---------------------------------------
-  b.box(2.0, 1.1, 0.03, M.alu, [-9.9, 1.55, 3.385]);
-  b.add(A.plane(1.94, 1.04, 520, (c, w, h) => drawWhiteboard(c, w, h)), M.label, [-9.9, 1.55, 3.368], [0, Math.PI, 0]);
-  b.box(1.6, 0.03, 0.06, M.alu, [-9.9, 0.985, 3.36]);
-  for (const [k, m] of [M.paintBlue, M.paintRed, M.paintGreen].entries()) b.cyl(0.008, 0.008, 0.12, m, [-10.3 + k * 0.05, 1.01, 3.355], [0, 0, Math.PI / 2], 8);
-  // small rolling cart with spare light panel and target boards
-  b.box(0.6, 0.02, 0.45, M.steel, [-8.2, 0.8, 2.85]);
-  b.box(0.6, 0.02, 0.45, M.steel, [-8.2, 0.3, 2.85]);
-  for (const [x, z] of [[-8.48, 2.65], [-7.92, 2.65], [-8.48, 3.05], [-7.92, 3.05]]) { b.box(0.025, 0.78, 0.025, M.steel, [x, 0.46, z]); b.cyl(0.035, 0.035, 0.03, M.rubber, [x, 0.035, z], [0, 0, Math.PI / 2], 12); }
-  b.box(0.4, 0.3, 0.012, M.paintWhite, [-8.2, 0.96, 2.95], [-0.15, 0, 0]);
-  b.add(A.plane(0.38, 0.28, 900, (c, w, h) => drawChart(c, w, h)), M.label, [-8.2, 0.96, 2.9435], [-0.15, Math.PI, 0]);
-  b.box(0.3, 0.1, 0.25, M.paintDark, [-8.3, 0.36, 2.85]);
-  b.collideBox(-8.55, -7.85, 2.6, 3.4);
+  // ---- South wall: low Compare Worlds console ---------------------------------
+  // Replace the old whiteboard/cart rather than adding furniture in an aisle.
+  // The same layout supplies the actual screen, picking and the safe approach.
+  const W=exhibits.worlds,cabinetWidth=W.width+.24;
+  const frontZ=W.z-.345,backZ=3.4;
+  b.box(cabinetWidth,.5,.36,M.paintGrey,[W.x,.35,3.18]);
+  b.box(W.width+.30,.04,.48,M.worktop,[W.x,.63,3.14]);
+  for(const x of [W.x-1.4,W.x+1.4])for(const z of [3.02,3.32])b.box(.07,.1,.07,M.steelDark,[x,.05,z]);
+  // Two recessed faces and modest handles echo the Lab's existing storage.
+  for(const offset of [-.85,.85]){
+    b.box(1.62,.37,.015,M.paintDark,[W.x+offset,.345,2.9925]);
+    b.box(.22,.018,.025,M.steel,[W.x+offset,.49,2.976]);
+  }
+  // Aluminium mounting plate, matte bezel, restrained light seam and sign.
+  b.box(W.width+.24,W.height+.22,.045,M.alu,[W.x,W.y,3.37]);
+  b.box(W.width+.16,W.height+.14,.10,M.anodBlack,[W.x,W.y,W.z+.055]);
+  for(const sign of [-1,1])b.box(.008,W.height-.1,.006,M.ledCyan,[W.x+sign*(W.width/2+.052),W.y,W.z-.001]);
+  ctx.screen('datawall',W.width,W.height,1280,720,[W.x,W.y,W.z],[0,W.yaw,0]);
+  b.add(A.sign(1.6,.18,{bg:'#2b2e33',lines:[{t:'Compare Worlds',size:.5,color:'#e0e6ea',weight:600}]}),M.label,[W.x,W.y+W.height/2+.26,W.z],[0,W.yaw,0]);
+  b.collideBox(W.x-(W.width+.30)/2,W.x+(W.width+.30)/2,frontZ,backZ);
 }
 
 // ---------------------------------------------------------------------------------------

@@ -1,18 +1,48 @@
 # Homepage entry handoff
 
-The Lab consumes the approved homepage preview handoff through the exact inline
-`assets/js/room-handoff.js` bootstrap from homepage commit
-`715d292a94ddda4f92eaf3c67b3f18edb073ed47`, Git blob
-`846960bd15c10cfb1bcf835173022bc42bcdbd19`. It runs immediately after charset and
-viewport metadata, before external styles or runtime scripts. The transport,
-image allowlist, 15-second lifetime, one-shot consumption and recovery controls
-are owned by that canonical bootstrap; the Lab introduces no second transport.
+This draft consumes the exact canonical `assets/js/room-handoff.js` from the
+homepage owner's local commit `39d91163736ed0242a3c381e87de401582c33b4b`, based
+on `30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de`. Its Git blob is
+`3a5aff4177e65fc68ddf74be4d0d09c71778f68a`, 6,569 LF bytes, SHA-256
+`711b2e813bbf790c53bed4b66aaa163380b2a9f7c59ebc2caf806723d381f4b6`.
+The exact local commit was inspected before pinning it in the inline provenance
+comment and CPU assertions. Publication is pending; this does not claim that
+commit is pushed, merged or deployed. The bootstrap runs immediately after charset and viewport metadata,
+before external styles or runtime scripts.
+
+The per-room frozen camera map is Arcade `default-entry-v1`, Lab
+`default-entry-v2`, Library `default-entry-v1`. Producer and consumer use this
+same map; obsolete v1 Lab tokens are rejected safely. Numeric version 1, storage
+key `pazneria.room-handoff.v1`, exact same-origin image allowlist, 15-second
+lifetime, one-shot consumption and recovery remain in the canonical bootstrap.
+There is no second transport and no Arcade or Library consumer change.
 
 The public cover uses `/assets/images/rooms/lab-entry.jpg` on the homepage origin.
-The capture remains unchanged and is not duplicated in this repository.
-The source contract and capture manifest are
-[room-handoff.md](https://github.com/Pazneria/pazneria.github.io/blob/715d292a94ddda4f92eaf3c67b3f18edb073ed47/docs/room-handoff.md)
-and [entry-views.json](https://github.com/Pazneria/pazneria.github.io/blob/715d292a94ddda4f92eaf3c67b3f18edb073ed47/assets/images/rooms/entry-views.json).
+The capture is not duplicated in this repository. The owner's prepared
+`homepage-west-patch` bundle supplies seven homepage text changes plus the exact
+replacement JPEG: 1707 x 923, 170,994 bytes, SHA-256
+`a2328ea468562b7827f2e9daaffec1edd7ac3b6990f3cac4c667e1ec5e0b263c`.
+It is an unedited 9 October default-entry frame rendered at Lab source commit
+`e821df05d19e82cb46ad5eabd7c8401cf040919b`, not a claimed published screenshot.
+The draft metadata records the source commit, local capture URL, intended public
+URL, camera pose and `prepared-draft` status. V2 identifies the west-board
+composition change; the default camera angle is unchanged.
+
+The homepage owner must apply `homepage.patch` and copy its separate
+`prepared/assets/images/rooms/lab-entry.jpg`, checking baseline compatibility.
+That patch updates the producer, canonical consumer, per-room camera manifest,
+documentation and tests together. Its 22 isolated homepage tests and 64 Lab
+bootstrap/controller tests pass. Existing Arcade/Library metadata is preserved.
+Source snapshots, exact changed-file hashes and application instructions are in
+the bundle's `HANDOFF.md`, `snapshot.json` and `prepared.json`. Publish the
+coordinated homepage and Lab changes only through the owning threads; this
+draft does not change the homepage or publish its capture. The homepage owner
+has now adopted these bytes in the exact local commit pinned above and supplied
+the complete eight-file binary patch `homepage-lab-v2.patch`, SHA-256
+`a5b76c5b3c0851d46c1fe8f064c30071a75e3a237466e04efd76a81a0d955e8b`,
+with 27 CPU checks passing. Its owner handoff is in
+`task-20/homepage-v2-validation/HANDOFF.md`. Coordinated publication approval
+remains with the parent; deploy the Lab v2 consumer before the homepage producer.
 
 Only a valid incoming Lab cover bypasses restored history/character-return pose
 for this visit. It uses `spawn()`: x=0, z=7.3, eye=1.62, yaw=0, pitch=-0.04,
@@ -35,5 +65,11 @@ cleanup; the Lab also releases its observer and inert surfaces on pagehide.
 This changes no room geometry, rendering quality, character assets, grading,
 votes, private Studio access or FPS-only controls. Responsive portrait cropping
 and navigation/image decode timing follow the shared contract's limitations.
-Combined browser/GPU QA and ordered publication remain with the parent and
-homepage owner; this destination bridge alone does not certify pixel continuity.
+Bounded headless QA confirmed that a seeded valid v2 token displays the exact
+prepared JPEG, then consumes the token and removes the cover after the live
+default room, character and comparison are ready. It restores the ordinary
+spawn, prompt 01, active surfaces and canvas focus. This is destination QA with
+a local cover, not cross-document production decode/cache verification. The
+homepage owner must verify the served JPEG hash, ordinary-cache entry and Back
+after coordinated publication. See
+[the west runtime receipt](LAB-WEST-SCENEBENCH-RUNTIME-EVIDENCE.json).

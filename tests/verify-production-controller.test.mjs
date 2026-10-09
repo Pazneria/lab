@@ -19,7 +19,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   let nextFrame=0,maxFrames=0,clock=100,focused=true,picked={point:{x:3,z:3}},screenCallbacks,importRelease;
   let navigationRestores=0;
   const mutations=[],handoffEvents=[];
-  const incoming=handoff?{active:true,room:'lab',camera:'default-entry-v1',...handoff}:null;
+  const incoming=handoff?{active:true,room:'lab',camera:'default-entry-v2',...handoff}:null;
   const importGate=deferImport?new Promise(resolve=>{importRelease=resolve;}):null;
   function target(properties={}) {
     const listeners=new Map();
@@ -87,7 +87,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     walkable:p=>Number.isFinite(p?.x)&&Number.isFinite(p?.z),
     nearby:()=>null,safeDestination:kind=>kind==='home'?'https://example.test/':'https://example.test/lab/',
     setExitDoors(){},
-    exhibits:{worlds:{approach:{x:0,z:-4.6,yaw:0,pitch:.12}}},
+    exhibits:realNavigation.exhibits,
     approaches:{character:{x:2.3,z:3.05,yaw:.4,pitch:-.42},catalog:{x:-3,z:-5.8,yaw:0,pitch:.08},home:{x:0,z:7.3,yaw:Math.PI,pitch:0}},
     advance(position,actions,dt){advances.push({actions:[...actions].sort(),dt});if(actions.has('forward'))position.z-=dt;
       if(settleEye){const desired=position.crouch?1:1.62;position.eye+=(desired-position.eye)*(1-Math.exp(-10*dt));}},
@@ -101,7 +101,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     byId('visit-screen').addEventListener('click',()=>callbacks.approach());
     byId('comparison-dialog').addEventListener('close',()=>callbacks.resume());
     return {source:{},inspect,get ready(){return comparisonReady;},hitTest:point=>point?.key?{key:point.key}:{key:'preview-a'},
-      activate(){callbacks.depart();location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
+      activate(point){if(['vote:a','next'].includes(point?.key)){callbacks.changed({});return;}callbacks.depart();location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
     };
   }});
   const room=synthetic({createRoom(canvas,onLost,options){
@@ -514,14 +514,28 @@ test('intentional catalog and Home object clicks open their manual controls with
   }
 });
 
-test('distant SceneBench clicks open its native controls; nearby preview selection still departs once without automatic walking',async()=>{
-  const distant=await controllerFixture();distant.picked={comparison:{key:'preview-a'}};await distant.byId('explore').emit('click');const before=distant.qa.position;
-  await distant.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
-  assert.equal(distant.byId('comparison-dialog').open,true);assert.equal(distant.qa.position.z,before.z);assert.equal(distant.routes.length,0);
-  assert.equal(distant.log.some(e=>e.event==='assign'),false);
-  const near=await controllerFixture();near.qa.teleport({x:0,z:-4.6});near.flush();near.picked={comparison:{key:'preview-a'}};await near.byId('explore').emit('click');
-  await near.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
-  assert.deepEqual(near.log.slice(-2).map(e=>e.event),['dispose','assign']);assert.match(near.log.at(-1).url,/walkable-3d\/scene.html/);assert.equal(near.routes.length,0);
+test('physical SceneBench previews act directly at any distance and preserve the west return pose before one scene departure',async()=>{
+  for(const pose of [realNavigation.spawn(),realNavigation.exhibits.worlds.approach]){
+    const f=await controllerFixture();f.qa.teleport(pose);f.flush();f.picked={comparison:{key:'preview-a'}};await f.byId('explore').emit('click');
+    await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
+    assert.equal(f.byId('comparison-dialog').open,false);assert.deepEqual(f.log.slice(-2).map(e=>e.event),['dispose','assign']);
+    assert.match(f.log.at(-1).url,/walkable-3d\/scene.html/);assert.equal(f.routes.length,0);
+    const approach=realNavigation.exhibits.worlds.approach;
+    for(const key of ['x','z','yaw','pitch'])assert.equal(f.history.state.labPosition[key],approach[key]);
+    assert.equal(f.history.state.labPosition.crouch,false);assert.equal(f.document.pointerLockElement,null);
+    await f.window.emit('pagehide',{persisted:true});f.byId('screen-controls').focus();f.screenCallbacks.returned();await f.window.emit('pageshow',{persisted:true});await settle();f.flush();
+    for(const key of ['x','z','yaw','pitch'])assert.equal(f.qa.position[key],approach[key]);assert.equal(f.captureRequests.length,1);
+    assert.equal(f.document.activeElement,f.canvas);await f.canvas.emit('keydown',{code:'KeyW'});f.flush();assert.deepEqual(f.advances.at(-1).actions,['forward']);
+  }
+});
+
+test('physical Next and vote actions keep the room, pose, capture and held movement active',async()=>{
+  for(const key of ['vote:a','next']){
+    const f=await controllerFixture();await f.byId('explore').emit('click');await f.canvas.emit('keydown',{code:'KeyW'});const pose=f.qa.position;
+    f.picked={comparison:{key}};await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
+    assert.equal(f.engine.disposed,false);assert.equal(f.byId('comparison-dialog').open,false);assert.deepEqual(f.qa.position,pose);assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.captureRequests.length,1);
+    assert.deepEqual(f.log.map(row=>row.event),['create']);f.flush();assert.deepEqual(f.advances.at(-1).actions,['forward']);assert.equal(f.routes.length,0);
+  }
 });
 
 test('Help station shortcuts open directly without automatic movement and keep reset accessible',async()=>{
@@ -578,7 +592,7 @@ test('handoff character or draw failure releases the cover to focused retry and 
 
 test('missing, inactive or unrelated handoff keeps ordinary restored entry and loader behavior',async()=>{
   const pose={x:1,z:2,yaw:.3,pitch:.1};
-  for(const handoff of [false,{active:false},{room:'arcade'}]){
+  for(const handoff of [false,{active:false},{room:'arcade'},{camera:'default-entry-v1'}]){
     const f=await controllerFixture({handoff,state:{labLayoutVersion:'fixture-layout',labPosition:pose},characterState:'loading'});
     assert.equal(f.qa.position.x,1);assert.equal(f.qa.position.z,2);assert.equal(f.navigationRestores,1);assert.equal(f.screenCallbacks.initialPrompt,null);
     assert.ok(f.surfaces.every(node=>!node.inert));assert.equal(f.byId('lab-loading').getAttribute('aria-hidden'),null);assert.deepEqual(f.handoffEvents,[]);

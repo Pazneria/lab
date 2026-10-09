@@ -194,9 +194,9 @@ export const colliders=Object.freeze([
   },
   {
     "type": "box",
-    "minX": -8.55,
-    "maxX": -7.85,
-    "minZ": 2.6,
+    "minX": -11.05,
+    "maxX": -7.550000000000001,
+    "minZ": 2.9000000000000004,
     "maxZ": 3.4
   },
   {

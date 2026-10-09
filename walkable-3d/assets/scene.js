@@ -21,7 +21,7 @@ $('return-comparison').href = returnUrl;
 let cameFromLab = false;
 try {
   const referrer = new URL(document.referrer), lab = new URL('../../lab-space/', import.meta.url);
-  cameFromLab = referrer.origin === lab.origin && referrer.pathname === lab.pathname;
+  cameFromLab = referrer.origin === lab.origin && [lab.pathname, lab.pathname + 'index.html'].includes(referrer.pathname);
 } catch { /* A direct link may have no referrer. */ }
 function returnToComparison() { if ((visit || cameFromLab) && history.length > 1) history.back(); else location.assign(returnUrl); }
 $('return-comparison').addEventListener('click', event => { event.preventDefault(); viewer.destroy(); returnToComparison(); });

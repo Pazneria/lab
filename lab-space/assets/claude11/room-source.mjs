@@ -45,7 +45,7 @@ export function createRoom(canvas,onLost,options={}){
   const comparisonSource=document.createElement('canvas');comparisonSource.width=1280;comparisonSource.height=720;
   const comparisonContext=comparisonSource.getContext('2d');
   comparisonContext.fillStyle='#0d141a';comparisonContext.fillRect(0,0,1280,720);
-  comparisonContext.fillStyle='#e8eff3';comparisonContext.font='600 40px system-ui';comparisonContext.fillText('SceneBench',48,80);
+  comparisonContext.fillStyle='#e8eff3';comparisonContext.font='600 40px system-ui';comparisonContext.fillText('Compare Worlds',48,80);
   comparisonContext.font='26px system-ui';comparisonContext.fillText('Choose two worlds to compare',48,140);
   const comparisonTexture=new T.CanvasTexture(comparisonSource);comparisonTexture.colorSpace=T.SRGBColorSpace;
   comparisonTexture.minFilter=T.LinearFilter;comparisonTexture.generateMipmaps=false;
@@ -81,7 +81,6 @@ export function createRoom(canvas,onLost,options={}){
     mesh.position.set(...position);mesh.rotation.set(...rotation);if(destination)mesh.userData.destination=destination;scene.add(mesh);return mesh;
   }
   // Readable native station labels; authored overlay/HUD elements are not used.
-  panel(['SceneBench','Explore and compare worlds'],3.3,.2,[0,1.33,-6.9]);
   panel(['Catalog','AI benchmark results'],exhibits.catalog.width,exhibits.catalog.height,[exhibits.catalog.x,exhibits.catalog.y,exhibits.catalog.z],[0,0,0],'catalog');
   panel(['Home'],.7,.24,[1.85,1.7,8.45],[0,Math.PI,0],'home');
   // The lectern's existing physical top becomes the CharacterBench shortcut.

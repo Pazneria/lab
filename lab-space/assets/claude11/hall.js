@@ -133,10 +133,7 @@ export function buildHall(ctx) {
   b.collideBox(-5.65, -3.55, dz - 0.6, dz);
 
   // ---- North wall exhibits --------------------------------------------------
-  // Large data wall (frame here, animated screen added by main)
-  b.box(3.5, 2.0, 0.08, M.anodBlack, [0, 2.45, z0 + 0.04]);
-  ctx.screen('datawall', 3.36, 1.89, 1024, 576, [0, 2.45, z0 + 0.085], [0, 0, 0]);
-  b.add(A.sign(1.6, 0.16, { bg: '#2b2e33', lines: [{ t: 'ORBIS-7 · LIVE ACQUISITION FEED', size: 0.5, color: '#e0e6ea', weight: 600 }] }), M.label, [0, 1.33, z0 + 0.081]);
+  // Compare Worlds has a lower integrated console in the west alcove.
   // Equipment racks (west corner)
   for (const [i, rx] of [-6.55, -5.9].entries()) {
     const rz = z0 + 0.55;

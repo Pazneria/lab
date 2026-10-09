@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Canonical assets/js/room-handoff.js from Pazneria/pazneria.github.io @ 715d292a94ddda4f92eaf3c67b3f18edb073ed47 -->
+  <!-- Canonical assets/js/room-handoff.js from Pazneria/pazneria.github.io @ 39d91163736ed0242a3c381e87de401582c33b4b; Git blob 3a5aff4177e65fc68ddf74be4d0d09c71778f68a; owner-prepared local commit, publication pending -->
   <script id="room-handoff-bootstrap">
 (() => {
   'use strict';
@@ -13,14 +13,19 @@
     lab: '/lab/lab-space/',
     library: '/library/',
   };
+  const entryCameras = Object.freeze({
+    arcade: 'default-entry-v1',
+    lab: 'default-entry-v2',
+    library: 'default-entry-v1',
+  });
   let record;
   try {
     record = JSON.parse(window.sessionStorage.getItem(KEY));
     window.sessionStorage.removeItem(KEY);
   } catch { return; }
-  if (!record || record.version !== 1 || record.camera !== 'default-entry-v1') return;
+  if (!record || record.version !== 1) return;
   if (!Number.isFinite(record.createdAt) || record.createdAt > Date.now() || Date.now() - record.createdAt > 15000) return;
-  if (!Object.hasOwn(destinations, record.room) || record.path !== destinations[record.room] || window.location.pathname !== record.path) return;
+  if (!Object.hasOwn(destinations, record.room) || record.path !== destinations[record.room] || window.location.pathname !== record.path || record.camera !== entryCameras[record.room]) return;
   let image;
   try { image = new URL(record.image, window.location.href); } catch { return; }
   const allowedImage = '/assets/images/rooms/' + record.room + '-entry.jpg';
@@ -173,7 +178,7 @@
           <nav class="access-links" aria-label="Direct exhibit access"><a id="access-worlds" href="../walkable-3d/">SceneBench</a><a href="../character-bench/?prompt=02">CharacterBench</a><a href="../">Catalog &amp; evidence</a><a href="../infrastructure/">AI infrastructure</a></nav>
           <button id="enter-room" type="button" hidden>Try again</button>
         </div>
-        <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable Lab. Ivo stands inside the central camera ring. SceneBench is on the north wall. Click to capture the mouse; Escape opens controls." aria-describedby="navigation-help"></canvas>
+        <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable Lab. Ivo stands inside the central camera ring. Compare Worlds is in the west alcove, on the left from the entrance. Click to capture the mouse; Escape opens controls." aria-describedby="navigation-help"></canvas>
         <div class="view-top"><div class="view-actions"><button id="explore" type="button" hidden>Explore</button><button id="visit-screen" type="button" hidden>SceneBench controls</button><button id="screen-controls" type="button" aria-haspopup="dialog" hidden>Compare scenes</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
         <button class="nearby" id="nearby" type="button" hidden>Open exhibit</button>
         <div class="walk-status" id="walk-status" hidden><span id="walk-message" role="status" aria-live="polite"></span></div>
@@ -187,7 +192,7 @@
     <p class="eyebrow">Lab</p><h2 id="help-title">Explore the Lab</h2>
     <p id="navigation-help">Click the room or choose Explore to capture the mouse. Escape opens these controls. Close them to keep walking, or choose Return to room to capture again.</p>
     <p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrow keys to walk, <kbd>Shift</kbd> to walk faster, <kbd>C</kbd> to crouch, and <kbd>R</kbd> to return to the entrance. Press <kbd>E</kbd> to use the station you are looking at. Enter captures an uncaptured mouse; after capture, it can also use a station.</p>
-    <p>Select Ivo inside the camera ring to enter CharacterBench, where two attempts of the same character prompt are compared side by side. SceneBench is on the north wall: select a preview to enter a scene, then return to the same comparison. Open both scenes before voting; the leaderboard and model reveal are available in Compare scenes.</p>
+    <p>Select Ivo inside the camera ring to enter CharacterBench, where two attempts of the same character prompt are compared side by side. Compare Worlds is the lower screen in the west alcove, on your left from the entrance. Select A or B there to inspect a scene full-screen. Exit the scene to return in front of the same screen, then inspect the other scene and vote on the board. Next chooses a new comparison. The SceneBench controls also provide keyboard access, model reveal and the leaderboard.</p>
     <p>Walk south through both sliding door sets to return home. The Lab menu and Exit / Home shortcut also provide direct exit access.</p>
     <div class="destinations"><button id="visit-character" type="button" disabled>Open CharacterBench</button><button id="visit-bench" type="button" disabled>Open catalog</button><button id="visit-home" type="button" disabled>Exit / Home</button><button id="reset" type="button" disabled>Return to entrance</button></div>
     <label class="motion-setting"><input type="checkbox" id="gentle">Gentle movement</label>

@@ -16,7 +16,7 @@ const inline=bootstrap[0][2];
 const canonical=inline.replaceAll('\r\n','\n').replace(/^\n/,'').replace(/\n[ \t]*$/,'\n');
 const KEY='pazneria.room-handoff.v1',NOW=1000000;
 const HREF='https://pazneria.github.io/lab/lab-space/?labqa=1#entry';
-const token=(overrides={})=>({version:1,room:'lab',path:'/lab/lab-space/',image:'/assets/images/rooms/lab-entry.jpg',camera:'default-entry-v1',createdAt:NOW,...overrides});
+const token=(overrides={})=>({version:1,room:'lab',path:'/lab/lab-space/',image:'/assets/images/rooms/lab-entry.jpg',camera:'default-entry-v2',createdAt:NOW,...overrides});
 
 class Events {
   constructor(){this.listeners=new Map();}
@@ -103,11 +103,11 @@ function assertClean(f){
   assert.ok(f.observers.every(observer=>!observer.connected));
 }
 
-test('exact canonical source and early classic-script order are pinned to the approved homepage commit',()=>{
+test('exact canonical source and early classic-script order are pinned to the homepage owner commit',()=>{
   const bytes=Buffer.from(canonical);
-  assert.equal(createHash('sha256').update(bytes).digest('hex'),'65a52aa41dcc09310efea0f00e06f4359df168f75344790eacfd69cf2ad7889c');
-  assert.equal(createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex'),'846960bd15c10cfb1bcf835173022bc42bcdbd19');
-  assert.match(html,/Pazneria\/pazneria\.github\.io @ 715d292a94ddda4f92eaf3c67b3f18edb073ed47/);
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),'711b2e813bbf790c53bed4b66aaa163380b2a9f7c59ebc2caf806723d381f4b6');
+  assert.equal(createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex'),'3a5aff4177e65fc68ddf74be4d0d09c71778f68a');
+  assert.match(html,/Pazneria\/pazneria\.github\.io @ 39d91163736ed0242a3c381e87de401582c33b4b; Git blob 3a5aff4177e65fc68ddf74be4d0d09c71778f68a; owner-prepared local commit, publication pending/);
   assert.equal(scripts[0],bootstrap[0]);assert.match(bootstrap[0][1],/^\s+id="room-handoff-bootstrap"\s*$/);
   assert.ok(bootstrap[0].index>html.indexOf('<head>')&&bootstrap[0].index<html.indexOf('</head>'));
   assert.ok(bootstrap[0].index<html.indexOf('<link rel="stylesheet"'));
@@ -116,7 +116,7 @@ test('exact canonical source and early classic-script order are pinned to the ap
 
 test('valid one-shot Lab token installs an opaque image cover before body or destination modules',()=>{
   const f=fixture({body:false});assert.equal(f.storage.has(KEY),false);assert.deepEqual(f.storageLog,[['get',KEY],['remove',KEY]]);
-  assert.equal(f.cover,'loading');assert.equal(f.bridge.active,true);assert.equal(f.bridge.room,'lab');assert.equal(f.bridge.camera,'default-entry-v1');assert.ok(Object.isFrozen(f.bridge));
+  assert.equal(f.cover,'loading');assert.equal(f.bridge.active,true);assert.equal(f.bridge.room,'lab');assert.equal(f.bridge.camera,'default-entry-v2');assert.ok(Object.isFrozen(f.bridge));
   assert.equal(f.styles.length,1);assert.match(f.styles[0].textContent,/position:fixed;inset:0;z-index:2147480000;background:#101916 url\("https:\/\/pazneria\.github\.io\/assets\/images\/rooms\/lab-entry\.jpg"\) center\/cover no-repeat;opacity:1/);
   assert.equal(f.controls,null);assert.equal(f.observers.length,1);assert.equal(f.observers[0].connected,true);
   assert.deepEqual({...f.observers[0].options},{childList:true});assert.equal([...f.timers.values()][0].delay,8000);
@@ -134,7 +134,7 @@ test('missing, malformed, and denied storage leave ordinary direct entry untouch
 
 test('wrong token version, camera, room, path, and timestamps are rejected and consumed',()=>{
   for(const overrides of [
-    {version:2},{version:'1'},{camera:'other'},{room:'unknown'},{room:'__proto__'},
+    {version:2},{version:'1'},{camera:'default-entry-v1'},{camera:'other'},{room:'unknown'},{room:'__proto__'},
     {path:'/lab/'},{path:'/library/'},{room:'library',path:'/library/'},{createdAt:NOW-15001},
     {createdAt:NOW+1},{createdAt:null},{createdAt:'1000000'},{createdAt:Infinity},
   ]){const f=fixture({record:token(overrides)});assertInactive(f);assert.equal(f.storage.has(KEY),false);}

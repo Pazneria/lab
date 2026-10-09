@@ -1,0 +1,62 @@
+{
+  "verifiedAt": "2026-10-09T05:19:23Z",
+  "finalRevalidation": "2026-10-09: 154 focused CPU cases pass after toast/v2 changes; frozen integrity, publication source checks, catalog and public asset hashes remain unchanged",
+  "baseCommit": "905dd560954feddc9dd09d18dbc400e40e88c8ff",
+  "scope": "Host-owned production derivative and host scene return alias only",
+  "cpuVerification": {
+    "testsPassed": 154,
+    "testsFailed": 0,
+    "pinnedThree": "0.186.1",
+    "pinnedEsbuild": "0.28.2",
+    "suiteGroups": [
+      "production camera/controller/navigation/doors/west station/comparison",
+      "pinned homepage handoff bootstrap",
+      "walkable physical hit targets/navigation/return aliases",
+      "existing grading/public judgment/viewport behavior",
+      "released Lab/CharacterBench integration"
+    ],
+    "authoredGeometryTests": 7,
+    "physicalComparisonFlowTests": 3,
+    "navigationSuiteTests": 17,
+    "preservationChecks": {
+      "recordedFrozenFilesVerified": 1000,
+      "publicationSourceFilesVerified": 1146,
+      "catalogRecords": 89,
+      "frozenAppliedSensingTree": "4c3426259714641da3a54ba9ed80b808823475b0",
+      "catalogSha256": "6dba31abbabc2ba3f63b2db19df878aca5cc61936b01d0179e0198278ee1cbe3",
+      "ivoBytes": 6629216,
+      "ivoSha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1",
+      "unchangedPaths": ["walkable-3d/entries", "walkable-3d/entries.json", "character-bench", "functions"]
+    }
+  },
+  "independentReview": {
+    "materialFindings": 0,
+    "focusedCpuTestsPassed": 94,
+    "bundleRebuiltInMemory": "Exact bytes and SHA-256 match",
+    "routeAudit": "17 navigation cases pass; no material route finding"
+  },
+  "station": {
+    "screenCenter": [-9.3, 1.6, 3.245],
+    "screenSize": [3.2, 1.8],
+    "yaw": 3.141592653589793,
+    "returnXZ": [-9.3, 0.9],
+    "screenCenterLoweredBy": 0.85,
+    "generatedColliderCount": 34,
+    "unchangedColliderCount": 33,
+    "colliderChange": "West cart replaced by wall-aligned low console",
+    "actualSightlinesVerified": "18 standing/crouched rays plus full landscape framing"
+  },
+  "bundle": {
+    "path": "lab-space/assets/production-room.mjs",
+    "bytes": 877963,
+    "sha256": "b780ca59233da55f94544c84a7cc304f30b62d18e959816a2154f1d5fb3d60ec"
+  },
+  "runtime": {
+    "benchmarkEntrantsExecuted": 0,
+    "publicVotesSubmitted": 0,
+    "status": "Subsequent bounded runtime QA complete; separate runtime receipt distinguishes source states and headless scheduling limits",
+    "receipt": "LAB-WEST-SCENEBENCH-RUNTIME-EVIDENCE.json"
+  },
+  "publicationDependency": "Prepared homepage-west-patch contains matching Lab image and v2 contract; owner application and coordinated publication remain pending",
+  "cleanup": "All owned browser/server sessions closed and ports/PIDs absent; Library preview untouched; geometry extraction helper removed"
+}

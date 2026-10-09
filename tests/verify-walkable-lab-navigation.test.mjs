@@ -146,3 +146,85 @@ test('scene document contains no Lab canvas/module; Lab departure disposes its r
   assert.doesNotMatch(html,/space\.js|room\.mjs|<canvas/);assert.match(html,/assets\/scene.js/);assert.match(html,/assets\/judgments.css/);assert.doesNotMatch(lab,/<dialog id="viewer"/);
   assert.match(space,/depart\(\)\{[^}]*preservePosition\(\);roomRequest\+\+;engine\?\.dispose\(\);engine=null/);
 });
+
+test('missing scene storage uses Back only for exact same-origin canonical or index Lab referrers, including queries',async()=>{
+  const href='https://example.test/lab/walkable-3d/scene.html?entry=a&visit=missing';
+  const refs=[
+    'https://example.test/lab/lab-space/',
+    'https://example.test/lab/lab-space/?prompt=01&labqa=1',
+    'https://example.test/lab/lab-space/?prompt=01#comparison',
+    'https://example.test/lab/lab-space/index.html',
+    'https://example.test/lab/lab-space/index.html?prompt=03&entry=g',
+    'https://example.test/lab/lab-space/index.html?prompt=03#comparison',
+  ];
+  for(const referrer of refs){
+    for(const exit of ['viewer','return-link']){
+      const f=await sceneFixture({href,referrer,session:new Map(),length:2});
+      assert.deepEqual(f.opened,[],'A referrer does not replace the missing one-shot autostart token.');
+      assert.equal(f.byId('return-comparison').href,'https://example.test/lab/lab-space/');
+      f.options.onReady(catalog.entries[0]);
+      if(exit==='viewer')f.options.onExit();
+      else {let prevented=false;f.byId('return-comparison').listeners.click({preventDefault(){prevented=true;}});assert.equal(prevented,true);}
+      assert.equal(f.back,1,referrer+' should return to its existing Lab history entry.');assert.deepEqual(f.assigned,[]);
+    }
+  }
+});
+
+test('same-origin Lab referrers without a preceding history entry use the canonical safe return instead of Back',async()=>{
+  for(const referrer of ['https://example.test/lab/lab-space/?prompt=03','https://example.test/lab/lab-space/index.html?prompt=01']){
+    const f=await sceneFixture({href:'https://example.test/lab/walkable-3d/scene.html?entry=a',referrer,length:1});
+    assert.deepEqual(f.opened,[]);f.options.onExit();assert.equal(f.back,0);assert.deepEqual(f.assigned,['https://example.test/lab/lab-space/']);
+    assert.equal(new URL(f.assigned[0]).search,'','Missing storage cannot invent a comparison receipt.');
+  }
+});
+
+test('external, malformed and near-alias Lab referrers cannot redirect history Back',async()=>{
+  for(const referrer of [
+    '', 'not a URL',
+    'https://evil.test/lab/lab-space/','https://evil.test/lab/lab-space/index.html?prompt=01',
+    'http://example.test/lab/lab-space/','https://example.test:444/lab/lab-space/',
+    'https://example.test.evil.test/lab/lab-space/',
+    'https://example.test/lab/lab-space','https://example.test/lab/lab-space-old/',
+    'https://example.test/lab/lab-space//','https://example.test/lab/lab-space/index.htm',
+    'https://example.test/lab/lab-space/index.html/','https://example.test/lab/lab-space/%69ndex.html',
+    'https://example.test/lab/Lab-space/','https://example.test/lab/walkable-3d/',
+    'https://example.test/elsewhere/?return=https://example.test/lab/lab-space/',
+  ]){
+    const f=await sceneFixture({href:'https://example.test/lab/walkable-3d/scene.html?entry=a&visit=missing',referrer,length:20});
+    assert.deepEqual(f.opened,[]);f.options.onExit();assert.equal(f.back,0,referrer+' must not authorize history traversal.');
+    assert.deepEqual(f.assigned,['https://example.test/lab/lab-space/']);
+  }
+});
+
+test('missing-storage Back preserves exact comparison history and cannot credit a viewed scene or unlock its gate',async()=>{
+  const record={version:1,grades:{g:{notes:'Preserved fixture note'}},preferences:{'f::g':{choice:'tie'}},opened:{a:'old'}};
+  for(const href of ['https://example.test/lab/lab-space/?prompt=01','https://example.test/lab/lab-space/index.html?prompt=01']){
+    const storage=new Map([['lab.walkable3d.judgments.v1',JSON.stringify(record)]]),lab=await screenFixture({catalog,href,storage});
+    const initial=copied(lab.history.state),expectedPair=pair(lab);lab.api.activate({x:100,y:200});
+    const preserved=copied(lab.history.state);lab.session.clear();
+    const scene=await sceneFixture({href:lab.assigned[0],session:lab.session,referrer:href,state:{},length:2});
+    assert.deepEqual(scene.opened,[]);scene.options.onReady(catalog.entries[0]);scene.options.onExit();assert.equal(scene.back,1);assert.deepEqual(scene.assigned,[]);
+    await lab.returnVisit({ready:true});
+    assert.deepEqual(pair(lab),expectedPair);assert.equal(lab.history.state.labComparison.comparisonId,initial.labComparison.comparisonId);
+    assert.deepEqual(copied(lab.history.state.labComparison.opened),[]);assert.ok(lab.choices.every(button=>button.disabled));
+    assert.deepEqual(copied(lab.history.state.labPosition),preserved.labPosition);assert.equal(lab.byId('screen-reveal').hidden,true);
+    assert.deepEqual(JSON.parse(storage.get('lab.walkable3d.judgments.v1')),record,'Missing receipt must preserve judgments and cannot invent readiness credit.');
+  }
+});
+
+test('canonical and index query launches return through actual ready receipts with exact sides and both-viewed gates',async()=>{
+  for(const href of ['https://example.test/lab/lab-space/?prompt=03','https://example.test/lab/lab-space/index.html?prompt=03']){
+    const lab=await screenFixture({catalog,href,random:()=>{throw Error('Explicit prompt and Back must not choose a new pair.');}});
+    const initial=copied(lab.history.state),ids=pair(lab);assert.deepEqual(ids,['f','g']);
+    for(let slot=0;slot<2;slot++){
+      lab.api.activate({x:slot?800:100,y:200});
+      const scene=await sceneFixture({href:lab.assigned.at(-1),session:lab.session,referrer:href});
+      assert.deepEqual(scene.opened,[ids[slot]]);scene.options.onReady(catalog.entries.find(entry=>entry.id===ids[slot]));scene.options.onExit();
+      assert.equal(scene.back,1);assert.deepEqual(scene.assigned,[]);await lab.returnVisit();
+      assert.deepEqual(pair(lab),ids);assert.equal(lab.history.state.labComparison.comparisonId,initial.labComparison.comparisonId);
+      assert.deepEqual(copied(lab.history.state.labComparison.opened),ids.slice(0,slot+1));
+      assert.ok(lab.choices.every(button=>button.disabled===(slot===0)));assert.equal(lab.byId('screen-reveal').hidden,true);
+    }
+    assert.deepEqual(JSON.parse(lab.storage.get('lab.walkable3d.judgments.v1')).preferences,{},'These route tests never submit a preference.');
+  }
+});
