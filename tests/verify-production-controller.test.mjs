@@ -13,10 +13,13 @@ const copy=value=>JSON.parse(JSON.stringify(value));
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
 function until(f,predicate,max=500){for(let i=0;i<max&&!predicate();i++)f.flush(f.clock+50);assert.ok(predicate(),'Expected bounded controller progress');}
 
-async function controllerFixture({reducedMotion=false,animate=false,deferImport=false,state={},characterHref='../character-bench/?prompt=02',session=new Map(),referrer='',settleEye=false,requestLock,characterState='ready',drawError=false,renderable=true,actualNavigation=false,fetchResponse}={}) {
+async function controllerFixture({reducedMotion=false,animate=false,deferImport=false,state={},characterHref='../character-bench/?prompt=02',session=new Map(),referrer='',settleEye=false,requestLock,characterState='ready',drawError=false,renderable=true,actualNavigation=false,fetchResponse,handoff=false,coverFade=true,comparisonReady=true}={}) {
   const elements=new Map(),renderers=[],frames=new Map(),cancelled=[],log=[],advances=[],routes=[],media=[],observers=[],captureRequests=[],timers=new Map(),fetches=[];
   let timerId=0;
   let nextFrame=0,maxFrames=0,clock=100,focused=true,picked={point:{x:3,z:3}},screenCallbacks,importRelease;
+  let navigationRestores=0;
+  const mutations=[],handoffEvents=[];
+  const incoming=handoff?{active:true,room:'lab',camera:'default-entry-v1',...handoff}:null;
   const importGate=deferImport?new Promise(resolve=>{importRelease=resolve;}):null;
   function target(properties={}) {
     const listeners=new Map();
@@ -33,7 +36,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   let document;
   function element(id='') {
     const capture=new Set(),attrs=new Map(),classes=new Set();
-    return target({id,dataset:{},hidden:false,disabled:false,checked:false,open:false,value:'',isConnected:true,
+    return target({id,dataset:{},hidden:false,disabled:false,checked:false,open:false,value:'',isConnected:true,inert:false,
       parentElement:{classList:{toggle(){}}},classList:{toggle(){},add:value=>classes.add(value),remove:value=>classes.delete(value),contains:value=>classes.has(value)},
       getAttribute:name=>attrs.get(name)??null,setAttribute(name,value){attrs.set(name,String(value));},removeAttribute:name=>attrs.delete(name),
       focus(){document.activeElement=this;},blur(){if(document.activeElement===this)document.activeElement=null;this.emit('blur');},
@@ -44,8 +47,9 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     });
   }
   const byId=id=>{if(!elements.has(id))elements.set(id,element(id));return elements.get(id);};
-  document=target({hidden:false,pointerLockElement:null,activeElement:null,referrer,hasFocus:()=>focused,
-    getElementById:byId,querySelectorAll:selector=>selector==='a[href*="character-bench/"]'?[byId('character-link'),byId('access-character')]:[],
+  const surfaces=['header','main','help-dialog','station-dialog','comparison-dialog'].map(byId);
+  document=target({documentElement:element('root'),hidden:false,pointerLockElement:null,activeElement:null,referrer,hasFocus:()=>focused,
+    getElementById:byId,querySelectorAll:selector=>selector==='body > header, body > main, body > dialog'?surfaces:selector==='a[href*="character-bench/"]'?[byId('character-link'),byId('access-character')]:[],
     exitPointerLock(){this.pointerLockElement=null;},
   });
   const canvas=byId('room');
@@ -56,7 +60,14 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     assign(url){log.push({event:'assign',url});},
   };
   const history={state:copy(state),replaceState(value){this.state=copy(value);}};
-  const window=target({visualViewport:target()});
+  const window=target({visualViewport:target(),pazneriaRoomHandoff:incoming});
+  function completeCover(){if(incoming)incoming.active=false;for(const observer of mutations)if(!observer.disconnected)observer.callback();}
+  if(incoming){
+    incoming.ready=()=>{const engine=renderers.at(-1);handoffEvents.push({kind:'ready',draws:engine.draws.length,position:copy(engine.draws.at(-1).position),characterState:engine.diagnostics.characterState,comparisonReady});if(!coverFade)completeCover();};
+    incoming.fail=()=>{handoffEvents.push({kind:'fail'});completeCover();};
+    if(incoming.active)byId('handoff-cancel').focus();
+    window.addEventListener('pagehide',completeCover);
+  }
   const context=vm.createContext({URL,URLSearchParams,console,document,window,history,location,
     AbortController,
     setTimeout(callback,delay){const id=++timerId;timers.set(id,{callback,delay});return id;},clearTimeout(id){timers.delete(id);},
@@ -67,6 +78,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     cancelAnimationFrame(id){cancelled.push(id);frames.delete(id);},
     matchMedia(query){const value=target({media:query,matches:query.includes('reduced-motion')&&reducedMotion});media.push(value);return value;},
     ResizeObserver:class {constructor(callback){this.callback=callback;observers.push(this);}observe(){}},
+    MutationObserver:class {constructor(callback){this.callback=callback;this.disconnected=false;mutations.push(this);}observe(){}disconnect(){this.disconnected=true;}},
   });
   const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [key,value]of Object.entries(values))this.setExport(key,value);},{context});
   if(actualNavigation)realNavigation.setExitDoors({inner:0,outer:0});
@@ -88,7 +100,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     byId('screen-controls').addEventListener('click',inspect);
     byId('visit-screen').addEventListener('click',()=>callbacks.approach());
     byId('comparison-dialog').addEventListener('close',()=>callbacks.resume());
-    return {source:{},inspect,hitTest:point=>point?.key?{key:point.key}:{key:'preview-a'},
+    return {source:{},inspect,get ready(){return comparisonReady;},hitTest:point=>point?.key?{key:point.key}:{key:'preview-a'},
       activate(){callbacks.depart();location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
     };
   }});
@@ -106,12 +118,13 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     initializeImportMeta(meta){meta.url='https://example.test/lab/lab-space/assets/production-space.js';},
     async importModuleDynamically(){if(importGate)await importGate;return room;},
   });
-  await module.link(path=>path.endsWith('walkable-screen.js')?screens:path.endsWith('scene-navigation.js')?synthetic({createSceneNavigation:()=>({restore(){}})}):path.endsWith('interaction.mjs')?synthetic(interaction):path.endsWith('production-exit.mjs')?synthetic(exit):navigation);
+  await module.link(path=>path.endsWith('walkable-screen.js')?screens:path.endsWith('scene-navigation.js')?synthetic({createSceneNavigation:()=>({restore(){navigationRestores++;}})}):path.endsWith('interaction.mjs')?synthetic(interaction):path.endsWith('production-exit.mjs')?synthetic(exit):navigation);
   await module.evaluate();if(!deferImport){await settle();const pending=[...frames];frames.clear();for(const [,callback]of pending)callback(clock);}
-  return {canvas,document,window,byId,history,location,renderers,log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,
+  return {canvas,document,window,byId,history,location,renderers,log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,surfaces,mutations,handoffEvents,completeCover,
     get qa(){return window.__productionLab;},get maxFrames(){return maxFrames;},
     get engine(){return renderers.at(-1);},get clock(){return clock;},set clock(value){clock=value;},
     set focused(value){focused=value;},set picked(value){picked=value;},
+    get navigationRestores(){return navigationRestores;},set renderable(value){renderable=value;},set comparisonReady(value){comparisonReady=value;screenCallbacks.changed({});},
     async importReady(){importRelease?.();await settle();},
     async acquireLock(){document.pointerLockElement=canvas;await document.emit('pointerlockchange');},
     flush(time=clock+16){clock=time;const pending=[...frames];frames.clear();for(const [id,callback]of pending)callback(time);return pending.length;},
@@ -519,4 +532,63 @@ test('Help station shortcuts open directly without automatic movement and keep r
   }
   const f=await controllerFixture();f.qa.teleport({x:1,z:6});f.flush();await f.byId('help').emit('click');await f.byId('reset').emit('click');f.flush();
   assert.equal(f.qa.position.x,0);assert.equal(f.qa.position.z,7.3);assert.equal(f.routes.length,0);
+});
+
+test('valid homepage handoff starts at the captured spawn and prompt without consuming saved character-return or history pose',async()=>{
+  const pose={x:1,z:2,yaw:.3,pitch:.1,crouch:true},state={labLayoutVersion:'fixture-layout',labPosition:pose,labPrompt:'03'};
+  const key='lab.production.character-return.v1',value=JSON.stringify({layout:'fixture-layout',position:pose}),session=new Map([[key,value]]);
+  const f=await controllerFixture({handoff:true,state,session,referrer:'https://example.test/lab/character-bench/',characterState:'loading'});
+  assert.deepEqual([f.qa.position.x,f.qa.position.z,f.qa.position.yaw,f.qa.position.pitch,f.qa.position.eye],[0,7.3,0,-.04,1.62]);
+  assert.equal(f.screenCallbacks.initialPrompt,'01');assert.equal(f.navigationRestores,0);assert.equal(session.get(key),value);
+  assert.deepEqual(f.history.state,state);assert.ok(f.surfaces.every(node=>node.inert));assert.equal(f.byId('lab-loading').getAttribute('aria-hidden'),'true');
+  await f.canvas.emit('keydown',{code:'KeyW'});await f.canvas.emit('keydown',{code:'KeyE'});await f.byId('explore').emit('click');
+  await f.byId('visit-character').emit('click');f.flush();assert.equal(f.qa.position.z,7.3);assert.equal(f.captureRequests.length,0);
+  assert.equal(f.log.some(e=>e.event==='assign'),false);assert.deepEqual(f.handoffEvents,[]);
+  await f.window.emit('blur');assert.deepEqual(f.history.state,state);
+});
+
+test('handoff reveal waits for ready Ivo, the default comparison and a successful frame; input and focus wait for cover removal',async()=>{
+  const f=await controllerFixture({handoff:true,deferImport:true,characterState:'loading',comparisonReady:false});
+  assert.deepEqual(f.handoffEvents,[]);await f.importReady();f.flush();assert.deepEqual(f.handoffEvents,[]);
+  f.engine.diagnostics.characterState='ready';f.engine.changed();f.flush();assert.deepEqual(f.handoffEvents,[]);
+  f.renderable=false;f.comparisonReady=true;f.flush();assert.deepEqual(f.handoffEvents,[]);
+  f.renderable=true;f.engine.changed();f.flush();assert.equal(f.handoffEvents.length,1);
+  const ready=f.handoffEvents[0];assert.equal(ready.kind,'ready');assert.ok(ready.draws>0);assert.equal(ready.characterState,'ready');assert.equal(ready.comparisonReady,true);
+  assert.deepEqual([ready.position.x,ready.position.z,ready.position.yaw,ready.position.pitch,ready.position.eye],[0,7.3,0,-.04,1.62]);
+  assert.equal(f.document.activeElement,f.byId('handoff-cancel'));assert.ok(f.surfaces.every(node=>node.inert));
+  await f.canvas.emit('keydown',{code:'KeyW'});await f.byId('explore').emit('click');f.flush();assert.equal(f.qa.position.z,7.3);assert.equal(f.captureRequests.length,0);
+  f.completeCover();assert.equal(f.document.activeElement,f.canvas);assert.ok(f.surfaces.every(node=>!node.inert));assert.ok(f.mutations.every(observer=>observer.disconnected));
+  await f.canvas.emit('keydown',{code:'KeyW'});f.flush();f.flush();assert.ok(f.qa.position.z<7.3);assert.equal(f.handoffEvents.length,1);
+});
+
+test('reduced-motion immediate handoff removal focuses the room after its ready frame without capturing',async()=>{
+  const f=await controllerFixture({handoff:true,coverFade:false,reducedMotion:true});
+  assert.equal(f.handoffEvents[0].kind,'ready');assert.equal(f.document.activeElement,f.canvas);assert.ok(f.surfaces.every(node=>!node.inert));
+  assert.equal(f.captureRequests.length,0);assert.equal(f.byId('gentle').checked,true);
+});
+
+test('handoff character or draw failure releases the cover to focused retry and usable direct links',async()=>{
+  for(const options of [{characterState:'failed'},{drawError:true}]){
+    const f=await controllerFixture({handoff:true,...options});
+    assert.deepEqual(f.handoffEvents,[{kind:'fail'}]);assert.equal(f.byId('room-access').hidden,false);assert.equal(f.byId('enter-room').hidden,false);
+    assert.equal(f.document.activeElement,f.byId('enter-room'));assert.ok(f.surfaces.every(node=>!node.inert));assert.equal(f.engine.disposed,true);
+    assert.ok(f.mutations.every(observer=>observer.disconnected));assert.equal(f.captureRequests.length,0);
+  }
+});
+
+test('missing, inactive or unrelated handoff keeps ordinary restored entry and loader behavior',async()=>{
+  const pose={x:1,z:2,yaw:.3,pitch:.1};
+  for(const handoff of [false,{active:false},{room:'arcade'}]){
+    const f=await controllerFixture({handoff,state:{labLayoutVersion:'fixture-layout',labPosition:pose},characterState:'loading'});
+    assert.equal(f.qa.position.x,1);assert.equal(f.qa.position.z,2);assert.equal(f.navigationRestores,1);assert.equal(f.screenCallbacks.initialPrompt,null);
+    assert.ok(f.surfaces.every(node=>!node.inert));assert.equal(f.byId('lab-loading').getAttribute('aria-hidden'),null);assert.deepEqual(f.handoffEvents,[]);
+  }
+});
+
+test('handoff pagehide releases inert surfaces and observer; Back reconstructs without replaying the cover or readiness',async()=>{
+  const f=await controllerFixture({handoff:true});assert.equal(f.handoffEvents.length,1);
+  await f.window.emit('pagehide',{persisted:true});assert.ok(f.surfaces.every(node=>!node.inert));assert.ok(f.mutations.every(observer=>observer.disconnected));
+  assert.equal(f.engine.disposed,true);const old=f.engine;old.changed();f.flush();assert.equal(old.draws.length,1);
+  await f.window.emit('pageshow',{persisted:true});await settle();f.flush();assert.equal(f.renderers.length,2);assert.equal(f.handoffEvents.length,1);
+  assert.equal(f.captureRequests.length,0);assert.ok(f.surfaces.every(node=>!node.inert));
 });

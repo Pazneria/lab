@@ -5,7 +5,7 @@ import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable,
 import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
-export function createWalkableScreen({changed,suspend,resume,approach,depart=suspend}) {
+export function createWalkableScreen({changed,suspend,resume,approach,depart=suspend,initialPrompt=null}) {
   const $=id=>document.getElementById(id),base=new URL('../../walkable-3d/',import.meta.url);
   const source=document.createElement('canvas');source.width=comparisonLayout.width;source.height=comparisonLayout.height;
   const ctx=source.getContext('2d'),images=new Map(),key='lab.walkable3d.judgments.v1';
@@ -157,12 +157,13 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     allEntries=data.entries;if(!Array.isArray(allEntries)||allEntries.some(e=>!/^[a-z0-9-]+$/.test(e.id)||!/^[a-f0-9]{64}$/.test(e.htmlSha256)))throw Error();prompts=data.prompts;canShuffle=hasRandomComparison(prompts,allEntries);
     $('screen-prompt').replaceChildren(...prompts.map(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=`${p.id} / ${p.title}`;return o;}));
     const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry')),visit=navigation.receipt();
-    if(visit&&!history.state?.labComparison)history.replaceState({...history.state,labPrompt:visit.promptId,labPairOrder:visit.pair,labPair:visit.pair.slice().sort().join('::'),labComparison:visit},'');
-    if(history.state?.labPrompt)selectPrompt(history.state.labPrompt,true);
+    if(!initialPrompt&&visit&&!history.state?.labComparison)history.replaceState({...history.state,labPrompt:visit.promptId,labPairOrder:visit.pair,labPair:visit.pair.slice().sort().join('::'),labComparison:visit},'');
+    if(initialPrompt)selectPrompt(initialPrompt);
+    else if(history.state?.labPrompt)selectPrompt(history.state.labPrompt,true);
     else if(requestedEntry)selectPrompt(requestedEntry.promptId,false,null,requestedEntry.id);
     else if(params.has('prompt'))selectPrompt(params.get('prompt'));
     else {const initial=randomComparison(prompts,allEntries);selectPrompt(initial?.promptId||prompts[0]?.id,false,initial?.entries);}
-    receiveReturn(visit);
+    if(!initialPrompt)receiveReturn(visit);
   }).catch(()=>{error='The entry index could not load. Use the standalone benchmark link or reload.';render();});
-  return {source,hitTest,activate,inspect,get ready(){return entries.length>0;}};
+  return {source,hitTest,activate,inspect,get ready(){return entries.length>0&&(!initialPrompt||pair().every(entry=>entry.previewAvailable===false||images.get(entry.id)?.complete));}};
 }

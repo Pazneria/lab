@@ -36,6 +36,25 @@ test('explicit prompt/entry links and restored comparisons are deterministic and
   assert.match(standalone,/selectPrompt\(requestedEntry\?\.promptId\|\|params.get\('prompt'\)\|\|'01',requestedEntry\?\.id\)/);
 });
 
+test('homepage initial prompt bypasses remembered comparison for this visit without changing saved judgments or Next randomization',async()=>{
+  const record={version:1,grades:{g:{notes:'Keep private'}},preferences:{'f::g':{choice:'g'}},opened:{f:'earlier'}};
+  const storage=new Map([['lab.walkable3d.judgments.v1',JSON.stringify(record)]]);
+  const remembered=await screenFixture({catalog,random:()=>.99});
+  let randomCalls=0;const f=await screenFixture({catalog,initialPrompt:'01',state:copied(remembered.history.state),href:'https://example.test/lab/lab-space/?prompt=03',storage,random:()=>{randomCalls++;return .99;}});
+  assert.equal(f.history.state.labPrompt,'01');assert.deepEqual(pair(f),['a','b']);assert.equal(f.api.ready,true);assert.equal(randomCalls,0);
+  assert.ok(f.choices.every(button=>button.disabled));assert.deepEqual(JSON.parse(storage.get('lab.walkable3d.judgments.v1')),record);assert.deepEqual(f.assigned,[]);
+  f.byId('screen-next').listeners.click();assert.ok(randomCalls>0);assert.equal(f.history.state.labPrompt,'03');assert.ok(f.choices.every(button=>button.disabled));
+  assert.deepEqual(JSON.parse(storage.get('lab.walkable3d.judgments.v1')),record);
+});
+
+test('homepage board readiness waits for both initial preview requests to settle; direct entry and declared placeholders stay usable',async()=>{
+  const f=await screenFixture({initialPrompt:'01',pendingImage:true});assert.equal(f.api.ready,false);assert.equal(f.images.length,2);
+  f.images[0].complete=true;f.images[0].onload();assert.equal(f.api.ready,false);
+  f.images[1].complete=true;f.images[1].naturalWidth=0;f.images[1].onerror();assert.equal(f.api.ready,true);
+  const direct=await screenFixture({pendingImage:true});assert.equal(direct.api.ready,true);
+  const placeholder=await screenFixture({initialPrompt:'01',placeholder:true});assert.equal(placeholder.api.ready,true);assert.equal(placeholder.images.length,0);
+});
+
 test('board and native scene clicks leave in the same tab once and preserve comparison/position',async()=>{
   const f=await screenFixture({catalog});f.byId('screen-controls').listeners.click();
   f.api.activate({x:100,y:200});f.byId('screen-cards').children[1].children[0].listeners.click();f.api.activate({x:800,y:200});f.byId('screen-next').listeners.click();

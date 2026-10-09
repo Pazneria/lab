@@ -1,4 +1,5 @@
 body{background:#1a1d21;color:#e8ecef}
+html[data-room-handoff] .lab-loading{display:none}
 .lab-loading{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:#111318;color:#e5e7eb;font:12px system-ui,sans-serif;opacity:1;visibility:visible;transition:opacity .18s ease}
 .loading-name{font-size:13px;font-weight:500;letter-spacing:.18em}.loading-indicator{width:26px;height:2px;overflow:hidden;background:#343944;position:relative}.loading-indicator:after{content:"";position:absolute;inset:0;background:#b4bdce;transform:translateX(-100%);animation:lab-loading 1.2s ease-in-out infinite}#loading-stage{color:#98a1b1;font-size:11px}.lab-loading.is-ready{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility 0s .18s}
 @keyframes lab-loading{to{transform:translateX(100%)}}
