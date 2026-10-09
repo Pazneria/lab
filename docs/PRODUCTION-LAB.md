@@ -19,6 +19,12 @@ native controls preserve random first selection, viewed-both gating, model
 reveal, public leaderboard, votes and same-tab scene departure. A scene
 departure disposes this Lab renderer before loading the submitted scene; exiting
 returns in front of the west screen with the same ordered pair and viewed gates.
+SceneBench in the header, menu and nearby shortcut focuses that physical screen.
+Blank screen regions do nothing. **Accessible controls** deliberately opens the
+optional native panel, including the existing public leaderboard and grading.
+The console uses pale cabinetry, a fitted display enclosure and a dark technical
+screen; the follow-up design, direct-click checks and captures are in
+[LAB-PHYSICAL-SCENEBENCH.md](LAB-PHYSICAL-SCENEBENCH.md).
 The catalog and home exit remain available in the minimal host menu.
 
 Claude's overlay, crosshair, area label, HUD and statistics UI are removed.
@@ -28,7 +34,8 @@ Keyboard input is canvas-scoped. Focus loss, capture release, dialogs and hidden
 documents clear held input and velocity; inactive pages render no frames.
 Movement uses only WASD or arrow keys; floor clicks do not start automatic routes.
 Clicks still acquire mouse look and use physical stations. Help shortcuts open
-the destination controls directly, preserving keyboard access and manual exits.
+their destinations; SceneBench focuses its physical screen. Explicit accessible
+controls preserve keyboard access and manual exits.
 Back/Forward recreates disposed renderers, including gentle reduced motion and
 pending-load races. A scoped, one-use session pose restores the Lab after a
 same-origin CharacterBench return when the normal history entry is unavailable.

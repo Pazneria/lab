@@ -1,5 +1,11 @@
 # West Compare Worlds station
 
+The placement and earlier QA below describe PR64. The subsequent physical-screen
+interaction correction and visual redesign are documented in
+[LAB-PHYSICAL-SCENEBENCH.md](LAB-PHYSICAL-SCENEBENCH.md), with current captures and
+a separate source-bound receipt. The station location and comparison backend
+remain unchanged.
+
 The production derivative moves its single SceneBench display from the north
 hall to the west alcove's south wall, left when entering from the south. The
 screen is 3.2 × 1.8 m, centered at `(-9.3, 1.6, 3.245)` and facing north. Its
@@ -71,6 +77,8 @@ The matching, unedited 1707 x 923 entrance JPEG and portable homepage patch are
 prepared in the owner's `homepage-west-patch` bundle. The Lab now consumes its
 exact prepared canonical bootstrap and `default-entry-v2`; Arcade and Library
 retain v1. The ordinary spawn and one-shot transport remain unchanged. The
-homepage owner must apply the matching producer, canonical source, image and
-manifest before coordinated publication. PR64 remains a draft; this QA neither
-merges nor deploys it. All owned browsers and servers are closed.
+homepage owner prepared the matching producer, canonical source, image and
+manifest for coordinated publication. PR64 was subsequently merged as
+`6aa072d92dfa8d4715d3b2b44c72355f3abef040`. The physical-screen follow-up remains
+a separate draft with a replacement entrance capture. All browsers and servers
+owned by these QA sessions are closed.

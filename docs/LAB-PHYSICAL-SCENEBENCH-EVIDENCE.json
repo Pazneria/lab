@@ -1,0 +1,225 @@
+{
+  "verifiedAt": "2026-10-09T08:19:13.897101+00:00",
+  "baseCommit": "6aa072d92dfa8d4715d3b2b44c72355f3abef040",
+  "finalSourceCommit": "05db8f5173d969a93babc5ead1329c96b5628ed6",
+  "directInteractionCaptureCommit": "3a12def4537880a8ebd94492afb7860c3bcbb65a",
+  "narrowAndEntranceCaptureCommit": "05db8f5173d969a93babc5ead1329c96b5628ed6",
+  "sourceEquivalence": "Final source differs from direct-click capture only by the max-width640 portrait CSS repair; JavaScript, geometry, renderer and interaction targets are identical.",
+  "scope": "Host-owned production derivative only; no publication in this draft",
+  "cpu": {
+    "passed": 153,
+    "failed": 0,
+    "frozenFilesVerified": 1000,
+    "votingCatalogRecords": 89,
+    "independentReviewPassed": 91,
+    "independentMaterialFindings": 0,
+    "bundleRebuild": "Independent pinned in-memory rebuild matches exact bytes",
+    "pinnedThree": "0.186.1",
+    "pinnedEsbuild": "0.28.2"
+  },
+  "preservedTrees": [
+    {
+      "path": "walkable-3d",
+      "baseTreeOrBlob": "4992a31038a20f479874c47422a48fab9d020307",
+      "draftTreeOrBlob": "4992a31038a20f479874c47422a48fab9d020307"
+    },
+    {
+      "path": "walkable-3d/entries/applied-sensing-opus/frozen",
+      "baseTreeOrBlob": "4c3426259714641da3a54ba9ed80b808823475b0",
+      "draftTreeOrBlob": "4c3426259714641da3a54ba9ed80b808823475b0"
+    },
+    {
+      "path": "character-bench",
+      "baseTreeOrBlob": "a78a51d7f4f8ec0ea9fb71401213b6515134900c",
+      "draftTreeOrBlob": "a78a51d7f4f8ec0ea9fb71401213b6515134900c"
+    },
+    {
+      "path": "lab-space/characters",
+      "baseTreeOrBlob": "480bd6927451aa655304ce21ceb6c8c383c22800",
+      "draftTreeOrBlob": "480bd6927451aa655304ce21ceb6c8c383c22800"
+    },
+    {
+      "path": "data",
+      "baseTreeOrBlob": "f613699c03fa9e8cffe249e7748270534a8bda15",
+      "draftTreeOrBlob": "f613699c03fa9e8cffe249e7748270534a8bda15"
+    },
+    {
+      "path": "infrastructure",
+      "baseTreeOrBlob": "5bef467fa42dcda5fdecb63e870222a6c7744be9",
+      "draftTreeOrBlob": "5bef467fa42dcda5fdecb63e870222a6c7744be9"
+    }
+  ],
+  "catalog": {
+    "path": "walkable-3d/entries.json",
+    "bytes": 357974,
+    "sha256": "6dba31abbabc2ba3f63b2db19df878aca5cc61936b01d0179e0198278ee1cbe3"
+  },
+  "publicCharacter": {
+    "path": "lab-space/characters/ivo-renn-sol.glb",
+    "bytes": 6629216,
+    "sha256": "9db9b433a1759c36a3c41bfc0e1625d4ad4501c4c6fc75df375647ba24f488b1"
+  },
+  "renderer": {
+    "path": "lab-space/assets/production-room.mjs",
+    "bytes": 878406,
+    "sha256": "d93efdec994ff9ee0c84a6f7f1a034caba8121f83c6bb53e4601ca78efa8cc38"
+  },
+  "runtime": {
+    "browserVersion": "154.0.8037.98",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti Laptop GPU (0x00002F58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "isolation": "Loopback-only; nonlocal requests blocked. Integrity-checked controlled HTML substitutes for frozen scene documents. Vote/session requests intercepted locally. Final entrance/portrait capture uses real catalog and public JPEG stills only.",
+    "benchmarkEntrantsExecuted": 0,
+    "realVotesSubmitted": 0,
+    "mockedWriteRequests": 2,
+    "applicationOrQaErrors": 0,
+    "aiming": "Controlled QA yaw/pitch aimed the actual 3D ray at screen coordinates, then native browser mouse down/up dispatched through the real canvas. No screen.activate calls or synthetic DOM events.",
+    "checks": [
+      "Header and menu SceneBench actions focus physical station with same renderer and no comparison dialog",
+      "Actual scene-card native clicks open existing same-tab full-screen viewer; Lab canvas/module absent there",
+      "Ready receipts restore safe standing pose, exact comparison and ordered A/B pair, focused canvas and released capture",
+      "Disabled vote after one receipt sends no requests",
+      "Both ready receipts enable physical vote; native vote reveals models and keeps the same renderer",
+      "Native Next resets both viewing gates and blind labels without leaving room",
+      "Whitespace and removed Inspect/Leaderboard button regions never open comparison UI",
+      "Explicit Accessible controls opens optional dialog",
+      "Portrait native SceneBench/accessibility buttons work; all4buttons fit at390x844 and320x700"
+    ]
+  },
+  "frameSample": {
+    "durationSeconds": 5,
+    "samples": 1201,
+    "medianMs": 4.199999999982538,
+    "p95Ms": 4.2999999999883585,
+    "p99Ms": 4.300000000017462,
+    "over25ms": 0,
+    "diagnostics": {
+      "threeRevision": "186",
+      "viewport": {
+        "width": 1707,
+        "height": 923,
+        "pixelRatio": 1
+      },
+      "renderedFrames": 22419,
+      "textureUpdates": 0,
+      "staticTriangles": 57376,
+      "drawCalls": 49,
+      "triangles": 11948,
+      "geometryCount": 134,
+      "textureCount": 41,
+      "characterState": "ready",
+      "characterBatch": {
+        "originalMeshes": 322,
+        "displayMeshes": 29,
+        "triangles": 250542,
+        "originalVertices": 132526,
+        "displayVertices": 132526,
+        "scale": 0.6215153254072339,
+        "bounds": {
+          "min": [
+            -0.6761287672498918,
+            0.66,
+            -0.7671478275061874
+          ],
+          "max": [
+            0.6761287672498918,
+            2.0100000000000002,
+            -0.43285217249381264
+          ]
+        }
+      },
+      "shadowSize": 4096
+    },
+    "viewport": {
+      "w": 1707,
+      "h": 923,
+      "dpr": 1
+    },
+    "capture": "room",
+    "longTasks": [
+      {
+        "start": 63.70000000298023,
+        "duration": 642
+      },
+      {
+        "start": 706.6000000014901,
+        "duration": 337
+      }
+    ],
+    "limitations": "Headless RAF scheduling, not displayed FPS or GPU timings. No frozen-scene baseline."
+  },
+  "previewImages": [
+    {
+      "path": "docs/previews/lab-physical-screen/lab-entry.jpg",
+      "bytes": 171898,
+      "sha256": "9379003c054b3daa59886b3b6b46d9c8999646388eeabc97b4ca460efd7cc17b"
+    },
+    {
+      "path": "docs/previews/lab-physical-screen/mock-preference.png",
+      "bytes": 1160985,
+      "sha256": "f6da84e798e1cc08267884088d151f183357f11495f78aa432ddadcdccfd06cb"
+    },
+    {
+      "path": "docs/previews/lab-physical-screen/portrait.png",
+      "bytes": 262174,
+      "sha256": "4f1061cccd7aa27cda7bcb32c8ecef29f0b90e51099c7bb7b76dafd973666713"
+    },
+    {
+      "path": "docs/previews/lab-physical-screen/station.png",
+      "bytes": 1173242,
+      "sha256": "28e426eb62a14bf66bb47094bed03aa8c2405915aadfb2fe90fefa3abc6de30f"
+    }
+  ],
+  "entrance": {
+    "captureSource": "05db8f5173d969a93babc5ead1329c96b5628ed6",
+    "pose": {
+      "x": 0,
+      "z": 7.3,
+      "yaw": 0,
+      "pitch": -0.04,
+      "eye": 1.62,
+      "vx": 0,
+      "vz": 0
+    },
+    "viewport": {
+      "w": 1707,
+      "h": 923,
+      "dpr": 1
+    },
+    "image": {
+      "path": "docs/previews/lab-physical-screen/lab-entry.jpg",
+      "bytes": 171898,
+      "sha256": "9379003c054b3daa59886b3b6b46d9c8999646388eeabc97b4ca460efd7cc17b"
+    },
+    "productionHomepageDestination": "assets/images/rooms/lab-entry.jpg",
+    "existingCameraContract": "default-entry-v2",
+    "coordination": "Supply replacement image and manifest hash to homepage owner before coordinated publication. Camera pose and pinned bootstrap contract are unchanged; no homepage producer or sharing changes made here."
+  },
+  "cleanup": {
+    "sessions": [
+      {
+        "pid": 50892,
+        "port": 59085,
+        "closed": true,
+        "pidAliveAfterClose": false,
+        "portListeningAfterClose": false
+      },
+      {
+        "pid": 33644,
+        "port": 51092,
+        "closed": true,
+        "pidAliveAfterClose": false,
+        "portListeningAfterClose": false
+      }
+    ],
+    "ownedChromeBrowsersClosed": true,
+    "library5418Untouched": true
+  },
+  "limits": [
+    "Headless RAF intervals measure scheduling, not displayed FPS or GPU duration; no measured improvement against frozen entry",
+    "Controlled scene fixtures verify host navigation and guards, not submitted-scene rendering or contestant performance",
+    "Physical touch gestures not exercised",
+    "Native mouse capture tested; precise targets used QA camera orientation to avoid headless relative-cursor warps",
+    "Early return stills caught the loading fade; clean return capture waited until loader opacity reached zero",
+    "No merge, deployment or live-source claim; publication held for parent coordination"
+  ]
+}
