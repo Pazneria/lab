@@ -9,8 +9,8 @@ the actual character silhouette opens `../character-bench/?prompt=02`, the
 dedicated same-prompt, two-attempt comparison route owned in a separate change.
 The lectern is a matching shortcut. No character ranking or winner is implied.
 The private inspection Studio, its audience, responses, credentials and backend
-are outside this change. **Do not merge this Lab until the comparison route is
-available in the coordinated integration.**
+are outside this change. The coordinated Lab and comparison route were released
+in PR #59 at commit `55a102e8262e80677c461dfe4f64918aba4aa4e8`.
 
 SceneBench occupies the existing north-wall screen. Its original comparison
 modules and native controls preserve random first selection, viewed-both gating,
@@ -23,9 +23,13 @@ The host provides Explore, Help, navigation and optional direction buttons.
 Mouse look uses direct movement deltas, adjustable sensitivity and bounded pitch.
 Keyboard input is canvas-scoped. Focus loss, capture release, dialogs and hidden
 documents clear held input and routes; inactive pages render no frames.
-Back/Forward recreates disposed renderers, including reduced-motion opt-in and
+Back/Forward recreates disposed renderers, including gentle reduced motion and
 pending-load races. A scoped, one-use session pose restores the Lab after a
 same-origin CharacterBench return when the normal history entry is unavailable.
+The 9 October follow-up aligns capture and movement with the fixed Library,
+loads directly into the room, and opens both south door sets as visitors walk
+out. Its contract, CPU evidence and held runtime checks are in
+[LAB-LIBRARY-CONTROLS.md](LAB-LIBRARY-CONTROLS.md).
 
 ## Functional room map
 
@@ -44,7 +48,8 @@ This is a schematic, not a scale drawing:
                                      Lectern (2.3, 2.1)
 
                           Entrance spawn (0, 7.3)
-                          Home doorway (0, 8.5)
+                          Inner sliding doors (0, 8.5)
+                          Vestibule / outer doors (0, 11.5)
                          SOUTH (+Z)
 ```
 
@@ -53,7 +58,7 @@ This is a schematic, not a scale drawing:
 | Central camera ring | Ivo stands on the original drum. His real mesh silhouette, drum and adjacent lectern open `../character-bench/?prompt=02`. The dedicated route compares two attempts of the same character prompt; the single Lab exhibit does not declare a winner. The walk shortcut approaches from the southeast at `(2.3, 3.05)`. |
 | North-wall data screen | Hosts the existing SceneBench comparison canvas. A distant selection walks to `(0, -4.6)`; nearby selections use the screen's physical UV coordinates. Preview entry, same-pair return, viewed-both voting, reveal, grading and leaderboard retain their existing modules. Compare scenes also opens the native accessible controls. |
 | North-west Catalog plaque | Approaches `(-3, -5.8)`, then opens the public catalog/evidence station dialog. This reuses the public catalog destination. |
-| South Home doorway | Approaches `(0, 7.3)`, then opens the exit dialog and existing home destination. |
+| South Home doorway | Approaching opens the first sliding set; continuing through the vestibule opens the second. Crossing the landing exit plane navigates Home once in the same tab. The plaque, Help shortcut and menu retain a manual accessible exit. |
 | West perception / east motion alcoves | Preserve the original machine-vision bench and motion-test apparatus as explorable room content. They do not claim additional website features. |
 | Host menu and fallback links | Keep Catalog, AI infrastructure, SceneBench, CharacterBench and Home discoverable; fallback links provide direct access when 3D is unavailable. AI infrastructure remains a menu destination. |
 
@@ -95,8 +100,8 @@ records these facts without exposing private Library or Studio data.
 ## Performance work and limits
 
 Static regional/material batching, original lighting, the 4096-square label atlas,
-and 4096-square static shadow are retained. Shadows update once at startup and
-once after the character loads. Rendering density is capped at DPR 1.25, matching
+and 4096-square shadow are retained. Shadows update at startup, after the
+character loads, and when the new door panels move. Rendering density is capped at DPR 1.25, matching
 the original default. Static matrices and texture preparation are reused.
 
 The GLB loads after the first active Lab draw, without requiring a click.
@@ -114,11 +119,13 @@ front-facing screens update with a total 30-update/second budget and 12 Hz
 per-screen ceiling. Invisible screens do not request continuous rendering.
 This reduces unnecessary updates without reducing the room's geometry or lights.
 
-Navigation uses the exact 34 generated scene colliders and a spatial index.
-Bounded CPU measurements on the user's machine: first detour/grid setup 12.46 ms;
+Navigation retains the exact 34 generated records for provenance. Host collision
+replaces only the fixed door blocker with shared moving-panel geometry and adds
+the vestibule/landing envelope. Historical CPU measurements before the
+walking-exit change: first detour/grid setup 12.46 ms;
 600 warm routes median 0.0053 ms, p95 0.3861 ms, maximum 2.0727 ms.
 These measure navigation CPU work only. **No AAA-performance claim is made.**
-After explicit clearance, bounded Chrome QA established a 1440x900 / DPR 1
+Before this follow-up, bounded Chrome QA established a 1440x900 / DPR 1
 baseline on the automatically selected RTX 5070 Ti Laptop GPU. Active RAF
 intervals were 4.2 ms median, 16.7/16.8 ms p95/p99 with none over 25 ms across
 four 10-second samples. These are headless browser scheduling measurements,
@@ -127,8 +134,9 @@ Cold loading costs and remaining platform limits are recorded separately in
 [the combined runtime receipt](LAB-CHARACTERBENCH-RUNTIME-EVIDENCE.json).
 
 Independent controller and renderer/navigation reviews found no remaining
-material correctness or requirement failures. The original 56 CPU cases are
-retained; the combined change now passes 96 focused cases. Runtime QA exposed a
+material correctness or requirement failures. The follow-up passes 134 focused
+CPU cases; native capture, fades and door-motion GPU costs still await coordinated
+runtime clearance. Earlier runtime QA exposed a
 detached camera transform bug, fixed by keeping its matrix updates enabled while
 the static room remains frozen. Three new tests use actual pinned Three r186
 camera transforms and board intersections. Final recorded images show the room
@@ -141,7 +149,7 @@ directory containing exact `three@0.186.1` and `esbuild@0.28.2`, then run:
 
 ```text
 node scripts/build-production-lab.cjs
-node --experimental-vm-modules --test tests/verify-production-camera.test.mjs tests/verify-production-controller.test.mjs tests/verify-production-navigation.test.mjs
+node --experimental-vm-modules --test tests/verify-production-*.test.mjs
 node --experimental-vm-modules --test tests/verify-walkable-lab-navigation.test.mjs tests/verify-walkable-hit-targets.test.mjs tests/verify-walkable-grading-ui.test.mjs tests/verify-walkable-public-judgments.test.mjs tests/verify-walkable-viewport.test.mjs
 python tests/verify-walkable-integrity.py
 python tests/verify-walkable-publication.py

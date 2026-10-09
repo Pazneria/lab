@@ -15,6 +15,7 @@ import {exhibits} from './layout.mjs';
 import {colliders as expectedColliders} from './colliders.mjs';
 import {batchStaticCharacter,fitCharacter,disposeGraph} from './character.mjs';
 import {createLabCamera,poseLabCamera} from './camera.mjs';
+import {createExitDoors} from './exit-doors.mjs';
 export {exhibits} from './layout.mjs';
 
 export function createRoom(canvas,onLost,options={}){
@@ -67,6 +68,7 @@ export function createRoom(canvas,onLost,options={}){
   atlasTexture.needsUpdate=true;
   const staticTriangles=builder.build(scene);
   if(JSON.stringify(builder.colliders)!==JSON.stringify(expectedColliders))throw new Error('Production collision layout differs from procedural geometry');
+  const exitDoors=createExitDoors(T,materials);scene.add(exitDoors.group);
 
   function panel(lines,width,height,position,rotation=[0,0,0],destination){
     const source=document.createElement('canvas');source.width=1024;source.height=Math.round(1024*height/width);
@@ -81,7 +83,7 @@ export function createRoom(canvas,onLost,options={}){
   // Readable native station labels; authored overlay/HUD elements are not used.
   panel(['SceneBench','Explore and compare worlds'],3.3,.2,[0,1.33,-6.9]);
   panel(['Catalog','AI benchmark results'],exhibits.catalog.width,exhibits.catalog.height,[exhibits.catalog.x,exhibits.catalog.y,exhibits.catalog.z],[0,0,0],'catalog');
-  panel(['Home'],1.05,.28,[0,1.7,8.45],[0,Math.PI,0],'home');
+  panel(['Home'],.7,.24,[1.85,1.7,8.45],[0,Math.PI,0],'home');
   // The lectern's existing physical top becomes the CharacterBench shortcut.
   const lecternFrame=new T.Group();lecternFrame.position.set(2.3,1,2.1);lecternFrame.rotation.y=-.4;
   const lecternTilt=new T.Group();lecternTilt.rotation.x=.45;lecternFrame.add(lecternTilt);
@@ -138,17 +140,19 @@ export function createRoom(canvas,onLost,options={}){
   const prepared=new Set();scene.traverse(object=>{for(const material of [].concat(object.material||[]))for(const value of Object.values(material))if(value?.isTexture&&!prepared.has(value)){prepared.add(value);renderer.initTexture(value);}});
   renderer.compile(scene,camera);
   return {
+    pose(position){if(!disposed)poseLabCamera(camera,position);},
+    exit(doors){if(disposed)return false;const moved=exitDoors.setProgress(doors);if(moved)renderer.shadowMap.needsUpdate=true;return moved;},
     comparison(source){if(disposed)return;comparisonContext.fillStyle='#0d141a';comparisonContext.fillRect(0,0,1280,720);comparisonContext.drawImage(source,0,60,1280,600);comparisonTexture.needsUpdate=true;changed();},
     draw(position,{dt=0,time=0,interactive=true}={}){
-      if(disposed||!running)return;
-      const width=canvas.clientWidth,height=canvas.clientHeight;if(!(width>0&&height>0))return;
+      if(disposed||!running)return false;
+      const width=canvas.clientWidth,height=canvas.clientHeight;if(!(width>0&&height>0))return false;
       const pixelRatio=Math.min(window.devicePixelRatio||1,1.25);
       if(!lastViewport||lastViewport.width!==width||lastViewport.height!==height||lastViewport.pixelRatio!==pixelRatio){
         renderer.setPixelRatio(pixelRatio);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();lastViewport={width,height,pixelRatio};
       }
       poseLabCamera(camera,position);
       updateScreens(dt,time);loadCharacter();
-      renderer.render(scene,camera);renderedFrames++;
+      renderer.render(scene,camera);renderedFrames++;return true;
     },
     pick(clientX,clientY){
       if(disposed)return null;const point=canvasPointer(clientX,clientY,canvas.getBoundingClientRect());if(!point)return null;
@@ -165,6 +169,6 @@ export function createRoom(canvas,onLost,options={}){
     get needsAnimation(){return !disposed&&running&&screenAnimation;},
     get colliders(){return expectedColliders;},
     get diagnostics(){return {threeRevision:T.REVISION,viewport:lastViewport,renderedFrames,textureUpdates,staticTriangles,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometryCount:renderer.info.memory.geometries,textureCount:renderer.info.memory.textures,characterState,characterBatch,shadowSize:4096};},
-    dispose(){if(disposed)return;disposed=true;running=false;controller.abort();canvas.removeEventListener('webglcontextlost',lost);if(pendingCharacter){disposeGraph(pendingCharacter);pendingCharacter=null;}disposeGraph(scene);sun.shadow.dispose();environment.dispose();renderer.renderLists.dispose();renderer.dispose();},
+    dispose(){if(disposed)return;disposed=true;running=false;controller.abort();canvas.removeEventListener('webglcontextlost',lost);if(pendingCharacter){disposeGraph(pendingCharacter);pendingCharacter=null;}exitDoors.dispose();disposeGraph(scene);sun.shadow.dispose();environment.dispose();renderer.renderLists.dispose();renderer.dispose();},
   };
 }

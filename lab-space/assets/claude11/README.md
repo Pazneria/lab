@@ -9,7 +9,8 @@ original HTML SHA-256 is
 
 `room-source.mjs` bundles to `../production-room.mjs` using Three.js 0.186.1.
 Procedural geometry, textures, materials, static region/material batching,
-lighting and the one-time 4096px shadow remain from the completed source.
+lighting and the 4096px shadow remain from the completed source. The host-added
+exit refreshes shadows when sliding panels move; its runtime cost awaits QA.
 The central tiny specimen, shaft and holders are removed so the completed Ivo
 character can stand on the existing drum. The surrounding cameras remain.
 The original HTML, author controls, HUD and frame loop are not imported.
@@ -17,14 +18,19 @@ The original HTML, author controls, HUD and frame loop are not imported.
 The host owns one frame loop and calls `draw(position,{dt,time})`. `dt` is elapsed
 time between actual draws and `time` is a monotonic time in seconds. The renderer
 has no frame loop. It exposes `start`, `stop`, `needsAnimation`, `comparison`,
-`pick`, `target`, `dispose`, `colliders` and read-only `diagnostics`.
+`pick`, `target`, `pose`, `exit`, `dispose`, `colliders` and read-only `diagnostics`.
+`draw` returns true only after a real render and false if inactive or zero-sized.
+`pose` updates the detached camera immediately for picking without drawing.
+`exit` receives the same door progress as collision and reports changes.
 The optional third factory argument accepts `changed` and `characterURL`.
 The default character URL is relative to the final bundled module location.
 
 SceneBench uses the existing north-wall screen. Its 1280x600 source is letterboxed
 within the physical 1280x720 display texture; picking converts UVs back to the
-existing host comparison coordinates. Catalog and Home use physical plaques and
-the original doorway. The central character is selected through actual mesh
+existing host comparison coordinates. Catalog and Home use physical plaques.
+`exit-doors.mjs` replaces the fixed panes with two sliding sets and a bounded
+landing; the original doorway frame and vestibule remain. The central character
+is selected through actual mesh
 intersections. Its lectern and drum are matching shortcuts. No private destination
 or benchmark data is embedded in this renderer; the host handles destinations.
 

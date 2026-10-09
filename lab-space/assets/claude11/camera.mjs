@@ -8,7 +8,7 @@ export function createLabCamera(PerspectiveCamera){
 }
 
 export function poseLabCamera(camera,position){
-  camera.position.set(position.x,position.eye??(position.crouch?1.12:1.62),position.z);
+  camera.position.set(position.x,position.eye??(position.crouch?1:1.62),position.z);
   camera.rotation.set(position.pitch,position.yaw,0);
   camera.updateMatrixWorld(true);
 }

@@ -100,24 +100,16 @@ export function buildHall(ctx) {
   const dz = z1;
   b.box(2.7, 0.08, 0.16, M.alu, [0, 2.54, dz]);
   for (const s of [-1, 1]) b.box(0.08, 2.5, 0.16, M.alu, [s * 1.31, 1.25, dz]);
-  for (const s of [-1, 1]) {
-    const cx = s * 0.63;
-    b.box(1.2, 2.4, 0.012, M.glass, [cx, 1.22, dz]);
-    b.box(0.06, 2.42, 0.05, M.alu, [cx - 0.6 + 0.03, 1.22, dz]);
-    b.box(0.06, 2.42, 0.05, M.alu, [cx + 0.6 - 0.03, 1.22, dz]);
-    b.box(1.2, 0.06, 0.05, M.alu, [cx, 2.4, dz]);
-    b.box(1.2, 0.18, 0.05, M.alu, [cx, 0.09, dz]);
-    b.cyl(0.018, 0.018, 1.0, M.steel, [cx, 1.05, dz - 0.08], [0, 0, Math.PI / 2], 10);
-    for (const ex of [-0.45, 0.45]) b.box(0.03, 0.03, 0.06, M.steel, [cx + ex, 1.05, dz - 0.05]);
-  }
+  // Host exit-doors.mjs replaces these two fixed leaves with sliding leaves.
+  // Preserve the procedural collision record for the original layout audit;
+  // host navigation substitutes its exact moving-panel gates.
   b.collideBox(-1.35, 1.35, dz - 0.05, dz + 0.1);
   // Lobby seen through the glass
   b.box(4, 0.1, 3, M.floor, [0, -0.05, dz + 1.6]);
   b.box(4, 0.1, 3, M.ceiling, [0, 2.95, dz + 1.6]);
   for (const s of [-1, 1]) b.box(0.1, 3, 3, M.wall, [s * 2, 1.5, dz + 1.6]);
-  b.box(4, 3, 0.1, M.wallAccent, [0, 1.5, dz + 3.1]);
+  // Host exit-doors.mjs supplies the split rear wall and second doorway.
   ceilingLight(b, M, 0, 2.9, dz + 1.6, 1.3, true);
-  b.add(A.sign(2.2, 0.5, { bg: '#2c3e4c', lines: [{ t: 'APPLIED SENSING LAB', size: 0.34, color: '#f0f2f4', weight: 700 }, { t: 'Demonstration Hall · Open Day', size: 0.22, color: '#b9cad6', weight: 500 }] }), M.label, [0, 1.75, dz + 3.04], [0, Math.PI, 0]);
 
   // Exit sign above doors (glowing) + welcome header on the inside
   b.box(0.42, 0.18, 0.06, M.paintWhite, [0, 2.8, dz - 0.04]);
