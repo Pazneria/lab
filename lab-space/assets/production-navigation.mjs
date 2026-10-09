@@ -1,20 +1,30 @@
 import {colliders} from './claude11/colliders.mjs';
 import {exhibits} from './claude11/layout.mjs';
+import {exitLayout,exitStaticColliders,isOriginalDoorCollider,doorColliders,boundedProgress} from './production-exit.mjs';
 export {exhibits};
 
 // The floor and collider records come from the derivative's authored geometry.
 // A small clearance protects the 30 cm player from numerical contact at corners.
-export const limits=Object.freeze({x:12,z:8.5,minZ:-7,maxZ:8.5,radius:.30});
-export const roomLayoutVersion='claude11-production-2026-10-08';
+export const limits=Object.freeze({x:12,z:12.35,minZ:-7,maxZ:12.35,radius:.30});
+export const roomLayoutVersion='claude11-production-exit-2026-10-09';
 export const clearance=limits.radius+.015;
 export const obstacles=colliders;
+export const collisionObstacles=Object.freeze([...colliders.filter(c=>!isOriginalDoorCollider(c)),...exitStaticColliders]);
+let doorProgress={inner:0,outer:0},exitGates=[...doorColliders('inner'),...doorColliders('outer')];
+export function setExitDoors(doors){
+  const next={inner:boundedProgress(doors.inner),outer:boundedProgress(doors.outer)};
+  if(next.inner===doorProgress.inner&&next.outer===doorProgress.outer)return;
+  doorProgress=next;exitGates=[...doorColliders('inner',next.inner),...doorColliders('outer',next.outer)];grid=null;
+}
 export const approaches=Object.freeze(Object.fromEntries(Object.entries(exhibits).map(([id,value])=>[id,value.approach])));
 export function spawn(){return {x:0,z:7.3,yaw:0,pitch:-.04,eye:1.62};}
 
-const floors=Object.freeze([
+export const navigationFloors=Object.freeze([
   {minX:-7,maxX:7,minZ:-7,maxZ:8.5},
   {minX:-12,maxX:12,minZ:-3.4,maxZ:3.4},
+  ...exitLayout.floors,
 ]);
+const floors=navigationFloors;
 const finitePoint=p=>Number.isFinite(p?.x)&&Number.isFinite(p?.z);
 const inFloor=p=>floors.some(f=>p.x>=f.minX&&p.x<=f.maxX&&p.z>=f.minZ&&p.z<=f.maxZ);
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
@@ -22,12 +32,12 @@ const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
 
 // Uniform spatial buckets keep movement and route checks local. The stamps avoid
 // allocating a Set for the same collider spanning several neighbouring buckets.
-const bucketSize=1,buckets=new Map(),stamps=new Uint32Array(colliders.length);
+const bucketSize=1,buckets=new Map(),stamps=new Uint32Array(collisionObstacles.length);
 let stamp=0;
 const bucketKey=(x,z)=>(z+32)*64+x+32;
 function colliderBounds(c){return c.type==='circle'?{minX:c.x-c.r,maxX:c.x+c.r,minZ:c.z-c.r,maxZ:c.z+c.r}:c;}
-for(let i=0;i<colliders.length;i++){
-  const c=colliders[i],b=colliderBounds(c);
+for(let i=0;i<collisionObstacles.length;i++){
+  const c=collisionObstacles[i],b=colliderBounds(c);
   if(!['box','circle'].includes(c.type)||![b.minX,b.maxX,b.minZ,b.maxZ].every(Number.isFinite)||b.minX>b.maxX||b.minZ>b.maxZ)throw new TypeError('Invalid production collider');
   for(let z=Math.floor((b.minZ-clearance)/bucketSize);z<=Math.floor((b.maxZ+clearance)/bucketSize);z++)for(let x=Math.floor((b.minX-clearance)/bucketSize);x<=Math.floor((b.maxX+clearance)/bucketSize);x++){
     const key=bucketKey(x,z);if(!buckets.has(key))buckets.set(key,[]);buckets.get(key).push(i);
@@ -37,7 +47,7 @@ function candidates(minX,maxX,minZ,maxZ){
   stamp=(stamp+1)>>>0;if(!stamp){stamps.fill(0);stamp=1;}
   const found=[];
   for(let z=Math.floor(minZ/bucketSize);z<=Math.floor(maxZ/bucketSize);z++)for(let x=Math.floor(minX/bucketSize);x<=Math.floor(maxX/bucketSize);x++)for(const i of buckets.get(bucketKey(x,z))||[]){
-    if(stamps[i]!==stamp){stamps[i]=stamp;found.push(colliders[i]);}
+    if(stamps[i]!==stamp){stamps[i]=stamp;found.push(collisionObstacles[i]);}
   }
   return found;
 }
@@ -46,7 +56,7 @@ function overlaps(p,c){
   const x=p.x-clamp(p.x,c.minX,c.maxX),z=p.z-clamp(p.z,c.minZ,c.maxZ);
   return x*x+z*z<=clearance*clearance;
 }
-export function walkable(p){return finitePoint(p)&&inFloor(p)&&!candidates(p.x,p.x,p.z,p.z).some(c=>overlaps(p,c));}
+export function walkable(p){return finitePoint(p)&&inFloor(p)&&!candidates(p.x,p.x,p.z,p.z).some(c=>overlaps(p,c))&&!exitGates.some(c=>overlaps(p,c));}
 export function blocked(x,z){return !walkable({x,z});}
 
 function rectInterval(a,b,rect){
@@ -79,7 +89,7 @@ function hitsCollider(a,b,c){
 }
 export function segmentFree(a,b){
   if(!walkable(a)||!walkable(b)||!segmentInFloor(a,b))return false;
-  return !candidates(Math.min(a.x,b.x),Math.max(a.x,b.x),Math.min(a.z,b.z),Math.max(a.z,b.z)).some(c=>hitsCollider(a,b,c));
+  return !candidates(Math.min(a.x,b.x),Math.max(a.x,b.x),Math.min(a.z,b.z),Math.max(a.z,b.z)).some(c=>hitsCollider(a,b,c))&&!exitGates.some(c=>hitsCollider(a,b,c));
 }
 
 function contactNormal(p,c,from){
@@ -99,7 +109,7 @@ function moveStep(p,dx,dz){
   const next={x:p.x+dx,z:p.z+dz};
   if(segmentFree(p,next)){p.x=next.x;p.z=next.z;return;}
   let sx=dx,sz=dz;
-  for(const c of candidates(next.x,next.x,next.z,next.z))if(overlaps(next,c)){
+  for(const c of [...candidates(next.x,next.x,next.z,next.z),...exitGates])if(overlaps(next,c)){
     const normal=contactNormal(next,c,p),into=sx*normal.x+sz*normal.z;
     if(into<0){sx-=normal.x*into;sz-=normal.z*into;}
   }
@@ -113,14 +123,24 @@ function moveStep(p,dx,dz){
 export function advance(p,actions,dt,gentle=false){
   if(!walkable(p)||!Number.isFinite(dt)||dt<=0)return p;
   const step=Math.min(dt,.05),crouch=actions.has('crouch')||p.crouch===true;
-  const speed=(gentle?1.3:actions.has('sprint')?4.2:2.6)*(crouch?.55:1);
+  const speed=(gentle?1.3:actions.has('sprint')?4.6:2.5)*(crouch?.55:1);
   p.yaw=(Number.isFinite(p.yaw)?p.yaw:0)+(Number(actions.has('turnLeft'))-Number(actions.has('turnRight')))*step*(gentle?.9:1.5);
   const forward=Number(actions.has('forward'))-Number(actions.has('backward')),side=Number(actions.has('right'))-Number(actions.has('left')),norm=Math.hypot(forward,side)||1;
-  const dx=(-Math.sin(p.yaw)*forward+Math.cos(p.yaw)*side)/norm*speed*step,dz=(-Math.cos(p.yaw)*forward-Math.sin(p.yaw)*side)/norm*speed*step;
+  const wantedX=(-Math.sin(p.yaw)*forward+Math.cos(p.yaw)*side)/norm*speed,wantedZ=(-Math.cos(p.yaw)*forward-Math.sin(p.yaw)*side)/norm*speed;
+  const blend=1-Math.exp(-12*step);
+  p.vx=(p.vx||0)+(wantedX-(p.vx||0))*blend;p.vz=(p.vz||0)+(wantedZ-(p.vz||0))*blend;
+  if(!forward&&!side&&Math.hypot(p.vx,p.vz)<.001)p.vx=p.vz=0;
+  const dx=p.vx*step,dz=p.vz*step;
   const count=Math.max(1,Math.ceil(Math.hypot(dx,dz)/.06));
   for(let i=0;i<count;i++)moveStep(p,dx/count,dz/count);
-  p.eye=crouch?1.12:1.62;
+  settleEye(p,step,crouch);
   return p;
+}
+export function settleEye(p,dt,crouch=p.crouch===true){
+  if(!Number.isFinite(dt)||dt<=0)return;
+  const target=crouch?1:1.62;
+  p.eye=(p.eye??1.62)+(target-(p.eye??1.62))*(1-Math.exp(-10*Math.min(dt,.05)));
+  if(Math.abs(p.eye-target)<.002)p.eye=target;
 }
 export function nearby(p){
   if(!finitePoint(p))return null;
@@ -137,7 +157,7 @@ export function safeDestination(kind){
 
 // Grid is created only when a click needs a detour. The graph is cached; a heap
 // avoids scanning the entire open set on every A* iteration.
-const spacing=.24,nx=Math.floor(24/spacing)+1,nz=Math.ceil(15.5/spacing)+1;
+const spacing=.24,nx=Math.floor(24/spacing)+1,nz=Math.ceil((limits.maxZ-limits.minZ)/spacing)+1;
 let grid;
 function routeGrid(){
   if(grid)return grid;
@@ -204,6 +224,7 @@ export function planRoute(start,requested,{approach=false}={}){
   return null;
 }
 export function followRoute(p,points,dt,gentle=false){
+  settleEye(p,dt);
   if(!walkable(p)||!Array.isArray(points)){if(Array.isArray(points))points.length=0;return 'blocked';}
   let travel=Number.isFinite(dt)?Math.min(Math.max(dt,0),.05)*(gentle?1.3:3.1):0;
   while(points.length&&travel>0){

@@ -1,4 +1,8 @@
 body{background:#1a1d21;color:#e8ecef}
+.lab-loading{position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:#111318;color:#e5e7eb;font:12px system-ui,sans-serif;opacity:1;visibility:visible;transition:opacity .18s ease}
+.loading-name{font-size:13px;font-weight:500;letter-spacing:.18em}.loading-indicator{width:26px;height:2px;overflow:hidden;background:#343944;position:relative}.loading-indicator:after{content:"";position:absolute;inset:0;background:#b4bdce;transform:translateX(-100%);animation:lab-loading 1.2s ease-in-out infinite}#loading-stage{color:#98a1b1;font-size:11px}.lab-loading.is-ready{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,visibility 0s .18s}
+@keyframes lab-loading{to{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){.lab-loading,.lab-loading.is-ready{transition:none}.loading-indicator:after{animation:none;transform:none}}
 .masthead{background:#172126e8;border-color:#607279;color:#f3f6ef;box-shadow:0 4px 18px #0003;backdrop-filter:blur(10px)}
 .identity>span{color:#d4e2db}.masthead .room-menu nav{background:#172126;color:#edf3ed;border-color:#607279}.room-menu[open] summary,.masthead .room-menu nav a:hover{background:#314449}
 .view-actions button,.nearby,.walk-status{background:#172126e8;color:#f0f4ef;border:1px solid #607279;box-shadow:0 4px 15px #0002}

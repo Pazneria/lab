@@ -35,7 +35,7 @@ test('repeated movement, yaw, pitch and crouch update the same real camera',()=>
     {x:0,z:7.3,yaw:Math.PI,pitch:0},
   ]){
     poseLabCamera(camera,pose);
-    const eye=new T.Vector3(pose.x,pose.eye??(pose.crouch?1.12:1.62),pose.z);
+    const eye=new T.Vector3(pose.x,pose.eye??(pose.crouch?1:1.62),pose.z);
     const direction=new T.Vector3(0,0,-1).applyEuler(new T.Euler(pose.pitch,pose.yaw,0,'YXZ'));
     close(new T.Vector3().setFromMatrixPosition(camera.matrixWorld),eye,'moving world eye');
     close(eye.clone().applyMatrix4(camera.matrixWorldInverse),new T.Vector3(),'moving inverse eye');

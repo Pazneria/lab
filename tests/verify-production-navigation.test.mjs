@@ -5,13 +5,18 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {colliders} from '../lab-space/assets/claude11/colliders.mjs';
 import {exhibits as layout} from '../lab-space/assets/claude11/layout.mjs';
-import {limits,clearance,obstacles,exhibits,approaches,spawn,walkable,blocked,segmentFree,advance,planRoute,followRoute,nearby,safeDestination} from '../lab-space/assets/production-navigation.mjs';
+import {limits,clearance,obstacles,collisionObstacles,navigationFloors,setExitDoors,exhibits,approaches,spawn,walkable,blocked,segmentFree,advance,planRoute,followRoute,nearby,safeDestination} from '../lab-space/assets/production-navigation.mjs';
+import {createExitController,doorColliders,exitLayout,HOME_URL} from '../lab-space/assets/production-exit.mjs';
 
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+let referenceDoors={inner:0,outer:0};
+function doors(value){referenceDoors=value;setExitDoors(value);}
+test.beforeEach(()=>doors({inner:0,outer:0}));
 function referenceWalkable(p){
   if(!Number.isFinite(p?.x)||!Number.isFinite(p?.z))return false;
-  if(!(Math.abs(p.x)<=7&&p.z>=-7&&p.z<=8.5||Math.abs(p.x)<=12&&Math.abs(p.z)<=3.4))return false;
-  return !colliders.some(c=>{
+  if(!navigationFloors.some(f=>p.x>=f.minX&&p.x<=f.maxX&&p.z>=f.minZ&&p.z<=f.maxZ))return false;
+  const geometry=[...collisionObstacles,...doorColliders('inner',referenceDoors.inner),...doorColliders('outer',referenceDoors.outer)];
+  return !geometry.some(c=>{
     if(c.type==='circle')return Math.hypot(p.x-c.x,p.z-c.z)<=c.r+clearance;
     return Math.hypot(p.x-clamp(p.x,c.minX,c.maxX),p.z-clamp(p.z,c.minZ,c.maxZ))<=clearance;
   });
@@ -44,8 +49,8 @@ test('navigation uses exact frozen scene colliders and shared station placements
 });
 
 test('spatial collision queries match independent full-array circle/box checks across the whole floor',()=>{
-  for(let z=-7.5;z<=9;z+=.17)for(let x=-12.5;x<=12.5;x+=.19){const p={x,z};assert.equal(walkable(p),referenceWalkable(p),JSON.stringify(p));}
-  for(const p of [{x:0,z:-.6},{x:2.3,z:2.1},{x:10,z:0},{x:-11.6,z:0},{x:7,z:4},{x:12.1,z:0},{x:0,z:8.7},{x:NaN,z:0},{x:0,z:Infinity}])assert.equal(walkable(p),false);
+  for(let z=-7.5;z<=12.6;z+=.17)for(let x=-12.5;x<=12.5;x+=.19){const p={x,z};assert.equal(walkable(p),referenceWalkable(p),JSON.stringify(p));}
+  for(const p of [{x:0,z:-.6},{x:2.3,z:2.1},{x:10,z:0},{x:-11.6,z:0},{x:7,z:4},{x:12.1,z:0},{x:0,z:8.5},{x:0,z:11.5},{x:NaN,z:0},{x:0,z:Infinity}])assert.equal(walkable(p),false);
   assert.equal(blocked(0,-.6),true);assert.equal(blocked(0,7.3),false);
 });
 
@@ -95,11 +100,11 @@ test('manual movement is normalized, responsive, sprint/crouch aware, bounded an
   const start=spawn(),straight={...start},diagonal={...start};
   advance(straight,new Set(['forward']),.05);advance(diagonal,new Set(['forward','right']),.05);
   const moved=p=>Math.hypot(p.x-start.x,p.z-start.z);
-  assert.ok(Math.abs(moved(straight)-.13)<1e-8);assert.ok(Math.abs(moved(straight)-moved(diagonal))<1e-8);
+  assert.ok(Math.abs(moved(straight)-2.5*.05*(1-Math.exp(-.6)))<1e-8);assert.ok(Math.abs(moved(straight)-moved(diagonal))<1e-8);
   const fast={...start},crouch={...start},gentle={...start};
   advance(fast,new Set(['forward','sprint']),.05);advance(crouch,new Set(['forward','crouch']),.05);advance(gentle,new Set(['forward']),.05,true);
-  assert.ok(moved(fast)>moved(straight));assert.ok(moved(crouch)<moved(straight));assert.ok(moved(gentle)<moved(straight));assert.equal(crouch.eye,1.12);
-  const stopped={...straight};advance(straight,new Set(),.05);assert.deepEqual(straight,stopped);
+  assert.ok(moved(fast)>moved(straight));assert.ok(moved(crouch)<moved(straight));assert.ok(moved(gentle)<moved(straight));assert.ok(crouch.eye>1&&crouch.eye<1.62);
+  const oldVelocity=Math.hypot(straight.vx,straight.vz);advance(straight,new Set(),.05);assert.ok(Math.hypot(straight.vx,straight.vz)<oldVelocity);
   const rand=random(52),p=spawn();
   for(let i=0;i<8000;i++){
     p.yaw=(rand()-.5)*Math.PI*2;
@@ -124,4 +129,49 @@ test('route following rejects stale or invalid paths without moving through bloc
 test('destination allowlist retains exact public URLs and rejects arbitrary and private targets',()=>{
   assert.equal(safeDestination('home'),'https://pazneria.github.io/');assert.equal(safeDestination('catalog'),'https://pazneria.github.io/lab/');
   for(const value of ['character','worlds','constructor','__proto__','https://evil.example/','https://jordan-character-studio-review.pazneria.chatgpt.site',null,{},undefined])assert.throws(()=>safeDestination(value),TypeError);
+});
+
+test('dynamic door gates match panel geometry and invalidate vestibule routes as clearance changes',()=>{
+  const a={x:0,z:7.6},b={x:0,z:9.2};
+  assert.equal(segmentFree(a,b),false);assert.equal(planRoute(a,b),null);
+  for(const inner of [0,.15,.3,.5,.75,1]){
+    doors({inner,outer:0});
+    for(let z=8.05;z<8.95;z+=.07)for(let x=-2.1;x<2.1;x+=.09)assert.equal(walkable({x,z}),referenceWalkable({x,z}));
+  }
+  assert.equal(segmentFree(a,b),true);verifyRoute(b,spawn());
+  doors({inner:0,outer:0});assert.equal(planRoute(a,b),null);
+  doors({inner:1,outer:1});assert.equal(segmentFree({x:0,z:10.8},{x:0,z:11.95}),true);
+  assert.equal(walkable({x:0,z:12.1}),false,'Landing end wall bounds the player disk');
+});
+
+test('manual walk, sprint and gentle motion traverse both doors with continuous collision clearance and one exit signal',()=>{
+  for(const [actions,gentle]of [[new Set(['forward']),false],[new Set(['forward','sprint']),false],[new Set(['forward']),true]]){
+    doors({inner:0,outer:0});const machine=createExitController(),p={...spawn(),yaw:Math.PI};let navigation=0,preloads=0,frames=0;
+    for(;frames<1600&&!navigation;frames++){
+      const before={...p},pre=machine.update(p,{dt:1/60,slowMotion:gentle});doors(pre.doors);
+      advance(p,actions,1/60,gentle);sampleSegment(before,p,.003);
+      const post=machine.update(p,{dt:0,slowMotion:gentle});doors(post.doors);
+      for(const value of [pre,post]){if(value.preload===HOME_URL)preloads++;if(value.navigate===HOME_URL)navigation++;}
+      assert.equal(referenceWalkable(p),true);
+    }
+    assert.equal(navigation,1);assert.equal(preloads,1);assert.ok(frames<1600);assert.ok(p.z>=11.88&&p.z<=exitLayout.threshold.maxZ);
+    assert.equal(machine.update(p,{dt:1/60}).navigate,null);
+  }
+});
+
+test('50ms straight and diagonal sprint steps depart using the swept threshold crossing despite landing collision',()=>{
+  for(const diagonal of [false,true]){
+  const machine=createExitController(),x=diagonal?.93:0;
+  // Establish both traversals with real panel clearance, then use the same
+  // collision step that formerly stranded the camera against the landing wall.
+  for(const z of [7.9,8.3,8.6,9,9.4,9.8,10.2,10.6,11,11.3,11.6,11.86]){
+    for(let i=0;i<20;i++)doors(machine.update({x:0,z},{dt:.05}).doors);
+  }
+  if(diagonal)for(const x of [.31,.62,.93])doors(machine.update({x,z:11.86},{dt:.05}).doors);
+  assert.equal(machine.snapshot().phase,'landing');
+  const p={x,z:11.86,yaw:Math.PI,vx:diagonal?4.6/Math.SQRT2:0,vz:diagonal?4.6/Math.SQRT2:4.6};
+  advance(p,new Set(diagonal?['forward','left','sprint']:['forward','sprint']),.05);
+  assert.ok(referenceWalkable(p));assert.ok(diagonal?p.x>.95:p.z>12.03);
+  assert.equal(machine.update(p,{dt:0}).navigate,HOME_URL);
+  }
 });
