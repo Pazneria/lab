@@ -33,6 +33,8 @@ The 9 October follow-up aligns capture and movement with the fixed Library,
 loads directly into the room, and opens both south door sets as visitors walk
 out. Its contract, CPU evidence and held runtime checks are in
 [LAB-LIBRARY-CONTROLS.md](LAB-LIBRARY-CONTROLS.md).
+The coordinated homepage preview entry uses the pinned inline bootstrap and
+matching ready boundary described in [LAB-ROOM-HANDOFF.md](LAB-ROOM-HANDOFF.md).
 
 ## Functional room map
 

@@ -8,7 +8,7 @@ export async function moduleIn(context,path) {
   const url=new URL('../'+path,import.meta.url);
   return new vm.SourceTextModule(readFileSync(url,'utf8'),{context,initializeImportMeta(meta){meta.url='https://example.test/lab/'+path;}});
 }
-export async function screenFixture({placeholder=false,failedImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false}={}) {
+export async function screenFixture({placeholder=false,failedImage=false,pendingImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false,initialPrompt=null}={}) {
   const elements=new Map(),opened=[],images=[],events=new Map(),assigned=[];let departures=0,resumes=0;
   const drawing=new Proxy({},{get:()=>()=>{}});
   function element(){return {dataset:{},children:[],listeners:{},hidden:false,disabled:false,checked:true,open:false,
@@ -24,7 +24,7 @@ export async function screenFixture({placeholder=false,failedImage=false,catalog
     document:{getElementById:byId,createElement:element,querySelectorAll:()=>choices},
     localStorage:memoryStorage(storage),sessionStorage:storageDisabled?{getItem(){throw Error();},setItem(){throw Error();}}:memoryStorage(session),
     history,location,addEventListener(type,fn){if(!events.has(type))events.set(type,[]);events.get(type).push(fn);},
-    Image:class {constructor(){images.push(this);}set src(value){this.url=value;this.complete=!failedImage;this.naturalWidth=failedImage?0:960;this.naturalHeight=failedImage?0:600;}},
+    Image:class {constructor(){images.push(this);}set src(value){this.url=value;this.complete=!failedImage&&!pendingImage;this.naturalWidth=failedImage?0:960;this.naturalHeight=failedImage?0:600;}},
     fetch:async()=>({ok:true,json:async()=>data})
   });
   context.pickerRandom=random;vm.runInContext('Math.random=pickerRandom',context);
@@ -33,7 +33,7 @@ export async function screenFixture({placeholder=false,failedImage=false,catalog
   const module=await moduleIn(context,'lab-space/assets/walkable-screen.js');
   await module.link(path=>path.endsWith('interaction.mjs')?synthetic(input):path.endsWith('scene-navigation.js')?navigation:path.endsWith('public-judgments.js')?synthetic({publicVotingEnabled:false,submitPublicVote(){throw Error('Unexpected public write');},hasPublicVote:()=>false,loadPublicLeaderboard(){},renderPublicLeaderboard(){},subscribePublicJudgments(){}}):path.endsWith('comparisons.js')?comparisons:synthetic({renderLeaderboard(){}}));
   await module.evaluate();
-  const api=module.namespace.createWalkableScreen({changed(){},suspend(){},resume(){resumes++;},depart(){departures++;history.state.labPosition={x:1,z:2,yaw:.3,pitch:.1};},approach(){}});
+  const api=module.namespace.createWalkableScreen({initialPrompt,changed(){},suspend(){},resume(){resumes++;},depart(){departures++;history.state.labPosition={x:1,z:2,yaw:.3,pitch:.1};},approach(){}});
   await new Promise(resolve=>setImmediate(resolve));
   async function sceneVisit({ready=false}={}) {
     const sceneHref=assigned.at(-1),sceneContext=vm.createContext({URL,URLSearchParams,sessionStorage:memoryStorage(session),location:{href:sceneHref,search:new URL(sceneHref).search}});
