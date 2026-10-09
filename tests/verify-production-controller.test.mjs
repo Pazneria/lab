@@ -100,8 +100,8 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     byId('screen-controls').addEventListener('click',inspect);
     byId('visit-screen').addEventListener('click',()=>callbacks.approach());
     byId('comparison-dialog').addEventListener('close',()=>callbacks.resume());
-    return {source:{},inspect,get ready(){return comparisonReady;},hitTest:point=>point?.key?{key:point.key}:{key:'preview-a'},
-      activate(point){if(['vote:a','next'].includes(point?.key)){callbacks.changed({});return;}callbacks.depart();location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
+    return {source:{},inspect,get ready(){return comparisonReady;},hitTest:point=>point?.key==='none'?null:point?.key?{key:point.key}:{key:'preview-a'},
+      activate(point){if(point?.key==='none')return;if(['vote:a','next'].includes(point?.key)){callbacks.changed({});return;}callbacks.depart();location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
     };
   }});
   const room=synthetic({createRoom(canvas,onLost,options){
@@ -536,6 +536,38 @@ test('physical Next and vote actions keep the room, pose, capture and held movem
     assert.equal(f.engine.disposed,false);assert.equal(f.byId('comparison-dialog').open,false);assert.deepEqual(f.qa.position,pose);assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.captureRequests.length,1);
     assert.deepEqual(f.log.map(row=>row.event),['create']);f.flush();assert.deepEqual(f.advances.at(-1).actions,['forward']);assert.equal(f.routes.length,0);
   }
+});
+
+test('SceneBench header, menu and nearby shortcuts focus the actual station without opening a comparison panel',async()=>{
+  for(const id of ['visit-screen','worlds-link','nearby']){
+    const f=await controllerFixture({actualNavigation:true});const renderer=f.engine;
+    if(id==='nearby'){f.qa.teleport(realNavigation.exhibits.worlds.approach);f.flush();}
+    if(id==='worlds-link')f.byId('room-menu').open=true;
+    const event=await f.byId(id).emit('click');f.flush();
+    for(const key of ['x','z','yaw','pitch'])assert.equal(f.qa.position[key],realNavigation.exhibits.worlds.approach[key]);
+    assert.equal(f.qa.position.crouch,false);assert.equal(f.engine,renderer);assert.equal(renderer.disposed,false);
+    assert.equal(f.byId('comparison-dialog').open,false);assert.equal(f.byId('station-dialog').open,false);assert.equal(f.byId('room-menu').open,false);
+    assert.equal(f.document.activeElement,f.canvas);assert.equal(f.captureRequests.length,0);assert.equal(f.log.some(row=>row.event==='assign'),false);
+    if(id==='worlds-link')assert.equal(event.defaultPrevented,true);
+  }
+});
+
+test('aiming at physical whitespace, bezel or adjacent floor cannot trigger the nearby HTML fallback',async()=>{
+  for(const picked of [{comparison:{key:'none'}},{screen:true,point:{x:-9.3,z:.9}},{point:{x:-9.3,z:.9}},null]){
+    const f=await controllerFixture({actualNavigation:true});f.qa.teleport(realNavigation.exhibits.worlds.approach);f.flush();f.picked=picked;
+    await f.byId('explore').emit('click');const pose=f.qa.position,renderer=f.engine;
+    await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
+    await f.canvas.emit('keydown',{code:'KeyE'});await f.canvas.emit('keydown',{code:'Enter'});f.flush();
+    assert.equal(f.byId('comparison-dialog').open,false);assert.equal(f.engine,renderer);assert.deepEqual(f.qa.position,pose);assert.equal(f.document.pointerLockElement,f.canvas);
+    assert.equal(f.log.some(row=>row.event==='assign'),false);
+  }
+});
+
+test('accessible controls remain a deliberate panel action and failed 3D preserves the menu link fallback',async()=>{
+  const f=await controllerFixture();await f.byId('screen-controls').emit('click');assert.equal(f.byId('comparison-dialog').open,true);
+  assert.equal(f.engine.disposed,false);assert.equal(f.qa.running,false);
+  f.byId('comparison-dialog').close();f.flush();assert.equal(f.byId('comparison-dialog').open,false);
+  f.engine.onLost();const event=await f.byId('worlds-link').emit('click');assert.equal(event.defaultPrevented,undefined);
 });
 
 test('Help station shortcuts open directly without automatic movement and keep reset accessible',async()=>{

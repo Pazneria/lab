@@ -14,7 +14,7 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
   const navigation=createSceneNavigation(base);
   let comparisonId='',leaving=false;
   const publicStatus=new Map();
-  let canShuffle=false,revealed=false,labelsSeenThisComparison=false,previewRects=[];
+  let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
   function refresh(){if(!persistent)return;try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
   const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>comparisonKey(pair());
@@ -29,16 +29,16 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
     ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('COMPARE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
     ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Loading comparisons').toUpperCase()}  /  CLICK TO EXPLORE`,40,82,920);
-    previewRects=[];
     for(let slot=0;slot<2;slot++){
-      const bounds=comparisonLayout.previews[slot],x=bounds.x,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(x,bounds.y,bounds.width,bounds.height);
-      const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const fit=fitPreview(bounds,img.naturalWidth,img.naturalHeight);previewRects[slot]=fit;ctx.drawImage(img,fit.x,fit.y,fit.width,fit.height);}
-      else if(e?.previewAvailable===false){ctx.fillStyle='#f6f0dc';ctx.font='28px Georgia';ctx.fillText('Preview not captured',x+32,232,510);ctx.font='18px Arial';ctx.fillText('Click to inspect the frozen build.',x+32,271,510);ctx.fillText('Host runtime QA has not been run.',x+32,302,510);}
-      ctx.fillStyle='#f6f0dc';ctx.font='25px Georgia';ctx.fillText(e?`${slot?'B':'A'}  /  ${e.title}`:'Awaiting a finished build',x,461,565);
+      const bounds=comparisonLayout.previews[slot],card=comparisonLayout.cards[slot],x=bounds.x,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(card.x,card.y,card.width,card.height);
+      const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const fit=fitPreview(bounds,img.naturalWidth,img.naturalHeight);ctx.drawImage(img,fit.x,fit.y,fit.width,fit.height);}
+      else if(e){ctx.fillStyle='#f6f0dc';ctx.font='28px Georgia';ctx.fillText(e.previewAvailable===false?'Preview not captured':img?.complete?'Preview unavailable':'Preview loading',x+32,232,510);ctx.font='18px Arial';ctx.fillText('Click this card to inspect the scene.',x+32,271,510);}
+      ctx.fillStyle='#f6f0dc';ctx.font='25px Georgia';ctx.fillText(e?`${slot?'B':'A'}  /  ${e.title}${openedThisComparison.has(e.id)?'  [VIEWED]':''}`:'Awaiting a finished build',x,461,565);
       ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?(hideModel?'Model label hidden · Desktop keyboard + mouse':modelName(e)):'A real pair needs two entries.',x,491,565);
     }
     for(const bounds of comparisonLayout.buttons)box(bounds.x,bounds.y,bounds.width,bounds.height,bounds.label,
       bounds.kind==='previous'?index===0:bounds.kind==='next'?!canShuffle:bounds.kind==='vote'?!both:false);
+    ctx.textAlign='left';ctx.font='17px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(error||publicStatus.get(pairKey())||(both?'Both scenes viewed. Choose your preference here.':'Inspect both scenes to unlock voting.'),40,594,1200);
     $('screen-prompt-label').textContent=promptId?`Worlds exhibit / Prompt ${promptId}`:'Worlds exhibit / Loading comparison';
     $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';
@@ -113,15 +113,14 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
   });
   addEventListener('storage',event=>{if(event.key===key){refresh();render();}});
   function hitTest(point){
-    const bounds=comparisonLayout.previews.map((rect,slot)=>previewRects[slot]||(pair()[slot]?.previewAvailable===false?rect:null));
     if(leaving||!point||point.x<0||point.y<0||point.x>=comparisonLayout.width||point.y>=comparisonLayout.height||!Number.isFinite(point.x)||!Number.isFinite(point.y))return null;
-    const hit=comparisonTargetAt(point,bounds)||{kind:'inspect'};
+    const hit=comparisonTargetAt(point);if(!hit)return null;
     if(hit.kind==='entry'){const entry=pair()[hit.slot];return entry?{...hit,key:'entry:'+entry.id}:null;}
     if(hit.kind==='vote'&&!bothOpened()||hit.kind==='previous'&&index===0||hit.kind==='next'&&!canShuffle)return null;
     return {...hit,key:hit.kind+(hit.choice?':'+hit.choice:'')};
   }
   function activate(point){const hit=hitTest(point);if(!hit)return;
-    if(hit.kind==='entry')open(pair()[hit.slot]);else if(hit.kind==='previous')step(-1);else if(hit.kind==='next')nextComparison();else if(hit.kind==='vote')vote(hit.choice);else if(hit.kind==='inspect')inspect();else if(hit.kind==='leaderboard')showLeaderboard();
+    if(hit.kind==='entry')open(pair()[hit.slot]);else if(hit.kind==='previous')step(-1);else if(hit.kind==='next')nextComparison();else if(hit.kind==='vote')vote(hit.choice);
   }
   function showLeaderboard(){inspect();const target=$(publicVotingEnabled?'screen-public-leaderboard':'screen-leaderboard');target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView({block:'start',behavior:'auto'});}
   $('screen-leaderboard-button').addEventListener('click',showLeaderboard);

@@ -46,3 +46,15 @@ test('explicit keyboard controls retain their dialog return without invoking phy
   f.byId('screen-controls').listeners.click();f.byId('screen-cards').children[0].children[0].listeners.click();
   await f.returnVisit({ready:true});assert.equal(f.returns,0);assert.equal(f.byId('comparison-dialog').open,true);assert.deepEqual(copy(f.history.state.labPosition),pose);
 });
+
+test('the physical texture draws scene previews, Next, gated choices and viewing state without panel actions',async()=>{
+  const f=await screenFixture({physicalReturn:true});const words=()=>f.drawingCalls.filter(call=>call.kind==='fillText').map(call=>call.args[0]);
+  assert.equal(f.api.source.width,1280);assert.equal(f.api.source.height,600);assert.ok(f.drawingCalls.some(call=>call.kind==='drawImage'));
+  for(const label of ['COMPARE WORLDS','Next','Prefer A','Tie','Prefer B','Inspect both scenes to unlock voting.'])assert.ok(words().includes(label));
+  assert.ok(!words().includes('Inspect'));assert.ok(!words().includes('Leaderboard'));
+  for(const point of [{x:640,y:200},{x:1000,y:540},{x:1100,y:75}])f.api.activate(point);
+  assert.equal(f.byId('comparison-dialog').open,false);assert.deepEqual(f.opened,[]);
+  f.api.activate({x:40,y:200});await f.returnVisit({ready:true});f.api.activate({x:800,y:490});await f.returnVisit({ready:true});
+  assert.equal(f.byId('comparison-dialog').open,false);assert.ok(words().some(text=>text.includes('[VIEWED]')));assert.ok(words().includes('Both scenes viewed. Choose your preference here.'));
+  f.api.activate({x:200,y:540});assert.ok(words().includes('model0'));assert.ok(words().includes('model1'));assert.equal(f.byId('comparison-dialog').open,false);
+});
