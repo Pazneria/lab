@@ -44,7 +44,7 @@ export function createRoom(canvas,onLost,options={}){
   const materials=makeMaterials(textures,atlasTexture),builder=new Builder(),screens=[];
   const comparisonSource=document.createElement('canvas');comparisonSource.width=1280;comparisonSource.height=720;
   const comparisonContext=comparisonSource.getContext('2d');
-  comparisonContext.fillStyle='#0d141a';comparisonContext.fillRect(0,0,1280,720);
+  comparisonContext.fillStyle='#10151c';comparisonContext.fillRect(0,0,1280,720);
   comparisonContext.fillStyle='#e8eff3';comparisonContext.font='600 40px system-ui';comparisonContext.fillText('Compare Worlds',48,80);
   comparisonContext.font='26px system-ui';comparisonContext.fillText('Choose two worlds to compare',48,140);
   const comparisonTexture=new T.CanvasTexture(comparisonSource);comparisonTexture.colorSpace=T.SRGBColorSpace;
@@ -141,7 +141,7 @@ export function createRoom(canvas,onLost,options={}){
   return {
     pose(position){if(!disposed)poseLabCamera(camera,position);},
     exit(doors){if(disposed)return false;const moved=exitDoors.setProgress(doors);if(moved)renderer.shadowMap.needsUpdate=true;return moved;},
-    comparison(source){if(disposed)return;comparisonContext.fillStyle='#0d141a';comparisonContext.fillRect(0,0,1280,720);comparisonContext.drawImage(source,0,60,1280,600);comparisonTexture.needsUpdate=true;changed();},
+    comparison(source){if(disposed)return;comparisonContext.fillStyle='#10151c';comparisonContext.fillRect(0,0,1280,720);comparisonContext.drawImage(source,0,60,1280,600);comparisonTexture.needsUpdate=true;changed();},
     draw(position,{dt=0,time=0,interactive=true}={}){
       if(disposed||!running)return false;
       const width=canvas.clientWidth,height=canvas.clientHeight;if(!(width>0&&height>0))return false;

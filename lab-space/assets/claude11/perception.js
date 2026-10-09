@@ -174,20 +174,26 @@ export function buildPerception(ctx) {
   // The same layout supplies the actual screen, picking and the safe approach.
   const W=exhibits.worlds,cabinetWidth=W.width+.24;
   const frontZ=W.z-.345,backZ=3.4;
-  b.box(cabinetWidth,.5,.36,M.paintGrey,[W.x,.35,3.18]);
+  // Powder-coated service cabinet, recessed doors and a dark floating worktop.
+  b.box(cabinetWidth,.5,.36,M.paintWhite,[W.x,.35,3.18]);
+  b.box(cabinetWidth-.14,.1,.32,M.anodBlack,[W.x,.075,3.2]);
   b.box(W.width+.30,.04,.48,M.worktop,[W.x,.63,3.14]);
   for(const x of [W.x-1.4,W.x+1.4])for(const z of [3.02,3.32])b.box(.07,.1,.07,M.steelDark,[x,.05,z]);
-  // Two recessed faces and modest handles echo the Lab's existing storage.
+  // Flush aluminium pulls and ventilation belong to the equipment enclosure.
   for(const offset of [-.85,.85]){
-    b.box(1.62,.37,.015,M.paintDark,[W.x+offset,.345,2.9925]);
-    b.box(.22,.018,.025,M.steel,[W.x+offset,.49,2.976]);
+    b.box(1.62,.37,.015,M.paintWhite,[W.x+offset,.345,2.9925]);
+    b.box(.18,.012,.02,M.alu,[W.x+offset,.49,2.976]);
   }
-  // Aluminium mounting plate, matte bezel, restrained light seam and sign.
-  b.box(W.width+.24,W.height+.22,.045,M.alu,[W.x,W.y,3.37]);
-  b.box(W.width+.16,W.height+.14,.10,M.anodBlack,[W.x,W.y,W.z+.055]);
-  for(const sign of [-1,1])b.box(.008,W.height-.1,.006,M.ledCyan,[W.x+sign*(W.width/2+.052),W.y,W.z-.001]);
+  for(let row=0;row<4;row++)b.box(.44,.008,.003,M.steelDark,[W.x-.85,.24+row*.022,2.982]);
+  b.box(.10,.004,.003,M.ledCyan,[W.x+1.40,.593,2.984]);
+  // A fitted pale housing and fine dark inset replace the oversized black slab.
+  b.box(W.width+.24,W.height+.22,.045,M.paintWhite,[W.x,W.y,3.37]);
+  b.box(W.width+.12,W.height+.12,.10,M.paintWhite,[W.x,W.y,W.z+.055]);
+  b.box(W.width+.045,W.height+.045,.06,M.anodBlack,[W.x,W.y,W.z+.031]);
+  for(const side of [-1,1])for(const end of [-1,1])b.cyl(.006,.006,.004,M.steel,[W.x+side*(W.width/2+.043),W.y+end*(W.height/2+.043),W.z-.002],[Math.PI/2,0,0],8);
   ctx.screen('datawall',W.width,W.height,1280,720,[W.x,W.y,W.z],[0,W.yaw,0]);
-  b.add(A.sign(1.6,.18,{bg:'#2b2e33',lines:[{t:'Compare Worlds',size:.5,color:'#e0e6ea',weight:600}]}),M.label,[W.x,W.y+W.height/2+.26,W.z],[0,W.yaw,0]);
+  b.add(A.sign(.88,.055,{bg:'#e8e8e3',lines:[{t:'SCENEBENCH',size:.48,color:'#303842',weight:600}]}),M.label,[W.x+1.03,W.y+W.height/2+.065,W.z-.001],[0,W.yaw,0]);
+  b.add(A.sign(.44,.05,{bg:'#e8e8e3',lines:[{t:'WEST / 01',size:.42,color:'#53595f',weight:500}]}),M.label,[W.x-1.18,W.y+W.height/2+.065,W.z-.001],[0,W.yaw,0]);
   b.collideBox(W.x-(W.width+.30)/2,W.x+(W.width+.30)/2,frontZ,backZ);
 }
 

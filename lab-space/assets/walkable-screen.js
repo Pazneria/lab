@@ -21,24 +21,35 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
   const save=()=>{try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}};
   const bothOpened=()=>pair().length===2&&pair().every(e=>openedThisComparison.has(e.id));
   function updateLeaderboard(){renderLeaderboard($('screen-leaderboard'),allEntries,record,persistent);}
-  function box(x,y,w,h,label,disabled=false){ctx.fillStyle=disabled?'#41584b':'#f3efdf';ctx.fillRect(x,y,w,h);ctx.fillStyle=disabled?'#bec9be':'#1c3c30';ctx.font='24px Arial';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+8);}
+  function box(x,y,w,h,label,disabled=false,selected=false){
+    const primary=label==='Next';ctx.fillStyle=disabled?'#161e28':primary?'#e6eef5':selected?'#8ad4e9':'#263344';
+    ctx.beginPath();ctx.roundRect(x,y,w,h,6);ctx.fill();ctx.strokeStyle=disabled?'#34404e':selected?'#a9e7f7':'#536577';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle=disabled?'#8492a4':primary||selected?'#14202c':'#eef4f9';ctx.font='600 21px "Segoe UI",system-ui,sans-serif';ctx.textAlign='center';ctx.fillText(label,x+w/2,y+h/2+7);
+  }
   function render(){
     const current=pair(),both=bothOpened(),hideModel=blind&&!revealed;
     $('screen-public-vote').textContent=publicStatus.get(pairKey())||'';
     const vote=record.preferences[pairKey()]?.choice;
-    const choiceLabel=vote?(vote==='skip'?' · SKIPPED':vote==='tie'?' · YOUR CHOICE: TIE':` · YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
-    ctx.fillStyle='#193b31';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#f5efd9';ctx.textAlign='left';ctx.font='31px Georgia';ctx.fillText('COMPARE WORLDS',40,49);ctx.font='20px Arial';ctx.textAlign='right';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,48);
-    ctx.textAlign='left';ctx.font='19px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(`${(prompts.find(p=>p.id===promptId)?.title||'Loading comparisons').toUpperCase()}  /  CLICK TO EXPLORE`,40,82,920);
+    const choiceLabel=vote?(vote==='skip'?' / SKIPPED':vote==='tie'?' / YOUR CHOICE: TIE':` / YOUR CHOICE: ${vote===current[0]?.id?'A':'B'}`):'';
+    ctx.fillStyle='#10151c';ctx.fillRect(0,0,1280,600);ctx.fillStyle='#8ad4e9';ctx.fillRect(40,24,3,28);
+    ctx.fillStyle='#edf3f9';ctx.textAlign='left';ctx.font='600 26px "Segoe UI",system-ui,sans-serif';ctx.fillText('COMPARE WORLDS',56,47);
+    ctx.font='500 16px "Segoe UI",system-ui,sans-serif';ctx.textAlign='right';ctx.fillStyle='#a6b7c8';ctx.fillText(pairs.length?`PAIR ${index+1} / ${pairs.length}${choiceLabel}`:'WAITING FOR ENTRIES',1240,46,700);
+    ctx.textAlign='left';ctx.font='17px "Segoe UI",system-ui,sans-serif';ctx.fillStyle='#a6b7c8';ctx.fillText(prompts.find(p=>p.id===promptId)?.title||'Loading comparisons',40,80,850);
+    ctx.textAlign='right';ctx.font='14px "Segoe UI",system-ui,sans-serif';ctx.fillText('SELECT A SCENE TO INSPECT',1240,80);
     for(let slot=0;slot<2;slot++){
-      const bounds=comparisonLayout.previews[slot],card=comparisonLayout.cards[slot],x=bounds.x,e=current[slot];ctx.fillStyle='#2f4c3e';ctx.fillRect(card.x,card.y,card.width,card.height);
+      const bounds=comparisonLayout.previews[slot],card=comparisonLayout.cards[slot],x=bounds.x,e=current[slot],viewed=e&&openedThisComparison.has(e.id),preferred=revealed&&vote===e?.id;
+      ctx.fillStyle='#1c2531';ctx.fillRect(card.x,card.y,card.width,card.height);ctx.strokeStyle=preferred?'#8ad4e9':'#394858';ctx.lineWidth=preferred?2:1;ctx.strokeRect(card.x+.5,card.y+.5,card.width-1,card.height-1);
       const img=e&&images.get(e.id);if(img?.complete&&img.naturalWidth){const fit=fitPreview(bounds,img.naturalWidth,img.naturalHeight);ctx.drawImage(img,fit.x,fit.y,fit.width,fit.height);}
-      else if(e){ctx.fillStyle='#f6f0dc';ctx.font='28px Georgia';ctx.fillText(e.previewAvailable===false?'Preview not captured':img?.complete?'Preview unavailable':'Preview loading',x+32,232,510);ctx.font='18px Arial';ctx.fillText('Click this card to inspect the scene.',x+32,271,510);}
-      ctx.fillStyle='#f6f0dc';ctx.font='25px Georgia';ctx.fillText(e?`${slot?'B':'A'}  /  ${e.title}${openedThisComparison.has(e.id)?'  [VIEWED]':''}`:'Awaiting a finished build',x,461,565);
-      ctx.fillStyle='#c4d3c3';ctx.font='17px Arial';ctx.fillText(e?(hideModel?'Model label hidden · Desktop keyboard + mouse':modelName(e)):'A real pair needs two entries.',x,491,565);
+      else if(e){ctx.fillStyle='#eef4f9';ctx.textAlign='left';ctx.font='500 25px "Segoe UI",system-ui,sans-serif';ctx.fillText(e.previewAvailable===false?'Preview not captured':img?.complete?'Preview unavailable':'Preview loading',x+32,232,510);ctx.font='17px "Segoe UI",system-ui,sans-serif';ctx.fillText('Click this card to inspect the scene.',x+32,271,510);}
+      ctx.fillStyle='#10151cf0';ctx.fillRect(x+12,bounds.y+12,34,28);ctx.fillStyle='#edf3f9';ctx.textAlign='center';ctx.font='600 17px "Segoe UI",system-ui,sans-serif';ctx.fillText(slot?'B':'A',x+29,bounds.y+32);
+      if(viewed){ctx.fillStyle='#10151cf0';ctx.fillRect(x+bounds.width-103,bounds.y+12,91,28);ctx.fillStyle='#b9d8e5';ctx.font='600 13px "Segoe UI",system-ui,sans-serif';ctx.fillText('[VIEWED]',x+bounds.width-57,bounds.y+31);}
+      ctx.textAlign='left';ctx.fillStyle='#edf3f9';ctx.font='500 23px "Segoe UI",system-ui,sans-serif';ctx.fillText(e?e.title:'Awaiting a finished build',x+14,462,545);
+      ctx.fillStyle='#a6b7c8';ctx.font='16px "Segoe UI",system-ui,sans-serif';ctx.fillText(e?(hideModel?'Model hidden until your choice':modelName(e)):'A real pair needs two entries.',x+14,491,545);
     }
     for(const bounds of comparisonLayout.buttons)box(bounds.x,bounds.y,bounds.width,bounds.height,bounds.label,
-      bounds.kind==='previous'?index===0:bounds.kind==='next'?!canShuffle:bounds.kind==='vote'?!both:false);
-    ctx.textAlign='left';ctx.font='17px Arial';ctx.fillStyle='#c4d3c3';ctx.fillText(error||publicStatus.get(pairKey())||(both?'Both scenes viewed. Choose your preference here.':'Inspect both scenes to unlock voting.'),40,594,1200);
+      bounds.kind==='previous'?index===0:bounds.kind==='next'?!canShuffle:bounds.kind==='vote'?!both:false,
+      bounds.kind==='vote'&&revealed&&(bounds.choice==='tie'?vote==='tie':vote===current[bounds.choice==='a'?0:1]?.id));
+    ctx.textAlign='left';ctx.font='15px "Segoe UI",system-ui,sans-serif';ctx.fillStyle='#a6b7c8';ctx.fillText(error||publicStatus.get(pairKey())||(both?'Both scenes viewed. Choose your preference here.':'Inspect both scenes to unlock voting.'),40,594,1200);
     $('screen-prompt-label').textContent=promptId?`Worlds exhibit / Prompt ${promptId}`:'Worlds exhibit / Loading comparison';
     $('screen-full-prompt').href=new URL(`?prompt=${promptId}#full-prompt`,base);$('screen-notebook').href=new URL(`?prompt=${promptId}`,base);
     $('screen-pair').textContent=pairs.length?`Comparison ${index+1} of ${pairs.length}`:'Waiting for a second finished entry';

@@ -74,14 +74,14 @@ test('the authored room emits exactly one low west datawall with shared physical
   const normal=new T.Vector3(0,0,1).transformDirection(board.matrixWorld);close(normal.x,0);close(normal.y,0);close(normal.z,-1);assert.equal(W.yaw,Math.PI);
 });
 
-test('matte console, mounting plate and small sign stay behind the screen and within the alcove',()=>{
-  assert.ok(room.station.some(record=>record.material==='worktop'));assert.ok(room.station.some(record=>record.material==='anodBlack'));assert.ok(room.station.some(record=>record.material==='ledCyan'));
+test('fitted equipment housing and pale service cabinet stay within the existing station footprint',()=>{
+  assert.ok(room.station.some(record=>record.material==='worktop'));assert.ok(room.station.some(record=>record.material==='paintWhite'));assert.ok(room.station.some(record=>record.material==='anodBlack'));assert.ok(room.station.some(record=>record.material==='ledCyan'));
   const bounds=new T.Box3();for(const record of room.station)bounds.union(record.bounds);
   close(bounds.min.x,-11.05);close(bounds.max.x,-7.55);close(bounds.min.z,2.9);close(bounds.max.z,3.3925);close(bounds.min.y,0);
   assert.ok(bounds.max.y<3.3);assert.ok(bounds.max.x<-7.25,'clear of the alcove portal pilaster');
-  const sign=room.station.filter(record=>record.label==='Compare Worlds');assert.equal(sign.length,1);
-  close(sign[0].bounds.getCenter(new T.Vector3()).x,exhibits.worlds.x);close(sign[0].bounds.getCenter(new T.Vector3()).y,2.76);
-  close(sign[0].bounds.getCenter(new T.Vector3()).z,exhibits.worlds.z);
+  const sign=room.station.filter(record=>record.label==='SCENEBENCH');assert.equal(sign.length,1);assert.equal(room.station.some(record=>record.label==='Compare Worlds'),false);
+  close(sign[0].bounds.getCenter(new T.Vector3()).x,exhibits.worlds.x+1.03);close(sign[0].bounds.getCenter(new T.Vector3()).y,2.565);
+  close(sign[0].bounds.getCenter(new T.Vector3()).z,exhibits.worlds.z-.001);
   assert.ok(sign[0].bounds.min.y>exhibits.worlds.y+exhibits.worlds.height/2);
 });
 
