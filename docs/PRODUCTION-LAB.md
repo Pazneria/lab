@@ -145,9 +145,15 @@ Cold loading costs and remaining platform limits are recorded separately in
 [the combined runtime receipt](LAB-CHARACTERBENCH-RUNTIME-EVIDENCE.json).
 
 Independent controller and renderer/navigation reviews found no remaining
-material correctness or requirement failures. The follow-up passes 134 focused
-CPU cases; native capture, fades and door-motion GPU costs still await coordinated
-runtime clearance. Earlier runtime QA exposed a
+material correctness or requirement failures. The west-station follow-up passes
+154 focused CPU cases. Bounded headless Chrome QA now covers west placement,
+capture/look, resize, controlled-scene inspection/return, viewed gates and the
+prepared v2 entry cover. Its scoped status-toast contrast repair was reviewed
+in final desktop and portrait stills. The exact current checks, measured RAF
+sample, cold-start limits and cleanup are in
+[LAB-WEST-SCENEBENCH-RUNTIME-EVIDENCE.json](LAB-WEST-SCENEBENCH-RUNTIME-EVIDENCE.json).
+These checks do not measure door-motion GPU duration or physical touch input.
+Earlier runtime QA exposed a
 detached camera transform bug, fixed by keeping its matrix updates enabled while
 the static room remains frozen. Three new tests use actual pinned Three r186
 camera transforms and board intersections. Final recorded images show the room

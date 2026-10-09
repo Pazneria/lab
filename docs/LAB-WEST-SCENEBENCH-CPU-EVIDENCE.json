@@ -1,5 +1,6 @@
 {
   "verifiedAt": "2026-10-09T05:19:23Z",
+  "finalRevalidation": "2026-10-09: 154 focused CPU cases pass after toast/v2 changes; frozen integrity, publication source checks, catalog and public asset hashes remain unchanged",
   "baseCommit": "905dd560954feddc9dd09d18dbc400e40e88c8ff",
   "scope": "Host-owned production derivative and host scene return alias only",
   "cpuVerification": {
@@ -51,12 +52,11 @@
     "sha256": "b780ca59233da55f94544c84a7cc304f30b62d18e959816a2154f1d5fb3d60ec"
   },
   "runtime": {
-    "browserOrGpuSessions": 0,
     "benchmarkEntrantsExecuted": 0,
     "publicVotesSubmitted": 0,
-    "newFrameMetrics": null,
-    "status": "Held for parent coordination; no performance improvement claim"
+    "status": "Subsequent bounded runtime QA complete; separate runtime receipt distinguishes source states and headless scheduling limits",
+    "receipt": "LAB-WEST-SCENEBENCH-RUNTIME-EVIDENCE.json"
   },
-  "publicationDependency": "Recapture canonical homepage Lab image and coordinate view-version contract; browser/GPU visual and return QA before parent publication",
-  "cleanup": "No owned browser, GPU, server or native sessions; geometry extraction helper removed"
+  "publicationDependency": "Prepared homepage-west-patch contains matching Lab image and v2 contract; owner application and coordinated publication remain pending",
+  "cleanup": "All owned browser/server sessions closed and ports/PIDs absent; Library preview untouched; geometry extraction helper removed"
 }

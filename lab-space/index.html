@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Canonical assets/js/room-handoff.js from Pazneria/pazneria.github.io @ 715d292a94ddda4f92eaf3c67b3f18edb073ed47 -->
+  <!-- Prepared canonical assets/js/room-handoff.js from Pazneria/pazneria.github.io baseline @ 30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de plus coordinated Lab default-entry-v2 patch; Git blob 3a5aff4177e65fc68ddf74be4d0d09c71778f68a -->
   <script id="room-handoff-bootstrap">
 (() => {
   'use strict';
@@ -13,14 +13,19 @@
     lab: '/lab/lab-space/',
     library: '/library/',
   };
+  const entryCameras = Object.freeze({
+    arcade: 'default-entry-v1',
+    lab: 'default-entry-v2',
+    library: 'default-entry-v1',
+  });
   let record;
   try {
     record = JSON.parse(window.sessionStorage.getItem(KEY));
     window.sessionStorage.removeItem(KEY);
   } catch { return; }
-  if (!record || record.version !== 1 || record.camera !== 'default-entry-v1') return;
+  if (!record || record.version !== 1) return;
   if (!Number.isFinite(record.createdAt) || record.createdAt > Date.now() || Date.now() - record.createdAt > 15000) return;
-  if (!Object.hasOwn(destinations, record.room) || record.path !== destinations[record.room] || window.location.pathname !== record.path) return;
+  if (!Object.hasOwn(destinations, record.room) || record.path !== destinations[record.room] || window.location.pathname !== record.path || record.camera !== entryCameras[record.room]) return;
   let image;
   try { image = new URL(record.image, window.location.href); } catch { return; }
   const allowedImage = '/assets/images/rooms/' + record.room + '-entry.jpg';

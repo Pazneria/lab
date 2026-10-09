@@ -19,7 +19,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   let nextFrame=0,maxFrames=0,clock=100,focused=true,picked={point:{x:3,z:3}},screenCallbacks,importRelease;
   let navigationRestores=0;
   const mutations=[],handoffEvents=[];
-  const incoming=handoff?{active:true,room:'lab',camera:'default-entry-v1',...handoff}:null;
+  const incoming=handoff?{active:true,room:'lab',camera:'default-entry-v2',...handoff}:null;
   const importGate=deferImport?new Promise(resolve=>{importRelease=resolve;}):null;
   function target(properties={}) {
     const listeners=new Map();
@@ -592,7 +592,7 @@ test('handoff character or draw failure releases the cover to focused retry and 
 
 test('missing, inactive or unrelated handoff keeps ordinary restored entry and loader behavior',async()=>{
   const pose={x:1,z:2,yaw:.3,pitch:.1};
-  for(const handoff of [false,{active:false},{room:'arcade'}]){
+  for(const handoff of [false,{active:false},{room:'arcade'},{camera:'default-entry-v1'}]){
     const f=await controllerFixture({handoff,state:{labLayoutVersion:'fixture-layout',labPosition:pose},characterState:'loading'});
     assert.equal(f.qa.position.x,1);assert.equal(f.qa.position.z,2);assert.equal(f.navigationRestores,1);assert.equal(f.screenCallbacks.initialPrompt,null);
     assert.ok(f.surfaces.every(node=>!node.inert));assert.equal(f.byId('lab-loading').getAttribute('aria-hidden'),null);assert.deepEqual(f.handoffEvents,[]);

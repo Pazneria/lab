@@ -9,7 +9,7 @@ const canvas=$('room'),enterButton=$('enter-room'),gentle=$('gentle'),help=$('he
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 gentle.checked=reduced.matches;
 const incoming=window.pazneriaRoomHandoff;
-const handoff=incoming?.room==='lab'&&incoming.camera==='default-entry-v1'?incoming:null,handoffEntry=!!handoff?.active;
+const handoff=incoming?.room==='lab'&&incoming.camera==='default-entry-v2'?incoming:null,handoffEntry=!!handoff?.active;
 const coveredElements=handoffEntry?[...document.querySelectorAll('body > header, body > main, body > dialog')].map(node=>[node,node.inert]):[];
 for(const [node]of coveredElements)node.inert=true;
 let handoffObserver=null;

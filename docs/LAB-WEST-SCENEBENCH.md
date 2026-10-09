@@ -42,10 +42,35 @@ Independent controller/geometry and route reviews found no material issues;
 the reviewer passed 94 focused CPU cases and reproduced the bundle byte for byte
 using an in-memory pinned build.
 
-Browser/GPU QA remains on the parent's coordinated schedule. Verify western
-lighting, readable buttons, portrait/landscape framing, native capture, resizing,
-both return paths and disposal with one bounded owned browser at a time. No new
-GPU/frame-performance measurement is claimed. The entrance view changed, so
-homepage screenshot recapture and canonical view-version coordination must
-precede publication. The pinned handoff bootstrap and ordinary default spawn
-are preserved in this draft.
+On 9 October, two serial, bounded headless Chrome sessions rendered this host
+derivative on the automatically selected RTX 5070 Ti Laptop GPU. The west board
+fits standing/crouched and landscape views; portrait framing was checked from
+the clear floor at 390 x 844, with readable native Help. Actual pointer capture,
+mouse look, Escape, resize, scene departure/disposal, both ready receipts,
+canonical browser Back and the index/directory return contracts were exercised.
+The host's full-screen viewer used controlled integrity-checked scene fixtures:
+no benchmark entrant was executed. A vote was intercepted locally; no public
+preference was submitted. Both viewing gates, blind labels, reveal and physical
+Next behaved as intended. The in-room renderer stayed active for vote and Next.
+
+Static image review found a pale status toast. Its scoped production colors are
+now bright text on a dark background, and a second rendered check plus image
+review confirmed the repair. No material findings remain in the reviewed stills.
+Detailed source states, artifacts, limitations and cleanup are in
+[the runtime receipt](LAB-WEST-SCENEBENCH-RUNTIME-EVIDENCE.json).
+
+A five-second captured sample at the west board, 900 x 600 / DPR 1, recorded
+1,195 RAF intervals: median 4.2 ms, p95 4.3 ms, p99 4.8 ms, none over 25 ms.
+The sampled view submitted 48 draw calls and 11,246 triangles. These are
+headless scheduling measurements, not displayed FPS, GPU durations or measured
+improvement against the frozen scene. Cold startup recorded 1,264 ms and 579 ms
+long tasks; this change does not claim to remove them. Physical touch behavior
+and real submitted-scene rendering were not exercised.
+
+The matching, unedited 1707 x 923 entrance JPEG and portable homepage patch are
+prepared in the owner's `homepage-west-patch` bundle. The Lab now consumes its
+exact prepared canonical bootstrap and `default-entry-v2`; Arcade and Library
+retain v1. The ordinary spawn and one-shot transport remain unchanged. The
+homepage owner must apply the matching producer, canonical source, image and
+manifest before coordinated publication. PR64 remains a draft; this QA neither
+merges nor deploys it. All owned browsers and servers are closed.

@@ -1,0 +1,136 @@
+{
+  "recordedAt": "2026-10-09T05:57:39Z",
+  "publication": "PR64 draft only; no merge or deployment",
+  "baseCommit": "905dd560954feddc9dd09d18dbc400e40e88c8ff",
+  "renderedGeometryCommit": "e821df05d19e82cb46ad5eabd7c8401cf040919b",
+  "finalVisualSource": "Same geometry commit plus scoped production toast colors and the coordinated Lab v2 handoff consumer; these changes are included in the final draft head",
+  "rendererBundle": {
+    "path": "lab-space/assets/production-room.mjs",
+    "bytes": 877963,
+    "sha256": "b780ca59233da55f94544c84a7cc304f30b62d18e959816a2154f1d5fb3d60ec"
+  },
+  "environment": {
+    "browser": "Owned headless Chrome 154.0.8037.98",
+    "playwrightCore": "1.55.1",
+    "threeRevision": "186",
+    "unmaskedVendor": "Google Inc. (NVIDIA)",
+    "unmaskedRenderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 5070 Ti Laptop GPU (0x00002F58) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "entryDrawingBuffer": [1707, 923],
+    "pixelRatio": 1,
+    "settingsOrDriversChanged": false
+  },
+  "isolation": {
+    "substantiveBrowserSessions": 2,
+    "concurrency": "One owned background browser at a time, after parent clearance",
+    "network": "Loopback-only; external requests aborted; public config replaced in memory with loopback origin",
+    "writes": "Two loopback POSTs in first session (session and vote), intercepted with local fixture responses; zero writes in final session; local server rejects writes",
+    "publicVotesSubmitted": 0,
+    "benchmarkEntrantsExecuted": 0,
+    "comparisonScenes": "Controlled canvas HTML fixtures with matching in-memory integrity hashes; actual host viewer, opaque sandbox, ready bridge, comparison store and physical interaction code",
+    "privateStudioOrLibraryAccessed": false,
+    "nativeInputInterference": false
+  },
+  "verifiedBehavior": {
+    "placement": "Screen centered at (-9.3,1.6,3.245), facing north, 3.2 x 1.8 m; readable standing/crouched views, console and aisle clearance shown in captures",
+    "physicalSelection": "Actual authored world/UV ray picks and canvas E key activate A/B, vote and Next without opening the native dialog",
+    "sceneDeparture": "Lab engine null and running false after disposal; separate scene document has no Lab canvas/module; full viewport host viewer 1707 x 923 with scene iframe 1707 x 765.515625 inside header/footer",
+    "readyGates": "After actual A-ready receipt and index-path exit, A is viewed and all vote buttons remain disabled; after actual B-ready receipt and exit, the same comparison ID/order has both viewed and voting enabled",
+    "physicalReturn": "Standing (-9.3,0.9), yaw pi, pitch -0.008528577862137716, zero velocity, canvas focus, no open native dialog, no automatic capture",
+    "blindReveal": "Both labels hidden before vote; locally intercepted A preference reveals GPT-6.1 Sol / GPT-6 Astra; renderer identity remains unchanged",
+    "next": "Physical Next creates a new comparison ID, clears viewed flags/reveal, disables voting and preserves the saved mock preference with the same renderer",
+    "browserBack": "Actual canonical-path browser Back preserves the A-ready receipt, comparison and return pose",
+    "fallbackReturn": "Actual generated same-origin fallback URL navigated after B-ready; query consumed, ordered pair and both ready gates retained, canvas focused; history-length-one button dispatch is covered by CPU tests rather than this browser run",
+    "input": "Native headless pointer capture and mouse movement change camera pose; Escape opens Help and releases capture; Help close restores canvas focus",
+    "resize": "900 x 600 landscape drawing buffer matches viewport; complete board framed",
+    "portrait": "390 x 844 viewport; complete physical board visible from clear floor at x=-9.3,z=-2; Help fits and closes, focus returns to canvas without a pose jump",
+    "toastRepair": "Scoped room-notice text rgb(240,244,239), background rgb(23,33,38); final desktop and portrait captures independently reviewed with no material finding",
+    "v2Cover": "Valid one-shot default-entry-v2 record uses exact prepared JPEG, completes only after default room/Ivo/comparison readiness, consumes token and restores prompt01/default pose/non-inert surfaces/canvas focus"
+  },
+  "sample": {
+    "kind": "Warm active headless RAF scheduling; not displayed FPS, GPU duration or before/after performance comparison",
+    "durationMs": 5000,
+    "intervals": 1195,
+    "medianMs": 4.2,
+    "p95Ms": 4.3,
+    "p99Ms": 4.8,
+    "intervalsOver25Ms": 0,
+    "renderedFrames": 1196,
+    "drawingBuffer": [900, 600],
+    "pixelRatio": 1,
+    "poseXZ": [-9.3, 0.9],
+    "captured": true,
+    "drawCalls": 48,
+    "submittedTriangles": 11246,
+    "coldEntryLongTasksMs": [1264, 579],
+    "entryDrawCalls": 158,
+    "entrySubmittedTriangles": 307322
+  },
+  "limitations": [
+    "One five-second scheduling sample at one warm camera pose; no measured improvement or AAA claim",
+    "Physical phone, touch gestures, production cross-document cache/decode timing and real benchmark scene rendering not tested",
+    "First session had six harness syntax/timing/selector errors, corrected with verified later checks; application page/console/request errors were absent",
+    "Earlier premature A receipts and portrait captures with Help still open are excluded from passed evidence; final session has no errors",
+    "No homepage or Lab publication in this task"
+  ],
+  "localArtifacts": {
+    "rootRelativeToTaskWorkspace": "lab-west-scenebench/evidence",
+    "firstSession": "west-runtime/session-log.json",
+    "finalSession": "west-visual-final/session-log.json",
+    "verifiedChecks": [
+      "west-runtime/entrance-runtime.json",
+      "west-runtime/scene-a-ready-return-verified.json",
+      "west-runtime/scene-b-ready-return.json",
+      "west-runtime/physical-vote-reveal.json",
+      "west-runtime/physical-next-reset.json",
+      "west-runtime/canonical-browser-back.json",
+      "west-runtime/fallback-return-result.json",
+      "west-runtime/west-active-raf-sample.json",
+      "west-visual-final/portrait-dialog-and-return.json",
+      "west-visual-final/v2-cover-ready.json"
+    ],
+    "reviewedCaptures": [
+      "west-runtime/entrance-full.png",
+      "west-runtime/west-standing.png",
+      "west-runtime/west-crouched.png",
+      "west-runtime/west-clearance-verified.png",
+      "west-runtime/controlled-scene-a-ready-verified.png",
+      "west-runtime/controlled-scene-b-ready.png",
+      "west-runtime/west-both-viewed.png",
+      "west-runtime/west-reveal-front.png",
+      "west-runtime/west-resized-landscape.png",
+      "west-visual-final/west-toast-fixed.png",
+      "west-visual-final/west-portrait-board.png",
+      "west-visual-final/portrait-help.png",
+      "west-visual-final/v2-final-entry.png"
+    ],
+    "finalCaptureHashes": {
+      "west-toast-fixed.png": "e3df4592cb0d09acedc1667949ce93c75f4a6280741a5e9e024f93c058431807",
+      "west-portrait-board.png": "d067aec95e59675b37f156c33ea035f61e316e13a54bec1f3b8252229689d974",
+      "portrait-help.png": "0521edcfa253560806e2eeebf7444da168b76b8478e74ccded4d3d754e346791",
+      "v2-final-entry.png": "730af242674db4b3e754dcba1b084bb4e2180fcec3e62c6c256dc2c8b16a8648"
+    }
+  },
+  "homepageOwnerDeliverable": {
+    "directoryRelativeToTaskWorkspace": "homepage-west-patch",
+    "instructions": "HANDOFF.md",
+    "portableTextPatch": "homepage.patch",
+    "image": "prepared/assets/images/rooms/lab-entry.jpg",
+    "homepageBaseline": "30eb1ebc5d42a47759c20ca1fec4ce7b56aa07de",
+    "canonicalGitBlob": "3a5aff4177e65fc68ddf74be4d0d09c71778f68a",
+    "canonicalSha256": "711b2e813bbf790c53bed4b66aaa163380b2a9f7c59ebc2caf806723d381f4b6",
+    "entryCamera": "default-entry-v2",
+    "jpegDimensions": [1707, 923],
+    "jpegBytes": 170994,
+    "jpegSha256": "a2328ea468562b7827f2e9daaffec1edd7ac3b6990f3cac4c667e1ec5e0b263c",
+    "homepageCpuTestsPassed": 22,
+    "labBootstrapControllerTestsPassed": 64,
+    "publicationDependency": "Homepage owner applies matching producer/canonical/manifest/image patch; pin resulting homepage commit and verify exact served JPEG and cache/Back behavior during coordinated publication"
+  },
+  "cleanup": {
+    "firstSession": {"nodePid": 52460, "port": 63325, "closed": true},
+    "finalSession": {"nodePid": 39716, "port": 57497, "closed": true},
+    "initialStdinEofLaunch": {"nodePid": 11368, "port": 62861, "closed": true, "checks": 0},
+    "independentPostCloseCheck": "Get-NetTCPConnection/Get-Process found none of these owned ports/PIDs",
+    "gpuSlot": "Released; all owned browsers/servers closed; Library preview untouched"
+  }
+}
