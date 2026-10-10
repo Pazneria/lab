@@ -47,3 +47,16 @@ export function randomComparison(prompts, entries, previousKey) {
   const prompt = choose(eligible), pair = choose(choose(prompt.modelPairs));
   return {promptId: prompt.promptId, entries: Math.random() < .5 ? pair : [pair[1], pair[0]]};
 }
+
+export function initialComparison(prompts, entries, pendingEntryPairs = []) {
+  for (const ids of pendingEntryPairs) {
+    if (!Array.isArray(ids) || ids.length !== 2 || ids[0] === ids[1]) continue;
+    const pair = ids.map(id => entries.find(entry => entry.id === id));
+    if (pair.some(entry => !entry || !isOpenable(entry) || !entry.comparisonModel) ||
+        pair[0].promptId !== pair[1].promptId || pair[0].comparisonModel === pair[1].comparisonModel ||
+        !prompts.some(prompt => prompt.id === pair[0].promptId)) continue;
+    // Resume a pending request's original A/B presentation without changing its ledger.
+    return {promptId: pair[0].promptId, entries: pair};
+  }
+  return randomComparison(prompts, entries);
+}

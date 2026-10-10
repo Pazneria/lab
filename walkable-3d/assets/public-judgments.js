@@ -6,6 +6,11 @@ try{const value=JSON.parse(localStorage.getItem(storageKey)||'null');if(value&&t
 const refreshLocal=()=>{try{const value=JSON.parse(localStorage.getItem(storageKey)||'null');if(value&&typeof value==='object')local={...local,...value};}catch{}};
 const persist=()=>{try{localStorage.setItem(storageKey,JSON.stringify(local));return true;}catch{return false;}};
 export const publicVotingEnabled=Boolean(PUBLIC_VOTING_ORIGIN);
+export function pendingPublicComparisons(){
+  if(!publicVotingEnabled)return [];
+  refreshLocal();
+  return Object.values(local.pending||{}).filter(body=>Array.isArray(body?.entries)&&body.entries.length===2&&body.entries.every(id=>typeof id==='string')&&body.entries[0]!==body.entries[1]).map(body=>[...body.entries]);
+}
 const pairKey=entries=>[...entries].sort().join('::');
 const notify=()=>listeners.forEach(fn=>fn());
 export function subscribePublicJudgments(fn){listeners.add(fn);return()=>listeners.delete(fn);}

@@ -43,3 +43,11 @@ test('superseded submission permits a new explicit choice above the server seque
   const f=await fixture({supersedeFirst:true});await assert.rejects(f.api.submitPublicVote(pair,'tie',true));
   await f.api.submitPublicVote(pair,'tie',false);assert.equal(f.writes[1].intent,9);assert.notEqual(f.writes[0].requestId,f.writes[1].requestId);
 });
+
+test('pending opening snapshot is ordered and read-only, and caller mutation cannot change retry identity',async()=>{
+  const f=await fixture({failFirst:true});await assert.rejects(f.api.submitPublicVote(pair,'tie',true));
+  const key='lab.walkable3d.public.v1',before=f.storage.get(key),calls=f.calls.length;
+  const pending=f.api.pendingPublicComparisons();assert.deepEqual(JSON.parse(JSON.stringify(pending)),[pair.map(e=>e.id)]);
+  pending[0].reverse();pending.push(['other','pair']);assert.equal(f.storage.get(key),before);assert.equal(f.calls.length,calls);
+  await f.api.submitPublicVote(pair,'tie',false);assert.deepEqual(f.writes[1],f.writes[0]);assert.equal(f.storage.get(f.privateKey),f.legacy);
+});
