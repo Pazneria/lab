@@ -52,11 +52,13 @@ test('actual UTF-8 host UI bytes contain no nonprinting or replacement glyphs',(
   }
 });
 
-test('the dedicated public room has no private Studio connection or persistent/public preference endpoint',()=>{
+test('the dedicated public room uses only the authorized voting origin and has no private Studio connection',()=>{
   const viewer=read('character-bench/assets/viewer.mjs');
   for(const source of [app,viewer,benchHtml])assert.doesNotMatch(source,/jordan-character-studio-review|jippity-project-room|submitPublicVote|public-judgments|localStorage|indexedDB|postMessage\(/);
   assert.match(app,/fetch\(new URL\('\.\.\/data\/admission\.json'/);assert.match(viewer,/url\.origin!==location\.origin/);
-  assert.match(benchHtml,/session-only preferences/);assert.match(benchHtml,/no public CharacterBench tally/);
+  const voting=read('character-bench/assets/voting.mjs');
+  assert.match(voting,/\/api\/character\/v1\//);assert.match(voting,/walkable-worlds-voting\.pazneria\.chatgpt\.site/);
+  assert.match(benchHtml,/Votes are saved in shared storage/);assert.match(benchHtml,/Public CharacterBench leaderboard/);
   assert.equal(new URL('character-bench/data/admission.json',publicRoot).origin,labUrl.origin);
 });
 
@@ -89,13 +91,15 @@ async function releasedApp(){
     fetch:async url=>{fetches.push(String(url));return Response.json(raw);},
   });
   const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [name,value]of Object.entries(values))this.setExport(name,value);},{context});
+  let saved=null;
+  const votes=synthetic({createVotingClient:()=>({pending:()=>null,remember(){},remembered:()=>null,current:async()=>saved||{status:'empty',intent:0},leaderboard:async()=>({rows:[],counts:{votes:0}}),submit:async(_pair,choice)=>(saved={status:'saved',choice})}),renderLeaderboard(){}});
   const core=synthetic(contracts),viewer=synthetic({createViewer(options){
     const engine={options,disposed:false,clear(){},invalidate(){},setMode(){},setLight(){},setGrid(){},dispose(){this.disposed=true;},
       loadPair(pair,generation){return new Promise(resolve=>loads.push({engine:this,pair,generation,resolve}));}};engines.push(engine);return engine;
   }});
-  await core.link(()=>{});await core.evaluate();await viewer.link(()=>{});await viewer.evaluate();
+  await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
   const module=new vm.SourceTextModule(app,{context,initializeImportMeta(meta){meta.url=new URL('assets/app.mjs',target).href;},importModuleDynamically:async()=>viewer});
-  await module.link(()=>core);await module.evaluate();await settleUntil(()=>!ids.get('prompt-select').disabled);
+  await module.link(specifier=>specifier==='./voting.mjs'?votes:core);await module.evaluate();await settleUntil(()=>!ids.get('prompt-select').disabled);
   return {ids,engines,loads,fetches,events,document,get state(){return engines.at(-1).options.state;},
     button:choice=>elements.find(element=>element.dataset.vote===choice),
     async start(){const count=loads.length,pending=ids.get('load-pair').emit('click');await settleUntil(()=>loads.length>count);return {pending,load:loads.at(-1)};},
@@ -115,12 +119,12 @@ test('the actual lobby deep link boots a blind same-prompt comparison and reveal
   assert.match(f.ids.get('provenance').textContent,/Runtime QA/);assert.match(f.ids.get('provenance').textContent,/Pending/);assert.equal(f.button('a').disabled,true);
 });
 
-test('departure clears the actual session choice and cached-page retry creates a fresh independent viewer',async()=>{
+test('departure releases the viewer; cached-page return restores a confirmed vote after both reloads',async()=>{
   const f=await releasedApp(),first=await f.start();f.ready(0);f.ready(1);first.load.resolve([true,true]);await first.pending;
   await f.button('a').emit('click');assert.equal(f.state.snapshot.choice,'a');const engine=f.engines[0];
   await f.emit('pagehide');assert.equal(engine.disposed,true);assert.equal(f.state.snapshot.choice,null);assert.equal(f.ids.get('reveal').hidden,true);
   assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.ids.get('provenance').textContent,'');assert.equal(f.button('a').disabled,true);
   await f.emit('pageshow');assert.equal(f.engines.length,1,'Return must require explicit reloading rather than silently importing');
   const second=await f.start();assert.equal(f.engines.length,2);assert.equal(f.state.snapshot.choice,null);assert.ok(second.load.pair.every(entry=>entry.promptId===promptId));
-  f.ready(0);f.ready(1);second.load.resolve([true,true]);await second.pending;assert.equal(f.button('a').disabled,false);
+  f.ready(0);f.ready(1);second.load.resolve([true,true]);await second.pending;assert.equal(f.button('a').disabled,true);assert.equal(f.state.snapshot.choice,'a');assert.equal(f.ids.get('reveal').hidden,false);
 });

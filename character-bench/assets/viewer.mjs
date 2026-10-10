@@ -52,7 +52,7 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
   finally {pmrem?.dispose();disposeObject(environmentScene);}
   const neutral=new T.MeshStandardMaterial({color:'#c9cfcb',roughness:.72,metalness:0,side:T.DoubleSide});
   const wire=new T.MeshBasicMaterial({color:'#25463c',wireframe:true,side:T.DoubleSide});
-  let mode='pbr',lightAngle=35,gridVisible=true,frame=0,closed=false,lastSize='',renderedFrames=0,lastDrawCpuMilliseconds=0;
+  let mode='pbr',lightAngle=35,gridVisible=true,frame=0,closed=false,lastSize='',renderedFrames=0,lastDrawCpuMilliseconds=0,loadRequest=0;
   const panes=surfaces.map(surface=>{
     const scene=new T.Scene();scene.background=new T.Color('#e9edeb');scene.environment=environment.texture;
     scene.add(new T.HemisphereLight('#ffffff','#b9c3bd',1.5));
@@ -135,17 +135,20 @@ export function createViewer({mount,surfaces,state,onStatus,onFailure}) {
   function contextLost(event){event.preventDefault();onFailure('3D context was lost. Retry to reload both frozen characters.');dispose();}
   canvas.addEventListener('webglcontextlost',contextLost);
   const resize=new ResizeObserver(()=>{lastSize='';invalidate();});resize.observe(mount);surfaces.forEach(s=>resize.observe(s));
-  function visibility(){if(document.hidden){if(frame)cancelAnimationFrame(frame);frame=0;slots.forEach(s=>s.clear());panes.forEach((p,i)=>onStatus(i,'paused','Inspection paused while this tab was hidden. Reload the pair to continue.'));}
+  function visibility(){if(document.hidden){if(frame)cancelAnimationFrame(frame);frame=0;clear();panes.forEach((p,i)=>onStatus(i,'paused','Inspection paused while this tab was hidden. Reload the pair to continue.'));}
     else invalidate();}
   document.addEventListener('visibilitychange',visibility);
   async function loadPair(pair,token) {
+    const request=++loadRequest;
+    const current=()=>!closed&&request===loadRequest&&token===state.snapshot.generation;
     return Promise.all(pair.map(async(entry,side)=>{
-      onStatus(side,'loading','Verifying and importing the frozen GLB…');
-      try {const ready=await slots[side].open(entry);if(ready&&token===state.snapshot.generation){onStatus(side,'ready','Ready to inspect');return true;}return false;}
-      catch(error){if(token===state.snapshot.generation)onStatus(side,'error',error.message);return false;}
+      if(!current())return false;
+      onStatus(side,'loading','Verifying and importing the frozen GLB…',token);
+      try {const ready=await slots[side].open(entry);if(ready&&current()){onStatus(side,'ready','Ready to inspect',token);return true;}return false;}
+      catch(error){if(current())onStatus(side,'error',error.message,token);return false;}
     }));
   }
-  function clear(){slots.forEach(s=>s.clear());invalidate();}
+  function clear(){loadRequest++;slots.forEach(s=>s.clear());invalidate();}
   function dispose(){if(closed)return;closed=true;if(frame)cancelAnimationFrame(frame);frame=0;
     resize.disconnect();document.removeEventListener('visibilitychange',visibility);canvas.removeEventListener('webglcontextlost',contextLost);
     slots.forEach(s=>s.close());panes.forEach(p=>disposeObject(p.grid));environment.dispose();neutral.dispose();wire.dispose();renderer.renderLists.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
