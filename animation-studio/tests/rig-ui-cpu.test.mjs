@@ -92,3 +92,9 @@ test('real pointer/key focus recovers a stale blur gate without restarting playb
 test('foreground activation during asynchronous payload preparation resynchronizes focus before the first draw',async()=>{
  const f=await fixture({focusDuringPreparation:true});assert.equal(f.document.hasFocus(),true);assert.equal(f.state.gates.focus,true);assert.equal(f.state.active,true);assert.ok(f.state.rendererFrames>0);assert.equal(f.state.playing,false);assert.equal(f.frames.size,0);
 });
+
+test('ordinary focus notifications cannot redraw and overwrite a typed angle before Apply',async()=>{
+ const f=await fixture(),clip=f.state.clips.find(c=>c.name==='walk_original');f.api.selectClip(clip.id);f.api.seek(.54);f.el('tree').children.find(e=>e.textContent.startsWith('10 ')).click();f.flush();assert.equal(f.frames.size,0);
+ f.document.activeElement=f.el('rotX');f.el('rotX').value='12';await f.document.emit('pointerdown');f.document.activeElement=f.el('applyEdit');await f.document.emit('focusin');f.flush();assert.equal(f.el('rotX').value,'12','paused redraw must not consume the uncommitted typed angle');
+ f.el('applyEdit').click();f.flush();assert.ok(Math.abs(f.state.edits['10'].rotation[0]-Math.sin(6*Math.PI/180))<1e-10);assert.equal(f.frames.size,0);
+});
