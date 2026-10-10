@@ -7,7 +7,8 @@ SceneBench catalog, votes or grading behavior. CharacterBench uses separate rout
 ## Route and integration
 
 From `lab-space/`, navigate in the same tab to `../character-bench/`.
-The production lobby's link `../character-bench/?prompt=02` is compatible.
+The production lobby's link `../character-bench/` starts a random comparison.
+Explicit links such as `../character-bench/?prompt=02` still select that character.
 The optional `prompt` query is an exact canonical ID from the admission manifest;
 it is never an asset URL or model selector. The return link is `../lab-space/`.
 The lobby owner must dispose its renderer before navigation. A valid pair loads
@@ -16,6 +17,14 @@ returning to a visible tab or cached page resumes the same pair automatically.
 Hidden tabs unload their viewer resources. **Retry** appears only after a failed
 or paused load. Next cancels old imports and skips without recording a vote;
 pending writes still require confirmation before navigation.
+
+On an unpinned initial load and every Next, an eligible character prompt is chosen
+uniformly first, then a pair within it, then left/right order with equal probability.
+Farid's extra pairs do not increase its chance of being selected. Next excludes
+the immediately previous unordered pair globally when any alternative exists;
+later revisits remain possible. Reload does not force the last viewed pair, except
+that an unresolved write resumes its exact pair and orientation for safe retry.
+An explicit prompt link or manual prompt choice randomizes within that character.
 
 Short display briefs above the viewers retain each character's defining traits.
 They are keyed to the frozen canonical prompt hash; the exact unchanged text,
@@ -189,7 +198,9 @@ not animate at rest. Hiding the tab unloads both imports and locks preferences
 until reload. Pair navigation cancels fetch/worker jobs and disposes old geometry,
 materials, textures, skeleton textures and ImageBitmaps; material references
 are restored before release. Page departure disconnects observers, releases
-the renderer/context, and clears the current inspection state. Returning or reloading restores a confirmed server judgment after both imports become ready. Module/WebGL failures
+the renderer/context, and clears the current inspection state. A cached-page return
+resumes the same pair. Each selected pair restores any confirmed server judgment
+after both imports become ready; a full reload may select a new random pair. Module/WebGL failures
 retain prompt, method and source-contract access. HTTPS or localhost is required
 for cryptographic verification.
 

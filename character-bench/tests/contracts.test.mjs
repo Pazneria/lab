@@ -1,7 +1,7 @@
 // CPU-only. Run: node --test character-bench/tests/contracts.test.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {LIMITS,safeAssetPath,validateManifest,eligiblePairs,choosePair,createComparisonState,validateGLB,createLoadSlot} from '../assets/contracts.mjs';
+import {LIMITS,safeAssetPath,validateManifest,eligiblePairs,choosePair,chooseComparison,createComparisonState,validateGLB,createLoadSlot} from '../assets/contracts.mjs';
 import {disposeObject} from '../assets/resources.mjs';
 const hash='a'.repeat(64),otherHash='b'.repeat(64);
 const prompt={id:'test-character',title:'Test character',text:'Exact fixture prompt',sha256:hash};
@@ -37,6 +37,32 @@ test('pair selection stays inside one prompt and avoids the previous pair when p
   const pair=choosePair(m,prompt.id,'one|two',()=>0);
   assert.notEqual(pair.map(e=>e.id).sort().join('|'),'one|two');
   assert.ok(pair.every(e=>e.promptId===prompt.id));assert.notEqual(pair[0].id,pair[1].id);
+});
+
+test('random comparisons choose prompts equally despite unequal pair counts, then pair and A/B independently',()=>{
+  const second={...prompt,id:'second',sha256:otherHash},third={...prompt,id:'unpaired'};
+  const more=['s1','s2','s3','s4'].map(id=>entry(id,{promptId:second.id,promptSha256:otherHash}));
+  const m=validateManifest({version:1,prompts:[prompt,second,third],entries:[a,b,...more,entry('lonely',{promptId:third.id}),entry('pending',{promptId:third.id,admission:{status:'pending'}})]});
+  const counts=new Map();
+  for(let bin=0;bin<100;bin++){
+    const values=[(bin+.5)/100,.25,.1],next=chooseComparison(m,null,()=>values.shift());
+    counts.set(next.promptId,(counts.get(next.promptId)||0)+1);assert(next.pair.every(e=>e.promptId===next.promptId));
+  }
+  assert.deepEqual([...counts],[[prompt.id,50],[second.id,50]]);
+  const possible=eligiblePairs(m,second.id);
+  for(let pairIndex=0;pairIndex<possible.length;pairIndex++)for(const side of [.1,.9]){
+    const values=[.75,(pairIndex+.5)/possible.length,side],next=chooseComparison(m,null,()=>values.shift());
+    assert.deepEqual(next.pair.map(e=>e.id),side<.5?possible[pairIndex].map(e=>e.id):possible[pairIndex].map(e=>e.id).reverse());
+  }
+});
+
+test('global Next excludes the previous unordered pair, permits later revisits, and handles exhausted catalogs',()=>{
+  const second={...prompt,id:'second',sha256:otherHash};
+  const m=validateManifest({version:1,prompts:[prompt,second],entries:[a,b,entry('three'),entry('s1',{promptId:second.id,promptSha256:otherHash}),entry('s2',{promptId:second.id,promptSha256:otherHash})]});
+  for(const value of [0,.2,.5,.99]){const next=chooseComparison(m,'one|two',()=>value);assert.notEqual(next.pair.map(e=>e.id).sort().join('|'),'one|two');}
+  assert.deepEqual(chooseComparison(m,'s1|s2',()=>0).pair.map(e=>e.id),['one','two']);
+  assert.equal(chooseComparison(manifest([a])),null);
+  assert.deepEqual(chooseComparison(manifest(),'one|two',()=>0).pair.map(e=>e.id),['one','two']);
 });
 test('linked cameras are default; unlock keeps independent states and relink adopts active view',()=>{
   const state=createComparisonState([a,b]);assert.equal(state.snapshot.linked,true);

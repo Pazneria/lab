@@ -1,4 +1,4 @@
-import {validateManifest,eligiblePairs,choosePair,createComparisonState,DEFAULT_CAMERA} from './contracts.mjs';
+import {validateManifest,eligiblePairs,choosePair,chooseComparison,createComparisonState,DEFAULT_CAMERA} from './contracts.mjs';
 import {createVotingClient,renderLeaderboard} from './voting.mjs';
 import {shortBrief} from './briefs.mjs';
 const $=id=>document.getElementById(id);
@@ -50,8 +50,8 @@ function renderControls(){
   for(const id of ['surface-mode','reset-camera','grid-toggle','light-angle'])$(id).disabled=!inspect;
   for(const button of document.querySelectorAll('[data-view],.focus-pane'))button.disabled=!inspect;
   document.querySelectorAll('[data-vote]').forEach(button=>{button.disabled=voteBlocked||!!restorationError||!(s.canVote||revising&&s.revealed&&s.ready.every(Boolean));button.classList.toggle('selected',button.dataset.vote===s.choice);button.setAttribute('aria-pressed',String(button.dataset.vote===s.choice));});
-  const pairs=manifest&&promptId?eligiblePairs(manifest,promptId):[];
-  $('next-pair').disabled=pairs.length<2||blocked;
+  const comparisonCount=manifest?.prompts.reduce((count,prompt)=>count+eligiblePairs(manifest,prompt.id).length,0)||0;
+  $('next-pair').disabled=comparisonCount<2||blocked;
   $('prompt-select').disabled=!manifest?.prompts.length||blocked;
   $('swap-pair').disabled=!hasPair||loading||s.revealed||blocked;
   $('retry-vote').hidden=!pending&&!restorationError;$('retry-vote').disabled=voteBusy||restoreBusy;
@@ -85,10 +85,10 @@ function renderProvenance(){
 }
 function restorePaneLayout(){pointerClearers.forEach(clear=>clear());expanded=null;stages.classList.remove('is-expanded');document.querySelectorAll('.pane').forEach(p=>p.hidden=false);
   document.querySelectorAll('.focus-pane').forEach(b=>{b.textContent='Expand '+sides[Number(b.dataset.side)].toUpperCase();b.setAttribute('aria-pressed','false');});}
-function selectPrompt(id,{updateUrl=true}={}){
+function selectPrompt(id,{updateUrl=true,chosenPair=null}={}){
   promptId=id;bootRequest++;loadAbort?.abort();loading=false;engine?.clear();restorePaneLayout();
-  const remembered=voting.remembered(id),eligible=eligiblePairs(manifest,id),prior=remembered&&eligible.find(p=>pairSignature(p)===pairSignature(remembered.map(id=>({id}))));
-  const prompt=manifest.prompts.find(p=>p.id===id),pair=prior?remembered.map(id=>prior.find(e=>e.id===id)):choosePair(manifest,id);state.setPair(pair);resetPresentation();restored=null;
+  const remembered=voting.remembered(id),previous=pairSignature(remembered?.map(id=>({id})));
+  const prompt=manifest.prompts.find(p=>p.id===id),pair=chosenPair||choosePair(manifest,id,previous);state.setPair(pair);resetPresentation();restored=null;
   $('prompt-title').textContent=prompt?.title||'No admitted prompt at this link';$('prompt-summary').textContent=shortBrief(prompt);
   $('prompt-text').textContent=prompt?.text||'This prompt has no verified admission record. Choose an available prompt to continue.';
   $('prompt-hash').textContent=prompt?'Canonical prompt SHA-256 · '+prompt.sha256:'';
@@ -162,10 +162,7 @@ $('withdraw-vote').addEventListener('click',()=>{revising=true;return submitVote
 $('refresh-leaderboard').addEventListener('click',refreshLeaderboard);
 $('next-pair').addEventListener('click',()=>{
   if(voteBusy||voting.pending(state.snapshot.pair||[]))return;
-  const pair=choosePair(manifest,promptId,pairSignature(state.snapshot.pair));if(!pair)return;
-  bootRequest++;loadAbort?.abort();loading=false;engine?.clear();restorePaneLayout();state.setPair(pair);resetPresentation();
-  sides.forEach((_,i)=>message(i,'empty','Loading models…'));$('provenance').replaceChildren();
-  restored=null;$('inspection-status').textContent='Loading models…';renderControls();restoreVote();loadPair();
+  const next=chooseComparison(manifest,pairSignature(state.snapshot.pair));if(next)selectPrompt(next.promptId,{chosenPair:next.pair});
 });
 $('swap-pair').addEventListener('click',()=>{
   if(loading||voteBusy||voting.pending(state.snapshot.pair||[])||!state.swap())return;
@@ -221,7 +218,7 @@ function depart(){bootRequest++;loading=false;restoreBusy=false;restorationError
 window.addEventListener('pagehide',depart);
 window.addEventListener('pageshow',event=>{if(event.persisted&&manifest){restoreVote();loadPair();}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){bootRequest++;loading=false;loadAbort?.abort();engine?.clear();pointerClearers.forEach(clear=>clear());sides.forEach((_,i)=>message(i,'paused','Inspection paused while this tab is hidden.'));}else if(manifest&&!state.snapshot.ready.every(Boolean))loadPair();});
-window.addEventListener('popstate',()=>{if(manifest){const query=new URL(location.href).searchParams.get('prompt');selectPrompt(query||manifest.prompts[0]?.id,{updateUrl:false});}});
+window.addEventListener('popstate',()=>{if(manifest){const query=new URL(location.href).searchParams.get('prompt'),next=!query&&chooseComparison(manifest,pairSignature(state.snapshot.pair));selectPrompt(query||next?.promptId||manifest.prompts[0]?.id,{updateUrl:false,chosenPair:next?.pair});}});
 // Read-only host measurements for a cleared QA session; no preference/admission API.
 if(new URL(location.href).searchParams.has('labqa'))Object.defineProperty(window,'__characterBench',{
   configurable:true,value:Object.freeze({get diagnostics(){return engine?.diagnostics??null;}})
@@ -237,7 +234,11 @@ async function boot(){
     $('prompt-select').replaceChildren(...manifest.prompts.map(p=>{const option=document.createElement('option');option.value=p.id;option.textContent=p.title;return option;}));
     $('prompt-select').disabled=false;const requested=new URL(location.href).searchParams.get('prompt');
     if(requested&&!manifest.prompts.some(p=>p.id===requested)){const missing=document.createElement('option');missing.value=requested;missing.textContent='Unknown prompt';$('prompt-select').append(missing);}
-    selectPrompt(requested||manifest.prompts[0].id,{updateUrl:false});
+    const remembered=voting.remembered(),pending=remembered&&voting.pending(remembered);
+    const pendingEntries=pending?.entries?.map(id=>manifest.entries.find(entry=>entry.id===id));
+    const pendingPair=pendingEntries?.length===2&&pendingEntries.every(Boolean)&&eligiblePairs(manifest,pendingEntries[0].promptId).some(pair=>pairSignature(pair)===pairSignature(pendingEntries))?pendingEntries:null;
+    const first=!requested&&chooseComparison(manifest,pairSignature(remembered?.map(id=>({id}))));
+    selectPrompt(pendingPair?.[0].promptId||requested||first?.promptId||manifest.prompts[0].id,{updateUrl:false,chosenPair:pendingPair||first?.pair});
     refreshLeaderboard();
   } catch(error){$('inspection-status').textContent=error.message+' No entries can be loaded or voted on.';sides.forEach((_,i)=>message(i,'error','The admission record could not be verified. Try reloading this page.'));}
 }
