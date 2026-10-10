@@ -13,7 +13,7 @@ it is never an asset URL or model selector. The return link is `../lab-space/`.
 The lobby owner must dispose its renderer before navigation. This route creates
 no renderer until the visitor selects **Load comparison**.
 
-The prepared catalog uses canonical IDs `01` for Mara and `02` for Ivo.
+The prepared catalog uses canonical IDs `01` for Mara, `02` for Ivo and `03` for Farid v2.
 IDs are strings; leading zeroes are significant.
 An unknown ID shows an honest empty state. Different prompt versions need
 different IDs and exact hashes, even when their titles are similar.
@@ -86,16 +86,25 @@ The whole manifest's submitted fingerprint is retained for audit. Changes to an
 unrelated entry or disclosure do not invalidate retries of unchanged eligible
 pairs: current server authority still requires the exact same canonical prompt
 and both immutable asset hashes. Invalid/unresolved records never enter voting.
-The current catalog has six eligible Mara/Ivo attempts and no Farid admission.
+The current catalog has nine eligible attempts: six unchanged Mara/Ivo files and
+three completed Farid v2 files. Farid uses two fresh Sol/Astra replacements and a
+frozen Claude original. [Farid evidence](data/farid-source-evidence.json) retains
+immutable attempt IDs, exact source/copy fingerprints, producer receipts, unknown
+serving identities and the parent-authorized punctuation-only input mapping.
+The replacements' actual submitted input hash remains distinct from the exact
+canonical common v2 text; no received prompt or original failed history is rewritten.
+Original Sol/Astra export failures and unresolved Luna remain outside voting.
 Distinct models follow SceneBench eligibility; future same-model repeats need a
 separate within-model reporting policy before inclusion in this model ranking.
 
 The leaderboard uses SceneBench's regularized Bradley–Terry fit on an Elo scale:
 baseline 1000, scale 400, prior precision 1, method `bt-elo-v1`. The prior adds no
 votes. Empty models have no rating. Fewer than 20 matches, 5 voting browsers or
-3 prompts remains provisional; with two current prompts every rating is
-provisional. Requested and receipt-reported model identities retain those labels.
-Character briefs 01/02 have no numeric rubric, so no rubric scores are invented.
+3 prompts remains provisional. Requested and receipt-reported model identities
+retain those labels. Character briefs 01/02 have no numeric rubric. Farid v2's
+100-point rubric remains in its exact prompt text. This iteration collects public
+A/B preferences only; no numeric rubric scores are collected or inferred. The
+separate authenticated SceneBench rubric feature is unchanged.
 
 Browser storage is a credential, confirmed-receipt and pending-request ledger;
 shared votes and aggregates are server records. Reload checks the server rather

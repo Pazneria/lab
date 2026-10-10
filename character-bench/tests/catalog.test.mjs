@@ -9,7 +9,7 @@ const catalog=validateManifest(raw);
 const sourceRecords=JSON.parse(readFileSync(new URL('../data/prompt-sources.json',import.meta.url))).records;
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 test('actual canonical prompt text matches exact hashes and keeps Mara and Ivo separate',()=>{
-  assert.deepEqual(catalog.prompts.map(p=>p.id),['01','02']);
+  assert.deepEqual(catalog.prompts.map(p=>p.id),['01','02','03']);
   for(const p of catalog.prompts)assert.equal(hash(p.text),p.sha256);
   assert.notEqual(catalog.prompts[0].sha256,catalog.prompts[1].sha256);
   for(const e of catalog.entries)assert.equal(e.promptSha256,catalog.prompts.find(p=>p.id===e.promptId).sha256);
@@ -26,7 +26,7 @@ test('supported original launch-message evidence matches substantive text and re
   }
 });
 test('actual catalog offers three same-prompt CPU-compatible pairs per character with guarded blind preferences',()=>{
-  assert.equal(catalog.entries.filter(e=>e.admission.status==='verified').length,6);
+  assert.equal(catalog.entries.filter(e=>e.admission.status==='verified').length,9);
   for(const prompt of catalog.prompts){
     const pairs=eligiblePairs(catalog,prompt.id);assert.equal(pairs.length,3);
     for(const pair of pairs){assert.equal(new Set(pair.map(e=>e.promptId)).size,1);assert.equal(new Set(pair.map(e=>e.provenance.requestedModel)).size,2);
@@ -35,8 +35,8 @@ test('actual catalog offers three same-prompt CPU-compatible pairs per character
     }
   }
 });
-test('six copied completed GLBs retain source hashes and pass the current compatibility profile',()=>{
-  const assets=catalog.entries.filter(e=>e.asset.path);assert.equal(assets.length,6);
+test('nine copied completed GLBs retain source hashes and pass the current compatibility profile',()=>{
+  const assets=catalog.entries.filter(e=>e.asset.path);assert.equal(assets.length,9);
   for(const e of assets){
     const bytes=readFileSync(new URL('../'+e.asset.path,import.meta.url));assert.equal(bytes.length,e.asset.byteLength);assert.equal(hash(bytes),e.asset.sha256);
     const profile=validateGLB(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
@@ -53,7 +53,7 @@ test('malformed Luna records cannot be loaded, paired or used to unlock voting',
   for(const p of catalog.prompts)for(const pair of eligiblePairs(catalog,p.id))assert.ok(pair.every(e=>e.admission.status==='verified'));
 });
 test('source timings, interruptions, backend uncertainty and check boundaries survive preparation',()=>{
-  for(const e of catalog.entries){const p=e.provenance;
+  for(const e of catalog.entries.filter(e=>e.promptId!=='03')){const p=e.provenance;
     assert.equal(p.verifiedModel,null);assert.equal(p.verifiedReasoning,null);assert.equal(p.requestedReasoning,e.id.endsWith('-04')?null:'XHIGH');assert.equal(p.timing.timezone,'UTC');assert.equal(p.timing.clockPaused,false);
     assert.equal(Date.parse(p.timing.deadline)-Date.parse(p.timing.implementationStart),3600000);
     assert.ok(Date.parse(p.timing.actualStop)<=Date.parse(p.timing.deadline));assert.ok(p.sourceHandoff&&p.sourceTiming&&p.sourceFiles.length);
@@ -64,7 +64,7 @@ test('source timings, interruptions, backend uncertainty and check boundaries su
   assert.match(ivo.provenance.sourceTiming,/202\.5s/);assert.match(ivo.provenance.limitations.join(' '),/28 confirmed bounded writes/);
 });
 test('dense Claude assets stay unchanged within allocation bounds without a triangle-cap failure or runtime claim',()=>{
-  const dense=catalog.entries.filter(e=>e.id.endsWith('-04'));assert.equal(dense.length,2);
+  const dense=catalog.entries.filter(e=>e.id.endsWith('-04')&&e.promptId!=='03');assert.equal(dense.length,2);
   for(const entry of dense){const bytes=readFileSync(new URL('../'+entry.asset.path,import.meta.url)),profile=validateGLB(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
     const triangles=profile.json.meshes.flatMap(mesh=>mesh.primitives).reduce((sum,primitive)=>sum+profile.json.accessors[primitive.indices].count/3,0);
     assert.equal(triangles,entry.asset.triangleCount);assert.ok(triangles>1000000);assert.equal(profile.vertices,entry.asset.vertexCount);

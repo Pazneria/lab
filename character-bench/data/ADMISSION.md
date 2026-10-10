@@ -1,5 +1,11 @@
 # Prepared admission evidence
 
+The Mara/Ivo preparation account below is retained as historical evidence. The
+current integration adds Farid v2 under canonical ID `03`, documented in
+[Farid source evidence](farid-source-evidence.json). Public voting uses a separate
+shared backend namespace. Runtime checks and deployment receipts are reported
+separately; CPU compatibility never becomes a quality score.
+
 Draft preparation only. Browser/GPU/performance inspection, screenshots, merge
 and publication remain held for parent integrated review. No entrant generators
 were executed, entrant bytes modified, active entrant folders inspected, new
@@ -118,3 +124,40 @@ snapshot found zero exact-path owned matches, subject to command-line and
 snapshot limits; user review process untouched. Full original handoff/timing
 text and source/check fingerprints remain in the catalog; no original preview
 was shown or rerendered. See [portable Claude evidence](claude-source-evidence.json).
+
+## Farid v2 completed attempts
+
+Canonical ID03 retains the exact shared v2 contract, Farid brief and100-point rubric,
+7,426UTF8bytes without a terminal newline; SHA256
+e6c8206eda3e42ba7e2c68c5e37cfb26b5e95e0d83ac2ef7cd4b3896507c2767.
+The parent explicitly maps a four-heading-separator encoding variant to this
+common v2 identity. Actual fresh Sol/Astra submitted full-input SHA256
+fdc1d6b720765ee56d29ffa8887252c7bf19cb34e0d65543dd40e56be591a037 is
+preserved separately from corrected full-original SHA256
+b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e.
+No words, numbers, requirements, line breaks or internal markers differ. Raw
+launch histories were not rewritten, and original failed attempts are not relabeled.
+
+entry-03-r01 is the finished fresh task55 Sol-requested replacement,7,587,600bytes/
+ea2561848b7a251488d2f28238ed36044ce186b8d0d53c892e3c171af24c0ff3.
+entry-03-r02 is the finished fresh task56 Astra-requested replacement,12,501,292bytes/
+fc7415ed4dfb38e4741dcb41c3a0ffc5efd832787da8aca5acdf7ccae66fc3d9.
+entry-03-04 is frozen original Claude03,27,109,440bytes/
+113b954154843c7b6272c79ea8fd8c5ba8a10c9ef9a57869714da739c873180c.
+Native current host guards and pinned r180 imports pass for all exact hashes.
+The original six Mara/Ivo files and eight source records remain unchanged.
+No source asset was repaired, reduced, regenerated or scored.
+
+Sol's six bounded CPU stills include superseded/penultimate exports; none is
+claimed as an exact-final render. Failed parent graphics-report messages and
+serving-backend uncertainty are retained. Astra producer did no renders. Claude
+software splat renders approximate shading; full raw original launch hash is
+unavailable even though the common v2 text was reconciled by the parent.
+Producer versus host checks remain separately labeled. The exact receipts and
+source-file fingerprints are in farid-source-evidence.json and the manifest.
+
+Failed original Sol/Astra export histories and unresolved/blocked Luna remain
+noneligible records in the source evidence. Only the three completed immutable
+Farid assets form three same-v2 pairs. Public ratings collect A/B preferences;
+the numeric rubric is prompt context, not an invented automatic score or a
+collected rubric rating. Runtime/performance scope remains explicitly limited.
