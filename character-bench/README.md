@@ -10,8 +10,17 @@ From `lab-space/`, navigate in the same tab to `../character-bench/`.
 The production lobby's link `../character-bench/?prompt=02` is compatible.
 The optional `prompt` query is an exact canonical ID from the admission manifest;
 it is never an asset URL or model selector. The return link is `../lab-space/`.
-The lobby owner must dispose its renderer before navigation. This route creates
-no renderer until the visitor selects **Load comparison**.
+The lobby owner must dispose its renderer before navigation. A valid pair loads
+automatically on entry, prompt changes and **Next**. Swap also reloads both sides;
+returning to a visible tab or cached page resumes the same pair automatically.
+Hidden tabs unload their viewer resources. **Retry** appears only after a failed
+or paused load. Next cancels old imports and skips without recording a vote;
+pending writes still require confirmation before navigation.
+
+Short display briefs above the viewers retain each character's defining traits.
+They are keyed to the frozen canonical prompt hash; the exact unchanged text,
+hash and run disclosures remain under **Full prompt**. A new unrecognized prompt
+hash falls back to its canonical text rather than inheriting an old summary.
 
 The prepared catalog uses canonical IDs `01` for Mara, `02` for Ivo and `03` for Farid v2.
 IDs are strings; leading zeroes are significant.

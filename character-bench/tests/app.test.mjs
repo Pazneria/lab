@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
 import {createHash,webcrypto} from 'node:crypto';
 import * as contracts from '../assets/contracts.mjs';
+import * as briefs from '../assets/briefs.mjs';
 const source=readFileSync(new URL('../assets/app.mjs',import.meta.url),'utf8');
 const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 class Element {
@@ -15,7 +16,7 @@ class Element {
   replaceChildren(...nodes){this._text='';this.children=[...nodes];}append(...nodes){this.children.push(...nodes);}focus(){this.focusCount=(this.focusCount||0)+1;}setPointerCapture(){}
 }
 const waitFor=async condition=>{for(let count=0;count<40;count++){if(condition())return;await new Promise(resolve=>setTimeout(resolve,5));}throw Error('CPU fixture did not settle.');};
-async function fixture({empty=false,requested='02',oneEntry=false,voteFailure=false,deferVote=false,deferRestore=false}={}) {
+async function fixture({empty=false,requested='02',oneEntry=false,voteFailure=false,deferVote=false,deferRestore=false,deferViewer=false}={}) {
   const elements=[],ids=new Map(),documentEvents={},windowEvents={},loads=[];
   for(const match of html.matchAll(/<([a-z][\w-]*)([^>]*)>/g)){
     const el=new Element(match[1]),attrs=match[2];
@@ -29,20 +30,20 @@ async function fixture({empty=false,requested='02',oneEntry=false,voteFailure=fa
   const prompt={id:'02',title:'Same fixture character',text:'Exact same fixture brief',sha256:createHash('sha256').update('Exact same fixture brief').digest('hex'),comparisonDisclosure:'Run conditions differ. Receipts follow your choice.'};
   const entries=['one','two','three'].map(id=>({id,promptId:'02',promptSha256:prompt.sha256,admission:{status:'verified',frozen:true,selfContained:true},asset:{path:'./entries/'+id+'.glb',sha256:'a'.repeat(64),byteLength:100},provenance:{modelLabel:'Secret '+id,sourceHandoff:'Original receipt for Secret '+id,sourceTiming:'Original timer for Secret '+id,requestedReasoning:'XHIGH',producerChecks:'Source-run check',hostChecks:'CPU check only'}}));
   let params,clears=0,disposed=0,creates=0;
-  const engine={loadPair(pair,token){return new Promise(resolve=>loads.push({pair,token,resolve}));},clear(){clears++;},dispose(){disposed++;},invalidate(){},setMode(){},setLight(){},setGrid(){}};
+  const engine={loadPair(pair,token){const item={pair,token};item.promise=new Promise(resolve=>item.resolve=resolve);loads.push(item);return item.promise;},clear(){clears++;},dispose(){disposed++;},invalidate(){},setMode(){},setLight(){},setGrid(){}};
   const context=vm.createContext({document,location,URL,AbortController,TextEncoder,crypto:webcrypto,history:{state:null,replaceState(_state,_title,url){if(url)location.href=String(url);}},
     window:{addEventListener:(type,fn)=>(windowEvents[type]??=[]).push(fn)},fetch:async()=>Response.json({version:1,prompts:empty?[]:[prompt],entries:empty?[]:oneEntry?entries.slice(0,1):entries})});
   const make=(values)=>new vm.SyntheticModule(Object.keys(values),function(){for(const [name,value]of Object.entries(values))this.setExport(name,value);},{context});
-  let pendingVote=null,sentVotes=0,voteResolve,restoreResolve,currentRequests=0;
+  let pendingVote=null,sentVotes=0,voteResolve,restoreResolve,currentRequests=0,viewerImportResolve,viewerImports=0;const submissions=[];
   const voting={pending:()=>pendingVote,remember(){},remembered:()=>null,current:async()=>{currentRequests++;if(deferRestore&&currentRequests===1)return new Promise(resolve=>{restoreResolve=resolve;});return {status:'empty',intent:0};},leaderboard:async()=>({rows:[],counts:{votes:0}}),
-    async submit(pair,choice,_hash,{retryOnly}={}){sentVotes++;if(!retryOnly)pendingVote={choice};if(voteFailure&&sentVotes===1)throw Error('Offline');if(deferVote)await new Promise(resolve=>{voteResolve=resolve;});const receipt={status:'saved',choice:pendingVote.choice};pendingVote=null;return receipt;}};
-  const votes=make({createVotingClient:()=>voting,renderLeaderboard(){}}),core=make(contracts),viewer=make({createViewer(value){params=value;creates++;return {...engine};}});await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
-  const module=new vm.SourceTextModule(source,{context,identifier:'https://fixture.example/lab/character-bench/assets/app.mjs',initializeImportMeta(meta){meta.url=module.identifier;},importModuleDynamically:async()=>viewer});
-  await module.link(specifier=>specifier==='./voting.mjs'?votes:core);await module.evaluate();await waitFor(()=>empty?ids.get('inspection-status').textContent.includes('Awaiting'):ids.get('prompt-title').textContent===(requested==='02'?prompt.title:'No admitted prompt at this link'));await new Promise(resolve=>setTimeout(resolve,0));
+    async submit(pair,choice,_hash,{retryOnly}={}){sentVotes++;submissions.push({entries:pair.map(e=>e.id),choice});if(!retryOnly)pendingVote={choice};if(voteFailure&&sentVotes===1)throw Error('Offline');if(deferVote)await new Promise(resolve=>{voteResolve=resolve;});const receipt={status:'saved',choice:pendingVote.choice};pendingVote=null;return receipt;}};
+  const votes=make({createVotingClient:()=>voting,renderLeaderboard(){}}),summaries=make(briefs),core=make(contracts),viewer=make({createViewer(value){params=value;creates++;return {...engine};}});await summaries.link(()=>{});await summaries.evaluate();await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
+  const module=new vm.SourceTextModule(source,{context,identifier:'https://fixture.example/lab/character-bench/assets/app.mjs',initializeImportMeta(meta){meta.url=module.identifier;},importModuleDynamically:async()=>{if(deferViewer&&viewerImports++===0)return new Promise(resolve=>viewerImportResolve=()=>resolve(viewer));return viewer;}});
+  await module.link(specifier=>specifier==='./voting.mjs'?votes:specifier==='./briefs.mjs'?summaries:core);await module.evaluate();await waitFor(()=>empty?ids.get('inspection-status').textContent.includes('Awaiting'):ids.get('prompt-title').textContent===(requested==='02'?prompt.title:'No admitted prompt at this link'));await new Promise(resolve=>setTimeout(resolve,0));
   return {ids,loads,elements,document,documentEvents,windowEvents,get params(){return params;},get creates(){return creates;},get clears(){return clears;},get disposed(){return disposed;},
-    async start(){const count=loads.length,pending=ids.get('load-pair').emit('click');await waitFor(()=>loads.length>count);return {pending,load:loads.at(-1)};},
+    async start(){let load=loads.findLast(l=>!l.claimed&&l.token===params?.state.snapshot.generation);if(!load){const count=loads.length;ids.get('load-pair').emit('click');await waitFor(()=>loads.length>count);load=loads.at(-1);}load.claimed=true;return {pending:load.promise.then(()=>new Promise(resolve=>setTimeout(resolve,0))),load};},
     ready(side,token){params.onStatus(side,'ready','Ready',token);},status(side,kind,text,token){params.onStatus(side,kind,text,token);},vote(choice){return elements.find(el=>el.dataset.vote===choice).emit('click');},
-    button(choice){return elements.find(el=>el.dataset.vote===choice);},get sentVotes(){return sentVotes;},confirmVote(){voteResolve();},finishOldRestore(){restoreResolve({status:'empty',intent:0});}};
+    button(choice){return elements.find(el=>el.dataset.vote===choice);},get sentVotes(){return sentVotes;},confirmVote(){voteResolve();},submissions,finishOldViewerImport(){viewerImportResolve();},finishOldRestore(receipt={status:'empty',intent:0}){restoreResolve(receipt);}};
 }
 
 test('vote failure reveals no identity, retry preserves choice, and duplicate clicks wait for confirmation',async()=>{
@@ -65,7 +66,7 @@ test('empty admission starts no viewer and exposes an honest usable fallback',as
 });
 test('actual controls keep identity blind until both current imports are ready and a vote occurs',async()=>{
   const f=await fixture(),{pending}=await f.start();assert.equal(f.creates,1);assert.equal(f.params.state.snapshot.linked,true);assert.equal(f.ids.get('label-a').textContent,'Attempt A');
-  assert.equal(f.ids.get('run-note').hidden,false);assert.equal(f.ids.get('provenance').textContent,'');
+  assert.equal(f.ids.get('run-note').hidden,false);assert.equal(f.ids.get('prompt-summary').textContent,'Exact same fixture brief');assert.equal(f.ids.get('provenance').textContent,'');
   f.ready(0);await f.vote('a');assert.equal(f.ids.get('reveal').hidden,true);f.ready(1);f.loads[0].resolve([true,true]);await pending;
   assert.equal(f.button('a').disabled,false);await f.vote('a');assert.equal(f.ids.get('reveal').hidden,false);assert.match(f.ids.get('label-a').textContent,/Secret /);assert.match(f.ids.get('provenance').textContent,/Not independently exposed/);
   assert.match(f.ids.get('provenance').textContent,/Original receipt/);assert.match(f.ids.get('provenance').textContent,/Original timer/);assert.match(f.ids.get('provenance').textContent,/Source-run check/);assert.match(f.ids.get('provenance').textContent,/CPU check only/);
@@ -124,7 +125,7 @@ test('fresh next pair restores linked cameras, active side and shared presentati
   await f.ids.get('next-pair').emit('click');
   const s=f.params.state.snapshot;assert.equal(s.linked,true);assert.equal(s.active,0);assert.deepEqual(s.cameras,[contracts.DEFAULT_CAMERA,contracts.DEFAULT_CAMERA]);
   assert.equal(f.ids.get('surface-mode').value,'pbr');assert.equal(f.ids.get('light-angle').value,'35');assert.equal(f.ids.get('grid-toggle').getAttribute('aria-pressed'),'true');
-  assert.equal(f.ids.get('load-pair').focusCount,1);assert.equal(f.ids.get('reveal').hidden,true);
+  assert.equal(f.ids.get('load-pair').hidden,true);assert.equal(f.ids.get('reveal').hidden,true);
 });
 test('swap retains exact entries, reverses sides and locks choices until both new imports; reveal blocks swap',async()=>{
   const f=await fixture(),first=await f.start();assert.equal(f.ids.get('swap-pair').disabled,true);
@@ -148,7 +149,31 @@ test('failed import reports neutral accessible status without leaking a submitte
   f.ready(0);f.status(1,'error','Secret two mesh in ./entries/two.glb failed');first.load.resolve([true,false]);await first.pending;
   assert.equal(f.button('a').disabled,true);assert.equal(f.ids.get('surface-b').getAttribute('aria-busy'),'false');
   assert.doesNotMatch(f.ids.get('message-b').textContent,/Secret|two\.glb/);assert.equal(f.ids.get('reveal').hidden,true);
+  assert.equal(f.ids.get('load-pair').hidden,false);const before=f.params.state.snapshot;
   const retry=await f.start();f.ready(0);f.ready(1);retry.load.resolve([true,true]);await retry.pending;assert.equal(f.button('a').disabled,false);
+  assert.deepEqual(retry.load.pair,before.pair);assert.equal(retry.load.token,before.generation);assert.equal(f.ids.get('load-pair').hidden,true);
+});
+
+test('initial pair loads automatically; rapid Next cancels stale imports and submits only the visible pair',async()=>{
+  const f=await fixture({deferRestore:true});assert.equal(f.loads.length,1);assert.equal(f.creates,1);assert.equal(f.ids.get('load-pair').hidden,true);
+  assert.equal(f.ids.get('next-pair').disabled,false,'A read-only restore must not block navigation');
+  const first=f.loads[0];await f.ids.get('next-pair').emit('click');await f.ids.get('next-pair').emit('click');await f.ids.get('next-pair').emit('click');
+  const current=await f.start();assert.equal(f.loads.length,4);assert.equal(f.clears,3);assert(current.load.pair.every(e=>e.promptId==='02'));
+  for(const stale of f.loads.slice(0,-1)){f.ready(0,stale.token);f.ready(1,stale.token);stale.resolve([true,true]);}
+  f.finishOldRestore({status:'saved',choice:first.pair[0].id,intent:1});await new Promise(resolve=>setTimeout(resolve,0));
+  assert.equal(f.button('a').disabled,true);assert.equal(f.ids.get('reveal').hidden,true);assert.equal(f.ids.get('label-a').textContent,'Attempt A');
+  assert.notEqual(current.load.token,first.token);f.ready(0,current.load.token);await f.vote('b');assert.equal(f.sentVotes,0);
+  f.ready(1,current.load.token);current.load.resolve([true,true]);await current.pending;await f.vote('b');
+  assert.deepEqual(f.submissions,[{entries:current.load.pair.map(e=>e.id),choice:current.load.pair[1].id}]);
+  assert.equal(f.params.state.snapshot.choice,'b');assert.equal(f.ids.get('label-a').textContent,current.load.pair[0].provenance.modelLabel);
+});
+
+test('Next while the viewer module is pending creates only the current viewer when older import resolves',async()=>{
+  const f=await fixture({deferViewer:true});assert.equal(f.creates,0);assert.equal(f.ids.get('next-pair').disabled,false);
+  await f.ids.get('next-pair').emit('click');await waitFor(()=>f.loads.length===1);const current=await f.start();
+  f.finishOldViewerImport();await new Promise(resolve=>setTimeout(resolve,0));assert.equal(f.creates,1);assert.equal(f.loads.length,1);
+  assert.equal(f.button('a').disabled,true);f.ready(0,current.load.token);f.ready(1,current.load.token);current.load.resolve([true,true]);await current.pending;
+  assert.equal(f.button('a').disabled,false);assert.equal(f.ids.get('reveal').hidden,true);
 });
 test('callbacks from a disposed viewer cannot unlock or fail its replacement',async()=>{
   const f=await fixture(),first=await f.start(),old=f.params;

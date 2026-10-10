@@ -80,11 +80,12 @@ export function createVotingClient({fetcher=globalThis.fetch,storage=globalThis.
 
 export function renderLeaderboard(target,data,document=globalThis.document) {
   const node=(tag,text)=>{const el=document.createElement(tag);el.textContent=String(text);return el;};
-  target.replaceChildren(node('p',`${data.counts.votes} current judgments from ${data.counts.browsers||0} anonymous browser credentials. Latest preference per browser and pair; retries add no matches.`));
-  if(!data.counts.votes)target.append(node('p','No public votes yet. Models remain unranked until a confirmed judgment is stored.'));
+  target.replaceChildren(node('p',`${data.counts.votes} judgments from ${data.counts.browsers||0} anonymous browser credentials.`));
+  if(!data.counts.votes)target.append(node('p','No public votes yet.'));
   const table=document.createElement('table');table.append(node('caption','CharacterBench preference ratings'));
   const head=document.createElement('tr');for(const label of ['Model / evidence','Rating','Wins','Ties','Losses','Matches','Browsers','Prompts','Status']){const th=node('th',label);th.scope='col';head.append(th);}const thead=document.createElement('thead');thead.append(head);table.append(thead);
   const body=document.createElement('tbody');for(const row of data.rows){const tr=document.createElement('tr');[row.model,row.rating??'—',row.wins,row.ties,row.losses,row.matches,row.votingBrowsers,row.prompts,row.matches?(row.provisional?'Provisional':'Sample threshold met'):'Unranked'].forEach((value,i)=>{const cell=node(i?'td':'th',value);if(!i)cell.scope='row';tr.append(cell);});body.append(tr);}table.append(body);target.append(table);
-  for(const text of data.disclosures||[])target.append(node('p',text));
-  target.append(node('p',`Method ${data.settings?.version}. Updated ${data.updatedAt}.`));
+  const details=document.createElement('details');details.append(node('summary','Rating method'));
+  for(const text of data.disclosures||[])details.append(node('p',text));
+  details.append(node('p',`Method ${data.settings?.version}. Updated ${data.updatedAt}.`));target.append(details);
 }
