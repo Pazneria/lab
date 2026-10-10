@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self' data: blob:; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <meta name="theme-color" content="#f5f4ef">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self' data: blob: https://walkable-worlds-voting.pazneria.chatgpt.site; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="theme-color" content="#081b1b">
   <meta name="description" content="Inspect two frozen attempts of the same character prompt in Jordan's Lab. Linked cameras, neutral lighting, and model labels hidden until you choose.">
   <title>CharacterBench · Jordan's Lab</title>
   <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
@@ -21,7 +21,7 @@
   <main id="main" tabindex="-1">
     <section class="intro" aria-labelledby="title">
       <div><p class="eyebrow"><span class="dot"></span> CHARACTER / COMPARISON</p><h1 id="title">CharacterBench<span class="period">.</span></h1><p class="lede">Same character. Two attempts.<br>Look closely, then make the call.</p></div>
-      <aside class="protocol"><span class="pill">BLIND UNTIL YOU CHOOSE</span><p>Identical lighting. Linked inspection.<br>Your preference, without a prefilled score.</p></aside>
+      <aside class="protocol"><span class="pill">LABELS HIDDEN UNTIL YOU CHOOSE</span><p>Identical lighting. Linked inspection.<br>Your preference, without a prefilled score.</p></aside>
     </section>
     <section class="brief" aria-labelledby="prompt-title">
       <div class="brief-title"><p class="eyebrow">THE SHARED BRIEF</p><h2 id="prompt-title">Awaiting an admitted comparison</h2></div>
@@ -29,42 +29,46 @@
     </section>
     <section class="workbench" aria-labelledby="comparison-title">
       <div class="bench-heading"><h2 id="comparison-title">The inspection table</h2><p id="pair-count" class="small">Two verified attempts of one prompt are required.</p></div>
-      <div class="toolbar" aria-label="Shared inspection controls">
+      <div class="toolbar" role="group" aria-label="Shared inspection controls">
+        <button id="swap-pair" aria-describedby="swap-note" disabled>Swap A/B</button>
         <button id="link-cameras" aria-pressed="true" disabled><span aria-hidden="true">↔</span> Cameras linked</button>
         <label>Surface<select id="surface-mode" disabled><option value="pbr">Original materials</option><option value="clay">Neutral clay</option><option value="wire">Wireframe</option></select></label>
         <button id="reset-camera" disabled>Reset view</button>
         <button id="grid-toggle" aria-pressed="true" disabled>Floor grid</button>
         <div class="light-control"><label for="light-angle">Light direction</label><input id="light-angle" type="range" min="-180" max="180" value="35" step="5" disabled><output id="light-value" for="light-angle">35°</output></div>
       </div>
+      <p id="swap-note" class="small">Swap sides before choosing to check presentation bias. Swapping starts a fresh inspection of these same files.</p>
       <p id="camera-note" class="camera-note">Rotate or zoom either view to move both. Unlock cameras for independent inspection.</p>
       <p id="run-note" class="small" hidden></p>
       <div id="stages" class="stages">
         <article class="pane" data-side="0" aria-labelledby="label-a">
           <header class="pane-header"><div><span class="side-token">A</span><h3 id="label-a">Attempt A</h3></div><button class="focus-pane" data-side="0" aria-pressed="false" disabled>Expand A</button></header>
-          <div class="surface" id="surface-a" data-side="0" tabindex="0" role="group" aria-label="Attempt A inspection. Drag to rotate; scroll or pinch to zoom. Arrow keys rotate; plus and minus zoom.">
+          <div class="surface" id="surface-a" data-side="0" aria-describedby="camera-note status-a" aria-busy="false" tabindex="0" role="group" aria-label="Attempt A inspection. Drag to rotate; scroll or pinch to zoom. Arrow keys rotate; plus and minus zoom.">
             <div class="pane-message" id="message-a" role="status"><span class="empty-mark" aria-hidden="true">A</span><strong>Awaiting a verified pair</strong><p>A frozen character will appear here after admission.</p></div>
             <span class="view-tag" aria-hidden="true">FRONT / NEUTRAL STUDIO</span>
           </div>
-          <footer class="pane-footer"><span id="status-a">No asset loaded</span><div class="view-controls" aria-label="Attempt A view presets"><button data-side="0" data-view="front" disabled>Front</button><button data-side="0" data-view="back" disabled>Back</button><button data-side="0" data-view="face" disabled>Close-up</button></div></footer>
+          <footer class="pane-footer"><span id="status-a">No asset loaded</span><div class="view-controls" aria-label="Attempt A view presets"><button data-side="0" data-view="front" disabled>Front</button><button data-side="0" data-view="side" disabled>Side</button><button data-side="0" data-view="back" disabled>Back</button><button data-side="0" data-view="top" disabled>Above</button><button data-side="0" data-view="face" disabled>Close-up</button></div></footer>
         </article>
         <article class="pane" data-side="1" aria-labelledby="label-b">
           <header class="pane-header"><div><span class="side-token">B</span><h3 id="label-b">Attempt B</h3></div><button class="focus-pane" data-side="1" aria-pressed="false" disabled>Expand B</button></header>
-          <div class="surface" id="surface-b" data-side="1" tabindex="0" role="group" aria-label="Attempt B inspection. Drag to rotate; scroll or pinch to zoom. Arrow keys rotate; plus and minus zoom.">
+          <div class="surface" id="surface-b" data-side="1" aria-describedby="camera-note status-b" aria-busy="false" tabindex="0" role="group" aria-label="Attempt B inspection. Drag to rotate; scroll or pinch to zoom. Arrow keys rotate; plus and minus zoom.">
             <div class="pane-message" id="message-b" role="status"><span class="empty-mark" aria-hidden="true">B</span><strong>Awaiting a verified pair</strong><p>A frozen character will appear here after admission.</p></div>
             <span class="view-tag" aria-hidden="true">FRONT / NEUTRAL STUDIO</span>
           </div>
-          <footer class="pane-footer"><span id="status-b">No asset loaded</span><div class="view-controls" aria-label="Attempt B view presets"><button data-side="1" data-view="front" disabled>Front</button><button data-side="1" data-view="back" disabled>Back</button><button data-side="1" data-view="face" disabled>Close-up</button></div></footer>
+          <footer class="pane-footer"><span id="status-b">No asset loaded</span><div class="view-controls" aria-label="Attempt B view presets"><button data-side="1" data-view="front" disabled>Front</button><button data-side="1" data-view="side" disabled>Side</button><button data-side="1" data-view="back" disabled>Back</button><button data-side="1" data-view="top" disabled>Above</button><button data-side="1" data-view="face" disabled>Close-up</button></div></footer>
         </article>
       </div>
       <div class="inspection-actions"><p id="inspection-status" role="status">No character previews have been substituted for missing pairs.</p><button id="load-pair" class="primary" disabled>Load comparison <span aria-hidden="true">↗</span></button></div>
       <div class="decision">
-        <div><p class="eyebrow">YOUR PREFERENCE</p><h2>Which attempt works better?</h2><p id="vote-instruction">Inspect both attempts before choosing. Model labels reveal after your choice.</p></div>
-        <div class="vote-actions" aria-label="Choose a preference"><button data-vote="a" disabled>Prefer A</button><button data-vote="tie" disabled>No preference</button><button data-vote="b" disabled>Prefer B</button></div>
+        <div><p class="eyebrow">YOUR PREFERENCE</p><h2>Which attempt works better?</h2><p id="vote-instruction">Inspect both attempts before choosing. Model labels reveal after the server confirms your choice.</p></div>
+        <div class="vote-actions" role="group" aria-label="Choose a preference" aria-describedby="vote-instruction"><button data-vote="a" aria-pressed="false" disabled>Prefer A</button><button data-vote="tie" aria-pressed="false" disabled>No preference</button><button data-vote="b" aria-pressed="false" disabled>Prefer B</button></div>
       </div>
-      <div id="reveal" class="reveal" hidden><p id="choice-status" role="status"></p><div id="provenance" class="provenance"></div></div>
-      <div class="comparison-foot"><span id="preference-note">This inspection uses session-only preferences. There is no public CharacterBench tally.</span><button id="next-pair" disabled>Next pair / skip <span aria-hidden="true">→</span></button></div>
+      <div id="reveal" class="reveal" hidden><p id="choice-status" role="status" tabindex="-1"></p><div id="provenance" class="provenance"></div></div>
+      <div class="vote-recovery"><p id="vote-status" role="status" aria-live="polite"></p><button id="retry-vote" hidden>Retry confirmation</button><button id="change-vote" hidden>Change preference</button><button id="withdraw-vote" hidden>Withdraw preference</button></div>
+      <div class="comparison-foot"><span id="preference-note">Votes are saved in shared storage. One current judgment per browser and pair. Skip records no vote.</span><button id="next-pair" disabled>Next pair / skip <span aria-hidden="true">→</span></button></div>
     </section>
-    <section class="method" aria-label="Inspection method"><details><summary>How this comparison works</summary><p>Only two distinct, verified attempts of the exact same prompt can be paired. A/B order is randomized. Each character is centered and fitted to the same unit bounding sphere without rewriting its frozen GLB; this compares framing rather than physical size.</p><p>The original PBR materials are preserved. Clay and wireframe are optional inspection modes. White studio lights, exposure, environment and the movable key light are shared across both views. Submitted lights and animations do not run. A rig is optional.</p><p>Drag to rotate; scroll or pinch to zoom. With a view focused, arrow keys rotate, +/− zoom, and Home resets. Each view also has Front, Back and Close-up controls. Model labels remain hidden until both files load and you choose a preference. Choices reset when you change pairs or leave the page.</p><p>Frozen asset hashes are verified before import. A failed import stays outside voting. Source timings and infrastructure limits are shown after your preference without a quality ranking.</p></details><a href="README.md">Method &amp; source contract ↗</a></section>
+    <section class="method" aria-label="Inspection method"><details><summary>How this comparison works</summary><p>Only two distinct, verified attempts of the exact same prompt can be paired. A/B order is randomized. Each character is centered and fitted to the same unit bounding sphere without rewriting its frozen GLB; this compares framing rather than physical size.</p><p>The original PBR materials are preserved. Clay and wireframe are optional inspection modes. White studio lights, exposure, environment and the movable key light are shared across both views. Submitted lights and animations do not run. A rig is optional.</p><p>Drag to rotate; scroll or pinch to zoom. With a view focused, arrow keys rotate, +/− zoom, and Home resets. Each view also has Front, Back and Close-up controls. Model labels remain hidden until both files load and you choose a preference. Swap A/B starts a fresh inspection with linked cameras, original materials and the default shared light. It is available before choosing. Escape in an expanded view restores both panes. Saved judgments persist across reloads. Each browser credential has one current judgment per entry pair. Change preference replaces it; Withdraw removes it from ratings; Skip records no vote.</p><p>Labels are hidden as an interface convention. The featured Lab character may be recognizable, and static source files expose provenance; this is not a fully blinded experiment.</p><p>Frozen asset hashes are verified before import. A failed import stays outside voting. Source timings and infrastructure limits are shown after a confirmed preference. Public pairwise ratings are separate from those source disclosures and from uncollected numeric rubric scores.</p></details><a href="README.md">Method &amp; source contract ↗</a></section>
+    <section class="public-leaderboard" aria-labelledby="leaderboard-title"><h2 id="leaderboard-title">Public CharacterBench leaderboard</h2><p>Shared A/B preferences across admitted character prompts. Model labels retain their requested or receipt-reported evidence. All current ratings are provisional.</p><button id="refresh-leaderboard">Refresh leaderboard</button><p id="leaderboard-status" role="status" aria-live="polite">Loading public judgments…</p><div id="leaderboard-data" class="leaderboard-scroll" role="region" aria-label="CharacterBench ratings and coverage" tabindex="0"></div></section>
     <noscript><p>JavaScript is required for interactive inspection. The <a href="data/admission.json">admission manifest</a> and <a href="README.md">source contract</a> remain accessible; the manifest includes model provenance.</p></noscript>
   </main>
   <footer class="footer"><span>JORDAN'S LAB / CHARACTERBENCH</span><span>Inspect the character. Keep the judgment yours.</span></footer>

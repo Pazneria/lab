@@ -2,7 +2,7 @@
 
 A host-owned, buildless comparison UI for Jordan's Lab. This change is confined
 to `character-bench/`; it does not change the Lab lobby, benchmark entrants,
-SceneBench catalog, grading service, sharing, hosting or credentials.
+SceneBench catalog, votes or grading behavior. CharacterBench uses separate routes and tables in the existing public voting service; audience and bindings are preserved.
 
 ## Route and integration
 
@@ -58,17 +58,55 @@ The floor grid is a framing aid rather than a meter ruler. Clay/wireframe
 diagnostics are double-sided; returning to original restores exact references.
 Submitted cameras and lights are not used; no animation mixer is created.
 
-Preferences require both current imports to complete. A preference reveals model
-identities and the source timing/infrastructure disclosures, with original handoff
-and timing text, requested/verified reasoning, producer versus host checks and
-source-file fingerprints. Run conditions differed, and that fact is stated before
-preference without identifying models. Pair changes
-and page departure clear it. No localStorage, IndexedDB, public vote API,
-leaderboard, aggregate score, rubric weights, winner claim or private Studio
-access is added. **Public CharacterBench voting persistence is absent.** Adding it
-requires a separate parent decision about catalog eligibility, server validation,
-storage, abuse controls and public result semantics. SceneBench voting endpoints
-are not reused for character IDs.
+Preferences require both current imports to complete. Model identities and source
+receipts reveal only after a matching server receipt, or restoration of an already
+confirmed judgment after both current imports load. A failed or unconfirmed write
+reveals nothing. The saved A/B orientation, exact prompt hash and frozen asset
+hashes accompany each request. Source timing, requested/verified reasoning,
+producer checks, host checks and limitations retain their original evidence.
+
+## Shared voting and leaderboard
+
+The existing public voting service provides `/api/character/v1/session`, `vote`
+(POST or authenticated current-vote GET), and `leaderboard`. Character records use
+six independent `character_*` D1 tables. SceneBench records, handlers, catalog,
+credentials and rating settings are not imported or rewritten.
+
+As in SceneBench, one current judgment counts per browser credential and unordered
+entry pair. A/B order is randomized; choosing Next pair avoids the previous pair
+when alternatives exist. Tie is one match with a half-win for each model. Skip
+records no match. An explicit revision replaces the current preference and is
+marked after reveal; withdrawal excludes it from rating inputs. A server intent
+sequence prevents delayed requests from resurrecting an older judgment. Atomic
+writes persist vote and idempotency receipt together. Retrying a lost confirmation
+resends the exact request ID, intent, choice and orientation. Definite rejections
+are reconciled with server state before releasing pending requests.
+
+The whole manifest's submitted fingerprint is retained for audit. Changes to an
+unrelated entry or disclosure do not invalidate retries of unchanged eligible
+pairs: current server authority still requires the exact same canonical prompt
+and both immutable asset hashes. Invalid/unresolved records never enter voting.
+The current catalog has six eligible Mara/Ivo attempts and no Farid admission.
+Distinct models follow SceneBench eligibility; future same-model repeats need a
+separate within-model reporting policy before inclusion in this model ranking.
+
+The leaderboard uses SceneBench's regularized Bradley–Terry fit on an Elo scale:
+baseline 1000, scale 400, prior precision 1, method `bt-elo-v1`. The prior adds no
+votes. Empty models have no rating. Fewer than 20 matches, 5 voting browsers or
+3 prompts remains provisional; with two current prompts every rating is
+provisional. Requested and receipt-reported model identities retain those labels.
+Character briefs 01/02 have no numeric rubric, so no rubric scores are invented.
+
+Browser storage is a credential, confirmed-receipt and pending-request ledger;
+shared votes and aggregates are server records. Reload checks the server rather
+than trusting local receipts. Web Locks are required for cross-tab write and
+credential coordination. Unsupported locks, blocked/corrupt storage or rejected
+credentials give an actionable failure and never silently mint a new identity.
+Browser credentials are not verified people: clearing storage or changing devices
+can create another voter. The service applies the same issuance/write quotas as
+SceneBench in separate character rate buckets. This is not proof against
+coordinated abuse. Loading, empty, pending, error, refresh, revision and withdrawal
+states use native accessible controls and announcements.
 
 Blindness is an interface convention. Static asset names and the admission
 manifest are inspectable by a visitor; this is not a secret identity protocol.
@@ -132,7 +170,7 @@ not animate at rest. Hiding the tab unloads both imports and locks preferences
 until reload. Pair navigation cancels fetch/worker jobs and disposes old geometry,
 materials, textures, skeleton textures and ImageBitmaps; material references
 are restored before release. Page departure disconnects observers, releases
-the renderer/context, and clears the session preference. Module/WebGL failures
+the renderer/context, and clears the current inspection state. Returning or reloading restores a confirmed server judgment after both imports become ready. Module/WebGL failures
 retain prompt, method and source-contract access. HTTPS or localhost is required
 for cryptographic verification.
 
@@ -153,7 +191,7 @@ node --check character-bench/assets/preflight.mjs
 node --check character-bench/assets/preflight-worker.mjs
 ```
 
-The 26 data/wiring/catalog tests cover same-prompt pairing, admission failures,
+The focused data/wiring/catalog tests cover same-prompt pairing, admission failures,
 linked/unlinked controls, current-import voting/reveal, pair/departure reset,
 loader cancellation/disposal, worker success/error/timeout, partial allocations,
 hierarchy/accessor bounds, image decode budgets, all six copied asset hashes,
@@ -164,6 +202,8 @@ saved Luna containers failed before importer parse and remain untouched in the
 parent's preservation archive. [CPU results](data/cpu-import-evidence.json) establish
 compatibility and unchanged bytes, not visual quality or equivalent execution.
 
-**Browser/GPU/performance sessions, screenshots, merge and publication remain
-held for parent integrated review.** No preview server was started. No active
-entrant folders were inspected and no entrant was contacted.
+Rendered QA is separately coordinated with the parent. CPU tests and a production
+service build do not establish live deployment, mobile gestures, assistive-device
+operation or steady graphics performance. Frozen runtime-review flags are retained
+until supported evidence is admitted. See the task integration handoff for exact
+validation/publication status. No active entrant was contacted or modified.

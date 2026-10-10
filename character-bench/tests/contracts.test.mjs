@@ -106,3 +106,21 @@ test('disposal releases shared geometry, materials, textures, bitmaps and bone t
   disposeObject({traverse(fn){nodes.forEach(fn);}});
   assert.deepEqual(calls,['texture','bone','bitmap','geometry','material']);
 });
+
+test('new pairs always restore linked defaults and reject old readiness tokens',()=>{
+  const state=createComparisonState([a,b]);state.setLinked(false);state.setCamera(1,{yaw:2,distance:7});
+  const old=state.snapshot.generation;state.setPair([b,a]);state.setReady(0,true,old);state.setReady(1,true,old);
+  assert.equal(state.snapshot.linked,true);assert.equal(state.snapshot.active,0);assert.deepEqual(state.snapshot.cameras[0],state.snapshot.cameras[1]);assert.equal(state.snapshot.canVote,false);
+});
+test('swap starts a new blind inspection of the same prompt without mutating the frozen pair',()=>{
+  const original=[a,b],state=createComparisonState(original);const old=state.snapshot.generation;
+  state.setReady(0,true);state.setReady(1,true);assert.equal(state.swap(),true);
+  assert.deepEqual(original,[a,b]);assert.deepEqual(state.snapshot.pair,[b,a]);assert.equal(state.snapshot.generation,old+1);
+  assert.deepEqual(state.snapshot.ready,[false,false]);assert.equal(state.snapshot.choice,null);assert.equal(state.label(0),'Attempt A');
+  state.setReady(0,true);state.setReady(1,true);state.vote('tie');assert.equal(state.swap(),false);
+});
+test('an invalid pair cannot be swapped into an eligible comparison',()=>{
+  for(const pair of [null,[a],[a,a],[a,entry('bad',{promptId:'other'})]]){
+    const state=createComparisonState(pair);const old=state.snapshot.generation;assert.equal(state.swap(),false);assert.equal(state.snapshot.generation,old);
+  }
+});

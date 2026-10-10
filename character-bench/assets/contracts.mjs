@@ -60,13 +60,15 @@ export function createComparisonState(pair=null) {
     current[0].promptSha256===current[1].promptSha256 && current.every(e=>e.admission?.status==='verified');
   return {
     get snapshot(){return {pair:current,generation,choice,ready:[...ready],linked,active,cameras:cameras.map(c=>({...c})),revealed:choice!==null,canVote:!!isValidPair()&&ready.every(Boolean)&&choice===null};},
-    setPair(pair){current=pair;generation++;choice=null;ready=[false,false];cameras=[{...DEFAULT_CAMERA},{...DEFAULT_CAMERA}];return generation;},
+    setPair(pair){current=pair;generation++;choice=null;ready=[false,false];linked=true;active=0;cameras=[{...DEFAULT_CAMERA},{...DEFAULT_CAMERA}];return generation;},
+    swap(){if(!isValidPair()||choice!==null)return false;this.setPair([current[1],current[0]]);return true;},
     setReady(side,value,token=generation){if(token===generation && [0,1].includes(side)) ready[side]=!!value;},
     setActive(side){if([0,1].includes(side))active=side;},
     setLinked(value){linked=!!value;if(linked)cameras=[{...cameras[active]},{...cameras[active]}];},
     setCamera(side,value){if(![0,1].includes(side))return;cameras[side]=clampCamera(value);active=side;if(linked)cameras[1-side]={...cameras[side]};},
     reset(){cameras=[{...DEFAULT_CAMERA},{...DEFAULT_CAMERA}];},
     vote(value){if(!['a','b','tie'].includes(value)||!this.snapshot.canVote)return false;choice=value;return true;},
+    revise(value){if(!['a','b','tie'].includes(value)||choice===null||!ready.every(Boolean))return false;choice=value;return true;},
     label(side){if(!current?.[side])return 'Attempt '+(side?'B':'A');return choice===null?'Attempt '+(side?'B':'A'):current[side].provenance.modelLabel;}
   };
 }
