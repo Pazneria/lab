@@ -155,6 +155,71 @@
         "rationale": "Exact shared common v2 text reconciled by parent; full original raw Claude launch hash is not independently supplied. Original receipt retained.",
         "sharedCommonReconciled": true
       }
+    },
+    {
+      "id": "entry-03-r03",
+      "sourceSHA": "2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a",
+      "copiedSHA": "2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a",
+      "bytes": 739212,
+      "sourceFiles": [
+        {
+          "file": "farid_luna_replacement.glb",
+          "byteLength": 739212,
+          "sha256": "2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a"
+        },
+        {
+          "file": "farid_luna_replacement.py",
+          "byteLength": 34824,
+          "sha256": "2192a1c1b8eab021e7a71c80a6f82c03b4aa358c822d4f29a38bd6ba9d8c71ff"
+        },
+        {
+          "file": "verify_farid_glb.py",
+          "byteLength": 5517,
+          "sha256": "d961cb3b997efd2e179c3c90c0f7d69830a92e9673a429aed4511b5063359239"
+        },
+        {
+          "file": "farid_qc_render.py",
+          "byteLength": 5487,
+          "sha256": "44ebe84775da74a7f4944fdad1f5a31043e873f5efe07d7c89ae8ace540abc84"
+        },
+        {
+          "file": "farid_luna_replacement_handoff.md",
+          "byteLength": 3598,
+          "sha256": "96c6480a07f9b89af0031974d389123d3fb3f1c69e2bbcccd05c917199cc2384"
+        },
+        {
+          "file": "run_timing.txt",
+          "byteLength": 424,
+          "sha256": "9a8d834354bc04550487e8532ed6c803bfd488b42375f40b39af36350aa0aab1"
+        },
+        {
+          "file": "verification_receipt.json",
+          "byteLength": 2082,
+          "sha256": "36cb94eaea67a5300dc8b62120d12a1e1c7070bfbaa64c2bd7cf0961602d965b"
+        },
+        {
+          "file": "C:/Users/jmore/Documents/Codex/2026-10-08/task-10/farid-attempt-trace/farid-luna-replacement-launch-correct-utf8.txt",
+          "byteLength": 8497,
+          "sha256": "b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e"
+        }
+      ],
+      "timing": {
+        "implementationStart": "2026-10-10T00:14:34Z",
+        "deadline": "2026-10-10T01:14:34Z",
+        "actualStop": "2026-10-10T00:23:35Z",
+        "timezone": "UTC",
+        "clockPaused": false,
+        "source": "Producer UTC receipt; setup interruption preceded implementation"
+      },
+      "promptMapping": {
+        "canonicalPromptId": "03",
+        "canonicalCommonSha256": "e6c8206eda3e42ba7e2c68c5e37cfb26b5e95e0d83ac2ef7cd4b3896507c2767",
+        "correctedOriginalLaunchSha256": "b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e",
+        "submittedLaunchSha256": "b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e",
+        "byteIdenticalOriginalLaunch": true,
+        "sharedCommonReconciled": true,
+        "rationale": "Exact corrected 8,497-byte original launch text and unchanged shared v2 common contract. Fresh replacement; no original recovery claimed."
+      }
     }
   ],
   "excludedOriginals": [
@@ -170,9 +235,9 @@
     },
     {
       "model": "Luna requested",
-      "status": "original outcome unresolved; replacement blocked before implementation, no finished delivery",
+      "status": "Original outcome unresolved; distinct fresh replacement entry-03-r03 completed after app restart and admitted independently.",
       "eligible": false
     }
   ],
-  "runtimeLimits": "Native exact-final imports for all three; bounded Astra/Claude host draw only so far. No repair, regeneration, arbitrary triangle cap or quality score."
+  "runtimeLimits": "Exact-final native CPU import passed for all four Farid attempts, and all six pairs passed bounded headless Chrome draws. No repair, regeneration, arbitrary triangle cap or quality score. Broad device, angle, assistive technology, rigging, deformation and performance certification remains pending."
 }

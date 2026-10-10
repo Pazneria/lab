@@ -25,18 +25,18 @@ test('supported original launch-message evidence matches substantive text and re
     assert.equal(original.text.replace('Requested model gpt-6.1-sol,','Requested model gpt-6-astra,'),reconstructed);
   }
 });
-test('actual catalog offers three same-prompt CPU-compatible pairs per character with guarded blind preferences',()=>{
-  assert.equal(catalog.entries.filter(e=>e.admission.status==='verified').length,9);
+test('actual catalog offers same-prompt CPU-compatible pairs with guarded blind preferences',()=>{
+  assert.equal(catalog.entries.filter(e=>e.admission.status==='verified').length,10);
   for(const prompt of catalog.prompts){
-    const pairs=eligiblePairs(catalog,prompt.id);assert.equal(pairs.length,3);
+    const pairs=eligiblePairs(catalog,prompt.id);assert.equal(pairs.length,prompt.id==='03'?6:3);
     for(const pair of pairs){assert.equal(new Set(pair.map(e=>e.promptId)).size,1);assert.equal(new Set(pair.map(e=>e.provenance.requestedModel)).size,2);
       const state=createComparisonState(pair);assert.equal(state.label(0),'Attempt A');assert.equal(state.vote('a'),false);
       state.setReady(0,true);state.setReady(1,true);assert.equal(state.vote('tie'),true);assert.equal(state.label(0),pair[0].provenance.modelLabel);
     }
   }
 });
-test('nine copied completed GLBs retain source hashes and pass the current compatibility profile',()=>{
-  const assets=catalog.entries.filter(e=>e.asset.path);assert.equal(assets.length,9);
+test('ten copied completed GLBs retain source hashes and pass the current compatibility profile',()=>{
+  const assets=catalog.entries.filter(e=>e.asset.path);assert.equal(assets.length,10);
   for(const e of assets){
     const bytes=readFileSync(new URL('../'+e.asset.path,import.meta.url));assert.equal(bytes.length,e.asset.byteLength);assert.equal(hash(bytes),e.asset.sha256);
     const profile=validateGLB(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));

@@ -86,14 +86,15 @@ The whole manifest's submitted fingerprint is retained for audit. Changes to an
 unrelated entry or disclosure do not invalidate retries of unchanged eligible
 pairs: current server authority still requires the exact same canonical prompt
 and both immutable asset hashes. Invalid/unresolved records never enter voting.
-The current catalog has nine eligible attempts: six unchanged Mara/Ivo files and
-three completed Farid v2 files. Farid uses two fresh Sol/Astra replacements and a
+The current catalog has ten eligible attempts: six unchanged Mara/Ivo files and
+four completed Farid v2 files. Farid uses three fresh Sol/Astra/Luna replacements and a
 frozen Claude original. [Farid evidence](data/farid-source-evidence.json) retains
 immutable attempt IDs, exact source/copy fingerprints, producer receipts, unknown
 serving identities and the parent-authorized punctuation-only input mapping.
-The replacements' actual submitted input hash remains distinct from the exact
-canonical common v2 text; no received prompt or original failed history is rewritten.
-Original Sol/Astra export failures and unresolved Luna remain outside voting.
+Sol/Astra replacements retain their punctuation-variant launch hash; Luna received
+the exact corrected original launch. Each full launch hash remains separate from
+the common v2 hash. No received prompt or original failed history is rewritten.
+Original Sol/Astra export failures and the unresolved original Luna remain outside voting.
 Distinct models follow SceneBench eligibility; future same-model repeats need a
 separate within-model reporting policy before inclusion in this model ranking.
 

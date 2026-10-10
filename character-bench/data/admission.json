@@ -24,7 +24,7 @@
       "text": "Create one complete, standalone 3D humanoid character from the supplied brief. Choose the art style yourself. Realistic, stylized and other coherent interpretations are welcome; no particular visual style is preferred or prescribed.\n\nDeliver the finished character as a self-contained GLB. Embed any textures used so the asset does not depend on external image files or remote URLs. The complete character must be inspectable from the front, sides, back and above, with a modeled head, torso, arms, hands, legs and feet. Finish the asset as a whole rather than as a single-view presentation.\n\nUse a neutral A-pose or T-pose with clear separation between the arms and torso and between the legs. The pose should make the character easy to inspect and prepare for later rigging. Express personality through the design, proportions, face and details rather than through an action pose.\n\nPrepare the asset for a later rigging pass: keep the body parts anatomically coherent within your chosen style, avoid accidental fusions between limbs and adjacent clothing, and make the major joints identifiable. A riggable intention is not a claim that untested deformation will work perfectly. A skeleton, skin weights and animations are not required and do not earn credit in this benchmark; focus on the static character. If a tool supplies an existing rig or animation data with the asset, you may preserve it; no stripping or animation tests are required.\n\nMultiple meshes are allowed. Use mesh organization and topology appropriate to your chosen approach. There is no arbitrary polygon cap and no all-quad requirement. Clothing and accessories can be separate meshes, provided the delivered character is complete and coherent. No handheld prop is required. Any optional accessories should leave the face, body and limb structure readily inspectable.\n\nChoose the clothing, materials, palette and detailing. Treat the supplied history, temperament, age and physical presence as the character's identity, not as an exhaustive costume specification. Do not rely on written explanations, equipment or environmental objects to compensate for an unfinished character.\n\nDeliver the character asset only. The host will provide a separate inspection studio. No environment, studio, custom lighting setup, turntable animation or presentation application is required.\n\nAlongside the GLB, provide a short handoff identifying the file, your chosen art direction and any known limitations. Keep the final asset self-contained regardless of how it was made.\n\nTIME LIMIT AND RUN HANDOFF\n\nYou have a hard maximum of one hour per character, measured from your actual implementation start. Record that start timestamp and the deadline exactly one hour later before beginning implementation. The hour includes asset creation, tool use, troubleshooting, checking the exported asset and final fixes. Ordinary work and tool waits do not pause the clock. Stop all implementation and asset editing by the deadline, even if the result is incomplete. Record your actual stop timestamp, disclose any interruptions and report unfinished work honestly. Do not replace actual timing evidence with an estimate.\n\nWork independently through the attempt without mid-run coaching messages. Make your own creative and technical decisions within the brief and the existing permissions. If an action needs approval, pause that action and report the blocker; continue other permitted work within the same running time limit.\n\nUse tools available within your existing access. Do not use paid services, create new credentials, expand permissions or communicate externally without approval. This prompt does not grant new access or authorize those actions.\n\nYour final handoff must identify the GLB file and include the actual implementation-start timestamp, one-hour deadline and actual stop timestamp, with the time zone stated. Include your art direction, checks actually performed, known limitations and anything incomplete. Report only checks you carried out; do not claim rigging or deformation validation from a static export alone.\n\nCHARACTER BRIEF\n\nCreate Farid Mansour, a 68-year-old Arab man who is an astronomer and a maker of precision instruments. He has spent decades observing the sky and building, repairing and calibrating the tools he relies on. An unusual measurement now occupies his attention: he wants to discover whether it reveals something new or exposes a fault in his own instrument. He would rather find his mistake than defend a result nobody else can reproduce.\n\nFarid is tall and lean, with an aged face and careful hands. His bearing is patient and exacting, but his dry, mischievous humor keeps him from seeming remote or solemn. Give him the particular physical presence of a person whose working life combines close observation, delicate manual work and long concentration.\n\nMake him a specific person rather than a generic wise old man. His Arab identity is required; no religious affiliation is specified. You choose his clothing, materials, palette and art style. Express his character through his face, proportions and design rather than relying on a telescope, written labels or a surrounding environment.\n\nBENCHMARK PURPOSE AND GRADING CRITERIA — DRAFT V2\n\nThis is a static 3D character benchmark. The host will display your exported asset in a shared neutral inspection studio with camera and lighting controls. Different attempts at the same character brief will be compared side by side. Overall pairwise preference is a separate judgment from the following 100-point rubric; do not optimize for an invented automatic score.\n\n1. Character interpretation — 30 points\n- Fidelity to the stated identity, age, physical presence and temperament: 15.\n- Specificity and personality expressed through the model itself: 10.\n- Coherence between the character's history, habits and chosen design: 5.\n\n2. Visual execution — 45 points\n- Convincing, intentional proportions and anatomy within the chosen art style: 15.\n- Quality of the face, hands and other focal details: 10.\n- Coherent materials, colors, surface treatment and clothing: 10.\n- Consistent completeness and craftsmanship from front, sides, back and above: 10.\n\n3. Technical quality and inspectability — 25 points\n- Self-contained, structurally valid GLB that loads reliably without missing dependencies: 10.\n- Clean geometry and materials without unintended gaps, broken normals, distracting intersections or accidental fusions: 10.\n- Practical responsiveness and resource use in the common viewer, with well-organized scene data: 5.\n\nRealism is not inherently better than stylization. Extra polygons, textures or accessories earn no credit by themselves. There is no arbitrary polygon cap or all-quad requirement. A skeleton, skin weights and animation earn no credit. Neutral pose and coherent joint/limb structure support static inspection and future rigging, but untested deformation is not assumed to work. Assess technical performance under equivalent host conditions; do not run prohibited performance tests during this attempt. The host will record any viewer limitation separately from an asset defect. An asset that cannot be opened cannot receive a visual judgment; retain its failure record without inventing a score.\n\nThese criteria are being introduced for this prompt version. Earlier attempts remain associated with the instructions they actually received.",
       "sha256": "e6c8206eda3e42ba7e2c68c5e37cfb26b5e95e0d83ac2ef7cd4b3896507c2767",
       "source": "Corrected exact shared v2 contract, Farid brief and 100-point rubric, independently reconciled by the parent with original Sol/Astra/Claude inputs. Model-specific launch/execution constraints are separate provenance.",
-      "comparisonDisclosure": "These are two fresh requested-model replacements and a frozen receipt-reported Claude original. The replacements received a disclosed punctuation-only encoding variant of the same v2 brief. Timing, checks and differences appear after a confirmed preference. The v2 numeric rubric is preserved in Read the prompt; these public ratings collect A/B preference only, not numeric rubric scores."
+      "comparisonDisclosure": "These are three fresh requested-model replacements and a frozen receipt-reported Claude original. Sol/Astra replacements received a disclosed punctuation-only encoding variant; Luna received the exact corrected original launch. Timing, checks and differences appear after a confirmed preference. The v2 numeric rubric is preserved in Read the prompt; public ratings collect A/B preferences only, not numeric rubric scores."
     }
   ],
   "entries": [
@@ -1128,6 +1128,113 @@
         "executionConstraints": "No independently supplied control-plane execution constraints; original producer disclosures retained.",
         "sessionReportedModel": "claude-opus-5-5",
         "modelEvidence": "Frozen Claude03 receipt reports this session identifier; serving backend/effort not independently exposed."
+      }
+    },
+    {
+      "id": "entry-03-r03",
+      "promptId": "03",
+      "promptSha256": "e6c8206eda3e42ba7e2c68c5e37cfb26b5e95e0d83ac2ef7cd4b3896507c2767",
+      "admission": {
+        "status": "verified",
+        "frozen": true,
+        "selfContained": true,
+        "basis": "CPU static compatibility only",
+        "runtimeReview": {
+          "status": "pending",
+          "gpuPerformance": false,
+          "boundedPairedDraw": "passed"
+        }
+      },
+      "asset": {
+        "path": "./entries/entry-03-r03.glb",
+        "sha256": "2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a",
+        "byteLength": 739212,
+        "triangleCount": 31292,
+        "vertexCount": 16729
+      },
+      "provenance": {
+        "modelLabel": "gpt-6-luna (requested)",
+        "requestedModel": "gpt-6-luna",
+        "requestedReasoning": "XHIGH",
+        "verifiedModel": null,
+        "verifiedReasoning": null,
+        "attemptKind": "fresh replacement",
+        "sourceWorkspace": "C:/Users/jmore/Documents/Codex/2026-10-09/task-59",
+        "requestedModelEvidence": "Explicit parent launch metadata; precise serving variant/backend and selected reasoning not independently exposed.",
+        "sourcePromptEvidence": "Exact corrected 8,497-byte original launch text and unchanged shared v2 common contract. Fresh replacement; no original recovery claimed.",
+        "promptMapping": {
+          "canonicalPromptId": "03",
+          "canonicalCommonSha256": "e6c8206eda3e42ba7e2c68c5e37cfb26b5e95e0d83ac2ef7cd4b3896507c2767",
+          "correctedOriginalLaunchSha256": "b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e",
+          "submittedLaunchSha256": "b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e",
+          "byteIdenticalOriginalLaunch": true,
+          "sharedCommonReconciled": true,
+          "rationale": "Exact corrected 8,497-byte original launch text and unchanged shared v2 common contract. Fresh replacement; no original recovery claimed."
+        },
+        "timing": {
+          "implementationStart": "2026-10-10T00:14:34Z",
+          "deadline": "2026-10-10T01:14:34Z",
+          "actualStop": "2026-10-10T00:23:35Z",
+          "timezone": "UTC",
+          "clockPaused": false,
+          "source": "Producer UTC receipt; setup interruption preceded implementation"
+        },
+        "timingDisclosure": "Producer recorded implementation 2026-10-10T00:14:34Z; deadline 2026-10-10T01:14:34Z; stop 2026-10-10T00:23:35Z. UTC. No implementation-clock pause.",
+        "runConditions": "Independent fresh timed replacement. One executor setup failure preceded implementation and was resolved after app restart. No competing assets/models/subagents, publication, installs or paid services. Local procedural generation and lightweight CPU checks.",
+        "limitations": [
+          "Fresh replacement, not a recovered original Luna attempt; original outcome remains unresolved.",
+          "Producer checked a simple CPU orthographic material projection, not a glTF viewer or studio render.",
+          "No independently available serving variant/backend/effort, Blender, independent validator, skeleton, skinning, animation, deformation or performance certification.",
+          "Python runtime-location warning was reported; synchronous generation/check/preview commands completed."
+        ],
+        "producerChecks": "# Farid Mansour — Luna replacement handoff\n\n## Deliverables\n\n- `farid_luna_replacement.glb` — self-contained static character asset; 739212 bytes; SHA-256 `2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a`.\n- `farid_luna_replacement.py` — procedural generation source; SHA-256 `2192a1c1b8eab021e7a71c80a6f82c03b4aa358c822d4f29a38bd6ba9d8c71ff`.\n- `verify_farid_glb.py` — lightweight GLB reader/check; SHA-256 `d961cb3b997efd2e179c3c90c0f7d69830a92e9673a429aed4511b5063359239`.\n- `run_timing.txt` and `verification_receipt.json` — timing, hashes, and check record.\n\n## Replacement provenance\n\nThis is a distinct fresh replacement, not a recovered original. The supplied bounded search reported no original Luna GLB or final receipt, and original task 13 recorded shell unavailable. No competitor outputs were read and no old files were edited. The verified launch text contained no previous output destination, so replacement outputs are mapped to this fresh workspace: `C:\\Users\\jmore\\Documents\\Codex\\2026-10-09\\task-59`.\n\nThe corrected launch file was verified before implementation: 8,497 bytes, SHA-256 `b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e`.\n\n## Art direction\n\nA refined, hand-shaped stylization with a tall, lean silhouette, medium olive complexion, long aged face, salt-and-pepper swept hair, a close-trimmed moustache and goatee, and a slightly raised brow over a dry half-smile. Deep blue-teal Levantine-inspired workwear, warm linen, a pomegranate wool waistcoat, restrained tailoring, and a tiny calibration-dial detail express his instrument-making history. He stands in a neutral A-pose with separated limbs and modeled hands, fingers, elbow shapes, knee darts, and boots. The face and proportions carry the characterization; there is no handheld prop or environment.\n\n## Timing and checks\n\n- Implementation start: 2026-10-10 00:14:34 UTC.\n- One-hour deadline: 2026-10-10 01:14:34 UTC.\n- Actual implementation stop: 2026-10-10 00:23:35 UTC.\n- Interruption during timed work: none. One executor setup failure occurred before implementation and was resolved after the desktop app restart.\n- The local Python generator created the final GLB. A lightweight Python reader parsed the GLB v2 header, JSON and BIN chunks, then decoded every position, normal, and index accessor. It found 207 meshes/nodes, 22 PBR materials, 16,729 vertices, 31,292 triangles, normalized normals, expected character bounds (about 2.014 m wide by 1.94 m high by 0.419 m deep), and zero external resources.\n- A CPU-only orthographic material preview was inspected from front, back, right side, and above. It was a simple internal projection, not a host viewer or studio render.\n- No Blender or independent glTF validator was available. No interactive viewer, browser, GPU/performance test, skeleton, animation, skinning, or deformation validation was used. No textures or external dependencies are present.\n- Python printed `Failed to find real location of C:\\Python314\\python.exe` before script output; the generator, reader, and preview commands continued and completed successfully. No background processes were launched; each command returned before finalization.\n\n## Limitations\n\nThis is a static stylized model. Joint placement and the neutral pose are prepared for a later rigging pass, but deformation has not been tested. Visual inspection was limited to the CPU orthographic preview; appearance in the host inspection studio remains unverified. No separate model-serving backend was used or independently exposed; generation was local and procedural.",
+        "hostChecks": "Independent exact SHA-256/size, current viewer preflight guards and pinned Three r180 native CPU GLTFLoader import passed. Source/copy hashes unchanged. All three Luna Farid pairings passed a bounded headless Chrome draw using the exact final file; broad device, angle, topology, rigging, deformation and performance certification remains pending.",
+        "runtimeReview": "Pending broad browser/mobile/assistive-device/performance QA; scoped checks documented separately.",
+        "sourceHandoff": "# Farid Mansour — Luna replacement handoff\n\n## Deliverables\n\n- `farid_luna_replacement.glb` — self-contained static character asset; 739212 bytes; SHA-256 `2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a`.\n- `farid_luna_replacement.py` — procedural generation source; SHA-256 `2192a1c1b8eab021e7a71c80a6f82c03b4aa358c822d4f29a38bd6ba9d8c71ff`.\n- `verify_farid_glb.py` — lightweight GLB reader/check; SHA-256 `d961cb3b997efd2e179c3c90c0f7d69830a92e9673a429aed4511b5063359239`.\n- `run_timing.txt` and `verification_receipt.json` — timing, hashes, and check record.\n\n## Replacement provenance\n\nThis is a distinct fresh replacement, not a recovered original. The supplied bounded search reported no original Luna GLB or final receipt, and original task 13 recorded shell unavailable. No competitor outputs were read and no old files were edited. The verified launch text contained no previous output destination, so replacement outputs are mapped to this fresh workspace: `C:\\Users\\jmore\\Documents\\Codex\\2026-10-09\\task-59`.\n\nThe corrected launch file was verified before implementation: 8,497 bytes, SHA-256 `b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e`.\n\n## Art direction\n\nA refined, hand-shaped stylization with a tall, lean silhouette, medium olive complexion, long aged face, salt-and-pepper swept hair, a close-trimmed moustache and goatee, and a slightly raised brow over a dry half-smile. Deep blue-teal Levantine-inspired workwear, warm linen, a pomegranate wool waistcoat, restrained tailoring, and a tiny calibration-dial detail express his instrument-making history. He stands in a neutral A-pose with separated limbs and modeled hands, fingers, elbow shapes, knee darts, and boots. The face and proportions carry the characterization; there is no handheld prop or environment.\n\n## Timing and checks\n\n- Implementation start: 2026-10-10 00:14:34 UTC.\n- One-hour deadline: 2026-10-10 01:14:34 UTC.\n- Actual implementation stop: 2026-10-10 00:23:35 UTC.\n- Interruption during timed work: none. One executor setup failure occurred before implementation and was resolved after the desktop app restart.\n- The local Python generator created the final GLB. A lightweight Python reader parsed the GLB v2 header, JSON and BIN chunks, then decoded every position, normal, and index accessor. It found 207 meshes/nodes, 22 PBR materials, 16,729 vertices, 31,292 triangles, normalized normals, expected character bounds (about 2.014 m wide by 1.94 m high by 0.419 m deep), and zero external resources.\n- A CPU-only orthographic material preview was inspected from front, back, right side, and above. It was a simple internal projection, not a host viewer or studio render.\n- No Blender or independent glTF validator was available. No interactive viewer, browser, GPU/performance test, skeleton, animation, skinning, or deformation validation was used. No textures or external dependencies are present.\n- Python printed `Failed to find real location of C:\\Python314\\python.exe` before script output; the generator, reader, and preview commands continued and completed successfully. No background processes were launched; each command returned before finalization.\n\n## Limitations\n\nThis is a static stylized model. Joint placement and the neutral pose are prepared for a later rigging pass, but deformation has not been tested. Visual inspection was limited to the CPU orthographic preview; appearance in the host inspection studio remains unverified. No separate model-serving backend was used or independently exposed; generation was local and procedural.",
+        "sourceTiming": "Implementation start: 2026-10-10 00:14:34 UTC One-hour deadline: 2026-10-10 01:14:34 UTC Actual implementation stop: 2026-10-10 00:23:35 UTC Time zone: UTC Interruption during timed run: none. A single executor setup failure occurred before implementation and was resolved after the desktop app restart. All generation, verification, and preview commands completed synchronously; no background/test processes were started.\r\n",
+        "sourceFiles": [
+          {
+            "file": "farid_luna_replacement.glb",
+            "byteLength": 739212,
+            "sha256": "2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a"
+          },
+          {
+            "file": "farid_luna_replacement.py",
+            "byteLength": 34824,
+            "sha256": "2192a1c1b8eab021e7a71c80a6f82c03b4aa358c822d4f29a38bd6ba9d8c71ff"
+          },
+          {
+            "file": "verify_farid_glb.py",
+            "byteLength": 5517,
+            "sha256": "d961cb3b997efd2e179c3c90c0f7d69830a92e9673a429aed4511b5063359239"
+          },
+          {
+            "file": "farid_qc_render.py",
+            "byteLength": 5487,
+            "sha256": "44ebe84775da74a7f4944fdad1f5a31043e873f5efe07d7c89ae8ace540abc84"
+          },
+          {
+            "file": "farid_luna_replacement_handoff.md",
+            "byteLength": 3598,
+            "sha256": "96c6480a07f9b89af0031974d389123d3fb3f1c69e2bbcccd05c917199cc2384"
+          },
+          {
+            "file": "run_timing.txt",
+            "byteLength": 424,
+            "sha256": "9a8d834354bc04550487e8532ed6c803bfd488b42375f40b39af36350aa0aab1"
+          },
+          {
+            "file": "verification_receipt.json",
+            "byteLength": 2082,
+            "sha256": "36cb94eaea67a5300dc8b62120d12a1e1c7070bfbaa64c2bd7cf0961602d965b"
+          },
+          {
+            "file": "C:/Users/jmore/Documents/Codex/2026-10-08/task-10/farid-attempt-trace/farid-luna-replacement-launch-correct-utf8.txt",
+            "byteLength": 8497,
+            "sha256": "b431b239d99118b44c76881b606f6702c334ea8a9b5ab482911b6f748da39d6e"
+          }
+        ],
+        "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       }
     }
   ]

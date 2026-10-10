@@ -144,6 +144,12 @@ entry-03-r02 is the finished fresh task56 Astra-requested replacement,12,501,292
 fc7415ed4dfb38e4741dcb41c3a0ffc5efd832787da8aca5acdf7ccae66fc3d9.
 entry-03-04 is frozen original Claude03,27,109,440bytes/
 113b954154843c7b6272c79ea8fd8c5ba8a10c9ef9a57869714da739c873180c.
+entry-03-r03 is the finished fresh task59 Luna-requested replacement,739,212bytes/
+2bfe5221cfe690ca1ac8bead3d36c7024b82b4eedc2ff881d3477e46f2042b2a.
+Luna received the exact corrected8,497-byte original launch, SHA256b431b239 above.
+The producer recorded00:14:34–00:23:35UTC within a one-hour clock, with setup
+interruption preceding implementation. Its CPU orthographic preview is separately
+labeled; no independent serving variant/effort or deformation certification is claimed.
 Native current host guards and pinned r180 imports pass for all exact hashes.
 The original six Mara/Ivo files and eight source records remain unchanged.
 No source asset was repaired, reduced, regenerated or scored.
@@ -156,8 +162,9 @@ unavailable even though the common v2 text was reconciled by the parent.
 Producer versus host checks remain separately labeled. The exact receipts and
 source-file fingerprints are in farid-source-evidence.json and the manifest.
 
-Failed original Sol/Astra export histories and unresolved/blocked Luna remain
-noneligible records in the source evidence. Only the three completed immutable
-Farid assets form three same-v2 pairs. Public ratings collect A/B preferences;
+Failed original Sol/Astra export histories and unresolved original Luna remain
+noneligible records in the source evidence. The distinct completed Luna replacement
+does not claim recovery of the original. Four completed immutable Farid assets
+form six same-v2 pairs. Public ratings collect A/B preferences;
 the numeric rubric is prompt context, not an invented automatic score or a
 collected rubric rating. Runtime/performance scope remains explicitly limited.
