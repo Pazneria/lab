@@ -33,7 +33,8 @@ test('explicit prompt/entry links and restored comparisons are deterministic and
   const restored=await screenFixture({catalog,state:copied(initial.history.state),href:initial.location.href,random:noRandom});
   assert.deepEqual(pair(restored),pair(initial));assert.equal(restored.history.state.labComparison.comparisonId,initial.history.state.labComparison.comparisonId);
   const standalone=readFileSync(new URL('../walkable-3d/assets/benchmark.js',import.meta.url),'utf8');
-  assert.match(standalone,/selectPrompt\(requestedEntry\?\.promptId\|\|params.get\('prompt'\)\|\|'01',requestedEntry\?\.id\)/);
+  assert.match(standalone,/!params.has\('entry'\)&&!params.has\('prompt'\)\?initialComparison/);
+  assert.match(standalone,/selectPrompt\(initial\?\.promptId\|\|requestedEntry\?\.promptId\|\|params.get\('prompt'\)\|\|'01',requestedEntry\?\.id,initial\?\.entries\)/);
 });
 
 test('homepage initial prompt bypasses remembered comparison for this visit without changing saved judgments or Next randomization',async()=>{

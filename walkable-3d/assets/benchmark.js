@@ -1,8 +1,8 @@
 import {modelName} from './comparisons.js';
 import {createViewer} from './viewer.js';
 import {createGradeForm,renderLeaderboard} from './judgments.js';
-import {comparisonKey,randomComparison,hasRandomComparison,isOpenable,unavailableLabel,unavailableSummary} from './comparisons.js';
-import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from './public-judgments.js';
+import {comparisonKey,randomComparison,initialComparison,hasRandomComparison,isOpenable,unavailableLabel,unavailableSummary} from './comparisons.js';
+import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from './public-judgments.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -233,7 +233,8 @@ import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard
     prompts=data.prompts; versions=data.promptVersions;canShuffle=hasRandomComparison(prompts,allEntries);
     $('#prompt-select').replaceChildren(...prompts.map(p=>{const o=el('option',`${p.id} / ${p.title}`);o.value=p.id;return o;}));
     const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry'));
-    selectPrompt(requestedEntry?.promptId||params.get('prompt')||'01',requestedEntry?.id);
+    const initial=!params.has('entry')&&!params.has('prompt')?initialComparison(prompts,allEntries,pendingPublicComparisons()):null;
+    selectPrompt(initial?.promptId||requestedEntry?.promptId||params.get('prompt')||'01',requestedEntry?.id,initial?.entries);
     if(params.has('version') && [...$('#prompt-version').options].some(o=>o.value===params.get('version'))) $('#prompt-version').value=params.get('version');
     if(location.hash==='#full-prompt'){$('#full-prompt').open=true;loadPrompt();$('#full-prompt').scrollIntoView();}
     render();

@@ -18,6 +18,13 @@ The full prompt is available through **View full prompt** in the standalone page
 
 Requested model/effort labels come from the parent task, while the producers could verify only their GPT-6 family identity. Both facts remain visible in inspectors. Producer timing diagnostics have different runs/settings and are not directly ranked.
 
+An unpinned standalone opening uses the same picker as Next: eligible prompt first,
+two distinct models, their eligible entries, then equal-probability left/right order.
+More entries do not give a prompt extra weight. Explicit prompt and entry links
+retain their current selection. A valid unresolved public submission resumes its
+original pair and A/B order on an unpinned opening; its retry ledger is unchanged
+and no submission is sent automatically. Catalog loading never launches a scene.
+
 ## Preview and checks
 
 Run `node scripts/serve-walkable.cjs` from the repository root and open `http://127.0.0.1:5191/lab/walkable-3d/`. This Pages-shaped server includes the CORS header that opaque-origin module loading needs. A plain server without CORS cannot run these sandboxed ES-module entries.
