@@ -144,7 +144,7 @@ export function settleEye(p,dt,crouch=p.crouch===true){
 }
 export function nearby(p){
   if(!finitePoint(p))return null;
-  for(const [id,radius] of [['character',1.1],['worlds',1.25],['catalog',1.1],['home',.9]])if(distance(p,approaches[id])<radius)return id;
+  for(const [id,radius] of [['character',1.1],['worlds',1.25],['catalog',1.1],['home',.9],['animation',.8]])if(distance(p,approaches[id])<radius)return id;
   return null;
 }
 export function safeDestination(kind){

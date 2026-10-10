@@ -46,6 +46,10 @@ out. Its contract, CPU evidence and held runtime checks are in
 The coordinated homepage preview entry uses the pinned inline bootstrap and
 matching ready boundary described in [LAB-ROOM-HANDOFF.md](LAB-ROOM-HANDOFF.md).
 
+## Animation Studio counter entry
+
+The small Crypt Warden skeleton on the existing red tool cart in the east alcove opens the public [Animation Studio](../animation-studio/) by direct click or E. The accessible link provides the same route. The exact accepted GLB hierarchy is retained under one miniature wrapper, with rest pose only in the room. No furniture or collision geometry is changed. Back to Lab restores the departure position and camera. The studio offers real model/rig inspection, delivered diagnostics, pose comparisons and the preserved Human01 motion study; local edits remain in the tab until exported. Proposed candidates require opt-in and held wolf/bear revisions stay blocked. See [the studio contract and limits](../animation-studio/README.md).
+
 ## Functional room map
 
 Visitors spawn at `(x=0, z=7.3)` facing north (negative Z). The main hall is

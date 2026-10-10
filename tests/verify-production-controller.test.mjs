@@ -6,6 +6,7 @@ import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
 import * as interaction from '../lab-space/assets/interaction.mjs';
 import * as exit from '../lab-space/assets/production-exit.mjs';
+import * as workbenchNavigation from '../animation-studio/navigation.mjs';
 import * as realNavigation from '../lab-space/assets/production-navigation.mjs';
 
 const source=readFileSync(new URL('../lab-space/assets/production-space.js',import.meta.url),'utf8');
@@ -13,7 +14,7 @@ const copy=value=>JSON.parse(JSON.stringify(value));
 const settle=()=>new Promise(resolve=>setImmediate(resolve));
 function until(f,predicate,max=500){for(let i=0;i<max&&!predicate();i++)f.flush(f.clock+50);assert.ok(predicate(),'Expected bounded controller progress');}
 
-async function controllerFixture({reducedMotion=false,animate=false,deferImport=false,state={},characterHref='../character-bench/?prompt=02',session=new Map(),referrer='',settleEye=false,requestLock,characterState='ready',drawError=false,renderable=true,actualNavigation=false,fetchResponse,handoff=false,coverFade=true,comparisonReady=true}={}) {
+async function controllerFixture({reducedMotion=false,animate=false,deferImport=false,state={},characterHref='../character-bench/?prompt=02',animationHref='../animation-studio/',storageDenied=false,session=new Map(),referrer='',settleEye=false,requestLock,characterState='ready',figurineState='ready',drawError=false,renderable=true,actualNavigation=false,fetchResponse,handoff=false,coverFade=true,comparisonReady=true}={}) {
   const elements=new Map(),renderers=[],frames=new Map(),cancelled=[],log=[],advances=[],routes=[],media=[],observers=[],captureRequests=[],timers=new Map(),fetches=[];
   let timerId=0;
   let nextFrame=0,maxFrames=0,clock=100,focused=true,picked={point:{x:3,z:3}},screenCallbacks,importRelease;
@@ -49,12 +50,12 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   const byId=id=>{if(!elements.has(id))elements.set(id,element(id));return elements.get(id);};
   const surfaces=['header','main','help-dialog','station-dialog','comparison-dialog'].map(byId);
   document=target({documentElement:element('root'),hidden:false,pointerLockElement:null,activeElement:null,referrer,hasFocus:()=>focused,
-    getElementById:byId,querySelectorAll:selector=>selector==='body > header, body > main, body > dialog'?surfaces:selector==='a[href*="character-bench/"]'?[byId('character-link'),byId('access-character')]:[],
+    getElementById:byId,querySelectorAll:selector=>selector==='body > header, body > main, body > dialog'?surfaces:selector==='a[href*="character-bench/"]'?[byId('character-link'),byId('access-character')]:selector==='a[href*="animation-studio/"]'?[byId('animation-link'),byId('access-animation')]:[],
     exitPointerLock(){this.pointerLockElement=null;},
   });
   const canvas=byId('room');
   canvas.requestPointerLock=requestLock===null?undefined:options=>{captureRequests.push(options);if(requestLock)return requestLock(options,captureRequests.length);document.pointerLockElement=canvas;return document.emit('pointerlockchange');};
-  byId('character-link').setAttribute('href',characterHref);
+  byId('character-link').setAttribute('href',characterHref);byId('animation-link').setAttribute('href',animationHref);
   byId('sensitivity').value='100';
   const location={href:'https://example.test/lab/lab-space/?labqa',search:'?labqa',origin:'https://example.test',
     assign(url){log.push({event:'assign',url});},
@@ -80,6 +81,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     ResizeObserver:class {constructor(callback){this.callback=callback;observers.push(this);}observe(){}},
     MutationObserver:class {constructor(callback){this.callback=callback;this.disconnected=false;mutations.push(this);}observe(){}disconnect(){this.disconnected=true;}},
   });
+  if(storageDenied)Object.defineProperty(context,'sessionStorage',{get(){throw new Error('Storage unavailable');}});
   const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [key,value]of Object.entries(values))this.setExport(key,value);},{context});
   if(actualNavigation)realNavigation.setExitDoors({inner:0,outer:0});
   const navigation=synthetic(actualNavigation?realNavigation:{
@@ -105,7 +107,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     };
   }});
   const room=synthetic({createRoom(canvas,onLost,options){
-    const renderer={id:renderers.length+1,needsAnimation:animate,draws:[],targets:[],poses:[],disposed:false,diagnostics:{characterState},
+    const renderer={id:renderers.length+1,needsAnimation:animate,draws:[],targets:[],poses:[],disposed:false,diagnostics:{characterState,figurineState},
       draw(position,options){assert.equal(this.disposed,false,'Disposed renderer must never draw');if(drawError)throw Error('fixture draw error');this.draws.push({position:copy(position),...options});return renderable;},pose(position){this.poses.push(copy(position));},
       exit(doors){this.doors=copy(doors);return false;},
       comparison(){},target(value){this.targets.push(copy(value));},pick:()=>picked,
@@ -118,7 +120,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     initializeImportMeta(meta){meta.url='https://example.test/lab/lab-space/assets/production-space.js';},
     async importModuleDynamically(){if(importGate)await importGate;return room;},
   });
-  await module.link(path=>path.endsWith('walkable-screen.js')?screens:path.endsWith('scene-navigation.js')?synthetic({createSceneNavigation:()=>({restore(){navigationRestores++;}})}):path.endsWith('interaction.mjs')?synthetic(interaction):path.endsWith('production-exit.mjs')?synthetic(exit):navigation);
+  await module.link(path=>path.endsWith('walkable-screen.js')?screens:path.endsWith('scene-navigation.js')?synthetic({createSceneNavigation:()=>({restore(){navigationRestores++;}})}):path.endsWith('interaction.mjs')?synthetic(interaction):path.endsWith('production-exit.mjs')?synthetic(exit):path.endsWith('animation-studio/navigation.mjs')?synthetic(workbenchNavigation):navigation);
   await module.evaluate();if(!deferImport){await settle();const pending=[...frames];frames.clear();for(const [,callback]of pending)callback(clock);}
   return {canvas,document,window,byId,history,location,renderers,log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,surfaces,mutations,handoffEvents,completeCover,
     get qa(){return window.__productionLab;},get maxFrames(){return maxFrames;},
@@ -322,7 +324,7 @@ test('character return restores one scoped pose only from the same-origin compar
 
 test('host markup exposes named exhibit links, help, motion choices, and no nonprinting glyphs',()=>{
   const html=readFileSync(new URL('../lab-space/index.html',import.meta.url),'utf8');
-  assert.match(html,/<html lang="en">/);assert.match(html,/href="\.\.\/character-bench\/\?prompt=02"/);
+  assert.match(html,/<html lang="en">/);assert.match(html,/href="\.\.\/character-bench\/"/);
   assert.match(html,/aria-label="Direct exhibit access"/);assert.match(html,/id="room"[^>]*tabindex="0"[^>]*aria-describedby="navigation-help"/);
   assert.match(html,/id="help-dialog" aria-labelledby="help-title"/);assert.match(html,/id="gentle"/);assert.match(html,/id="sensitivity"[^>]*type="range"/);
   assert.doesNotMatch(html,/Walk to|cancel-walk|click-to-move|show-pad|data-move|id="movement"/i,'Retired automatic and pointer movement controls must not remain in the host UI');
@@ -637,4 +639,73 @@ test('handoff pagehide releases inert surfaces and observer; Back reconstructs w
   assert.equal(f.engine.disposed,true);const old=f.engine;old.changed();f.flush();assert.equal(old.draws.length,1);
   await f.window.emit('pageshow',{persisted:true});await settle();f.flush();assert.equal(f.renderers.length,2);assert.equal(f.handoffEvents.length,1);
   assert.equal(f.captureRequests.length,0);assert.ok(f.surfaces.every(node=>!node.inert));
+});
+
+
+test('physical animation workbench disposes before same-tab departure and saves a scoped pose',async()=>{
+  const f=await controllerFixture({animate:true});await f.byId('explore').emit('click');await f.heldInput();f.flush();f.flush();
+  const pose=f.qa.position,engine=f.engine;f.picked={destination:'animation'};
+  await f.canvas.emit('keydown',{code:'KeyE'});
+  assert.equal(engine.disposed,true);assert.equal(f.qa.engine,null);assert.equal(f.frames.size,0);assert.equal(f.document.pointerLockElement,null);
+  assert.deepEqual(f.log.slice(-2),[{event:'dispose',id:1},{event:'assign',url:'https://example.test/lab/animation-studio/'}]);
+  const record=JSON.parse(f.session.get(workbenchNavigation.WORKBENCH_RETURN_KEY));
+  assert.equal(record.layout,'fixture-layout');assert.equal(record.position.z,pose.z);assert.equal(record.position.yaw,pose.yaw);
+});
+test('animation links, Help and 3D fallback use the same cleanup route; modified links stay ordinary',async()=>{
+  for(const id of ['animation-link','access-animation','visit-animation']){
+    const f=await controllerFixture();const e=await f.byId(id).emit('click',{button:0});
+    assert.equal(f.engine.disposed,true);assert.equal(f.log.at(-1).url,'https://example.test/lab/animation-studio/');
+    if(id!=='visit-animation')assert.equal(e.defaultPrevented,true);
+  }
+  const fallback=await controllerFixture({drawError:true});await fallback.byId('access-animation').emit('click',{button:0});
+  assert.equal(fallback.log.at(-1).url,'https://example.test/lab/animation-studio/');
+  for(const modifier of [{ctrlKey:true},{metaKey:true},{shiftKey:true},{altKey:true},{button:1}]){
+    const f=await controllerFixture();const e=await f.byId('animation-link').emit('click',{button:0,...modifier});
+    assert.equal(e.defaultPrevented,undefined);assert.equal(f.engine.disposed,false);assert.equal(f.log.some(x=>x.event==='assign'),false);
+  }
+});
+test('unsafe workbench destination cannot depart or dispose a working Lab',async()=>{
+  for(const animationHref of ['https://other.test/lab/animation-studio/','../character-bench/','../animation-studio/?private=token','javascript:alert(1)','#',null]){
+    const f=await controllerFixture({animationHref});await f.byId('visit-animation').emit('click');
+    assert.equal(f.engine.disposed,false);assert.equal(f.log.some(x=>x.event==='assign'),false);
+  }
+});
+test('fresh studio return restores a one-use current-layout walkable pose; history pose takes priority',async()=>{
+  const pose={x:1,z:2,yaw:.3,pitch:-.2,crouch:true},key=workbenchNavigation.WORKBENCH_RETURN_KEY;
+  const record=JSON.stringify({version:1,layout:'fixture-layout',lab:'https://example.test/lab/lab-space/',position:pose});
+  const session=new Map([[key,record]]),f=await controllerFixture({session,referrer:'https://example.test/lab/animation-studio/'});
+  assert.equal(f.qa.position.x,1);assert.equal(f.qa.position.crouch,true);assert.equal(session.has(key),false);
+  const saved={...pose,x:2,crouch:false},prioritySession=new Map([[key,record]]);
+  const priority=await controllerFixture({session:prioritySession,referrer:'https://example.test/lab/animation-studio/',state:{labLayoutVersion:'fixture-layout',labPosition:saved}});
+  assert.equal(priority.qa.position.x,2);assert.equal(prioritySession.has(key),false);
+});
+test('animation integration tolerates denied storage on entry and departure',async()=>{
+  const f=await controllerFixture({storageDenied:true});assert.ok(f.engine);
+  await f.byId('visit-animation').emit('click');assert.equal(f.engine.disposed,true);assert.equal(f.log.at(-1).url,'https://example.test/lab/animation-studio/');
+});
+
+test('first Lab reveal waits for the ready figurine, and loading does not expose a placeholder display',async()=>{
+ const f=await controllerFixture({figurineState:'loading'});f.flush();assert.equal(f.byId('lab-loading').classList.contains('is-ready'),false);assert.equal(f.byId('loading-stage').textContent,'Placing figurine');
+ f.engine.diagnostics.figurineState='ready';f.engine.changed();f.flush();assert.equal(f.byId('lab-loading').classList.contains('is-ready'),true);assert.equal(f.document.activeElement,f.canvas);
+});
+test('figurine load failure keeps the Lab usable and the existing studio menu route preserves camera/position',async()=>{
+ const f=await controllerFixture({figurineState:'failed'});f.flush();assert.equal(f.byId('lab-loading').classList.contains('is-ready'),true);assert.match(f.byId('walk-message').textContent,/Animation Studio.*menu/);
+ const pose=copy(f.qa.position);await f.byId('animation-link').emit('click',{button:0});assert.equal(f.engine.disposed,true);const saved=JSON.parse(f.session.get(workbenchNavigation.WORKBENCH_RETURN_KEY));assert.equal(saved.position.x,pose.x);assert.equal(saved.position.z,pose.z);assert.equal(saved.position.yaw,pose.yaw);assert.equal(saved.position.pitch,pose.pitch);assert.ok(f.log.some(e=>e.event==='assign'&&e.url==='https://example.test/lab/animation-studio/'));
+});
+
+
+test('first unlocked mouse click on the counter figurine departs directly without acquiring look capture',async()=>{
+ const f=await controllerFixture();f.picked={destination:'animation'};
+ const g={button:0,pointerId:21,clientX:500,clientY:300,isPrimary:true,pointerType:'mouse'};
+ await f.canvas.emit('pointerdown',g);assert.equal(f.captureRequests.length,0);assert.equal(f.engine.disposed,false);
+ await f.canvas.emit('pointerup',g);assert.equal(f.engine.disposed,true);assert.equal(f.log.at(-1).url,'https://example.test/lab/animation-studio/');
+});
+test('figurine mouse drag or changed release target cannot cause an unintended studio departure',async()=>{
+ for(const changed of ['drag','target']){
+  const f=await controllerFixture();f.picked={destination:'animation'};const g={button:0,pointerId:22,clientX:500,clientY:300,isPrimary:true,pointerType:'mouse'};
+  await f.canvas.emit('pointerdown',g);
+  if(changed==='drag')await f.canvas.emit('pointermove',{...g,clientX:540,buttons:1});else f.picked={destination:'character'};
+  await f.canvas.emit('pointerup',{...g,clientX:changed==='drag'?540:500});
+  assert.equal(f.captureRequests.length,0);assert.equal(f.engine.disposed,false);assert.equal(f.log.some(e=>e.event==='assign'),false);
+ }
 });

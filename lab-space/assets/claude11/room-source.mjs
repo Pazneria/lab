@@ -10,6 +10,7 @@ import {buildInstrument} from './instrument.js';
 import {buildPerception} from './perception.js';
 import {buildMotion} from './motion.js';
 import {DRAWERS} from './screens.js';
+import {createWorkbenchFigurine,FIGURINE_SOURCE} from './workbench.mjs';
 import {canvasPointer,firstVisibleHit} from '../interaction.mjs';
 import {exhibits} from './layout.mjs';
 import {colliders as expectedColliders} from './colliders.mjs';
@@ -100,7 +101,8 @@ export function createRoom(canvas,onLost,options={}){
 
   const raycaster=new T.Raycaster(),pointer=new T.Vector2(),frustum=new T.Frustum(),projectionView=new T.Matrix4(),toCamera=new T.Vector3();
   let disposed=false,running=true,lastViewport=null,screenIndex=0,screenBudget=0,screenAnimation=false,characterStarted=false,characterState='unloaded',characterBatch=null;
-  let renderedFrames=0,textureUpdates=0,pendingCharacter=null;
+  let renderedFrames=0,textureUpdates=0,pendingCharacter=null,figurineStarted=false,figurineState='unloaded',figurine=null,pendingFigurine=null;
+  raycaster.layers.enable(1);
   const controller=new AbortController();
   const changed=()=>{if(!disposed){options.changed?.();canvas.dispatchEvent(new Event('roomchange'));}};
   const lost=event=>{event.preventDefault();running=false;onLost?.();};canvas.addEventListener('webglcontextlost',lost);
@@ -134,6 +136,26 @@ export function createRoom(canvas,onLost,options={}){
       characterState='ready';changed();
     }catch(error){if(pendingCharacter){disposeGraph(pendingCharacter);pendingCharacter=null;}if(disposed||error.name==='AbortError')return;characterState='failed';console.error('Character display could not load:',error);changed();}
   }
+  async function loadFigurine(){
+    if(figurineStarted||disposed)return;figurineStarted=true;figurineState='loading';
+    try{
+      const url=options.figurineURL||new URL('../figurines/crypt-warden/skeleton.glb',import.meta.url);
+      const response=await fetch(url,{signal:controller.signal,credentials:'omit'});if(!response.ok)throw Error(`Figurine asset HTTP ${response.status}`);
+      const data=await response.arrayBuffer();if(disposed)return;
+      if(data.byteLength!==FIGURINE_SOURCE.bytes)throw Error('Figurine asset size differs from its source manifest');
+      const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',data)),value=>value.toString(16).padStart(2,'0')).join('');
+      if(digest!==FIGURINE_SOURCE.sha256)throw Error('Figurine asset hash differs from its source manifest');
+      const {GLTFLoader}=await import('three/examples/jsm/loaders/GLTFLoader.js');
+      const gltf=await new GLTFLoader().parseAsync(data,new URL('.',url).href);
+      if(disposed){disposeGraph(gltf.scene);return;}
+      if(gltf.animations.length!==FIGURINE_SOURCE.diagnosticClips){disposeGraph(gltf.scene);throw Error('Figurine diagnostic clip contract differs');}
+      pendingFigurine=createWorkbenchFigurine(T,gltf.scene);
+      await renderer.compileAsync(pendingFigurine.root,camera,scene);
+      if(disposed){if(pendingFigurine){disposeGraph(pendingFigurine.root);pendingFigurine=null;}return;}
+      figurine=pendingFigurine;pendingFigurine=null;scene.add(figurine.root);scene.updateMatrixWorld(true);renderer.shadowMap.needsUpdate=true;
+      figurineState='ready';changed();
+    }catch(error){if(pendingFigurine){disposeGraph(pendingFigurine.root);pendingFigurine=null;}if(disposed||error.name==='AbortError')return;figurineState='failed';console.error('Skeleton figurine could not load:',error);changed();}
+  }
   // Upload shared material textures once; avoid duplicate preparation per batch.
   scene.updateMatrixWorld(true);scene.matrixWorldAutoUpdate=false;
   const prepared=new Set();scene.traverse(object=>{for(const material of [].concat(object.material||[]))for(const value of Object.values(material))if(value?.isTexture&&!prepared.has(value)){prepared.add(value);renderer.initTexture(value);}});
@@ -150,7 +172,7 @@ export function createRoom(canvas,onLost,options={}){
         renderer.setPixelRatio(pixelRatio);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();lastViewport={width,height,pixelRatio};
       }
       poseLabCamera(camera,position);
-      updateScreens(dt,time);loadCharacter();
+      updateScreens(dt,time);loadCharacter();loadFigurine();
       renderer.render(scene,camera);renderedFrames++;return true;
     },
     pick(clientX,clientY){
@@ -163,11 +185,12 @@ export function createRoom(canvas,onLost,options={}){
       // Solid architecture does not redirect visitors to an unrelated floor point.
       if(y>2.6)return null;return {point:{x,z},approach:true};
     },
+    hover(clientX,clientY){if(disposed||!figurine)return false;return figurine.setHovered(this.pick(clientX,clientY)?.destination==='animation');},
     target(point){if(disposed)return;marker.visible=!!point;if(point){marker.position.set(point.x,.04,point.z);marker.updateMatrixWorld(true);}},
     start(){if(!disposed)running=true;},stop(){running=false;screenAnimation=false;},
     get needsAnimation(){return !disposed&&running&&screenAnimation;},
     get colliders(){return expectedColliders;},
-    get diagnostics(){return {threeRevision:T.REVISION,viewport:lastViewport,renderedFrames,textureUpdates,staticTriangles,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometryCount:renderer.info.memory.geometries,textureCount:renderer.info.memory.textures,characterState,characterBatch,shadowSize:4096};},
-    dispose(){if(disposed)return;disposed=true;running=false;controller.abort();canvas.removeEventListener('webglcontextlost',lost);if(pendingCharacter){disposeGraph(pendingCharacter);pendingCharacter=null;}exitDoors.dispose();disposeGraph(scene);sun.shadow.dispose();environment.dispose();renderer.renderLists.dispose();renderer.dispose();},
+    get diagnostics(){return {threeRevision:T.REVISION,viewport:lastViewport,renderedFrames,textureUpdates,staticTriangles,drawCalls:renderer.info.render.calls,triangles:renderer.info.render.triangles,geometryCount:renderer.info.memory.geometries,textureCount:renderer.info.memory.textures,characterState,characterBatch,figurineState,figurine:figurine?{sourceSha256:FIGURINE_SOURCE.sha256,triangles:FIGURINE_SOURCE.triangles,scale:figurine.scale,height:figurine.height,hovered:figurine.hovered}:null,shadowSize:4096};},
+    dispose(){if(disposed)return;disposed=true;running=false;controller.abort();canvas.removeEventListener('webglcontextlost',lost);if(pendingFigurine){disposeGraph(pendingFigurine.root);pendingFigurine=null;}if(pendingCharacter){disposeGraph(pendingCharacter);pendingCharacter=null;}exitDoors.dispose();disposeGraph(scene);sun.shadow.dispose();environment.dispose();renderer.renderLists.dispose();renderer.dispose();},
   };
 }
