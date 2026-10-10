@@ -83,6 +83,7 @@ test('real pointer/key focus recovers a stale blur gate without restarting playb
  const f=await fixture();await f.window.emit('blur');assert.equal(f.state.gates.focus,false);assert.equal(f.state.active,false);const before=f.state.rendererFrames;
  await f.document.emit('pointerdown');f.flush();assert.equal(f.state.gates.focus,true);assert.ok(f.state.rendererFrames>before);assert.equal(f.state.playing,false);
  await f.window.emit('blur');await f.document.emit('keydown',{target:{tagName:'CANVAS'},key:'x'});f.flush();assert.equal(f.state.active,true);
+ await f.window.emit('blur');await f.el('view').emit('wheel',{preventDefault(){},deltaY:20});f.flush();assert.equal(f.state.active,true);
  f.setFocus(false);await f.document.emit('pointerdown');assert.equal(f.state.active,false);assert.equal(f.frames.size,0);
  f.setFocus(true);f.api.setActive(false);await f.document.emit('focusin');f.flush();assert.equal(f.state.rendererAlive,false);assert.equal(f.state.active,false);
 });
