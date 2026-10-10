@@ -22,3 +22,6 @@ button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,s
 @media(max-width:760px){.pane-footer{flex-wrap:wrap}.protocol{flex-wrap:wrap}.pill{max-width:100%}.view-controls{gap:3px}.view-controls button{padding:7px 8px}.comparison-foot{flex-wrap:wrap}.comparison-foot button{max-width:none}}
 .skip{color:#071b1b;background:#eef3ee}
 @media(forced-colors:active){.skip,.pane-message,.pane-header,.pane-footer,.toolbar,.reveal,button,select,#prompt-text,.source-receipt{background:Canvas;color:CanvasText}.pane-message p{color:CanvasText}}
+
+/* Brief and navigation refinements; exact prompt and method remain in details. */
+.brief{gap:12px 24px;margin-bottom:20px}.prompt-summary,.brief-requirement{grid-column:1/-1;margin:0;max-width:1150px}.prompt-summary{font-size:14px;line-height:1.65}.brief-requirement{font-size:12px;line-height:1.6;color:var(--muted)}.comparison-foot{justify-content:flex-end}.comparison-foot .next-action{font-size:14px;min-height:48px;min-width:130px;padding:12px 20px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.intro{padding-top:28px;padding-bottom:24px}.inspection-actions:has(#load-pair[hidden]):has(#inspection-status:empty){padding:0;border-bottom:0}

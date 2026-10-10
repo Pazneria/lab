@@ -1,5 +1,6 @@
 import {validateManifest,eligiblePairs,choosePair,createComparisonState,DEFAULT_CAMERA} from './contracts.mjs';
 import {createVotingClient,renderLeaderboard} from './voting.mjs';
+import {shortBrief} from './briefs.mjs';
 const $=id=>document.getElementById(id);
 const state=createComparisonState(),stages=$('stages'),surfaces=[$('surface-a'),$('surface-b')];
 const sides=['a','b'];let manifest=null,promptId=null,engine=null,loading=false,bootRequest=0,expanded=null,loadAbort=null;
@@ -28,12 +29,12 @@ function textNode(tag,text,className){const node=document.createElement(tag);nod
 function pairSignature(pair){return pair?.map(e=>e.id).sort().join('|')||null;}
 function message(side,kind,text){
   // Parser errors can contain submitted mesh names or asset URLs. Keep pre-choice status neutral.
-  if(kind==='error'&&!state.snapshot.revealed)text='The frozen file could not be imported. Retry the comparison or choose another pair.';
+  if(kind==='error'&&!state.snapshot.revealed)text='Could not load this model. Retry or choose Next.';
   surfaces[side].setAttribute('aria-busy',String(kind==='loading'));
   statuses[side]=kind;state.setReady(side,kind==='ready');
   const box=$('message-'+sides[side]);box.replaceChildren();box.hidden=kind==='ready';box.classList.toggle('is-loading',kind==='loading');
   const mark=textNode('span',kind==='loading'?'…':sides[side].toUpperCase(),'empty-mark');mark.setAttribute('aria-hidden','true');
-  box.append(mark,textNode('strong',kind==='loading'?'Loading frozen attempt':kind==='error'?'Import unavailable':kind==='paused'?'Inspection paused':'Ready when the pair is admitted'),textNode('p',text));
+  box.append(mark,textNode('strong',kind==='loading'?'Loading model':kind==='error'?'Could not load':kind==='paused'?'Paused':'Awaiting a pair'),textNode('p',text));
   $('status-'+sides[side]).textContent=kind==='ready'?'Frozen GLB verified · ready':kind==='loading'?'Verifying source…':kind==='error'?'Import failed':kind==='paused'?'Unloaded while hidden':'No asset loaded';
   surfaces[side].classList.toggle('is-ready',kind==='ready');renderControls();
 }
@@ -41,26 +42,26 @@ function renderControls(){
   if(restored?.status==='saved'&&state.snapshot.canVote){state.vote(choiceFor(restored));renderProvenance();}
   else if(restored?.status==='saved'&&state.snapshot.revealed&&state.snapshot.ready.every(Boolean)&&state.snapshot.choice!==choiceFor(restored)){state.revise(choiceFor(restored));renderProvenance();}
   const s=state.snapshot,hasPair=!!s.pair,inspect=!!engine&&s.ready.some(Boolean);
-  const pending=hasPair&&voting.pending(s.pair),blocked=voteBusy||restoreBusy||!!pending;
+  const pending=hasPair&&voting.pending(s.pair),blocked=voteBusy||!!pending,voteBlocked=blocked||restoreBusy;
   $('load-pair').disabled=!hasPair||loading;
-  $('load-pair').textContent=loading?'Loading comparison…':s.ready.every(Boolean)?'Reload comparison ↗':statuses.some(x=>['error','paused'].includes(x))?'Retry comparison ↗':'Load comparison ↗';
+  $('load-pair').hidden=!hasPair||loading||s.ready.every(Boolean);$('load-pair').textContent='Retry';
   $('link-cameras').disabled=!inspect;$('link-cameras').setAttribute('aria-pressed',String(s.linked));$('link-cameras').textContent=s.linked?'↔ Cameras linked':'⇄ Cameras independent';
-  $('camera-note').textContent=s.linked?'Rotate or zoom either view to move both. Unlock cameras for independent inspection.':'Cameras are independent. Linking again adopts the last view you inspected.';
+  $('camera-note').textContent='Drag to rotate. Scroll or pinch to zoom.';
   for(const id of ['surface-mode','reset-camera','grid-toggle','light-angle'])$(id).disabled=!inspect;
   for(const button of document.querySelectorAll('[data-view],.focus-pane'))button.disabled=!inspect;
-  document.querySelectorAll('[data-vote]').forEach(button=>{button.disabled=blocked||!!restorationError||!(s.canVote||revising&&s.revealed&&s.ready.every(Boolean));button.classList.toggle('selected',button.dataset.vote===s.choice);button.setAttribute('aria-pressed',String(button.dataset.vote===s.choice));});
+  document.querySelectorAll('[data-vote]').forEach(button=>{button.disabled=voteBlocked||!!restorationError||!(s.canVote||revising&&s.revealed&&s.ready.every(Boolean));button.classList.toggle('selected',button.dataset.vote===s.choice);button.setAttribute('aria-pressed',String(button.dataset.vote===s.choice));});
   const pairs=manifest&&promptId?eligiblePairs(manifest,promptId):[];
   $('next-pair').disabled=pairs.length<2||blocked;
   $('prompt-select').disabled=!manifest?.prompts.length||blocked;
   $('swap-pair').disabled=!hasPair||loading||s.revealed||blocked;
   $('retry-vote').hidden=!pending&&!restorationError;$('retry-vote').disabled=voteBusy||restoreBusy;
-  $('change-vote').hidden=!s.revealed;$('change-vote').disabled=blocked||!s.ready.every(Boolean);
-  $('withdraw-vote').hidden=!s.revealed||restored?.status==='withdrawn';$('withdraw-vote').disabled=blocked;
+  $('change-vote').hidden=!s.revealed;$('change-vote').disabled=voteBlocked||!s.ready.every(Boolean);
+  $('withdraw-vote').hidden=!s.revealed||restored?.status==='withdrawn';$('withdraw-vote').disabled=voteBlocked;
   $('vote-status').textContent=voteBusy?'Saving preference. Waiting for server confirmation…':restoreBusy?'Checking this browser’s saved preference…':pending?'Preference not confirmed. Retry the pending request; it will not add a second match.':restored?.status==='withdrawn'?'Preference withdrawn from public ratings.':s.revealed?'Preference confirmed in shared storage. Reloading preserves this browser’s judgment.':'';
   if(voteError||restorationError)$('vote-status').textContent=voteError||restorationError;
   sides.forEach((letter,index)=>{$('label-'+letter).textContent=state.label(index);});
   $('reveal').hidden=!s.revealed;
-  $('vote-instruction').textContent=revising?'Choose a replacement preference. Only one current judgment for this pair will count.':s.revealed?'Your saved preference is shown below. Identities are now visible; changes are recorded as revisions.':s.canVote?'Both frozen attempts are ready. Your choice will reveal labels after the server confirms it.':'Load and inspect both attempts before choosing. Model labels reveal after a confirmed vote.';
+  $('vote-instruction').textContent=revising?'Choose a replacement preference.':s.revealed?'Preference saved.':s.canVote?'Choose to reveal model labels.':'Choose after both models load.';
 }
 function renderProvenance(){
   const s=state.snapshot;if(!s.revealed)return;
@@ -88,24 +89,24 @@ function selectPrompt(id,{updateUrl=true}={}){
   promptId=id;bootRequest++;loadAbort?.abort();loading=false;engine?.clear();restorePaneLayout();
   const remembered=voting.remembered(id),eligible=eligiblePairs(manifest,id),prior=remembered&&eligible.find(p=>pairSignature(p)===pairSignature(remembered.map(id=>({id}))));
   const prompt=manifest.prompts.find(p=>p.id===id),pair=prior?remembered.map(id=>prior.find(e=>e.id===id)):choosePair(manifest,id);state.setPair(pair);resetPresentation();restored=null;
-  $('prompt-title').textContent=prompt?.title||'No admitted prompt at this link';
+  $('prompt-title').textContent=prompt?.title||'No admitted prompt at this link';$('prompt-summary').textContent=shortBrief(prompt);
   $('prompt-text').textContent=prompt?.text||'This prompt has no verified admission record. Choose an available prompt to continue.';
   $('prompt-hash').textContent=prompt?'Canonical prompt SHA-256 · '+prompt.sha256:'';
   $('prompt-select').value=id;
   $('run-note').textContent=prompt?.comparisonDisclosure||'';$('run-note').hidden=!prompt?.comparisonDisclosure;
   const count=eligiblePairs(manifest,id).length;
-  $('pair-count').textContent=count?count+' admitted pair'+(count===1?'':'s')+' · one canonical prompt':'Awaiting two verified attempts of this prompt.';
-  $('inspection-status').textContent=pair?'Both panes use the same lighting and unit-sphere framing. Load this pair to begin.':'No two verified attempts of this prompt are available. Other character prompts are never substituted.';
-  sides.forEach((_,i)=>message(i,'empty',pair?'Load comparison to verify and inspect this frozen attempt.':'A second verified attempt of the same prompt is required.'));
+  $('pair-count').textContent=count?count+' pair'+(count===1?'':'s'):'';
+  $('inspection-status').textContent=pair?'Loading models…':'No eligible pair for this prompt.';
+  sides.forEach((_,i)=>message(i,'empty',pair?'Loading models…':'Two verified attempts of the same prompt are required.'));
   $('provenance').replaceChildren();renderControls();
   if(updateUrl){const url=new URL(location.href);url.searchParams.set('prompt',id);history.replaceState(history.state,'',url);}
-  restoreVote();
+  restoreVote();loadPair();
 }
 async function loadPair(){
-  const pair=state.snapshot.pair;if(!pair||loading)return;
+  const pair=state.snapshot.pair;if(!pair||loading||document.hidden)return;
   const request=++bootRequest,token=state.snapshot.generation;
   loadAbort?.abort();loadAbort=new AbortController();loading=true;state.setReady(0,false);state.setReady(1,false);
-  sides.forEach((_,i)=>message(i,'loading','Preparing shared inspection resources…'));renderControls();
+  sides.forEach((_,i)=>message(i,'loading','Verifying the frozen file…'));renderControls();
   try {
     if(!engine){
       const module=await import('./viewer.mjs');
@@ -123,9 +124,9 @@ async function loadPair(){
     }
     const ready=await engine.loadPair(pair,token);
     if(request!==bootRequest)return;
-    $('inspection-status').textContent=ready.every(Boolean)?'Drag either character to rotate. Scroll or pinch to zoom. Both files passed the frozen source checks.':'A failed or paused import cannot be voted on. Retry the comparison to continue.';
+    $('inspection-status').textContent=ready.every(Boolean)?'':'Could not load both models. Retry or choose Next.';
   } catch(error) {
-    if(request===bootRequest){engine?.dispose();engine=null;sides.forEach((_,i)=>message(i,'error',error.message));$('inspection-status').textContent='3D inspection is unavailable. The exact prompt and source contract remain accessible.';}
+    if(request===bootRequest){engine?.dispose();engine=null;sides.forEach((_,i)=>message(i,'error',error.message));$('inspection-status').textContent='3D view unavailable. Retry or choose Next.';}
   } finally {if(request===bootRequest){loading=false;renderControls();}}
 }
 function changeCamera(side,value){if(statuses[side]!=='ready')return;state.setCamera(side,value);engine?.invalidate();}
@@ -160,18 +161,18 @@ $('change-vote').addEventListener('click',()=>{revising=true;renderControls();})
 $('withdraw-vote').addEventListener('click',()=>{revising=true;return submitVote('withdraw');});
 $('refresh-leaderboard').addEventListener('click',refreshLeaderboard);
 $('next-pair').addEventListener('click',()=>{
-  if(voteBusy||restoreBusy||voting.pending(state.snapshot.pair||[]))return;
+  if(voteBusy||voting.pending(state.snapshot.pair||[]))return;
   const pair=choosePair(manifest,promptId,pairSignature(state.snapshot.pair));if(!pair)return;
   bootRequest++;loadAbort?.abort();loading=false;engine?.clear();restorePaneLayout();state.setPair(pair);resetPresentation();
-  sides.forEach((_,i)=>message(i,'empty','New blind pair selected. Load both frozen attempts to begin.'));$('provenance').replaceChildren();
-  restored=null;$('inspection-status').textContent='New pair selected. Shared inspection defaults restored; load both frozen attempts.';renderControls();restoreVote();$('load-pair').focus({preventScroll:true});
+  sides.forEach((_,i)=>message(i,'empty','Loading models…'));$('provenance').replaceChildren();
+  restored=null;$('inspection-status').textContent='Loading models…';renderControls();restoreVote();loadPair();
 });
 $('swap-pair').addEventListener('click',()=>{
-  if(loading||voteBusy||restoreBusy||voting.pending(state.snapshot.pair||[])||!state.swap())return;
+  if(loading||voteBusy||voting.pending(state.snapshot.pair||[])||!state.swap())return;
   bootRequest++;loadAbort?.abort();engine?.clear();restorePaneLayout();resetPresentation();
-  sides.forEach((_,i)=>message(i,'empty','Sides swapped. Load both frozen attempts for a fresh inspection.'));
-  $('provenance').replaceChildren();$('inspection-status').textContent='A/B sides swapped. Shared defaults restored; this records no preference.';
-  restored=null;renderControls();restoreVote();$('load-pair').focus({preventScroll:true});
+  sides.forEach((_,i)=>message(i,'empty','Loading models…'));
+  $('provenance').replaceChildren();$('inspection-status').textContent='Loading models…';
+  restored=null;renderControls();restoreVote();loadPair();
 });
 document.querySelectorAll('.focus-pane').forEach(button=>button.addEventListener('click',()=>{
   const side=Number(button.dataset.side);expanded=expanded===side?null:side;state.setActive(side);stages.classList.toggle('is-expanded',expanded!==null);
@@ -218,8 +219,8 @@ surfaces.forEach((surface,side)=>{
 function depart(){bootRequest++;loading=false;restoreBusy=false;restorationError='';loadAbort?.abort();engine?.dispose();engine=null;state.setPair(state.snapshot.pair);restorePaneLayout();resetPresentation();
   sides.forEach((_,i)=>message(i,'paused','Reload both frozen attempts to resume inspection.'));$('provenance').replaceChildren();renderControls();}
 window.addEventListener('pagehide',depart);
-window.addEventListener('pageshow',event=>{if(event.persisted&&manifest)restoreVote();});
-document.addEventListener('visibilitychange',()=>{if(document.hidden){bootRequest++;loading=false;loadAbort?.abort();engine?.clear();pointerClearers.forEach(clear=>clear());sides.forEach((_,i)=>message(i,'paused','Inspection paused while this tab was hidden. Reload both frozen attempts to continue.'));}});
+window.addEventListener('pageshow',event=>{if(event.persisted&&manifest){restoreVote();loadPair();}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){bootRequest++;loading=false;loadAbort?.abort();engine?.clear();pointerClearers.forEach(clear=>clear());sides.forEach((_,i)=>message(i,'paused','Inspection paused while this tab is hidden.'));}else if(manifest&&!state.snapshot.ready.every(Boolean))loadPair();});
 window.addEventListener('popstate',()=>{if(manifest){const query=new URL(location.href).searchParams.get('prompt');selectPrompt(query||manifest.prompts[0]?.id,{updateUrl:false});}});
 // Read-only host measurements for a cleared QA session; no preference/admission API.
 if(new URL(location.href).searchParams.has('labqa'))Object.defineProperty(window,'__characterBench',{

@@ -6,6 +6,7 @@ import vm from 'node:vm';
 import {readFileSync,existsSync} from 'node:fs';
 import {createHash,webcrypto} from 'node:crypto';
 import * as contracts from '../character-bench/assets/contracts.mjs';
+import * as briefs from '../character-bench/assets/briefs.mjs';
 
 const read=path=>readFileSync(new URL('../'+path,import.meta.url),'utf8');
 const raw=JSON.parse(read('character-bench/data/admission.json'));
@@ -93,23 +94,23 @@ async function releasedApp(){
   const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [name,value]of Object.entries(values))this.setExport(name,value);},{context});
   let saved=null;
   const votes=synthetic({createVotingClient:()=>({pending:()=>null,remember(){},remembered:()=>null,current:async()=>saved||{status:'empty',intent:0},leaderboard:async()=>({rows:[],counts:{votes:0}}),submit:async(_pair,choice)=>(saved={status:'saved',choice})}),renderLeaderboard(){}});
-  const core=synthetic(contracts),viewer=synthetic({createViewer(options){
+  const core=synthetic(contracts),summaries=synthetic(briefs),viewer=synthetic({createViewer(options){
     const engine={options,disposed:false,clear(){},invalidate(){},setMode(){},setLight(){},setGrid(){},dispose(){this.disposed=true;},
-      loadPair(pair,generation){return new Promise(resolve=>loads.push({engine:this,pair,generation,resolve}));}};engines.push(engine);return engine;
+      loadPair(pair,generation){const item={engine:this,pair,generation};item.promise=new Promise(resolve=>item.resolve=resolve);loads.push(item);return item.promise;}};engines.push(engine);return engine;
   }});
-  await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
+  await summaries.link(()=>{});await summaries.evaluate();await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
   const module=new vm.SourceTextModule(app,{context,initializeImportMeta(meta){meta.url=new URL('assets/app.mjs',target).href;},importModuleDynamically:async()=>viewer});
-  await module.link(specifier=>specifier==='./voting.mjs'?votes:core);await module.evaluate();await settleUntil(()=>!ids.get('prompt-select').disabled);
+  await module.link(specifier=>specifier==='./voting.mjs'?votes:specifier==='./briefs.mjs'?summaries:core);await module.evaluate();await settleUntil(()=>!ids.get('prompt-select').disabled);
   return {ids,engines,loads,fetches,events,document,get state(){return engines.at(-1).options.state;},
     button:choice=>elements.find(element=>element.dataset.vote===choice),
-    async start(){const count=loads.length,pending=ids.get('load-pair').emit('click');await settleUntil(()=>loads.length>count);return {pending,load:loads.at(-1)};},
+    async start(){await settleUntil(()=>loads.some(l=>!l.claimed&&l.generation===engines.at(-1)?.options.state.snapshot.generation));const load=loads.findLast(l=>!l.claimed);load.claimed=true;return {pending:load.promise.then(()=>new Promise(resolve=>setTimeout(resolve,0))),load};},
     ready(side){engines.at(-1).options.onStatus(side,'ready','Ready');},
     async emit(type){for(const callback of events.get(type)||[])await callback({persisted:true});},
   };
 }
 
 test('the actual lobby deep link boots a blind same-prompt comparison and reveals only after both current imports',async()=>{
-  const f=await releasedApp();assert.deepEqual(f.fetches,[new URL('data/admission.json',target).href]);assert.equal(f.engines.length,0);
+  const f=await releasedApp();assert.deepEqual(f.fetches,[new URL('data/admission.json',target).href]);assert.equal(f.engines.length,1);
   assert.equal(f.ids.get('prompt-select').value,promptId);const {pending,load}=await f.start();
   assert.ok(load.pair.every(entry=>entry.promptId===promptId));assert.equal(f.state.snapshot.linked,true);
   assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.ids.get('provenance').textContent,'');
@@ -124,7 +125,7 @@ test('departure releases the viewer; cached-page return restores a confirmed vot
   await f.button('a').emit('click');assert.equal(f.state.snapshot.choice,'a');const engine=f.engines[0];
   await f.emit('pagehide');assert.equal(engine.disposed,true);assert.equal(f.state.snapshot.choice,null);assert.equal(f.ids.get('reveal').hidden,true);
   assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.ids.get('provenance').textContent,'');assert.equal(f.button('a').disabled,true);
-  await f.emit('pageshow');assert.equal(f.engines.length,1,'Return must require explicit reloading rather than silently importing');
+  await f.emit('pageshow');await settleUntil(()=>f.engines.length===2);assert.equal(f.engines.length,2,'Cached return automatically reloads the frozen pair');
   const second=await f.start();assert.equal(f.engines.length,2);assert.equal(f.state.snapshot.choice,null);assert.ok(second.load.pair.every(entry=>entry.promptId===promptId));
   f.ready(0);f.ready(1);second.load.resolve([true,true]);await second.pending;assert.equal(f.button('a').disabled,true);assert.equal(f.state.snapshot.choice,'a');assert.equal(f.ids.get('reveal').hidden,false);
 });
