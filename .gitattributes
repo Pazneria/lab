@@ -39,3 +39,13 @@ scripts/build-production-lab.cjs text eol=lf
 docs/PRODUCTION-LAB* text eol=lf
 # Generated upstream GLSL template strings retain their original whitespace.
 lab-space/assets/production-room.mjs whitespace=-blank-at-eol,-space-before-tab
+
+# Exact studio payloads and original figurine; generated HTML reviewed by hash.
+lab-space/figurines/crypt-warden/** -text
+animation-studio/index.html -text -diff
+animation-studio/rig-review/source/** -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+animation-studio/*.mjs -text
+animation-studio/*.md text eol=lf
+scripts/build-public-rig-studio.cjs text eol=lf
+tests/verify-public-rig-studio.test.mjs text eol=lf
+tests/verify-animation-workbench-geometry.test.mjs text eol=lf

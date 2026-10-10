@@ -1,0 +1,33 @@
+{
+  "schema": "lab-figurine-source/1",
+  "asset": "crypt_warden_skeleton_01",
+  "sourceOwner": "Oct9 task53",
+  "acceptance": "Accepted source named by Jordan through the parent task; no geometry refinement here",
+  "sourceManifest": "source-hashes.json",
+  "sourceManifestSha256": "ce157576b807a73cfa7943972ee3952f4306d64fd57c14a5cb9b5ccba6c92337",
+  "file": "skeleton.glb",
+  "sha256": "e0b87964820e62eb6b7106bd13818e63ac0f7b20d688b8392473080077f53457",
+  "bytes": 861620,
+  "triangles": 4202,
+  "joints": 25,
+  "diagnosticClips": 6,
+  "sourceBounds": {
+    "min": [
+      -0.389,
+      0,
+      -0.127
+    ],
+    "max": [
+      0.3875,
+      1.78,
+      0.16311902
+    ]
+  },
+  "display": {
+    "scale": 0.19,
+    "height": 0.3382,
+    "pose": "Rest only; diagnostic clips preserved but not played"
+  },
+  "preservedSourceFilesChecked": 53,
+  "publication": "Public Lab miniature; exact accepted source bytes"
+}

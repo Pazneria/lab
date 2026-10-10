@@ -3,6 +3,7 @@ import {createSceneNavigation} from '../../walkable-3d/assets/scene-navigation.j
 import {clickSlop,movedBeyondClick,intentionalClick} from './interaction.mjs';
 import {advance,spawn,nearby,safeDestination,walkable,exhibits,roomLayoutVersion,setExitDoors} from './production-navigation.mjs';
 import {createExitController,HOME_URL} from './production-exit.mjs';
+import {workbenchDestination,saveWorkbenchReturn,takeWorkbenchReturn} from '../../animation-studio/navigation.mjs';
 
 const $=id=>document.getElementById(id);
 const canvas=$('room'),enterButton=$('enter-room'),gentle=$('gentle'),help=$('help-dialog'),station=$('station-dialog'),menu=$('room-menu');
@@ -23,8 +24,10 @@ const actions=new Set(),keys=new Set();
 const keyMap={KeyW:'forward',KeyS:'backward',KeyA:'left',KeyD:'right',ArrowUp:'forward',ArrowDown:'backward',ArrowLeft:'left',ArrowRight:'right',ShiftLeft:'sprint',ShiftRight:'sprint'};
 const saved=history.state;
 if(!handoffEntry){
+  let workbenchBack=null;try{workbenchBack=takeWorkbenchReturn(sessionStorage,location.href,document.referrer,roomLayoutVersion,walkable);}catch{}
   if(saved?.labLayoutVersion===roomLayoutVersion&&saved.labPosition&&walkable(saved.labPosition)&&['yaw','pitch'].every(k=>Number.isFinite(saved.labPosition[k])))position={...spawn(),...saved.labPosition};
   else try{const back=JSON.parse(sessionStorage.getItem('lab.production.character-return.v1'));sessionStorage.removeItem('lab.production.character-return.v1');const from=new URL(document.referrer||location.href);if(from.origin===location.origin&&from.pathname.endsWith('/character-bench/')&&back?.layout===roomLayoutVersion&&walkable(back.position)&&['yaw','pitch'].every(k=>Number.isFinite(back.position[k])))position={...spawn(),...back.position};}catch{}
+  if(workbenchBack&&!(saved?.labLayoutVersion===roomLayoutVersion&&saved.labPosition&&walkable(saved.labPosition)&&['yaw','pitch'].every(k=>Number.isFinite(saved.labPosition[k]))))position={...spawn(),...workbenchBack};
 }
 
 position.eye=position.crouch?1:1.62;
@@ -44,8 +47,8 @@ if(handoffEntry){handoffObserver=new MutationObserver(handoffChanged);handoffObs
 function invalidate(){dirty=true;schedule();}
 function schedule(){if(available()&&!frame)frame=requestAnimationFrame(tick);}
 function targetKey(target){if(target?.comparison)return screen.hitTest(target.comparison)?.key||null;if(target?.destination)return 'station:'+target.destination;return null;}
-function status(){const kind=nearby(position);$('nearby').hidden=!kind||document.pointerLockElement===canvas;$('nearby').textContent=kind==='character'?'CharacterBench':kind==='worlds'?'Use SceneBench screen':kind==='home'?'Exit to home':'Open catalog';}
-function draw(dt=0,time=performance.now()/1000,interactive=false){if(!available())return;try{const rendered=engine.draw(position,{dt,time,interactive});if(rendered===false)return;status();if(!roomReady){const state=engine.diagnostics?.characterState;if(state==='failed')fallback('The character could not load. Try again or open a destination below.');else if((!state||state==='ready')&&(!handoff?.active||screen.ready))finishLoading();else loadingStage(state==='loading'?'Placing character':'Preparing exhibits');}}catch{fallback('The 3D Lab stopped. Try again or open a destination below.');}}
+function status(){const kind=nearby(position);$('nearby').hidden=!kind||document.pointerLockElement===canvas;$('nearby').textContent=kind==='character'?'CharacterBench':kind==='worlds'?'Use SceneBench screen':kind==='home'?'Exit to home':kind==='animation'?'Animation studio':'Open catalog';}
+function draw(dt=0,time=performance.now()/1000,interactive=false){if(!available())return;try{const rendered=engine.draw(position,{dt,time,interactive});if(rendered===false)return;status();if(!roomReady){const state=engine.diagnostics?.characterState,figure=engine.diagnostics?.figurineState;if(state==='failed')fallback('The character could not load. Try again or open a destination below.');else if((!state||state==='ready')&&(!figure||figure==='ready'||figure==='failed')&&(!handoff?.active||screen.ready)){finishLoading();if(figure==='failed')message('The figurine could not load. Animation Studio is available in the menu.');}else loadingStage(state==='loading'?'Placing character':figure==='loading'?'Placing figurine':'Preparing exhibits');}}catch{fallback('The 3D Lab stopped. Try again or open a destination below.');}}
 function tick(time){
   frame=0;if(!available()){lastTime=0;return;}
   const dt=lastTime?Math.min(Math.max((time-lastTime)/1000,0),.05):0;lastTime=time;idleTime+=dt;
@@ -96,7 +99,7 @@ const screen=createWalkableScreen({
   approach:focusWorlds
 });
 
-function showRoom(value){active=value;canvas.hidden=!value;$('room-access').hidden=value;canvas.parentElement.classList.toggle('is-access',!value);$('explore').hidden=!value;for(const id of ['visit-bench','visit-home','visit-character','reset'])$(id).disabled=!value;if(value)invalidate();}
+function showRoom(value){active=value;canvas.hidden=!value;$('room-access').hidden=value;canvas.parentElement.classList.toggle('is-access',!value);$('explore').hidden=!value;for(const id of ['visit-bench','visit-home','visit-character','visit-animation','reset'])$(id).disabled=!value;if(value)invalidate();}
 function fallback(text){failed=true;loading=false;roomReady=false;request++;releaseLook();stop();showRoom(false);engine?.dispose();engine=null;$('lab-loading').hidden=true;enterButton.hidden=false;enterButton.disabled=false;$('access-message').textContent=text;if(handoffEntry){handoff.fail();handoffChanged();}}
 async function enter(){
   if(loading)return;if(engine){showRoom(true);return;}
@@ -121,6 +124,11 @@ function focusWorlds(){
 function openStation(kind){
   if(kind==='worlds'){focusWorlds();return;}
   if(!kind||handoff?.active)return;releaseLook();stop();preserve();
+  if(kind==='animation'){
+    const destination=workbenchDestination($('animation-link').getAttribute('href'),location.href);
+    if(!destination){message('Animation studio is unavailable.');return;}
+    try{saveWorkbenchReturn(sessionStorage,location.href,roomLayoutVersion,position);}catch{}suspended=true;request++;engine?.dispose();engine=null;location.assign(destination);return;
+  }
   if(kind==='character'){
     const destination=characterDestination();
     if(destination){preserveCharacterReturn();suspended=true;request++;engine?.dispose();engine=null;location.assign(destination);return;}
@@ -128,7 +136,7 @@ function openStation(kind){
   }
   restoreFocus=document.activeElement;const home=kind==='home';$('dialog-number').textContent=home?'Exit':'Catalog';$('dialog-title').textContent=home?'Return home':'Catalog & evidence';$('dialog-copy').textContent=home?"Return to Jordan’s home page.":'Browse the public benchmark catalog, sources, and graphs.';$('dialog-link').href=safeDestination(kind);$('dialog-link').textContent=home?'Exit to home':'Open catalog';$('dialog-link').hidden=false;station.showModal();
 }
-function activate(target){if(target?.comparison)screen.activate(target.comparison);else if(['character','catalog','home','worlds'].includes(target?.destination))openStation(target.destination);}
+function activate(target){if(target?.comparison)screen.activate(target.comparison);else if(['character','catalog','home','worlds','animation'].includes(target?.destination))openStation(target.destination);}
 
 $('visit-screen').hidden=false;$('screen-controls').hidden=false;$('help').hidden=false;
 $('worlds-link').addEventListener('click',event=>{if(active&&roomReady&&!failed){event.preventDefault();focusWorlds();}});
@@ -139,10 +147,11 @@ help.addEventListener('close',()=>{canvas.focus({preventScroll:true});invalidate
 help.addEventListener('cancel',event=>{event.preventDefault();help.close();});
 $('resume-look').addEventListener('click',()=>{help.close();requestLook();});
 station.addEventListener('close',()=>{if(restoreFocus?.isConnected&&!restoreFocus.hidden)restoreFocus.focus({preventScroll:true});else canvas.focus({preventScroll:true});invalidate();});
-for(const [id,kind] of [['visit-bench','catalog'],['visit-home','home'],['visit-character','character']])$(id).addEventListener('click',()=>{help.close();openStation(kind);});
+for(const [id,kind] of [['visit-bench','catalog'],['visit-home','home'],['visit-character','character'],['visit-animation','animation']])$(id).addEventListener('click',()=>{help.close();openStation(kind);});
 $('reset').addEventListener('click',()=>{help.close();releaseLook();stop();exitController.cancel();position=spawn();invalidate();});
 $('nearby').addEventListener('click',()=>openStation(nearby(position)));
 for(const link of document.querySelectorAll('a[href*="character-bench/"]'))link.addEventListener('click',preserveCharacterReturn);
+for(const link of document.querySelectorAll('a[href*="animation-studio/"]'))link.addEventListener('click',event=>{if(event.button===0&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey&&!event.altKey){event.preventDefault();openStation('animation');}});
 gentle.addEventListener('change',()=>{stop();invalidate();});
 function captureFallback(){capturePending=captureWanted=captureLegacy=false;if(inputReady()){dragFallback=true;message('Hold the left mouse button to look. Escape opens controls.');}}
 async function requestLook(){
@@ -159,6 +168,8 @@ async function requestLook(){
   invalidate();
 }
 $('explore').addEventListener('click',requestLook);
+canvas.addEventListener('pointermove',event=>{if(inputReady()&&!locked&&!drag&&engine?.hover?.(event.clientX,event.clientY)){canvas.classList.toggle('is-figurine-hover',!!engine.diagnostics?.figurine?.hovered);invalidate();}});
+canvas.addEventListener('pointerleave',()=>{canvas.classList.toggle('is-figurine-hover',false);if(engine?.hover?.(-1,-1))invalidate();});
 canvas.addEventListener('keydown',event=>{
   if(!inputReady())return;
   if(keyMap[event.code]){event.preventDefault();message();keys.add(event.code);actions.add(keyMap[event.code]);schedule();}
@@ -180,8 +191,11 @@ canvas.addEventListener('pointerdown',event=>{
   if(event.button!==0||!inputReady()||event.isPrimary===false)return;
   canvas.focus({preventScroll:true});message();
   if(locked){const rect=canvas.getBoundingClientRect();activate(engine.pick(rect.left+rect.width/2,rect.top+rect.height/2));return;}
-  const capture=(!event.pointerType||event.pointerType==='mouse')&&!dragFallback;
-  canvas.setPointerCapture(event.pointerId);drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,capture,slop:clickSlop(event.pointerType),targetKey:targetKey(engine.pick(event.clientX,event.clientY)),view:{...position}};
+  const target=engine.pick(event.clientX,event.clientY);
+  // The small counter figurine has a direct click affordance; retain ordinary
+  // first-gesture look capture on the floor and existing exhibit screens.
+  const capture=(!event.pointerType||event.pointerType==='mouse')&&!dragFallback&&target?.destination!=='animation';
+  canvas.setPointerCapture(event.pointerId);drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,capture,slop:clickSlop(event.pointerType),targetKey:targetKey(target),view:{...position}};
   if(capture)requestLook();
 });
 canvas.addEventListener('pointermove',event=>{if(!drag||drag.id!==event.pointerId||!inputReady())return;if(event.pointerType==='mouse'&&event.buttons!==undefined&&!(event.buttons&1)){drag=null;return;}if(!drag.moved&&!movedBeyondClick(drag,event))return;drag.moved=true;look(event.clientX-drag.x,event.clientY-drag.y);drag.x=event.clientX;drag.y=event.clientY;});

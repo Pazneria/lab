@@ -1,0 +1,13 @@
+# Animation Studio
+
+Enter through the small skeleton on the red tool cart in the Lab's east alcove (click or E), or use the accessible Animation Studio link. Back to Lab restores the departure position and camera. Direct URL: https://pazneria.github.io/lab/animation-studio/.
+
+The viewport renders actual GLBs and their real skin palettes. Select a model, inspect its hierarchy, show bones/sockets/weights, orbit, scrub delivered diagnostics and compare poses. Human01 retains its original-versus-refined study, prior original-authored idle/walk/run clips and local pose-key export. Space plays/pauses, arrows step, F fits and R restores rest. File imports, edits and review notes remain in this tab until downloaded; there is no upload service.
+
+Twenty original models are available by default. Six proposals require explicit opt-in and remain unaccepted. Historical wolf/bear inputs remain blocked. Rest-only models and static diagnostic poses are labeled; the studio does not invent locomotion clips or claim calibrated OSRS timing. Foot/contact overlays derive actual deformed samples; an overlay alone is not a gait validation.
+
+The published HTML is a derivative of validated private checkpoint d04a8aa51b84dde35389691d404cca7c8f6fee1f (input SHA256 5bdaca96df0f1fbbf0b6078af17ccd9de24798d5823c2eab991f2ca60a79d569). Public labels and machine-only provenance are adapted; embedded model and motion bytes are unchanged. No screenshot gallery, private review captures or Library receipts are published. Editable rig modules are in `rig-review/source/`; the generated HTML retains the pinned payload. `node scripts/build-public-rig-studio.cjs` rebuilds it from those modules and its existing payload. The first import accepts only the exact validated input HTML as an optional argument.
+
+Demand rendering is bounded to 30 Hz while playing, DPR 1.5 and 1600x1200 buffers. Paused input draws once. Blur, hidden/offscreen pages, inactive workspace modes and idle suspend rendering. The Human study allocates its renderer only when selected, and workspace changes destroy the inactive renderer. Large bundled payloads may cause a cold-load delay; the original static artifacts, accepted assets and benchmark entrants remain unchanged.
+
+CPU checks (no installations): `node --experimental-vm-modules --test tests/verify-public-rig-studio.test.mjs animation-studio/tests/rig-ui-cpu.test.mjs animation-studio/tests/modes.test.mjs tests/verify-production-controller.test.mjs tests/verify-animation-workbench-geometry.test.mjs`. The last test uses the existing pinned Three 0.186.1/esbuild 0.28.2 via `LAB_PRODUCTION_DEPENDENCIES`.

@@ -1,6 +1,8 @@
 // One source for physical host stations, approaches and renderer placement.
+import {workbenchLayout} from './workbench.mjs';
 const worldsX=-9.3,worldsY=1.6,worldsZ=3.245,worldsApproachZ=.9;
 export const exhibits=Object.freeze({
+  animation:workbenchLayout,
   worlds:Object.freeze({x:worldsX,y:worldsY,z:worldsZ,width:3.2,height:1.8,yaw:Math.PI,
     approach:Object.freeze({x:worldsX,z:worldsApproachZ,yaw:Math.PI,pitch:Math.atan2(worldsY-1.62,worldsZ-worldsApproachZ)})}),
   character:Object.freeze({x:0,z:-.6,radius:1.5,stageY:.66,maxHeight:1.35,maxWidth:1.6,maxDepth:1.3,

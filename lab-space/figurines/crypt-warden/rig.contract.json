@@ -1,0 +1,745 @@
+{
+  "id": "crypt_skeleton_rig_v1",
+  "axes": "+Y up, +Z forward, +X character left",
+  "units": "authoring units; accepted human=1.72",
+  "ground_origin": [
+    0,
+    0,
+    0
+  ],
+  "joints": [
+    {
+      "name": "root",
+      "parent": null,
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "translation": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "pelvis",
+      "parent": "root",
+      "position": [
+        0.0,
+        0.925,
+        -0.01
+      ],
+      "translation": [
+        0.0,
+        0.925,
+        -0.01
+      ]
+    },
+    {
+      "name": "spine_lower",
+      "parent": "pelvis",
+      "position": [
+        0.0,
+        1.035,
+        -0.028
+      ],
+      "translation": [
+        0.0,
+        0.10999999999999988,
+        -0.018000000000000002
+      ]
+    },
+    {
+      "name": "chest",
+      "parent": "spine_lower",
+      "position": [
+        0.0,
+        1.22,
+        -0.025
+      ],
+      "translation": [
+        0.0,
+        0.18500000000000005,
+        0.002999999999999999
+      ]
+    },
+    {
+      "name": "neck",
+      "parent": "chest",
+      "position": [
+        0.0,
+        1.445,
+        -0.013
+      ],
+      "translation": [
+        0.0,
+        0.2250000000000001,
+        0.012000000000000002
+      ]
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "position": [
+        0.0,
+        1.523,
+        0.01
+      ],
+      "translation": [
+        0.0,
+        0.07799999999999985,
+        0.023
+      ]
+    },
+    {
+      "name": "jaw",
+      "parent": "head",
+      "position": [
+        0.0,
+        1.59,
+        0.042
+      ],
+      "translation": [
+        0.0,
+        0.06700000000000017,
+        0.032
+      ]
+    },
+    {
+      "name": "clavicle_left",
+      "parent": "chest",
+      "position": [
+        0.065,
+        1.418,
+        -0.011
+      ],
+      "translation": [
+        0.065,
+        0.19799999999999995,
+        0.014000000000000002
+      ]
+    },
+    {
+      "name": "upper_arm_left",
+      "parent": "clavicle_left",
+      "position": [
+        0.236,
+        1.416,
+        -0.011
+      ],
+      "translation": [
+        0.17099999999999999,
+        -0.0020000000000000018,
+        0.0
+      ]
+    },
+    {
+      "name": "forearm_left",
+      "parent": "upper_arm_left",
+      "position": [
+        0.329,
+        1.154,
+        0.021
+      ],
+      "translation": [
+        0.09300000000000003,
+        -0.262,
+        0.032
+      ]
+    },
+    {
+      "name": "hand_left",
+      "parent": "forearm_left",
+      "position": [
+        0.358,
+        0.924,
+        0.057
+      ],
+      "translation": [
+        0.02899999999999997,
+        -0.22999999999999987,
+        0.036000000000000004
+      ]
+    },
+    {
+      "name": "fingers_left",
+      "parent": "hand_left",
+      "position": [
+        0.358,
+        0.862,
+        0.076
+      ],
+      "translation": [
+        0.0,
+        -0.062000000000000055,
+        0.018999999999999996
+      ]
+    },
+    {
+      "name": "thigh_left",
+      "parent": "pelvis",
+      "position": [
+        0.111,
+        0.901,
+        -0.006
+      ],
+      "translation": [
+        0.111,
+        -0.02400000000000002,
+        0.004
+      ]
+    },
+    {
+      "name": "shin_left",
+      "parent": "thigh_left",
+      "position": [
+        0.137,
+        0.508,
+        0.014
+      ],
+      "translation": [
+        0.02600000000000001,
+        -0.393,
+        0.02
+      ]
+    },
+    {
+      "name": "foot_left",
+      "parent": "shin_left",
+      "position": [
+        0.135,
+        0.093,
+        -0.018
+      ],
+      "translation": [
+        -0.0020000000000000018,
+        -0.41500000000000004,
+        -0.032
+      ]
+    },
+    {
+      "name": "toe_left",
+      "parent": "foot_left",
+      "position": [
+        0.135,
+        0.035,
+        0.108
+      ],
+      "translation": [
+        0.0,
+        -0.057999999999999996,
+        0.126
+      ]
+    },
+    {
+      "name": "clavicle_right",
+      "parent": "chest",
+      "position": [
+        -0.065,
+        1.418,
+        -0.011
+      ],
+      "translation": [
+        -0.065,
+        0.19799999999999995,
+        0.014000000000000002
+      ]
+    },
+    {
+      "name": "upper_arm_right",
+      "parent": "clavicle_right",
+      "position": [
+        -0.236,
+        1.416,
+        -0.011
+      ],
+      "translation": [
+        -0.17099999999999999,
+        -0.0020000000000000018,
+        0.0
+      ]
+    },
+    {
+      "name": "forearm_right",
+      "parent": "upper_arm_right",
+      "position": [
+        -0.329,
+        1.154,
+        0.021
+      ],
+      "translation": [
+        -0.09300000000000003,
+        -0.262,
+        0.032
+      ]
+    },
+    {
+      "name": "hand_right",
+      "parent": "forearm_right",
+      "position": [
+        -0.358,
+        0.924,
+        0.057
+      ],
+      "translation": [
+        -0.02899999999999997,
+        -0.22999999999999987,
+        0.036000000000000004
+      ]
+    },
+    {
+      "name": "fingers_right",
+      "parent": "hand_right",
+      "position": [
+        -0.358,
+        0.862,
+        0.076
+      ],
+      "translation": [
+        0.0,
+        -0.062000000000000055,
+        0.018999999999999996
+      ]
+    },
+    {
+      "name": "thigh_right",
+      "parent": "pelvis",
+      "position": [
+        -0.111,
+        0.901,
+        -0.006
+      ],
+      "translation": [
+        -0.111,
+        -0.02400000000000002,
+        0.004
+      ]
+    },
+    {
+      "name": "shin_right",
+      "parent": "thigh_right",
+      "position": [
+        -0.137,
+        0.508,
+        0.014
+      ],
+      "translation": [
+        -0.02600000000000001,
+        -0.393,
+        0.02
+      ]
+    },
+    {
+      "name": "foot_right",
+      "parent": "shin_right",
+      "position": [
+        -0.135,
+        0.093,
+        -0.018
+      ],
+      "translation": [
+        0.0020000000000000018,
+        -0.41500000000000004,
+        -0.032
+      ]
+    },
+    {
+      "name": "toe_right",
+      "parent": "foot_right",
+      "position": [
+        -0.135,
+        0.035,
+        0.108
+      ],
+      "translation": [
+        0.0,
+        -0.057999999999999996,
+        0.126
+      ]
+    }
+  ],
+  "sockets": [
+    {
+      "name": "socket_left_grip",
+      "parent": "hand_left",
+      "model_position": [
+        0.348,
+        0.855,
+        0.111
+      ],
+      "translation": [
+        -0.01,
+        -0.069,
+        0.054
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "attachment anchor; open fingers require authored weapon-grip pose"
+    },
+    {
+      "name": "socket_left_heel_contact",
+      "parent": "foot_left",
+      "model_position": [
+        0.135,
+        0,
+        -0.04
+      ],
+      "translation": [
+        0.0,
+        -0.093,
+        -0.022
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "ground reference at rest; no IK solve"
+    },
+    {
+      "name": "socket_left_toe_contact",
+      "parent": "toe_left",
+      "model_position": [
+        0.135,
+        0.008,
+        0.143
+      ],
+      "translation": [
+        0.0,
+        -0.027,
+        0.035
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "toe pad reference; no terrain or stride solve"
+    },
+    {
+      "name": "socket_right_grip",
+      "parent": "hand_right",
+      "model_position": [
+        -0.348,
+        0.855,
+        0.111
+      ],
+      "translation": [
+        0.01,
+        -0.069,
+        0.054
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "attachment anchor; open fingers require authored weapon-grip pose"
+    },
+    {
+      "name": "socket_right_heel_contact",
+      "parent": "foot_right",
+      "model_position": [
+        -0.135,
+        0,
+        -0.04
+      ],
+      "translation": [
+        0.0,
+        -0.093,
+        -0.022
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "ground reference at rest; no IK solve"
+    },
+    {
+      "name": "socket_right_toe_contact",
+      "parent": "toe_right",
+      "model_position": [
+        -0.135,
+        0.008,
+        0.143
+      ],
+      "translation": [
+        0.0,
+        -0.027,
+        0.035
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "toe pad reference; no terrain or stride solve"
+    },
+    {
+      "name": "socket_head",
+      "parent": "head",
+      "model_position": [
+        0,
+        1.79,
+        0.008
+      ],
+      "translation": [
+        0.0,
+        0.267,
+        -0.002
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "head attachment clearance"
+    },
+    {
+      "name": "socket_back",
+      "parent": "chest",
+      "model_position": [
+        0,
+        1.319,
+        -0.145
+      ],
+      "translation": [
+        0.0,
+        0.099,
+        -0.12
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "back attachment anchor"
+    },
+    {
+      "name": "socket_chest_fx",
+      "parent": "chest",
+      "model_position": [
+        0,
+        1.288,
+        0.04
+      ],
+      "translation": [
+        0.0,
+        0.068,
+        0.065
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "interior magic/effect anchor, no gameplay authority"
+    },
+    {
+      "name": "socket_interaction",
+      "parent": "root",
+      "model_position": [
+        0,
+        0.96,
+        0
+      ],
+      "translation": [
+        0.0,
+        0.96,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "purpose": "presentation target only"
+    }
+  ],
+  "probes": {
+    "DIAG_elbows": {
+      "forearm_left": [
+        0,
+        0,
+        -65
+      ],
+      "forearm_right": [
+        0,
+        0,
+        65
+      ]
+    },
+    "DIAG_knee_lift": {
+      "thigh_left": [
+        -22,
+        0,
+        0
+      ],
+      "shin_left": [
+        48,
+        0,
+        0
+      ],
+      "foot_left": [
+        -18,
+        0,
+        0
+      ]
+    },
+    "DIAG_head_jaw": {
+      "neck": [
+        0,
+        -12,
+        0
+      ],
+      "head": [
+        0,
+        28,
+        0
+      ],
+      "jaw": [
+        18,
+        0,
+        0
+      ]
+    },
+    "DIAG_reach": {
+      "clavicle_right": [
+        0,
+        0,
+        -9
+      ],
+      "upper_arm_right": [
+        -38,
+        0,
+        -24
+      ],
+      "forearm_right": [
+        -44,
+        0,
+        12
+      ],
+      "hand_right": [
+        0,
+        0,
+        -12
+      ],
+      "fingers_right": [
+        28,
+        0,
+        0
+      ]
+    },
+    "DIAG_spine": {
+      "spine_lower": [
+        7,
+        0,
+        0
+      ],
+      "chest": [
+        -11,
+        15,
+        0
+      ],
+      "neck": [
+        5,
+        -12,
+        0
+      ]
+    },
+    "DIAG_toes": {
+      "toe_left": [
+        -24,
+        0,
+        0
+      ],
+      "toe_right": [
+        -24,
+        0,
+        0
+      ]
+    }
+  },
+  "skin": "Rigid articulated bone shells; 1 nonzero influence per vertex. Bone geometry must not rubber-bend.",
+  "rest_rotation_xyzw": [
+    0,
+    0,
+    0,
+    1
+  ],
+  "rest_scale": [
+    1,
+    1,
+    1
+  ],
+  "pose_rotation_order": "local model-aligned XYZ degrees; qz*qy*qx; bind axes identity",
+  "attachment": "actorWorld * jointWorld * socketLocal * itemGripCorrection",
+  "compatibility": "New rig. Not drop-in human/player animation compatible. Retarget and test explicitly.",
+  "contact": "Root fixed. Knee and reach probes can lift or move contacts. No IK, terrain solve or finished locomotion.",
+  "geometry": "Closed independent bone shells; intentional insertion overlap at joints. No printable union or exhaustive collision guarantee."
+}

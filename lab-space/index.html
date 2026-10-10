@@ -163,7 +163,7 @@
     <div class="identity"><span>LAB</span><h1>Lab</h1></div>
     <details class="room-menu" id="room-menu">
       <summary id="navigation-toggle">Menu</summary>
-      <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="infrastructure-link" href="/lab/infrastructure/">AI infrastructure ↗</a><a id="worlds-link" href="../walkable-3d/">SceneBench</a><a id="character-link" href="../character-bench/">CharacterBench</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
+      <nav id="tools" tabindex="-1" aria-label="Primary"><a id="catalog-link" href="https://pazneria.github.io/lab/">Catalog ↗</a><a id="infrastructure-link" href="/lab/infrastructure/">AI infrastructure ↗</a><a id="worlds-link" href="../walkable-3d/">SceneBench</a><a id="character-link" href="../character-bench/">CharacterBench</a><a id="animation-link" href="../animation-studio/">Animation studio</a><a id="home-link" href="https://pazneria.github.io/">Exit / Home ↗</a></nav>
     </details>
   </header>
   <main>
@@ -175,10 +175,10 @@
         <div class="room-access" id="room-access" hidden>
           <h2>Lab</h2>
           <p id="access-message" role="status">The Lab could not load.</p>
-          <nav class="access-links" aria-label="Direct exhibit access"><a id="access-worlds" href="../walkable-3d/">SceneBench</a><a href="../character-bench/">CharacterBench</a><a href="../">Catalog &amp; evidence</a><a href="../infrastructure/">AI infrastructure</a></nav>
+          <nav class="access-links" aria-label="Direct exhibit access"><a id="access-worlds" href="../walkable-3d/">SceneBench</a><a href="../character-bench/">CharacterBench</a><a id="access-animation" href="../animation-studio/">Animation studio</a><a href="../">Catalog &amp; evidence</a><a href="../infrastructure/">AI infrastructure</a></nav>
           <button id="enter-room" type="button" hidden>Try again</button>
         </div>
-        <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable Lab. Ivo stands inside the central camera ring. Compare Worlds is in the west alcove, on the left from the entrance. Click to capture the mouse; Escape opens controls." aria-describedby="navigation-help"></canvas>
+        <canvas id="room" hidden tabindex="0" role="img" aria-label="Walkable Lab. Ivo stands inside the central camera ring. Compare Worlds is in the west alcove, on the left from the entrance. A small skeleton on the east tool-cart counter opens Animation Studio. Click to capture the mouse; Escape opens controls." aria-describedby="navigation-help"></canvas>
         <div class="view-top"><div class="view-actions"><button id="explore" type="button" hidden>Explore</button><button id="visit-screen" type="button" hidden>SceneBench</button><button id="screen-controls" type="button" aria-haspopup="dialog" aria-label="Accessible SceneBench controls" hidden>Accessible controls</button><button id="help" type="button" aria-haspopup="dialog" hidden>Help</button></div></div>
         <button class="nearby" id="nearby" type="button" hidden>Open exhibit</button>
         <div class="walk-status" id="walk-status" hidden><span id="walk-message" role="status" aria-live="polite"></span></div>
@@ -192,9 +192,9 @@
     <p class="eyebrow">Lab</p><h2 id="help-title">Explore the Lab</h2>
     <p id="navigation-help">Click the room or choose Explore to capture the mouse. Escape opens these controls. Close them to keep walking, or choose Return to room to capture again.</p>
     <p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrow keys to walk, <kbd>Shift</kbd> to walk faster, <kbd>C</kbd> to crouch, and <kbd>R</kbd> to return to the entrance. Press <kbd>E</kbd> to use the station you are looking at. Enter captures an uncaptured mouse; after capture, it can also use a station.</p>
-    <p>Select Ivo inside the camera ring to enter CharacterBench, where two attempts of the same character prompt are compared side by side. SceneBench takes you to the lower Compare Worlds screen in the west alcove, on your left from the entrance. Aim at a scene card and click or press E to inspect it full-screen. Exit the scene to return in front of the same screen, then inspect the other scene and vote on the display. Next chooses a new comparison. Accessible controls is an optional keyboard and screen-reader panel with model reveal and the leaderboard.</p>
+    <p>Select Ivo inside the camera ring to enter CharacterBench, where two attempts of the same character prompt are compared side by side. SceneBench takes you to the lower Compare Worlds screen in the west alcove, on your left from the entrance. Aim at a scene card and click or press E to inspect it full-screen. Exit the scene to return in front of the same screen, then inspect the other scene and vote on the display. Next chooses a new comparison. Select the small skeleton on the tool-cart counter in the east alcove to open Animation Studio. Back to Lab returns to the same position and camera. Accessible controls is an optional keyboard and screen-reader panel with model reveal and the leaderboard.</p>
     <p>Walk south through both sliding door sets to return home. The Lab menu and Exit / Home shortcut also provide direct exit access.</p>
-    <div class="destinations"><button id="visit-character" type="button" disabled>Open CharacterBench</button><button id="visit-bench" type="button" disabled>Open catalog</button><button id="visit-home" type="button" disabled>Exit / Home</button><button id="reset" type="button" disabled>Return to entrance</button></div>
+    <div class="destinations"><button id="visit-character" type="button" disabled>Open CharacterBench</button><button id="visit-animation" type="button" disabled>Open animation studio</button><button id="visit-bench" type="button" disabled>Open catalog</button><button id="visit-home" type="button" disabled>Exit / Home</button><button id="reset" type="button" disabled>Return to entrance</button></div>
     <label class="motion-setting"><input type="checkbox" id="gentle">Gentle movement</label>
     <label class="sensitivity">Look sensitivity <input id="sensitivity" type="range" min="40" max="220" step="5" value="100"><output id="sensitivity-value" for="sensitivity">100%</output></label>
     <button id="resume-look" type="button">Return to room</button>
