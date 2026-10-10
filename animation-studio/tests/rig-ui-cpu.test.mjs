@@ -18,17 +18,17 @@ class Element{
  setAttribute(k,v){this.attrs[k]=String(v);}getAttribute(k){return this.attrs[k];}
  addEventListener(type,fn){if(!this.listeners.has(type))this.listeners.set(type,[]);this.listeners.get(type).push(fn);}
  emit(type,event={}){return Promise.all((this.listeners.get(type)||[]).map(f=>f(event)));}
- setPointerCapture(){}getBoundingClientRect(){return {left:0,top:0,width:820,height:520};}click(){this.onclick?.();}
+ focus(){}setPointerCapture(){}getBoundingClientRect(){return {left:0,top:0,width:820,height:520};}click(){this.onclick?.();}
 }
-async function fixture(){
+async function fixture({focusDuringPreparation=false}={}){
  const elements=new Map();for(const m of template.matchAll(/<([a-z0-9]+)\b([^>]*\bid="([^"]+)"[^>]*)>/gi)){const e=new Element(m[1]);e.id=m[3];e.checked=/\bchecked\b/.test(m[2]);e.hidden=/\bhidden\b/.test(m[2]);e.value=m[2].match(/\bvalue="([^"]*)"/)?.[1]||'';elements.set(e.id,e);}
  elements.get('bundle-data').textContent=bundle;elements.get('compare').value='off';elements.get('speed').value='1';elements.get('notes').value='';
- let focused=true,next=1,time=0;const frames=new Map(),renderers=[],document=new Element(),window=new Element();document.hidden=false;document.activeElement=null;document.hasFocus=()=>focused;document.getElementById=id=>{assert.ok(elements.has(id),'Missing UI '+id);return elements.get(id);};document.createElement=tag=>new Element(tag);
+ let focused=!focusDuringPreparation,next=1,time=0;const frames=new Map(),renderers=[],document=new Element(),window=new Element();document.hidden=false;document.activeElement=null;document.hasFocus=()=>focused;document.getElementById=id=>{assert.ok(elements.has(id),'Missing UI '+id);return elements.get(id);};document.createElement=tag=>new Element(tag);
  const cameras=['front','side','rear','three'].map(camera=>{const e=new Element('button');e.dataset.camera=camera;return e;});
  document.querySelectorAll=selector=>selector==='[data-camera]'?cameras:selector==='.editgrid input'?['posX','posY','posZ','rotX','rotY','rotZ','scaleX','scaleY','scaleZ'].map(id=>elements.get(id)):[];
  class Renderer{constructor(canvas){this.canvas=canvas;this.frames=0;this.destroyed=false;this.gl={getError:()=>0};renderers.push(this);}draw(value){assert.equal(this.destroyed,false);this.value=value;this.frames++;return 0;}destroy(){this.destroyed=true;}}
- const context=vm.createContext({document,window,crypto:webcrypto,console,TextDecoder,TextEncoder,Blob,URL,structuredClone,atob:s=>Buffer.from(s,'base64').toString('binary'),performance:{now:()=>time},requestAnimationFrame:fn=>{const id=next++;frames.set(id,fn);return id;},cancelAnimationFrame:id=>frames.delete(id),ResizeObserver:class{observe(){}},setTimeout,clearTimeout});
- const modules=new Map();async function module(name){if(modules.has(name))return modules.get(name);if(name==='renderer.mjs'){const m=new vm.SyntheticModule(['StudioRenderer'],function(){this.setExport('StudioRenderer',Renderer);},{context,identifier:name});modules.set(name,m);return m;}const m=new vm.SourceTextModule(fs.readFileSync(path.join(root,name),'utf8'),{context,identifier:name});modules.set(name,m);await m.link(spec=>module(path.basename(spec)));return m;}
+ const context=vm.createContext({document,window,crypto:{subtle:{digest:async(...args)=>{const result=await webcrypto.subtle.digest(...args);if(focusDuringPreparation)focused=true;return result;}}},console,TextDecoder,TextEncoder,Blob,URL,structuredClone,atob:s=>Buffer.from(s,'base64').toString('binary'),performance:{now:()=>time},requestAnimationFrame:fn=>{const id=next++;frames.set(id,fn);return id;},cancelAnimationFrame:id=>frames.delete(id),ResizeObserver:class{observe(){}},setTimeout,clearTimeout});
+ const modules=new Map();async function module(name){if(modules.has(name))return modules.get(name);if(name==='renderer.mjs'){const m=new vm.SyntheticModule(['StudioRenderer'],function(){this.setExport('StudioRenderer',Renderer);},{context,identifier:name});modules.set(name,m);return m;}const m=new vm.SourceTextModule(fs.readFileSync(name==='app.mjs'&&process.env.STUDIO_REPRO_APP_SOURCE?process.env.STUDIO_REPRO_APP_SOURCE:path.join(root,name),'utf8'),{context,identifier:name});modules.set(name,m);await m.link(spec=>module(path.basename(spec)));return m;}
  const m=await module('app.mjs');await m.evaluate();await window.rigInspectorReady;assert.ok(window.rigInspectorDiagnostics,elements.get('error').textContent);const api=window.rigStudioControl;
  const flush=(limit=10)=>{let count=0;while(frames.size&&count++<limit){time+=34;const pending=[...frames.values()];frames.clear();for(const f of pending)f(time);}};flush();
  return {window,document,api,el:id=>elements.get(id),get state(){return window.rigInspectorDiagnostics.state;},get last(){return renderers.at(-1);},renderers,frames,flush,setFocus:value=>focused=value};
@@ -70,3 +70,24 @@ test('unknown clip selection cannot discard a ready sampled pose',async()=>{cons
 test('held originals reject before loading even with candidate opt-in',async()=>{const f=await fixture();for(const enabled of [false,true]){f.el('reviewOptIn').checked=enabled;f.el('reviewOptIn').onchange();for(const id of ['ashgrove_wolf_01','bear_woodland_01']){const before=f.state;await f.api.selectAsset(id);assert.equal(f.state.hash,before.hash);assert.equal(f.state.cachedModels,before.cachedModels);assert.ok(f.el('error').textContent.includes('Source is on hold'));assert.equal(f.el('asset').options.find(o=>o.value===id).disabled,true);}}});
 test('proposed selection and comparison require opt-in, and revoking it restores original Human',async()=>{const f=await fixture();assert.equal(f.state.candidateReviewOptIn,false);assert.equal(f.el('candidateOption').disabled,true);await f.api.selectAsset('dog_bracken_town_01');assert.equal(f.state.asset,'human01');assert.ok(f.el('error').textContent.includes('opt-in'));f.el('reviewOptIn').checked=true;f.el('reviewOptIn').onchange();await f.api.selectAsset('human01_skin_candidate_v1');assert.equal(f.state.asset,'human01_skin_candidate_v1');f.el('reviewOptIn').checked=false;f.el('reviewOptIn').onchange();f.flush();assert.equal(f.state.asset,'human01');assert.equal(f.state.comparison,'off');assert.equal(f.state.playing,false);assert.equal(f.el('candidateOption').disabled,true);});
 test('delivered scorpion static diagnostics are available with no invented clip playback',async()=>{const f=await fixture();f.el('reviewOptIn').checked=true;f.el('reviewOptIn').onchange();await f.api.selectAsset('scorpion_scree_01');assert.equal(f.state.clips.length,0);assert.ok(f.el('clip').options.some(o=>o.value==='static:tail_lateral'));f.api.selectClip('static:tail_lateral');f.flush();assert.equal(f.state.clip,null);assert.equal(f.state.time,0);assert.equal(f.el('play').disabled,true);assert.ok(f.el('clipInfo').textContent.includes('Static diagnostic'));assert.ok(f.last.value.views[0].pose.nodes.some(n=>Math.abs(n.rotation[1])>.01));});
+
+
+test('joint edit revokes travel proof and immediately restores ordinary loop availability',async()=>{
+ const f=await fixture(),clip=f.state.clips.find(c=>c.name==='walk_original');f.api.selectClip(clip.id);f.el('travelProof').checked=true;f.el('travelProof').onchange();assert.equal(f.el('loop').disabled,true);assert.equal(f.el('loop').checked,false);
+ f.el('rotX').value='12';f.el('applyEdit').click();assert.equal(f.state.actorPlacement.enabled,false);assert.equal(f.el('travelProof').disabled,true);assert.equal(f.el('loop').disabled,false);
+ f.el('clearEdits').click();assert.equal(f.el('travelProof').disabled,false);assert.equal(f.el('loop').disabled,false);f.el('loop').checked=true;f.el('loop').onchange?.();f.flush();assert.equal(f.el('loop').checked,true);
+});
+
+
+test('real pointer/key focus recovers a stale blur gate without restarting playback',async()=>{
+ const f=await fixture();await f.window.emit('blur');assert.equal(f.state.gates.focus,false);assert.equal(f.state.active,false);const before=f.state.rendererFrames;
+ await f.document.emit('pointerdown');f.flush();assert.equal(f.state.gates.focus,true);assert.ok(f.state.rendererFrames>before);assert.equal(f.state.playing,false);
+ await f.window.emit('blur');await f.document.emit('keydown',{target:{tagName:'CANVAS'},key:'x'});f.flush();assert.equal(f.state.active,true);
+ f.setFocus(false);await f.document.emit('pointerdown');assert.equal(f.state.active,false);assert.equal(f.frames.size,0);
+ f.setFocus(true);f.api.setActive(false);await f.document.emit('focusin');f.flush();assert.equal(f.state.rendererAlive,false);assert.equal(f.state.active,false);
+});
+
+
+test('foreground activation during asynchronous payload preparation resynchronizes focus before the first draw',async()=>{
+ const f=await fixture({focusDuringPreparation:true});assert.equal(f.document.hasFocus(),true);assert.equal(f.state.gates.focus,true);assert.equal(f.state.active,true);assert.ok(f.state.rendererFrames>0);assert.equal(f.state.playing,false);assert.equal(f.frames.size,0);
+});

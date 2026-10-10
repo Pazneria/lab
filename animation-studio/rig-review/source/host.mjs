@@ -4,12 +4,20 @@ const host$=id=>document.getElementById(id);
 let authoringReady=null;
 function ensureHumanStudy(){
  if(authoringReady)return authoringReady;
- authoringReady=new Promise((resolve,reject)=>{
-  const frame=host$('humanStudyFrame');
-  const timer=setTimeout(()=>reject(Error('Human01 study did not finish loading. The model view is available.')),15000);
-  frame.onload=()=>{clearTimeout(timer);if(!frame.contentWindow?.humanStudyControl){reject(Error('Human01 study could not initialize.'));return;}resolve(frame.contentWindow.humanStudyControl);};
-  frame.srcdoc=JSON.parse(host$('motion-editor-data').textContent).html;
- });return authoringReady;
+ const frame=host$('humanStudyFrame');
+ const attempt=new Promise((resolve,reject)=>{
+  let settled=false,timer;
+  const cleanup=()=>{clearTimeout(timer);frame.onload=null;frame.onerror=null;};
+  const fail=error=>{if(settled)return;settled=true;cleanup();
+   // A fresh iframe isolates a retry from late events/scripts of the failed load.
+   const replacement=frame.cloneNode(false);replacement.removeAttribute('srcdoc');frame.replaceWith(replacement);reject(error);
+  };
+  frame.onload=()=>{if(settled)return;const control=frame.contentWindow?.humanStudyControl;if(typeof control?.setActive!=='function'){fail(Error('Human01 study could not initialize. Select the tab to retry.'));return;}settled=true;cleanup();resolve(control);};
+  frame.onerror=()=>fail(Error('Human01 study could not load. Select the tab to retry.'));
+  timer=setTimeout(()=>fail(Error('Human01 study did not finish loading. Select the tab to retry.')),15000);
+  try{frame.srcdoc=JSON.parse(host$('motion-editor-data').textContent).html;}catch(error){fail(error);}
+ });
+ authoringReady=attempt;attempt.catch(()=>{if(authoringReady===attempt)authoringReady=null;});return attempt;
 }
 const rigView={ensure:async()=>{await window.rigInspectorReady;if(!window.rigInspectorDiagnostics)throw Error('The rig viewport could not initialize.');},setActive:value=>window.rigStudioControl?.setActive(value)};
 const motionView={ensure:ensureHumanStudy,setActive:value=>{const frame=host$('humanStudyFrame');if(value){frame.hidden=false;if(document.hasFocus())frame.contentDocument?.getElementById('view')?.focus({preventScroll:true});}frame.contentWindow?.humanStudyControl?.setActive(value);}};

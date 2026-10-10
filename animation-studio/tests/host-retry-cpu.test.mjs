@@ -1,0 +1,19 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';import {createStudioModes} from '../modes.mjs';
+async function fixture(){
+ const timers=new Map(),els=new Map(),listeners=new Map();let next=0,srcdocWrites=0;const active={rig:false,motion:false};
+ class Element{constructor(id){this.id=id;this.hidden=true;this.textContent='';this.attrs={};}setAttribute(k,v){this.attrs[k]=v;}addEventListener(){}removeAttribute(k){delete this.attrs[k];}cloneNode(){const e=new Element(this.id);e.attrs={...this.attrs};return e;}replaceWith(e){els.set(this.id,e);}set srcdoc(v){this.attrs.srcdoc=v;srcdocWrites++;}get srcdoc(){return this.attrs.srcdoc;}}
+ for(const id of ['humanStudyFrame','motion-editor-data','rig-panel','study-panel','studyLoading','rigTab','studyTab','hostState','modeError','backToLab'])els.set(id,new Element(id));els.get('motion-editor-data').textContent=JSON.stringify({html:'<html>study</html>'});
+ const document={getElementById:id=>els.get(id),hasFocus:()=>true};const window={rigInspectorReady:Promise.resolve(),rigInspectorDiagnostics:{},rigStudioControl:{setActive:v=>{active.rig=v;}},addEventListener:(n,f)=>listeners.set(n,f)};
+ const context=vm.createContext({window,document,console,location:{href:'https://example.test/lab/animation-studio/'},history:{},setTimeout:fn=>{const id=++next;timers.set(id,fn);return id;},clearTimeout:id=>timers.delete(id)});
+ const modes=new vm.SyntheticModule(['createStudioModes'],function(){this.setExport('createStudioModes',createStudioModes);},{context});const nav=new vm.SyntheticModule(['returnToLab'],function(){this.setExport('returnToLab',()=>false);},{context});
+ const m=new vm.SourceTextModule(fs.readFileSync(process.env.STUDIO_REPRO_HOST_SOURCE||new URL('../rig-review/source/host.mjs',import.meta.url),'utf8'),{context});await m.link(name=>name.includes('modes')?modes:nav);await m.evaluate();await window.privateStudioHost.select('rig');
+ return {window,timers,active,el:id=>els.get(id),get writes(){return srcdocWrites;},success(){const f=els.get('humanStudyFrame');f.contentWindow={humanStudyControl:{setActive:v=>{active.motion=v;}},studioDiagnostics:{state:{}},};f.contentDocument={getElementById:()=>({focus(){}})};f.onload();}};
+}
+for(const kind of ['timeout','missing control','load error','bad payload'])test('failed Human initialization '+kind+' can retry with a fresh iframe and no active old viewport',async()=>{
+ const f=await fixture(),old=f.el('humanStudyFrame');if(kind==='bad payload')f.el('motion-editor-data').textContent='bad JSON';const failed=f.window.privateStudioHost.select('motion');
+ if(kind==='timeout')[...f.timers.values()][0]();else if(kind==='missing control')old.onload();else if(kind==='load error')old.onerror();
+ assert.equal(await failed,false);assert.equal(f.window.privateStudioHost.mode,'rig');assert.equal(f.active.rig,true);assert.equal(f.active.motion,false);assert.equal(f.timers.size,0);
+ f.el('motion-editor-data').textContent=JSON.stringify({html:'<html>retry</html>'});const retry=f.window.privateStudioHost.select('motion');f.success();assert.equal(await retry,true);assert.equal(old.onload,null);assert.notEqual(f.el('humanStudyFrame'),old);assert.equal(f.active.rig,false);assert.equal(f.active.motion,true);assert.equal(f.timers.size,0);
+ await f.window.privateStudioHost.select('rig');const again=f.window.privateStudioHost.select('motion');assert.equal(await again,true);assert.equal(f.writes,kind==='bad payload'?1:2,'successful iframe is retained for draft continuity');
+});
+test('late readiness after a workspace switch never activates the Human viewport',async()=>{const f=await fixture();const pending=f.window.privateStudioHost.select('motion');await f.window.privateStudioHost.select('rig');f.success();assert.equal(await pending,false);assert.equal(f.active.rig,true);assert.equal(f.active.motion,false);});
