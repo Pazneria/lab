@@ -44,6 +44,15 @@ export function choosePair(manifest,promptId,previous=null,random=Math.random) {
   const pair=pool[index];
   return random()<.5?[...pair]:[pair[1],pair[0]];
 }
+export function chooseComparison(manifest,previous=null,random=Math.random) {
+  const options=manifest.prompts.map(prompt=>({promptId:prompt.id,pairs:eligiblePairs(manifest,prompt.id)})).filter(option=>option.pairs.length);
+  const alternatives=options.map(option=>({...option,pairs:option.pairs.filter(pair=>pair.map(entry=>entry.id).sort().join('|')!==previous)})).filter(option=>option.pairs.length);
+  const pool=alternatives.length?alternatives:options;if(!pool.length)return null;
+  const pick=items=>items[Math.min(items.length-1,Math.max(0,Math.floor(random()*items.length)))];
+  // Choose the prompt first so extra attempts cannot give it extra weight.
+  const option=pick(pool),pair=pick(option.pairs);
+  return {promptId:option.promptId,pair:random()<.5?[...pair]:[pair[1],pair[0]]};
+}
 export const DEFAULT_CAMERA=Object.freeze({yaw:0,pitch:.12,distance:3.6,targetY:0});
 export function clampCamera(value) {
   const result={...DEFAULT_CAMERA,...value};

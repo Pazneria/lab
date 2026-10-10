@@ -16,7 +16,7 @@ class Element {
   replaceChildren(...nodes){this._text='';this.children=[...nodes];}append(...nodes){this.children.push(...nodes);}focus(){this.focusCount=(this.focusCount||0)+1;}setPointerCapture(){}
 }
 const waitFor=async condition=>{for(let count=0;count<40;count++){if(condition())return;await new Promise(resolve=>setTimeout(resolve,5));}throw Error('CPU fixture did not settle.');};
-async function fixture({empty=false,requested='02',oneEntry=false,voteFailure=false,deferVote=false,deferRestore=false,deferViewer=false}={}) {
+async function fixture({empty=false,requested='02',oneEntry=false,voteFailure=false,deferVote=false,deferRestore=false,deferViewer=false,multiplePrompts=false,random=null,lastPair=null,initialPending=null}={}) {
   const elements=[],ids=new Map(),documentEvents={},windowEvents={},loads=[];
   for(const match of html.matchAll(/<([a-z][\w-]*)([^>]*)>/g)){
     const el=new Element(match[1]),attrs=match[2];
@@ -26,21 +26,25 @@ async function fixture({empty=false,requested='02',oneEntry=false,voteFailure=fa
   ids.get('surface-mode').value='pbr';ids.get('light-angle').value='35';
   const document={hidden:false,getElementById:id=>ids.get(id),createElement:tag=>new Element(tag),addEventListener:(type,fn)=>(documentEvents[type]??=[]).push(fn),
     querySelectorAll(selector){return elements.filter(el=>selector.split(',').some(part=>{part=part.trim();if(part==='[data-vote]')return el.dataset.vote!==undefined;if(part==='[data-view]')return el.dataset.view!==undefined;return part.startsWith('.')&&(el.attrs.class||'').split(' ').includes(part.slice(1));}));}};
-  const location={href:'https://fixture.example/lab/character-bench/?prompt='+requested,origin:'https://fixture.example'};
+  const location={href:'https://fixture.example/lab/character-bench/'+(requested?'?prompt='+requested:''),origin:'https://fixture.example'};
   const prompt={id:'02',title:'Same fixture character',text:'Exact same fixture brief',sha256:createHash('sha256').update('Exact same fixture brief').digest('hex'),comparisonDisclosure:'Run conditions differ. Receipts follow your choice.'};
   const entries=['one','two','three'].map(id=>({id,promptId:'02',promptSha256:prompt.sha256,admission:{status:'verified',frozen:true,selfContained:true},asset:{path:'./entries/'+id+'.glb',sha256:'a'.repeat(64),byteLength:100},provenance:{modelLabel:'Secret '+id,sourceHandoff:'Original receipt for Secret '+id,sourceTiming:'Original timer for Secret '+id,requestedReasoning:'XHIGH',producerChecks:'Source-run check',hostChecks:'CPU check only'}}));
+  const other={...prompt,id:'03',title:'Another fixture character',text:'Another exact brief',sha256:createHash('sha256').update('Another exact brief').digest('hex')};
+  const prompts=multiplePrompts?[prompt,other]:[prompt];
+  if(multiplePrompts)entries.push(...['s1','s2','s3','s4'].map(id=>({...entries[0],id,promptId:other.id,promptSha256:other.sha256,asset:{...entries[0].asset,path:'./entries/'+id+'.glb'},provenance:{modelLabel:'Secret '+id}})));
   let params,clears=0,disposed=0,creates=0;
   const engine={loadPair(pair,token){const item={pair,token};item.promise=new Promise(resolve=>item.resolve=resolve);loads.push(item);return item.promise;},clear(){clears++;},dispose(){disposed++;},invalidate(){},setMode(){},setLight(){},setGrid(){}};
   const context=vm.createContext({document,location,URL,AbortController,TextEncoder,crypto:webcrypto,history:{state:null,replaceState(_state,_title,url){if(url)location.href=String(url);}},
-    window:{addEventListener:(type,fn)=>(windowEvents[type]??=[]).push(fn)},fetch:async()=>Response.json({version:1,prompts:empty?[]:[prompt],entries:empty?[]:oneEntry?entries.slice(0,1):entries})});
+    window:{addEventListener:(type,fn)=>(windowEvents[type]??=[]).push(fn)},fetch:async()=>Response.json({version:1,prompts:empty?[]:prompts,entries:empty?[]:oneEntry?entries.slice(0,1):entries})});
   const make=(values)=>new vm.SyntheticModule(Object.keys(values),function(){for(const [name,value]of Object.entries(values))this.setExport(name,value);},{context});
-  let pendingVote=null,sentVotes=0,voteResolve,restoreResolve,currentRequests=0,viewerImportResolve,viewerImports=0;const submissions=[];
-  const voting={pending:()=>pendingVote,remember(){},remembered:()=>null,current:async()=>{currentRequests++;if(deferRestore&&currentRequests===1)return new Promise(resolve=>{restoreResolve=resolve;});return {status:'empty',intent:0};},leaderboard:async()=>({rows:[],counts:{votes:0}}),
+  let pendingVote=initialPending,sentVotes=0,voteResolve,restoreResolve,currentRequests=0,viewerImportResolve,viewerImports=0;const submissions=[];
+  const voting={pending:()=>pendingVote,remember(pair){lastPair={promptId:pair[0].promptId,ids:pair.map(e=>e.id)};},remembered(id){return lastPair&&(id===undefined||id===lastPair.promptId)?lastPair.ids:null;},current:async()=>{currentRequests++;if(deferRestore&&currentRequests===1)return new Promise(resolve=>{restoreResolve=resolve;});return {status:'empty',intent:0};},leaderboard:async()=>({rows:[],counts:{votes:0}}),
     async submit(pair,choice,_hash,{retryOnly}={}){sentVotes++;submissions.push({entries:pair.map(e=>e.id),choice});if(!retryOnly)pendingVote={choice};if(voteFailure&&sentVotes===1)throw Error('Offline');if(deferVote)await new Promise(resolve=>{voteResolve=resolve;});const receipt={status:'saved',choice:pendingVote.choice};pendingVote=null;return receipt;}};
-  const votes=make({createVotingClient:()=>voting,renderLeaderboard(){}}),summaries=make(briefs),core=make(contracts),viewer=make({createViewer(value){params=value;creates++;return {...engine};}});await summaries.link(()=>{});await summaries.evaluate();await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
+  const randomized=random?{...contracts,choosePair:(m,id,previous)=>contracts.choosePair(m,id,previous,random),chooseComparison:(m,previous)=>contracts.chooseComparison(m,previous,random)}:contracts;
+  const votes=make({createVotingClient:()=>voting,renderLeaderboard(){}}),summaries=make(briefs),core=make(randomized),viewer=make({createViewer(value){params=value;creates++;return {...engine};}});await summaries.link(()=>{});await summaries.evaluate();await core.link(()=>{});await core.evaluate();await votes.link(()=>{});await votes.evaluate();await viewer.link(()=>{});await viewer.evaluate();
   const module=new vm.SourceTextModule(source,{context,identifier:'https://fixture.example/lab/character-bench/assets/app.mjs',initializeImportMeta(meta){meta.url=module.identifier;},importModuleDynamically:async()=>{if(deferViewer&&viewerImports++===0)return new Promise(resolve=>viewerImportResolve=()=>resolve(viewer));return viewer;}});
-  await module.link(specifier=>specifier==='./voting.mjs'?votes:specifier==='./briefs.mjs'?summaries:core);await module.evaluate();await waitFor(()=>empty?ids.get('inspection-status').textContent.includes('Awaiting'):ids.get('prompt-title').textContent===(requested==='02'?prompt.title:'No admitted prompt at this link'));await new Promise(resolve=>setTimeout(resolve,0));
-  return {ids,loads,elements,document,documentEvents,windowEvents,get params(){return params;},get creates(){return creates;},get clears(){return clears;},get disposed(){return disposed;},
+  await module.link(specifier=>specifier==='./voting.mjs'?votes:specifier==='./briefs.mjs'?summaries:core);await module.evaluate();await waitFor(()=>empty?ids.get('inspection-status').textContent.includes('Awaiting'):prompts.some(p=>p.title===ids.get('prompt-title').textContent)||ids.get('prompt-title').textContent==='No admitted prompt at this link');await new Promise(resolve=>setTimeout(resolve,0));
+  return {ids,loads,elements,document,documentEvents,windowEvents,location,get params(){return params;},get creates(){return creates;},get clears(){return clears;},get disposed(){return disposed;},
     async start(){let load=loads.findLast(l=>!l.claimed&&l.token===params?.state.snapshot.generation);if(!load){const count=loads.length;ids.get('load-pair').emit('click');await waitFor(()=>loads.length>count);load=loads.at(-1);}load.claimed=true;return {pending:load.promise.then(()=>new Promise(resolve=>setTimeout(resolve,0))),load};},
     ready(side,token){params.onStatus(side,'ready','Ready',token);},status(side,kind,text,token){params.onStatus(side,kind,text,token);},vote(choice){return elements.find(el=>el.dataset.vote===choice).emit('click');},
     button(choice){return elements.find(el=>el.dataset.vote===choice);},get sentVotes(){return sentVotes;},confirmVote(){voteResolve();},submissions,finishOldViewerImport(){viewerImportResolve();},finishOldRestore(receipt={status:'empty',intent:0}){restoreResolve(receipt);}};
@@ -174,6 +178,32 @@ test('Next while the viewer module is pending creates only the current viewer wh
   f.finishOldViewerImport();await new Promise(resolve=>setTimeout(resolve,0));assert.equal(f.creates,1);assert.equal(f.loads.length,1);
   assert.equal(f.button('a').disabled,true);f.ready(0,current.load.token);f.ready(1,current.load.token);current.load.resolve([true,true]);await current.pending;
   assert.equal(f.button('a').disabled,false);assert.equal(f.ids.get('reveal').hidden,true);
+});
+
+test('unpinning entry randomizes the character; Next randomizes across characters and updates the brief and URL',async()=>{
+  const f=await fixture({requested:null,multiplePrompts:true,random:()=>.1}),first=await f.start();
+  assert.equal(first.load.pair[0].promptId,'02');f.ready(0);f.ready(1);first.load.resolve([true,true]);await first.pending;
+  const values=[.9,.4,.9];
+  // A second fixture proves the upper random bin starts on the other character.
+  const second=await fixture({requested:null,multiplePrompts:true,random:()=>values.length?values.shift():.1}),initial=await second.start();
+  assert.equal(initial.load.pair[0].promptId,'03');assert.equal(second.ids.get('prompt-summary').textContent,'Another exact brief');
+  const before=initial.load.pair.map(e=>e.id).sort().join('|');await second.ids.get('next-pair').emit('click');const next=await second.start();
+  assert.equal(next.load.pair[0].promptId,'02');assert.notEqual(next.load.pair.map(e=>e.id).sort().join('|'),before);
+  assert.equal(second.ids.get('prompt-select').value,'02');assert.equal(second.ids.get('prompt-summary').textContent,'Exact same fixture brief');
+  assert.equal(new URL(second.location.href).searchParams.get('prompt'),'02');
+  assert.equal(second.ids.get('label-a').textContent,'Attempt A');assert.equal(second.button('a').disabled,true);
+});
+
+test('reload selects a new random pair while an unresolved write restores its exact original pair and orientation',async()=>{
+  const previous={promptId:'02',ids:['one','two']};
+  const fresh=await fixture({lastPair:previous,random:()=>0}),first=await fresh.start();
+  assert.deepEqual(first.load.pair.map(e=>e.id),['one','three']);
+  const pending={entries:['two','one'],promptId:'02',choice:'tie'};
+  const resumed=await fixture({requested:'03',multiplePrompts:true,lastPair:previous,initialPending:pending,random:()=>.9}),load=await resumed.start();
+  assert.deepEqual(load.load.pair.map(e=>e.id),pending.entries);assert.equal(resumed.ids.get('prompt-select').value,'02');
+  assert.equal(resumed.ids.get('next-pair').disabled,true);assert.equal(resumed.ids.get('retry-vote').hidden,false);
+  resumed.ready(0);resumed.ready(1);load.load.resolve([true,true]);await load.pending;await resumed.ids.get('retry-vote').emit('click');
+  assert.deepEqual(resumed.submissions,[{entries:pending.entries,choice:'tie'}]);assert.equal(resumed.ids.get('next-pair').disabled,false);
 });
 test('callbacks from a disposed viewer cannot unlock or fail its replacement',async()=>{
   const f=await fixture(),first=await f.start(),old=f.params;

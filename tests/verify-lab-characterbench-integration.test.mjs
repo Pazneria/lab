@@ -17,12 +17,12 @@ const target=new URL(labHtml.match(/<a id="character-link" href="([^"]+)"/)[1],l
 const promptId=target.searchParams.get('prompt');
 const publicRoot=new URL('../',labUrl);
 
-test('the released lobby links to an existing dedicated route and an admitted same-prompt pair',()=>{
+test('the released lobby enters the dedicated randomized comparison without pinning a character',()=>{
   assert.equal(target.origin,labUrl.origin);assert.equal(target.pathname,'/lab/character-bench/');
   assert.ok(existsSync(new URL('../character-bench/index.html',import.meta.url)));
-  assert.ok(catalog.prompts.some(prompt=>prompt.id===promptId));assert.ok(contracts.eligiblePairs(catalog,promptId).length>0);
-  for(const pair of contracts.eligiblePairs(catalog,promptId)){
-    assert.equal(new Set(pair.map(entry=>entry.promptId)).size,1);assert.equal(pair[0].promptId,promptId);
+  assert.equal(promptId,null);assert.doesNotMatch(labHtml,/character-bench\/\?prompt=/);
+  for(const prompt of catalog.prompts)for(const pair of contracts.eligiblePairs(catalog,prompt.id)){
+    assert.equal(new Set(pair.map(entry=>entry.promptId)).size,1);assert.equal(pair[0].promptId,prompt.id);
     for(const entry of pair){const asset=new URL(entry.asset.path,target);assert.equal(asset.origin,labUrl.origin);assert.ok(asset.pathname.startsWith('/lab/character-bench/entries/'));
       assert.ok(existsSync(new URL('../character-bench/'+entry.asset.path,import.meta.url)));}
   }
@@ -40,7 +40,7 @@ test('the single lobby character is an unchanged owned published attempt, with t
   const bytes=readFileSync(new URL('../lab-space/characters/'+provenance.asset,import.meta.url));
   assert.equal(bytes.length,provenance.bytes);assert.equal(createHash('sha256').update(bytes).digest('hex'),provenance.sha256);
   const published=catalog.entries.find(entry=>entry.asset?.sha256===provenance.sha256);
-  assert.ok(published,'The displayed GLB should match the released owned comparison attempt');assert.equal(published.promptId,promptId);
+  assert.ok(published,'The displayed GLB should match the released owned comparison attempt');assert.equal(published.promptId,'02');
   assert.equal(provenance.originalUnchanged,true);assert.equal(provenance.servingConfigurationIndependentlyVerified,false);
   assert.match(provenance.ownership,/Jordan's own/);assert.match(provenance.purpose,/no benchmark result or winner/i);
 });
@@ -74,7 +74,7 @@ class Element {
   focus(){}setPointerCapture(){}
 }
 const settleUntil=async condition=>{for(let attempt=0;attempt<60;attempt++){if(condition())return;await new Promise(resolve=>setTimeout(resolve,2));}throw Error('Released app fixture did not settle');};
-async function releasedApp(){
+async function releasedApp({random=null}={}){
   const elements=[],ids=new Map(),events=new Map(),engines=[],loads=[],fetches=[];
   for(const match of benchHtml.matchAll(/<([a-z][\w-]*)([^>]*)>/g)){
     const element=new Element(match[1]);for(const attr of match[2].matchAll(/([\w-]+)="([^"]*)"/g)){element.attrs[attr[1]]=attr[2];if(attr[1]==='id')ids.set(attr[2],element);if(attr[1].startsWith('data-'))element.dataset[attr[1].slice(5)]=attr[2];}
@@ -94,7 +94,8 @@ async function releasedApp(){
   const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [name,value]of Object.entries(values))this.setExport(name,value);},{context});
   let saved=null;
   const votes=synthetic({createVotingClient:()=>({pending:()=>null,remember(){},remembered:()=>null,current:async()=>saved||{status:'empty',intent:0},leaderboard:async()=>({rows:[],counts:{votes:0}}),submit:async(_pair,choice)=>(saved={status:'saved',choice})}),renderLeaderboard(){}});
-  const core=synthetic(contracts),summaries=synthetic(briefs),viewer=synthetic({createViewer(options){
+  const randomized=random?{...contracts,choosePair:(m,id,previous)=>contracts.choosePair(m,id,previous,random),chooseComparison:(m,previous)=>contracts.chooseComparison(m,previous,random)}:contracts;
+  const core=synthetic(randomized),summaries=synthetic(briefs),viewer=synthetic({createViewer(options){
     const engine={options,disposed:false,clear(){},invalidate(){},setMode(){},setLight(){},setGrid(){},dispose(){this.disposed=true;},
       loadPair(pair,generation){const item={engine:this,pair,generation};item.promise=new Promise(resolve=>item.resolve=resolve);loads.push(item);return item.promise;}};engines.push(engine);return engine;
   }});
@@ -109,10 +110,10 @@ async function releasedApp(){
   };
 }
 
-test('the actual lobby deep link boots a blind same-prompt comparison and reveals only after both current imports',async()=>{
+test('the actual lobby route boots a random blind same-prompt comparison and reveals only after both current imports',async()=>{
   const f=await releasedApp();assert.deepEqual(f.fetches,[new URL('data/admission.json',target).href]);assert.equal(f.engines.length,1);
-  assert.equal(f.ids.get('prompt-select').value,promptId);const {pending,load}=await f.start();
-  assert.ok(load.pair.every(entry=>entry.promptId===promptId));assert.equal(f.state.snapshot.linked,true);
+  const selectedPrompt=f.ids.get('prompt-select').value;assert.ok(catalog.prompts.some(p=>p.id===selectedPrompt));const {pending,load}=await f.start();
+  assert.ok(load.pair.every(entry=>entry.promptId===selectedPrompt));assert.equal(f.state.snapshot.linked,true);
   assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.ids.get('provenance').textContent,'');
   f.ready(0);await f.button('a').emit('click');assert.equal(f.ids.get('reveal').hidden,true);
   f.ready(1);load.resolve([true,true]);await pending;await f.button('tie').emit('click');
@@ -126,6 +127,13 @@ test('departure releases the viewer; cached-page return restores a confirmed vot
   await f.emit('pagehide');assert.equal(engine.disposed,true);assert.equal(f.state.snapshot.choice,null);assert.equal(f.ids.get('reveal').hidden,true);
   assert.equal(f.ids.get('label-a').textContent,'Attempt A');assert.equal(f.ids.get('provenance').textContent,'');assert.equal(f.button('a').disabled,true);
   await f.emit('pageshow');await settleUntil(()=>f.engines.length===2);assert.equal(f.engines.length,2,'Cached return automatically reloads the frozen pair');
-  const second=await f.start();assert.equal(f.engines.length,2);assert.equal(f.state.snapshot.choice,null);assert.ok(second.load.pair.every(entry=>entry.promptId===promptId));
+  const second=await f.start();assert.equal(f.engines.length,2);assert.equal(f.state.snapshot.choice,null);assert.deepEqual(second.load.pair,first.load.pair);
   f.ready(0);f.ready(1);second.load.resolve([true,true]);await second.pending;assert.equal(f.button('a').disabled,true);assert.equal(f.state.snapshot.choice,'a');assert.equal(f.ids.get('reveal').hidden,false);
+});
+
+test('the production catalog gives each admitted character an equal initial random interval despite Farid having extra pairs',async()=>{
+  for(const [value,expected] of [[.1,'01'],[.5,'02'],[.9,'03']]){
+    const f=await releasedApp({random:()=>value}),{load}=await f.start();assert.equal(f.ids.get('prompt-select').value,expected);
+    assert.ok(load.pair.every(entry=>entry.promptId===expected));assert.equal(new Set(load.pair.map(entry=>entry.id)).size,2);
+  }
 });

@@ -73,7 +73,7 @@ export function createVotingClient({fetcher=globalThis.fetch,storage=globalThis.
   }
   return {submit,current,keyOf,pending:pair=>{try{return read().pending[keyOf(pair)]||null;}catch{return null;}},
     remember(pair){try{const data=read();data.lastPair={promptId:pair[0].promptId,ids:pair.map(e=>e.id)};save(data);}catch{};},
-    remembered(promptId){try{const p=read().lastPair;return p?.promptId===promptId&&Array.isArray(p.ids)&&p.ids.length===2?p.ids:null;}catch{return null;}},
+    remembered(promptId){try{const p=read().lastPair;return (promptId===undefined||p?.promptId===promptId)&&Array.isArray(p?.ids)&&p.ids.length===2?p.ids:null;}catch{return null;}},
     async leaderboard(promptId=null){const result=await request('leaderboard'+(promptId?'?prompt='+encodeURIComponent(promptId):''));if(result.scope!=='CharacterBench public anonymous A/B preferences'||!Array.isArray(result.rows)||!Number.isSafeInteger(result.counts?.votes)||result.counts.votes<0)throw Error('Invalid leaderboard response');return result;}
   };
 }
