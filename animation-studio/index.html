@@ -636,7 +636,7 @@ function candidatePairingAllowed(){if(!ui$('reviewOptIn').checked)return false;c
 function pauseInspector(reason='Paused'){inspectorClock?.stop(reason);ui$('play').textContent='Play';}
 function invalidateInspector(){viewRevision++;viewCache=null;inspectorClock?.request();}
 function setResourceGate(key,value,reason){const wasOpen=inspectorGate.open;inspectorGate.set(key,value,reason);if(!wasOpen&&inspectorGate.open&&inspectorClock)reportInspector('Viewer ready. Playback remains paused until Play.');}
-function syncInputFocus(){setResourceGate('focus',document.hasFocus(),'Paused while unfocused');setResourceGate('page',!document.hidden,'Paused while hidden');}
+function syncInputFocus(){const focus=document.hasFocus(),page=!document.hidden;if(resourceGates.focus!==focus)setResourceGate('focus',focus,'Paused while unfocused');if(resourceGates.page!==page)setResourceGate('page',page,'Paused while hidden');}
 function inspectorOption(value,label){const o=document.createElement('option');o.value=value;o.textContent=label;return o;}
 function recordAllowed(record){return (record.activeBindingAllowed!==false||record.requiresReviewOptIn)&&(!record.requiresReviewOptIn||ui$('reviewOptIn').checked);}
 function assertReviewAllowed(record){if(record.activeBindingAllowed===false&&!record.requiresReviewOptIn)throw Error('Source is on hold; revised accepted hash and contract required');if(record.requiresReviewOptIn&&!ui$('reviewOptIn').checked)throw Error('Explicit proposed-candidate opt-in is required');}
