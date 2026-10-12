@@ -105,3 +105,17 @@ test('six incoming actual rigs pose real skin buffers through live sliders and r
 });
 test('dwarf raw local -65 flexion is provisional and -90 remains a visibly warned review pose',async()=>{const f=await fixture();await f.api.selectAsset('dwarf');f.el('tree').children.find(b=>b.textContent.includes(' forearm_right ')).click();f.el('rotRangeX').value='-65';f.el('rotRangeX').oninput();f.flush();assert.match(f.el('poseBoundary').textContent,/provisional/);assert.doesNotMatch(f.el('poseBoundary').textContent,/Outside/);f.el('rotRangeX').value='-90';f.el('rotRangeX').oninput();f.flush();assert.match(f.el('poseBoundary').textContent,/Outside/);assert.match(f.el('poseBoundary').textContent,/realignment/);assert.equal(f.state.playing,false);});
 test('valid numbers update immediately and malformed/singular drafts cannot replace the last ready pose',async()=>{const f=await fixture();f.el('rotX').value='18';f.el('rotX').oninput();f.flush();const before=f.state.edits;f.el('posX').value='';f.el('posX').oninput();assert.deepEqual(f.state.edits,before);f.el('posX').value='0';f.el('scaleX').value='0';f.el('scaleX').oninput();assert.deepEqual(f.state.edits,before);assert.match(f.el('error').textContent,/Singular/);f.el('clearEdits').click();f.flush();assert.equal(Object.keys(f.state.edits).length,0);});
+
+
+test('camera-only redraw reuses posed geometry; clearing a joint invalidates the pose cache',async()=>{
+ const f=await fixture();f.el('rotX').value='20';f.el('applyEdit').click();f.flush();const posed=f.last.value.views[0].geometry,rotation=Array.from(f.last.value.views[0].pose.nodes[f.state.selectedNode].rotation);
+ f.el('zoomIn').click();f.flush();assert.equal(f.last.value.views[0].geometry,posed);f.el('zoomOut').click();f.flush();assert.equal(f.last.value.views[0].geometry,posed);
+ f.el('clearJoint').click();f.flush();assert.notDeepEqual(Array.from(f.last.value.views[0].pose.nodes[f.state.selectedNode].rotation),rotation);assert.equal(Object.keys(f.state.edits).length,0);
+});
+test('ordinary canvas wheel stays available to page scrolling; modifier zoom is explicit',async()=>{
+ const f=await fixture(),span=f.state.camera.span;let prevented=0;await f.el('view').emit('wheel',{deltaY:100,preventDefault(){prevented++;}});f.flush();assert.equal(prevented,0);assert.equal(f.state.camera.span,span);
+ await f.el('view').emit('wheel',{deltaY:100,ctrlKey:true,preventDefault(){prevented++;}});f.flush();assert.equal(prevented,1);assert.ok(f.state.camera.span>span);
+});
+test('triangle screening stays lazy and enabling it uses the same posed mesh',async()=>{
+ const f=await fixture();assert.equal(f.last.value.views[0].audit,null);const geometry=f.last.value.views[0].geometry;f.el('areas').checked=true;f.el('areas').onchange();f.flush();assert.ok(f.last.value.views[0].audit.length);const triples=g=>Array.from(g.indices).flatMap(i=>Array.from(g.positions.slice(i*3,i*3+3)));assert.deepEqual(triples(f.last.value.views[0].geometry[0]),triples(geometry[0]));
+});
