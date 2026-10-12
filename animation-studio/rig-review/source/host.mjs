@@ -19,14 +19,14 @@ function ensureHumanStudy(){
  });
  authoringReady=attempt;attempt.catch(()=>{if(authoringReady===attempt)authoringReady=null;});return attempt;
 }
-const rigView={ensure:async()=>{await window.rigInspectorReady;if(!window.rigInspectorDiagnostics)throw Error('The rig viewport could not initialize.');},setActive:value=>window.rigStudioControl?.setActive(value)};
+const rigView={ensure:async()=>{await window.rigInspectorReady;if(!window.rigInspectorDiagnostics||window.rigInspectorDiagnostics.state?.gates?.context===false)throw Error(host$('error').textContent||'The rig viewport could not initialize.');},setActive:value=>window.rigStudioControl?.setActive(value)};
 const motionView={ensure:ensureHumanStudy,setActive:value=>{const frame=host$('humanStudyFrame');if(value){frame.hidden=false;if(document.hasFocus())frame.contentDocument?.getElementById('view')?.focus({preventScroll:true});}frame.contentWindow?.humanStudyControl?.setActive(value);}};
 const studioModes=createStudioModes({rig:rigView,motion:motionView,changed(mode,pending){
  host$('rig-panel').hidden=mode!=='rig';host$('study-panel').hidden=mode!=='motion';
  host$('humanStudyFrame').hidden=mode!=='motion'||pending;host$('studyLoading').hidden=mode!=='motion'||!pending;
  host$('rigTab').setAttribute('aria-selected',String(mode==='rig'));host$('studyTab').setAttribute('aria-selected',String(mode==='motion'));
- host$('hostState').textContent=pending?' / Loading':'';
-},report(error){host$('modeError').hidden=false;host$('modeError').textContent=error.message;}});
+ host$('hostState').textContent=pending?' / Loading':mode==='rig'&&window.rigInspectorDiagnostics?.state?.gates?.context===false?' / Viewer unavailable':'';
+},report(error){host$('hostState').textContent=' / Viewer unavailable';host$('modeError').hidden=false;host$('modeError').textContent=error.message;}});
 host$('rigTab').onclick=()=>{host$('modeError').hidden=true;studioModes.select('rig');};
 host$('studyTab').onclick=()=>{host$('modeError').hidden=true;studioModes.select('motion');};
 host$('backToLab').addEventListener('click',event=>returnToLab(event,{base:location.href,referrer:document.referrer,history}));

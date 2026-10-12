@@ -20,18 +20,18 @@ class Element{
  emit(type,event={}){return Promise.all((this.listeners.get(type)||[]).map(f=>f(event)));}
  focus(){}setPointerCapture(){}getBoundingClientRect(){return {left:0,top:0,width:820,height:520};}click(){this.onclick?.();}
 }
-async function fixture({focusDuringPreparation=false}={}){
+async function fixture({focusDuringPreparation=false,rendererError=null}={}){
  const elements=new Map();for(const m of template.matchAll(/<([a-z0-9]+)\b([^>]*\bid="([^"]+)"[^>]*)>/gi)){const e=new Element(m[1]);e.id=m[3];e.checked=/\bchecked\b/.test(m[2]);e.hidden=/\bhidden\b/.test(m[2]);e.value=m[2].match(/\bvalue="([^"]*)"/)?.[1]||'';elements.set(e.id,e);}
  elements.get('bundle-data').textContent=bundle;elements.get('compare').value='off';elements.get('speed').value='1';elements.get('notes').value='';
  let focused=!focusDuringPreparation,next=1,time=0;const frames=new Map(),renderers=[],document=new Element(),window=new Element();document.hidden=false;document.activeElement=null;document.hasFocus=()=>focused;document.getElementById=id=>{assert.ok(elements.has(id),'Missing UI '+id);return elements.get(id);};document.createElement=tag=>new Element(tag);
  const cameras=['front','side','rear','three'].map(camera=>{const e=new Element('button');e.dataset.camera=camera;return e;});
  document.querySelectorAll=selector=>selector==='[data-camera]'?cameras:selector==='.editgrid input'?['posX','posY','posZ','rotX','rotY','rotZ','scaleX','scaleY','scaleZ'].map(id=>elements.get(id)):[];
- class Renderer{constructor(canvas){this.canvas=canvas;this.frames=0;this.destroyed=false;this.gl={getError:()=>0};renderers.push(this);}draw(value){assert.equal(this.destroyed,false);this.value=value;this.frames++;return 0;}destroy(){this.destroyed=true;}}
+ class Renderer{constructor(canvas){if(rendererError)throw Error(rendererError);this.canvas=canvas;this.frames=0;this.destroyed=false;this.gl={getError:()=>0};renderers.push(this);}draw(value){assert.equal(this.destroyed,false);this.value=value;this.frames++;return 0;}destroy(){this.destroyed=true;}}
  const context=vm.createContext({document,window,crypto:{subtle:{digest:async(...args)=>{const result=await webcrypto.subtle.digest(...args);if(focusDuringPreparation)focused=true;return result;}}},console,TextDecoder,TextEncoder,Blob,URL,structuredClone,atob:s=>Buffer.from(s,'base64').toString('binary'),performance:{now:()=>time},requestAnimationFrame:fn=>{const id=next++;frames.set(id,fn);return id;},cancelAnimationFrame:id=>frames.delete(id),ResizeObserver:class{observe(){}},setTimeout,clearTimeout});
  const modules=new Map();async function module(name){if(modules.has(name))return modules.get(name);if(name==='renderer.mjs'){const m=new vm.SyntheticModule(['StudioRenderer'],function(){this.setExport('StudioRenderer',Renderer);},{context,identifier:name});modules.set(name,m);return m;}const m=new vm.SourceTextModule(fs.readFileSync(name==='app.mjs'&&process.env.STUDIO_REPRO_APP_SOURCE?process.env.STUDIO_REPRO_APP_SOURCE:path.join(root,name),'utf8'),{context,identifier:name});modules.set(name,m);await m.link(spec=>module(path.basename(spec)));return m;}
- const m=await module('app.mjs');await m.evaluate();await window.rigInspectorReady;assert.ok(window.rigInspectorDiagnostics,elements.get('error').textContent);const api=window.rigStudioControl;
+ const m=await module('app.mjs');await m.evaluate();await window.rigInspectorReady;if(!rendererError)assert.ok(window.rigInspectorDiagnostics,elements.get('error').textContent);const api=window.rigStudioControl;
  const flush=(limit=10)=>{let count=0;while(frames.size&&count++<limit){time+=34;const pending=[...frames.values()];frames.clear();for(const f of pending)f(time);}};flush();
- return {window,document,api,el:id=>elements.get(id),get state(){return window.rigInspectorDiagnostics.state;},get last(){return renderers.at(-1);},renderers,frames,flush,setFocus:value=>focused=value};
+ return {window,document,api,el:id=>elements.get(id),get state(){return window.rigInspectorDiagnostics.state;},get last(){return renderers.at(-1);},renderers,frames,flush,setFocus:value=>focused=value,failRenderer:message=>rendererError=message};
 }
 test('real app initializes original Human01 paused with actual tree and delivered clips',async()=>{
  const f=await fixture();assert.equal(f.state.asset,'human01');assert.equal(f.state.nodeCount,28);assert.deepEqual(Array.from(f.state.paletteCounts),[20]);assert.equal(f.state.playing,false);assert.equal(f.frames.size,0);assert.equal(f.el('tree').children.length,28);assert.ok(f.state.clips.some(c=>c.name==='walk_original'&&c.classification==='prior-original'));assert.equal(f.el('selectedName').textContent,'pelvis');
@@ -118,4 +118,15 @@ test('ordinary canvas wheel stays available to page scrolling; modifier zoom is 
 });
 test('triangle screening stays lazy and enabling it uses the same posed mesh',async()=>{
  const f=await fixture();assert.equal(f.last.value.views[0].audit,null);const geometry=f.last.value.views[0].geometry;f.el('areas').checked=true;f.el('areas').onchange();f.flush();assert.ok(f.last.value.views[0].audit.length);const triples=g=>Array.from(g.indices).flatMap(i=>Array.from(g.positions.slice(i*3,i*3+3)));assert.deepEqual(triples(f.last.value.views[0].geometry[0]),triples(geometry[0]));
+});
+
+
+test('unavailable WebGL releases panel input and cannot announce readiness on focus',async()=>{
+ const f=await fixture({rendererError:'WebGL is unavailable'});assert.equal(f.el('rig-panel').inert,false);assert.equal(f.el('rig-panel').getAttribute('aria-busy'),'false');assert.match(f.el('message').textContent,/Viewer unavailable/);assert.match(f.el('error').textContent,/WebGL is unavailable/);assert.equal(f.frames.size,0);
+ await f.window.emit('blur');await f.window.emit('focus');await f.document.emit('pointerdown');assert.doesNotMatch(f.el('message').textContent,/Viewer ready/);assert.equal(f.frames.size,0);assert.equal(f.el('tree').children.length,28);f.el('rotX').value='20';f.el('applyEdit').click();assert.match(f.el('editInfo').textContent,/inspection/i);
+});
+
+
+test('renderer failure on mode return suspends graphics and preserves CPU editing',async()=>{
+ const f=await fixture();f.api.setActive(false);f.failRenderer('WebGL is unavailable');assert.throws(()=>f.api.setActive(true),/WebGL is unavailable/);assert.equal(f.state.gates.context,false);assert.equal(f.state.rendererAlive,false);assert.equal(f.state.active,false);assert.equal(f.frames.size,0);await f.window.emit('blur');await f.window.emit('focus');assert.doesNotMatch(f.el('message').textContent,/Viewer ready/);assert.match(f.el('error').textContent,/WebGL is unavailable/);assert.equal(f.el('rig-panel').inert,false);
 });

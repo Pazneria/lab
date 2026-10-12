@@ -5,9 +5,10 @@ const FS = 'precision mediump float;varying vec3 color;uniform bool unlit;void m
 export class StudioRenderer {
  constructor(canvas){this.canvas=canvas;this.gl=canvas.getContext('webgl',{antialias:true,alpha:false,preserveDrawingBuffer:false,powerPreference:'low-power'});
  if(!this.gl)throw Error('WebGL is unavailable. The studio needs WebGL for viewing; the original assets and CPU evidence remain available.');
- const g=this.gl,shader=(type,source)=>{const s=g.createShader(type);g.shaderSource(s,source);g.compileShader(s);if(!g.getShaderParameter(s,g.COMPILE_STATUS))throw Error(g.getShaderInfoLog(s));return s;};
+ const g=this.gl,shader=(type,source)=>{const s=g.createShader(type);g.shaderSource(s,source);g.compileShader(s);return s;};
  this.program=g.createProgram();const vs=shader(g.VERTEX_SHADER,VS),fs=shader(g.FRAGMENT_SHADER,FS);g.attachShader(this.program,vs);g.attachShader(this.program,fs);g.linkProgram(this.program);
- if(!g.getProgramParameter(this.program,g.LINK_STATUS))throw Error(g.getProgramInfoLog(this.program));g.deleteShader(vs);g.deleteShader(fs);g.useProgram(this.program);
+ // One startup link check; query shader logs only when linking fails.
+ if(!g.getProgramParameter(this.program,g.LINK_STATUS)){const message=g.getProgramInfoLog(this.program)||g.getShaderInfoLog(vs)||g.getShaderInfoLog(fs)||'WebGL shader linking failed';g.deleteShader(vs);g.deleteShader(fs);g.deleteProgram(this.program);throw Error(message);}g.deleteShader(vs);g.deleteShader(fs);g.useProgram(this.program);
  this.buffer=g.createBuffer();this.meshSlots=[];this.attributeIds=[];this.uploads=0;this.uintIndices=!!g.getExtension('OES_element_index_uint');this.auxData=new Float32Array(0);g.bindBuffer(g.ARRAY_BUFFER,this.buffer);
  for(const [name,offset] of [['p',0],['n',12],['c',24]]){const id=g.getAttribLocation(this.program,name);this.attributeIds.push([id,offset]);g.enableVertexAttribArray(id);g.vertexAttribPointer(id,3,g.FLOAT,false,36,offset);}
  this.u={};for(const n of ['yaw','pitch','span','aspect','center','unlit','pointSize'])this.u[n]=g.getUniformLocation(this.program,n);
@@ -40,7 +41,9 @@ export class StudioRenderer {
  }
  while(this.meshSlots.length>slotIndex){const slot=this.meshSlots.pop();g.deleteBuffer(slot.buffer);g.deleteBuffer(slot.indexBuffer);}
  this.frames++;
- return g.getError();
+ // Keep input-driven frames free of synchronous GPU error queries.
+ // Explicit diagnostics and the context-loss event remain available.
+ return 0;
  }
  bindAttributes(buffer){const g=this.gl;g.bindBuffer(g.ARRAY_BUFFER,buffer);for(const [id,offset] of this.attributeIds)g.vertexAttribPointer(id,3,g.FLOAT,false,36,offset);}
  mesh(geometry,index){const g=this.gl;let slot=this.meshSlots[index];if(!slot)slot=this.meshSlots[index]={buffer:g.createBuffer(),indexBuffer:g.createBuffer()};this.bindAttributes(slot.buffer);
