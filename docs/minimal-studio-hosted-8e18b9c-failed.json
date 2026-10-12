@@ -1,0 +1,323 @@
+{
+  "sha": "8e18b9c25b623eb2e8ff5ad5e92932bc066fc65c",
+  "environment": "GitHub Ubuntu 24.04 / Xvfb / Chrome, one browser, no custom security or GPU flags",
+  "ownerBrowserTested": false,
+  "ownerHangReproduced": false,
+  "checks": [
+    {
+      "name": "first-load viewer readiness without document reload",
+      "passed": false,
+      "ms": 1529,
+      "error": "AssertionError [ERR_ASSERTION]: Document input must respond during graphics initialization"
+    },
+    {
+      "name": "actual context loss preserves input and recovers without reload",
+      "passed": true,
+      "ms": 327,
+      "details": {
+        "losses": [
+          {
+            "reason": "WebGL unavailable. Model selection and navigation remain usable.",
+            "at": 613.7999999999884
+          },
+          {
+            "reason": "WebGL context lost",
+            "at": 1208.0999999999767
+          }
+        ],
+        "scrolling": {
+          "before": 169,
+          "after": 419
+        },
+        "noReload": true,
+        "posePreserved": true
+      }
+    },
+    {
+      "name": "WebGL unavailable never blocks controls or navigation",
+      "passed": true,
+      "ms": 1260,
+      "details": {
+        "selection": true,
+        "scroll": true,
+        "navigation": true,
+        "boundedAttempts": 3
+      }
+    },
+    {
+      "name": "graphics worker startup stall keeps native document inputs responsive",
+      "passed": true,
+      "ms": 2148,
+      "details": {
+        "eventMs": 76,
+        "scrolling": {
+          "before": 10,
+          "after": 260
+        },
+        "heartbeat": 0.1999999999825377
+      }
+    },
+    {
+      "name": "independent graphics control in a fresh browser process",
+      "passed": true,
+      "ms": 872,
+      "details": {
+        "result": {
+          "done": true,
+          "available": false,
+          "ms": 25.89999999999418
+        },
+        "events": [
+          {
+            "done": true,
+            "available": false,
+            "ms": 25.89999999999418
+          }
+        ],
+        "ticks": 1,
+        "clicked": true,
+        "eventMs": 143
+      }
+    }
+  ],
+  "errors": [],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "timings": {
+    "startupWallMs": 1527,
+    "startup": {
+      "started": 302.1000000000058,
+      "readyMs": 768.2999999999884,
+      "workersCreated": 1,
+      "workersTerminated": 0,
+      "loads": [
+        {
+          "id": "human01",
+          "ms": 565.7000000000116,
+          "workerMs": 183.39999999999418
+        }
+      ],
+      "poseMs": [],
+      "longTasks": [
+        {
+          "start": 298,
+          "duration": 158
+        },
+        {
+          "start": 1104.2999999999884,
+          "duration": 64
+        }
+      ],
+      "heartbeatMaxDriftMs": 507.4000000000233,
+      "heartbeatTicks": 2,
+      "errors": [],
+      "cancelled": 0,
+      "viewerReadyMs": 1202.6999999999825
+    }
+  },
+  "passed": false,
+  "browserVersion": "154.0.8037.97",
+  "firstLoadGraphics": {
+    "state": "ready",
+    "attempts": 2,
+    "losses": [
+      {
+        "reason": "WebGL unavailable. Model selection and navigation remain usable.",
+        "at": 613.7999999999884
+      }
+    ],
+    "initializationMs": [
+      546.7999999999884,
+      101
+    ],
+    "draws": 1,
+    "liveBuffers": 5
+  },
+  "firstLoadInput": {
+    "eventMs": 726,
+    "scrolling": {
+      "before": 10,
+      "after": 260
+    },
+    "health": {
+      "model": "human01",
+      "ready": true,
+      "selected": 0,
+      "clip": "rest",
+      "time": 0,
+      "playing": false,
+      "edits": {},
+      "camera": {
+        "yaw": 0.45,
+        "pitch": 0.15,
+        "span": 2.5800000366568563,
+        "center": [
+          0,
+          0.8600000163912773,
+          0.043453045189380646
+        ]
+      },
+      "visible": true,
+      "pending": false,
+      "inflight": false,
+      "queued": false,
+      "raf": false,
+      "playbackTimer": false,
+      "viewerReady": true,
+      "graphics": {
+        "state": "ready",
+        "attempts": 2,
+        "losses": [
+          {
+            "reason": "WebGL unavailable. Model selection and navigation remain usable.",
+            "at": 613.7999999999884
+          }
+        ],
+        "initializationMs": [
+          546.7999999999884,
+          101
+        ],
+        "draws": 1,
+        "liveBuffers": 5
+      },
+      "graphicsPending": false,
+      "graphicsQueued": false,
+      "liveGraphicsWorkers": 1,
+      "rendererFrames": 1,
+      "liveBuffers": 5,
+      "liveWorkers": 1,
+      "stats": {
+        "started": 302.1000000000058,
+        "readyMs": 768.2999999999884,
+        "workersCreated": 1,
+        "workersTerminated": 0,
+        "loads": [
+          {
+            "id": "human01",
+            "ms": 565.7000000000116,
+            "workerMs": 183.39999999999418
+          }
+        ],
+        "poseMs": [],
+        "longTasks": [
+          {
+            "start": 298,
+            "duration": 158
+          },
+          {
+            "start": 1104.2999999999884,
+            "duration": 64
+          }
+        ],
+        "heartbeatMaxDriftMs": 507.4000000000233,
+        "heartbeatTicks": 2,
+        "errors": [],
+        "cancelled": 0,
+        "viewerReadyMs": 1202.6999999999825
+      }
+    }
+  },
+  "independentGraphicsControl": {
+    "result": {
+      "done": true,
+      "available": false,
+      "ms": 25.89999999999418
+    },
+    "events": [
+      {
+        "done": true,
+        "available": false,
+        "ms": 25.89999999999418
+      }
+    ],
+    "ticks": 1,
+    "clicked": true,
+    "eventMs": 143
+  },
+  "finalHealth": {
+    "model": "human01",
+    "ready": true,
+    "selected": 0,
+    "clip": "rest",
+    "time": 0,
+    "playing": false,
+    "edits": {},
+    "camera": {
+      "yaw": 0.45,
+      "pitch": 0.15,
+      "span": 2.5800000366568563,
+      "center": [
+        0,
+        0.8600000163912773,
+        0.043453045189380646
+      ]
+    },
+    "visible": true,
+    "pending": false,
+    "inflight": false,
+    "queued": false,
+    "raf": false,
+    "playbackTimer": false,
+    "viewerReady": true,
+    "graphics": {
+      "state": "ready",
+      "attempts": 3,
+      "losses": [
+        {
+          "reason": "WebGL unavailable. Model selection and navigation remain usable.",
+          "at": 613.7999999999884
+        },
+        {
+          "reason": "WebGL context lost",
+          "at": 1208.0999999999767
+        }
+      ],
+      "initializationMs": [
+        546.7999999999884,
+        101,
+        4.7999999999883585
+      ],
+      "draws": 2,
+      "liveBuffers": 5
+    },
+    "graphicsPending": false,
+    "graphicsQueued": false,
+    "liveGraphicsWorkers": 1,
+    "rendererFrames": 2,
+    "liveBuffers": 5,
+    "liveWorkers": 1,
+    "stats": {
+      "started": 302.1000000000058,
+      "readyMs": 768.2999999999884,
+      "workersCreated": 1,
+      "workersTerminated": 0,
+      "loads": [
+        {
+          "id": "human01",
+          "ms": 565.7000000000116,
+          "workerMs": 183.39999999999418
+        }
+      ],
+      "poseMs": [],
+      "longTasks": [
+        {
+          "start": 298,
+          "duration": 158
+        },
+        {
+          "start": 1104.2999999999884,
+          "duration": 64
+        }
+      ],
+      "heartbeatMaxDriftMs": 507.4000000000233,
+      "heartbeatTicks": 21,
+      "errors": [],
+      "cancelled": 0,
+      "viewerReadyMs": 1202.6999999999825
+    }
+  }
+}

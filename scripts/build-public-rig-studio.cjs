@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..'),studio=path.join(root,'animation-studio'),source=path.join(studio,'rig-review/source');
 const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
-const input=process.argv[2]?path.resolve(process.argv[2]):path.join(studio,'index.html');
+const input=process.argv[2]?path.resolve(process.argv[2]):path.join(studio,'legacy.html');
 const bytes=fs.readFileSync(input),html=bytes.toString('utf8');
 if(process.argv[2])assert.equal(sha(bytes),'5bdaca96df0f1fbbf0b6078af17ccd9de24798d5823c2eab991f2ca60a79d569','Use the tested private checkpoint only');
 const block=(text,id)=>JSON.parse(text.match(new RegExp('<script id="'+id+'" type="application/json">([\\s\\S]*?)</script>'))[1]);
@@ -23,5 +23,5 @@ scripts.splice(scripts.length-1,0,...['navigation.mjs','modes.mjs'].map(n=>fs.re
 const script=scripts.join('\n');assert.ok(!script.toLowerCase().includes('</script'));
 const output=fs.readFileSync(path.join(source,'index.template.html'),'utf8').replace('__BUNDLE__',encode(bundle)).replace('__MOTION_EDITOR__',encode(motion)).replace('__APP__',script);
 assert.ok(!/__BUNDLE__|__MOTION_EDITOR__|__APP__/.test(output));assert.ok(!/[A-Z]:\\\\Users\\\\|libfile_[a-z0-9]+/i.test(output));
-fs.writeFileSync(path.join(studio,'index.html'),output);
+fs.writeFileSync(path.join(studio,'legacy.html'),output);
 console.log(JSON.stringify({htmlBytes:Buffer.byteLength(output),sha256:sha(output),pinnedModels:bundle.records.length+1,assetBytesChanged:false,graphics:false}));

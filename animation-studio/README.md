@@ -1,5 +1,7 @@
 # Animation Studio
 
+The rebuilt core is now the default route. The prior interface and all Human01 study/authoring features remain at [legacy.html](legacy.html). The historical instructions below describe that preserved interface. See [replacement scope, routing checks, known cold-start limitation and rollback](../docs/RIG-STUDIO-REPLACEMENT-RELEASE.md).
+
 Enter through the small skeleton on the red tool cart in the Lab's east alcove (click or E), or use the accessible Animation Studio link. Back to Lab restores the departure position and camera. Direct URL: https://pazneria.github.io/lab/animation-studio/.
 
 The viewport renders actual GLBs and their real skin palettes. Select a model, inspect its hierarchy, show bones/sockets/weights, orbit, scrub delivered diagnostics and compare poses. Human01 retains its original-versus-refined study, prior original-authored idle/walk/run clips and local pose-key export. Space plays/pauses, arrows step, F fits and R restores rest. File imports, edits and review notes remain in this tab until downloaded; there is no upload service.

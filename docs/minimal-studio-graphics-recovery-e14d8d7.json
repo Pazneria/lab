@@ -1,0 +1,113 @@
+{
+  "sha": "e14d8d753b97c8255537c4d0eecbcb7e1a721b68",
+  "environment": "GitHub Ubuntu 24.04 / Xvfb / Chrome, one browser, no custom security or GPU flags",
+  "ownerBrowserTested": false,
+  "ownerHangReproduced": false,
+  "checks": [
+    {
+      "name": "real graphics worker fatal, 404 and import error recreate worker and preserve pose",
+      "passed": true,
+      "ms": 2808,
+      "details": [
+        {
+          "fault": "fatal",
+          "scripts": 2,
+          "noReload": true,
+          "posePreserved": true,
+          "failures": [
+            {
+              "reason": "Graphics worker failed: Uncaught Error: controlled fatal graphics",
+              "at": 508
+            }
+          ]
+        },
+        {
+          "fault": "404",
+          "scripts": 2,
+          "noReload": true,
+          "posePreserved": true,
+          "failures": [
+            {
+              "reason": "Graphics worker failed: fatal error",
+              "at": 125.5
+            }
+          ]
+        },
+        {
+          "fault": "import",
+          "scripts": 2,
+          "noReload": true,
+          "posePreserved": true,
+          "failures": [
+            {
+              "reason": "Graphics worker failed: fatal error",
+              "at": 149.6999999999971
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "never-answer graphics initialization and render time out and fresh Retry recovers",
+      "passed": true,
+      "ms": 20880,
+      "details": [
+        {
+          "fault": "startup",
+          "reason": "Graphics initialization timed out",
+          "scripts": 2,
+          "noReload": true,
+          "posePreserved": true
+        },
+        {
+          "fault": "render",
+          "reason": "Graphics draw timed out",
+          "scripts": 2,
+          "noReload": true,
+          "posePreserved": true
+        }
+      ]
+    },
+    {
+      "name": "document presentation context absent or throwing closes bitmap and recovers",
+      "passed": true,
+      "ms": 1135,
+      "details": [
+        {
+          "fault": "missing",
+          "closed": 2,
+          "noReload": true,
+          "posePreserved": true
+        },
+        {
+          "fault": "throw",
+          "closed": 2,
+          "noReload": true,
+          "posePreserved": true
+        }
+      ]
+    },
+    {
+      "name": "graphics constructor failure offers meaningful creation Retry with latest pose",
+      "passed": true,
+      "ms": 633,
+      "details": {
+        "noReload": true,
+        "posePreserved": true,
+        "constructorRetried": true
+      }
+    }
+  ],
+  "errors": [
+    "Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'snapshot')\n    at eval (eval at evaluate (:370:30), <anonymous>:1:37)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  ],
+  "console": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "timings": {},
+  "passed": false,
+  "browserVersion": "154.0.8037.97"
+}

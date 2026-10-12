@@ -1,0 +1,2105 @@
+{
+  "schema": 1,
+  "sourceRevision": "cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d",
+  "legacySha256": "ce8b83d64a1eb2fe6227f6cbc62bd38e0b55027291193afea1a98fc2504c759c",
+  "records": [
+    {
+      "id": "human01",
+      "label": "Human 01 preserved rig proof",
+      "stableId": "human01_rig",
+      "family": "human",
+      "role": "actor",
+      "file": "assets/human01.glb",
+      "bytes": 164116,
+      "sha256": "eef773e568c1fda0713481e068e7d7eeb1a6f876abe65d793ac5650138befa67",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "diagnostic_only",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Preserved rig referenced as accepted input by room38; this catalog does not infer visual, locomotion or game readiness from that input acceptance.",
+        "Only five pose studies and grip morph proof; no finished gameplay animation.",
+        "Rigging task01a1232f is stopped and undoing changes. Freeze/read-only; no work is resumed by this catalog.",
+        "Existing game transform rig is a separate contract; a skinned GLB is not a drop-in replacement."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "goblin_bramblejaw_01_v3",
+      "label": "Bramblejaw goblin",
+      "stableId": "goblin_bramblejaw_01",
+      "family": "goblin",
+      "role": "actor",
+      "file": "assets/goblin_bramblejaw_01_v3.glb",
+      "bytes": 214352,
+      "sha256": "98c052f2dcd6fd138d398442e67d26872183e43e849406e7a52d693cf68f9b83",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Preferred v3 is located from actual revision deliverables, not a guessed suffix.",
+        "Own rig and diagnostic studies; game animation/contacts/collision and parent visual acceptance pending.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "cow_v2",
+      "label": "Meadow cow",
+      "stableId": "cow_meadow_01",
+      "family": "bovine",
+      "role": "actor",
+      "file": "assets/cow_v2.glb",
+      "bytes": 332296,
+      "sha256": "41b7874c8596363440b728f186a8749a15fc74a6a718cef5d945c9315c1cf826",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Own quadruped rig with static pose studies and no GLB animation clips.",
+        "v2 rig/head/muzzle changes are explicit; do not mix v1 rig with v2 geometry.",
+        "Parent visual acceptance, game loader, ground contacts and gameplay collision remain pending.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "foreleg_flex": {
+            "front_left_upper": [
+              18,
+              0,
+              0
+            ],
+            "front_left_lower": [
+              -28,
+              0,
+              0
+            ],
+            "front_left_cannon": [
+              8,
+              0,
+              0
+            ]
+          },
+          "hock_flex": {
+            "hind_right_upper": [
+              -16,
+              0,
+              0
+            ],
+            "hind_right_lower": [
+              26,
+              0,
+              0
+            ],
+            "hind_right_cannon": [
+              -18,
+              0,
+              0
+            ]
+          },
+          "head_lower": {
+            "neck": [
+              18,
+              0,
+              0
+            ],
+            "head": [
+              12,
+              0,
+              0
+            ]
+          },
+          "ear_tail": {
+            "ear_left": [
+              0,
+              0,
+              -18
+            ],
+            "ear_right": [
+              0,
+              0,
+              18
+            ],
+            "tail_base": [
+              0,
+              12,
+              0
+            ],
+            "tail_mid": [
+              0,
+              0,
+              12
+            ]
+          }
+        },
+        "source": "rig.contract.json",
+        "sha256": "aface95ea104ec8f1c21823e4a2f002ece06e710fe17787e78b8bc224e270211",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "chicken",
+      "label": "Chicken",
+      "stableId": "original_chicken_01",
+      "family": "bird",
+      "role": "actor",
+      "file": "assets/chicken.glb",
+      "bytes": 85376,
+      "sha256": "60501c56879536c4dcaee6f951cd793847f916522382ea015afad6e9aad8a7e2",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Parent visual acceptance, game importer/material/camera review, gameplay interfaces and scale conversion remain unverified.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "walk_probe": {
+            "thigh_L": [
+              -18,
+              0,
+              0
+            ],
+            "hock_L": [
+              26,
+              0,
+              0
+            ],
+            "foot_L": [
+              -8,
+              0,
+              0
+            ],
+            "thigh_R": [
+              16,
+              0,
+              0
+            ],
+            "hock_R": [
+              -10,
+              0,
+              0
+            ],
+            "foot_R": [
+              -6,
+              0,
+              0
+            ],
+            "neck_base": [
+              -5,
+              0,
+              0
+            ],
+            "neck_mid": [
+              8,
+              0,
+              0
+            ],
+            "head": [
+              -3,
+              0,
+              0
+            ]
+          },
+          "peck_probe": {
+            "body": [
+              20,
+              0,
+              0
+            ],
+            "neck_base": [
+              25,
+              0,
+              0
+            ],
+            "neck_mid": [
+              30,
+              0,
+              0
+            ],
+            "head": [
+              30,
+              0,
+              0
+            ],
+            "tail": [
+              -10,
+              0,
+              0
+            ],
+            "thigh_L": [
+              -20,
+              0,
+              0
+            ],
+            "thigh_R": [
+              -20,
+              0,
+              0
+            ]
+          },
+          "wing_probe": {
+            "wing_L": [
+              0,
+              -10,
+              45
+            ],
+            "wing_R": [
+              0,
+              10,
+              -45
+            ]
+          },
+          "head_turn_probe": {
+            "head": [
+              0,
+              25,
+              0
+            ]
+          }
+        },
+        "source": "pose.py",
+        "sha256": "5832fb0d553c0ab257f577e65f08afe9c08bdeffb1baacf6d65287098134a4a6",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "bandit_v2",
+      "label": "Roadside bandit dressed body",
+      "stableId": "bandit_roadside_01",
+      "family": "human_bandit",
+      "role": "actor",
+      "file": "assets/bandit_v2.glb",
+      "bytes": 348740,
+      "sha256": "d23c488a846cf343493d0a9d1ca740a7a6d84d79ad081cb179488ea9f61d2cff",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Complete body replacement; do not overlay a second body. Uses baseline head, not head33/hair32 composition.",
+        "Diagnostic fit clips and grip shapes do not prove finished locomotion, attack timing or contacts.",
+        "v2 has separate deformation/weight profile; preserve exact version and contract.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "rat_common_01",
+      "label": "Rat Common 01",
+      "stableId": "rat_common_01",
+      "family": "rodent",
+      "role": "actor",
+      "file": "assets/rat_common_01.glb",
+      "bytes": 517992,
+      "sha256": "fd517689d2627052df72e7eab173b0a7d42b28662d460a1bae6fba5fb9dede64",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Own rat_quadruped_v1 rig; static pose probes, no GLB animation clips.",
+        "Tail-inclusive bounds are not gameplay collision; no foot plants, IK or finished gait.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "head_scent": {
+            "neck": [
+              -7,
+              0,
+              0
+            ],
+            "head": [
+              -9,
+              18,
+              0
+            ],
+            "ear_L": [
+              0,
+              0,
+              -12
+            ],
+            "ear_R": [
+              0,
+              0,
+              12
+            ]
+          },
+          "forelimb_flex": {
+            "fore_upper_L": [
+              -14,
+              0,
+              0
+            ],
+            "fore_lower_L": [
+              28,
+              0,
+              0
+            ],
+            "fore_paw_L": [
+              -14,
+              0,
+              0
+            ]
+          },
+          "hindlimb_flex": {
+            "hind_upper_R": [
+              12,
+              0,
+              0
+            ],
+            "hind_lower_R": [
+              -24,
+              0,
+              0
+            ],
+            "hind_paw_R": [
+              12,
+              0,
+              0
+            ]
+          },
+          "bite_probe": {
+            "neck": [
+              9,
+              0,
+              0
+            ],
+            "head": [
+              6,
+              0,
+              0
+            ],
+            "jaw": [
+              19,
+              0,
+              0
+            ]
+          },
+          "tail_sweep": {
+            "tail_00": [
+              0,
+              8,
+              0
+            ],
+            "tail_01": [
+              0,
+              9,
+              0
+            ],
+            "tail_02": [
+              0,
+              -12,
+              0
+            ],
+            "tail_03": [
+              0,
+              -9,
+              0
+            ],
+            "tail_04": [
+              0,
+              7,
+              0
+            ]
+          },
+          "body_crouch": {
+            "lumbar": [
+              4,
+              0,
+              0
+            ],
+            "chest": [
+              -6,
+              0,
+              0
+            ],
+            "neck": [
+              2,
+              0,
+              0
+            ]
+          },
+          "ear_fold": {
+            "ear_L": [
+              8,
+              0,
+              -20
+            ],
+            "ear_R": [
+              8,
+              0,
+              20
+            ]
+          }
+        },
+        "source": "rat_common_01.editable.json",
+        "sha256": "12a1b0397160c35b6af9c1231b0e1235d020fd452f0220f17049206ceaf0f73a",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "rat_giant_01",
+      "label": "Rat Giant 01",
+      "stableId": "rat_giant_01",
+      "family": "rodent",
+      "role": "actor",
+      "file": "assets/rat_giant_01.glb",
+      "bytes": 487836,
+      "sha256": "e71fc157c0bc8c993a0658ae5c4ffca89dd2918281b4be233ab0972029655b12",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Own rat_quadruped_v1 rig; static pose probes, no GLB animation clips.",
+        "Tail-inclusive bounds are not gameplay collision; no foot plants, IK or finished gait.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "head_scent": {
+            "neck": [
+              -7,
+              0,
+              0
+            ],
+            "head": [
+              -9,
+              18,
+              0
+            ],
+            "ear_L": [
+              0,
+              0,
+              -12
+            ],
+            "ear_R": [
+              0,
+              0,
+              12
+            ]
+          },
+          "forelimb_flex": {
+            "fore_upper_L": [
+              -14,
+              0,
+              0
+            ],
+            "fore_lower_L": [
+              28,
+              0,
+              0
+            ],
+            "fore_paw_L": [
+              -14,
+              0,
+              0
+            ]
+          },
+          "hindlimb_flex": {
+            "hind_upper_R": [
+              12,
+              0,
+              0
+            ],
+            "hind_lower_R": [
+              -24,
+              0,
+              0
+            ],
+            "hind_paw_R": [
+              12,
+              0,
+              0
+            ]
+          },
+          "bite_probe": {
+            "neck": [
+              9,
+              0,
+              0
+            ],
+            "head": [
+              6,
+              0,
+              0
+            ],
+            "jaw": [
+              19,
+              0,
+              0
+            ]
+          },
+          "tail_sweep": {
+            "tail_00": [
+              0,
+              8,
+              0
+            ],
+            "tail_01": [
+              0,
+              9,
+              0
+            ],
+            "tail_02": [
+              0,
+              -12,
+              0
+            ],
+            "tail_03": [
+              0,
+              -9,
+              0
+            ],
+            "tail_04": [
+              0,
+              7,
+              0
+            ]
+          },
+          "body_crouch": {
+            "lumbar": [
+              4,
+              0,
+              0
+            ],
+            "chest": [
+              -6,
+              0,
+              0
+            ],
+            "neck": [
+              2,
+              0,
+              0
+            ]
+          },
+          "ear_fold": {
+            "ear_L": [
+              8,
+              0,
+              -20
+            ],
+            "ear_R": [
+              8,
+              0,
+              20
+            ]
+          }
+        },
+        "source": "rat_giant_01.editable.json",
+        "sha256": "f494f43d440758571c055e8c2c4ab0efb584d58a202d4ce2042d0ba57108c9ff",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "spider",
+      "label": "Spider",
+      "stableId": "spider",
+      "family": "arachnid",
+      "role": "actor",
+      "file": "assets/spider.glb",
+      "bytes": 306748,
+      "sha256": "dcfffdec3a0ca6af051cdd1da9b26d8628277ca7659a4ceee99c1f57129a4292",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Static deformation probes only; no GLB gait, support schedule, terrain solve or attack.",
+        "Own eight-leg rig; parent acceptance/runtime review pending; source-authored candidate, not image-to-3D.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "front_leg_lift": {
+            "leg_L1_femur": [
+              0,
+              0,
+              16
+            ],
+            "leg_L1_tibia": [
+              0,
+              0,
+              -12
+            ]
+          },
+          "middle_leg_spread": {
+            "leg_L2_coxa": [
+              0,
+              8,
+              4
+            ],
+            "leg_R2_coxa": [
+              0,
+              -8,
+              -4
+            ]
+          },
+          "tarsus_flex": {
+            "leg_L3_tarsus": [
+              0,
+              0,
+              14
+            ]
+          },
+          "abdomen_bite": {
+            "abdomen": [
+              10,
+              0,
+              0
+            ],
+            "jaw": [
+              18,
+              0,
+              0
+            ],
+            "palp_L": [
+              0,
+              -9,
+              0
+            ],
+            "palp_R": [
+              0,
+              9,
+              0
+            ]
+          }
+        },
+        "source": "pose.py",
+        "sha256": "0b691e0db7cfcd1debc3376495e09c4d6e6bffe53af8c0b9904b9c0cb3d470f6",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "giant_spider",
+      "label": "Giant Spider",
+      "stableId": "giant_spider",
+      "family": "arachnid",
+      "role": "actor",
+      "file": "assets/giant_spider.glb",
+      "bytes": 306880,
+      "sha256": "2a047df82a03acbd1d98e042bc2e93c27de93c3f0e4ade96eb4702283de18cf2",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Static deformation probes only; no GLB gait, support schedule, terrain solve or attack.",
+        "Own eight-leg rig; parent acceptance/runtime review pending; source-authored candidate, not image-to-3D.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "front_leg_lift": {
+            "leg_L1_femur": [
+              0,
+              0,
+              16
+            ],
+            "leg_L1_tibia": [
+              0,
+              0,
+              -12
+            ]
+          },
+          "middle_leg_spread": {
+            "leg_L2_coxa": [
+              0,
+              8,
+              4
+            ],
+            "leg_R2_coxa": [
+              0,
+              -8,
+              -4
+            ]
+          },
+          "tarsus_flex": {
+            "leg_L3_tarsus": [
+              0,
+              0,
+              14
+            ]
+          },
+          "abdomen_bite": {
+            "abdomen": [
+              10,
+              0,
+              0
+            ],
+            "jaw": [
+              18,
+              0,
+              0
+            ],
+            "palp_L": [
+              0,
+              -9,
+              0
+            ],
+            "palp_R": [
+              0,
+              9,
+              0
+            ]
+          }
+        },
+        "source": "pose.py",
+        "sha256": "0b691e0db7cfcd1debc3376495e09c4d6e6bffe53af8c0b9904b9c0cb3d470f6",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "sheep_woolly",
+      "label": "Sheep Woolly",
+      "stableId": "sheep_woolly",
+      "family": "ovine",
+      "role": "actor",
+      "file": "assets/sheep_woolly.glb",
+      "bytes": 427852,
+      "sha256": "bc5eb12fc48795c3121836b21ec89ae30d6b24c5b5753c6b7b254684f96b8e67",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Independent CPU craft checkpoint passes; expressly not production/runtime acceptance.",
+        "No animation clips; diagnostic head-turn can shrink neck area; no exhaustive self-intersection/IK proof.",
+        "State switching/rig and shearing gameplay remain caller-owned.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "foreleg_flex": {
+            "front_left_upper": [
+              18,
+              0,
+              0
+            ],
+            "front_left_lower": [
+              -26,
+              0,
+              0
+            ],
+            "front_left_cannon": [
+              12,
+              0,
+              0
+            ],
+            "front_left_hoof": [
+              -4,
+              0,
+              0
+            ]
+          },
+          "hock_flex": {
+            "hind_right_upper": [
+              -17,
+              0,
+              0
+            ],
+            "hind_right_lower": [
+              24,
+              0,
+              0
+            ],
+            "hind_right_cannon": [
+              -20,
+              0,
+              0
+            ],
+            "hind_right_hoof": [
+              8,
+              0,
+              0
+            ]
+          },
+          "head_lower": {
+            "neck": [
+              20,
+              0,
+              0
+            ],
+            "head": [
+              16,
+              0,
+              0
+            ]
+          },
+          "head_turn": {
+            "neck": [
+              0,
+              8,
+              0
+            ],
+            "head": [
+              0,
+              22,
+              0
+            ]
+          },
+          "ear_tail": {
+            "ear_left": [
+              0,
+              0,
+              -15
+            ],
+            "ear_right": [
+              0,
+              0,
+              15
+            ],
+            "tail_base": [
+              0,
+              14,
+              0
+            ],
+            "tail_tip": [
+              12,
+              0,
+              0
+            ]
+          }
+        },
+        "source": "rig.contract.json",
+        "sha256": "5a057ef91ca53dcb0f349133ce5ad516a55be9efc6fcb648a07ee644233e84a3",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "sheep_sheared",
+      "label": "Sheep Sheared",
+      "stableId": "sheep_sheared",
+      "family": "ovine",
+      "role": "actor",
+      "file": "assets/sheep_sheared.glb",
+      "bytes": 349508,
+      "sha256": "7b6d1bc04dd052f1b7f55024182b5d822875a82a6966abb1fbd4966b7da5de74",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Independent CPU craft checkpoint passes; expressly not production/runtime acceptance.",
+        "No animation clips; diagnostic head-turn can shrink neck area; no exhaustive self-intersection/IK proof.",
+        "State switching/rig and shearing gameplay remain caller-owned.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "foreleg_flex": {
+            "front_left_upper": [
+              18,
+              0,
+              0
+            ],
+            "front_left_lower": [
+              -26,
+              0,
+              0
+            ],
+            "front_left_cannon": [
+              12,
+              0,
+              0
+            ],
+            "front_left_hoof": [
+              -4,
+              0,
+              0
+            ]
+          },
+          "hock_flex": {
+            "hind_right_upper": [
+              -17,
+              0,
+              0
+            ],
+            "hind_right_lower": [
+              24,
+              0,
+              0
+            ],
+            "hind_right_cannon": [
+              -20,
+              0,
+              0
+            ],
+            "hind_right_hoof": [
+              8,
+              0,
+              0
+            ]
+          },
+          "head_lower": {
+            "neck": [
+              20,
+              0,
+              0
+            ],
+            "head": [
+              16,
+              0,
+              0
+            ]
+          },
+          "head_turn": {
+            "neck": [
+              0,
+              8,
+              0
+            ],
+            "head": [
+              0,
+              22,
+              0
+            ]
+          },
+          "ear_tail": {
+            "ear_left": [
+              0,
+              0,
+              -15
+            ],
+            "ear_right": [
+              0,
+              0,
+              15
+            ],
+            "tail_base": [
+              0,
+              14,
+              0
+            ],
+            "tail_tip": [
+              12,
+              0,
+              0
+            ]
+          }
+        },
+        "source": "rig.contract.json",
+        "sha256": "5a057ef91ca53dcb0f349133ce5ad516a55be9efc6fcb648a07ee644233e84a3",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "ram_woolly",
+      "label": "Ram Woolly",
+      "stableId": "ram_woolly",
+      "family": "ovine",
+      "role": "actor",
+      "file": "assets/ram_woolly.glb",
+      "bytes": 486612,
+      "sha256": "0348cfc1560b8b0eb58dcb373fedf8af876277f2719d2ce8da97fce11bae232f",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Independent CPU craft checkpoint passes; expressly not production/runtime acceptance.",
+        "No animation clips; diagnostic head-turn can shrink neck area; no exhaustive self-intersection/IK proof.",
+        "State switching/rig and shearing gameplay remain caller-owned.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "foreleg_flex": {
+            "front_left_upper": [
+              18,
+              0,
+              0
+            ],
+            "front_left_lower": [
+              -26,
+              0,
+              0
+            ],
+            "front_left_cannon": [
+              12,
+              0,
+              0
+            ],
+            "front_left_hoof": [
+              -4,
+              0,
+              0
+            ]
+          },
+          "hock_flex": {
+            "hind_right_upper": [
+              -17,
+              0,
+              0
+            ],
+            "hind_right_lower": [
+              24,
+              0,
+              0
+            ],
+            "hind_right_cannon": [
+              -20,
+              0,
+              0
+            ],
+            "hind_right_hoof": [
+              8,
+              0,
+              0
+            ]
+          },
+          "head_lower": {
+            "neck": [
+              20,
+              0,
+              0
+            ],
+            "head": [
+              16,
+              0,
+              0
+            ]
+          },
+          "head_turn": {
+            "neck": [
+              0,
+              8,
+              0
+            ],
+            "head": [
+              0,
+              22,
+              0
+            ]
+          },
+          "ear_tail": {
+            "ear_left": [
+              0,
+              0,
+              -15
+            ],
+            "ear_right": [
+              0,
+              0,
+              15
+            ],
+            "tail_base": [
+              0,
+              14,
+              0
+            ],
+            "tail_tip": [
+              12,
+              0,
+              0
+            ]
+          }
+        },
+        "source": "rig.contract.json",
+        "sha256": "5a057ef91ca53dcb0f349133ce5ad516a55be9efc6fcb648a07ee644233e84a3",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "ram_shorn",
+      "label": "Ram Shorn",
+      "stableId": "ram_shorn",
+      "family": "ovine",
+      "role": "actor",
+      "file": "assets/ram_shorn.glb",
+      "bytes": 408292,
+      "sha256": "d1780809fd973d72b6d2eb4600c7c4230299ba2a2fce8df628bbda3fe4a4de49",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Independent CPU craft checkpoint passes; expressly not production/runtime acceptance.",
+        "No animation clips; diagnostic head-turn can shrink neck area; no exhaustive self-intersection/IK proof.",
+        "State switching/rig and shearing gameplay remain caller-owned.",
+        "Later bounded review evidence is linked separately from author pending notes; it does not confer Jordan acceptance or game readiness."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "foreleg_flex": {
+            "front_left_upper": [
+              18,
+              0,
+              0
+            ],
+            "front_left_lower": [
+              -26,
+              0,
+              0
+            ],
+            "front_left_cannon": [
+              12,
+              0,
+              0
+            ],
+            "front_left_hoof": [
+              -4,
+              0,
+              0
+            ]
+          },
+          "hock_flex": {
+            "hind_right_upper": [
+              -17,
+              0,
+              0
+            ],
+            "hind_right_lower": [
+              24,
+              0,
+              0
+            ],
+            "hind_right_cannon": [
+              -20,
+              0,
+              0
+            ],
+            "hind_right_hoof": [
+              8,
+              0,
+              0
+            ]
+          },
+          "head_lower": {
+            "neck": [
+              20,
+              0,
+              0
+            ],
+            "head": [
+              16,
+              0,
+              0
+            ]
+          },
+          "head_turn": {
+            "neck": [
+              0,
+              8,
+              0
+            ],
+            "head": [
+              0,
+              22,
+              0
+            ]
+          },
+          "ear_tail": {
+            "ear_left": [
+              0,
+              0,
+              -15
+            ],
+            "ear_right": [
+              0,
+              0,
+              15
+            ],
+            "tail_base": [
+              0,
+              14,
+              0
+            ],
+            "tail_tip": [
+              12,
+              0,
+              0
+            ]
+          }
+        },
+        "source": "rig.contract.json",
+        "sha256": "5a057ef91ca53dcb0f349133ce5ad516a55be9efc6fcb648a07ee644233e84a3",
+        "classification": "existing-static-diagnostic",
+        "rotationConvention": "absolute bind-local qz*qy*qx degrees; source evaluator verified"
+      }
+    },
+    {
+      "id": "ashgrove_wolf_01",
+      "label": "Ashgrove wolf",
+      "stableId": "ashgrove_wolf_01",
+      "family": "canine",
+      "role": "actor",
+      "file": "assets/ashgrove_wolf_01.glb",
+      "bytes": 298192,
+      "sha256": "fdb808b831da3903be08f623484d2e990f3c411d9da8536541fa49895a6f8fb9",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "revision_requested",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "hold_for_revision",
+        "dispatch_policy": "parent_assignment_only",
+        "revision_status": "needs_revision",
+        "integration_hold": "Wolf hind-leg revision underway; await completed approved version/hash before rigging integration."
+      },
+      "limits": [
+        "Wolf hind-leg revision underway; await completed approved version/hash before rigging integration.",
+        "Own rig and diagnostic clips only; no finished idle/gait/attack/death/flight set or game collision.",
+        "Independent review and DCC evidence have separate scope; source tests do not confer parent art or runtime acceptance."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "bear_woodland_01",
+      "label": "Woodland bear",
+      "stableId": "bear_woodland_01",
+      "family": "ursid",
+      "role": "actor",
+      "file": "assets/bear_woodland_01.glb",
+      "bytes": 569312,
+      "sha256": "3829eef546ee25e140513f16a22e47a24b7660fa2087609b7eceba2f0d5bd460",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "revision_requested",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "hold_for_revision",
+        "dispatch_policy": "parent_assignment_only",
+        "revision_status": "needs_revision",
+        "integration_hold": "Bear body, muzzle and fur-read revisions underway; await completed approved version/hash before rigging integration."
+      },
+      "limits": [
+        "Bear body, muzzle and fur-read revisions underway; await completed approved version/hash before rigging integration.",
+        "Own rig and diagnostic clips only; no finished idle/gait/attack/death/flight set or game collision.",
+        "Independent review and DCC evidence have separate scope; source tests do not confer parent art or runtime acceptance."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "fen_frog",
+      "label": "Fen frog",
+      "stableId": "fen_frog_01",
+      "family": "amphibian",
+      "role": "actor",
+      "file": "assets/fen_frog.glb",
+      "bytes": 446272,
+      "sha256": "24fec4b225234f7d4302e331240ecf4c1eb88d17ed97ded6ed75f7c70c257734",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "accepted_for_stated_scope",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only",
+        "acceptance_scope": "Parent visual asset-craft judgment, not animation, collision, game importer, material calibration or gameplay acceptance.",
+        "acceptance_evidence": [
+          {
+            "path": "2026-10-10-parent-art-review.json",
+            "sha256": "054c625dda1807c90b8d5b2520252e66f4808f28bb9dd6171fe15ca294c9005a",
+            "bytes": 1801,
+            "role": "trusted_parent_decision_relay"
+          }
+        ]
+      },
+      "limits": [
+        "Own rig and diagnostic clips only; no finished idle/gait/attack/death/flight set or game collision.",
+        "Independent review and DCC evidence have separate scope; source tests do not confer parent art or runtime acceptance.",
+        "Parent art acceptance recorded on 2026-10-10; older pending notes do not override the relay. Independent/runtime scopes remain separate."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "skeleton",
+      "label": "Crypt Warden skeleton",
+      "stableId": "crypt_warden_skeleton_01",
+      "family": "skeletal_biped",
+      "role": "actor",
+      "file": "assets/skeleton.glb",
+      "bytes": 861620,
+      "sha256": "e0b87964820e62eb6b7106bd13818e63ac0f7b20d688b8392473080077f53457",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "accepted_for_stated_scope",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only",
+        "acceptance_scope": "Parent visual asset-craft judgment, not animation, collision, game importer, material calibration or gameplay acceptance.",
+        "acceptance_evidence": [
+          {
+            "path": "2026-10-10-parent-art-review.json",
+            "sha256": "054c625dda1807c90b8d5b2520252e66f4808f28bb9dd6171fe15ca294c9005a",
+            "bytes": 1801,
+            "role": "trusted_parent_decision_relay"
+          }
+        ]
+      },
+      "limits": [
+        "Own rig and diagnostic clips only; no finished idle/gait/attack/death/flight set or game collision.",
+        "Independent review and DCC evidence have separate scope; source tests do not confer parent art or runtime acceptance.",
+        "Parent art acceptance recorded on 2026-10-10; older pending notes do not override the relay. Independent/runtime scopes remain separate."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "imp_cinderhook_01",
+      "label": "Cinderhook imp",
+      "stableId": "imp_cinderhook_01",
+      "family": "imp",
+      "role": "actor",
+      "file": "assets/imp_cinderhook_01.glb",
+      "bytes": 509468,
+      "sha256": "90d0f2804ab73628faafd15c45c4090c0cbd1b433c746144e02230255f577619",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "accepted_for_stated_scope",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only",
+        "acceptance_scope": "Parent visual asset-craft judgment, not animation, collision, game importer, material calibration or gameplay acceptance.",
+        "acceptance_evidence": [
+          {
+            "path": "2026-10-10-parent-art-review.json",
+            "sha256": "054c625dda1807c90b8d5b2520252e66f4808f28bb9dd6171fe15ca294c9005a",
+            "bytes": 1801,
+            "role": "trusted_parent_decision_relay"
+          }
+        ]
+      },
+      "limits": [
+        "Own rig and diagnostic clips only; no finished idle/gait/attack/death/flight set or game collision.",
+        "Independent review and DCC evidence have separate scope; source tests do not confer parent art or runtime acceptance.",
+        "No preview images present in deliverables; prepared CPU render command is unexecuted. Parent now accepts visual craft via relay; catalog renders and DCC/GPU verification remain unperformed.",
+        "Parent art acceptance recorded on 2026-10-10; older pending notes do not override the relay. Independent/runtime scopes remain separate."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "human_accepted_static",
+      "label": "Human 01 static accepted baseline",
+      "stableId": "original_human_01",
+      "family": "human_reference",
+      "role": "module_or_reference",
+      "file": "assets/human_accepted_static.glb",
+      "bytes": 54392,
+      "sha256": "1681a5481f57d5dbeec3e86a365c9fe2099338aa98f676b64ce0a1efc8de3d8e",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "documented_accepted_baseline",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only",
+        "acceptance_evidence": [
+          {
+            "path": "accepted_deliverables_sha256.json",
+            "sha256": "a473536479a47cca1631f47887403a87734922c83abbfc6c62f408cf0e5816cf",
+            "bytes": 3169,
+            "role": "accepted_baseline_reference"
+          },
+          {
+            "path": "README.md",
+            "sha256": "aeba061018abe6cca82882855acb24bb2990dee2500e3b002c9fa1b8f75acd65",
+            "bytes": 11400,
+            "role": "accepted_baseline_reference"
+          },
+          {
+            "path": "room.contract.json",
+            "sha256": "a3605e803d0a04ffe58713817f1a8386ffa680aa1bcdd97ec59ac8b8750b6aa8",
+            "bytes": 10288,
+            "role": "accepted_baseline_reference"
+          }
+        ]
+      },
+      "limits": [
+        "Accepted static baseline is documented by task32/34/38 preserved-input contracts. This does not approve later head/hair combinations or gameplay animation.",
+        "No skin or animation in this original GLB; authoring metres do not fix world tile conversion."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "human_head33",
+      "label": "Neutral head module",
+      "stableId": "original_human_01_neutral_head",
+      "family": "head_module",
+      "role": "module_or_reference",
+      "file": "assets/human_head33.glb",
+      "bytes": 14888,
+      "sha256": "0727035ba5d4cc99666ade7479a86f2a520b5ae6872938a6a24f2450c4c6651b",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Rigid head-only replacement; no facial animation; locked scalp fit belongs to the pinned module.",
+        "Hair, neck and body remain separate responsibilities; combined acceptance pending."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "human_hair32",
+      "label": "Short swept hair module",
+      "stableId": "hair_short_swept_01",
+      "family": "hair_module",
+      "role": "module_or_reference",
+      "file": "assets/human_hair32.glb",
+      "bytes": 22792,
+      "sha256": "b3c0de6fc37796c960bd98825be7ebf61906e0066702a84189a48262e98c688e",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Head-local mount at local zero; model anchor [0,1.58,0] must be applied once.",
+        "Unknown or full headgear hides entire hair; retaining hair requires exact fit/pose review.",
+        "CPU static fit evidence exists; combined parent art and GPU review are pending."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "human_mallet34",
+      "label": "Timber mallet proxy",
+      "stableId": "original_mallet_proxy",
+      "family": "equipment_reference",
+      "role": "module_or_reference",
+      "file": "assets/human_mallet34.glb",
+      "bytes": 11220,
+      "sha256": "7d1684594807acf2cc9bd120b54ac8cd97310c2a4f85de19d4befe9db35520a4",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "readiness": {
+        "visual_acceptance": "diagnostic_only",
+        "technical_evidence": "See pinned source reports; current catalog check validates links, bytes and rest metadata only.",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified",
+        "dispatch_policy": "parent_assignment_only"
+      },
+      "limits": [
+        "Held-tool diagnostic proxy, not accepted final equipment."
+      ],
+      "rigProductionAcceptance": "not_claimed",
+      "staticPoses": null
+    },
+    {
+      "id": "duck_riverbank_01",
+      "label": "Riverbank duck",
+      "stableId": "duck_riverbank_01",
+      "family": "avian_duck",
+      "role": "authoring_candidate",
+      "file": "assets/duck_riverbank_01.glb",
+      "bytes": 202288,
+      "sha256": "71af18bb994711e627f4f60b3c3bcddfaa4ffe501c5a6504ffac1e15159d1d46",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": true,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified"
+      },
+      "limits": [
+        "No jaw/finger/feather controls; no flight, dive, swim gait or contact schedule demonstrated.",
+        "Bill target is a closed-bill interaction frame; exact bill/surface clearance requires a later scene target and reviewed pose.",
+        "No stride, duty factor, cadence, floating draft or OSRS duck animation is measured by this mapping."
+      ],
+      "staticPoses": null
+    },
+    {
+      "id": "scorpion_scree_01",
+      "label": "Scree scorpion",
+      "stableId": "scorpion_scree_01",
+      "family": "arachnid_scorpion",
+      "role": "authoring_candidate",
+      "file": "assets/scorpion_scree_01.glb",
+      "bytes": 558908,
+      "sha256": "5eeca0192783fcf6944fb8aa343c875df6aca99b611a64d755fe9b8b75262331",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": true,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified"
+      },
+      "limits": [
+        "No eight-foot phase/support rhythm, stride or authoritative sting timing is inferred from leg_lift or tail probes.",
+        "Rigid shells are preserved. Pairwise hinge coverage, reach and action clearance need later visual/trajectory review, not automatic smoothing or rebinding.",
+        "Current inspector CPU parser accepts 69 joints within its aggregate 8192-joint input limit; no demonstrated inspector palette incompatibility. Game runtime budget/performance remains untested."
+      ],
+      "staticPoses": {
+        "poses": {
+          "rest": {},
+          "tail_lateral": {
+            "tail_1": [
+              0,
+              9,
+              0
+            ],
+            "tail_2": [
+              0,
+              7,
+              0
+            ],
+            "tail_3": [
+              0,
+              6,
+              0
+            ],
+            "tail_4": [
+              0,
+              5,
+              0
+            ],
+            "telson": [
+              4,
+              0,
+              0
+            ]
+          },
+          "tail_extend": {
+            "tail_2": [
+              -8,
+              0,
+              0
+            ],
+            "tail_3": [
+              -10,
+              0,
+              0
+            ],
+            "tail_4": [
+              -8,
+              0,
+              0
+            ],
+            "tail_5": [
+              -6,
+              0,
+              0
+            ]
+          },
+          "chela_close": {
+            "palp_L_finger": [
+              0,
+              -16,
+              0
+            ],
+            "palp_R_finger": [
+              0,
+              16,
+              0
+            ]
+          },
+          "palp_reach": {
+            "palp_L_femur": [
+              0,
+              -10,
+              0
+            ],
+            "palp_L_patella": [
+              0,
+              13,
+              0
+            ],
+            "palp_R_femur": [
+              0,
+              10,
+              0
+            ],
+            "palp_R_patella": [
+              0,
+              -13,
+              0
+            ]
+          },
+          "leg_lift": {
+            "leg_L2_femur": [
+              0,
+              0,
+              12
+            ],
+            "leg_L2_patella": [
+              0,
+              0,
+              -7
+            ],
+            "leg_L2_tibia": [
+              0,
+              0,
+              10
+            ],
+            "leg_L2_tarsus": [
+              0,
+              0,
+              -6
+            ]
+          }
+        },
+        "sha256": "278932ed7e5124355f4d042586b86dc46e9291838af5ae6406d0bd4e8ca264f5",
+        "source": "pinned author editable diagnostic_poses_degrees; static only"
+      }
+    },
+    {
+      "id": "hobgoblin_ironfen_01",
+      "label": "Ironfen hobgoblin",
+      "stableId": "hobgoblin_ironfen_01",
+      "family": "biped_hobgoblin",
+      "role": "authoring_candidate",
+      "file": "assets/hobgoblin_ironfen_01.glb",
+      "bytes": 471688,
+      "sha256": "92d266922e31c900d906a7a315b3b05faf2e35a2f28301a864ebb7441ff2a00b",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": true,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified"
+      },
+      "limits": [
+        "20 joints alone does not make this human01-compatible. Its own rig identity, side names, proportions and weights remain authoritative.",
+        "Cloth panels/belt follow pelvis; no cloth collision or hand-fit behavior is inferred from probes."
+      ],
+      "staticPoses": null
+    },
+    {
+      "id": "hill_giant_heath_01",
+      "label": "Heath hill giant",
+      "stableId": "hill_giant_heath_01",
+      "family": "biped_hill_giant",
+      "role": "authoring_candidate",
+      "file": "assets/hill_giant_heath_01.glb",
+      "bytes": 393664,
+      "sha256": "6ff7ffcf3c75e44788131d3e2b3c0b7acf9ea2f40ae6a46fb41ec83c92dd42f0",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": true,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified"
+      },
+      "limits": [
+        "Diagnostic crouch has no pelvis/ground-contact solve and is not a failed locomotion clip. No new knee/hip defect is demonstrated by this contract audit.",
+        "Source diagnostic area warnings remain review cases; this read-only audit does not re-certify deformation or full self-intersection."
+      ],
+      "staticPoses": null
+    },
+    {
+      "id": "dog_bracken_town_01",
+      "label": "Bracken town dog",
+      "stableId": "dog_bracken_town_01",
+      "family": "canine_domestic_dog",
+      "role": "authoring_candidate",
+      "file": "assets/dog_bracken_town_01.glb",
+      "bytes": 256008,
+      "sha256": "492deb945e99d974598d983e735d3f8d86e453a992ca5ae8add782e306f15539",
+      "activeBindingAllowed": false,
+      "requiresReviewOptIn": true,
+      "readiness": {
+        "visual_acceptance": "pending_parent",
+        "gameplay_ready": false,
+        "runtime_integration": "unverified"
+      },
+      "limits": [
+        "Author-reported diag_foreleg_flex at t=1 s, triangle 534, area ratio 0.41035305283834056 remains a shoulder collar review flag below the proposed .5 screening threshold. This contract audit does not remeasure or visually clear it, and does not infer a required rebind.",
+        "Six embedded two-second diagnostics are probes, not locomotion. No planted support solve, combined-pose acceptance, runtime performance or game-camera review is claimed.",
+        "Native aimed Blender bone frames differ from identity GLB binds; convert explicitly, never copy native Euler rotations into GLB local channels."
+      ],
+      "staticPoses": null
+    },
+    {
+      "id": "dwarf",
+      "label": "Cairnsmith dwarf corrected candidate",
+      "stableId": "dwarf_cairnsmith_01-rig-v1_1.glb",
+      "family": "dwarf",
+      "role": "rig_study",
+      "file": "assets/dwarf.glb",
+      "bytes": 401304,
+      "sha256": "0a3b3b86e91d117fa9a53da5670059b17f9f3582927d8d708539ea9fb21b12c9",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "rigReview": {
+        "artAccepted": true,
+        "rigAccepted": false,
+        "finishedAnimation": false,
+        "sourceVersion": "task60/2026-10-11/v1.1",
+        "status": "corrected-private-rig-candidate",
+        "summary": "Original art buffers and no-thumb anatomy unchanged; only44 authored arm-vertex weights plus two interior elbow pivots changed. 28joint/11socket organization preserved. Provisional ordinary authoring envelope0..65degrees based on both arms and representative shoulder/wrist/+30/-30 model-localYtwist tests plus focused CPU pixel inspection; engineering recommendation, not owner or gameplay acceptance.",
+        "limits": [
+          "Original art buffers and no-thumb anatomy unchanged; only44 authored arm-vertex weights plus two interior elbow pivots changed. 28joint/11socket organization preserved.",
+          "Provisional ordinary authoring envelope0..65degrees based on both arms and representative shoulder/wrist/+30/-30 model-localYtwist tests plus focused CPU pixel inspection; engineering recommendation, not owner or gameplay acceptance.",
+          "0..90degrees is the sampled engineering test envelope. Above65degrees requires pose-specific review; the shown combined90 example retains central elbow-band volume74..76% and ring area68.55%. No unrestricted deep-bend or twist readiness.",
+          "65pure central elbow-band volume97.85..99.17%; shown combined65 example91.0..93.2%; opposite-twist65 example89.61..94.22%; all sampled65 profiles89.61..99.17%. Zero strict proper self-intersections or opposed faces in independent218-pose audit; this does not certify all collision or surface contacts.",
+          "Rest sockets and rigid hand/finger attachment remain stable; changing hinge shifts free-space grip trajectory. At65degrees delta.0451332units vsbaseline; tool poses need alignment checks.",
+          "909sampled exported diagnostic frames plus332structural checks; diagnostic clips are not finished locomotion. Free ankle probe remains unplanted and may cross ground."
+        ],
+        "joints": 28,
+        "sockets": 11
+      },
+      "staticPoses": {
+        "poses": {
+          "Root_review_pure_right_elbow65": {
+            "forearm_right": [
+              -65.00000000000001,
+              0,
+              0
+            ]
+          },
+          "Root_review_pure_right_elbow90": {
+            "forearm_right": [
+              -89.99999999999999,
+              0,
+              0
+            ]
+          },
+          "Root_review_combined65_model_localY_twist": {
+            "forearm_right": [
+              -65,
+              30.000000000000004,
+              1.836294101515286e-15
+            ],
+            "forearm_left": [
+              -65,
+              -30.000000000000004,
+              -1.836294101515286e-15
+            ],
+            "hand_right": [
+              19.99999999999999,
+              14.999999999999996,
+              11.999999999999995
+            ],
+            "hand_left": [
+              19.99999999999999,
+              -14.999999999999996,
+              -11.999999999999995
+            ],
+            "upper_arm_right": [
+              -25.000000000000007,
+              0,
+              -22.000000000000004
+            ],
+            "upper_arm_left": [
+              -25.000000000000007,
+              0,
+              22.000000000000004
+            ],
+            "clavicle_right": [
+              0,
+              0,
+              -5
+            ],
+            "clavicle_left": [
+              0,
+              0,
+              5
+            ],
+            "chest": [
+              -3,
+              3,
+              -2.488218361681087e-17
+            ],
+            "finger_1_right": [
+              19,
+              0,
+              0
+            ],
+            "finger_2_right": [
+              21.999999999999996,
+              0,
+              0
+            ],
+            "finger_3_right": [
+              25.000000000000007,
+              0,
+              0
+            ],
+            "finger_4_right": [
+              28,
+              0,
+              0
+            ],
+            "finger_1_left": [
+              19,
+              0,
+              0
+            ],
+            "finger_2_left": [
+              21.999999999999996,
+              0,
+              0
+            ],
+            "finger_3_left": [
+              25.000000000000007,
+              0,
+              0
+            ],
+            "finger_4_left": [
+              28,
+              0,
+              0
+            ]
+          }
+        },
+        "sha256": "41852136f3c71fae91349bded5516ad12328524b2fe0f8177bf17211feba51a2",
+        "source": "dwarf-elbow.frames.json",
+        "classification": "Root-reviewed inspection-only static local poses; not embedded clips"
+      }
+    },
+    {
+      "id": "minotaur",
+      "label": "Ridgehorn minotaur",
+      "stableId": "minotaur_ridgehorn_01_rig_v1.glb",
+      "family": "minotaur",
+      "role": "rig_study",
+      "file": "assets/minotaur.glb",
+      "bytes": 438044,
+      "sha256": "5b219fc8eeaf444246336f6c9b85a8c686992b1170389a6b528d737985006476",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "rigReview": {
+        "artAccepted": true,
+        "rigAccepted": false,
+        "finishedAnimation": false,
+        "sourceVersion": "task60/2026-10-11/v1.1",
+        "status": "new-rig-candidate",
+        "summary": "Unchanged28joint/15socket candidate, six diagnostic clips;343CPUchecks and6x121sampledposes fromv1 retained. Approved art buffers/materials preserved, sampled seams/binds/deformation tested. Fur/body clearance, arbitrary articulation, equipment fit and planted locomotion not certified.",
+        "limits": [
+          "Unchanged28joint/15socket candidate, six diagnostic clips;343CPUchecks and6x121sampledposes fromv1 retained.",
+          "Approved art buffers/materials preserved, sampled seams/binds/deformation tested. Fur/body clearance, arbitrary articulation, equipment fit and planted locomotion not certified."
+        ],
+        "joints": 28,
+        "sockets": 15
+      }
+    },
+    {
+      "id": "ghost",
+      "label": "Barrow warden ghost",
+      "stableId": "ghost_barrow_warden_01.rig_v1.glb",
+      "family": "ghost",
+      "role": "rig_study",
+      "file": "assets/ghost.glb",
+      "bytes": 128748,
+      "sha256": "29b56e82d44c3086da470c148c6b94b9b9f0603ab85356013526f7f50fdc7d40",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "rigReview": {
+        "artAccepted": true,
+        "rigAccepted": false,
+        "finishedAnimation": false,
+        "sourceVersion": "task60/2026-10-11/v1.1",
+        "status": "new-rig-candidate",
+        "summary": "Unchanged14joint/6socket candidate, five probes and32CPUchecks retained; approved connected opaque cloth art preserved. Floating ghost has no feet; resthem.27units. Sampled cloth deformation reviewed inprior CPUcards; arbitrary cuff/collar/shroud collisions, cloth physics and gameplay motion not certified.",
+        "limits": [
+          "Unchanged14joint/6socket candidate, five probes and32CPUchecks retained; approved connected opaque cloth art preserved.",
+          "Floating ghost has no feet; resthem.27units. Sampled cloth deformation reviewed inprior CPUcards; arbitrary cuff/collar/shroud collisions, cloth physics and gameplay motion not certified."
+        ],
+        "joints": 14,
+        "sockets": 6
+      }
+    },
+    {
+      "id": "zombie",
+      "label": "Mirebound zombie",
+      "stableId": "zombie_mirebound_01.glb",
+      "family": "zombie",
+      "role": "rig_study",
+      "file": "assets/zombie.glb",
+      "bytes": 197204,
+      "sha256": "bc2163426a741763249c028a312dfd04508c4adb84c8d929e62b34ec7580ef18",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "rigReview": {
+        "artAccepted": true,
+        "rigAccepted": false,
+        "finishedAnimation": false,
+        "sourceVersion": "task60/2026-10-11/v1.1",
+        "status": "completed-preserved",
+        "summary": "Byte-identical acceptedart and existing20joint/11socket rig with four diagnostic clips;25focused+18structural checks and4x601dense samples retained. No thumbs. Existing diagnostics do not establish finished locomotion, ground-constrained contacts, equipment fit or arbitrary collision clearance.",
+        "limits": [
+          "Byte-identical acceptedart and existing20joint/11socket rig with four diagnostic clips;25focused+18structural checks and4x601dense samples retained. No thumbs.",
+          "Existing diagnostics do not establish finished locomotion, ground-constrained contacts, equipment fit or arbitrary collision clearance."
+        ],
+        "joints": 20,
+        "sockets": 11
+      }
+    },
+    {
+      "id": "crawler",
+      "label": "Flesh crawler preserved rig",
+      "stableId": "flesh_crawler_mire_01.glb",
+      "family": "crawler",
+      "role": "rig_study",
+      "file": "assets/crawler.glb",
+      "bytes": 432524,
+      "sha256": "ccbed0d6977da38089b71c5641d6a6534d795d72de643b6d6995fb10996be505",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "rigReview": {
+        "artAccepted": true,
+        "rigAccepted": false,
+        "finishedAnimation": false,
+        "sourceVersion": "task60/2026-10-11/v1.1",
+        "status": "completed-preserved",
+        "summary": "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained. body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+        "limits": [
+          "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained.",
+          "body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+          "An in-memory rootYoffset+.0373838651 removes sampled penetration but leaves middle/rear contacts+.0495111/+.0860939 high andXZdrift. Not a planted six-contact pose; no exported root-lift orcontactIK.",
+          "Clarification covers this bounded free-space probe. Other contact schedules, locomotion, inter-shell overlap/hinge gaps, collision/silhouette and broader visible articulation remain unaccepted.",
+          "Historicalv1 summary-.02505 misattributed area-worst sample rather than clip-wide minimum; corrected sidecars do not change GLB."
+        ],
+        "joints": 33,
+        "sockets": 9
+      }
+    },
+    {
+      "id": "crawler_diagnostics",
+      "label": "Flesh crawler · separate diagnostic export",
+      "stableId": "crawler_diagnostics.glb",
+      "family": "crawler",
+      "role": "rig_diagnostic_variant",
+      "file": "assets/crawler_diagnostics.glb",
+      "bytes": 437228,
+      "sha256": "41fe76d618b8d21f09cac62744ca2dff348da077618e20eeec95b8bee38ea4f6",
+      "activeBindingAllowed": true,
+      "requiresReviewOptIn": false,
+      "rigReview": {
+        "artAccepted": true,
+        "rigAccepted": false,
+        "finishedAnimation": false,
+        "sourceVersion": "task60/2026-10-11/v1.1",
+        "status": "completed-preserved",
+        "summary": "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained. body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+        "limits": [
+          "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained.",
+          "body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+          "An in-memory rootYoffset+.0373838651 removes sampled penetration but leaves middle/rear contacts+.0495111/+.0860939 high andXZdrift. Not a planted six-contact pose; no exported root-lift orcontactIK.",
+          "Clarification covers this bounded free-space probe. Other contact schedules, locomotion, inter-shell overlap/hinge gaps, collision/silhouette and broader visible articulation remain unaccepted.",
+          "Historicalv1 summary-.02505 misattributed area-worst sample rather than clip-wide minimum; corrected sidecars do not change GLB."
+        ],
+        "joints": 33,
+        "sockets": 9,
+        "optionalDiagnosticExport": true
+      }
+    }
+  ]
+}

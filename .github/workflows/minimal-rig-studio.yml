@@ -1,0 +1,71 @@
+name: Minimal rig studio candidate
+on:
+  push:
+    branches: [rebuild-minimal-rig-studio]
+    paths:
+      - animation-studio/minimal/**
+      - animation-studio/rebuild.html
+      - animation-studio/tests/minimal-studio.test.mjs
+      - scripts/review-minimal-studio.mjs
+      - .github/workflows/minimal-rig-studio.yml
+permissions:
+  contents: read
+concurrency:
+  group: minimal-studio-hosted-graphics
+  cancel-in-progress: true
+jobs:
+  focused:
+    # One-shot review requested by the parent; do not repeat on later pushes.
+    if: github.sha == 'c9bc6cacbc2a018a79bc6cb3cd956c53f84eb5ae'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Frozen assets and worker/resource contracts
+        run: node --experimental-vm-modules --test animation-studio/tests/minimal-studio.test.mjs tests/verify-public-rig-studio.test.mjs
+      - name: Runner-only browser controller
+        run: npm install --prefix "$RUNNER_TEMP/minimal-browser" --no-audit --no-fund playwright@1.64.0
+      - name: Bounded hosted browser review
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/minimal-browser/node_modules/playwright/index.mjs
+          STUDIO_REVIEW_SHA: ${{ github.sha }}
+          STUDIO_REVIEW_PHASE: idle
+        run: xvfb-run -a node scripts/review-minimal-studio.mjs
+      - name: Review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: minimal-studio-${{ github.sha }}
+          path: minimal-studio-evidence/
+          retention-days: 7
+  clock-diagnostic:
+    needs: focused
+    if: github.sha == 'c9bc6cacbc2a018a79bc6cb3cd956c53f84eb5ae'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Runner-only existing browser controller
+        run: npm install --prefix "$RUNNER_TEMP/clock-browser" --no-audit --no-fund playwright@1.64.0
+      - name: One sequential three-case clock/trace diagnosis
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/clock-browser/node_modules/playwright/index.mjs
+          STUDIO_REVIEW_SHA: ${{ github.sha }}
+        run: xvfb-run -a node scripts/diagnose-studio-clocks.mjs
+      - name: Preserve bounded diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-clocks-${{ github.sha }}
+          path: studio-clock-evidence/
+          retention-days: 7

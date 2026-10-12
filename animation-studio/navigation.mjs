@@ -14,7 +14,7 @@ export function saveWorkbenchReturn(storage,base,layout,position){
 export function takeWorkbenchReturn(storage,base,referrer,layout,walkable){
   try{const raw=storage.getItem(WORKBENCH_RETURN_KEY);storage.removeItem(WORKBENCH_RETURN_KEY);
     const back=JSON.parse(raw),expected=new URL('../animation-studio/',base),from=new URL(referrer),lab=new URL('../lab-space/',base).href;
-    if(from.origin!==expected.origin||![expected.pathname,expected.pathname+'index.html'].includes(from.pathname)||back?.version!==1||back.lab!==lab||back.layout!==layout||!workbenchPose(back.position)||!walkable(back.position))return null;
+    if(from.origin!==expected.origin||![expected.pathname,expected.pathname+'index.html',expected.pathname+'legacy.html',expected.pathname+'rebuild.html'].includes(from.pathname)||back?.version!==1||back.lab!==lab||back.layout!==layout||!workbenchPose(back.position)||!walkable(back.position))return null;
     return back.position;
   }catch{return null;}
 }
