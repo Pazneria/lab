@@ -42,7 +42,8 @@ lab-space/assets/production-room.mjs whitespace=-blank-at-eol,-space-before-tab
 
 # Exact studio payloads and original figurine; generated HTML reviewed by hash.
 lab-space/figurines/crypt-warden/** -text
-animation-studio/index.html -text -diff
+animation-studio/legacy.html -text -diff
+animation-studio/index.html text eol=lf
 animation-studio/rig-review/source/** -text whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
 animation-studio/*.mjs -text
 animation-studio/*.md text eol=lf

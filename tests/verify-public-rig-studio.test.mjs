@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';import {createHash} from 'node:crypto';
 import {prepareAsset,evaluateInspection} from '../animation-studio/rig-review/source/inspection.mjs';
 import {deform} from '../animation-studio/rig-review/source/core.mjs';
-const read=p=>fs.readFileSync(new URL(p,import.meta.url),'utf8'),html=read('../animation-studio/index.html'),sha=b=>createHash('sha256').update(b).digest('hex');
+const read=p=>fs.readFileSync(new URL(p,import.meta.url),'utf8'),html=read('../animation-studio/legacy.html'),sha=b=>createHash('sha256').update(b).digest('hex');
 const block=(s,id)=>JSON.parse(s.match(new RegExp('<script id="'+id+'" type="application/json">([\\s\\S]*?)</script>'))[1]);
 const bundle=block(html,'bundle-data'),child=block(html,'motion-editor-data'),human=block(child.html,'bundle-data');
 for(const record of [...bundle.records,bundle.candidate])test(record.id+': public GLB hash, hierarchy and finite bind/deformation preserved',()=>{

@@ -1,6 +1,6 @@
 // Extract only frozen PR76 inputs. No source refresh or approval changes.
 const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
-const dir='animation-studio',legacy=dir+'/index.html';
+const dir='animation-studio',legacy=dir+'/legacy.html';
 const original=fs.readFileSync(fs.existsSync(legacy)?legacy:dir+'/index.html');
 const bundle=JSON.parse(original.toString().match(/<script id="bundle-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');

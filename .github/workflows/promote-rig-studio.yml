@@ -1,0 +1,36 @@
+name: Approved rig studio route promotion
+on:
+  push:
+    branches: [publish-rebuilt-rig-studio]
+permissions:
+  contents: read
+concurrency:
+  group: approved-studio-route-review
+  cancel-in-progress: true
+jobs:
+  promotion:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Frozen assets, graphics lifecycle and return routing
+        run: node --experimental-vm-modules --test animation-studio/tests/minimal-studio.test.mjs animation-studio/tests/promotion-routing.test.mjs tests/verify-public-rig-studio.test.mjs
+      - name: Existing runner-only browser controller
+        run: npm install --prefix "$RUNNER_TEMP/studio-promotion" --no-audit --no-fund playwright@1.64.0
+      - name: Bounded default-route and actual Lab integration
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-promotion/node_modules/playwright/index.mjs
+          STUDIO_REVIEW_SHA: ${{ github.sha }}
+        run: xvfb-run -a node scripts/review-studio-promotion.mjs
+      - name: Promotion evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-promotion-${{ github.sha }}
+          path: studio-promotion-evidence/
+          retention-days: 7
