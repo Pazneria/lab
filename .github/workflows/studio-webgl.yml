@@ -1,0 +1,43 @@
+name: Studio WebGL review
+on:
+  push:
+    branches: [fix-rig-studio-input-failure]
+    paths:
+      - animation-studio/**
+      - scripts/review-studio-webgl.mjs
+      - .github/workflows/studio-webgl.yml
+permissions:
+  contents: read
+concurrency:
+  group: studio-webgl-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install runner-only browser controller
+        run: npm install --prefix "$RUNNER_TEMP/studio-browser" --no-audit --no-fund playwright@1.64.0
+      - name: Extract deployed-main negative control
+        run: git show d9eb1e07b4ac98bbb982809e6e65db48d97fd0ce:animation-studio/index.html > "$RUNNER_TEMP/studio-base.html"
+      - name: WebGL and native input review
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-browser/node_modules/playwright/index.mjs
+          STUDIO_BASE_HTML: ${{ runner.temp }}/studio-base.html
+          STUDIO_REVIEW_SHA: ${{ github.sha }}
+        run: xvfb-run -a node scripts/review-studio-webgl.mjs
+      - name: Upload review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-webgl-${{ github.sha }}
+          path: studio-webgl-evidence/
+          retention-days: 7
+          if-no-files-found: warn
