@@ -4,8 +4,10 @@ export class GraphicsBridge{
   this.canvas=canvas;this.onHealth=onHealth;this.frames=0;this.createdBuffers=0;this.deletedBuffers=0;
   this.generation=0;this.modelId=null;this.presentedModel=null;this.pending=false;this.queued=null;this.nextModel=null;this.clear=true;this.disposed=false;this.probes=new Map();this.probeId=0;
   this.health={state:'starting',attempts:0,losses:[],initializationMs:[],liveBuffers:0};
-  this.output=canvas.getContext('bitmaprenderer');if(!this.output)this.output=canvas.getContext('2d');
-  if(!this.output||typeof OffscreenCanvas==='undefined')throw Error('Worker graphics unavailable. Pose controls and navigation remain usable.');
+  // Do not ask the document to connect to the GPU service while it starts.
+  // Create the presentation context only after the worker has a valid frame.
+  this.output=null;
+  if(typeof OffscreenCanvas==='undefined')throw Error('Worker graphics unavailable. Pose controls and navigation remain usable.');
   this.worker=new Worker(new URL('./graphics-worker.mjs',import.meta.url),{type:'module'});
   this.worker.onmessage=({data})=>{
    if(this.disposed){data.bitmap?.close();return;}
@@ -14,11 +16,12 @@ export class GraphicsBridge{
    if(data.type==='present'){
     this.pending=false;
     if(data.generation===this.generation){this.canvas.width=data.bitmap.width;this.canvas.height=data.bitmap.height;
+     if(!this.output)this.output=this.canvas.getContext('bitmaprenderer')||this.canvas.getContext('2d');
      if(this.output.transferFromImageBitmap)this.output.transferFromImageBitmap(data.bitmap);else this.output.drawImage(data.bitmap,0,0);
      this.frames++;this.presentedModel=data.modelId;
     }
     data.bitmap.close();this.onHealth?.(this.health);this.pump();
-   }else if(data.type==='health'){this.onHealth?.(this.health);if(data.health.state==='ready')this.pump();}
+   }else if(data.type==='health'){if(data.health.state!=='ready')this.presentedModel=null;this.onHealth?.(this.health);if(data.health.state==='ready')this.pump();}
   };
   this.worker.onerror=()=>{this.pending=false;this.health.state='unavailable';this.onHealth?.(this.health);};
   this.worker.postMessage({type:'init'});

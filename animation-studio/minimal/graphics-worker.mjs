@@ -1,13 +1,13 @@
 import {Viewer} from './viewer.mjs';
 
-let viewer=null,canvas=null,model=null,latest=null,modelId=null,generation=0;
+let viewer=null,canvas=null,model=null,latest=null,lastPresentation=null,modelId=null,generation=0;
 let recoveryTimer=0,attempt=0,disposed=false;
 const health={state:'starting',attempts:0,losses:[],initializationMs:[],draws:0,liveBuffers:0};
 const report=()=>postMessage({type:'health',health:{...health,liveBuffers:viewer?viewer.createdBuffers-viewer.deletedBuffers:0}});
 function recover(reason){
  if(disposed||recoveryTimer)return;
  health.losses.push({reason,at:performance.now()});health.losses=health.losses.slice(-10);
- viewer?.destroy();viewer=null;health.state=attempt<3?'recovering':'unavailable';report();
+ viewer?.destroy();viewer=null;latest=latest||lastPresentation;health.state=attempt<3?'recovering':'unavailable';report();
  if(attempt<3)recoveryTimer=setTimeout(()=>{recoveryTimer=0;initialize();},250);
 }
 function initialize(){
@@ -20,8 +20,8 @@ function initialize(){
   if(viewer.gl.isContextLost())throw Error('WebGL context lost during initialization');
   const error=viewer.gl.getError();if(error)throw Error('WebGL initialization error '+error);
   if(model)viewer.setModel(model);
-  health.state='ready';health.initializationMs.push(performance.now()-started);report();
-  present();
+  health.state='ready';health.initializationMs.push(performance.now()-started);
+  if(latest)present();else report();
  }catch(error){health.initializationMs.push(performance.now()-started);recover(error.message);}
 }
 function present(){
@@ -32,7 +32,7 @@ function present(){
   if(viewer.gl.isContextLost()){recover('WebGL context lost before presentation');return;}
   const bitmap=canvas.transferToImageBitmap();health.draws++;
   postMessage({type:'present',bitmap,generation,modelId,health:{...health,liveBuffers:viewer.createdBuffers-viewer.deletedBuffers}},[bitmap]);
-  latest=null;
+  lastPresentation={...latest,frame:null,model:null};latest=null;
  }catch(error){recover(error.message);}
 }
 self.onmessage=({data})=>{
