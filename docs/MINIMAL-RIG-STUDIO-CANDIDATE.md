@@ -1,5 +1,7 @@
 # Minimal rig studio candidate
 
+This document preserves the pre-promotion review and restrictions at those revisions. The owner subsequently approved default-route replacement after being informed of the failed cold-start aggregate; see [release history](RIG-STUDIO-REPLACEMENT-RELEASE.md). Historical failures and thresholds below are unchanged.
+
 Branch `rebuild-minimal-rig-studio`, based on live PR76 `cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d`. Candidate entry: `animation-studio/rebuild.html`, served over HTTP. No PR, default-route replacement, publication or merge is authorized.
 
 The original entry/CSP, Lab entry, rig source, Human01 study, owner edits and approval records remain byte-identical. The 34-export inventory is preserved; 33 records have separate hash-verified GLBs and the unaccepted Human01 skin candidate stays in the original studio. Twenty-six inputs already allowed for active binding are selectable. Existing clips/pose studies remain diagnostics, not approved finished animations. No concurrently reviewed art revisions are integrated.
