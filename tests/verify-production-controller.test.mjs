@@ -135,6 +135,36 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   };
 }
 
+test('center crosshair follows ready mouse capture and disappears immediately on capture loss',async()=>{
+  const f=await controllerFixture();assert.equal(f.byId('lab-crosshair').hidden,true);
+  await f.byId('explore').emit('click');assert.equal(f.byId('lab-crosshair').hidden,false);
+  f.document.pointerLockElement=null;await f.document.emit('pointerlockchange');
+  assert.equal(f.byId('lab-crosshair').hidden,true);
+  const loading=await controllerFixture({characterState:'loading'});
+  await loading.byId('explore').emit('click');assert.equal(loading.byId('lab-crosshair').hidden,true);
+  const fallback=await controllerFixture({requestLock:null});await fallback.byId('explore').emit('click');
+  assert.equal(fallback.byId('lab-crosshair').hidden,true);
+});
+
+test('menus, dialogs, embedded stations and lifecycle interruptions hide the captured crosshair',async()=>{
+  for(const kind of ['menu','help','station','comparison','embedded','blur','hidden','pagehide','failure','studio']){
+    const f=await controllerFixture();await f.byId('explore').emit('click');
+    assert.equal(f.byId('lab-crosshair').hidden,false,kind);
+    if(kind==='menu'){f.byId('room-menu').open=true;await f.byId('room-menu').emit('toggle');}
+    if(kind==='help')await f.byId('help').emit('click');
+    if(kind==='station')await f.byId('visit-bench').emit('click');
+    if(kind==='comparison')await f.byId('screen-controls').emit('click');
+    if(kind==='embedded')f.screenCallbacks.suspend();
+    if(kind==='blur'){f.focused=false;await f.window.emit('blur');}
+    if(kind==='hidden'){f.document.hidden=true;await f.document.emit('visibilitychange');}
+    if(kind==='pagehide')await f.window.emit('pagehide');
+    if(kind==='failure')f.engine.onLost();
+    if(kind==='studio')await f.byId('visit-animation').emit('click');
+    assert.equal(f.byId('lab-crosshair').hidden,true,kind);
+    if(kind==='embedded'){f.screenCallbacks.resume();assert.equal(f.byId('lab-crosshair').hidden,true);}
+  }
+});
+
 test('movement hotkeys are scoped to the focused Lab canvas and shared actions release independently',async()=>{
   const f=await controllerFixture();f.flush();
   await f.document.emit('keydown',{code:'KeyW'});await f.window.emit('keydown',{code:'KeyW'});

@@ -21,3 +21,10 @@ dialog{color:#23332f;background:#f4f5ee;border-color:#b3c5bd}dialog::backdrop{ba
 
 /* A static cursor cue accompanies the small counter figurine rim. */
 #room.is-figurine-hover{cursor:pointer}
+
+/* White strokes with a dark edge remain legible across the room's materials. */
+#lab-crosshair{position:absolute;left:50%;top:50%;width:11px;height:11px;transform:translate(-50%,-50%);pointer-events:none;user-select:none}
+#lab-crosshair[hidden]{display:none}
+#lab-crosshair::before,#lab-crosshair::after{content:"";position:absolute;background:#fff;box-shadow:0 0 0 1px #172126;border-radius:1px}
+#lab-crosshair::before{left:0;top:5px;width:11px;height:1px}
+#lab-crosshair::after{left:5px;top:0;width:1px;height:11px}
