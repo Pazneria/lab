@@ -27,6 +27,13 @@ jobs:
           npm install --prefix "$RUNNER_TEMP/studio-profile" --no-audit --no-fund playwright@1.64.0
           git fetch --depth=1 origin cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d
           git show cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d:animation-studio/index.html > "$RUNNER_TEMP/studio-selection-baseline.html"
+          git show cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d:animation-studio/rig-review/source/core.mjs > "$RUNNER_TEMP/studio-selection-baseline-core.mjs"
+      - name: Rebuild and check selection contracts on hosted runner
+        env:
+          STUDIO_BASE_CORE: ${{ runner.temp }}/studio-selection-baseline-core.mjs
+        run: |
+          node scripts/build-public-rig-studio.cjs
+          node --experimental-vm-modules --test animation-studio/tests/selection-core.test.mjs animation-studio/tests/rig-ui-cpu.test.mjs animation-studio/tests/modes.test.mjs animation-studio/tests/host-retry-cpu.test.mjs tests/verify-public-rig-studio.test.mjs
       - name: Bounded selection/workspace profiling
         env:
           STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-profile/node_modules/playwright/index.mjs

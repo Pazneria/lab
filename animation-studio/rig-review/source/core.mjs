@@ -33,7 +33,8 @@ export function slerp(a,b,t){
  return a.map((v,i)=>(Math.sin((1-t)*theta)*v+Math.sin(t*theta)*b[i])/sin);
 }
 const TYPES={SCALAR:1,VEC2:2,VEC3:3,VEC4:4,MAT4:16};
-const COMPONENTS={5120:[1,'getInt8',127],5121:[1,'getUint8',255],5122:[2,'getInt16',32767],5123:[2,'getUint16',65535],5125:[4,'getUint32',4294967295],5126:[4,'getFloat32',1]};
+const COMPONENTS={5120:[1,'getInt8',127,Int8Array],5121:[1,'getUint8',255,Uint8Array],5122:[2,'getInt16',32767,Int16Array],5123:[2,'getUint16',65535,Uint16Array],5125:[4,'getUint32',4294967295,Uint32Array],5126:[4,'getFloat32',1,Float32Array]};
+const NATIVE_LITTLE_ENDIAN=new Uint8Array(new Uint16Array([1]).buffer)[0]===1;
 export function parseGlb(input,label='Imported GLB'){
  const bytes=input instanceof Uint8Array?input:new Uint8Array(input);
  check(bytes.byteLength>=20&&bytes.byteLength<=LIMITS.bytes,'GLB must be 20 bytes to 64 MiB');
@@ -67,6 +68,12 @@ export function parseGlb(input,label='Imported GLB'){
   check(Number.isInteger(stride)&&stride>=packed&&stride%width===0,'Invalid accessor stride');
   const start=(v.byteOffset||0)+byteOffset,end=count?start+(count-1)*stride+packed:start;
   check(start>=0&&end<=(v.byteOffset||0)+v.byteLength&&end<=binary.length,'Accessor exceeds buffer bounds');
+  const absolute=binary.byteOffset+start;
+  if(stride===packed&&Number.isInteger(absolute)&&absolute%width===0&&(width===1||NATIVE_LITTLE_ENDIAN)){
+   // Keep the same owned Float64 values and finite checks; copy packed bytes natively.
+   const out=new Float64Array(new info[3](binary.buffer,absolute,count*size));
+   for(const value of out)check(Number.isFinite(value),'Non-finite accessor');return out;
+  }
   const out=new Float64Array(count*size);
   for(let i=0;i<count;i++)for(let c=0;c<size;c++){const value=binView[method](start+i*stride+c*width,true);check(Number.isFinite(value),'Non-finite accessor');out[i*size+c]=value;}
   return out;

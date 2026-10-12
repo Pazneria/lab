@@ -62,7 +62,7 @@ function refreshTimeline(){
  ui$('contactInfo').textContent=(c?.contacts?.left?.length||c?.contacts?.right?.length)?'Prior authored contact intervals, in seconds. No world contact solve.':'No authored contact schedule for this selection.';
  refreshProofControls();
 }
-let poseCache=null;const geometryCache=new WeakMap(),auditCache=new WeakMap();
+let poseCache=null;const geometryCache=new WeakMap(),auditCache=new WeakMap(),bindBoundsCache=new WeakMap();
 function currentEvaluatedPose(){const a=currentAsset(),clip=activeClip(),staticPose=activeStatic()?.pose;if(poseCache&&poseCache.a===a&&poseCache.clip===clip&&poseCache.staticPose===staticPose&&poseCache.time===currentTime&&poseCache.edits===localEdits)return poseCache.pose;const pose=!clip&&!staticPose&&!Object.keys(localEdits).length?a.bind:evaluateInspection(a.model,clip,currentTime,staticPose,localEdits);poseCache={a,clip,staticPose,time:currentTime,edits:localEdits,pose};return pose;}
 function geometryFor(a,pose){if(pose===a.bind)return a.bindGeometry;if(!geometryCache.has(pose))geometryCache.set(pose,deform(a.model,pose));return geometryCache.get(pose);}
 function refreshSelection(){
@@ -79,7 +79,7 @@ function applyInspectorEdit(){
  try{const read=prefix=>['X','Y','Z'].map(axis=>{const field=ui$(prefix+axis);if(String(field.value).trim()===''||!Number.isFinite(Number(field.value)))throw Error('Enter a finite '+prefix+axis+' value');return Number(field.value);}),edit={position:read('pos'),rotation:euler(read('rot')),scale:read('scale')},next={...localEdits,[selectedNode]:edit};evaluateInspection(currentAsset().model,activeClip(),currentTime,activeStatic()?.pose,next);localEdits=next;reportInspector('',true);refreshProofControls();invalidateInspector();refreshSelection();return true;}catch(error){reportInspector(error.message,true);return false;}
 }
 function fitInspector(){
- const g=currentAsset().bindGeometry,positions=g.flatMap(x=>Array.from(x.positions));let low=[Infinity,Infinity,Infinity],high=[-Infinity,-Infinity,-Infinity];for(let i=0;i<positions.length;i+=3)for(let k=0;k<3;k++){low[k]=Math.min(low[k],positions[i+k]);high[k]=Math.max(high[k],positions[i+k]);}
+ const asset=currentAsset();let bounds=bindBoundsCache.get(asset);if(!bounds){const low=[Infinity,Infinity,Infinity],high=[-Infinity,-Infinity,-Infinity];for(const geometry of asset.bindGeometry){const positions=geometry.positions;for(let i=0;i<positions.length;i+=3)for(let k=0;k<3;k++){low[k]=Math.min(low[k],positions[i+k]);high[k]=Math.max(high[k],positions[i+k]);}}bounds={low,high};bindBoundsCache.set(asset,bounds);}const low=bounds.low,high=bounds.high.slice();
  const permission=currentPermission();if(ui$('travelProof').checked&&permission)high[2]+=permission.referenceSpeed*permission.duration;
  inspectorCamera.center=low.map((v,k)=>(v+high[k])/2);inspectorCamera.span=Math.max(.15,...low.map((v,k)=>high[k]-v))*1.5;invalidateInspector();
 }

@@ -1,15 +1,16 @@
 // One studio, one active renderer. Lazy authoring is never initialized at entry.
 export function createStudioModes({rig,motion,changed=()=>{},report=()=>{}}){
- let mode='rig',epoch=0,disposed=false,pending=false;
+ let mode='rig',epoch=0,disposed=false,pending=false,activated=null;
  const views={rig,motion};
- const deactivate=()=>{for(const view of Object.values(views))view.setActive(false);};
+ const deactivate=()=>{activated=null;for(const view of Object.values(views))view.setActive(false);};
  async function select(next){
   if(disposed||!Object.hasOwn(views,next))return false;
+  if(!pending&&mode===next&&activated===next)return true;
   const generation=++epoch;mode=next;pending=true;deactivate();changed(mode,pending);
   try{
    await views[next].ensure();
    if(disposed||generation!==epoch){if(disposed||mode!==next)views[next].setActive(false);return false;}
-   views[next].setActive(true);pending=false;changed(mode,pending);return true;
+   views[next].setActive(true);activated=next;pending=false;changed(mode,pending);return true;
   }catch(error){
    if(disposed||generation!==epoch)return false;
    mode='rig';pending=false;deactivate();try{rig.setActive(true);}catch(fallbackError){report(fallbackError);}changed(mode,pending);report(error);return false;
