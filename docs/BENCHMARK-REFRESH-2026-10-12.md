@@ -14,7 +14,9 @@ These views preserve missing values, do not introduce a global ranking, and do n
 
 ## Generation and validation
 
-Status: validation in progress; publication is gated on checks against the exact final revision. The archived source revision is `ba9b01a8c521b261e4ff0c8b8189c24c1f45737f`.
+Cloud generation and independent source review passed at revision [`6b79810ef45589a3f2f59e77251daa293f9ab97b`](https://github.com/Pazneria/lab/commit/6b79810ef45589a3f2f59e77251daa293f9ab97b). [Actions run 38280533607](https://github.com/Pazneria/lab/actions/runs/38280533607) passed every static, source-preservation and boundary check and all eight browser scripts. Browser checks covered new rows and controls, 94 metric/cohort views, real back-forward cache restoration, recovery with cached older HTML and current assets, narrow screens, accessibility and the original catalog/results.
+
+Checks for the final publication revision are linked through [PR #75](https://github.com/Pazneria/lab/pull/75/checks). The recorded successful run validates the revision named above; a later documentation or integration revision must pass its own checks before publication. Publication remains gated on the exact final revision and reconciliation with current main. The archived source revision is `ba9b01a8c521b261e4ff0c8b8189c24c1f45737f`.
 
 ```sh
 node scripts/build-gallery-refresh-2026-10-12.cjs

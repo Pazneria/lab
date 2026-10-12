@@ -4,7 +4,7 @@ A source-backed gallery of **86 individual cards**, grouped into **58 benchmark 
 
 The page preserves all **20 original discovery records**, their 51 URLs and 30 null metric definitions. The original **18 result rows and seven graph views**, 340 standard rows, frontend packet and expanded community source records remain unchanged. The new coverage input adds 319 primary rows, 81 selected first-wave observations and 1,392 RuneBench skill summaries for 87 configurations. No global score, cross-benchmark rank or missing-value zero is introduced. Selected cohorts are clearly incomplete, and source review dates remain separate from publication and evaluation dates.
 
-The October 12 refresh is an **unvalidated draft** until the exact revision passes cloud generation, source review and hosted regression checks. See [the refresh data and validation note](docs/BENCHMARK-REFRESH-2026-10-12.md). The earlier October 5 coverage remains preserved. Archived research packets and exact source hashes support the displayed cohorts. See [the combined coverage draft and narrow security review](docs/COVERAGE-DRAFT-2026-10-05.md). The external homepage, room and infrastructure remain outside the change.
+The October 12 refresh passed cloud generation, source review and all static and browser regressions at revision [`6b79810`](https://github.com/Pazneria/lab/commit/6b79810ef45589a3f2f59e77251daa293f9ab97b) in [validation run 38280533607](https://github.com/Pazneria/lab/actions/runs/38280533607). Checks for the final publication revision are linked through [PR #75](https://github.com/Pazneria/lab/pull/75/checks); publication remains gated on that exact revision passing and reconciliation with current main. See [the refresh data and validation note](docs/BENCHMARK-REFRESH-2026-10-12.md). The earlier October 5 coverage remains preserved. Archived research packets and exact source hashes support the displayed cohorts. See [the combined coverage draft and narrow security review](docs/COVERAGE-DRAFT-2026-10-05.md). The external homepage, room and infrastructure remain outside the change.
 
 See [catalog audit and pending evidence](docs/CATALOG-AUDIT-2026-10-05.md),
 [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
@@ -104,7 +104,7 @@ security checks are not a security certification.
 The selected repository is `Pazneria/lab`, with its existing `main`/root legacy
 GitHub Pages workflow at **https://pazneria.github.io/lab/**. Publish tested,
 reversible commits through a pull request after fetching and preserving remote
-work. The October 12 refresh must remain unpublished until parent receipt and exact-revision cloud validation are confirmed. This change owns the benchmark UI/data; homepage and the separately owned
+work. Publish the October 12 refresh only after final-revision checks pass and current main is reconciled. This change owns the benchmark UI/data; homepage and the separately owned
 3D `lab-space` room remain outside its scope. The homepage’s Lab link opens
 `lab-space/`; that room’s benchmark station opens the root gallery. Preserve
 both destinations and the additional `benchmarks.html` route.
