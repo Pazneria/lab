@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';import {webcrypto,createHash} from 'node:crypto';
 import {Viewer} from '../minimal/viewer.mjs';
+import {GraphicsBridge} from '../minimal/graphics-bridge.mjs';
 const root=new URL('../',import.meta.url),read=p=>fs.readFileSync(new URL(p,root)),catalog=JSON.parse(read('minimal/catalog.json')),sha=b=>createHash('sha256').update(b).digest('hex');
 test('frozen legacy, all 34 inventory entries, asset bytes and policy remain preserved',()=>{
  const legacy=read('index.html');assert.equal(sha(legacy),catalog.legacySha256);assert.equal(sha(legacy),'ce8b83d64a1eb2fe6227f6cbc62bd38e0b55027291193afea1a98fc2504c759c');
@@ -19,4 +20,16 @@ for(const id of ['human01','skeleton','chicken'])test(id+': real worker rest, re
 test('worker refuses opt-in proposals and tampered hashes',async()=>{const f=await workerFixture('human01');assert.match((await f.send({type:'load',record:{...f.record,requiresReviewOptIn:true}})).message,/separate review/);assert.match((await f.send({type:'load',record:{...f.record,sha256:'0'.repeat(64)}})).message,/integrity/);});
 test('viewer reuses context and releases every model buffer and program',()=>{const calls=[],gl=new Proxy({getProgramParameter:()=>true,getExtension:()=>null,getAttribLocation:()=>0,createShader:()=>({}),createProgram:()=>({}),createBuffer:()=>({}),getError:()=>{throw Error('Forbidden GPU readback');}},{get(t,k){if(k in t)return t[k];if(/^[A-Z_]+$/.test(k))return k;return(...a)=>calls.push([k,...a]);}});globalThis.devicePixelRatio=1;const canvas={getContext:()=>gl,clientWidth:700,clientHeight:400},v=new Viewer(canvas);const frame={geometry:[{positions:new Float32Array(9),normals:new Float32Array(9),colors:new Float32Array(9),indices:new Uint32Array([0,1,2])}],lines:new Float32Array(),points:new Float32Array(),highlight:new Float32Array()};
  for(let i=0;i<12;i++){v.setModel(frame);v.update(frame);v.draw({yaw:0,pitch:0,span:2,center:[0,0,0]},frame);assert.equal(v.createdBuffers-v.deletedBuffers,5);}v.releaseModel();assert.equal(v.createdBuffers-v.deletedBuffers,1);v.destroy();assert.equal(v.createdBuffers,v.deletedBuffers);assert.equal(calls.filter(c=>c[0]==='deleteProgram').length,1);
+});
+test('graphics bridge never creates document WebGL, coalesces draws and rejects obsolete presentation',()=>{
+ const messages=[],presented=[],closed=[],contexts=[];let instance;
+ globalThis.OffscreenCanvas=class{};
+ globalThis.Worker=class{constructor(){instance=this;}postMessage(data){messages.push(data);}terminate(){this.terminated=true;}};
+ const canvas={clientWidth:700,clientHeight:400,getContext(type){contexts.push(type);assert.notEqual(type,'webgl');return {transferFromImageBitmap:bitmap=>presented.push(bitmap)};}};
+ const b=new GraphicsBridge(canvas);instance.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});
+ const frame={geometry:[],lines:new Float32Array(),points:new Float32Array(),highlight:new Float32Array()},camera={yaw:0,pitch:0,span:2,center:[0,0,0]};
+ b.setModel(frame,'first');b.draw(camera,frame,true);const first=messages.at(-1);b.draw({...camera,yaw:1},frame,true);b.draw({...camera,yaw:2},frame,true);assert.equal(messages.filter(m=>m.type==='render').length,1);
+ b.releaseModel();b.setModel(frame,'second');b.draw(camera,frame,true);const bitmap={width:100,height:100,close:()=>closed.push(true)};
+ instance.onmessage({data:{type:'present',bitmap,generation:first.generation,modelId:'first',health:{state:'ready',liveBuffers:5}}});assert.equal(presented.length,0);assert.equal(messages.at(-1).modelId,'second');const next=messages.at(-1);
+ instance.onmessage({data:{type:'present',bitmap,generation:next.generation,modelId:'second',health:{state:'ready',liveBuffers:5}}});assert.equal(presented.length,1);assert.equal(b.presentedModel,'second');assert.equal(b.frames,1);assert.equal(b.pending,false);assert.equal(contexts.length,1);b.destroy();assert.equal(instance.terminated,true);assert.equal(b.createdBuffers,0);assert.equal(closed.length,2);
 });
