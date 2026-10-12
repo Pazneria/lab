@@ -8,7 +8,7 @@
     "data/benchmark-refresh-2026-10-12/medical-robotics.json": "39efe776dbb70224195af9b661c6a0f5f87026f41e8d2a444d7b912c6624452f",
     "data/benchmark-refresh-2026-10-12/evidence-manifest.json": "6e7f54260e30b886c1a255bfca1f77c0ac8e7625e3cfeb9c15d64e390bb704cc"
   },
-  "refreshProjectionSHA256": "66efa73f61c361c16408b230a3e2844e3d8af0ac62d0bf49955bcb3155f1806f",
+  "refreshProjectionSHA256": "354418158d9df5314057439369141f306ded4718277fa10434e20f5f76b7d646",
   "firstWaveCards": 27,
   "firstWaveRows": 81,
   "additionRows": 319,

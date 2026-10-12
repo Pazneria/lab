@@ -45903,6 +45903,10 @@ window.LAB_GALLERY = {
             "label": "serious injury or worse",
             "rows": [
               {
+                "outcome": "serious injury or worse",
+                "waymo_ipmm_rounded": 0.01,
+                "human_benchmark_ipmm_rounded": 0.21,
+                "percent_difference": -94.82,
                 "label": "Waymo Driver · operating-area fleet",
                 "value": 0.01,
                 "result_id": "waymo-safety-impact-202606-corrected20261002-waymo-0",
@@ -45916,6 +45920,10 @@ window.LAB_GALLERY = {
                 "evaluation_date": null
               },
               {
+                "outcome": "serious injury or worse",
+                "waymo_ipmm_rounded": 0.01,
+                "human_benchmark_ipmm_rounded": 0.21,
+                "percent_difference": -94.82,
                 "label": "Geographically adjusted human benchmark",
                 "value": 0.21,
                 "result_id": "waymo-safety-impact-202606-corrected20261002-human-0",
@@ -45963,6 +45971,10 @@ window.LAB_GALLERY = {
             "label": "any injury reported",
             "rows": [
               {
+                "outcome": "any injury reported",
+                "waymo_ipmm_rounded": 0.67,
+                "human_benchmark_ipmm_rounded": 3.77,
+                "percent_difference": -82.12,
                 "label": "Waymo Driver · operating-area fleet",
                 "value": 0.67,
                 "result_id": "waymo-safety-impact-202606-corrected20261002-waymo-1",
@@ -45976,6 +45988,10 @@ window.LAB_GALLERY = {
                 "evaluation_date": null
               },
               {
+                "outcome": "any injury reported",
+                "waymo_ipmm_rounded": 0.67,
+                "human_benchmark_ipmm_rounded": 3.77,
+                "percent_difference": -82.12,
                 "label": "Geographically adjusted human benchmark",
                 "value": 3.77,
                 "result_id": "waymo-safety-impact-202606-corrected20261002-human-1",
@@ -46023,6 +46039,10 @@ window.LAB_GALLERY = {
             "label": "airbag deployment in any vehicle",
             "rows": [
               {
+                "outcome": "airbag deployment in any vehicle",
+                "waymo_ipmm_rounded": 0.29,
+                "human_benchmark_ipmm_rounded": 1.61,
+                "percent_difference": -81.68,
                 "label": "Waymo Driver · operating-area fleet",
                 "value": 0.29,
                 "result_id": "waymo-safety-impact-202606-corrected20261002-waymo-2",
@@ -46036,6 +46056,10 @@ window.LAB_GALLERY = {
                 "evaluation_date": null
               },
               {
+                "outcome": "airbag deployment in any vehicle",
+                "waymo_ipmm_rounded": 0.29,
+                "human_benchmark_ipmm_rounded": 1.61,
+                "percent_difference": -81.68,
                 "label": "Geographically adjusted human benchmark",
                 "value": 1.61,
                 "result_id": "waymo-safety-impact-202606-corrected20261002-human-2",
