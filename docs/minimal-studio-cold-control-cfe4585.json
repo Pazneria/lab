@@ -1,0 +1,77 @@
+{
+  "sha": "cfe45850d3aef621ebeba68eb68003f186d9ea28",
+  "environment": "GitHub Ubuntu 24.04 / Xvfb / Chrome, one browser, no custom security or GPU flags",
+  "ownerBrowserTested": false,
+  "ownerHangReproduced": false,
+  "checks": [
+    {
+      "name": "independent graphics control in a fresh browser process",
+      "passed": true,
+      "ms": 5096,
+      "details": {
+        "result": {
+          "done": true,
+          "available": false,
+          "ms": 4194.5
+        },
+        "events": [
+          {
+            "done": true,
+            "available": false,
+            "ms": 4194.5
+          }
+        ],
+        "ticks": 4,
+        "drifts": [
+          4189.899999999994,
+          -59.39999999999418,
+          52.10000000000582,
+          -28.60000000000582
+        ],
+        "tasks": [
+          {
+            "start": 4724.600000000006,
+            "duration": 93
+          }
+        ],
+        "clicked": true,
+        "eventMs": 4562
+      }
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "timings": {},
+  "passed": true,
+  "browserVersion": "154.0.8037.97",
+  "independentGraphicsControl": {
+    "result": {
+      "done": true,
+      "available": false,
+      "ms": 4194.5
+    },
+    "events": [
+      {
+        "done": true,
+        "available": false,
+        "ms": 4194.5
+      }
+    ],
+    "ticks": 4,
+    "drifts": [
+      4189.899999999994,
+      -59.39999999999418,
+      52.10000000000582,
+      -28.60000000000582
+    ],
+    "tasks": [
+      {
+        "start": 4724.600000000006,
+        "duration": 93
+      }
+    ],
+    "clicked": true,
+    "eventMs": 4562
+  },
+  "finalHealth": null
+}
