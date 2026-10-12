@@ -1,0 +1,1202 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-12",
+  "research_window_utc": "2026-10-12T14:58:00Z/2026-10-12T15:04:00Z",
+  "scope": "Targeted lab-reported and community refresh; primary sources only; no new evaluation runs",
+  "baseline": {
+    "gallery": "https://github.com/Pazneria/lab/blob/main/data/gallery-current-2026-10-01.json",
+    "expansion": "https://github.com/Pazneria/lab/blob/main/data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+    "expansion_blob_sha": "c8a553406ea32def3b1d69103e6c5e8b3cb25bf2"
+  },
+  "findings": [
+    "Claude Haiku 5.5 is a verified post-baseline release, dated October 7; exact API ID claude-haiku-5-5.",
+    "AA Intelligence Index v4.3.2 was already present in the October 5 research; reverified, not a new methodology change.",
+    "HLE-Diamond creator high-effort cohort remains nine models with unchanged headline values; no Haiku result found there.",
+    "Haiku system card supplies a NEW explicit OSWorld 2.1 official 82-task offline cohort. Separate partial credit from strict pass, and keep separate from September all-task results.",
+    "October 7 Sonnet 5.5 cache-read repricing changes task costs; preserve the price date rather than rewriting historical cost claims.",
+    "October ChatGPT GPT-6 Sol/Luna and September API/Work/Codex versions are distinct according to OpenAI's October card.",
+    "Small Elo movements in AA matched baseline rows are leaderboard refreshes, not established model changes or improvements."
+  ],
+  "sources": {
+    "haiku_launch": {
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "source_role": "lab_report",
+      "publication_date": "2026-10-07"
+    },
+    "haiku_card": {
+      "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+      "source_role": "lab_report",
+      "publication_date": "2026-10-07",
+      "retrieval_method": "Public PDF downloaded; pdftotext extraction; pages 111 and 128 visually verified"
+    },
+    "haiku_docs": {
+      "url": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+      "source_role": "official_model_documentation"
+    },
+    "aa_models": {
+      "url": "https://artificialanalysis.ai/leaderboards/models?deprecation=all",
+      "source_role": "independent_evaluator",
+      "publication_date": null
+    },
+    "aa_methodology": {
+      "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+      "source_role": "independent_evaluator",
+      "version": "4.3.2",
+      "publication_date": null
+    },
+    "aa_gdpval": {
+      "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+      "source_role": "independent_evaluator"
+    },
+    "aa_briefcase": {
+      "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
+      "source_role": "independent_evaluator"
+    },
+    "aa_hle": {
+      "url": "https://artificialanalysis.ai/evaluations/humanitys-last-exam",
+      "source_role": "independent_evaluator"
+    },
+    "arena_text": {
+      "url": "https://arena.ai/leaderboard/chat/text",
+      "source_role": "community_preference_leaderboard",
+      "listed_date": "2026-10-08"
+    },
+    "hle_diamond": {
+      "url": "https://lastexam.ai/blog/hle-diamond",
+      "source_role": "benchmark_creator",
+      "publication_date": "2026-09-22"
+    },
+    "openai_october": {
+      "url": "https://deploymentsafety.openai.com/gpt-6-october/capability-threshold-critical",
+      "source_role": "lab_report",
+      "publication_date": "2026-10-07"
+    },
+    "argon_launch": {
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "source_role": "lab_report",
+      "publication_date": "2026-09-30"
+    }
+  },
+  "default_row_fields": {
+    "evaluation_date": null,
+    "cost_usd_per_task": null,
+    "wall_clock_seconds_per_task": null,
+    "model_snapshot_id": null
+  },
+  "cohorts": [
+    {
+      "id": "anthropic-haiku55-hle-no-tools",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "Humanity's Last Exam",
+        "dataset": "Original HLE multimodal, not Diamond",
+        "tasks": 2500,
+        "effort": "max",
+        "thinking": "adaptive/auto",
+        "trials": 5,
+        "tools": false,
+        "task_token_budget": 980000,
+        "compaction": false,
+        "grader": "Claude Opus 4.6",
+        "metric": "accuracy",
+        "unit": "percent",
+        "source_pages": [
+          111,
+          118
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 45.9
+        }
+      ],
+      "notes": [
+        "No evaluation date given. Distinct from AA's 2158 text-only cohort."
+      ]
+    },
+    {
+      "id": "anthropic-haiku55-hle-tools",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "Humanity's Last Exam",
+        "dataset": "Original HLE multimodal, not Diamond",
+        "tasks": 2500,
+        "effort": "max",
+        "thinking": "adaptive/auto",
+        "trials": 5,
+        "tools": [
+          "web search",
+          "web fetch",
+          "programmatic tool calling",
+          "code execution"
+        ],
+        "task_token_budget": 980000,
+        "compaction": false,
+        "grader": "Claude Opus 4.6",
+        "metric": "accuracy",
+        "unit": "percent",
+        "source_pages": [
+          111,
+          118,
+          119
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 57.4
+        }
+      ],
+      "notes": [
+        "Sources discussing HLE blocklisted; flagged successes reviewed by Opus 5 and confirmed cheating rescored incorrect.",
+        "Cost curves exclude web search fees; Haiku uses recorded list-price usage, whereas Opus/Sonnet curves assume perfect cache hits."
+      ]
+    },
+    {
+      "id": "anthropic-haiku55-terminalbench4",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "Terminal-Bench",
+        "version": "4.0",
+        "tasks": 66,
+        "effort": "max",
+        "harness": "Claude Code --bare",
+        "trials_per_task": 10,
+        "total_trials": 660,
+        "tools": [
+          "terminal"
+        ],
+        "network_egress": false,
+        "fallback": false,
+        "safeguards": true,
+        "metric": "pass@1",
+        "unit": "percent",
+        "source_pages": [
+          115,
+          116
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 39.2,
+          "uncertainty_type": "standard_error_independent_trials",
+          "uncertainty_plus_minus": 1.9,
+          "safeguard_failed_trials": 12
+        }
+      ],
+      "notes": [
+        "Resources pre-cached and images rebuilt; 12/660 safeguard-interrupted trials failed.",
+        "Separate from public CLI, Vals and AA mini-swe-agent cohorts."
+      ]
+    },
+    {
+      "id": "anthropic-haiku55-terminalbench-science01",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "Terminal-Bench-Science",
+        "version": "0.1",
+        "tasks": 70,
+        "effort": "max",
+        "harness": "Claude Code --bare",
+        "trials_per_task": 10,
+        "total_trials": 700,
+        "network_egress": false,
+        "fallback": false,
+        "safeguards": true,
+        "metric": "pass@1",
+        "unit": "percent",
+        "source_pages": [
+          116
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 20.6,
+          "uncertainty_type": "standard_error_clustered_by_task",
+          "uncertainty_plus_minus": 3.7,
+          "safeguard_failed_trials": 16
+        }
+      ],
+      "notes": [
+        "All interrupted trials failed. Keep distinct from public leaderboard and AA evaluation."
+      ]
+    },
+    {
+      "id": "anthropic-frontiercode11-haiku55",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "FrontierCode",
+        "version": "1.1",
+        "effort": "max",
+        "trials_per_task": 5,
+        "metric": "composite functional and code-quality score",
+        "unit": "percent",
+        "source_pages": [
+          111,
+          112,
+          113
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "split": "Main",
+          "tasks": 100,
+          "value": 46.4
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "split": "Extended",
+          "tasks": 150,
+          "value": 58.4
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "xhigh",
+          "split": "Main",
+          "tasks": 100,
+          "value": 45.8
+        }
+      ],
+      "notes": [
+        "Lab reports no modifications to official evaluation. Best-effort and max-effort leaderboards differ."
+      ]
+    },
+    {
+      "id": "anthropic-haiku55-chartography",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "Chartography",
+        "tasks": 100,
+        "effort": "max",
+        "trials": 5,
+        "grader": "Gemini 3.5 Flash",
+        "metric": "accuracy",
+        "unit": "percent",
+        "source_pages": [
+          123,
+          124,
+          125
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "tools": false,
+          "value": 46.4
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "tools": [
+            "container with image and standard libraries",
+            "image cropping"
+          ],
+          "value": 86.2
+        }
+      ],
+      "notes": [
+        "Expert-defined acceptable ranges match official tasks. Do not pool tools/no-tools. Cost curves use actual cache reads/writes; Sonnet uses October 7 cache-read price."
+      ]
+    },
+    {
+      "id": "anthropic-osworld21-offline-october",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "OSWorld",
+        "version": "2.1",
+        "subset": "official offline",
+        "tasks": 82,
+        "full_benchmark_tasks": 108,
+        "effort": "max",
+        "trials_per_task": 5,
+        "resolution": "1080p",
+        "max_action_steps": 500,
+        "network_egress": false,
+        "grader_when_needed": "Claude Opus 4.8",
+        "unit": "percent",
+        "source_pages": [
+          127,
+          128
+        ],
+        "metrics": [
+          "mean_partial_checkpoint_credit",
+          "strict_all_checkpoints_pass@1"
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "partial_credit": 72.4,
+          "strict_pass": 37.1
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "model_id": "claude-sonnet-5-5",
+          "partial_credit": 83.9,
+          "strict_pass": 48.8
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "model_id": "claude-opus-5-5",
+          "partial_credit": 87.2,
+          "strict_pass": 53.2
+        },
+        {
+          "model_variant": "GPT-6.1 Sol",
+          "model_id": "gpt-6.1-sol",
+          "partial_credit": 76.6,
+          "strict_pass": 39.8,
+          "score_read_method": "explicit chart labels",
+          "compaction": "OpenAI"
+        },
+        {
+          "model_variant": "GPT-6 Luna",
+          "model_id": "gpt-6-luna",
+          "partial_credit": 48.9,
+          "strict_pass": 17.1,
+          "score_read_method": "explicit chart labels",
+          "compaction": "OpenAI"
+        }
+      ],
+      "notes": [
+        "Re-evaluation under new offline conditions. Do not merge with September 108-task/full cohort.",
+        "Chart states 95% intervals but numeric bounds not transcribed; do not invent.",
+        "Anthropic ran OpenAI models through OpenAI API; this is not OpenAI-reported."
+      ]
+    },
+    {
+      "id": "anthropic-haiku55-programbench-modified",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "ProgramBench",
+        "original_tasks": 200,
+        "evaluated_tasks": 166,
+        "excluded_tasks": 34,
+        "exclusion_rule": "reference binary scored below 0.9",
+        "test_filter": "only tests reference binary passes",
+        "harness": "mini-swe-agent",
+        "effort": "max",
+        "trials": 5,
+        "upstream_six_hour_timeout_removed": true,
+        "tools_excluded": [
+          "internet",
+          "decompilation"
+        ],
+        "metric": "hidden behavioral test pass rate",
+        "unit": "percent",
+        "source_pages": [
+          117
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 82
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "value": 79.7
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "value": 91.2
+        }
+      ],
+      "notes": [
+        "Modified evaluation; must not merge with upstream 200-task timed cohort."
+      ]
+    },
+    {
+      "id": "frontierswe-v2-haiku55-lab-reproduction",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "FrontierSWE",
+        "version": "2",
+        "tasks": 34,
+        "trials_per_task": 5,
+        "hours_per_trial": 20,
+        "effort": "max",
+        "harness": "Proximal own harness",
+        "metric": "benchmark score",
+        "unit": "percent",
+        "source_pages": [
+          116,
+          117
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 43.8
+        }
+      ],
+      "notes": [
+        "Card says Proximal ran evaluation. Check creator board before adding to its cohort."
+      ]
+    },
+    {
+      "id": "anthropic-haiku55-swe-families",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "effort": "max",
+        "trials": 5,
+        "metric": "benchmark task pass rate",
+        "unit": "percent",
+        "source_pages": [
+          111,
+          112
+        ]
+      },
+      "rows": [
+        {
+          "benchmark": "SWE-Bench Pro",
+          "version": null,
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 64.8,
+          "import_status": "hold_version_not_explicit"
+        },
+        {
+          "benchmark": "SWE-bench Multilingual",
+          "tasks": 300,
+          "languages": 9,
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 83.7
+        },
+        {
+          "benchmark": "SWE-bench Multimodal",
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "value": 30.7
+        }
+      ],
+      "notes": [
+        "Do not insert the Pro score into Public v2 or Hard v2 because the card does not establish that version. Harness details not resolved here."
+      ]
+    },
+    {
+      "id": "anthropic-healthbench-professional-haiku55-effort",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "HealthBench Professional",
+        "metric": "length_adjusted_score",
+        "unit": "percent",
+        "grader": "Claude Opus 4.8",
+        "safety_classifiers": true,
+        "trials_per_effort": 5,
+        "source_pages": [
+          131,
+          132,
+          133,
+          134
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "low",
+          "value": 57.9,
+          "evaluation_date": "2026-10-04"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "medium",
+          "value": 59.9,
+          "evaluation_date": "2026-10-04"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "high",
+          "value": 61.3,
+          "evaluation_date": "2026-10-04"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "xhigh",
+          "value": 61,
+          "evaluation_date": "2026-10-04"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "max",
+          "value": 64.8,
+          "raw_score": 71,
+          "evaluation_date_range": [
+            "2026-10-01",
+            "2026-10-02"
+          ],
+          "approx_response_seconds": 110
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "max",
+          "value": 64.2,
+          "trials": 13,
+          "evaluation_date": "2026-10-04",
+          "role": "same_day_recheck"
+        }
+      ],
+      "notes": [
+        "Do not merge with OpenAI-grader or raw-score rows. Max runs made earlier than low–xhigh; same-day recheck supplied.",
+        "Lower-effort response times reported as a range 8–21 seconds, not individual exact values."
+      ]
+    },
+    {
+      "id": "anthropic-physicianbench-haiku55-effort",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "PhysicianBench",
+        "tasks": 100,
+        "trials_per_task": 5,
+        "metric": "attempt pass rate",
+        "unit": "percent",
+        "grader": "Claude Opus 5",
+        "safety_classifiers": true,
+        "source_pages": [
+          132,
+          133,
+          134
+        ]
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "low",
+          "value": 17.8,
+          "evaluation_date": "2026-10-05",
+          "approx_model_time_seconds": 48
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "medium",
+          "value": 25.2,
+          "evaluation_date": "2026-10-05",
+          "approx_model_time_seconds": null
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "high",
+          "value": 31.6,
+          "evaluation_date": "2026-10-05",
+          "approx_model_time_seconds": 133
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "xhigh",
+          "value": 35.8,
+          "evaluation_date": "2026-10-05",
+          "approx_model_time_seconds": null
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "max",
+          "value": 43,
+          "evaluation_date_range": [
+            "2026-10-01",
+            "2026-10-02"
+          ],
+          "approx_model_time_seconds": 660
+        }
+      ],
+      "notes": [
+        "Time is summed model-request duration excluding tools and judge, mean of five attempts per task then median across tasks. Not wall clock.",
+        "Max and lower efforts measured on different days; do not infer matched-server cross-model latency."
+      ]
+    },
+    {
+      "id": "aa-report-in-haiku-card",
+      "source_id": "haiku_card",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "source_pages": [
+          111,
+          131
+        ],
+        "unit": "Elo",
+        "publication_snapshot": "2026-10-07"
+      },
+      "rows": [
+        {
+          "benchmark": "GDPval-AA",
+          "version": "2.1",
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "max",
+          "value": 1620,
+          "tasks": 220
+        },
+        {
+          "benchmark": "GDPval-AA",
+          "version": "2.1",
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "medium",
+          "value": 1277,
+          "tasks": 220
+        },
+        {
+          "benchmark": "AA-Briefcase",
+          "version": "1.1",
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "max",
+          "value": 1578
+        },
+        {
+          "benchmark": "AA-Briefcase",
+          "version": "1.1",
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "medium",
+          "value": 1372
+        }
+      ],
+      "notes": [
+        "AA ran evaluations; lab reproduces launch-era ratings. Preserve snapshot rather than replacing current AA rows with these."
+      ]
+    },
+    {
+      "id": "aa-intelligence-v432-current-selected",
+      "source_id": "aa_models",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "new_post_baseline_model_results",
+      "config": {
+        "benchmark": "Artificial Analysis Intelligence Index",
+        "version": "4.3.2",
+        "metric": "composite_index",
+        "unit": "index_points",
+        "cost_unit": "USD per weighted index task",
+        "speed_probe_note": "TTFT and end-to-end are separate API measurements, not index task runtime"
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "max",
+          "value": 43,
+          "cost_usd_per_task": 0.21,
+          "median_tokens_per_second": 240,
+          "latency_first_chunk_seconds": 289.46,
+          "end_to_end_500_token_seconds": 291.54,
+          "status": "new_post_baseline_model"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "xhigh",
+          "value": 41,
+          "cost_usd_per_task": 0.12,
+          "median_tokens_per_second": 188,
+          "latency_first_chunk_seconds": 57.12,
+          "end_to_end_500_token_seconds": 59.78,
+          "status": "new_post_baseline_model"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "high",
+          "value": 38,
+          "cost_usd_per_task": 0.08,
+          "median_tokens_per_second": 174,
+          "latency_first_chunk_seconds": 22.65,
+          "end_to_end_500_token_seconds": 25.52,
+          "status": "new_post_baseline_model"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "medium",
+          "value": 34,
+          "cost_usd_per_task": 0.05,
+          "median_tokens_per_second": 166,
+          "latency_first_chunk_seconds": 13.4,
+          "end_to_end_500_token_seconds": 16.41,
+          "status": "new_post_baseline_model"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "low",
+          "value": 29,
+          "cost_usd_per_task": 0.02,
+          "median_tokens_per_second": 178,
+          "latency_first_chunk_seconds": 9.72,
+          "end_to_end_500_token_seconds": 12.53,
+          "status": "new_post_baseline_model"
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "effort": "max",
+          "fallback": "default",
+          "value": 58,
+          "cost_usd_per_task": 5.98,
+          "status": "current_not_asserted_delta"
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "effort": "max",
+          "fallback": "default",
+          "value": 56,
+          "cost_usd_per_task": 5.46,
+          "status": "current_not_asserted_delta"
+        },
+        {
+          "model_variant": "GPT-6 Astra",
+          "effort": "max",
+          "value": 53,
+          "cost_usd_per_task": 3.26,
+          "status": "current_not_asserted_delta"
+        },
+        {
+          "model_variant": "GPT-6.1 Sol",
+          "effort": "max",
+          "value": 52,
+          "cost_usd_per_task": 0.72,
+          "status": "current_not_asserted_delta"
+        },
+        {
+          "model_variant": "Gemini 4 Argon",
+          "effort": "high",
+          "value": 53,
+          "cost_usd_per_task": 1.99,
+          "availability": "limited/private access in launch report",
+          "status": "current_not_asserted_delta"
+        }
+      ],
+      "notes": [
+        "Version was already present October 5. No cross-version delta claim.",
+        "Speed/latency differs across page caches and live measurements; only exact retrieval snapshot represented.",
+        "No dated model snapshots or per-model evaluation dates published on this page."
+      ]
+    },
+    {
+      "id": "aa-gdpval-v21-current",
+      "source_id": "aa_gdpval",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "mixed_new_rows_and_refresh",
+      "config": {
+        "benchmark": "GDPval-AA",
+        "version": "2.1",
+        "tasks": 220,
+        "repeats": 1,
+        "harness": "Stirrup",
+        "tools": [
+          "shell",
+          "web browsing"
+        ],
+        "metric": "Elo",
+        "anchor": "DeepSeek V4.1 Flash max = 1600",
+        "ci_level": 0.95
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Opus 5.5",
+          "effort": "max",
+          "fallback": "default",
+          "value": 1866,
+          "ci_delta": [
+            -26,
+            26
+          ],
+          "baseline_value": 1866,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "effort": "max",
+          "fallback": "default",
+          "value": 1838,
+          "ci_delta": [
+            -23,
+            23
+          ],
+          "baseline_value": 1839,
+          "status": "minor_live_elo_refresh"
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "effort": "xhigh",
+          "fallback": "default",
+          "value": 1836,
+          "ci_delta": [
+            -25,
+            25
+          ],
+          "baseline_value": 1837,
+          "status": "minor_live_elo_refresh"
+        },
+        {
+          "model_variant": "Claude Haiku 5.5",
+          "model_id": "claude-haiku-5-5",
+          "effort": "medium",
+          "value": 1274,
+          "ci_delta": [
+            -21,
+            21
+          ],
+          "status": "new_post_baseline_model"
+        }
+      ],
+      "notes": [
+        "Partial visible table; cannot infer missing Haiku max score. Card max1620 and medium1277 are earlier snapshots.",
+        "One-point differences do not establish capability changes."
+      ]
+    },
+    {
+      "id": "aa-briefcase-v11-current",
+      "source_id": "aa_briefcase",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "reverified_mostly_unchanged",
+      "config": {
+        "benchmark": "AA-Briefcase",
+        "version": "1.1",
+        "tasks": 91,
+        "scenarios": 4,
+        "repeats": 1,
+        "harness": "Stirrup",
+        "metric": "combined_Elo",
+        "ci_level": 0.95
+      },
+      "rows": [
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "effort": "max",
+          "fallback": "default",
+          "value": 1823,
+          "ci_delta": [
+            -11,
+            13
+          ],
+          "baseline_value": 1823,
+          "status": "unchanged_score"
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "effort": "max",
+          "fallback": "default",
+          "value": 1807,
+          "ci_delta": [
+            -12,
+            13
+          ],
+          "baseline_value": 1807,
+          "status": "unchanged_score"
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "effort": "xhigh",
+          "fallback": "default",
+          "value": 1766,
+          "ci_delta": [
+            -11,
+            12
+          ],
+          "baseline_value": 1768,
+          "status": "minor_live_elo_refresh"
+        }
+      ],
+      "notes": [
+        "Current visible table did not expose Haiku entries; absence is not evidence untested.",
+        "Two-point change not evidence of model regression."
+      ]
+    },
+    {
+      "id": "arena-text-overall-2026-10-08",
+      "source_id": "arena_text",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "fresh_community_snapshot_no_baseline_delta",
+      "config": {
+        "benchmark": "Arena Text Overall",
+        "source_as_of": "2026-10-08",
+        "retrieved_at": "2026-10-12",
+        "metric": "community_preference_rating",
+        "total_votes": 8734330,
+        "models": 414,
+        "adjustments": "default Overall, not exclude-ties/math/expert/agent",
+        "uncertainty_type": "published_plus_minus",
+        "uncertainty_level": null
+      },
+      "rows": [
+        {
+          "model_variant": "gemini-4-argon-high",
+          "value": 1525,
+          "uncertainty_plus_minus": 9,
+          "votes": 4892,
+          "preliminary": true,
+          "rank_spread": [
+            1,
+            1
+          ]
+        },
+        {
+          "model_variant": "claude-opus-5.5-high",
+          "value": 1507,
+          "uncertainty_plus_minus": 8,
+          "votes": 6272,
+          "preliminary": false,
+          "rank_spread": [
+            2,
+            10
+          ]
+        },
+        {
+          "model_variant": "claude-fable-5.1-max",
+          "value": 1501,
+          "uncertainty_plus_minus": 6,
+          "votes": 13063,
+          "preliminary": false,
+          "rank_spread": [
+            2,
+            13
+          ]
+        },
+        {
+          "model_variant": "gpt-6.1-sol-max",
+          "value": 1484,
+          "uncertainty_plus_minus": 9,
+          "votes": 4512,
+          "preliminary": false,
+          "rank_spread": [
+            8,
+            45
+          ]
+        },
+        {
+          "model_variant": "claude-sonnet-5.5-xhigh",
+          "value": 1476,
+          "uncertainty_plus_minus": 9,
+          "votes": 4838,
+          "preliminary": false,
+          "rank_spread": [
+            13,
+            57
+          ]
+        },
+        {
+          "model_variant": "gpt-6-astra-max",
+          "value": 1475,
+          "uncertainty_plus_minus": 7,
+          "votes": 10536,
+          "preliminary": false,
+          "rank_spread": [
+            19,
+            53
+          ]
+        }
+      ],
+      "notes": [
+        "Fresh dated snapshot, not measured delta against old gallery because no matched baseline supplied.",
+        "Arena preference not accuracy. Do not merge with Arena agent rankings or exclude-ties ratings.",
+        "Votes are model-specific sample sizes, not benchmark question counts."
+      ]
+    },
+    {
+      "id": "hle-diamond-high-reverified",
+      "source_id": "hle_diamond",
+      "checked_at": "2026-10-12",
+      "evaluation_date": null,
+      "status": "reverified_unchanged",
+      "config": {
+        "benchmark": "HLE-Diamond",
+        "tasks": 1000,
+        "reasoning_tasks": 500,
+        "knowledge_tasks": 500,
+        "effort": "high",
+        "tools": false,
+        "metric": "accuracy",
+        "unit": "percent"
+      },
+      "rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "value": 59.9,
+          "baseline_value": 59.9,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "value": 54.6,
+          "baseline_value": 54.6,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "GPT-6.1 Sol",
+          "value": 53.2,
+          "baseline_value": 53.2,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Claude Fable 5.1",
+          "value": 50.7,
+          "baseline_value": 50.7,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Gemini 3.8 Flash",
+          "value": 33.3,
+          "baseline_value": 33.3,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "value": 33.1,
+          "baseline_value": 33.1,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "GPT-6 Sol",
+          "value": 32.8,
+          "baseline_value": 32.8,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Muse Spark 1.3",
+          "value": 24.6,
+          "baseline_value": 24.6,
+          "status": "unchanged"
+        },
+        {
+          "model_variant": "Grok 4.7",
+          "value": 22.8,
+          "baseline_value": 22.8,
+          "status": "unchanged"
+        }
+      ],
+      "notes": [
+        "All nine headline scores match October 1 gallery. No Haiku5.5 or Gemini4Argon row exposed.",
+        "Do not insert original HLE 2500-question lab scores here. Run dates and dated API snapshots remain undisclosed."
+      ]
+    }
+  ],
+  "version_and_price_events": [
+    {
+      "id": "haiku55-release",
+      "date": "2026-10-07",
+      "model_id": "claude-haiku-5-5",
+      "api_default_effort": "medium",
+      "context_tokens": 1000000,
+      "max_output_tokens": 128000,
+      "source_id": "haiku_docs"
+    },
+    {
+      "id": "sonnet55-cache-repricing",
+      "date": "2026-10-07",
+      "model_id": "claude-sonnet-5-5",
+      "metric": "cache_read_USD_per_million_tokens",
+      "old_value": 0.2,
+      "new_value": 0.1,
+      "source_id": "haiku_launch"
+    },
+    {
+      "id": "haiku55-tiered-pricing",
+      "date": "2026-10-07",
+      "model_id": "claude-haiku-5-5",
+      "prompt_tokens_threshold": 100000,
+      "up_to_threshold": {
+        "input": 0.1,
+        "output": 0.5,
+        "cache_read": 0.01
+      },
+      "over_threshold": {
+        "input": 0.5,
+        "output": 2.5,
+        "cache_read": 0.05
+      },
+      "unit": "USD per million tokens",
+      "source_id": "haiku_docs"
+    },
+    {
+      "id": "gpt6-october-chat-variant",
+      "date": "2026-10-07",
+      "models": [
+        "GPT-6 Sol",
+        "GPT-6 Luna"
+      ],
+      "source_id": "openai_october",
+      "note": "October ChatGPT versions are distinguished from September versions retained in Codex and Work; do not re-label older API scores as October ChatGPT."
+    },
+    {
+      "id": "argon-availability",
+      "date": "2026-09-30",
+      "source_id": "argon_launch",
+      "note": "Launch report provides limited trusted-defender rollout, not broad general availability; benchmark presence does not imply public API availability."
+    }
+  ],
+  "unresolved": [
+    "Exact immutable API snapshots unavailable for recent model aliases.",
+    "Haiku lab SWE-Bench Pro dataset version and harness not established in cited section; hold cross-board import.",
+    "AA chart-only rows beyond exposed tables unavailable in this pass; do not fill from unrelated launch snapshots.",
+    "Haiku original HLE run dates unspecified; independent AA Haiku HLE score not recovered.",
+    "Current leaderboard retrieval does not establish exact evaluation timestamps.",
+    "No exhaustive catalog refresh claimed."
+  ]
+}

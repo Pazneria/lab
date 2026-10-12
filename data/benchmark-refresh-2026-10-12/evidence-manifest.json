@@ -1,0 +1,27 @@
+{
+  "prepared_at": "2026-10-12",
+  "version_note": "Full official RoboChallenge Table30 V2 table replaces stale search-index observations",
+  "purpose": "Public primary-source evidence for bounded benchmark gallery refresh",
+  "files": [
+    {
+      "path": "frontend.json",
+      "bytes": 193181,
+      "sha256": "09c92272600f445370f2079cd7ef84c979c3f9b2e4fd0cd09de33f0c1231365a"
+    },
+    {
+      "path": "lab-community.json",
+      "bytes": 36728,
+      "sha256": "7140f751cf1cb9faf72ba26018ee6ded5c9f09f78c659f0cbc48efb792e8fd8c"
+    },
+    {
+      "path": "medical-robotics.json",
+      "bytes": 67245,
+      "sha256": "39efe776dbb70224195af9b661c6a0f5f87026f41e8d2a444d7b912c6624452f"
+    },
+    {
+      "path": "robochallenge-table30-v2-primary-rendered-2026-10-12.txt",
+      "bytes": 37721,
+      "sha256": "e8fa602a481a1b278a667a743ecfea4a421241711c13462299c87120c849a84a"
+    }
+  ]
+}
