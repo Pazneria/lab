@@ -126,5 +126,5 @@ try{
    assert.equal(details.clicked,true);result.independentGraphicsControl={...details,eventMs};return result.independentGraphicsControl;
   }finally{if(separate!==browser)await separate.close();}
  });
- result.finalHealth=process.env.STUDIO_REVIEW_PHASE==='control'?null:await state();result.passed=result.checks.every(c=>c.passed)&&!result.errors.length;process.exitCode=result.passed?0:1;
+ result.finalHealth=['control','failure'].includes(process.env.STUDIO_REVIEW_PHASE)?null:await state();result.passed=result.checks.every(c=>c.passed)&&!result.errors.length;process.exitCode=result.passed?0:1;
 }catch(error){result.errors.push(String(error));process.exitCode=1;}finally{save();clearTimeout(watchdog);await browser?.close();await new Promise(r=>server.close(r));}
