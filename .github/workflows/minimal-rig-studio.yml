@@ -2,6 +2,12 @@ name: Minimal rig studio candidate
 on:
   push:
     branches: [rebuild-minimal-rig-studio]
+    paths:
+      - animation-studio/minimal/**
+      - animation-studio/rebuild.html
+      - animation-studio/tests/minimal-studio.test.mjs
+      - scripts/review-minimal-studio.mjs
+      - .github/workflows/minimal-rig-studio.yml
 permissions:
   contents: read
 concurrency:
