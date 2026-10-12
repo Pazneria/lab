@@ -19,14 +19,16 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 3
+          fetch-depth: 1
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - name: Install runner-only browser controller
         run: npm install --prefix "$RUNNER_TEMP/studio-browser" --no-audit --no-fund playwright@1.64.0
       - name: Extract deployed-main negative control
-        run: git show d9eb1e07b4ac98bbb982809e6e65db48d97fd0ce:animation-studio/index.html > "$RUNNER_TEMP/studio-base.html"
+        run: |
+          git fetch --depth=1 origin d9eb1e07b4ac98bbb982809e6e65db48d97fd0ce
+          git show d9eb1e07b4ac98bbb982809e6e65db48d97fd0ce:animation-studio/index.html > "$RUNNER_TEMP/studio-base.html"
       - name: WebGL and native input review
         env:
           STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-browser/node_modules/playwright/index.mjs
