@@ -4,6 +4,24 @@ Branch `rebuild-minimal-rig-studio`, based on live PR76 `cc4e8ada47cdd6ae34ca669
 
 The original entry/CSP, Lab entry, rig source, Human01 study, owner edits and approval records remain byte-identical. The 34-export inventory is preserved; 33 records have separate hash-verified GLBs and the unaccepted Human01 skin candidate stays in the original studio. Twenty-six inputs already allowed for active binding are selectable. Existing clips/pose studies remain diagnostics, not approved finished animations. No concurrently reviewed art revisions are integrated.
 
+## Latest idle-recovery correction and one diagnostic job (c9bc6ca)
+
+The remaining idle recovery hole is closed. A recovering health signal arms a 12-second recovery deadline only when no deadline exists. Repeated recovery messages never extend an active draw deadline. Readiness without a new frame does not clear recovery coverage; any replay inherits the existing deadline. A valid presentation clears it. [Run 38310950857](https://github.com/Pazneria/lab/actions/runs/38310950857) passed 51 CPU contracts and the single focused [silent idle-recovery regression](minimal-studio-idle-recovery-c9bc6ca.json): the idle deadline armed, expired, terminated the worker, and a fresh Retry restored edits/camera without page reload. The full aggregate was not rerun.
+
+The same workflow then ran exactly one diagnostic job, with sequential fresh-browser no-graphics, bare worker WebGL and exact candidate cases, one attempt each. It captured three short compressed Chrome traces, explicit trace/Node clock-sync markers, document/no-graphics-worker/Node heartbeats, native trusted input dispatch/handling, and runner CPU pressure. [Raw clocks and summaries](studio-clock-diagnostic-c9bc6ca/result.json), [correlation analysis](studio-clock-diagnostic-c9bc6ca/analysis.json), and the compressed traces in that directory are preserved. Clock-sync events fall within the corresponding Node monotonic before/after brackets (approximately 1–11 ms bounds). No-graphics-worker baselines started before application graphics; the candidate lead-in was only 18 ms, so there is limited pre-graphics cadence in that case. Sampling continued over one second after graphics completion.
+
+| Case | Document max drift | No-graphics worker max drift | External Node max drift | Native key dispatch/ack |
+| --- | --- | --- | --- | --- |
+| No application graphics | 441.9 ms | 5.1 ms | 1.6 ms | 133 ms |
+| Bare worker WebGL | 1.9 ms | 0.5 ms | 13.2 ms | 9 ms |
+| Exact candidate | 114.7 ms | 0.2 ms | 1.4 ms | 122 ms |
+
+Classification for the observed no-graphics gap: **browser/process waiting**, with direct trace support rather than inference from absent JavaScript tasks. The actual document renderer (PID 2332, confirmed by its control-document ParseHTML events) ran a GPU-channel establishment task for 420.155 ms wall time and only 1.226 ms thread CPU. That interval overlaps the 441.9 ms document heartbeat gap. A separate WebUI renderer shows the same wait. The worker and Node clocks continued, and runner CPU PSI was low (some avg10 around 0.09%, full 0); this does not support host-wide scheduling starvation. It does not implicate studio JavaScript, since the case loaded none.
+
+The candidate case did not reproduce the prior 898.1 ms failed gap. Its longest reported document task was 62 ms. Trace GPU waits occurred on the graphics worker: shader-status wait about 117.5 ms and an implicit bitmap/readback wait about 467.1 ms, with very little thread CPU. Document/no-graphics-worker/Node clocks remained responsive through the worker wait. Graphics initialized in one attempt without loss. These measurements support the worker isolation for this attempt, not a clean aggregate or owner-browser certification.
+
+**The exact cause of the earlier 898.1 ms candidate failure remains unresolved**, because that failing run had no trace and this one authorized diagnostic attempt did not reproduce it. The historical aggregate remains failed, the 250 ms bound is unchanged, and no further unchanged browser run was made. Current candidate runtime is c9bc6ca; later evidence-only commits change no runtime. No PR, publication, owner local test or security override occurred.
+
 ## Current correction and validation (3f2847d)
 
 Independent review confirmed missing graphics startup/draw deadlines, ineffective Retry after worker failure, unguarded document presentation failures and no-op Retry after constructor failure. These were source defects, not an established cause of the owner's hang.

@@ -1,0 +1,26 @@
+{
+  "sha": "c9bc6cacbc2a018a79bc6cb3cd956c53f84eb5ae",
+  "environment": "GitHub Ubuntu 24.04 / Xvfb / Chrome, one browser, no custom security or GPU flags",
+  "ownerBrowserTested": false,
+  "ownerHangReproduced": false,
+  "checks": [
+    {
+      "name": "idle context loss followed by silent recovery times out and fresh Retry preserves pose",
+      "passed": true,
+      "ms": 17034,
+      "details": {
+        "deadlineArmedWhileIdle": true,
+        "reason": "Graphics recovery timed out",
+        "scripts": 2,
+        "noReload": true,
+        "posePreserved": true
+      }
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "timings": {},
+  "passed": true,
+  "browserVersion": "154.0.8037.97",
+  "finalHealth": null
+}

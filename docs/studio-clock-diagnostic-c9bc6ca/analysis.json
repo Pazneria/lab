@@ -1,0 +1,450 @@
+{
+  "classification": "browser/process waiting for the observed no-graphics baseline gap; prior 898.1 ms candidate failure unresolved",
+  "oneJob": true,
+  "caseAttempts": 1,
+  "strictAggregateRemainsFailed": true,
+  "cases": [
+    {
+      "name": "no-graphics",
+      "documentMaxDriftMs": 441.90000000000873,
+      "noGraphicsWorkerMaxDriftMs": 5.100000000005821,
+      "nodeMaxDriftMs": 1.6059910000003583,
+      "documentLongestTaskMs": 52,
+      "largestDocumentGap": {
+        "start": 1791840655985.7,
+        "end": 1791840656527.5999,
+        "drift": 441.90000000000873
+      },
+      "workerBaselineStartedBeforeGraphics": true,
+      "baselineBeforeGraphicsMs": null,
+      "afterGraphicsMs": null,
+      "nativeInputRoundTripMs": [
+        133
+      ],
+      "syncBounds": [
+        {
+          "id": "no-graphics-start",
+          "traceUs": 122534847,
+          "nodeBeforeHrUs": 122524837,
+          "nodeAfterHrUs": 122535398,
+          "roundTripMs": 10.561,
+          "withinBounds": true
+        },
+        {
+          "id": "no-graphics-end",
+          "traceUs": 124418359,
+          "nodeBeforeHrUs": 124417983,
+          "nodeAfterHrUs": 124418553,
+          "roundTripMs": 0.57,
+          "withinBounds": true
+        }
+      ],
+      "selectedTraceEvents": [
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "process": "WebUI Top Renderer",
+          "thread": "CrRendererMain",
+          "pid": 2325,
+          "tid": 1,
+          "wallMs": 420.286,
+          "threadCpuMs": 0.81,
+          "startEpoch": 1791840656009.196,
+          "endEpoch": 1791840656429.4822,
+          "args": {
+            "src_file": "services/viz/public/cpp/gpu/gpu.cc",
+            "src_func": "OnEstablishedGpuChannel",
+            "src_line": 209
+          }
+        },
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "process": "Renderer",
+          "thread": "CrRendererMain",
+          "pid": 2332,
+          "tid": 1,
+          "wallMs": 420.155,
+          "threadCpuMs": 1.226,
+          "startEpoch": 1791840656009.3152,
+          "endEpoch": 1791840656429.47,
+          "args": {
+            "src_file": "services/viz/public/cpp/gpu/gpu.cc",
+            "src_func": "OnEstablishedGpuChannel",
+            "src_line": 209
+          }
+        },
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "process": "Renderer",
+          "thread": "CrRendererMain",
+          "pid": 2332,
+          "tid": 1,
+          "wallMs": 0.051,
+          "threadCpuMs": 0.048,
+          "startEpoch": 1791840656532.5352,
+          "endEpoch": 1791840656532.5862,
+          "args": {
+            "src_file": "services/viz/public/cpp/gpu/gpu.cc",
+            "src_func": "OnEstablishedGpuChannel",
+            "src_line": 209
+          }
+        },
+        {
+          "name": "ThreadControllerImpl::RunTask",
+          "process": "Renderer",
+          "thread": "CrRendererMain",
+          "pid": 2331,
+          "tid": 1,
+          "wallMs": 0.035,
+          "threadCpuMs": 0.033,
+          "startEpoch": 1791840656009.404,
+          "endEpoch": 1791840656009.439,
+          "args": {
+            "src_file": "services/viz/public/cpp/gpu/gpu.cc",
+            "src_func": "OnEstablishedGpuChannel",
+            "src_line": 209
+          }
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "Compositor",
+          "pid": 2332,
+          "tid": 7,
+          "wallMs": 0.009,
+          "threadCpuMs": 0.007,
+          "startEpoch": 1791840656533.135,
+          "endEpoch": 1791840656533.144,
+          "args": {}
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "Compositor",
+          "pid": 2332,
+          "tid": 7,
+          "wallMs": 0.005,
+          "threadCpuMs": 0.001,
+          "startEpoch": 1791840656533.146,
+          "endEpoch": 1791840656533.1511,
+          "args": {}
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "Compositor",
+          "pid": 2332,
+          "tid": 7,
+          "wallMs": 0.004,
+          "threadCpuMs": 0.003,
+          "startEpoch": 1791840656533.1382,
+          "endEpoch": 1791840656533.142,
+          "args": {
+            "end": 0,
+            "start": 0
+          }
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "Compositor",
+          "pid": 2332,
+          "tid": 7,
+          "wallMs": 0.001,
+          "threadCpuMs": 0.001,
+          "startEpoch": 1791840656533.1482,
+          "endEpoch": 1791840656533.1492,
+          "args": {
+            "end": 0,
+            "start": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "bare-worker-webgl",
+      "documentMaxDriftMs": 1.8999999999941792,
+      "noGraphicsWorkerMaxDriftMs": 0.5,
+      "nodeMaxDriftMs": 13.199955000000045,
+      "documentLongestTaskMs": 0,
+      "largestDocumentGap": {
+        "start": 1791840658628.2002,
+        "end": 1791840658730.1,
+        "drift": 1.8999999999941792
+      },
+      "workerBaselineStartedBeforeGraphics": true,
+      "baselineBeforeGraphicsMs": 487,
+      "afterGraphicsMs": 1106,
+      "nativeInputRoundTripMs": [
+        9
+      ],
+      "syncBounds": [
+        {
+          "id": "bare-worker-webgl-start",
+          "traceUs": 125417942,
+          "nodeBeforeHrUs": 125417534,
+          "nodeAfterHrUs": 125418233,
+          "roundTripMs": 0.699,
+          "withinBounds": true
+        },
+        {
+          "id": "bare-worker-webgl-end",
+          "traceUs": 127187237,
+          "nodeBeforeHrUs": 127186853,
+          "nodeAfterHrUs": 127187457,
+          "roundTripMs": 0.604,
+          "withinBounds": true
+        }
+      ],
+      "selectedTraceEvents": [
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.731,
+          "threadCpuMs": 0.041,
+          "startEpoch": 1791840659228.095,
+          "endEpoch": 1791840659228.8262,
+          "args": {}
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.697,
+          "threadCpuMs": 0.013,
+          "startEpoch": 1791840659228.125,
+          "endEpoch": 1791840659228.822,
+          "args": {
+            "end": 146,
+            "start": 146
+          }
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.357,
+          "threadCpuMs": 0.028,
+          "startEpoch": 1791840659228.855,
+          "endEpoch": 1791840659229.2122,
+          "args": {}
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.346,
+          "threadCpuMs": 0.068,
+          "startEpoch": 1791840659214.236,
+          "endEpoch": 1791840659214.582,
+          "args": {}
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.335,
+          "threadCpuMs": 0.011,
+          "startEpoch": 1791840659228.874,
+          "endEpoch": 1791840659229.209,
+          "args": {
+            "end": 179,
+            "start": 179
+          }
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.306,
+          "threadCpuMs": 0.037,
+          "startEpoch": 1791840659214.271,
+          "endEpoch": 1791840659214.5771,
+          "args": {
+            "end": 44,
+            "start": 44
+          }
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.268,
+          "threadCpuMs": 0.036,
+          "startEpoch": 1791840659250.7551,
+          "endEpoch": 1791840659251.023,
+          "args": {}
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2506,
+          "tid": 12,
+          "wallMs": 0.26,
+          "threadCpuMs": 0.028,
+          "startEpoch": 1791840659221.204,
+          "endEpoch": 1791840659221.464,
+          "args": {}
+        }
+      ]
+    },
+    {
+      "name": "candidate",
+      "documentMaxDriftMs": 114.69999999999709,
+      "noGraphicsWorkerMaxDriftMs": 0.19999999999708962,
+      "nodeMaxDriftMs": 1.3892980000018724,
+      "documentLongestTaskMs": 62,
+      "largestDocumentGap": {
+        "start": 1791840661463.9001,
+        "end": 1791840661678.6,
+        "drift": 114.69999999999709
+      },
+      "workerBaselineStartedBeforeGraphics": true,
+      "baselineBeforeGraphicsMs": 18,
+      "afterGraphicsMs": 1083.5,
+      "nativeInputRoundTripMs": [
+        122
+      ],
+      "syncBounds": [
+        {
+          "id": "candidate-start",
+          "traceUs": 128247844,
+          "nodeBeforeHrUs": 128246146,
+          "nodeAfterHrUs": 128249422,
+          "roundTripMs": 3.276,
+          "withinBounds": true
+        },
+        {
+          "id": "candidate-end",
+          "traceUs": 130291348,
+          "nodeBeforeHrUs": 130289898,
+          "nodeAfterHrUs": 130291618,
+          "roundTripMs": 1.72,
+          "withinBounds": true
+        }
+      ],
+      "selectedTraceEvents": [
+        {
+          "name": "GLES2::ReadPixels",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 467.763,
+          "threadCpuMs": 0.928,
+          "startEpoch": 1791840661887.843,
+          "endEpoch": 1791840662355.606,
+          "args": {}
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 467.101,
+          "threadCpuMs": 0.267,
+          "startEpoch": 1791840661887.849,
+          "endEpoch": 1791840662354.95,
+          "args": {}
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 467.031,
+          "threadCpuMs": 0.225,
+          "startEpoch": 1791840661887.895,
+          "endEpoch": 1791840662354.926,
+          "args": {
+            "end": 907,
+            "start": 907
+          }
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 117.529,
+          "threadCpuMs": 0.049,
+          "startEpoch": 1791840661700.979,
+          "endEpoch": 1791840661818.508,
+          "args": {}
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 117.495,
+          "threadCpuMs": 0.021,
+          "startEpoch": 1791840661701.008,
+          "endEpoch": 1791840661818.503,
+          "args": {
+            "end": 303,
+            "start": 303
+          }
+        },
+        {
+          "name": "GLES2::ReadPixels",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 4.813,
+          "threadCpuMs": 0.746,
+          "startEpoch": 1791840661867.003,
+          "endEpoch": 1791840661871.816,
+          "args": {}
+        },
+        {
+          "name": "ImplementationBase::WaitForCmd",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 3.731,
+          "threadCpuMs": 0.038,
+          "startEpoch": 1791840661867.527,
+          "endEpoch": 1791840661871.258,
+          "args": {}
+        },
+        {
+          "name": "CommandBufferProxyImpl::WaitForGetOffset",
+          "process": "Renderer",
+          "thread": "DedicatedWorker thread",
+          "pid": 2658,
+          "tid": 13,
+          "wallMs": 3.702,
+          "threadCpuMs": 0.018,
+          "startEpoch": 1791840661867.552,
+          "endEpoch": 1791840661871.254,
+          "args": {
+            "end": 592,
+            "start": 592
+          }
+        }
+      ]
+    }
+  ]
+}
