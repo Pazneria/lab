@@ -16,4 +16,22 @@ CPU validation: `node --experimental-vm-modules --test animation-studio/tests/mi
 
 Remaining scope limits: rotation-only local posing, no animation authoring/export, no proposal opt-in controls, no Human01 study inside the new UI, no gait/production certification. Use the preserved original entry for those existing workflows. A future default-route promotion must reconcile the candidate's new module/worker policy and Lab return contract explicitly; neither was silently changed here.
 
-Hosted evidence and measured startup/cold/warm timings are recorded after the exact branch revision finishes validation.
+## Measured validation and limits
+
+[Hosted run 38305821981](https://github.com/Pazneria/lab/actions/runs/38305821981) passed 44 CPU contracts and 14 browser scenarios at runtime revision `43eb5403c188285beba2088f0936f477829a6b26`. [Raw results](../evidence/minimal-studio/43eb540-hosted.json) retain failures/recovery counters, long tasks, environment and all measurements. Chrome was 154.0.8037.97 on Ubuntu/Xvfb. No owner browser was tested.
+
+| Measurement | Observed |
+| --- | --- |
+| First navigation to model-data readiness | 2538 ms; first attempt lost WebGL |
+| First model worker load | 265 ms |
+| Largest first-attempt main long task | 1797 ms during viewer initialization |
+| First-pass model selections (mixed cold/cached) | 27–214 ms, median 46 ms |
+| Repeated chicken/skeleton selection | 30–50 ms |
+| Injected 1800 ms worker stall | Real toggle and scroll responded; heartbeat maximum drift 0.2 ms |
+| Idle/hidden/disposal | No idle draw loop; workers/buffers released on navigation |
+
+The final aggregate includes a recorded first-load hosted WebGL context loss (37442), followed by a successful single explicit viewer reload. It is therefore **not a clean cold-viewer startup success**. The test reports that condition rather than hiding it or adding security/GPU flags. The candidate now offers a visible Reload viewer button and passes deliberate context-loss recovery, unavailable WebGL, missing model, cancellation and worker-timeout checks. Browser-driver initialization can still produce a main-thread long task and this candidate cannot promise to interrupt a synchronous browser WebGL initialization. That risk remains for review.
+
+Navigation/back tests used the lightweight destination fixture, not the live 3D room. Model switch timing ends at worker/model readiness; it is not a measured GPU presentation timestamp. Diagnostic playback was sampled at elapsed wall time and paused correctly; no complete animation quality certification is claimed. The owner’s native Page Unresponsive hang is still unreproduced. No publication or default-route switch has occurred.
+
+The runtime files tested at 43eb540 are unchanged by the later evidence-only commit.
