@@ -192,13 +192,16 @@ export function deform(model,pose,{hiddenParts=[],mount=identity()}={}){
   const n=model.nodes[pr.nodeId],state=pose.nodes[pr.nodeId],skin=n.skin===undefined?null:model.skins[n.skin];
   const matrices=skin?skin.joints.map((id,i)=>mul(mount,mul(pose.world[id],skin.inverseBind.slice(i*16,(i+1)*16)))):[mul(mount,pose.world[pr.nodeId])];
   const normals=matrices.map(normalMatrix),positions=new Float32Array(pr.positions.length),outNormals=new Float32Array(pr.normals.length);
+  // Scalar skinning keeps arithmetic order and Float32 results without per-influence arrays.
   for(let i=0;i<positions.length/3;i++){
-   const p=Array.from(pr.positions.subarray(i*3,i*3+3)),nn=Array.from(pr.normals.subarray(i*3,i*3+3));
-   pr.targets.forEach((t,k)=>{const w=state.weights[k]||0;for(let c=0;c<3;c++){p[c]+=t.positions[i*3+c]*w;nn[c]+=t.normals[i*3+c]*w;}});
-   let out=[0,0,0],normal=[0,0,0];for(let k=0;k<(skin?4:1);k++){
-    const j=skin?pr.joints[i*4+k]:0,w=skin?pr.weights[i*4+k]:1;if(!w)continue;
-    const pp=point(matrices[j],p),vv=vector(normals[j],nn);for(let c=0;c<3;c++){out[c]+=pp[c]*w;normal[c]+=vv[c]*w;}}
-   positions.set(out,i*3);outNormals.set(unit(normal),i*3);
+   const o=i*3;let px=pr.positions[o],py=pr.positions[o+1],pz=pr.positions[o+2],nx=pr.normals[o],ny=pr.normals[o+1],nz=pr.normals[o+2];
+   for(let k=0;k<pr.targets.length;k++){const t=pr.targets[k],w=state.weights[k]||0;px+=t.positions[o]*w;py+=t.positions[o+1]*w;pz+=t.positions[o+2]*w;nx+=t.normals[o]*w;ny+=t.normals[o+1]*w;nz+=t.normals[o+2]*w;}
+   let x=0,y=0,z=0,ax=0,ay=0,az=0;
+   for(let k=0;k<(skin?4:1);k++){const j=skin?pr.joints[i*4+k]:0,w=skin?pr.weights[i*4+k]:1;if(!w)continue;const m=matrices[j],n=normals[j];
+    x+=(m[0]*px+m[4]*py+m[8]*pz+m[12])*w;y+=(m[1]*px+m[5]*py+m[9]*pz+m[13])*w;z+=(m[2]*px+m[6]*py+m[10]*pz+m[14])*w;
+    ax+=(n[0]*nx+n[4]*ny+n[8]*nz)*w;ay+=(n[1]*nx+n[5]*ny+n[9]*nz)*w;az+=(n[2]*nx+n[6]*ny+n[10]*nz)*w;
+   }
+   positions[o]=x;positions[o+1]=y;positions[o+2]=z;const length=Math.hypot(ax,ay,az);outNormals[o]=length>1e-12?ax/length:0;outNormals[o+1]=length>1e-12?ay/length:0;outNormals[o+2]=length>1e-12?az/length:0;
   }
   return {positions,normals:outNormals,colors:pr.colors,indices:filteredIndices(pr,pr.faceGroups?hiddenParts:[]),doubleSided:pr.doubleSided};
  });
