@@ -77,6 +77,7 @@ async function main() {
     ignoreDefaultArgs: ["--disable-back-forward-cache"],
   });
   report.browser = browser.version();
+  report.browserChannel = process.env.LAB_BROWSER_CHANNEL || "default headless shell";
   const watch = (page) => {
     page.on("pageerror", (e) => report.errors.push(e.message));
     page.on("request", (r) => {

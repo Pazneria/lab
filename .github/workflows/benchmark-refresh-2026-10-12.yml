@@ -98,14 +98,35 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          node tests/verify-coverage.cjs
-          node tests/verify-ranking-order.cjs
-          node tests/verify-gallery-navigation.cjs
-          node tests/verify-gallery-return.cjs
-          node tests/verify-gallery-selection.cjs
-          node tests/verify-real-catalog.cjs
-          node tests/verify-ui.cjs
-          node tests/verify-results.cjs
+          failures=0
+          printf '\n### Independent browser checks\n\n| Script | Result |\n| --- | --- |\n' >> "$GITHUB_STEP_SUMMARY"
+          for script in \
+            tests/verify-coverage.cjs \
+            tests/verify-ranking-order.cjs \
+            tests/verify-gallery-navigation.cjs \
+            tests/verify-gallery-return.cjs \
+            tests/verify-gallery-selection.cjs \
+            tests/verify-real-catalog.cjs \
+            tests/verify-ui.cjs \
+            tests/verify-results.cjs
+          do
+            browser_channel="${LAB_BROWSER_CHANNEL:-}"
+            # Installed full Chromium/new headless exercises the real BFCache path.
+            if [ "$script" = tests/verify-gallery-return.cjs ]; then
+              browser_channel=chromium
+            fi
+            if LAB_BROWSER_CHANNEL="$browser_channel" node "$script"; then
+              printf '| `%s` | passed |\n' "$script" >> "$GITHUB_STEP_SUMMARY"
+            else
+              status=$?
+              failures=$((failures + 1))
+              printf '| `%s` | failed (exit %s) |\n' "$script" "$status" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+          if [ "$failures" -ne 0 ]; then
+            printf '%s independent browser check(s) failed\n' "$failures"
+            exit 1
+          fi
       - name: Record bounded evidence summaries without uploading storage
         if: always()
         shell: bash
