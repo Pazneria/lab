@@ -41,6 +41,7 @@ jobs:
             /tests/
             /docs/
             /evidence/gallery-data-validation.json
+            /evidence/frontend-packet-reconciliation.json
             /index.html
             /benchmarks.html
             /results.html
