@@ -1,6 +1,14 @@
 {
-  "cards": 73,
-  "coverageCards": 39,
+  "cards": 86,
+  "coverageCards": 52,
+  "refreshCards": 13,
+  "refreshInputSHA256": {
+    "data/benchmark-refresh-2026-10-12/frontend.json": "09c92272600f445370f2079cd7ef84c979c3f9b2e4fd0cd09de33f0c1231365a",
+    "data/benchmark-refresh-2026-10-12/lab-community.json": "7140f751cf1cb9faf72ba26018ee6ded5c9f09f78c659f0cbc48efb792e8fd8c",
+    "data/benchmark-refresh-2026-10-12/medical-robotics.json": "39efe776dbb70224195af9b661c6a0f5f87026f41e8d2a444d7b912c6624452f",
+    "data/benchmark-refresh-2026-10-12/evidence-manifest.json": "6e7f54260e30b886c1a255bfca1f77c0ac8e7625e3cfeb9c15d64e390bb704cc"
+  },
+  "refreshProjectionSHA256": "66efa73f61c361c16408b230a3e2844e3d8af0ac62d0bf49955bcb3155f1806f",
   "firstWaveCards": 27,
   "firstWaveRows": 81,
   "additionRows": 319,
