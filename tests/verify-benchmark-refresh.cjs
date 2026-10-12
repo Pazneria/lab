@@ -113,7 +113,10 @@ fleet.variants.forEach((v, i) => {
   assert.equal(v.metrics[0].direction, "lower_is_better");
   assert.equal(v.metrics[0].unit, "crashed vehicles/million miles");
   assert.deepEqual(v.rows.map((r) => r.value), [raw.waymo_ipmm_rounded, raw.human_benchmark_ipmm_rounded]);
-  v.rows.forEach((r) => assert.deepEqual(r.raw, raw));
+  v.rows.forEach((r) => {
+    assert.deepEqual(r.raw, raw);
+    for (const [field, value] of Object.entries(raw)) assert.deepEqual(r[field], value, "Waymo pair preserves " + field);
+  });
 });
 const audit = refresh.coverage.refresh.directory;
 assert.ok(audit.some((c) => /SWE-Bench Pro version unspecified/.test(c.status)));
