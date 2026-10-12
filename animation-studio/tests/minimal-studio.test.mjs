@@ -33,3 +33,25 @@ test('graphics bridge never creates document WebGL, coalesces draws and rejects 
  instance.onmessage({data:{type:'present',bitmap,generation:first.generation,modelId:'first',health:{state:'ready',liveBuffers:5}}});assert.equal(presented.length,0);assert.equal(messages.at(-1).modelId,'second');const next=messages.at(-1);
  instance.onmessage({data:{type:'present',bitmap,generation:next.generation,modelId:'second',health:{state:'ready',liveBuffers:5}}});assert.equal(presented.length,1);assert.equal(b.presentedModel,'second');assert.equal(b.frames,1);assert.equal(b.pending,false);assert.equal(contexts.length,1);b.destroy();assert.equal(instance.terminated,true);assert.equal(b.createdBuffers,0);assert.equal(closed.length,2);
 });
+test('fatal graphics failure recreates worker, retains full latest pose and ignores old replies',()=>{
+ const instances=[];globalThis.OffscreenCanvas=class{};globalThis.Worker=class{constructor(){instances.push(this);this.sent=[];}postMessage(data){this.sent.push(data);}terminate(){this.terminated=true;}};
+ const canvas={clientWidth:700,clientHeight:400,getContext:()=>({transferFromImageBitmap(){}})};
+ const b=new GraphicsBridge(canvas);try{
+  const first=instances[0],oldReply=first.onmessage;first.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});
+  const model={geometry:[{positions:new Float32Array([0,0,0]),normals:new Float32Array([0,1,0]),colors:new Float32Array([1,1,1]),indices:new Uint32Array([0])}],lines:new Float32Array(),points:new Float32Array(),highlight:new Float32Array()};
+  const posed={...model,geometry:[{positions:new Float32Array([1,2,3]),normals:new Float32Array([0,1,0])}]};b.setModel(model,'human01');b.draw({yaw:1,pitch:0,span:2,center:[0,0,0]},posed,true);
+  first.onerror({message:'controlled fatal',preventDefault(){}});assert.equal(first.terminated,true);assert.equal(b.health.state,'unavailable');assert.equal(b.pending,false);assert.equal(b.worker,null);
+  b.retry();const second=instances[1];assert.notEqual(first,second);second.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});const replay=second.sent.at(-1);assert.equal(replay.modelId,'human01');assert.deepEqual(replay.model.geometry[0].positions,new Float32Array([1,2,3]));assert.ok(replay.model.geometry[0].colors.length);assert.ok(replay.model.geometry[0].indices.length);assert.equal(replay.camera.yaw,1);
+  let closed=false;oldReply({data:{type:'present',bitmap:{close(){closed=true;}},generation:b.generation,modelId:'human01'}});assert.equal(closed,true);assert.equal(b.frames,0);assert.equal(b.workersCreated,2);assert.equal(b.workersTerminated,1);
+ }finally{b.destroy();}
+});
+test('graphics startup and draw watchdogs terminate nonresponding workers',async()=>{
+ const instances=[];globalThis.OffscreenCanvas=class{};globalThis.Worker=class{constructor(){instances.push(this);}postMessage(){}terminate(){this.terminated=true;}};
+ const canvas={clientWidth:700,clientHeight:400,getContext:()=>({transferFromImageBitmap(){}})},b=new GraphicsBridge(canvas,null,{startupMs:15,drawMs:15});
+ try{await new Promise(r=>setTimeout(r,30));assert.match(b.health.reason,/initialization timed out/);assert.equal(instances[0].terminated,true);assert.equal(b.worker,null);b.retry();instances[1].onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});b.draw({yaw:0,pitch:0,span:2,center:[0,0,0]},null,true);await new Promise(r=>setTimeout(r,30));assert.match(b.health.reason,/draw timed out/);assert.equal(b.pending,false);assert.equal(instances[1].terminated,true);}finally{b.destroy();}
+});
+for(const kind of ['missing','throw'])test('bitmap '+kind+' presentation closes bitmap and enters recoverable unavailable state',()=>{
+ let worker;globalThis.OffscreenCanvas=class{};globalThis.Worker=class{constructor(){worker=this;}postMessage(){}terminate(){this.terminated=true;}};
+ const canvas={clientWidth:700,clientHeight:400,getContext:()=>kind==='missing'?null:{transferFromImageBitmap(){throw Error('controlled presentation failure');}}},b=new GraphicsBridge(canvas);let closed=0;
+ try{worker.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});b.draw({yaw:0,pitch:0,span:2,center:[0,0,0]},null,true);worker.onmessage({data:{type:'present',generation:b.generation,modelId:null,bitmap:{width:1,height:1,close(){closed++;}},health:{state:'ready',liveBuffers:1}}});assert.equal(closed,1);assert.equal(b.health.state,'unavailable');assert.match(b.health.reason,/presentation failed/);assert.equal(b.pending,false);assert.equal(b.worker,null);}finally{b.destroy();}
+});

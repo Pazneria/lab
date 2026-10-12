@@ -3,7 +3,7 @@ import {euler,clamp} from '../rig-review/source/core.mjs';
 import {returnToLab} from '../navigation.mjs';
 const $=id=>document.getElementById(id),canvas=$('view');
 const stats={started:performance.now(),readyMs:null,workersCreated:0,workersTerminated:0,loads:[],poseMs:[],longTasks:[],heartbeatMaxDriftMs:0,heartbeatTicks:0,errors:[],cancelled:0};
-let renderer=null,worker=null,timeout=0,records=[],record=null,meta=null,frame=null,revision=0,inflight=false,poseWanted=false,request=0;
+let renderer=null,worker=null,timeout=0,records=[],record=null,meta=null,frame=null,modelFrame=null,revision=0,inflight=false,poseWanted=false,request=0;
 let announcedModel=null;
 let selected=-1,clip='rest',time=0,edits={},playing=false,anchor=0,anchorTime=0,raf=0,tick=0,dirty=false,onscreen=true,disposed=false,loadStarted=0;
 const camera={yaw:.45,pitch:.15,span:2,center:[0,1,0]};
@@ -11,11 +11,11 @@ const activeClip=()=>meta?.clips.find(c=>c.id===clip);
 const visible=()=>!disposed&&!document.hidden&&onscreen;
 function status(text,error=false){$('status').textContent=text;$('status').classList.toggle('error',error);}
 function stopWorker(){clearTimeout(timeout);timeout=0;if(worker){worker.terminate();stats.workersTerminated++;worker=null;}inflight=false;poseWanted=false;}
-function controls(){const ready=!!meta,canEdit=ready&&meta.joints.find(j=>j.id===selected)?.editable;for(const id of ['joint','clip','reset'])$(id).disabled=!ready;$('play').disabled=!ready||!(activeClip()?.duration>0);$('time').disabled=!ready||!(activeClip()?.duration>0);for(const id of ['x','y','z','rangeX','rangeY','rangeZ','clearJoint'])$(id).disabled=!canEdit;$('cancel').disabled=!worker||ready;}
-function fail(message){pause();stopWorker();meta=null;frame=null;renderer?.releaseModel();dirty=true;invalidate();controls();status(message,true);$('retry').hidden=false;stats.errors.push(message);stats.errors=stats.errors.slice(-20);}
+function controls(){const ready=!!meta,canEdit=ready&&meta.joints.find(j=>j.id===selected)?.editable;for(const id of ['joint','clip','reset'])$(id).disabled=!ready;$('play').disabled=!ready||!(activeClip()?.duration>0)||renderer?.health.state!=='ready'||renderer?.presentedModel!==record?.id;$('time').disabled=!ready||!(activeClip()?.duration>0);for(const id of ['x','y','z','rangeX','rangeY','rangeZ','clearJoint'])$(id).disabled=!canEdit;$('cancel').disabled=!worker||ready;}
+function fail(message){pause();stopWorker();meta=null;frame=null;modelFrame=null;renderer?.releaseModel();dirty=true;invalidate();controls();status(message,true);$('retry').hidden=false;stats.errors.push(message);stats.errors=stats.errors.slice(-20);}
 function guard(ms,message){clearTimeout(timeout);timeout=setTimeout(()=>fail(message),ms);}
 function pause(){playing=false;clearTimeout(tick);tick=0;$('play').textContent='Play diagnostic';}
-function cancel(){stats.cancelled++;pause();stopWorker();meta=null;frame=null;renderer?.releaseModel();dirty=true;invalidate();controls();status('Load cancelled. Choose a model or retry.');$('retry').hidden=false;}
+function cancel(){stats.cancelled++;pause();stopWorker();meta=null;frame=null;modelFrame=null;renderer?.releaseModel();dirty=true;invalidate();controls();status('Load cancelled. Choose a model or retry.');$('retry').hidden=false;}
 function invalidate(){dirty=true;if(visible()&&!raf)raf=requestAnimationFrame(draw);}
 function draw(){raf=0;if(!visible()||!dirty)return;dirty=false;if(renderer)try{renderer.draw(camera,frame,$('bones').checked);}catch(error){renderer.destroy();renderer=null;fail('Viewer draw failed: '+error.message);}}
 function angles(values){if(!values)return;for(let k=0;k<3;k++){const axis='XYZ'[k];const n=Math.round(values[k]*100)/100;$('range'+axis).value=n;$(axis.toLowerCase()).value=n;}}
@@ -27,7 +27,7 @@ function nextTick(){if(playing&&!tick)tick=setTimeout(playback,34);}
 function fit(){if(meta){camera.center=meta.bounds.center.slice();camera.span=meta.bounds.span;camera.yaw=.45;camera.pitch=.15;invalidate();}}
 function chooseClip(){pause();clip=$('clip').value;time=0;edits={};$('editNote').textContent='No local overrides.';const c=activeClip();$('clipNote').textContent=c?c.kind+' · '+c.name+'. '+c.provenance+' — not an approved finished animation.':'Rest pose. No diagnostic playing.';timeline();controls();queuePose();}
 function option(select,value,text){const el=document.createElement('option');el.value=value;el.textContent=text;select.append(el);}
-function load(id){announcedModel=null;pause();stopWorker();revision++;meta=null;frame=null;edits={};clip='rest';time=0;selected=-1;renderer?.releaseModel();invalidate();record=records.find(r=>r.id===id);$('retry').hidden=true;$('joint').replaceChildren();$('clip').replaceChildren();option($('clip'),'rest','Rest pose');$('editNote').textContent='No local overrides.';$('clipNote').textContent='Diagnostic studies are not approved finished animations.';timeline();controls();if(!record){fail('Model is absent from the pinned catalog.');return;}
+function load(id){announcedModel=null;pause();stopWorker();revision++;meta=null;frame=null;modelFrame=null;edits={};clip='rest';time=0;selected=-1;renderer?.releaseModel();invalidate();record=records.find(r=>r.id===id);$('retry').hidden=true;$('joint').replaceChildren();$('clip').replaceChildren();option($('clip'),'rest','Rest pose');$('editNote').textContent='No local overrides.';$('clipNote').textContent='Diagnostic studies are not approved finished animations.';timeline();controls();if(!record){fail('Model is absent from the pinned catalog.');return;}
  $('modelNote').textContent=record.label+' · pinned '+record.sha256.slice(0,12)+'. '+(record.limits?.[0]||'Inspection input; production acceptance is not claimed.');
  status('Loading '+record.label+'…');loadStarted=performance.now();
  try{const current=worker=new Worker(new URL('./model-worker.mjs',import.meta.url),{type:'module'});stats.workersCreated++;controls();guard(15000,'Model load timed out. The page remains usable; choose another model or retry.');
@@ -36,7 +36,7 @@ function load(id){announcedModel=null;pause();stopWorker();revision++;meta=null;
   if(data.type==='progress'){status(data.text);return;}
   if(data.type==='error'){fail(data.message);return;}
   clearTimeout(timeout);timeout=0;
-  if(data.type==='ready'){meta=data.meta;frame=data.frame;selected=meta.selected;inflight=false;
+  if(data.type==='ready'){meta=data.meta;frame=data.frame;modelFrame=frame;selected=meta.selected;inflight=false;
    try{renderer?.setModel(frame,record.id);}catch(error){fail(error.message);return;}
    for(const j of meta.joints)option($('joint'),j.id,j.name+(j.editable?'':' (matrix; read only)'));$('joint').value=selected;
    for(const c of meta.clips)option($('clip'),c.id,c.kind+' · '+c.name);
@@ -73,12 +73,13 @@ const resize=new ResizeObserver(invalidate);resize.observe(canvas);
 function viewerStatus(){
  const state=renderer?.health.state||'unavailable';
  $('reloadView').hidden=state==='ready'||state==='starting';
- if(state==='recovering'){announcedModel=null;pause();status('Viewer recovering. Pose controls and scrolling remain usable.');}
- else if(state==='unavailable')status('Viewer unavailable. Retry the viewer; pose controls and navigation remain usable.',true);
- else if(meta&&renderer?.presentedModel===record?.id){if(announcedModel!==record.id){announcedModel=record.id;if(stats.viewerReadyMs===undefined)stats.viewerReadyMs=performance.now()-stats.started;status('Ready · '+record.label);}}
+ if(state==='recovering'){announcedModel=null;pause();controls();status('Viewer recovering. Pose controls and scrolling remain usable.');}
+ else if(state==='unavailable'){announcedModel=null;pause();controls();status('Viewer unavailable. '+(renderer?.health.reason||'Graphics failed')+'. Retry the viewer; pose controls and navigation remain usable.',true);}
+ else if(meta&&renderer?.presentedModel===record?.id){if(announcedModel!==record.id){announcedModel=record.id;controls();if(stats.viewerReadyMs===undefined)stats.viewerReadyMs=performance.now()-stats.started;status('Ready · '+record.label);}}
  else if(meta)status('Pose data ready · starting viewer…');
 }
-$('reloadView').addEventListener('click',()=>{renderer?.retry();invalidate();});
+function startGraphics(){try{renderer=new GraphicsBridge(canvas,viewerStatus);if(meta&&modelFrame)renderer.setModel(modelFrame,record.id);viewerStatus();invalidate();}catch(error){renderer=null;announcedModel=null;pause();controls();$('reloadView').hidden=false;status(error.message+' Retry the viewer; pose controls and navigation remain usable.',true);stats.errors.push(error.message);stats.errors=stats.errors.slice(-20);}}
+$('reloadView').addEventListener('click',()=>{if(renderer)renderer.retry();else startGraphics();invalidate();});
 $('back').addEventListener('click',event=>returnToLab(event,{base:location.href,referrer:document.referrer,history}));
 let heartbeatLast=performance.now();const heartbeat=setInterval(()=>{const now=performance.now();if(!document.hidden){stats.heartbeatMaxDriftMs=Math.max(stats.heartbeatMaxDriftMs,now-heartbeatLast-250);stats.heartbeatTicks++;}heartbeatLast=now;},250);
 let observer;try{observer=new PerformanceObserver(list=>{for(const e of list.getEntries())stats.longTasks.push({start:e.startTime,duration:e.duration});stats.longTasks=stats.longTasks.slice(-50);});observer.observe({type:'longtask',buffered:true});}catch{}
@@ -86,5 +87,5 @@ const snapshot=()=>({model:record?.id,ready:!!meta,selected,clip,time,playing,ed
 window.minimalStudioDiagnostics={snapshot,graphicsProbe:()=>renderer?.probe(),loseContext:()=>renderer?.loseContext()};$('healthRefresh').addEventListener('click',()=>{$('health').textContent=JSON.stringify(snapshot(),null,2);});
 function dispose(){if(disposed)return;disposed=true;pause();stopWorker();cancelAnimationFrame(raf);raf=0;renderer?.destroy();renderer=null;intersection.disconnect();resize.disconnect();observer?.disconnect();clearInterval(heartbeat);}
 window.addEventListener('pagehide',dispose);window.addEventListener('pageshow',e=>{if(e.persisted&&disposed)location.reload();});
-try{renderer=new GraphicsBridge(canvas,viewerStatus);}catch(error){status(error.message,true);$('reloadView').hidden=false;stats.errors.push(error.message);}
+startGraphics();
 try{const response=await fetch(new URL('./catalog.json',import.meta.url));if(!response.ok)throw Error('Model catalog unavailable ('+response.status+'). Reload to retry.');const catalog=await response.json();records=catalog.records.filter(r=>r.activeBindingAllowed&&!r.requiresReviewOptIn);for(const r of records)option($('model'),r.id,r.label);$('model').disabled=false;load(records[0]?.id);}catch(error){fail(error.message);$('retry').hidden=true;}

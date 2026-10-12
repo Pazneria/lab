@@ -9,7 +9,7 @@ const watchdog=setTimeout(()=>{result.errors.push('180-second hosted budget exce
 const state=()=>page.evaluate(()=>window.minimalStudioDiagnostics.snapshot());
 async function ready(id){await page.waitForFunction(id=>{const s=window.minimalStudioDiagnostics?.snapshot();return s?.ready&&!s.inflight&&(!id||s.model===id);},id);}
 async function switchModel(id){const start=Date.now();await page.selectOption('#model',id);await ready(id);return Date.now()-start;}
-async function check(name,fn){if(process.env.STUDIO_REVIEW_PHASE==='control'&&!/independent graphics/.test(name))return;if(process.env.STUDIO_REVIEW_PHASE==='initialization'&&!/first-load|graphics worker|context loss|WebGL unavailable|independent graphics/.test(name))return;const start=Date.now();try{const details=await fn();result.checks.push({name,passed:true,ms:Date.now()-start,details});console.log('PASS '+name);}catch(e){result.checks.push({name,passed:false,ms:Date.now()-start,error:String(e)});console.error(name,e);try{await page.screenshot({path:path.join(out,'failure-'+result.checks.length+'.png')});}catch{}}finally{save();}}
+async function check(name,fn){if(process.env.STUDIO_REVIEW_PHASE==='failure'&&!/fatal|never-answer|presentation|constructor/.test(name))return;if(process.env.STUDIO_REVIEW_PHASE==='control'&&!/independent graphics/.test(name))return;if(process.env.STUDIO_REVIEW_PHASE==='initialization'&&!/first-load|graphics worker|context loss|WebGL unavailable|independent graphics/.test(name))return;const start=Date.now();try{const details=await fn();result.checks.push({name,passed:true,ms:Date.now()-start,details});console.log('PASS '+name);}catch(e){result.checks.push({name,passed:false,ms:Date.now()-start,error:String(e)});console.error(name,e);try{await page.screenshot({path:path.join(out,'failure-'+result.checks.length+'.png')});}catch{}}finally{save();}}
 async function observe(ctx){await ctx.addInitScript(()=>{window.__gl=null;const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){const g=original.call(this,type,...args);if(g&&/^webgl/.test(type))window.__gl=g;return g;};});}
 function watch(p){p.setDefaultTimeout(10000);p.on('pageerror',e=>{result.errors.push(e.message);save();});p.on('console',m=>{if(result.console.length<60)result.console.push({type:m.type(),text:m.text()});});}
 async function scroll(){await page.locator('#view').scrollIntoViewIfNeeded();const r=await page.locator('#view').boundingBox();await page.mouse.move(r.x+r.width/2,r.y+100);const before=await page.evaluate(()=>scrollY),span=(await state()).camera.span;await page.mouse.wheel(0,250);await page.waitForFunction(y=>scrollY>y,before);assert.equal((await state()).camera.span,span);return {before,after:await page.evaluate(()=>scrollY)};}
@@ -46,6 +46,75 @@ try{
   page=await slow.newPage();watch(page);await page.goto(url);await ready();const start=Date.now();await page.click('#bones');const eventMs=Date.now()-start;assert.ok(eventMs<500);const scrolling=await scroll();await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);const s=await state();assert.ok(s.stats.heartbeatMaxDriftMs<250);await slow.close();page=context.pages()[0];return {eventMs,scrolling,heartbeat:s.stats.heartbeatMaxDriftMs};
  });
  await check('nonresponding worker times out and can be cancelled',async()=>{const stalled=await browser.newContext({viewport:{width:1280,height:720}});await observe(stalled);await stalled.route('**/minimal/model-worker.mjs',r=>r.fulfill({contentType:'text/javascript',body:'self.onmessage=()=>{};'}));page=await stalled.newPage();watch(page);await page.goto(url);await page.waitForFunction(()=>document.getElementById('status').textContent.includes('timed out'),null,{timeout:18000});assert.equal((await state()).liveWorkers,0);await scroll();await stalled.close();page=context.pages()[0];return {timeout:true,workerReleased:true};});
+ await check('real graphics worker fatal, 404 and import error recreate worker and preserve pose',async()=>{
+  const details=[];
+  for(const fault of ['fatal','404','import']){
+   const failed=await browser.newContext({viewport:{width:1280,height:720}});let scripts=0;
+   await failed.route('**/minimal/graphics-worker.mjs',async r=>{
+    scripts++;if(scripts>1){await r.continue();return;}
+    if(fault==='404'){await r.fulfill({status:404,body:'controlled missing worker'});return;}
+    if(fault==='import'){await r.fulfill({contentType:'text/javascript',body:"import './controlled-missing-import.mjs';"});return;}
+    const response=await r.fetch();await r.fulfill({response,body:await response.text()+"\nconst original=self.onmessage;self.onmessage=event=>{if(event.data.type==='render'&&!event.data.bones)throw Error('controlled fatal graphics');return original(event);};"});
+   });
+   page=await failed.newPage();watch(page);await page.goto(url);await ready();
+   if(fault==='fatal'){await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);await page.click('#bones');}
+   await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().graphics.state==='unavailable');
+   await page.fill('#x','24');await page.waitForFunction(()=>!window.minimalStudioDiagnostics.snapshot().inflight);await page.click('#zoomIn');const before=await state();assert.equal(before.liveGraphicsWorkers,0);assert.equal(before.graphicsPending,false);await scroll();
+   let navigations=0;const listener=f=>{if(f===page.mainFrame())navigations++;};page.on('framenavigated',listener);
+   await page.click('#reloadView');await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);
+   const after=await state();assert.equal(navigations,0);assert.ok(scripts>=2);assert.deepEqual(after.edits,before.edits);assert.deepEqual(after.camera,before.camera);assert.equal(after.model,before.model);assert.equal(after.selected,before.selected);assert.equal(after.liveGraphicsWorkers,1);assert.equal(after.graphics.workersCreated,2);assert.equal(after.graphics.workersTerminated,1);
+   details.push({fault,scripts,noReload:true,posePreserved:true,failures:after.graphics.failures});await failed.close();
+  }
+  page=context.pages()[0];return details;
+ });
+ await check('never-answer graphics initialization and render time out and fresh Retry recovers',async()=>{
+  const details=[];
+  for(const fault of ['startup','render']){
+   const stalled=await browser.newContext({viewport:{width:1280,height:720}});let scripts=0;
+   await stalled.route('**/minimal/graphics-worker.mjs',async r=>{
+    scripts++;if(scripts>1){await r.continue();return;}
+    if(fault==='startup'){await r.fulfill({contentType:'text/javascript',body:'self.onmessage=()=>{};'});return;}
+    const response=await r.fetch();await r.fulfill({response,body:await response.text()+"\nconst original=self.onmessage;self.onmessage=event=>{if(event.data.type==='render'&&!event.data.bones)return;return original(event);};"});
+   });
+   page=await stalled.newPage();watch(page);await page.goto(url);await ready();
+   if(fault==='render'){await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);await page.click('#bones');}
+   await page.fill('#x','23');await page.waitForFunction(()=>!window.minimalStudioDiagnostics.snapshot().inflight);await scroll();
+   await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().graphics.state==='unavailable',null,{timeout:15000});
+   const before=await state();assert.equal(before.liveGraphicsWorkers,0);assert.equal(before.graphicsPending,false);assert.equal(before.playing,false);assert.match(before.graphics.reason,/timed out/);
+   let navigations=0;page.on('framenavigated',f=>{if(f===page.mainFrame())navigations++;});await page.click('#reloadView');await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);
+   const after=await state();assert.equal(navigations,0);assert.equal(scripts,2);assert.deepEqual(after.edits,before.edits);assert.equal(after.model,before.model);assert.equal(after.liveGraphicsWorkers,1);assert.equal(after.graphics.workersTerminated,1);details.push({fault,reason:before.graphics.reason,scripts,noReload:true,posePreserved:true});await stalled.close();
+  }
+  page=context.pages()[0];return details;
+ });
+ await check('document presentation context absent or throwing closes bitmap and recovers',async()=>{
+  const details=[];
+  for(const fault of ['missing','throw']){
+   const failed=await browser.newContext({viewport:{width:1280,height:720}});
+   await failed.addInitScript(fault=>{
+    window.presentationFault=true;window.bitmapCloses=0;
+    const originalClose=ImageBitmap.prototype.close;ImageBitmap.prototype.close=function(){window.bitmapCloses++;return originalClose.call(this);};
+    const original=HTMLCanvasElement.prototype.getContext;
+    HTMLCanvasElement.prototype.getContext=function(type,...args){
+     if(this.id!=='view')return original.call(this,type,...args);
+     if(fault==='missing'&&window.presentationFault&&['bitmaprenderer','2d'].includes(type))return null;
+     const value=original.call(this,type,...args);
+     if(fault==='throw'&&type==='bitmaprenderer'&&value){const transfer=value.transferFromImageBitmap.bind(value);value.transferFromImageBitmap=bitmap=>{if(window.presentationFault)throw Error('controlled presentation failure');return transfer(bitmap);};}
+     return value;
+    };
+   },fault);
+   page=await failed.newPage();watch(page);await page.goto(url);await ready();await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().graphics.state==='unavailable');
+   assert.ok(await page.evaluate(()=>window.bitmapCloses>=1));await page.fill('#x','21');await page.waitForFunction(()=>!window.minimalStudioDiagnostics.snapshot().inflight);const before=await state();assert.equal(before.liveGraphicsWorkers,0);await scroll();await page.evaluate(()=>window.presentationFault=false);
+   let navigations=0;page.on('framenavigated',f=>{if(f===page.mainFrame())navigations++;});await page.click('#reloadView');await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);
+   const after=await state();assert.equal(navigations,0);assert.deepEqual(after.edits,before.edits);assert.equal(after.liveGraphicsWorkers,1);assert.equal(after.graphics.workersCreated,2);details.push({fault,closed:await page.evaluate(()=>window.bitmapCloses),noReload:true,posePreserved:true});await failed.close();
+  }
+  page=context.pages()[0];return details;
+ });
+ await check('graphics constructor failure offers meaningful creation Retry with latest pose',async()=>{
+  const failed=await browser.newContext({viewport:{width:1280,height:720}});await failed.addInitScript(()=>{window.savedOffscreen=OffscreenCanvas;window.OffscreenCanvas=undefined;});
+  page=await failed.newPage();watch(page);await page.goto(url);await ready();assert.equal((await state()).liveGraphicsWorkers,0);assert.equal((await state()).viewerReady,false);await page.fill('#x','19');await page.waitForFunction(()=>!window.minimalStudioDiagnostics.snapshot().inflight);await page.click('#zoomIn');const before=await state();await scroll();
+  await page.evaluate(()=>window.OffscreenCanvas=window.savedOffscreen);let navigations=0;page.on('framenavigated',f=>{if(f===page.mainFrame())navigations++;});await page.click('#reloadView');await page.waitForFunction(()=>window.minimalStudioDiagnostics.snapshot().viewerReady);
+  const after=await state();assert.equal(navigations,0);assert.deepEqual(after.edits,before.edits);assert.deepEqual(after.camera,before.camera);assert.equal(after.liveGraphicsWorkers,1);await failed.close();page=context.pages()[0];return {noReload:true,posePreserved:true,constructorRetried:true};
+ });
  await check('phone layout scroll and controls remain accessible',async()=>{const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await observe(mobile);page=await mobile.newPage();watch(page);await page.goto(url);await ready();assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await switchModel('chicken');await page.click('#reset');await page.locator('#healthRefresh').scrollIntoViewIfNeeded();assert.ok(await page.evaluate(()=>scrollY>0));await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(out,'mobile.png'),fullPage:true});await mobile.close();page=context.pages()[0];return {width:390,overflow:false,buttons:true,scroll:true};});
  await check('navigation, back and pagehide release resources',async()=>{await page.evaluate(()=>{window.__released=null;window.addEventListener('pagehide',()=>{sessionStorage.setItem('minimal-release-proof',JSON.stringify(window.minimalStudioDiagnostics.snapshot()));});});await page.click('#back');await page.waitForURL(/lab-space/);const released=await page.evaluate(()=>JSON.parse(sessionStorage.getItem('minimal-release-proof')));assert.equal(released.liveWorkers,0);assert.equal(released.liveBuffers,0);assert.equal(released.raf,false);await page.goBack();await ready();assert.equal((await state()).liveWorkers,1);return {released,backReady:true};});
  await check('independent graphics control in a fresh browser process',async()=>{

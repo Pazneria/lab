@@ -32,6 +32,7 @@ jobs:
         env:
           STUDIO_PLAYWRIGHT: ${{ runner.temp }}/minimal-browser/node_modules/playwright/index.mjs
           STUDIO_REVIEW_SHA: ${{ github.sha }}
+          STUDIO_REVIEW_PHASE: failure
         run: xvfb-run -a node scripts/review-minimal-studio.mjs
       - name: Review evidence
         if: always()
