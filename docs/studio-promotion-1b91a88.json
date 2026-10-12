@@ -1,0 +1,226 @@
+{
+  "sha": "1b91a88f0f68c2cc64257aca011882eda44ada0a",
+  "ownerBrowserTested": false,
+  "historicalColdHeartbeatFailureMs": 898.1,
+  "historicalColdAggregateStatus": "failed",
+  "checks": [
+    {
+      "name": "direct default route serves new entry, only needed assets, controls and correct legacy link",
+      "passed": true,
+      "ms": 3589,
+      "details": {
+        "url": "http://127.0.0.1:44763/lab/animation-studio/",
+        "input": {
+          "pose": true,
+          "reset": true,
+          "zoom": true,
+          "scroll": true
+        },
+        "legacy": "legacy.html"
+      }
+    },
+    {
+      "name": "legacy source retains exact approved bytes and Human01 study access without core eager load",
+      "passed": true,
+      "ms": 126,
+      "details": {
+        "sha": "ce8b83d64a1eb2fe6227f6cbc62bd38e0b55027291193afea1a98fc2504c759c",
+        "bytes": 16823693,
+        "humanStudyPreserved": true
+      }
+    },
+    {
+      "name": "actual 3D Lab skeleton E launch enters default route and Back restores departure pose",
+      "passed": true,
+      "ms": 36526,
+      "details": {
+        "gl": {
+          "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+          "lost": false,
+          "error": 0
+        },
+        "beforeInput": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": 0,
+          "pitch": -0.04,
+          "eye": 1.62,
+          "crouch": false,
+          "vx": 0,
+          "vz": 0
+        },
+        "departureReceipt": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": 0,
+          "pitch": -0.04,
+          "crouch": false
+        },
+        "after": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": 0,
+          "pitch": -0.04,
+          "eye": 1.62,
+          "crouch": false,
+          "vx": 0,
+          "vz": 0
+        },
+        "input": {
+          "pose": true,
+          "reset": true,
+          "zoom": true,
+          "scroll": true
+        },
+        "workersReleased": true,
+        "nativeE": true,
+        "fixturePreparation": true,
+        "teleports": true
+      }
+    },
+    {
+      "name": "actual aimed skeleton click launches new route and browser Back restores pose",
+      "passed": true,
+      "ms": 14758,
+      "details": {
+        "nativeClick": true,
+        "before": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": -2.4492582618634433,
+          "pitch": -0.410709673791654,
+          "crouch": false
+        },
+        "after": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": -2.4492582618634433,
+          "pitch": -0.410709673791654,
+          "eye": 1.62,
+          "crouch": false,
+          "vx": 0,
+          "vz": 0
+        },
+        "fixturePreparation": true,
+        "teleports": true
+      }
+    },
+    {
+      "name": "legacy navigation retains prior study controls and Lab return receipt",
+      "passed": true,
+      "ms": 10170,
+      "details": {
+        "studyControlsAccessible": true,
+        "legacyReceiptAccepted": true,
+        "before": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": -2.4492582618634433,
+          "pitch": -0.410709673791654,
+          "eye": 1.62,
+          "crouch": false,
+          "vx": 0,
+          "vz": 0
+        },
+        "after": {
+          "x": 7.35,
+          "z": 1.65,
+          "yaw": -2.4492582618634433,
+          "pitch": -0.410709673791654,
+          "crouch": false
+        },
+        "verifiedByNativeReentry": true
+      }
+    },
+    {
+      "name": "phone default route has no horizontal overflow and usable scroll/pose controls",
+      "passed": true,
+      "ms": 497,
+      "details": {
+        "width": 390,
+        "scroll": true,
+        "pose": true,
+        "reset": true
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "browserVersion": "154.0.8037.97",
+  "startup": {
+    "wallMs": 3118,
+    "health": {
+      "model": "human01",
+      "ready": true,
+      "selected": 0,
+      "clip": "rest",
+      "time": 0,
+      "playing": false,
+      "edits": {},
+      "camera": {
+        "yaw": 0.45,
+        "pitch": 0.15,
+        "span": 2.5800000366568563,
+        "center": [
+          0,
+          0.8600000163912773,
+          0.043453045189380646
+        ]
+      },
+      "visible": true,
+      "pending": false,
+      "inflight": false,
+      "queued": false,
+      "raf": false,
+      "playbackTimer": false,
+      "viewerReady": true,
+      "graphics": {
+        "state": "ready",
+        "attempts": 2,
+        "losses": [
+          {
+            "reason": "WebGL unavailable. Model selection and navigation remain usable.",
+            "at": 2455.0999999999985
+          }
+        ],
+        "initializationMs": [
+          2440.5,
+          63.599999999998545
+        ],
+        "draws": 1,
+        "liveBuffers": 5,
+        "failures": [],
+        "workersCreated": 1,
+        "workersTerminated": 0
+      },
+      "graphicsPending": false,
+      "graphicsDeadlineActive": false,
+      "graphicsQueued": false,
+      "liveGraphicsWorkers": 1,
+      "rendererFrames": 1,
+      "liveBuffers": 5,
+      "liveWorkers": 1,
+      "stats": {
+        "started": 58.799999999995634,
+        "readyMs": 2520.300000000003,
+        "workersCreated": 1,
+        "workersTerminated": 0,
+        "loads": [
+          {
+            "id": "human01",
+            "ms": 2475.4000000000015,
+            "workerMs": 20.099999999998545
+          }
+        ],
+        "poseMs": [],
+        "longTasks": [],
+        "heartbeatMaxDriftMs": 2233.300000000003,
+        "heartbeatTicks": 4,
+        "errors": [],
+        "cancelled": 0,
+        "viewerReadyMs": 3012.9000000000015
+      }
+    },
+    "notFullColdValidation": true
+  }
+}
