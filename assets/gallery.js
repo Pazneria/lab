@@ -187,7 +187,7 @@
       ids.add(c.id);
     }
     return (
-      ids.size === 73 &&
+      ids.size === (input.coverage.refresh ? 86 : 73) &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(
@@ -312,6 +312,7 @@
   const byId = new Map(all.map((c) => [c.id, c]));
   const priority = [
     "hle-diamond",
+    "webdev-arena-frontend-2026-10-08",
     "webdev-arena-frontend",
     "bullshitbench-v2",
     "runebench",
@@ -321,7 +322,9 @@
     "mmmu-pro",
     "terminal-bench-4",
     "swe-bench-pro-public-v2",
+    "healthbench-professional-openai-20260929",
     "healthbench-professional",
+    "waymo-corrected-fleet-outcomes",
   ];
   all.sort((a, b) => {
     const ai = priority.indexOf(a.id),
@@ -1077,7 +1080,19 @@
           if (c.row_scope) li.append(e("small", "", c.row_scope));
           backlog.append(li);
         }
+        const refreshAudit = e("ul", "research-directory");
+        for (const c of input.coverage.refresh?.directory || []) {
+          const li = e("li");
+          li.append(external(c.url, c.name), e("small", "", c.status));
+          refreshAudit.append(li);
+        }
         directory.replaceChildren(
+          ...(input.coverage.refresh ? [disclosure(
+            "October 12 source review and held cohorts",
+            local("data/benchmark-refresh-2026-10-12/evidence-manifest.json", "Exact source archive manifest"),
+            local("data/gallery-refresh-projection-2026-10-12.json", "Refresh projection and source audit"),
+            refreshAudit,
+          )] : []),
           disclosure(
             "Evidence guides · " +
               guides.children.length +

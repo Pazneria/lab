@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = read("data/coverage-projection-2026-10-05.json");
+const coverage = read("data/gallery-refresh-projection-2026-10-12.json").coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,10 +183,10 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 73);
-    assert.equal(await page.locator(".mini-graph svg").count(), 64);
+    assert.equal(await page.locator(".benchmark-card").count(), 86);
+    assert.equal(await page.locator(".mini-graph svg").count(), 77);
     pass(
-      "Default gallery groups result families without empty cards; all 73 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 86 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
@@ -211,8 +211,49 @@ async function main() {
       }
     }
     pass(
-      "All 39 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 52 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
+    // October 12 views retain their typed uncertainty and exact memberships.
+    await go("results.html?benchmark=webdev-arena-frontend-2026-10-08");
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 142);
+    assert.equal(await page.locator(".confidence-interval").count(), 0);
+    assert.equal(await page.locator(".reported-interval").count(), 12);
+    assert.match(await page.locator(".coverage-chart").innerText(), /unspecified confidence level/);
+    await page.locator("input[name=config]").fill("gpt-5.3-codex (codex-harness)");
+    assert.equal(await page.locator(".coverage-mark").count(), 2);
+    const distinct = await page.locator(".coverage-mark").evaluateAll((nodes) => nodes.map((n) => n.dataset.resultId));
+    assert.equal(new Set(distinct).size, 2);
+    for (const id of ["terminal-bench-4-haiku55-lab", "terminal-bench-science-haiku55-lab", "mentalhealthbench"]) {
+      await go("results.html?benchmark=" + id);
+      assert.equal(await page.locator(".confidence-interval").count(), 0);
+      assert.ok(await page.locator(".reported-interval").count());
+      assert.match(await page.locator(".coverage-chart").innerText(), /standard error/);
+    }
+    await go("results.html?benchmark=healthbench-professional-openai-20260929");
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 8);
+    await page.locator("select[name=view]").selectOption("raw");
+    assert.equal(await page.locator(".coverage-mark").count(), 8);
+    await go("results.html?benchmark=healthagentbench");
+    await page.locator("select[name=view]").selectOption("time");
+    assert.equal(await page.locator(".coverage-mark").count(), 10);
+    assert.match(await page.locator(".axis-description").innerText(), /minutes\/attempt/);
+    await page.locator("select[name=cohort]").selectOption("healthagentbench-20260727-additions");
+    assert.equal(await page.locator("select[name=view]").count(), 0);
+    assert.equal(await page.locator(".coverage-mark").count(), 2);
+    await go("results.html?benchmark=drivingbench-fixed-pilot");
+    await page.locator("select[name=cohort]").selectOption("drivingbench-fixed-pilot-attempts");
+    await page.locator("select[name=view]").selectOption("time");
+    assert.equal(await page.locator(".coverage-mark").count(), 11);
+    await go("results.html?benchmark=waymo-corrected-fleet-outcomes");
+    assert.equal(await page.locator(".coverage-chart").getAttribute("data-direction"), "lower_is_better");
+    await page.setViewportSize({ width: 320, height: 844 });
+    for (const id of ["webdev-arena-frontend-2026-10-08", "healthagentbench", "drivingbench-fixed-pilot", "waymo-corrected-fleet-outcomes"]) {
+      await go("results.html?benchmark=" + id);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, id + " mobile overflow");
+      await axe("October 12 mobile " + id);
+    }
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    pass("October 12 complete rows, duplicate source keys, typed uncertainty, separate cost/time setups and narrow-screen views");
     await go("results.html?benchmark=balrog");
     await page.locator("select[name=cohort]").selectOption("VLM");
     assert.equal(await page.locator(".chart-table tbody tr").count(), 10);

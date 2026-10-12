@@ -1,0 +1,20 @@
+{
+  "registry": "https://registry.npmjs.org",
+  "packages": [
+    {
+      "name": "playwright",
+      "version": "1.63.0",
+      "integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg=="
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.63.0",
+      "integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg=="
+    },
+    {
+      "name": "axe-core",
+      "version": "4.13.0",
+      "integrity": "sha512-UzGt8zg7Ny8djbYMhxl2zuEevVa7r2gJjYY5Lwr1xM7+XU2nd6CkIWFTVcCIbAP63vSz71NaVyyuSk9lHKcy0A=="
+    }
+  ]
+}

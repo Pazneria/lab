@@ -32,8 +32,18 @@
     fmt(n) + (n == null ? "" : unit === "percent" ? "%" : " " + unit);
   function confidence(row, metric) {
     const n = value(row, metric.field);
-    let bounds, level;
-    if (metric.ci_field) {
+    let bounds, level, kind = "confidence_interval";
+    if (metric.interval_field) {
+      bounds = value(row, metric.interval_field);
+      kind = metric.interval_kind;
+      level = metric.ci_level;
+    } else if (metric.stderr_field) {
+      const se = value(row, metric.stderr_field);
+      if (!number(se) || se < 0) return null;
+      bounds = [n - se, n + se];
+      kind = "standard_error";
+    }
+    else if (metric.ci_field) {
       bounds = value(row, metric.ci_field);
       level = metric.ci_level;
     } else if (metric.field === "value") {
@@ -41,21 +51,21 @@
       level = row.ci_level;
     }
     return number(n) &&
-      number(level) &&
-      level > 0 &&
-      level < 1 &&
+      (["published_interval", "standard_error"].includes(kind) ||
+        (kind === "confidence_interval" && number(level) && level > 0 && level < 1)) &&
       Array.isArray(bounds) &&
       bounds.length === 2 &&
       bounds.every(number) &&
       bounds[0] <= n &&
       n <= bounds[1]
-      ? { lower: bounds[0], upper: bounds[1], level }
+      ? { lower: bounds[0], upper: bounds[1], level, kind }
       : null;
   }
   const intervalText = (ci, unit) =>
     ci
-      ? fmt(ci.level * 100) +
-        "% CI: " +
+      ? (ci.kind === "standard_error" ? "Mean ± one standard error: " :
+          ci.kind === "published_interval" ? "Published bounds (confidence level unspecified): " :
+          fmt(ci.level * 100) + "% CI: ") +
         shown(ci.lower, unit) +
         " to " +
         shown(ci.upper, unit)
@@ -78,13 +88,20 @@
   function valid(data) {
     if (
       data?.schema_version !== 1 ||
-      data.cards?.length !== 39 ||
+      data.cards?.length !== (data.refresh ? 52 : 39) ||
       data.first_wave_ids?.length !== 27 ||
       data.backlog?.length !== 52 ||
       data.audits?.length !== 46 ||
       Object.keys(data.rune?.summaries || {}).length !== 87
     )
       return false;
+    if (data.refresh && (data.refresh.schema_version !== 1 ||
+      data.refresh.checked_at !== "2026-10-12" || data.refresh.card_ids?.length !== 13 ||
+      new Set(data.refresh.card_ids).size !== 13 ||
+      new Set(data.cards.map((c) => c.id)).size !== 52 ||
+      !data.refresh.card_ids.every((id) => data.cards.some((c) => c.id === id)) ||
+      !Array.isArray(data.refresh.directory) ||
+      !data.refresh.directory.every((c) => typeof c.name === "string" && safe(c.url) && typeof c.status === "string"))) return false;
     return (
       data.cards.every(
         (c) =>
@@ -103,6 +120,9 @@
                 (m) =>
                   /^[a-z0-9_-]+$/.test(m.id) &&
                   typeof m.field === "string" &&
+                  (!m.interval_field || ["published_interval", "confidence_interval"].includes(m.interval_kind)) &&
+                  (!m.stderr_field || v.rows.every((r) => value(r, m.stderr_field) == null ||
+                    (number(value(r, m.stderr_field)) && value(r, m.stderr_field) >= 0))) &&
                   m.domain?.length === 2 &&
                   m.domain.every(number) &&
                   m.domain[0] < m.domain[1] &&
@@ -185,9 +205,9 @@
           r.label.length > 24 ? r.label.slice(0, 23) + "…" : r.label,
         ),
         svg("rect", {
-          x: Math.min(sx(0), sx(n)),
+          x: Math.min(sx(Math.max(metric.domain[0], Math.min(0, metric.domain[1]))), sx(n)),
           y: y - 5,
-          width: Math.max(2, Math.abs(sx(n) - sx(0))),
+          width: Math.max(2, Math.abs(sx(n) - sx(Math.max(metric.domain[0], Math.min(0, metric.domain[1]))))),
           height: 10,
           rx: 3,
           fill: colors[variant.rows.indexOf(r) % colors.length],
@@ -594,9 +614,9 @@
           drawing.append(labelNode);
           mark.append(
             svg("rect", {
-              x: Math.min(sx(0), x),
+              x: Math.min(sx(Math.max(metric.domain[0], Math.min(0, metric.domain[1]))), x),
               y: y - 9,
-              width: Math.max(2, Math.abs(x - sx(0))),
+              width: Math.max(2, Math.abs(x - sx(Math.max(metric.domain[0], Math.min(0, metric.domain[1]))))),
               height: 18,
               rx: 3,
               fill: colors[variant.rows.indexOf(r) % colors.length],
@@ -608,7 +628,7 @@
             ),
           );
         }
-        // Only explicitly identified source confidence intervals are drawn. Undefined +/- columns remain in source details.
+        // Draw only typed source uncertainty; unspecified plus/minus values remain in source details.
         if (!metric.x_field && ci)
           mark.append(
             svg("line", {
@@ -618,10 +638,11 @@
               y2: y,
               stroke: "#1e293b",
               "stroke-width": 2,
-              class: "confidence-interval",
+              class: ci.kind === "confidence_interval" ? "confidence-interval" : "reported-interval",
+              "data-interval-kind": ci.kind,
               "data-ci-lower": ci.lower,
               "data-ci-upper": ci.upper,
-              "data-ci-level": ci.level,
+              ...(number(ci.level) ? { "data-ci-level": ci.level } : {}),
             }),
             ...[ci.lower, ci.upper].map((bound) =>
               svg("line", {
@@ -662,6 +683,7 @@
       node.append(e("p", "empty-state", "No reported values match this view."));
     node.append(panel);
     const knownCI = variant.rows.some((r) => confidence(r, metric));
+    const intervalKinds = new Set(variant.rows.map((r) => confidence(r, metric)?.kind));
     const confidenceLevels = [
       ...new Set(
         variant.rows.map((r) => confidence(r, metric)?.level).filter(number),
@@ -672,7 +694,11 @@
         "p",
         "chart-subtitle",
         knownCI
-          ? "Whiskers show the reported " +
+          ? intervalKinds.has("standard_error")
+            ? "Whiskers show mean ± one reported standard error, not a confidence interval. Exact bounds are in the table and mark details; differences do not by themselves establish significance."
+            : intervalKinds.has("published_interval")
+              ? "Whiskers show published bounds with unspecified confidence level. Exact bounds are in the table and mark details; differences do not by themselves establish significance."
+              : "Whiskers show the reported " +
               confidenceLevels.join(" and ") +
               " confidence intervals for " +
               metric.label +
@@ -696,7 +722,7 @@
       "Configuration",
       metric.label + " (" + metric.unit + ")",
       ...(knownCI
-        ? ["Reported confidence interval (" + metric.unit + ")"]
+        ? [(intervalKinds.has("standard_error") ? "Mean ± one standard error" : intervalKinds.has("published_interval") ? "Published bounds (confidence level unspecified)" : "Reported confidence interval") + " (" + metric.unit + ")"]
         : []),
       ...(metric.x_field ? [metric.x_label + " (" + metric.x_unit + ")"] : []),
       "Source",
@@ -774,5 +800,5 @@
       ],
     };
   }
-  window.LAB_COVERAGE = { valid, selection, miniature, chart, runeCard };
+  window.LAB_COVERAGE = { valid, selection, miniature, chart, runeCard, uncertainty: confidence };
 })();

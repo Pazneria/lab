@@ -5,6 +5,8 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   out = path.join(root, "evidence");
+const currentFamilyCount = JSON.parse(fs.readFileSync(path.join(root, "data/gallery-metadata-2026-10-12.json"), "utf8")).counts.default_families;
+assert.equal(currentFamilyCount, 57);
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -278,7 +280,7 @@ async function main() {
     await ready(deep);
     await deep.locator(".back-link").click();
     await deep.waitForURL("**/benchmarks.html#gallery");
-    assert.equal(await deep.locator(".benchmark-card").count(), 51);
+    assert.equal(await deep.locator(".benchmark-card").count(), currentFamilyCount);
     await deep.goto(base + "results.html?benchmark=hle-diamond");
     await ready(deep);
     for (const url of [

@@ -1,10 +1,10 @@
 # Lab · AI benchmark gallery
 
-A source-backed gallery of **73 individual cards**, grouped into **51 benchmark families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
+A source-backed gallery of **86 individual cards**, grouped into **57 benchmark families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
 
 The page preserves all **20 original discovery records**, their 51 URLs and 30 null metric definitions. The original **18 result rows and seven graph views**, 340 standard rows, frontend packet and expanded community source records remain unchanged. The new coverage input adds 319 primary rows, 81 selected first-wave observations and 1,392 RuneBench skill summaries for 87 configurations. No global score, cross-benchmark rank or missing-value zero is introduced. Selected cohorts are clearly incomplete, and source review dates remain separate from publication and evaluation dates.
 
-This combined increment is an **unpublished draft in PR 17** for parent source review. The full public research input was supplied in 15 ordered JSON parts after Library materialization failed on Windows. It was reconstructed and validated successfully; no Library download success is claimed. See [the combined coverage draft and narrow security review](docs/COVERAGE-DRAFT-2026-10-05.md). The external homepage, room and infrastructure remain outside the change.
+The October 12 refresh is an **unvalidated draft** until the exact revision passes cloud generation, source review and hosted regression checks. See [the bounded refresh handoff](docs/BENCHMARK-REFRESH-2026-10-12.md). The earlier October 5 coverage remains preserved. The full public research input was supplied in 15 ordered JSON parts after Library materialization failed on Windows. It was reconstructed and validated successfully; no Library download success is claimed. See [the combined coverage draft and narrow security review](docs/COVERAGE-DRAFT-2026-10-05.md). The external homepage, room and infrastructure remain outside the change.
 
 See [catalog audit and pending evidence](docs/CATALOG-AUDIT-2026-10-05.md),
 [gallery integration and scoped security review](docs/GALLERY-INTEGRATION.md),
@@ -59,6 +59,7 @@ node scripts/build-catalog.cjs --check
 node scripts/build-results.cjs --check
 node scripts/build-coverage.cjs
 node scripts/build-gallery-metadata.cjs
+node scripts/build-gallery-refresh-2026-10-12.cjs
 node scripts/build-gallery.cjs
 ```
 
@@ -103,7 +104,7 @@ security checks are not a security certification.
 The selected repository is `Pazneria/lab`, with its existing `main`/root legacy
 GitHub Pages workflow at **https://pazneria.github.io/lab/**. Publish tested,
 reversible commits through a pull request after fetching and preserving remote
-work. This combined draft must remain unpublished until parent source review. This change owns the benchmark UI/data; homepage and the separately owned
+work. The October 12 refresh must remain unpublished until parent receipt and exact-revision cloud validation are confirmed. This change owns the benchmark UI/data; homepage and the separately owned
 3D `lab-space` room remain outside its scope. The homepage’s Lab link opens
 `lab-space/`; that room’s benchmark station opens the root gallery. Preserve
 both destinations and the additional `benchmarks.html` route.

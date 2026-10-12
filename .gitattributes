@@ -49,3 +49,8 @@ animation-studio/*.md text eol=lf
 scripts/build-public-rig-studio.cjs text eol=lf
 tests/verify-public-rig-studio.test.mjs text eol=lf
 tests/verify-animation-workbench-geometry.test.mjs text eol=lf
+
+# October 12 public research keeps its exact parent-supplied source bytes.
+data/benchmark-refresh-2026-10-12/** -text
+data/gallery-refresh-projection-2026-10-12.json text eol=lf
+data/gallery-metadata-2026-10-12.json text eol=lf
