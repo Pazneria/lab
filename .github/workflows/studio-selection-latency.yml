@@ -1,0 +1,42 @@
+name: Studio selection latency
+on:
+  push:
+    branches: [fix-studio-selection-latency]
+    paths:
+      - animation-studio/**
+      - scripts/profile-studio-selection.mjs
+      - .github/workflows/studio-selection-latency.yml
+permissions:
+  contents: read
+concurrency:
+  group: studio-selection-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  profile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Runner-only profiling dependencies and exact deployed baseline
+        run: |
+          npm install --prefix "$RUNNER_TEMP/studio-profile" --no-audit --no-fund playwright@1.64.0
+          git fetch --depth=1 origin cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d
+          git show cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d:animation-studio/index.html > "$RUNNER_TEMP/studio-selection-baseline.html"
+      - name: Bounded selection/workspace profiling
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-profile/node_modules/playwright/index.mjs
+          STUDIO_PROFILE_BASELINE: ${{ runner.temp }}/studio-selection-baseline.html
+          STUDIO_PROFILE_SHA: ${{ github.sha }}
+        run: xvfb-run -a node scripts/profile-studio-selection.mjs
+      - name: Save timing evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-selection-${{ github.sha }}
+          path: studio-selection-evidence/
+          retention-days: 7
