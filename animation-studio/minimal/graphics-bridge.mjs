@@ -7,7 +7,7 @@ export class GraphicsBridge {
   this.generation=0;this.modelId=null;this.presentedModel=null;
   this.pending=false;this.queued=null;this.nextModel=null;this.clear=true;
   this.model=null;this.lastDraw=null;this.disposed=false;this.output=null;
-  this.probes=new Map();this.probeId=0;this.timer=0;
+  this.probes=new Map();this.probeId=0;this.timer=0;this.recoveryPending=false;
   this.failures=[];this.workersCreated=0;this.workersTerminated=0;
   this.health={state:'starting',attempts:0,losses:[],initializationMs:[],liveBuffers:0};
   if(typeof OffscreenCanvas==='undefined')throw Error('Worker graphics unavailable. Pose controls and navigation remain usable.');
@@ -29,7 +29,7 @@ export class GraphicsBridge {
  stopWorker() {
   clearTimeout(this.timer);this.timer=0;this.settleProbes();
   if(this.worker){this.worker.onmessage=null;this.worker.onerror=null;this.worker.onmessageerror=null;this.worker.terminate();this.workersTerminated++;this.worker=null;}
-  this.pending=false;this.createdBuffers=0;this.deletedBuffers=0;
+  this.pending=false;this.recoveryPending=false;this.createdBuffers=0;this.deletedBuffers=0;
  }
  fail(reason) {
   if(this.disposed)return;
@@ -50,7 +50,7 @@ export class GraphicsBridge {
     }
     if(data.health)this.updateHealth(data.health);
     if(data.type==='present') {
-     clearTimeout(this.timer);this.timer=0;this.pending=false;
+     clearTimeout(this.timer);this.timer=0;this.pending=false;this.recoveryPending=false;
      try {
       if(data.generation===this.generation&&data.modelId===this.modelId) {
        this.canvas.width=data.bitmap.width;this.canvas.height=data.bitmap.height;
@@ -66,8 +66,14 @@ export class GraphicsBridge {
     }else if(data.type==='health') {
      if(data.health.state==='unavailable'){this.fail(data.health.losses?.at(-1)?.reason||'Graphics initialization failed');return;}
      if(data.health.state!=='ready')this.presentedModel=null;
-     // A recovery notification must not extend an outstanding draw deadline.
-     if(data.health.state==='ready'&&!this.pending){clearTimeout(this.timer);this.timer=0;}
+     // Idle context loss needs a deadline too. Repeated notifications cannot
+     // extend an existing draw/recovery deadline, which lasts until a frame.
+     if(data.health.state==='recovering'){
+      this.recoveryPending=true;
+      if(!this.timer)this.arm(this.limits.startupMs,'Graphics recovery timed out');
+     }
+     if(data.health.state==='ready'&&!this.pending&&!this.recoveryPending){clearTimeout(this.timer);this.timer=0;}
+     if(data.health.state==='ready'&&this.recoveryPending&&!this.pending&&!this.queued)this.queued=this.lastDraw;
      this.notify();if(data.health.state==='ready')this.pump();
     }
    };
@@ -97,7 +103,7 @@ export class GraphicsBridge {
   if(this.disposed||!this.worker||this.pending||!this.queued||this.health.state!=='ready')return;
   const data={type:'render',...this.queued,generation:this.generation,modelId:this.modelId,model:this.nextModel,clear:this.clear};
   this.queued=null;this.nextModel=null;this.clear=false;this.pending=true;
-  this.arm(this.limits.drawMs,'Graphics draw timed out');
+  if(!this.timer)this.arm(this.limits.drawMs,'Graphics draw timed out');
   try{this.worker.postMessage(data);}catch(error){this.fail('Graphics request failed: '+error.message);}
  }
  retry() {

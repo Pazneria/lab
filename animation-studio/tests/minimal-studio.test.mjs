@@ -55,3 +55,19 @@ for(const kind of ['missing','throw'])test('bitmap '+kind+' presentation closes 
  const canvas={clientWidth:700,clientHeight:400,getContext:()=>kind==='missing'?null:{transferFromImageBitmap(){throw Error('controlled presentation failure');}}},b=new GraphicsBridge(canvas);let closed=0;
  try{worker.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});b.draw({yaw:0,pitch:0,span:2,center:[0,0,0]},null,true);worker.onmessage({data:{type:'present',generation:b.generation,modelId:null,bitmap:{width:1,height:1,close(){closed++;}},health:{state:'ready',liveBuffers:1}}});assert.equal(closed,1);assert.equal(b.health.state,'unavailable');assert.match(b.health.reason,/presentation failed/);assert.equal(b.pending,false);assert.equal(b.worker,null);}finally{b.destroy();}
 });
+test('idle context loss followed by silent recovery is bounded and repeated health cannot extend it',async()=>{
+ let worker;globalThis.OffscreenCanvas=class{};globalThis.Worker=class{constructor(){worker=this;}postMessage(){}terminate(){this.terminated=true;}};
+ const b=new GraphicsBridge({clientWidth:700,clientHeight:400,getContext:()=>({transferFromImageBitmap(){}})},null,{startupMs:20,drawMs:100});
+ try{
+  worker.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});b.draw({yaw:0,pitch:0,span:2,center:[0,0,0]},null,true);
+  worker.onmessage({data:{type:'present',generation:b.generation,modelId:null,bitmap:{width:1,height:1,close(){}},health:{state:'ready',liveBuffers:1}}});assert.equal(b.timer,0);assert.equal(b.pending,false);
+  worker.onmessage({data:{type:'health',health:{state:'recovering',liveBuffers:0}}});const deadline=b.timer;assert.ok(deadline);worker.onmessage({data:{type:'health',health:{state:'recovering',liveBuffers:0}}});assert.equal(b.timer,deadline);
+  worker.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});assert.equal(b.timer,deadline,'Readiness without presentation must retain recovery deadline');assert.equal(b.pending,true);
+  await new Promise(r=>setTimeout(r,35));assert.equal(worker.terminated,true);assert.equal(b.worker,null);assert.match(b.health.reason,/recovery timed out/);
+ }finally{b.destroy();}
+});
+test('context recovery notifications do not extend an active draw deadline',()=>{
+ let worker;globalThis.OffscreenCanvas=class{};globalThis.Worker=class{constructor(){worker=this;}postMessage(){}terminate(){}};
+ const b=new GraphicsBridge({clientWidth:700,clientHeight:400,getContext:()=>({transferFromImageBitmap(){}})});
+ try{worker.onmessage({data:{type:'health',health:{state:'ready',liveBuffers:1}}});b.draw({yaw:0,pitch:0,span:2,center:[0,0,0]},null,true);const deadline=b.timer;worker.onmessage({data:{type:'health',health:{state:'recovering',liveBuffers:0}}});assert.equal(b.timer,deadline);assert.equal(b.pending,true);}finally{b.destroy();}
+});

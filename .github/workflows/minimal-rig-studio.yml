@@ -32,6 +32,7 @@ jobs:
         env:
           STUDIO_PLAYWRIGHT: ${{ runner.temp }}/minimal-browser/node_modules/playwright/index.mjs
           STUDIO_REVIEW_SHA: ${{ github.sha }}
+          STUDIO_REVIEW_PHASE: idle
         run: xvfb-run -a node scripts/review-minimal-studio.mjs
       - name: Review evidence
         if: always()
@@ -39,4 +40,29 @@ jobs:
         with:
           name: minimal-studio-${{ github.sha }}
           path: minimal-studio-evidence/
+          retention-days: 7
+  clock-diagnostic:
+    needs: focused
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Runner-only existing browser controller
+        run: npm install --prefix "$RUNNER_TEMP/clock-browser" --no-audit --no-fund playwright@1.64.0
+      - name: One sequential three-case clock/trace diagnosis
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/clock-browser/node_modules/playwright/index.mjs
+          STUDIO_REVIEW_SHA: ${{ github.sha }}
+        run: xvfb-run -a node scripts/diagnose-studio-clocks.mjs
+      - name: Preserve bounded diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-clocks-${{ github.sha }}
+          path: studio-clock-evidence/
           retention-days: 7
