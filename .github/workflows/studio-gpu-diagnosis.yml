@@ -1,0 +1,39 @@
+name: Studio GPU diagnosis
+on:
+  push:
+    branches: [fix-studio-selection-latency]
+    paths:
+      - scripts/diagnose-studio-gpu.mjs
+      - .github/workflows/studio-gpu-diagnosis.yml
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact deployed baseline and runner-only browser controller
+        run: |
+          npm install --prefix "$RUNNER_TEMP/studio-gpu" --no-audit --no-fund playwright@1.64.0
+          git fetch --depth=1 origin cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d
+          git show cc4e8ada47cdd6ae34ca6697596bdb0bf63bde8d:animation-studio/index.html > "$RUNNER_TEMP/studio-gpu-baseline.html"
+      - name: Bounded raw/probe/instrumentation and GPU timing controls
+        env:
+          STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-gpu/node_modules/playwright/index.mjs
+          STUDIO_GPU_BASELINE: ${{ runner.temp }}/studio-gpu-baseline.html
+          STUDIO_GPU_SHA: ${{ github.sha }}
+          DEBUG: pw:browser
+        run: xvfb-run -a node scripts/diagnose-studio-gpu.mjs
+      - name: Save diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: studio-gpu-${{ github.sha }}
+          path: studio-gpu-evidence/
+          retention-days: 7
