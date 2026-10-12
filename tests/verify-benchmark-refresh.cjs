@@ -25,7 +25,25 @@ for (const key of Object.keys(baseline).filter((k) => k !== "cards" && k !== "fa
 const oldMetadata = read("data/gallery-metadata-2026-10-05.json");
 for (const [id, m] of Object.entries(oldMetadata.cards)) assert.deepEqual(refresh.metadata.cards[id], m, id + " original metadata");
 assert.equal(refresh.metadata.counts.all, 86);
-assert.equal(refresh.metadata.counts.default_families, 57);
+assert.equal(refresh.metadata.counts.default_families, 58);
+// Six additions join already plotted families. Waymo's older guide was source-only,
+// so it and six wholly new graph families account for the seven-family increase.
+assert.deepEqual(refresh.coverage.familyGroups["osworld-v2-offline"], ["osworld-v2-offline", "osworld-v2-1-offline-october"]);
+assert.deepEqual(refresh.coverage.familyGroups["waymo-onroad-safety"], ["waymo-corrected-fleet-outcomes", "waymo-onroad-safety"]);
+assert.equal(oldMetadata.cards["osworld-v2-offline"].evidence, "plotted");
+assert.equal(oldMetadata.cards["waymo-onroad-safety"].evidence, "source_only");
+assert.equal(card("osworld-v2-1-offline-october").category, "agents");
+for (const ids of Object.values(refresh.coverage.familyGroups)) for (const id of ids) assert.ok(refresh.metadata.cards[id], id + " family member must exist");
+for (const [key, ids] of Object.entries(baseline.familyGroups)) assert.deepEqual(refresh.coverage.familyGroups[key].filter((id) => ids.includes(id)), ids);
+const plottedFamilies = (metadata, groups) => {
+  const mapping = new Map(Object.entries(groups).flatMap(([k, ids]) => ids.map((id) => [id, k])));
+  return new Set(Object.entries(metadata.cards).filter(([, m]) => m.evidence === "plotted").map(([id]) => mapping.get(id) || id));
+};
+const oldPlotted = plottedFamilies(oldMetadata, refresh.coverage.familyGroups);
+assert.equal(oldPlotted.size, 51);
+const currentPlotted = plottedFamilies(refresh.metadata, refresh.coverage.familyGroups);
+assert.equal(currentPlotted.size, 58);
+assert.deepEqual([...currentPlotted].filter((id) => !oldPlotted.has(id)).sort(), ["webrise-v1-text", "hle-original-haiku55-october", "healthagentbench", "mentalhealthbench", "robochallenge-table30-v2", "drivingbench-fixed-pilot", "waymo-onroad-safety"].sort());
 const arena = card(expectedIds[0]).variants[0];
 sameRows(arena.rows, front.cohorts[expectedIds[0]].rows);
 assert.equal(arena.rows.length, 142);
@@ -43,7 +61,9 @@ assert.deepEqual(web.metrics.map((m) => m.field), ["transition_validity_percent"
 const pairs = [["hle-original-haiku55-october", ["anthropic-haiku55-hle-no-tools", "anthropic-haiku55-hle-tools"]], ["terminal-bench-4-haiku55-lab", ["anthropic-haiku55-terminalbench4"]], ["terminal-bench-science-haiku55-lab", ["anthropic-haiku55-terminalbench-science01"]], ["osworld-v2-1-offline-october", ["anthropic-osworld21-offline-october"]], ["healthbench-professional-haiku55-effort", ["anthropic-healthbench-professional-haiku55-effort"]], ["healthagentbench", ["healthagentbench-original-paper", "healthagentbench-20260727-additions"]], ["mentalhealthbench", ["mentalhealthbench-openai-max-20260929", "mentalhealthbench-paper-default"]], ["robochallenge-table30-v2", ["robochallenge-table30-v2-current"]]];
 for (const [id, ids] of pairs) card(id).variants.forEach((v, i) => { sameRows(v.rows, source(ids[i]).rows); assert.deepEqual(v.settings, source(ids[i]).settings || source(ids[i]).config || {}); });
 assert.equal(card("osworld-v2-1-offline-october").variants[0].rows.length, 5);
-assert.match(card("osworld-v2-1-offline-october").read, /82|108/);
+assert.equal(card("osworld-v2-1-offline-october").variants[0].settings.tasks, 82);
+assert.equal(card("osworld-v2-1-offline-october").variants[0].settings.full_benchmark_tasks, 108);
+assert.match(card("osworld-v2-1-offline-october").read, /retained OSWorld 2.0/);
 const health = card("healthbench-professional-openai-20260929").variants[0].rows;
 const oldHealth = read("data/gallery-current-2026-10-01.json").cards.find((c) => c.id === "healthbench-professional");
 assert.equal(health.length, 8);
@@ -100,7 +120,7 @@ for (const id of ["terminal-bench-4-haiku55-lab", "terminal-bench-science-haiku5
 const invalid = structuredClone(refresh.coverage);
 invalid.refresh.card_ids.pop();
 assert.equal(renderer.valid(invalid), false);
-const report = { passed: true, cards: 13, totalCards: 86, families: 57, checks: ["Exact source hashes and archived projection/metadata preserved", "All admitted raw rows, duplicate Arena keys and named cohort settings", "Separate typed uncertainty, grader/effort groups and missing costs", "Paired cost/time units, 11 dependent attempts and three adverse outcomes", "Held numeric and modified cohorts excluded; baseline and current renderer guards"] };
+const report = { passed: true, cards: 13, totalCards: 86, families: 58, checks: ["Exact source hashes and archived projection/metadata preserved", "All admitted raw rows, duplicate Arena keys and named cohort settings", "Separate typed uncertainty, grader/effort groups and missing costs", "Paired cost/time units, 11 dependent attempts and three adverse outcomes", "Held numeric and modified cohorts excluded; baseline and current renderer guards"] };
 fs.mkdirSync(path.join(root, "evidence"), { recursive: true });
 fs.writeFileSync(path.join(root, "evidence/benchmark-refresh-validation.json"), JSON.stringify(report, null, 2) + "\n");
 console.log(JSON.stringify(report));

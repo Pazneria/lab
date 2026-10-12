@@ -87,10 +87,10 @@ function build() {
   }
   const os = labBy.get("anthropic-osworld21-offline-october");
   assert.equal(os.rows.length, 5);
-  card("osworld-v2-1-offline-october", "OSWorld 2.1 · offline October setup", "standard", "Can an agent finish computer tasks offline?",
+  card("osworld-v2-1-offline-october", "OSWorld 2.1 · offline October setup", "agents", "Can an agent finish computer tasks offline?",
     "Five systems operate a computer on OSWorld 2.1’s official 82-task offline subset, with five trials per task, 1080p resolution and up to 500 action steps.",
     "Computer work requires completing connected actions. Partial checkpoint credit can be useful even when the entire task is not finished.",
-    "Strict success requires every checkpoint to pass; partial credit is a different measurement. Keep this subset separate from September’s full 108-task cohort. The source chart identifies 95% intervals but supplies no transcribed numeric bounds here, so no interval is invented. Anthropic ran the OpenAI models through their API.",
+    "Strict success requires every checkpoint to pass; partial credit is a different measurement. Keep this 82-task subset separate from the September full 108-task cohort and the retained OSWorld 2.0 developer-report card. The version selector links those cards without combining their rows or protocols. The source chart identifies 95% intervals but supplies no transcribed numeric bounds here, so no interval is invented. Anthropic ran the OpenAI models through their API.",
     [variant(os, "October report · official 82-task offline subset", [percent("strict", "All checkpoints passed, pass@1", "strict_pass"), percent("partial", "Mean partial checkpoint credit", "partial_credit")], rows(os), { complete: false, coverage: "All five selected chart-labeled systems; a bounded offline subset." })]);
   const extension = medicalBy.get("healthbench-professional-openai-20260929-extension");
   const predecessor = standard.cards.find((c) => c.id === "healthbench-professional");
@@ -158,6 +158,8 @@ function build() {
   assert.ok(cards.every((c) => !coverage.cards.some((b) => b.id === c.id)));
   coverage.cards.push(...cards);
   const group = (base, member, first = false) => {
+    assert.ok(oldMetadata.cards[base], base + " must be a retained card, not an invented family member");
+    assert.ok(cards.some((c) => c.id === member), member + " must be an admitted refresh card");
     const key = Object.keys(coverage.familyGroups).find((k) => coverage.familyGroups[k].includes(base)) || base;
     const members = coverage.familyGroups[key] || [base];
     coverage.familyGroups[key] = first ? [member, ...members] : [...members, member];
@@ -165,7 +167,7 @@ function build() {
   group("webdev-arena-frontend", arena.id, true);
   group("terminal-bench-4", "terminal-bench-4-haiku55-lab");
   group("terminal-bench-science", "terminal-bench-science-haiku55-lab");
-  group("osworld-v2-1", "osworld-v2-1-offline-october");
+  group("osworld-v2-offline", "osworld-v2-1-offline-october");
   group("healthbench-professional", "healthbench-professional-openai-20260929", true);
   group("healthbench-professional", "healthbench-professional-haiku55-effort");
   group("waymo-onroad-safety", "waymo-corrected-fleet-outcomes", true);

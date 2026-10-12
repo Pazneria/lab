@@ -1,6 +1,6 @@
 # Lab · AI benchmark gallery
 
-A source-backed gallery of **86 individual cards**, grouped into **57 benchmark families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
+A source-backed gallery of **86 individual cards**, grouped into **58 benchmark families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
 
 The page preserves all **20 original discovery records**, their 51 URLs and 30 null metric definitions. The original **18 result rows and seven graph views**, 340 standard rows, frontend packet and expanded community source records remain unchanged. The new coverage input adds 319 primary rows, 81 selected first-wave observations and 1,392 RuneBench skill summaries for 87 configurations. No global score, cross-benchmark rank or missing-value zero is introduced. Selected cohorts are clearly incomplete, and source review dates remain separate from publication and evaluation dates.
 
