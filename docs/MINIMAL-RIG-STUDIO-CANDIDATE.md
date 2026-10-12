@@ -20,7 +20,7 @@ Classification for the observed no-graphics gap: **browser/process waiting**, wi
 
 The candidate case did not reproduce the prior 898.1 ms failed gap. Its longest reported document task was 62 ms. Trace GPU waits occurred on the graphics worker: shader-status wait about 117.5 ms and an implicit bitmap/readback wait about 467.1 ms, with very little thread CPU. Document/no-graphics-worker/Node clocks remained responsive through the worker wait. Graphics initialized in one attempt without loss. These measurements support the worker isolation for this attempt, not a clean aggregate or owner-browser certification.
 
-**The exact cause of the earlier 898.1 ms candidate failure remains unresolved**, because that failing run had no trace and this one authorized diagnostic attempt did not reproduce it. The historical aggregate remains failed, the 250 ms bound is unchanged, and no further unchanged browser run was made. Current candidate runtime is c9bc6ca; later evidence-only commits change no runtime. No PR, publication, owner local test or security override occurred.
+**The exact cause of the earlier 898.1 ms candidate failure remains unresolved**, because that failing run had no trace and this one authorized diagnostic attempt did not reproduce it. The historical aggregate remains failed, the 250 ms bound is unchanged, and no further unchanged browser run was made. Current candidate runtime is c9bc6ca; later evidence-only commits change no runtime. The one-shot hosted jobs are pinned to c9bc6ca so later pushes cannot silently repeat the diagnostic or aggregate. Future validation must be configured explicitly. No PR, publication, owner local test or security override occurred.
 
 ## Current correction and validation (3f2847d)
 

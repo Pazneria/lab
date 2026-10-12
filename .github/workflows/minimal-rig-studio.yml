@@ -15,6 +15,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   focused:
+    # One-shot review requested by the parent; do not repeat on later pushes.
+    if: github.sha == 'c9bc6cacbc2a018a79bc6cb3cd956c53f84eb5ae'
     runs-on: ubuntu-24.04
     timeout-minutes: 7
     steps:
@@ -43,6 +45,7 @@ jobs:
           retention-days: 7
   clock-diagnostic:
     needs: focused
+    if: github.sha == 'c9bc6cacbc2a018a79bc6cb3cd956c53f84eb5ae'
     runs-on: ubuntu-24.04
     timeout-minutes: 6
     steps:
