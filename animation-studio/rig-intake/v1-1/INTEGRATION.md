@@ -1,0 +1,26 @@
+# Actual-rig intake v1.1 — rig-only studio update
+
+Base: verified live main `31c5a510e11a216d884e8d426dfe034273cc993f`. This branch adds five approved-art rig studies and one explicitly separate crawler diagnostic export. All prior28 payload records, authored Human motion, the original/refined Human study, existing features and acceptance holds are preserved. Deferred Tidewarden code, assets, preview/archive and rollback branch are untouched. No armor, game/inventory, scoring, benchmark entrants or backend change is included.
+
+The source is task60 `rigging/2026-10-11/v1.1/`. `review/REPORT.md`, the actual inspector HTML, candidate pins and the delivered ZIP were inspected. All five primary GLBs match their exact pins and ZIP members. The current standalone inspector differs from the sealed ZIP by line endings only; it is not substituted into this host. The host uses its existing parser, skin evaluator, renderer and sole clock. No duplicate inspector or clock is mounted.
+
+| Export | Actual joints | Scope |
+|---|---:|---|
+| dwarf.glb |28| Corrected elbow weights/binds on approved art; provisional ordinary flexion0–65 degrees (raw local X0 to-65). Beyond requires individual review. Tool poses need realignment. |
+| minotaur.glb |28| Existing rig candidate; fur/body clearance, arbitrary articulation, equipment and planting unverified. |
+| ghost.glb |14| Floating connected cloth; no feet/contact schedule. Cloth/cuff/collar clearance and physics unverified. |
+| zombie.glb |20| Existing rig preserved; no thumbs. Diagnostics do not establish locomotion, ground contacts or equipment fit. |
+| crawler.glb |33| Primary unchanged proposal. Free thorax pitch is not a stance/contact solve; no automatic root lift. |
+| crawler_diagnostics.glb |33| Separate actual six-probe export; explicitly diagnostic, not finished motion. |
+
+The inventory has23 prior skinned actor variants, four static/module references, the preserved Human comparison candidate, five incoming primary rigs and one companion:34 picker records. Two historical wolf/bear originals remain held, and six prior proposals/comparison require opt-in. All32 eligible selections were exercised with opt-in; no catablepon, golem, ogress, demon or unicorn awaiting art acceptance was added. Every skinned input's joints are real TRS palette members. Palette indices and actual parent hierarchy remain distinct node identities.
+
+Select a model and joint, then use the live XYZ sliders beside the viewport or valid numeric fields. The evaluator applies the same local pose to the real weighted mesh and skeleton/socket overlay. Apply remains available for a batch transform. Malformed/singular drafts retain the previous pose. Rest/Reset pose clears clip/time/local overrides; per-joint and all-edit resets remain available. Sliders stack with full touch width on phones, with explicit dwarf range/tool guidance. Static references have no invented skeleton. Existing notes, comparison, clips/imports and Human draft workflow remain.
+
+Validation:165 CPU tests pass, including actual-buffer movement/reset for all six arrivals, finite-input fallback, dwarf boundaries and prior focus/Apply/loop/retry/navigation/SceneBench regressions. Twelve actual browser groups pass on the exact generated HTML: current-live baseline, native model/clip/orbit/weights controls, original repair cases, repeated mesh-only posing/reset of all six exports, all32 eligible selections/cache/idle, minotaur diagnostic frame/buffer bounds, async-focus timing, walking/E entry, actual captured-mouse skeleton click, exact saved-ticket departure restoration, and390x844 actual touch orbit/slider/reset with no horizontal overflow. The approved-installed Chrome route through bundled Playwright recovered usable runtime access; the historical app-launcher HRESULT cause was not claimed repaired. No installs, security changes, OS focus changes, visible windows or production votes. Shared graphics lock was exclusively acquired and matching-token released; successful run28.203s; owned browsers/server closed.
+
+Runtime performance evidence:18 draws across647ms diagnostic transport; max30Hz clock,1600x1200 buffer cap, DPR1.5 cap, prepared cache6 and paused/static idle suspension remain. Numeric/diagnostic checks and finite rendering do not confer finished animation, arbitrary-pose collision, equipment-fit, planted gait or gameplay acceptance.
+
+Rebuild: `node scripts/build-studio-rig-intake.cjs`. It reads the exact versioned copies in this folder and appends verified records without replacing any existing revision. The generated HTML is self-contained; cold-load cost is about16.8MB. Local owner review can use the exported studio HTML. Full Lab entry and Back were verified on an ephemeral loopback preview of the isolated full checkout; a standalone studio export does not contain the Lab room. No server is left running.
+
+Prepared publication destination, if authorized: the existing Pazneria/lab `main` Pages deployment at https://pazneria.github.io/lab/animation-studio/ . This task prepares a tested branch; new publication authorization has not been supplied. Rig-only publication must not be conflated with the explicitly deferred Tidewarden update. Local source/evidence remain authoritative without a Library attachment.

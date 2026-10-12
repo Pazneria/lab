@@ -1,0 +1,292 @@
+[
+  {
+    "id": "dwarf",
+    "stableId": "dwarf_cairnsmith_01-rig-v1_1.glb",
+    "label": "Cairnsmith dwarf corrected candidate",
+    "version": "2026-10-11.v1.1 corrected rig candidate",
+    "family": "dwarf",
+    "role": "rig_study",
+    "activeBindingAllowed": true,
+    "requiresReviewOptIn": false,
+    "sha256": "0a3b3b86e91d117fa9a53da5670059b17f9f3582927d8d708539ea9fb21b12c9",
+    "bytes": 401304,
+    "file": "dwarf.glb",
+    "staticPoses": {
+      "poses": {
+        "Root_review_pure_right_elbow65": {
+          "forearm_right": [
+            -65.00000000000001,
+            0,
+            0
+          ]
+        },
+        "Root_review_pure_right_elbow90": {
+          "forearm_right": [
+            -89.99999999999999,
+            0,
+            0
+          ]
+        },
+        "Root_review_combined65_model_localY_twist": {
+          "forearm_right": [
+            -65,
+            30.000000000000004,
+            1.836294101515286e-15
+          ],
+          "forearm_left": [
+            -65,
+            -30.000000000000004,
+            -1.836294101515286e-15
+          ],
+          "hand_right": [
+            19.99999999999999,
+            14.999999999999996,
+            11.999999999999995
+          ],
+          "hand_left": [
+            19.99999999999999,
+            -14.999999999999996,
+            -11.999999999999995
+          ],
+          "upper_arm_right": [
+            -25.000000000000007,
+            0,
+            -22.000000000000004
+          ],
+          "upper_arm_left": [
+            -25.000000000000007,
+            0,
+            22.000000000000004
+          ],
+          "clavicle_right": [
+            0,
+            0,
+            -5
+          ],
+          "clavicle_left": [
+            0,
+            0,
+            5
+          ],
+          "chest": [
+            -3,
+            3,
+            -2.488218361681087e-17
+          ],
+          "finger_1_right": [
+            19,
+            0,
+            0
+          ],
+          "finger_2_right": [
+            21.999999999999996,
+            0,
+            0
+          ],
+          "finger_3_right": [
+            25.000000000000007,
+            0,
+            0
+          ],
+          "finger_4_right": [
+            28,
+            0,
+            0
+          ],
+          "finger_1_left": [
+            19,
+            0,
+            0
+          ],
+          "finger_2_left": [
+            21.999999999999996,
+            0,
+            0
+          ],
+          "finger_3_left": [
+            25.000000000000007,
+            0,
+            0
+          ],
+          "finger_4_left": [
+            28,
+            0,
+            0
+          ]
+        }
+      },
+      "sha256": "41852136f3c71fae91349bded5516ad12328524b2fe0f8177bf17211feba51a2",
+      "source": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-09\\task-60\\rigging\\2026-10-11\\v1.1\\visual-review\\dwarf-elbow.frames.json",
+      "classification": "Root-reviewed inspection-only static local poses; not embedded clips"
+    },
+    "clipLimits": {
+      "DIAG_elbows_90": "Extended inspection only: above65 degrees needs pose-specific review; 90-degree central/ring compression remains.",
+      "DIAG_elbows_wrists": "65-degree representative diagnostic; provisional authoring recommendation is not rig/pose acceptance.",
+      "DIAG_ankles_free": "Free ankle diagnostic is unplanted and may cross ground."
+    },
+    "rigReview": {
+      "artAccepted": true,
+      "rigAccepted": false,
+      "finishedAnimation": false,
+      "sourceVersion": "task60/2026-10-11/v1.1",
+      "status": "corrected-private-rig-candidate",
+      "summary": "Original art buffers and no-thumb anatomy unchanged; only44 authored arm-vertex weights plus two interior elbow pivots changed. 28joint/11socket organization preserved. Provisional ordinary authoring envelope0..65degrees based on both arms and representative shoulder/wrist/+30/-30 model-localYtwist tests plus focused CPU pixel inspection; engineering recommendation, not owner or gameplay acceptance.",
+      "limits": [
+        "Original art buffers and no-thumb anatomy unchanged; only44 authored arm-vertex weights plus two interior elbow pivots changed. 28joint/11socket organization preserved.",
+        "Provisional ordinary authoring envelope0..65degrees based on both arms and representative shoulder/wrist/+30/-30 model-localYtwist tests plus focused CPU pixel inspection; engineering recommendation, not owner or gameplay acceptance.",
+        "0..90degrees is the sampled engineering test envelope. Above65degrees requires pose-specific review; the shown combined90 example retains central elbow-band volume74..76% and ring area68.55%. No unrestricted deep-bend or twist readiness.",
+        "65pure central elbow-band volume97.85..99.17%; shown combined65 example91.0..93.2%; opposite-twist65 example89.61..94.22%; all sampled65 profiles89.61..99.17%. Zero strict proper self-intersections or opposed faces in independent218-pose audit; this does not certify all collision or surface contacts.",
+        "Rest sockets and rigid hand/finger attachment remain stable; changing hinge shifts free-space grip trajectory. At65degrees delta.0451332units vsbaseline; tool poses need alignment checks.",
+        "909sampled exported diagnostic frames plus332structural checks; diagnostic clips are not finished locomotion. Free ankle probe remains unplanted and may cross ground."
+      ],
+      "joints": 28,
+      "sockets": 11
+    }
+  },
+  {
+    "id": "minotaur",
+    "stableId": "minotaur_ridgehorn_01_rig_v1.glb",
+    "label": "Ridgehorn minotaur",
+    "version": "2026-10-11.v1.1 carry-forward; exact v1 bytes",
+    "family": "minotaur",
+    "role": "rig_study",
+    "activeBindingAllowed": true,
+    "requiresReviewOptIn": false,
+    "sha256": "5b219fc8eeaf444246336f6c9b85a8c686992b1170389a6b528d737985006476",
+    "bytes": 438044,
+    "file": "minotaur.glb",
+    "clipLimits": {},
+    "rigReview": {
+      "artAccepted": true,
+      "rigAccepted": false,
+      "finishedAnimation": false,
+      "sourceVersion": "task60/2026-10-11/v1.1",
+      "status": "new-rig-candidate",
+      "summary": "Unchanged28joint/15socket candidate, six diagnostic clips;343CPUchecks and6x121sampledposes fromv1 retained. Approved art buffers/materials preserved, sampled seams/binds/deformation tested. Fur/body clearance, arbitrary articulation, equipment fit and planted locomotion not certified.",
+      "limits": [
+        "Unchanged28joint/15socket candidate, six diagnostic clips;343CPUchecks and6x121sampledposes fromv1 retained.",
+        "Approved art buffers/materials preserved, sampled seams/binds/deformation tested. Fur/body clearance, arbitrary articulation, equipment fit and planted locomotion not certified."
+      ],
+      "joints": 28,
+      "sockets": 15
+    }
+  },
+  {
+    "id": "ghost",
+    "stableId": "ghost_barrow_warden_01.rig_v1.glb",
+    "label": "Barrow warden ghost",
+    "version": "2026-10-11.v1.1 carry-forward; exact v1 bytes",
+    "family": "ghost",
+    "role": "rig_study",
+    "activeBindingAllowed": true,
+    "requiresReviewOptIn": false,
+    "sha256": "29b56e82d44c3086da470c148c6b94b9b9f0603ab85356013526f7f50fdc7d40",
+    "bytes": 128748,
+    "file": "ghost.glb",
+    "clipLimits": {},
+    "rigReview": {
+      "artAccepted": true,
+      "rigAccepted": false,
+      "finishedAnimation": false,
+      "sourceVersion": "task60/2026-10-11/v1.1",
+      "status": "new-rig-candidate",
+      "summary": "Unchanged14joint/6socket candidate, five probes and32CPUchecks retained; approved connected opaque cloth art preserved. Floating ghost has no feet; resthem.27units. Sampled cloth deformation reviewed inprior CPUcards; arbitrary cuff/collar/shroud collisions, cloth physics and gameplay motion not certified.",
+      "limits": [
+        "Unchanged14joint/6socket candidate, five probes and32CPUchecks retained; approved connected opaque cloth art preserved.",
+        "Floating ghost has no feet; resthem.27units. Sampled cloth deformation reviewed inprior CPUcards; arbitrary cuff/collar/shroud collisions, cloth physics and gameplay motion not certified."
+      ],
+      "joints": 14,
+      "sockets": 6
+    }
+  },
+  {
+    "id": "zombie",
+    "stableId": "zombie_mirebound_01.glb",
+    "label": "Mirebound zombie",
+    "version": "2026-10-11.v1.1 carry-forward; exact v1 bytes",
+    "family": "zombie",
+    "role": "rig_study",
+    "activeBindingAllowed": true,
+    "requiresReviewOptIn": false,
+    "sha256": "bc2163426a741763249c028a312dfd04508c4adb84c8d929e62b34ec7580ef18",
+    "bytes": 197204,
+    "file": "zombie.glb",
+    "clipLimits": {},
+    "rigReview": {
+      "artAccepted": true,
+      "rigAccepted": false,
+      "finishedAnimation": false,
+      "sourceVersion": "task60/2026-10-11/v1.1",
+      "status": "completed-preserved",
+      "summary": "Byte-identical acceptedart and existing20joint/11socket rig with four diagnostic clips;25focused+18structural checks and4x601dense samples retained. No thumbs. Existing diagnostics do not establish finished locomotion, ground-constrained contacts, equipment fit or arbitrary collision clearance.",
+      "limits": [
+        "Byte-identical acceptedart and existing20joint/11socket rig with four diagnostic clips;25focused+18structural checks and4x601dense samples retained. No thumbs.",
+        "Existing diagnostics do not establish finished locomotion, ground-constrained contacts, equipment fit or arbitrary collision clearance."
+      ],
+      "joints": 20,
+      "sockets": 11
+    }
+  },
+  {
+    "id": "crawler",
+    "stableId": "flesh_crawler_mire_01.glb",
+    "label": "Flesh crawler preserved rig",
+    "version": "2026-10-11.v1.1 clarification; unchanged GLB bytes",
+    "family": "crawler",
+    "role": "rig_study",
+    "activeBindingAllowed": true,
+    "requiresReviewOptIn": false,
+    "sha256": "ccbed0d6977da38089b71c5641d6a6534d795d72de643b6d6995fb10996be505",
+    "bytes": 432524,
+    "file": "crawler.glb",
+    "clipLimits": {},
+    "rigReview": {
+      "artAccepted": true,
+      "rigAccepted": false,
+      "finishedAnimation": false,
+      "sourceVersion": "task60/2026-10-11/v1.1",
+      "status": "completed-preserved",
+      "summary": "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained. body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+      "limits": [
+        "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained.",
+        "body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+        "An in-memory rootYoffset+.0373838651 removes sampled penetration but leaves middle/rear contacts+.0495111/+.0860939 high andXZdrift. Not a planted six-contact pose; no exported root-lift orcontactIK.",
+        "Clarification covers this bounded free-space probe. Other contact schedules, locomotion, inter-shell overlap/hinge gaps, collision/silhouette and broader visible articulation remain unaccepted.",
+        "Historicalv1 summary-.02505 misattributed area-worst sample rather than clip-wide minimum; corrected sidecars do not change GLB."
+      ],
+      "joints": 33,
+      "sockets": 9
+    }
+  },
+  {
+    "id": "crawler_diagnostics",
+    "stableId": "crawler_diagnostics.glb",
+    "label": "Flesh crawler · separate diagnostic export",
+    "version": "2026-10-11.v1.1 clarification; unchanged GLB bytes",
+    "family": "crawler",
+    "role": "rig_diagnostic_variant",
+    "activeBindingAllowed": true,
+    "requiresReviewOptIn": false,
+    "sha256": "41fe76d618b8d21f09cac62744ca2dff348da077618e20eeec95b8bee38ea4f6",
+    "bytes": 437228,
+    "file": "crawler_diagnostics.glb",
+    "rigReview": {
+      "artAccepted": true,
+      "rigAccepted": false,
+      "finishedAnimation": false,
+      "sourceVersion": "task60/2026-10-11/v1.1",
+      "status": "completed-preserved",
+      "summary": "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained. body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+      "limits": [
+        "33joint/9socket primary rig and separate six-probe companion unchanged byte-identically; existing rig proposal status retained.",
+        "body_pitch rotates thoraxX3degrees with root fixed and all leg-local transforms atbind. Across201samples, actualminimumY=-.0373838651; no induced shell skin fault demonstrated.",
+        "An in-memory rootYoffset+.0373838651 removes sampled penetration but leaves middle/rear contacts+.0495111/+.0860939 high andXZdrift. Not a planted six-contact pose; no exported root-lift orcontactIK.",
+        "Clarification covers this bounded free-space probe. Other contact schedules, locomotion, inter-shell overlap/hinge gaps, collision/silhouette and broader visible articulation remain unaccepted.",
+        "Historicalv1 summary-.02505 misattributed area-worst sample rather than clip-wide minimum; corrected sidecars do not change GLB."
+      ],
+      "joints": 33,
+      "sockets": 9,
+      "optionalDiagnosticExport": true
+    }
+  }
+]
