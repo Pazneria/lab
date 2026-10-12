@@ -15,7 +15,7 @@ test('public studio is interactive, offline and free of machine/Library metadata
  for(const code of [html,child.html].map(s=>s.match(/<script type="module">([\s\S]*?)<\/script>/)[1]))new vm.SourceTextModule(code);
 });
 test('delivered original/proposed/held gates and original timing remain unchanged',()=>{
- const all=[...bundle.records,bundle.candidate];assert.equal(all.length,28);assert.equal(all.filter(r=>r.activeBindingAllowed===false&&!r.requiresReviewOptIn).length,2);assert.equal(all.filter(r=>r.requiresReviewOptIn).length,6);assert.equal(all.filter(r=>r.activeBindingAllowed!==false&&!r.requiresReviewOptIn).length,20);
+ const incoming=bundle.records.filter(r=>r.rigReview),all=[...bundle.records.filter(r=>!r.rigReview),bundle.candidate];assert.equal(incoming.length,6);assert.ok(incoming.every(r=>r.rigReview.artAccepted&&!r.rigReview.rigAccepted&&!r.rigReview.finishedAnimation));assert.equal(all.length,28);assert.equal(all.filter(r=>r.activeBindingAllowed===false&&!r.requiresReviewOptIn).length,2);assert.equal(all.filter(r=>r.requiresReviewOptIn).length,6);assert.equal(all.filter(r=>r.activeBindingAllowed!==false&&!r.requiresReviewOptIn).length,20);
  assert.equal(sha(Buffer.from(bundle.motion.data,'base64')),'bfac4a0a9f04ee74a19b0e7e0314ca2ae6342667c487542cf9abb01db5a38088');assert.doesNotMatch(html.match(/<input id="reviewOptIn"[^>]*>/)[0],/checked/);assert.match(html,/Proposals require explicit opt-in and stay unaccepted/);
 });
 test('Human authoring payloads and original-versus-refined source retain exact hashes',()=>{

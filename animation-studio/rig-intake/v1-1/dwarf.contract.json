@@ -1,0 +1,1440 @@
+{
+  "id": "dwarf-cairnsmith-rig-v1_1",
+  "asset_id": "dwarf_cairnsmith_01",
+  "revision": "art-v1.4.0+rig-v1.1",
+  "status": "implemented_private_rig_candidate_pending_parent_review",
+  "source_art_version": "v1.4.0",
+  "source_glb_sha256": "1fb51b0fbb640ad84aafbd1b8ef3860a485832b8df900619c6dd4728eda258cd",
+  "rig_glb_sha256": "0a3b3b86e91d117fa9a53da5670059b17f9f3582927d8d708539ea9fb21b12c9",
+  "axes": "+Y up, +Z forward, +X character-left",
+  "units": "accepted-human-relative authored units; no metre/tile equivalence",
+  "height": 1.315,
+  "scale_policy": "Retain 1.315 authoring height. Scale complete actor wrapper once; no fixed tile/metre conversion.",
+  "joint_count": 28,
+  "joints": [
+    {
+      "name": "root",
+      "parent": null,
+      "bind_model_position": [
+        0,
+        0,
+        0
+      ],
+      "engineering_basis": "Between feet; actor wrapper owns world movement.",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": null,
+      "node_index": 8,
+      "skin_palette_index": 0,
+      "exported_parent_node_index": 47,
+      "exported_parent_node_name": "dwarf_cairnsmith_01_rig_actor"
+    },
+    {
+      "name": "pelvis",
+      "parent": "root",
+      "bind_model_position": [
+        0,
+        0.561,
+        -0.008
+      ],
+      "engineering_basis": "Inside accepted pants hip shell; existing center landmark checked.",
+      "translation": [
+        0,
+        0.561,
+        -0.008
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "root",
+      "node_index": 9,
+      "skin_palette_index": 1,
+      "exported_parent_node_index": 8,
+      "exported_parent_node_name": "root"
+    },
+    {
+      "name": "spine",
+      "parent": "pelvis",
+      "bind_model_position": [
+        0,
+        0.713,
+        -0.009
+      ],
+      "engineering_basis": "Accepted waist/tunic transition landmark.",
+      "translation": [
+        0,
+        0.1519999999999999,
+        -0.0009999999999999992
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "pelvis",
+      "node_index": 10,
+      "skin_palette_index": 2,
+      "exported_parent_node_index": 9,
+      "exported_parent_node_name": "pelvis"
+    },
+    {
+      "name": "chest",
+      "parent": "spine",
+      "bind_model_position": [
+        0,
+        0.879,
+        -0.018
+      ],
+      "engineering_basis": "Upper tunic/vest center landmark.",
+      "translation": [
+        0,
+        0.16600000000000004,
+        -0.009
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "spine",
+      "node_index": 11,
+      "skin_palette_index": 3,
+      "exported_parent_node_index": 10,
+      "exported_parent_node_name": "spine"
+    },
+    {
+      "name": "neck",
+      "parent": "chest",
+      "bind_model_position": [
+        0,
+        0.989,
+        0
+      ],
+      "engineering_basis": "Within neck shaft and upper tunic.",
+      "translation": [
+        0,
+        0.10999999999999999,
+        0.018
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "chest",
+      "node_index": 12,
+      "skin_palette_index": 4,
+      "exported_parent_node_index": 11,
+      "exported_parent_node_name": "chest"
+    },
+    {
+      "name": "head",
+      "parent": "neck",
+      "bind_model_position": [
+        0,
+        1.043,
+        0.008
+      ],
+      "engineering_basis": "Top of neck insertion; source head landmark 1.143 is a skull center, not an approved hinge.",
+      "translation": [
+        0,
+        0.05399999999999994,
+        0.008
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "neck",
+      "node_index": 13,
+      "skin_palette_index": 5,
+      "exported_parent_node_index": 12,
+      "exported_parent_node_name": "neck"
+    },
+    {
+      "name": "clavicle_right",
+      "parent": "chest",
+      "bind_model_position": [
+        -0.14,
+        0.936,
+        -0.018
+      ],
+      "engineering_basis": "Medial shoulder connection within broad tunic.",
+      "translation": [
+        -0.14,
+        0.05700000000000005,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "chest",
+      "node_index": 14,
+      "skin_palette_index": 6,
+      "exported_parent_node_index": 11,
+      "exported_parent_node_name": "chest"
+    },
+    {
+      "name": "upper_arm_right",
+      "parent": "clavicle_right",
+      "bind_model_position": [
+        -0.281,
+        0.913,
+        -0.017
+      ],
+      "engineering_basis": "Source shoulder landmark inside sleeve sections.",
+      "translation": [
+        -0.14100000000000001,
+        -0.02300000000000002,
+        0.0009999999999999974
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "clavicle_right",
+      "node_index": 15,
+      "skin_palette_index": 7,
+      "exported_parent_node_index": 14,
+      "exported_parent_node_name": "clavicle_right"
+    },
+    {
+      "name": "forearm_right",
+      "parent": "upper_arm_right",
+      "bind_model_position": [
+        -0.356,
+        0.764,
+        0.025
+      ],
+      "engineering_basis": "Interior forward hinge at Y=.764/Z=.025; practical elbow study removes source-v1 90-degree folds while preserving original bind art.",
+      "translation": [
+        -0.07499999999999996,
+        -0.14900000000000002,
+        0.042
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "upper_arm_right",
+      "node_index": 16,
+      "skin_palette_index": 8,
+      "exported_parent_node_index": 15,
+      "exported_parent_node_name": "upper_arm_right"
+    },
+    {
+      "name": "hand_right",
+      "parent": "forearm_right",
+      "bind_model_position": [
+        -0.389,
+        0.587,
+        0.018
+      ],
+      "engineering_basis": "Wrist at accepted arm endpoint adjacent to palm; source overlap/gap retained.",
+      "translation": [
+        -0.03300000000000003,
+        -0.17700000000000005,
+        -0.007000000000000003
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "forearm_right",
+      "node_index": 17,
+      "skin_palette_index": 9,
+      "exported_parent_node_index": 16,
+      "exported_parent_node_name": "forearm_right"
+    },
+    {
+      "name": "finger_1_right",
+      "parent": "hand_right",
+      "bind_model_position": [
+        -0.346,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        0.04300000000000004,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_right",
+      "node_index": 18,
+      "skin_palette_index": 10,
+      "exported_parent_node_index": 17,
+      "exported_parent_node_name": "hand_right"
+    },
+    {
+      "name": "finger_2_right",
+      "parent": "hand_right",
+      "bind_model_position": [
+        -0.38,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        0.009000000000000008,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_right",
+      "node_index": 19,
+      "skin_palette_index": 11,
+      "exported_parent_node_index": 17,
+      "exported_parent_node_name": "hand_right"
+    },
+    {
+      "name": "finger_3_right",
+      "parent": "hand_right",
+      "bind_model_position": [
+        -0.414,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        -0.024999999999999967,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_right",
+      "node_index": 20,
+      "skin_palette_index": 12,
+      "exported_parent_node_index": 17,
+      "exported_parent_node_name": "hand_right"
+    },
+    {
+      "name": "finger_4_right",
+      "parent": "hand_right",
+      "bind_model_position": [
+        -0.44799999999999995,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        -0.05899999999999994,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_right",
+      "node_index": 21,
+      "skin_palette_index": 13,
+      "exported_parent_node_index": 17,
+      "exported_parent_node_name": "hand_right"
+    },
+    {
+      "name": "thigh_right",
+      "parent": "pelvis",
+      "bind_model_position": [
+        -0.128,
+        0.555,
+        -0.011
+      ],
+      "engineering_basis": "Center of accepted upper leg ring; not a scaled human.",
+      "translation": [
+        -0.128,
+        -0.006000000000000005,
+        -0.002999999999999999
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "pelvis",
+      "node_index": 22,
+      "skin_palette_index": 14,
+      "exported_parent_node_index": 9,
+      "exported_parent_node_name": "pelvis"
+    },
+    {
+      "name": "shin_right",
+      "parent": "thigh_right",
+      "bind_model_position": [
+        -0.145,
+        0.361,
+        -0.006
+      ],
+      "engineering_basis": "Between authored .329 and .372 knee rings.",
+      "translation": [
+        -0.016999999999999987,
+        -0.19400000000000006,
+        0.004999999999999999
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "thigh_right",
+      "node_index": 23,
+      "skin_palette_index": 15,
+      "exported_parent_node_index": 22,
+      "exported_parent_node_name": "thigh_right"
+    },
+    {
+      "name": "foot_right",
+      "parent": "shin_right",
+      "bind_model_position": [
+        -0.146,
+        0.179,
+        -0.024
+      ],
+      "engineering_basis": "Boot ankle/instep ring; source .142 foot guide remains a separate locator.",
+      "translation": [
+        -0.0010000000000000009,
+        -0.182,
+        -0.018000000000000002
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "shin_right",
+      "node_index": 24,
+      "skin_palette_index": 16,
+      "exported_parent_node_index": 23,
+      "exported_parent_node_name": "shin_right"
+    },
+    {
+      "name": "clavicle_left",
+      "parent": "chest",
+      "bind_model_position": [
+        0.14,
+        0.936,
+        -0.018
+      ],
+      "engineering_basis": "Medial shoulder connection within broad tunic.",
+      "translation": [
+        0.14,
+        0.05700000000000005,
+        0.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "chest",
+      "node_index": 25,
+      "skin_palette_index": 17,
+      "exported_parent_node_index": 11,
+      "exported_parent_node_name": "chest"
+    },
+    {
+      "name": "upper_arm_left",
+      "parent": "clavicle_left",
+      "bind_model_position": [
+        0.281,
+        0.913,
+        -0.017
+      ],
+      "engineering_basis": "Source shoulder landmark inside sleeve sections.",
+      "translation": [
+        0.14100000000000001,
+        -0.02300000000000002,
+        0.0009999999999999974
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "clavicle_left",
+      "node_index": 26,
+      "skin_palette_index": 18,
+      "exported_parent_node_index": 25,
+      "exported_parent_node_name": "clavicle_left"
+    },
+    {
+      "name": "forearm_left",
+      "parent": "upper_arm_left",
+      "bind_model_position": [
+        0.356,
+        0.764,
+        0.025
+      ],
+      "engineering_basis": "Interior forward hinge at Y=.764/Z=.025; practical elbow study removes source-v1 90-degree folds while preserving original bind art.",
+      "translation": [
+        0.07499999999999996,
+        -0.14900000000000002,
+        0.042
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "upper_arm_left",
+      "node_index": 27,
+      "skin_palette_index": 19,
+      "exported_parent_node_index": 26,
+      "exported_parent_node_name": "upper_arm_left"
+    },
+    {
+      "name": "hand_left",
+      "parent": "forearm_left",
+      "bind_model_position": [
+        0.389,
+        0.587,
+        0.018
+      ],
+      "engineering_basis": "Wrist at accepted arm endpoint adjacent to palm; source overlap/gap retained.",
+      "translation": [
+        0.03300000000000003,
+        -0.17700000000000005,
+        -0.007000000000000003
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "forearm_left",
+      "node_index": 28,
+      "skin_palette_index": 20,
+      "exported_parent_node_index": 27,
+      "exported_parent_node_name": "forearm_left"
+    },
+    {
+      "name": "finger_1_left",
+      "parent": "hand_left",
+      "bind_model_position": [
+        0.346,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        -0.04300000000000004,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_left",
+      "node_index": 29,
+      "skin_palette_index": 21,
+      "exported_parent_node_index": 28,
+      "exported_parent_node_name": "hand_left"
+    },
+    {
+      "name": "finger_2_left",
+      "parent": "hand_left",
+      "bind_model_position": [
+        0.38,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        -0.009000000000000008,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_left",
+      "node_index": 30,
+      "skin_palette_index": 22,
+      "exported_parent_node_index": 28,
+      "exported_parent_node_name": "hand_left"
+    },
+    {
+      "name": "finger_3_left",
+      "parent": "hand_left",
+      "bind_model_position": [
+        0.414,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        0.024999999999999967,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_left",
+      "node_index": 31,
+      "skin_palette_index": 23,
+      "exported_parent_node_index": 28,
+      "exported_parent_node_name": "hand_left"
+    },
+    {
+      "name": "finger_4_left",
+      "parent": "hand_left",
+      "bind_model_position": [
+        0.44799999999999995,
+        0.522,
+        0.039
+      ],
+      "engineering_basis": "One rigid control for each separate closed finger shell at its embedded root.",
+      "translation": [
+        0.05899999999999994,
+        -0.06499999999999995,
+        0.021
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "hand_left",
+      "node_index": 32,
+      "skin_palette_index": 24,
+      "exported_parent_node_index": 28,
+      "exported_parent_node_name": "hand_left"
+    },
+    {
+      "name": "thigh_left",
+      "parent": "pelvis",
+      "bind_model_position": [
+        0.128,
+        0.555,
+        -0.011
+      ],
+      "engineering_basis": "Center of accepted upper leg ring; not a scaled human.",
+      "translation": [
+        0.128,
+        -0.006000000000000005,
+        -0.002999999999999999
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "pelvis",
+      "node_index": 33,
+      "skin_palette_index": 25,
+      "exported_parent_node_index": 9,
+      "exported_parent_node_name": "pelvis"
+    },
+    {
+      "name": "shin_left",
+      "parent": "thigh_left",
+      "bind_model_position": [
+        0.145,
+        0.361,
+        -0.006
+      ],
+      "engineering_basis": "Between authored .329 and .372 knee rings.",
+      "translation": [
+        0.016999999999999987,
+        -0.19400000000000006,
+        0.004999999999999999
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "thigh_left",
+      "node_index": 34,
+      "skin_palette_index": 26,
+      "exported_parent_node_index": 33,
+      "exported_parent_node_name": "thigh_left"
+    },
+    {
+      "name": "foot_left",
+      "parent": "shin_left",
+      "bind_model_position": [
+        0.146,
+        0.179,
+        -0.024
+      ],
+      "engineering_basis": "Boot ankle/instep ring; source .142 foot guide remains a separate locator.",
+      "translation": [
+        0.0010000000000000009,
+        -0.182,
+        -0.018000000000000002
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "anatomical_parent_joint": "shin_left",
+      "node_index": 35,
+      "skin_palette_index": 27,
+      "exported_parent_node_index": 34,
+      "exported_parent_node_name": "shin_left"
+    }
+  ],
+  "sockets": [
+    {
+      "name": "socket_head",
+      "parent": "head",
+      "rest_model_position": [
+        0,
+        1.154,
+        0
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        0,
+        0.11099999999999999,
+        -0.008
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 36
+    },
+    {
+      "name": "socket_back",
+      "parent": "chest",
+      "rest_model_position": [
+        0,
+        0.876,
+        -0.185
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        0,
+        -0.0030000000000000027,
+        -0.167
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 37
+    },
+    {
+      "name": "socket_neck",
+      "parent": "neck",
+      "rest_model_position": [
+        0,
+        0.975,
+        0.112
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        0,
+        -0.014000000000000012,
+        0.112
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 38
+    },
+    {
+      "name": "socket_right_grip",
+      "parent": "hand_right",
+      "rest_model_position": [
+        -0.381,
+        0.522,
+        0.071
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        0.008000000000000007,
+        -0.06499999999999995,
+        0.05299999999999999
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 39
+    },
+    {
+      "name": "socket_left_grip",
+      "parent": "hand_left",
+      "rest_model_position": [
+        0.381,
+        0.522,
+        0.071
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        -0.008000000000000007,
+        -0.06499999999999995,
+        0.05299999999999999
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 40
+    },
+    {
+      "name": "socket_right_foot",
+      "parent": "foot_right",
+      "rest_model_position": [
+        -0.146,
+        0.142,
+        -0.015
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        0.0,
+        -0.037000000000000005,
+        0.009000000000000001
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 41
+    },
+    {
+      "name": "socket_left_foot",
+      "parent": "foot_left",
+      "rest_model_position": [
+        0.146,
+        0.142,
+        -0.015
+      ],
+      "purpose": "Attachment locator from retained static guide; new ownership, equipment/contact fit unaccepted.",
+      "translation": [
+        0.0,
+        -0.037000000000000005,
+        0.009000000000000001
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 42
+    },
+    {
+      "name": "socket_right_heel_contact",
+      "parent": "foot_right",
+      "rest_model_position": [
+        -0.146,
+        0,
+        -0.127
+      ],
+      "purpose": "Sole-plane contact reference; no IK or gait supplied.",
+      "translation": [
+        0.0,
+        -0.179,
+        -0.10300000000000001
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 43
+    },
+    {
+      "name": "socket_right_toe_contact",
+      "parent": "foot_right",
+      "rest_model_position": [
+        -0.146,
+        0,
+        0.211
+      ],
+      "purpose": "Sole-plane contact reference; no IK or gait supplied.",
+      "translation": [
+        0.0,
+        -0.179,
+        0.235
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 44
+    },
+    {
+      "name": "socket_left_heel_contact",
+      "parent": "foot_left",
+      "rest_model_position": [
+        0.146,
+        0,
+        -0.127
+      ],
+      "purpose": "Sole-plane contact reference; no IK or gait supplied.",
+      "translation": [
+        0.0,
+        -0.179,
+        -0.10300000000000001
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 45
+    },
+    {
+      "name": "socket_left_toe_contact",
+      "parent": "foot_left",
+      "rest_model_position": [
+        0.146,
+        0,
+        0.211
+      ],
+      "purpose": "Sole-plane contact reference; no IK or gait supplied.",
+      "translation": [
+        0.0,
+        -0.179,
+        0.235
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "node_index": 46
+    }
+  ],
+  "rest_geometry": "All source POSITION/NORMAL/COLOR_0/index accessors, materials and binary prefix unchanged.",
+  "fingers": "Four separate original rigid closed finger shells per hand, one control each. No thumbs and no individual knuckle chains.",
+  "attachment": "jointSceneWorld * socketLocal * itemGripCorrection; equivalently actorWorld * jointModel * socketLocal * itemGripCorrection. jointSceneWorld includes every ancestor, including actor.",
+  "skinning": "Palette indices refer to skin.joints, not scene-node indices. Mesh-local = inverse(meshWorld) * jointWorld * inverseBind.",
+  "contacts": "Heel/toe references are on the original Y=0 sole plane. Original foot guides are at Y=.142 and are retained as ankle-area locators, not contacts.",
+  "animation_scope": "Nine exported DIAG rest/pose/rest probes only; no finished idle/gait/actions, no root travel, events or IK.",
+  "diagnostic_poses_degrees_XYZ": {
+    "DIAG_shoulders": {
+      "clavicle_right": [
+        0,
+        0,
+        -5
+      ],
+      "clavicle_left": [
+        0,
+        0,
+        5
+      ],
+      "upper_arm_right": [
+        -25,
+        0,
+        -22
+      ],
+      "upper_arm_left": [
+        -20,
+        0,
+        20
+      ]
+    },
+    "DIAG_elbows_wrists": {
+      "forearm_right": [
+        -65,
+        0,
+        0
+      ],
+      "forearm_left": [
+        -55,
+        0,
+        0
+      ],
+      "hand_right": [
+        12,
+        0,
+        8
+      ],
+      "hand_left": [
+        -10,
+        0,
+        -8
+      ]
+    },
+    "DIAG_elbows_90": {
+      "forearm_right": [
+        -90,
+        0,
+        0
+      ],
+      "forearm_left": [
+        -90,
+        0,
+        0
+      ]
+    },
+    "DIAG_hip_knee_lift": {
+      "thigh_right": [
+        -18,
+        0,
+        -3
+      ],
+      "shin_right": [
+        38,
+        0,
+        0
+      ],
+      "foot_right": [
+        -20,
+        0,
+        0
+      ]
+    },
+    "DIAG_ankles_free": {
+      "foot_right": [
+        12,
+        0,
+        0
+      ],
+      "foot_left": [
+        -10,
+        0,
+        0
+      ]
+    },
+    "DIAG_head_neck": {
+      "neck": [
+        2,
+        -5,
+        0
+      ],
+      "head": [
+        0,
+        15,
+        0
+      ]
+    },
+    "DIAG_fingers": {
+      "finger_1_right": [
+        19,
+        0,
+        0
+      ],
+      "finger_2_right": [
+        22,
+        0,
+        0
+      ],
+      "finger_3_right": [
+        25,
+        0,
+        0
+      ],
+      "finger_4_right": [
+        28,
+        0,
+        0
+      ],
+      "finger_1_left": [
+        19,
+        0,
+        0
+      ],
+      "finger_2_left": [
+        22,
+        0,
+        0
+      ],
+      "finger_3_left": [
+        25,
+        0,
+        0
+      ],
+      "finger_4_left": [
+        28,
+        0,
+        0
+      ]
+    },
+    "DIAG_torso": {
+      "spine": [
+        3,
+        0,
+        0
+      ],
+      "chest": [
+        -4,
+        4,
+        0
+      ],
+      "head": [
+        1,
+        -4,
+        0
+      ]
+    },
+    "DIAG_combined": {
+      "upper_arm_right": [
+        -15,
+        0,
+        -12
+      ],
+      "forearm_right": [
+        -45,
+        0,
+        0
+      ],
+      "hand_right": [
+        8,
+        0,
+        3
+      ],
+      "thigh_right": [
+        -12,
+        0,
+        0
+      ],
+      "shin_right": [
+        25,
+        0,
+        0
+      ],
+      "foot_right": [
+        -13,
+        0,
+        0
+      ],
+      "chest": [
+        -3,
+        3,
+        0
+      ],
+      "head": [
+        0,
+        12,
+        0
+      ],
+      "finger_1_right": [
+        18,
+        0,
+        0
+      ],
+      "finger_2_right": [
+        20,
+        0,
+        0
+      ],
+      "finger_3_right": [
+        22,
+        0,
+        0
+      ],
+      "finger_4_right": [
+        18,
+        0,
+        0
+      ]
+    }
+  },
+  "approval_scope": "Source art selection is owner-directed; new joints, weights, socket ownership and pose limits are private engineering candidates pending review.",
+  "limits": [
+    "No approved dwarf equipment or two-hand support/grip fit.",
+    "No complete collision or arbitrary angle guarantee.",
+    "Beard/head-to-chest and apron/leg clearance require matched visual review.",
+    "Source layered palm/finger overlaps and wrist shell separation are retained, not welded.",
+    "No renderer/runtime integration, studio registration, publication or gameplay readiness."
+  ],
+  "gameplay_ready": false,
+  "elbow_correction": {
+    "baseline_glb_sha256": "a8c5dff447e3c18a3cdd33802037ebad9f3bd63b78e88483e3e6f1e89dfbe63d",
+    "scope": "Only both original arm elbow weight profiles and both forearm hinge bind positions. Other authored joint weights and all exact source art remain unchanged.",
+    "hinge_shift": {
+      "old_model_z": -0.017,
+      "new_model_z": 0.025,
+      "delta_model_z": 0.042,
+      "model_y": 0.764,
+      "reason": "Forward interior hinge reduces inner elbow-band fold while remaining inside original closed accepted arm."
+    },
+    "elbow_weights": "For original arm Y>=.626: r=clamp((Z+.017)/.078,-1,1); width=.180*(1+.25*r); forearm=clamp((.764+width/2-Y)/width,0,1), upper=1-forearm. Y>=.838 upper cap remains rigid upper arm. Wrist weights below .626 unchanged.",
+    "profile_direction": "Positive Z inner/front transition broadens; negative Z outer/back narrows. Rest positions/normals/colors/topology/materials are unchanged.",
+    "intended_flexion_degrees": [
+      0,
+      90
+    ],
+    "range_status": "Engineering evaluation envelope, not accepted gameplay range. 65-degree tool/carry bend is a practical target; 90-degree deep bend requires visual review of residual LBS section/volume compression. Twist/wrist/shoulder combinations are representative sampled probes, not arbitrary coupled-motion guarantees.",
+    "contact_policy": "Free arm movement; no tool handle, paired grip, planted-foot or external-contact solve. Diagnostic clips only.",
+    "socket_trajectory": "Grip sockets remain rigidly owned by original hands and retain exact rest anchors. New hinge changes free-space hand/tool trajectory by approximately .04514 authored units at65deg and .05940 at90deg versus sealedv1. Existing tool poses require new alignment; stable attachment does not imply identical motion.",
+    "quality_tradeoff": "Compared alternatives using central/extended capped elbow-band and whole closed-arm volumes, ring polygon area/directional stretch/warping, inner and outer faces, actual normal opposition and nonadjacent intersections. Chosen profile trades about1.2 percentage points of additional ring-area compression at90deg and some ring warping for improved local elbow-band volume and removal of folds. See focused_quality.json and exported actual-data verification.",
+    "residual_limit": "Linear-blend skinning still compresses ring section near90deg; do not claim fully ready deep-bend range or optimized minimum triangle area as anatomical acceptance."
+  }
+}

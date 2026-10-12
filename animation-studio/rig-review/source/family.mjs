@@ -2,6 +2,7 @@ import {point} from './core.mjs';
 import {paletteMembership,nodeKind} from './inspection.mjs';
 const requireFamily=(ok,message)=>{if(!ok)throw Error(message);};
 export function modelReviewGroup(record){
+ if(record.role==='rig_study'||record.role==='rig_diagnostic_variant')return 'Approved art / rig studies';
  if(record.parentStatus?.visualAcceptance==='held_pending_revision')return 'Historical - held revisions';
  if(record.role==='proposed_candidate'||record.role==='authoring_candidate')return 'Proposed - awaiting acceptance';
  if(record.collection==='keeper'||record.parentStatus?.visualAcceptance==='parent_confirmed_keeper')return 'Accepted visual keepers';
