@@ -18,14 +18,14 @@ Remaining scope limits: rotation-only local posing, no animation authoring/expor
 
 ## Measured validation and limits
 
-[Hosted run 38305821981](https://github.com/Pazneria/lab/actions/runs/38305821981) passed 44 CPU contracts and 14 browser scenarios at runtime revision `43eb5403c188285beba2088f0936f477829a6b26`. [Raw results](../evidence/minimal-studio/43eb540-hosted.json) retain failures/recovery counters, long tasks, environment and all measurements. Chrome was 154.0.8037.97 on Ubuntu/Xvfb. No owner browser was tested.
+[Hosted run 38305821981](https://github.com/Pazneria/lab/actions/runs/38305821981) passed 44 CPU contracts and 14 browser scenarios at runtime revision `43eb5403c188285beba2088f0936f477829a6b26`. [Raw results](minimal-studio-hosted-43eb540.json) retain failures/recovery counters, long tasks, environment and all measurements. Chrome was 154.0.8037.97 on Ubuntu/Xvfb. No owner browser was tested.
 
 | Measurement | Observed |
 | --- | --- |
 | First navigation to model-data readiness | 2538 ms; first attempt lost WebGL |
 | First model worker load | 265 ms |
 | Largest first-attempt main long task | 1797 ms during viewer initialization |
-| First-pass model selections (mixed cold/cached) | 27–214 ms, median 46 ms |
+| First-pass model selections (mixed cold/cached) | 27–214 ms, median 45 ms |
 | Repeated chicken/skeleton selection | 30–50 ms |
 | Injected 1800 ms worker stall | Real toggle and scroll responded; heartbeat maximum drift 0.2 ms |
 | Idle/hidden/disposal | No idle draw loop; workers/buffers released on navigation |

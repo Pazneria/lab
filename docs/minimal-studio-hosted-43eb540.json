@@ -1,0 +1,756 @@
+{
+  "sha": "43eb5403c188285beba2088f0936f477829a6b26",
+  "environment": "GitHub Ubuntu 24.04 / Xvfb / Chrome, one browser, no custom security or GPU flags",
+  "ownerBrowserTested": false,
+  "ownerHangReproduced": false,
+  "checks": [
+    {
+      "name": "cold startup loads one pinned GLB and real WebGL",
+      "passed": true,
+      "ms": 2999,
+      "details": {
+        "requests": 22,
+        "startupMs": 2538,
+        "graphics": {
+          "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+          "renderer": "WebKit WebGL",
+          "error": 0
+        }
+      }
+    },
+    {
+      "name": "actual scroll, orbit, pan and zoom inputs respond",
+      "passed": true,
+      "ms": 341,
+      "details": {
+        "scrolling": {
+          "before": 169,
+          "after": 419
+        },
+        "orbit": true,
+        "pan": true,
+        "zoom": true
+      }
+    },
+    {
+      "name": "joint rotation and reset operate on the real worker",
+      "passed": true,
+      "ms": 202,
+      "details": {
+        "joint": "1",
+        "rotation": 24,
+        "reset": true
+      }
+    },
+    {
+      "name": "available diagnostics are labeled and playback follows wall time",
+      "passed": true,
+      "ms": 782,
+      "details": {
+        "clip": "embedded:embedded_0",
+        "elapsedSeconds": 0.4451999999999971,
+        "pausedTime": 0.48109999999999126
+      }
+    },
+    {
+      "name": "all eligible models, cold/warm timing and repeated cleanup",
+      "passed": true,
+      "ms": 1556,
+      "details": {
+        "models": 26,
+        "cold": {
+          "id": "skeleton",
+          "ms": 46
+        },
+        "warm": [
+          {
+            "id": "chicken",
+            "ms": 30
+          },
+          {
+            "id": "skeleton",
+            "ms": 50
+          },
+          {
+            "id": "chicken",
+            "ms": 34
+          },
+          {
+            "id": "skeleton",
+            "ms": 50
+          }
+        ],
+        "liveBuffers": 5
+      }
+    },
+    {
+      "name": "paused and hidden pages have no runaway renderer loop",
+      "passed": true,
+      "ms": 750,
+      "details": {
+        "idleFrames": 94,
+        "hidden": {
+          "model": "skeleton",
+          "ready": true,
+          "selected": 0,
+          "clip": "rest",
+          "time": 0,
+          "playing": false,
+          "edits": {},
+          "camera": {
+            "yaw": 0.45,
+            "pitch": 0.15,
+            "span": 2.6699999603927136,
+            "center": [
+              -0.0007500052452087402,
+              0.8899999845921993,
+              0.01805950701236725
+            ]
+          },
+          "visible": true,
+          "pending": false,
+          "inflight": false,
+          "queued": false,
+          "raf": false,
+          "playbackTimer": false,
+          "rendererFrames": 94,
+          "liveBuffers": 5,
+          "liveWorkers": 1,
+          "stats": {
+            "started": 20.89999999999418,
+            "readyMs": 119.69999999999709,
+            "workersCreated": 32,
+            "workersTerminated": 31,
+            "loads": [
+              {
+                "id": "human01",
+                "ms": 26.89999999999418,
+                "workerMs": 11
+              },
+              {
+                "id": "skeleton",
+                "ms": 47.09999999999127,
+                "workerMs": 36.5
+              },
+              {
+                "id": "human01",
+                "ms": 20.79999999998836,
+                "workerMs": 10.099999999991269
+              },
+              {
+                "id": "goblin_bramblejaw_01_v3",
+                "ms": 28.39999999999418,
+                "workerMs": 17
+              },
+              {
+                "id": "cow_v2",
+                "ms": 79.60000000000582,
+                "workerMs": 70.5
+              },
+              {
+                "id": "chicken",
+                "ms": 18.80000000000291,
+                "workerMs": 10
+              },
+              {
+                "id": "bandit_v2",
+                "ms": 25.30000000000291,
+                "workerMs": 16.70000000001164
+              },
+              {
+                "id": "rat_common_01",
+                "ms": 34,
+                "workerMs": 23
+              },
+              {
+                "id": "rat_giant_01",
+                "ms": 30.89999999999418,
+                "workerMs": 19.70000000001164
+              },
+              {
+                "id": "spider",
+                "ms": 29.30000000000291,
+                "workerMs": 20.39999999999418
+              },
+              {
+                "id": "giant_spider",
+                "ms": 23.69999999999709,
+                "workerMs": 15.39999999999418
+              },
+              {
+                "id": "sheep_woolly",
+                "ms": 31.60000000000582,
+                "workerMs": 23.19999999999709
+              },
+              {
+                "id": "sheep_sheared",
+                "ms": 32,
+                "workerMs": 21.30000000000291
+              },
+              {
+                "id": "ram_woolly",
+                "ms": 34.69999999999709,
+                "workerMs": 22.10000000000582
+              },
+              {
+                "id": "ram_shorn",
+                "ms": 33.60000000000582,
+                "workerMs": 22.20000000001164
+              },
+              {
+                "id": "fen_frog",
+                "ms": 30.5,
+                "workerMs": 19.80000000000291
+              },
+              {
+                "id": "skeleton",
+                "ms": 37.80000000000291,
+                "workerMs": 26.60000000000582
+              },
+              {
+                "id": "imp_cinderhook_01",
+                "ms": 33.59999999999127,
+                "workerMs": 23.60000000000582
+              },
+              {
+                "id": "human_accepted_static",
+                "ms": 23.39999999999418,
+                "workerMs": 8.10000000000582
+              },
+              {
+                "id": "human_head33",
+                "ms": 16.60000000000582,
+                "workerMs": 5.099999999991269
+              },
+              {
+                "id": "human_hair32",
+                "ms": 17.69999999999709,
+                "workerMs": 7.30000000000291
+              },
+              {
+                "id": "human_mallet34",
+                "ms": 14.89999999999418,
+                "workerMs": 4.899999999994179
+              },
+              {
+                "id": "dwarf",
+                "ms": 207.09999999999127,
+                "workerMs": 21.80000000000291
+              },
+              {
+                "id": "minotaur",
+                "ms": 30.89999999999418,
+                "workerMs": 18.60000000000582
+              },
+              {
+                "id": "ghost",
+                "ms": 22.80000000000291,
+                "workerMs": 12.30000000000291
+              },
+              {
+                "id": "zombie",
+                "ms": 25.39999999999418,
+                "workerMs": 14.099999999991269
+              },
+              {
+                "id": "crawler",
+                "ms": 31.30000000000291,
+                "workerMs": 21.19999999999709
+              },
+              {
+                "id": "crawler_diagnostics",
+                "ms": 34,
+                "workerMs": 22.59999999999127
+              },
+              {
+                "id": "chicken",
+                "ms": 18.69999999999709,
+                "workerMs": 7.69999999999709
+              },
+              {
+                "id": "skeleton",
+                "ms": 36.10000000000582,
+                "workerMs": 25.89999999999418
+              },
+              {
+                "id": "chicken",
+                "ms": 17.89999999999418,
+                "workerMs": 8.5
+              },
+              {
+                "id": "skeleton",
+                "ms": 38.90000000000873,
+                "workerMs": 29.30000000000291
+              }
+            ],
+            "poseMs": [
+              2.1000000000058208,
+              0.8999999999941792,
+              0.6000000000058208,
+              2,
+              1.5,
+              1.8000000000029104,
+              1.7000000000116415,
+              1.5,
+              1.8000000000029104,
+              1.4000000000087311,
+              1.5,
+              1.8000000000029104,
+              1.6000000000058208,
+              1.7000000000116415,
+              1.5,
+              1.5,
+              1.4000000000087311,
+              1.3999999999941792,
+              1.8000000000029104,
+              1.8999999999941792
+            ],
+            "longTasks": [
+              {
+                "start": 147,
+                "duration": 58
+              }
+            ],
+            "heartbeatMaxDriftMs": 12.5,
+            "heartbeatTicks": 14,
+            "errors": [],
+            "cancelled": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "actual context loss preserves input and explicit reload recovers",
+      "passed": true,
+      "ms": 251,
+      "details": {
+        "lostContext": true,
+        "scroll": true,
+        "explicitReload": true
+      }
+    },
+    {
+      "name": "missing asset error keeps scrolling and selection responsive",
+      "passed": true,
+      "ms": 507,
+      "details": {
+        "recovery": true,
+        "scrolling": {
+          "before": 0,
+          "after": 250
+        }
+      }
+    },
+    {
+      "name": "WebGL unavailable never blocks controls or navigation",
+      "passed": true,
+      "ms": 919,
+      "details": {
+        "selection": true,
+        "scroll": true,
+        "navigation": true
+      }
+    },
+    {
+      "name": "cancel delayed load and replace an obsolete worker",
+      "passed": true,
+      "ms": 2254,
+      "details": {
+        "cancelled": true,
+        "staleCommit": false
+      }
+    },
+    {
+      "name": "worker CPU stall does not stall page events",
+      "passed": true,
+      "ms": 2131,
+      "details": {
+        "scrolling": {
+          "before": 10,
+          "after": 260
+        },
+        "heartbeatTicks": 7,
+        "maxDriftMs": 0.19999999999708962
+      }
+    },
+    {
+      "name": "nonresponding worker times out and can be cancelled",
+      "passed": true,
+      "ms": 15364,
+      "details": {
+        "timeout": true,
+        "workerReleased": true
+      }
+    },
+    {
+      "name": "phone layout scroll and controls remain accessible",
+      "passed": true,
+      "ms": 524,
+      "details": {
+        "width": 390,
+        "overflow": false,
+        "buttons": true,
+        "scroll": true
+      }
+    },
+    {
+      "name": "navigation, back and pagehide release resources",
+      "passed": true,
+      "ms": 214,
+      "details": {
+        "released": {
+          "model": "human01",
+          "ready": true,
+          "selected": 0,
+          "clip": "rest",
+          "time": 0,
+          "playing": false,
+          "edits": {},
+          "camera": {
+            "yaw": 0.45,
+            "pitch": 0.15,
+            "span": 2.5800000366568563,
+            "center": [
+              0,
+              0.8600000163912773,
+              0.043453045189380646
+            ]
+          },
+          "visible": false,
+          "pending": false,
+          "inflight": false,
+          "queued": false,
+          "raf": false,
+          "playbackTimer": false,
+          "rendererFrames": 0,
+          "liveBuffers": 0,
+          "liveWorkers": 0,
+          "stats": {
+            "started": 17.10000000000582,
+            "readyMs": 48.89999999999418,
+            "workersCreated": 1,
+            "workersTerminated": 1,
+            "loads": [
+              {
+                "id": "human01",
+                "ms": 35.89999999999418,
+                "workerMs": 11.400000000008731
+              }
+            ],
+            "poseMs": [],
+            "longTasks": [],
+            "heartbeatMaxDriftMs": 0.3000000000029104,
+            "heartbeatTicks": 87,
+            "errors": [],
+            "cancelled": 0
+          }
+        },
+        "backReady": true
+      }
+    }
+  ],
+  "errors": [],
+  "console": [
+    {
+      "type": "warning",
+      "text": "WebGL: CONTEXT_LOST_WEBGL: loseContext: context lost"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x240400103a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x240400103a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x240400103a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "type": "warning",
+      "text": "[.WebGL-0x240400103a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ],
+  "timings": {
+    "startupWallMs": 2538,
+    "startup": {
+      "started": 246.8000000000029,
+      "readyMs": 2281.0999999999913,
+      "workersCreated": 1,
+      "workersTerminated": 0,
+      "loads": [
+        {
+          "id": "human01",
+          "ms": 264.8999999999942,
+          "workerMs": 238
+        }
+      ],
+      "poseMs": [],
+      "longTasks": [
+        {
+          "start": 243.5,
+          "duration": 1797
+        },
+        {
+          "start": 2040.8999999999942,
+          "duration": 135
+        }
+      ],
+      "heartbeatMaxDriftMs": 1698.6000000000058,
+      "heartbeatTicks": 3,
+      "errors": [
+        "WebGL context lost"
+      ],
+      "cancelled": 0
+    },
+    "modelSwitches": [
+      {
+        "id": "human01",
+        "ms": 28
+      },
+      {
+        "id": "goblin_bramblejaw_01_v3",
+        "ms": 46
+      },
+      {
+        "id": "cow_v2",
+        "ms": 96
+      },
+      {
+        "id": "chicken",
+        "ms": 31
+      },
+      {
+        "id": "bandit_v2",
+        "ms": 33
+      },
+      {
+        "id": "rat_common_01",
+        "ms": 45
+      },
+      {
+        "id": "rat_giant_01",
+        "ms": 44
+      },
+      {
+        "id": "spider",
+        "ms": 46
+      },
+      {
+        "id": "giant_spider",
+        "ms": 30
+      },
+      {
+        "id": "sheep_woolly",
+        "ms": 45
+      },
+      {
+        "id": "sheep_sheared",
+        "ms": 46
+      },
+      {
+        "id": "ram_woolly",
+        "ms": 46
+      },
+      {
+        "id": "ram_shorn",
+        "ms": 46
+      },
+      {
+        "id": "fen_frog",
+        "ms": 46
+      },
+      {
+        "id": "skeleton",
+        "ms": 46
+      },
+      {
+        "id": "imp_cinderhook_01",
+        "ms": 47
+      },
+      {
+        "id": "human_accepted_static",
+        "ms": 42
+      },
+      {
+        "id": "human_head33",
+        "ms": 27
+      },
+      {
+        "id": "human_hair32",
+        "ms": 28
+      },
+      {
+        "id": "human_mallet34",
+        "ms": 29
+      },
+      {
+        "id": "dwarf",
+        "ms": 214
+      },
+      {
+        "id": "minotaur",
+        "ms": 60
+      },
+      {
+        "id": "ghost",
+        "ms": 31
+      },
+      {
+        "id": "zombie",
+        "ms": 31
+      },
+      {
+        "id": "crawler",
+        "ms": 43
+      },
+      {
+        "id": "crawler_diagnostics",
+        "ms": 46
+      }
+    ],
+    "warmSwitches": [
+      {
+        "id": "chicken",
+        "ms": 30
+      },
+      {
+        "id": "skeleton",
+        "ms": 50
+      },
+      {
+        "id": "chicken",
+        "ms": 34
+      },
+      {
+        "id": "skeleton",
+        "ms": 50
+      }
+    ]
+  },
+  "passed": true,
+  "browserVersion": "154.0.8037.97",
+  "startupContextLoss": {
+    "graphics": {
+      "version": null,
+      "renderer": null,
+      "error": 37442
+    },
+    "health": {
+      "model": "human01",
+      "ready": true,
+      "selected": 0,
+      "clip": "rest",
+      "time": 0,
+      "playing": false,
+      "edits": {},
+      "camera": {
+        "yaw": 0.45,
+        "pitch": 0.15,
+        "span": 2.5800000366568563,
+        "center": [
+          0,
+          0.8600000163912773,
+          0.043453045189380646
+        ]
+      },
+      "visible": true,
+      "pending": false,
+      "inflight": false,
+      "queued": false,
+      "raf": false,
+      "playbackTimer": false,
+      "rendererFrames": 0,
+      "liveBuffers": 0,
+      "liveWorkers": 1,
+      "stats": {
+        "started": 246.8000000000029,
+        "readyMs": 2281.0999999999913,
+        "workersCreated": 1,
+        "workersTerminated": 0,
+        "loads": [
+          {
+            "id": "human01",
+            "ms": 264.8999999999942,
+            "workerMs": 238
+          }
+        ],
+        "poseMs": [],
+        "longTasks": [
+          {
+            "start": 243.5,
+            "duration": 1797
+          },
+          {
+            "start": 2040.8999999999942,
+            "duration": 135
+          }
+        ],
+        "heartbeatMaxDriftMs": 1698.6000000000058,
+        "heartbeatTicks": 3,
+        "errors": [
+          "WebGL context lost"
+        ],
+        "cancelled": 0
+      }
+    }
+  },
+  "startupRecoveredBySingleReload": true,
+  "graphics": {
+    "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+    "renderer": "WebKit WebGL",
+    "error": 0
+  },
+  "finalHealth": {
+    "model": "human01",
+    "ready": true,
+    "selected": 0,
+    "clip": "rest",
+    "time": 0,
+    "playing": false,
+    "edits": {},
+    "camera": {
+      "yaw": 0.45,
+      "pitch": 0.15,
+      "span": 2.5800000366568563,
+      "center": [
+        0,
+        0.8600000163912773,
+        0.043453045189380646
+      ]
+    },
+    "visible": true,
+    "pending": false,
+    "inflight": false,
+    "queued": false,
+    "raf": false,
+    "playbackTimer": false,
+    "rendererFrames": 2,
+    "liveBuffers": 5,
+    "liveWorkers": 1,
+    "stats": {
+      "started": 14.80000000000291,
+      "readyMs": 55.5,
+      "workersCreated": 1,
+      "workersTerminated": 0,
+      "loads": [
+        {
+          "id": "human01",
+          "ms": 42,
+          "workerMs": 9.89999999999418
+        }
+      ],
+      "poseMs": [],
+      "longTasks": [],
+      "heartbeatMaxDriftMs": 0,
+      "heartbeatTicks": 0,
+      "errors": [],
+      "cancelled": 0
+    }
+  }
+}
