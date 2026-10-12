@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Focused CPU contracts on hosted runner
+        run: node --experimental-vm-modules --test animation-studio/tests/rig-ui-cpu.test.mjs animation-studio/tests/modes.test.mjs animation-studio/tests/host-retry-cpu.test.mjs animation-studio/tests/renderer-cpu.test.mjs tests/verify-public-rig-studio.test.mjs
       - name: Install runner-only browser controller
         run: npm install --prefix "$RUNNER_TEMP/studio-browser" --no-audit --no-fund playwright@1.64.0
       - name: Extract deployed-main negative control

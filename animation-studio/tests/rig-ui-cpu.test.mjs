@@ -128,5 +128,5 @@ test('unavailable WebGL releases panel input and cannot announce readiness on fo
 
 
 test('renderer failure on mode return suspends graphics and preserves CPU editing',async()=>{
- const f=await fixture();f.api.setActive(false);f.failRenderer('WebGL is unavailable');assert.throws(()=>f.api.setActive(true),/WebGL is unavailable/);assert.equal(f.state.gates.context,false);assert.equal(f.state.rendererAlive,false);assert.equal(f.state.active,false);assert.equal(f.frames.size,0);await f.window.emit('blur');await f.window.emit('focus');assert.doesNotMatch(f.el('message').textContent,/Viewer ready/);assert.match(f.el('error').textContent,/WebGL is unavailable/);assert.equal(f.el('rig-panel').inert,false);
+ const f=await fixture();f.api.setActive(false);f.failRenderer('WebGL is unavailable');assert.throws(()=>f.api.setActive(true),/WebGL is unavailable/);assert.equal(f.state.gates.context,false);assert.equal(f.state.rendererAlive,false);assert.equal(f.state.active,false);assert.equal(f.frames.size,0);await f.window.emit('blur');await f.window.emit('focus');assert.doesNotMatch(f.el('message').textContent,/Viewer ready/);assert.match(f.el('error').textContent,/WebGL is unavailable/);assert.equal(f.el('rig-panel').inert,false);f.api.setActive(false);assert.match(f.el('message').textContent,/Viewer unavailable/);
 });
