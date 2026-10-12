@@ -86,6 +86,7 @@
       [m.snapshot_at, m.publication_at, m.result_packet_checked_at].every(
         dateOK,
       ) &&
+      dateOK(m.observation_period_end ?? null) &&
       Array.isArray(m.evaluations) &&
       m.evaluations.every(
         (s) =>
@@ -187,7 +188,7 @@
       ids.add(c.id);
     }
     return (
-      ids.size === 73 &&
+      ids.size === (input.coverage.refresh ? 86 : 73) &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(
@@ -312,6 +313,7 @@
   const byId = new Map(all.map((c) => [c.id, c]));
   const priority = [
     "hle-diamond",
+    "webdev-arena-frontend-2026-10-08",
     "webdev-arena-frontend",
     "bullshitbench-v2",
     "runebench",
@@ -321,7 +323,9 @@
     "mmmu-pro",
     "terminal-bench-4",
     "swe-bench-pro-public-v2",
+    "healthbench-professional-openai-20260929",
     "healthbench-professional",
+    "waymo-corrected-fleet-outcomes",
   ];
   all.sort((a, b) => {
     const ai = priority.indexOf(a.id),
@@ -507,6 +511,8 @@
         ? shortDate(m.snapshot_at)
         : "Not established as a separate dated snapshot.",
     );
+    if (m.observation_period_end)
+      fact("Observation period end", shortDate(m.observation_period_end) + "; the observations end here, not the source snapshot or evaluation date.");
     fact(
       "Publication or revision",
       m.publication_at
@@ -1077,7 +1083,19 @@
           if (c.row_scope) li.append(e("small", "", c.row_scope));
           backlog.append(li);
         }
+        const refreshAudit = e("ul", "research-directory");
+        for (const c of input.coverage.refresh?.directory || []) {
+          const li = e("li");
+          li.append(external(c.url, c.name), e("small", "", c.status));
+          refreshAudit.append(li);
+        }
         directory.replaceChildren(
+          ...(input.coverage.refresh ? [disclosure(
+            "October 12 source review and held cohorts",
+            local("data/benchmark-refresh-2026-10-12/evidence-manifest.json", "Exact source archive manifest"),
+            local("data/gallery-refresh-projection-2026-10-12.json", "Refresh projection and source audit"),
+            refreshAudit,
+          )] : []),
           disclosure(
             "Evidence guides · " +
               guides.children.length +
@@ -1202,7 +1220,7 @@
       sources = card.coverage.variants.map((v) => ({
         url: v.source_url,
         title: "Primary result source — " + v.label,
-        info: "Source checked October 5, 2026; evaluation dates remain separately labeled.",
+        info: "Source checked " + shortDate(metadata(card).source_review.date) + "; evaluation dates remain separately labeled.",
       }));
       if (card.original)
         sources.push(
@@ -1393,6 +1411,9 @@
           "Read the supplied original research input",
         ),
       );
+      for (const file of card.coverage.source_inputs || [])
+        if (file !== card.coverage.source_input)
+          body.append(local(file, "Preserved source input: " + file));
       if (card.standard)
         body.append(raw("Preserved earlier source cohort", card.standard));
       if (card.original)

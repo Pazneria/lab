@@ -1,0 +1,1862 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-12",
+  "scope": "Read-only primary-source review of medical, physical robotics, and driving coverage; no evaluations run.",
+  "baseline": [
+    {
+      "repository": "Pazneria/lab",
+      "path": "data/gallery-current-2026-10-01.json",
+      "sha": "d21835fe02f1cfc840d1bceb521d5d6271ea89cc"
+    },
+    {
+      "repository": "Pazneria/lab",
+      "path": "data/coverage-research-2026-10-05/primary-source-additions.json",
+      "sha": "2ef948362c5105477895012456235ab8a7ec917f"
+    }
+  ],
+  "freshness_policy": "New coverage means absent from the two inspected baseline files. It does not mean newly published since October 5. Publication dates, data endpoints, source-check dates and evaluation dates are separate.",
+  "priorities": [
+    "Extend the existing HealthBench Professional OpenAI cohort with GPT-6.1 Sol; the seven existing rows are unchanged.",
+    "Add HealthAgentBench with model+harness labels and paired cost/time for the original ten-agent paper cohort; two July additions have cost but no verified time.",
+    "Add MentalHealthBench as synthetic conversation evaluation, with maximum-effort and default-effort cohorts separated.",
+    "Add the directly rendered RoboChallenge Table30 V2 physical generalist standings (54 rows): LoopWAM now leads with 43.33% success, ahead of KDDI VLA-DM0.5 at 40.67%. The October 5 announcement placing KDDI first is historical.",
+    "Consider DrivingBench as a small physical pilot with one independent chat per system, not evidence of road-driving readiness.",
+    "Keep Waymo fleet outcomes separate from simulator and model benchmarks; use October 2 corrected downloads."
+  ],
+  "cohorts": [
+    {
+      "id": "healthbench-professional-openai-20260929-extension",
+      "category": "medical",
+      "kind": "offline_clinician_conversation_tasks",
+      "change_status": "new_coverage_older_publication",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/healthbench/tbl-7",
+      "source_pdf": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+      "source_locator": "Table 7; PDF p.10",
+      "source_publication_date": "2026-09-29",
+      "publisher": "OpenAI",
+      "evidence_type": "developer_report",
+      "comparison_group": "OpenAI HealthBench Professional length-adjusted; same seven predecessor values as baseline",
+      "metric": "length-adjusted rubric score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "settings": {
+        "reasoning_effort": null,
+        "tools": null,
+        "harness": "OpenAI research/API evaluation; exact table-level configuration not specified",
+        "samples_per_task": null,
+        "sample_size": null
+      },
+      "rows": [
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6.1 Sol",
+          "value": 64.2,
+          "unadjusted_value": 67.2,
+          "mean_response_length_characters": 3038
+        }
+      ],
+      "related_variant_rows": [
+        {
+          "benchmark": "HealthBench",
+          "model_variant": "GPT-6.1 Sol",
+          "value": 58.5,
+          "unadjusted_value": 56.7,
+          "mean_response_length_characters": 1701
+        },
+        {
+          "benchmark": "HealthBench Hard",
+          "model_variant": "GPT-6.1 Sol",
+          "value": 36.2,
+          "unadjusted_value": 33.4,
+          "mean_response_length_characters": 1646
+        },
+        {
+          "benchmark": "HealthBench Consensus",
+          "model_variant": "GPT-6.1 Sol",
+          "value": 96,
+          "unadjusted_value": 95.9,
+          "mean_response_length_characters": 1686
+        }
+      ],
+      "caveats": [
+        "Other variants require separate cards/cohorts.",
+        "No paired cost/time.",
+        "Do not merge Anthropic-grader scores.",
+        "Not clinical outcome validation."
+      ],
+      "reverified_unchanged": "GPT-6 Astra Professional64.7/raw68.2 already present; no new correction."
+    },
+    {
+      "id": "mentalhealthbench-openai-max-20260929",
+      "category": "medical",
+      "kind": "synthetic_conversation_response_evaluation",
+      "change_status": "new_coverage_older_publication",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+      "source_locator": "Section5.3 Table9, PDFp12",
+      "source_publication_date": "2026-09-29",
+      "evidence_type": "developer_report",
+      "metric": "task-clipped rubric score",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "settings": {
+        "reasoning_effort": "maximum",
+        "tools": null,
+        "harness": "rubric-scored responses",
+        "tasks": 1215,
+        "samples_per_task": 4,
+        "acuity_tasks": {
+          "non_acute": 650,
+          "high_acuity": 221,
+          "emergent": 344
+        },
+        "uncertainty": "1 standard error across task means"
+      },
+      "rows": [
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-5.6 Luna",
+          "value": 44.4,
+          "stderr_pp": 1,
+          "non_acute": [
+            40.4,
+            1.3
+          ],
+          "high_acuity": [
+            48.4,
+            2.3
+          ],
+          "emergent": [
+            49.4,
+            1.9
+          ]
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-5.6 Sol",
+          "value": 46.7,
+          "stderr_pp": 1,
+          "non_acute": [
+            42.5,
+            1.3
+          ],
+          "high_acuity": [
+            51.8,
+            2.2
+          ],
+          "emergent": [
+            51.2,
+            1.9
+          ]
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6 Luna",
+          "value": 51.7,
+          "stderr_pp": 0.9,
+          "non_acute": [
+            49.3,
+            1.3
+          ],
+          "high_acuity": [
+            54.7,
+            2.2
+          ],
+          "emergent": [
+            54.3,
+            1.8
+          ]
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6 Sol",
+          "value": 54.2,
+          "stderr_pp": 0.9,
+          "non_acute": [
+            53.5,
+            1.3
+          ],
+          "high_acuity": [
+            55.3,
+            2.2
+          ],
+          "emergent": [
+            54.9,
+            1.8
+          ]
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6 Astra",
+          "value": 58.7,
+          "stderr_pp": 1,
+          "non_acute": [
+            58.5,
+            1.3
+          ],
+          "high_acuity": [
+            59.8,
+            2.2
+          ],
+          "emergent": [
+            58.5,
+            1.8
+          ]
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6.1 Sol",
+          "value": 57.9,
+          "stderr_pp": 1,
+          "non_acute": [
+            57.3,
+            1.3
+          ],
+          "high_acuity": [
+            59.1,
+            2.2
+          ],
+          "emergent": [
+            58,
+            1.9
+          ]
+        }
+      ],
+      "caveats": [
+        "Synthetic conversations, not patient treatment outcomes.",
+        "Standard errors are not confidence intervals.",
+        "Keep separate from paper default-effort results.",
+        "Cost/time unavailable."
+      ]
+    },
+    {
+      "id": "mentalhealthbench-paper-default",
+      "category": "medical",
+      "kind": "synthetic_conversation_response_evaluation",
+      "change_status": "new_coverage_older_publication",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+      "source_locator": "Section 2.3 p6; Figure 5 p10; Appendix B",
+      "source_publication_date": null,
+      "evidence_type": "benchmark_author_paper",
+      "metric": "task-clipped rubric score",
+      "unit": "percent",
+      "settings": {
+        "reasoning_effort": "default; distinct from max-effort system-card cohort",
+        "sample_size": 1215,
+        "tools": null,
+        "samples_per_task": 4,
+        "grader": "GPT-5.6 Sol, high reasoning effort",
+        "temperature": "API default",
+        "verbosity": "API default"
+      },
+      "rows": [
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6 Astra",
+          "value": 57.3
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6 Sol",
+          "value": 53.9
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Claude Opus 5.5",
+          "value": 52.4
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-6 Luna",
+          "value": 50.2
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Muse Spark 1.3",
+          "value": 48.6
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-5.6 Sol (Aug 2026)",
+          "value": 47
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Claude Fable 5.1",
+          "value": 46.4
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-5.6 Luna (Aug 2026)",
+          "value": 44.9
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Claude Sonnet 5",
+          "value": 44.5
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-5 Thinking",
+          "value": 42.9
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Claude Haiku 4.5",
+          "value": 41.7
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Grok 4.7",
+          "value": 41.3
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Gemini 3.8 Flash",
+          "value": 35.5
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Gemini 2.5 Flash",
+          "value": 33.5
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "GPT-4o (March 2025)",
+          "value": 32.1
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Gemini 3.1 Pro",
+          "value": 32.1
+        },
+        {
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "model_variant": "Gemini 2.5 Pro",
+          "value": 29.5
+        }
+      ],
+      "caveats": [
+        "Cost figure lacks exact coordinate table; do not interpolate dollars.",
+        "No claim of therapy efficacy or clinical safety."
+      ]
+    },
+    {
+      "id": "healthagentbench-original-paper",
+      "category": "medical",
+      "kind": "offline_agentic_clinical_artifact_tasks",
+      "change_status": "new_coverage_older_publication",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://arxiv.org/pdf/2606.31179",
+      "source_locator": "Section4.1; Figure4 p10; AppendixD",
+      "source_publication_date": "2026-07-01",
+      "source_date_support": "https://github.com/microsoft/HealthAgentBench",
+      "evidence_type": "benchmark_author_run",
+      "settings": {
+        "tasks": 54,
+        "categories": 7,
+        "attempts_per_task": 3,
+        "trials_per_system": 162,
+        "reasoning_effort": "xhigh",
+        "web_browsing": false,
+        "framework": "Harbor; native Codex/Claude Code/Copilot CLI harnesses"
+      },
+      "metric": "pooled task success rate",
+      "unit": "percent",
+      "rows": [
+        {
+          "evaluation_date": null,
+          "harness": "Codex",
+          "model_variant": "GPT-5.5",
+          "value": 42,
+          "cost_usd_per_attempt": 2.8,
+          "wallclock_minutes_per_attempt": 15
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Copilot CLI",
+          "model_variant": "Opus 4.8",
+          "value": 36,
+          "cost_usd_per_attempt": 3.1,
+          "wallclock_minutes_per_attempt": 18
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Copilot CLI",
+          "model_variant": "GPT-5.5",
+          "value": 35,
+          "cost_usd_per_attempt": 2.6,
+          "wallclock_minutes_per_attempt": 18
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Claude Code",
+          "model_variant": "Opus 4.8",
+          "value": 32,
+          "cost_usd_per_attempt": 4,
+          "wallclock_minutes_per_attempt": 16
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Codex",
+          "model_variant": "GPT-5.4",
+          "value": 28,
+          "cost_usd_per_attempt": 1.3,
+          "wallclock_minutes_per_attempt": 18
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Claude Code",
+          "model_variant": "Opus 4.7",
+          "value": 27,
+          "cost_usd_per_attempt": 4.8,
+          "wallclock_minutes_per_attempt": 16
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Codex",
+          "model_variant": "GPT-5.3",
+          "value": 22,
+          "cost_usd_per_attempt": 1,
+          "wallclock_minutes_per_attempt": 14
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Claude Code",
+          "model_variant": "Opus 4.6",
+          "value": 19,
+          "cost_usd_per_attempt": 4.1,
+          "wallclock_minutes_per_attempt": 22
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Claude Code",
+          "model_variant": "Sonnet 4.6",
+          "value": 17,
+          "cost_usd_per_attempt": 2.9,
+          "wallclock_minutes_per_attempt": 24
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Codex",
+          "model_variant": "GPT-5.4-mini",
+          "value": 16,
+          "cost_usd_per_attempt": 0.6,
+          "wallclock_minutes_per_attempt": 16
+        }
+      ],
+      "caveats": [
+        "Scores rounded as published; not independent exact model-only comparison.",
+        "Costs and times are per task attempt, not full-suite totals.",
+        "Clinical artifacts include gated datasets; not patient outcome evidence.",
+        "Paper Wilson95% intervals not transcribed."
+      ],
+      "current_repository_harbor_pin": "0.8.0; current README, not established as historical run version",
+      "settings_source": "https://github.com/microsoft/HealthAgentBench"
+    },
+    {
+      "id": "healthagentbench-20260727-additions",
+      "category": "medical",
+      "kind": "offline_agentic_clinical_artifact_tasks",
+      "change_status": "new_coverage_older_publication",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://microsoft.github.io/HealthAgentBench/",
+      "source_locator": "Leaderboard",
+      "source_publication_date": null,
+      "addition_date": "2026-07-27",
+      "addition_date_source": "https://github.com/microsoft/HealthAgentBench",
+      "evidence_type": "benchmark_creator_live_board",
+      "settings": {
+        "tasks": 54,
+        "attempts_per_task": 3,
+        "trials_per_system": 162,
+        "reasoning_effort": null,
+        "web_browsing": null
+      },
+      "metric": "pooled task success rate",
+      "unit": "percent",
+      "rows": [
+        {
+          "evaluation_date": null,
+          "harness": "Claude Code",
+          "model_variant": "Opus 5",
+          "value": 55,
+          "cost_usd_per_task": 3.3,
+          "wallclock_minutes_per_task": null
+        },
+        {
+          "evaluation_date": null,
+          "harness": "Codex",
+          "model_variant": "GPT-5.6-sol",
+          "value": 45,
+          "cost_usd_per_task": 5.2,
+          "wallclock_minutes_per_task": null
+        }
+      ],
+      "caveats": [
+        "Paper has ten earlier systems; these two appear on current creator board.",
+        "Board cost label says cost/task but nearby explanatory sentence is awkward; retained exact label, no full-sweep extrapolation.",
+        "Do not silently inherit xhigh settings or latency from older paper cohort."
+      ]
+    },
+    {
+      "id": "robochallenge-table30-v2-current",
+      "category": "robotics",
+      "kind": "physical_robot_manipulation",
+      "change_status": "new_coverage_current_snapshot",
+      "new_since_2026_10_05": null,
+      "ready_for_import": true,
+      "source_url": "https://robochallenge.ai/leaderboard",
+      "source_locator": "Track table-30-v2 selected; aggregate Leaderboard table with 54 model rows. Separate Task Detail table has 675 task rows and is not the aggregate ranking.",
+      "source_publication_date": null,
+      "announcement_date": "2026-10-05",
+      "announcement_source": "https://www.kddi-research.jp/english/topics/2026/100501.html",
+      "evidence_type": "benchmark_creator_live_board_direct_rendered_browser",
+      "metric": "task success rate",
+      "unit": "percent",
+      "secondary_metric": "Score (partial progress; distinct from success)",
+      "settings": {
+        "tasks": 30,
+        "robot_types": 4,
+        "rollouts_per_task": null,
+        "total_rollouts_per_model": null,
+        "harness": "RoboChallenge online physical-robot evaluation",
+        "model_regime": "multi-task/generalist V2"
+      },
+      "rows": [
+        {
+          "rank": 1,
+          "model_variant": "LoopWAM",
+          "submitter": "LoopWAM",
+          "score": 56.8,
+          "success_rate_percent": 43.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 1"
+        },
+        {
+          "rank": 2,
+          "model_variant": "VLA-DM0.5",
+          "submitter": "KDDI Research",
+          "score": 54.42,
+          "success_rate_percent": 40.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 2"
+        },
+        {
+          "rank": 3,
+          "model_variant": "my16",
+          "submitter": "Tymtbo",
+          "score": 41.27,
+          "success_rate_percent": 30.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 3"
+        },
+        {
+          "rank": 4,
+          "model_variant": "ambase",
+          "submitter": "AVerse001",
+          "score": 29.83,
+          "success_rate_percent": 19.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 4"
+        },
+        {
+          "rank": 5,
+          "model_variant": "JV0",
+          "submitter": "JIIOV",
+          "score": 27.58,
+          "success_rate_percent": 16,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 5"
+        },
+        {
+          "rank": 6,
+          "model_variant": "mc",
+          "submitter": "mcBrains",
+          "score": 23.63,
+          "success_rate_percent": 15.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 6"
+        },
+        {
+          "rank": 7,
+          "model_variant": "MagicBot",
+          "submitter": "MagicBot",
+          "score": 20.82,
+          "success_rate_percent": 14.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 7"
+        },
+        {
+          "rank": 8,
+          "model_variant": "Baseline Model",
+          "submitter": "RoboChallenge",
+          "score": 31.48,
+          "success_rate_percent": 14.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 8"
+        },
+        {
+          "rank": 9,
+          "model_variant": "holobrain",
+          "submitter": "HRL",
+          "score": 27.93,
+          "success_rate_percent": 14.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 9"
+        },
+        {
+          "rank": 10,
+          "model_variant": "test_01",
+          "submitter": "VLA",
+          "score": 22.73,
+          "success_rate_percent": 12.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 10"
+        },
+        {
+          "rank": 11,
+          "model_variant": "W0",
+          "submitter": "WMA",
+          "score": 21.85,
+          "success_rate_percent": 12,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 11"
+        },
+        {
+          "rank": 12,
+          "model_variant": "debuggers_vla",
+          "submitter": "debuggers",
+          "score": 18.72,
+          "success_rate_percent": 11,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 12"
+        },
+        {
+          "rank": 13,
+          "model_variant": "hcp-e",
+          "submitter": "HCP-E",
+          "score": 19.2,
+          "success_rate_percent": 10.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 13"
+        },
+        {
+          "rank": 14,
+          "model_variant": "Astraeus_V1.5",
+          "submitter": "Yuze Xuan",
+          "score": 13.87,
+          "success_rate_percent": 8.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 14"
+        },
+        {
+          "rank": 15,
+          "model_variant": "EgoVLA",
+          "submitter": "Yuhao Chen",
+          "score": 20.95,
+          "success_rate_percent": 7.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 15"
+        },
+        {
+          "rank": 16,
+          "model_variant": "USTB-Linketic",
+          "submitter": "Zhenyang Wei",
+          "score": 14.9,
+          "success_rate_percent": 7.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 16"
+        },
+        {
+          "rank": 17,
+          "model_variant": "vict",
+          "submitter": "victory team",
+          "score": 12.72,
+          "success_rate_percent": 7.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 17"
+        },
+        {
+          "rank": 18,
+          "model_variant": "ARX5-multitask",
+          "submitter": "Hua Xue",
+          "score": 13,
+          "success_rate_percent": 6.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 18"
+        },
+        {
+          "rank": 19,
+          "model_variant": "Astraeus_V1.6",
+          "submitter": "Yuze Xuan",
+          "score": 11.57,
+          "success_rate_percent": 6.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 19"
+        },
+        {
+          "rank": 20,
+          "model_variant": "MultiVLA",
+          "submitter": "Vertex",
+          "score": 12.85,
+          "success_rate_percent": 6,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 20"
+        },
+        {
+          "rank": 21,
+          "model_variant": "RoboRush",
+          "submitter": "RoboRush",
+          "score": 12.33,
+          "success_rate_percent": 6,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 21"
+        },
+        {
+          "rank": 22,
+          "model_variant": "UR5-multitask",
+          "submitter": "Hua Xue",
+          "score": 7.95,
+          "success_rate_percent": 6,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 22"
+        },
+        {
+          "rank": 23,
+          "model_variant": "metrics",
+          "submitter": "Metrics",
+          "score": 16.12,
+          "success_rate_percent": 5.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 23"
+        },
+        {
+          "rank": 24,
+          "model_variant": "xyz",
+          "submitter": "xyz",
+          "score": 8.83,
+          "success_rate_percent": 5.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 24"
+        },
+        {
+          "rank": 25,
+          "model_variant": "AVP",
+          "submitter": "Any-01",
+          "score": 9.58,
+          "success_rate_percent": 5,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 25"
+        },
+        {
+          "rank": 26,
+          "model_variant": "smartVLA",
+          "submitter": "smartVLA",
+          "score": 7.25,
+          "success_rate_percent": 4,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 26"
+        },
+        {
+          "rank": 27,
+          "model_variant": "Astraeus_V1",
+          "submitter": "Yuze Xuan",
+          "score": 8.42,
+          "success_rate_percent": 3.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 27"
+        },
+        {
+          "rank": 28,
+          "model_variant": "NGRob",
+          "submitter": "Next Gen Robot",
+          "score": 6.28,
+          "success_rate_percent": 3.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 28"
+        },
+        {
+          "rank": 29,
+          "model_variant": "BrainC",
+          "submitter": "YunJinBrains",
+          "score": 10.1,
+          "success_rate_percent": 3,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 29"
+        },
+        {
+          "rank": 30,
+          "model_variant": "DOS-W1-multitask",
+          "submitter": "Hua Xue",
+          "score": 5.53,
+          "success_rate_percent": 3,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 30"
+        },
+        {
+          "rank": 31,
+          "model_variant": "TengenX0.1",
+          "submitter": "Yimin Chen",
+          "score": 8.68,
+          "success_rate_percent": 2,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 31"
+        },
+        {
+          "rank": 32,
+          "model_variant": "ALOHA-multitask",
+          "submitter": "Hua Xue",
+          "score": 5.92,
+          "success_rate_percent": 2,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 32"
+        },
+        {
+          "rank": 33,
+          "model_variant": "KETI_pi0.5",
+          "submitter": "KETI",
+          "score": 5.42,
+          "success_rate_percent": 2,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 33"
+        },
+        {
+          "rank": 34,
+          "model_variant": "TvT",
+          "submitter": "TvT",
+          "score": 5.12,
+          "success_rate_percent": 2,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 34"
+        },
+        {
+          "rank": 35,
+          "model_variant": "happy_farm",
+          "submitter": "YZF",
+          "score": 4.05,
+          "success_rate_percent": 1.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 35"
+        },
+        {
+          "rank": 36,
+          "model_variant": "Astraeus_V1.7",
+          "submitter": "Yuze Xuan",
+          "score": 4.28,
+          "success_rate_percent": 1,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 36"
+        },
+        {
+          "rank": 37,
+          "model_variant": "Aloha05",
+          "submitter": "jiafan",
+          "score": 1.52,
+          "success_rate_percent": 1,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 37"
+        },
+        {
+          "rank": 38,
+          "model_variant": "RobotPioneer",
+          "submitter": "RobotPioneer",
+          "score": 3.22,
+          "success_rate_percent": 0.67,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 38"
+        },
+        {
+          "rank": 39,
+          "model_variant": "EchoMind Master",
+          "submitter": "EchoMind Master",
+          "score": 4.22,
+          "success_rate_percent": 0.33,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 39"
+        },
+        {
+          "rank": 40,
+          "model_variant": "pi-aloha-base",
+          "submitter": "AVerse001",
+          "score": 2.97,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 40"
+        },
+        {
+          "rank": 41,
+          "model_variant": "moveon",
+          "submitter": "能动就行",
+          "score": 2.6,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 41"
+        },
+        {
+          "rank": 42,
+          "model_variant": "wp",
+          "submitter": "zhaogs",
+          "score": 2.53,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 42"
+        },
+        {
+          "rank": 43,
+          "model_variant": "R0",
+          "submitter": "VLM",
+          "score": 1.92,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 43"
+        },
+        {
+          "rank": 44,
+          "model_variant": "WAM_v0",
+          "submitter": "Nanfang Zheng",
+          "score": 1.42,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 44"
+        },
+        {
+          "rank": 45,
+          "model_variant": "M36-E0",
+          "submitter": "Bo Zhang",
+          "score": 1.15,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 45"
+        },
+        {
+          "rank": 46,
+          "model_variant": "pi05",
+          "submitter": "robocare",
+          "score": 0.73,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 46"
+        },
+        {
+          "rank": 47,
+          "model_variant": "EI-WAM-53M",
+          "submitter": "Jiahao Wu",
+          "score": 0.37,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 47"
+        },
+        {
+          "rank": 48,
+          "model_variant": "Datawhale-VLA",
+          "submitter": "Datawhale-EAI",
+          "score": 0.2,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 48"
+        },
+        {
+          "rank": 49,
+          "model_variant": "testmulti6",
+          "submitter": "THUEE",
+          "score": 0.18,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 49"
+        },
+        {
+          "rank": 50,
+          "model_variant": "vertical",
+          "submitter": "Vertical",
+          "score": 0.17,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 50"
+        },
+        {
+          "rank": 51,
+          "model_variant": "pb_vla",
+          "submitter": "PB",
+          "score": 0,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 51"
+        },
+        {
+          "rank": 52,
+          "model_variant": "kp-robot",
+          "submitter": "Lutos_sanzu",
+          "score": 0,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 52"
+        },
+        {
+          "rank": 53,
+          "model_variant": "DM-OPD",
+          "submitter": "Wenjuan Han",
+          "score": 0,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 53"
+        },
+        {
+          "rank": 54,
+          "model_variant": "MiniCPM-RobotManip",
+          "submitter": "Modelbest",
+          "score": 0,
+          "success_rate_percent": 0,
+          "is_multitask": true,
+          "evaluation_date": null,
+          "cost_usd": null,
+          "latency_seconds": null,
+          "numeric_import": "verified_full_primary_rendered_table",
+          "source_url": "https://robochallenge.ai/leaderboard",
+          "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 54"
+        }
+      ],
+      "caveats": [
+        "Direct web text extraction returned blank, and the search index was stale. The replacement values above were read from the actual rendered primary leaderboard on October 12, 2026.",
+        "The October 5 KDDI announcement described first place at that date. The October 12 rendered board instead ranks LoopWAM first and VLA-DM0.5 second. Do not present KDDI as the current leader.",
+        "Model submission dates, exact evaluation dates, full rollout denominators, costs and latency remain unavailable. The leaderboard retrieval date is not an evaluation date.",
+        "Low or zero aggregate values may reflect incomplete task coverage; coverage was not established for every submission, so retain model labels and do not treat every row as a fully evaluated 30-task run.",
+        "Keep Table30 V2 separate from V1 specialist/generalist, CVPR/ICRA competition subsets, and the planned simulation counterpart."
+      ],
+      "protocol_source": "https://robochallenge.ai/robochallenge_techreport_V2.pdf",
+      "protocol_summary": "18 new bimanual tasks plus12 retained; DOS-W1(12),ALOHA(8),ARX5(7),UR5(3). Multi-task only; zero-shot and OOD are distinct protocols.",
+      "single_task_evidence": {
+        "source_url": "https://robochallenge.ai/run_detail/table30_v2?run_id=c0d96885-2506-4f21-8b54-55175108d7a3",
+        "model_variant": "VLA-DM0.5",
+        "task": "wipe_the_table",
+        "execution_time_as_printed": "2026/09/15 02:10:58",
+        "timezone": null,
+        "score": 84,
+        "success_rate_percent": 60,
+        "rollouts": 10,
+        "warning": "Single-task run is not the overall leaderboard evaluation date or denominator. This ancillary single-task row remains search-index-only and must not be numerically imported without direct primary verification.",
+        "numeric_import": "hold_search_index_only",
+        "evidence_type": "official_site_search_index_only_not_directly_rendered",
+        "ready_for_import": false
+      },
+      "prior_search_index_rows_superseded": true,
+      "numeric_import": "verified_full_primary_rendered_table",
+      "retrieved_at": "2026-10-12T15:11:48Z",
+      "source_capture": {
+        "file": "robochallenge-table30-v2-primary-rendered-2026-10-12.txt",
+        "sha256": "e8fa602a481a1b278a667a743ecfea4a421241711c13462299c87120c849a84a",
+        "retrieval_method": "Cloud browser direct page rendering, complete accessibility tree",
+        "aggregate_rows": 54,
+        "filters": {
+          "track": "table-30-v2",
+          "tag": null,
+          "task": null,
+          "is_multitask": null,
+          "model_user_search": null
+        },
+        "all_rows_display_multitask_yes": true
+      },
+      "leader_change_evidence": {
+        "status": "current_rank_differs_from_primary_2026_10_05_announcement",
+        "as_of_2026_10_05": {
+          "model_variant": "VLA-DM0.5",
+          "submitter": "KDDI Research",
+          "rank": 1,
+          "source_url": "https://www.kddi-research.jp/english/topics/2026/100501.html"
+        },
+        "as_of_2026_10_12": {
+          "model_variant": "LoopWAM",
+          "submitter": "LoopWAM",
+          "rank": 1,
+          "score": 56.8,
+          "success_rate_percent": 43.33,
+          "source_url": "https://robochallenge.ai/leaderboard"
+        },
+        "exact_change_date": null
+      }
+    },
+    {
+      "id": "robodojo-real-paper-20260703",
+      "category": "robotics",
+      "kind": "physical_robot_manipulation",
+      "change_status": "new_coverage_historical_paper_snapshot",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://arxiv.org/html/2607.04434v1",
+      "source_locator": "Table2; Sections5.2,6.3.2; AppendixK",
+      "source_publication_date": "2026-07-05",
+      "source_snapshot_date": "2026-07-03",
+      "evidence_type": "benchmark_author_run",
+      "settings": {
+        "tasks": 18,
+        "embodiments": [
+          "ARX X5",
+          "Piper",
+          "Piper X"
+        ],
+        "trials_per_task": 10,
+        "trials_per_policy": 180,
+        "training_seeds_per_embodiment": 1,
+        "harness": "RoboDojo-RealEval",
+        "policy_interface": "XPolicyLab"
+      },
+      "metric": "task success rate",
+      "unit": "percent",
+      "coverage": "Selected3policy rows plus human reference; not complete leaderboard",
+      "rows": [
+        {
+          "model_variant": "pi0.5",
+          "score": 22.9,
+          "success_rate_percent": 12.8,
+          "initial_checkpoint": "gs://openpi-assets/checkpoints/pi05_base",
+          "training_batch_size": 256,
+          "training_steps": 30000,
+          "cost_usd": null,
+          "whole_suite_wallclock_minutes": 202,
+          "wallclock_conditions": "RTX4090 on same LAN;180 trials;includes resets,inference,execution"
+        },
+        {
+          "model_variant": "InternVLA-A1",
+          "score": 12,
+          "success_rate_percent": 7.2,
+          "initial_checkpoint": "InternVLA-A1-3B",
+          "training_batch_size": 64,
+          "training_steps": 30000,
+          "cost_usd": null,
+          "whole_suite_wallclock_minutes": null
+        },
+        {
+          "model_variant": "GalaxeaVLA",
+          "score": 9,
+          "success_rate_percent": 4.4,
+          "initial_checkpoint": "G0Plus_3B-base",
+          "training_batch_size": 32,
+          "training_epochs": 4,
+          "cost_usd": null,
+          "whole_suite_wallclock_minutes": null
+        },
+        {
+          "model_variant": "Human teleoperation",
+          "score": 100,
+          "success_rate_percent": 100,
+          "reference": true
+        }
+      ],
+      "caveats": [
+        "Historical frozen paper cohort, not today's live ranking.",
+        "42-task simulation suite is separate; tasks are not one-to-one sim/real matched.",
+        "Partial-progress score is not success rate.",
+        "Whole-suite time is not per-action latency."
+      ],
+      "current_board_url": "https://robodojo-benchmark.com/leaderboard",
+      "current_board_status": "No table extracted; no current score claim"
+    },
+    {
+      "id": "phail-v1-20260528",
+      "category": "robotics",
+      "kind": "physical_robot_manipulation",
+      "change_status": "new_coverage_historical_paper_snapshot",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://arxiv.org/html/2605.29710v1",
+      "source_locator": "Table2;Sections4-5",
+      "source_publication_date": "2026-05-28",
+      "evidence_type": "benchmark_author_run",
+      "settings": {
+        "robot": "FrankaFR3/Robotiq2F-85",
+        "tasks": "bin-to-bin pick-and-place,4trained objects",
+        "training_episodes": 449,
+        "finetuning": "default recipe per repository; no hyperparameter search",
+        "harness": "Positronic",
+        "rmst_cap_seconds": 240,
+        "bootstrap": "1000 episode-clustered replicates;seed0"
+      },
+      "metric": "Human-Relative Throughput",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "rows": [
+        {
+          "evaluation_date": null,
+          "model_variant": "OpenPI pi0.5",
+          "rmst_seconds": 77.7,
+          "rmst_ci95": [
+            69.2,
+            87
+          ],
+          "hrt_percent": 13.8,
+          "hrt_ci95": [
+            12.2,
+            15.7
+          ],
+          "intervention_rate_percent": 4.2,
+          "episodes": 165,
+          "cost_usd": null
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "GR00T N1.6",
+          "rmst_seconds": 77.2,
+          "rmst_ci95": [
+            69,
+            86.4
+          ],
+          "hrt_percent": 13.3,
+          "hrt_ci95": [
+            12,
+            15.2
+          ],
+          "intervention_rate_percent": 4.2,
+          "episodes": 165,
+          "cost_usd": null
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "ACT",
+          "rmst_seconds": 100.9,
+          "rmst_ci95": [
+            85.8,
+            117.6
+          ],
+          "hrt_percent": 10.5,
+          "hrt_ci95": [
+            9.2,
+            13.2
+          ],
+          "intervention_rate_percent": 2,
+          "episodes": 151,
+          "cost_usd": null
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "SmolVLA",
+          "rmst_seconds": 165.8,
+          "rmst_ci95": [
+            147,
+            185.6
+          ],
+          "hrt_percent": 6.4,
+          "hrt_ci95": [
+            5.7,
+            7.5
+          ],
+          "intervention_rate_percent": 18.6,
+          "episodes": 118,
+          "cost_usd": null
+        },
+        {
+          "evaluation_date": null,
+          "model_variant": "Human teleoperation",
+          "rmst_seconds": 10.5,
+          "rmst_ci95": [
+            10.3,
+            10.8
+          ],
+          "hrt_percent": 100,
+          "hrt_ci95": null,
+          "intervention_rate_percent": null,
+          "episodes": 396,
+          "cost_usd": null
+        }
+      ],
+      "caveats": [
+        "HRT is macro-averaged human/model RMST ratio, not success rate or production throughput.",
+        "Top2 statistically unresolved at sample size; do not imply significant winner.",
+        "Historical trained-object cohort, not zero-shot."
+      ]
+    },
+    {
+      "id": "drivingbench-v1-fixed-pilot",
+      "category": "driving",
+      "kind": "physical_closed_course_pilot",
+      "change_status": "new_coverage_historical_fixed_experiment",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://drivingbench.com/",
+      "paper_url": "https://drivingbench.com/paper",
+      "protocol_url": "https://drivingbench.com/report/",
+      "source_publication_date": null,
+      "observed_trace_date": "2026-09-17",
+      "trace_date_source": "https://drivingbench.com/trace/gpt-6-astra/2/",
+      "evidence_type": "independent_benchmark_creator_pilot",
+      "metric": "best centerline progress",
+      "unit": "percent",
+      "settings": {
+        "independent_chats_per_system": 1,
+        "max_attempts_same_chat": 3,
+        "all_observed_attempts": 11,
+        "reasoning_effort": "medium",
+        "vehicle": "2022 Toyota Corolla; comma four; modified openpilot",
+        "course_centerline_meters": 127,
+        "speed_cap_mps": 3.5,
+        "tools": [
+          "observe",
+          "set_motion",
+          "stop_now"
+        ],
+        "human_safety_operator": true
+      },
+      "rows": [
+        {
+          "model_variant": "GPT-6 Astra",
+          "harness": "Codex CLI0.154.0-alpha.6.2",
+          "attempt_progress_percent": [
+            49,
+            100
+          ],
+          "attempt_duration_seconds": [
+            78,
+            322
+          ],
+          "attempt_distance_meters": [
+            67.3,
+            134.7
+          ],
+          "attempt_cost_usd": [
+            2.01,
+            7.74
+          ],
+          "best_progress_percent": 100,
+          "reported_total_cost_usd": 9.75,
+          "reported_total_tokens": 7800000,
+          "finish_time_seconds": 322
+        },
+        {
+          "model_variant": "Claude Fable 5.1",
+          "harness": "Claude Code2.1.274",
+          "attempt_progress_percent": [
+            9,
+            10,
+            45
+          ],
+          "attempt_duration_seconds": [
+            41,
+            190,
+            260
+          ],
+          "attempt_cost_usd": [
+            0.96,
+            1.35,
+            1.64
+          ],
+          "best_progress_percent": 45,
+          "reported_total_cost_usd": 3.95,
+          "reported_total_tokens": 3600000,
+          "finish_time_seconds": null
+        },
+        {
+          "model_variant": "Grok 4.6",
+          "harness": "Cursor(version unavailable)",
+          "attempt_progress_percent": [
+            8,
+            11,
+            10
+          ],
+          "attempt_duration_seconds": [
+            35,
+            49,
+            43
+          ],
+          "attempt_cost_usd": [
+            0.18,
+            0.19,
+            0.29
+          ],
+          "best_progress_percent": 11,
+          "reported_total_cost_usd": 0.65,
+          "reported_total_tokens": 1000000,
+          "finish_time_seconds": null
+        },
+        {
+          "model_variant": "GPT-5.6 Sol",
+          "harness": "Codex CLI0.154.0-alpha.6.2",
+          "attempt_progress_percent": [
+            6,
+            6,
+            6
+          ],
+          "attempt_duration_seconds": [
+            28,
+            38,
+            27
+          ],
+          "attempt_cost_usd": [
+            0.35,
+            0.43,
+            0.27
+          ],
+          "best_progress_percent": 6,
+          "reported_total_cost_usd": 1.05,
+          "reported_total_tokens": 1600000,
+          "finish_time_seconds": null
+        }
+      ],
+      "source_locators": {
+        "per_attempt_costs": "homepage; costs include reflection",
+        "durations_and_versions": "paper Table4,p19;Section4.2,p6",
+        "totals": "paper Table2,p7"
+      },
+      "caveats": [
+        "Same-chat attempts are dependent; no population success-rate estimate.",
+        "Progress uses a4m centerline corridor; not general driving competence.",
+        "134.7m is distance driven;127m is course centerline.",
+        "5:22 ends at last engagement; paper prose4:44 is arrival at finish zone.",
+        "Grok paper total$0.65 differs from rounded attempt costs summing$0.66; preserve rather than reconcile.",
+        "Prompt/interface iterated during development; model+harness comparison.",
+        "No public-road safety inference."
+      ]
+    },
+    {
+      "id": "waymo-safety-impact-202606-corrected20261002",
+      "category": "driving",
+      "kind": "real_world_fleet_outcome_study",
+      "change_status": "new_coverage_corrected_existing_release",
+      "new_since_2026_10_05": false,
+      "ready_for_import": true,
+      "source_url": "https://waymo.com/safety/impact/",
+      "release_notes_url": "https://storage.googleapis.com/waymo-uploads/files/documents/safety/safety-impact-data/Waymo_Safety_Impact_Data_Hub_Release_Notes_20261002.pdf",
+      "source_publication_date": "2026-09-24",
+      "correction_date": "2026-10-02",
+      "data_end_date": "2026-06-30",
+      "evidence_type": "operator_reported_observational_fleet_outcomes",
+      "model_variant": "Waymo Driver (fleet versions not enumerated)",
+      "exposure_rider_only_miles_rounded": 271300000,
+      "metric": "crashed vehicles per million miles",
+      "direction": "lower_is_better",
+      "rows": [
+        {
+          "outcome": "serious injury or worse",
+          "waymo_ipmm_rounded": 0.01,
+          "human_benchmark_ipmm_rounded": 0.21,
+          "percent_difference": -94.82
+        },
+        {
+          "outcome": "any injury reported",
+          "waymo_ipmm_rounded": 0.67,
+          "human_benchmark_ipmm_rounded": 3.77,
+          "percent_difference": -82.12
+        },
+        {
+          "outcome": "airbag deployment in any vehicle",
+          "waymo_ipmm_rounded": 0.29,
+          "human_benchmark_ipmm_rounded": 1.61,
+          "percent_difference": -81.68
+        }
+      ],
+      "caveats": [
+        "Surface-street fleet exposure in operating areas; geographically adjusted human comparator.",
+        "Operator-reported observational comparison, not randomized trial or model leaderboard.",
+        "Rates rounded on page; use CSV for confidence intervals and precision.",
+        "Costs/latency/model snapshot unavailable."
+      ],
+      "correction_summary": "Oct2 replaced CSV3/CSV4: duplicated Atlanta S2cells affected dynamic benchmarks; wrong-year data also affected CSV4. CSV1/CSV2 unchanged.",
+      "classification_sensitivity": {
+        "sgo_id": "30270-13817",
+        "status": "serious-injury category unknown pending police crash report",
+        "waymo_current_serious_ipmm": 0.011,
+        "waymo_if_classified_serious_ipmm": 0.018,
+        "human_benchmark_ipmm": 0.2133,
+        "source_locator": "Release notesp2;Sept24entry"
+      }
+    },
+    {
+      "id": "alpasim-e2e-challenge-2026",
+      "category": "driving",
+      "kind": "closed_loop_simulation",
+      "change_status": "new_coverage_active_benchmark",
+      "new_since_2026_10_05": null,
+      "ready_for_import": "metadata_only",
+      "source_url": "https://opendrivelab.com/alpasim2026",
+      "current_rules_url": "https://nvidia-alpasime2eclosedloopchallenge2026.hf.space/?__theme=system",
+      "leaderboard_url": "https://nvidia-alpasime2eclosedloopchallenge2026.hf.space/gradio/",
+      "evidence_type": "benchmark_organizers",
+      "settings": {
+        "tracks": [
+          "Physical AI AV",
+          "nuPlan"
+        ],
+        "gpu_memory_gib": 16,
+        "target_work_seconds_per_drive_call": 0.1,
+        "current_deployment_commit": "0bb4c4bfe10951ea5589aa8ea514e422cf3c3506",
+        "branch": "e2e_challenge",
+        "private_heldout_scenarios": true
+      },
+      "dates": {
+        "opened": "2026-06-15",
+        "reopened": "2026-09-09",
+        "rules_freeze": "2026-09-15",
+        "registration_cutoff": "2026-10-18",
+        "submission_deadline": "2026-10-31"
+      },
+      "rows": [],
+      "caveats": [
+        "No public scores extracted from Gradio; do not invent leaderboard values.",
+        "Tracks independent; local capability scale not comparable to official scale.",
+        "Initial PAI runs disable Harmonizer; final PAI enables it; nuPlan remains disabled.",
+        "10/1485 public nuPlan scenarios have MAPfoldback issue; private set unaffected.",
+        "Prior nuPlan off-road evaluation bug requires organizer regrading, not rerunning policies."
+      ]
+    }
+  ],
+  "unchanged_or_unverified": [
+    {
+      "id": "medhelm-v5",
+      "status": "reverified_unchanged",
+      "source_url": "https://medhelm.org/",
+      "source_snapshot_date": "2026-05-14",
+      "version": "5.0.0",
+      "visible_models": 10,
+      "advertised_models": 11,
+      "note": "Same10scores as Oct5baseline. Full JavaScript leaderboard not extracted; eleventh model remains unavailable."
+    },
+    {
+      "id": "healthbench-professional-anthropic-20260928",
+      "status": "withhold_numeric_import_primary_card_unretrieved",
+      "source_index": "https://platform.claude.com/docs/en/resources/overview",
+      "secondary_discovery_url": "https://healthbenchprofessional.com/sources",
+      "note": "Sonnet5.5/Opus5.5/PhysicianBench reported by secondary boards. Official card links repeatedly returned InternalError; no primary numerical verification. OpenAI explicitly warns scoring differs: https://openai.com/index/gpt-5-6/ footnote7."
+    },
+    {
+      "id": "robochallenge-simulation-counterpart",
+      "status": "planned_not_a_scored_benchmark",
+      "source_url": "https://robochallenge.ai/simulation/table30_v2",
+      "note": "IsaacLab simulation counterpart and RealSeries are described as planned; no verified scores."
+    },
+    {
+      "id": "waymo-open-dataset-2026",
+      "status": "active_old_leaderboards_no_new_formal_challenge",
+      "source_url": "https://www.waymo.com/open/challenges/",
+      "note": "Organizer explicitly says no formal2026 challenges, though existing leaderboards remain active."
+    },
+    {
+      "id": "medagentbench-v2",
+      "status": "baseline_preserved_no_new_score_claim",
+      "note": "Three distinct existing cohorts retained; no newly verified extension in this review."
+    },
+    {
+      "id": "BARN2026",
+      "status": "baseline_preserved_not_requeried",
+      "note": "No security-warning bypass; no new result asserted."
+    }
+  ],
+  "bounded_followup": "2026-10-12: replaced stale search-index RoboChallenge standings with the complete directly rendered official table; retained the unrendered ancillary single-task row as hold_search_index_only. Other numeric cohorts retain their previously verified full primary paper, report or creator page evidence."
+}

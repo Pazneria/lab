@@ -6,6 +6,8 @@ const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   out = path.join(root, "evidence"),
   prefix = process.env.LAB_RETURN_PREFIX || "gallery-return";
+const currentFamilyCount = JSON.parse(fs.readFileSync(path.join(root, "data/gallery-metadata-2026-10-12.json"), "utf8")).counts.default_families;
+assert.equal(currentFamilyCount, 58);
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -75,6 +77,7 @@ async function main() {
     ignoreDefaultArgs: ["--disable-back-forward-cache"],
   });
   report.browser = browser.version();
+  report.browserChannel = process.env.LAB_BROWSER_CHANNEL || "default headless shell";
   const watch = (page) => {
     page.on("pageerror", (e) => report.errors.push(e.message));
     page.on("request", (r) => {
@@ -147,7 +150,7 @@ async function main() {
             );
             assert.equal(
               await page.locator(".benchmark-card").count(),
-              navigation ? 51 : expected,
+              navigation ? currentFamilyCount : expected,
             );
             assert.equal(
               await page.locator("#gallery-empty").isVisible(),
@@ -210,11 +213,12 @@ async function main() {
       await page.locator("#benchmark-search").fill("");
       await page.goBack({ waitUntil: "commit" });
       await page.waitForFunction(
-        () => document.querySelectorAll(".benchmark-card").length === 51,
+        (wanted) => document.querySelectorAll(".benchmark-card").length === wanted,
+        currentFamilyCount,
       );
       await page.reload();
       await cardsReady(page);
-      assert.equal(await page.locator(".benchmark-card").count(), 51);
+      assert.equal(await page.locator(".benchmark-card").count(), currentFamilyCount);
       const direct = await context.newPage();
       watch(direct);
       await direct.goto(
@@ -227,7 +231,7 @@ async function main() {
       );
       await direct.locator(".back-link").click();
       await cardsReady(direct);
-      assert.equal(await direct.locator(".benchmark-card").count(), 51);
+      assert.equal(await direct.locator(".benchmark-card").count(), currentFamilyCount);
       await direct.close();
       await capture(page, mobile ? "mobile" : "desktop");
       pass(
@@ -281,7 +285,7 @@ async function main() {
         );
       } else {
         await cardsReady(page);
-        assert.equal(await page.locator(".benchmark-card").count(), 51);
+        assert.equal(await page.locator(".benchmark-card").count(), currentFamilyCount);
         assert.equal(
           await page.locator("#gallery-unavailable").isVisible(),
           false,
@@ -298,7 +302,7 @@ async function main() {
         );
         await capture(page, "cached-document-recovered");
         pass(
-          "Actual pre-ordering document shape plus current assets recovers all 51 cards after detail-to-gallery navigation",
+          "Actual pre-ordering document shape plus current assets recovers all current families after detail-to-gallery navigation",
         );
       }
       await context.close();

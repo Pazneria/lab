@@ -1,0 +1,5717 @@
+{
+  "schema_version": "frontend-source-review-2026-10-12-v1",
+  "checked_at": "2026-10-12",
+  "checked_time_window_utc": [
+    "14:57",
+    "15:04"
+  ],
+  "independently_executed": false,
+  "scope": "Primary-source reading and numeric evidence only. No paid evaluations or repository changes.",
+  "recommendations": [
+    "Add October 8 WebDev Frontend as a new dated cohort; preserve October 1 source packet unchanged.",
+    "Retain Design Arena Overall Frontend as unresolved; selected model-page Website and UI Component observations are separate, incomplete, and lack a synchronized snapshot date.",
+    "Retain Design2Code v3 and WebCraftBench v3 as fixed historical studies with original model/configuration labels.",
+    "Consider WebRISE Text modality as a separate browser-executed conformance card; its visual scores, requirement coverage, and transition validity are different metrics.",
+    "Web-Bench and FrontendBench are useful historical functional complements, not current frontier leaderboards."
+  ],
+  "cohorts": {
+    "webdev-arena-frontend-2026-10-08": {
+      "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+      "methodology_urls": [
+        "https://arena.ai/blog/webdev-arena",
+        "https://arena.ai/blog/arena-rank"
+      ],
+      "snapshot_date": "2026-10-08",
+      "evaluation_date": null,
+      "status": "verified_full_displayed_table",
+      "selection": "All 142 displayed rows; source duplicate model labels preserved as distinct source rows",
+      "total_models": 142,
+      "total_votes": 752673,
+      "metric": "Arena preference rating",
+      "unit": "arena_rating",
+      "direction": "higher_is_better",
+      "settings": {
+        "slice": "Frontend, default domain and technology view",
+        "technology": "HTML or React",
+        "workflow": "Multi-step reasoning and tool use",
+        "style_control": "Default URL; Remove Style Control control is present. Exact current feature configuration not reconstructed.",
+        "harness": "Preserve named harness suffixes. Exact per-row implementation/version and tool budgets unavailable."
+      },
+      "limitations": [
+        "Preference votes are not independent task samples or objective correctness.",
+        "Keep this separate from WebDev Overall and Fullstack.",
+        "API prices are list token rates, not measured generation costs or latency.",
+        "Some per-model vote counts decrease versus the archived snapshot; no explanation or causal improvement inference is established.",
+        "Ranks and score uncertainty overlap.",
+        "Two source rows share gpt-5.3-codex (codex-harness): rank 86 score 1408, rank 102 score 1370. Underlying variant distinction is not exposed. Do not merge/deduplicate by model label or assert 142 unique model identifiers."
+      ],
+      "rows": [
+        {
+          "rank": 1,
+          "model_variant": "claude-opus-5.5-max",
+          "value": 1857,
+          "confidence_interval": {
+            "lower": 1838,
+            "upper": 1876,
+            "minus": 19,
+            "plus": 19,
+            "level": null
+          },
+          "votes": 1687,
+          "rank_spread": [
+            1,
+            1
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$4 / $20",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-1",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        {
+          "rank": 2,
+          "model_variant": "claude-sonnet-5.5-xhigh",
+          "value": 1813,
+          "confidence_interval": {
+            "lower": 1796,
+            "upper": 1830,
+            "minus": 17,
+            "plus": 17,
+            "level": null
+          },
+          "votes": 1833,
+          "rank_spread": [
+            2,
+            3
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$2 / $10",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-2",
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        {
+          "rank": 3,
+          "model_variant": "gpt-6-astra-max",
+          "value": 1809,
+          "confidence_interval": {
+            "lower": 1797,
+            "upper": 1821,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 4114,
+          "rank_spread": [
+            2,
+            3
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$10 / $50",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-3",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        {
+          "rank": 4,
+          "model_variant": "claude-fable-5.1-max",
+          "value": 1778,
+          "confidence_interval": {
+            "lower": 1767,
+            "upper": 1789,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 5284,
+          "rank_spread": [
+            4,
+            5
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$10 / $50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-4",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        {
+          "rank": 5,
+          "model_variant": "gpt-6.1-sol-max",
+          "value": 1771,
+          "confidence_interval": {
+            "lower": 1754,
+            "upper": 1788,
+            "minus": 17,
+            "plus": 17,
+            "level": null
+          },
+          "votes": 1698,
+          "rank_spread": [
+            4,
+            6
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$2 / $10",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-5",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        {
+          "rank": 6,
+          "model_variant": "claude-sonnet-5.5-high",
+          "value": 1745,
+          "confidence_interval": {
+            "lower": 1733,
+            "upper": 1757,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 3208,
+          "rank_spread": [
+            5,
+            6
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$2 / $10",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-6",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        {
+          "rank": 7,
+          "model_variant": "claude-opus-5-max",
+          "value": 1713,
+          "confidence_interval": {
+            "lower": 1706,
+            "upper": 1720,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 13416,
+          "rank_spread": [
+            7,
+            8
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-7",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 8,
+          "model_variant": "gpt-6-sol-max",
+          "value": 1695,
+          "confidence_interval": {
+            "lower": 1682,
+            "upper": 1708,
+            "minus": 13,
+            "plus": 13,
+            "level": null
+          },
+          "votes": 2643,
+          "rank_spread": [
+            7,
+            12
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$2 / $10",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-8",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        {
+          "rank": 9,
+          "model_variant": "gemini-4-argon-high",
+          "value": 1687,
+          "confidence_interval": {
+            "lower": 1669,
+            "upper": 1705,
+            "minus": 18,
+            "plus": 18,
+            "level": null
+          },
+          "votes": 1277,
+          "rank_spread": [
+            8,
+            15
+          ],
+          "preliminary": true,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$2 / $10",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-9",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        {
+          "rank": 10,
+          "model_variant": "qwen3.8-max-0902",
+          "value": 1686,
+          "confidence_interval": {
+            "lower": 1678,
+            "upper": 1694,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 8967,
+          "rank_spread": [
+            8,
+            13
+          ],
+          "preliminary": true,
+          "provider_and_license": "Alibaba · Proprietary",
+          "api_list_price_source_text": "$2 / $6",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-10",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "rank": 11,
+          "model_variant": "qwen3.8-max",
+          "value": 1679,
+          "confidence_interval": {
+            "lower": 1666,
+            "upper": 1692,
+            "minus": 13,
+            "plus": 13,
+            "level": null
+          },
+          "votes": 2927,
+          "rank_spread": [
+            8,
+            16
+          ],
+          "preliminary": true,
+          "provider_and_license": "Alibaba · Proprietary",
+          "api_list_price_source_text": "$2 / $6",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-11",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "rank": 12,
+          "model_variant": "claude-opus-5-high",
+          "value": 1677,
+          "confidence_interval": {
+            "lower": 1671,
+            "upper": 1683,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 17818,
+          "rank_spread": [
+            8,
+            14
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-12",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 13,
+          "model_variant": "muse-spark-1.3-max",
+          "value": 1672,
+          "confidence_interval": {
+            "lower": 1663,
+            "upper": 1681,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 6203,
+          "rank_spread": [
+            9,
+            16
+          ],
+          "preliminary": false,
+          "provider_and_license": "Meta · Proprietary",
+          "api_list_price_source_text": "$1.25 / $4.25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-13",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 4.25
+          }
+        },
+        {
+          "rank": 14,
+          "model_variant": "kimi-k3-max",
+          "value": 1669,
+          "confidence_interval": {
+            "lower": 1662,
+            "upper": 1676,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 14010,
+          "rank_spread": [
+            10,
+            17
+          ],
+          "preliminary": false,
+          "provider_and_license": "Moonshot · Kimi K3 license",
+          "api_list_price_source_text": "$3 / $15",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-14",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "rank": 15,
+          "model_variant": "grok-4.7-xhigh",
+          "value": 1658,
+          "confidence_interval": {
+            "lower": 1646,
+            "upper": 1670,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 3082,
+          "rank_spread": [
+            11,
+            21
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$2 / $6",
+          "context_length_source_text": "500K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-15",
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "rank": 16,
+          "model_variant": "mimo-v2.6-flash",
+          "value": 1655,
+          "confidence_interval": {
+            "lower": 1643,
+            "upper": 1667,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 3230,
+          "rank_spread": [
+            12,
+            22
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · MIT",
+          "api_list_price_source_text": "$0.14 / $0.28",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-16",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.14,
+            "output": 0.28
+          }
+        },
+        {
+          "rank": 17,
+          "model_variant": "hy4-preview",
+          "value": 1652,
+          "confidence_interval": {
+            "lower": 1641,
+            "upper": 1663,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 3798,
+          "rank_spread": [
+            14,
+            23
+          ],
+          "preliminary": true,
+          "provider_and_license": "Tencent · Apache 2.0",
+          "api_list_price_source_text": "$0.83 / $2.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-17",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.83,
+            "output": 2.5
+          }
+        },
+        {
+          "rank": 18,
+          "model_variant": "qwen3.8-flash-next",
+          "value": 1650,
+          "confidence_interval": {
+            "lower": 1641,
+            "upper": 1659,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 5518,
+          "rank_spread": [
+            15,
+            23
+          ],
+          "preliminary": true,
+          "provider_and_license": "Alibaba · qwen-community-1.0",
+          "api_list_price_source_text": "$0.16 / $0.47",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-18",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.16,
+            "output": 0.47
+          }
+        },
+        {
+          "rank": 19,
+          "model_variant": "mimo-v2.6-pro",
+          "value": 1646,
+          "confidence_interval": {
+            "lower": 1634,
+            "upper": 1658,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 2863,
+          "rank_spread": [
+            15,
+            24
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · MIT",
+          "api_list_price_source_text": "$0.43 / $0.87",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-19",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.43,
+            "output": 0.87
+          }
+        },
+        {
+          "rank": 20,
+          "model_variant": "muse-spark-1.3 (xHigh)",
+          "value": 1640,
+          "confidence_interval": {
+            "lower": 1631,
+            "upper": 1649,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 5646,
+          "rank_spread": [
+            15,
+            27
+          ],
+          "preliminary": false,
+          "provider_and_license": "Meta · Proprietary",
+          "api_list_price_source_text": "$1.25 / $4.25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-20",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 4.25
+          }
+        },
+        {
+          "rank": 21,
+          "model_variant": "claude-fable-5-high",
+          "value": 1638,
+          "confidence_interval": {
+            "lower": 1631,
+            "upper": 1645,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 12325,
+          "rank_spread": [
+            16,
+            27
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$10 / $50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-21",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 10,
+            "output": 50
+          }
+        },
+        {
+          "rank": 22,
+          "model_variant": "glm-5.3-max",
+          "value": 1638,
+          "confidence_interval": {
+            "lower": 1629,
+            "upper": 1647,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 6580,
+          "rank_spread": [
+            15,
+            27
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$1.40 / $4.40",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-22",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.4,
+            "output": 4.4
+          }
+        },
+        {
+          "rank": 23,
+          "model_variant": "deepseek-v4.1-flash-max",
+          "value": 1630,
+          "confidence_interval": {
+            "lower": 1618,
+            "upper": 1642,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 2785,
+          "rank_spread": [
+            17,
+            28
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-23",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 24,
+          "model_variant": "grok-4.6-high",
+          "value": 1629,
+          "confidence_interval": {
+            "lower": 1621,
+            "upper": 1637,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7244,
+          "rank_spread": [
+            19,
+            27
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$2 / $6",
+          "context_length_source_text": "500K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-24",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "rank": 25,
+          "model_variant": "gpt-5.6-sol-xhigh (codex-harness)",
+          "value": 1626,
+          "confidence_interval": {
+            "lower": 1619,
+            "upper": 1633,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 12985,
+          "rank_spread": [
+            20,
+            27
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$4 / $20",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-25",
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 4,
+            "output": 20
+          }
+        },
+        {
+          "rank": 26,
+          "model_variant": "glm-5.3-flash",
+          "value": 1625,
+          "confidence_interval": {
+            "lower": 1617,
+            "upper": 1633,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 10842,
+          "rank_spread": [
+            20,
+            28
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$0.06 / $0.20",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-26",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.06,
+            "output": 0.2
+          }
+        },
+        {
+          "rank": 27,
+          "model_variant": "glm-5.2-max",
+          "value": 1613,
+          "confidence_interval": {
+            "lower": 1606,
+            "upper": 1620,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 12411,
+          "rank_spread": [
+            25,
+            29
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$1.40 / $4.40",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-27",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.4,
+            "output": 4.4
+          }
+        },
+        {
+          "rank": 28,
+          "model_variant": "claude-haiku-5.5-high",
+          "value": 1609,
+          "confidence_interval": {
+            "lower": 1586,
+            "upper": 1632,
+            "minus": 23,
+            "plus": 23,
+            "level": null
+          },
+          "votes": 753,
+          "rank_spread": [
+            20,
+            35
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$0.10 / $0.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-28",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.1,
+            "output": 0.5
+          }
+        },
+        {
+          "rank": 29,
+          "model_variant": "qwen3.8-27b",
+          "value": 1599,
+          "confidence_interval": {
+            "lower": 1592,
+            "upper": 1606,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 10945,
+          "rank_spread": [
+            27,
+            34
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Apache 2.0",
+          "api_list_price_source_text": "$0.40 / $3",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-29",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.4,
+            "output": 3
+          }
+        },
+        {
+          "rank": 30,
+          "model_variant": "gemini-3.7-flash-high",
+          "value": 1595,
+          "confidence_interval": {
+            "lower": 1587,
+            "upper": 1603,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 8475,
+          "rank_spread": [
+            28,
+            35
+          ],
+          "preliminary": true,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.75 / $3.75",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-30",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 3.75
+          }
+        },
+        {
+          "rank": 31,
+          "model_variant": "deepseek-v4-pro-high-20260813",
+          "value": 1589,
+          "confidence_interval": {
+            "lower": 1578,
+            "upper": 1600,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 3674,
+          "rank_spread": [
+            28,
+            35
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$1.32 / $3.96",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-31",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.32,
+            "output": 3.96
+          }
+        },
+        {
+          "rank": 32,
+          "model_variant": "gemini-3.8-flash-high",
+          "value": 1589,
+          "confidence_interval": {
+            "lower": 1580,
+            "upper": 1598,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 7239,
+          "rank_spread": [
+            28,
+            35
+          ],
+          "preliminary": true,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.75 / $3.75",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-32",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 3.75
+          }
+        },
+        {
+          "rank": 33,
+          "model_variant": "gpt-6-luna-max",
+          "value": 1588,
+          "confidence_interval": {
+            "lower": 1580,
+            "upper": 1596,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 9525,
+          "rank_spread": [
+            28,
+            35
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.10 / $0.50",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-33",
+          "evaluation_date": null,
+          "effort": "max",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.1,
+            "output": 0.5
+          }
+        },
+        {
+          "rank": 34,
+          "model_variant": "deepseek-v4-flash-high",
+          "value": 1585,
+          "confidence_interval": {
+            "lower": 1575,
+            "upper": 1595,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 3999,
+          "rank_spread": [
+            28,
+            35
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-34",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 35,
+          "model_variant": "step-5-preview-high",
+          "value": 1576,
+          "confidence_interval": {
+            "lower": 1563,
+            "upper": 1589,
+            "minus": 13,
+            "plus": 13,
+            "level": null
+          },
+          "votes": 2682,
+          "rank_spread": [
+            29,
+            40
+          ],
+          "preliminary": false,
+          "provider_and_license": "StepFun · Proprietary",
+          "api_list_price_source_text": "$1 / $2.70",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-35",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1,
+            "output": 2.7
+          }
+        },
+        {
+          "rank": 36,
+          "model_variant": "grok-4.5",
+          "value": 1563,
+          "confidence_interval": {
+            "lower": 1556,
+            "upper": 1570,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 9182,
+          "rank_spread": [
+            35,
+            40
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$2 / $6",
+          "context_length_source_text": "500K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-36",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 6
+          }
+        },
+        {
+          "rank": 37,
+          "model_variant": "claude-opus-4-7-high",
+          "value": 1562,
+          "confidence_interval": {
+            "lower": 1556,
+            "upper": 1568,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 16173,
+          "rank_spread": [
+            35,
+            40
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-37",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 38,
+          "model_variant": "claude-opus-4-8-high",
+          "value": 1560,
+          "confidence_interval": {
+            "lower": 1554,
+            "upper": 1566,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 14210,
+          "rank_spread": [
+            35,
+            41
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-38",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 39,
+          "model_variant": "claude-opus-4-7",
+          "value": 1559,
+          "confidence_interval": {
+            "lower": 1553,
+            "upper": 1565,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 16300,
+          "rank_spread": [
+            35,
+            41
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-39",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 40,
+          "model_variant": "claude-opus-4-6-high",
+          "value": 1549,
+          "confidence_interval": {
+            "lower": 1543,
+            "upper": 1555,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 17672,
+          "rank_spread": [
+            38,
+            47
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-40",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 41,
+          "model_variant": "mistral-large-4",
+          "value": 1548,
+          "confidence_interval": {
+            "lower": 1529,
+            "upper": 1567,
+            "minus": 19,
+            "plus": 19,
+            "level": null
+          },
+          "votes": 1136,
+          "rank_spread": [
+            35,
+            49
+          ],
+          "preliminary": false,
+          "provider_and_license": "Mistral · Proprietary",
+          "api_list_price_source_text": "$0.68 / $2.09",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-41",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.68,
+            "output": 2.09
+          }
+        },
+        {
+          "rank": 42,
+          "model_variant": "claude-sonnet-5-high",
+          "value": 1545,
+          "confidence_interval": {
+            "lower": 1538,
+            "upper": 1552,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 11941,
+          "rank_spread": [
+            40,
+            48
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$2 / $10",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-42",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 10
+          }
+        },
+        {
+          "rank": 43,
+          "model_variant": "claude-opus-4-8",
+          "value": 1540,
+          "confidence_interval": {
+            "lower": 1534,
+            "upper": 1546,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 14864,
+          "rank_spread": [
+            40,
+            48
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-43",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 44,
+          "model_variant": "muse-spark-1.1",
+          "value": 1539,
+          "confidence_interval": {
+            "lower": 1531,
+            "upper": 1547,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 6300,
+          "rank_spread": [
+            40,
+            48
+          ],
+          "preliminary": false,
+          "provider_and_license": "Meta · Proprietary",
+          "api_list_price_source_text": "$1.25 / $4.25",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-44",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 4.25
+          }
+        },
+        {
+          "rank": 45,
+          "model_variant": "claude-opus-4-6",
+          "value": 1537,
+          "confidence_interval": {
+            "lower": 1531,
+            "upper": 1543,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 18960,
+          "rank_spread": [
+            41,
+            48
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-45",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 46,
+          "model_variant": "gemini-3.6-flash-high",
+          "value": 1536,
+          "confidence_interval": {
+            "lower": 1527,
+            "upper": 1545,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 6434,
+          "rank_spread": [
+            40,
+            49
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.75 / $3.75",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-46",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 3.75
+          }
+        },
+        {
+          "rank": 47,
+          "model_variant": "muse-spark-1.2 (xHigh)",
+          "value": 1532,
+          "confidence_interval": {
+            "lower": 1517,
+            "upper": 1547,
+            "minus": 15,
+            "plus": 15,
+            "level": null
+          },
+          "votes": 1739,
+          "rank_spread": [
+            40,
+            56
+          ],
+          "preliminary": false,
+          "provider_and_license": "Meta · Proprietary",
+          "api_list_price_source_text": "$1.25 / $4.25",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-47",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 4.25
+          }
+        },
+        {
+          "rank": 48,
+          "model_variant": "gemini-3.5-flash",
+          "value": 1525,
+          "confidence_interval": {
+            "lower": 1503,
+            "upper": 1547,
+            "minus": 22,
+            "plus": 22,
+            "level": null
+          },
+          "votes": 846,
+          "rank_spread": [
+            40,
+            58
+          ],
+          "preliminary": true,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.75 / $4.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-48",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 4.5
+          }
+        },
+        {
+          "rank": 49,
+          "model_variant": "gpt-5.6-terra-xhigh (codex-harness)",
+          "value": 1523,
+          "confidence_interval": {
+            "lower": 1516,
+            "upper": 1530,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 9588,
+          "rank_spread": [
+            45,
+            56
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$2 / $12",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-49",
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "rank": 50,
+          "model_variant": "claude-sonnet-4-6",
+          "value": 1521,
+          "confidence_interval": {
+            "lower": 1516,
+            "upper": 1526,
+            "minus": 5,
+            "plus": 5,
+            "level": null
+          },
+          "votes": 21093,
+          "rank_spread": [
+            47,
+            56
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$1.50 / $7.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-50",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.5,
+            "output": 7.5
+          }
+        },
+        {
+          "rank": 51,
+          "model_variant": "seed-2.1-pro-preview",
+          "value": 1518,
+          "confidence_interval": {
+            "lower": 1511,
+            "upper": 1525,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 11696,
+          "rank_spread": [
+            47,
+            57
+          ],
+          "preliminary": false,
+          "provider_and_license": "Bytedance · Proprietary",
+          "api_list_price_source_text": "$0.88 / $4.42",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-51",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.88,
+            "output": 4.42
+          }
+        },
+        {
+          "rank": 52,
+          "model_variant": "qwen3.7-max-20260517",
+          "value": 1518,
+          "confidence_interval": {
+            "lower": 1510,
+            "upper": 1526,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7764,
+          "rank_spread": [
+            47,
+            58
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Proprietary",
+          "api_list_price_source_text": "$1.48 / $4.42",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-52",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.48,
+            "output": 4.42
+          }
+        },
+        {
+          "rank": 53,
+          "model_variant": "gpt-5.5-xhigh (codex-harness)",
+          "value": 1517,
+          "confidence_interval": {
+            "lower": 1511,
+            "upper": 1523,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 14036,
+          "rank_spread": [
+            47,
+            58
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$5 / $30",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-53",
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 30
+          }
+        },
+        {
+          "rank": 54,
+          "model_variant": "gpt-5.6-luna-xhigh (codex-harness)",
+          "value": 1517,
+          "confidence_interval": {
+            "lower": 1510,
+            "upper": 1524,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 9600,
+          "rank_spread": [
+            47,
+            58
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.20 / $1.20",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-54",
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.2,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 55,
+          "model_variant": "hy3",
+          "value": 1512,
+          "confidence_interval": {
+            "lower": 1502,
+            "upper": 1522,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 4456,
+          "rank_spread": [
+            47,
+            58
+          ],
+          "preliminary": false,
+          "provider_and_license": "Tencent · Apache 2.0",
+          "api_list_price_source_text": "$0.13 / $0.53",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-55",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.13,
+            "output": 0.53
+          }
+        },
+        {
+          "rank": 56,
+          "model_variant": "glm-5.1",
+          "value": 1510,
+          "confidence_interval": {
+            "lower": 1503,
+            "upper": 1517,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 9404,
+          "rank_spread": [
+            47,
+            58
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$1.40 / $4.40",
+          "context_length_source_text": "202.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-56",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.4,
+            "output": 4.4
+          }
+        },
+        {
+          "rank": 57,
+          "model_variant": "kimi-k2.6",
+          "value": 1506,
+          "confidence_interval": {
+            "lower": 1498,
+            "upper": 1514,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 8510,
+          "rank_spread": [
+            50,
+            60
+          ],
+          "preliminary": false,
+          "provider_and_license": "Moonshot · Modified MIT",
+          "api_list_price_source_text": "$0.95 / $4",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-57",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.95,
+            "output": 4
+          }
+        },
+        {
+          "rank": 58,
+          "model_variant": "gemini-3.5-flash-high",
+          "value": 1503,
+          "confidence_interval": {
+            "lower": 1495,
+            "upper": 1511,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7952,
+          "rank_spread": [
+            51,
+            62
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.75 / $4.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-58",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 4.5
+          }
+        },
+        {
+          "rank": 59,
+          "model_variant": "claude-opus-4-5-20251101-high-32k",
+          "value": 1493,
+          "confidence_interval": {
+            "lower": 1485,
+            "upper": 1501,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 11034,
+          "rank_spread": [
+            57,
+            65
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "200K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-59",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 60,
+          "model_variant": "gemini-3.5-flash-medium",
+          "value": 1492,
+          "confidence_interval": {
+            "lower": 1485,
+            "upper": 1499,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 9926,
+          "rank_spread": [
+            57,
+            65
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.75 / $4.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-60",
+          "evaluation_date": null,
+          "effort": "medium",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 4.5
+          }
+        },
+        {
+          "rank": 61,
+          "model_variant": "gpt-5.5-high (codex-harness)",
+          "value": 1491,
+          "confidence_interval": {
+            "lower": 1485,
+            "upper": 1497,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 14596,
+          "rank_spread": [
+            58,
+            65
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$5 / $30",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-61",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 30
+          }
+        },
+        {
+          "rank": 62,
+          "model_variant": "qwen3.6-max-preview",
+          "value": 1483,
+          "confidence_interval": {
+            "lower": 1470,
+            "upper": 1496,
+            "minus": 13,
+            "plus": 13,
+            "level": null
+          },
+          "votes": 2669,
+          "rank_spread": [
+            58,
+            68
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Proprietary",
+          "api_list_price_source_text": "$1.27 / $7.61",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-62",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.27,
+            "output": 7.61
+          }
+        },
+        {
+          "rank": 63,
+          "model_variant": "minimax-m3",
+          "value": 1479,
+          "confidence_interval": {
+            "lower": 1473,
+            "upper": 1485,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 15445,
+          "rank_spread": [
+            59,
+            68
+          ],
+          "preliminary": false,
+          "provider_and_license": "MiniMax · MiniMax Community License",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "524.3K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-63",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 64,
+          "model_variant": "kimi-k2.7-code",
+          "value": 1475,
+          "confidence_interval": {
+            "lower": 1465,
+            "upper": 1485,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 4652,
+          "rank_spread": [
+            59,
+            70
+          ],
+          "preliminary": false,
+          "provider_and_license": "Moonshot · Modified MIT",
+          "api_list_price_source_text": "$0.67 / $3.35",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-64",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.67,
+            "output": 3.35
+          }
+        },
+        {
+          "rank": 65,
+          "model_variant": "mimo-v2.5-pro",
+          "value": 1475,
+          "confidence_interval": {
+            "lower": 1469,
+            "upper": 1481,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 18240,
+          "rank_spread": [
+            62,
+            68
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · MIT",
+          "api_list_price_source_text": "$0.43 / $0.87",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-65",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.43,
+            "output": 0.87
+          }
+        },
+        {
+          "rank": 66,
+          "model_variant": "claude-opus-4-5-20251101",
+          "value": 1468,
+          "confidence_interval": {
+            "lower": 1461,
+            "upper": 1475,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 13417,
+          "rank_spread": [
+            62,
+            72
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$5 / $25",
+          "context_length_source_text": "200K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-66",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 25
+          }
+        },
+        {
+          "rank": 67,
+          "model_variant": "gpt-5.4-high (codex-harness)",
+          "value": 1464,
+          "confidence_interval": {
+            "lower": 1445,
+            "upper": 1483,
+            "minus": 19,
+            "plus": 19,
+            "level": null
+          },
+          "votes": 1350,
+          "rank_spread": [
+            62,
+            77
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$2.50 / $15",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-67",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2.5,
+            "output": 15
+          }
+        },
+        {
+          "rank": 68,
+          "model_variant": "deepseek-v4-pro-high-preview",
+          "value": 1462,
+          "confidence_interval": {
+            "lower": 1455,
+            "upper": 1469,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 11975,
+          "rank_spread": [
+            65,
+            73
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$1.32 / $3.96",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-68",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.32,
+            "output": 3.96
+          }
+        },
+        {
+          "rank": 69,
+          "model_variant": "qwen3.6-plus",
+          "value": 1460,
+          "confidence_interval": {
+            "lower": 1454,
+            "upper": 1466,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 15906,
+          "rank_spread": [
+            65,
+            73
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Proprietary",
+          "api_list_price_source_text": "$0.33 / $1.95",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-69",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.33,
+            "output": 1.95
+          }
+        },
+        {
+          "rank": 70,
+          "model_variant": "gpt-5.5 (codex-harness)",
+          "value": 1458,
+          "confidence_interval": {
+            "lower": 1452,
+            "upper": 1464,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 14151,
+          "rank_spread": [
+            66,
+            74
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$5 / $30",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-70",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 5,
+            "output": 30
+          }
+        },
+        {
+          "rank": 71,
+          "model_variant": "gemini-3.1-pro-preview",
+          "value": 1451,
+          "confidence_interval": {
+            "lower": 1446,
+            "upper": 1456,
+            "minus": 5,
+            "plus": 5,
+            "level": null
+          },
+          "votes": 20970,
+          "rank_spread": [
+            67,
+            77
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$1 / $6",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-71",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1,
+            "output": 6
+          }
+        },
+        {
+          "rank": 72,
+          "model_variant": "deepseek-v4-pro",
+          "value": 1445,
+          "confidence_interval": {
+            "lower": 1438,
+            "upper": 1452,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 11184,
+          "rank_spread": [
+            69,
+            80
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$1.32 / $3.96",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-72",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.32,
+            "output": 3.96
+          }
+        },
+        {
+          "rank": 73,
+          "model_variant": "gpt-5.4-medium (codex-harness)",
+          "value": 1443,
+          "confidence_interval": {
+            "lower": 1425,
+            "upper": 1461,
+            "minus": 18,
+            "plus": 18,
+            "level": null
+          },
+          "votes": 1376,
+          "rank_spread": [
+            66,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$2.50 / $15",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-73",
+          "evaluation_date": null,
+          "effort": "medium",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2.5,
+            "output": 15
+          }
+        },
+        {
+          "rank": 74,
+          "model_variant": "gemini-3.5-flash-lite",
+          "value": 1442,
+          "confidence_interval": {
+            "lower": 1393,
+            "upper": 1491,
+            "minus": 49,
+            "plus": 49,
+            "level": null
+          },
+          "votes": 176,
+          "rank_spread": [
+            59,
+            97
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.15 / $1.25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-74",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.15,
+            "output": 1.25
+          }
+        },
+        {
+          "rank": 75,
+          "model_variant": "gemini-3-pro",
+          "value": 1439,
+          "confidence_interval": {
+            "lower": 1431,
+            "upper": 1447,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 14089,
+          "rank_spread": [
+            70,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$2 / $12",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-75",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2,
+            "output": 12
+          }
+        },
+        {
+          "rank": 76,
+          "model_variant": "gemini-3-flash",
+          "value": 1439,
+          "confidence_interval": {
+            "lower": 1430,
+            "upper": 1448,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 10894,
+          "rank_spread": [
+            70,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.50 / $3",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-76",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.5,
+            "output": 3
+          }
+        },
+        {
+          "rank": 77,
+          "model_variant": "kimi-k2.5-thinking",
+          "value": 1435,
+          "confidence_interval": {
+            "lower": 1430,
+            "upper": 1440,
+            "minus": 5,
+            "plus": 5,
+            "level": null
+          },
+          "votes": 18809,
+          "rank_spread": [
+            72,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Moonshot · Modified MIT",
+          "api_list_price_source_text": "$0.60 / $3",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-77",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.6,
+            "output": 3
+          }
+        },
+        {
+          "rank": 78,
+          "model_variant": "glm-4.7",
+          "value": 1434,
+          "confidence_interval": {
+            "lower": 1422,
+            "upper": 1446,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 4007,
+          "rank_spread": [
+            70,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$0.60 / $2.20",
+          "context_length_source_text": "204.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-78",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.6,
+            "output": 2.2
+          }
+        },
+        {
+          "rank": 79,
+          "model_variant": "glm-5",
+          "value": 1434,
+          "confidence_interval": {
+            "lower": 1426,
+            "upper": 1442,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7437,
+          "rank_spread": [
+            72,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$1 / $3.20",
+          "context_length_source_text": "202.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-79",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1,
+            "output": 3.2
+          }
+        },
+        {
+          "rank": 80,
+          "model_variant": "mimo-v2-pro",
+          "value": 1433,
+          "confidence_interval": {
+            "lower": 1425,
+            "upper": 1441,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7171,
+          "rank_spread": [
+            72,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · Proprietary",
+          "api_list_price_source_text": "$1.10 / $3.30",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-80",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.1,
+            "output": 3.3
+          }
+        },
+        {
+          "rank": 81,
+          "model_variant": "mimo-v2.5",
+          "value": 1431,
+          "confidence_interval": {
+            "lower": 1425,
+            "upper": 1437,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 13301,
+          "rank_spread": [
+            73,
+            84
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · MIT",
+          "api_list_price_source_text": "$0.14 / $0.28",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-81",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.14,
+            "output": 0.28
+          }
+        },
+        {
+          "rank": 82,
+          "model_variant": "deepseek-v4-flash-high-preview",
+          "value": 1427,
+          "confidence_interval": {
+            "lower": 1420,
+            "upper": 1434,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 9286,
+          "rank_spread": [
+            73,
+            85
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-82",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 83,
+          "model_variant": "gpt-5-medium",
+          "value": 1416,
+          "confidence_interval": {
+            "lower": 1400,
+            "upper": 1432,
+            "minus": 16,
+            "plus": 16,
+            "level": null
+          },
+          "votes": 3092,
+          "rank_spread": [
+            73,
+            93
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$1.25 / $10",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-83",
+          "evaluation_date": null,
+          "effort": "medium",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "rank": 84,
+          "model_variant": "gpt-5.2",
+          "value": 1415,
+          "confidence_interval": {
+            "lower": 1393,
+            "upper": 1437,
+            "minus": 22,
+            "plus": 22,
+            "level": null
+          },
+          "votes": 1082,
+          "rank_spread": [
+            73,
+            98
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.88 / $7",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-84",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.88,
+            "output": 7
+          }
+        },
+        {
+          "rank": 85,
+          "model_variant": "inkling",
+          "value": 1409,
+          "confidence_interval": {
+            "lower": 1402,
+            "upper": 1416,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 11594,
+          "rank_spread": [
+            82,
+            93
+          ],
+          "preliminary": false,
+          "provider_and_license": "Thinky · Apache 2.0",
+          "api_list_price_source_text": "$1 / $4.05",
+          "context_length_source_text": "524.3K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-85",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1,
+            "output": 4.05
+          }
+        },
+        {
+          "rank": 86,
+          "model_variant": "gpt-5.3-codex (codex-harness)",
+          "value": 1408,
+          "confidence_interval": {
+            "lower": 1394,
+            "upper": 1422,
+            "minus": 14,
+            "plus": 14,
+            "level": null
+          },
+          "votes": 2643,
+          "rank_spread": [
+            81,
+            96
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$1.75 / $14",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-86",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "rank": 87,
+          "model_variant": "kimi-k2.5-instant",
+          "value": 1403,
+          "confidence_interval": {
+            "lower": 1391,
+            "upper": 1415,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 3269,
+          "rank_spread": [
+            82,
+            98
+          ],
+          "preliminary": false,
+          "provider_and_license": "Moonshot · Modified MIT",
+          "api_list_price_source_text": "$0.50 / $2.50",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-87",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.5,
+            "output": 2.5
+          }
+        },
+        {
+          "rank": 88,
+          "model_variant": "gpt-5.4",
+          "value": 1403,
+          "confidence_interval": {
+            "lower": 1391,
+            "upper": 1415,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 3048,
+          "rank_spread": [
+            82,
+            98
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$2.50 / $15",
+          "context_length_source_text": "1.1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-88",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 2.5,
+            "output": 15
+          }
+        },
+        {
+          "rank": 89,
+          "model_variant": "Inkling Small",
+          "value": 1403,
+          "confidence_interval": {
+            "lower": 1393,
+            "upper": 1413,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 4227,
+          "rank_spread": [
+            82,
+            97
+          ],
+          "preliminary": false,
+          "provider_and_license": "Thinky · Apache 2.0",
+          "api_list_price_source_text": "$0.45 / $1.20",
+          "context_length_source_text": "524.3K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-89",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.45,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 90,
+          "model_variant": "qwen3.5-397b-a17b",
+          "value": 1397,
+          "confidence_interval": {
+            "lower": 1392,
+            "upper": 1402,
+            "minus": 5,
+            "plus": 5,
+            "level": null
+          },
+          "votes": 19438,
+          "rank_spread": [
+            82,
+            98
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Apache 2.0",
+          "api_list_price_source_text": "$0.55 / $3.50",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-90",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.55,
+            "output": 3.5
+          }
+        },
+        {
+          "rank": 91,
+          "model_variant": "gpt-5.4-mini-high",
+          "value": 1396,
+          "confidence_interval": {
+            "lower": 1389,
+            "upper": 1403,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 11323,
+          "rank_spread": [
+            82,
+            100
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.75 / $4.50",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-91",
+          "evaluation_date": null,
+          "effort": "high",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 4.5
+          }
+        },
+        {
+          "rank": 92,
+          "model_variant": "gpt-5.1-medium",
+          "value": 1394,
+          "confidence_interval": {
+            "lower": 1383,
+            "upper": 1405,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 4912,
+          "rank_spread": [
+            82,
+            100
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.63 / $5",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-92",
+          "evaluation_date": null,
+          "effort": "medium",
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.63,
+            "output": 5
+          }
+        },
+        {
+          "rank": 93,
+          "model_variant": "minimax-m2.7",
+          "value": 1394,
+          "confidence_interval": {
+            "lower": 1388,
+            "upper": 1400,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 14659,
+          "rank_spread": [
+            84,
+            100
+          ],
+          "preliminary": false,
+          "provider_and_license": "MiniMax · Modified MIT",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "204.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-93",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 94,
+          "model_variant": "claude-sonnet-4-5-20250929-high-32k",
+          "value": 1392,
+          "confidence_interval": {
+            "lower": 1384,
+            "upper": 1400,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 13256,
+          "rank_spread": [
+            84,
+            100
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$3 / $15",
+          "context_length_source_text": "200K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-94",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "rank": 95,
+          "model_variant": "claude-opus-4-1-20250805",
+          "value": 1389,
+          "confidence_interval": {
+            "lower": 1378,
+            "upper": 1400,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 6926,
+          "rank_spread": [
+            84,
+            103
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$7.50 / $37.50",
+          "context_length_source_text": "200K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-95",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 7.5,
+            "output": 37.5
+          }
+        },
+        {
+          "rank": 96,
+          "model_variant": "glm-5v-turbo",
+          "value": 1389,
+          "confidence_interval": {
+            "lower": 1374,
+            "upper": 1404,
+            "minus": 15,
+            "plus": 15,
+            "level": null
+          },
+          "votes": 1984,
+          "rank_spread": [
+            82,
+            103
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · Proprietary",
+          "api_list_price_source_text": "$1.20 / $4",
+          "context_length_source_text": "202.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-96",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.2,
+            "output": 4
+          }
+        },
+        {
+          "rank": 97,
+          "model_variant": "minimax-m2.5",
+          "value": 1386,
+          "confidence_interval": {
+            "lower": 1378,
+            "upper": 1394,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7629,
+          "rank_spread": [
+            85,
+            103
+          ],
+          "preliminary": false,
+          "provider_and_license": "MiniMax · Modified MIT",
+          "api_list_price_source_text": "$0.27 / $1.08",
+          "context_length_source_text": "204.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-97",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.27,
+            "output": 1.08
+          }
+        },
+        {
+          "rank": 98,
+          "model_variant": "gemini-3-flash (thinking-minimal)",
+          "value": 1385,
+          "confidence_interval": {
+            "lower": 1380,
+            "upper": 1390,
+            "minus": 5,
+            "plus": 5,
+            "level": null
+          },
+          "votes": 21360,
+          "rank_spread": [
+            91,
+            103
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.50 / $3",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-98",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.5,
+            "output": 3
+          }
+        },
+        {
+          "rank": 99,
+          "model_variant": "claude-sonnet-4-5-20250929",
+          "value": 1384,
+          "confidence_interval": {
+            "lower": 1377,
+            "upper": 1391,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 15723,
+          "rank_spread": [
+            91,
+            103
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$3 / $15",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-99",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 3,
+            "output": 15
+          }
+        },
+        {
+          "rank": 100,
+          "model_variant": "minimax-m2.1-preview",
+          "value": 1383,
+          "confidence_interval": {
+            "lower": 1373,
+            "upper": 1393,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 7645,
+          "rank_spread": [
+            87,
+            104
+          ],
+          "preliminary": false,
+          "provider_and_license": "MiniMax · MIT",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "204.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-100",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 101,
+          "model_variant": "grok-4.20-beta-0309-reasoning",
+          "value": 1374,
+          "confidence_interval": {
+            "lower": 1368,
+            "upper": 1380,
+            "minus": 6,
+            "plus": 6,
+            "level": null
+          },
+          "votes": 13635,
+          "rank_spread": [
+            95,
+            108
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$1.25 / $2.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-101",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 2.5
+          }
+        },
+        {
+          "rank": 102,
+          "model_variant": "gpt-5.3-codex (codex-harness)",
+          "value": 1370,
+          "confidence_interval": {
+            "lower": 1359,
+            "upper": 1381,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 3643,
+          "rank_spread": [
+            95,
+            111
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$1.75 / $14",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-102",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": "codex-harness (source label)",
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "rank": 103,
+          "model_variant": "solar-pro4",
+          "value": 1370,
+          "confidence_interval": {
+            "lower": 1358,
+            "upper": 1382,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 3781,
+          "rank_spread": [
+            95,
+            111
+          ],
+          "preliminary": false,
+          "provider_and_license": "Upstage · Proprietary",
+          "api_list_price_source_text": "$0.09 / $0.36",
+          "context_length_source_text": "524.3K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-103",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.09,
+            "output": 0.36
+          }
+        },
+        {
+          "rank": 104,
+          "model_variant": "gemma-4-31b",
+          "value": 1366,
+          "confidence_interval": {
+            "lower": 1359,
+            "upper": 1373,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 12574,
+          "rank_spread": [
+            101,
+            111
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Apache 2.0",
+          "api_list_price_source_text": "$0.99 / $1.49",
+          "context_length_source_text": "131.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-104",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.99,
+            "output": 1.49
+          }
+        },
+        {
+          "rank": 105,
+          "model_variant": "deepseek-v3.2-thinking",
+          "value": 1361,
+          "confidence_interval": {
+            "lower": 1352,
+            "upper": 1370,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 6920,
+          "rank_spread": [
+            101,
+            112
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$0.26 / $0.80",
+          "context_length_source_text": "163.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-105",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.26,
+            "output": 0.8
+          }
+        },
+        {
+          "rank": 106,
+          "model_variant": "grok-4.3",
+          "value": 1360,
+          "confidence_interval": {
+            "lower": 1353,
+            "upper": 1367,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 13301,
+          "rank_spread": [
+            102,
+            111
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$1.25 / $2.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-106",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 2.5
+          }
+        },
+        {
+          "rank": 107,
+          "model_variant": "qwen3.5-122b-a10b",
+          "value": 1359,
+          "confidence_interval": {
+            "lower": 1351,
+            "upper": 1367,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 8169,
+          "rank_spread": [
+            102,
+            112
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Apache 2.0",
+          "api_list_price_source_text": "$0.26 / $2.08",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-107",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.26,
+            "output": 2.08
+          }
+        },
+        {
+          "rank": 108,
+          "model_variant": "qwen3.5-27b",
+          "value": 1357,
+          "confidence_interval": {
+            "lower": 1349,
+            "upper": 1365,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 7710,
+          "rank_spread": [
+            102,
+            114
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Apache 2.0",
+          "api_list_price_source_text": "$0.26 / $2.60",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-108",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.26,
+            "output": 2.6
+          }
+        },
+        {
+          "rank": 109,
+          "model_variant": "gemma-4-26b-a4b",
+          "value": 1357,
+          "confidence_interval": {
+            "lower": 1340,
+            "upper": 1374,
+            "minus": 17,
+            "plus": 17,
+            "level": null
+          },
+          "votes": 1497,
+          "rank_spread": [
+            100,
+            116
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Apache 2.0",
+          "api_list_price_source_text": "N/A",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-109",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": null
+        },
+        {
+          "rank": 110,
+          "model_variant": "muse-glimmer",
+          "value": 1356,
+          "confidence_interval": {
+            "lower": 1339,
+            "upper": 1373,
+            "minus": 17,
+            "plus": 17,
+            "level": null
+          },
+          "votes": 1406,
+          "rank_spread": [
+            101,
+            117
+          ],
+          "preliminary": false,
+          "provider_and_license": "Meta · Apache-2.0",
+          "api_list_price_source_text": "N/A",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-110",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": null
+        },
+        {
+          "rank": 111,
+          "model_variant": "hunyuan-hy3-preview",
+          "value": 1355,
+          "confidence_interval": {
+            "lower": 1337,
+            "upper": 1373,
+            "minus": 18,
+            "plus": 18,
+            "level": null
+          },
+          "votes": 1419,
+          "rank_spread": [
+            101,
+            117
+          ],
+          "preliminary": false,
+          "provider_and_license": "Tencent · tencent-hunyuan-community",
+          "api_list_price_source_text": "N/A",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-111",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": null
+        },
+        {
+          "rank": 112,
+          "model_variant": "laguna-m.1",
+          "value": 1343,
+          "confidence_interval": {
+            "lower": 1333,
+            "upper": 1353,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 4822,
+          "rank_spread": [
+            106,
+            117
+          ],
+          "preliminary": false,
+          "provider_and_license": "Poolside · Apache 2.0",
+          "api_list_price_source_text": "$0.20 / $0.40",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-112",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.2,
+            "output": 0.4
+          }
+        },
+        {
+          "rank": 113,
+          "model_variant": "gpt-5.1",
+          "value": 1341,
+          "confidence_interval": {
+            "lower": 1333,
+            "upper": 1349,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 10716,
+          "rank_spread": [
+            108,
+            118
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.63 / $5",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-113",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.63,
+            "output": 5
+          }
+        },
+        {
+          "rank": 114,
+          "model_variant": "glm-4.6",
+          "value": 1339,
+          "confidence_interval": {
+            "lower": 1328,
+            "upper": 1350,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 6781,
+          "rank_spread": [
+            108,
+            120
+          ],
+          "preliminary": false,
+          "provider_and_license": "Z.ai · MIT",
+          "api_list_price_source_text": "$0.50 / $2",
+          "context_length_source_text": "204.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-114",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.5,
+            "output": 2
+          }
+        },
+        {
+          "rank": 115,
+          "model_variant": "gpt-5.2-codex",
+          "value": 1338,
+          "confidence_interval": {
+            "lower": 1329,
+            "upper": 1347,
+            "minus": 9,
+            "plus": 9,
+            "level": null
+          },
+          "votes": 6722,
+          "rank_spread": [
+            109,
+            119
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$1.75 / $14",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-115",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.75,
+            "output": 14
+          }
+        },
+        {
+          "rank": 116,
+          "model_variant": "gpt-5.1-codex",
+          "value": 1336,
+          "confidence_interval": {
+            "lower": 1324,
+            "upper": 1348,
+            "minus": 12,
+            "plus": 12,
+            "level": null
+          },
+          "votes": 5005,
+          "rank_spread": [
+            109,
+            120
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$1.25 / $10",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-116",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "rank": 117,
+          "model_variant": "mimo-v2-flash (non-thinking)",
+          "value": 1329,
+          "confidence_interval": {
+            "lower": 1319,
+            "upper": 1339,
+            "minus": 10,
+            "plus": 10,
+            "level": null
+          },
+          "votes": 5693,
+          "rank_spread": [
+            110,
+            120
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · MIT",
+          "api_list_price_source_text": "$0.10 / $0.30",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-117",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.1,
+            "output": 0.3
+          }
+        },
+        {
+          "rank": 118,
+          "model_variant": "claude-haiku-4-5-20251001",
+          "value": 1326,
+          "confidence_interval": {
+            "lower": 1321,
+            "upper": 1331,
+            "minus": 5,
+            "plus": 5,
+            "level": null
+          },
+          "votes": 26744,
+          "rank_spread": [
+            114,
+            120
+          ],
+          "preliminary": false,
+          "provider_and_license": "Anthropic · Proprietary",
+          "api_list_price_source_text": "$1 / $5",
+          "context_length_source_text": "200K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-118",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1,
+            "output": 5
+          }
+        },
+        {
+          "rank": 119,
+          "model_variant": "deepseek-v3.2",
+          "value": 1324,
+          "confidence_interval": {
+            "lower": 1316,
+            "upper": 1332,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 9375,
+          "rank_spread": [
+            113,
+            120
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$0.26 / $0.80",
+          "context_length_source_text": "163.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-119",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.26,
+            "output": 0.8
+          }
+        },
+        {
+          "rank": 120,
+          "model_variant": "kimi-k2-thinking-turbo",
+          "value": 1321,
+          "confidence_interval": {
+            "lower": 1314,
+            "upper": 1328,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 13093,
+          "rank_spread": [
+            115,
+            120
+          ],
+          "preliminary": false,
+          "provider_and_license": "Moonshot · Modified MIT",
+          "api_list_price_source_text": "$0.57 / $2.30",
+          "context_length_source_text": "131.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-120",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.57,
+            "output": 2.3
+          }
+        },
+        {
+          "rank": 121,
+          "model_variant": "laguna-xs.2",
+          "value": 1299,
+          "confidence_interval": {
+            "lower": 1288,
+            "upper": 1310,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 4060,
+          "rank_spread": [
+            121,
+            123
+          ],
+          "preliminary": false,
+          "provider_and_license": "Poolside · Apache 2.0",
+          "api_list_price_source_text": "$0.10 / $0.20",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-121",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.1,
+            "output": 0.2
+          }
+        },
+        {
+          "rank": 122,
+          "model_variant": "minimax-m2",
+          "value": 1296,
+          "confidence_interval": {
+            "lower": 1285,
+            "upper": 1307,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 6713,
+          "rank_spread": [
+            121,
+            123
+          ],
+          "preliminary": false,
+          "provider_and_license": "MiniMax · Apache 2.0",
+          "api_list_price_source_text": "$0.30 / $1.20",
+          "context_length_source_text": "204.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-122",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.3,
+            "output": 1.2
+          }
+        },
+        {
+          "rank": 123,
+          "model_variant": "mimo-v2-flash (thinking)",
+          "value": 1291,
+          "confidence_interval": {
+            "lower": 1275,
+            "upper": 1307,
+            "minus": 16,
+            "plus": 16,
+            "level": null
+          },
+          "votes": 1687,
+          "rank_spread": [
+            121,
+            126
+          ],
+          "preliminary": false,
+          "provider_and_license": "Xiaomi · MIT",
+          "api_list_price_source_text": "$0.10 / $0.30",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-123",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.1,
+            "output": 0.3
+          }
+        },
+        {
+          "rank": 124,
+          "model_variant": "qwen3-coder-480b-a35b-instruct",
+          "value": 1274,
+          "confidence_interval": {
+            "lower": 1266,
+            "upper": 1282,
+            "minus": 8,
+            "plus": 8,
+            "level": null
+          },
+          "votes": 12719,
+          "rank_spread": [
+            123,
+            128
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Apache 2.0",
+          "api_list_price_source_text": "$0.65 / $3.25",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-124",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.65,
+            "output": 3.25
+          }
+        },
+        {
+          "rank": 125,
+          "model_variant": "deepseek-v3.2-exp",
+          "value": 1271,
+          "confidence_interval": {
+            "lower": 1258,
+            "upper": 1284,
+            "minus": 13,
+            "plus": 13,
+            "level": null
+          },
+          "votes": 3972,
+          "rank_spread": [
+            123,
+            132
+          ],
+          "preliminary": false,
+          "provider_and_license": "DeepSeek · MIT",
+          "api_list_price_source_text": "$0.27 / $0.41",
+          "context_length_source_text": "163.8K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-125",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.27,
+            "output": 0.41
+          }
+        },
+        {
+          "rank": 126,
+          "model_variant": "mistral-medium-3.5",
+          "value": 1265,
+          "confidence_interval": {
+            "lower": 1250,
+            "upper": 1280,
+            "minus": 15,
+            "plus": 15,
+            "level": null
+          },
+          "votes": 2244,
+          "rank_spread": [
+            123,
+            134
+          ],
+          "preliminary": false,
+          "provider_and_license": "Mistral · Modified MIT",
+          "api_list_price_source_text": "$0.75 / $3.75",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-126",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.75,
+            "output": 3.75
+          }
+        },
+        {
+          "rank": 127,
+          "model_variant": "gemini-3.1-flash-lite-preview",
+          "value": 1255,
+          "confidence_interval": {
+            "lower": 1248,
+            "upper": 1262,
+            "minus": 7,
+            "plus": 7,
+            "level": null
+          },
+          "votes": 14123,
+          "rank_spread": [
+            125,
+            134
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$0.25 / $1.50",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-127",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.25,
+            "output": 1.5
+          }
+        },
+        {
+          "rank": 128,
+          "model_variant": "KAT-Coder-Pro-V1",
+          "value": 1255,
+          "confidence_interval": {
+            "lower": 1236,
+            "upper": 1274,
+            "minus": 19,
+            "plus": 19,
+            "level": null
+          },
+          "votes": 1504,
+          "rank_spread": [
+            124,
+            136
+          ],
+          "preliminary": false,
+          "provider_and_license": "Proprietary",
+          "api_list_price_source_text": "$0.21 / $0.83",
+          "context_length_source_text": "256K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-128",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.21,
+            "output": 0.83
+          }
+        },
+        {
+          "rank": 129,
+          "model_variant": "qwen3.5-35b-a3b",
+          "value": 1253,
+          "confidence_interval": {
+            "lower": 1236,
+            "upper": 1270,
+            "minus": 17,
+            "plus": 17,
+            "level": null
+          },
+          "votes": 1617,
+          "rank_spread": [
+            124,
+            136
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Apache 2.0",
+          "api_list_price_source_text": "$0.08 / $0.75",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-129",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.08,
+            "output": 0.75
+          }
+        },
+        {
+          "rank": 130,
+          "model_variant": "gpt-5.1-codex-mini",
+          "value": 1243,
+          "confidence_interval": {
+            "lower": 1221,
+            "upper": 1265,
+            "minus": 22,
+            "plus": 22,
+            "level": null
+          },
+          "votes": 1155,
+          "rank_spread": [
+            125,
+            136
+          ],
+          "preliminary": false,
+          "provider_and_license": "OpenAI · Proprietary",
+          "api_list_price_source_text": "$0.25 / $2",
+          "context_length_source_text": "400K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-130",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.25,
+            "output": 2
+          }
+        },
+        {
+          "rank": 131,
+          "model_variant": "qwen3.5-flash",
+          "value": 1243,
+          "confidence_interval": {
+            "lower": 1223,
+            "upper": 1263,
+            "minus": 20,
+            "plus": 20,
+            "level": null
+          },
+          "votes": 1329,
+          "rank_spread": [
+            125,
+            136
+          ],
+          "preliminary": false,
+          "provider_and_license": "Alibaba · Proprietary",
+          "api_list_price_source_text": "N/A",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-131",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": null
+        },
+        {
+          "rank": 132,
+          "model_variant": "grok-4-1-fast-reasoning",
+          "value": 1241,
+          "confidence_interval": {
+            "lower": 1230,
+            "upper": 1252,
+            "minus": 11,
+            "plus": 11,
+            "level": null
+          },
+          "votes": 5491,
+          "rank_spread": [
+            126,
+            136
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$0.20 / $0.50",
+          "context_length_source_text": "128K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-132",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.2,
+            "output": 0.5
+          }
+        },
+        {
+          "rank": 133,
+          "model_variant": "trinity-large-thinking",
+          "value": 1238,
+          "confidence_interval": {
+            "lower": 1218,
+            "upper": 1258,
+            "minus": 20,
+            "plus": 20,
+            "level": null
+          },
+          "votes": 1353,
+          "rank_spread": [
+            125,
+            136
+          ],
+          "preliminary": false,
+          "provider_and_license": "Apache 2.0",
+          "api_list_price_source_text": "$0.25 / $0.80",
+          "context_length_source_text": "262.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-133",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.25,
+            "output": 0.8
+          }
+        },
+        {
+          "rank": 134,
+          "model_variant": "mistral-large-3",
+          "value": 1229,
+          "confidence_interval": {
+            "lower": 1204,
+            "upper": 1254,
+            "minus": 25,
+            "plus": 25,
+            "level": null
+          },
+          "votes": 839,
+          "rank_spread": [
+            126,
+            138
+          ],
+          "preliminary": false,
+          "provider_and_license": "Mistral · Apache 2.0",
+          "api_list_price_source_text": "$0.50 / $1.50",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-134",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.5,
+            "output": 1.5
+          }
+        },
+        {
+          "rank": 135,
+          "model_variant": "gemini-2.5-pro",
+          "value": 1226,
+          "confidence_interval": {
+            "lower": 1210,
+            "upper": 1242,
+            "minus": 16,
+            "plus": 16,
+            "level": null
+          },
+          "votes": 2728,
+          "rank_spread": [
+            128,
+            137
+          ],
+          "preliminary": false,
+          "provider_and_license": "Google · Proprietary",
+          "api_list_price_source_text": "$1.25 / $10",
+          "context_length_source_text": "1M",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-135",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 1.25,
+            "output": 10
+          }
+        },
+        {
+          "rank": 136,
+          "model_variant": "grok-4.1-thinking",
+          "value": 1213,
+          "confidence_interval": {
+            "lower": 1188,
+            "upper": 1238,
+            "minus": 25,
+            "plus": 25,
+            "level": null
+          },
+          "votes": 961,
+          "rank_spread": [
+            128,
+            140
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "N/A",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-136",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": null
+        },
+        {
+          "rank": 137,
+          "model_variant": "devstral-2",
+          "value": 1196,
+          "confidence_interval": {
+            "lower": 1175,
+            "upper": 1217,
+            "minus": 21,
+            "plus": 21,
+            "level": null
+          },
+          "votes": 1182,
+          "rank_spread": [
+            134,
+            141
+          ],
+          "preliminary": false,
+          "provider_and_license": "Mistral · Modified MIT",
+          "api_list_price_source_text": "N/A",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-137",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": null
+        },
+        {
+          "rank": 138,
+          "model_variant": "granite-4.1-8b",
+          "value": 1190,
+          "confidence_interval": {
+            "lower": 1171,
+            "upper": 1209,
+            "minus": 19,
+            "plus": 19,
+            "level": null
+          },
+          "votes": 1727,
+          "rank_spread": [
+            135,
+            141
+          ],
+          "preliminary": false,
+          "provider_and_license": "IBM · Apache 2.0",
+          "api_list_price_source_text": "$0.05 / $0.10",
+          "context_length_source_text": "131.1K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-138",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.05,
+            "output": 0.1
+          }
+        },
+        {
+          "rank": 139,
+          "model_variant": "mercury-2",
+          "value": 1170,
+          "confidence_interval": {
+            "lower": 1146,
+            "upper": 1194,
+            "minus": 24,
+            "plus": 24,
+            "level": null
+          },
+          "votes": 954,
+          "rank_spread": [
+            136,
+            141
+          ],
+          "preliminary": false,
+          "provider_and_license": "Inception AI · Proprietary",
+          "api_list_price_source_text": "$0.25 / $0.75",
+          "context_length_source_text": "128K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-139",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.25,
+            "output": 0.75
+          }
+        },
+        {
+          "rank": 140,
+          "model_variant": "grok-code-fast-1",
+          "value": 1166,
+          "confidence_interval": {
+            "lower": 1138,
+            "upper": 1194,
+            "minus": 28,
+            "plus": 28,
+            "level": null
+          },
+          "votes": 789,
+          "rank_spread": [
+            136,
+            141
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$0.20 / $1.50",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-140",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.2,
+            "output": 1.5
+          }
+        },
+        {
+          "rank": 141,
+          "model_variant": "grok-4-fast-reasoning",
+          "value": 1158,
+          "confidence_interval": {
+            "lower": 1131,
+            "upper": 1185,
+            "minus": 27,
+            "plus": 27,
+            "level": null
+          },
+          "votes": 742,
+          "rank_spread": [
+            137,
+            141
+          ],
+          "preliminary": false,
+          "provider_and_license": "SpaceXAI · Proprietary",
+          "api_list_price_source_text": "$0.20 / $0.50",
+          "context_length_source_text": "N/A",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-141",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.2,
+            "output": 0.5
+          }
+        },
+        {
+          "rank": 142,
+          "model_variant": "devstral-medium-2507",
+          "value": 1075,
+          "confidence_interval": {
+            "lower": 1044,
+            "upper": 1106,
+            "minus": 31,
+            "plus": 31,
+            "level": null
+          },
+          "votes": 842,
+          "rank_spread": [
+            142,
+            142
+          ],
+          "preliminary": false,
+          "provider_and_license": "Mistral · Proprietary",
+          "api_list_price_source_text": "$0.40 / $2",
+          "context_length_source_text": "128K",
+          "source_row_key": "webdev-frontend-2026-10-08-rank-142",
+          "evaluation_date": null,
+          "effort": null,
+          "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+          "harness": null,
+          "harness_version": null,
+          "tool_budget": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "api_list_price_usd_per_million_tokens": {
+            "input": 0.4,
+            "output": 2
+          }
+        }
+      ],
+      "comparison_with_archive": {
+        "archive_path": "data/frontend-research-2026-10-05.original.json",
+        "old_snapshot_date": "2026-10-01",
+        "old_total_models": 138,
+        "old_total_votes": 745814,
+        "model_count_delta": 4,
+        "vote_count_delta": 6859,
+        "rows": [
+          {
+            "model_variant": "claude-opus-5.5-max",
+            "old_value": 1858,
+            "new_value": 1857,
+            "delta": -1,
+            "old_rank": 1,
+            "new_rank": 1,
+            "old_votes": 1565,
+            "new_votes": 1687
+          },
+          {
+            "model_variant": "claude-sonnet-5.5-xhigh",
+            "old_value": 1822,
+            "new_value": 1813,
+            "delta": -9,
+            "old_rank": 2,
+            "new_rank": 2,
+            "old_votes": 1245,
+            "new_votes": 1833
+          },
+          {
+            "model_variant": "gpt-6-astra-max",
+            "old_value": 1807,
+            "new_value": 1809,
+            "delta": 2,
+            "old_rank": 3,
+            "new_rank": 3,
+            "old_votes": 5196,
+            "new_votes": 4114
+          },
+          {
+            "model_variant": "claude-fable-5.1-max",
+            "old_value": 1782,
+            "new_value": 1778,
+            "delta": -4,
+            "old_rank": 4,
+            "new_rank": 4,
+            "old_votes": 5110,
+            "new_votes": 5284
+          },
+          {
+            "model_variant": "gpt-6.1-sol-max",
+            "old_value": 1774,
+            "new_value": 1771,
+            "delta": -3,
+            "old_rank": 5,
+            "new_rank": 5,
+            "old_votes": 1343,
+            "new_votes": 1698
+          },
+          {
+            "model_variant": "claude-sonnet-5.5-high",
+            "old_value": 1744,
+            "new_value": 1745,
+            "delta": 1,
+            "old_rank": 6,
+            "new_rank": 6,
+            "old_votes": 2089,
+            "new_votes": 3208
+          },
+          {
+            "model_variant": "claude-opus-5-max",
+            "old_value": 1717,
+            "new_value": 1713,
+            "delta": -4,
+            "old_rank": 7,
+            "new_rank": 7,
+            "old_votes": 13257,
+            "new_votes": 13416
+          },
+          {
+            "model_variant": "gpt-6-sol-max",
+            "old_value": 1698,
+            "new_value": 1695,
+            "delta": -3,
+            "old_rank": 8,
+            "new_rank": 8,
+            "old_votes": 2844,
+            "new_votes": 2643
+          },
+          {
+            "model_variant": "gemini-4-argon-high",
+            "old_value": 1691,
+            "new_value": 1687,
+            "delta": -4,
+            "old_rank": 9,
+            "new_rank": 9,
+            "old_votes": 1929,
+            "new_votes": 1277
+          },
+          {
+            "model_variant": "qwen3.8-max-0902",
+            "old_value": 1680,
+            "new_value": 1686,
+            "delta": 6,
+            "old_rank": 10,
+            "new_rank": 10,
+            "old_votes": 7694,
+            "new_votes": 8967
+          },
+          {
+            "model_variant": "qwen3.8-max",
+            "old_value": 1678,
+            "new_value": 1679,
+            "delta": 1,
+            "old_rank": 12,
+            "new_rank": 11,
+            "old_votes": 2935,
+            "new_votes": 2927
+          },
+          {
+            "model_variant": "claude-opus-5-high",
+            "old_value": 1680,
+            "new_value": 1677,
+            "delta": -3,
+            "old_rank": 11,
+            "new_rank": 12,
+            "old_votes": 17378,
+            "new_votes": 17818
+          }
+        ]
+      }
+    },
+    "design-arena-partial-primary-model-observations": {
+      "source_url": "https://www.designarena.ai/leaderboard/code",
+      "methodology_urls": [
+        "https://www.designarena.ai/about",
+        "https://notes.designarena.ai/methodology/"
+      ],
+      "status": "partial_primary_observations_not_synchronized_leaderboard",
+      "snapshot_date": null,
+      "evaluation_date": null,
+      "limitations": [
+        "Overall Frontend, Website, UI Component, Web Apps, Fullstack, Image-to-HTML are separate tracks.",
+        "Model-page Overall may aggregate multiple arenas; do not relabel it Overall Frontend.",
+        "Model release dates and total model tournaments are not evaluation dates or category vote denominators.",
+        "Per-category votes, CI, exact effort/harness and timing/cost of generation were not exposed.",
+        "Observed UI Component ranks conflict across pages (two rank-5 entries); likely unsynchronized observations, but the cause is unverified. Do not construct a complete ranking from these pages.",
+        "Search-index excerpts differed from direct-open values; direct-open values are retained."
+      ],
+      "methodology_note": "Official pages agree on Bradley–Terry design preference. Threshold and sampling details differ between the current About page and the older methodology note; do not silently combine them.",
+      "rows": [
+        {
+          "model_variant": "Claude Opus 5.5",
+          "source_url": "https://www.designarena.ai/models/claude-opus-5-5",
+          "track": "website",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1335,
+          "reported_win_rate_percent": 57,
+          "reported_rank": 5,
+          "model_release_date": "2026-09-22",
+          "model_total_tournaments_all_tracks": 3126,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": null,
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "Claude Opus 5.5",
+          "source_url": "https://www.designarena.ai/models/claude-opus-5-5",
+          "track": "uicomponent",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1388,
+          "reported_win_rate_percent": 64,
+          "reported_rank": 2,
+          "model_release_date": "2026-09-22",
+          "model_total_tournaments_all_tracks": 3126,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": null,
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "source_url": "https://www.designarena.ai/models/claude-sonnet-5-5",
+          "track": "website",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1329,
+          "reported_win_rate_percent": 56,
+          "reported_rank": 7,
+          "model_release_date": "2026-09-28",
+          "model_total_tournaments_all_tracks": 1150,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": null,
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "Claude Sonnet 5.5",
+          "source_url": "https://www.designarena.ai/models/claude-sonnet-5-5",
+          "track": "uicomponent",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1383,
+          "reported_win_rate_percent": 65,
+          "reported_rank": 3,
+          "model_release_date": "2026-09-28",
+          "model_total_tournaments_all_tracks": 1150,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": null,
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "GPT-6 Astra (max)",
+          "source_url": "https://www.designarena.ai/models/gpt-6-astra-max",
+          "track": "website",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1342,
+          "reported_win_rate_percent": 59,
+          "reported_rank": 3,
+          "model_release_date": "2026-09-20",
+          "model_total_tournaments_all_tracks": 2263,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": "max",
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "GPT-6 Astra (max)",
+          "source_url": "https://www.designarena.ai/models/gpt-6-astra-max",
+          "track": "uicomponent",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1379,
+          "reported_win_rate_percent": 62,
+          "reported_rank": 4,
+          "model_release_date": "2026-09-20",
+          "model_total_tournaments_all_tracks": 2263,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": "max",
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "GPT-6.1 Sol",
+          "source_url": "https://www.designarena.ai/models/gpt-6.1-sol",
+          "track": "website",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1322,
+          "reported_win_rate_percent": 56,
+          "reported_rank": 9,
+          "model_release_date": "2026-09-29",
+          "model_total_tournaments_all_tracks": 1001,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": null,
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "GPT-6.1 Sol",
+          "source_url": "https://www.designarena.ai/models/gpt-6.1-sol",
+          "track": "uicomponent",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1359,
+          "reported_win_rate_percent": 60,
+          "reported_rank": 5,
+          "model_release_date": "2026-09-29",
+          "model_total_tournaments_all_tracks": 1001,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": null,
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "Muse Spark 1.3 (xhigh)",
+          "source_url": "https://www.designarena.ai/models/muse-spark-1.3",
+          "track": "website",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1361,
+          "reported_win_rate_percent": 58,
+          "reported_rank": 1,
+          "model_release_date": "2026-09-02",
+          "model_total_tournaments_all_tracks": 39341,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        },
+        {
+          "model_variant": "Muse Spark 1.3 (xhigh)",
+          "source_url": "https://www.designarena.ai/models/muse-spark-1.3",
+          "track": "uicomponent",
+          "metric": "Bradley–Terry preference rating",
+          "rating": 1356,
+          "reported_win_rate_percent": 58,
+          "reported_rank": 5,
+          "model_release_date": "2026-09-02",
+          "model_total_tournaments_all_tracks": 39341,
+          "category_votes": null,
+          "uncertainty": null,
+          "snapshot_date": null,
+          "evaluation_date": null,
+          "effort": "xhigh",
+          "harness": null,
+          "cost_usd_per_task": null,
+          "latency_seconds": null
+        }
+      ]
+    },
+    "design2code-v3-484": {
+      "id": "design2code-v3-484",
+      "name": "Design2Code · 484-page historical cohort",
+      "category": "frontend",
+      "evidence_kind": "screenshot_fidelity",
+      "source_url": "https://arxiv.org/html/2403.03163v3",
+      "project_url": "https://salt-nlp.github.io/Design2Code/",
+      "code_url": "https://github.com/NoviScl/Design2Code",
+      "paper_revision_date": "2025-02-09",
+      "evaluation_date": null,
+      "status": "historical_source_cohort",
+      "sample_size": 484,
+      "metric_order": [
+        "block_match",
+        "text",
+        "position",
+        "color",
+        "clip"
+      ],
+      "unit": "similarity_score_0_to_100",
+      "summary": "Screenshot-to-HTML/CSS evaluation. Table 1 reports five separate similarity dimensions; no combined success score.",
+      "settings": {
+        "decoding": "Greedy",
+        "max_new_tokens": 4096,
+        "effort": null,
+        "harness": "Author prompting and screenshot evaluation",
+        "prompt_methods": [
+          "direct",
+          "text_augmented",
+          "self_revision"
+        ]
+      },
+      "limitations": [
+        "Historical model cohort; checked now does not make it a current frontier leaderboard.",
+        "Design2Code-HARD contains 80 separate cases and must be a separate cohort.",
+        "Prompt methods have different inputs and generation budgets; retain separate labels.",
+        "Visual similarity is not functional browser completion.",
+        "Missing cost, latency and uncertainty remain null."
+      ],
+      "rows": [
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 93,
+            "text": 98.2,
+            "position": 85.5,
+            "color": 84.1,
+            "clip": 90.4
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "text_augmented",
+          "metrics": {
+            "block_match": 92.4,
+            "text": 98.6,
+            "position": 84.5,
+            "color": 83.1,
+            "clip": 89.9
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4o",
+          "model_snapshot": "gpt-4o-2024-05-13",
+          "prompt_method": "self_revision",
+          "metrics": {
+            "block_match": 92.7,
+            "text": 98.6,
+            "position": 84.9,
+            "color": 83.3,
+            "clip": 90.1
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "GPT-4V",
+          "model_snapshot": "gpt-4-1106-vision-preview",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 85.8,
+            "text": 97.4,
+            "position": 80.5,
+            "color": 73.3,
+            "clip": 86.9
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "Claude 3 Opus",
+          "model_snapshot": "claude-3-opus-20240229",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 90.2,
+            "text": 97.5,
+            "position": 77.9,
+            "color": 71.4,
+            "clip": 87
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        },
+        {
+          "model_variant": "Gemini 1.0 Pro Vision",
+          "model_snapshot": "gemini-1.0-pro-vision",
+          "prompt_method": "direct",
+          "metrics": {
+            "block_match": 80.2,
+            "text": 94.6,
+            "position": 72.3,
+            "color": 66.2,
+            "clip": 84.4
+          },
+          "cost_usd": null,
+          "latency_seconds": null,
+          "uncertainty": null
+        }
+      ],
+      "source_checked_at": "2026-10-12",
+      "primary_table_source_url": "https://aclanthology.org/2025.naacl-long.199.pdf",
+      "current_revision_source_url": "https://arxiv.org/abs/2403.03163",
+      "change_from_archive": "Six archived rows and model snapshots rechecked against Table 1 and appendix; no numeric changes. Latest arXiv remains v3, February 9, 2025.",
+      "notes": [
+        "Historical reference-fidelity evidence. No contemporary 2026 model run established.",
+        "Do not use unrelated AgentBeats implementation or secondary tables as a new official Design2Code cohort."
+      ]
+    },
+    "webcraftbench-v3-review": {
+      "source_url": "https://arxiv.org/html/2609.15387v3#S5.T3",
+      "revision_source_url": "https://arxiv.org/abs/2609.15387",
+      "source_checked_at": "2026-10-12",
+      "publication_revision_date": "2026-09-20",
+      "evaluation_date": null,
+      "status": "fixed_historical_study_no_numeric_change",
+      "archived_source_path": "data/coverage-research-2026-10-05/primary-source-additions.json#/cohorts/webcraftbench-v3",
+      "verified_rows": 17,
+      "result": "All 17 Table 3 model, harness, effort and seven z-score values match the stored cohort.",
+      "notes": [
+        "Retain the existing table without relabeling as October experiments.",
+        "Scores are relative to the same 17-system pool.",
+        "Runtime scoring is LLM-judged evidence, not a deterministic test-suite success rate.",
+        "No current Astra or GPT-6.1 result exists in this study."
+      ]
+    },
+    "frontendbench-2025-paper": {
+      "source_url": "https://arxiv.org/html/2506.13832v1",
+      "publication_date": "2025-06-16",
+      "evaluation_date": null,
+      "status": "historical_author_report",
+      "sample_size": 148,
+      "metric": "Auto-evaluation all-tests-pass task rate",
+      "unit": "percent",
+      "direction": "higher_is_better",
+      "settings": {
+        "generation": "Prompt to HTML",
+        "tests": "Puppeteer headless browser and Jest assertions",
+        "scoring": "Each task succeeds only if every included test passes",
+        "model_snapshots": null,
+        "effort": null,
+        "decoding": null
+      },
+      "rows": [
+        {
+          "model_variant": "Gemini-2.5-pro",
+          "auto_pass_percent": 70.27,
+          "human_pass_percent": 79.73,
+          "agreement_percent": 87.83,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "DeepSeek-R1",
+          "auto_pass_percent": 75,
+          "human_pass_percent": 67.57,
+          "agreement_percent": 89.86,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "DeepSeek-V3",
+          "auto_pass_percent": 66.89,
+          "human_pass_percent": 68.24,
+          "agreement_percent": 91.89,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "o3-mini",
+          "auto_pass_percent": 83.11,
+          "human_pass_percent": 83.78,
+          "agreement_percent": 92.57,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        }
+      ],
+      "limitations": [
+        "Exact endpoint snapshots and generation settings not established in paper.",
+        "90.54% is average human/automatic agreement, not a model score.",
+        "Prose mistakenly says DeepSeek-R1 human score is higher; numeric Table 3 shows 67.57 human versus 75.00 automatic. Preserve table and flag discrepancy."
+      ]
+    },
+    "web-bench-v1-selected-historical": {
+      "source_url": "https://huggingface.co/spaces/bytedance-research/Web-Bench-Leaderboard",
+      "methodology_url": "https://arxiv.org/html/2505.07473v1",
+      "status": "selected_historical_results",
+      "evaluation_date": null,
+      "settings": {
+        "version": "v1.0.0",
+        "agent": "Web-Agent",
+        "projects": 50,
+        "sequential_tasks_per_project": 20,
+        "total_tasks": 1000,
+        "mean_tests_per_task": 3.6,
+        "aggregation_caveat": "Paper reports Best-of-5 sampling. Pass@1 is tasks solved before first failure in sequence; Pass@2 includes one error-feedback retry and continues until retry fails."
+      },
+      "metrics": {
+        "pass_at_1": "Percent of sequential tasks passing all E2E tests first attempt before any failure",
+        "pass_at_2": "Percent passed including retries",
+        "error_at_1": "Source label retained; exact definition not verified in this pass"
+      },
+      "rows": [
+        {
+          "model_variant": "claude-4-0-opus-20250514-thinking",
+          "thinking": true,
+          "pass_at_1": 25.6,
+          "pass_at_2": 37.5,
+          "error_at_1": 9.3,
+          "result_archive_filename": "eval-20250612-165421.zip",
+          "date_in_filename": "2025-06-12",
+          "source_url": "https://huggingface.co/spaces/bytedance-research/Web-Bench-Leaderboard/blob/main/src/base-eval-results/claude-4-0-opus-20250514-thinking/meta.json",
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "gemini-2.5-pro-250605",
+          "thinking": true,
+          "pass_at_1": 25.3,
+          "pass_at_2": 44,
+          "error_at_1": 11.4,
+          "result_archive_filename": "eval-20250613-192748.zip",
+          "date_in_filename": "2025-06-13",
+          "source_url": "https://huggingface.co/spaces/bytedance-research/Web-Bench-Leaderboard/blob/main/src/base-eval-results/gemini-2.5-pro-250605/meta.json",
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "kimi-k2",
+          "thinking": false,
+          "pass_at_1": 13.2,
+          "pass_at_2": 22.7,
+          "error_at_1": 10.4,
+          "result_archive_filename": "eval-20250722-171630.zip",
+          "date_in_filename": "2025-07-22",
+          "source_url": "https://huggingface.co/spaces/bytedance-research/Web-Bench-Leaderboard/blob/main/src/base-eval-results/kimi-k2/meta.json",
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        }
+      ],
+      "limitations": [
+        "Selected three metadata files, not full leaderboard or asserted top three.",
+        "Archive filenames provide date clues, not independently verified evaluation timestamps.",
+        "Project dependencies and Best-of-5 selection prevent treating these as ordinary independent pass@1 estimates.",
+        "No 2026 frontier evaluation verified."
+      ]
+    },
+    "webrise-v1-text": {
+      "source_url": "https://arxiv.org/html/2606.03220v1",
+      "code_url": "https://github.com/IIGROUP/WebRISE",
+      "publication_date": "2026-06-02",
+      "evaluation_date": null,
+      "status": "fixed_historical_author_report",
+      "selection": "All 14 paper model rows for Text modality only",
+      "tasks": 442,
+      "total_transitions": 5495,
+      "total_requirement_checks": 5271,
+      "all_modalities": [
+        "Text",
+        "Markdown",
+        "Sketch",
+        "Image",
+        "Video"
+      ],
+      "settings": {
+        "artifact": "Self-contained executable HTML/CSS/JavaScript",
+        "execution": "Adaptive contract-guided browser agent",
+        "transition_assertion_judge": "GPT-5-mini",
+        "auxiliary_visual_judge": "Gemini-3-Flash-Preview",
+        "aggregation": "Task-level macro averages",
+        "exact_generation_model_snapshots": null,
+        "reasoning_effort": null,
+        "agent_step_budget": null,
+        "decoding": null
+      },
+      "metrics": {
+        "transition_validity_percent": "Fraction of required transitions passed; blocked or skipped is unsuccessful",
+        "requirement_coverage_percent": "Fraction of requirements whose mapped checks all pass",
+        "visual_quality_0_100": "Auxiliary visual score; not correctness"
+      },
+      "rows": [
+        {
+          "model_variant": "Qwen3.6-35B-A3B",
+          "modality": "Text",
+          "transition_validity_percent": 26.8,
+          "requirement_coverage_percent": 30.5,
+          "visual_quality_0_100": 78.2,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Qwen3.5-122B-A10B",
+          "modality": "Text",
+          "transition_validity_percent": 38,
+          "requirement_coverage_percent": 41.2,
+          "visual_quality_0_100": 56.8,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Qwen3.5-27B",
+          "modality": "Text",
+          "transition_validity_percent": 36.3,
+          "requirement_coverage_percent": 40,
+          "visual_quality_0_100": 59.9,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Qwen3.5-397B-A17B",
+          "modality": "Text",
+          "transition_validity_percent": 45.7,
+          "requirement_coverage_percent": 49.2,
+          "visual_quality_0_100": 64.8,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Kimi-K2.5",
+          "modality": "Text",
+          "transition_validity_percent": 48.5,
+          "requirement_coverage_percent": 51.9,
+          "visual_quality_0_100": 68.9,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Qwen3.6-27B",
+          "modality": "Text",
+          "transition_validity_percent": 47.9,
+          "requirement_coverage_percent": 50.9,
+          "visual_quality_0_100": 75.3,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Kimi-K2.6",
+          "modality": "Text",
+          "transition_validity_percent": 44.6,
+          "requirement_coverage_percent": 47.3,
+          "visual_quality_0_100": 83.1,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Claude Opus 4.6",
+          "modality": "Text",
+          "transition_validity_percent": 43.3,
+          "requirement_coverage_percent": 45.5,
+          "visual_quality_0_100": 56.6,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Gemini 3 Flash",
+          "modality": "Text",
+          "transition_validity_percent": 44.7,
+          "requirement_coverage_percent": 48.2,
+          "visual_quality_0_100": 71.9,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Claude Opus 4.7",
+          "modality": "Text",
+          "transition_validity_percent": 48.8,
+          "requirement_coverage_percent": 50.9,
+          "visual_quality_0_100": 68.3,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Gemini 3.1 Pro",
+          "modality": "Text",
+          "transition_validity_percent": 50.7,
+          "requirement_coverage_percent": 53.6,
+          "visual_quality_0_100": 69.7,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "Qwen3.6-Plus",
+          "modality": "Text",
+          "transition_validity_percent": 49.3,
+          "requirement_coverage_percent": 51.9,
+          "visual_quality_0_100": 68.2,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "GPT-5.4",
+          "modality": "Text",
+          "transition_validity_percent": 59.7,
+          "requirement_coverage_percent": 61.4,
+          "visual_quality_0_100": 78.4,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        },
+        {
+          "model_variant": "GPT-5.5",
+          "modality": "Text",
+          "transition_validity_percent": 60.3,
+          "requirement_coverage_percent": 62.3,
+          "visual_quality_0_100": 85.6,
+          "cost_usd_per_task": null,
+          "latency_seconds": null,
+          "uncertainty": null,
+          "evaluation_date": null
+        }
+      ],
+      "limitations": [
+        "Use modality selector and diagnostic metrics rather than the auxiliary Overall blend.",
+        "Scores are browser-agent/judge dependent.",
+        "Paper supplies abbreviated model names without exact effort or API snapshots.",
+        "65.6% transition validity and 66.3% coverage are GPT-5.5 Video results, not Text and not complete-app success.",
+        "Not an evaluation of autonomous browsing on pre-existing websites."
+      ]
+    }
+  },
+  "scope_boundary": "WebArena/BrowserGym-style navigation success evaluates agents operating existing sites; keep that separate from generated-site functionality.",
+  "source_only_candidates": [
+    {
+      "name": "WebGen-Bench",
+      "url": "https://huggingface.co/datasets/luzimu/WebGen-Bench",
+      "tasks": 101,
+      "test_cases": 647,
+      "status": "Primary dataset verified; numeric original leaderboard/configuration not re-extracted in this pass"
+    },
+    {
+      "name": "WebGen-Bench Harbor parity",
+      "url": "https://github.com/harbor-framework/harbor/blob/main/adapters/webgen_bench/README.md",
+      "status": "Adapter-owner parity study; should not be presented as original benchmark current standings",
+      "agent": "aider",
+      "model": "gpt-5-mini",
+      "judge": "WebVoyager Qwen2.5-VL-32B-Instruct",
+      "trials": 3,
+      "tasks": 101,
+      "original_accuracy": 16.7,
+      "original_reported_plus_minus": 0.9,
+      "harbor_accuracy": 16.2,
+      "harbor_reported_plus_minus": 1.6,
+      "uncertainty_type": null
+    }
+  ]
+}

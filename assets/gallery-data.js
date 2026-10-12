@@ -11115,6 +11115,97 @@ window.LAB_GALLERY = {
       "notice": "Complete exact harness and effort table is published; missing harness software versions do not justify an empty card. Mark them unknown. Scores are relative within this fixed 17-system pool, not percentages. Do not rename old source systems to current models or claim this paper tests Astra or GPT-6.1 Sol. No public dataset/code release; author-reported fixed study. 85.3% human-preference agreement is benchmark validation on 197 pairs, not model task success.",
       "date": "Source checked October 5, 2026; individual evaluation dates remain separately labeled"
     },
+    "webdev-arena-frontend-2026-10-08": {
+      "question": "Which generated websites do people prefer?",
+      "tests": "People compare generated HTML or React websites. This snapshot preserves all 142 displayed Frontend rows, their votes, harness labels and published score ranges.",
+      "matters": "Preference can reveal whether a website feels useful and appealing, while a separate functional test is needed to establish that its controls work.",
+      "read": "Ratings belong to this Frontend comparison pool. The axis spans 1000–1900 rating points, and the published intervals have no supplied confidence level. Two identically named Codex rows remain distinct source rows; 142 rows do not establish 142 unique models. API token prices are not task costs, and changes in votes or ratings do not prove model improvement.",
+      "date": "Source snapshot 2026-10-08; reviewed October 12"
+    },
+    "webrise-v1-text": {
+      "question": "Does a generated website behave as requested?",
+      "tests": "Models turn text requirements into executable websites. A browser agent checks required transitions and requirement coverage across 442 tasks; a separate judge assesses visual quality.",
+      "matters": "A convincing screenshot can hide a broken interaction. The two functional measurements show different parts of the required behavior.",
+      "read": "Use Text results here: transition validity and requirement coverage are task-level macro averages, not complete-app success. Visual quality is a separate auxiliary score. The June paper does not supply exact generation snapshots, effort, cost or time, and its Video results belong to another modality.",
+      "date": "Source published 2026-06-02; reviewed October 12"
+    },
+    "hle-original-haiku55-october": {
+      "question": "Can Haiku answer difficult expert questions?",
+      "tests": "The developer evaluates Haiku on the original 2,500-question multimodal Humanity’s Last Exam with five trials at maximum effort. Tools and no-tools runs are separate setups.",
+      "matters": "Difficult questions probe expert knowledge and reasoning, while the tool-assisted setup also depends on search and code execution.",
+      "read": "These two selected Haiku observations are original HLE, not HLE-Diamond or the independent text-only cohort. The report supplies no evaluation date or paired costs. Its tool run excludes known HLE discussion sources and rescored confirmed cheating as incorrect.",
+      "date": "Source published 2026-10-07; reviewed October 12"
+    },
+    "terminal-bench-4-haiku55-lab": {
+      "question": "Can Haiku complete demanding terminal work?",
+      "tests": "The October 7 developer report uses Claude Code --bare at maximum effort, with ten trials per task on 66 terminal tasks. Network access and fallback models are disabled.",
+      "matters": "Terminal work requires inspecting files, using software and checking an outcome over many steps. The harness and task environment are part of the measured system.",
+      "read": "This is one selected model under a specified lab setup, separate from public CLI and other evaluator cohorts. Safeguard-interrupted trials count as failures. The reported plus/minus value is a standard error, not a 95% confidence interval; run dates, cost and duration are not supplied.",
+      "date": "Source published 2026-10-07; reviewed October 12"
+    },
+    "terminal-bench-science-haiku55-lab": {
+      "question": "Can Haiku complete demanding terminal work?",
+      "tests": "The October 7 developer report uses Claude Code --bare at maximum effort, with ten trials per task on 70 scientific-computing tasks. Network access and fallback models are disabled.",
+      "matters": "Terminal work requires inspecting files, using software and checking an outcome over many steps. The harness and task environment are part of the measured system.",
+      "read": "This is one selected model under a specified lab setup, separate from public CLI and other evaluator cohorts. Safeguard-interrupted trials count as failures. The reported plus/minus value is a standard error, not a 95% confidence interval; run dates, cost and duration are not supplied.",
+      "date": "Source published 2026-10-07; reviewed October 12"
+    },
+    "osworld-v2-1-offline-october": {
+      "question": "Can an agent finish computer tasks offline?",
+      "tests": "Five systems operate a computer on OSWorld 2.1’s official 82-task offline subset, with five trials per task, 1080p resolution and up to 500 action steps.",
+      "matters": "Computer work requires completing connected actions. Partial checkpoint credit can be useful even when the entire task is not finished.",
+      "read": "Strict success requires every checkpoint to pass; partial credit is a different measurement. Keep this 82-task subset separate from the September full 108-task cohort and the retained OSWorld 2.0 developer-report card. The version selector links those cards without combining their rows or protocols. The source chart identifies 95% intervals but supplies no transcribed numeric bounds here, so no interval is invented. Anthropic ran the OpenAI models through their API.",
+      "date": "Source published 2026-10-07; reviewed October 12"
+    },
+    "healthbench-professional-openai-20260929": {
+      "question": "How well does an AI answer professional medical questions?",
+      "tests": "An OpenAI report grades medical conversations against detailed rubrics and adjusts for response length. The September 29 table adds GPT-6.1 Sol to the seven preserved predecessor values.",
+      "matters": "Medical responses must meet several requirements at once. A length adjustment helps distinguish rubric performance from simply writing a longer answer.",
+      "read": "Sol’s adjusted 64.2 and raw 67.2 are different scores. Astra’s corrected 64.7 was already present and remains unchanged. These rows use the OpenAI reporting series, with no paired cost/time or exact table-level effort supplied; they cannot be combined with Anthropic-grader scores or treated as patient outcomes.",
+      "date": "Source published 2026-09-29; reviewed October 12"
+    },
+    "healthbench-professional-haiku55-effort": {
+      "question": "How does Haiku perform under the developer’s medical grading setup?",
+      "tests": "The Haiku system card reports length-adjusted HealthBench Professional scores under an Opus 4.8 grader, with safety classifiers enabled and separately labeled effort runs.",
+      "matters": "Different reasoning settings can change a measured response, but the grading setup and collection dates also affect what a comparison means.",
+      "read": "Five-effort launch observations and the 13-trial same-day max recheck remain separately labeled. The original max runs occurred earlier than low through xhigh, so this is not a causal effort experiment. Keep these scores separate from the OpenAI grader. Approximate response times and an aggregate low-effort range do not provide exact paired task times.",
+      "date": "Source published 2026-10-07; reviewed October 12"
+    },
+    "healthagentbench": {
+      "question": "Can a clinical-workflow agent produce the required artifact?",
+      "tests": "Agents use their native coding harnesses to complete 54 clinical-artifact tasks. The original paper reports three attempts per task for each of ten systems, with no web browsing and xhigh effort.",
+      "matters": "Clinical workflow work extends beyond answering a question to producing a usable result. The model and its harness are both part of the measured system.",
+      "read": "The original ten-agent cohort pairs published rounded success rates with USD and wall-clock minutes per task attempt. These are not full-suite totals or patient outcomes. The two July additions keep their own board cost/task label, unknown effort and missing time rather than inheriting the paper setup. Numeric Wilson interval bounds were not transcribed.",
+      "date": "Source published 2026-07-01; reviewed October 12"
+    },
+    "mentalhealthbench": {
+      "question": "Does a response meet a mental-health conversation rubric?",
+      "tests": "Models respond to 1,215 synthetic conversations spanning non-acute, high-acuity and emergent scenarios. Four samples per task are assessed against a detailed response rubric.",
+      "matters": "Different conversation situations require different responses. A rubric can reveal shortcomings within this synthetic evaluation, while treatment efficacy needs separate clinical evidence.",
+      "read": "Maximum-effort system-card results and default-effort paper results are separate cohorts. The maximum-effort table reports one standard error across task means, not confidence intervals. Cost and time are unavailable, and these scores do not establish therapy efficacy or clinical safety.",
+      "date": "Source published 2026-09-29; reviewed October 12"
+    },
+    "robochallenge-table30-v2": {
+      "question": "Can a generalist robot complete physical manipulation tasks?",
+      "tests": "The Table30 V2 track tests multi-task robot systems across 30 tasks and four robot types. This view preserves all 54 aggregate rows from the official board rendered on October 12.",
+      "matters": "Physical tasks require sensing and acting through a real embodiment. Completing a task differs from making partial progress toward it.",
+      "read": "Success rate and the board’s partial-progress Score remain separate views. LoopWAM leads this retrieved success table; KDDI’s October 5 first-place announcement describes an earlier state. Evaluation dates, rollout denominators and complete task coverage are unknown, so low or zero rows are not assumed to be fully evaluated runs. The unrendered single-task observation stays excluded.",
+      "date": "Source snapshot 2026-10-12; reviewed October 12"
+    },
+    "drivingbench-fixed-pilot": {
+      "question": "Can an agent guide a vehicle around a small closed course?",
+      "tests": "Four model-and-harness systems control a speed-capped vehicle on a 127-metre course with a human safety operator. Each system has one independent chat and up to three dependent attempts.",
+      "matters": "The pilot exposes the interaction between observation, decisions and vehicle control. It is a small physical experiment rather than a population estimate of driving ability.",
+      "read": "Best progress, whole-chat reported spend and per-attempt duration describe different parts of this fixed pilot. All 11 attempts retain their original costs and durations, including failed attempts; they are not independent samples. Grok’s published total differs from the rounded attempt sum and is left unchanged. These results do not establish public-road safety.",
+      "date": "Source reviewed October 12; run dates remain separately labeled"
+    },
+    "waymo-corrected-fleet-outcomes": {
+      "question": "What crash outcomes were observed in the studied operating areas?",
+      "tests": "Waymo reports rider-only fleet crash involvement per mile against a geographically adjusted human comparator. The data end in June 2026, and October 2 release notes identify corrections to dynamic benchmark downloads.",
+      "matters": "Exposure-adjusted observations can inform the studied operating areas, but they describe the complete vehicle and operations system rather than a foundation model in isolation.",
+      "read": "Each outcome has its own comparison and lower rates are better. Published rounded rates and separately reported percentage differences are preserved without recalculating one from the other. This operator-reported observational study does not establish safety everywhere; a pending serious-injury classification is described in the source notes. Cost, latency and immutable fleet versions are unavailable.",
+      "date": "Observation period ends 2026-06-30; source reviewed October 12"
+    },
     "aa-briefcase-v1-1": {
       "question": "Can an agent produce useful professional work?",
       "tests": "Agents work through realistic office scenarios and produce deliverables. Evaluators compare the finished work rather than checking a short factual answer.",
@@ -11911,16 +12002,17 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-10-05",
-    "basis": "Derived from archived source packets, not a fresh source poll or new evaluation.",
+    "prepared_at": "2026-10-12",
+    "basis": "Earlier source metadata retained; October 12 additions derived from the exact parent source archive, not new evaluations.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 73,
-      "plotted": 64,
-      "current": 44,
-      "historical": 22,
+      "all": 86,
+      "plotted": 77,
+      "current": 52,
+      "historical": 27,
       "source_only": 7,
-      "unavailable": 2
+      "unavailable": 2,
+      "default_families": 58
     },
     "cards": {
       "hle-diamond": {
@@ -14143,6 +14235,451 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 3
+        }
+      },
+      "webdev-arena-frontend-2026-10-08": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": "2026-10-08",
+        "observation_period_end": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 8 · complete displayed Frontend table",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 142
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 142
+        }
+      },
+      "webrise-v1-text": {
+        "evidence": "plotted",
+        "cohort": "historical",
+        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-06-02",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "June 2 paper · all 14 Text rows",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 14
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 14
+        }
+      },
+      "hle-original-haiku55-october": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-10-07",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Original HLE · no tools · max effort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Original HLE · web and code tools · max effort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 2
+        }
+      },
+      "terminal-bench-4-haiku55-lab": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-10-07",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 7 report · Claude Code --bare · max",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 1
+        }
+      },
+      "terminal-bench-science-haiku55-lab": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-10-07",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 7 report · Claude Code --bare · max",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 1
+        }
+      },
+      "osworld-v2-1-offline-october": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-10-07",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October report · official 82-task offline subset",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 5
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 5
+        }
+      },
+      "healthbench-professional-openai-20260929": {
+        "evidence": "plotted",
+        "cohort": "historical",
+        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-09-29",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "September 29 table · seven unchanged predecessors plus Sol",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 8
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 8
+        }
+      },
+      "healthbench-professional-haiku55-effort": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-10-07",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 7 card · effort and collection dates retained",
+            "earliest": "2026-10-04",
+            "latest": "2026-10-04",
+            "known": 5,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 6
+        }
+      },
+      "healthagentbench": {
+        "evidence": "plotted",
+        "cohort": "historical",
+        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-07-01",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Original ten-agent paper cohort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 10
+          },
+          {
+            "slice": "July 27 additions · board setup partly unspecified",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 2
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 12
+        }
+      },
+      "mentalhealthbench": {
+        "evidence": "plotted",
+        "cohort": "historical",
+        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": "2026-09-29",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "September 29 system card · maximum effort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 6
+          },
+          {
+            "slice": "Author paper · default effort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 17
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 23
+        }
+      },
+      "robochallenge-table30-v2": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": "2026-10-12",
+        "observation_period_end": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 12 retrieved aggregate board · 54 rows",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 54
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 54
+        }
+      },
+      "drivingbench-fixed-pilot": {
+        "evidence": "plotted",
+        "cohort": "historical",
+        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Four system summaries · one chat per system",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 4
+          },
+          {
+            "slice": "All 11 dependent same-chat attempts",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 11
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 15
+        }
+      },
+      "waymo-corrected-fleet-outcomes": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-12",
+          "mode": "parent_primary_research",
+          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+        },
+        "result_packet_checked_at": "2026-10-12",
+        "snapshot_at": null,
+        "observation_period_end": "2026-06-30",
+        "publication_at": "2026-09-24",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "serious injury or worse",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 2
+          },
+          {
+            "slice": "any injury reported",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 2
+          },
+          {
+            "slice": "airbag deployment in any vehicle",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 2
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 6
         }
       }
     }
@@ -29952,6 +30489,15622 @@ window.LAB_GALLERY = {
             ]
           }
         ]
+      },
+      {
+        "id": "webdev-arena-frontend-2026-10-08",
+        "name": "Arena Frontend · October 8",
+        "category": "frontend",
+        "question": "Which generated websites do people prefer?",
+        "tests": "People compare generated HTML or React websites. This snapshot preserves all 142 displayed Frontend rows, their votes, harness labels and published score ranges.",
+        "matters": "Preference can reveal whether a website feels useful and appealing, while a separate functional test is needed to establish that its controls work.",
+        "read": "Ratings belong to this Frontend comparison pool. The axis spans 1000–1900 rating points, and the published intervals have no supplied confidence level. Two identically named Codex rows remain distinct source rows; 142 rows do not establish 142 unique models. API token prices are not task costs, and changes in votes or ratings do not prove model improvement.",
+        "source_input": "data/benchmark-refresh-2026-10-12/frontend.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/frontend.json"
+        ],
+        "variants": [
+          {
+            "id": "webdev-arena-frontend-2026-10-08",
+            "label": "October 8 · complete displayed Frontend table",
+            "rows": [
+              {
+                "rank": 1,
+                "model_variant": "claude-opus-5.5-max",
+                "value": 1857,
+                "confidence_interval": {
+                  "lower": 1838,
+                  "upper": 1876,
+                  "minus": 19,
+                  "plus": 19,
+                  "level": null
+                },
+                "votes": 1687,
+                "rank_spread": [
+                  1,
+                  1
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$4 / $20",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-1",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 4,
+                  "output": 20
+                },
+                "label": "claude-opus-5.5-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-1",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 1,
+                  "model_variant": "claude-opus-5.5-max",
+                  "value": 1857,
+                  "confidence_interval": {
+                    "lower": 1838,
+                    "upper": 1876,
+                    "minus": 19,
+                    "plus": 19,
+                    "level": null
+                  },
+                  "votes": 1687,
+                  "rank_spread": [
+                    1,
+                    1
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$4 / $20",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-1",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 4,
+                    "output": 20
+                  }
+                },
+                "published_range": [
+                  1838,
+                  1876
+                ]
+              },
+              {
+                "rank": 2,
+                "model_variant": "claude-sonnet-5.5-xhigh",
+                "value": 1813,
+                "confidence_interval": {
+                  "lower": 1796,
+                  "upper": 1830,
+                  "minus": 17,
+                  "plus": 17,
+                  "level": null
+                },
+                "votes": 1833,
+                "rank_spread": [
+                  2,
+                  3
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$2 / $10",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-2",
+                "evaluation_date": null,
+                "effort": "xhigh",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 10
+                },
+                "label": "claude-sonnet-5.5-xhigh",
+                "result_id": "webdev-frontend-2026-10-08-rank-2",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 2,
+                  "model_variant": "claude-sonnet-5.5-xhigh",
+                  "value": 1813,
+                  "confidence_interval": {
+                    "lower": 1796,
+                    "upper": 1830,
+                    "minus": 17,
+                    "plus": 17,
+                    "level": null
+                  },
+                  "votes": 1833,
+                  "rank_spread": [
+                    2,
+                    3
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$2 / $10",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-2",
+                  "evaluation_date": null,
+                  "effort": "xhigh",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1796,
+                  1830
+                ]
+              },
+              {
+                "rank": 3,
+                "model_variant": "gpt-6-astra-max",
+                "value": 1809,
+                "confidence_interval": {
+                  "lower": 1797,
+                  "upper": 1821,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 4114,
+                "rank_spread": [
+                  2,
+                  3
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$10 / $50",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-3",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 10,
+                  "output": 50
+                },
+                "label": "gpt-6-astra-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-3",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 3,
+                  "model_variant": "gpt-6-astra-max",
+                  "value": 1809,
+                  "confidence_interval": {
+                    "lower": 1797,
+                    "upper": 1821,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 4114,
+                  "rank_spread": [
+                    2,
+                    3
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$10 / $50",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-3",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 10,
+                    "output": 50
+                  }
+                },
+                "published_range": [
+                  1797,
+                  1821
+                ]
+              },
+              {
+                "rank": 4,
+                "model_variant": "claude-fable-5.1-max",
+                "value": 1778,
+                "confidence_interval": {
+                  "lower": 1767,
+                  "upper": 1789,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 5284,
+                "rank_spread": [
+                  4,
+                  5
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$10 / $50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-4",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 10,
+                  "output": 50
+                },
+                "label": "claude-fable-5.1-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-4",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 4,
+                  "model_variant": "claude-fable-5.1-max",
+                  "value": 1778,
+                  "confidence_interval": {
+                    "lower": 1767,
+                    "upper": 1789,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 5284,
+                  "rank_spread": [
+                    4,
+                    5
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$10 / $50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-4",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 10,
+                    "output": 50
+                  }
+                },
+                "published_range": [
+                  1767,
+                  1789
+                ]
+              },
+              {
+                "rank": 5,
+                "model_variant": "gpt-6.1-sol-max",
+                "value": 1771,
+                "confidence_interval": {
+                  "lower": 1754,
+                  "upper": 1788,
+                  "minus": 17,
+                  "plus": 17,
+                  "level": null
+                },
+                "votes": 1698,
+                "rank_spread": [
+                  4,
+                  6
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$2 / $10",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-5",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 10
+                },
+                "label": "gpt-6.1-sol-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-5",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 5,
+                  "model_variant": "gpt-6.1-sol-max",
+                  "value": 1771,
+                  "confidence_interval": {
+                    "lower": 1754,
+                    "upper": 1788,
+                    "minus": 17,
+                    "plus": 17,
+                    "level": null
+                  },
+                  "votes": 1698,
+                  "rank_spread": [
+                    4,
+                    6
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$2 / $10",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-5",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1754,
+                  1788
+                ]
+              },
+              {
+                "rank": 6,
+                "model_variant": "claude-sonnet-5.5-high",
+                "value": 1745,
+                "confidence_interval": {
+                  "lower": 1733,
+                  "upper": 1757,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 3208,
+                "rank_spread": [
+                  5,
+                  6
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$2 / $10",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-6",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 10
+                },
+                "label": "claude-sonnet-5.5-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-6",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 6,
+                  "model_variant": "claude-sonnet-5.5-high",
+                  "value": 1745,
+                  "confidence_interval": {
+                    "lower": 1733,
+                    "upper": 1757,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 3208,
+                  "rank_spread": [
+                    5,
+                    6
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$2 / $10",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-6",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1733,
+                  1757
+                ]
+              },
+              {
+                "rank": 7,
+                "model_variant": "claude-opus-5-max",
+                "value": 1713,
+                "confidence_interval": {
+                  "lower": 1706,
+                  "upper": 1720,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 13416,
+                "rank_spread": [
+                  7,
+                  8
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-7",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-5-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-7",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 7,
+                  "model_variant": "claude-opus-5-max",
+                  "value": 1713,
+                  "confidence_interval": {
+                    "lower": 1706,
+                    "upper": 1720,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 13416,
+                  "rank_spread": [
+                    7,
+                    8
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-7",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1706,
+                  1720
+                ]
+              },
+              {
+                "rank": 8,
+                "model_variant": "gpt-6-sol-max",
+                "value": 1695,
+                "confidence_interval": {
+                  "lower": 1682,
+                  "upper": 1708,
+                  "minus": 13,
+                  "plus": 13,
+                  "level": null
+                },
+                "votes": 2643,
+                "rank_spread": [
+                  7,
+                  12
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$2 / $10",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-8",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 10
+                },
+                "label": "gpt-6-sol-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-8",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 8,
+                  "model_variant": "gpt-6-sol-max",
+                  "value": 1695,
+                  "confidence_interval": {
+                    "lower": 1682,
+                    "upper": 1708,
+                    "minus": 13,
+                    "plus": 13,
+                    "level": null
+                  },
+                  "votes": 2643,
+                  "rank_spread": [
+                    7,
+                    12
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$2 / $10",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-8",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1682,
+                  1708
+                ]
+              },
+              {
+                "rank": 9,
+                "model_variant": "gemini-4-argon-high",
+                "value": 1687,
+                "confidence_interval": {
+                  "lower": 1669,
+                  "upper": 1705,
+                  "minus": 18,
+                  "plus": 18,
+                  "level": null
+                },
+                "votes": 1277,
+                "rank_spread": [
+                  8,
+                  15
+                ],
+                "preliminary": true,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$2 / $10",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-9",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 10
+                },
+                "label": "gemini-4-argon-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-9",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 9,
+                  "model_variant": "gemini-4-argon-high",
+                  "value": 1687,
+                  "confidence_interval": {
+                    "lower": 1669,
+                    "upper": 1705,
+                    "minus": 18,
+                    "plus": 18,
+                    "level": null
+                  },
+                  "votes": 1277,
+                  "rank_spread": [
+                    8,
+                    15
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$2 / $10",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-9",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1669,
+                  1705
+                ]
+              },
+              {
+                "rank": 10,
+                "model_variant": "qwen3.8-max-0902",
+                "value": 1686,
+                "confidence_interval": {
+                  "lower": 1678,
+                  "upper": 1694,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 8967,
+                "rank_spread": [
+                  8,
+                  13
+                ],
+                "preliminary": true,
+                "provider_and_license": "Alibaba · Proprietary",
+                "api_list_price_source_text": "$2 / $6",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-10",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 6
+                },
+                "label": "qwen3.8-max-0902",
+                "result_id": "webdev-frontend-2026-10-08-rank-10",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 10,
+                  "model_variant": "qwen3.8-max-0902",
+                  "value": 1686,
+                  "confidence_interval": {
+                    "lower": 1678,
+                    "upper": 1694,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 8967,
+                  "rank_spread": [
+                    8,
+                    13
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Alibaba · Proprietary",
+                  "api_list_price_source_text": "$2 / $6",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-10",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 6
+                  }
+                },
+                "published_range": [
+                  1678,
+                  1694
+                ]
+              },
+              {
+                "rank": 11,
+                "model_variant": "qwen3.8-max",
+                "value": 1679,
+                "confidence_interval": {
+                  "lower": 1666,
+                  "upper": 1692,
+                  "minus": 13,
+                  "plus": 13,
+                  "level": null
+                },
+                "votes": 2927,
+                "rank_spread": [
+                  8,
+                  16
+                ],
+                "preliminary": true,
+                "provider_and_license": "Alibaba · Proprietary",
+                "api_list_price_source_text": "$2 / $6",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-11",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 6
+                },
+                "label": "qwen3.8-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-11",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 11,
+                  "model_variant": "qwen3.8-max",
+                  "value": 1679,
+                  "confidence_interval": {
+                    "lower": 1666,
+                    "upper": 1692,
+                    "minus": 13,
+                    "plus": 13,
+                    "level": null
+                  },
+                  "votes": 2927,
+                  "rank_spread": [
+                    8,
+                    16
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Alibaba · Proprietary",
+                  "api_list_price_source_text": "$2 / $6",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-11",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 6
+                  }
+                },
+                "published_range": [
+                  1666,
+                  1692
+                ]
+              },
+              {
+                "rank": 12,
+                "model_variant": "claude-opus-5-high",
+                "value": 1677,
+                "confidence_interval": {
+                  "lower": 1671,
+                  "upper": 1683,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 17818,
+                "rank_spread": [
+                  8,
+                  14
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-12",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-5-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-12",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 12,
+                  "model_variant": "claude-opus-5-high",
+                  "value": 1677,
+                  "confidence_interval": {
+                    "lower": 1671,
+                    "upper": 1683,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 17818,
+                  "rank_spread": [
+                    8,
+                    14
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-12",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1671,
+                  1683
+                ]
+              },
+              {
+                "rank": 13,
+                "model_variant": "muse-spark-1.3-max",
+                "value": 1672,
+                "confidence_interval": {
+                  "lower": 1663,
+                  "upper": 1681,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 6203,
+                "rank_spread": [
+                  9,
+                  16
+                ],
+                "preliminary": false,
+                "provider_and_license": "Meta · Proprietary",
+                "api_list_price_source_text": "$1.25 / $4.25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-13",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 4.25
+                },
+                "label": "muse-spark-1.3-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-13",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 13,
+                  "model_variant": "muse-spark-1.3-max",
+                  "value": 1672,
+                  "confidence_interval": {
+                    "lower": 1663,
+                    "upper": 1681,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 6203,
+                  "rank_spread": [
+                    9,
+                    16
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Meta · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $4.25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-13",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 4.25
+                  }
+                },
+                "published_range": [
+                  1663,
+                  1681
+                ]
+              },
+              {
+                "rank": 14,
+                "model_variant": "kimi-k3-max",
+                "value": 1669,
+                "confidence_interval": {
+                  "lower": 1662,
+                  "upper": 1676,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 14010,
+                "rank_spread": [
+                  10,
+                  17
+                ],
+                "preliminary": false,
+                "provider_and_license": "Moonshot · Kimi K3 license",
+                "api_list_price_source_text": "$3 / $15",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-14",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 3,
+                  "output": 15
+                },
+                "label": "kimi-k3-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-14",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 14,
+                  "model_variant": "kimi-k3-max",
+                  "value": 1669,
+                  "confidence_interval": {
+                    "lower": 1662,
+                    "upper": 1676,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 14010,
+                  "rank_spread": [
+                    10,
+                    17
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Moonshot · Kimi K3 license",
+                  "api_list_price_source_text": "$3 / $15",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-14",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 3,
+                    "output": 15
+                  }
+                },
+                "published_range": [
+                  1662,
+                  1676
+                ]
+              },
+              {
+                "rank": 15,
+                "model_variant": "grok-4.7-xhigh",
+                "value": 1658,
+                "confidence_interval": {
+                  "lower": 1646,
+                  "upper": 1670,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 3082,
+                "rank_spread": [
+                  11,
+                  21
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$2 / $6",
+                "context_length_source_text": "500K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-15",
+                "evaluation_date": null,
+                "effort": "xhigh",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 6
+                },
+                "label": "grok-4.7-xhigh",
+                "result_id": "webdev-frontend-2026-10-08-rank-15",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 15,
+                  "model_variant": "grok-4.7-xhigh",
+                  "value": 1658,
+                  "confidence_interval": {
+                    "lower": 1646,
+                    "upper": 1670,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 3082,
+                  "rank_spread": [
+                    11,
+                    21
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$2 / $6",
+                  "context_length_source_text": "500K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-15",
+                  "evaluation_date": null,
+                  "effort": "xhigh",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 6
+                  }
+                },
+                "published_range": [
+                  1646,
+                  1670
+                ]
+              },
+              {
+                "rank": 16,
+                "model_variant": "mimo-v2.6-flash",
+                "value": 1655,
+                "confidence_interval": {
+                  "lower": 1643,
+                  "upper": 1667,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 3230,
+                "rank_spread": [
+                  12,
+                  22
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · MIT",
+                "api_list_price_source_text": "$0.14 / $0.28",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-16",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.14,
+                  "output": 0.28
+                },
+                "label": "mimo-v2.6-flash",
+                "result_id": "webdev-frontend-2026-10-08-rank-16",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 16,
+                  "model_variant": "mimo-v2.6-flash",
+                  "value": 1655,
+                  "confidence_interval": {
+                    "lower": 1643,
+                    "upper": 1667,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 3230,
+                  "rank_spread": [
+                    12,
+                    22
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · MIT",
+                  "api_list_price_source_text": "$0.14 / $0.28",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-16",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.14,
+                    "output": 0.28
+                  }
+                },
+                "published_range": [
+                  1643,
+                  1667
+                ]
+              },
+              {
+                "rank": 17,
+                "model_variant": "hy4-preview",
+                "value": 1652,
+                "confidence_interval": {
+                  "lower": 1641,
+                  "upper": 1663,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 3798,
+                "rank_spread": [
+                  14,
+                  23
+                ],
+                "preliminary": true,
+                "provider_and_license": "Tencent · Apache 2.0",
+                "api_list_price_source_text": "$0.83 / $2.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-17",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.83,
+                  "output": 2.5
+                },
+                "label": "hy4-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-17",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 17,
+                  "model_variant": "hy4-preview",
+                  "value": 1652,
+                  "confidence_interval": {
+                    "lower": 1641,
+                    "upper": 1663,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 3798,
+                  "rank_spread": [
+                    14,
+                    23
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Tencent · Apache 2.0",
+                  "api_list_price_source_text": "$0.83 / $2.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-17",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.83,
+                    "output": 2.5
+                  }
+                },
+                "published_range": [
+                  1641,
+                  1663
+                ]
+              },
+              {
+                "rank": 18,
+                "model_variant": "qwen3.8-flash-next",
+                "value": 1650,
+                "confidence_interval": {
+                  "lower": 1641,
+                  "upper": 1659,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 5518,
+                "rank_spread": [
+                  15,
+                  23
+                ],
+                "preliminary": true,
+                "provider_and_license": "Alibaba · qwen-community-1.0",
+                "api_list_price_source_text": "$0.16 / $0.47",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-18",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.16,
+                  "output": 0.47
+                },
+                "label": "qwen3.8-flash-next",
+                "result_id": "webdev-frontend-2026-10-08-rank-18",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 18,
+                  "model_variant": "qwen3.8-flash-next",
+                  "value": 1650,
+                  "confidence_interval": {
+                    "lower": 1641,
+                    "upper": 1659,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 5518,
+                  "rank_spread": [
+                    15,
+                    23
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Alibaba · qwen-community-1.0",
+                  "api_list_price_source_text": "$0.16 / $0.47",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-18",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.16,
+                    "output": 0.47
+                  }
+                },
+                "published_range": [
+                  1641,
+                  1659
+                ]
+              },
+              {
+                "rank": 19,
+                "model_variant": "mimo-v2.6-pro",
+                "value": 1646,
+                "confidence_interval": {
+                  "lower": 1634,
+                  "upper": 1658,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 2863,
+                "rank_spread": [
+                  15,
+                  24
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · MIT",
+                "api_list_price_source_text": "$0.43 / $0.87",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-19",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.43,
+                  "output": 0.87
+                },
+                "label": "mimo-v2.6-pro",
+                "result_id": "webdev-frontend-2026-10-08-rank-19",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 19,
+                  "model_variant": "mimo-v2.6-pro",
+                  "value": 1646,
+                  "confidence_interval": {
+                    "lower": 1634,
+                    "upper": 1658,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 2863,
+                  "rank_spread": [
+                    15,
+                    24
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · MIT",
+                  "api_list_price_source_text": "$0.43 / $0.87",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-19",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.43,
+                    "output": 0.87
+                  }
+                },
+                "published_range": [
+                  1634,
+                  1658
+                ]
+              },
+              {
+                "rank": 20,
+                "model_variant": "muse-spark-1.3 (xHigh)",
+                "value": 1640,
+                "confidence_interval": {
+                  "lower": 1631,
+                  "upper": 1649,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 5646,
+                "rank_spread": [
+                  15,
+                  27
+                ],
+                "preliminary": false,
+                "provider_and_license": "Meta · Proprietary",
+                "api_list_price_source_text": "$1.25 / $4.25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-20",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 4.25
+                },
+                "label": "muse-spark-1.3 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-08-rank-20",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 20,
+                  "model_variant": "muse-spark-1.3 (xHigh)",
+                  "value": 1640,
+                  "confidence_interval": {
+                    "lower": 1631,
+                    "upper": 1649,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 5646,
+                  "rank_spread": [
+                    15,
+                    27
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Meta · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $4.25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-20",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 4.25
+                  }
+                },
+                "published_range": [
+                  1631,
+                  1649
+                ]
+              },
+              {
+                "rank": 21,
+                "model_variant": "claude-fable-5-high",
+                "value": 1638,
+                "confidence_interval": {
+                  "lower": 1631,
+                  "upper": 1645,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 12325,
+                "rank_spread": [
+                  16,
+                  27
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$10 / $50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-21",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 10,
+                  "output": 50
+                },
+                "label": "claude-fable-5-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-21",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 21,
+                  "model_variant": "claude-fable-5-high",
+                  "value": 1638,
+                  "confidence_interval": {
+                    "lower": 1631,
+                    "upper": 1645,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 12325,
+                  "rank_spread": [
+                    16,
+                    27
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$10 / $50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-21",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 10,
+                    "output": 50
+                  }
+                },
+                "published_range": [
+                  1631,
+                  1645
+                ]
+              },
+              {
+                "rank": 22,
+                "model_variant": "glm-5.3-max",
+                "value": 1638,
+                "confidence_interval": {
+                  "lower": 1629,
+                  "upper": 1647,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 6580,
+                "rank_spread": [
+                  15,
+                  27
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$1.40 / $4.40",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-22",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.4,
+                  "output": 4.4
+                },
+                "label": "glm-5.3-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-22",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 22,
+                  "model_variant": "glm-5.3-max",
+                  "value": 1638,
+                  "confidence_interval": {
+                    "lower": 1629,
+                    "upper": 1647,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 6580,
+                  "rank_spread": [
+                    15,
+                    27
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$1.40 / $4.40",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-22",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.4,
+                    "output": 4.4
+                  }
+                },
+                "published_range": [
+                  1629,
+                  1647
+                ]
+              },
+              {
+                "rank": 23,
+                "model_variant": "deepseek-v4.1-flash-max",
+                "value": 1630,
+                "confidence_interval": {
+                  "lower": 1618,
+                  "upper": 1642,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 2785,
+                "rank_spread": [
+                  17,
+                  28
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-23",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "deepseek-v4.1-flash-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-23",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 23,
+                  "model_variant": "deepseek-v4.1-flash-max",
+                  "value": 1630,
+                  "confidence_interval": {
+                    "lower": 1618,
+                    "upper": 1642,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 2785,
+                  "rank_spread": [
+                    17,
+                    28
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-23",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1618,
+                  1642
+                ]
+              },
+              {
+                "rank": 24,
+                "model_variant": "grok-4.6-high",
+                "value": 1629,
+                "confidence_interval": {
+                  "lower": 1621,
+                  "upper": 1637,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7244,
+                "rank_spread": [
+                  19,
+                  27
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$2 / $6",
+                "context_length_source_text": "500K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-24",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 6
+                },
+                "label": "grok-4.6-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-24",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 24,
+                  "model_variant": "grok-4.6-high",
+                  "value": 1629,
+                  "confidence_interval": {
+                    "lower": 1621,
+                    "upper": 1637,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7244,
+                  "rank_spread": [
+                    19,
+                    27
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$2 / $6",
+                  "context_length_source_text": "500K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-24",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 6
+                  }
+                },
+                "published_range": [
+                  1621,
+                  1637
+                ]
+              },
+              {
+                "rank": 25,
+                "model_variant": "gpt-5.6-sol-xhigh (codex-harness)",
+                "value": 1626,
+                "confidence_interval": {
+                  "lower": 1619,
+                  "upper": 1633,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 12985,
+                "rank_spread": [
+                  20,
+                  27
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$4 / $20",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-25",
+                "evaluation_date": null,
+                "effort": "xhigh",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 4,
+                  "output": 20
+                },
+                "label": "gpt-5.6-sol-xhigh (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-25",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 25,
+                  "model_variant": "gpt-5.6-sol-xhigh (codex-harness)",
+                  "value": 1626,
+                  "confidence_interval": {
+                    "lower": 1619,
+                    "upper": 1633,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 12985,
+                  "rank_spread": [
+                    20,
+                    27
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$4 / $20",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-25",
+                  "evaluation_date": null,
+                  "effort": "xhigh",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 4,
+                    "output": 20
+                  }
+                },
+                "published_range": [
+                  1619,
+                  1633
+                ]
+              },
+              {
+                "rank": 26,
+                "model_variant": "glm-5.3-flash",
+                "value": 1625,
+                "confidence_interval": {
+                  "lower": 1617,
+                  "upper": 1633,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 10842,
+                "rank_spread": [
+                  20,
+                  28
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$0.06 / $0.20",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-26",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.06,
+                  "output": 0.2
+                },
+                "label": "glm-5.3-flash",
+                "result_id": "webdev-frontend-2026-10-08-rank-26",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 26,
+                  "model_variant": "glm-5.3-flash",
+                  "value": 1625,
+                  "confidence_interval": {
+                    "lower": 1617,
+                    "upper": 1633,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 10842,
+                  "rank_spread": [
+                    20,
+                    28
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$0.06 / $0.20",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-26",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.06,
+                    "output": 0.2
+                  }
+                },
+                "published_range": [
+                  1617,
+                  1633
+                ]
+              },
+              {
+                "rank": 27,
+                "model_variant": "glm-5.2-max",
+                "value": 1613,
+                "confidence_interval": {
+                  "lower": 1606,
+                  "upper": 1620,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 12411,
+                "rank_spread": [
+                  25,
+                  29
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$1.40 / $4.40",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-27",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.4,
+                  "output": 4.4
+                },
+                "label": "glm-5.2-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-27",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 27,
+                  "model_variant": "glm-5.2-max",
+                  "value": 1613,
+                  "confidence_interval": {
+                    "lower": 1606,
+                    "upper": 1620,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 12411,
+                  "rank_spread": [
+                    25,
+                    29
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$1.40 / $4.40",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-27",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.4,
+                    "output": 4.4
+                  }
+                },
+                "published_range": [
+                  1606,
+                  1620
+                ]
+              },
+              {
+                "rank": 28,
+                "model_variant": "claude-haiku-5.5-high",
+                "value": 1609,
+                "confidence_interval": {
+                  "lower": 1586,
+                  "upper": 1632,
+                  "minus": 23,
+                  "plus": 23,
+                  "level": null
+                },
+                "votes": 753,
+                "rank_spread": [
+                  20,
+                  35
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$0.10 / $0.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-28",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.1,
+                  "output": 0.5
+                },
+                "label": "claude-haiku-5.5-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-28",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 28,
+                  "model_variant": "claude-haiku-5.5-high",
+                  "value": 1609,
+                  "confidence_interval": {
+                    "lower": 1586,
+                    "upper": 1632,
+                    "minus": 23,
+                    "plus": 23,
+                    "level": null
+                  },
+                  "votes": 753,
+                  "rank_spread": [
+                    20,
+                    35
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$0.10 / $0.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-28",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.1,
+                    "output": 0.5
+                  }
+                },
+                "published_range": [
+                  1586,
+                  1632
+                ]
+              },
+              {
+                "rank": 29,
+                "model_variant": "qwen3.8-27b",
+                "value": 1599,
+                "confidence_interval": {
+                  "lower": 1592,
+                  "upper": 1606,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 10945,
+                "rank_spread": [
+                  27,
+                  34
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Apache 2.0",
+                "api_list_price_source_text": "$0.40 / $3",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-29",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.4,
+                  "output": 3
+                },
+                "label": "qwen3.8-27b",
+                "result_id": "webdev-frontend-2026-10-08-rank-29",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 29,
+                  "model_variant": "qwen3.8-27b",
+                  "value": 1599,
+                  "confidence_interval": {
+                    "lower": 1592,
+                    "upper": 1606,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 10945,
+                  "rank_spread": [
+                    27,
+                    34
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Apache 2.0",
+                  "api_list_price_source_text": "$0.40 / $3",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-29",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.4,
+                    "output": 3
+                  }
+                },
+                "published_range": [
+                  1592,
+                  1606
+                ]
+              },
+              {
+                "rank": 30,
+                "model_variant": "gemini-3.7-flash-high",
+                "value": 1595,
+                "confidence_interval": {
+                  "lower": 1587,
+                  "upper": 1603,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 8475,
+                "rank_spread": [
+                  28,
+                  35
+                ],
+                "preliminary": true,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.75 / $3.75",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-30",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 3.75
+                },
+                "label": "gemini-3.7-flash-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-30",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 30,
+                  "model_variant": "gemini-3.7-flash-high",
+                  "value": 1595,
+                  "confidence_interval": {
+                    "lower": 1587,
+                    "upper": 1603,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 8475,
+                  "rank_spread": [
+                    28,
+                    35
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $3.75",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-30",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 3.75
+                  }
+                },
+                "published_range": [
+                  1587,
+                  1603
+                ]
+              },
+              {
+                "rank": 31,
+                "model_variant": "deepseek-v4-pro-high-20260813",
+                "value": 1589,
+                "confidence_interval": {
+                  "lower": 1578,
+                  "upper": 1600,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 3674,
+                "rank_spread": [
+                  28,
+                  35
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$1.32 / $3.96",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-31",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.32,
+                  "output": 3.96
+                },
+                "label": "deepseek-v4-pro-high-20260813",
+                "result_id": "webdev-frontend-2026-10-08-rank-31",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 31,
+                  "model_variant": "deepseek-v4-pro-high-20260813",
+                  "value": 1589,
+                  "confidence_interval": {
+                    "lower": 1578,
+                    "upper": 1600,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 3674,
+                  "rank_spread": [
+                    28,
+                    35
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$1.32 / $3.96",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-31",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.32,
+                    "output": 3.96
+                  }
+                },
+                "published_range": [
+                  1578,
+                  1600
+                ]
+              },
+              {
+                "rank": 32,
+                "model_variant": "gemini-3.8-flash-high",
+                "value": 1589,
+                "confidence_interval": {
+                  "lower": 1580,
+                  "upper": 1598,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 7239,
+                "rank_spread": [
+                  28,
+                  35
+                ],
+                "preliminary": true,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.75 / $3.75",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-32",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 3.75
+                },
+                "label": "gemini-3.8-flash-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-32",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 32,
+                  "model_variant": "gemini-3.8-flash-high",
+                  "value": 1589,
+                  "confidence_interval": {
+                    "lower": 1580,
+                    "upper": 1598,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 7239,
+                  "rank_spread": [
+                    28,
+                    35
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $3.75",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-32",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 3.75
+                  }
+                },
+                "published_range": [
+                  1580,
+                  1598
+                ]
+              },
+              {
+                "rank": 33,
+                "model_variant": "gpt-6-luna-max",
+                "value": 1588,
+                "confidence_interval": {
+                  "lower": 1580,
+                  "upper": 1596,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 9525,
+                "rank_spread": [
+                  28,
+                  35
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.10 / $0.50",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-33",
+                "evaluation_date": null,
+                "effort": "max",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.1,
+                  "output": 0.5
+                },
+                "label": "gpt-6-luna-max",
+                "result_id": "webdev-frontend-2026-10-08-rank-33",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 33,
+                  "model_variant": "gpt-6-luna-max",
+                  "value": 1588,
+                  "confidence_interval": {
+                    "lower": 1580,
+                    "upper": 1596,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 9525,
+                  "rank_spread": [
+                    28,
+                    35
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.10 / $0.50",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-33",
+                  "evaluation_date": null,
+                  "effort": "max",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.1,
+                    "output": 0.5
+                  }
+                },
+                "published_range": [
+                  1580,
+                  1596
+                ]
+              },
+              {
+                "rank": 34,
+                "model_variant": "deepseek-v4-flash-high",
+                "value": 1585,
+                "confidence_interval": {
+                  "lower": 1575,
+                  "upper": 1595,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 3999,
+                "rank_spread": [
+                  28,
+                  35
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-34",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "deepseek-v4-flash-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-34",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 34,
+                  "model_variant": "deepseek-v4-flash-high",
+                  "value": 1585,
+                  "confidence_interval": {
+                    "lower": 1575,
+                    "upper": 1595,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 3999,
+                  "rank_spread": [
+                    28,
+                    35
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-34",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1575,
+                  1595
+                ]
+              },
+              {
+                "rank": 35,
+                "model_variant": "step-5-preview-high",
+                "value": 1576,
+                "confidence_interval": {
+                  "lower": 1563,
+                  "upper": 1589,
+                  "minus": 13,
+                  "plus": 13,
+                  "level": null
+                },
+                "votes": 2682,
+                "rank_spread": [
+                  29,
+                  40
+                ],
+                "preliminary": false,
+                "provider_and_license": "StepFun · Proprietary",
+                "api_list_price_source_text": "$1 / $2.70",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-35",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1,
+                  "output": 2.7
+                },
+                "label": "step-5-preview-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-35",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 35,
+                  "model_variant": "step-5-preview-high",
+                  "value": 1576,
+                  "confidence_interval": {
+                    "lower": 1563,
+                    "upper": 1589,
+                    "minus": 13,
+                    "plus": 13,
+                    "level": null
+                  },
+                  "votes": 2682,
+                  "rank_spread": [
+                    29,
+                    40
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "StepFun · Proprietary",
+                  "api_list_price_source_text": "$1 / $2.70",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-35",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1,
+                    "output": 2.7
+                  }
+                },
+                "published_range": [
+                  1563,
+                  1589
+                ]
+              },
+              {
+                "rank": 36,
+                "model_variant": "grok-4.5",
+                "value": 1563,
+                "confidence_interval": {
+                  "lower": 1556,
+                  "upper": 1570,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 9182,
+                "rank_spread": [
+                  35,
+                  40
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$2 / $6",
+                "context_length_source_text": "500K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-36",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 6
+                },
+                "label": "grok-4.5",
+                "result_id": "webdev-frontend-2026-10-08-rank-36",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 36,
+                  "model_variant": "grok-4.5",
+                  "value": 1563,
+                  "confidence_interval": {
+                    "lower": 1556,
+                    "upper": 1570,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 9182,
+                  "rank_spread": [
+                    35,
+                    40
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$2 / $6",
+                  "context_length_source_text": "500K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-36",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 6
+                  }
+                },
+                "published_range": [
+                  1556,
+                  1570
+                ]
+              },
+              {
+                "rank": 37,
+                "model_variant": "claude-opus-4-7-high",
+                "value": 1562,
+                "confidence_interval": {
+                  "lower": 1556,
+                  "upper": 1568,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 16173,
+                "rank_spread": [
+                  35,
+                  40
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-37",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-7-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-37",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 37,
+                  "model_variant": "claude-opus-4-7-high",
+                  "value": 1562,
+                  "confidence_interval": {
+                    "lower": 1556,
+                    "upper": 1568,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 16173,
+                  "rank_spread": [
+                    35,
+                    40
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-37",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1556,
+                  1568
+                ]
+              },
+              {
+                "rank": 38,
+                "model_variant": "claude-opus-4-8-high",
+                "value": 1560,
+                "confidence_interval": {
+                  "lower": 1554,
+                  "upper": 1566,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 14210,
+                "rank_spread": [
+                  35,
+                  41
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-38",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-8-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-38",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 38,
+                  "model_variant": "claude-opus-4-8-high",
+                  "value": 1560,
+                  "confidence_interval": {
+                    "lower": 1554,
+                    "upper": 1566,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 14210,
+                  "rank_spread": [
+                    35,
+                    41
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-38",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1554,
+                  1566
+                ]
+              },
+              {
+                "rank": 39,
+                "model_variant": "claude-opus-4-7",
+                "value": 1559,
+                "confidence_interval": {
+                  "lower": 1553,
+                  "upper": 1565,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 16300,
+                "rank_spread": [
+                  35,
+                  41
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-39",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-7",
+                "result_id": "webdev-frontend-2026-10-08-rank-39",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 39,
+                  "model_variant": "claude-opus-4-7",
+                  "value": 1559,
+                  "confidence_interval": {
+                    "lower": 1553,
+                    "upper": 1565,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 16300,
+                  "rank_spread": [
+                    35,
+                    41
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-39",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1553,
+                  1565
+                ]
+              },
+              {
+                "rank": 40,
+                "model_variant": "claude-opus-4-6-high",
+                "value": 1549,
+                "confidence_interval": {
+                  "lower": 1543,
+                  "upper": 1555,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 17672,
+                "rank_spread": [
+                  38,
+                  47
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-40",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-6-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-40",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 40,
+                  "model_variant": "claude-opus-4-6-high",
+                  "value": 1549,
+                  "confidence_interval": {
+                    "lower": 1543,
+                    "upper": 1555,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 17672,
+                  "rank_spread": [
+                    38,
+                    47
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-40",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1543,
+                  1555
+                ]
+              },
+              {
+                "rank": 41,
+                "model_variant": "mistral-large-4",
+                "value": 1548,
+                "confidence_interval": {
+                  "lower": 1529,
+                  "upper": 1567,
+                  "minus": 19,
+                  "plus": 19,
+                  "level": null
+                },
+                "votes": 1136,
+                "rank_spread": [
+                  35,
+                  49
+                ],
+                "preliminary": false,
+                "provider_and_license": "Mistral · Proprietary",
+                "api_list_price_source_text": "$0.68 / $2.09",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-41",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.68,
+                  "output": 2.09
+                },
+                "label": "mistral-large-4",
+                "result_id": "webdev-frontend-2026-10-08-rank-41",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 41,
+                  "model_variant": "mistral-large-4",
+                  "value": 1548,
+                  "confidence_interval": {
+                    "lower": 1529,
+                    "upper": 1567,
+                    "minus": 19,
+                    "plus": 19,
+                    "level": null
+                  },
+                  "votes": 1136,
+                  "rank_spread": [
+                    35,
+                    49
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Mistral · Proprietary",
+                  "api_list_price_source_text": "$0.68 / $2.09",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-41",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.68,
+                    "output": 2.09
+                  }
+                },
+                "published_range": [
+                  1529,
+                  1567
+                ]
+              },
+              {
+                "rank": 42,
+                "model_variant": "claude-sonnet-5-high",
+                "value": 1545,
+                "confidence_interval": {
+                  "lower": 1538,
+                  "upper": 1552,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 11941,
+                "rank_spread": [
+                  40,
+                  48
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$2 / $10",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-42",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 10
+                },
+                "label": "claude-sonnet-5-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-42",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 42,
+                  "model_variant": "claude-sonnet-5-high",
+                  "value": 1545,
+                  "confidence_interval": {
+                    "lower": 1538,
+                    "upper": 1552,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 11941,
+                  "rank_spread": [
+                    40,
+                    48
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$2 / $10",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-42",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1538,
+                  1552
+                ]
+              },
+              {
+                "rank": 43,
+                "model_variant": "claude-opus-4-8",
+                "value": 1540,
+                "confidence_interval": {
+                  "lower": 1534,
+                  "upper": 1546,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 14864,
+                "rank_spread": [
+                  40,
+                  48
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-43",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-8",
+                "result_id": "webdev-frontend-2026-10-08-rank-43",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 43,
+                  "model_variant": "claude-opus-4-8",
+                  "value": 1540,
+                  "confidence_interval": {
+                    "lower": 1534,
+                    "upper": 1546,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 14864,
+                  "rank_spread": [
+                    40,
+                    48
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-43",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1534,
+                  1546
+                ]
+              },
+              {
+                "rank": 44,
+                "model_variant": "muse-spark-1.1",
+                "value": 1539,
+                "confidence_interval": {
+                  "lower": 1531,
+                  "upper": 1547,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 6300,
+                "rank_spread": [
+                  40,
+                  48
+                ],
+                "preliminary": false,
+                "provider_and_license": "Meta · Proprietary",
+                "api_list_price_source_text": "$1.25 / $4.25",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-44",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 4.25
+                },
+                "label": "muse-spark-1.1",
+                "result_id": "webdev-frontend-2026-10-08-rank-44",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 44,
+                  "model_variant": "muse-spark-1.1",
+                  "value": 1539,
+                  "confidence_interval": {
+                    "lower": 1531,
+                    "upper": 1547,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 6300,
+                  "rank_spread": [
+                    40,
+                    48
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Meta · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $4.25",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-44",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 4.25
+                  }
+                },
+                "published_range": [
+                  1531,
+                  1547
+                ]
+              },
+              {
+                "rank": 45,
+                "model_variant": "claude-opus-4-6",
+                "value": 1537,
+                "confidence_interval": {
+                  "lower": 1531,
+                  "upper": 1543,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 18960,
+                "rank_spread": [
+                  41,
+                  48
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-45",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-6",
+                "result_id": "webdev-frontend-2026-10-08-rank-45",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 45,
+                  "model_variant": "claude-opus-4-6",
+                  "value": 1537,
+                  "confidence_interval": {
+                    "lower": 1531,
+                    "upper": 1543,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 18960,
+                  "rank_spread": [
+                    41,
+                    48
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-45",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1531,
+                  1543
+                ]
+              },
+              {
+                "rank": 46,
+                "model_variant": "gemini-3.6-flash-high",
+                "value": 1536,
+                "confidence_interval": {
+                  "lower": 1527,
+                  "upper": 1545,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 6434,
+                "rank_spread": [
+                  40,
+                  49
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.75 / $3.75",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-46",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 3.75
+                },
+                "label": "gemini-3.6-flash-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-46",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 46,
+                  "model_variant": "gemini-3.6-flash-high",
+                  "value": 1536,
+                  "confidence_interval": {
+                    "lower": 1527,
+                    "upper": 1545,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 6434,
+                  "rank_spread": [
+                    40,
+                    49
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $3.75",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-46",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 3.75
+                  }
+                },
+                "published_range": [
+                  1527,
+                  1545
+                ]
+              },
+              {
+                "rank": 47,
+                "model_variant": "muse-spark-1.2 (xHigh)",
+                "value": 1532,
+                "confidence_interval": {
+                  "lower": 1517,
+                  "upper": 1547,
+                  "minus": 15,
+                  "plus": 15,
+                  "level": null
+                },
+                "votes": 1739,
+                "rank_spread": [
+                  40,
+                  56
+                ],
+                "preliminary": false,
+                "provider_and_license": "Meta · Proprietary",
+                "api_list_price_source_text": "$1.25 / $4.25",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-47",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 4.25
+                },
+                "label": "muse-spark-1.2 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-08-rank-47",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 47,
+                  "model_variant": "muse-spark-1.2 (xHigh)",
+                  "value": 1532,
+                  "confidence_interval": {
+                    "lower": 1517,
+                    "upper": 1547,
+                    "minus": 15,
+                    "plus": 15,
+                    "level": null
+                  },
+                  "votes": 1739,
+                  "rank_spread": [
+                    40,
+                    56
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Meta · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $4.25",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-47",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 4.25
+                  }
+                },
+                "published_range": [
+                  1517,
+                  1547
+                ]
+              },
+              {
+                "rank": 48,
+                "model_variant": "gemini-3.5-flash",
+                "value": 1525,
+                "confidence_interval": {
+                  "lower": 1503,
+                  "upper": 1547,
+                  "minus": 22,
+                  "plus": 22,
+                  "level": null
+                },
+                "votes": 846,
+                "rank_spread": [
+                  40,
+                  58
+                ],
+                "preliminary": true,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.75 / $4.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-48",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 4.5
+                },
+                "label": "gemini-3.5-flash",
+                "result_id": "webdev-frontend-2026-10-08-rank-48",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 48,
+                  "model_variant": "gemini-3.5-flash",
+                  "value": 1525,
+                  "confidence_interval": {
+                    "lower": 1503,
+                    "upper": 1547,
+                    "minus": 22,
+                    "plus": 22,
+                    "level": null
+                  },
+                  "votes": 846,
+                  "rank_spread": [
+                    40,
+                    58
+                  ],
+                  "preliminary": true,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $4.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-48",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 4.5
+                  }
+                },
+                "published_range": [
+                  1503,
+                  1547
+                ]
+              },
+              {
+                "rank": 49,
+                "model_variant": "gpt-5.6-terra-xhigh (codex-harness)",
+                "value": 1523,
+                "confidence_interval": {
+                  "lower": 1516,
+                  "upper": 1530,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 9588,
+                "rank_spread": [
+                  45,
+                  56
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$2 / $12",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-49",
+                "evaluation_date": null,
+                "effort": "xhigh",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 12
+                },
+                "label": "gpt-5.6-terra-xhigh (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-49",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 49,
+                  "model_variant": "gpt-5.6-terra-xhigh (codex-harness)",
+                  "value": 1523,
+                  "confidence_interval": {
+                    "lower": 1516,
+                    "upper": 1530,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 9588,
+                  "rank_spread": [
+                    45,
+                    56
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$2 / $12",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-49",
+                  "evaluation_date": null,
+                  "effort": "xhigh",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 12
+                  }
+                },
+                "published_range": [
+                  1516,
+                  1530
+                ]
+              },
+              {
+                "rank": 50,
+                "model_variant": "claude-sonnet-4-6",
+                "value": 1521,
+                "confidence_interval": {
+                  "lower": 1516,
+                  "upper": 1526,
+                  "minus": 5,
+                  "plus": 5,
+                  "level": null
+                },
+                "votes": 21093,
+                "rank_spread": [
+                  47,
+                  56
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$1.50 / $7.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-50",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.5,
+                  "output": 7.5
+                },
+                "label": "claude-sonnet-4-6",
+                "result_id": "webdev-frontend-2026-10-08-rank-50",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 50,
+                  "model_variant": "claude-sonnet-4-6",
+                  "value": 1521,
+                  "confidence_interval": {
+                    "lower": 1516,
+                    "upper": 1526,
+                    "minus": 5,
+                    "plus": 5,
+                    "level": null
+                  },
+                  "votes": 21093,
+                  "rank_spread": [
+                    47,
+                    56
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$1.50 / $7.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-50",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.5,
+                    "output": 7.5
+                  }
+                },
+                "published_range": [
+                  1516,
+                  1526
+                ]
+              },
+              {
+                "rank": 51,
+                "model_variant": "seed-2.1-pro-preview",
+                "value": 1518,
+                "confidence_interval": {
+                  "lower": 1511,
+                  "upper": 1525,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 11696,
+                "rank_spread": [
+                  47,
+                  57
+                ],
+                "preliminary": false,
+                "provider_and_license": "Bytedance · Proprietary",
+                "api_list_price_source_text": "$0.88 / $4.42",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-51",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.88,
+                  "output": 4.42
+                },
+                "label": "seed-2.1-pro-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-51",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 51,
+                  "model_variant": "seed-2.1-pro-preview",
+                  "value": 1518,
+                  "confidence_interval": {
+                    "lower": 1511,
+                    "upper": 1525,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 11696,
+                  "rank_spread": [
+                    47,
+                    57
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Bytedance · Proprietary",
+                  "api_list_price_source_text": "$0.88 / $4.42",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-51",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.88,
+                    "output": 4.42
+                  }
+                },
+                "published_range": [
+                  1511,
+                  1525
+                ]
+              },
+              {
+                "rank": 52,
+                "model_variant": "qwen3.7-max-20260517",
+                "value": 1518,
+                "confidence_interval": {
+                  "lower": 1510,
+                  "upper": 1526,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7764,
+                "rank_spread": [
+                  47,
+                  58
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Proprietary",
+                "api_list_price_source_text": "$1.48 / $4.42",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-52",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.48,
+                  "output": 4.42
+                },
+                "label": "qwen3.7-max-20260517",
+                "result_id": "webdev-frontend-2026-10-08-rank-52",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 52,
+                  "model_variant": "qwen3.7-max-20260517",
+                  "value": 1518,
+                  "confidence_interval": {
+                    "lower": 1510,
+                    "upper": 1526,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7764,
+                  "rank_spread": [
+                    47,
+                    58
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Proprietary",
+                  "api_list_price_source_text": "$1.48 / $4.42",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-52",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.48,
+                    "output": 4.42
+                  }
+                },
+                "published_range": [
+                  1510,
+                  1526
+                ]
+              },
+              {
+                "rank": 53,
+                "model_variant": "gpt-5.5-xhigh (codex-harness)",
+                "value": 1517,
+                "confidence_interval": {
+                  "lower": 1511,
+                  "upper": 1523,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 14036,
+                "rank_spread": [
+                  47,
+                  58
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$5 / $30",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-53",
+                "evaluation_date": null,
+                "effort": "xhigh",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 30
+                },
+                "label": "gpt-5.5-xhigh (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-53",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 53,
+                  "model_variant": "gpt-5.5-xhigh (codex-harness)",
+                  "value": 1517,
+                  "confidence_interval": {
+                    "lower": 1511,
+                    "upper": 1523,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 14036,
+                  "rank_spread": [
+                    47,
+                    58
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$5 / $30",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-53",
+                  "evaluation_date": null,
+                  "effort": "xhigh",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 30
+                  }
+                },
+                "published_range": [
+                  1511,
+                  1523
+                ]
+              },
+              {
+                "rank": 54,
+                "model_variant": "gpt-5.6-luna-xhigh (codex-harness)",
+                "value": 1517,
+                "confidence_interval": {
+                  "lower": 1510,
+                  "upper": 1524,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 9600,
+                "rank_spread": [
+                  47,
+                  58
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.20 / $1.20",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-54",
+                "evaluation_date": null,
+                "effort": "xhigh",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.2,
+                  "output": 1.2
+                },
+                "label": "gpt-5.6-luna-xhigh (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-54",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 54,
+                  "model_variant": "gpt-5.6-luna-xhigh (codex-harness)",
+                  "value": 1517,
+                  "confidence_interval": {
+                    "lower": 1510,
+                    "upper": 1524,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 9600,
+                  "rank_spread": [
+                    47,
+                    58
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.20 / $1.20",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-54",
+                  "evaluation_date": null,
+                  "effort": "xhigh",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.2,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1510,
+                  1524
+                ]
+              },
+              {
+                "rank": 55,
+                "model_variant": "hy3",
+                "value": 1512,
+                "confidence_interval": {
+                  "lower": 1502,
+                  "upper": 1522,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 4456,
+                "rank_spread": [
+                  47,
+                  58
+                ],
+                "preliminary": false,
+                "provider_and_license": "Tencent · Apache 2.0",
+                "api_list_price_source_text": "$0.13 / $0.53",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-55",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.13,
+                  "output": 0.53
+                },
+                "label": "hy3",
+                "result_id": "webdev-frontend-2026-10-08-rank-55",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 55,
+                  "model_variant": "hy3",
+                  "value": 1512,
+                  "confidence_interval": {
+                    "lower": 1502,
+                    "upper": 1522,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 4456,
+                  "rank_spread": [
+                    47,
+                    58
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Tencent · Apache 2.0",
+                  "api_list_price_source_text": "$0.13 / $0.53",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-55",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.13,
+                    "output": 0.53
+                  }
+                },
+                "published_range": [
+                  1502,
+                  1522
+                ]
+              },
+              {
+                "rank": 56,
+                "model_variant": "glm-5.1",
+                "value": 1510,
+                "confidence_interval": {
+                  "lower": 1503,
+                  "upper": 1517,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 9404,
+                "rank_spread": [
+                  47,
+                  58
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$1.40 / $4.40",
+                "context_length_source_text": "202.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-56",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.4,
+                  "output": 4.4
+                },
+                "label": "glm-5.1",
+                "result_id": "webdev-frontend-2026-10-08-rank-56",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 56,
+                  "model_variant": "glm-5.1",
+                  "value": 1510,
+                  "confidence_interval": {
+                    "lower": 1503,
+                    "upper": 1517,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 9404,
+                  "rank_spread": [
+                    47,
+                    58
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$1.40 / $4.40",
+                  "context_length_source_text": "202.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-56",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.4,
+                    "output": 4.4
+                  }
+                },
+                "published_range": [
+                  1503,
+                  1517
+                ]
+              },
+              {
+                "rank": 57,
+                "model_variant": "kimi-k2.6",
+                "value": 1506,
+                "confidence_interval": {
+                  "lower": 1498,
+                  "upper": 1514,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 8510,
+                "rank_spread": [
+                  50,
+                  60
+                ],
+                "preliminary": false,
+                "provider_and_license": "Moonshot · Modified MIT",
+                "api_list_price_source_text": "$0.95 / $4",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-57",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.95,
+                  "output": 4
+                },
+                "label": "kimi-k2.6",
+                "result_id": "webdev-frontend-2026-10-08-rank-57",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 57,
+                  "model_variant": "kimi-k2.6",
+                  "value": 1506,
+                  "confidence_interval": {
+                    "lower": 1498,
+                    "upper": 1514,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 8510,
+                  "rank_spread": [
+                    50,
+                    60
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Moonshot · Modified MIT",
+                  "api_list_price_source_text": "$0.95 / $4",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-57",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.95,
+                    "output": 4
+                  }
+                },
+                "published_range": [
+                  1498,
+                  1514
+                ]
+              },
+              {
+                "rank": 58,
+                "model_variant": "gemini-3.5-flash-high",
+                "value": 1503,
+                "confidence_interval": {
+                  "lower": 1495,
+                  "upper": 1511,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7952,
+                "rank_spread": [
+                  51,
+                  62
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.75 / $4.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-58",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 4.5
+                },
+                "label": "gemini-3.5-flash-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-58",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 58,
+                  "model_variant": "gemini-3.5-flash-high",
+                  "value": 1503,
+                  "confidence_interval": {
+                    "lower": 1495,
+                    "upper": 1511,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7952,
+                  "rank_spread": [
+                    51,
+                    62
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $4.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-58",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 4.5
+                  }
+                },
+                "published_range": [
+                  1495,
+                  1511
+                ]
+              },
+              {
+                "rank": 59,
+                "model_variant": "claude-opus-4-5-20251101-high-32k",
+                "value": 1493,
+                "confidence_interval": {
+                  "lower": 1485,
+                  "upper": 1501,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 11034,
+                "rank_spread": [
+                  57,
+                  65
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "200K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-59",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-5-20251101-high-32k",
+                "result_id": "webdev-frontend-2026-10-08-rank-59",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 59,
+                  "model_variant": "claude-opus-4-5-20251101-high-32k",
+                  "value": 1493,
+                  "confidence_interval": {
+                    "lower": 1485,
+                    "upper": 1501,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 11034,
+                  "rank_spread": [
+                    57,
+                    65
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "200K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-59",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1485,
+                  1501
+                ]
+              },
+              {
+                "rank": 60,
+                "model_variant": "gemini-3.5-flash-medium",
+                "value": 1492,
+                "confidence_interval": {
+                  "lower": 1485,
+                  "upper": 1499,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 9926,
+                "rank_spread": [
+                  57,
+                  65
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.75 / $4.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-60",
+                "evaluation_date": null,
+                "effort": "medium",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 4.5
+                },
+                "label": "gemini-3.5-flash-medium",
+                "result_id": "webdev-frontend-2026-10-08-rank-60",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 60,
+                  "model_variant": "gemini-3.5-flash-medium",
+                  "value": 1492,
+                  "confidence_interval": {
+                    "lower": 1485,
+                    "upper": 1499,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 9926,
+                  "rank_spread": [
+                    57,
+                    65
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $4.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-60",
+                  "evaluation_date": null,
+                  "effort": "medium",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 4.5
+                  }
+                },
+                "published_range": [
+                  1485,
+                  1499
+                ]
+              },
+              {
+                "rank": 61,
+                "model_variant": "gpt-5.5-high (codex-harness)",
+                "value": 1491,
+                "confidence_interval": {
+                  "lower": 1485,
+                  "upper": 1497,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 14596,
+                "rank_spread": [
+                  58,
+                  65
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$5 / $30",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-61",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 30
+                },
+                "label": "gpt-5.5-high (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-61",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 61,
+                  "model_variant": "gpt-5.5-high (codex-harness)",
+                  "value": 1491,
+                  "confidence_interval": {
+                    "lower": 1485,
+                    "upper": 1497,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 14596,
+                  "rank_spread": [
+                    58,
+                    65
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$5 / $30",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-61",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 30
+                  }
+                },
+                "published_range": [
+                  1485,
+                  1497
+                ]
+              },
+              {
+                "rank": 62,
+                "model_variant": "qwen3.6-max-preview",
+                "value": 1483,
+                "confidence_interval": {
+                  "lower": 1470,
+                  "upper": 1496,
+                  "minus": 13,
+                  "plus": 13,
+                  "level": null
+                },
+                "votes": 2669,
+                "rank_spread": [
+                  58,
+                  68
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Proprietary",
+                "api_list_price_source_text": "$1.27 / $7.61",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-62",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.27,
+                  "output": 7.61
+                },
+                "label": "qwen3.6-max-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-62",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 62,
+                  "model_variant": "qwen3.6-max-preview",
+                  "value": 1483,
+                  "confidence_interval": {
+                    "lower": 1470,
+                    "upper": 1496,
+                    "minus": 13,
+                    "plus": 13,
+                    "level": null
+                  },
+                  "votes": 2669,
+                  "rank_spread": [
+                    58,
+                    68
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Proprietary",
+                  "api_list_price_source_text": "$1.27 / $7.61",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-62",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.27,
+                    "output": 7.61
+                  }
+                },
+                "published_range": [
+                  1470,
+                  1496
+                ]
+              },
+              {
+                "rank": 63,
+                "model_variant": "minimax-m3",
+                "value": 1479,
+                "confidence_interval": {
+                  "lower": 1473,
+                  "upper": 1485,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 15445,
+                "rank_spread": [
+                  59,
+                  68
+                ],
+                "preliminary": false,
+                "provider_and_license": "MiniMax · MiniMax Community License",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "524.3K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-63",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "minimax-m3",
+                "result_id": "webdev-frontend-2026-10-08-rank-63",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 63,
+                  "model_variant": "minimax-m3",
+                  "value": 1479,
+                  "confidence_interval": {
+                    "lower": 1473,
+                    "upper": 1485,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 15445,
+                  "rank_spread": [
+                    59,
+                    68
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "MiniMax · MiniMax Community License",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "524.3K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-63",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1473,
+                  1485
+                ]
+              },
+              {
+                "rank": 64,
+                "model_variant": "kimi-k2.7-code",
+                "value": 1475,
+                "confidence_interval": {
+                  "lower": 1465,
+                  "upper": 1485,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 4652,
+                "rank_spread": [
+                  59,
+                  70
+                ],
+                "preliminary": false,
+                "provider_and_license": "Moonshot · Modified MIT",
+                "api_list_price_source_text": "$0.67 / $3.35",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-64",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.67,
+                  "output": 3.35
+                },
+                "label": "kimi-k2.7-code",
+                "result_id": "webdev-frontend-2026-10-08-rank-64",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 64,
+                  "model_variant": "kimi-k2.7-code",
+                  "value": 1475,
+                  "confidence_interval": {
+                    "lower": 1465,
+                    "upper": 1485,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 4652,
+                  "rank_spread": [
+                    59,
+                    70
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Moonshot · Modified MIT",
+                  "api_list_price_source_text": "$0.67 / $3.35",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-64",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.67,
+                    "output": 3.35
+                  }
+                },
+                "published_range": [
+                  1465,
+                  1485
+                ]
+              },
+              {
+                "rank": 65,
+                "model_variant": "mimo-v2.5-pro",
+                "value": 1475,
+                "confidence_interval": {
+                  "lower": 1469,
+                  "upper": 1481,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 18240,
+                "rank_spread": [
+                  62,
+                  68
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · MIT",
+                "api_list_price_source_text": "$0.43 / $0.87",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-65",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.43,
+                  "output": 0.87
+                },
+                "label": "mimo-v2.5-pro",
+                "result_id": "webdev-frontend-2026-10-08-rank-65",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 65,
+                  "model_variant": "mimo-v2.5-pro",
+                  "value": 1475,
+                  "confidence_interval": {
+                    "lower": 1469,
+                    "upper": 1481,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 18240,
+                  "rank_spread": [
+                    62,
+                    68
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · MIT",
+                  "api_list_price_source_text": "$0.43 / $0.87",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-65",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.43,
+                    "output": 0.87
+                  }
+                },
+                "published_range": [
+                  1469,
+                  1481
+                ]
+              },
+              {
+                "rank": 66,
+                "model_variant": "claude-opus-4-5-20251101",
+                "value": 1468,
+                "confidence_interval": {
+                  "lower": 1461,
+                  "upper": 1475,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 13417,
+                "rank_spread": [
+                  62,
+                  72
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$5 / $25",
+                "context_length_source_text": "200K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-66",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 25
+                },
+                "label": "claude-opus-4-5-20251101",
+                "result_id": "webdev-frontend-2026-10-08-rank-66",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 66,
+                  "model_variant": "claude-opus-4-5-20251101",
+                  "value": 1468,
+                  "confidence_interval": {
+                    "lower": 1461,
+                    "upper": 1475,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 13417,
+                  "rank_spread": [
+                    62,
+                    72
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$5 / $25",
+                  "context_length_source_text": "200K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-66",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 25
+                  }
+                },
+                "published_range": [
+                  1461,
+                  1475
+                ]
+              },
+              {
+                "rank": 67,
+                "model_variant": "gpt-5.4-high (codex-harness)",
+                "value": 1464,
+                "confidence_interval": {
+                  "lower": 1445,
+                  "upper": 1483,
+                  "minus": 19,
+                  "plus": 19,
+                  "level": null
+                },
+                "votes": 1350,
+                "rank_spread": [
+                  62,
+                  77
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$2.50 / $15",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-67",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2.5,
+                  "output": 15
+                },
+                "label": "gpt-5.4-high (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-67",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 67,
+                  "model_variant": "gpt-5.4-high (codex-harness)",
+                  "value": 1464,
+                  "confidence_interval": {
+                    "lower": 1445,
+                    "upper": 1483,
+                    "minus": 19,
+                    "plus": 19,
+                    "level": null
+                  },
+                  "votes": 1350,
+                  "rank_spread": [
+                    62,
+                    77
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$2.50 / $15",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-67",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2.5,
+                    "output": 15
+                  }
+                },
+                "published_range": [
+                  1445,
+                  1483
+                ]
+              },
+              {
+                "rank": 68,
+                "model_variant": "deepseek-v4-pro-high-preview",
+                "value": 1462,
+                "confidence_interval": {
+                  "lower": 1455,
+                  "upper": 1469,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 11975,
+                "rank_spread": [
+                  65,
+                  73
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$1.32 / $3.96",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-68",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.32,
+                  "output": 3.96
+                },
+                "label": "deepseek-v4-pro-high-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-68",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 68,
+                  "model_variant": "deepseek-v4-pro-high-preview",
+                  "value": 1462,
+                  "confidence_interval": {
+                    "lower": 1455,
+                    "upper": 1469,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 11975,
+                  "rank_spread": [
+                    65,
+                    73
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$1.32 / $3.96",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-68",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.32,
+                    "output": 3.96
+                  }
+                },
+                "published_range": [
+                  1455,
+                  1469
+                ]
+              },
+              {
+                "rank": 69,
+                "model_variant": "qwen3.6-plus",
+                "value": 1460,
+                "confidence_interval": {
+                  "lower": 1454,
+                  "upper": 1466,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 15906,
+                "rank_spread": [
+                  65,
+                  73
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Proprietary",
+                "api_list_price_source_text": "$0.33 / $1.95",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-69",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.33,
+                  "output": 1.95
+                },
+                "label": "qwen3.6-plus",
+                "result_id": "webdev-frontend-2026-10-08-rank-69",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 69,
+                  "model_variant": "qwen3.6-plus",
+                  "value": 1460,
+                  "confidence_interval": {
+                    "lower": 1454,
+                    "upper": 1466,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 15906,
+                  "rank_spread": [
+                    65,
+                    73
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Proprietary",
+                  "api_list_price_source_text": "$0.33 / $1.95",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-69",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.33,
+                    "output": 1.95
+                  }
+                },
+                "published_range": [
+                  1454,
+                  1466
+                ]
+              },
+              {
+                "rank": 70,
+                "model_variant": "gpt-5.5 (codex-harness)",
+                "value": 1458,
+                "confidence_interval": {
+                  "lower": 1452,
+                  "upper": 1464,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 14151,
+                "rank_spread": [
+                  66,
+                  74
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$5 / $30",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-70",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 5,
+                  "output": 30
+                },
+                "label": "gpt-5.5 (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-70",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 70,
+                  "model_variant": "gpt-5.5 (codex-harness)",
+                  "value": 1458,
+                  "confidence_interval": {
+                    "lower": 1452,
+                    "upper": 1464,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 14151,
+                  "rank_spread": [
+                    66,
+                    74
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$5 / $30",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-70",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 5,
+                    "output": 30
+                  }
+                },
+                "published_range": [
+                  1452,
+                  1464
+                ]
+              },
+              {
+                "rank": 71,
+                "model_variant": "gemini-3.1-pro-preview",
+                "value": 1451,
+                "confidence_interval": {
+                  "lower": 1446,
+                  "upper": 1456,
+                  "minus": 5,
+                  "plus": 5,
+                  "level": null
+                },
+                "votes": 20970,
+                "rank_spread": [
+                  67,
+                  77
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$1 / $6",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-71",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1,
+                  "output": 6
+                },
+                "label": "gemini-3.1-pro-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-71",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 71,
+                  "model_variant": "gemini-3.1-pro-preview",
+                  "value": 1451,
+                  "confidence_interval": {
+                    "lower": 1446,
+                    "upper": 1456,
+                    "minus": 5,
+                    "plus": 5,
+                    "level": null
+                  },
+                  "votes": 20970,
+                  "rank_spread": [
+                    67,
+                    77
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$1 / $6",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-71",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1,
+                    "output": 6
+                  }
+                },
+                "published_range": [
+                  1446,
+                  1456
+                ]
+              },
+              {
+                "rank": 72,
+                "model_variant": "deepseek-v4-pro",
+                "value": 1445,
+                "confidence_interval": {
+                  "lower": 1438,
+                  "upper": 1452,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 11184,
+                "rank_spread": [
+                  69,
+                  80
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$1.32 / $3.96",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-72",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.32,
+                  "output": 3.96
+                },
+                "label": "deepseek-v4-pro",
+                "result_id": "webdev-frontend-2026-10-08-rank-72",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 72,
+                  "model_variant": "deepseek-v4-pro",
+                  "value": 1445,
+                  "confidence_interval": {
+                    "lower": 1438,
+                    "upper": 1452,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 11184,
+                  "rank_spread": [
+                    69,
+                    80
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$1.32 / $3.96",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-72",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.32,
+                    "output": 3.96
+                  }
+                },
+                "published_range": [
+                  1438,
+                  1452
+                ]
+              },
+              {
+                "rank": 73,
+                "model_variant": "gpt-5.4-medium (codex-harness)",
+                "value": 1443,
+                "confidence_interval": {
+                  "lower": 1425,
+                  "upper": 1461,
+                  "minus": 18,
+                  "plus": 18,
+                  "level": null
+                },
+                "votes": 1376,
+                "rank_spread": [
+                  66,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$2.50 / $15",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-73",
+                "evaluation_date": null,
+                "effort": "medium",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2.5,
+                  "output": 15
+                },
+                "label": "gpt-5.4-medium (codex-harness)",
+                "result_id": "webdev-frontend-2026-10-08-rank-73",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 73,
+                  "model_variant": "gpt-5.4-medium (codex-harness)",
+                  "value": 1443,
+                  "confidence_interval": {
+                    "lower": 1425,
+                    "upper": 1461,
+                    "minus": 18,
+                    "plus": 18,
+                    "level": null
+                  },
+                  "votes": 1376,
+                  "rank_spread": [
+                    66,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$2.50 / $15",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-73",
+                  "evaluation_date": null,
+                  "effort": "medium",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2.5,
+                    "output": 15
+                  }
+                },
+                "published_range": [
+                  1425,
+                  1461
+                ]
+              },
+              {
+                "rank": 74,
+                "model_variant": "gemini-3.5-flash-lite",
+                "value": 1442,
+                "confidence_interval": {
+                  "lower": 1393,
+                  "upper": 1491,
+                  "minus": 49,
+                  "plus": 49,
+                  "level": null
+                },
+                "votes": 176,
+                "rank_spread": [
+                  59,
+                  97
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.15 / $1.25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-74",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.15,
+                  "output": 1.25
+                },
+                "label": "gemini-3.5-flash-lite",
+                "result_id": "webdev-frontend-2026-10-08-rank-74",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 74,
+                  "model_variant": "gemini-3.5-flash-lite",
+                  "value": 1442,
+                  "confidence_interval": {
+                    "lower": 1393,
+                    "upper": 1491,
+                    "minus": 49,
+                    "plus": 49,
+                    "level": null
+                  },
+                  "votes": 176,
+                  "rank_spread": [
+                    59,
+                    97
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.15 / $1.25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-74",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.15,
+                    "output": 1.25
+                  }
+                },
+                "published_range": [
+                  1393,
+                  1491
+                ]
+              },
+              {
+                "rank": 75,
+                "model_variant": "gemini-3-pro",
+                "value": 1439,
+                "confidence_interval": {
+                  "lower": 1431,
+                  "upper": 1447,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 14089,
+                "rank_spread": [
+                  70,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$2 / $12",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-75",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2,
+                  "output": 12
+                },
+                "label": "gemini-3-pro",
+                "result_id": "webdev-frontend-2026-10-08-rank-75",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 75,
+                  "model_variant": "gemini-3-pro",
+                  "value": 1439,
+                  "confidence_interval": {
+                    "lower": 1431,
+                    "upper": 1447,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 14089,
+                  "rank_spread": [
+                    70,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$2 / $12",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-75",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2,
+                    "output": 12
+                  }
+                },
+                "published_range": [
+                  1431,
+                  1447
+                ]
+              },
+              {
+                "rank": 76,
+                "model_variant": "gemini-3-flash",
+                "value": 1439,
+                "confidence_interval": {
+                  "lower": 1430,
+                  "upper": 1448,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 10894,
+                "rank_spread": [
+                  70,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.50 / $3",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-76",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.5,
+                  "output": 3
+                },
+                "label": "gemini-3-flash",
+                "result_id": "webdev-frontend-2026-10-08-rank-76",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 76,
+                  "model_variant": "gemini-3-flash",
+                  "value": 1439,
+                  "confidence_interval": {
+                    "lower": 1430,
+                    "upper": 1448,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 10894,
+                  "rank_spread": [
+                    70,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.50 / $3",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-76",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.5,
+                    "output": 3
+                  }
+                },
+                "published_range": [
+                  1430,
+                  1448
+                ]
+              },
+              {
+                "rank": 77,
+                "model_variant": "kimi-k2.5-thinking",
+                "value": 1435,
+                "confidence_interval": {
+                  "lower": 1430,
+                  "upper": 1440,
+                  "minus": 5,
+                  "plus": 5,
+                  "level": null
+                },
+                "votes": 18809,
+                "rank_spread": [
+                  72,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Moonshot · Modified MIT",
+                "api_list_price_source_text": "$0.60 / $3",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-77",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.6,
+                  "output": 3
+                },
+                "label": "kimi-k2.5-thinking",
+                "result_id": "webdev-frontend-2026-10-08-rank-77",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 77,
+                  "model_variant": "kimi-k2.5-thinking",
+                  "value": 1435,
+                  "confidence_interval": {
+                    "lower": 1430,
+                    "upper": 1440,
+                    "minus": 5,
+                    "plus": 5,
+                    "level": null
+                  },
+                  "votes": 18809,
+                  "rank_spread": [
+                    72,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Moonshot · Modified MIT",
+                  "api_list_price_source_text": "$0.60 / $3",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-77",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.6,
+                    "output": 3
+                  }
+                },
+                "published_range": [
+                  1430,
+                  1440
+                ]
+              },
+              {
+                "rank": 78,
+                "model_variant": "glm-4.7",
+                "value": 1434,
+                "confidence_interval": {
+                  "lower": 1422,
+                  "upper": 1446,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 4007,
+                "rank_spread": [
+                  70,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$0.60 / $2.20",
+                "context_length_source_text": "204.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-78",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.6,
+                  "output": 2.2
+                },
+                "label": "glm-4.7",
+                "result_id": "webdev-frontend-2026-10-08-rank-78",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 78,
+                  "model_variant": "glm-4.7",
+                  "value": 1434,
+                  "confidence_interval": {
+                    "lower": 1422,
+                    "upper": 1446,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 4007,
+                  "rank_spread": [
+                    70,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$0.60 / $2.20",
+                  "context_length_source_text": "204.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-78",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.6,
+                    "output": 2.2
+                  }
+                },
+                "published_range": [
+                  1422,
+                  1446
+                ]
+              },
+              {
+                "rank": 79,
+                "model_variant": "glm-5",
+                "value": 1434,
+                "confidence_interval": {
+                  "lower": 1426,
+                  "upper": 1442,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7437,
+                "rank_spread": [
+                  72,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$1 / $3.20",
+                "context_length_source_text": "202.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-79",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1,
+                  "output": 3.2
+                },
+                "label": "glm-5",
+                "result_id": "webdev-frontend-2026-10-08-rank-79",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 79,
+                  "model_variant": "glm-5",
+                  "value": 1434,
+                  "confidence_interval": {
+                    "lower": 1426,
+                    "upper": 1442,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7437,
+                  "rank_spread": [
+                    72,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$1 / $3.20",
+                  "context_length_source_text": "202.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-79",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1,
+                    "output": 3.2
+                  }
+                },
+                "published_range": [
+                  1426,
+                  1442
+                ]
+              },
+              {
+                "rank": 80,
+                "model_variant": "mimo-v2-pro",
+                "value": 1433,
+                "confidence_interval": {
+                  "lower": 1425,
+                  "upper": 1441,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7171,
+                "rank_spread": [
+                  72,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · Proprietary",
+                "api_list_price_source_text": "$1.10 / $3.30",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-80",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.1,
+                  "output": 3.3
+                },
+                "label": "mimo-v2-pro",
+                "result_id": "webdev-frontend-2026-10-08-rank-80",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 80,
+                  "model_variant": "mimo-v2-pro",
+                  "value": 1433,
+                  "confidence_interval": {
+                    "lower": 1425,
+                    "upper": 1441,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7171,
+                  "rank_spread": [
+                    72,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · Proprietary",
+                  "api_list_price_source_text": "$1.10 / $3.30",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-80",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.1,
+                    "output": 3.3
+                  }
+                },
+                "published_range": [
+                  1425,
+                  1441
+                ]
+              },
+              {
+                "rank": 81,
+                "model_variant": "mimo-v2.5",
+                "value": 1431,
+                "confidence_interval": {
+                  "lower": 1425,
+                  "upper": 1437,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 13301,
+                "rank_spread": [
+                  73,
+                  84
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · MIT",
+                "api_list_price_source_text": "$0.14 / $0.28",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-81",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.14,
+                  "output": 0.28
+                },
+                "label": "mimo-v2.5",
+                "result_id": "webdev-frontend-2026-10-08-rank-81",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 81,
+                  "model_variant": "mimo-v2.5",
+                  "value": 1431,
+                  "confidence_interval": {
+                    "lower": 1425,
+                    "upper": 1437,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 13301,
+                  "rank_spread": [
+                    73,
+                    84
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · MIT",
+                  "api_list_price_source_text": "$0.14 / $0.28",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-81",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.14,
+                    "output": 0.28
+                  }
+                },
+                "published_range": [
+                  1425,
+                  1437
+                ]
+              },
+              {
+                "rank": 82,
+                "model_variant": "deepseek-v4-flash-high-preview",
+                "value": 1427,
+                "confidence_interval": {
+                  "lower": 1420,
+                  "upper": 1434,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 9286,
+                "rank_spread": [
+                  73,
+                  85
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-82",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "deepseek-v4-flash-high-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-82",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 82,
+                  "model_variant": "deepseek-v4-flash-high-preview",
+                  "value": 1427,
+                  "confidence_interval": {
+                    "lower": 1420,
+                    "upper": 1434,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 9286,
+                  "rank_spread": [
+                    73,
+                    85
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-82",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1420,
+                  1434
+                ]
+              },
+              {
+                "rank": 83,
+                "model_variant": "gpt-5-medium",
+                "value": 1416,
+                "confidence_interval": {
+                  "lower": 1400,
+                  "upper": 1432,
+                  "minus": 16,
+                  "plus": 16,
+                  "level": null
+                },
+                "votes": 3092,
+                "rank_spread": [
+                  73,
+                  93
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$1.25 / $10",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-83",
+                "evaluation_date": null,
+                "effort": "medium",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 10
+                },
+                "label": "gpt-5-medium",
+                "result_id": "webdev-frontend-2026-10-08-rank-83",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 83,
+                  "model_variant": "gpt-5-medium",
+                  "value": 1416,
+                  "confidence_interval": {
+                    "lower": 1400,
+                    "upper": 1432,
+                    "minus": 16,
+                    "plus": 16,
+                    "level": null
+                  },
+                  "votes": 3092,
+                  "rank_spread": [
+                    73,
+                    93
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $10",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-83",
+                  "evaluation_date": null,
+                  "effort": "medium",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1400,
+                  1432
+                ]
+              },
+              {
+                "rank": 84,
+                "model_variant": "gpt-5.2",
+                "value": 1415,
+                "confidence_interval": {
+                  "lower": 1393,
+                  "upper": 1437,
+                  "minus": 22,
+                  "plus": 22,
+                  "level": null
+                },
+                "votes": 1082,
+                "rank_spread": [
+                  73,
+                  98
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.88 / $7",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-84",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.88,
+                  "output": 7
+                },
+                "label": "gpt-5.2",
+                "result_id": "webdev-frontend-2026-10-08-rank-84",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 84,
+                  "model_variant": "gpt-5.2",
+                  "value": 1415,
+                  "confidence_interval": {
+                    "lower": 1393,
+                    "upper": 1437,
+                    "minus": 22,
+                    "plus": 22,
+                    "level": null
+                  },
+                  "votes": 1082,
+                  "rank_spread": [
+                    73,
+                    98
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.88 / $7",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-84",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.88,
+                    "output": 7
+                  }
+                },
+                "published_range": [
+                  1393,
+                  1437
+                ]
+              },
+              {
+                "rank": 85,
+                "model_variant": "inkling",
+                "value": 1409,
+                "confidence_interval": {
+                  "lower": 1402,
+                  "upper": 1416,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 11594,
+                "rank_spread": [
+                  82,
+                  93
+                ],
+                "preliminary": false,
+                "provider_and_license": "Thinky · Apache 2.0",
+                "api_list_price_source_text": "$1 / $4.05",
+                "context_length_source_text": "524.3K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-85",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1,
+                  "output": 4.05
+                },
+                "label": "inkling",
+                "result_id": "webdev-frontend-2026-10-08-rank-85",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 85,
+                  "model_variant": "inkling",
+                  "value": 1409,
+                  "confidence_interval": {
+                    "lower": 1402,
+                    "upper": 1416,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 11594,
+                  "rank_spread": [
+                    82,
+                    93
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Thinky · Apache 2.0",
+                  "api_list_price_source_text": "$1 / $4.05",
+                  "context_length_source_text": "524.3K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-85",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1,
+                    "output": 4.05
+                  }
+                },
+                "published_range": [
+                  1402,
+                  1416
+                ]
+              },
+              {
+                "rank": 86,
+                "model_variant": "gpt-5.3-codex (codex-harness)",
+                "value": 1408,
+                "confidence_interval": {
+                  "lower": 1394,
+                  "upper": 1422,
+                  "minus": 14,
+                  "plus": 14,
+                  "level": null
+                },
+                "votes": 2643,
+                "rank_spread": [
+                  81,
+                  96
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$1.75 / $14",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-86",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.75,
+                  "output": 14
+                },
+                "label": "gpt-5.3-codex (codex-harness) · source row 86",
+                "result_id": "webdev-frontend-2026-10-08-rank-86",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 86,
+                  "model_variant": "gpt-5.3-codex (codex-harness)",
+                  "value": 1408,
+                  "confidence_interval": {
+                    "lower": 1394,
+                    "upper": 1422,
+                    "minus": 14,
+                    "plus": 14,
+                    "level": null
+                  },
+                  "votes": 2643,
+                  "rank_spread": [
+                    81,
+                    96
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$1.75 / $14",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-86",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.75,
+                    "output": 14
+                  }
+                },
+                "published_range": [
+                  1394,
+                  1422
+                ]
+              },
+              {
+                "rank": 87,
+                "model_variant": "kimi-k2.5-instant",
+                "value": 1403,
+                "confidence_interval": {
+                  "lower": 1391,
+                  "upper": 1415,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 3269,
+                "rank_spread": [
+                  82,
+                  98
+                ],
+                "preliminary": false,
+                "provider_and_license": "Moonshot · Modified MIT",
+                "api_list_price_source_text": "$0.50 / $2.50",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-87",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.5,
+                  "output": 2.5
+                },
+                "label": "kimi-k2.5-instant",
+                "result_id": "webdev-frontend-2026-10-08-rank-87",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 87,
+                  "model_variant": "kimi-k2.5-instant",
+                  "value": 1403,
+                  "confidence_interval": {
+                    "lower": 1391,
+                    "upper": 1415,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 3269,
+                  "rank_spread": [
+                    82,
+                    98
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Moonshot · Modified MIT",
+                  "api_list_price_source_text": "$0.50 / $2.50",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-87",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.5,
+                    "output": 2.5
+                  }
+                },
+                "published_range": [
+                  1391,
+                  1415
+                ]
+              },
+              {
+                "rank": 88,
+                "model_variant": "gpt-5.4",
+                "value": 1403,
+                "confidence_interval": {
+                  "lower": 1391,
+                  "upper": 1415,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 3048,
+                "rank_spread": [
+                  82,
+                  98
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$2.50 / $15",
+                "context_length_source_text": "1.1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-88",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 2.5,
+                  "output": 15
+                },
+                "label": "gpt-5.4",
+                "result_id": "webdev-frontend-2026-10-08-rank-88",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 88,
+                  "model_variant": "gpt-5.4",
+                  "value": 1403,
+                  "confidence_interval": {
+                    "lower": 1391,
+                    "upper": 1415,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 3048,
+                  "rank_spread": [
+                    82,
+                    98
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$2.50 / $15",
+                  "context_length_source_text": "1.1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-88",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 2.5,
+                    "output": 15
+                  }
+                },
+                "published_range": [
+                  1391,
+                  1415
+                ]
+              },
+              {
+                "rank": 89,
+                "model_variant": "Inkling Small",
+                "value": 1403,
+                "confidence_interval": {
+                  "lower": 1393,
+                  "upper": 1413,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 4227,
+                "rank_spread": [
+                  82,
+                  97
+                ],
+                "preliminary": false,
+                "provider_and_license": "Thinky · Apache 2.0",
+                "api_list_price_source_text": "$0.45 / $1.20",
+                "context_length_source_text": "524.3K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-89",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.45,
+                  "output": 1.2
+                },
+                "label": "Inkling Small",
+                "result_id": "webdev-frontend-2026-10-08-rank-89",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 89,
+                  "model_variant": "Inkling Small",
+                  "value": 1403,
+                  "confidence_interval": {
+                    "lower": 1393,
+                    "upper": 1413,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 4227,
+                  "rank_spread": [
+                    82,
+                    97
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Thinky · Apache 2.0",
+                  "api_list_price_source_text": "$0.45 / $1.20",
+                  "context_length_source_text": "524.3K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-89",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.45,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1393,
+                  1413
+                ]
+              },
+              {
+                "rank": 90,
+                "model_variant": "qwen3.5-397b-a17b",
+                "value": 1397,
+                "confidence_interval": {
+                  "lower": 1392,
+                  "upper": 1402,
+                  "minus": 5,
+                  "plus": 5,
+                  "level": null
+                },
+                "votes": 19438,
+                "rank_spread": [
+                  82,
+                  98
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Apache 2.0",
+                "api_list_price_source_text": "$0.55 / $3.50",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-90",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.55,
+                  "output": 3.5
+                },
+                "label": "qwen3.5-397b-a17b",
+                "result_id": "webdev-frontend-2026-10-08-rank-90",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 90,
+                  "model_variant": "qwen3.5-397b-a17b",
+                  "value": 1397,
+                  "confidence_interval": {
+                    "lower": 1392,
+                    "upper": 1402,
+                    "minus": 5,
+                    "plus": 5,
+                    "level": null
+                  },
+                  "votes": 19438,
+                  "rank_spread": [
+                    82,
+                    98
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Apache 2.0",
+                  "api_list_price_source_text": "$0.55 / $3.50",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-90",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.55,
+                    "output": 3.5
+                  }
+                },
+                "published_range": [
+                  1392,
+                  1402
+                ]
+              },
+              {
+                "rank": 91,
+                "model_variant": "gpt-5.4-mini-high",
+                "value": 1396,
+                "confidence_interval": {
+                  "lower": 1389,
+                  "upper": 1403,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 11323,
+                "rank_spread": [
+                  82,
+                  100
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.75 / $4.50",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-91",
+                "evaluation_date": null,
+                "effort": "high",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 4.5
+                },
+                "label": "gpt-5.4-mini-high",
+                "result_id": "webdev-frontend-2026-10-08-rank-91",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 91,
+                  "model_variant": "gpt-5.4-mini-high",
+                  "value": 1396,
+                  "confidence_interval": {
+                    "lower": 1389,
+                    "upper": 1403,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 11323,
+                  "rank_spread": [
+                    82,
+                    100
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.75 / $4.50",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-91",
+                  "evaluation_date": null,
+                  "effort": "high",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 4.5
+                  }
+                },
+                "published_range": [
+                  1389,
+                  1403
+                ]
+              },
+              {
+                "rank": 92,
+                "model_variant": "gpt-5.1-medium",
+                "value": 1394,
+                "confidence_interval": {
+                  "lower": 1383,
+                  "upper": 1405,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 4912,
+                "rank_spread": [
+                  82,
+                  100
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.63 / $5",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-92",
+                "evaluation_date": null,
+                "effort": "medium",
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.63,
+                  "output": 5
+                },
+                "label": "gpt-5.1-medium",
+                "result_id": "webdev-frontend-2026-10-08-rank-92",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 92,
+                  "model_variant": "gpt-5.1-medium",
+                  "value": 1394,
+                  "confidence_interval": {
+                    "lower": 1383,
+                    "upper": 1405,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 4912,
+                  "rank_spread": [
+                    82,
+                    100
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.63 / $5",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-92",
+                  "evaluation_date": null,
+                  "effort": "medium",
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.63,
+                    "output": 5
+                  }
+                },
+                "published_range": [
+                  1383,
+                  1405
+                ]
+              },
+              {
+                "rank": 93,
+                "model_variant": "minimax-m2.7",
+                "value": 1394,
+                "confidence_interval": {
+                  "lower": 1388,
+                  "upper": 1400,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 14659,
+                "rank_spread": [
+                  84,
+                  100
+                ],
+                "preliminary": false,
+                "provider_and_license": "MiniMax · Modified MIT",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "204.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-93",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "minimax-m2.7",
+                "result_id": "webdev-frontend-2026-10-08-rank-93",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 93,
+                  "model_variant": "minimax-m2.7",
+                  "value": 1394,
+                  "confidence_interval": {
+                    "lower": 1388,
+                    "upper": 1400,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 14659,
+                  "rank_spread": [
+                    84,
+                    100
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "MiniMax · Modified MIT",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "204.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-93",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1388,
+                  1400
+                ]
+              },
+              {
+                "rank": 94,
+                "model_variant": "claude-sonnet-4-5-20250929-high-32k",
+                "value": 1392,
+                "confidence_interval": {
+                  "lower": 1384,
+                  "upper": 1400,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 13256,
+                "rank_spread": [
+                  84,
+                  100
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$3 / $15",
+                "context_length_source_text": "200K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-94",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 3,
+                  "output": 15
+                },
+                "label": "claude-sonnet-4-5-20250929-high-32k",
+                "result_id": "webdev-frontend-2026-10-08-rank-94",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 94,
+                  "model_variant": "claude-sonnet-4-5-20250929-high-32k",
+                  "value": 1392,
+                  "confidence_interval": {
+                    "lower": 1384,
+                    "upper": 1400,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 13256,
+                  "rank_spread": [
+                    84,
+                    100
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$3 / $15",
+                  "context_length_source_text": "200K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-94",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 3,
+                    "output": 15
+                  }
+                },
+                "published_range": [
+                  1384,
+                  1400
+                ]
+              },
+              {
+                "rank": 95,
+                "model_variant": "claude-opus-4-1-20250805",
+                "value": 1389,
+                "confidence_interval": {
+                  "lower": 1378,
+                  "upper": 1400,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 6926,
+                "rank_spread": [
+                  84,
+                  103
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$7.50 / $37.50",
+                "context_length_source_text": "200K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-95",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 7.5,
+                  "output": 37.5
+                },
+                "label": "claude-opus-4-1-20250805",
+                "result_id": "webdev-frontend-2026-10-08-rank-95",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 95,
+                  "model_variant": "claude-opus-4-1-20250805",
+                  "value": 1389,
+                  "confidence_interval": {
+                    "lower": 1378,
+                    "upper": 1400,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 6926,
+                  "rank_spread": [
+                    84,
+                    103
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$7.50 / $37.50",
+                  "context_length_source_text": "200K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-95",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 7.5,
+                    "output": 37.5
+                  }
+                },
+                "published_range": [
+                  1378,
+                  1400
+                ]
+              },
+              {
+                "rank": 96,
+                "model_variant": "glm-5v-turbo",
+                "value": 1389,
+                "confidence_interval": {
+                  "lower": 1374,
+                  "upper": 1404,
+                  "minus": 15,
+                  "plus": 15,
+                  "level": null
+                },
+                "votes": 1984,
+                "rank_spread": [
+                  82,
+                  103
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · Proprietary",
+                "api_list_price_source_text": "$1.20 / $4",
+                "context_length_source_text": "202.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-96",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.2,
+                  "output": 4
+                },
+                "label": "glm-5v-turbo",
+                "result_id": "webdev-frontend-2026-10-08-rank-96",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 96,
+                  "model_variant": "glm-5v-turbo",
+                  "value": 1389,
+                  "confidence_interval": {
+                    "lower": 1374,
+                    "upper": 1404,
+                    "minus": 15,
+                    "plus": 15,
+                    "level": null
+                  },
+                  "votes": 1984,
+                  "rank_spread": [
+                    82,
+                    103
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · Proprietary",
+                  "api_list_price_source_text": "$1.20 / $4",
+                  "context_length_source_text": "202.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-96",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.2,
+                    "output": 4
+                  }
+                },
+                "published_range": [
+                  1374,
+                  1404
+                ]
+              },
+              {
+                "rank": 97,
+                "model_variant": "minimax-m2.5",
+                "value": 1386,
+                "confidence_interval": {
+                  "lower": 1378,
+                  "upper": 1394,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7629,
+                "rank_spread": [
+                  85,
+                  103
+                ],
+                "preliminary": false,
+                "provider_and_license": "MiniMax · Modified MIT",
+                "api_list_price_source_text": "$0.27 / $1.08",
+                "context_length_source_text": "204.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-97",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.27,
+                  "output": 1.08
+                },
+                "label": "minimax-m2.5",
+                "result_id": "webdev-frontend-2026-10-08-rank-97",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 97,
+                  "model_variant": "minimax-m2.5",
+                  "value": 1386,
+                  "confidence_interval": {
+                    "lower": 1378,
+                    "upper": 1394,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7629,
+                  "rank_spread": [
+                    85,
+                    103
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "MiniMax · Modified MIT",
+                  "api_list_price_source_text": "$0.27 / $1.08",
+                  "context_length_source_text": "204.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-97",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.27,
+                    "output": 1.08
+                  }
+                },
+                "published_range": [
+                  1378,
+                  1394
+                ]
+              },
+              {
+                "rank": 98,
+                "model_variant": "gemini-3-flash (thinking-minimal)",
+                "value": 1385,
+                "confidence_interval": {
+                  "lower": 1380,
+                  "upper": 1390,
+                  "minus": 5,
+                  "plus": 5,
+                  "level": null
+                },
+                "votes": 21360,
+                "rank_spread": [
+                  91,
+                  103
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.50 / $3",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-98",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.5,
+                  "output": 3
+                },
+                "label": "gemini-3-flash (thinking-minimal)",
+                "result_id": "webdev-frontend-2026-10-08-rank-98",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 98,
+                  "model_variant": "gemini-3-flash (thinking-minimal)",
+                  "value": 1385,
+                  "confidence_interval": {
+                    "lower": 1380,
+                    "upper": 1390,
+                    "minus": 5,
+                    "plus": 5,
+                    "level": null
+                  },
+                  "votes": 21360,
+                  "rank_spread": [
+                    91,
+                    103
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.50 / $3",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-98",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.5,
+                    "output": 3
+                  }
+                },
+                "published_range": [
+                  1380,
+                  1390
+                ]
+              },
+              {
+                "rank": 99,
+                "model_variant": "claude-sonnet-4-5-20250929",
+                "value": 1384,
+                "confidence_interval": {
+                  "lower": 1377,
+                  "upper": 1391,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 15723,
+                "rank_spread": [
+                  91,
+                  103
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$3 / $15",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-99",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 3,
+                  "output": 15
+                },
+                "label": "claude-sonnet-4-5-20250929",
+                "result_id": "webdev-frontend-2026-10-08-rank-99",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 99,
+                  "model_variant": "claude-sonnet-4-5-20250929",
+                  "value": 1384,
+                  "confidence_interval": {
+                    "lower": 1377,
+                    "upper": 1391,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 15723,
+                  "rank_spread": [
+                    91,
+                    103
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$3 / $15",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-99",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 3,
+                    "output": 15
+                  }
+                },
+                "published_range": [
+                  1377,
+                  1391
+                ]
+              },
+              {
+                "rank": 100,
+                "model_variant": "minimax-m2.1-preview",
+                "value": 1383,
+                "confidence_interval": {
+                  "lower": 1373,
+                  "upper": 1393,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 7645,
+                "rank_spread": [
+                  87,
+                  104
+                ],
+                "preliminary": false,
+                "provider_and_license": "MiniMax · MIT",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "204.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-100",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "minimax-m2.1-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-100",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 100,
+                  "model_variant": "minimax-m2.1-preview",
+                  "value": 1383,
+                  "confidence_interval": {
+                    "lower": 1373,
+                    "upper": 1393,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 7645,
+                  "rank_spread": [
+                    87,
+                    104
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "MiniMax · MIT",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "204.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-100",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1373,
+                  1393
+                ]
+              },
+              {
+                "rank": 101,
+                "model_variant": "grok-4.20-beta-0309-reasoning",
+                "value": 1374,
+                "confidence_interval": {
+                  "lower": 1368,
+                  "upper": 1380,
+                  "minus": 6,
+                  "plus": 6,
+                  "level": null
+                },
+                "votes": 13635,
+                "rank_spread": [
+                  95,
+                  108
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$1.25 / $2.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-101",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 2.5
+                },
+                "label": "grok-4.20-beta-0309-reasoning",
+                "result_id": "webdev-frontend-2026-10-08-rank-101",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 101,
+                  "model_variant": "grok-4.20-beta-0309-reasoning",
+                  "value": 1374,
+                  "confidence_interval": {
+                    "lower": 1368,
+                    "upper": 1380,
+                    "minus": 6,
+                    "plus": 6,
+                    "level": null
+                  },
+                  "votes": 13635,
+                  "rank_spread": [
+                    95,
+                    108
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $2.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-101",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 2.5
+                  }
+                },
+                "published_range": [
+                  1368,
+                  1380
+                ]
+              },
+              {
+                "rank": 102,
+                "model_variant": "gpt-5.3-codex (codex-harness)",
+                "value": 1370,
+                "confidence_interval": {
+                  "lower": 1359,
+                  "upper": 1381,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 3643,
+                "rank_spread": [
+                  95,
+                  111
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$1.75 / $14",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-102",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": "codex-harness (source label)",
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.75,
+                  "output": 14
+                },
+                "label": "gpt-5.3-codex (codex-harness) · source row 102",
+                "result_id": "webdev-frontend-2026-10-08-rank-102",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 102,
+                  "model_variant": "gpt-5.3-codex (codex-harness)",
+                  "value": 1370,
+                  "confidence_interval": {
+                    "lower": 1359,
+                    "upper": 1381,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 3643,
+                  "rank_spread": [
+                    95,
+                    111
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$1.75 / $14",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-102",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": "codex-harness (source label)",
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.75,
+                    "output": 14
+                  }
+                },
+                "published_range": [
+                  1359,
+                  1381
+                ]
+              },
+              {
+                "rank": 103,
+                "model_variant": "solar-pro4",
+                "value": 1370,
+                "confidence_interval": {
+                  "lower": 1358,
+                  "upper": 1382,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 3781,
+                "rank_spread": [
+                  95,
+                  111
+                ],
+                "preliminary": false,
+                "provider_and_license": "Upstage · Proprietary",
+                "api_list_price_source_text": "$0.09 / $0.36",
+                "context_length_source_text": "524.3K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-103",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.09,
+                  "output": 0.36
+                },
+                "label": "solar-pro4",
+                "result_id": "webdev-frontend-2026-10-08-rank-103",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 103,
+                  "model_variant": "solar-pro4",
+                  "value": 1370,
+                  "confidence_interval": {
+                    "lower": 1358,
+                    "upper": 1382,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 3781,
+                  "rank_spread": [
+                    95,
+                    111
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Upstage · Proprietary",
+                  "api_list_price_source_text": "$0.09 / $0.36",
+                  "context_length_source_text": "524.3K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-103",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.09,
+                    "output": 0.36
+                  }
+                },
+                "published_range": [
+                  1358,
+                  1382
+                ]
+              },
+              {
+                "rank": 104,
+                "model_variant": "gemma-4-31b",
+                "value": 1366,
+                "confidence_interval": {
+                  "lower": 1359,
+                  "upper": 1373,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 12574,
+                "rank_spread": [
+                  101,
+                  111
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Apache 2.0",
+                "api_list_price_source_text": "$0.99 / $1.49",
+                "context_length_source_text": "131.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-104",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.99,
+                  "output": 1.49
+                },
+                "label": "gemma-4-31b",
+                "result_id": "webdev-frontend-2026-10-08-rank-104",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 104,
+                  "model_variant": "gemma-4-31b",
+                  "value": 1366,
+                  "confidence_interval": {
+                    "lower": 1359,
+                    "upper": 1373,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 12574,
+                  "rank_spread": [
+                    101,
+                    111
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Apache 2.0",
+                  "api_list_price_source_text": "$0.99 / $1.49",
+                  "context_length_source_text": "131.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-104",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.99,
+                    "output": 1.49
+                  }
+                },
+                "published_range": [
+                  1359,
+                  1373
+                ]
+              },
+              {
+                "rank": 105,
+                "model_variant": "deepseek-v3.2-thinking",
+                "value": 1361,
+                "confidence_interval": {
+                  "lower": 1352,
+                  "upper": 1370,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 6920,
+                "rank_spread": [
+                  101,
+                  112
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$0.26 / $0.80",
+                "context_length_source_text": "163.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-105",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.26,
+                  "output": 0.8
+                },
+                "label": "deepseek-v3.2-thinking",
+                "result_id": "webdev-frontend-2026-10-08-rank-105",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 105,
+                  "model_variant": "deepseek-v3.2-thinking",
+                  "value": 1361,
+                  "confidence_interval": {
+                    "lower": 1352,
+                    "upper": 1370,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 6920,
+                  "rank_spread": [
+                    101,
+                    112
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$0.26 / $0.80",
+                  "context_length_source_text": "163.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-105",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.26,
+                    "output": 0.8
+                  }
+                },
+                "published_range": [
+                  1352,
+                  1370
+                ]
+              },
+              {
+                "rank": 106,
+                "model_variant": "grok-4.3",
+                "value": 1360,
+                "confidence_interval": {
+                  "lower": 1353,
+                  "upper": 1367,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 13301,
+                "rank_spread": [
+                  102,
+                  111
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$1.25 / $2.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-106",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 2.5
+                },
+                "label": "grok-4.3",
+                "result_id": "webdev-frontend-2026-10-08-rank-106",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 106,
+                  "model_variant": "grok-4.3",
+                  "value": 1360,
+                  "confidence_interval": {
+                    "lower": 1353,
+                    "upper": 1367,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 13301,
+                  "rank_spread": [
+                    102,
+                    111
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $2.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-106",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 2.5
+                  }
+                },
+                "published_range": [
+                  1353,
+                  1367
+                ]
+              },
+              {
+                "rank": 107,
+                "model_variant": "qwen3.5-122b-a10b",
+                "value": 1359,
+                "confidence_interval": {
+                  "lower": 1351,
+                  "upper": 1367,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 8169,
+                "rank_spread": [
+                  102,
+                  112
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Apache 2.0",
+                "api_list_price_source_text": "$0.26 / $2.08",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-107",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.26,
+                  "output": 2.08
+                },
+                "label": "qwen3.5-122b-a10b",
+                "result_id": "webdev-frontend-2026-10-08-rank-107",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 107,
+                  "model_variant": "qwen3.5-122b-a10b",
+                  "value": 1359,
+                  "confidence_interval": {
+                    "lower": 1351,
+                    "upper": 1367,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 8169,
+                  "rank_spread": [
+                    102,
+                    112
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Apache 2.0",
+                  "api_list_price_source_text": "$0.26 / $2.08",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-107",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.26,
+                    "output": 2.08
+                  }
+                },
+                "published_range": [
+                  1351,
+                  1367
+                ]
+              },
+              {
+                "rank": 108,
+                "model_variant": "qwen3.5-27b",
+                "value": 1357,
+                "confidence_interval": {
+                  "lower": 1349,
+                  "upper": 1365,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 7710,
+                "rank_spread": [
+                  102,
+                  114
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Apache 2.0",
+                "api_list_price_source_text": "$0.26 / $2.60",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-108",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.26,
+                  "output": 2.6
+                },
+                "label": "qwen3.5-27b",
+                "result_id": "webdev-frontend-2026-10-08-rank-108",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 108,
+                  "model_variant": "qwen3.5-27b",
+                  "value": 1357,
+                  "confidence_interval": {
+                    "lower": 1349,
+                    "upper": 1365,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 7710,
+                  "rank_spread": [
+                    102,
+                    114
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Apache 2.0",
+                  "api_list_price_source_text": "$0.26 / $2.60",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-108",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.26,
+                    "output": 2.6
+                  }
+                },
+                "published_range": [
+                  1349,
+                  1365
+                ]
+              },
+              {
+                "rank": 109,
+                "model_variant": "gemma-4-26b-a4b",
+                "value": 1357,
+                "confidence_interval": {
+                  "lower": 1340,
+                  "upper": 1374,
+                  "minus": 17,
+                  "plus": 17,
+                  "level": null
+                },
+                "votes": 1497,
+                "rank_spread": [
+                  100,
+                  116
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Apache 2.0",
+                "api_list_price_source_text": "N/A",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-109",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": null,
+                "label": "gemma-4-26b-a4b",
+                "result_id": "webdev-frontend-2026-10-08-rank-109",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 109,
+                  "model_variant": "gemma-4-26b-a4b",
+                  "value": 1357,
+                  "confidence_interval": {
+                    "lower": 1340,
+                    "upper": 1374,
+                    "minus": 17,
+                    "plus": 17,
+                    "level": null
+                  },
+                  "votes": 1497,
+                  "rank_spread": [
+                    100,
+                    116
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Apache 2.0",
+                  "api_list_price_source_text": "N/A",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-109",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": null
+                },
+                "published_range": [
+                  1340,
+                  1374
+                ]
+              },
+              {
+                "rank": 110,
+                "model_variant": "muse-glimmer",
+                "value": 1356,
+                "confidence_interval": {
+                  "lower": 1339,
+                  "upper": 1373,
+                  "minus": 17,
+                  "plus": 17,
+                  "level": null
+                },
+                "votes": 1406,
+                "rank_spread": [
+                  101,
+                  117
+                ],
+                "preliminary": false,
+                "provider_and_license": "Meta · Apache-2.0",
+                "api_list_price_source_text": "N/A",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-110",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": null,
+                "label": "muse-glimmer",
+                "result_id": "webdev-frontend-2026-10-08-rank-110",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 110,
+                  "model_variant": "muse-glimmer",
+                  "value": 1356,
+                  "confidence_interval": {
+                    "lower": 1339,
+                    "upper": 1373,
+                    "minus": 17,
+                    "plus": 17,
+                    "level": null
+                  },
+                  "votes": 1406,
+                  "rank_spread": [
+                    101,
+                    117
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Meta · Apache-2.0",
+                  "api_list_price_source_text": "N/A",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-110",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": null
+                },
+                "published_range": [
+                  1339,
+                  1373
+                ]
+              },
+              {
+                "rank": 111,
+                "model_variant": "hunyuan-hy3-preview",
+                "value": 1355,
+                "confidence_interval": {
+                  "lower": 1337,
+                  "upper": 1373,
+                  "minus": 18,
+                  "plus": 18,
+                  "level": null
+                },
+                "votes": 1419,
+                "rank_spread": [
+                  101,
+                  117
+                ],
+                "preliminary": false,
+                "provider_and_license": "Tencent · tencent-hunyuan-community",
+                "api_list_price_source_text": "N/A",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-111",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": null,
+                "label": "hunyuan-hy3-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-111",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 111,
+                  "model_variant": "hunyuan-hy3-preview",
+                  "value": 1355,
+                  "confidence_interval": {
+                    "lower": 1337,
+                    "upper": 1373,
+                    "minus": 18,
+                    "plus": 18,
+                    "level": null
+                  },
+                  "votes": 1419,
+                  "rank_spread": [
+                    101,
+                    117
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Tencent · tencent-hunyuan-community",
+                  "api_list_price_source_text": "N/A",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-111",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": null
+                },
+                "published_range": [
+                  1337,
+                  1373
+                ]
+              },
+              {
+                "rank": 112,
+                "model_variant": "laguna-m.1",
+                "value": 1343,
+                "confidence_interval": {
+                  "lower": 1333,
+                  "upper": 1353,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 4822,
+                "rank_spread": [
+                  106,
+                  117
+                ],
+                "preliminary": false,
+                "provider_and_license": "Poolside · Apache 2.0",
+                "api_list_price_source_text": "$0.20 / $0.40",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-112",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.2,
+                  "output": 0.4
+                },
+                "label": "laguna-m.1",
+                "result_id": "webdev-frontend-2026-10-08-rank-112",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 112,
+                  "model_variant": "laguna-m.1",
+                  "value": 1343,
+                  "confidence_interval": {
+                    "lower": 1333,
+                    "upper": 1353,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 4822,
+                  "rank_spread": [
+                    106,
+                    117
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Poolside · Apache 2.0",
+                  "api_list_price_source_text": "$0.20 / $0.40",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-112",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.2,
+                    "output": 0.4
+                  }
+                },
+                "published_range": [
+                  1333,
+                  1353
+                ]
+              },
+              {
+                "rank": 113,
+                "model_variant": "gpt-5.1",
+                "value": 1341,
+                "confidence_interval": {
+                  "lower": 1333,
+                  "upper": 1349,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 10716,
+                "rank_spread": [
+                  108,
+                  118
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.63 / $5",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-113",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.63,
+                  "output": 5
+                },
+                "label": "gpt-5.1",
+                "result_id": "webdev-frontend-2026-10-08-rank-113",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 113,
+                  "model_variant": "gpt-5.1",
+                  "value": 1341,
+                  "confidence_interval": {
+                    "lower": 1333,
+                    "upper": 1349,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 10716,
+                  "rank_spread": [
+                    108,
+                    118
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.63 / $5",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-113",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.63,
+                    "output": 5
+                  }
+                },
+                "published_range": [
+                  1333,
+                  1349
+                ]
+              },
+              {
+                "rank": 114,
+                "model_variant": "glm-4.6",
+                "value": 1339,
+                "confidence_interval": {
+                  "lower": 1328,
+                  "upper": 1350,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 6781,
+                "rank_spread": [
+                  108,
+                  120
+                ],
+                "preliminary": false,
+                "provider_and_license": "Z.ai · MIT",
+                "api_list_price_source_text": "$0.50 / $2",
+                "context_length_source_text": "204.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-114",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.5,
+                  "output": 2
+                },
+                "label": "glm-4.6",
+                "result_id": "webdev-frontend-2026-10-08-rank-114",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 114,
+                  "model_variant": "glm-4.6",
+                  "value": 1339,
+                  "confidence_interval": {
+                    "lower": 1328,
+                    "upper": 1350,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 6781,
+                  "rank_spread": [
+                    108,
+                    120
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Z.ai · MIT",
+                  "api_list_price_source_text": "$0.50 / $2",
+                  "context_length_source_text": "204.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-114",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.5,
+                    "output": 2
+                  }
+                },
+                "published_range": [
+                  1328,
+                  1350
+                ]
+              },
+              {
+                "rank": 115,
+                "model_variant": "gpt-5.2-codex",
+                "value": 1338,
+                "confidence_interval": {
+                  "lower": 1329,
+                  "upper": 1347,
+                  "minus": 9,
+                  "plus": 9,
+                  "level": null
+                },
+                "votes": 6722,
+                "rank_spread": [
+                  109,
+                  119
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$1.75 / $14",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-115",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.75,
+                  "output": 14
+                },
+                "label": "gpt-5.2-codex",
+                "result_id": "webdev-frontend-2026-10-08-rank-115",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 115,
+                  "model_variant": "gpt-5.2-codex",
+                  "value": 1338,
+                  "confidence_interval": {
+                    "lower": 1329,
+                    "upper": 1347,
+                    "minus": 9,
+                    "plus": 9,
+                    "level": null
+                  },
+                  "votes": 6722,
+                  "rank_spread": [
+                    109,
+                    119
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$1.75 / $14",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-115",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.75,
+                    "output": 14
+                  }
+                },
+                "published_range": [
+                  1329,
+                  1347
+                ]
+              },
+              {
+                "rank": 116,
+                "model_variant": "gpt-5.1-codex",
+                "value": 1336,
+                "confidence_interval": {
+                  "lower": 1324,
+                  "upper": 1348,
+                  "minus": 12,
+                  "plus": 12,
+                  "level": null
+                },
+                "votes": 5005,
+                "rank_spread": [
+                  109,
+                  120
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$1.25 / $10",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-116",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 10
+                },
+                "label": "gpt-5.1-codex",
+                "result_id": "webdev-frontend-2026-10-08-rank-116",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 116,
+                  "model_variant": "gpt-5.1-codex",
+                  "value": 1336,
+                  "confidence_interval": {
+                    "lower": 1324,
+                    "upper": 1348,
+                    "minus": 12,
+                    "plus": 12,
+                    "level": null
+                  },
+                  "votes": 5005,
+                  "rank_spread": [
+                    109,
+                    120
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $10",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-116",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1324,
+                  1348
+                ]
+              },
+              {
+                "rank": 117,
+                "model_variant": "mimo-v2-flash (non-thinking)",
+                "value": 1329,
+                "confidence_interval": {
+                  "lower": 1319,
+                  "upper": 1339,
+                  "minus": 10,
+                  "plus": 10,
+                  "level": null
+                },
+                "votes": 5693,
+                "rank_spread": [
+                  110,
+                  120
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · MIT",
+                "api_list_price_source_text": "$0.10 / $0.30",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-117",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.1,
+                  "output": 0.3
+                },
+                "label": "mimo-v2-flash (non-thinking)",
+                "result_id": "webdev-frontend-2026-10-08-rank-117",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 117,
+                  "model_variant": "mimo-v2-flash (non-thinking)",
+                  "value": 1329,
+                  "confidence_interval": {
+                    "lower": 1319,
+                    "upper": 1339,
+                    "minus": 10,
+                    "plus": 10,
+                    "level": null
+                  },
+                  "votes": 5693,
+                  "rank_spread": [
+                    110,
+                    120
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · MIT",
+                  "api_list_price_source_text": "$0.10 / $0.30",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-117",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.1,
+                    "output": 0.3
+                  }
+                },
+                "published_range": [
+                  1319,
+                  1339
+                ]
+              },
+              {
+                "rank": 118,
+                "model_variant": "claude-haiku-4-5-20251001",
+                "value": 1326,
+                "confidence_interval": {
+                  "lower": 1321,
+                  "upper": 1331,
+                  "minus": 5,
+                  "plus": 5,
+                  "level": null
+                },
+                "votes": 26744,
+                "rank_spread": [
+                  114,
+                  120
+                ],
+                "preliminary": false,
+                "provider_and_license": "Anthropic · Proprietary",
+                "api_list_price_source_text": "$1 / $5",
+                "context_length_source_text": "200K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-118",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1,
+                  "output": 5
+                },
+                "label": "claude-haiku-4-5-20251001",
+                "result_id": "webdev-frontend-2026-10-08-rank-118",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 118,
+                  "model_variant": "claude-haiku-4-5-20251001",
+                  "value": 1326,
+                  "confidence_interval": {
+                    "lower": 1321,
+                    "upper": 1331,
+                    "minus": 5,
+                    "plus": 5,
+                    "level": null
+                  },
+                  "votes": 26744,
+                  "rank_spread": [
+                    114,
+                    120
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Anthropic · Proprietary",
+                  "api_list_price_source_text": "$1 / $5",
+                  "context_length_source_text": "200K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-118",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1,
+                    "output": 5
+                  }
+                },
+                "published_range": [
+                  1321,
+                  1331
+                ]
+              },
+              {
+                "rank": 119,
+                "model_variant": "deepseek-v3.2",
+                "value": 1324,
+                "confidence_interval": {
+                  "lower": 1316,
+                  "upper": 1332,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 9375,
+                "rank_spread": [
+                  113,
+                  120
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$0.26 / $0.80",
+                "context_length_source_text": "163.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-119",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.26,
+                  "output": 0.8
+                },
+                "label": "deepseek-v3.2",
+                "result_id": "webdev-frontend-2026-10-08-rank-119",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 119,
+                  "model_variant": "deepseek-v3.2",
+                  "value": 1324,
+                  "confidence_interval": {
+                    "lower": 1316,
+                    "upper": 1332,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 9375,
+                  "rank_spread": [
+                    113,
+                    120
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$0.26 / $0.80",
+                  "context_length_source_text": "163.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-119",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.26,
+                    "output": 0.8
+                  }
+                },
+                "published_range": [
+                  1316,
+                  1332
+                ]
+              },
+              {
+                "rank": 120,
+                "model_variant": "kimi-k2-thinking-turbo",
+                "value": 1321,
+                "confidence_interval": {
+                  "lower": 1314,
+                  "upper": 1328,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 13093,
+                "rank_spread": [
+                  115,
+                  120
+                ],
+                "preliminary": false,
+                "provider_and_license": "Moonshot · Modified MIT",
+                "api_list_price_source_text": "$0.57 / $2.30",
+                "context_length_source_text": "131.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-120",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.57,
+                  "output": 2.3
+                },
+                "label": "kimi-k2-thinking-turbo",
+                "result_id": "webdev-frontend-2026-10-08-rank-120",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 120,
+                  "model_variant": "kimi-k2-thinking-turbo",
+                  "value": 1321,
+                  "confidence_interval": {
+                    "lower": 1314,
+                    "upper": 1328,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 13093,
+                  "rank_spread": [
+                    115,
+                    120
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Moonshot · Modified MIT",
+                  "api_list_price_source_text": "$0.57 / $2.30",
+                  "context_length_source_text": "131.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-120",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.57,
+                    "output": 2.3
+                  }
+                },
+                "published_range": [
+                  1314,
+                  1328
+                ]
+              },
+              {
+                "rank": 121,
+                "model_variant": "laguna-xs.2",
+                "value": 1299,
+                "confidence_interval": {
+                  "lower": 1288,
+                  "upper": 1310,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 4060,
+                "rank_spread": [
+                  121,
+                  123
+                ],
+                "preliminary": false,
+                "provider_and_license": "Poolside · Apache 2.0",
+                "api_list_price_source_text": "$0.10 / $0.20",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-121",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.1,
+                  "output": 0.2
+                },
+                "label": "laguna-xs.2",
+                "result_id": "webdev-frontend-2026-10-08-rank-121",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 121,
+                  "model_variant": "laguna-xs.2",
+                  "value": 1299,
+                  "confidence_interval": {
+                    "lower": 1288,
+                    "upper": 1310,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 4060,
+                  "rank_spread": [
+                    121,
+                    123
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Poolside · Apache 2.0",
+                  "api_list_price_source_text": "$0.10 / $0.20",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-121",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.1,
+                    "output": 0.2
+                  }
+                },
+                "published_range": [
+                  1288,
+                  1310
+                ]
+              },
+              {
+                "rank": 122,
+                "model_variant": "minimax-m2",
+                "value": 1296,
+                "confidence_interval": {
+                  "lower": 1285,
+                  "upper": 1307,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 6713,
+                "rank_spread": [
+                  121,
+                  123
+                ],
+                "preliminary": false,
+                "provider_and_license": "MiniMax · Apache 2.0",
+                "api_list_price_source_text": "$0.30 / $1.20",
+                "context_length_source_text": "204.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-122",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.3,
+                  "output": 1.2
+                },
+                "label": "minimax-m2",
+                "result_id": "webdev-frontend-2026-10-08-rank-122",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 122,
+                  "model_variant": "minimax-m2",
+                  "value": 1296,
+                  "confidence_interval": {
+                    "lower": 1285,
+                    "upper": 1307,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 6713,
+                  "rank_spread": [
+                    121,
+                    123
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "MiniMax · Apache 2.0",
+                  "api_list_price_source_text": "$0.30 / $1.20",
+                  "context_length_source_text": "204.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-122",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.3,
+                    "output": 1.2
+                  }
+                },
+                "published_range": [
+                  1285,
+                  1307
+                ]
+              },
+              {
+                "rank": 123,
+                "model_variant": "mimo-v2-flash (thinking)",
+                "value": 1291,
+                "confidence_interval": {
+                  "lower": 1275,
+                  "upper": 1307,
+                  "minus": 16,
+                  "plus": 16,
+                  "level": null
+                },
+                "votes": 1687,
+                "rank_spread": [
+                  121,
+                  126
+                ],
+                "preliminary": false,
+                "provider_and_license": "Xiaomi · MIT",
+                "api_list_price_source_text": "$0.10 / $0.30",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-123",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.1,
+                  "output": 0.3
+                },
+                "label": "mimo-v2-flash (thinking)",
+                "result_id": "webdev-frontend-2026-10-08-rank-123",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 123,
+                  "model_variant": "mimo-v2-flash (thinking)",
+                  "value": 1291,
+                  "confidence_interval": {
+                    "lower": 1275,
+                    "upper": 1307,
+                    "minus": 16,
+                    "plus": 16,
+                    "level": null
+                  },
+                  "votes": 1687,
+                  "rank_spread": [
+                    121,
+                    126
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Xiaomi · MIT",
+                  "api_list_price_source_text": "$0.10 / $0.30",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-123",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.1,
+                    "output": 0.3
+                  }
+                },
+                "published_range": [
+                  1275,
+                  1307
+                ]
+              },
+              {
+                "rank": 124,
+                "model_variant": "qwen3-coder-480b-a35b-instruct",
+                "value": 1274,
+                "confidence_interval": {
+                  "lower": 1266,
+                  "upper": 1282,
+                  "minus": 8,
+                  "plus": 8,
+                  "level": null
+                },
+                "votes": 12719,
+                "rank_spread": [
+                  123,
+                  128
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Apache 2.0",
+                "api_list_price_source_text": "$0.65 / $3.25",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-124",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.65,
+                  "output": 3.25
+                },
+                "label": "qwen3-coder-480b-a35b-instruct",
+                "result_id": "webdev-frontend-2026-10-08-rank-124",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 124,
+                  "model_variant": "qwen3-coder-480b-a35b-instruct",
+                  "value": 1274,
+                  "confidence_interval": {
+                    "lower": 1266,
+                    "upper": 1282,
+                    "minus": 8,
+                    "plus": 8,
+                    "level": null
+                  },
+                  "votes": 12719,
+                  "rank_spread": [
+                    123,
+                    128
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Apache 2.0",
+                  "api_list_price_source_text": "$0.65 / $3.25",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-124",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.65,
+                    "output": 3.25
+                  }
+                },
+                "published_range": [
+                  1266,
+                  1282
+                ]
+              },
+              {
+                "rank": 125,
+                "model_variant": "deepseek-v3.2-exp",
+                "value": 1271,
+                "confidence_interval": {
+                  "lower": 1258,
+                  "upper": 1284,
+                  "minus": 13,
+                  "plus": 13,
+                  "level": null
+                },
+                "votes": 3972,
+                "rank_spread": [
+                  123,
+                  132
+                ],
+                "preliminary": false,
+                "provider_and_license": "DeepSeek · MIT",
+                "api_list_price_source_text": "$0.27 / $0.41",
+                "context_length_source_text": "163.8K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-125",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.27,
+                  "output": 0.41
+                },
+                "label": "deepseek-v3.2-exp",
+                "result_id": "webdev-frontend-2026-10-08-rank-125",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 125,
+                  "model_variant": "deepseek-v3.2-exp",
+                  "value": 1271,
+                  "confidence_interval": {
+                    "lower": 1258,
+                    "upper": 1284,
+                    "minus": 13,
+                    "plus": 13,
+                    "level": null
+                  },
+                  "votes": 3972,
+                  "rank_spread": [
+                    123,
+                    132
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "DeepSeek · MIT",
+                  "api_list_price_source_text": "$0.27 / $0.41",
+                  "context_length_source_text": "163.8K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-125",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.27,
+                    "output": 0.41
+                  }
+                },
+                "published_range": [
+                  1258,
+                  1284
+                ]
+              },
+              {
+                "rank": 126,
+                "model_variant": "mistral-medium-3.5",
+                "value": 1265,
+                "confidence_interval": {
+                  "lower": 1250,
+                  "upper": 1280,
+                  "minus": 15,
+                  "plus": 15,
+                  "level": null
+                },
+                "votes": 2244,
+                "rank_spread": [
+                  123,
+                  134
+                ],
+                "preliminary": false,
+                "provider_and_license": "Mistral · Modified MIT",
+                "api_list_price_source_text": "$0.75 / $3.75",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-126",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.75,
+                  "output": 3.75
+                },
+                "label": "mistral-medium-3.5",
+                "result_id": "webdev-frontend-2026-10-08-rank-126",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 126,
+                  "model_variant": "mistral-medium-3.5",
+                  "value": 1265,
+                  "confidence_interval": {
+                    "lower": 1250,
+                    "upper": 1280,
+                    "minus": 15,
+                    "plus": 15,
+                    "level": null
+                  },
+                  "votes": 2244,
+                  "rank_spread": [
+                    123,
+                    134
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Mistral · Modified MIT",
+                  "api_list_price_source_text": "$0.75 / $3.75",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-126",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.75,
+                    "output": 3.75
+                  }
+                },
+                "published_range": [
+                  1250,
+                  1280
+                ]
+              },
+              {
+                "rank": 127,
+                "model_variant": "gemini-3.1-flash-lite-preview",
+                "value": 1255,
+                "confidence_interval": {
+                  "lower": 1248,
+                  "upper": 1262,
+                  "minus": 7,
+                  "plus": 7,
+                  "level": null
+                },
+                "votes": 14123,
+                "rank_spread": [
+                  125,
+                  134
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$0.25 / $1.50",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-127",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.25,
+                  "output": 1.5
+                },
+                "label": "gemini-3.1-flash-lite-preview",
+                "result_id": "webdev-frontend-2026-10-08-rank-127",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 127,
+                  "model_variant": "gemini-3.1-flash-lite-preview",
+                  "value": 1255,
+                  "confidence_interval": {
+                    "lower": 1248,
+                    "upper": 1262,
+                    "minus": 7,
+                    "plus": 7,
+                    "level": null
+                  },
+                  "votes": 14123,
+                  "rank_spread": [
+                    125,
+                    134
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$0.25 / $1.50",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-127",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.25,
+                    "output": 1.5
+                  }
+                },
+                "published_range": [
+                  1248,
+                  1262
+                ]
+              },
+              {
+                "rank": 128,
+                "model_variant": "KAT-Coder-Pro-V1",
+                "value": 1255,
+                "confidence_interval": {
+                  "lower": 1236,
+                  "upper": 1274,
+                  "minus": 19,
+                  "plus": 19,
+                  "level": null
+                },
+                "votes": 1504,
+                "rank_spread": [
+                  124,
+                  136
+                ],
+                "preliminary": false,
+                "provider_and_license": "Proprietary",
+                "api_list_price_source_text": "$0.21 / $0.83",
+                "context_length_source_text": "256K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-128",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.21,
+                  "output": 0.83
+                },
+                "label": "KAT-Coder-Pro-V1",
+                "result_id": "webdev-frontend-2026-10-08-rank-128",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 128,
+                  "model_variant": "KAT-Coder-Pro-V1",
+                  "value": 1255,
+                  "confidence_interval": {
+                    "lower": 1236,
+                    "upper": 1274,
+                    "minus": 19,
+                    "plus": 19,
+                    "level": null
+                  },
+                  "votes": 1504,
+                  "rank_spread": [
+                    124,
+                    136
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Proprietary",
+                  "api_list_price_source_text": "$0.21 / $0.83",
+                  "context_length_source_text": "256K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-128",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.21,
+                    "output": 0.83
+                  }
+                },
+                "published_range": [
+                  1236,
+                  1274
+                ]
+              },
+              {
+                "rank": 129,
+                "model_variant": "qwen3.5-35b-a3b",
+                "value": 1253,
+                "confidence_interval": {
+                  "lower": 1236,
+                  "upper": 1270,
+                  "minus": 17,
+                  "plus": 17,
+                  "level": null
+                },
+                "votes": 1617,
+                "rank_spread": [
+                  124,
+                  136
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Apache 2.0",
+                "api_list_price_source_text": "$0.08 / $0.75",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-129",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.08,
+                  "output": 0.75
+                },
+                "label": "qwen3.5-35b-a3b",
+                "result_id": "webdev-frontend-2026-10-08-rank-129",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 129,
+                  "model_variant": "qwen3.5-35b-a3b",
+                  "value": 1253,
+                  "confidence_interval": {
+                    "lower": 1236,
+                    "upper": 1270,
+                    "minus": 17,
+                    "plus": 17,
+                    "level": null
+                  },
+                  "votes": 1617,
+                  "rank_spread": [
+                    124,
+                    136
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Apache 2.0",
+                  "api_list_price_source_text": "$0.08 / $0.75",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-129",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.08,
+                    "output": 0.75
+                  }
+                },
+                "published_range": [
+                  1236,
+                  1270
+                ]
+              },
+              {
+                "rank": 130,
+                "model_variant": "gpt-5.1-codex-mini",
+                "value": 1243,
+                "confidence_interval": {
+                  "lower": 1221,
+                  "upper": 1265,
+                  "minus": 22,
+                  "plus": 22,
+                  "level": null
+                },
+                "votes": 1155,
+                "rank_spread": [
+                  125,
+                  136
+                ],
+                "preliminary": false,
+                "provider_and_license": "OpenAI · Proprietary",
+                "api_list_price_source_text": "$0.25 / $2",
+                "context_length_source_text": "400K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-130",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.25,
+                  "output": 2
+                },
+                "label": "gpt-5.1-codex-mini",
+                "result_id": "webdev-frontend-2026-10-08-rank-130",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 130,
+                  "model_variant": "gpt-5.1-codex-mini",
+                  "value": 1243,
+                  "confidence_interval": {
+                    "lower": 1221,
+                    "upper": 1265,
+                    "minus": 22,
+                    "plus": 22,
+                    "level": null
+                  },
+                  "votes": 1155,
+                  "rank_spread": [
+                    125,
+                    136
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "OpenAI · Proprietary",
+                  "api_list_price_source_text": "$0.25 / $2",
+                  "context_length_source_text": "400K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-130",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.25,
+                    "output": 2
+                  }
+                },
+                "published_range": [
+                  1221,
+                  1265
+                ]
+              },
+              {
+                "rank": 131,
+                "model_variant": "qwen3.5-flash",
+                "value": 1243,
+                "confidence_interval": {
+                  "lower": 1223,
+                  "upper": 1263,
+                  "minus": 20,
+                  "plus": 20,
+                  "level": null
+                },
+                "votes": 1329,
+                "rank_spread": [
+                  125,
+                  136
+                ],
+                "preliminary": false,
+                "provider_and_license": "Alibaba · Proprietary",
+                "api_list_price_source_text": "N/A",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-131",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": null,
+                "label": "qwen3.5-flash",
+                "result_id": "webdev-frontend-2026-10-08-rank-131",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 131,
+                  "model_variant": "qwen3.5-flash",
+                  "value": 1243,
+                  "confidence_interval": {
+                    "lower": 1223,
+                    "upper": 1263,
+                    "minus": 20,
+                    "plus": 20,
+                    "level": null
+                  },
+                  "votes": 1329,
+                  "rank_spread": [
+                    125,
+                    136
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Alibaba · Proprietary",
+                  "api_list_price_source_text": "N/A",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-131",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": null
+                },
+                "published_range": [
+                  1223,
+                  1263
+                ]
+              },
+              {
+                "rank": 132,
+                "model_variant": "grok-4-1-fast-reasoning",
+                "value": 1241,
+                "confidence_interval": {
+                  "lower": 1230,
+                  "upper": 1252,
+                  "minus": 11,
+                  "plus": 11,
+                  "level": null
+                },
+                "votes": 5491,
+                "rank_spread": [
+                  126,
+                  136
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$0.20 / $0.50",
+                "context_length_source_text": "128K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-132",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.2,
+                  "output": 0.5
+                },
+                "label": "grok-4-1-fast-reasoning",
+                "result_id": "webdev-frontend-2026-10-08-rank-132",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 132,
+                  "model_variant": "grok-4-1-fast-reasoning",
+                  "value": 1241,
+                  "confidence_interval": {
+                    "lower": 1230,
+                    "upper": 1252,
+                    "minus": 11,
+                    "plus": 11,
+                    "level": null
+                  },
+                  "votes": 5491,
+                  "rank_spread": [
+                    126,
+                    136
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$0.20 / $0.50",
+                  "context_length_source_text": "128K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-132",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.2,
+                    "output": 0.5
+                  }
+                },
+                "published_range": [
+                  1230,
+                  1252
+                ]
+              },
+              {
+                "rank": 133,
+                "model_variant": "trinity-large-thinking",
+                "value": 1238,
+                "confidence_interval": {
+                  "lower": 1218,
+                  "upper": 1258,
+                  "minus": 20,
+                  "plus": 20,
+                  "level": null
+                },
+                "votes": 1353,
+                "rank_spread": [
+                  125,
+                  136
+                ],
+                "preliminary": false,
+                "provider_and_license": "Apache 2.0",
+                "api_list_price_source_text": "$0.25 / $0.80",
+                "context_length_source_text": "262.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-133",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.25,
+                  "output": 0.8
+                },
+                "label": "trinity-large-thinking",
+                "result_id": "webdev-frontend-2026-10-08-rank-133",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 133,
+                  "model_variant": "trinity-large-thinking",
+                  "value": 1238,
+                  "confidence_interval": {
+                    "lower": 1218,
+                    "upper": 1258,
+                    "minus": 20,
+                    "plus": 20,
+                    "level": null
+                  },
+                  "votes": 1353,
+                  "rank_spread": [
+                    125,
+                    136
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Apache 2.0",
+                  "api_list_price_source_text": "$0.25 / $0.80",
+                  "context_length_source_text": "262.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-133",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.25,
+                    "output": 0.8
+                  }
+                },
+                "published_range": [
+                  1218,
+                  1258
+                ]
+              },
+              {
+                "rank": 134,
+                "model_variant": "mistral-large-3",
+                "value": 1229,
+                "confidence_interval": {
+                  "lower": 1204,
+                  "upper": 1254,
+                  "minus": 25,
+                  "plus": 25,
+                  "level": null
+                },
+                "votes": 839,
+                "rank_spread": [
+                  126,
+                  138
+                ],
+                "preliminary": false,
+                "provider_and_license": "Mistral · Apache 2.0",
+                "api_list_price_source_text": "$0.50 / $1.50",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-134",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.5,
+                  "output": 1.5
+                },
+                "label": "mistral-large-3",
+                "result_id": "webdev-frontend-2026-10-08-rank-134",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 134,
+                  "model_variant": "mistral-large-3",
+                  "value": 1229,
+                  "confidence_interval": {
+                    "lower": 1204,
+                    "upper": 1254,
+                    "minus": 25,
+                    "plus": 25,
+                    "level": null
+                  },
+                  "votes": 839,
+                  "rank_spread": [
+                    126,
+                    138
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Mistral · Apache 2.0",
+                  "api_list_price_source_text": "$0.50 / $1.50",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-134",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.5,
+                    "output": 1.5
+                  }
+                },
+                "published_range": [
+                  1204,
+                  1254
+                ]
+              },
+              {
+                "rank": 135,
+                "model_variant": "gemini-2.5-pro",
+                "value": 1226,
+                "confidence_interval": {
+                  "lower": 1210,
+                  "upper": 1242,
+                  "minus": 16,
+                  "plus": 16,
+                  "level": null
+                },
+                "votes": 2728,
+                "rank_spread": [
+                  128,
+                  137
+                ],
+                "preliminary": false,
+                "provider_and_license": "Google · Proprietary",
+                "api_list_price_source_text": "$1.25 / $10",
+                "context_length_source_text": "1M",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-135",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 1.25,
+                  "output": 10
+                },
+                "label": "gemini-2.5-pro",
+                "result_id": "webdev-frontend-2026-10-08-rank-135",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 135,
+                  "model_variant": "gemini-2.5-pro",
+                  "value": 1226,
+                  "confidence_interval": {
+                    "lower": 1210,
+                    "upper": 1242,
+                    "minus": 16,
+                    "plus": 16,
+                    "level": null
+                  },
+                  "votes": 2728,
+                  "rank_spread": [
+                    128,
+                    137
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Google · Proprietary",
+                  "api_list_price_source_text": "$1.25 / $10",
+                  "context_length_source_text": "1M",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-135",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 1.25,
+                    "output": 10
+                  }
+                },
+                "published_range": [
+                  1210,
+                  1242
+                ]
+              },
+              {
+                "rank": 136,
+                "model_variant": "grok-4.1-thinking",
+                "value": 1213,
+                "confidence_interval": {
+                  "lower": 1188,
+                  "upper": 1238,
+                  "minus": 25,
+                  "plus": 25,
+                  "level": null
+                },
+                "votes": 961,
+                "rank_spread": [
+                  128,
+                  140
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "N/A",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-136",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": null,
+                "label": "grok-4.1-thinking",
+                "result_id": "webdev-frontend-2026-10-08-rank-136",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 136,
+                  "model_variant": "grok-4.1-thinking",
+                  "value": 1213,
+                  "confidence_interval": {
+                    "lower": 1188,
+                    "upper": 1238,
+                    "minus": 25,
+                    "plus": 25,
+                    "level": null
+                  },
+                  "votes": 961,
+                  "rank_spread": [
+                    128,
+                    140
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "N/A",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-136",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": null
+                },
+                "published_range": [
+                  1188,
+                  1238
+                ]
+              },
+              {
+                "rank": 137,
+                "model_variant": "devstral-2",
+                "value": 1196,
+                "confidence_interval": {
+                  "lower": 1175,
+                  "upper": 1217,
+                  "minus": 21,
+                  "plus": 21,
+                  "level": null
+                },
+                "votes": 1182,
+                "rank_spread": [
+                  134,
+                  141
+                ],
+                "preliminary": false,
+                "provider_and_license": "Mistral · Modified MIT",
+                "api_list_price_source_text": "N/A",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-137",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": null,
+                "label": "devstral-2",
+                "result_id": "webdev-frontend-2026-10-08-rank-137",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 137,
+                  "model_variant": "devstral-2",
+                  "value": 1196,
+                  "confidence_interval": {
+                    "lower": 1175,
+                    "upper": 1217,
+                    "minus": 21,
+                    "plus": 21,
+                    "level": null
+                  },
+                  "votes": 1182,
+                  "rank_spread": [
+                    134,
+                    141
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Mistral · Modified MIT",
+                  "api_list_price_source_text": "N/A",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-137",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": null
+                },
+                "published_range": [
+                  1175,
+                  1217
+                ]
+              },
+              {
+                "rank": 138,
+                "model_variant": "granite-4.1-8b",
+                "value": 1190,
+                "confidence_interval": {
+                  "lower": 1171,
+                  "upper": 1209,
+                  "minus": 19,
+                  "plus": 19,
+                  "level": null
+                },
+                "votes": 1727,
+                "rank_spread": [
+                  135,
+                  141
+                ],
+                "preliminary": false,
+                "provider_and_license": "IBM · Apache 2.0",
+                "api_list_price_source_text": "$0.05 / $0.10",
+                "context_length_source_text": "131.1K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-138",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.05,
+                  "output": 0.1
+                },
+                "label": "granite-4.1-8b",
+                "result_id": "webdev-frontend-2026-10-08-rank-138",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 138,
+                  "model_variant": "granite-4.1-8b",
+                  "value": 1190,
+                  "confidence_interval": {
+                    "lower": 1171,
+                    "upper": 1209,
+                    "minus": 19,
+                    "plus": 19,
+                    "level": null
+                  },
+                  "votes": 1727,
+                  "rank_spread": [
+                    135,
+                    141
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "IBM · Apache 2.0",
+                  "api_list_price_source_text": "$0.05 / $0.10",
+                  "context_length_source_text": "131.1K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-138",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.05,
+                    "output": 0.1
+                  }
+                },
+                "published_range": [
+                  1171,
+                  1209
+                ]
+              },
+              {
+                "rank": 139,
+                "model_variant": "mercury-2",
+                "value": 1170,
+                "confidence_interval": {
+                  "lower": 1146,
+                  "upper": 1194,
+                  "minus": 24,
+                  "plus": 24,
+                  "level": null
+                },
+                "votes": 954,
+                "rank_spread": [
+                  136,
+                  141
+                ],
+                "preliminary": false,
+                "provider_and_license": "Inception AI · Proprietary",
+                "api_list_price_source_text": "$0.25 / $0.75",
+                "context_length_source_text": "128K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-139",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.25,
+                  "output": 0.75
+                },
+                "label": "mercury-2",
+                "result_id": "webdev-frontend-2026-10-08-rank-139",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 139,
+                  "model_variant": "mercury-2",
+                  "value": 1170,
+                  "confidence_interval": {
+                    "lower": 1146,
+                    "upper": 1194,
+                    "minus": 24,
+                    "plus": 24,
+                    "level": null
+                  },
+                  "votes": 954,
+                  "rank_spread": [
+                    136,
+                    141
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Inception AI · Proprietary",
+                  "api_list_price_source_text": "$0.25 / $0.75",
+                  "context_length_source_text": "128K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-139",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.25,
+                    "output": 0.75
+                  }
+                },
+                "published_range": [
+                  1146,
+                  1194
+                ]
+              },
+              {
+                "rank": 140,
+                "model_variant": "grok-code-fast-1",
+                "value": 1166,
+                "confidence_interval": {
+                  "lower": 1138,
+                  "upper": 1194,
+                  "minus": 28,
+                  "plus": 28,
+                  "level": null
+                },
+                "votes": 789,
+                "rank_spread": [
+                  136,
+                  141
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$0.20 / $1.50",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-140",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.2,
+                  "output": 1.5
+                },
+                "label": "grok-code-fast-1",
+                "result_id": "webdev-frontend-2026-10-08-rank-140",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 140,
+                  "model_variant": "grok-code-fast-1",
+                  "value": 1166,
+                  "confidence_interval": {
+                    "lower": 1138,
+                    "upper": 1194,
+                    "minus": 28,
+                    "plus": 28,
+                    "level": null
+                  },
+                  "votes": 789,
+                  "rank_spread": [
+                    136,
+                    141
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$0.20 / $1.50",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-140",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.2,
+                    "output": 1.5
+                  }
+                },
+                "published_range": [
+                  1138,
+                  1194
+                ]
+              },
+              {
+                "rank": 141,
+                "model_variant": "grok-4-fast-reasoning",
+                "value": 1158,
+                "confidence_interval": {
+                  "lower": 1131,
+                  "upper": 1185,
+                  "minus": 27,
+                  "plus": 27,
+                  "level": null
+                },
+                "votes": 742,
+                "rank_spread": [
+                  137,
+                  141
+                ],
+                "preliminary": false,
+                "provider_and_license": "SpaceXAI · Proprietary",
+                "api_list_price_source_text": "$0.20 / $0.50",
+                "context_length_source_text": "N/A",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-141",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.2,
+                  "output": 0.5
+                },
+                "label": "grok-4-fast-reasoning",
+                "result_id": "webdev-frontend-2026-10-08-rank-141",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 141,
+                  "model_variant": "grok-4-fast-reasoning",
+                  "value": 1158,
+                  "confidence_interval": {
+                    "lower": 1131,
+                    "upper": 1185,
+                    "minus": 27,
+                    "plus": 27,
+                    "level": null
+                  },
+                  "votes": 742,
+                  "rank_spread": [
+                    137,
+                    141
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "SpaceXAI · Proprietary",
+                  "api_list_price_source_text": "$0.20 / $0.50",
+                  "context_length_source_text": "N/A",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-141",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.2,
+                    "output": 0.5
+                  }
+                },
+                "published_range": [
+                  1131,
+                  1185
+                ]
+              },
+              {
+                "rank": 142,
+                "model_variant": "devstral-medium-2507",
+                "value": 1075,
+                "confidence_interval": {
+                  "lower": 1044,
+                  "upper": 1106,
+                  "minus": 31,
+                  "plus": 31,
+                  "level": null
+                },
+                "votes": 842,
+                "rank_spread": [
+                  142,
+                  142
+                ],
+                "preliminary": false,
+                "provider_and_license": "Mistral · Proprietary",
+                "api_list_price_source_text": "$0.40 / $2",
+                "context_length_source_text": "128K",
+                "source_row_key": "webdev-frontend-2026-10-08-rank-142",
+                "evaluation_date": null,
+                "effort": null,
+                "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "api_list_price_usd_per_million_tokens": {
+                  "input": 0.4,
+                  "output": 2
+                },
+                "label": "devstral-medium-2507",
+                "result_id": "webdev-frontend-2026-10-08-rank-142",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 142,
+                  "model_variant": "devstral-medium-2507",
+                  "value": 1075,
+                  "confidence_interval": {
+                    "lower": 1044,
+                    "upper": 1106,
+                    "minus": 31,
+                    "plus": 31,
+                    "level": null
+                  },
+                  "votes": 842,
+                  "rank_spread": [
+                    142,
+                    142
+                  ],
+                  "preliminary": false,
+                  "provider_and_license": "Mistral · Proprietary",
+                  "api_list_price_source_text": "$0.40 / $2",
+                  "context_length_source_text": "128K",
+                  "source_row_key": "webdev-frontend-2026-10-08-rank-142",
+                  "evaluation_date": null,
+                  "effort": null,
+                  "effort_note": "Only unambiguous source effort suffixes are parsed; preserve full model label for all other settings.",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "api_list_price_usd_per_million_tokens": {
+                    "input": 0.4,
+                    "output": 2
+                  }
+                },
+                "published_range": [
+                  1044,
+                  1106
+                ]
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Arena preference rating · axis 1000–1900",
+                "field": "value",
+                "unit": "Arena rating points",
+                "domain": [
+                  1000,
+                  1900
+                ],
+                "direction": "higher_is_better",
+                "interval_field": "published_range",
+                "interval_kind": "published_interval"
+              }
+            ],
+            "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+            "settings": {
+              "slice": "Frontend, default domain and technology view",
+              "technology": "HTML or React",
+              "workflow": "Multi-step reasoning and tool use",
+              "style_control": "Default URL; Remove Style Control control is present. Exact current feature configuration not reconstructed.",
+              "harness": "Preserve named harness suffixes. Exact per-row implementation/version and tool budgets unavailable."
+            },
+            "limitations": [
+              "Preference votes are not independent task samples or objective correctness.",
+              "Keep this separate from WebDev Overall and Fullstack.",
+              "API prices are list token rates, not measured generation costs or latency.",
+              "Some per-model vote counts decrease versus the archived snapshot; no explanation or causal improvement inference is established.",
+              "Ranks and score uncertainty overlap.",
+              "Two source rows share gpt-5.3-codex (codex-harness): rank 86 score 1408, rank 102 score 1370. Underlying variant distinction is not exposed. Do not merge/deduplicate by model label or assert 142 unique model identifiers."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": null,
+            "data_end_date": null,
+            "snapshot_at": "2026-10-08",
+            "checked_at": "2026-10-12",
+            "complete": true,
+            "coverage": "All 142 displayed source rows; duplicate model labels retained."
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "webrise-v1-text",
+        "name": "WebRISE · Text",
+        "category": "frontend",
+        "question": "Does a generated website behave as requested?",
+        "tests": "Models turn text requirements into executable websites. A browser agent checks required transitions and requirement coverage across 442 tasks; a separate judge assesses visual quality.",
+        "matters": "A convincing screenshot can hide a broken interaction. The two functional measurements show different parts of the required behavior.",
+        "read": "Use Text results here: transition validity and requirement coverage are task-level macro averages, not complete-app success. Visual quality is a separate auxiliary score. The June paper does not supply exact generation snapshots, effort, cost or time, and its Video results belong to another modality.",
+        "source_input": "data/benchmark-refresh-2026-10-12/frontend.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/frontend.json"
+        ],
+        "variants": [
+          {
+            "id": "webrise-v1-text",
+            "label": "June 2 paper · all 14 Text rows",
+            "rows": [
+              {
+                "model_variant": "Qwen3.6-35B-A3B",
+                "modality": "Text",
+                "transition_validity_percent": 26.8,
+                "requirement_coverage_percent": 30.5,
+                "visual_quality_0_100": 78.2,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Qwen3.6-35B-A3B",
+                "result_id": "webrise-v1-text-row-0",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Qwen3.6-35B-A3B",
+                  "modality": "Text",
+                  "transition_validity_percent": 26.8,
+                  "requirement_coverage_percent": 30.5,
+                  "visual_quality_0_100": 78.2,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Qwen3.5-122B-A10B",
+                "modality": "Text",
+                "transition_validity_percent": 38,
+                "requirement_coverage_percent": 41.2,
+                "visual_quality_0_100": 56.8,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Qwen3.5-122B-A10B",
+                "result_id": "webrise-v1-text-row-1",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Qwen3.5-122B-A10B",
+                  "modality": "Text",
+                  "transition_validity_percent": 38,
+                  "requirement_coverage_percent": 41.2,
+                  "visual_quality_0_100": 56.8,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Qwen3.5-27B",
+                "modality": "Text",
+                "transition_validity_percent": 36.3,
+                "requirement_coverage_percent": 40,
+                "visual_quality_0_100": 59.9,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Qwen3.5-27B",
+                "result_id": "webrise-v1-text-row-2",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Qwen3.5-27B",
+                  "modality": "Text",
+                  "transition_validity_percent": 36.3,
+                  "requirement_coverage_percent": 40,
+                  "visual_quality_0_100": 59.9,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Qwen3.5-397B-A17B",
+                "modality": "Text",
+                "transition_validity_percent": 45.7,
+                "requirement_coverage_percent": 49.2,
+                "visual_quality_0_100": 64.8,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Qwen3.5-397B-A17B",
+                "result_id": "webrise-v1-text-row-3",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Qwen3.5-397B-A17B",
+                  "modality": "Text",
+                  "transition_validity_percent": 45.7,
+                  "requirement_coverage_percent": 49.2,
+                  "visual_quality_0_100": 64.8,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Kimi-K2.5",
+                "modality": "Text",
+                "transition_validity_percent": 48.5,
+                "requirement_coverage_percent": 51.9,
+                "visual_quality_0_100": 68.9,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Kimi-K2.5",
+                "result_id": "webrise-v1-text-row-4",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Kimi-K2.5",
+                  "modality": "Text",
+                  "transition_validity_percent": 48.5,
+                  "requirement_coverage_percent": 51.9,
+                  "visual_quality_0_100": 68.9,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Qwen3.6-27B",
+                "modality": "Text",
+                "transition_validity_percent": 47.9,
+                "requirement_coverage_percent": 50.9,
+                "visual_quality_0_100": 75.3,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Qwen3.6-27B",
+                "result_id": "webrise-v1-text-row-5",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Qwen3.6-27B",
+                  "modality": "Text",
+                  "transition_validity_percent": 47.9,
+                  "requirement_coverage_percent": 50.9,
+                  "visual_quality_0_100": 75.3,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Kimi-K2.6",
+                "modality": "Text",
+                "transition_validity_percent": 44.6,
+                "requirement_coverage_percent": 47.3,
+                "visual_quality_0_100": 83.1,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Kimi-K2.6",
+                "result_id": "webrise-v1-text-row-6",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Kimi-K2.6",
+                  "modality": "Text",
+                  "transition_validity_percent": 44.6,
+                  "requirement_coverage_percent": 47.3,
+                  "visual_quality_0_100": 83.1,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Claude Opus 4.6",
+                "modality": "Text",
+                "transition_validity_percent": 43.3,
+                "requirement_coverage_percent": 45.5,
+                "visual_quality_0_100": 56.6,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Claude Opus 4.6",
+                "result_id": "webrise-v1-text-row-7",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Claude Opus 4.6",
+                  "modality": "Text",
+                  "transition_validity_percent": 43.3,
+                  "requirement_coverage_percent": 45.5,
+                  "visual_quality_0_100": 56.6,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Gemini 3 Flash",
+                "modality": "Text",
+                "transition_validity_percent": 44.7,
+                "requirement_coverage_percent": 48.2,
+                "visual_quality_0_100": 71.9,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Gemini 3 Flash",
+                "result_id": "webrise-v1-text-row-8",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Gemini 3 Flash",
+                  "modality": "Text",
+                  "transition_validity_percent": 44.7,
+                  "requirement_coverage_percent": 48.2,
+                  "visual_quality_0_100": 71.9,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Claude Opus 4.7",
+                "modality": "Text",
+                "transition_validity_percent": 48.8,
+                "requirement_coverage_percent": 50.9,
+                "visual_quality_0_100": 68.3,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Claude Opus 4.7",
+                "result_id": "webrise-v1-text-row-9",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Claude Opus 4.7",
+                  "modality": "Text",
+                  "transition_validity_percent": 48.8,
+                  "requirement_coverage_percent": 50.9,
+                  "visual_quality_0_100": 68.3,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Gemini 3.1 Pro",
+                "modality": "Text",
+                "transition_validity_percent": 50.7,
+                "requirement_coverage_percent": 53.6,
+                "visual_quality_0_100": 69.7,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Gemini 3.1 Pro",
+                "result_id": "webrise-v1-text-row-10",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Gemini 3.1 Pro",
+                  "modality": "Text",
+                  "transition_validity_percent": 50.7,
+                  "requirement_coverage_percent": 53.6,
+                  "visual_quality_0_100": 69.7,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Qwen3.6-Plus",
+                "modality": "Text",
+                "transition_validity_percent": 49.3,
+                "requirement_coverage_percent": 51.9,
+                "visual_quality_0_100": 68.2,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "Qwen3.6-Plus",
+                "result_id": "webrise-v1-text-row-11",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "Qwen3.6-Plus",
+                  "modality": "Text",
+                  "transition_validity_percent": 49.3,
+                  "requirement_coverage_percent": 51.9,
+                  "visual_quality_0_100": 68.2,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "GPT-5.4",
+                "modality": "Text",
+                "transition_validity_percent": 59.7,
+                "requirement_coverage_percent": 61.4,
+                "visual_quality_0_100": 78.4,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "GPT-5.4",
+                "result_id": "webrise-v1-text-row-12",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "GPT-5.4",
+                  "modality": "Text",
+                  "transition_validity_percent": 59.7,
+                  "requirement_coverage_percent": 61.4,
+                  "visual_quality_0_100": 78.4,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "GPT-5.5",
+                "modality": "Text",
+                "transition_validity_percent": 60.3,
+                "requirement_coverage_percent": 62.3,
+                "visual_quality_0_100": 85.6,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "evaluation_date": null,
+                "label": "GPT-5.5",
+                "result_id": "webrise-v1-text-row-13",
+                "source_url": "https://arxiv.org/html/2606.03220v1",
+                "raw": {
+                  "model_variant": "GPT-5.5",
+                  "modality": "Text",
+                  "transition_validity_percent": 60.3,
+                  "requirement_coverage_percent": 62.3,
+                  "visual_quality_0_100": 85.6,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "uncertainty": null,
+                  "evaluation_date": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "transitions",
+                "label": "Required transitions passed",
+                "field": "transition_validity_percent",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "requirements",
+                "label": "Requirement coverage",
+                "field": "requirement_coverage_percent",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "visual",
+                "label": "Auxiliary visual quality",
+                "field": "visual_quality_0_100",
+                "unit": "visual points (0–100)",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://arxiv.org/html/2606.03220v1",
+            "settings": {
+              "artifact": "Self-contained executable HTML/CSS/JavaScript",
+              "execution": "Adaptive contract-guided browser agent",
+              "transition_assertion_judge": "GPT-5-mini",
+              "auxiliary_visual_judge": "Gemini-3-Flash-Preview",
+              "aggregation": "Task-level macro averages",
+              "exact_generation_model_snapshots": null,
+              "reasoning_effort": null,
+              "agent_step_budget": null,
+              "decoding": null
+            },
+            "limitations": [
+              "Use modality selector and diagnostic metrics rather than the auxiliary Overall blend.",
+              "Scores are browser-agent/judge dependent.",
+              "Paper supplies abbreviated model names without exact effort or API snapshots.",
+              "65.6% transition validity and 66.3% coverage are GPT-5.5 Video results, not Text and not complete-app success.",
+              "Not an evaluation of autonomous browsing on pre-existing websites."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-06-02",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          }
+        ],
+        "historical": true,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "hle-original-haiku55-october",
+        "name": "HLE · Haiku 5.5 lab report",
+        "category": "standard",
+        "question": "Can Haiku answer difficult expert questions?",
+        "tests": "The developer evaluates Haiku on the original 2,500-question multimodal Humanity’s Last Exam with five trials at maximum effort. Tools and no-tools runs are separate setups.",
+        "matters": "Difficult questions probe expert knowledge and reasoning, while the tool-assisted setup also depends on search and code execution.",
+        "read": "These two selected Haiku observations are original HLE, not HLE-Diamond or the independent text-only cohort. The report supplies no evaluation date or paired costs. Its tool run excludes known HLE discussion sources and rescored confirmed cheating as incorrect.",
+        "source_input": "data/benchmark-refresh-2026-10-12/lab-community.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/lab-community.json"
+        ],
+        "variants": [
+          {
+            "id": "anthropic-haiku55-hle-no-tools",
+            "label": "Original HLE · no tools · max effort",
+            "rows": [
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "value": 45.9,
+                "label": "Claude Haiku 5.5",
+                "result_id": "anthropic-haiku55-hle-no-tools-row-0",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "value": 45.9
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Original HLE accuracy",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+            "settings": {
+              "benchmark": "Humanity's Last Exam",
+              "dataset": "Original HLE multimodal, not Diamond",
+              "tasks": 2500,
+              "effort": "max",
+              "thinking": "adaptive/auto",
+              "trials": 5,
+              "tools": false,
+              "task_token_budget": 980000,
+              "compaction": false,
+              "grader": "Claude Opus 4.6",
+              "metric": "accuracy",
+              "unit": "percent",
+              "source_pages": [
+                111,
+                118
+              ]
+            },
+            "limitations": [
+              "No evaluation date given. Distinct from AA's 2158 text-only cohort."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-10-07",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": false,
+            "coverage": "One selected developer-reported model."
+          },
+          {
+            "id": "anthropic-haiku55-hle-tools",
+            "label": "Original HLE · web and code tools · max effort",
+            "rows": [
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "value": 57.4,
+                "label": "Claude Haiku 5.5",
+                "result_id": "anthropic-haiku55-hle-tools-row-0",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "value": 57.4
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Original HLE accuracy",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+            "settings": {
+              "benchmark": "Humanity's Last Exam",
+              "dataset": "Original HLE multimodal, not Diamond",
+              "tasks": 2500,
+              "effort": "max",
+              "thinking": "adaptive/auto",
+              "trials": 5,
+              "tools": [
+                "web search",
+                "web fetch",
+                "programmatic tool calling",
+                "code execution"
+              ],
+              "task_token_budget": 980000,
+              "compaction": false,
+              "grader": "Claude Opus 4.6",
+              "metric": "accuracy",
+              "unit": "percent",
+              "source_pages": [
+                111,
+                118,
+                119
+              ]
+            },
+            "limitations": [
+              "Sources discussing HLE blocklisted; flagged successes reviewed by Opus 5 and confirmed cheating rescored incorrect.",
+              "Cost curves exclude web search fees; Haiku uses recorded list-price usage, whereas Opus/Sonnet curves assume perfect cache hits."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-10-07",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": false,
+            "coverage": "One selected developer-reported model; separate tools setting."
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "terminal-bench-4-haiku55-lab",
+        "name": "Terminal-Bench 4 · Haiku lab setup",
+        "category": "standard",
+        "question": "Can Haiku complete demanding terminal work?",
+        "tests": "The October 7 developer report uses Claude Code --bare at maximum effort, with ten trials per task on 66 terminal tasks. Network access and fallback models are disabled.",
+        "matters": "Terminal work requires inspecting files, using software and checking an outcome over many steps. The harness and task environment are part of the measured system.",
+        "read": "This is one selected model under a specified lab setup, separate from public CLI and other evaluator cohorts. Safeguard-interrupted trials count as failures. The reported plus/minus value is a standard error, not a 95% confidence interval; run dates, cost and duration are not supplied.",
+        "source_input": "data/benchmark-refresh-2026-10-12/lab-community.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/lab-community.json"
+        ],
+        "variants": [
+          {
+            "id": "anthropic-haiku55-terminalbench4",
+            "label": "October 7 report · Claude Code --bare · max",
+            "rows": [
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "value": 39.2,
+                "uncertainty_type": "standard_error_independent_trials",
+                "uncertainty_plus_minus": 1.9,
+                "safeguard_failed_trials": 12,
+                "label": "Claude Haiku 5.5",
+                "result_id": "anthropic-haiku55-terminalbench4-row-0",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "value": 39.2,
+                  "uncertainty_type": "standard_error_independent_trials",
+                  "uncertainty_plus_minus": 1.9,
+                  "safeguard_failed_trials": 12
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success, pass@1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "uncertainty_plus_minus"
+              }
+            ],
+            "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+            "settings": {
+              "benchmark": "Terminal-Bench",
+              "version": "4.0",
+              "tasks": 66,
+              "effort": "max",
+              "harness": "Claude Code --bare",
+              "trials_per_task": 10,
+              "total_trials": 660,
+              "tools": [
+                "terminal"
+              ],
+              "network_egress": false,
+              "fallback": false,
+              "safeguards": true,
+              "metric": "pass@1",
+              "unit": "percent",
+              "source_pages": [
+                115,
+                116
+              ]
+            },
+            "limitations": [
+              "Resources pre-cached and images rebuilt; 12/660 safeguard-interrupted trials failed.",
+              "Separate from public CLI, Vals and AA mini-swe-agent cohorts."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-10-07",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": false,
+            "coverage": "One selected lab-reported model and the exact task/trial recipe."
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "terminal-bench-science-haiku55-lab",
+        "name": "Terminal-Bench Science · Haiku lab setup",
+        "category": "standard",
+        "question": "Can Haiku complete demanding terminal work?",
+        "tests": "The October 7 developer report uses Claude Code --bare at maximum effort, with ten trials per task on 70 scientific-computing tasks. Network access and fallback models are disabled.",
+        "matters": "Terminal work requires inspecting files, using software and checking an outcome over many steps. The harness and task environment are part of the measured system.",
+        "read": "This is one selected model under a specified lab setup, separate from public CLI and other evaluator cohorts. Safeguard-interrupted trials count as failures. The reported plus/minus value is a standard error, not a 95% confidence interval; run dates, cost and duration are not supplied.",
+        "source_input": "data/benchmark-refresh-2026-10-12/lab-community.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/lab-community.json"
+        ],
+        "variants": [
+          {
+            "id": "anthropic-haiku55-terminalbench-science01",
+            "label": "October 7 report · Claude Code --bare · max",
+            "rows": [
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "value": 20.6,
+                "uncertainty_type": "standard_error_clustered_by_task",
+                "uncertainty_plus_minus": 3.7,
+                "safeguard_failed_trials": 16,
+                "label": "Claude Haiku 5.5",
+                "result_id": "anthropic-haiku55-terminalbench-science01-row-0",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "value": 20.6,
+                  "uncertainty_type": "standard_error_clustered_by_task",
+                  "uncertainty_plus_minus": 3.7,
+                  "safeguard_failed_trials": 16
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success, pass@1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "uncertainty_plus_minus"
+              }
+            ],
+            "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+            "settings": {
+              "benchmark": "Terminal-Bench-Science",
+              "version": "0.1",
+              "tasks": 70,
+              "effort": "max",
+              "harness": "Claude Code --bare",
+              "trials_per_task": 10,
+              "total_trials": 700,
+              "network_egress": false,
+              "fallback": false,
+              "safeguards": true,
+              "metric": "pass@1",
+              "unit": "percent",
+              "source_pages": [
+                116
+              ]
+            },
+            "limitations": [
+              "All interrupted trials failed. Keep distinct from public leaderboard and AA evaluation."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-10-07",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": false,
+            "coverage": "One selected lab-reported model and the exact task/trial recipe."
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "osworld-v2-1-offline-october",
+        "name": "OSWorld 2.1 · offline October setup",
+        "category": "agents",
+        "question": "Can an agent finish computer tasks offline?",
+        "tests": "Five systems operate a computer on OSWorld 2.1’s official 82-task offline subset, with five trials per task, 1080p resolution and up to 500 action steps.",
+        "matters": "Computer work requires completing connected actions. Partial checkpoint credit can be useful even when the entire task is not finished.",
+        "read": "Strict success requires every checkpoint to pass; partial credit is a different measurement. Keep this 82-task subset separate from the September full 108-task cohort and the retained OSWorld 2.0 developer-report card. The version selector links those cards without combining their rows or protocols. The source chart identifies 95% intervals but supplies no transcribed numeric bounds here, so no interval is invented. Anthropic ran the OpenAI models through their API.",
+        "source_input": "data/benchmark-refresh-2026-10-12/lab-community.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/lab-community.json"
+        ],
+        "variants": [
+          {
+            "id": "anthropic-osworld21-offline-october",
+            "label": "October report · official 82-task offline subset",
+            "rows": [
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "partial_credit": 72.4,
+                "strict_pass": 37.1,
+                "label": "Claude Haiku 5.5",
+                "result_id": "anthropic-osworld21-offline-october-row-0",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "partial_credit": 72.4,
+                  "strict_pass": 37.1
+                }
+              },
+              {
+                "model_variant": "Claude Sonnet 5.5",
+                "model_id": "claude-sonnet-5-5",
+                "partial_credit": 83.9,
+                "strict_pass": 48.8,
+                "label": "Claude Sonnet 5.5",
+                "result_id": "anthropic-osworld21-offline-october-row-1",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Sonnet 5.5",
+                  "model_id": "claude-sonnet-5-5",
+                  "partial_credit": 83.9,
+                  "strict_pass": 48.8
+                }
+              },
+              {
+                "model_variant": "Claude Opus 5.5",
+                "model_id": "claude-opus-5-5",
+                "partial_credit": 87.2,
+                "strict_pass": 53.2,
+                "label": "Claude Opus 5.5",
+                "result_id": "anthropic-osworld21-offline-october-row-2",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Opus 5.5",
+                  "model_id": "claude-opus-5-5",
+                  "partial_credit": 87.2,
+                  "strict_pass": 53.2
+                }
+              },
+              {
+                "model_variant": "GPT-6.1 Sol",
+                "model_id": "gpt-6.1-sol",
+                "partial_credit": 76.6,
+                "strict_pass": 39.8,
+                "score_read_method": "explicit chart labels",
+                "compaction": "OpenAI",
+                "label": "GPT-6.1 Sol",
+                "result_id": "anthropic-osworld21-offline-october-row-3",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "GPT-6.1 Sol",
+                  "model_id": "gpt-6.1-sol",
+                  "partial_credit": 76.6,
+                  "strict_pass": 39.8,
+                  "score_read_method": "explicit chart labels",
+                  "compaction": "OpenAI"
+                }
+              },
+              {
+                "model_variant": "GPT-6 Luna",
+                "model_id": "gpt-6-luna",
+                "partial_credit": 48.9,
+                "strict_pass": 17.1,
+                "score_read_method": "explicit chart labels",
+                "compaction": "OpenAI",
+                "label": "GPT-6 Luna",
+                "result_id": "anthropic-osworld21-offline-october-row-4",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "GPT-6 Luna",
+                  "model_id": "gpt-6-luna",
+                  "partial_credit": 48.9,
+                  "strict_pass": 17.1,
+                  "score_read_method": "explicit chart labels",
+                  "compaction": "OpenAI"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "strict",
+                "label": "All checkpoints passed, pass@1",
+                "field": "strict_pass",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "partial",
+                "label": "Mean partial checkpoint credit",
+                "field": "partial_credit",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+            "settings": {
+              "benchmark": "OSWorld",
+              "version": "2.1",
+              "subset": "official offline",
+              "tasks": 82,
+              "full_benchmark_tasks": 108,
+              "effort": "max",
+              "trials_per_task": 5,
+              "resolution": "1080p",
+              "max_action_steps": 500,
+              "network_egress": false,
+              "grader_when_needed": "Claude Opus 4.8",
+              "unit": "percent",
+              "source_pages": [
+                127,
+                128
+              ],
+              "metrics": [
+                "mean_partial_checkpoint_credit",
+                "strict_all_checkpoints_pass@1"
+              ]
+            },
+            "limitations": [
+              "Re-evaluation under new offline conditions. Do not merge with September 108-task/full cohort.",
+              "Chart states 95% intervals but numeric bounds not transcribed; do not invent.",
+              "Anthropic ran OpenAI models through OpenAI API; this is not OpenAI-reported."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-10-07",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": false,
+            "coverage": "All five selected chart-labeled systems; a bounded offline subset."
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "healthbench-professional-openai-20260929",
+        "name": "HealthBench Professional · OpenAI table",
+        "category": "medical",
+        "question": "How well does an AI answer professional medical questions?",
+        "tests": "An OpenAI report grades medical conversations against detailed rubrics and adjusts for response length. The September 29 table adds GPT-6.1 Sol to the seven preserved predecessor values.",
+        "matters": "Medical responses must meet several requirements at once. A length adjustment helps distinguish rubric performance from simply writing a longer answer.",
+        "read": "Sol’s adjusted 64.2 and raw 67.2 are different scores. Astra’s corrected 64.7 was already present and remains unchanged. These rows use the OpenAI reporting series, with no paired cost/time or exact table-level effort supplied; they cannot be combined with Anthropic-grader scores or treated as patient outcomes.",
+        "source_input": "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+          "data/gallery-current-2026-10-01.json",
+          "data/current-medical.original.json"
+        ],
+        "variants": [
+          {
+            "id": "healthbench-professional-openai-20260929-extension",
+            "label": "September 29 table · seven unchanged predecessors plus Sol",
+            "rows": [
+              {
+                "model_variant": "GPT-5.5",
+                "effort": null,
+                "value": 51.8,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 57.2,
+                "mean_response_length_characters": 3818,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-5.5",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-0",
+                "raw": {
+                  "model_variant": "GPT-5.5",
+                  "effort": null,
+                  "value": 51.8,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 57.2,
+                  "mean_response_length_characters": 3818,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Sol",
+                "effort": null,
+                "value": 60.5,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 64.1,
+                "mean_response_length_characters": 3228,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-5.6 Sol",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-1",
+                "raw": {
+                  "model_variant": "GPT-5.6 Sol",
+                  "effort": null,
+                  "value": 60.5,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 64.1,
+                  "mean_response_length_characters": 3228,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Terra",
+                "effort": null,
+                "value": 57.7,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 62.4,
+                "mean_response_length_characters": 3618,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-5.6 Terra",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-2",
+                "raw": {
+                  "model_variant": "GPT-5.6 Terra",
+                  "effort": null,
+                  "value": 57.7,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 62.4,
+                  "mean_response_length_characters": 3618,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Luna",
+                "effort": null,
+                "value": 55.7,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 59.8,
+                "mean_response_length_characters": 3389,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-5.6 Luna",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-3",
+                "raw": {
+                  "model_variant": "GPT-5.6 Luna",
+                  "effort": null,
+                  "value": 55.7,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 59.8,
+                  "mean_response_length_characters": 3389,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "model_variant": "GPT-6 Astra",
+                "effort": null,
+                "value": 64.7,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 68.2,
+                "mean_response_length_characters": 3185,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-6 Astra",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-4",
+                "raw": {
+                  "model_variant": "GPT-6 Astra",
+                  "effort": null,
+                  "value": 64.7,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 68.2,
+                  "mean_response_length_characters": 3185,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "model_variant": "GPT-6 Sol",
+                "effort": null,
+                "value": 60.8,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 59.5,
+                "mean_response_length_characters": 1573,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-6 Sol",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-5",
+                "raw": {
+                  "model_variant": "GPT-6 Sol",
+                  "effort": null,
+                  "value": 60.8,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 59.5,
+                  "mean_response_length_characters": 1573,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "model_variant": "GPT-6 Luna",
+                "effort": null,
+                "value": 60.8,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                "unadjusted_value": 61.2,
+                "mean_response_length_characters": 2119,
+                "evaluation_date": null,
+                "source_input": "data/current-medical.original.json",
+                "label": "GPT-6 Luna",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-6",
+                "raw": {
+                  "model_variant": "GPT-6 Luna",
+                  "effort": null,
+                  "value": 60.8,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "source_url": "https://deploymentsafety.openai.com/gpt-6-astra/healthbench",
+                  "unadjusted_value": 61.2,
+                  "mean_response_length_characters": 2119,
+                  "evaluation_date": null,
+                  "source_input": "data/current-medical.original.json"
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6.1 Sol",
+                "value": 64.2,
+                "unadjusted_value": 67.2,
+                "mean_response_length_characters": 3038,
+                "label": "GPT-6.1 Sol",
+                "result_id": "healthbench-professional-openai-20260929-extension-row-7",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/healthbench/tbl-7",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6.1 Sol",
+                  "value": 64.2,
+                  "unadjusted_value": 67.2,
+                  "mean_response_length_characters": 3038
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "adjusted",
+                "label": "Length-adjusted rubric score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "raw",
+                "label": "Unadjusted rubric score",
+                "field": "unadjusted_value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/healthbench/tbl-7",
+            "settings": {
+              "reasoning_effort": null,
+              "tools": null,
+              "harness": "OpenAI research/API evaluation; exact table-level configuration not specified",
+              "samples_per_task": null,
+              "sample_size": null
+            },
+            "limitations": [
+              "Other variants require separate cards/cohorts.",
+              "No paired cost/time.",
+              "Do not merge Anthropic-grader scores.",
+              "Not clinical outcome validation."
+            ],
+            "source_locator": "Table 7; PDF p.10",
+            "evaluation_date": null,
+            "publication_at": "2026-09-29",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          }
+        ],
+        "historical": true,
+        "source_packet_checked_at": "2026-10-12",
+        "preserved_source_cohorts": [
+          {
+            "source_input": "data/gallery-current-2026-10-01.json",
+            "id": "healthbench-professional",
+            "row_count": 7
+          }
+        ]
+      },
+      {
+        "id": "healthbench-professional-haiku55-effort",
+        "name": "HealthBench Professional · Haiku effort runs",
+        "category": "medical",
+        "question": "How does Haiku perform under the developer’s medical grading setup?",
+        "tests": "The Haiku system card reports length-adjusted HealthBench Professional scores under an Opus 4.8 grader, with safety classifiers enabled and separately labeled effort runs.",
+        "matters": "Different reasoning settings can change a measured response, but the grading setup and collection dates also affect what a comparison means.",
+        "read": "Five-effort launch observations and the 13-trial same-day max recheck remain separately labeled. The original max runs occurred earlier than low through xhigh, so this is not a causal effort experiment. Keep these scores separate from the OpenAI grader. Approximate response times and an aggregate low-effort range do not provide exact paired task times.",
+        "source_input": "data/benchmark-refresh-2026-10-12/lab-community.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/lab-community.json"
+        ],
+        "variants": [
+          {
+            "id": "anthropic-healthbench-professional-haiku55-effort",
+            "label": "October 7 card · effort and collection dates retained",
+            "rows": [
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "effort": "low",
+                "value": 57.9,
+                "evaluation_date": "2026-10-04",
+                "label": "Claude Haiku 5.5 · low · 2026-10-04",
+                "result_id": "anthropic-healthbench-professional-haiku55-effort-row-0",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "effort": "low",
+                  "value": 57.9,
+                  "evaluation_date": "2026-10-04"
+                }
+              },
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "effort": "medium",
+                "value": 59.9,
+                "evaluation_date": "2026-10-04",
+                "label": "Claude Haiku 5.5 · medium · 2026-10-04",
+                "result_id": "anthropic-healthbench-professional-haiku55-effort-row-1",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "effort": "medium",
+                  "value": 59.9,
+                  "evaluation_date": "2026-10-04"
+                }
+              },
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "effort": "high",
+                "value": 61.3,
+                "evaluation_date": "2026-10-04",
+                "label": "Claude Haiku 5.5 · high · 2026-10-04",
+                "result_id": "anthropic-healthbench-professional-haiku55-effort-row-2",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "effort": "high",
+                  "value": 61.3,
+                  "evaluation_date": "2026-10-04"
+                }
+              },
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "effort": "xhigh",
+                "value": 61,
+                "evaluation_date": "2026-10-04",
+                "label": "Claude Haiku 5.5 · xhigh · 2026-10-04",
+                "result_id": "anthropic-healthbench-professional-haiku55-effort-row-3",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "effort": "xhigh",
+                  "value": 61,
+                  "evaluation_date": "2026-10-04"
+                }
+              },
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "effort": "max",
+                "value": 64.8,
+                "raw_score": 71,
+                "evaluation_date_range": [
+                  "2026-10-01",
+                  "2026-10-02"
+                ],
+                "approx_response_seconds": 110,
+                "label": "Claude Haiku 5.5 · max · October 1–2",
+                "result_id": "anthropic-healthbench-professional-haiku55-effort-row-4",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "effort": "max",
+                  "value": 64.8,
+                  "raw_score": 71,
+                  "evaluation_date_range": [
+                    "2026-10-01",
+                    "2026-10-02"
+                  ],
+                  "approx_response_seconds": 110
+                }
+              },
+              {
+                "model_variant": "Claude Haiku 5.5",
+                "model_id": "claude-haiku-5-5",
+                "effort": "max",
+                "value": 64.2,
+                "trials": 13,
+                "evaluation_date": "2026-10-04",
+                "role": "same_day_recheck",
+                "label": "Claude Haiku 5.5 · max · October 4 recheck (13 trials)",
+                "result_id": "anthropic-healthbench-professional-haiku55-effort-row-5",
+                "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+                "raw": {
+                  "model_variant": "Claude Haiku 5.5",
+                  "model_id": "claude-haiku-5-5",
+                  "effort": "max",
+                  "value": 64.2,
+                  "trials": 13,
+                  "evaluation_date": "2026-10-04",
+                  "role": "same_day_recheck"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Length-adjusted score, Anthropic grader",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+            "settings": {
+              "benchmark": "HealthBench Professional",
+              "metric": "length_adjusted_score",
+              "unit": "percent",
+              "grader": "Claude Opus 4.8",
+              "safety_classifiers": true,
+              "trials_per_effort": 5,
+              "source_pages": [
+                131,
+                132,
+                133,
+                134
+              ]
+            },
+            "limitations": [
+              "Do not merge with OpenAI-grader or raw-score rows. Max runs made earlier than low–xhigh; same-day recheck supplied.",
+              "Lower-effort response times reported as a range 8–21 seconds, not individual exact values."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-10-07",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "healthagentbench",
+        "name": "HealthAgentBench",
+        "category": "medical",
+        "question": "Can a clinical-workflow agent produce the required artifact?",
+        "tests": "Agents use their native coding harnesses to complete 54 clinical-artifact tasks. The original paper reports three attempts per task for each of ten systems, with no web browsing and xhigh effort.",
+        "matters": "Clinical workflow work extends beyond answering a question to producing a usable result. The model and its harness are both part of the measured system.",
+        "read": "The original ten-agent cohort pairs published rounded success rates with USD and wall-clock minutes per task attempt. These are not full-suite totals or patient outcomes. The two July additions keep their own board cost/task label, unknown effort and missing time rather than inheriting the paper setup. Numeric Wilson interval bounds were not transcribed.",
+        "source_input": "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/medical-robotics.json"
+        ],
+        "variants": [
+          {
+            "id": "healthagentbench-original-paper",
+            "label": "Original ten-agent paper cohort",
+            "rows": [
+              {
+                "evaluation_date": null,
+                "harness": "Codex",
+                "model_variant": "GPT-5.5",
+                "value": 42,
+                "cost_usd_per_attempt": 2.8,
+                "wallclock_minutes_per_attempt": 15,
+                "label": "GPT-5.5 + Codex",
+                "result_id": "healthagentbench-original-paper-row-0",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Codex",
+                  "model_variant": "GPT-5.5",
+                  "value": 42,
+                  "cost_usd_per_attempt": 2.8,
+                  "wallclock_minutes_per_attempt": 15
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Copilot CLI",
+                "model_variant": "Opus 4.8",
+                "value": 36,
+                "cost_usd_per_attempt": 3.1,
+                "wallclock_minutes_per_attempt": 18,
+                "label": "Opus 4.8 + Copilot CLI",
+                "result_id": "healthagentbench-original-paper-row-1",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Copilot CLI",
+                  "model_variant": "Opus 4.8",
+                  "value": 36,
+                  "cost_usd_per_attempt": 3.1,
+                  "wallclock_minutes_per_attempt": 18
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Copilot CLI",
+                "model_variant": "GPT-5.5",
+                "value": 35,
+                "cost_usd_per_attempt": 2.6,
+                "wallclock_minutes_per_attempt": 18,
+                "label": "GPT-5.5 + Copilot CLI",
+                "result_id": "healthagentbench-original-paper-row-2",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Copilot CLI",
+                  "model_variant": "GPT-5.5",
+                  "value": 35,
+                  "cost_usd_per_attempt": 2.6,
+                  "wallclock_minutes_per_attempt": 18
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Claude Code",
+                "model_variant": "Opus 4.8",
+                "value": 32,
+                "cost_usd_per_attempt": 4,
+                "wallclock_minutes_per_attempt": 16,
+                "label": "Opus 4.8 + Claude Code",
+                "result_id": "healthagentbench-original-paper-row-3",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Claude Code",
+                  "model_variant": "Opus 4.8",
+                  "value": 32,
+                  "cost_usd_per_attempt": 4,
+                  "wallclock_minutes_per_attempt": 16
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Codex",
+                "model_variant": "GPT-5.4",
+                "value": 28,
+                "cost_usd_per_attempt": 1.3,
+                "wallclock_minutes_per_attempt": 18,
+                "label": "GPT-5.4 + Codex",
+                "result_id": "healthagentbench-original-paper-row-4",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Codex",
+                  "model_variant": "GPT-5.4",
+                  "value": 28,
+                  "cost_usd_per_attempt": 1.3,
+                  "wallclock_minutes_per_attempt": 18
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Claude Code",
+                "model_variant": "Opus 4.7",
+                "value": 27,
+                "cost_usd_per_attempt": 4.8,
+                "wallclock_minutes_per_attempt": 16,
+                "label": "Opus 4.7 + Claude Code",
+                "result_id": "healthagentbench-original-paper-row-5",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Claude Code",
+                  "model_variant": "Opus 4.7",
+                  "value": 27,
+                  "cost_usd_per_attempt": 4.8,
+                  "wallclock_minutes_per_attempt": 16
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Codex",
+                "model_variant": "GPT-5.3",
+                "value": 22,
+                "cost_usd_per_attempt": 1,
+                "wallclock_minutes_per_attempt": 14,
+                "label": "GPT-5.3 + Codex",
+                "result_id": "healthagentbench-original-paper-row-6",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Codex",
+                  "model_variant": "GPT-5.3",
+                  "value": 22,
+                  "cost_usd_per_attempt": 1,
+                  "wallclock_minutes_per_attempt": 14
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Claude Code",
+                "model_variant": "Opus 4.6",
+                "value": 19,
+                "cost_usd_per_attempt": 4.1,
+                "wallclock_minutes_per_attempt": 22,
+                "label": "Opus 4.6 + Claude Code",
+                "result_id": "healthagentbench-original-paper-row-7",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Claude Code",
+                  "model_variant": "Opus 4.6",
+                  "value": 19,
+                  "cost_usd_per_attempt": 4.1,
+                  "wallclock_minutes_per_attempt": 22
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Claude Code",
+                "model_variant": "Sonnet 4.6",
+                "value": 17,
+                "cost_usd_per_attempt": 2.9,
+                "wallclock_minutes_per_attempt": 24,
+                "label": "Sonnet 4.6 + Claude Code",
+                "result_id": "healthagentbench-original-paper-row-8",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Claude Code",
+                  "model_variant": "Sonnet 4.6",
+                  "value": 17,
+                  "cost_usd_per_attempt": 2.9,
+                  "wallclock_minutes_per_attempt": 24
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Codex",
+                "model_variant": "GPT-5.4-mini",
+                "value": 16,
+                "cost_usd_per_attempt": 0.6,
+                "wallclock_minutes_per_attempt": 16,
+                "label": "GPT-5.4-mini + Codex",
+                "result_id": "healthagentbench-original-paper-row-9",
+                "source_url": "https://arxiv.org/pdf/2606.31179",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Codex",
+                  "model_variant": "GPT-5.4-mini",
+                  "value": 16,
+                  "cost_usd_per_attempt": 0.6,
+                  "wallclock_minutes_per_attempt": 16
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Pooled task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "cost",
+                "label": "Pooled task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "kind": "scatter",
+                "y_label": "Pooled task success",
+                "x_field": "cost_usd_per_attempt",
+                "x_label": "Mean reported cost per task attempt",
+                "x_unit": "USD/attempt",
+                "x_basis": "Original paper cohort only: candidate system cost per task attempt, not full-suite spend. Published values are rounded."
+              },
+              {
+                "id": "time",
+                "label": "Pooled task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "kind": "scatter",
+                "y_label": "Pooled task success",
+                "x_field": "wallclock_minutes_per_attempt",
+                "x_label": "Mean wall-clock duration per task attempt",
+                "x_unit": "minutes/attempt",
+                "x_basis": "Original paper cohort only: wall-clock minutes per task attempt; not model-only inference time or whole-suite duration."
+              }
+            ],
+            "source_url": "https://arxiv.org/pdf/2606.31179",
+            "settings": {
+              "tasks": 54,
+              "categories": 7,
+              "attempts_per_task": 3,
+              "trials_per_system": 162,
+              "reasoning_effort": "xhigh",
+              "web_browsing": false,
+              "framework": "Harbor; native Codex/Claude Code/Copilot CLI harnesses"
+            },
+            "limitations": [
+              "Scores rounded as published; not independent exact model-only comparison.",
+              "Costs and times are per task attempt, not full-suite totals.",
+              "Clinical artifacts include gated datasets; not patient outcome evidence.",
+              "Paper Wilson95% intervals not transcribed."
+            ],
+            "source_locator": "Section4.1; Figure4 p10; AppendixD",
+            "evaluation_date": null,
+            "publication_at": "2026-07-01",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          },
+          {
+            "id": "healthagentbench-20260727-additions",
+            "label": "July 27 additions · board setup partly unspecified",
+            "rows": [
+              {
+                "evaluation_date": null,
+                "harness": "Claude Code",
+                "model_variant": "Opus 5",
+                "value": 55,
+                "cost_usd_per_task": 3.3,
+                "wallclock_minutes_per_task": null,
+                "label": "Opus 5 + Claude Code",
+                "result_id": "healthagentbench-20260727-additions-row-0",
+                "source_url": "https://microsoft.github.io/HealthAgentBench/",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Claude Code",
+                  "model_variant": "Opus 5",
+                  "value": 55,
+                  "cost_usd_per_task": 3.3,
+                  "wallclock_minutes_per_task": null
+                }
+              },
+              {
+                "evaluation_date": null,
+                "harness": "Codex",
+                "model_variant": "GPT-5.6-sol",
+                "value": 45,
+                "cost_usd_per_task": 5.2,
+                "wallclock_minutes_per_task": null,
+                "label": "GPT-5.6-sol + Codex",
+                "result_id": "healthagentbench-20260727-additions-row-1",
+                "source_url": "https://microsoft.github.io/HealthAgentBench/",
+                "raw": {
+                  "evaluation_date": null,
+                  "harness": "Codex",
+                  "model_variant": "GPT-5.6-sol",
+                  "value": 45,
+                  "cost_usd_per_task": 5.2,
+                  "wallclock_minutes_per_task": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Pooled task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://microsoft.github.io/HealthAgentBench/",
+            "settings": {
+              "tasks": 54,
+              "attempts_per_task": 3,
+              "trials_per_system": 162,
+              "reasoning_effort": null,
+              "web_browsing": null
+            },
+            "limitations": [
+              "Paper has ten earlier systems; these two appear on current creator board.",
+              "Board cost label says cost/task but nearby explanatory sentence is awkward; retained exact label, no full-sweep extrapolation.",
+              "Do not silently inherit xhigh settings or latency from older paper cohort."
+            ],
+            "source_locator": "Leaderboard",
+            "evaluation_date": null,
+            "publication_at": null,
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": false,
+            "coverage": "Two dated additions; board cost/task is retained in details, not pooled with paper cost/attempt."
+          }
+        ],
+        "historical": true,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "mentalhealthbench",
+        "name": "MentalHealthBench",
+        "category": "medical",
+        "question": "Does a response meet a mental-health conversation rubric?",
+        "tests": "Models respond to 1,215 synthetic conversations spanning non-acute, high-acuity and emergent scenarios. Four samples per task are assessed against a detailed response rubric.",
+        "matters": "Different conversation situations require different responses. A rubric can reveal shortcomings within this synthetic evaluation, while treatment efficacy needs separate clinical evidence.",
+        "read": "Maximum-effort system-card results and default-effort paper results are separate cohorts. The maximum-effort table reports one standard error across task means, not confidence intervals. Cost and time are unavailable, and these scores do not establish therapy efficacy or clinical safety.",
+        "source_input": "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/medical-robotics.json"
+        ],
+        "variants": [
+          {
+            "id": "mentalhealthbench-openai-max-20260929",
+            "label": "September 29 system card · maximum effort",
+            "rows": [
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-5.6 Luna",
+                "value": 44.4,
+                "stderr_pp": 1,
+                "non_acute": [
+                  40.4,
+                  1.3
+                ],
+                "high_acuity": [
+                  48.4,
+                  2.3
+                ],
+                "emergent": [
+                  49.4,
+                  1.9
+                ],
+                "label": "GPT-5.6 Luna",
+                "result_id": "mentalhealthbench-openai-max-20260929-row-0",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-5.6 Luna",
+                  "value": 44.4,
+                  "stderr_pp": 1,
+                  "non_acute": [
+                    40.4,
+                    1.3
+                  ],
+                  "high_acuity": [
+                    48.4,
+                    2.3
+                  ],
+                  "emergent": [
+                    49.4,
+                    1.9
+                  ]
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-5.6 Sol",
+                "value": 46.7,
+                "stderr_pp": 1,
+                "non_acute": [
+                  42.5,
+                  1.3
+                ],
+                "high_acuity": [
+                  51.8,
+                  2.2
+                ],
+                "emergent": [
+                  51.2,
+                  1.9
+                ],
+                "label": "GPT-5.6 Sol",
+                "result_id": "mentalhealthbench-openai-max-20260929-row-1",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-5.6 Sol",
+                  "value": 46.7,
+                  "stderr_pp": 1,
+                  "non_acute": [
+                    42.5,
+                    1.3
+                  ],
+                  "high_acuity": [
+                    51.8,
+                    2.2
+                  ],
+                  "emergent": [
+                    51.2,
+                    1.9
+                  ]
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6 Luna",
+                "value": 51.7,
+                "stderr_pp": 0.9,
+                "non_acute": [
+                  49.3,
+                  1.3
+                ],
+                "high_acuity": [
+                  54.7,
+                  2.2
+                ],
+                "emergent": [
+                  54.3,
+                  1.8
+                ],
+                "label": "GPT-6 Luna",
+                "result_id": "mentalhealthbench-openai-max-20260929-row-2",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6 Luna",
+                  "value": 51.7,
+                  "stderr_pp": 0.9,
+                  "non_acute": [
+                    49.3,
+                    1.3
+                  ],
+                  "high_acuity": [
+                    54.7,
+                    2.2
+                  ],
+                  "emergent": [
+                    54.3,
+                    1.8
+                  ]
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6 Sol",
+                "value": 54.2,
+                "stderr_pp": 0.9,
+                "non_acute": [
+                  53.5,
+                  1.3
+                ],
+                "high_acuity": [
+                  55.3,
+                  2.2
+                ],
+                "emergent": [
+                  54.9,
+                  1.8
+                ],
+                "label": "GPT-6 Sol",
+                "result_id": "mentalhealthbench-openai-max-20260929-row-3",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6 Sol",
+                  "value": 54.2,
+                  "stderr_pp": 0.9,
+                  "non_acute": [
+                    53.5,
+                    1.3
+                  ],
+                  "high_acuity": [
+                    55.3,
+                    2.2
+                  ],
+                  "emergent": [
+                    54.9,
+                    1.8
+                  ]
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6 Astra",
+                "value": 58.7,
+                "stderr_pp": 1,
+                "non_acute": [
+                  58.5,
+                  1.3
+                ],
+                "high_acuity": [
+                  59.8,
+                  2.2
+                ],
+                "emergent": [
+                  58.5,
+                  1.8
+                ],
+                "label": "GPT-6 Astra",
+                "result_id": "mentalhealthbench-openai-max-20260929-row-4",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6 Astra",
+                  "value": 58.7,
+                  "stderr_pp": 1,
+                  "non_acute": [
+                    58.5,
+                    1.3
+                  ],
+                  "high_acuity": [
+                    59.8,
+                    2.2
+                  ],
+                  "emergent": [
+                    58.5,
+                    1.8
+                  ]
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6.1 Sol",
+                "value": 57.9,
+                "stderr_pp": 1,
+                "non_acute": [
+                  57.3,
+                  1.3
+                ],
+                "high_acuity": [
+                  59.1,
+                  2.2
+                ],
+                "emergent": [
+                  58,
+                  1.9
+                ],
+                "label": "GPT-6.1 Sol",
+                "result_id": "mentalhealthbench-openai-max-20260929-row-5",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6.1 Sol",
+                  "value": 57.9,
+                  "stderr_pp": 1,
+                  "non_acute": [
+                    57.3,
+                    1.3
+                  ],
+                  "high_acuity": [
+                    59.1,
+                    2.2
+                  ],
+                  "emergent": [
+                    58,
+                    1.9
+                  ]
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task-clipped rubric score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+            "settings": {
+              "reasoning_effort": "maximum",
+              "tools": null,
+              "harness": "rubric-scored responses",
+              "tasks": 1215,
+              "samples_per_task": 4,
+              "acuity_tasks": {
+                "non_acute": 650,
+                "high_acuity": 221,
+                "emergent": 344
+              },
+              "uncertainty": "1 standard error across task means"
+            },
+            "limitations": [
+              "Synthetic conversations, not patient treatment outcomes.",
+              "Standard errors are not confidence intervals.",
+              "Keep separate from paper default-effort results.",
+              "Cost/time unavailable."
+            ],
+            "source_locator": "Section5.3 Table9, PDFp12",
+            "evaluation_date": null,
+            "publication_at": "2026-09-29",
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          },
+          {
+            "id": "mentalhealthbench-paper-default",
+            "label": "Author paper · default effort",
+            "rows": [
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6 Astra",
+                "value": 57.3,
+                "label": "GPT-6 Astra",
+                "result_id": "mentalhealthbench-paper-default-row-0",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6 Astra",
+                  "value": 57.3
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6 Sol",
+                "value": 53.9,
+                "label": "GPT-6 Sol",
+                "result_id": "mentalhealthbench-paper-default-row-1",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6 Sol",
+                  "value": 53.9
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Claude Opus 5.5",
+                "value": 52.4,
+                "label": "Claude Opus 5.5",
+                "result_id": "mentalhealthbench-paper-default-row-2",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Claude Opus 5.5",
+                  "value": 52.4
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-6 Luna",
+                "value": 50.2,
+                "label": "GPT-6 Luna",
+                "result_id": "mentalhealthbench-paper-default-row-3",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-6 Luna",
+                  "value": 50.2
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Muse Spark 1.3",
+                "value": 48.6,
+                "label": "Muse Spark 1.3",
+                "result_id": "mentalhealthbench-paper-default-row-4",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Muse Spark 1.3",
+                  "value": 48.6
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-5.6 Sol (Aug 2026)",
+                "value": 47,
+                "label": "GPT-5.6 Sol (Aug 2026)",
+                "result_id": "mentalhealthbench-paper-default-row-5",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-5.6 Sol (Aug 2026)",
+                  "value": 47
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Claude Fable 5.1",
+                "value": 46.4,
+                "label": "Claude Fable 5.1",
+                "result_id": "mentalhealthbench-paper-default-row-6",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Claude Fable 5.1",
+                  "value": 46.4
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-5.6 Luna (Aug 2026)",
+                "value": 44.9,
+                "label": "GPT-5.6 Luna (Aug 2026)",
+                "result_id": "mentalhealthbench-paper-default-row-7",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-5.6 Luna (Aug 2026)",
+                  "value": 44.9
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Claude Sonnet 5",
+                "value": 44.5,
+                "label": "Claude Sonnet 5",
+                "result_id": "mentalhealthbench-paper-default-row-8",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Claude Sonnet 5",
+                  "value": 44.5
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-5 Thinking",
+                "value": 42.9,
+                "label": "GPT-5 Thinking",
+                "result_id": "mentalhealthbench-paper-default-row-9",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-5 Thinking",
+                  "value": 42.9
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Claude Haiku 4.5",
+                "value": 41.7,
+                "label": "Claude Haiku 4.5",
+                "result_id": "mentalhealthbench-paper-default-row-10",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Claude Haiku 4.5",
+                  "value": 41.7
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Grok 4.7",
+                "value": 41.3,
+                "label": "Grok 4.7",
+                "result_id": "mentalhealthbench-paper-default-row-11",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Grok 4.7",
+                  "value": 41.3
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Gemini 3.8 Flash",
+                "value": 35.5,
+                "label": "Gemini 3.8 Flash",
+                "result_id": "mentalhealthbench-paper-default-row-12",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Gemini 3.8 Flash",
+                  "value": 35.5
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Gemini 2.5 Flash",
+                "value": 33.5,
+                "label": "Gemini 2.5 Flash",
+                "result_id": "mentalhealthbench-paper-default-row-13",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Gemini 2.5 Flash",
+                  "value": 33.5
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "GPT-4o (March 2025)",
+                "value": 32.1,
+                "label": "GPT-4o (March 2025)",
+                "result_id": "mentalhealthbench-paper-default-row-14",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "GPT-4o (March 2025)",
+                  "value": 32.1
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Gemini 3.1 Pro",
+                "value": 32.1,
+                "label": "Gemini 3.1 Pro",
+                "result_id": "mentalhealthbench-paper-default-row-15",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Gemini 3.1 Pro",
+                  "value": 32.1
+                }
+              },
+              {
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "model_variant": "Gemini 2.5 Pro",
+                "value": 29.5,
+                "label": "Gemini 2.5 Pro",
+                "result_id": "mentalhealthbench-paper-default-row-16",
+                "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+                "raw": {
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "model_variant": "Gemini 2.5 Pro",
+                  "value": 29.5
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task-clipped rubric score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://cdn.openai.com/ctf-cdn/MentalHealthBench_A_Comprehensive_Benchmark_of_AI_Capabilities_in_Realistic_Mental_Health_Conversations.pdf",
+            "settings": {
+              "reasoning_effort": "default; distinct from max-effort system-card cohort",
+              "sample_size": 1215,
+              "tools": null,
+              "samples_per_task": 4,
+              "grader": "GPT-5.6 Sol, high reasoning effort",
+              "temperature": "API default",
+              "verbosity": "API default"
+            },
+            "limitations": [
+              "Cost figure lacks exact coordinate table; do not interpolate dollars.",
+              "No claim of therapy efficacy or clinical safety."
+            ],
+            "source_locator": "Section 2.3 p6; Figure 5 p10; Appendix B",
+            "evaluation_date": null,
+            "publication_at": null,
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          }
+        ],
+        "historical": true,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "robochallenge-table30-v2",
+        "name": "RoboChallenge · Table30 V2",
+        "category": "physical",
+        "question": "Can a generalist robot complete physical manipulation tasks?",
+        "tests": "The Table30 V2 track tests multi-task robot systems across 30 tasks and four robot types. This view preserves all 54 aggregate rows from the official board rendered on October 12.",
+        "matters": "Physical tasks require sensing and acting through a real embodiment. Completing a task differs from making partial progress toward it.",
+        "read": "Success rate and the board’s partial-progress Score remain separate views. LoopWAM leads this retrieved success table; KDDI’s October 5 first-place announcement describes an earlier state. Evaluation dates, rollout denominators and complete task coverage are unknown, so low or zero rows are not assumed to be fully evaluated runs. The unrendered single-task observation stays excluded.",
+        "source_input": "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/medical-robotics.json"
+        ],
+        "variants": [
+          {
+            "id": "robochallenge-table30-v2-current",
+            "label": "October 12 retrieved aggregate board · 54 rows",
+            "rows": [
+              {
+                "rank": 1,
+                "model_variant": "LoopWAM",
+                "submitter": "LoopWAM",
+                "score": 56.8,
+                "success_rate_percent": 43.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 1",
+                "label": "LoopWAM",
+                "result_id": "robochallenge-table30-v2-current-row-0",
+                "raw": {
+                  "rank": 1,
+                  "model_variant": "LoopWAM",
+                  "submitter": "LoopWAM",
+                  "score": 56.8,
+                  "success_rate_percent": 43.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 1"
+                }
+              },
+              {
+                "rank": 2,
+                "model_variant": "VLA-DM0.5",
+                "submitter": "KDDI Research",
+                "score": 54.42,
+                "success_rate_percent": 40.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 2",
+                "label": "VLA-DM0.5",
+                "result_id": "robochallenge-table30-v2-current-row-1",
+                "raw": {
+                  "rank": 2,
+                  "model_variant": "VLA-DM0.5",
+                  "submitter": "KDDI Research",
+                  "score": 54.42,
+                  "success_rate_percent": 40.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 2"
+                }
+              },
+              {
+                "rank": 3,
+                "model_variant": "my16",
+                "submitter": "Tymtbo",
+                "score": 41.27,
+                "success_rate_percent": 30.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 3",
+                "label": "my16",
+                "result_id": "robochallenge-table30-v2-current-row-2",
+                "raw": {
+                  "rank": 3,
+                  "model_variant": "my16",
+                  "submitter": "Tymtbo",
+                  "score": 41.27,
+                  "success_rate_percent": 30.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 3"
+                }
+              },
+              {
+                "rank": 4,
+                "model_variant": "ambase",
+                "submitter": "AVerse001",
+                "score": 29.83,
+                "success_rate_percent": 19.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 4",
+                "label": "ambase",
+                "result_id": "robochallenge-table30-v2-current-row-3",
+                "raw": {
+                  "rank": 4,
+                  "model_variant": "ambase",
+                  "submitter": "AVerse001",
+                  "score": 29.83,
+                  "success_rate_percent": 19.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 4"
+                }
+              },
+              {
+                "rank": 5,
+                "model_variant": "JV0",
+                "submitter": "JIIOV",
+                "score": 27.58,
+                "success_rate_percent": 16,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 5",
+                "label": "JV0",
+                "result_id": "robochallenge-table30-v2-current-row-4",
+                "raw": {
+                  "rank": 5,
+                  "model_variant": "JV0",
+                  "submitter": "JIIOV",
+                  "score": 27.58,
+                  "success_rate_percent": 16,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 5"
+                }
+              },
+              {
+                "rank": 6,
+                "model_variant": "mc",
+                "submitter": "mcBrains",
+                "score": 23.63,
+                "success_rate_percent": 15.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 6",
+                "label": "mc",
+                "result_id": "robochallenge-table30-v2-current-row-5",
+                "raw": {
+                  "rank": 6,
+                  "model_variant": "mc",
+                  "submitter": "mcBrains",
+                  "score": 23.63,
+                  "success_rate_percent": 15.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 6"
+                }
+              },
+              {
+                "rank": 7,
+                "model_variant": "MagicBot",
+                "submitter": "MagicBot",
+                "score": 20.82,
+                "success_rate_percent": 14.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 7",
+                "label": "MagicBot",
+                "result_id": "robochallenge-table30-v2-current-row-6",
+                "raw": {
+                  "rank": 7,
+                  "model_variant": "MagicBot",
+                  "submitter": "MagicBot",
+                  "score": 20.82,
+                  "success_rate_percent": 14.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 7"
+                }
+              },
+              {
+                "rank": 8,
+                "model_variant": "Baseline Model",
+                "submitter": "RoboChallenge",
+                "score": 31.48,
+                "success_rate_percent": 14.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 8",
+                "label": "Baseline Model",
+                "result_id": "robochallenge-table30-v2-current-row-7",
+                "raw": {
+                  "rank": 8,
+                  "model_variant": "Baseline Model",
+                  "submitter": "RoboChallenge",
+                  "score": 31.48,
+                  "success_rate_percent": 14.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 8"
+                }
+              },
+              {
+                "rank": 9,
+                "model_variant": "holobrain",
+                "submitter": "HRL",
+                "score": 27.93,
+                "success_rate_percent": 14.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 9",
+                "label": "holobrain",
+                "result_id": "robochallenge-table30-v2-current-row-8",
+                "raw": {
+                  "rank": 9,
+                  "model_variant": "holobrain",
+                  "submitter": "HRL",
+                  "score": 27.93,
+                  "success_rate_percent": 14.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 9"
+                }
+              },
+              {
+                "rank": 10,
+                "model_variant": "test_01",
+                "submitter": "VLA",
+                "score": 22.73,
+                "success_rate_percent": 12.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 10",
+                "label": "test_01",
+                "result_id": "robochallenge-table30-v2-current-row-9",
+                "raw": {
+                  "rank": 10,
+                  "model_variant": "test_01",
+                  "submitter": "VLA",
+                  "score": 22.73,
+                  "success_rate_percent": 12.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 10"
+                }
+              },
+              {
+                "rank": 11,
+                "model_variant": "W0",
+                "submitter": "WMA",
+                "score": 21.85,
+                "success_rate_percent": 12,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 11",
+                "label": "W0",
+                "result_id": "robochallenge-table30-v2-current-row-10",
+                "raw": {
+                  "rank": 11,
+                  "model_variant": "W0",
+                  "submitter": "WMA",
+                  "score": 21.85,
+                  "success_rate_percent": 12,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 11"
+                }
+              },
+              {
+                "rank": 12,
+                "model_variant": "debuggers_vla",
+                "submitter": "debuggers",
+                "score": 18.72,
+                "success_rate_percent": 11,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 12",
+                "label": "debuggers_vla",
+                "result_id": "robochallenge-table30-v2-current-row-11",
+                "raw": {
+                  "rank": 12,
+                  "model_variant": "debuggers_vla",
+                  "submitter": "debuggers",
+                  "score": 18.72,
+                  "success_rate_percent": 11,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 12"
+                }
+              },
+              {
+                "rank": 13,
+                "model_variant": "hcp-e",
+                "submitter": "HCP-E",
+                "score": 19.2,
+                "success_rate_percent": 10.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 13",
+                "label": "hcp-e",
+                "result_id": "robochallenge-table30-v2-current-row-12",
+                "raw": {
+                  "rank": 13,
+                  "model_variant": "hcp-e",
+                  "submitter": "HCP-E",
+                  "score": 19.2,
+                  "success_rate_percent": 10.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 13"
+                }
+              },
+              {
+                "rank": 14,
+                "model_variant": "Astraeus_V1.5",
+                "submitter": "Yuze Xuan",
+                "score": 13.87,
+                "success_rate_percent": 8.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 14",
+                "label": "Astraeus_V1.5",
+                "result_id": "robochallenge-table30-v2-current-row-13",
+                "raw": {
+                  "rank": 14,
+                  "model_variant": "Astraeus_V1.5",
+                  "submitter": "Yuze Xuan",
+                  "score": 13.87,
+                  "success_rate_percent": 8.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 14"
+                }
+              },
+              {
+                "rank": 15,
+                "model_variant": "EgoVLA",
+                "submitter": "Yuhao Chen",
+                "score": 20.95,
+                "success_rate_percent": 7.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 15",
+                "label": "EgoVLA",
+                "result_id": "robochallenge-table30-v2-current-row-14",
+                "raw": {
+                  "rank": 15,
+                  "model_variant": "EgoVLA",
+                  "submitter": "Yuhao Chen",
+                  "score": 20.95,
+                  "success_rate_percent": 7.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 15"
+                }
+              },
+              {
+                "rank": 16,
+                "model_variant": "USTB-Linketic",
+                "submitter": "Zhenyang Wei",
+                "score": 14.9,
+                "success_rate_percent": 7.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 16",
+                "label": "USTB-Linketic",
+                "result_id": "robochallenge-table30-v2-current-row-15",
+                "raw": {
+                  "rank": 16,
+                  "model_variant": "USTB-Linketic",
+                  "submitter": "Zhenyang Wei",
+                  "score": 14.9,
+                  "success_rate_percent": 7.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 16"
+                }
+              },
+              {
+                "rank": 17,
+                "model_variant": "vict",
+                "submitter": "victory team",
+                "score": 12.72,
+                "success_rate_percent": 7.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 17",
+                "label": "vict",
+                "result_id": "robochallenge-table30-v2-current-row-16",
+                "raw": {
+                  "rank": 17,
+                  "model_variant": "vict",
+                  "submitter": "victory team",
+                  "score": 12.72,
+                  "success_rate_percent": 7.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 17"
+                }
+              },
+              {
+                "rank": 18,
+                "model_variant": "ARX5-multitask",
+                "submitter": "Hua Xue",
+                "score": 13,
+                "success_rate_percent": 6.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 18",
+                "label": "ARX5-multitask",
+                "result_id": "robochallenge-table30-v2-current-row-17",
+                "raw": {
+                  "rank": 18,
+                  "model_variant": "ARX5-multitask",
+                  "submitter": "Hua Xue",
+                  "score": 13,
+                  "success_rate_percent": 6.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 18"
+                }
+              },
+              {
+                "rank": 19,
+                "model_variant": "Astraeus_V1.6",
+                "submitter": "Yuze Xuan",
+                "score": 11.57,
+                "success_rate_percent": 6.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 19",
+                "label": "Astraeus_V1.6",
+                "result_id": "robochallenge-table30-v2-current-row-18",
+                "raw": {
+                  "rank": 19,
+                  "model_variant": "Astraeus_V1.6",
+                  "submitter": "Yuze Xuan",
+                  "score": 11.57,
+                  "success_rate_percent": 6.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 19"
+                }
+              },
+              {
+                "rank": 20,
+                "model_variant": "MultiVLA",
+                "submitter": "Vertex",
+                "score": 12.85,
+                "success_rate_percent": 6,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 20",
+                "label": "MultiVLA",
+                "result_id": "robochallenge-table30-v2-current-row-19",
+                "raw": {
+                  "rank": 20,
+                  "model_variant": "MultiVLA",
+                  "submitter": "Vertex",
+                  "score": 12.85,
+                  "success_rate_percent": 6,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 20"
+                }
+              },
+              {
+                "rank": 21,
+                "model_variant": "RoboRush",
+                "submitter": "RoboRush",
+                "score": 12.33,
+                "success_rate_percent": 6,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 21",
+                "label": "RoboRush",
+                "result_id": "robochallenge-table30-v2-current-row-20",
+                "raw": {
+                  "rank": 21,
+                  "model_variant": "RoboRush",
+                  "submitter": "RoboRush",
+                  "score": 12.33,
+                  "success_rate_percent": 6,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 21"
+                }
+              },
+              {
+                "rank": 22,
+                "model_variant": "UR5-multitask",
+                "submitter": "Hua Xue",
+                "score": 7.95,
+                "success_rate_percent": 6,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 22",
+                "label": "UR5-multitask",
+                "result_id": "robochallenge-table30-v2-current-row-21",
+                "raw": {
+                  "rank": 22,
+                  "model_variant": "UR5-multitask",
+                  "submitter": "Hua Xue",
+                  "score": 7.95,
+                  "success_rate_percent": 6,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 22"
+                }
+              },
+              {
+                "rank": 23,
+                "model_variant": "metrics",
+                "submitter": "Metrics",
+                "score": 16.12,
+                "success_rate_percent": 5.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 23",
+                "label": "metrics",
+                "result_id": "robochallenge-table30-v2-current-row-22",
+                "raw": {
+                  "rank": 23,
+                  "model_variant": "metrics",
+                  "submitter": "Metrics",
+                  "score": 16.12,
+                  "success_rate_percent": 5.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 23"
+                }
+              },
+              {
+                "rank": 24,
+                "model_variant": "xyz",
+                "submitter": "xyz",
+                "score": 8.83,
+                "success_rate_percent": 5.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 24",
+                "label": "xyz",
+                "result_id": "robochallenge-table30-v2-current-row-23",
+                "raw": {
+                  "rank": 24,
+                  "model_variant": "xyz",
+                  "submitter": "xyz",
+                  "score": 8.83,
+                  "success_rate_percent": 5.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 24"
+                }
+              },
+              {
+                "rank": 25,
+                "model_variant": "AVP",
+                "submitter": "Any-01",
+                "score": 9.58,
+                "success_rate_percent": 5,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 25",
+                "label": "AVP",
+                "result_id": "robochallenge-table30-v2-current-row-24",
+                "raw": {
+                  "rank": 25,
+                  "model_variant": "AVP",
+                  "submitter": "Any-01",
+                  "score": 9.58,
+                  "success_rate_percent": 5,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 25"
+                }
+              },
+              {
+                "rank": 26,
+                "model_variant": "smartVLA",
+                "submitter": "smartVLA",
+                "score": 7.25,
+                "success_rate_percent": 4,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 26",
+                "label": "smartVLA",
+                "result_id": "robochallenge-table30-v2-current-row-25",
+                "raw": {
+                  "rank": 26,
+                  "model_variant": "smartVLA",
+                  "submitter": "smartVLA",
+                  "score": 7.25,
+                  "success_rate_percent": 4,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 26"
+                }
+              },
+              {
+                "rank": 27,
+                "model_variant": "Astraeus_V1",
+                "submitter": "Yuze Xuan",
+                "score": 8.42,
+                "success_rate_percent": 3.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 27",
+                "label": "Astraeus_V1",
+                "result_id": "robochallenge-table30-v2-current-row-26",
+                "raw": {
+                  "rank": 27,
+                  "model_variant": "Astraeus_V1",
+                  "submitter": "Yuze Xuan",
+                  "score": 8.42,
+                  "success_rate_percent": 3.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 27"
+                }
+              },
+              {
+                "rank": 28,
+                "model_variant": "NGRob",
+                "submitter": "Next Gen Robot",
+                "score": 6.28,
+                "success_rate_percent": 3.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 28",
+                "label": "NGRob",
+                "result_id": "robochallenge-table30-v2-current-row-27",
+                "raw": {
+                  "rank": 28,
+                  "model_variant": "NGRob",
+                  "submitter": "Next Gen Robot",
+                  "score": 6.28,
+                  "success_rate_percent": 3.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 28"
+                }
+              },
+              {
+                "rank": 29,
+                "model_variant": "BrainC",
+                "submitter": "YunJinBrains",
+                "score": 10.1,
+                "success_rate_percent": 3,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 29",
+                "label": "BrainC",
+                "result_id": "robochallenge-table30-v2-current-row-28",
+                "raw": {
+                  "rank": 29,
+                  "model_variant": "BrainC",
+                  "submitter": "YunJinBrains",
+                  "score": 10.1,
+                  "success_rate_percent": 3,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 29"
+                }
+              },
+              {
+                "rank": 30,
+                "model_variant": "DOS-W1-multitask",
+                "submitter": "Hua Xue",
+                "score": 5.53,
+                "success_rate_percent": 3,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 30",
+                "label": "DOS-W1-multitask",
+                "result_id": "robochallenge-table30-v2-current-row-29",
+                "raw": {
+                  "rank": 30,
+                  "model_variant": "DOS-W1-multitask",
+                  "submitter": "Hua Xue",
+                  "score": 5.53,
+                  "success_rate_percent": 3,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 30"
+                }
+              },
+              {
+                "rank": 31,
+                "model_variant": "TengenX0.1",
+                "submitter": "Yimin Chen",
+                "score": 8.68,
+                "success_rate_percent": 2,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 31",
+                "label": "TengenX0.1",
+                "result_id": "robochallenge-table30-v2-current-row-30",
+                "raw": {
+                  "rank": 31,
+                  "model_variant": "TengenX0.1",
+                  "submitter": "Yimin Chen",
+                  "score": 8.68,
+                  "success_rate_percent": 2,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 31"
+                }
+              },
+              {
+                "rank": 32,
+                "model_variant": "ALOHA-multitask",
+                "submitter": "Hua Xue",
+                "score": 5.92,
+                "success_rate_percent": 2,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 32",
+                "label": "ALOHA-multitask",
+                "result_id": "robochallenge-table30-v2-current-row-31",
+                "raw": {
+                  "rank": 32,
+                  "model_variant": "ALOHA-multitask",
+                  "submitter": "Hua Xue",
+                  "score": 5.92,
+                  "success_rate_percent": 2,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 32"
+                }
+              },
+              {
+                "rank": 33,
+                "model_variant": "KETI_pi0.5",
+                "submitter": "KETI",
+                "score": 5.42,
+                "success_rate_percent": 2,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 33",
+                "label": "KETI_pi0.5",
+                "result_id": "robochallenge-table30-v2-current-row-32",
+                "raw": {
+                  "rank": 33,
+                  "model_variant": "KETI_pi0.5",
+                  "submitter": "KETI",
+                  "score": 5.42,
+                  "success_rate_percent": 2,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 33"
+                }
+              },
+              {
+                "rank": 34,
+                "model_variant": "TvT",
+                "submitter": "TvT",
+                "score": 5.12,
+                "success_rate_percent": 2,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 34",
+                "label": "TvT",
+                "result_id": "robochallenge-table30-v2-current-row-33",
+                "raw": {
+                  "rank": 34,
+                  "model_variant": "TvT",
+                  "submitter": "TvT",
+                  "score": 5.12,
+                  "success_rate_percent": 2,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 34"
+                }
+              },
+              {
+                "rank": 35,
+                "model_variant": "happy_farm",
+                "submitter": "YZF",
+                "score": 4.05,
+                "success_rate_percent": 1.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 35",
+                "label": "happy_farm",
+                "result_id": "robochallenge-table30-v2-current-row-34",
+                "raw": {
+                  "rank": 35,
+                  "model_variant": "happy_farm",
+                  "submitter": "YZF",
+                  "score": 4.05,
+                  "success_rate_percent": 1.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 35"
+                }
+              },
+              {
+                "rank": 36,
+                "model_variant": "Astraeus_V1.7",
+                "submitter": "Yuze Xuan",
+                "score": 4.28,
+                "success_rate_percent": 1,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 36",
+                "label": "Astraeus_V1.7",
+                "result_id": "robochallenge-table30-v2-current-row-35",
+                "raw": {
+                  "rank": 36,
+                  "model_variant": "Astraeus_V1.7",
+                  "submitter": "Yuze Xuan",
+                  "score": 4.28,
+                  "success_rate_percent": 1,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 36"
+                }
+              },
+              {
+                "rank": 37,
+                "model_variant": "Aloha05",
+                "submitter": "jiafan",
+                "score": 1.52,
+                "success_rate_percent": 1,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 37",
+                "label": "Aloha05",
+                "result_id": "robochallenge-table30-v2-current-row-36",
+                "raw": {
+                  "rank": 37,
+                  "model_variant": "Aloha05",
+                  "submitter": "jiafan",
+                  "score": 1.52,
+                  "success_rate_percent": 1,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 37"
+                }
+              },
+              {
+                "rank": 38,
+                "model_variant": "RobotPioneer",
+                "submitter": "RobotPioneer",
+                "score": 3.22,
+                "success_rate_percent": 0.67,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 38",
+                "label": "RobotPioneer",
+                "result_id": "robochallenge-table30-v2-current-row-37",
+                "raw": {
+                  "rank": 38,
+                  "model_variant": "RobotPioneer",
+                  "submitter": "RobotPioneer",
+                  "score": 3.22,
+                  "success_rate_percent": 0.67,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 38"
+                }
+              },
+              {
+                "rank": 39,
+                "model_variant": "EchoMind Master",
+                "submitter": "EchoMind Master",
+                "score": 4.22,
+                "success_rate_percent": 0.33,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 39",
+                "label": "EchoMind Master",
+                "result_id": "robochallenge-table30-v2-current-row-38",
+                "raw": {
+                  "rank": 39,
+                  "model_variant": "EchoMind Master",
+                  "submitter": "EchoMind Master",
+                  "score": 4.22,
+                  "success_rate_percent": 0.33,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 39"
+                }
+              },
+              {
+                "rank": 40,
+                "model_variant": "pi-aloha-base",
+                "submitter": "AVerse001",
+                "score": 2.97,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 40",
+                "label": "pi-aloha-base",
+                "result_id": "robochallenge-table30-v2-current-row-39",
+                "raw": {
+                  "rank": 40,
+                  "model_variant": "pi-aloha-base",
+                  "submitter": "AVerse001",
+                  "score": 2.97,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 40"
+                }
+              },
+              {
+                "rank": 41,
+                "model_variant": "moveon",
+                "submitter": "能动就行",
+                "score": 2.6,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 41",
+                "label": "moveon",
+                "result_id": "robochallenge-table30-v2-current-row-40",
+                "raw": {
+                  "rank": 41,
+                  "model_variant": "moveon",
+                  "submitter": "能动就行",
+                  "score": 2.6,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 41"
+                }
+              },
+              {
+                "rank": 42,
+                "model_variant": "wp",
+                "submitter": "zhaogs",
+                "score": 2.53,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 42",
+                "label": "wp",
+                "result_id": "robochallenge-table30-v2-current-row-41",
+                "raw": {
+                  "rank": 42,
+                  "model_variant": "wp",
+                  "submitter": "zhaogs",
+                  "score": 2.53,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 42"
+                }
+              },
+              {
+                "rank": 43,
+                "model_variant": "R0",
+                "submitter": "VLM",
+                "score": 1.92,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 43",
+                "label": "R0",
+                "result_id": "robochallenge-table30-v2-current-row-42",
+                "raw": {
+                  "rank": 43,
+                  "model_variant": "R0",
+                  "submitter": "VLM",
+                  "score": 1.92,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 43"
+                }
+              },
+              {
+                "rank": 44,
+                "model_variant": "WAM_v0",
+                "submitter": "Nanfang Zheng",
+                "score": 1.42,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 44",
+                "label": "WAM_v0",
+                "result_id": "robochallenge-table30-v2-current-row-43",
+                "raw": {
+                  "rank": 44,
+                  "model_variant": "WAM_v0",
+                  "submitter": "Nanfang Zheng",
+                  "score": 1.42,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 44"
+                }
+              },
+              {
+                "rank": 45,
+                "model_variant": "M36-E0",
+                "submitter": "Bo Zhang",
+                "score": 1.15,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 45",
+                "label": "M36-E0",
+                "result_id": "robochallenge-table30-v2-current-row-44",
+                "raw": {
+                  "rank": 45,
+                  "model_variant": "M36-E0",
+                  "submitter": "Bo Zhang",
+                  "score": 1.15,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 45"
+                }
+              },
+              {
+                "rank": 46,
+                "model_variant": "pi05",
+                "submitter": "robocare",
+                "score": 0.73,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 46",
+                "label": "pi05",
+                "result_id": "robochallenge-table30-v2-current-row-45",
+                "raw": {
+                  "rank": 46,
+                  "model_variant": "pi05",
+                  "submitter": "robocare",
+                  "score": 0.73,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 46"
+                }
+              },
+              {
+                "rank": 47,
+                "model_variant": "EI-WAM-53M",
+                "submitter": "Jiahao Wu",
+                "score": 0.37,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 47",
+                "label": "EI-WAM-53M",
+                "result_id": "robochallenge-table30-v2-current-row-46",
+                "raw": {
+                  "rank": 47,
+                  "model_variant": "EI-WAM-53M",
+                  "submitter": "Jiahao Wu",
+                  "score": 0.37,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 47"
+                }
+              },
+              {
+                "rank": 48,
+                "model_variant": "Datawhale-VLA",
+                "submitter": "Datawhale-EAI",
+                "score": 0.2,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 48",
+                "label": "Datawhale-VLA",
+                "result_id": "robochallenge-table30-v2-current-row-47",
+                "raw": {
+                  "rank": 48,
+                  "model_variant": "Datawhale-VLA",
+                  "submitter": "Datawhale-EAI",
+                  "score": 0.2,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 48"
+                }
+              },
+              {
+                "rank": 49,
+                "model_variant": "testmulti6",
+                "submitter": "THUEE",
+                "score": 0.18,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 49",
+                "label": "testmulti6",
+                "result_id": "robochallenge-table30-v2-current-row-48",
+                "raw": {
+                  "rank": 49,
+                  "model_variant": "testmulti6",
+                  "submitter": "THUEE",
+                  "score": 0.18,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 49"
+                }
+              },
+              {
+                "rank": 50,
+                "model_variant": "vertical",
+                "submitter": "Vertical",
+                "score": 0.17,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 50",
+                "label": "vertical",
+                "result_id": "robochallenge-table30-v2-current-row-49",
+                "raw": {
+                  "rank": 50,
+                  "model_variant": "vertical",
+                  "submitter": "Vertical",
+                  "score": 0.17,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 50"
+                }
+              },
+              {
+                "rank": 51,
+                "model_variant": "pb_vla",
+                "submitter": "PB",
+                "score": 0,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 51",
+                "label": "pb_vla",
+                "result_id": "robochallenge-table30-v2-current-row-50",
+                "raw": {
+                  "rank": 51,
+                  "model_variant": "pb_vla",
+                  "submitter": "PB",
+                  "score": 0,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 51"
+                }
+              },
+              {
+                "rank": 52,
+                "model_variant": "kp-robot",
+                "submitter": "Lutos_sanzu",
+                "score": 0,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 52",
+                "label": "kp-robot",
+                "result_id": "robochallenge-table30-v2-current-row-51",
+                "raw": {
+                  "rank": 52,
+                  "model_variant": "kp-robot",
+                  "submitter": "Lutos_sanzu",
+                  "score": 0,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 52"
+                }
+              },
+              {
+                "rank": 53,
+                "model_variant": "DM-OPD",
+                "submitter": "Wenjuan Han",
+                "score": 0,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 53",
+                "label": "DM-OPD",
+                "result_id": "robochallenge-table30-v2-current-row-52",
+                "raw": {
+                  "rank": 53,
+                  "model_variant": "DM-OPD",
+                  "submitter": "Wenjuan Han",
+                  "score": 0,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 53"
+                }
+              },
+              {
+                "rank": 54,
+                "model_variant": "MiniCPM-RobotManip",
+                "submitter": "Modelbest",
+                "score": 0,
+                "success_rate_percent": 0,
+                "is_multitask": true,
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "numeric_import": "verified_full_primary_rendered_table",
+                "source_url": "https://robochallenge.ai/leaderboard",
+                "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 54",
+                "label": "MiniCPM-RobotManip",
+                "result_id": "robochallenge-table30-v2-current-row-53",
+                "raw": {
+                  "rank": 54,
+                  "model_variant": "MiniCPM-RobotManip",
+                  "submitter": "Modelbest",
+                  "score": 0,
+                  "success_rate_percent": 0,
+                  "is_multitask": true,
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "numeric_import": "verified_full_primary_rendered_table",
+                  "source_url": "https://robochallenge.ai/leaderboard",
+                  "source_locator": "Aggregate Table30 V2 leaderboard, displayed rank 54"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "success",
+                "label": "Task success rate",
+                "field": "success_rate_percent",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "progress",
+                "label": "Partial-progress Score",
+                "field": "score",
+                "unit": "Score points (0–100)",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://robochallenge.ai/leaderboard",
+            "settings": {
+              "tasks": 30,
+              "robot_types": 4,
+              "rollouts_per_task": null,
+              "total_rollouts_per_model": null,
+              "harness": "RoboChallenge online physical-robot evaluation",
+              "model_regime": "multi-task/generalist V2"
+            },
+            "limitations": [
+              "Direct web text extraction returned blank, and the search index was stale. The replacement values above were read from the actual rendered primary leaderboard on October 12, 2026.",
+              "The October 5 KDDI announcement described first place at that date. The October 12 rendered board instead ranks LoopWAM first and VLA-DM0.5 second. Do not present KDDI as the current leader.",
+              "Model submission dates, exact evaluation dates, full rollout denominators, costs and latency remain unavailable. The leaderboard retrieval date is not an evaluation date.",
+              "Low or zero aggregate values may reflect incomplete task coverage; coverage was not established for every submission, so retain model labels and do not treat every row as a fully evaluated 30-task run.",
+              "Keep Table30 V2 separate from V1 specialist/generalist, CVPR/ICRA competition subsets, and the planned simulation counterpart."
+            ],
+            "source_locator": "Track table-30-v2 selected; aggregate Leaderboard table with 54 model rows. Separate Task Detail table has 675 task rows and is not the aggregate ranking.",
+            "evaluation_date": null,
+            "publication_at": null,
+            "data_end_date": null,
+            "snapshot_at": "2026-10-12",
+            "checked_at": "2026-10-12",
+            "complete": true,
+            "coverage": "Complete displayed aggregate table; per-submission task/rollout coverage is unavailable."
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "drivingbench-fixed-pilot",
+        "name": "DrivingBench · fixed physical pilot",
+        "category": "physical",
+        "question": "Can an agent guide a vehicle around a small closed course?",
+        "tests": "Four model-and-harness systems control a speed-capped vehicle on a 127-metre course with a human safety operator. Each system has one independent chat and up to three dependent attempts.",
+        "matters": "The pilot exposes the interaction between observation, decisions and vehicle control. It is a small physical experiment rather than a population estimate of driving ability.",
+        "read": "Best progress, whole-chat reported spend and per-attempt duration describe different parts of this fixed pilot. All 11 attempts retain their original costs and durations, including failed attempts; they are not independent samples. Grok’s published total differs from the rounded attempt sum and is left unchanged. These results do not establish public-road safety.",
+        "source_input": "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/medical-robotics.json"
+        ],
+        "variants": [
+          {
+            "id": "drivingbench-v1-fixed-pilot",
+            "label": "Four system summaries · one chat per system",
+            "rows": [
+              {
+                "model_variant": "GPT-6 Astra",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt_progress_percent": [
+                  49,
+                  100
+                ],
+                "attempt_duration_seconds": [
+                  78,
+                  322
+                ],
+                "attempt_distance_meters": [
+                  67.3,
+                  134.7
+                ],
+                "attempt_cost_usd": [
+                  2.01,
+                  7.74
+                ],
+                "best_progress_percent": 100,
+                "reported_total_cost_usd": 9.75,
+                "reported_total_tokens": 7800000,
+                "finish_time_seconds": 322,
+                "label": "GPT-6 Astra + Codex CLI0.154.0-alpha.6.2",
+                "result_id": "drivingbench-v1-fixed-pilot-row-0",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "GPT-6 Astra",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt_progress_percent": [
+                    49,
+                    100
+                  ],
+                  "attempt_duration_seconds": [
+                    78,
+                    322
+                  ],
+                  "attempt_distance_meters": [
+                    67.3,
+                    134.7
+                  ],
+                  "attempt_cost_usd": [
+                    2.01,
+                    7.74
+                  ],
+                  "best_progress_percent": 100,
+                  "reported_total_cost_usd": 9.75,
+                  "reported_total_tokens": 7800000,
+                  "finish_time_seconds": 322
+                }
+              },
+              {
+                "model_variant": "Claude Fable 5.1",
+                "harness": "Claude Code2.1.274",
+                "attempt_progress_percent": [
+                  9,
+                  10,
+                  45
+                ],
+                "attempt_duration_seconds": [
+                  41,
+                  190,
+                  260
+                ],
+                "attempt_cost_usd": [
+                  0.96,
+                  1.35,
+                  1.64
+                ],
+                "best_progress_percent": 45,
+                "reported_total_cost_usd": 3.95,
+                "reported_total_tokens": 3600000,
+                "finish_time_seconds": null,
+                "label": "Claude Fable 5.1 + Claude Code2.1.274",
+                "result_id": "drivingbench-v1-fixed-pilot-row-1",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Claude Fable 5.1",
+                  "harness": "Claude Code2.1.274",
+                  "attempt_progress_percent": [
+                    9,
+                    10,
+                    45
+                  ],
+                  "attempt_duration_seconds": [
+                    41,
+                    190,
+                    260
+                  ],
+                  "attempt_cost_usd": [
+                    0.96,
+                    1.35,
+                    1.64
+                  ],
+                  "best_progress_percent": 45,
+                  "reported_total_cost_usd": 3.95,
+                  "reported_total_tokens": 3600000,
+                  "finish_time_seconds": null
+                }
+              },
+              {
+                "model_variant": "Grok 4.6",
+                "harness": "Cursor(version unavailable)",
+                "attempt_progress_percent": [
+                  8,
+                  11,
+                  10
+                ],
+                "attempt_duration_seconds": [
+                  35,
+                  49,
+                  43
+                ],
+                "attempt_cost_usd": [
+                  0.18,
+                  0.19,
+                  0.29
+                ],
+                "best_progress_percent": 11,
+                "reported_total_cost_usd": 0.65,
+                "reported_total_tokens": 1000000,
+                "finish_time_seconds": null,
+                "label": "Grok 4.6 + Cursor(version unavailable)",
+                "result_id": "drivingbench-v1-fixed-pilot-row-2",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "Grok 4.6",
+                  "harness": "Cursor(version unavailable)",
+                  "attempt_progress_percent": [
+                    8,
+                    11,
+                    10
+                  ],
+                  "attempt_duration_seconds": [
+                    35,
+                    49,
+                    43
+                  ],
+                  "attempt_cost_usd": [
+                    0.18,
+                    0.19,
+                    0.29
+                  ],
+                  "best_progress_percent": 11,
+                  "reported_total_cost_usd": 0.65,
+                  "reported_total_tokens": 1000000,
+                  "finish_time_seconds": null
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Sol",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt_progress_percent": [
+                  6,
+                  6,
+                  6
+                ],
+                "attempt_duration_seconds": [
+                  28,
+                  38,
+                  27
+                ],
+                "attempt_cost_usd": [
+                  0.35,
+                  0.43,
+                  0.27
+                ],
+                "best_progress_percent": 6,
+                "reported_total_cost_usd": 1.05,
+                "reported_total_tokens": 1600000,
+                "finish_time_seconds": null,
+                "label": "GPT-5.6 Sol + Codex CLI0.154.0-alpha.6.2",
+                "result_id": "drivingbench-v1-fixed-pilot-row-3",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "raw": {
+                  "model_variant": "GPT-5.6 Sol",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt_progress_percent": [
+                    6,
+                    6,
+                    6
+                  ],
+                  "attempt_duration_seconds": [
+                    28,
+                    38,
+                    27
+                  ],
+                  "attempt_cost_usd": [
+                    0.35,
+                    0.43,
+                    0.27
+                  ],
+                  "best_progress_percent": 6,
+                  "reported_total_cost_usd": 1.05,
+                  "reported_total_tokens": 1600000,
+                  "finish_time_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Best centerline progress",
+                "field": "best_progress_percent",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "cost",
+                "label": "Best centerline progress",
+                "field": "best_progress_percent",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "kind": "scatter",
+                "y_label": "Best centerline progress",
+                "x_field": "reported_total_cost_usd",
+                "x_label": "Reported total cost of the fixed system chat",
+                "x_unit": "USD/chat",
+                "x_basis": "Whole fixed pilot chat, not cost of a successful attempt or a mean task cost. Grok’s reported total is preserved despite rounding disagreement."
+              }
+            ],
+            "source_url": "https://drivingbench.com/",
+            "settings": {
+              "independent_chats_per_system": 1,
+              "max_attempts_same_chat": 3,
+              "all_observed_attempts": 11,
+              "reasoning_effort": "medium",
+              "vehicle": "2022 Toyota Corolla; comma four; modified openpilot",
+              "course_centerline_meters": 127,
+              "speed_cap_mps": 3.5,
+              "tools": [
+                "observe",
+                "set_motion",
+                "stop_now"
+              ],
+              "human_safety_operator": true
+            },
+            "limitations": [
+              "Same-chat attempts are dependent; no population success-rate estimate.",
+              "Progress uses a4m centerline corridor; not general driving competence.",
+              "134.7m is distance driven;127m is course centerline.",
+              "5:22 ends at last engagement; paper prose4:44 is arrival at finish zone.",
+              "Grok paper total$0.65 differs from rounded attempt costs summing$0.66; preserve rather than reconcile.",
+              "Prompt/interface iterated during development; model+harness comparison.",
+              "No public-road safety inference."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": null,
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          },
+          {
+            "id": "drivingbench-fixed-pilot-attempts",
+            "label": "All 11 dependent same-chat attempts",
+            "rows": [
+              {
+                "model_variant": "GPT-6 Astra",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt": 1,
+                "value": 49,
+                "duration_seconds": 78,
+                "cost_usd": 2.01,
+                "result_id": "driving-pilot-system-0-attempt-0",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "GPT-6 Astra · same-chat attempt 1",
+                "raw": {
+                  "model_variant": "GPT-6 Astra",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt": 1,
+                  "value": 49,
+                  "duration_seconds": 78,
+                  "cost_usd": 2.01,
+                  "result_id": "driving-pilot-system-0-attempt-0",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "GPT-6 Astra",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt": 2,
+                "value": 100,
+                "duration_seconds": 322,
+                "cost_usd": 7.74,
+                "result_id": "driving-pilot-system-0-attempt-1",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "GPT-6 Astra · same-chat attempt 2",
+                "raw": {
+                  "model_variant": "GPT-6 Astra",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt": 2,
+                  "value": 100,
+                  "duration_seconds": 322,
+                  "cost_usd": 7.74,
+                  "result_id": "driving-pilot-system-0-attempt-1",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Claude Fable 5.1",
+                "harness": "Claude Code2.1.274",
+                "attempt": 1,
+                "value": 9,
+                "duration_seconds": 41,
+                "cost_usd": 0.96,
+                "result_id": "driving-pilot-system-1-attempt-0",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "Claude Fable 5.1 · same-chat attempt 1",
+                "raw": {
+                  "model_variant": "Claude Fable 5.1",
+                  "harness": "Claude Code2.1.274",
+                  "attempt": 1,
+                  "value": 9,
+                  "duration_seconds": 41,
+                  "cost_usd": 0.96,
+                  "result_id": "driving-pilot-system-1-attempt-0",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Claude Fable 5.1",
+                "harness": "Claude Code2.1.274",
+                "attempt": 2,
+                "value": 10,
+                "duration_seconds": 190,
+                "cost_usd": 1.35,
+                "result_id": "driving-pilot-system-1-attempt-1",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "Claude Fable 5.1 · same-chat attempt 2",
+                "raw": {
+                  "model_variant": "Claude Fable 5.1",
+                  "harness": "Claude Code2.1.274",
+                  "attempt": 2,
+                  "value": 10,
+                  "duration_seconds": 190,
+                  "cost_usd": 1.35,
+                  "result_id": "driving-pilot-system-1-attempt-1",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Claude Fable 5.1",
+                "harness": "Claude Code2.1.274",
+                "attempt": 3,
+                "value": 45,
+                "duration_seconds": 260,
+                "cost_usd": 1.64,
+                "result_id": "driving-pilot-system-1-attempt-2",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "Claude Fable 5.1 · same-chat attempt 3",
+                "raw": {
+                  "model_variant": "Claude Fable 5.1",
+                  "harness": "Claude Code2.1.274",
+                  "attempt": 3,
+                  "value": 45,
+                  "duration_seconds": 260,
+                  "cost_usd": 1.64,
+                  "result_id": "driving-pilot-system-1-attempt-2",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Grok 4.6",
+                "harness": "Cursor(version unavailable)",
+                "attempt": 1,
+                "value": 8,
+                "duration_seconds": 35,
+                "cost_usd": 0.18,
+                "result_id": "driving-pilot-system-2-attempt-0",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "Grok 4.6 · same-chat attempt 1",
+                "raw": {
+                  "model_variant": "Grok 4.6",
+                  "harness": "Cursor(version unavailable)",
+                  "attempt": 1,
+                  "value": 8,
+                  "duration_seconds": 35,
+                  "cost_usd": 0.18,
+                  "result_id": "driving-pilot-system-2-attempt-0",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Grok 4.6",
+                "harness": "Cursor(version unavailable)",
+                "attempt": 2,
+                "value": 11,
+                "duration_seconds": 49,
+                "cost_usd": 0.19,
+                "result_id": "driving-pilot-system-2-attempt-1",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "Grok 4.6 · same-chat attempt 2",
+                "raw": {
+                  "model_variant": "Grok 4.6",
+                  "harness": "Cursor(version unavailable)",
+                  "attempt": 2,
+                  "value": 11,
+                  "duration_seconds": 49,
+                  "cost_usd": 0.19,
+                  "result_id": "driving-pilot-system-2-attempt-1",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "Grok 4.6",
+                "harness": "Cursor(version unavailable)",
+                "attempt": 3,
+                "value": 10,
+                "duration_seconds": 43,
+                "cost_usd": 0.29,
+                "result_id": "driving-pilot-system-2-attempt-2",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "Grok 4.6 · same-chat attempt 3",
+                "raw": {
+                  "model_variant": "Grok 4.6",
+                  "harness": "Cursor(version unavailable)",
+                  "attempt": 3,
+                  "value": 10,
+                  "duration_seconds": 43,
+                  "cost_usd": 0.29,
+                  "result_id": "driving-pilot-system-2-attempt-2",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Sol",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt": 1,
+                "value": 6,
+                "duration_seconds": 28,
+                "cost_usd": 0.35,
+                "result_id": "driving-pilot-system-3-attempt-0",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "GPT-5.6 Sol · same-chat attempt 1",
+                "raw": {
+                  "model_variant": "GPT-5.6 Sol",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt": 1,
+                  "value": 6,
+                  "duration_seconds": 28,
+                  "cost_usd": 0.35,
+                  "result_id": "driving-pilot-system-3-attempt-0",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Sol",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt": 2,
+                "value": 6,
+                "duration_seconds": 38,
+                "cost_usd": 0.43,
+                "result_id": "driving-pilot-system-3-attempt-1",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "GPT-5.6 Sol · same-chat attempt 2",
+                "raw": {
+                  "model_variant": "GPT-5.6 Sol",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt": 2,
+                  "value": 6,
+                  "duration_seconds": 38,
+                  "cost_usd": 0.43,
+                  "result_id": "driving-pilot-system-3-attempt-1",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              },
+              {
+                "model_variant": "GPT-5.6 Sol",
+                "harness": "Codex CLI0.154.0-alpha.6.2",
+                "attempt": 3,
+                "value": 6,
+                "duration_seconds": 27,
+                "cost_usd": 0.27,
+                "result_id": "driving-pilot-system-3-attempt-2",
+                "source_url": "https://drivingbench.com/",
+                "evaluation_date": null,
+                "label": "GPT-5.6 Sol · same-chat attempt 3",
+                "raw": {
+                  "model_variant": "GPT-5.6 Sol",
+                  "harness": "Codex CLI0.154.0-alpha.6.2",
+                  "attempt": 3,
+                  "value": 6,
+                  "duration_seconds": 27,
+                  "cost_usd": 0.27,
+                  "result_id": "driving-pilot-system-3-attempt-2",
+                  "source_url": "https://drivingbench.com/",
+                  "evaluation_date": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Attempt centerline progress",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "cost",
+                "label": "Attempt centerline progress",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "kind": "scatter",
+                "y_label": "Attempt centerline progress",
+                "x_field": "cost_usd",
+                "x_label": "Reported cost of this attempt, including reflection",
+                "x_unit": "USD/attempt",
+                "x_basis": "Individual attempts share chat state. The recorded costs include reflection and must not be treated as independent replications."
+              },
+              {
+                "id": "time",
+                "label": "Attempt centerline progress",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "kind": "scatter",
+                "y_label": "Attempt centerline progress",
+                "x_field": "duration_seconds",
+                "x_label": "Recorded attempt duration",
+                "x_unit": "seconds",
+                "x_basis": "Each recorded attempt duration, including failures; not inference-only time. Astra’s 322 seconds ends at the last engagement, distinct from arrival at the finish zone."
+              }
+            ],
+            "source_url": "https://drivingbench.com/",
+            "settings": {
+              "independent_chats_per_system": 1,
+              "max_attempts_same_chat": 3,
+              "all_observed_attempts": 11,
+              "reasoning_effort": "medium",
+              "vehicle": "2022 Toyota Corolla; comma four; modified openpilot",
+              "course_centerline_meters": 127,
+              "speed_cap_mps": 3.5,
+              "tools": [
+                "observe",
+                "set_motion",
+                "stop_now"
+              ],
+              "human_safety_operator": true
+            },
+            "limitations": [
+              "Same-chat attempts are dependent; no population success-rate estimate.",
+              "Progress uses a4m centerline corridor; not general driving competence.",
+              "134.7m is distance driven;127m is course centerline.",
+              "5:22 ends at last engagement; paper prose4:44 is arrival at finish zone.",
+              "Grok paper total$0.65 differs from rounded attempt costs summing$0.66; preserve rather than reconcile.",
+              "Prompt/interface iterated during development; model+harness comparison.",
+              "No public-road safety inference."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": null,
+            "data_end_date": null,
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          }
+        ],
+        "historical": true,
+        "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "waymo-corrected-fleet-outcomes",
+        "name": "Waymo · corrected fleet outcomes",
+        "category": "physical",
+        "question": "What crash outcomes were observed in the studied operating areas?",
+        "tests": "Waymo reports rider-only fleet crash involvement per mile against a geographically adjusted human comparator. The data end in June 2026, and October 2 release notes identify corrections to dynamic benchmark downloads.",
+        "matters": "Exposure-adjusted observations can inform the studied operating areas, but they describe the complete vehicle and operations system rather than a foundation model in isolation.",
+        "read": "Each outcome has its own comparison and lower rates are better. Published rounded rates and separately reported percentage differences are preserved without recalculating one from the other. This operator-reported observational study does not establish safety everywhere; a pending serious-injury classification is described in the source notes. Cost, latency and immutable fleet versions are unavailable.",
+        "source_input": "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-12/medical-robotics.json"
+        ],
+        "variants": [
+          {
+            "id": "waymo-safety-impact-202606-corrected20261002-outcome-0",
+            "label": "serious injury or worse",
+            "rows": [
+              {
+                "outcome": "serious injury or worse",
+                "waymo_ipmm_rounded": 0.01,
+                "human_benchmark_ipmm_rounded": 0.21,
+                "percent_difference": -94.82,
+                "label": "Waymo Driver · operating-area fleet",
+                "value": 0.01,
+                "result_id": "waymo-safety-impact-202606-corrected20261002-waymo-0",
+                "source_url": "https://waymo.com/safety/impact/",
+                "raw": {
+                  "outcome": "serious injury or worse",
+                  "waymo_ipmm_rounded": 0.01,
+                  "human_benchmark_ipmm_rounded": 0.21,
+                  "percent_difference": -94.82
+                },
+                "evaluation_date": null
+              },
+              {
+                "outcome": "serious injury or worse",
+                "waymo_ipmm_rounded": 0.01,
+                "human_benchmark_ipmm_rounded": 0.21,
+                "percent_difference": -94.82,
+                "label": "Geographically adjusted human benchmark",
+                "value": 0.21,
+                "result_id": "waymo-safety-impact-202606-corrected20261002-human-0",
+                "source_url": "https://waymo.com/safety/impact/",
+                "raw": {
+                  "outcome": "serious injury or worse",
+                  "waymo_ipmm_rounded": 0.01,
+                  "human_benchmark_ipmm_rounded": 0.21,
+                  "percent_difference": -94.82
+                },
+                "evaluation_date": null
+              }
+            ],
+            "metrics": [
+              {
+                "id": "rate",
+                "label": "Crashed vehicles per million miles",
+                "field": "value",
+                "unit": "crashed vehicles/million miles",
+                "domain": [
+                  0,
+                  0.25
+                ],
+                "direction": "lower_is_better"
+              }
+            ],
+            "source_url": "https://waymo.com/safety/impact/",
+            "settings": {},
+            "limitations": [
+              "Surface-street fleet exposure in operating areas; geographically adjusted human comparator.",
+              "Operator-reported observational comparison, not randomized trial or model leaderboard.",
+              "Rates rounded on page; use CSV for confidence intervals and precision.",
+              "Costs/latency/model snapshot unavailable."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-09-24",
+            "data_end_date": "2026-06-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          },
+          {
+            "id": "waymo-safety-impact-202606-corrected20261002-outcome-1",
+            "label": "any injury reported",
+            "rows": [
+              {
+                "outcome": "any injury reported",
+                "waymo_ipmm_rounded": 0.67,
+                "human_benchmark_ipmm_rounded": 3.77,
+                "percent_difference": -82.12,
+                "label": "Waymo Driver · operating-area fleet",
+                "value": 0.67,
+                "result_id": "waymo-safety-impact-202606-corrected20261002-waymo-1",
+                "source_url": "https://waymo.com/safety/impact/",
+                "raw": {
+                  "outcome": "any injury reported",
+                  "waymo_ipmm_rounded": 0.67,
+                  "human_benchmark_ipmm_rounded": 3.77,
+                  "percent_difference": -82.12
+                },
+                "evaluation_date": null
+              },
+              {
+                "outcome": "any injury reported",
+                "waymo_ipmm_rounded": 0.67,
+                "human_benchmark_ipmm_rounded": 3.77,
+                "percent_difference": -82.12,
+                "label": "Geographically adjusted human benchmark",
+                "value": 3.77,
+                "result_id": "waymo-safety-impact-202606-corrected20261002-human-1",
+                "source_url": "https://waymo.com/safety/impact/",
+                "raw": {
+                  "outcome": "any injury reported",
+                  "waymo_ipmm_rounded": 0.67,
+                  "human_benchmark_ipmm_rounded": 3.77,
+                  "percent_difference": -82.12
+                },
+                "evaluation_date": null
+              }
+            ],
+            "metrics": [
+              {
+                "id": "rate",
+                "label": "Crashed vehicles per million miles",
+                "field": "value",
+                "unit": "crashed vehicles/million miles",
+                "domain": [
+                  0,
+                  4
+                ],
+                "direction": "lower_is_better"
+              }
+            ],
+            "source_url": "https://waymo.com/safety/impact/",
+            "settings": {},
+            "limitations": [
+              "Surface-street fleet exposure in operating areas; geographically adjusted human comparator.",
+              "Operator-reported observational comparison, not randomized trial or model leaderboard.",
+              "Rates rounded on page; use CSV for confidence intervals and precision.",
+              "Costs/latency/model snapshot unavailable."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-09-24",
+            "data_end_date": "2026-06-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          },
+          {
+            "id": "waymo-safety-impact-202606-corrected20261002-outcome-2",
+            "label": "airbag deployment in any vehicle",
+            "rows": [
+              {
+                "outcome": "airbag deployment in any vehicle",
+                "waymo_ipmm_rounded": 0.29,
+                "human_benchmark_ipmm_rounded": 1.61,
+                "percent_difference": -81.68,
+                "label": "Waymo Driver · operating-area fleet",
+                "value": 0.29,
+                "result_id": "waymo-safety-impact-202606-corrected20261002-waymo-2",
+                "source_url": "https://waymo.com/safety/impact/",
+                "raw": {
+                  "outcome": "airbag deployment in any vehicle",
+                  "waymo_ipmm_rounded": 0.29,
+                  "human_benchmark_ipmm_rounded": 1.61,
+                  "percent_difference": -81.68
+                },
+                "evaluation_date": null
+              },
+              {
+                "outcome": "airbag deployment in any vehicle",
+                "waymo_ipmm_rounded": 0.29,
+                "human_benchmark_ipmm_rounded": 1.61,
+                "percent_difference": -81.68,
+                "label": "Geographically adjusted human benchmark",
+                "value": 1.61,
+                "result_id": "waymo-safety-impact-202606-corrected20261002-human-2",
+                "source_url": "https://waymo.com/safety/impact/",
+                "raw": {
+                  "outcome": "airbag deployment in any vehicle",
+                  "waymo_ipmm_rounded": 0.29,
+                  "human_benchmark_ipmm_rounded": 1.61,
+                  "percent_difference": -81.68
+                },
+                "evaluation_date": null
+              }
+            ],
+            "metrics": [
+              {
+                "id": "rate",
+                "label": "Crashed vehicles per million miles",
+                "field": "value",
+                "unit": "crashed vehicles/million miles",
+                "domain": [
+                  0,
+                  4
+                ],
+                "direction": "lower_is_better"
+              }
+            ],
+            "source_url": "https://waymo.com/safety/impact/",
+            "settings": {},
+            "limitations": [
+              "Surface-street fleet exposure in operating areas; geographically adjusted human comparator.",
+              "Operator-reported observational comparison, not randomized trial or model leaderboard.",
+              "Rates rounded on page; use CSV for confidence intervals and precision.",
+              "Costs/latency/model snapshot unavailable."
+            ],
+            "source_locator": null,
+            "evaluation_date": null,
+            "publication_at": "2026-09-24",
+            "data_end_date": "2026-06-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-12",
+            "complete": true
+          }
+        ],
+        "historical": false,
+        "source_packet_checked_at": "2026-10-12"
       }
     ],
     "first_wave_ids": [
@@ -32870,18 +49023,37 @@ window.LAB_GALLERY = {
         "terminal-bench-4",
         "terminal-bench-4-native-agents",
         "terminal-bench-2",
-        "terminal-bench-2-1-history"
+        "terminal-bench-2-1-history",
+        "terminal-bench-4-haiku55-lab"
       ],
       "terminal-bench-science": [
         "terminal-bench-science",
         "terminal-bench-science-native-agents",
-        "terminal-bench-science-0-1"
+        "terminal-bench-science-0-1",
+        "terminal-bench-science-haiku55-lab"
       ],
       "medagentbench-v2-revised-original-tasks": [
         "medagentbench-v2-revised-original-tasks",
         "medagentbench-v2-memory-heldout",
         "medagentbench-v2-new-tasks",
         "medagentbench"
+      ],
+      "webdev-arena-frontend": [
+        "webdev-arena-frontend-2026-10-08",
+        "webdev-arena-frontend"
+      ],
+      "osworld-v2-offline": [
+        "osworld-v2-offline",
+        "osworld-v2-1-offline-october"
+      ],
+      "healthbench-professional": [
+        "healthbench-professional-openai-20260929",
+        "healthbench-professional",
+        "healthbench-professional-haiku55-effort"
+      ],
+      "waymo-onroad-safety": [
+        "waymo-corrected-fleet-outcomes",
+        "waymo-onroad-safety"
       ]
     },
     "rune": {
@@ -67588,6 +83760,117 @@ window.LAB_GALLERY = {
       "unresolved_configuration_labels": [
         "kimi3-low"
       ]
+    },
+    "refresh": {
+      "schema_version": 1,
+      "checked_at": "2026-10-12",
+      "card_ids": [
+        "webdev-arena-frontend-2026-10-08",
+        "webrise-v1-text",
+        "hle-original-haiku55-october",
+        "terminal-bench-4-haiku55-lab",
+        "terminal-bench-science-haiku55-lab",
+        "osworld-v2-1-offline-october",
+        "healthbench-professional-openai-20260929",
+        "healthbench-professional-haiku55-effort",
+        "healthagentbench",
+        "mentalhealthbench",
+        "robochallenge-table30-v2",
+        "drivingbench-fixed-pilot",
+        "waymo-corrected-fleet-outcomes"
+      ],
+      "directory": [
+        {
+          "name": "anthropic-frontiercode11-haiku55",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "anthropic-haiku55-chartography",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "anthropic-haiku55-programbench-modified",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Verified modified evaluation; kept separate from upstream"
+        },
+        {
+          "name": "frontierswe-v2-haiku55-lab-reproduction",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "anthropic-haiku55-swe-families",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Numeric import held: SWE-Bench Pro version unspecified"
+        },
+        {
+          "name": "anthropic-physicianbench-haiku55-effort",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "aa-report-in-haiku-card",
+          "url": "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "aa-intelligence-v432-current-selected",
+          "url": "https://artificialanalysis.ai/leaderboards/models?deprecation=all",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "aa-gdpval-v21-current",
+          "url": "https://artificialanalysis.ai/evaluations/gdpval-aa",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "aa-briefcase-v11-current",
+          "url": "https://artificialanalysis.ai/evaluations/aa-briefcase",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "arena-text-overall-2026-10-08",
+          "url": "https://arena.ai/leaderboard/chat/text",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "hle-diamond-high-reverified",
+          "url": "https://lastexam.ai/blog/hle-diamond",
+          "status": "Additional source cohort retained outside default graphs"
+        },
+        {
+          "name": "robodojo-real-paper-20260703",
+          "url": "https://arxiv.org/html/2607.04434v1",
+          "status": "Historical or metadata-only candidate; source notes retained"
+        },
+        {
+          "name": "phail-v1-20260528",
+          "url": "https://arxiv.org/html/2605.29710v1",
+          "status": "Historical or metadata-only candidate; source notes retained"
+        },
+        {
+          "name": "alpasim-e2e-challenge-2026",
+          "url": "https://opendrivelab.com/alpasim2026",
+          "status": "Historical or metadata-only candidate; source notes retained"
+        },
+        {
+          "name": "Design Arena Overall Frontend",
+          "url": "https://www.designarena.ai/leaderboard/code",
+          "status": "Unresolved overall board; unsynchronized track observations are not a replacement"
+        },
+        {
+          "name": "WebGen-Bench",
+          "url": "https://huggingface.co/datasets/luzimu/WebGen-Bench",
+          "status": "Primary dataset verified; numeric original leaderboard/configuration not re-extracted in this pass"
+        },
+        {
+          "name": "WebGen-Bench Harbor parity",
+          "url": "https://github.com/harbor-framework/harbor/blob/main/adapters/webgen_bench/README.md",
+          "status": "Adapter-owner parity study; should not be presented as original benchmark current standings"
+        }
+      ]
     }
   },
   "expanded": {
@@ -82414,7 +98697,37 @@ window.LAB_GALLERY = {
     "input": "Public source snapshots and complete parent-relayed research packets. Library materialization failed on Windows os.setxattr; no successful transfer claimed.",
     "verification": "Epoch CSV and pinned community CSV/JSON independently parsed. MMMU and coding research relayed by parent. Medical author tables and corrected HealthBench report reopened. Offline checks validate cohort membership, units, missing data and preserved originals.",
     "independentlyExecuted": false,
+    "refresh": {
+      "checked_at": "2026-10-12",
+      "source_transfer": "Exact parent-supplied public research archived through source-only GitHub commit ba9b01a; Library materialization failed and was not bypassed.",
+      "source_integrities": [
+        {
+          "path": "frontend.json",
+          "bytes": 193181,
+          "sha256": "09c92272600f445370f2079cd7ef84c979c3f9b2e4fd0cd09de33f0c1231365a"
+        },
+        {
+          "path": "lab-community.json",
+          "bytes": 36728,
+          "sha256": "7140f751cf1cb9faf72ba26018ee6ded5c9f09f78c659f0cbc48efb792e8fd8c"
+        },
+        {
+          "path": "medical-robotics.json",
+          "bytes": 67245,
+          "sha256": "39efe776dbb70224195af9b661c6a0f5f87026f41e8d2a444d7b912c6624452f"
+        },
+        {
+          "path": "robochallenge-table30-v2-primary-rendered-2026-10-12.txt",
+          "bytes": 37721,
+          "sha256": "e8fa602a481a1b278a667a743ecfea4a421241711c13462299c87120c849a84a"
+        }
+      ]
+    },
     "sourceFiles": [
+      "data/benchmark-refresh-2026-10-12/frontend.json",
+      "data/benchmark-refresh-2026-10-12/lab-community.json",
+      "data/benchmark-refresh-2026-10-12/medical-robotics.json",
+      "data/benchmark-refresh-2026-10-12/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -82431,7 +98744,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-10-05.json",
+    "presentationMetadata": "data/gallery-metadata-2026-10-12.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

@@ -66,10 +66,14 @@ const community = read("data/community-expanded-2026-10-01.json");
 const medical = read("data/current-medical.original.json");
 const coverage = require("./build-coverage.cjs")();
 assert.deepEqual(read("data/coverage-projection-2026-10-05.json"), coverage);
-const cardMetadata = require("./build-gallery-metadata.cjs")();
+const archivedMetadata = require("./build-gallery-metadata.cjs")();
+const refresh = require("./build-gallery-refresh-2026-10-12.cjs")();
+assert.deepEqual(read("data/gallery-refresh-projection-2026-10-12.json"), refresh);
+assert.deepEqual(read("data/gallery-metadata-2026-10-12.json"), refresh.metadata);
+const cardMetadata = refresh.metadata;
 assert.deepEqual(
   read("data/gallery-metadata-2026-10-05.json"),
-  cardMetadata,
+  archivedMetadata,
   "Regenerate gallery metadata from archived sources",
 );
 const preservedHashes = {
@@ -249,6 +253,7 @@ const output = {
   notes: {
     ...notes,
     ...frontendNotes,
+    ...refresh.notes,
     ...Object.fromEntries(
       coverage.cards.map((c) => [
         c.id,
@@ -270,7 +275,7 @@ const output = {
   frontend,
   supplement,
   cardMetadata,
-  coverage,
+  coverage: refresh.coverage,
   expanded: normalizeDisplayText({ ...community, medical }),
   provenance: {
     input:
@@ -278,7 +283,9 @@ const output = {
     verification:
       "Epoch CSV and pinned community CSV/JSON independently parsed. MMMU and coding research relayed by parent. Medical author tables and corrected HealthBench report reopened. Offline checks validate cohort membership, units, missing data and preserved originals.",
     independentlyExecuted: false,
+    refresh: { checked_at: refresh.checked_at, source_transfer: refresh.source_transfer, source_integrities: refresh.source_integrities },
     sourceFiles: [
+      ...refresh.source_files,
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -295,7 +302,7 @@ const output = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json",
     ],
     rendererContract: "data/coverage-renderer-contract-2026-10-05.json",
-    presentationMetadata: "data/gallery-metadata-2026-10-05.json",
+    presentationMetadata: "data/gallery-metadata-2026-10-12.json",
     frontendInputStatus: frontendInput.endsWith(".working.json")
       ? "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
       : "Original public research packet supplied directly by parent; not Library materialization",
@@ -327,8 +334,11 @@ if (process.argv.includes("--check"))
   );
 else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
 const evidence = {
-  cards: 73,
-  coverageCards: 39,
+  cards: 86,
+  coverageCards: 52,
+  refreshCards: refresh.cards.length,
+  refreshInputSHA256: Object.fromEntries(refresh.source_files.map((p) => [p, sha(p)])),
+  refreshProjectionSHA256: sha("data/gallery-refresh-projection-2026-10-12.json"),
   firstWaveCards: 27,
   firstWaveRows: 81,
   additionRows: 319,
