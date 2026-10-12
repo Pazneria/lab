@@ -45,12 +45,16 @@ function build() {
       settings: clone(c.settings || c.config || {}), limitations: clone(c.caveats || c.limitations || c.notes || []),
       source_locator: c.source_locator || null, evaluation_date: c.evaluation_date ?? null,
       publication_at: c.source_publication_date || c.publication_date || lab.sources[c.source_id]?.publication_date || null,
+      data_end_date: c.data_end_date || null,
       snapshot_at: c.snapshot_date || null, checked_at: "2026-10-12", ...extra,
     };
   }
   const cards = [];
   function card(id, name, category, question, tests, matters, interpretation, variants, historical = false) {
+    const source_input = dir + (category === "frontend" ? "frontend.json" :
+      variants.every((v) => labBy.has(v.id)) ? "lab-community.json" : "medical-robotics.json");
     cards.push({ id, name, category, question, tests, matters, read: interpretation,
+      source_input, source_inputs: [source_input],
       variants, historical, source_packet_checked_at: "2026-10-12" });
   }
   const arena = { ...front.cohorts["webdev-arena-frontend-2026-10-08"], id: "webdev-arena-frontend-2026-10-08" };
@@ -103,6 +107,10 @@ function build() {
     "Medical responses must meet several requirements at once. A length adjustment helps distinguish rubric performance from simply writing a longer answer.",
     "Sol’s adjusted 64.2 and raw 67.2 are different scores. Astra’s corrected 64.7 was already present and remains unchanged. These rows use the OpenAI reporting series, with no paired cost/time or exact table-level effort supplied; they cannot be combined with Anthropic-grader scores or treated as patient outcomes.",
     [variant(extension, "September 29 table · seven unchanged predecessors plus Sol", [percent("adjusted", "Length-adjusted rubric score"), percent("raw", "Unadjusted rubric score", "unadjusted_value")], healthRows, { complete: true })], true);
+  // The refreshed OpenAI card extends, rather than rewrites, the earlier cohort.
+  const healthCard = cards.at(-1);
+  healthCard.source_inputs.push("data/gallery-current-2026-10-01.json", "data/current-medical.original.json");
+  healthCard.preserved_source_cohorts = [{ source_input: "data/gallery-current-2026-10-01.json", id: predecessor.id, row_count: predecessor.rows.length }];
   const haikuHealth = labBy.get("anthropic-healthbench-professional-haiku55-effort");
   card("healthbench-professional-haiku55-effort", "HealthBench Professional · Haiku effort runs", "medical", "How does Haiku perform under the developer’s medical grading setup?",
     "The Haiku system card reports length-adjusted HealthBench Professional scores under an Opus 4.8 grader, with safety classifiers enabled and separately labeled effort runs.",
@@ -149,7 +157,7 @@ function build() {
   const fleetVariants = fleet.rows.map((r, i) => variant({ ...fleet, id: fleet.id + "-outcome-" + i }, r.outcome, [{ id: "rate", label: "Crashed vehicles per million miles", field: "value", unit: "crashed vehicles/million miles", domain: [0, i === 0 ? 0.25 : 4], direction: "lower_is_better" }], [
     { label: "Waymo Driver · operating-area fleet", value: r.waymo_ipmm_rounded, result_id: fleet.id + "-waymo-" + i, source_url: fleet.source_url, raw: clone(r), evaluation_date: null },
     { label: "Geographically adjusted human benchmark", value: r.human_benchmark_ipmm_rounded, result_id: fleet.id + "-human-" + i, source_url: fleet.source_url, raw: clone(r), evaluation_date: null },
-  ], { complete: true, snapshot_at: "2026-06-30" }));
+  ], { complete: true, snapshot_at: null, data_end_date: fleet.data_end_date }));
   card("waymo-corrected-fleet-outcomes", "Waymo · corrected fleet outcomes", "physical", "What crash outcomes were observed in the studied operating areas?",
     "Waymo reports rider-only fleet crash involvement per mile against a geographically adjusted human comparator. The data end in June 2026, and October 2 release notes identify corrections to dynamic benchmark downloads.",
     "Exposure-adjusted observations can inform the studied operating areas, but they describe the complete vehicle and operations system rather than a foundation model in isolation.",
@@ -191,6 +199,7 @@ function build() {
     discovery_lifecycle: null,
     source_review: { date: "2026-10-12", mode: "parent_primary_research", scope: "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run." },
     result_packet_checked_at: "2026-10-12", snapshot_at: c.variants[0].snapshot_at || null,
+    observation_period_end: c.variants[0].data_end_date || null,
     publication_at: c.variants[0].publication_at || null, publication_label: null,
     evaluations: c.variants.map((v) => ({ slice: v.label, ...dates(v.rows, "evaluation_date") })),
     model_releases: dates(c.variants.flatMap((v) => v.rows), "model_release_date"),
@@ -207,7 +216,7 @@ function build() {
   };
   const family = new Map(Object.entries(coverage.familyGroups).flatMap(([k, members]) => members.map((id) => [id, k])));
   metadata.counts.default_families = new Set(Object.entries(metadata.cards).filter(([, m]) => m.evidence === "plotted").map(([id]) => family.get(id) || id)).size;
-  const notes = Object.fromEntries(cards.map((c) => [c.id, { question: c.question, tests: c.tests, matters: c.matters, read: c.read, date: c.variants[0].snapshot_at ? "Source snapshot " + c.variants[0].snapshot_at + "; reviewed October 12" : c.variants[0].publication_at ? "Source published " + c.variants[0].publication_at + "; reviewed October 12" : "Source reviewed October 12; run dates remain separately labeled" }]));
+  const notes = Object.fromEntries(cards.map((c) => [c.id, { question: c.question, tests: c.tests, matters: c.matters, read: c.read, date: c.variants[0].data_end_date ? "Observation period ends " + c.variants[0].data_end_date + "; source reviewed October 12" : c.variants[0].snapshot_at ? "Source snapshot " + c.variants[0].snapshot_at + "; reviewed October 12" : c.variants[0].publication_at ? "Source published " + c.variants[0].publication_at + "; reviewed October 12" : "Source reviewed October 12; run dates remain separately labeled" }]));
   return { schema_version: 1, checked_at: "2026-10-12", cards, coverage, metadata, notes,
     source_files: [dir + "frontend.json", dir + "lab-community.json", dir + "medical-robotics.json", dir + "evidence-manifest.json"],
     source_integrities: manifest.files, source_transfer: "Exact parent-supplied public research archived through source-only GitHub commit ba9b01a; Library materialization failed and was not bypassed.",

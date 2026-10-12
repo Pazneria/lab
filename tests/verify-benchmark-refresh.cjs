@@ -14,6 +14,15 @@ const sameRows = (rows, originals) => {
 };
 const expectedIds = ["webdev-arena-frontend-2026-10-08", "webrise-v1-text", "hle-original-haiku55-october", "terminal-bench-4-haiku55-lab", "terminal-bench-science-haiku55-lab", "osworld-v2-1-offline-october", "healthbench-professional-openai-20260929", "healthbench-professional-haiku55-effort", "healthagentbench", "mentalhealthbench", "robochallenge-table30-v2", "drivingbench-fixed-pilot", "waymo-corrected-fleet-outcomes"];
 assert.deepEqual(refresh.cards.map((c) => c.id), expectedIds);
+const packetFor = (id) => dir + (expectedIds.slice(0, 2).includes(id) ? "frontend.json" :
+  ["hle-original-haiku55-october", "terminal-bench-4-haiku55-lab", "terminal-bench-science-haiku55-lab", "osworld-v2-1-offline-october", "healthbench-professional-haiku55-effort"].includes(id) ? "lab-community.json" : "medical-robotics.json");
+for (const c of refresh.cards) {
+  assert.equal(c.source_input, packetFor(c.id), c.id + " archived packet link");
+  assert.ok(c.source_inputs.includes(c.source_input));
+  for (const file of c.source_inputs) assert.ok(fs.existsSync(path.join(root, file)), file + " source file exists");
+}
+assert.deepEqual(card("healthbench-professional-openai-20260929").source_inputs, [dir + "medical-robotics.json", "data/gallery-current-2026-10-01.json", "data/current-medical.original.json"]);
+assert.deepEqual(card("healthbench-professional-openai-20260929").preserved_source_cohorts, [{ source_input: "data/gallery-current-2026-10-01.json", id: "healthbench-professional", row_count: 7 }]);
 assert.deepEqual(refresh.coverage.refresh.card_ids, expectedIds);
 for (const f of read(dir + "evidence-manifest.json").files) {
   const bytes = fs.readFileSync(path.join(root, dir, f.path));
@@ -93,7 +102,13 @@ for (const r of originalDriving.rows) for (let i = 0; i < r.attempt_progress_per
 assert.match(driving.read, /round/);
 const fleet = card("waymo-corrected-fleet-outcomes");
 assert.equal(fleet.variants.length, 3);
+assert.equal(refresh.metadata.cards[fleet.id].snapshot_at, null);
+assert.equal(refresh.metadata.cards[fleet.id].observation_period_end, "2026-06-30");
+assert.equal(refresh.metadata.cards[fleet.id].publication_at, "2026-09-24");
+assert.match(refresh.notes[fleet.id].date, /Observation period ends 2026-06-30/);
 fleet.variants.forEach((v, i) => {
+  assert.equal(v.snapshot_at, null);
+  assert.equal(v.data_end_date, source("waymo-safety-impact-202606-corrected20261002").data_end_date);
   const raw = source("waymo-safety-impact-202606-corrected20261002").rows[i];
   assert.equal(v.metrics[0].direction, "lower_is_better");
   assert.equal(v.metrics[0].unit, "crashed vehicles/million miles");

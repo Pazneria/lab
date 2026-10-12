@@ -191,6 +191,10 @@ async function main() {
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
       assert.equal(await page.locator(".coverage-chart").count(), 1);
+      if (coverage.refresh.card_ids.includes(card.id)) {
+        const inputLink = page.locator("a").filter({ hasText: /^Read the supplied original research input$/ });
+        assert.equal(await inputLink.getAttribute("href"), card.source_input);
+      }
       assert.equal(await page.locator(".explanations h2").count(), 3);
       await page.locator(".coverage-mark").first().focus();
       assert.equal(await page.locator(".point-inspector h3").count(), 1);
@@ -246,6 +250,10 @@ async function main() {
     assert.equal(await page.locator(".coverage-mark").count(), 11);
     await go("results.html?benchmark=waymo-corrected-fleet-outcomes");
     assert.equal(await page.locator(".coverage-chart").getAttribute("data-direction"), "lower_is_better");
+    const period = await page.locator(".date-facts dt").filter({ hasText: "Observation period end" }).evaluate((n) => n.nextElementSibling.textContent);
+    assert.match(period, /Jun 30, 2026/);
+    const snapshot = await page.locator(".date-facts dt").filter({ hasText: /^Source snapshot$/ }).evaluate((n) => n.nextElementSibling.textContent);
+    assert.match(snapshot, /Not established/);
     await page.setViewportSize({ width: 320, height: 844 });
     for (const id of ["webdev-arena-frontend-2026-10-08", "healthagentbench", "drivingbench-fixed-pilot", "waymo-corrected-fleet-outcomes"]) {
       await go("results.html?benchmark=" + id);

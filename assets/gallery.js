@@ -86,6 +86,7 @@
       [m.snapshot_at, m.publication_at, m.result_packet_checked_at].every(
         dateOK,
       ) &&
+      dateOK(m.observation_period_end ?? null) &&
       Array.isArray(m.evaluations) &&
       m.evaluations.every(
         (s) =>
@@ -510,6 +511,8 @@
         ? shortDate(m.snapshot_at)
         : "Not established as a separate dated snapshot.",
     );
+    if (m.observation_period_end)
+      fact("Observation period end", shortDate(m.observation_period_end) + "; the observations end here, not the source snapshot or evaluation date.");
     fact(
       "Publication or revision",
       m.publication_at
@@ -1217,7 +1220,7 @@
       sources = card.coverage.variants.map((v) => ({
         url: v.source_url,
         title: "Primary result source — " + v.label,
-        info: "Source checked October 5, 2026; evaluation dates remain separately labeled.",
+        info: "Source checked " + shortDate(metadata(card).source_review.date) + "; evaluation dates remain separately labeled.",
       }));
       if (card.original)
         sources.push(
@@ -1408,6 +1411,9 @@
           "Read the supplied original research input",
         ),
       );
+      for (const file of card.coverage.source_inputs || [])
+        if (file !== card.coverage.source_input)
+          body.append(local(file, "Preserved source input: " + file));
       if (card.standard)
         body.append(raw("Preserved earlier source cohort", card.standard));
       if (card.original)
