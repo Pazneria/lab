@@ -28,6 +28,7 @@ jobs:
           STUDIO_PLAYWRIGHT: ${{ runner.temp }}/studio-gpu/node_modules/playwright/index.mjs
           STUDIO_GPU_BASELINE: ${{ runner.temp }}/studio-gpu-baseline.html
           STUDIO_GPU_SHA: ${{ github.sha }}
+          STUDIO_GPU_MODE: native-dropdown
           DEBUG: pw:browser
         run: xvfb-run -a node scripts/diagnose-studio-gpu.mjs
       - name: Save diagnostic evidence
