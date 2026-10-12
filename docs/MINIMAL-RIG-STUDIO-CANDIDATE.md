@@ -91,4 +91,4 @@ The final aggregate's later control was healthy (4.6 ms initialization), demonst
 
 The owner's actual Page Unresponsive hang remains unreproduced. Hosted results do not establish its cause or certify the owner's normal browser. Production/default-route promotion needs separate approval and explicit reconciliation of the module/worker policy and Lab return contract. Rotation-only local posing is provided; animation authoring/export, proposal opt-in, Human01 study inside the new UI and gait/production certification remain out of scope.
 
-The current tested runtime is 3f2847d. Later evidence-only commits do not change it. All original source/history, authored assets, owner edits and approvals remain preserved.
+The latest focused-tested runtime is c9bc6ca. The historical full aggregate at 3f2847d remains failed, and its 898.1 ms cold-start failure remains unresolved. Later evidence/documentation commits do not change runtime files. All original source/history, authored assets, owner edits and approvals remain preserved.
