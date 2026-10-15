@@ -1,6 +1,15 @@
 {
-  "cards": 86,
-  "coverageCards": 52,
+  "cards": 88,
+  "coverageCards": 54,
+  "argonMeasurements": {
+    "google": 19,
+    "aa": 10
+  },
+  "argonInputSHA256": {
+    "data/gemini-4-argon-2026-10-15/source-packet.json": "cbf64058afea7e387fcd675aa0cfaeedde5d9fa445528703357a5a644d0f5805",
+    "data/gemini-4-argon-2026-10-15/evidence-manifest.json": "a027a97489aed51e3e9e00b135f6b31295da5f4fea88d47b4e5b8a66b94f8f62"
+  },
+  "argonProjectionSHA256": "7842b5768ee7dd1cf85e4067418f77ea3155b3cbfdaf2efda9c1e9bbb3e95a43",
   "refreshCards": 13,
   "refreshInputSHA256": {
     "data/benchmark-refresh-2026-10-12/frontend.json": "09c92272600f445370f2079cd7ef84c979c3f9b2e4fd0cd09de33f0c1231365a",
