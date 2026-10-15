@@ -11421,6 +11421,20 @@ window.LAB_GALLERY = {
       "read": "This is a selected source cohort, not the complete board. Python-assisted results are a different setting and remain outside this cohort. Exact settings and source footnotes remain attached to each row.",
       "notice": "Selected source rows, not complete model coverage. Tool-enabled rows are separate; do not mix Python-assisted results. Creator https://charxiv.github.io/ has historical original report",
       "date": "2026-07"
+    },
+    "gemini-4-argon-google-report": {
+      "question": "What does Google's model card report for Gemini 4 Argon?",
+      "tests": "Select one benchmark from the October model card. Its 19 measurements span separate tasks, metrics and protocols; Google self-computes some and reproduces external boards for others.",
+      "matters": "The new model can be inspected without treating results from different evaluators, tasks or harnesses as one ranking.",
+      "read": "These are selected Argon observations, not a complete refreshed leaderboard. Each selector changes the benchmark or measurement; rows are never pooled across benchmarks. Exact run dates, generic cost/time and numerical uncertainty are unknown. Announcement on September 30, broad availability on October 13 and source review on October 15 are different dates. External results reproduced by Google are explicitly attributed, not claimed independently checked against those boards.",
+      "date": "Source checked October 15, 2026; run dates not reported"
+    },
+    "gemini-4-argon-aa-report": {
+      "question": "What did Artificial Analysis measure for Gemini 4 Argon?",
+      "tests": "Select an AA benchmark for the high-reasoning Argon configuration evaluated with Long Decode Continuation. The article reports 10 distinct measurements, with index points, Elo and percentages kept separate.",
+      "matters": "The new model can be inspected without treating results from different evaluators, tasks or harnesses as one ranking.",
+      "read": "These are selected Argon observations, not a complete refreshed leaderboard. Each selector changes the benchmark or measurement; rows are never pooled across benchmarks. Exact run dates, generic cost/time and numerical uncertainty are unknown. Announcement on September 30, broad availability on October 13 and source review on October 15 are different dates. AA's AutomationBench-AA 78% differs from Google's private-set 51.3%; AA's rounded Terminal result 57% differs from Google's 57.4%. The 53-point Intelligence Index result is directly reported; the $1.99 introductory index-task cost is kept only in that setup's details.",
+      "date": "Source checked October 15, 2026; run dates not reported"
     }
   },
   "frontend": {
@@ -12002,17 +12016,17 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-10-12",
-    "basis": "Earlier source metadata retained; October 12 additions derived from the exact parent source archive, not new evaluations.",
+    "prepared_at": "2026-10-15",
+    "basis": "Earlier archived metadata retained; selected Gemini 4 Argon source observations added with separate evaluator and run-date semantics.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 86,
-      "plotted": 77,
-      "current": 52,
+      "all": 88,
+      "plotted": 79,
+      "current": 54,
       "historical": 27,
       "source_only": 7,
       "unavailable": 2,
-      "default_families": 58
+      "default_families": 60
     },
     "cards": {
       "hle-diamond": {
@@ -12517,14 +12531,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
-        "snapshot_at": "2026-10-01",
+        "result_packet_checked_at": "2026-10-15",
+        "snapshot_at": null,
         "publication_at": null,
-        "publication_label": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "43 published configurations",
@@ -12539,12 +12553,26 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 6
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Terminal-Bench 4.0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / Terminal-Bench 4 (AA)",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
           "earliest": "2026-09-29",
-          "latest": "2026-09-29",
-          "known": 1,
+          "latest": "2026-09-30",
+          "known": 3,
           "unknown": 48
         }
       },
@@ -12616,14 +12644,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
+        "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "Overall · 17 native-agent systems",
@@ -12631,12 +12659,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 17
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Terminal-Bench Science 0.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
           "earliest": "2026-05-28",
-          "latest": "2026-09-22",
-          "known": 17,
+          "latest": "2026-09-30",
+          "known": 18,
           "unknown": 0
         }
       },
@@ -13433,14 +13468,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
+        "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "Selected published rows",
@@ -13448,12 +13483,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 3
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / AA-Briefcase",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
-          "earliest": null,
-          "latest": null,
-          "known": 0,
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 1,
           "unknown": 3
         }
       },
@@ -13493,14 +13535,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
+        "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "Selected published rows",
@@ -13508,12 +13550,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 3
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / AutomationBench-AA",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
-          "earliest": null,
-          "latest": null,
-          "known": 0,
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 1,
           "unknown": 3
         }
       },
@@ -13583,14 +13632,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
+        "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "Selected published rows",
@@ -13598,12 +13647,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 3
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / AA-Omniscience",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
-          "earliest": null,
-          "latest": null,
-          "known": 0,
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 1,
           "unknown": 3
         }
       },
@@ -13943,14 +13999,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
+        "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "Selected published rows",
@@ -13958,12 +14014,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 3
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / FrontierSWE v2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
-          "earliest": null,
-          "latest": null,
-          "known": 0,
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 1,
           "unknown": 3
         }
       },
@@ -14153,14 +14216,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
+          "date": "2026-10-15",
           "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
         },
-        "result_packet_checked_at": "2026-10-05",
+        "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
-        "publication_at": "2026-09-03",
-        "publication_label": null,
+        "publication_at": null,
+        "publication_label": "Multiple dated source reports; see the separate cohorts.",
         "evaluations": [
           {
             "slice": "Selected published rows",
@@ -14168,12 +14231,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 3
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / OSWorld 2.0 offline",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
-          "earliest": null,
-          "latest": null,
-          "known": 0,
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 1,
           "unknown": 3
         }
       },
@@ -14681,6 +14751,213 @@ window.LAB_GALLERY = {
           "known": 0,
           "unknown": 6
         }
+      },
+      "gemini-4-argon-google-report": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Selected Argon observations from this named source, kept separate by benchmark and protocol; not new independently executed evaluations.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-15",
+          "mode": "parent_primary_research",
+          "scope": "Selected Argon results checked against primary-source model/API documentation, evaluation methodology and independent AA reporting."
+        },
+        "result_packet_checked_at": "2026-10-15",
+        "snapshot_at": null,
+        "publication_at": "2026-10-13",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Gemini 4 Argon / Google model card / Vals Index",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / AutomationBench (private set)",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Vals Finance Agent v2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Harvey Legal Agent Benchmark",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / DeepSWE v1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / FrontierSWE v2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Vibe Code Bench",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Terminal-Bench 4.0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / PostTrainBench v1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Terminal-Bench Science 0.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / LABBench 2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / RiemannBench",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / GraphWalks BFS F1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Agent's Last Exam",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / OSWorld 2.0 offline",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / Chartography",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / LVBench",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / Google model card / CWE-bench v1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 18,
+          "unknown": 0
+        }
+      },
+      "gemini-4-argon-aa-report": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Selected Argon observations from this named source, kept separate by benchmark and protocol; not new independently executed evaluations.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-15",
+          "mode": "parent_primary_research",
+          "scope": "Selected Argon results checked against primary-source model/API documentation, evaluation methodology and independent AA reporting."
+        },
+        "result_packet_checked_at": "2026-10-15",
+        "snapshot_at": null,
+        "publication_at": "2026-09-30",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Gemini 4 Argon / independent AA / AA Intelligence Index v4.3.2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / AutomationBench-AA",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / Terminal-Bench 4 (AA)",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / AA-Briefcase",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Gemini 4 Argon / independent AA / AA-Omniscience",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-09-30",
+          "latest": "2026-09-30",
+          "known": 5,
+          "unknown": 0
+        }
       }
     }
   },
@@ -14782,7 +15059,217 @@ window.LAB_GALLERY = {
             "coverage": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
             "complete": false,
             "source_role": "primary_evaluator"
+          },
+          {
+            "id": "gemini-4-argon-aa-aa-briefcase",
+            "label": "Gemini 4 Argon / independent AA / AA-Briefcase",
+            "rows": [
+              {
+                "id": "aa-briefcase",
+                "benchmark": "AA-Briefcase",
+                "metrics": [
+                  {
+                    "id": "elo",
+                    "label": "Overall Briefcase rating",
+                    "value": 1494,
+                    "unit": "Elo",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      2500
+                    ]
+                  },
+                  {
+                    "id": "rubric",
+                    "label": "Rubric pass rate",
+                    "value": 65,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "analytical",
+                    "label": "Analytical quality",
+                    "value": 1576,
+                    "unit": "Elo",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      2500
+                    ]
+                  },
+                  {
+                    "id": "presentation",
+                    "label": "Presentation quality",
+                    "value": 1308,
+                    "unit": "Elo",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      2500
+                    ]
+                  }
+                ],
+                "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+                "target_card_id": "aa-briefcase-v1-1",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-aa-briefcase",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "elo": 1494,
+                  "rubric": 65,
+                  "analytical": 1576,
+                  "presentation": 1308
+                },
+                "raw": {
+                  "id": "aa-briefcase",
+                  "benchmark": "AA-Briefcase",
+                  "metrics": [
+                    {
+                      "id": "elo",
+                      "label": "Overall Briefcase rating",
+                      "value": 1494,
+                      "unit": "Elo",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        2500
+                      ]
+                    },
+                    {
+                      "id": "rubric",
+                      "label": "Rubric pass rate",
+                      "value": 65,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "analytical",
+                      "label": "Analytical quality",
+                      "value": 1576,
+                      "unit": "Elo",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        2500
+                      ]
+                    },
+                    {
+                      "id": "presentation",
+                      "label": "Presentation quality",
+                      "value": 1308,
+                      "unit": "Elo",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        2500
+                      ]
+                    }
+                  ],
+                  "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+                  "target_card_id": "aa-briefcase-v1-1",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "elo",
+                "label": "Overall Briefcase rating",
+                "field": "measurements.elo",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2500
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "rubric",
+                "label": "Rubric pass rate",
+                "field": "measurements.rubric",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "analytical",
+                "label": "Analytical quality",
+                "field": "measurements.analytical",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2500
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "presentation",
+                "label": "Presentation quality",
+                "field": "measurements.presentation",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2500
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AA-Briefcase",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -14957,7 +15444,115 @@ window.LAB_GALLERY = {
             "coverage": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
             "complete": false,
             "source_role": "primary_evaluator"
+          },
+          {
+            "id": "gemini-4-argon-aa-automationbench-aa",
+            "label": "Gemini 4 Argon / independent AA / AutomationBench-AA",
+            "rows": [
+              {
+                "id": "automationbench-aa",
+                "benchmark": "AutomationBench-AA",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success, AA setup",
+                    "value": 78,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+                "target_card_id": "automationbench-aa",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-automationbench-aa",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 78
+                },
+                "raw": {
+                  "id": "automationbench-aa",
+                  "benchmark": "AutomationBench-AA",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success, AA setup",
+                      "value": 78,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+                  "target_card_id": "automationbench-aa",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success, AA setup",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AutomationBench-AA",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -15212,7 +15807,183 @@ window.LAB_GALLERY = {
             "coverage": "Verified seed rows only; not a complete leaderboard. Preserve source ordering/selection and fetch a full frozen cohort before claiming complete coverage.",
             "complete": false,
             "source_role": "primary_evaluator"
+          },
+          {
+            "id": "gemini-4-argon-aa-aa-omniscience",
+            "label": "Gemini 4 Argon / independent AA / AA-Omniscience",
+            "rows": [
+              {
+                "id": "aa-omniscience",
+                "benchmark": "AA-Omniscience",
+                "metrics": [
+                  {
+                    "id": "hallucination",
+                    "label": "Hallucination rate",
+                    "value": 15,
+                    "unit": "percent",
+                    "direction": "lower_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "accuracy",
+                    "label": "Accuracy",
+                    "value": 50,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "index",
+                    "label": "Overall Omniscience index",
+                    "value": 42,
+                    "unit": "index points",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+                "target_card_id": "aa-omniscience",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-aa-omniscience",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "hallucination": 15,
+                  "accuracy": 50,
+                  "index": 42
+                },
+                "raw": {
+                  "id": "aa-omniscience",
+                  "benchmark": "AA-Omniscience",
+                  "metrics": [
+                    {
+                      "id": "hallucination",
+                      "label": "Hallucination rate",
+                      "value": 15,
+                      "unit": "percent",
+                      "direction": "lower_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "accuracy",
+                      "label": "Accuracy",
+                      "value": 50,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "index",
+                      "label": "Overall Omniscience index",
+                      "value": 42,
+                      "unit": "index points",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+                  "target_card_id": "aa-omniscience",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "hallucination",
+                "label": "Hallucination rate",
+                "field": "measurements.hallucination",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "lower_is_better"
+              },
+              {
+                "id": "accuracy",
+                "label": "Accuracy",
+                "field": "measurements.accuracy",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "index",
+                "label": "Overall Omniscience index",
+                "field": "measurements.index",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AA-Omniscience",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -16279,7 +17050,116 @@ window.LAB_GALLERY = {
             "coverage": "Verified seed rows only; not complete leaderboard. Retain exact source labels; unknown effort/API snapshot remains null.",
             "complete": false,
             "source_role": "primary_evaluator"
+          },
+          {
+            "id": "gemini-4-argon-google-frontierswe-v2",
+            "label": "Gemini 4 Argon / Google model card / FrontierSWE v2",
+            "rows": [
+              {
+                "id": "frontierswe-v2",
+                "benchmark": "FrontierSWE v2",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 55,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+                "target_card_id": "frontierswe-v2",
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-frontierswe-v2",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 55
+                },
+                "raw": {
+                  "id": "frontierswe-v2",
+                  "benchmark": "FrontierSWE v2",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 55,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+                  "target_card_id": "frontierswe-v2",
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; FrontierSWE v2",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -16904,7 +17784,116 @@ window.LAB_GALLERY = {
             "coverage": "Verbatim model names and reported numbers; not claimed independent re-evaluation or complete model coverage.",
             "complete": false,
             "source_role": "model_developer_report"
+          },
+          {
+            "id": "gemini-4-argon-google-osworld-2-offline",
+            "label": "Gemini 4 Argon / Google model card / OSWorld 2.0 offline",
+            "rows": [
+              {
+                "id": "osworld-2-offline",
+                "benchmark": "OSWorld 2.0 offline",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Offline partial score; max of three runs",
+                    "value": 69.2,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+                "target_card_id": "osworld-v2-offline",
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-osworld-2-offline",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 69.2
+                },
+                "raw": {
+                  "id": "osworld-2-offline",
+                  "benchmark": "OSWorld 2.0 offline",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Offline partial score; max of three runs",
+                      "value": 69.2,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+                  "target_card_id": "osworld-v2-offline",
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Offline partial score; max of three runs",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; OSWorld 2.0 offline",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -27754,7 +28743,220 @@ window.LAB_GALLERY = {
             "evaluation_date": null,
             "complete": false,
             "coverage": "Original six fully described configurations; preserved separately from the expanded table."
+          },
+          {
+            "id": "gemini-4-argon-google-terminal-bench-4",
+            "label": "Gemini 4 Argon / Google model card / Terminal-Bench 4.0",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4.0",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success",
+                    "value": 57.4,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+                "target_card_id": "terminal-bench-4",
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-terminal-bench-4",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 57.4
+                },
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4.0",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success",
+                      "value": 57.4,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+                  "target_card_id": "terminal-bench-4",
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Terminal-Bench 4.0",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-aa-terminal-bench-4",
+            "label": "Gemini 4 Argon / independent AA / Terminal-Bench 4 (AA)",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4 (AA)",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success, AA reported rounded result",
+                    "value": 57,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+                "target_card_id": "terminal-bench-4",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-terminal-bench-4",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 57
+                },
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4 (AA)",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success, AA reported rounded result",
+                      "value": 57,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+                  "target_card_id": "terminal-bench-4",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success, AA reported rounded result",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; Terminal-Bench 4 (AA)",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/primary-source-additions.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -28315,7 +29517,116 @@ window.LAB_GALLERY = {
             "publication_at": null,
             "snapshot_at": null,
             "label_field": "label"
+          },
+          {
+            "id": "gemini-4-argon-google-terminal-bench-science-0-1",
+            "label": "Gemini 4 Argon / Google model card / Terminal-Bench Science 0.1",
+            "rows": [
+              {
+                "id": "terminal-bench-science-0-1",
+                "benchmark": "Terminal-Bench Science 0.1",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success; extended verifier timeout",
+                    "value": 57.6,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+                "target_card_id": "terminal-bench-science-native-agents",
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-terminal-bench-science-0-1",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 57.6
+                },
+                "raw": {
+                  "id": "terminal-bench-science-0-1",
+                  "benchmark": "Terminal-Bench Science 0.1",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success; extended verifier timeout",
+                      "value": 57.6,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+                  "target_card_id": "terminal-bench-science-native-agents",
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success; extended verifier timeout",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Terminal-Bench Science 0.1",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
+        ],
+        "source_inputs": [
+          "data/coverage-research-2026-10-05/primary-source-additions.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
         ]
       },
       {
@@ -46105,6 +47416,2658 @@ window.LAB_GALLERY = {
         ],
         "historical": false,
         "source_packet_checked_at": "2026-10-12"
+      },
+      {
+        "id": "gemini-4-argon-google-report",
+        "name": "Gemini 4 Argon / Google reported benchmarks",
+        "category": "standard",
+        "question": "What does Google's model card report for Gemini 4 Argon?",
+        "tests": "Select one benchmark from the October model card. Its 19 measurements span separate tasks, metrics and protocols; Google self-computes some and reproduces external boards for others.",
+        "matters": "The new model can be inspected without treating results from different evaluators, tasks or harnesses as one ranking.",
+        "read": "These are selected Argon observations, not a complete refreshed leaderboard. Each selector changes the benchmark or measurement; rows are never pooled across benchmarks. Exact run dates, generic cost/time and numerical uncertainty are unknown. Announcement on September 30, broad availability on October 13 and source review on October 15 are different dates. External results reproduced by Google are explicitly attributed, not claimed independently checked against those boards.",
+        "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-15",
+        "historical": false,
+        "variants": [
+          {
+            "id": "gemini-4-argon-google-vals-index",
+            "label": "Gemini 4 Argon / Google model card / Vals Index",
+            "rows": [
+              {
+                "id": "vals-index",
+                "benchmark": "Vals Index",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 68.9,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces Vals AI results; this index is distinct from the AA Intelligence Index.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-vals-index",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 68.9
+                },
+                "raw": {
+                  "id": "vals-index",
+                  "benchmark": "Vals Index",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 68.9,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces Vals AI results; this index is distinct from the AA Intelligence Index.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Vals Index",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces Vals AI results; this index is distinct from the AA Intelligence Index.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-automationbench-private",
+            "label": "Gemini 4 Argon / Google model card / AutomationBench (private set)",
+            "rows": [
+              {
+                "id": "automationbench-private",
+                "benchmark": "AutomationBench (private set)",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 51.3,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Private-set score reproduced by Google from the Zapier board. Separate from AutomationBench-AA at 78%.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-automationbench-private",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 51.3
+                },
+                "raw": {
+                  "id": "automationbench-private",
+                  "benchmark": "AutomationBench (private set)",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 51.3,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Private-set score reproduced by Google from the Zapier board. Separate from AutomationBench-AA at 78%.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; AutomationBench (private set)",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Private-set score reproduced by Google from the Zapier board. Separate from AutomationBench-AA at 78%.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-vals-finance-agent-v2",
+            "label": "Gemini 4 Argon / Google model card / Vals Finance Agent v2",
+            "rows": [
+              {
+                "id": "vals-finance-agent-v2",
+                "benchmark": "Vals Finance Agent v2",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 65.4,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces Vals AI results.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-vals-finance-agent-v2",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 65.4
+                },
+                "raw": {
+                  "id": "vals-finance-agent-v2",
+                  "benchmark": "Vals Finance Agent v2",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 65.4,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces Vals AI results.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Vals Finance Agent v2",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces Vals AI results.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-harvey-legal-agent",
+            "label": "Gemini 4 Argon / Google model card / Harvey Legal Agent Benchmark",
+            "rows": [
+              {
+                "id": "harvey-legal-agent",
+                "benchmark": "Harvey Legal Agent Benchmark",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 19.6,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces Vals AI results.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-harvey-legal-agent",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 19.6
+                },
+                "raw": {
+                  "id": "harvey-legal-agent",
+                  "benchmark": "Harvey Legal Agent Benchmark",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 19.6,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces Vals AI results.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Harvey Legal Agent Benchmark",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces Vals AI results.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-deepswe-v1-1",
+            "label": "Gemini 4 Argon / Google model card / DeepSWE v1.1",
+            "rows": [
+              {
+                "id": "deepswe-v1-1",
+                "benchmark": "DeepSWE v1.1",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 77.9,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed with mini-swe-agent; highest scoring thinking level as reported on the Datacurve board.",
+                "target_card_id": null,
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-deepswe-v1-1",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 77.9
+                },
+                "raw": {
+                  "id": "deepswe-v1-1",
+                  "benchmark": "DeepSWE v1.1",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 77.9,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed with mini-swe-agent; highest scoring thinking level as reported on the Datacurve board.",
+                  "target_card_id": null,
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; DeepSWE v1.1",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed with mini-swe-agent; highest scoring thinking level as reported on the Datacurve board.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-frontierswe-v2",
+            "label": "Gemini 4 Argon / Google model card / FrontierSWE v2",
+            "rows": [
+              {
+                "id": "frontierswe-v2",
+                "benchmark": "FrontierSWE v2",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 55,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+                "target_card_id": "frontierswe-v2",
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-frontierswe-v2",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 55
+                },
+                "raw": {
+                  "id": "frontierswe-v2",
+                  "benchmark": "FrontierSWE v2",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 55,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+                  "target_card_id": "frontierswe-v2",
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; FrontierSWE v2",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-vibe-code-bench",
+            "label": "Gemini 4 Argon / Google model card / Vibe Code Bench",
+            "rows": [
+              {
+                "id": "vibe-code-bench",
+                "benchmark": "Vibe Code Bench",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 91.9,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces Vals AI results.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-vibe-code-bench",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 91.9
+                },
+                "raw": {
+                  "id": "vibe-code-bench",
+                  "benchmark": "Vibe Code Bench",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 91.9,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces Vals AI results.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Vibe Code Bench",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces Vals AI results.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-terminal-bench-4",
+            "label": "Gemini 4 Argon / Google model card / Terminal-Bench 4.0",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4.0",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success",
+                    "value": 57.4,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+                "target_card_id": "terminal-bench-4",
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-terminal-bench-4",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 57.4
+                },
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4.0",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success",
+                      "value": 57.4,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+                  "target_card_id": "terminal-bench-4",
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Terminal-Bench 4.0",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-posttrainbench-v1-1",
+            "label": "Gemini 4 Argon / Google model card / PostTrainBench v1.1",
+            "rows": [
+              {
+                "id": "posttrainbench-v1-1",
+                "benchmark": "PostTrainBench v1.1",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 45.3,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed, OpenCode harness, ten-hour budget on one H100; weighted aggregate over four base models and seven benchmarks.",
+                "target_card_id": null,
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-posttrainbench-v1-1",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 45.3
+                },
+                "raw": {
+                  "id": "posttrainbench-v1-1",
+                  "benchmark": "PostTrainBench v1.1",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 45.3,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed, OpenCode harness, ten-hour budget on one H100; weighted aggregate over four base models and seven benchmarks.",
+                  "target_card_id": null,
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; PostTrainBench v1.1",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed, OpenCode harness, ten-hour budget on one H100; weighted aggregate over four base models and seven benchmarks.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-terminal-bench-science-0-1",
+            "label": "Gemini 4 Argon / Google model card / Terminal-Bench Science 0.1",
+            "rows": [
+              {
+                "id": "terminal-bench-science-0-1",
+                "benchmark": "Terminal-Bench Science 0.1",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success; extended verifier timeout",
+                    "value": 57.6,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+                "target_card_id": "terminal-bench-science-native-agents",
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-terminal-bench-science-0-1",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 57.6
+                },
+                "raw": {
+                  "id": "terminal-bench-science-0-1",
+                  "benchmark": "Terminal-Bench Science 0.1",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success; extended verifier timeout",
+                      "value": 57.6,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+                  "target_card_id": "terminal-bench-science-native-agents",
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success; extended verifier timeout",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Terminal-Bench Science 0.1",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-labbench-2",
+            "label": "Gemini 4 Argon / Google model card / LABBench 2",
+            "rows": [
+              {
+                "id": "labbench-2",
+                "benchmark": "LABBench 2",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 88.8,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed with Linux terminal, bioinformatics tools, Python, R and internet access.",
+                "target_card_id": null,
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-labbench-2",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 88.8
+                },
+                "raw": {
+                  "id": "labbench-2",
+                  "benchmark": "LABBench 2",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 88.8,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed with Linux terminal, bioinformatics tools, Python, R and internet access.",
+                  "target_card_id": null,
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; LABBench 2",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed with Linux terminal, bioinformatics tools, Python, R and internet access.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-riemannbench",
+            "label": "Gemini 4 Argon / Google model card / RiemannBench",
+            "rows": [
+              {
+                "id": "riemannbench",
+                "benchmark": "RiemannBench",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 76,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces the Surge official board.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-riemannbench",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 76
+                },
+                "raw": {
+                  "id": "riemannbench",
+                  "benchmark": "RiemannBench",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 76,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces the Surge official board.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; RiemannBench",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces the Surge official board.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-graphwalks",
+            "label": "Gemini 4 Argon / Google model card / GraphWalks BFS F1",
+            "rows": [
+              {
+                "id": "graphwalks",
+                "benchmark": "GraphWalks BFS F1",
+                "metrics": [
+                  {
+                    "id": "short",
+                    "label": "BFS F1, up to 128k tokens (650 items)",
+                    "value": 99.7,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "long",
+                    "label": "BFS F1, 256k to 1M tokens (200 items)",
+                    "value": 84.2,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed two distinct context-length subsets: 650 items up to 128k; 200 items at 256k–1M.",
+                "target_card_id": null,
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-graphwalks",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "short": 99.7,
+                  "long": 84.2
+                },
+                "raw": {
+                  "id": "graphwalks",
+                  "benchmark": "GraphWalks BFS F1",
+                  "metrics": [
+                    {
+                      "id": "short",
+                      "label": "BFS F1, up to 128k tokens (650 items)",
+                      "value": 99.7,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "long",
+                      "label": "BFS F1, 256k to 1M tokens (200 items)",
+                      "value": 84.2,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed two distinct context-length subsets: 650 items up to 128k; 200 items at 256k–1M.",
+                  "target_card_id": null,
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "short",
+                "label": "BFS F1, up to 128k tokens (650 items)",
+                "field": "measurements.short",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "long",
+                "label": "BFS F1, 256k to 1M tokens (200 items)",
+                "field": "measurements.long",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; GraphWalks BFS F1",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed two distinct context-length subsets: 650 items up to 128k; 200 items at 256k–1M.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-agents-last-exam",
+            "label": "Gemini 4 Argon / Google model card / Agent's Last Exam",
+            "rows": [
+              {
+                "id": "agents-last-exam",
+                "benchmark": "Agent's Last Exam",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Binary pass rate",
+                    "value": 39.5,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed binary pass rate, ALE-Claw harness, five hours, safety filters enabled; flagged responses become empty strings while episodes can continue.",
+                "target_card_id": null,
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-agents-last-exam",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 39.5
+                },
+                "raw": {
+                  "id": "agents-last-exam",
+                  "benchmark": "Agent's Last Exam",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Binary pass rate",
+                      "value": 39.5,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed binary pass rate, ALE-Claw harness, five hours, safety filters enabled; flagged responses become empty strings while episodes can continue.",
+                  "target_card_id": null,
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Binary pass rate",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Agent's Last Exam",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed binary pass rate, ALE-Claw harness, five hours, safety filters enabled; flagged responses become empty strings while episodes can continue.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-osworld-2-offline",
+            "label": "Gemini 4 Argon / Google model card / OSWorld 2.0 offline",
+            "rows": [
+              {
+                "id": "osworld-2-offline",
+                "benchmark": "OSWorld 2.0 offline",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Offline partial score; max of three runs",
+                    "value": 69.2,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+                "target_card_id": "osworld-v2-offline",
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-osworld-2-offline",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 69.2
+                },
+                "raw": {
+                  "id": "osworld-2-offline",
+                  "benchmark": "OSWorld 2.0 offline",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Offline partial score; max of three runs",
+                      "value": 69.2,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+                  "target_card_id": "osworld-v2-offline",
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Offline partial score; max of three runs",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; OSWorld 2.0 offline",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-chartography",
+            "label": "Gemini 4 Argon / Google model card / Chartography",
+            "rows": [
+              {
+                "id": "chartography",
+                "benchmark": "Chartography",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 71.6,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "No tools. Google reproduces the Surge official board.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-chartography",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 71.6
+                },
+                "raw": {
+                  "id": "chartography",
+                  "benchmark": "Chartography",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 71.6,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "No tools. Google reproduces the Surge official board.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; Chartography",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "No tools. Google reproduces the Surge official board.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-lvbench",
+            "label": "Gemini 4 Argon / Google model card / LVBench",
+            "rows": [
+              {
+                "id": "lvbench",
+                "benchmark": "LVBench",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 91.7,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google self-computed without tools; Gemini uses one frame per second, while other model frame budgets vary.",
+                "target_card_id": null,
+                "evidence_role": "developer_report",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-lvbench",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 91.7
+                },
+                "raw": {
+                  "id": "lvbench",
+                  "benchmark": "LVBench",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 91.7,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google self-computed without tools; Gemini uses one frame per second, while other model frame budgets vary.",
+                  "target_card_id": null,
+                  "evidence_role": "developer_report",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; LVBench",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google self-computed without tools; Gemini uses one frame per second, while other model frame budgets vary.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "developer_report",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-google-cwe-bench-v1",
+            "label": "Gemini 4 Argon / Google model card / CWE-bench v1",
+            "rows": [
+              {
+                "id": "cwe-bench-v1",
+                "benchmark": "CWE-bench v1",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Reported score",
+                    "value": 68,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Google reproduces the official board. Ranking uses pass@1 with pass@4 as a tie-break; the displayed score is not relabeled pass@4.",
+                "target_card_id": null,
+                "evidence_role": "vendor_reproduced_external_leaderboard",
+                "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                "model_variant": "Gemini 4 Argon",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon",
+                "result_id": "gemini-4-argon-google-cwe-bench-v1",
+                "effort": "highest thinking; see benchmark-specific exceptions",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 68
+                },
+                "raw": {
+                  "id": "cwe-bench-v1",
+                  "benchmark": "CWE-bench v1",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Reported score",
+                      "value": 68,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Google reproduces the official board. Ranking uses pass@1 with pass@4 as a tie-break; the displayed score is not relabeled pass@4.",
+                  "target_card_id": null,
+                  "evidence_role": "vendor_reproduced_external_leaderboard",
+                  "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+                  "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Reported score",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+            "source_locator": "October model-card results table; CWE-bench v1",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+              "methodology": "Google reproduces the official board. Ranking uses pass@1 with pass@4 as a tie-break; the displayed score is not relabeled pass@4.",
+              "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+              "evidence_role": "vendor_reproduced_external_leaderboard",
+              "long_decode_continuation": null
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-10-13",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          }
+        ]
+      },
+      {
+        "id": "gemini-4-argon-aa-report",
+        "name": "Gemini 4 Argon / independent AA benchmarks",
+        "category": "standard",
+        "question": "What did Artificial Analysis measure for Gemini 4 Argon?",
+        "tests": "Select an AA benchmark for the high-reasoning Argon configuration evaluated with Long Decode Continuation. The article reports 10 distinct measurements, with index points, Elo and percentages kept separate.",
+        "matters": "The new model can be inspected without treating results from different evaluators, tasks or harnesses as one ranking.",
+        "read": "These are selected Argon observations, not a complete refreshed leaderboard. Each selector changes the benchmark or measurement; rows are never pooled across benchmarks. Exact run dates, generic cost/time and numerical uncertainty are unknown. Announcement on September 30, broad availability on October 13 and source review on October 15 are different dates. AA's AutomationBench-AA 78% differs from Google's private-set 51.3%; AA's rounded Terminal result 57% differs from Google's 57.4%. The 53-point Intelligence Index result is directly reported; the $1.99 introductory index-task cost is kept only in that setup's details.",
+        "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-15",
+        "historical": false,
+        "variants": [
+          {
+            "id": "gemini-4-argon-aa-intelligence-index-v4-3-2",
+            "label": "Gemini 4 Argon / independent AA / AA Intelligence Index v4.3.2",
+            "rows": [
+              {
+                "id": "intelligence-index-v4-3-2",
+                "benchmark": "AA Intelligence Index v4.3.2",
+                "metrics": [
+                  {
+                    "id": "index",
+                    "label": "Intelligence Index v4.3.2",
+                    "value": 53,
+                    "unit": "index points",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+                "target_card_id": null,
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-intelligence-index-v4-3-2",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "index": 53
+                },
+                "raw": {
+                  "id": "intelligence-index-v4-3-2",
+                  "benchmark": "AA Intelligence Index v4.3.2",
+                  "metrics": [
+                    {
+                      "id": "index",
+                      "label": "Intelligence Index v4.3.2",
+                      "value": 53,
+                      "unit": "index points",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+                  "target_card_id": null,
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "index",
+                "label": "Intelligence Index v4.3.2",
+                "field": "measurements.index",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AA Intelligence Index v4.3.2",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true,
+              "introductory_cost_usd_per_intelligence_index_task": 1.99,
+              "approximate_average_output_tokens_per_index_task": 62000,
+              "throughput_tokens_per_second": null,
+              "cost_basis": "September 30 reported introductory and cache pricing; not a generic task cost or current-price guarantee"
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-aa-automationbench-aa",
+            "label": "Gemini 4 Argon / independent AA / AutomationBench-AA",
+            "rows": [
+              {
+                "id": "automationbench-aa",
+                "benchmark": "AutomationBench-AA",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success, AA setup",
+                    "value": 78,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+                "target_card_id": "automationbench-aa",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-automationbench-aa",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 78
+                },
+                "raw": {
+                  "id": "automationbench-aa",
+                  "benchmark": "AutomationBench-AA",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success, AA setup",
+                      "value": 78,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+                  "target_card_id": "automationbench-aa",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success, AA setup",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AutomationBench-AA",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-aa-terminal-bench-4",
+            "label": "Gemini 4 Argon / independent AA / Terminal-Bench 4 (AA)",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4 (AA)",
+                "metrics": [
+                  {
+                    "id": "score",
+                    "label": "Task success, AA reported rounded result",
+                    "value": 57,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+                "target_card_id": "terminal-bench-4",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-terminal-bench-4",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "score": 57
+                },
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4 (AA)",
+                  "metrics": [
+                    {
+                      "id": "score",
+                      "label": "Task success, AA reported rounded result",
+                      "value": 57,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+                  "target_card_id": "terminal-bench-4",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success, AA reported rounded result",
+                "field": "measurements.score",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; Terminal-Bench 4 (AA)",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-aa-aa-briefcase",
+            "label": "Gemini 4 Argon / independent AA / AA-Briefcase",
+            "rows": [
+              {
+                "id": "aa-briefcase",
+                "benchmark": "AA-Briefcase",
+                "metrics": [
+                  {
+                    "id": "elo",
+                    "label": "Overall Briefcase rating",
+                    "value": 1494,
+                    "unit": "Elo",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      2500
+                    ]
+                  },
+                  {
+                    "id": "rubric",
+                    "label": "Rubric pass rate",
+                    "value": 65,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "analytical",
+                    "label": "Analytical quality",
+                    "value": 1576,
+                    "unit": "Elo",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      2500
+                    ]
+                  },
+                  {
+                    "id": "presentation",
+                    "label": "Presentation quality",
+                    "value": 1308,
+                    "unit": "Elo",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      2500
+                    ]
+                  }
+                ],
+                "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+                "target_card_id": "aa-briefcase-v1-1",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-aa-briefcase",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "elo": 1494,
+                  "rubric": 65,
+                  "analytical": 1576,
+                  "presentation": 1308
+                },
+                "raw": {
+                  "id": "aa-briefcase",
+                  "benchmark": "AA-Briefcase",
+                  "metrics": [
+                    {
+                      "id": "elo",
+                      "label": "Overall Briefcase rating",
+                      "value": 1494,
+                      "unit": "Elo",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        2500
+                      ]
+                    },
+                    {
+                      "id": "rubric",
+                      "label": "Rubric pass rate",
+                      "value": 65,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "analytical",
+                      "label": "Analytical quality",
+                      "value": 1576,
+                      "unit": "Elo",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        2500
+                      ]
+                    },
+                    {
+                      "id": "presentation",
+                      "label": "Presentation quality",
+                      "value": 1308,
+                      "unit": "Elo",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        2500
+                      ]
+                    }
+                  ],
+                  "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+                  "target_card_id": "aa-briefcase-v1-1",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "elo",
+                "label": "Overall Briefcase rating",
+                "field": "measurements.elo",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2500
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "rubric",
+                "label": "Rubric pass rate",
+                "field": "measurements.rubric",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "analytical",
+                "label": "Analytical quality",
+                "field": "measurements.analytical",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2500
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "presentation",
+                "label": "Presentation quality",
+                "field": "measurements.presentation",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2500
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AA-Briefcase",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-argon-aa-aa-omniscience",
+            "label": "Gemini 4 Argon / independent AA / AA-Omniscience",
+            "rows": [
+              {
+                "id": "aa-omniscience",
+                "benchmark": "AA-Omniscience",
+                "metrics": [
+                  {
+                    "id": "hallucination",
+                    "label": "Hallucination rate",
+                    "value": 15,
+                    "unit": "percent",
+                    "direction": "lower_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "accuracy",
+                    "label": "Accuracy",
+                    "value": 50,
+                    "unit": "percent",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  {
+                    "id": "index",
+                    "label": "Overall Omniscience index",
+                    "value": 42,
+                    "unit": "index points",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+                "target_card_id": "aa-omniscience",
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-aa-omniscience",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "hallucination": 15,
+                  "accuracy": 50,
+                  "index": 42
+                },
+                "raw": {
+                  "id": "aa-omniscience",
+                  "benchmark": "AA-Omniscience",
+                  "metrics": [
+                    {
+                      "id": "hallucination",
+                      "label": "Hallucination rate",
+                      "value": 15,
+                      "unit": "percent",
+                      "direction": "lower_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "accuracy",
+                      "label": "Accuracy",
+                      "value": 50,
+                      "unit": "percent",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    },
+                    {
+                      "id": "index",
+                      "label": "Overall Omniscience index",
+                      "value": 42,
+                      "unit": "index points",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+                  "target_card_id": "aa-omniscience",
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "hallucination",
+                "label": "Hallucination rate",
+                "field": "measurements.hallucination",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "lower_is_better"
+              },
+              {
+                "id": "accuracy",
+                "label": "Accuracy",
+                "field": "measurements.accuracy",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "index",
+                "label": "Overall Omniscience index",
+                "field": "measurements.index",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AA-Omniscience",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -83871,6 +87834,24 @@ window.LAB_GALLERY = {
           "status": "Adapter-owner parity study; should not be presented as original benchmark current standings"
         }
       ]
+    },
+    "model_updates": {
+      "schema_version": 1,
+      "checked_at": "2026-10-15",
+      "model_id": "gemini-4-argon",
+      "card_ids": [
+        "gemini-4-argon-google-report",
+        "gemini-4-argon-aa-report"
+      ],
+      "augmented_card_ids": [
+        "frontierswe-v2",
+        "terminal-bench-4",
+        "terminal-bench-science-native-agents",
+        "osworld-v2-offline",
+        "automationbench-aa",
+        "aa-briefcase-v1-1",
+        "aa-omniscience"
+      ]
     }
   },
   "expanded": {
@@ -98728,6 +102709,8 @@ window.LAB_GALLERY = {
       "data/benchmark-refresh-2026-10-12/lab-community.json",
       "data/benchmark-refresh-2026-10-12/medical-robotics.json",
       "data/benchmark-refresh-2026-10-12/evidence-manifest.json",
+      "data/gemini-4-argon-2026-10-15/source-packet.json",
+      "data/gemini-4-argon-2026-10-15/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -98744,7 +102727,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-10-12.json",
+    "presentationMetadata": "data/gallery-metadata-2026-10-15.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

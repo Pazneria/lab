@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-15",
+  "files": [
+    {
+      "path": "source-packet.json",
+      "bytes": 26701,
+      "sha256": "cbf64058afea7e387fcd675aa0cfaeedde5d9fa445528703357a5a644d0f5805"
+    }
+  ]
+}

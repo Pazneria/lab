@@ -1,8 +1,11 @@
 "use strict";
 // Cloud-only comparison to the frozen source revision; no generated writes.
 const { execFileSync } = require("node:child_process"), assert = require("node:assert/strict"), path = require("node:path");
-const root = path.resolve(__dirname, ".."), baseline = "ba9b01a8c521b261e4ff0c8b8189c24c1f45737f";
+const root = path.resolve(__dirname, ".."), baseline = "98070799927edd6bda1a29a6518027443d3ad841";
 const allowed = new Set([
+  "data/gemini-4-argon-2026-10-15/source-packet.json", "data/gemini-4-argon-2026-10-15/evidence-manifest.json",
+  "scripts/build-gallery-gemini-argon-2026-10-15.cjs", "tests/verify-gemini-argon.cjs", "docs/GEMINI-4-ARGON-2026-10-15.md",
+  "data/gallery-gemini-argon-projection-2026-10-15.json", "data/gallery-metadata-2026-10-15.json",
   ".gitattributes", ".github/workflows/benchmark-refresh-2026-10-12.yml",
   "README.md", "docs/BENCHMARK-REFRESH-2026-10-12.md", "index.html", "benchmarks.html", "assets/gallery.js", "assets/coverage-graphs.js",
   "scripts/build-gallery.cjs", "scripts/build-gallery-refresh-2026-10-12.cjs", "scripts/summarize-benchmark-ci.cjs", "scripts/verify-benchmark-ci-toolchain.cjs", "scripts/verify-benchmark-refresh-boundary.cjs",

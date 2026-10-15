@@ -70,7 +70,10 @@ const archivedMetadata = require("./build-gallery-metadata.cjs")();
 const refresh = require("./build-gallery-refresh-2026-10-12.cjs")();
 assert.deepEqual(read("data/gallery-refresh-projection-2026-10-12.json"), refresh);
 assert.deepEqual(read("data/gallery-metadata-2026-10-12.json"), refresh.metadata);
-const cardMetadata = refresh.metadata;
+const argon = require("./build-gallery-gemini-argon-2026-10-15.cjs")();
+assert.deepEqual(read("data/gallery-gemini-argon-projection-2026-10-15.json"), argon.projection);
+assert.deepEqual(read("data/gallery-metadata-2026-10-15.json"), argon.metadata);
+const cardMetadata = argon.metadata;
 assert.deepEqual(
   read("data/gallery-metadata-2026-10-05.json"),
   archivedMetadata,
@@ -271,11 +274,12 @@ const output = {
         },
       ]),
     ),
+    ...argon.notes,
   },
   frontend,
   supplement,
   cardMetadata,
-  coverage: refresh.coverage,
+  coverage: argon.coverage,
   expanded: normalizeDisplayText({ ...community, medical }),
   provenance: {
     input:
@@ -286,6 +290,7 @@ const output = {
     refresh: { checked_at: refresh.checked_at, source_transfer: refresh.source_transfer, source_integrities: refresh.source_integrities },
     sourceFiles: [
       ...refresh.source_files,
+      ...argon.projection.source_files,
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -302,7 +307,7 @@ const output = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json",
     ],
     rendererContract: "data/coverage-renderer-contract-2026-10-05.json",
-    presentationMetadata: "data/gallery-metadata-2026-10-12.json",
+    presentationMetadata: "data/gallery-metadata-2026-10-15.json",
     frontendInputStatus: frontendInput.endsWith(".working.json")
       ? "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
       : "Original public research packet supplied directly by parent; not Library materialization",
@@ -334,8 +339,11 @@ if (process.argv.includes("--check"))
   );
 else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
 const evidence = {
-  cards: 86,
-  coverageCards: 52,
+  cards: 88,
+  coverageCards: 54,
+  argonMeasurements: { google: 19, aa: 10 },
+  argonInputSHA256: Object.fromEntries(argon.projection.source_files.map((p) => [p, sha(p)])),
+  argonProjectionSHA256: sha("data/gallery-gemini-argon-projection-2026-10-15.json"),
   refreshCards: refresh.cards.length,
   refreshInputSHA256: Object.fromEntries(refresh.source_files.map((p) => [p, sha(p)])),
   refreshProjectionSHA256: sha("data/gallery-refresh-projection-2026-10-12.json"),

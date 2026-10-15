@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = read("data/gallery-refresh-projection-2026-10-12.json").coverage;
+const coverage = require("../scripts/build-gallery-gemini-argon-2026-10-15.cjs")().coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,15 +183,15 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 86);
-    assert.equal(await page.locator(".mini-graph svg").count(), 77);
+    assert.equal(await page.locator(".benchmark-card").count(), 88);
+    assert.equal(await page.locator(".mini-graph svg").count(), 79);
     pass(
-      "Default gallery groups result families without empty cards; all 86 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 88 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
       assert.equal(await page.locator(".coverage-chart").count(), 1);
-      if (coverage.refresh.card_ids.includes(card.id)) {
+      if ([...coverage.refresh.card_ids, ...coverage.model_updates.card_ids].includes(card.id)) {
         const inputLink = page.locator("a").filter({ hasText: /^Read the supplied original research input$/ });
         assert.equal(await inputLink.getAttribute("href"), card.source_input);
       }
@@ -215,8 +215,39 @@ async function main() {
       }
     }
     pass(
-      "All 52 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 54 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
+    // The selected Argon records retain evaluator and metric boundaries.
+    await go("benchmarks.html?q=gemini%204%20argon");
+    assert.equal(await page.locator(".benchmark-card").count(), 2);
+    await go("results.html?benchmark=gemini-4-argon-aa-report");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "53");
+    assert.equal(await page.locator(".confidence-interval, .reported-interval").count(), 0);
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-aa-aa-omniscience");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "15");
+    assert.equal(await page.locator(".coverage-chart").getAttribute("data-direction"), "lower_is_better");
+    await page.locator("select[name=view]").selectOption("accuracy");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "50");
+    assert.equal(await page.locator(".coverage-chart").getAttribute("data-direction"), "higher_is_better");
+    await go("results.html?benchmark=gemini-4-argon-google-report");
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-google-automationbench-private");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "51.3");
+    await go("results.html?benchmark=automationbench-aa");
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-aa-automationbench-aa");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "78");
+    await go("results.html?benchmark=terminal-bench-4");
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-google-terminal-bench-4");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "57.4");
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-aa-terminal-bench-4");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "57");
+    await page.setViewportSize({ width: 320, height: 844 });
+    for (const id of coverage.model_updates.card_ids) {
+      await go("results.html?benchmark=" + id);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, id + " mobile overflow");
+      await axe("Argon mobile " + id);
+    }
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    pass("Argon reports and selected cohorts preserve distinct evaluator values, score directions and mobile controls");
     // October 12 views retain their typed uncertainty and exact memberships.
     await go("results.html?benchmark=webdev-arena-frontend-2026-10-08");
     assert.equal(await page.locator(".chart-table tbody tr").count(), 142);
