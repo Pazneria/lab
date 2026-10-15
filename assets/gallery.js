@@ -188,7 +188,7 @@
       ids.add(c.id);
     }
     return (
-      ids.size === (input.coverage.refresh ? 86 : 73) &&
+      ids.size === (input.coverage.model_updates ? 88 : input.coverage.refresh ? 86 : 73) &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(
@@ -312,6 +312,8 @@
   );
   const byId = new Map(all.map((c) => [c.id, c]));
   const priority = [
+    "gemini-4-argon-aa-report",
+    "gemini-4-argon-google-report",
     "hle-diamond",
     "webdev-arena-frontend-2026-10-08",
     "webdev-arena-frontend",
@@ -1413,7 +1415,7 @@
       );
       for (const file of card.coverage.source_inputs || [])
         if (file !== card.coverage.source_input)
-          body.append(local(file, "Preserved source input: " + file));
+          body.append(local(file, "Additional source input: " + file));
       if (card.standard)
         body.append(raw("Preserved earlier source cohort", card.standard));
       if (card.original)

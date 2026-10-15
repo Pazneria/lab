@@ -55,3 +55,7 @@ tests/verify-animation-workbench-geometry.test.mjs text eol=lf
 data/benchmark-refresh-2026-10-12/** -text
 data/gallery-refresh-projection-2026-10-12.json text eol=lf
 data/gallery-metadata-2026-10-12.json text eol=lf
+
+# Preserve exact dated Argon source packet; keep its generated delta portable.
+data/gemini-4-argon-2026-10-15/** -text
+data/gallery-gemini-argon-projection-2026-10-15.json text eol=lf

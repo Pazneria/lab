@@ -1,0 +1,733 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-15",
+  "model": {
+    "name": "Gemini 4 Argon",
+    "api_id": "gemini-4-argon",
+    "announcement_date": "2026-09-30",
+    "broad_availability_date": "2026-10-13",
+    "thinking_levels": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  "sources": {
+    "api": "https://ai.google.dev/gemini-api/docs/models/gemini-4-argon",
+    "announcement": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+    "rollout": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/",
+    "google_model_card": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+    "google_methodology": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+    "aa_article": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+    "aa_model": "https://artificialanalysis.ai/models/gemini-4-argon"
+  },
+  "provenance": "Parent-supplied primary-source research checked against the official model card, evaluation methodology, API documentation, rollout announcement and AA article. No evaluations executed.",
+  "google": {
+    "publication_date": "2026-10-13",
+    "publication_label": "October 2026 model card, web page dated October 13",
+    "effort": "highest thinking unless the per-benchmark methodology specifies otherwise",
+    "default_measurement": "pass@1 except specified partial scores, F1, aggregate metrics and source-specific exceptions; smaller studies may average multiple trials",
+    "observations": [
+      {
+        "id": "vals-index",
+        "benchmark": "Vals Index",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 68.9,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces Vals AI results; this index is distinct from the AA Intelligence Index.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "automationbench-private",
+        "benchmark": "AutomationBench (private set)",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 51.3,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Private-set score reproduced by Google from the Zapier board. Separate from AutomationBench-AA at 78%.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "vals-finance-agent-v2",
+        "benchmark": "Vals Finance Agent v2",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 65.4,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces Vals AI results.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "harvey-legal-agent",
+        "benchmark": "Harvey Legal Agent Benchmark",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 19.6,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces Vals AI results.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "deepswe-v1-1",
+        "benchmark": "DeepSWE v1.1",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 77.9,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed with mini-swe-agent; highest scoring thinking level as reported on the Datacurve board.",
+        "target_card_id": null,
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "frontierswe-v2",
+        "benchmark": "FrontierSWE v2",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 55.0,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces the Proximal official board; the existing source cohort remains separate.",
+        "target_card_id": "frontierswe-v2",
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "vibe-code-bench",
+        "benchmark": "Vibe Code Bench",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 91.9,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces Vals AI results.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "terminal-bench-4",
+        "benchmark": "Terminal-Bench 4.0",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Task success",
+            "value": 57.4,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed Argon result; highest thinking. Exact Argon harness and paired task cost/time not supplied here. AA reports a separate rounded 57%.",
+        "target_card_id": "terminal-bench-4",
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "posttrainbench-v1-1",
+        "benchmark": "PostTrainBench v1.1",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 45.3,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed, OpenCode harness, ten-hour budget on one H100; weighted aggregate over four base models and seven benchmarks.",
+        "target_card_id": null,
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "terminal-bench-science-0-1",
+        "benchmark": "Terminal-Bench Science 0.1",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Task success; extended verifier timeout",
+            "value": 57.6,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed with six times the verifier timeout to address verification timeouts. Do not pool with normal-timeout runs.",
+        "target_card_id": "terminal-bench-science-native-agents",
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "labbench-2",
+        "benchmark": "LABBench 2",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 88.8,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed with Linux terminal, bioinformatics tools, Python, R and internet access.",
+        "target_card_id": null,
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "riemannbench",
+        "benchmark": "RiemannBench",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 76.0,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces the Surge official board.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "graphwalks",
+        "benchmark": "GraphWalks BFS F1",
+        "metrics": [
+          {
+            "id": "short",
+            "label": "BFS F1, up to 128k tokens (650 items)",
+            "value": 99.7,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          },
+          {
+            "id": "long",
+            "label": "BFS F1, 256k to 1M tokens (200 items)",
+            "value": 84.2,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed two distinct context-length subsets: 650 items up to 128k; 200 items at 256k–1M.",
+        "target_card_id": null,
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "agents-last-exam",
+        "benchmark": "Agent's Last Exam",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Binary pass rate",
+            "value": 39.5,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed binary pass rate, ALE-Claw harness, five hours, safety filters enabled; flagged responses become empty strings while episodes can continue.",
+        "target_card_id": null,
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "osworld-2-offline",
+        "benchmark": "OSWorld 2.0 offline",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Offline partial score; max of three runs",
+            "value": 69.2,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed partial score, maximum of three single-attempt runs. Official 08.08 patch, 1080p, 500 steps, Gemini CUA harness with parallel batch calls, compaction, screenshot-only observation and safety filters. Separate from OSWorld 2.1 82-task/strict-success runs.",
+        "target_card_id": "osworld-v2-offline",
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "chartography",
+        "benchmark": "Chartography",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 71.6,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "No tools. Google reproduces the Surge official board.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "lvbench",
+        "benchmark": "LVBench",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 91.7,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google self-computed without tools; Gemini uses one frame per second, while other model frame budgets vary.",
+        "target_card_id": null,
+        "evidence_role": "developer_report",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "cwe-bench-v1",
+        "benchmark": "CWE-bench v1",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Reported score",
+            "value": 68.0,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Google reproduces the official board. Ranking uses pass@1 with pass@4 as a tie-break; the displayed score is not relabeled pass@4.",
+        "target_card_id": null,
+        "evidence_role": "vendor_reproduced_external_leaderboard",
+        "source_url": "https://deepmind.google/models/model-cards/gemini-4-argon/",
+        "methodology_url": "https://deepmind.google/models/evals-methodology/gemini-4-argon",
+        "model_variant": "Gemini 4 Argon",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      }
+    ]
+  },
+  "aa": {
+    "publication_date": "2026-09-30",
+    "effort": "high",
+    "long_decode_continuation": true,
+    "introductory_cost_usd_per_intelligence_index_task": 1.99,
+    "approximate_average_output_tokens_per_index_task": 62000,
+    "throughput_tokens_per_second": null,
+    "stale_availability_statement": "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements.",
+    "observations": [
+      {
+        "id": "intelligence-index-v4-3-2",
+        "benchmark": "AA Intelligence Index v4.3.2",
+        "metrics": [
+          {
+            "id": "index",
+            "label": "Intelligence Index v4.3.2",
+            "value": 53,
+            "unit": "index points",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+        "target_card_id": null,
+        "evidence_role": "independent_evaluator",
+        "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+        "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "automationbench-aa",
+        "benchmark": "AutomationBench-AA",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Task success, AA setup",
+            "value": 78,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "AA evaluation; separate from Google's private AutomationBench result of 51.3%.",
+        "target_card_id": "automationbench-aa",
+        "evidence_role": "independent_evaluator",
+        "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+        "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "terminal-bench-4",
+        "benchmark": "Terminal-Bench 4 (AA)",
+        "metrics": [
+          {
+            "id": "score",
+            "label": "Task success, AA reported rounded result",
+            "value": 57,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "AA evaluation. Article gives rounded 57%, independently reported from Google's 57.4%; do not assert equal harnesses.",
+        "target_card_id": "terminal-bench-4",
+        "evidence_role": "independent_evaluator",
+        "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+        "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "aa-briefcase",
+        "benchmark": "AA-Briefcase",
+        "metrics": [
+          {
+            "id": "elo",
+            "label": "Overall Briefcase rating",
+            "value": 1494,
+            "unit": "Elo",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              2500
+            ]
+          },
+          {
+            "id": "rubric",
+            "label": "Rubric pass rate",
+            "value": 65,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          },
+          {
+            "id": "analytical",
+            "label": "Analytical quality",
+            "value": 1576,
+            "unit": "Elo",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              2500
+            ]
+          },
+          {
+            "id": "presentation",
+            "label": "Presentation quality",
+            "value": 1308,
+            "unit": "Elo",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              2500
+            ]
+          }
+        ],
+        "methodology": "AA reports overall Elo and three distinct diagnostic measurements. Do not average Elo and rubric pass. Exact article benchmark version not supplied; retain it separately from the archived v1.1 cohort.",
+        "target_card_id": "aa-briefcase-v1-1",
+        "evidence_role": "independent_evaluator",
+        "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+        "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      },
+      {
+        "id": "aa-omniscience",
+        "benchmark": "AA-Omniscience",
+        "metrics": [
+          {
+            "id": "hallucination",
+            "label": "Hallucination rate",
+            "value": 15,
+            "unit": "percent",
+            "direction": "lower_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          },
+          {
+            "id": "accuracy",
+            "label": "Accuracy",
+            "value": 50,
+            "unit": "percent",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          },
+          {
+            "id": "index",
+            "label": "Overall Omniscience index",
+            "value": 42,
+            "unit": "index points",
+            "direction": "higher_is_better",
+            "domain": [
+              0,
+              100
+            ]
+          }
+        ],
+        "methodology": "AA reports hallucination rate, accuracy and overall index separately. Lower hallucination is better; other reported directions are higher-is-better.",
+        "target_card_id": "aa-omniscience",
+        "evidence_role": "independent_evaluator",
+        "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+        "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+        "model_id": "gemini-4-argon",
+        "evaluation_date": null,
+        "cost_usd": null,
+        "latency_seconds": null
+      }
+    ]
+  },
+  "limitations": [
+    "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+    "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+    "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+    "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+    "No vendor and AA numbers are pooled or used to infer controlled improvements."
+  ]
+}

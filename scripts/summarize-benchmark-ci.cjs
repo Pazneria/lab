@@ -5,6 +5,7 @@ const crypto = require("node:crypto");
 const files = [
   "gallery-data-validation.json",
   "benchmark-refresh-validation.json",
+  "gemini-argon-validation.json",
   "coverage-ui-validation.json",
   "ranking-validation.json",
   "gallery-navigation-validation.json",
