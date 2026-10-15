@@ -1,6 +1,6 @@
 # Gemini 4 Argon tracker update
 
-Status: source preparation; exact-revision cloud validation and source review are required before publication.
+Source review and cloud generation passed for revision [`a4e0560ebec15b8e15440851e66847e891b68b39`](https://github.com/Pazneria/lab/commit/a4e0560ebec15b8e15440851e66847e891b68b39). [Hosted validation run 38788521443](https://github.com/Pazneria/lab/actions/runs/38788521443) passed all source/static checks and all eight browser regression scripts. Final publication-revision checks are linked through [PR #79](https://github.com/Pazneria/lab/pull/79/checks); later documentation revisions require their own successful checks before publication.
 
 The update adds separate Google and Artificial Analysis report cards for Gemini 4 Argon (`gemini-4-argon`) and separate selected Argon cohorts on seven existing benchmark cards. The gallery has 88 direct cards across 60 benchmark and model-report families. Older source packets, dates, rows, settings, direct links and chart defaults remain preserved. The new report cards make Argon searchable without combining unrelated benchmark scores.
 
