@@ -80,6 +80,8 @@
       [
         "parent_source_audit",
         "parent_primary_research",
+        "primary_source_review",
+        "primary_source_recheck",
         "inherited_catalog",
       ].includes(m.source_review?.mode) &&
       typeof m.source_review?.scope === "string" &&
