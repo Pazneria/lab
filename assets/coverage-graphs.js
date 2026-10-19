@@ -88,7 +88,7 @@
   function valid(data) {
     if (
       data?.schema_version !== 1 ||
-      data.cards?.length !== (data.model_updates ? 54 : data.refresh ? 52 : 39) ||
+      data.cards?.length !== (data.benchmark_updates ? 55 : data.model_updates ? 54 : data.refresh ? 52 : 39) ||
       data.first_wave_ids?.length !== 27 ||
       data.backlog?.length !== 52 ||
       data.audits?.length !== 46 ||
@@ -98,7 +98,7 @@
     if (data.refresh && (data.refresh.schema_version !== 1 ||
       data.refresh.checked_at !== "2026-10-12" || data.refresh.card_ids?.length !== 13 ||
       new Set(data.refresh.card_ids).size !== 13 ||
-      new Set(data.cards.map((c) => c.id)).size !== (data.model_updates ? 54 : 52) ||
+      new Set(data.cards.map((c) => c.id)).size !== (data.benchmark_updates ? 55 : data.model_updates ? 54 : 52) ||
       !data.refresh.card_ids.every((id) => data.cards.some((c) => c.id === id)) ||
       !Array.isArray(data.refresh.directory) ||
       !data.refresh.directory.every((c) => typeof c.name === "string" && safe(c.url) && typeof c.status === "string"))) return false;
@@ -108,6 +108,14 @@
       !["gemini-4-argon-google-report", "gemini-4-argon-aa-report"].every((id) => data.model_updates.card_ids.includes(id) && data.cards.some((c) => c.id === id)) ||
       data.model_updates.augmented_card_ids?.length !== 7 || new Set(data.model_updates.augmented_card_ids).size !== 7 ||
       !data.model_updates.augmented_card_ids.every((id) => data.cards.some((c) => c.id === id)))) return false;
+    if (data.benchmark_updates && (data.benchmark_updates.schema_version !== 1 ||
+      data.benchmark_updates.checked_at !== "2026-10-19" ||
+      data.benchmark_updates.source_snapshot_at !== "2026-10-18" ||
+      data.benchmark_updates.source_input !== "data/benchmark-refresh-2026-10-19/source-packet.json" ||
+      data.benchmark_updates.card_ids?.length !== 1 ||
+      data.benchmark_updates.card_ids[0] !== "webdev-arena-frontend-2026-10-18" ||
+      !data.cards.some((c) => c.id === "webdev-arena-frontend-2026-10-18") ||
+      data.benchmark_updates.reviewed_existing_ids?.length !== 6)) return false;
     return (
       data.cards.every(
         (c) =>

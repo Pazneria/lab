@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-19",
+  "source_execution": "Primary sources reviewed; no benchmark was independently executed.",
+  "arena_frontend": {
+    "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+    "snapshot_at": "2026-10-18",
+    "publication_at": null,
+    "evaluation_date": null,
+    "category": "Code Arena / WebDev / Frontend; default domain and technology filters",
+    "displayed_total_votes": 790403,
+    "displayed_models": 147,
+    "selection": "First 20 displayed model rows; not a complete October 18 table.",
+    "outcome": "human pairwise preference rating, not screenshot fidelity or automated functional completion",
+    "interval_kind": "published interval; confidence coverage not specified on the table",
+    "vote_count_basis": "Per-row votes, distinct from the page-wide 790,403 votes.",
+    "workflow": "Page describes multi-step reasoning, tool use, and HTML or React generation; exact per-row harness, tools and budgets unverified.",
+    "task_cost_usd": null,
+    "task_time_seconds": null,
+    "rows": [
+      {
+        "rank": 1,
+        "rank_spread": [
+          1,
+          1
+        ],
+        "model_variant": "Claude Opus 5.5 (Max)",
+        "value": 1848,
+        "published_range": [
+          1831,
+          1865
+        ],
+        "published_plus_minus": 17,
+        "votes": 2114,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-1"
+      },
+      {
+        "rank": 2,
+        "rank_spread": [
+          2,
+          3
+        ],
+        "model_variant": "Claude Sonnet 5.5 (xHigh)",
+        "value": 1808,
+        "published_range": [
+          1793,
+          1823
+        ],
+        "published_plus_minus": 15,
+        "votes": 2619,
+        "preliminary": false,
+        "effort": "xhigh",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-2"
+      },
+      {
+        "rank": 3,
+        "rank_spread": [
+          2,
+          4
+        ],
+        "model_variant": "GPT-6 Astra (Max)",
+        "value": 1797,
+        "published_range": [
+          1786,
+          1808
+        ],
+        "published_plus_minus": 11,
+        "votes": 4941,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-3"
+      },
+      {
+        "rank": 4,
+        "rank_spread": [
+          3,
+          5
+        ],
+        "model_variant": "Claude Fable 5.1 (Max)",
+        "value": 1776,
+        "published_range": [
+          1766,
+          1786
+        ],
+        "published_plus_minus": 10,
+        "votes": 6086,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-4"
+      },
+      {
+        "rank": 5,
+        "rank_spread": [
+          4,
+          5
+        ],
+        "model_variant": "GPT-6.1 Sol (Max)",
+        "value": 1768,
+        "published_range": [
+          1753,
+          1783
+        ],
+        "published_plus_minus": 15,
+        "votes": 2443,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-5"
+      },
+      {
+        "rank": 6,
+        "rank_spread": [
+          6,
+          6
+        ],
+        "model_variant": "Claude Sonnet 5.5 (High)",
+        "value": 1741,
+        "published_range": [
+          1730,
+          1752
+        ],
+        "published_plus_minus": 11,
+        "votes": 4088,
+        "preliminary": false,
+        "effort": "high",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-6"
+      },
+      {
+        "rank": 7,
+        "rank_spread": [
+          7,
+          8
+        ],
+        "model_variant": "Claude Opus 5 (Max)",
+        "value": 1711,
+        "published_range": [
+          1704,
+          1718
+        ],
+        "published_plus_minus": 7,
+        "votes": 14290,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-7"
+      },
+      {
+        "rank": 8,
+        "rank_spread": [
+          7,
+          17
+        ],
+        "model_variant": "Gemini 4 Argon (High)",
+        "value": 1688,
+        "published_range": [
+          1669,
+          1707
+        ],
+        "published_plus_minus": 19,
+        "votes": 1272,
+        "preliminary": true,
+        "effort": "high",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-8"
+      },
+      {
+        "rank": 9,
+        "rank_spread": [
+          8,
+          15
+        ],
+        "model_variant": "GPT-6 Sol (Max)",
+        "value": 1687,
+        "published_range": [
+          1675,
+          1699
+        ],
+        "published_plus_minus": 12,
+        "votes": 3572,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-9"
+      },
+      {
+        "rank": 10,
+        "rank_spread": [
+          8,
+          14
+        ],
+        "model_variant": "Qwen3.8-Max (0902)",
+        "value": 1686,
+        "published_range": [
+          1678,
+          1694
+        ],
+        "published_plus_minus": 8,
+        "votes": 11437,
+        "preliminary": true,
+        "effort": null,
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-10"
+      },
+      {
+        "rank": 11,
+        "rank_spread": [
+          8,
+          17
+        ],
+        "model_variant": "Qwen3.8-Max",
+        "value": 1679,
+        "published_range": [
+          1666,
+          1692
+        ],
+        "published_plus_minus": 13,
+        "votes": 2912,
+        "preliminary": true,
+        "effort": null,
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-11"
+      },
+      {
+        "rank": 12,
+        "rank_spread": [
+          8,
+          17
+        ],
+        "model_variant": "Claude Opus 5 (High)",
+        "value": 1677,
+        "published_range": [
+          1671,
+          1683
+        ],
+        "published_plus_minus": 6,
+        "votes": 19590,
+        "preliminary": false,
+        "effort": "high",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-12"
+      },
+      {
+        "rank": 13,
+        "rank_spread": [
+          8,
+          17
+        ],
+        "model_variant": "Muse Spark 1.3 (Max)",
+        "value": 1674,
+        "published_range": [
+          1665,
+          1683
+        ],
+        "published_plus_minus": 9,
+        "votes": 7259,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-13"
+      },
+      {
+        "rank": 14,
+        "rank_spread": [
+          8,
+          20
+        ],
+        "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+        "value": 1673,
+        "published_range": [
+          1656,
+          1690
+        ],
+        "published_plus_minus": 17,
+        "votes": 1436,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-14"
+      },
+      {
+        "rank": 15,
+        "rank_spread": [
+          9,
+          17
+        ],
+        "model_variant": "Kimi K3 (Max)",
+        "value": 1669,
+        "published_range": [
+          1662,
+          1676
+        ],
+        "published_plus_minus": 7,
+        "votes": 15603,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-15"
+      },
+      {
+        "rank": 16,
+        "rank_spread": [
+          11,
+          21
+        ],
+        "model_variant": "Grok 4.7 (xHigh)",
+        "value": 1660,
+        "published_range": [
+          1649,
+          1671
+        ],
+        "published_plus_minus": 11,
+        "votes": 4018,
+        "preliminary": false,
+        "effort": "xhigh",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-16"
+      },
+      {
+        "rank": 17,
+        "rank_spread": [
+          11,
+          25
+        ],
+        "model_variant": "Muse Wonder (Max)",
+        "value": 1655,
+        "published_range": [
+          1639,
+          1671
+        ],
+        "published_plus_minus": 16,
+        "votes": 1688,
+        "preliminary": false,
+        "effort": "max",
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-17"
+      },
+      {
+        "rank": 18,
+        "rank_spread": [
+          15,
+          25
+        ],
+        "model_variant": "MiMo-V2.6-Flash",
+        "value": 1651,
+        "published_range": [
+          1640,
+          1662
+        ],
+        "published_plus_minus": 11,
+        "votes": 4113,
+        "preliminary": false,
+        "effort": null,
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-18"
+      },
+      {
+        "rank": 19,
+        "rank_spread": [
+          15,
+          25
+        ],
+        "model_variant": "Hy4 preview",
+        "value": 1650,
+        "published_range": [
+          1639,
+          1661
+        ],
+        "published_plus_minus": 11,
+        "votes": 3799,
+        "preliminary": true,
+        "effort": null,
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-19"
+      },
+      {
+        "rank": 20,
+        "rank_spread": [
+          15,
+          25
+        ],
+        "model_variant": "Qwen3.8-Flash-Next",
+        "value": 1648,
+        "published_range": [
+          1639,
+          1657
+        ],
+        "published_plus_minus": 9,
+        "votes": 6590,
+        "preliminary": true,
+        "effort": null,
+        "harness": null,
+        "harness_version": null,
+        "tool_budget": null,
+        "evaluation_date": null,
+        "model_release_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "source_row_key": "webdev-frontend-2026-10-18-rank-20"
+      }
+    ]
+  },
+  "source_reviews": [
+    {
+      "ids": [
+        "design-arena-frontend"
+      ],
+      "source_urls": [
+        "https://www.designarena.ai/about",
+        "https://www.designarena.ai/models/claude-opus-5-5"
+      ],
+      "decision": "source_only",
+      "finding": "Anonymous four-model design tournaments produce five pairwise votes and Bradley-Terry preference ratings. Overall Frontend, Website, Web Apps, Fullstack and Image to HTML are separate categories. The dynamic model page changed during review, and its all-category tournament count is not a category sample size; no synchronized category score imported."
+    },
+    {
+      "ids": [
+        "design2code-v3-484"
+      ],
+      "source_urls": [
+        "https://salt-nlp.github.io/Design2Code/",
+        "https://github.com/NoviScl/Design2Code"
+      ],
+      "decision": "preserve_historical",
+      "finding": "484 screenshot-to-code webpage cases from C4; HARD has a separate 80-case set. Visual, element, text, position and color measurements and prompt variants must stay separate. No verified new frontier model result found."
+    },
+    {
+      "ids": [
+        "frontendbench-2025-paper",
+        "webgen-bench-2025",
+        "cattest-2026"
+      ],
+      "source_urls": [
+        "https://arxiv.org/abs/2506.13832",
+        "https://arxiv.org/abs/2505.03733",
+        "https://github.com/harbor-framework/harbor/blob/main/adapters/webgen_bench/README.md",
+        "https://arxiv.org/abs/2609.00081"
+      ],
+      "decision": "source_only",
+      "finding": "FrontendBench has 148 prompt/test pairs; WebGen-Bench tests generated website behavior with 647 interaction tests and requires harness-specific timeout disclosure. CATTest covers bug discovery in 102 generated apps, not generation quality. No comparable current frontier functional completion table verified."
+    },
+    {
+      "ids": [
+        "bench2drive"
+      ],
+      "source_urls": [
+        "https://github.com/Thinklab-SJTU/Bench2Drive/blob/0.0.4/README.md"
+      ],
+      "decision": "retain_existing_scores",
+      "finding": "August 6 v0.0.4 release has 1,100 uniform training routes and a separate 220-route validation benchmark. Existing plotted v0.0.4 rows already include LEAD Driving Score 95.59 / Success Rate 87.28 and Simlingo 86.55 / 70.45. System run dates remain unavailable."
+    },
+    {
+      "ids": [
+        "behavior-challenge-2026"
+      ],
+      "source_urls": [
+        "https://behavior.stanford.edu/challenge/index.html",
+        "https://behavior.stanford.edu/challenge/baselines.html"
+      ],
+      "decision": "source_only",
+      "finding": "2026 challenge has 100 tasks in seven scenes. Submission deadline was October 16; winners are scheduled November 4. Baseline instructions require BEHAVIOR-1K v3.9.3 for evaluation compatibility. No winners claimed before announcement."
+    },
+    {
+      "ids": [
+        "healthbench-professional",
+        "mentalhealthbench"
+      ],
+      "source_urls": [
+        "https://openai.com/index/making-chatgpt-better-for-clinicians/",
+        "https://openai.com/index/introducing-mentalhealthbench/"
+      ],
+      "decision": "retain_existing_cohorts",
+      "finding": "HealthBench Professional separates base models from the ChatGPT for Clinicians tool system. MentalHealthBench uses synthetic conversations and expert-consensus rubrics, with GPT-5.6 Sol automated grading; the frontier comparison is dated September 23. Neither source supports a new commensurate October 19 score for the existing cards."
+    }
+  ]
+}

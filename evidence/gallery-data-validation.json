@@ -1,6 +1,12 @@
 {
-  "cards": 88,
-  "coverageCards": 54,
+  "cards": 89,
+  "coverageCards": 55,
+  "octoberSelectedRows": 20,
+  "octoberInputSHA256": {
+    "data/benchmark-refresh-2026-10-19/source-packet.json": "7c5b4bff9f8e0ab96d8cfc9d88899f027c20e7ee8d74e9576ed3d63c7885a4a5",
+    "data/benchmark-refresh-2026-10-19/evidence-manifest.json": "d6e1bc69f9225f27ef839686c8d4ffa31cea066980fed07db16703f4cfd3d747"
+  },
+  "octoberProjectionSHA256": "b424bac7867e0497c4044851a8a7615520727c78eb8417a4a8ccb950fab95620",
   "argonMeasurements": {
     "google": 19,
     "aa": 10

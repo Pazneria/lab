@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = require("../scripts/build-gallery-gemini-argon-2026-10-15.cjs")().coverage;
+const coverage = require("../scripts/build-gallery-refresh-2026-10-19.cjs")().coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,15 +183,15 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 88);
-    assert.equal(await page.locator(".mini-graph svg").count(), 79);
+    assert.equal(await page.locator(".benchmark-card").count(), 89);
+    assert.equal(await page.locator(".mini-graph svg").count(), 80);
     pass(
-      "Default gallery groups result families without empty cards; all 88 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 89 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
       assert.equal(await page.locator(".coverage-chart").count(), 1);
-      if ([...coverage.refresh.card_ids, ...coverage.model_updates.card_ids].includes(card.id)) {
+      if ([...coverage.refresh.card_ids, ...coverage.model_updates.card_ids, ...coverage.benchmark_updates.card_ids].includes(card.id)) {
         const inputLink = page.locator("a").filter({ hasText: /^Read the supplied original research input$/ });
         assert.equal(await inputLink.getAttribute("href"), card.source_input);
       }
@@ -215,7 +215,7 @@ async function main() {
       }
     }
     pass(
-      "All 54 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 55 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
     // The selected Argon records retain evaluator and metric boundaries.
     await go("benchmarks.html?q=gemini%204%20argon");
@@ -248,6 +248,18 @@ async function main() {
     }
     await page.setViewportSize({ width: 1440, height: 1000 });
     pass("Argon reports and selected cohorts preserve distinct evaluator values, score directions and mobile controls");
+    // October 18 Frontend preference remains distinct from fidelity and function checks.
+    await go("results.html?benchmark=webdev-arena-frontend-2026-10-18");
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 20);
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"), "1848");
+    assert.equal(await page.locator(".confidence-interval").count(), 0);
+    assert.equal(await page.locator(".reported-interval").count(), 12);
+    assert.match(await page.locator(".coverage-chart").innerText(), /unspecified confidence level/);
+    await page.setViewportSize({ width: 320, height: 844 });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false);
+    await axe("October 18 Frontend mobile");
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    pass("October 18 Frontend selected rows, dated interval meaning, sources and mobile controls verified");
     // October 12 views retain their typed uncertainty and exact memberships.
     await go("results.html?benchmark=webdev-arena-frontend-2026-10-08");
     assert.equal(await page.locator(".chart-table tbody tr").count(), 142);
