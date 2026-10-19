@@ -1,17 +1,31 @@
 "use strict";
-// Cloud-only comparison to the frozen source revision; no generated writes.
-const { execFileSync } = require("node:child_process"), assert = require("node:assert/strict"), path = require("node:path");
-const root = path.resolve(__dirname, ".."), baseline = "98070799927edd6bda1a29a6518027443d3ad841";
+const { execFileSync } = require("node:child_process");
+const assert = require("node:assert/strict");
+const path = require("node:path");
+const root = path.resolve(__dirname, "..");
+const baseline = "818a45b6116246117baa189ab31641b3af70a273";
 const allowed = new Set([
-  "data/gemini-4-argon-2026-10-15/source-packet.json", "data/gemini-4-argon-2026-10-15/evidence-manifest.json",
-  "scripts/build-gallery-gemini-argon-2026-10-15.cjs", "tests/verify-gemini-argon.cjs", "docs/GEMINI-4-ARGON-2026-10-15.md",
-  "data/gallery-gemini-argon-projection-2026-10-15.json", "data/gallery-metadata-2026-10-15.json",
-  ".gitattributes", ".github/workflows/benchmark-refresh-2026-10-12.yml",
-  "README.md", "docs/BENCHMARK-REFRESH-2026-10-12.md", "index.html", "benchmarks.html", "assets/gallery.js", "assets/coverage-graphs.js",
-  "scripts/build-gallery.cjs", "scripts/build-gallery-refresh-2026-10-12.cjs", "scripts/summarize-benchmark-ci.cjs", "scripts/verify-benchmark-ci-toolchain.cjs", "scripts/verify-benchmark-refresh-boundary.cjs",
-  "tests/benchmark-ci-toolchain-2026-10-12.json", "tests/verify-benchmark-refresh.cjs", "tests/verify-benchmark-refresh-ui.cjs", "tests/verify-coverage.cjs", "tests/verify-gallery-navigation.cjs", "tests/verify-gallery-return.cjs",
-  "assets/gallery-data.js", "data/gallery-refresh-projection-2026-10-12.json", "data/gallery-metadata-2026-10-12.json", "evidence/gallery-data-validation.json",
+  ".gitattributes",
+  ".github/workflows/benchmark-refresh-2026-10-12.yml",
+  "README.md", "index.html", "benchmarks.html",
+  "assets/gallery.js", "assets/coverage-graphs.js", "assets/gallery-data.js",
+  "data/benchmark-refresh-2026-10-19/source-packet.json",
+  "data/benchmark-refresh-2026-10-19/evidence-manifest.json",
+  "data/gallery-refresh-projection-2026-10-19.json",
+  "data/gallery-metadata-2026-10-19.json",
+  "docs/BENCHMARK-REFRESH-2026-10-19.md",
+  "evidence/gallery-data-validation.json",
+  "scripts/build-gallery-refresh-2026-10-19.cjs",
+  "scripts/build-gallery.cjs",
+  "scripts/verify-benchmark-refresh-boundary.cjs",
+  "tests/verify-benchmark-2026-10-19.cjs",
+  "tests/verify-gemini-argon.cjs",
+  "tests/verify-coverage.cjs",
+  "tests/verify-gallery-navigation.cjs",
+  "tests/verify-gallery-return.cjs",
 ]);
 const changed = execFileSync("git", ["diff", "--name-only", baseline, "HEAD"], { cwd: root, encoding: "utf8" }).trim().split("\n").filter(Boolean);
-for (const file of changed) assert.ok(allowed.has(file), "Outside bounded benchmark refresh: " + file);
-console.log(JSON.stringify({ passed: true, baseline, changed, sourceAndProtectedRootsUnchanged: true }));
+for (const file of changed) assert.ok(allowed.has(file), "Outside October 19 benchmark refresh: " + file);
+assert.ok(changed.includes("data/benchmark-refresh-2026-10-19/source-packet.json"));
+assert.ok(changed.includes("assets/gallery-data.js"));
+console.log(JSON.stringify({ passed: true, baseline, changed, protectedRootsUnchanged: true }));

@@ -10917,13 +10917,13 @@ window.LAB_GALLERY = {
     "behavior-challenge-2026": {
       "question": "Can it complete long household tasks in simulation?",
       "matters": "Household activities can involve many dependent steps. A simulator offers repeatable tasks for studying planning and manipulation.",
-      "read": "Partial goal-predicate satisfaction is not full task success. Self-reported, verified and archived results must stay distinct, and simulation does not establish reliability in a real home."
+      "read": "The 2026 challenge covers 100 tasks and seven scenes. Submissions closed October 16; the winners announcement is scheduled for November 4. Baseline evaluation instructions require BEHAVIOR-1K v3.9.3. Self-reported, verified and archived results stay separate; no winner score is inferred."
     },
     "bench2drive": {
       "question": "Can a driving system react to a changing road?",
-      "tests": "Complete sensor-and-control systems drive through 220 routes in CARLA under the v0.0.4 protocol. All routes count, including failures.",
+      "tests": "Complete sensor-and-control systems drive through the separate 220-route v0.0.4 validation benchmark in CARLA. The August 6 release also supplied 1,100 uniform training routes, which are not evaluation routes.",
       "matters": "Closed-loop driving reveals how a system responds after its own actions change the scene.",
-      "read": "Driving Score and route success are different outcomes. These simulator results do not establish on-road safety, and the system evaluation dates remain unknown.",
+      "read": "The existing v0.0.4 comparison already includes LEAD and Simlingo. Driving Score and route success are separate simulator outcomes; system evaluation dates and on-road safety are not established.",
       "notice": "Official repository comparisons, not independent safety audits. Driving Score, Success Rate, Efficiency and ability mean have distinct units; never average them. Row evaluation dates unavailable; maintained repo is not evidence of newly rerun systems.",
       "date": "Source checked October 5, 2026; individual evaluation dates remain separately labeled"
     },
@@ -11000,7 +11000,7 @@ window.LAB_GALLERY = {
     "healthbench-professional": {
       "question": "How well does an AI answer professional medical questions under a detailed rubric?",
       "matters": "Medical tasks test careful use of information and workflow tools. This controlled benchmark result does not establish that a system is safe for clinical use.",
-      "read": "Higher means a higher length-adjusted rubric score within this source cohort. developer-reported comparison, not independent clinical validation 2000-character reference, 1.47 score points per 500 characters; longer penalized and shorter receive positive adjustment Use corrected live table. Search snippets/launch material may retain superseded Astra 63.4 adjusted / 69.5 raw. This is a distinct series from original HealthBench, Hard, Consensus and MedAgentBench. Medical benchmark score does not establish clinical qualification or real-patient safety.",
+      "read": "HealthBench Professional evaluates care consult, documentation and medical research conversations with physician-authored rubrics. Base-model scores and the ChatGPT for Clinicians tool system are different setups. Existing corrected length-adjusted source cohorts remain; no October 19 score is inferred.",
       "notice": "No paired cost or elapsed-time results supplied; values remain null",
       "date": "Developer report: September 3, 2026; corrected September 22; run dates unavailable"
     },
@@ -11095,7 +11095,7 @@ window.LAB_GALLERY = {
       "question": "How closely can AI rebuild a website from its screenshot?",
       "tests": "A model receives a reference screenshot and generates HTML and CSS. The historical 484-page evaluation measures content blocks, text, position, color and CLIP visual similarity separately. The default graph compares four Direct configurations; the separate GPT-4o method view compares Direct, Text augmented and Self revision prompting.",
       "matters": "Recreating a layout requires matching both the page structure and its appearance. A model can reproduce the words while placing elements incorrectly, which is why the five dimensions answer different questions. None of these measurements verifies that a form submits correctly or a browser workflow finishes.",
-      "read": "Choose one similarity dimension and compare its 0–100 scores within that view. Higher means a closer match under that metric, not a percentage of working websites. Use the comparison selector to inspect GPT-4o’s prompting methods; their inputs and generation budgets differ. The five metrics are never averaged, and the separate 80-case HARD cohort is not included.",
+      "read": "The historical 484 C4 screenshot cases and separate HARD 80 cases measure visual reconstruction, with element, text, position, color and CLIP dimensions kept separate. Direct and prompted method variants stay distinct. No current frontier screenshot result is verified here; this does not test interactive feature completion.",
       "date": "Paper revision February 9, 2025 · historical 484-page cohort · evaluation dates unknown · checked October 5, 2026",
       "notice": "This is a historical screenshot-fidelity comparison. Exact model snapshots and prompting methods remain in the details; cost, time and uncertainty were not reported."
     },
@@ -11103,7 +11103,7 @@ window.LAB_GALLERY = {
       "question": "Which AI-generated website designs do voters like?",
       "tests": "Anonymous tournaments compare four generated designs and collect five pairwise votes. The creator fits Bradley-Terry preference ratings from those choices. This card follows the Overall Frontend text-to-HTML track, which is separate from image-to-HTML, web-app and fullstack tracks.",
       "matters": "Design preference can capture whether a page feels coherent and appealing. It complements tests of visual fidelity and working features, because a popular design does not necessarily reproduce a reference or implement every requested behavior.",
-      "read": "Open the creator’s leaderboard and methodology in Sources. The earlier text retrieval did not expose numerical rows. A later isolated browser read showed rating labels, but a dated set of configurations has not been admitted in this increment. This card links the live board without plotting an unreviewed comparison; the changelog date is not an evaluation date.",
+      "read": "Anonymous four-model tournaments produce five pairwise preference votes and Bradley-Terry ratings. Overall Frontend, Website, Web Apps, Fullstack and Image to HTML are separate categories. October 19 model-page values moved during review, and all-category tournament totals do not supply category sample sizes; no synchronized score is plotted.",
       "date": "Primary source checked October 5, 2026 · browser rating labels observed · numeric comparison not admitted",
       "notice": "The live board contains rating labels; no dated comparison, task cost or time values have been admitted for plotting here."
     },
@@ -11182,7 +11182,7 @@ window.LAB_GALLERY = {
       "question": "Does a response meet a mental-health conversation rubric?",
       "tests": "Models respond to 1,215 synthetic conversations spanning non-acute, high-acuity and emergent scenarios. Four samples per task are assessed against a detailed response rubric.",
       "matters": "Different conversation situations require different responses. A rubric can reveal shortcomings within this synthetic evaluation, while treatment efficacy needs separate clinical evidence.",
-      "read": "Maximum-effort system-card results and default-effort paper results are separate cohorts. The maximum-effort table reports one standard error across task means, not confidence intervals. Cost and time are unavailable, and these scores do not establish therapy efficacy or clinical safety.",
+      "read": "The synthetic conversation benchmark uses expert-consensus rubrics and GPT-5.6 Sol automated grading. The source's newest-provider comparison is dated September 23. Maximum-effort system-card and default-effort paper results remain separate; score error bars have their source-specific definitions. No clinical efficacy conclusion follows.",
       "date": "Source published 2026-09-29; reviewed October 12"
     },
     "robochallenge-table30-v2": {
@@ -11435,6 +11435,13 @@ window.LAB_GALLERY = {
       "matters": "The new model can be inspected without treating results from different evaluators, tasks or harnesses as one ranking.",
       "read": "These are selected Argon observations, not a complete refreshed leaderboard. Each selector changes the benchmark or measurement; rows are never pooled across benchmarks. Exact run dates, generic cost/time and numerical uncertainty are unknown. Announcement on September 30, broad availability on October 13 and source review on October 15 are different dates. AA's AutomationBench-AA 78% differs from Google's private-set 51.3%; AA's rounded Terminal result 57% differs from Google's 57.4%. The 53-point Intelligence Index result is directly reported; the $1.99 introductory index-task cost is kept only in that setup's details.",
       "date": "Source checked October 15, 2026; run dates not reported"
+    },
+    "webdev-arena-frontend-2026-10-18": {
+      "question": "Which generated websites did people prefer in the October 18 Frontend view?",
+      "tests": "Code Arena voters compare HTML or React website work in the WebDev Frontend category. This dated view selects the first 20 rows from a 147-model table with 790,403 page-wide votes.",
+      "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
+      "read": "These are 20 selected preference ratings, with each model row's own vote count and the source's published score range. The interval confidence level is not specified. Preserve effort suffixes and harness labels; exact per-row tools, cost, time and run dates are unavailable. The October 8 complete 142-row table remains a separate older cohort.",
+      "date": "Arena Frontend table dated October 18, 2026; reviewed October 19"
     }
   },
   "frontend": {
@@ -12016,14 +12023,14 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-10-15",
-    "basis": "Earlier archived metadata retained; selected Gemini 4 Argon source observations added with separate evaluator and run-date semantics.",
+    "prepared_at": "2026-10-19",
+    "basis": "Earlier archived results retained; October 18 WebDev Frontend preference selection added with a separate date and six existing source areas rechecked October 19.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 88,
-      "plotted": 79,
+      "all": 89,
+      "plotted": 80,
       "current": 54,
-      "historical": 27,
+      "historical": 28,
       "source_only": 7,
       "unavailable": 2,
       "default_families": 60
@@ -12345,10 +12352,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
-          "mode": "parent_source_audit",
-          "scope": "Table29 corrected September22 values match all seven Oct1 rows.",
-          "audit_status": "no_numeric_change_verified"
+          "date": "2026-10-19",
+          "mode": "primary_source_recheck",
+          "scope": "HealthBench Professional separates base models from the ChatGPT for Clinicians tool system. MentalHealthBench uses synthetic conversations and expert-consensus rubrics, with GPT-5.6 Sol automated grading; the frontier comparison is dated September 23. Neither source supports a new commensurate October 19 score for the existing cards.",
+          "audit_status": "retain_existing_cohorts"
         },
         "result_packet_checked_at": "2026-10-01",
         "snapshot_at": null,
@@ -12368,7 +12375,8 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 7
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
       },
       "medagentbench-v2-revised-original-tasks": {
         "evidence": "plotted",
@@ -13292,10 +13300,10 @@ window.LAB_GALLERY = {
           "basis": "Launched July 2, 2026; submissions due October 16 and winners scheduled November 4. Prior research found self-reported results but an empty verified-results file."
         },
         "source_review": {
-          "date": "2026-10-05",
-          "mode": "parent_source_audit",
-          "scope": "Verified results.jsonl and per_task_results.jsonl remain empty. October1 Zero-Shot Butlers self-report covers50tasks/500episodes, not100tasks/1000episodes; no unified ranking recommended.",
-          "audit_status": "self_reported_new_subset_only"
+          "date": "2026-10-19",
+          "mode": "primary_source_recheck",
+          "scope": "2026 challenge has 100 tasks in seven scenes. Submission deadline was October 16; winners are scheduled November 4. Baseline instructions require BEHAVIOR-1K v3.9.3 for evaluation compatibility. No winners claimed before announcement.",
+          "audit_status": "source_only"
         },
         "result_packet_checked_at": null,
         "snapshot_at": "2026-09-30",
@@ -13303,7 +13311,8 @@ window.LAB_GALLERY = {
         "publication_label": null,
         "evaluations": [],
         "model_releases": null,
-        "unavailable_reason": null
+        "unavailable_reason": null,
+        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
       },
       "bench2drive": {
         "evidence": "plotted",
@@ -13315,9 +13324,10 @@ window.LAB_GALLERY = {
           "basis": "Recovered research observed v0.0.4 repository results on September 30, 2026; individual row dates were not supplied."
         },
         "source_review": {
-          "date": "2026-10-05",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research, decoded from 15 direct JSON parts. Pinned RuneBench and EQ source files independently parsed; no evaluation was executed."
+          "date": "2026-10-19",
+          "mode": "primary_source_recheck",
+          "scope": "August 6 v0.0.4 release has 1,100 uniform training routes and a separate 220-route validation benchmark. Existing plotted v0.0.4 rows already include LEAD Driving Score 95.59 / Success Rate 87.28 and Simlingo 86.55 / 70.45. System run dates remain unavailable.",
+          "audit_status": "retain_existing_scores"
         },
         "result_packet_checked_at": "2026-10-05",
         "snapshot_at": null,
@@ -13337,7 +13347,8 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 10
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
       },
       "waymo-onroad-safety": {
         "evidence": "source_only",
@@ -13394,17 +13405,18 @@ window.LAB_GALLERY = {
         "cohort_basis": "No scored cohort admitted; source access and protocol review are different questions.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source research; not a new poll by this UI change.",
-          "audit_status": null
+          "date": "2026-10-19",
+          "mode": "primary_source_recheck",
+          "scope": "Anonymous four-model design tournaments produce five pairwise votes and Bradley-Terry preference ratings. Overall Frontend, Website, Web Apps, Fullstack and Image to HTML are separate categories. The dynamic model page changed during review, and its all-category tournament count is not a category sample size; no synchronized category score imported.",
+          "audit_status": "source_only"
         },
         "result_packet_checked_at": null,
         "snapshot_at": null,
         "publication_at": null,
         "publication_label": null,
         "evaluations": [],
-        "model_releases": null
+        "model_releases": null,
+        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
       },
       "design2code-v3-484": {
         "evidence": "plotted",
@@ -13412,10 +13424,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Fixed author-paper Table 1 cohort; historical model labels and prompting setups remain intact.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-05",
-          "mode": "parent_source_audit",
-          "scope": "Official code repository latest commit remains November2,2024; paper latest revision remains February9,2025.",
-          "audit_status": "historical_source"
+          "date": "2026-10-19",
+          "mode": "primary_source_recheck",
+          "scope": "484 screenshot-to-code webpage cases from C4; HARD has a separate 80-case set. Visual, element, text, position and color measurements and prompt variants must stay separate. No verified new frontier model result found.",
+          "audit_status": "preserve_historical"
         },
         "result_packet_checked_at": "2026-10-05",
         "snapshot_at": null,
@@ -13430,7 +13442,8 @@ window.LAB_GALLERY = {
             "unknown": 6
           }
         ],
-        "model_releases": null
+        "model_releases": null,
+        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
       },
       "webcraftbench-v3": {
         "evidence": "plotted",
@@ -14309,8 +14322,8 @@ window.LAB_GALLERY = {
       },
       "webdev-arena-frontend-2026-10-08": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
+        "cohort": "historical",
+        "cohort_basis": "Complete October 8 table retained as the earlier Frontend snapshot; October 18 selected rows form a separate card.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-10-12",
@@ -14606,9 +14619,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-12",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+          "date": "2026-10-19",
+          "mode": "primary_source_recheck",
+          "scope": "HealthBench Professional separates base models from the ChatGPT for Clinicians tool system. MentalHealthBench uses synthetic conversations and expert-consensus rubrics, with GPT-5.6 Sol automated grading; the frontier comparison is dated September 23. Neither source supports a new commensurate October 19 score for the existing cards.",
+          "audit_status": "retain_existing_cohorts"
         },
         "result_packet_checked_at": "2026-10-12",
         "snapshot_at": null,
@@ -14636,7 +14650,8 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 23
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
       },
       "robochallenge-table30-v2": {
         "evidence": "plotted",
@@ -14957,6 +14972,36 @@ window.LAB_GALLERY = {
           "latest": "2026-09-30",
           "known": 5,
           "unknown": 0
+        }
+      },
+      "webdev-arena-frontend-2026-10-18": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Dated October 18 Frontend preference snapshot, first 20 of 147 displayed model rows; not a complete board.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-19",
+          "mode": "primary_source_review",
+          "scope": "Direct Arena Frontend table transcription; independent evaluation not run."
+        },
+        "result_packet_checked_at": "2026-10-19",
+        "snapshot_at": "2026-10-18",
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 18 · first 20 of 147 displayed models",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 20
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 20
         }
       }
     }
@@ -50068,6 +50113,1131 @@ window.LAB_GALLERY = {
             "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
         ]
+      },
+      {
+        "id": "webdev-arena-frontend-2026-10-18",
+        "name": "WebDev Arena · Frontend · October 18",
+        "category": "frontend",
+        "question": "Which generated websites did people prefer in the October 18 Frontend view?",
+        "tests": "Code Arena voters compare HTML or React website work in the WebDev Frontend category. This dated view selects the first 20 rows from a 147-model table with 790,403 page-wide votes.",
+        "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
+        "read": "These are 20 selected preference ratings, with each model row's own vote count and the source's published score range. The interval confidence level is not specified. Preserve effort suffixes and harness labels; exact per-row tools, cost, time and run dates are unavailable. The October 8 complete 142-row table remains a separate older cohort.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-10-19/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-19/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-19",
+        "variants": [
+          {
+            "id": "webdev-arena-frontend-2026-10-18",
+            "label": "October 18 · first 20 of 147 displayed models",
+            "rows": [
+              {
+                "rank": 1,
+                "rank_spread": [
+                  1,
+                  1
+                ],
+                "model_variant": "Claude Opus 5.5 (Max)",
+                "value": 1848,
+                "published_range": [
+                  1831,
+                  1865
+                ],
+                "published_plus_minus": 17,
+                "votes": 2114,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-1",
+                "label": "Claude Opus 5.5 (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-1",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 1,
+                  "rank_spread": [
+                    1,
+                    1
+                  ],
+                  "model_variant": "Claude Opus 5.5 (Max)",
+                  "value": 1848,
+                  "published_range": [
+                    1831,
+                    1865
+                  ],
+                  "published_plus_minus": 17,
+                  "votes": 2114,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-1"
+                }
+              },
+              {
+                "rank": 2,
+                "rank_spread": [
+                  2,
+                  3
+                ],
+                "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                "value": 1808,
+                "published_range": [
+                  1793,
+                  1823
+                ],
+                "published_plus_minus": 15,
+                "votes": 2619,
+                "preliminary": false,
+                "effort": "xhigh",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-2",
+                "label": "Claude Sonnet 5.5 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-18-rank-2",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 2,
+                  "rank_spread": [
+                    2,
+                    3
+                  ],
+                  "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                  "value": 1808,
+                  "published_range": [
+                    1793,
+                    1823
+                  ],
+                  "published_plus_minus": 15,
+                  "votes": 2619,
+                  "preliminary": false,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-2"
+                }
+              },
+              {
+                "rank": 3,
+                "rank_spread": [
+                  2,
+                  4
+                ],
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 1797,
+                "published_range": [
+                  1786,
+                  1808
+                ],
+                "published_plus_minus": 11,
+                "votes": 4941,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-3",
+                "label": "GPT-6 Astra (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-3",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 3,
+                  "rank_spread": [
+                    2,
+                    4
+                  ],
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 1797,
+                  "published_range": [
+                    1786,
+                    1808
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 4941,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-3"
+                }
+              },
+              {
+                "rank": 4,
+                "rank_spread": [
+                  3,
+                  5
+                ],
+                "model_variant": "Claude Fable 5.1 (Max)",
+                "value": 1776,
+                "published_range": [
+                  1766,
+                  1786
+                ],
+                "published_plus_minus": 10,
+                "votes": 6086,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-4",
+                "label": "Claude Fable 5.1 (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-4",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 4,
+                  "rank_spread": [
+                    3,
+                    5
+                  ],
+                  "model_variant": "Claude Fable 5.1 (Max)",
+                  "value": 1776,
+                  "published_range": [
+                    1766,
+                    1786
+                  ],
+                  "published_plus_minus": 10,
+                  "votes": 6086,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-4"
+                }
+              },
+              {
+                "rank": 5,
+                "rank_spread": [
+                  4,
+                  5
+                ],
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 1768,
+                "published_range": [
+                  1753,
+                  1783
+                ],
+                "published_plus_minus": 15,
+                "votes": 2443,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-5",
+                "label": "GPT-6.1 Sol (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-5",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 5,
+                  "rank_spread": [
+                    4,
+                    5
+                  ],
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 1768,
+                  "published_range": [
+                    1753,
+                    1783
+                  ],
+                  "published_plus_minus": 15,
+                  "votes": 2443,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-5"
+                }
+              },
+              {
+                "rank": 6,
+                "rank_spread": [
+                  6,
+                  6
+                ],
+                "model_variant": "Claude Sonnet 5.5 (High)",
+                "value": 1741,
+                "published_range": [
+                  1730,
+                  1752
+                ],
+                "published_plus_minus": 11,
+                "votes": 4088,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-6",
+                "label": "Claude Sonnet 5.5 (High)",
+                "result_id": "webdev-frontend-2026-10-18-rank-6",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 6,
+                  "rank_spread": [
+                    6,
+                    6
+                  ],
+                  "model_variant": "Claude Sonnet 5.5 (High)",
+                  "value": 1741,
+                  "published_range": [
+                    1730,
+                    1752
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 4088,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-6"
+                }
+              },
+              {
+                "rank": 7,
+                "rank_spread": [
+                  7,
+                  8
+                ],
+                "model_variant": "Claude Opus 5 (Max)",
+                "value": 1711,
+                "published_range": [
+                  1704,
+                  1718
+                ],
+                "published_plus_minus": 7,
+                "votes": 14290,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-7",
+                "label": "Claude Opus 5 (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-7",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 7,
+                  "rank_spread": [
+                    7,
+                    8
+                  ],
+                  "model_variant": "Claude Opus 5 (Max)",
+                  "value": 1711,
+                  "published_range": [
+                    1704,
+                    1718
+                  ],
+                  "published_plus_minus": 7,
+                  "votes": 14290,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-7"
+                }
+              },
+              {
+                "rank": 8,
+                "rank_spread": [
+                  7,
+                  17
+                ],
+                "model_variant": "Gemini 4 Argon (High)",
+                "value": 1688,
+                "published_range": [
+                  1669,
+                  1707
+                ],
+                "published_plus_minus": 19,
+                "votes": 1272,
+                "preliminary": true,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-8",
+                "label": "Gemini 4 Argon (High)",
+                "result_id": "webdev-frontend-2026-10-18-rank-8",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 8,
+                  "rank_spread": [
+                    7,
+                    17
+                  ],
+                  "model_variant": "Gemini 4 Argon (High)",
+                  "value": 1688,
+                  "published_range": [
+                    1669,
+                    1707
+                  ],
+                  "published_plus_minus": 19,
+                  "votes": 1272,
+                  "preliminary": true,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-8"
+                }
+              },
+              {
+                "rank": 9,
+                "rank_spread": [
+                  8,
+                  15
+                ],
+                "model_variant": "GPT-6 Sol (Max)",
+                "value": 1687,
+                "published_range": [
+                  1675,
+                  1699
+                ],
+                "published_plus_minus": 12,
+                "votes": 3572,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-9",
+                "label": "GPT-6 Sol (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-9",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 9,
+                  "rank_spread": [
+                    8,
+                    15
+                  ],
+                  "model_variant": "GPT-6 Sol (Max)",
+                  "value": 1687,
+                  "published_range": [
+                    1675,
+                    1699
+                  ],
+                  "published_plus_minus": 12,
+                  "votes": 3572,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-9"
+                }
+              },
+              {
+                "rank": 10,
+                "rank_spread": [
+                  8,
+                  14
+                ],
+                "model_variant": "Qwen3.8-Max (0902)",
+                "value": 1686,
+                "published_range": [
+                  1678,
+                  1694
+                ],
+                "published_plus_minus": 8,
+                "votes": 11437,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-10",
+                "label": "Qwen3.8-Max (0902)",
+                "result_id": "webdev-frontend-2026-10-18-rank-10",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 10,
+                  "rank_spread": [
+                    8,
+                    14
+                  ],
+                  "model_variant": "Qwen3.8-Max (0902)",
+                  "value": 1686,
+                  "published_range": [
+                    1678,
+                    1694
+                  ],
+                  "published_plus_minus": 8,
+                  "votes": 11437,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-10"
+                }
+              },
+              {
+                "rank": 11,
+                "rank_spread": [
+                  8,
+                  17
+                ],
+                "model_variant": "Qwen3.8-Max",
+                "value": 1679,
+                "published_range": [
+                  1666,
+                  1692
+                ],
+                "published_plus_minus": 13,
+                "votes": 2912,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-11",
+                "label": "Qwen3.8-Max",
+                "result_id": "webdev-frontend-2026-10-18-rank-11",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 11,
+                  "rank_spread": [
+                    8,
+                    17
+                  ],
+                  "model_variant": "Qwen3.8-Max",
+                  "value": 1679,
+                  "published_range": [
+                    1666,
+                    1692
+                  ],
+                  "published_plus_minus": 13,
+                  "votes": 2912,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-11"
+                }
+              },
+              {
+                "rank": 12,
+                "rank_spread": [
+                  8,
+                  17
+                ],
+                "model_variant": "Claude Opus 5 (High)",
+                "value": 1677,
+                "published_range": [
+                  1671,
+                  1683
+                ],
+                "published_plus_minus": 6,
+                "votes": 19590,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-12",
+                "label": "Claude Opus 5 (High)",
+                "result_id": "webdev-frontend-2026-10-18-rank-12",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 12,
+                  "rank_spread": [
+                    8,
+                    17
+                  ],
+                  "model_variant": "Claude Opus 5 (High)",
+                  "value": 1677,
+                  "published_range": [
+                    1671,
+                    1683
+                  ],
+                  "published_plus_minus": 6,
+                  "votes": 19590,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-12"
+                }
+              },
+              {
+                "rank": 13,
+                "rank_spread": [
+                  8,
+                  17
+                ],
+                "model_variant": "Muse Spark 1.3 (Max)",
+                "value": 1674,
+                "published_range": [
+                  1665,
+                  1683
+                ],
+                "published_plus_minus": 9,
+                "votes": 7259,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-13",
+                "label": "Muse Spark 1.3 (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-13",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 13,
+                  "rank_spread": [
+                    8,
+                    17
+                  ],
+                  "model_variant": "Muse Spark 1.3 (Max)",
+                  "value": 1674,
+                  "published_range": [
+                    1665,
+                    1683
+                  ],
+                  "published_plus_minus": 9,
+                  "votes": 7259,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-13"
+                }
+              },
+              {
+                "rank": 14,
+                "rank_spread": [
+                  8,
+                  20
+                ],
+                "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "value": 1673,
+                "published_range": [
+                  1656,
+                  1690
+                ],
+                "published_plus_minus": 17,
+                "votes": 1436,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-14",
+                "label": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-14",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 14,
+                  "rank_spread": [
+                    8,
+                    20
+                  ],
+                  "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                  "value": 1673,
+                  "published_range": [
+                    1656,
+                    1690
+                  ],
+                  "published_plus_minus": 17,
+                  "votes": 1436,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-14"
+                }
+              },
+              {
+                "rank": 15,
+                "rank_spread": [
+                  9,
+                  17
+                ],
+                "model_variant": "Kimi K3 (Max)",
+                "value": 1669,
+                "published_range": [
+                  1662,
+                  1676
+                ],
+                "published_plus_minus": 7,
+                "votes": 15603,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-15",
+                "label": "Kimi K3 (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-15",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 15,
+                  "rank_spread": [
+                    9,
+                    17
+                  ],
+                  "model_variant": "Kimi K3 (Max)",
+                  "value": 1669,
+                  "published_range": [
+                    1662,
+                    1676
+                  ],
+                  "published_plus_minus": 7,
+                  "votes": 15603,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-15"
+                }
+              },
+              {
+                "rank": 16,
+                "rank_spread": [
+                  11,
+                  21
+                ],
+                "model_variant": "Grok 4.7 (xHigh)",
+                "value": 1660,
+                "published_range": [
+                  1649,
+                  1671
+                ],
+                "published_plus_minus": 11,
+                "votes": 4018,
+                "preliminary": false,
+                "effort": "xhigh",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-16",
+                "label": "Grok 4.7 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-18-rank-16",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 16,
+                  "rank_spread": [
+                    11,
+                    21
+                  ],
+                  "model_variant": "Grok 4.7 (xHigh)",
+                  "value": 1660,
+                  "published_range": [
+                    1649,
+                    1671
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 4018,
+                  "preliminary": false,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-16"
+                }
+              },
+              {
+                "rank": 17,
+                "rank_spread": [
+                  11,
+                  25
+                ],
+                "model_variant": "Muse Wonder (Max)",
+                "value": 1655,
+                "published_range": [
+                  1639,
+                  1671
+                ],
+                "published_plus_minus": 16,
+                "votes": 1688,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-17",
+                "label": "Muse Wonder (Max)",
+                "result_id": "webdev-frontend-2026-10-18-rank-17",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 17,
+                  "rank_spread": [
+                    11,
+                    25
+                  ],
+                  "model_variant": "Muse Wonder (Max)",
+                  "value": 1655,
+                  "published_range": [
+                    1639,
+                    1671
+                  ],
+                  "published_plus_minus": 16,
+                  "votes": 1688,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-17"
+                }
+              },
+              {
+                "rank": 18,
+                "rank_spread": [
+                  15,
+                  25
+                ],
+                "model_variant": "MiMo-V2.6-Flash",
+                "value": 1651,
+                "published_range": [
+                  1640,
+                  1662
+                ],
+                "published_plus_minus": 11,
+                "votes": 4113,
+                "preliminary": false,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-18",
+                "label": "MiMo-V2.6-Flash",
+                "result_id": "webdev-frontend-2026-10-18-rank-18",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 18,
+                  "rank_spread": [
+                    15,
+                    25
+                  ],
+                  "model_variant": "MiMo-V2.6-Flash",
+                  "value": 1651,
+                  "published_range": [
+                    1640,
+                    1662
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 4113,
+                  "preliminary": false,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-18"
+                }
+              },
+              {
+                "rank": 19,
+                "rank_spread": [
+                  15,
+                  25
+                ],
+                "model_variant": "Hy4 preview",
+                "value": 1650,
+                "published_range": [
+                  1639,
+                  1661
+                ],
+                "published_plus_minus": 11,
+                "votes": 3799,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-19",
+                "label": "Hy4 preview",
+                "result_id": "webdev-frontend-2026-10-18-rank-19",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 19,
+                  "rank_spread": [
+                    15,
+                    25
+                  ],
+                  "model_variant": "Hy4 preview",
+                  "value": 1650,
+                  "published_range": [
+                    1639,
+                    1661
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 3799,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-19"
+                }
+              },
+              {
+                "rank": 20,
+                "rank_spread": [
+                  15,
+                  25
+                ],
+                "model_variant": "Qwen3.8-Flash-Next",
+                "value": 1648,
+                "published_range": [
+                  1639,
+                  1657
+                ],
+                "published_plus_minus": 9,
+                "votes": 6590,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-18-rank-20",
+                "label": "Qwen3.8-Flash-Next",
+                "result_id": "webdev-frontend-2026-10-18-rank-20",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 20,
+                  "rank_spread": [
+                    15,
+                    25
+                  ],
+                  "model_variant": "Qwen3.8-Flash-Next",
+                  "value": 1648,
+                  "published_range": [
+                    1639,
+                    1657
+                  ],
+                  "published_plus_minus": 9,
+                  "votes": 6590,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-18-rank-20"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Arena Frontend preference rating · axis 1000–1900",
+                "field": "value",
+                "unit": "Arena rating points",
+                "domain": [
+                  1000,
+                  1900
+                ],
+                "direction": "higher_is_better",
+                "interval_field": "published_range",
+                "interval_kind": "published_interval"
+              }
+            ],
+            "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+            "source_locator": "October 18, 2026, Code Arena / WebDev / Frontend, ranks 1–20",
+            "settings": {
+              "category": "Code Arena / WebDev / Frontend; default domain and technology filters",
+              "displayed_total_votes": 790403,
+              "displayed_models": 147,
+              "selection": "First 20 displayed model rows; not a complete October 18 table.",
+              "workflow": "Page describes multi-step reasoning, tool use, and HTML or React generation; exact per-row harness, tools and budgets unverified.",
+              "row_harness_and_tools": null,
+              "row_tool_budget": null,
+              "task_cost_usd": null,
+              "task_time_seconds": null,
+              "interval_kind": "published interval; confidence coverage not specified on the table",
+              "vote_count_basis": "Per-row votes, distinct from the page-wide 790,403 votes."
+            },
+            "source_input": "data/benchmark-refresh-2026-10-19/source-packet.json",
+            "snapshot_at": "2026-10-18",
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-10-19",
+            "complete": false,
+            "coverage": "First 20 displayed model rows; not a complete October 18 table.",
+            "limitations": [
+              "This is a dated selection from a live preference table, not the complete 147-model table.",
+              "The table does not establish row evaluation dates, exact harness versions, tool budgets, task cost, task time, or interval confidence coverage.",
+              "Preference ratings are not screenshot reproduction scores or functional browser task pass rates."
+            ]
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -53002,6 +54172,7 @@ window.LAB_GALLERY = {
         "medagentbench"
       ],
       "webdev-arena-frontend": [
+        "webdev-arena-frontend-2026-10-18",
         "webdev-arena-frontend-2026-10-08",
         "webdev-arena-frontend"
       ],
@@ -87852,6 +89023,23 @@ window.LAB_GALLERY = {
         "aa-briefcase-v1-1",
         "aa-omniscience"
       ]
+    },
+    "benchmark_updates": {
+      "schema_version": 1,
+      "checked_at": "2026-10-19",
+      "source_snapshot_at": "2026-10-18",
+      "card_ids": [
+        "webdev-arena-frontend-2026-10-18"
+      ],
+      "source_input": "data/benchmark-refresh-2026-10-19/source-packet.json",
+      "reviewed_existing_ids": [
+        "design-arena-frontend",
+        "design2code-v3-484",
+        "bench2drive",
+        "behavior-challenge-2026",
+        "healthbench-professional",
+        "mentalhealthbench"
+      ]
     }
   },
   "expanded": {
@@ -102711,6 +103899,8 @@ window.LAB_GALLERY = {
       "data/benchmark-refresh-2026-10-12/evidence-manifest.json",
       "data/gemini-4-argon-2026-10-15/source-packet.json",
       "data/gemini-4-argon-2026-10-15/evidence-manifest.json",
+      "data/benchmark-refresh-2026-10-19/source-packet.json",
+      "data/benchmark-refresh-2026-10-19/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -102727,7 +103917,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-10-15.json",
+    "presentationMetadata": "data/gallery-metadata-2026-10-19.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

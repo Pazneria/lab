@@ -59,3 +59,8 @@ data/gallery-metadata-2026-10-12.json text eol=lf
 # Preserve exact dated Argon source packet; keep its generated delta portable.
 data/gemini-4-argon-2026-10-15/** -text
 data/gallery-gemini-argon-projection-2026-10-15.json text eol=lf
+
+# Preserve the reviewed October 19 source bytes and portable generated projections.
+data/benchmark-refresh-2026-10-19/** -text
+data/gallery-refresh-projection-2026-10-19.json text eol=lf
+data/gallery-metadata-2026-10-19.json text eol=lf

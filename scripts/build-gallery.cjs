@@ -73,7 +73,10 @@ assert.deepEqual(read("data/gallery-metadata-2026-10-12.json"), refresh.metadata
 const argon = require("./build-gallery-gemini-argon-2026-10-15.cjs")();
 assert.deepEqual(read("data/gallery-gemini-argon-projection-2026-10-15.json"), argon.projection);
 assert.deepEqual(read("data/gallery-metadata-2026-10-15.json"), argon.metadata);
-const cardMetadata = argon.metadata;
+const october = require("./build-gallery-refresh-2026-10-19.cjs")();
+assert.deepEqual(read("data/gallery-refresh-projection-2026-10-19.json"), october.projection);
+assert.deepEqual(read("data/gallery-metadata-2026-10-19.json"), october.metadata);
+const cardMetadata = october.metadata;
 assert.deepEqual(
   read("data/gallery-metadata-2026-10-05.json"),
   archivedMetadata,
@@ -279,7 +282,7 @@ const output = {
   frontend,
   supplement,
   cardMetadata,
-  coverage: argon.coverage,
+  coverage: october.coverage,
   expanded: normalizeDisplayText({ ...community, medical }),
   provenance: {
     input:
@@ -291,6 +294,7 @@ const output = {
     sourceFiles: [
       ...refresh.source_files,
       ...argon.projection.source_files,
+      ...october.projection.source_files,
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -307,12 +311,14 @@ const output = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json",
     ],
     rendererContract: "data/coverage-renderer-contract-2026-10-05.json",
-    presentationMetadata: "data/gallery-metadata-2026-10-15.json",
+    presentationMetadata: "data/gallery-metadata-2026-10-19.json",
     frontendInputStatus: frontendInput.endsWith(".working.json")
       ? "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
       : "Original public research packet supplied directly by parent; not Library materialization",
   },
 };
+for (const [id, patch] of Object.entries(october.notes))
+  output.notes[id] = { ...output.notes[id], ...patch };
 assert.equal(
   read("data/gallery-renderer-contract-2026-10-05-audit.json").counts
     .totalCards,
@@ -339,8 +345,11 @@ if (process.argv.includes("--check"))
   );
 else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
 const evidence = {
-  cards: 88,
-  coverageCards: 54,
+  cards: 89,
+  coverageCards: 55,
+  octoberSelectedRows: october.projection.card.variants[0].rows.length,
+  octoberInputSHA256: Object.fromEntries(october.projection.source_files.map((p) => [p, sha(p)])),
+  octoberProjectionSHA256: sha("data/gallery-refresh-projection-2026-10-19.json"),
   argonMeasurements: { google: 19, aa: 10 },
   argonInputSHA256: Object.fromEntries(argon.projection.source_files.map((p) => [p, sha(p)])),
   argonProjectionSHA256: sha("data/gallery-gemini-argon-projection-2026-10-15.json"),

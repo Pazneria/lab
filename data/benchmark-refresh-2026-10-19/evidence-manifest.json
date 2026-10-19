@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "path": "source-packet.json",
+      "bytes": 17435,
+      "sha256": "7c5b4bff9f8e0ab96d8cfc9d88899f027c20e7ee8d74e9576ed3d63c7885a4a5"
+    }
+  ]
+}

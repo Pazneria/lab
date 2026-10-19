@@ -80,6 +80,8 @@
       [
         "parent_source_audit",
         "parent_primary_research",
+        "primary_source_review",
+        "primary_source_recheck",
         "inherited_catalog",
       ].includes(m.source_review?.mode) &&
       typeof m.source_review?.scope === "string" &&
@@ -188,7 +190,7 @@
       ids.add(c.id);
     }
     return (
-      ids.size === (input.coverage.model_updates ? 88 : input.coverage.refresh ? 86 : 73) &&
+      ids.size === (input.coverage.benchmark_updates ? 89 : input.coverage.model_updates ? 88 : input.coverage.refresh ? 86 : 73) &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(
@@ -315,6 +317,7 @@
     "gemini-4-argon-aa-report",
     "gemini-4-argon-google-report",
     "hle-diamond",
+    "webdev-arena-frontend-2026-10-18",
     "webdev-arena-frontend-2026-10-08",
     "webdev-arena-frontend",
     "bullshitbench-v2",
