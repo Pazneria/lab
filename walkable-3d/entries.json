@@ -5081,7 +5081,7 @@
       "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
       "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
       "limitations": [
-        "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+        "Actual hosted startup and default-view capture succeeded after the earlier documented harness/hosting attempt. Movement, routes, collision feel, full geometry and performance remain unverified.",
         "Original producer limitations remain in the unchanged README.",
         "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
       ],
@@ -5125,6 +5125,10 @@
         {
           "label": "Original pre-capture importer record",
           "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -5138,17 +5142,19 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Actual preview not yet captured.",
+      "previewAvailable": true,
+      "previewAlt": "Rain Court - actual unchanged authored default-view canvas.",
       "archiveSha256": "8f0ddb03696f2de8611ee2d31a115ce314fa737d2fc9a9d6de2c6cf9c44166a9",
       "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "2e914ecb3daa6e224c46f92edc30aa14747208fb301dfa26d0ff01a71799d5bb",
       "promptVersion": "02-terra",
-      "webgl": "WebGL (startup unverified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured. No route, collision or performance QA."
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured in separately approved bounded follow-up session. Earlier harness/hosting attempt preserved. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "terra-03",
@@ -5658,7 +5664,7 @@
       "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
       "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
       "limitations": [
-        "Capture exposed missing host module-path aliases/dependency closure; no intrinsic entrant startup failure established. Hosting mapping corrected after session; later runtime validation pending.",
+        "Actual hosted startup and default-view capture succeeded after the earlier documented harness/hosting attempt. Movement, routes, collision feel, full geometry and performance remain unverified.",
         "Original producer limitations remain in the unchanged README.",
         "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
       ],
@@ -5690,6 +5696,10 @@
         {
           "label": "Original pre-capture importer record",
           "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -5711,17 +5721,19 @@
           "{\"imports\":{\"./node_modules/three/build/\":\"./vendor/three/\",\"./node_modules/three/examples/jsm/utils/BufferGeometryUtils.js\":\"./vendor/three/BufferGeometryUtils.js\","
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Actual preview not yet captured.",
+      "previewAvailable": true,
+      "previewAlt": "Station 06 — Maintenance Bay 04 - actual unchanged authored default-view canvas.",
       "archiveSha256": "914aee860f1377c56164edee7b2f572df4c9d0504d9b0c246181661f6d8325f0",
       "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "13746ba2605ca362105f949a56cd3499dde2284a9dcb04a17553c63f38498327",
       "promptVersion": "09-terra",
-      "webgl": "WebGL (startup unverified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Capture exposed missing host module-path aliases/dependency closure; no intrinsic entrant startup failure established. Hosting mapping corrected after session; later runtime validation pending. No route, collision or performance QA."
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured in separately approved bounded follow-up session. Earlier harness/hosting attempt preserved. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "terra-10",
@@ -5903,7 +5915,7 @@
       "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
       "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
       "limitations": [
-        "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+        "Actual hosted startup and default-view capture succeeded after the earlier documented harness/hosting attempt. Movement, routes, collision feel, full geometry and performance remain unverified.",
         "Original producer limitations remain in the unchanged README.",
         "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
       ],
@@ -5947,6 +5959,10 @@
         {
           "label": "Original pre-capture importer record",
           "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -5960,17 +5976,19 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Actual preview not yet captured.",
+      "previewAvailable": true,
+      "previewAlt": "Afterglow Arcade - actual unchanged authored default-view canvas.",
       "archiveSha256": "b07b6ff7c61a9b3a089fd682fb1e251d211edf4b719dd7d0242671f5c2760d6e",
       "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "1195880b5049b0223617eba924e8e060d7c7185bd2e4f73505b4ffe978086988",
       "promptVersion": "12-terra",
-      "webgl": "WebGL (startup unverified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured. No route, collision or performance QA."
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured in separately approved bounded follow-up session. Earlier harness/hosting attempt preserved. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "terra-13",
@@ -6525,7 +6543,7 @@
       "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
       "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
       "limitations": [
-        "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+        "Actual hosted startup and default-view capture succeeded after the earlier documented harness/hosting attempt. Movement, routes, collision feel, full geometry and performance remain unverified.",
         "Original producer limitations remain in the unchanged README.",
         "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
       ],
@@ -6565,6 +6583,10 @@
         {
           "label": "Original pre-capture importer record",
           "path": "pre-capture-host-run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
         }
       ],
       "readySelector": "canvas[data-engine]",
@@ -6578,17 +6600,19 @@
           "href=\"./assets/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Actual preview not yet captured.",
+      "previewAvailable": true,
+      "previewAlt": "Thistle & Thread — The Wayfarer's Wagon - actual unchanged authored default-view canvas.",
       "archiveSha256": "c881a5ce465a166f536eb80e2f535092d37f817d6ccc948b2b50219be64cbb4d",
       "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "8f3becb0cf9e1ddfb56d1aba3a9080ecdbbbaf47b7c6f04b985a3dcd85499081",
       "promptVersion": "20-terra",
-      "webgl": "WebGL (startup unverified)",
-      "availability": "unverified",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
       "completionStatus": "completed",
-      "runtimeVerification": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured. No route, collision or performance QA."
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured in separately approved bounded follow-up session. Earlier harness/hosting attempt preserved. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     },
     {
       "id": "terra-21",

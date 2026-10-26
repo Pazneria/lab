@@ -41,9 +41,9 @@ test('all published frozen files preserve the mapped original bytes and launch h
   for(const [name,r] of Object.entries(p.files)){assert.equal(hash(read(dir+name)),r.sha256);assert.equal(read(dir+name).length,r.bytes);}
  }
 });
-test('18 genuine default-view captures and four honest pending previews retain cleanup and QA limits',()=>{
- assert.equal(fresh.filter(e=>e.previewAvailable).length,18);
- const pending=fresh.filter(e=>!e.previewAvailable);assert.deepEqual(pending.map(e=>e.id),['terra-02','terra-09','terra-12','terra-20']);
+test('22 genuine default-view captures retain earlier attempt evidence retain cleanup and QA limits',()=>{
+ assert.equal(fresh.filter(e=>e.previewAvailable).length,22);
+ const pending=fresh.filter(e=>!e.previewAvailable);assert.deepEqual(pending.map(e=>e.id),[]);
  for(const e of fresh){
   const dir=`walkable-3d/entries/${e.id}/`;
   if(!e.previewAvailable){assert.equal(e.availability,'unverified');assert.equal(existsSync(new URL(dir+'preview.jpg',root)),false);assert.ok(JSON.parse(read(dir+'preview-attempt.json')).interpretation);continue;}

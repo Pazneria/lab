@@ -142,6 +142,14 @@
       "sha256": "df74cb235e982436edcb99f88326c9faf6a2cc3b0ff950d6715600d5f336f543",
       "bytes": 3129
     },
+    "preview-capture.json": {
+      "sha256": "269751ed3215da8112ea6befcf69b51264e463b339976d3945b976c94dd21a1e",
+      "bytes": 3039
+    },
+    "preview.jpg": {
+      "sha256": "739e562915bae73fdb6ab0d93d1c17344bc10789d54770a66f673c707c48764f",
+      "bytes": 61800
+    },
     "README.md": {
       "sha256": "2ee017102923a24e502ea3f59c7032d129d506e93795e27a5dee7b94f79bb9d8",
       "bytes": 2226
@@ -151,8 +159,8 @@
       "bytes": 35231
     },
     "run-record.json": {
-      "sha256": "0596030b9f32967c0459d18767fca67269ccbc3bba7a8f91195732e08a90b686",
-      "bytes": 3731
+      "sha256": "2cd43106b1521855194cd3e0e27811ed13dc99f81008dae248abaa117cc0c0bf",
+      "bytes": 3809
     },
     "three-LICENSE": {
       "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
@@ -172,6 +180,8 @@
       "launch-prompt.txt",
       "pre-capture-host-run-record.json",
       "preview-attempt.json",
+      "preview-capture.json",
+      "preview.jpg",
       "README.md",
       "rollup-LICENSE.md",
       "run-record.json",
@@ -182,8 +192,5 @@
       "Full source/build preservation ZIP and raw source/check evidence in task/frozen-completed"
     ]
   },
-  "previewCapture": {
-    "status": "uncaptured",
-    "attempt": "preview-attempt.json"
-  }
+  "previewCapture": "preview-capture.json"
 }

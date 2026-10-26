@@ -21,12 +21,13 @@
   "stopUtc": null,
   "qa": {
     "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
-    "visual": "NOT RUN",
+    "visual": "Default-view canvas captured; no full visual-quality assessment.",
     "interactive": "NOT RUN",
-    "gpu": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
     "performance": "NOT RUN",
-    "preview": "UNCAPTURED",
-    "captureAttempt": "preview-attempt.json"
+    "preview": "CAPTURED",
+    "captureAttempt": "preview-attempt.json",
+    "captureRecord": "preview-capture.json"
   },
   "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
 }
