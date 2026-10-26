@@ -1,0 +1,30 @@
+{
+  "id": "terra-07",
+  "scene": 7,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-8",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Still Forms\n\nA compact first-person museum built with Three.js. The two galleries are linked by a 5 m ramp rising 0.4 m. Three original forms are constructed from bronze-like folded plates, pale stone, and translucent resin.\n\n## Launch\n\nFrom this directory, install the dependencies if needed and start the local development server:\n\n```powershell\nnpm install\nnpm run dev\n```\n\nSuggested launch address: http://127.0.0.1:5188/ (the server is not running until you start it). The port is fixed and the command will report an error if it is already occupied.\n\n## Controls\n\n- Click **Enter the museum** to capture the pointer.\n- Move with **W A S D** or arrow keys and look with the mouse.\n- Hold **Shift** to move faster.\n- Press **R** to reset to the entrance.\n- Press **Esc** to release the pointer; click the scene to capture it again.\n\n## Checks and limitations\n\nThe JavaScript syntax check and Vite production build passed. A CPU-only grid check found a connected path through both rooms and verified 360 sampled points on a 2.5 m circle around the central work. The ramp rises at 8%. No browser, server, screenshot renderer, GPU check, or performance benchmark was run during this entry, so appearance, interactive behavior, and frame times remain unverified. The translucent resin uses standard alpha blending rather than physical refraction and may show sorting artifacts from some views. A keyboard and mouse are required.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

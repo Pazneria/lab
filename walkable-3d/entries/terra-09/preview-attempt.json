@@ -1,0 +1,42 @@
+{
+  "entry": "terra-09",
+  "authorization": "Owner approved one background sequential default-view capture session at 2026-10-26 20:13:16 UTC; parent verified all22 completed and cleanup disclosures at20:16:48 UTC, then cleared capture. No user tabs, foreground input, route/performance QA or entrant repairs.",
+  "capture": {
+    "id": "terra-09",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=09&entry=terra-09",
+    "startedAt": "2026-10-26T20:25:34.661Z",
+    "status": "startup-failed",
+    "consoleErrors": [
+      "Access to script at 'http://127.0.0.1:5197/lab/walkable-3d/entries/terra-09/frozen/node_modules/three/build/three.module.js' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED",
+      "Access to script at 'http://127.0.0.1:5197/lab/walkable-3d/entries/terra-09/frozen/node_modules/three/examples/jsm/utils/BufferGeometryUtils.js' from origin 'null' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "pageErrors": [],
+    "requestFailures": [
+      {
+        "url": "http://127.0.0.1:5197/lab/walkable-3d/entries/terra-09/frozen/node_modules/three/build/three.module.js",
+        "error": "net::ERR_FAILED"
+      },
+      {
+        "url": "http://127.0.0.1:5197/lab/walkable-3d/entries/terra-09/frozen/node_modules/three/examples/jsm/utils/BufferGeometryUtils.js",
+        "error": "net::ERR_FAILED"
+      }
+    ],
+    "nonReadRequests": [],
+    "unexpectedExternalRequests": [],
+    "controls": [],
+    "frozenHtmlSha256": "13746ba2605ca362105f949a56cd3499dde2284a9dcb04a17553c63f38498327",
+    "hostVisibility": "visible",
+    "viewerMessage": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "observedStartupFailure": true,
+    "error": "A runtime or asset error prevented this scene from continuing. It has been unloaded. Try again or close the viewer.",
+    "viewerUnloaded": true,
+    "contextClosed": true,
+    "finishedAt": "2026-10-26T20:25:35.608Z"
+  },
+  "interpretation": "Capture exposed missing host module-path aliases/dependency closure; no intrinsic entrant startup failure established. Hosting mapping corrected after session; later runtime validation pending.",
+  "entrantRepaired": false,
+  "performanceBenchmark": false,
+  "interactiveRouteQa": false
+}

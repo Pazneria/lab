@@ -1,0 +1,31 @@
+{
+  "id": "terra-01",
+  "scene": 1,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-2",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "BUILD_LOG.txt": "First implementation: 2026-10-26 16:06:58 -04:00\nDeadline: 2026-10-26 17:06:58 -04:00\nModel: GPT-6 (exact assigned variant and effort not exposed in this execution environment)\nInterruptions: none\nStop: 2026-10-26 16:10:00 -04:00\nInterruptions: no interruption to the implementation window; the first stalled dependency installation was cancelled and retried successfully.\nProcess cleanup: dependency installation and build processes completed; the initial stalled installation was cancelled. No server, watcher, browser, or test process was started.\nChecks: node --check src/main.js; npm run build. No visual, browser, interactive, GPU, or performance checks were performed.\n",
+    "README.md": "# Holloway Halt\n\nAn explorable, procedural 3D scene of a disused woodland station. The waiting room connects the entrance path to the platform; a boarded crossing near the right end of the platform leads to a winding path in the woods.\n\n## Launch\n\nRequires a recent Node.js installation (Node 20.19+ or 22.12+). From this folder:\n\n```powershell\nnpm install\nnpm run start\n```\n\nOpen the **suggested launch address** http://127.0.0.1:5187/ after starting the command. No server was started during creation or verification. The production build is also in `dist/`; `npm run build` regenerates it.\n\n## Controls\n\n- Click **Enter the station**, then move the mouse to look around.\n- **W A S D** or arrow keys: walk. **Shift**: walk faster.\n- **R**: return to the entrance. **Esc**: release the mouse and pause; click the button to resume.\n\nThe scene is designed for a desktop browser with WebGL and pointer lock. Movement uses simple collision against the building, canopy posts, trees, and the scene boundary. There is no jumping or mobile control scheme. The platform height transitions automatically.\n\n## Verification and limits\n\n`node --check src/main.js` and `npm run build` completed successfully. No browser, visual, interactive, GPU, or performance testing was performed under the execution conditions; appearance, navigation, frame time, and cross-browser behavior remain unverified. The production build emitted Vite's advisory about the main JavaScript chunk being just over 500 kB. All textures and geometry are generated locally; the only installed runtime library is Three.js.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

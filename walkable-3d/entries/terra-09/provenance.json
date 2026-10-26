@@ -1,0 +1,183 @@
+{
+  "entry": "terra-09",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-09\\source-preservation.zip",
+  "archiveSha256": "914aee860f1377c56164edee7b2f572df4c9d0504d9b0c246181661f6d8325f0",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/main.js": "main.js",
+      "frozen/vendor/three/three.core.js": "dependency-runtime/three/three.core.js",
+      "frozen/vendor/three/three.module.js": "dependency-runtime/three/three.module.js",
+      "README.md": "README.md",
+      "RUN_TIMES.txt": "RUN_TIMES.txt",
+      "three-LICENSE": "dependency-licenses/three-LICENSE",
+      "frozen/vendor/three/BufferGeometryUtils.js": "dependency-runtime/three/BufferGeometryUtils.js"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "13746ba2605ca362105f949a56cd3499dde2284a9dcb04a17553c63f38498327",
+        "bytes": 1490,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\index.html"
+      },
+      "main.js": {
+        "sha256": "b87e0db8a3a5798d28d43d3c36198d77f79f114d13946fd301abda91c84470eb",
+        "bytes": 21378,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\main.js"
+      },
+      "package-lock.json": {
+        "sha256": "b9336f06558ea53bfdd3f0454c31946562f7a05637f0a16f52d6e4e1ea5fa372",
+        "bytes": 547,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\package-lock.json"
+      },
+      "package.json": {
+        "sha256": "674cf761abc9e1c3b4b3cf34a69bbc13d5473c3086e33f8e4273d9eb0fe2b8b5",
+        "bytes": 213,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\package.json"
+      },
+      "README.md": {
+        "sha256": "ed339c29b7c4b23db5a6234c8f41739dc1a56b01755cd0f7c613fafad522589d",
+        "bytes": 1452,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\README.md"
+      },
+      "RUN_TIMES.txt": {
+        "sha256": "8468c1e37b7ebf3bdb050f126c157b40bd4b1565a3e1ca1940237161cb5e4dc8",
+        "bytes": 500,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\RUN_TIMES.txt"
+      },
+      "style.css": {
+        "sha256": "cb63e83fe0a1be0d54c7a60123677bb70aa422718546b7aa2871bb9da897107a",
+        "bytes": 2109,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\style.css"
+      },
+      "dependency-licenses/three-LICENSE": {
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "bytes": 1081,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\node_modules\\three\\LICENSE"
+      },
+      "dependency-runtime/three/three.module.js": {
+        "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+        "bytes": 662772,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\node_modules\\three\\build\\three.module.js"
+      },
+      "dependency-runtime/three/three.core.js": {
+        "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+        "bytes": 1458113,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\node_modules\\three\\build\\three.core.js"
+      },
+      "dependency-runtime/three/BufferGeometryUtils.js": {
+        "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+        "bytes": 37712,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10\\node_modules\\three\\examples\\jsm\\utils\\BufferGeometryUtils.js"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-09\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "launch": {
+    "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+    "verification": "All22 base and launch bytes match exact parent-supplied hashes; unchanged suffix and newline framing."
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "./node_modules/three/build/",
+          "./vendor/three/"
+        ],
+        [
+          "{\"imports\":{",
+          "{\"imports\":{\"./node_modules/three/build/\":\"./vendor/three/\",\"./node_modules/three/examples/jsm/utils/BufferGeometryUtils.js\":\"./vendor/three/BufferGeometryUtils.js\","
+        ]
+      ]
+    },
+    "Unchanged host opaque sandbox/CSP/readiness bridge; no entrant rebuild or behavior repair. Exact installed dependency closure copied where required; no caches published."
+  ],
+  "files": {
+    "launch-prompt.txt": {
+      "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+      "bytes": 7164
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "4c3da4e2a70b45460d4db6660568225cb2916d770e2cf5af8f24d6077bb4cfc1",
+      "bytes": 3369
+    },
+    "preview-attempt.json": {
+      "sha256": "ba0abe4bb14ae18e26a91ef7ddb6b8b081c77c8eb88212b97af8d83053591ca5",
+      "bytes": 2533
+    },
+    "README.md": {
+      "sha256": "ed339c29b7c4b23db5a6234c8f41739dc1a56b01755cd0f7c613fafad522589d",
+      "bytes": 1452
+    },
+    "run-record.json": {
+      "sha256": "7d88e0c1140b9f22e76c73cc5d210e9481dd00e65bb26106747b9bd5aabab745",
+      "bytes": 3415
+    },
+    "RUN_TIMES.txt": {
+      "sha256": "8468c1e37b7ebf3bdb050f126c157b40bd4b1565a3e1ca1940237161cb5e4dc8",
+      "bytes": 500
+    },
+    "three-LICENSE": {
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    "frozen/index.html.txt": {
+      "sha256": "13746ba2605ca362105f949a56cd3499dde2284a9dcb04a17553c63f38498327",
+      "bytes": 1490
+    },
+    "frozen/main.js": {
+      "sha256": "b87e0db8a3a5798d28d43d3c36198d77f79f114d13946fd301abda91c84470eb",
+      "bytes": 21378
+    },
+    "frozen/style.css": {
+      "sha256": "cb63e83fe0a1be0d54c7a60123677bb70aa422718546b7aa2871bb9da897107a",
+      "bytes": 2109
+    },
+    "frozen/vendor/three/BufferGeometryUtils.js": {
+      "sha256": "9fb63427ce6641fa14fd0baff9cc4d1b5f9c3d85fd084bf2e90e803c44ec1797",
+      "bytes": 37712
+    },
+    "frozen/vendor/three/three.core.js": {
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6",
+      "bytes": 1458113
+    },
+    "frozen/vendor/three/three.module.js": {
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea",
+      "bytes": 662772
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-attempt.json",
+      "README.md",
+      "run-record.json",
+      "RUN_TIMES.txt",
+      "three-LICENSE",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/style.css",
+      "frozen/vendor/three/BufferGeometryUtils.js",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation ZIP and raw source/check evidence in task/frozen-completed"
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "attempt": "preview-attempt.json"
+  }
+}

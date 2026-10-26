@@ -1,0 +1,31 @@
+{
+  "id": "terra-17",
+  "scene": 17,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-18",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Above the Wayfarer's Rest\n\nA compact first-person room above a tavern, with a working alcove and a covered balcony. An old helmet has become a planter on the mantel.\n\n## Launch\n\nFrom this directory, run:\n\n```powershell\nnpm install\nnpm run dev\n```\n\nThen open the **suggested** address `http://127.0.0.1:5187/`. The address is not a running preview; the server was not started during construction. Dependencies were installed in this workspace and a production build is available in `dist/`.\n\n## Controls\n\nClick **Enter the room** to capture the mouse. Move with WASD or arrow keys, look with the mouse, hold Shift to move faster, and press R or use the Reset position button to return to the entrance. Esc releases the mouse; click the scene to capture it again. A mouse and keyboard are required.\n\n## Verification and limitations\n\n`node --check src/main.js` and `npm run build` passed. A CPU-only grid search of the scene's collision rules found the entrance, living area, study and balcony mutually reachable. No browser, server, screenshot, GPU check, interactive test or performance benchmark was run. Appearance, pointer-lock behavior, and actual performance are therefore unverified. The scene uses procedural materials and unshadowed lighting to keep the geometry and rendering costs modest; it does not include NPCs or interactive props.\n",
+    "RUN-RECORD.txt": "Model: GPT-6 (Codex); exact model variant not exposed in this session.\nReasoning effort: not exposed in this session.\nFirst implementation action: 2026-10-26 16:11:09 -04:00 (2026-10-26 20:11:09 UTC)\nDeadline: 2026-10-26 17:11:09 -04:00 (2026-10-26 21:11:09 UTC)\nStop timestamp: 2026-10-26 16:14:12 -04:00 (2026-10-26 20:14:12 UTC)\nInterruption history: no user interruption. Initial sandboxed npm install was stopped after it stalled; a permitted registry install then completed.\nCleanup: all command sessions launched for this entry completed or were stopped. No server, watcher, browser, or test process was started or left running.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "Default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

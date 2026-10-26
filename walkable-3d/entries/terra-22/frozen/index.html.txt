@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Astral Atelier</title>
+  <script type="module" crossorigin src="/assets/index-C_Hfr-wJ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-RoaADAjc.css">
+</head>
+<body>
+  <div id="hud">
+    <div class="brand"><span class="star">✦</span><div><strong>THE ASTRAL ATELIER</strong><small>THE CROWN'S HOUSE OF INVENTION</small></div></div>
+    <div class="hint">W A S D <span>move</span> &nbsp; MOUSE <span>look</span> &nbsp; SHIFT <span>walk faster</span> &nbsp; R <span>reset</span></div>
+  </div>
+  <div id="reticle">·</div>
+  <div id="welcome">
+    <div class="card"><div class="eyebrow">A ROYAL COMMISSION &nbsp; / &nbsp; NO. 07</div><h1>The Astral<br><em>Atelier</em></h1><p>Enter a house of cloth, light and careful hands. Follow the archive to the unfinished mantle of the Night Court.</p><button id="enter">ENTER THE ATELIER <span>↗</span></button><div class="instructions">W A S D &nbsp; move &nbsp;&nbsp; · &nbsp;&nbsp; MOUSE &nbsp; look<br>SHIFT &nbsp; move faster &nbsp;&nbsp; · &nbsp;&nbsp; R &nbsp; return to entrance<br>ESC &nbsp; release mouse</div></div>
+  </div>
+  <div id="note">Click to look around</div>
+</body>
+</html>

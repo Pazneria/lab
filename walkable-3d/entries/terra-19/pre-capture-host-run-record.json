@@ -1,0 +1,31 @@
+{
+  "id": "terra-19",
+  "scene": 19,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Pelagic House\n\nA self-contained, first-person WebGL underwater apartment. The scene contains a living/sleeping room, a research nook and a separate observation chamber with a layered pressure window onto a small reef. All geometry and materials are generated locally; there are no runtime assets or package dependencies.\n\n## Launch\n\nFrom this folder, run:\n\n```powershell\npython -m http.server 53820 --bind 127.0.0.1\n```\n\nThen open the suggested local address **http://127.0.0.1:53820/** in a WebGL-capable desktop browser. This address is not a running preview until you start the command. Stop the server with Ctrl+C.\n\n## Controls\n\n- Click **Enter the apartment** to capture the mouse. Click the scene again after releasing it.\n- Move with **W A S D** or the arrow keys. Hold **Shift** to move faster.\n- Look with the **mouse**.\n- Press **R** to reset to the entrance and **Esc** to release the mouse.\n\n## Checks and limitations\n\n`node --check main.js` checks JavaScript syntax. `node check-scene.cjs` performs a CPU-only check of finite generated geometry and a coarse collision-grid route through the spaces; it stubs out WebGL and does not open a browser or render the scene.\n\nThe scene has not been opened in a browser or visually inspected under this run's execution conditions. Interactive behavior, appearance across GPUs and browsers, and frame times are unverified. The research instruments are decorative. The scene uses a fixed eye height and desktop keyboard/mouse controls; there is no touch control or jumping.\n",
+    "RUN_RECORD.txt": "First implementation action: 2026-10-26 16:11:37 -04:00\nDeadline: 2026-10-26 17:11:37 -04:00\nModel: GPT-6 (exact assigned variant and effort not exposed in this session)\nInterruptions: none observed\nDependency attempt: npm install did not complete and was cancelled; the delivered build has no dependencies.\nProcess cleanup: the npm install process was cancelled and all check processes completed. No server, watcher, browser, or test process remains running.\nActual stop: 2026-10-26 16:15:23 -04:00\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

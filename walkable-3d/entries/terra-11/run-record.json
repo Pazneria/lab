@@ -1,0 +1,31 @@
+{
+  "id": "terra-11",
+  "scene": 11,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-12",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "IMPLEMENTATION_TIME.txt": "First implementation action: 2026-10-26 16:09:20 -04:00 (2026-10-26 20:09:20 UTC)\nDeadline: 2026-10-26 17:09:20 -04:00 (2026-10-26 21:09:20 UTC)\nActual stop: 2026-10-26 16:12:40 -04:00 (2026-10-26 20:12:40 UTC)\nModel: GPT-6 (Codex runtime); exact variant and reasoning effort not exposed to this session\nInterruptions: no session interruption. The initial sandboxed npm install was cancelled after it stalled with network disabled; the subsequent authorized install completed.\nProcess cleanup: the initial install was cancelled; the subsequent install, static checks, and build processes exited. No server, watcher, or browser was started, and no entry process remains running.\n",
+    "README.md": "# FIELD / Demonstration Lab\n\nA self-contained, procedural Three.js exhibition scene with a central sensor array, an optical perception bench and a mechanical motion test rig. Scene geometry, signs and screen graphics are generated in the browser; there are no external artwork or font requests.\n\n## Launch\n\nRequires Node.js and npm. From this directory:\n\n```powershell\nnpm install\nnpm run start\n```\n\nThen open the **suggested launch address** http://127.0.0.1:5197/ in a browser. No server is running as part of this delivery. `npm run build` creates a static production build in `dist/`.\n\n## Controls\n\nClick **Enter the lab** to capture the mouse. Move with **W A S D** or the arrow keys, look with the mouse, hold **Shift** to move faster, press **R** to reset to the entrance, and **Esc** to release the pointer. Click the scene or the entry button to capture it again.\n\nThe scene uses simple horizontal collision around the room, central instrument and main furniture. It is designed for desktop mouse and keyboard. Exhibits and displays are scenic and do not operate as scientific tools.\n\n## Verification limits\n\nThe execution conditions for this entry prohibit launching a browser, server, visual renderer or GPU/performance test. Visual appearance, interaction and frame times therefore require separate inspection. See the final report for checks performed and timing.\n\n## Static checks performed\n\n- `node --check src/main.js` passed.\n- `node check-layout.mjs` sampled the collision map and found connected routes from the entrance to all four sides of the array, both alcove approaches and the back wall.\n- `npm run build` completed. Vite reported its advisory about the single minified JavaScript chunk exceeding 500 kB.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "Default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

@@ -1,0 +1,175 @@
+{
+  "entry": "terra-15",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-15\\source-preservation.zip",
+  "archiveSha256": "9f31c1a24935c35035ff06625911a8b48eb76d889fe782c5aa78d245138c98df",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/scene.js": "scene.js",
+      "frozen/vendor/three/three.core.js": "dependency-runtime/three/three.core.js",
+      "frozen/vendor/three/three.module.js": "dependency-runtime/three/three.module.js",
+      "README.md": "README.md",
+      "RUN-RECORD.md": "RUN-RECORD.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "ad58e20976f09c1b54c89936fe64efa67cb58f89ba190e6392683a7211729258",
+        "bytes": 1044,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\index.html"
+      },
+      "package-lock.json": {
+        "sha256": "7ab5668e8ab6fb8163e94fc34e6ecb36f6a612596f39243ac75d2b5efbe3e8bb",
+        "bytes": 540,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\package-lock.json"
+      },
+      "package.json": {
+        "sha256": "37c9ed5ca9010fb18f18228758338f46e90d1ee737df242b8b0015395c777b02",
+        "bytes": 307,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\package.json"
+      },
+      "README.md": {
+        "sha256": "b85114bff57df5ea4aedc61d4a3842d1405fe0f956618990705e95b7370e7505",
+        "bytes": 1355,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\README.md"
+      },
+      "route-check.mjs": {
+        "sha256": "cba140470f79335454b9e336297e818d196508649f5fa05d17287dea2a616c51",
+        "bytes": 1389,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\route-check.mjs"
+      },
+      "RUN-RECORD.md": {
+        "sha256": "0dc745304d7b5d1dbdd23c52ce0caad33c25bf8f962ce1edcfcdf0af608fabd8",
+        "bytes": 838,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\RUN-RECORD.md"
+      },
+      "scene.js": {
+        "sha256": "ca80a68e2a19868e91ee22e1d74a7067610b61fdf5dab2220a9f61870898cbc4",
+        "bytes": 25015,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\scene.js"
+      },
+      "style.css": {
+        "sha256": "9b1886e8c22cbf5d763d71e14f0edddff5140bf4057cf1215a6a558f6f19492b",
+        "bytes": 1238,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\style.css"
+      },
+      "dependency-licenses/three-LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\node_modules\\three\\LICENSE"
+      },
+      "dependency-runtime/three/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\node_modules\\three\\build\\three.module.js"
+      },
+      "dependency-runtime/three/three.core.js": {
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17\\node_modules\\three\\build\\three.core.js"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-15\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "launch": {
+    "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+    "verification": "All22 base and launch bytes match exact parent-supplied hashes; unchanged suffix and newline framing."
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "./node_modules/three/build/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "Unchanged host opaque sandbox/CSP/readiness bridge; no entrant rebuild or behavior repair. Exact installed dependency closure copied where required; no caches published."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "ad58e20976f09c1b54c89936fe64efa67cb58f89ba190e6392683a7211729258",
+      "bytes": 1044
+    },
+    "frozen/scene.js": {
+      "sha256": "ca80a68e2a19868e91ee22e1d74a7067610b61fdf5dab2220a9f61870898cbc4",
+      "bytes": 25015
+    },
+    "frozen/style.css": {
+      "sha256": "9b1886e8c22cbf5d763d71e14f0edddff5140bf4057cf1215a6a558f6f19492b",
+      "bytes": 1238
+    },
+    "frozen/vendor/three/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "launch-prompt.txt": {
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "bytes": 7673
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "11f2cfd754187cff06f80948d12f8b472ee64673f5e4879009b73078c39278ac",
+      "bytes": 3611
+    },
+    "preview-capture.json": {
+      "sha256": "40efb05a6e2f97a37c9db669b955e268c878acedb2079bb8a1740ef0879257db",
+      "bytes": 3046
+    },
+    "preview.jpg": {
+      "sha256": "e6d6823ceeb431a320060957de0cd4900c90d5dbae3cef3bfd0a4a422e4bf4b1",
+      "bytes": 67538
+    },
+    "README.md": {
+      "sha256": "b85114bff57df5ea4aedc61d4a3842d1405fe0f956618990705e95b7370e7505",
+      "bytes": 1355
+    },
+    "run-record.json": {
+      "sha256": "89d020b50636b0b46dc4bf8fee543dbedaf06dfaeefcf03d854923d67c934c55",
+      "bytes": 3709
+    },
+    "RUN-RECORD.md": {
+      "sha256": "0dc745304d7b5d1dbdd23c52ce0caad33c25bf8f962ce1edcfcdf0af608fabd8",
+      "bytes": 838
+    },
+    "three-LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/scene.js",
+      "frozen/style.css",
+      "frozen/vendor/three/three.core.js",
+      "frozen/vendor/three/three.module.js",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "RUN-RECORD.md",
+      "three-LICENSE"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation ZIP and raw source/check evidence in task/frozen-completed"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

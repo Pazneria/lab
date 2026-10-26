@@ -1,0 +1,30 @@
+{
+  "id": "terra-22",
+  "scene": 22,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-23",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# The Astral Atelier\n\nA compact, first-person 3D royal tailor's house: fitting room, cloth archive, and the workshop of the unfinished Night Court mantle. All geometry and textures are generated locally in the scene; there are no downloaded image assets or runtime asset requests.\n\n## Launch\n\nWith Node.js 20.19+ or 22.12+ installed, from this directory:\n\n```powershell\nnpm install\nnpm run start\n```\n\nOpen the **suggested launch address** http://127.0.0.1:5187/ after starting the command. No server is included as a running process. Click **Enter the Atelier** to capture the mouse. The project also builds with `npm run build`.\n\n## Controls\n\n- **W A S D** or arrow keys: walk\n- **Mouse**: look around\n- **Shift**: walk faster\n- **R**: reset to the entrance\n- **Esc**: release the mouse; click the scene to capture it again\n\n## Implementation and limitations\n\nThree.js renders a static, procedural environment. The mirror is a still metallic surface, rather than a real-time reflection. The outfit and cloth do not simulate or animate. Collision is a simple horizontal approximation around major walls and furniture; the raised fitting dais does not change camera height. There is no touch control.\n\nThe scene was built under a restriction against browser, GPU, visual, interactive, or performance testing. `node --check src/main.js` and `npm run build` passed. A successful build does not establish how the scene looks, that interaction works in a particular browser, or its frame rate. Vite reports its ordinary advisory for a JavaScript bundle above 500 kB.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

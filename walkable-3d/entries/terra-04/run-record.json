@@ -1,0 +1,31 @@
+{
+  "id": "terra-04",
+  "scene": 4,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-5",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# The Glasshouse\n\nA first-person, procedurally built greenhouse scene. The two stone aisles run on either side of a raised central bed and reconnect at the doorway and at the potting alcove.\n\n## Launch\n\nRequires Node.js 20.19+ or 22.12+. In this directory:\n\n```powershell\nnpm ci\nnpm run start\n```\n\nOpen the **suggested launch address** `http://127.0.0.1:4187/` after starting Vite. The server uses that fixed port and will report an error if it is occupied. Dependencies are pinned in `package-lock.json`. The scene's textures and geometry are generated locally; it does not fetch visual assets at runtime.\n\n## Controls\n\n- Click **Enter the glasshouse** to capture the mouse.\n- Move with **W A S D** or the arrow keys; move the mouse to look.\n- Hold **Shift** to walk faster.\n- Press **R** to reset to the threshold.\n- Press **Escape** to release the mouse; click the enter button again to resume.\n\nThe raised bed, enclosing walls, doorway and potting bench have simple collision boundaries. Plants are intentionally permeable so their foliage can be inspected closely.\n\n## Verification and limitations\n\nThe build and JavaScript syntax were checked without running a server or browser. A CPU-only reachability check found a path from the threshold to both aisles and the alcove using the movement collision bounds. Interactive behavior, actual appearance, and graphics performance have not been tested; those require a separate browser session. The renderer uses static shadows, and the glass is stylized transparent material rather than physically simulated glazing.\n",
+    "RUN_RECORD.md": "# Run record\n\n- Assigned model: GPT-6 (the more specific runtime model identifier was not exposed in this session).\n- Reasoning effort: not exposed in this session.\n- First implementation action: 2026-10-26 16:07:38 -04:00 (2026-10-26 20:07:38 UTC).\n- Deadline: 2026-10-26 17:07:38 -04:00 (2026-10-26 21:07:38 UTC).\n- Stop timestamp: 2026-10-26 16:11:48 -04:00 (2026-10-26 20:11:48 UTC).\n- Interruptions: no session interruption. The initial sandboxed npm install stalled and was canceled; the subsequent permitted install completed.\n- Checks: JavaScript syntax, Vite production build, and a CPU-only collision-boundary reachability check passed. No browser, renderer, server, visual test, interactive test, or performance benchmark was started.\n- Cleanup: command sessions have ended. A final process check showed no Node processes. No unrelated process was terminated.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "Default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

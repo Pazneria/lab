@@ -1,0 +1,59 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a limestone cavern where a dry walking route curves around a shallow underground pool.
+
+Connect an entrance recess, the pool chamber, and a small raised landing through a broad natural arch. The viewer should be able to inspect the water from several angles and look back through the arch without needing to jump or swim.
+
+Give the rock a convincing larger structure before adding small texture: layered walls, irregular ledges, rounded erosion, and a few substantial formations. Contrast pale dry stone with darker wet surfaces near the pool. A narrow opening above can admit daylight, with restrained reflected color helping the shaded areas stay readable. Add a few signs of scale, such as a simple rope handrail or abandoned survey marker. Keep the water effect economical; the finished lighting and spatial depth matter more than simulation.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, view the pool from several angles, pass beneath the arch and look back from the raised landing. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A coherent large-scale limestone structure with layers, erosion, ledges and substantial formations
+- Distinct pale dry stone and darker wet surfaces near the pool
+- Believable depth or surface cues in the shallow water
+- Restrained lighting that creates spatial depth and keeps the route readable
+- Purposeful detail and clear signs of human scale along the walking route
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance across pool viewpoints and when the full chamber enters view
+- Stable, economical water rendering during ordinary exploration
+- Minimal stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A limestone cavern with an entrance recess, shallow pool chamber, broad natural arch and small raised landing
+- A continuous dry walking route around the pool and through the arch
+- Several accessible pool viewpoints without requiring jumping or swimming
+- Walkable elevation changes, understandable water and rock boundaries, convincing scale and a useful view back through the arch
+
+MY INSPECTION ROUTE
+
+Entrance recess → dry pool-side path → arch → raised landing → look back → return.
+
+I will pay particular attention to looking across the water from several positions, turning beneath the arch and inspecting the chamber from the landing. Elevation changes should be walkable, with water and rock edges forming understandable boundaries. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

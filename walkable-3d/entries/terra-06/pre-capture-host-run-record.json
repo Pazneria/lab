@@ -1,0 +1,32 @@
+{
+  "id": "terra-06",
+  "scene": 6,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-7",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Limestone Hollow\n\nA first-person walk through an underground limestone pool chamber. Everything needed for the scene, including Three.js, is local to this folder. No package installation is required.\n\n## Launch later\n\nFrom this directory, run:\n\n```powershell\npython -m http.server 8297 --bind 127.0.0.1\n```\n\nThen visit the **suggested** address `http://127.0.0.1:8297/`. The server was not started during this build. Use Ctrl+C in the terminal to stop it. Any comparable static HTTP server can serve this folder; opening `index.html` directly as a file may be blocked by browser module security.\n\n## Controls\n\n- Click the scene or the controls panel to capture the mouse; move the mouse to look around.\n- W, A, S, D or the arrow keys move; hold Shift for a faster walk.\n- R returns to the entrance. Escape releases the mouse. The Reset and Controls buttons are also available.\n\nThe dry route runs to the right of the pool, beneath the arch, and up to the landing. Water, enclosure walls and major flowstone formations block movement.\n\n## Checks and limitations\n\n`node --check src/main.js` checks JavaScript syntax. `node check-route.mjs` checks the actual movement predicates along a sampled route, tests several barriers, and checks the arch geometry on the CPU. These checks are not a substitute for browser testing.\n\nThe scene was not opened in a browser, rendered, interactively tested, or benchmarked during this build, as required by the execution conditions. Visual quality, controls in a real browser, and performance remain unverified. The water uses a simple translucent shader; it is not a fluid simulation. Mouse-look requires browser pointer-lock support, and there are no touch controls.\n\nThree.js r165 is included under the MIT license; see `vendor/THREE-LICENSE.txt`.\n",
+    "RUN_RECORD.txt": "Model: GPT-6-based Codex; exact model variant and reasoning effort were not exposed to this execution environment.\nFirst implementation action: 2026-10-26T16:08:11.1038664-04:00\nOne-hour deadline: 2026-10-26T17:08:11.1038664-04:00\nActual stop timestamp: 2026-10-26T16:11:04.1147236-04:00\nInterruptions: No session interruptions. The first npm install was stopped after it stalled; a bounded retry failed with ENOTFOUND. The installed Three.js library was copied into this workspace instead.\nCleanup: Both npm attempts ended. The static check commands ended. No server, watcher, browser, GPU test, or benchmark was started. No entry process remains running.\n",
+    "START_TIME.txt": "2026-10-26T16:08:11.1038664-04:00\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

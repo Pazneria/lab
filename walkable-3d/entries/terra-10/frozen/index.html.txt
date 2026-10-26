@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The Hillside Library</title>  <script type="module" crossorigin src="/assets/index-CYeeIaFK.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CrYJF03V.css">
+</head><body>
+<div id="intro"><div class="eyebrow">A PLACE TO LINGER</div><h1>The Hillside Library</h1><p>Explore the shelves, the window alcove, and the gallery above.</p><button id="enter">Enter the library</button><div class="instructions"><span><b>W A S D</b> move</span><span><b>Mouse</b> look</span><span><b>Shift</b> walk faster</span><span><b>R</b> reset</span><span><b>Esc</b> release mouse</span></div><small>Click the scene to capture your mouse. This scene is intended for a desktop browser.</small></div>
+<div id="hud"><div class="hud-title">THE HILLSIDE LIBRARY</div><div>WASD move &nbsp; · &nbsp; Mouse look &nbsp; · &nbsp; Shift faster &nbsp; · &nbsp; R reset &nbsp; · &nbsp; Esc release</div><button id="reset">Reset position</button></div><div id="crosshair">·</div><div id="notice"></div></body></html>

@@ -1,0 +1,28 @@
+{
+  "entry": "terra-02",
+  "authorization": "Owner approved one background sequential default-view capture session at 2026-10-26 20:13:16 UTC; parent verified all22 completed and cleanup disclosures at20:16:48 UTC, then cleared capture. No user tabs, foreground input, route/performance QA or entrant repairs.",
+  "capture": {
+    "id": "terra-02",
+    "url": "http://127.0.0.1:5197/lab/walkable-3d/?prompt=02&entry=terra-02",
+    "startedAt": "2026-10-26T20:25:10.344Z",
+    "status": "capture-failed",
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "nonReadRequests": [],
+    "unexpectedExternalRequests": [],
+    "controls": [],
+    "frozenHtmlSha256": "2e914ecb3daa6e224c46f92edc30aa14747208fb301dfa26d0ff01a71799d5bb",
+    "hostVisibility": "visible",
+    "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+    "readyObserved": true,
+    "error": "locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#hint')\u001b[22m\n\u001b[2m    - locator resolved to <div id=\"hint\">Click to enter · WASD to walk · mouse to look</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <canvas width=\"1242\" height=\"805\" data-engine=\"three.js r180\"></canvas> from <div id=\"scene\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <canvas width=\"1242\" height=\"805\" data-engine=\"three.js r180\"></canvas> from <div id=\"scene\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    7 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <canvas width=\"1242\" height=\"805\" data-engine=\"three.js r180\"></canvas> from <div id=\"scene\">…</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 500ms\u001b[22m\n",
+    "viewerUnloaded": true,
+    "contextClosed": true,
+    "finishedAt": "2026-10-26T20:25:16.632Z"
+  },
+  "interpretation": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+  "entrantRepaired": false,
+  "performanceBenchmark": false,
+  "interactiveRouteQa": false
+}

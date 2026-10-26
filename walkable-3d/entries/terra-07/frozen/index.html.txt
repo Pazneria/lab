@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#191b19" />
+  <title>Still Forms — a small museum</title>
+  <script type="module" crossorigin src="/assets/index-D51b1ZA-.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CpdYBjmU.css">
+</head>
+<body>
+  <div id="intro" class="overlay">
+    <div class="intro-card">
+      <div class="eyebrow">A SMALL MUSEUM &nbsp; / &nbsp; 01</div>
+      <h1>Still<br><em>Forms.</em></h1>
+      <p>Three studies in material and light.</p>
+      <button id="enter">Enter the museum <span>↗</span></button>
+      <div class="instructions"><span><b>W A S D</b> &nbsp; move</span><span><b>MOUSE</b> &nbsp; look</span><span><b>SHIFT</b> &nbsp; walk faster</span><span><b>R</b> &nbsp; reset</span></div>
+      <small>Click to capture the pointer · Esc to release it</small>
+    </div>
+  </div>
+  <div id="hud"><div class="brand"><span>SF</span><div>STILL FORMS<small>A MUSEUM OF MATERIAL</small></div></div><div class="hud-right">WASD move &nbsp; / &nbsp; mouse look &nbsp; / &nbsp; R reset</div></div>
+  <div id="crosshair"></div>
+  <div id="hint">Click to look around</div>
+</body>
+</html>

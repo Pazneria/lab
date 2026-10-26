@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Low Tide — Tidal Boathouse</title>
+  <script type="module" crossorigin src="/assets/index-Cdtxfa8P.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B_Mpwtcd.css">
+</head>
+<body>
+<div id="scene"></div>
+<div id="veil">
+  <div class="intro">
+    <div class="eyebrow">A QUIET PLACE TO EXPLORE</div>
+    <h1>Low Tide</h1>
+    <p>A working boathouse at the edge of a tidal inlet. Follow the boards through the workshop, out onto the pier, and down to the shore.</p>
+    <button id="enter">Enter the boathouse <span>↗</span></button>
+    <div class="intro-controls"><b>W A S D</b> walk <i></i><b>MOUSE</b> look <i></i><b>SHIFT</b> walk faster</div>
+  </div>
+  <div class="caption">MORNING LIGHT <span> / </span> LOW WATER</div>
+</div>
+<div id="hud"><div class="brand"><span class="mark">◌</span><div><strong>LOW TIDE</strong><small>TIDAL BOATHOUSE</small></div></div><div class="hint">WASD <span>walk</span> &nbsp; · &nbsp; MOUSE <span>look</span> &nbsp; · &nbsp; SHIFT <span>faster</span></div><button id="reset" title="Return to the workshop">↺ <span>Reset</span></button></div>
+<div id="crosshair">·</div><div id="message">Click to look around</div>
+</body></html>

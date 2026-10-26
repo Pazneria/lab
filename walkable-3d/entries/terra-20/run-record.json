@@ -1,0 +1,31 @@
+{
+  "id": "terra-20",
+  "scene": 20,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-21",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Thistle & Thread — The Wayfarer's Wagon\n\nA small first-person browser scene: an inhabited wagon, its work area and fold-out shop, and the camp around it.\n\n## Launch\n\nFrom this folder, run:\n\n```powershell\nnpm install\nnpm run dev\n```\n\nThen open the **suggested** address <http://127.0.0.1:5187/>. The server is not started by the build process and was not started for this entry. Dependencies are already installed in this workspace; `npm install` is useful if moving the source to another machine with Node.js.\n\n## Controls\n\nClick the scene to capture the mouse. Move with WASD or the arrow keys, look with the mouse, hold Shift to walk faster, press R to return to camp, and press Escape to release the mouse. The entrance steps are at the end of the wagon; another set of steps leads onto the customer landing in front of the open shop.\n\n## Checks and limitations\n\n`npm run build` produces the non-serving `dist` build. `node route-check.cjs` checks connectivity using the scene's collision map, and `node geometry-check.mjs` checks the procedural geometry and batching using a lightweight canvas stub. These are CPU-only checks. No browser, screenshot, interactive, GPU, or performance test was run under the execution conditions. The scene is designed for desktop mouse and keyboard; touch controls are not included. Lighting and material appearance remain unverified visually, and frame rate has not been measured.\n\nThe static geometry is merged by material, and directional shadows are rendered once rather than recalculated on every frame. Furniture and fold-out mechanisms are static. The wagon is not a vehicle and the shop has no trading interface.\n\n## Entry record\n\nFirst implementation action: 2026-10-26 20:12:06 UTC. Deadline: 2026-10-26 21:12:06 UTC. The exact assigned model identifier and reasoning-effort setting were not exposed in this execution environment; the system identifies Codex as GPT-6 based. The initial sandboxed package installation was interrupted after it did not complete; the same public packages were then installed successfully with the permitted network escalation. No other interruptions occurred. The actual stop timestamp and process cleanup are recorded in the delivery report.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "Hosted startup observed; no preview captured or performance measurement.",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED",
+    "captureAttempt": "preview-attempt.json"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

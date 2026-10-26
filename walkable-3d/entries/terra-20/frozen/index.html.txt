@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thistle &amp; Thread — The Wayfarer's Wagon</title>
+  <script type="module" crossorigin src="/assets/index-B1kF_837.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-3pjyuFTh.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="vignette"></div>
+  <header><div class="eyebrow">A LITTLE PLACE ON THE ROAD</div><h1>Thistle <span>&amp;</span> Thread</h1><p>THE WAYFARER’S WAGON</p></header>
+  <div id="hint"><strong>Come on in</strong><span>Click anywhere to look around</span><small>W A S D / arrow keys · walk &nbsp; | &nbsp; mouse · look<br>Shift · walk faster &nbsp; | &nbsp; R · return to camp &nbsp; | &nbsp; Esc · release mouse</small></div>
+  <div id="crosshair">+</div>
+  <div id="footer">A merchant’s little home, shop &amp; camp <span>•</span> Click to explore</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "id": "terra-15",
+  "scene": 15,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-17",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Mera's Rooms\n\nA compact first-person scene about Mera, a coastal route-maker who keeps her charts, mending, and souvenirs close at hand. The bedroom connects through a walk-in wardrobe to a small study; the same route returns to the entrance.\n\n## Launch\n\nFrom this folder, run:\n\n```powershell\nnpm start\n```\n\nThen open the suggested local address **http://127.0.0.1:4179/** in a WebGL-capable browser. The included `node_modules` contains Three.js; if dependencies are missing, run `npm install` first. Python 3 is required for the launch command.\n\nClick **Enter the rooms** to capture the mouse. Use **W A S D** to move, the **mouse** to look, **Shift** to move faster, **R** to return to the entrance, and **Esc** to release the mouse. Click the scene or the entry button to capture it again.\n\n## Verification and limits\n\nThis entry was built without launching a browser, renderer, server, or performance test, as required by the execution conditions. `node --check scene.js` checks JavaScript syntax. `node route-check.mjs` performs a coarse CPU-only reachability check of the collision layout; it is not interactive testing. The scene has procedural geometry and textures, fixed eye height, simplified collision, and no equipment interactions. Visual quality, live pointer-lock behavior, and frame time remain to be evaluated in a separate session.\n",
+    "RUN-RECORD.md": "# Run record\n\n- Model reported by the runtime: GPT-6. The exact model variant and reasoning-effort setting were not exposed in this environment.\n- First implementation: 2026-10-26 20:11:02.830 UTC (creation of the initial package.json).\n- One-hour deadline: 2026-10-26 21:11:02.830 UTC.\n- Stop timestamp: 2026-10-26 20:15:14.451 UTC.\n- Interruptions: none. The initial sandboxed npm registry request failed due to network restrictions; the permitted registry retry succeeded during the same uninterrupted run.\n- Process cleanup: all commands started for the entry completed; no server, watcher, browser, renderer, or test process was left running.\n- Checks: JavaScript syntax, installed dependency and entry-file checks, and CPU-only collision-layout reachability. Browser, visual, interactive, GPU, and performance checks were not run.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

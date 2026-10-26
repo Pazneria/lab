@@ -4981,6 +4981,1780 @@
       "runtimeVerification": "Host startup, original entry control and authored default canvas observed. Movement, routes, collision feel, full geometry, visual quality and performance remain unverified.",
       "preview": "preview.jpg",
       "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-01",
+      "title": "Holloway Halt",
+      "description": "An abandoned railway station, reclaimed by autumn woodland.",
+      "promptId": "01",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the station**, then move the mouse to look around.\n- **W A S D** or arrow keys: walk. **Shift**: walk faster.\n- **R**: return to the entrance. **Esc**: release the mouse and pause; click the button to resume.\n\nThe scene is designed for a desktop browser with WebGL and pointer lock. Movement uses simple collision against the building, canopy posts, trees, and the scene boundary. There is no jumping or mobile control scheme. The platform height transitions automatically.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer BUILD_LOG.txt",
+          "path": "BUILD_LOG.txt"
+        },
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Holloway Halt - actual unchanged authored default-view canvas.",
+      "archiveSha256": "31093b1234d2ac9030cb581c11c62e1c2bb540d82f1a5492d10a74855f574fb1",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "4d79440d20fb99968c345c74e7fa6a4bb59ac44c7caa33ae612310a51f64c825",
+      "promptVersion": "01-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-02",
+      "title": "Rain Court",
+      "description": "A courtyard night market, just after rain.",
+      "promptId": "02",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified. Original producer config-derived Sol/medium claim is preserved. It refers to the laptop global Codex config, which does not independently establish this thread’s serving model or effective effort.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click the scene to capture the mouse; move the mouse to look.\n- W/A/S/D or arrow keys walk. Hold Shift to move faster.\n- R or **Return to entrance** resets the view and position.\n- Escape releases the mouse; click the scene again to resume mouse-look.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer BUILD_RECORD.txt",
+          "path": "BUILD_RECORD.txt"
+        },
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Unsuccessful capture attempt and limits",
+          "path": "preview-attempt.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "Actual preview not yet captured.",
+      "archiveSha256": "8f0ddb03696f2de8611ee2d31a115ce314fa737d2fc9a9d6de2c6cf9c44166a9",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "2e914ecb3daa6e224c46f92edc30aa14747208fb301dfa26d0ff01a71799d5bb",
+      "promptVersion": "02-terra",
+      "webgl": "WebGL (startup unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured. No route, collision or performance QA."
+    },
+    {
+      "id": "terra-03",
+      "title": "Observatory on the Plateau",
+      "description": "A desert observatory on a rocky plateau in late afternoon.",
+      "promptId": "03",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click **Enter the observatory** to capture the mouse. Move with WASD or the arrow keys, look with the mouse, hold Shift to move faster, press R to return to the entrance, and press Esc to release the cursor. Click to resume.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer implementation-start.txt",
+          "path": "implementation-start.txt"
+        },
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Observatory on the Plateau - actual unchanged authored default-view canvas.",
+      "archiveSha256": "0cf06239f3e78e3c493e380463cf4a51a5bd64c1564c70d65540a73c1fb12933",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "9b5a518551c78899872e2485c5b0509085368401bf70201a3f0d34bc1a3c78ab",
+      "promptVersion": "03-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-04",
+      "title": "The Glasshouse",
+      "description": "An old tropical greenhouse, recognizable beneath years of plant growth.",
+      "promptId": "04",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the glasshouse** to capture the mouse.\n- Move with **W A S D** or the arrow keys; move the mouse to look.\n- Hold **Shift** to walk faster.\n- Press **R** to reset to the threshold.\n- Press **Escape** to release the mouse; click the enter button again to resume.\n\nThe raised bed, enclosing walls, doorway and potting bench have simple collision boundaries. Plants are intentionally permeable so their foliage can be inspected closely.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN_RECORD.md",
+          "path": "RUN_RECORD.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "The Glasshouse - actual unchanged authored default-view canvas.",
+      "archiveSha256": "e6e8364a00132e4c733a7e93fbd8dd3c0c4a45e6802f3b37efce7370a80ef6ca",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "eb1104c6e90e5c84be15d8d4f11ddcc736309cb5396301339ab1377e4f4dbd03",
+      "promptVersion": "04-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-05",
+      "title": "North / Field Station 04",
+      "description": "A compact polar research shelter during clear blue twilight.",
+      "promptId": "05",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click **Enter the shelter** to capture the pointer. Move with **W A S D** or the arrow keys; move the mouse to look. Hold **Shift** to move faster. Press **R** to return to the starting position. Press **Esc** to release the pointer; click the button to resume.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer start-time.txt",
+          "path": "start-time.txt"
+        },
+        {
+          "label": "Original producer stop-time.txt",
+          "path": "stop-time.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "North / Field Station 04 - actual unchanged authored default-view canvas.",
+      "archiveSha256": "832f6910fd51b911ce7872fc4d2eab506a9a55fbb8dd2c5ea7c0687def96a25d",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "43a951cd697ce4ad46965282d9c71089119e4142c0abf2c0c7339cd3391f977d",
+      "promptVersion": "05-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-06",
+      "title": "Limestone Hollow",
+      "description": "A dry route around a shallow underground pool, through a broad natural arch to a raised landing.",
+      "promptId": "06",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click the scene or the controls panel to capture the mouse; move the mouse to look around.\n- W, A, S, D or the arrow keys move; hold Shift for a faster walk.\n- R returns to the entrance. Escape releases the mouse. The Reset and Controls buttons are also available.\n\nThe dry route runs to the right of the pool, beneath the arch, and up to the landing. Water, enclosure walls and major flowstone formations block movement.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN_RECORD.txt",
+          "path": "RUN_RECORD.txt"
+        },
+        {
+          "label": "Original producer START_TIME.txt",
+          "path": "START_TIME.txt"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Limestone Hollow - actual unchanged authored default-view canvas.",
+      "archiveSha256": "a579b3dd4f89239223ec05ab9fc14d12e8179991c76afa9fbf8fa0c43a13e8c7",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "e6dbf5bff5af9d6a6ac32e35b3c0d2040081c4246924b3d43b8551bacd73b978",
+      "promptVersion": "06-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-07",
+      "title": "Still Forms",
+      "description": "An entrance gallery and taller sculpture hall connected by a broad ramp, with three original abstract sculptures.",
+      "promptId": "07",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the museum** to capture the pointer.\n- Move with **W A S D** or arrow keys and look with the mouse.\n- Hold **Shift** to move faster.\n- Press **R** to reset to the entrance.\n- Press **Esc** to release the pointer; click the scene to capture it again.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Still Forms - actual unchanged authored default-view canvas.",
+      "archiveSha256": "a08c419a7e4815b0a9d234ac1f1d34231601031ebb858e40e1ba3be0ed571491",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "c5b6037b9e99784c8cd3dd073a78d1b5765094e22843ff4355123597013c9d9a",
+      "promptVersion": "07-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-08",
+      "title": "Low Tide — Tidal Boathouse",
+      "description": "A timber workshop, short pier and exposed shoreline beside a quiet tidal inlet.",
+      "promptId": "08",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click **Enter the boathouse** to capture the mouse. Move with **WASD** or the arrow keys, look with the mouse, and hold **Shift** to move faster. Press **R** or click **Reset** to return to the workshop. Press **Escape** to release the pointer; click the scene to capture it again.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Low Tide — Tidal Boathouse - actual unchanged authored default-view canvas.",
+      "archiveSha256": "76bee39b2f43832dbe39cc4c6b816a4100a0835d2b6136e0473272ea5584ec66",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "455c802d156701180cc2ac233b00bd1adcc7f9fecef1739c4bf2460c8828be29",
+      "promptVersion": "08-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-09",
+      "title": "Station 06 — Maintenance Bay 04",
+      "description": "A main work floor, service alcove and elevated inspection walkway connected by ordinary stairs.",
+      "promptId": "09",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the bay** to capture the pointer.\n- Move with **W A S D** or the arrow keys; look with the mouse.\n- Hold **Shift** to move faster.\n- Press **R** to reset to the entrance.\n- Press **Esc** to release the pointer; click to resume.\n\nThe service alcove is on the left of the main floor. The stair flight is on the right and leads to the inspection deck across the back of the bay. Return by the same stairs.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Capture exposed missing host module-path aliases/dependency closure; no intrinsic entrant startup failure established. Hosting mapping corrected after session; later runtime validation pending.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN_TIMES.txt",
+          "path": "RUN_TIMES.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Unsuccessful capture attempt and limits",
+          "path": "preview-attempt.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "./node_modules/three/build/",
+          "./vendor/three/"
+        ],
+        [
+          "{\"imports\":{",
+          "{\"imports\":{\"./node_modules/three/build/\":\"./vendor/three/\",\"./node_modules/three/examples/jsm/utils/BufferGeometryUtils.js\":\"./vendor/three/BufferGeometryUtils.js\","
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "Actual preview not yet captured.",
+      "archiveSha256": "914aee860f1377c56164edee7b2f572df4c9d0504d9b0c246181661f6d8325f0",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "13746ba2605ca362105f949a56cd3499dde2284a9dcb04a17553c63f38498327",
+      "promptVersion": "09-terra",
+      "webgl": "WebGL (startup unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Capture exposed missing host module-path aliases/dependency closure; no intrinsic entrant startup failure established. Hosting mapping corrected after session; later runtime validation pending. No route, collision or performance QA."
+    },
+    {
+      "id": "terra-10",
+      "title": "The Hillside Library",
+      "description": "Lower shelves, a window reading alcove and broad stairs to a partial upper gallery.",
+      "promptId": "10",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click the original entry control; WASD/arrow keys move, mouse looks, Shift moves faster, R resets, Esc releases. See original README.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "The Hillside Library - actual unchanged authored default-view canvas.",
+      "archiveSha256": "81580fb5fa74f16e23cf342049b76e030a5ffbfc70ea0a5bc9de83923c84e039",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "805fe9e02429d11f7604b656f3bba1622ebb4ef1eeddf7959e2b24a01d9dfc8d",
+      "promptVersion": "10-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-11",
+      "title": "FIELD / Demonstration Lab",
+      "description": "One exhibition hall with a central instrument, perception-testing bench and motion-testing alcove.",
+      "promptId": "11",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click **Enter the lab** to capture the mouse. Move with **W A S D** or the arrow keys, look with the mouse, hold **Shift** to move faster, press **R** to reset to the entrance, and **Esc** to release the pointer. Click the scene or the entry button to capture it again.\n\nThe scene uses simple horizontal collision around the room, central instrument and main furniture. It is designed for desktop mouse and keyboard. Exhibits and displays are scenic and do not operate as scientific tools.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer IMPLEMENTATION_TIME.txt",
+          "path": "IMPLEMENTATION_TIME.txt"
+        },
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "FIELD / Demonstration Lab - actual unchanged authored default-view canvas.",
+      "archiveSha256": "f8642c577c00e873cb3e1c1e9ea6f6aa9c4d0588a17be5900d42c26b2423cd85",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "11e837e1e88c5caa28d542d1e33de649960e1ff76c39f05f25b35dcabc51f57a",
+      "promptVersion": "11-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-12",
+      "title": "Afterglow Arcade",
+      "description": "An original feature cabinet, two cabinet banks and an open counter alcove connected by walkable routes.",
+      "promptId": "12",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click the opening panel to capture the mouse. Move with WASD or arrow keys; look with the mouse. Hold Shift to move faster. Press R to reset to the entrance, and Esc to release the mouse. Click the panel again to resume.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN-RECORD.txt",
+          "path": "RUN-RECORD.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Unsuccessful capture attempt and limits",
+          "path": "preview-attempt.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "Actual preview not yet captured.",
+      "archiveSha256": "b07b6ff7c61a9b3a089fd682fb1e251d211edf4b719dd7d0242671f5c2760d6e",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "1195880b5049b0223617eba924e8e060d7c7185bd2e4f73505b4ffe978086988",
+      "promptVersion": "12-terra",
+      "webgl": "WebGL (startup unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured. No route, collision or performance QA."
+    },
+    {
+      "id": "terra-13",
+      "title": "Rainline Station",
+      "description": "An enclosed rainy mountain terminal, stationary cabin loading platform and covered lookout.",
+      "promptId": "13",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the station** to capture the mouse; move the mouse to look around.\n- W/A/S/D or arrow keys move; hold Shift to move faster.\n- R resets the viewpoint; Esc releases the mouse. Click the scene to capture it again.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer timing.txt",
+          "path": "timing.txt"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Rainline Station - actual unchanged authored default-view canvas.",
+      "archiveSha256": "9815f93007d245cb222badbe127529fb2a8eddc88e6adef0160fa1cf368bff73",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "a36b4835bd024f62127b29a38de43fc624cd842a173927c6d063285e2def12e7",
+      "promptVersion": "13-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-14",
+      "title": "Clay & Kiln",
+      "description": "A pottery studio, sheltered glazing area and connected brick-kiln courtyard.",
+      "promptId": "14",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click the original entry control; WASD/arrow keys move, mouse looks, Shift moves faster, R resets, Esc releases. See original README.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer timing.txt",
+          "path": "timing.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "<script type=\"module\"",
+          "<script type=\"importmap\">{\"imports\":{\"./node_modules/three/build/three.module.js\":\"./vendor/three/three.module.js\"}}</script><script type=\"module\""
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Clay & Kiln - actual unchanged authored default-view canvas.",
+      "archiveSha256": "a8661a058ce9ec62227758edd384a0629dda11b2839534e8eeb51ed8d0dedbc8",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "7edf135bd360338030affcff94902c72da8dadbb20f3915828e92e97b3ae213e",
+      "promptVersion": "14-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-15",
+      "title": "Mera's Rooms",
+      "description": "An original hero’s bedroom, usable wardrobe and small map-and-work study.",
+      "promptId": "15",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click the original entry control; WASD/arrow keys move, mouse looks, Shift moves faster, R resets, Esc releases. See original README.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN-RECORD.md",
+          "path": "RUN-RECORD.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ],
+        [
+          "./node_modules/three/build/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Mera's Rooms - actual unchanged authored default-view canvas.",
+      "archiveSha256": "9f31c1a24935c35035ff06625911a8b48eb76d889fe782c5aa78d245138c98df",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "ad58e20976f09c1b54c89936fe64efa67cb58f89ba190e6392683a7211729258",
+      "promptVersion": "15-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-16",
+      "title": "Hearth & Herb",
+      "description": "A cozy kitchen, crowded magical workroom and little framed greenhouse.",
+      "promptId": "16",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified. Original producer config-derived Sol/medium claim is preserved. It refers to the laptop global Codex config, which does not independently establish this thread’s serving model or effective effort.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the cottage**, then move the mouse to look.\n- **W A S D** or arrow keys move; hold **Shift** to move faster.\n- **R** or the Reset button returns to the entrance.\n- **Esc** releases the pointer; click the scene to capture it again.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer implementation-start.txt",
+          "path": "implementation-start.txt"
+        },
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run-record.txt",
+          "path": "run-record.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Hearth & Herb - actual unchanged authored default-view canvas.",
+      "archiveSha256": "06a9c07fe41e47f7aa49110d30b9a97fc5ca2b05b9828ea20ea5d754f1fb824d",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "ebbda636ebd940c88ea6d9f13179af48c52d599ffd19db487ed17a5fdabe621b",
+      "promptVersion": "16-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-17",
+      "title": "Above the Wayfarer's Rest",
+      "description": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor.",
+      "promptId": "17",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click **Enter the room** to capture the mouse. Move with WASD or arrow keys, look with the mouse, hold Shift to move faster, and press R or use the Reset position button to return to the entrance. Esc releases the mouse; click the scene to capture it again. A mouse and keyboard are required.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN-RECORD.txt",
+          "path": "RUN-RECORD.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Above the Wayfarer's Rest - actual unchanged authored default-view canvas.",
+      "archiveSha256": "e3da1e45b64e98d3b9bd1fc43e7e3d5569f068fdc48bf35d818679e48fe139a6",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "f2edc8eabcb38b12ed913e9d9f6b54150ff41f92ca5fd15dcd53d52d9bd328e4",
+      "promptVersion": "17-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-18",
+      "title": "The Meridian — Captain's Quarters",
+      "description": "A captain’s bedroom, private study and observation nook onto space.",
+      "promptId": "18",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter quarters**, then move the mouse to look.\n- **W/A/S/D** or arrow keys move; hold **Shift** to move faster.\n- **R** resets position and view; **Esc** releases the mouse.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer implementation-start.txt",
+          "path": "implementation-start.txt"
+        },
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run-record.txt",
+          "path": "run-record.txt"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "The Meridian — Captain's Quarters - actual unchanged authored default-view canvas.",
+      "archiveSha256": "3b9e2f4d7dd23f6c79ab187762fac42043cc8db8ba846fe3b9bc186bb45d41cb",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "0c4dac341abe83589e2b4e9c894428eb2050b6b52bff2bd076337338879ba12a",
+      "promptVersion": "18-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-19",
+      "title": "Pelagic House",
+      "description": "A domestic room, research work nook and substantial observation window onto a bounded dark reef.",
+      "promptId": "19",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- Click **Enter the apartment** to capture the mouse. Click the scene again after releasing it.\n- Move with **W A S D** or the arrow keys. Hold **Shift** to move faster.\n- Look with the **mouse**.\n- Press **R** to reset to the entrance and **Esc** to release the mouse.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN_RECORD.txt",
+          "path": "RUN_RECORD.txt"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas#scene",
+      "hostPathReplacements": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "Pelagic House - actual unchanged authored default-view canvas.",
+      "archiveSha256": "17026d2904bfca8654446d1f6063cd0eae593ebc0312d99263d533f4e4246da7",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "bc97c7cc101be78f0206e635701ffd50e483545cb140b1f3932c7f12fa5d898e",
+      "promptVersion": "19-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-20",
+      "title": "Thistle & Thread — The Wayfarer's Wagon",
+      "description": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp.",
+      "promptId": "20",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click the scene to capture the mouse. Move with WASD or the arrow keys, look with the mouse, hold Shift to walk faster, press R to return to camp, and press Escape to release the mouse. The entrance steps are at the end of the wagon; another set of steps leads onto the customer landing in front of the open shop.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Unsuccessful capture attempt and limits",
+          "path": "preview-attempt.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "Actual preview not yet captured.",
+      "archiveSha256": "c881a5ce465a166f536eb80e2f535092d37f817d6ccc948b2b50219be64cbb4d",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "8f3becb0cf9e1ddfb56d1aba3a9080ecdbbbaf47b7c6f04b985a3dcd85499081",
+      "promptVersion": "20-terra",
+      "webgl": "WebGL (startup unverified)",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "runtimeVerification": "Capture harness clicked a pointer-inert hint or a canvas behind the original start overlay. Runtime reached host readiness; actual preview remains uncaptured. No route, collision or performance QA."
+    },
+    {
+      "id": "terra-21",
+      "title": "The Caretaker's Rest",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "Click the original entry control; WASD/arrow keys move, mouse looks, Shift moves faster, R resets, Esc releases. See original README.",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer START_TIME.txt",
+          "path": "START_TIME.txt"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "The Caretaker's Rest - actual unchanged authored default-view canvas.",
+      "archiveSha256": "b5b378b3b8dc84cff6723b22e6ad428c5af2a53c81daa558b09c90e366c89c7f",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "855971d8fa9f5f6a0069ddcc370d4b53029f183a55615d7003811f95a003440b",
+      "promptVersion": "21-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
+    },
+    {
+      "id": "terra-22",
+      "title": "The Astral Atelier",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "terra",
+      "requestedConfiguration": "GPT-6.1 Terra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+      "buildWindow": "Original producer records contain first implementation, exact one-hour deadline and actual stop claims, with interruption/cleanup history where supplied. Timing is self-reported, not independently verified.",
+      "interruptions": "No midrun entrant messages or clock extensions, parent-confirmed. Dependency retries and producer interruption claims remain in unchanged original records.",
+      "controls": "- **W A S D** or arrow keys: walk\n- **Mouse**: look around\n- **Shift**: walk faster\n- **R**: reset to the entrance\n- **Esc**: release the mouse; click the scene to capture it again",
+      "producerChecks": "CPU-only syntax/build/geometry or route checks reported by producer; see original README/run records. No producer browser, visual, GPU or performance checks.",
+      "performanceEvidence": "No measured frame times or performance score; CPU checks do not verify appearance, interactive movement or GPU behavior.",
+      "limitations": [
+        "Actual hosted startup and default-view capture succeeded. Movement, routes, collision feel, full geometry and performance remain unverified.",
+        "Original producer limitations remain in the unchanged README.",
+        "Requested model/effort are parent-selected; actual backend identity/effective effort not independently exposed."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "esbuild-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "rollup-LICENSE.md"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "three-LICENSE"
+        },
+        {
+          "label": "Original dependency license",
+          "path": "vite-LICENSE.md"
+        },
+        {
+          "label": "Exact verified initial launch prompt",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Requested model, original timing claims and importer limits",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Actual default-view capture provenance",
+          "path": "preview-capture.json"
+        },
+        {
+          "label": "Original pre-capture importer record",
+          "path": "pre-capture-host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas[data-engine]",
+      "hostPathReplacements": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ],
+      "previewAvailable": true,
+      "previewAlt": "The Astral Atelier - actual unchanged authored default-view canvas.",
+      "archiveSha256": "2fdd6609dd69fb1bac4f090e8bcdfb3e41f16f1630d91b96ad4ddcb6672c9373",
+      "archiveKind": "Host-created original source/build/record/license preservation ZIP retained outside Git and Pages.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "af61d7c5835d0a3d116a674b8e09cf93b6e0e29c55334ad9346d4943ecbd6aa7",
+      "promptVersion": "22-terra",
+      "webgl": "WebGL (host startup/default-view observed; no performance QA)",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "runtimeVerification": "Hosted startup, original entry control and default canvas captured only. Movement, routes, collision feel, full geometry and performance remain unverified.",
+      "preview": "preview.jpg",
+      "previewCapture": "preview-capture.json"
     }
   ],
   "prompts": [
@@ -5595,6 +7369,204 @@
       "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
       "source": "Exact launch TXT verified against task50 handoff, task43 canonical and existing OpenAI launch hashes. Owner reports completion.",
       "note": "Preparation time is not implementation start. Actual delivery framing was not independently observed."
+    },
+    {
+      "id": "01-terra",
+      "promptId": "01",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-01-terra.txt",
+      "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "02-terra",
+      "promptId": "02",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-02-terra.txt",
+      "sha256": "0e6f602a86782fafa7f5accba0eaf46ecd8bc721e7d91804960e6c9bbe054be4",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "03-terra",
+      "promptId": "03",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-03-terra.txt",
+      "sha256": "8d2733f26050fe5bf0d03ef1ed9b92a2cc372943938c7e8d8878d5a5ef6d23d5",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "04-terra",
+      "promptId": "04",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-04-terra.txt",
+      "sha256": "9bdc755a7c3088bf6b34b3736076fe207254fa68182bc3cb08e82a989af83cf8",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "05-terra",
+      "promptId": "05",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-05-terra.txt",
+      "sha256": "3105a31098ecf4ff4e1e92cbb2058d292440555c6690f6c5150db2b079103d67",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "06-terra",
+      "promptId": "06",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-06-terra.txt",
+      "sha256": "2ffabaa281b0fc6b348c8ca3f410e0b3d6df4808fb8265f01b09611a53c3407b",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "07-terra",
+      "promptId": "07",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-07-terra.txt",
+      "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "08-terra",
+      "promptId": "08",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-08-terra.txt",
+      "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "09-terra",
+      "promptId": "09",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-09-terra.txt",
+      "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "10-terra",
+      "promptId": "10",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-10-terra.txt",
+      "sha256": "66abbb54666f190fe4ed3987d00e7619b1cf36ba1bb34dd8fca169cedcadf442",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "11-terra",
+      "promptId": "11",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-11-terra.txt",
+      "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "12-terra",
+      "promptId": "12",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-12-terra.txt",
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "13-terra",
+      "promptId": "13",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-13-terra.txt",
+      "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "14-terra",
+      "promptId": "14",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-14-terra.txt",
+      "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "15-terra",
+      "promptId": "15",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-15-terra.txt",
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "16-terra",
+      "promptId": "16",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-16-terra.txt",
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "17-terra",
+      "promptId": "17",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-17-terra.txt",
+      "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "18-terra",
+      "promptId": "18",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-18-terra.txt",
+      "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "19-terra",
+      "promptId": "19",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-19-terra.txt",
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "20-terra",
+      "promptId": "20",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-20-terra.txt",
+      "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "21-terra",
+      "promptId": "21",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-21-terra.txt",
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
+    },
+    {
+      "id": "22-terra",
+      "promptId": "22",
+      "label": "Terra initial launch / unchanged no-browser conditions",
+      "path": "prompt-22-terra.txt",
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
+      "source": "Exact parent-supplied original launch hash verified against canonical base plus supplied execution conditions and framing.",
+      "note": "Requested Terra/XHIGH/default service; actual serving identity and effective effort not independently exposed. No midrun messages or deadline extensions."
     }
   ]
 }

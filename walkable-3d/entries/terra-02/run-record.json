@@ -1,0 +1,32 @@
+{
+  "id": "terra-02",
+  "scene": 2,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-3",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified. Original producer config-derived Sol/medium claim is preserved. It refers to the laptop global Codex config, which does not independently establish this thread’s serving model or effective effort.",
+  "producerRecords": {
+    "BUILD_RECORD.txt": "First implementation: 2026-10-26 16:07:12 -04:00\nDeadline: 2026-10-26 17:07:12 -04:00\nModel: gpt-6.1-sol (configured)\nEffort: medium (configured)\nInterruptions: No work interruption. The first sandboxed npm install was canceled after it stalled; a subsequent permitted install completed.\nProcess cleanup: All started command sessions completed or were canceled. No Node process was present at the final process check. No server, browser, watcher, or performance test was started.\nActual stop: 2026-10-26 16:12:20 -04:00\n",
+    "README.md": "# Rain Court\n\nA small first-person night market built with Three.js. Four stalls face an open courtyard; the covered opening on the far wall leads to the tea counter.\n\n## Launch\n\nRequires Node.js 20.19+ or 22.12+ and a desktop browser with WebGL 2. From this directory in PowerShell:\n\n```powershell\ncd 'C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-3'\nnpm run start\n```\n\nThen open the **suggested launch address** http://127.0.0.1:5187/ in a browser. The port is strict: if it is occupied, Vite will report an error instead of silently choosing another one. If dependencies have been removed, run `npm ci` first. No server was started during this build.\n\n## Controls\n\n- Click the scene to capture the mouse; move the mouse to look.\n- W/A/S/D or arrow keys walk. Hold Shift to move faster.\n- R or **Return to entrance** resets the view and position.\n- Escape releases the mouse; click the scene again to resume mouse-look.\n\n## Implementation and checks\n\nThe scene generates its geometry and textures locally, and batches static meshes by material. Lighting pools and subtle highlights suggest wet paving; they are not dynamic reflections. Collision uses simple horizontal bounding boxes around the major structures. The experience is designed for desktop mouse and keyboard; there are no touch controls.\n\n`npm run build` and `node --check src/main.js` passed. `node scripts/check-scene.mjs` constructed the scene and merged its geometry with a CPU-only DOM/canvas stub. `node scripts/check-route.mjs` checked grid connectivity between the entrance, each awning, the passage, the tea counter, and the return. These checks do not verify what a browser renders or how movement feels. No browser, visual, interactive, GPU or performance test was performed under this run's execution conditions.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "Hosted startup observed; no preview captured or performance measurement.",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED",
+    "captureAttempt": "preview-attempt.json"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

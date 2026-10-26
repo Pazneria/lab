@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Holloway Halt</title>  <script type="module" crossorigin src="/assets/index-CAUEAiC3.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BIM8nI4W.css">
+</head>
+<body><div id="scene"></div><div id="intro"><div class="card"><div class="eyebrow">A PLACE LEFT BEHIND</div><h1>Holloway Halt</h1><p>Beyond the trees, the last train has long since gone.</p><button id="enter">Enter the station</button><div class="instructions"><b>W A S D</b> walk &nbsp;·&nbsp; <b>Mouse</b> look<br><b>Shift</b> walk faster &nbsp;·&nbsp; <b>R</b> return to entrance<br><b>Esc</b> release mouse</div></div></div><div id="hud"><span>HOLLOWAY HALT</span><span>WASD move &nbsp; · &nbsp; mouse look &nbsp; · &nbsp; R reset &nbsp; · &nbsp; Esc pause</span></div><div id="crosshair">·</div><div id="notice"></div></body></html>

@@ -1,0 +1,32 @@
+{
+  "id": "terra-09",
+  "scene": 9,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-10",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Station 06 — Maintenance Bay 04\n\nAn explorable 3D orbital maintenance bay built with Three.js and procedural geometry. The local installation includes the Three.js dependency; no external assets are loaded by the scene.\n\n## Launch\n\nFrom this directory in PowerShell:\n\n```powershell\npython -m http.server 49371 --bind 127.0.0.1\n```\n\nOpen the **suggested** address `http://127.0.0.1:49371/` in a WebGL-capable desktop browser. The server is not running as part of this handoff. If dependencies need to be restored, run `npm install` in this directory first.\n\n## Controls\n\n- Click **Enter the bay** to capture the pointer.\n- Move with **W A S D** or the arrow keys; look with the mouse.\n- Hold **Shift** to move faster.\n- Press **R** to reset to the entrance.\n- Press **Esc** to release the pointer; click to resume.\n\nThe service alcove is on the left of the main floor. The stair flight is on the right and leads to the inspection deck across the back of the bay. Return by the same stairs.\n\n## Notes\n\nThe project uses simplified collision against the major room boundaries, the machine, workbench, and access routes. It has no jump or physics simulation; the stair elevation is continuous for comfortable movement. It is intended for desktop mouse and keyboard. Visual appearance, browser interaction, and performance have not been verified in this run because the execution conditions prohibit launching a browser, renderer, server, or benchmark.\n",
+    "RUN_TIMES.txt": "First implementation action: 2026-10-26 20:08:57 UTC\nDeadline: 2026-10-26 21:08:57 UTC\nActual stop timestamp: 2026-10-26 20:13:37 UTC\nModel: GPT-6 (exact variant unavailable in execution environment)\nReasoning effort: unavailable in execution environment\nInterruptions: none. The first npm registry request could not resolve in the sandbox; installation succeeded on an approved retry.\nProcess cleanup: npm and all check commands exited; no server, browser, watcher, or benchmark was started.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED",
+    "captureAttempt": "preview-attempt.json"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}
