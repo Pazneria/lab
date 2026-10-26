@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Caretaker's Rest</title>  <script type="module" crossorigin src="/assets/index-_lyQpppG.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-_ytbndXq.css">
+</head>
+<body><div id="scene"></div><div id="crosshair">+</div><div id="hud"><div class="eyebrow">THE CARETAKER'S REST</div><div id="place">Caretaker's quarters</div><div class="hint">W A S D · move &nbsp; / &nbsp; mouse · look &nbsp; / &nbsp; shift · walk faster &nbsp; / &nbsp; R · reset</div></div><div id="welcome"><div class="card"><div class="eyebrow">A SMALL HOME FOR A VERY LARGE GUEST</div><h1>The Caretaker's Rest</h1><p>Follow the warm light past the bed and through the gear passage. The roost is open to you at floor level.</p><button id="enter">Enter the quarters</button><div class="controls">W A S D to move · mouse to look<br>Shift to walk faster · R to return to the entrance<br>Esc releases the mouse</div></div></div></body></html>

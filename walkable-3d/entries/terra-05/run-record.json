@@ -1,0 +1,32 @@
+{
+  "id": "terra-05",
+  "scene": 5,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-6",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# North / Field Station 04\n\nA compact, procedurally built browser scene: snowy exterior, entry vestibule, and a research/living room. Everything visible is generated locally; the application does not fetch art assets.\n\n## Launch\n\nFrom this directory, run:\n\n```powershell\nnpm install\nnpm run dev\n```\n\nOpen the suggested address http://127.0.0.1:5186/ in a desktop browser. This address was not started or verified during implementation. The included `node_modules` and lockfile may make `npm install` unnecessary; it is included for a fresh copy. A production build can be generated with `npm run build`.\n\n## Controls\n\nClick **Enter the shelter** to capture the pointer. Move with **W A S D** or the arrow keys; move the mouse to look. Hold **Shift** to move faster. Press **R** to return to the starting position. Press **Esc** to release the pointer; click the button to resume.\n\n## Verification and limitations\n\n`node --check src/main.js`, `node scripts/check-route.mjs`, and `npm run build` were run successfully. The route check samples a walkable path and tests representative wall collisions, but it is not interactive testing. Under the execution conditions no browser, visual inspection, GPU test, server, or performance measurement was used. Appearance, live controls, shadow quality, and actual performance remain unverified. The scene is designed for desktop mouse and keyboard; it has no touch controls. The terrain and objects are stylized procedural geometry, and collision is limited to walls and larger furnishings.\n",
+    "start-time.txt": "2026-10-26 16:08:15 -04:00\n",
+    "stop-time.txt": "2026-10-26 16:12:02 -04:00\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "Default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

@@ -1,0 +1,30 @@
+{
+  "id": "terra-10",
+  "scene": 10,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-11\\hillside-library",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# The Hillside Library\n\nA self-contained Three.js scene generated from local geometry, textures, and materials. The room includes a lower collection, a window alcove, a broad stair, and a partial upper gallery.\n\n## Launch\n\nFrom this directory, run:\n\n```powershell\nnpm run dev -- --host 127.0.0.1 --port 43117 --strictPort\n```\n\nThen open the suggested address http://127.0.0.1:43117/ in a desktop browser. The server was not started during this build. Dependencies are installed in this workspace; if they need to be restored, run `npm ci` first.\n\nClick **Enter the library** to capture the mouse. Move with **W/A/S/D**, look with the mouse, hold **Shift** to move faster, and press **R** or the onscreen reset button to return to the start. Press **Escape** to release the mouse; click the scene to capture it again.\n\n## Checks and limitations\n\n`npm run build` and `node --check src/main.js` pass. `npm run check-route` runs a CPU-only movement simulation using the scene's movement code and a separately enumerated set of matching obstacles; it checks a route through the alcove, up the stair and across the overlook, the return, and selected edge/wall boundaries. This is not an interactive browser test.\n\nNo browser, rendering, visual, GPU, or performance test was run. Appearance, frame times, and the complete interactive collision behavior remain unverified. Lighting uses unshadowed lights and simple translucent floor patches; the landscape and textures are procedural. Desktop mouse and keyboard are required.\n\n## Timing and provenance\n\n- First implementation action: 2026-10-26 16:09:07 UTC-04:00.\n- One-hour deadline: 2026-10-26 17:09:07 UTC-04:00.\n- Exact assigned model identifier and reasoning effort: not exposed to this runtime. The system identifies the assistant as GPT-6, but does not provide a more precise identifier or effort setting.\n- Interruptions: no work interruption. The first npm registry request failed in the restricted environment; the dependency install succeeded on a permitted retry. An installed-library filename search returned paths in unrelated projects; those files were not opened or reused.\n- Actual stop: 2026-10-26 16:14:21 -04:00. All entry commands had completed; no server, watcher, browser, or test process was left running.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "Default-view canvas captured; no full visual-quality assessment.",
+    "interactive": "NOT RUN",
+    "gpu": "Host startup/default-view rendering observed only.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

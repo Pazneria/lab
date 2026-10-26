@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limestone Hollow</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div class="title"><span class="eyebrow">FIELD NOTES · 01</span><h1>Limestone Hollow</h1><p>A pool beneath the stone</p></div>
+  <div id="hint" class="hint"><strong>Click to enter</strong><span>Mouse to look &nbsp;·&nbsp; WASD / arrow keys to walk</span><span>Shift to walk faster &nbsp;·&nbsp; R to return to the entrance</span><span>Esc releases the mouse</span></div>
+  <div id="crosshair" aria-hidden="true"></div>
+  <div class="bottom"><span>EXPLORE AT WALKING PACE</span><button id="reset" type="button">↻ &nbsp; Reset position</button><button id="help" type="button">? &nbsp; Controls</button></div>
+  <div id="notice" role="status"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

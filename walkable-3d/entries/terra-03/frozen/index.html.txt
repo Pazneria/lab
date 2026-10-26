@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Observatory on the Plateau</title>
+  <script type="module" crossorigin src="/assets/index-CGsfA9V9.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DjPJBw1E.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="intro" class="overlay">
+    <div class="card">
+      <div class="eyebrow">THE HIGH DESERT · LATE AFTERNOON</div>
+      <h1>Observatory<br><em>on the plateau</em></h1>
+      <p>A quiet place to measure the sky. Walk through the shaded passage, around the instrument, and out onto the terrace.</p>
+      <button id="enter">Enter the observatory <span>↗</span></button>
+      <div class="instructions"><span><b>W A S D</b> move</span><span><b>Mouse</b> look</span><span><b>Shift</b> walk faster</span><span><b>R</b> reset</span></div>
+      <small>Click to capture the mouse · Esc releases it</small>
+    </div>
+  </div>
+  <div id="hud"><div class="hud-title">THE HIGH DESERT <span>/</span> OBSERVATORY</div><div class="hud-controls">WASD <span>move</span> &nbsp; MOUSE <span>look</span> &nbsp; SHIFT <span>faster</span> &nbsp; R <span>reset</span> &nbsp; ESC <span>release cursor</span></div></div>
+  <div id="crosshair"></div>
+</body>
+</html>

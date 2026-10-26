@@ -1,0 +1,31 @@
+{
+  "id": "terra-03",
+  "scene": 3,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-4",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "implementation-start.txt": "2026-10-26 16:07:22 -04:00\n2026-10-26 17:07:22 -04:00\n",
+    "README.md": "# Observatory on the Plateau\n\nA first-person, browser-rendered 3D desert observatory. The source and generated production bundle are in this directory.\n\n## Launch\n\nFrom this directory in PowerShell:\n\n```powershell\nnpm install\nnpm run dev\n```\n\nSuggested launch address: http://127.0.0.1:5197/ . This address was not started or verified during the build. The dependencies are already installed in this workspace; `npm install` is only needed if they are missing. A browser with WebGL is required.\n\n## Controls\n\nClick **Enter the observatory** to capture the mouse. Move with WASD or the arrow keys, look with the mouse, hold Shift to move faster, press R to return to the entrance, and press Esc to release the cursor. Click to resume.\n\n## Verification and limitations\n\n`node --check src/main.js` and `npm run build` passed. A CPU-only grid check found connected positions from entrance to chamber to terrace, rejected positions past the terrace edge and inside the instrument, and sampled a clear circle around the instrument. These checks do not establish visual correctness, browser compatibility, interactive collision feel, or frame rate. The build was not opened in a browser and no server, rendering, screenshot, GPU, or performance test was run, per the execution conditions. The browser pointer-lock interaction and visual quality require later inspection. Vite reported a bundle-size advisory for the Three.js-containing bundle.\n\n## Run record\n\n- Model: the runtime identifies the assistant as GPT-6; an exact model identifier and reasoning-effort setting were not exposed to this agent.\n- First implementation action: 2026-10-26 16:07:22 -04:00 (20:07:22 UTC).\n- One-hour deadline: 2026-10-26 17:07:22 -04:00 (21:07:22 UTC).\n- Interruptions: the first package install was stopped after it stalled on restricted DNS; a bounded retry confirmed the DNS failure. A subsequent authorized registry install succeeded. No other interruption occurred.\n- Cleanup: all commands started for this entry have finished or were stopped; no server, watcher, browser, or test process was started for the entry.\n- Actual editing stop: 2026-10-26 16:11:17 -04:00 (2026-10-26 20:11:17 UTC).\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

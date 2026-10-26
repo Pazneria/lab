@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field / AI Demonstration Lab</title>
+  <script type="module" crossorigin src="/assets/index-BXA89noX.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Bdep877T.css">
+</head>
+<body>
+  <div id="hud">
+    <div class="brand"><span class="brand-mark">F</span><span>FIELD <small> / DEMONSTRATION LAB</small></span></div>
+    <div class="hud-right"><span class="dot"></span> EXHIBITION MODE <span class="divider">/</span> <span id="position">CENTRAL HALL</span></div>
+  </div>
+  <div id="reticle" aria-hidden="true"></div>
+  <div id="help"><b>W A S D</b> move <span>·</span> <b>MOUSE</b> look <span>·</span> <b>SHIFT</b> walk faster <span>·</span> <b>R</b> reset <span>·</span> <b>ESC</b> release mouse</div>
+  <div id="overlay">
+    <div class="intro">
+      <div class="eyebrow">FIELD RESEARCH / OPEN LAB 01</div>
+      <h1>Experiments<br><em>in perception.</em></h1>
+      <p>Explore the instrument, perception bench and motion rig in a compact working laboratory.</p>
+      <button id="enter">ENTER THE LAB <span>↗</span></button>
+      <div class="instructions"><b>W A S D</b> move &nbsp; <b>MOUSE</b> look &nbsp; <b>SHIFT</b> faster &nbsp; <b>R</b> reset</div>
+      <p class="fine">Click the scene to capture the mouse. Press Esc to release it.</p>
+    </div>
+  </div>
+</body>
+</html>

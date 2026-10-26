@@ -1,0 +1,133 @@
+{
+  "entry": "terra-19",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-19\\source-preservation.zip",
+  "archiveSha256": "17026d2904bfca8654446d1f6063cd0eae593ebc0312d99263d533f4e4246da7",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/main.js": "main.js",
+      "README.md": "README.md",
+      "RUN_RECORD.txt": "RUN_RECORD.txt"
+    },
+    "perFileSourceHashes": {
+      "check-scene.cjs": {
+        "sha256": "d1372e14b090c53a79bbdebd9bb195d57911b2afeba8f9d44abc6ca0841b9b70",
+        "bytes": 2307,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\check-scene.cjs"
+      },
+      "index.html": {
+        "sha256": "bc97c7cc101be78f0206e635701ffd50e483545cb140b1f3932c7f12fa5d898e",
+        "bytes": 1171,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\index.html"
+      },
+      "main.js": {
+        "sha256": "dfa8a9c5b5238d9c1c4aea1f2843ddcb8febac44fb1ba41a26b9efe4fc250750",
+        "bytes": 25054,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\main.js"
+      },
+      "package.json": {
+        "sha256": "27da30828c748403155ffdb7ad533116d2f2159a6a78309fd6f183b57d8e684e",
+        "bytes": 184,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\package.json"
+      },
+      "README.md": {
+        "sha256": "a16adaf26818674fa0f4cfd0b34db4c008e13fc654b34bdecd5b1585d3da04e7",
+        "bytes": 1529,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\README.md"
+      },
+      "RUN_RECORD.txt": {
+        "sha256": "05d8b8237d75eea14db02dc6057e6bb72bf884719a937939d53784d51c154f53",
+        "bytes": 507,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\RUN_RECORD.txt"
+      },
+      "style.css": {
+        "sha256": "6ed632d7ce9c6145677c8c7811e9cc2eebb1c063595072359797d57e995a8e01",
+        "bytes": 1917,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-20\\style.css"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-19\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "launch": {
+    "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+    "verification": "All22 base and launch bytes match exact parent-supplied hashes; unchanged suffix and newline framing."
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ]
+      ]
+    },
+    "Unchanged host opaque sandbox/CSP/readiness bridge; no entrant rebuild or behavior repair. Exact installed dependency closure copied where required; no caches published."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "bc97c7cc101be78f0206e635701ffd50e483545cb140b1f3932c7f12fa5d898e",
+      "bytes": 1171
+    },
+    "frozen/main.js": {
+      "sha256": "dfa8a9c5b5238d9c1c4aea1f2843ddcb8febac44fb1ba41a26b9efe4fc250750",
+      "bytes": 25054
+    },
+    "frozen/style.css": {
+      "sha256": "6ed632d7ce9c6145677c8c7811e9cc2eebb1c063595072359797d57e995a8e01",
+      "bytes": 1917
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "eb04a1c9c9e35b9f9c9c633c89039ae2e2e5864a0621fc24a2226571aa88dafb",
+      "bytes": 3454
+    },
+    "preview-capture.json": {
+      "sha256": "ae6d89fa7457348109094d4cdb4c5e462678f853b879795684ca2b0583e53ed1",
+      "bytes": 3051
+    },
+    "preview.jpg": {
+      "sha256": "e0c3cfaa3fad3d9fb58497800fd03b63e33a2c3995b334053669fdd13261d9d9",
+      "bytes": 61501
+    },
+    "README.md": {
+      "sha256": "a16adaf26818674fa0f4cfd0b34db4c008e13fc654b34bdecd5b1585d3da04e7",
+      "bytes": 1529
+    },
+    "run-record.json": {
+      "sha256": "9bdfcbec44524dbf9f098d88f2a71ed80bb9cfdec96ed892d966d2cf56b6b8ed",
+      "bytes": 3552
+    },
+    "RUN_RECORD.txt": {
+      "sha256": "05d8b8237d75eea14db02dc6057e6bb72bf884719a937939d53784d51c154f53",
+      "bytes": 507
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/style.css",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "RUN_RECORD.txt"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation ZIP and raw source/check evidence in task/frozen-completed"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

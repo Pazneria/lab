@@ -8,7 +8,7 @@ const root=new URL('../',import.meta.url),base='beb653a64706feb4edb105c4b1f5c05f
 const catalog=JSON.parse(readFileSync(new URL('walkable-3d/entries.json',root))),baseline=JSON.parse(execFileSync('git',['show',`${base}:walkable-3d/entries.json`],{cwd:root}));
 const ids=['pathwarden-rooms-opus','witch-cottage-opus','gilded-tankard-loft-opus'];
 const hash=b=>createHash('sha256').update(b).digest('hex');
-const hostCodeBase='24b56265fd66152db98480cd81412677ca164514';
+const hostCodeBase='8a6575a2f532d0f96bad590cf87a6659c9b9ea0e';
 test('all 81 prior records, frozen trees, prompt definitions and original versions remain unchanged',()=>{
  const priorIds=new Set(baseline.entries.map(e=>e.id));
  assert.deepEqual(catalog.entries.filter(e=>priorIds.has(e.id)),baseline.entries);
@@ -21,7 +21,7 @@ test('all 81 prior records, frozen trees, prompt definitions and original versio
  }
 });
 test('three owner-cleared entries preserve canonical launches, genuine captures and unknown backend/effort/timing',()=>{
- assert.equal(catalog.entries.length,89);assert.equal(catalog.entries.filter(e=>e.availability!=='failed').length,81);
+ assert.equal(catalog.entries.length,111);assert.equal(catalog.entries.filter(e=>e.availability!=='failed').length,103);
  for(const [i,id] of ids.entries()){
   const e=catalog.entries.find(e=>e.id===id),dir=new URL(`walkable-3d/entries/${id}/`,root);
   assert.equal(e.promptId,String(i+15));assert.equal(e.comparisonModel,'opus');assert.equal(e.availability,'ready');assert.equal(e.completionStatus,'completed');

@@ -1,0 +1,30 @@
+{
+  "id": "terra-08",
+  "scene": 8,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-9",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Low Tide — Tidal Boathouse\n\nA local, procedural Three.js walking scene. From the workshop doorway, follow the pier forward; the short ramp on its right leads down to the exposed shore and boat.\n\n## Launch\n\nRequires Node.js and npm. Dependencies are included in this workspace; if needed, run `npm install` first. From this folder run:\n\n    npm run dev -- --host 127.0.0.1 --port 4189 --strictPort\n\nThen open the suggested address http://127.0.0.1:4189/ in a WebGL-capable browser. The address was not started or browser-tested during this build.\n\n## Controls\n\nClick **Enter the boathouse** to capture the mouse. Move with **WASD** or the arrow keys, look with the mouse, and hold **Shift** to move faster. Press **R** or click **Reset** to return to the workshop. Press **Escape** to release the pointer; click the scene to capture it again.\n\n## Checks and limitations\n\n- `npm run build` completed successfully. Vite reported its standard warning for a JavaScript chunk larger than 500 kB.\n- `node route-check.mjs` checked the workshop-to-pier-to-shore-to-boat circuit and return, plus selected collision boundaries, against the actual movement functions.\n- `node scene-cpu-check.mjs` constructed the procedural scene without a renderer and checked that mesh vertex positions were finite.\n- Browser rendering, visual appearance, interactive controls and frame timing were not tested, as required by the execution conditions. The water and tide are decorative and fixed; the scene has no boat physics. Invisible walkable limits keep the viewer on supported surfaces. Mouse and keyboard are required.\n\n## Run record\n\n- Model: GPT-6 as identified by the execution environment; exact variant and reasoning effort were not exposed to this run.\n- First implementation action: 2026-10-26 20:08:34 UTC.\n- Deadline: 2026-10-26 21:08:34 UTC.\n- Stop timestamp: 2026-10-26 20:12:44 UTC.\n- Interruption history: the initial sandboxed dependency install was stopped after it stalled with network access disabled; an authorized install retry completed. No other interruptions.\n- Process cleanup: all installation, build, and CPU-check processes started for the entry have exited. No server, browser, watcher, or benchmark was started. Port 4189 had no TCP listener in a local check; availability may change.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

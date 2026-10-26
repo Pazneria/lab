@@ -1,0 +1,5 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hearth & Herb — a witch's cottage</title>  <script type="module" crossorigin src="/assets/index-FsdHjVs7.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DZIIDjF1.css">
+</head>
+<body><div id="overlay"><div class="intro"><div class="eyebrow">A SMALL PLACE FOR QUIET MAGIC</div><h1>Hearth <em>&</em> Herb</h1><p>A cottage kitchen, a well-used workroom, and a glasshouse full of improbable things.</p><button id="enter">Enter the cottage</button><div class="controls"><span><b>W A S D</b> move</span><span><b>Mouse</b> look</span><span><b>Shift</b> walk faster</span><span><b>R</b> reset</span><span><b>Esc</b> release mouse</span></div><small>Click the scene to capture the mouse. The rooms are yours to explore.</small></div></div><div id="hud"><div class="brand">HEARTH <i>&</i> HERB</div><div id="hint">WASD to move · mouse to look · R to reset · Esc to release</div><button id="reset" title="Return to entrance">↺ <span>Reset</span></button><div class="crosshair">·</div></div></body></html>

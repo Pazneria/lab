@@ -1,0 +1,57 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Build a compact science and AI demonstration lab arranged as one exhibition hall with two open test alcoves. From the entrance, a freestanding experimental instrument should be the clear main attraction, with room to walk all the way around it. Connect this central floor to a perception-testing bench on one side and a motion-testing rig on the other, then provide a clear return route to the entrance.
+
+Give the central instrument a recognizable physical construction, such as a ring of lenses and sensors around a small illuminated sample platform. The perception bench should have a camera-like sensor, a few geometric sample objects and a display with an original test pattern; the motion alcove should contain a small mechanical test rig with visible joints or tracks and an adjacent control console. These are scenic exhibits, and their exact designs are yours to choose. Use brushed metal, painted housings, glass, rubber cables and work surfaces with restrained signs of use. Broad neutral illumination and a few colored status lights should make the equipment easy to inspect. Clear labels, accessible controls and orderly cable routes should suggest real experiments in a welcoming, working lab. Keep everything within the hall and alcoves; working AI, scientific simulation and animated machinery are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will circle the main instrument, approach both test areas, inspect equipment and materials closely, and look back across the hall. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Screens may show static or simple animated fictional test graphics. Build only the standalone scene; functional exhibit applications, website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- An identifiable central instrument with convincing physical construction from several angles
+- Distinct metal, painted housings, glass, cables and work surfaces at close range
+- Two test areas with different equipment silhouettes and purposeful arrangements
+- Readable neutral lighting with restrained colored accents
+- Close-range detail that supports a working science lab rather than generic glowing decoration
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while circling the main instrument with both test areas in view
+- Smooth movement between the central floor and the test alcoves
+- Minimal glass-related slowdown, screen flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A compact lab exhibition hall with a main instrument clearly visible from the entrance
+- A distinct perception-testing bench and a distinct motion-testing alcove with a control console
+- Walkable access around the central instrument and up to both test areas, with a clear return route
+- Convincing human scale, usable equipment clearances and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → circle the main instrument → perception-testing bench → motion-testing alcove → return view across the hall → entrance.
+
+I will pay particular attention to inspecting the main instrument from all sides, approaching the test equipment, and turning toward the full hall from each alcove. Equipment and cables should support the setting without obstructing the route. Suggested instrument designs, materials and small props are guidance; the core spaces, distinct test areas and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

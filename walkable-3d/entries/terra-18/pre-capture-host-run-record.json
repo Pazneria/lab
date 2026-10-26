@@ -1,0 +1,32 @@
+{
+  "id": "terra-18",
+  "scene": 18,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-19",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "implementation-start.txt": "2026-10-26 16:11:23 -04:00\n2026-10-26 17:11:23 -04:00\n",
+    "README.md": "# The Meridian — Captain's Quarters\n\nA self-contained first-person 3D cabin. The route runs from the entrance alongside the sleeping berth, past the private study and on to the observation nook. All geometry and materials are generated locally; Three.js r183 is included in `vendor/` under its MIT license.\n\n## Launch\n\nFrom this folder, run:\n\n```powershell\npython -m http.server 43219 --bind 127.0.0.1\n```\n\nThen open the suggested address **http://127.0.0.1:43219/** in a WebGL-capable desktop browser. The address was not served or opened during this build. Stop the server with Ctrl+C when finished. No package installation is required.\n\n## Controls\n\n- Click **Enter quarters**, then move the mouse to look.\n- **W/A/S/D** or arrow keys move; hold **Shift** to move faster.\n- **R** resets position and view; **Esc** releases the mouse.\n\n## Verification and limitations\n\n`node --check src/main.js` validates JavaScript syntax. `node checks/route.mjs` samples the collision map and checks that representative points near the bed, desk, window, nook seat, and entrance are connected. These are CPU-only checks, not a browser test.\n\nThe scene has not been opened in a browser or visually verified, and no frame-time or GPU measurements were taken. Movement is desktop keyboard and pointer-lock based; touch controls are not implemented. The space vista and cabin lighting are static, and the collision model uses simplified horizontal boxes.\n",
+    "run-record.txt": "Model: Codex based on GPT-6; exact model variant not exposed to this session.\nReasoning effort: not exposed to this session.\nFirst implementation action: 2026-10-26 16:11:23 -04:00 (20:11:23 UTC)\nOne-hour deadline: 2026-10-26 17:11:23 -04:00 (21:11:23 UTC)\nActual stop: 2026-10-26 16:14:43 -04:00\nInterruption history: No session interruptions. The initial npm installation stalled and was stopped; a locally installed Three.js distribution was used instead.\nProcess cleanup: The stopped npm command and all CPU checks exited. No server, watcher, browser, or test process remains running.\nPort: 43219 is suggested; OS permission prevented checking whether it was available.\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

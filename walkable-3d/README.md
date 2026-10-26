@@ -1,5 +1,13 @@
 # Walkable 3D - Jordan's personal benchmark
 
+## October 26 Terra batch
+
+The current catalog contains **111 records across 22 prompts: 103 eligible submissions, eight preserved unavailable records, and 103 genuine previews**. All 22 new completed runs were requested as GPT-6.1 Terra / XHIGH using default (standard) service. Task creation accepted those requests; exact serving backend and effective effort were not independently exposed to producers. Scenes 02 and 16 retain their original Sol/medium config-derived claims with an explanation that the laptop global config is not independent evidence of the separately created thread's serving settings.
+
+All 22 exact initial launch hashes match the parent-supplied launch contract, including unchanged execution conditions and newline framing. Source, built runtime, original producer records and licenses are preserved byte-for-byte. No entrant was contacted, repaired, rebuilt or scored. Timing and CPU checks remain attributed producer claims, with the original one-hour cap and no midrun messages or clock extensions.
+
+The owner authorized one background capture session after all runs completed and cleanup was cleared, followed by one separately approved bounded session for four harness/hosting misses. Both sessions used one browser and one scene at a time, without user tabs or foreground interaction, and closed all owned contexts, browsers and loopback servers. All 22 scenes reached hosted readiness and produced real 960×600 JPEG default-view previews below 180 kB. The first harness missed original entry controls in scenes 02, 12 and 20; scene 09 needed host import-map aliases and its exact installed dependency closure. Original failed-attempt records remain available. Those harness/hosting issues were resolved without changing entrant JavaScript or frozen HTML. Capture establishes startup/default view only; routes, collision feel, full geometry and performance remain unverified. No grades or public votes were created.
+
 ## Public judgments
 
 New A/B choices are submitted anonymously to the [dedicated public judgments service](https://walkable-worlds-voting.pazneria.chatgpt.site). Existing local preferences, grades, notes, both-open eligibility, randomized pairing and reveal-until-Next behavior remain in place. Only a new explicit choice is submitted publicly. Retries retain their request ID and a persisted per-pair intent sequence; a delayed older request cannot overwrite a newer choice or withdrawal. Public withdrawal can be retried after a network failure. No legacy record is uploaded.

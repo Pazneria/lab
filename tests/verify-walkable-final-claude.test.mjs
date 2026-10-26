@@ -18,12 +18,12 @@ test('all 86 prior records, frozen trees, prompts, host code and auth configurat
  const changes=execFileSync('git',['diff',base,'--name-only','--','walkable-3d/entries/'],{cwd:root,encoding:'utf8'}).trim().split('\n').filter(Boolean);
  assert.ok(changes.every(p=>!priorIds.has(p.split('/')[2])));
  for(const name of ['walkable-3d/assets/viewer.js','walkable-3d/assets/judgments.js','walkable-3d/assets/public-judgments.js','walkable-3d/assets/public-config.js','_config.yml']){
-  assert.equal(readFileSync(new URL(name,root),'utf8').replaceAll('\r\n','\n'),execFileSync('git',['show',`${base}:${name}`],{cwd:root,encoding:'utf8'}));
+  assert.equal(readFileSync(new URL(name,root),'utf8').replaceAll('\r\n','\n'),execFileSync('git',['show',`8a6575a2f532d0f96bad590cf87a6659c9b9ea0e:${name}`],{cwd:root,encoding:'utf8'}));
  }
 });
 
 test('the three completed sources preserve canonical launches, actual default-view captures and remaining QA limits',()=>{
- assert.equal(catalog.entries.length,89);
+ assert.equal(catalog.entries.length,111);
  assert.equal(catalog.entries.filter(e=>e.availability==='failed').length,8);
  for(const [scene,id] of cases){
   const e=catalog.entries.find(e=>e.id===id),dir=new URL(`walkable-3d/entries/${id}/`,root);
@@ -48,5 +48,5 @@ test('the three completed sources preserve canonical launches, actual default-vi
   assert.equal(capture.output.sha256,hash(readFileSync(new URL('preview.jpg',dir))));
   assert.equal(capture.sourceUnchanged,true);assert.equal(capture.capture.contextClosed,true);assert.equal(capture.capture.viewerUnloaded,true);
  }
- assert.equal(new Set(catalog.entries.filter(e=>e.availability!=='failed').map(e=>`${e.promptId}/${e.comparisonModel}`)).size,81);
+ assert.equal(new Set(catalog.entries.filter(e=>e.availability!=='failed').map(e=>`${e.promptId}/${e.comparisonModel}`)).size,103);
 });

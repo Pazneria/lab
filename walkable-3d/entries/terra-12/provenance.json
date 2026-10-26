@@ -1,0 +1,181 @@
+{
+  "entry": "terra-12",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-12\\source-preservation.zip",
+  "archiveSha256": "b07b6ff7c61a9b3a089fd682fb1e251d211edf4b719dd7d0242671f5c2760d6e",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-BcXvo2R4.js": "dist/assets/index-BcXvo2R4.js",
+      "frozen/index.html.txt": "dist/index.html",
+      "README.md": "README.md",
+      "RUN-RECORD.txt": "RUN-RECORD.txt",
+      "esbuild-LICENSE.md": "dependency-licenses/esbuild-LICENSE.md",
+      "rollup-LICENSE.md": "dependency-licenses/rollup-LICENSE.md",
+      "three-LICENSE": "dependency-licenses/three-LICENSE",
+      "vite-LICENSE.md": "dependency-licenses/vite-LICENSE.md"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "344873c80effdad9c9fa2de36c33eed25fb192311acacda026cb642feeebfd6a",
+        "bytes": 2182,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\index.html"
+      },
+      "package-lock.json": {
+        "sha256": "5597c9087d6b6bbcc4ab565aff424849ef633f503c9720919823cf6b344779c8",
+        "bytes": 35124,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\package-lock.json"
+      },
+      "package.json": {
+        "sha256": "e8b21d999b516ef823aaccd661ce70271734428eb9c186a12ed09c1651fa06f6",
+        "bytes": 277,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\package.json"
+      },
+      "README.md": {
+        "sha256": "1b997983d66a432015c570f2a4cc7b016bfa6c18e0ed283b421aaea5ec0fd8c4",
+        "bytes": 1449,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\README.md"
+      },
+      "RUN-RECORD.txt": {
+        "sha256": "c8bf5298abacecfc4300ad78f76d7657cc766cb73232b50c893663a68b2751ba",
+        "bytes": 702,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\RUN-RECORD.txt"
+      },
+      "src/main.js": {
+        "sha256": "e3ce651691f48e62dcbc08c218d902b1f3b492ac3dea2608325f7f9c80982de9",
+        "bytes": 20574,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\src\\main.js"
+      },
+      "dist/index.html": {
+        "sha256": "1195880b5049b0223617eba924e8e060d7c7185bd2e4f73505b4ffe978086988",
+        "bytes": 2210,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\dist\\index.html"
+      },
+      "dist/assets/index-BcXvo2R4.js": {
+        "sha256": "5edf1c934e630201be5407ecce1b1ab3532c1e1697af8da20a04520303c421b6",
+        "bytes": 492337,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\dist\\assets\\index-BcXvo2R4.js"
+      },
+      "dependency-licenses/three-LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\node_modules\\three\\LICENSE"
+      },
+      "dependency-licenses/vite-LICENSE.md": {
+        "sha256": "a77a1c089806b39ad339535bdf3677f636c91d96693e8ad7b11fe733f650ea64",
+        "bytes": 101176,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\node_modules\\vite\\LICENSE.md"
+      },
+      "dependency-licenses/esbuild-LICENSE.md": {
+        "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+        "bytes": 1069,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\node_modules\\esbuild\\LICENSE.md"
+      },
+      "dependency-licenses/rollup-LICENSE.md": {
+        "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+        "bytes": 35231,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-13\\night-arcade\\node_modules\\rollup\\LICENSE.md"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-12\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "launch": {
+    "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+    "verification": "All22 base and launch bytes match exact parent-supplied hashes; unchanged suffix and newline framing."
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/assets/",
+          "src=\"./assets/"
+        ],
+        [
+          "href=\"/assets/",
+          "href=\"./assets/"
+        ]
+      ]
+    },
+    "Unchanged host opaque sandbox/CSP/readiness bridge; no entrant rebuild or behavior repair. Exact installed dependency closure copied where required; no caches published."
+  ],
+  "files": {
+    "esbuild-LICENSE.md": {
+      "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "bytes": 1069
+    },
+    "frozen/assets/index-BcXvo2R4.js": {
+      "sha256": "5edf1c934e630201be5407ecce1b1ab3532c1e1697af8da20a04520303c421b6",
+      "bytes": 492337
+    },
+    "frozen/index.html.txt": {
+      "sha256": "1195880b5049b0223617eba924e8e060d7c7185bd2e4f73505b4ffe978086988",
+      "bytes": 2210
+    },
+    "launch-prompt.txt": {
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "bytes": 7716
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "be87daf6a42a69000dd5edec9a32c9c57a7e3aab67d578d9dd7939791f33df15",
+      "bytes": 3587
+    },
+    "preview-attempt.json": {
+      "sha256": "2fd7d46a184a47051b9c137f29116fe46f486c90b22b65203fedd1bb6978ad1c",
+      "bytes": 3028
+    },
+    "preview-capture.json": {
+      "sha256": "f311732a48387bb7e33d932053734bfa112e123e3feacb9e51529c5797612c60",
+      "bytes": 3039
+    },
+    "preview.jpg": {
+      "sha256": "7b5512db062773670d114e865ed66a46c6b8040476684ac7c7bd350615d11a63",
+      "bytes": 79971
+    },
+    "README.md": {
+      "sha256": "1b997983d66a432015c570f2a4cc7b016bfa6c18e0ed283b421aaea5ec0fd8c4",
+      "bytes": 1449
+    },
+    "rollup-LICENSE.md": {
+      "sha256": "fa1bd040c5bdeefe65b3821cebf474f2733ce65df13089bd151dda1778e62fe8",
+      "bytes": 35231
+    },
+    "run-record.json": {
+      "sha256": "deea627bd369be5bb94f5ae3f72de946a5d3b3fc76e997424f6b0bc503b93c97",
+      "bytes": 3776
+    },
+    "RUN-RECORD.txt": {
+      "sha256": "c8bf5298abacecfc4300ad78f76d7657cc766cb73232b50c893663a68b2751ba",
+      "bytes": 702
+    },
+    "three-LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "vite-LICENSE.md": {
+      "sha256": "a77a1c089806b39ad339535bdf3677f636c91d96693e8ad7b11fe733f650ea64",
+      "bytes": 101176
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "esbuild-LICENSE.md",
+      "frozen/assets/index-BcXvo2R4.js",
+      "frozen/index.html.txt",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-attempt.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "rollup-LICENSE.md",
+      "run-record.json",
+      "RUN-RECORD.txt",
+      "three-LICENSE",
+      "vite-LICENSE.md"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation ZIP and raw source/check evidence in task/frozen-completed"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}

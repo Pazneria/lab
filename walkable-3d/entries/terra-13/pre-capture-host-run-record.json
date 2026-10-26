@@ -1,0 +1,31 @@
+{
+  "id": "terra-13",
+  "scene": 13,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14",
+  "completionClearedByParent": true,
+  "completionClearanceUtc": "2026-10-26T20:16:48Z",
+  "requestedModel": "gpt-6.1-terra",
+  "requestedEffort": "xhigh",
+  "requestedService": "standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "producerRecords": {
+    "README.md": "# Rainline Station\n\nA compact, walkable mountain cable-car terminal with a stationary gondola, loading platform, and covered lookout. Geometry and surface textures are generated locally; the Three.js runtime is bundled in `vendor/`.\n\n## Launch\n\nFrom this directory, run:\n\n```powershell\npython -m http.server 8769 --bind 127.0.0.1\n```\n\nThen open the **suggested launch address** <http://127.0.0.1:8769/> in a WebGL-capable desktop browser. The server is not running as part of delivery. No installation or internet connection is needed. Stop your server with Ctrl+C.\n\n## Controls\n\n- Click **Enter the station** to capture the mouse; move the mouse to look around.\n- W/A/S/D or arrow keys move; hold Shift to move faster.\n- R resets the viewpoint; Esc releases the mouse. Click the scene to capture it again.\n\n## Scope and limitations\n\nThe cabin and cables are stationary, the mountain view is a simple modeled backdrop, and rain is suggested by surface marks and atmosphere. Collision covers the perimeter, machinery, cabin and lookout bench; it is not a full physics simulation. The scene has no touch controls. Browser interaction, visual appearance, and performance have not been tested in this execution because the supplied conditions prohibit browser and GPU testing.\n\nThe bundled Three.js distribution is licensed under the MIT license; see `vendor/THREE-LICENSE.txt`.\n",
+    "timing.txt": "First implementation: 2026-10-26 20:10:02 UTC\nDeadline: 2026-10-26 21:10:02 UTC\nModel: GPT-6 (exact runtime model identifier not exposed)\nReasoning effort: not exposed by runtime\nInterruptions: none\nActual stop: 2026-10-26 20:13:01 UTC\n"
+  },
+  "timingAuthority": "Original producer self-reports preserved unchanged; exact 60-minute first-implementation cap, no resets or extensions. No independent actual-timing verification.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "qa": {
+    "static": "Source paths, frozen hashes and installed dependency closure reviewed; producer checks attributed in original documents.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "publication": "Staged for incremental host/service publication; public vote/database state unchanged."
+}

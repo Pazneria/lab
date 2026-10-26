@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Clay &amp; Kiln — a pottery workshop</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="scene"></div>
+  <div id="intro" class="panel">
+    <div class="eyebrow">AN EXPLORABLE WORKSHOP</div>
+    <h1>Clay <span>&amp;</span> Kiln</h1>
+    <p>Walk through the pottery studio, the glazing shelter, and out to the kiln courtyard.</p>
+    <button id="enter">Enter the workshop</button>
+    <div class="controls"><b>W A S D</b> move <i>·</i> <b>Mouse</b> look <i>·</i> <b>Shift</b> walk faster<br><b>R</b> reset <i>·</i> <b>Esc</b> release mouse</div>
+  </div>
+  <div id="hud"><span>CLAY &amp; KILN</span><span>WASD move &nbsp; · &nbsp; Mouse look &nbsp; · &nbsp; R reset &nbsp; · &nbsp; Esc pause</span></div>
+  <div id="reticle">·</div>
+  <div id="notice"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

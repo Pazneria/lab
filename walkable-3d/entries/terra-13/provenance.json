@@ -1,0 +1,161 @@
+{
+  "entry": "terra-13",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-13\\source-preservation.zip",
+  "archiveSha256": "9815f93007d245cb222badbe127529fb2a8eddc88e6adef0160fa1cf368bff73",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/style.css": "style.css",
+      "frozen/main.js": "main.js",
+      "frozen/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js": "vendor/three.core.js",
+      "frozen/vendor/three.module.js": "vendor/three.module.js",
+      "README.md": "README.md",
+      "timing.txt": "timing.txt"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "a36b4835bd024f62127b29a38de43fc624cd842a173927c6d063285e2def12e7",
+        "bytes": 1045,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\index.html"
+      },
+      "main.js": {
+        "sha256": "1f1ae9937f554e8276b45338c0a185c160bb188632e4a5c6485d75728b1bcde7",
+        "bytes": 20407,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\main.js"
+      },
+      "package.json": {
+        "sha256": "e686bb81bf447e7574102265df1a5da898c2e8ccbba59c18560ce2fd2f588b35",
+        "bytes": 166,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\package.json"
+      },
+      "README.md": {
+        "sha256": "5c193e6728b5e3faabd7ffa6e78fecc4dceab408d22782cdb289cbebcc32d614",
+        "bytes": 1376,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\README.md"
+      },
+      "style.css": {
+        "sha256": "e66b9a3d290003a45eb20b20a5781bd205317f91f17205dd374e5151e47a5cd8",
+        "bytes": 1915,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\style.css"
+      },
+      "timing.txt": {
+        "sha256": "898da03db8ac4ee18f95aaa7857a64310987c853afc88b53742311fa60f20f87",
+        "bytes": 242,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\timing.txt"
+      },
+      "vendor/THREE-LICENSE.txt": {
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+        "bytes": 1081,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\vendor\\THREE-LICENSE.txt"
+      },
+      "vendor/three.core.js": {
+        "sha256": "2ee3d8425f49d705104fd95cc153f0432d635f1f34b98f48b0095f8b531fd5a6",
+        "bytes": 1421802,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\vendor\\three.core.js"
+      },
+      "vendor/three.module.js": {
+        "sha256": "e8ac51bc2f6b7eb17bc88c6540eb0a1fee872f848949373de39d55f34b5c5a8f",
+        "bytes": 639046,
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task-14\\vendor\\three.module.js"
+      }
+    },
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\frozen-completed\\scene-13\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent selected and the task creation accepted GPT-6.1 Terra at XHIGH with default/standard service. Producer exposed GPT-6 family identity only. Exact serving backend and effective reasoning effort are not independently verified.",
+  "launch": {
+    "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+    "verification": "All22 base and launch bytes match exact parent-supplied hashes; unchanged suffix and newline framing."
+  },
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "src=\"/src/",
+          "src=\"./src/"
+        ],
+        [
+          "href=\"/style.css\"",
+          "href=\"./style.css\""
+        ]
+      ]
+    },
+    "Unchanged host opaque sandbox/CSP/readiness bridge; no entrant rebuild or behavior repair. Exact installed dependency closure copied where required; no caches published."
+  ],
+  "files": {
+    "frozen/index.html.txt": {
+      "sha256": "a36b4835bd024f62127b29a38de43fc624cd842a173927c6d063285e2def12e7",
+      "bytes": 1045
+    },
+    "frozen/main.js": {
+      "sha256": "1f1ae9937f554e8276b45338c0a185c160bb188632e4a5c6485d75728b1bcde7",
+      "bytes": 20407
+    },
+    "frozen/style.css": {
+      "sha256": "e66b9a3d290003a45eb20b20a5781bd205317f91f17205dd374e5151e47a5cd8",
+      "bytes": 1915
+    },
+    "frozen/vendor/THREE-LICENSE.txt": {
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "2ee3d8425f49d705104fd95cc153f0432d635f1f34b98f48b0095f8b531fd5a6",
+      "bytes": 1421802
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "e8ac51bc2f6b7eb17bc88c6540eb0a1fee872f848949373de39d55f34b5c5a8f",
+      "bytes": 639046
+    },
+    "launch-prompt.txt": {
+      "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+      "bytes": 7656
+    },
+    "pre-capture-host-run-record.json": {
+      "sha256": "a4778f81bb4b21f3087de3cecc0a049c1029956736627bb2f120ccff8368ebe4",
+      "bytes": 3031
+    },
+    "preview-capture.json": {
+      "sha256": "985b086093715c29ce14914e44c60423fc5ef720e1af7d295ca1fc1ee97d5fa9",
+      "bytes": 3046
+    },
+    "preview.jpg": {
+      "sha256": "6b835e7eecc0d57d8752b993360861552893ddb5ea36f23ac3665b67801d2db9",
+      "bytes": 72581
+    },
+    "README.md": {
+      "sha256": "5c193e6728b5e3faabd7ffa6e78fecc4dceab408d22782cdb289cbebcc32d614",
+      "bytes": 1376
+    },
+    "run-record.json": {
+      "sha256": "2b72690a2eaf3ca0bc345dc7b0256b8ef564c7f41b21e5a6a09cd604164d5516",
+      "bytes": 3129
+    },
+    "timing.txt": {
+      "sha256": "898da03db8ac4ee18f95aaa7857a64310987c853afc88b53742311fa60f20f87",
+      "bytes": 242
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/style.css",
+      "frozen/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "launch-prompt.txt",
+      "pre-capture-host-run-record.json",
+      "preview-capture.json",
+      "preview.jpg",
+      "README.md",
+      "run-record.json",
+      "timing.txt"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation ZIP and raw source/check evidence in task/frozen-completed"
+    ]
+  },
+  "previewCapture": "preview-capture.json"
+}
