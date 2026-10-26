@@ -91,7 +91,7 @@ bad.model_updates.card_ids.pop();
 assert.equal(sandbox.window.LAB_COVERAGE.valid(bad), false);
 const asset = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, "assets/gallery-data.js"), "utf8"), asset);
-assert.deepEqual(JSON.parse(JSON.stringify(asset.window.LAB_GALLERY.coverage)), require("../scripts/build-gallery-refresh-2026-10-19.cjs")().coverage);
+assert.deepEqual(JSON.parse(JSON.stringify(asset.window.LAB_GALLERY.coverage)), require("../scripts/build-gallery-refresh-2026-10-26.cjs")().coverage);
 const report = { passed: true, checked_at: source.checked_at, googleMeasurements: 19, aaMeasurements: 10, addedCards: 2, augmentedCards: 7,
   checks: ["Exact source hashes, selected model ID and typed release dates", "Google and AA values/protocols remain separate", "Introductory task cost, missing throughput and missing uncertainty", "All prior cards/cohorts, metadata and original source data preserved", "Current renderer and generated asset agree"] };
 fs.mkdirSync(path.join(root, "evidence"), { recursive: true });

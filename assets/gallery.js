@@ -190,7 +190,7 @@
       ids.add(c.id);
     }
     return (
-      ids.size === (input.coverage.benchmark_updates ? 89 : input.coverage.model_updates ? 88 : input.coverage.refresh ? 86 : 73) &&
+      ids.size === (input.coverage.weekly_refresh ? 92 : input.coverage.benchmark_updates ? 89 : input.coverage.model_updates ? 88 : input.coverage.refresh ? 86 : 73) &&
       input.standard.cards.reduce((n, c) => n + c.rows.length, 0) === 340 &&
       Object.values(input.standard.sources).every((s) => safeURL(s.url)) &&
       [...ids].every(

@@ -88,7 +88,7 @@
   function valid(data) {
     if (
       data?.schema_version !== 1 ||
-      data.cards?.length !== (data.benchmark_updates ? 55 : data.model_updates ? 54 : data.refresh ? 52 : 39) ||
+      data.cards?.length !== (data.weekly_refresh ? 58 : data.benchmark_updates ? 55 : data.model_updates ? 54 : data.refresh ? 52 : 39) ||
       data.first_wave_ids?.length !== 27 ||
       data.backlog?.length !== 52 ||
       data.audits?.length !== 46 ||
@@ -98,7 +98,7 @@
     if (data.refresh && (data.refresh.schema_version !== 1 ||
       data.refresh.checked_at !== "2026-10-12" || data.refresh.card_ids?.length !== 13 ||
       new Set(data.refresh.card_ids).size !== 13 ||
-      new Set(data.cards.map((c) => c.id)).size !== (data.benchmark_updates ? 55 : data.model_updates ? 54 : 52) ||
+      new Set(data.cards.map((c) => c.id)).size !== (data.weekly_refresh ? 58 : data.benchmark_updates ? 55 : data.model_updates ? 54 : 52) ||
       !data.refresh.card_ids.every((id) => data.cards.some((c) => c.id === id)) ||
       !Array.isArray(data.refresh.directory) ||
       !data.refresh.directory.every((c) => typeof c.name === "string" && safe(c.url) && typeof c.status === "string"))) return false;
@@ -116,6 +116,12 @@
       data.benchmark_updates.card_ids[0] !== "webdev-arena-frontend-2026-10-18" ||
       !data.cards.some((c) => c.id === "webdev-arena-frontend-2026-10-18") ||
       data.benchmark_updates.reviewed_existing_ids?.length !== 6)) return false;
+    if (data.weekly_refresh && (data.weekly_refresh.schema_version !== 1 ||
+      data.weekly_refresh.checked_at !== "2026-10-26" ||
+      data.weekly_refresh.source_snapshot_at !== "2026-10-22" ||
+      data.weekly_refresh.source_input !== "data/benchmark-refresh-2026-10-26/source-packet.json" ||
+      data.weekly_refresh.card_ids?.length !== 3 || new Set(data.weekly_refresh.card_ids).size !== 3 ||
+      !["webdev-arena-frontend-2026-10-22", "healthbench-professional-october-deployment", "mentalhealthbench-october-deployment"].every(id => data.weekly_refresh.card_ids.includes(id) && data.cards.some(c => c.id === id)))) return false;
     return (
       data.cards.every(
         (c) =>
