@@ -64,3 +64,8 @@ data/gallery-gemini-argon-projection-2026-10-15.json text eol=lf
 data/benchmark-refresh-2026-10-19/** -text
 data/gallery-refresh-projection-2026-10-19.json text eol=lf
 data/gallery-metadata-2026-10-19.json text eol=lf
+
+# Exact reviewed October 26 source bytes; portable standalone projections.
+data/benchmark-refresh-2026-10-26/** -text
+data/gallery-refresh-projection-2026-10-26.json text eol=lf
+data/gallery-metadata-2026-10-26.json text eol=lf
