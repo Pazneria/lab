@@ -11103,7 +11103,7 @@ window.LAB_GALLERY = {
       "question": "Which AI-generated website designs do voters like?",
       "tests": "Anonymous tournaments compare four generated designs and collect five pairwise votes. The creator fits Bradley-Terry preference ratings from those choices. This card follows the Overall Frontend text-to-HTML track, which is separate from image-to-HTML, web-app and fullstack tracks.",
       "matters": "Design preference can capture whether a page feels coherent and appealing. It complements tests of visual fidelity and working features, because a popular design does not necessarily reproduce a reference or implement every requested behavior.",
-      "read": "Anonymous four-model tournaments produce five pairwise preference votes and Bradley-Terry ratings. Overall Frontend, Website, Web Apps, Fullstack and Image to HTML are separate categories. October 19 model-page values moved during review, and all-category tournament totals do not supply category sample sizes; no synchronized score is plotted.",
+      "read": "DesignArena measures human preference with Bradley–Terry ratings. Website/frontend, HTML, agentic and builder setups remain separate. The reviewed category page provided no extractable synchronized score rows; unavailable is not zero. Output limits and settings are not standardized.",
       "date": "Primary source checked October 5, 2026 · browser rating labels observed · numeric comparison not admitted",
       "notice": "The live board contains rating labels; no dated comparison, task cost or time values have been admitted for plotting here."
     },
@@ -11126,7 +11126,7 @@ window.LAB_GALLERY = {
       "question": "Does a generated website behave as requested?",
       "tests": "Models turn text requirements into executable websites. A browser agent checks required transitions and requirement coverage across 442 tasks; a separate judge assesses visual quality.",
       "matters": "A convincing screenshot can hide a broken interaction. The two functional measurements show different parts of the required behavior.",
-      "read": "Use Text results here: transition validity and requirement coverage are task-level macro averages, not complete-app success. Visual quality is a separate auxiliary score. The June paper does not supply exact generation snapshots, effort, cost or time, and its Video results belong to another modality.",
+      "read": "Transition validity, requirement coverage and auxiliary visual quality answer separate questions. The source contains 442 tasks, 5,495 transitions and 5,271 checks. Existing Text results remain; exact snapshots, effort and run dates are unavailable, so this is not a newly measured frontier ranking.",
       "date": "Source published 2026-06-02; reviewed October 12"
     },
     "hle-original-haiku55-october": {
@@ -11442,6 +11442,27 @@ window.LAB_GALLERY = {
       "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
       "read": "These are 20 selected preference ratings, with each model row's own vote count and the source's published score range. The interval confidence level is not specified. Preserve effort suffixes and harness labels; exact per-row tools, cost, time and run dates are unavailable. The October 8 complete 142-row table remains a separate older cohort.",
       "date": "Arena Frontend table dated October 18, 2026; reviewed October 19"
+    },
+    "webdev-arena-frontend-2026-10-22": {
+      "question": "Which generated websites did people prefer in the October 22 Frontend view?",
+      "tests": "This dated preference view selects the first 20 configurations from 151 displayed model entries. The page reports 807,096 votes; each configuration has its own vote count.",
+      "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
+      "read": "Higher means a higher human preference rating in the Frontend category. Published bounds have unspecified confidence coverage. This is a selection of 20 configurations, not the full board. Keep effort, preliminary status and date separate; token list prices are not task costs. October 18 and October 8 remain separate earlier snapshots.",
+      "date": "Arena table dated October 22; reviewed October 26, 2026"
+    },
+    "healthbench-professional-october-deployment": {
+      "question": "How do the October ChatGPT deployments score on professional medical conversations?",
+      "tests": "How do the October ChatGPT deployments score on professional medical conversations?",
+      "matters": "Rubric scores describe responses under a benchmark protocol. They do not establish patient outcomes or safe clinical deployment.",
+      "read": "The default graph uses length-adjusted scores; the unadjusted metric is a separate choice. October releases and revised comparison models must not be merged with the September table. Exact effort and run dates are unknown. These scores do not measure clinical efficacy.",
+      "date": "October release report reviewed October 26, 2026; precise publication and evaluation dates unavailable"
+    },
+    "mentalhealthbench-october-deployment": {
+      "question": "How do the October deployments respond to synthetic mental-health conversations?",
+      "tests": "How do the October deployments respond to synthetic mental-health conversations?",
+      "matters": "Rubric scores describe responses under a benchmark protocol. They do not establish patient outcomes or safe clinical deployment.",
+      "read": "Scores average four responses per task, then 1,215 task means. Bars show one standard error across task means, not a confidence interval. This lowest-deployment-effort cohort stays separate from the September maximum-effort and author-paper default-effort cohorts. Synthetic rubric performance does not establish clinical safety.",
+      "date": "October release report reviewed October 26, 2026; precise publication and evaluation dates unavailable"
     }
   },
   "frontend": {
@@ -12023,14 +12044,14 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-10-19",
-    "basis": "Earlier archived results retained; October 18 WebDev Frontend preference selection added with a separate date and six existing source areas rechecked October 19.",
+    "prepared_at": "2026-10-26",
+    "basis": "Earlier source evidence preserved; October 22 selected Frontend table and separate October medical deployment tables added after October 26 review.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 89,
-      "plotted": 80,
-      "current": 54,
-      "historical": 28,
+      "all": 92,
+      "plotted": 83,
+      "current": 56,
+      "historical": 29,
       "source_only": 7,
       "unavailable": 2,
       "default_families": 60
@@ -12352,10 +12373,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest cohort collected for this protocol in the archived source packet; this does not establish fresh runs or complete frontier coverage.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-19",
+          "date": "2026-10-26",
           "mode": "primary_source_recheck",
-          "scope": "HealthBench Professional separates base models from the ChatGPT for Clinicians tool system. MentalHealthBench uses synthetic conversations and expert-consensus rubrics, with GPT-5.6 Sol automated grading; the frontier comparison is dated September 23. Neither source supports a new commensurate October 19 score for the existing cards.",
-          "audit_status": "retain_existing_cohorts"
+          "scope": "Tables5/6 add separate October ChatGPT deployment cohorts. Adjusted/raw HealthBench and September maximum-effort versus October lowest-deployment mental-health scores must not be pooled. Run dates, measured cost/time and exact HealthBench effort remain unavailable.",
+          "audit_status": "add_separate_october_deployment_cohorts"
         },
         "result_packet_checked_at": "2026-10-01",
         "snapshot_at": null,
@@ -12376,7 +12397,7 @@ window.LAB_GALLERY = {
           "known": 0,
           "unknown": 7
         },
-        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "medagentbench-v2-revised-original-tasks": {
         "evidence": "plotted",
@@ -12539,9 +12560,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-15",
-          "mode": "parent_primary_research",
-          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
+          "audit_status": "vendor_protocol_review_no_pooled_row"
         },
         "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
@@ -12582,7 +12604,8 @@ window.LAB_GALLERY = {
           "latest": "2026-09-30",
           "known": 3,
           "unknown": 48
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "terminal-bench-science": {
         "evidence": "plotted",
@@ -12652,9 +12675,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-15",
-          "mode": "parent_primary_research",
-          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
+          "audit_status": "vendor_protocol_review_no_pooled_row"
         },
         "result_packet_checked_at": "2026-10-15",
         "snapshot_at": null,
@@ -12681,7 +12705,8 @@ window.LAB_GALLERY = {
           "latest": "2026-09-30",
           "known": 18,
           "unknown": 0
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "swe-bench-verified-bash-history": {
         "evidence": "plotted",
@@ -13360,10 +13385,10 @@ window.LAB_GALLERY = {
           "basis": "Fixed IIHS report published July 23, 2026 analyzes 2021–2024; provider hub in earlier research covered exposure through June 2026 and remains an ongoing data source."
         },
         "source_review": {
-          "date": "2026-10-05",
-          "mode": "parent_source_audit",
-          "scope": "Provider hub remains data through June2026, released September24,2026. Keep provider data separate from IIHS July23,2026 study of2021–2024.",
-          "audit_status": "no_new_exposure_period_interpretive_caveat_found"
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "Through June2026:271.3M rider-only miles; rounded reductions95%serious-injury-or-worse,82%airbag and82%injury. Existing more precise corrected outcome rows already represented. Geography-adjusted surface-street retrospective comparison, regardless of fault; not universal driving ability.",
+          "audit_status": "existing_observation_period_preserved"
         },
         "result_packet_checked_at": null,
         "snapshot_at": "2026-09-30",
@@ -13371,7 +13396,8 @@ window.LAB_GALLERY = {
         "publication_label": null,
         "evaluations": [],
         "model_releases": null,
-        "unavailable_reason": null
+        "unavailable_reason": null,
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "webdev-arena-frontend": {
         "evidence": "plotted",
@@ -13405,10 +13431,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "No scored cohort admitted; source access and protocol review are different questions.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-19",
+          "date": "2026-10-26",
           "mode": "primary_source_recheck",
-          "scope": "Anonymous four-model design tournaments produce five pairwise votes and Bradley-Terry preference ratings. Overall Frontend, Website, Web Apps, Fullstack and Image to HTML are separate categories. The dynamic model page changed during review, and its all-category tournament count is not a category sample size; no synchronized category score imported.",
-          "audit_status": "source_only"
+          "scope": "Preference uses Bradley-Terry; website/frontend, HTML, agentic and builder setups differ. The reviewed category page yielded no extractable synchronized score rows. Settings/output limits vary. No score or zero imported.",
+          "audit_status": "source_only_no_synchronized_scores"
         },
         "result_packet_checked_at": null,
         "snapshot_at": null,
@@ -13416,7 +13442,7 @@ window.LAB_GALLERY = {
         "publication_label": null,
         "evaluations": [],
         "model_releases": null,
-        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "design2code-v3-484": {
         "evidence": "plotted",
@@ -13424,10 +13450,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Fixed author-paper Table 1 cohort; historical model labels and prompting setups remain intact.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-19",
+          "date": "2026-10-26",
           "mode": "primary_source_recheck",
-          "scope": "484 screenshot-to-code webpage cases from C4; HARD has a separate 80-case set. Visual, element, text, position and color measurements and prompt variants must stay separate. No verified new frontier model result found.",
-          "audit_status": "preserve_historical"
+          "scope": "484 screenshot/HTML pairs and separate HARD80 remain historical; prompt-method and fidelity dimensions remain separate. No verified modern frontier ranking.",
+          "audit_status": "retain_historical_protocol"
         },
         "result_packet_checked_at": "2026-10-05",
         "snapshot_at": null,
@@ -13443,7 +13469,7 @@ window.LAB_GALLERY = {
           }
         ],
         "model_releases": null,
-        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "webcraftbench-v3": {
         "evidence": "plotted",
@@ -14357,9 +14383,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-12",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "442tasks,5495transitions and5271requirement checks; transition validity, requirement coverage and auxiliary visual quality stay separate. Existing text results retained; no exact new effort, snapshot or evaluation dates established.",
+          "audit_status": "existing_rows_preserved"
         },
         "result_packet_checked_at": "2026-10-12",
         "snapshot_at": null,
@@ -14380,7 +14407,8 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 14
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "hle-original-haiku55-october": {
         "evidence": "plotted",
@@ -14388,9 +14416,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-12",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
+          "audit_status": "vendor_protocol_review_no_pooled_row"
         },
         "result_packet_checked_at": "2026-10-12",
         "snapshot_at": null,
@@ -14418,7 +14447,8 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 2
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "terminal-bench-4-haiku55-lab": {
         "evidence": "plotted",
@@ -14488,9 +14518,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-12",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
+          "audit_status": "vendor_protocol_review_no_pooled_row"
         },
         "result_packet_checked_at": "2026-10-12",
         "snapshot_at": null,
@@ -14511,12 +14542,13 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 5
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "healthbench-professional-openai-20260929": {
         "evidence": "plotted",
         "cohort": "historical",
-        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "cohort_basis": "Earlier source snapshot retained as a separate version/configuration; October deployment/Frontend evidence is separately selectable. Different effort and releases prevent a before/after capability claim.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-10-12",
@@ -14616,13 +14648,13 @@ window.LAB_GALLERY = {
       "mentalhealthbench": {
         "evidence": "plotted",
         "cohort": "historical",
-        "cohort_basis": "Fixed source cohort newly covered here; an October source review does not make these experiments new.",
+        "cohort_basis": "Earlier source snapshot retained as a separate version/configuration; October deployment/Frontend evidence is separately selectable. Different effort and releases prevent a before/after capability claim.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-19",
+          "date": "2026-10-26",
           "mode": "primary_source_recheck",
-          "scope": "HealthBench Professional separates base models from the ChatGPT for Clinicians tool system. MentalHealthBench uses synthetic conversations and expert-consensus rubrics, with GPT-5.6 Sol automated grading; the frontier comparison is dated September 23. Neither source supports a new commensurate October 19 score for the existing cards.",
-          "audit_status": "retain_existing_cohorts"
+          "scope": "Tables5/6 add separate October ChatGPT deployment cohorts. Adjusted/raw HealthBench and September maximum-effort versus October lowest-deployment mental-health scores must not be pooled. Run dates, measured cost/time and exact HealthBench effort remain unavailable.",
+          "audit_status": "add_separate_october_deployment_cohorts"
         },
         "result_packet_checked_at": "2026-10-12",
         "snapshot_at": null,
@@ -14651,7 +14683,7 @@ window.LAB_GALLERY = {
           "known": 0,
           "unknown": 23
         },
-        "review_source_input": "data/benchmark-refresh-2026-10-19/source-packet.json"
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "robochallenge-table30-v2": {
         "evidence": "plotted",
@@ -14728,9 +14760,10 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-12",
-          "mode": "parent_primary_research",
-          "scope": "Parent-supplied primary-source packet, exact source-only GitHub archive verified; no independent evaluation run."
+          "date": "2026-10-26",
+          "mode": "primary_source_recheck",
+          "scope": "Through June2026:271.3M rider-only miles; rounded reductions95%serious-injury-or-worse,82%airbag and82%injury. Existing more precise corrected outcome rows already represented. Geography-adjusted surface-street retrospective comparison, regardless of fault; not universal driving ability.",
+          "audit_status": "existing_observation_period_preserved"
         },
         "result_packet_checked_at": "2026-10-12",
         "snapshot_at": null,
@@ -14765,7 +14798,8 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 6
-        }
+        },
+        "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
       },
       "gemini-4-argon-google-report": {
         "evidence": "plotted",
@@ -14976,8 +15010,8 @@ window.LAB_GALLERY = {
       },
       "webdev-arena-frontend-2026-10-18": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Dated October 18 Frontend preference snapshot, first 20 of 147 displayed model rows; not a complete board.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier source snapshot retained as a separate version/configuration; October deployment/Frontend evidence is separately selectable. Different effort and releases prevent a before/after capability claim.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-10-19",
@@ -15002,6 +15036,96 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 20
+        }
+      },
+      "webdev-arena-frontend-2026-10-22": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Selected October 22 preference snapshot, first 20 of 151; not a complete board.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-26",
+          "mode": "primary_source_review",
+          "scope": "Direct primary table review; no independent evaluation executed."
+        },
+        "result_packet_checked_at": "2026-10-26",
+        "snapshot_at": "2026-10-22",
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 22 · first 20 of 151 displayed configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 20
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 20
+        }
+      },
+      "healthbench-professional-october-deployment": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate October ChatGPT deployment report; not the September Codex/Work model or maximum-effort cohort.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-26",
+          "mode": "primary_source_review",
+          "scope": "Direct primary table review; no independent evaluation executed."
+        },
+        "result_packet_checked_at": "2026-10-26",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October release system-card table · separate deployment cohort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 5
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 5
+        }
+      },
+      "mentalhealthbench-october-deployment": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate October ChatGPT deployment report; not the September Codex/Work model or maximum-effort cohort.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-26",
+          "mode": "primary_source_review",
+          "scope": "Direct primary table review; no independent evaluation executed."
+        },
+        "result_packet_checked_at": "2026-10-26",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October release system-card table · separate deployment cohort",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 6
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 6
         }
       }
     }
@@ -51238,6 +51362,1539 @@ window.LAB_GALLERY = {
             ]
           }
         ]
+      },
+      {
+        "id": "webdev-arena-frontend-2026-10-22",
+        "name": "WebDev Arena · Frontend · October 22",
+        "category": "frontend",
+        "question": "Which generated websites did people prefer in the October 22 Frontend view?",
+        "tests": "This dated preference view selects the first 20 configurations from 151 displayed model entries. The page reports 807,096 votes; each configuration has its own vote count.",
+        "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
+        "read": "Higher means a higher human preference rating in the Frontend category. Published bounds have unspecified confidence coverage. This is a selection of 20 configurations, not the full board. Keep effort, preliminary status and date separate; token list prices are not task costs. October 18 and October 8 remain separate earlier snapshots.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-26/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-26",
+        "variants": [
+          {
+            "id": "webdev-arena-frontend-2026-10-22",
+            "label": "October 22 · first 20 of 151 displayed configurations",
+            "rows": [
+              {
+                "rank": 1,
+                "rank_spread": [
+                  1,
+                  1
+                ],
+                "model_variant": "Claude Opus 5.5 (Max)",
+                "value": 1849,
+                "published_range": [
+                  1833,
+                  1865
+                ],
+                "published_plus_minus": 16,
+                "votes": 2307,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-1",
+                "label": "Claude Opus 5.5 (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-1",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 1,
+                  "rank_spread": [
+                    1,
+                    1
+                  ],
+                  "model_variant": "Claude Opus 5.5 (Max)",
+                  "value": 1849,
+                  "published_range": [
+                    1833,
+                    1865
+                  ],
+                  "published_plus_minus": 16,
+                  "votes": 2307,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-1"
+                }
+              },
+              {
+                "rank": 2,
+                "rank_spread": [
+                  2,
+                  3
+                ],
+                "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                "value": 1808,
+                "published_range": [
+                  1794,
+                  1822
+                ],
+                "published_plus_minus": 14,
+                "votes": 2969,
+                "preliminary": false,
+                "effort": "xhigh",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-2",
+                "label": "Claude Sonnet 5.5 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-22-rank-2",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 2,
+                  "rank_spread": [
+                    2,
+                    3
+                  ],
+                  "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                  "value": 1808,
+                  "published_range": [
+                    1794,
+                    1822
+                  ],
+                  "published_plus_minus": 14,
+                  "votes": 2969,
+                  "preliminary": false,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-2"
+                }
+              },
+              {
+                "rank": 3,
+                "rank_spread": [
+                  2,
+                  4
+                ],
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 1795,
+                "published_range": [
+                  1784,
+                  1806
+                ],
+                "published_plus_minus": 11,
+                "votes": 5195,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-3",
+                "label": "GPT-6 Astra (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-3",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 3,
+                  "rank_spread": [
+                    2,
+                    4
+                  ],
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 1795,
+                  "published_range": [
+                    1784,
+                    1806
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 5195,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-3"
+                }
+              },
+              {
+                "rank": 4,
+                "rank_spread": [
+                  3,
+                  5
+                ],
+                "model_variant": "Claude Fable 5.1 (Max)",
+                "value": 1776,
+                "published_range": [
+                  1766,
+                  1786
+                ],
+                "published_plus_minus": 10,
+                "votes": 6364,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-4",
+                "label": "Claude Fable 5.1 (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-4",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 4,
+                  "rank_spread": [
+                    3,
+                    5
+                  ],
+                  "model_variant": "Claude Fable 5.1 (Max)",
+                  "value": 1776,
+                  "published_range": [
+                    1766,
+                    1786
+                  ],
+                  "published_plus_minus": 10,
+                  "votes": 6364,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-4"
+                }
+              },
+              {
+                "rank": 5,
+                "rank_spread": [
+                  4,
+                  7
+                ],
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 1767,
+                "published_range": [
+                  1753,
+                  1781
+                ],
+                "published_plus_minus": 14,
+                "votes": 2778,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-5",
+                "label": "GPT-6.1 Sol (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-5",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 5,
+                  "rank_spread": [
+                    4,
+                    7
+                  ],
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 1767,
+                  "published_range": [
+                    1753,
+                    1781
+                  ],
+                  "published_plus_minus": 14,
+                  "votes": 2778,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-5"
+                }
+              },
+              {
+                "rank": 6,
+                "rank_spread": [
+                  5,
+                  7
+                ],
+                "model_variant": "Muse Wonder Full (Max)",
+                "value": 1742,
+                "published_range": [
+                  1726,
+                  1758
+                ],
+                "published_plus_minus": 16,
+                "votes": 1673,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-6",
+                "label": "Muse Wonder Full (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-6",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 6,
+                  "rank_spread": [
+                    5,
+                    7
+                  ],
+                  "model_variant": "Muse Wonder Full (Max)",
+                  "value": 1742,
+                  "published_range": [
+                    1726,
+                    1758
+                  ],
+                  "published_plus_minus": 16,
+                  "votes": 1673,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-6"
+                }
+              },
+              {
+                "rank": 7,
+                "rank_spread": [
+                  5,
+                  7
+                ],
+                "model_variant": "Claude Sonnet 5.5 (High)",
+                "value": 1742,
+                "published_range": [
+                  1731,
+                  1753
+                ],
+                "published_plus_minus": 11,
+                "votes": 4466,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-7",
+                "label": "Claude Sonnet 5.5 (High)",
+                "result_id": "webdev-frontend-2026-10-22-rank-7",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 7,
+                  "rank_spread": [
+                    5,
+                    7
+                  ],
+                  "model_variant": "Claude Sonnet 5.5 (High)",
+                  "value": 1742,
+                  "published_range": [
+                    1731,
+                    1753
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 4466,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-7"
+                }
+              },
+              {
+                "rank": 8,
+                "rank_spread": [
+                  8,
+                  9
+                ],
+                "model_variant": "Claude Opus 5 (Max)",
+                "value": 1712,
+                "published_range": [
+                  1705,
+                  1719
+                ],
+                "published_plus_minus": 7,
+                "votes": 14683,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-8",
+                "label": "Claude Opus 5 (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-8",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 8,
+                  "rank_spread": [
+                    8,
+                    9
+                  ],
+                  "model_variant": "Claude Opus 5 (Max)",
+                  "value": 1712,
+                  "published_range": [
+                    1705,
+                    1719
+                  ],
+                  "published_plus_minus": 7,
+                  "votes": 14683,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-8"
+                }
+              },
+              {
+                "rank": 9,
+                "rank_spread": [
+                  8,
+                  14
+                ],
+                "model_variant": "Kimi K3.1 Pro (Max)",
+                "value": 1704,
+                "published_range": [
+                  1689,
+                  1719
+                ],
+                "published_plus_minus": 15,
+                "votes": 2133,
+                "preliminary": true,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-9",
+                "label": "Kimi K3.1 Pro (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-9",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 9,
+                  "rank_spread": [
+                    8,
+                    14
+                  ],
+                  "model_variant": "Kimi K3.1 Pro (Max)",
+                  "value": 1704,
+                  "published_range": [
+                    1689,
+                    1719
+                  ],
+                  "published_plus_minus": 15,
+                  "votes": 2133,
+                  "preliminary": true,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-9"
+                }
+              },
+              {
+                "rank": 10,
+                "rank_spread": [
+                  9,
+                  17
+                ],
+                "model_variant": "Gemini 4 Argon (High)",
+                "value": 1688,
+                "published_range": [
+                  1673,
+                  1703
+                ],
+                "published_plus_minus": 15,
+                "votes": 2011,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-10",
+                "label": "Gemini 4 Argon (High)",
+                "result_id": "webdev-frontend-2026-10-22-rank-10",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 10,
+                  "rank_spread": [
+                    9,
+                    17
+                  ],
+                  "model_variant": "Gemini 4 Argon (High)",
+                  "value": 1688,
+                  "published_range": [
+                    1673,
+                    1703
+                  ],
+                  "published_plus_minus": 15,
+                  "votes": 2011,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-10"
+                }
+              },
+              {
+                "rank": 11,
+                "rank_spread": [
+                  9,
+                  16
+                ],
+                "model_variant": "GPT-6 Sol (Max)",
+                "value": 1687,
+                "published_range": [
+                  1676,
+                  1698
+                ],
+                "published_plus_minus": 11,
+                "votes": 3899,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-11",
+                "label": "GPT-6 Sol (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-11",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 11,
+                  "rank_spread": [
+                    9,
+                    16
+                  ],
+                  "model_variant": "GPT-6 Sol (Max)",
+                  "value": 1687,
+                  "published_range": [
+                    1676,
+                    1698
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 3899,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-11"
+                }
+              },
+              {
+                "rank": 12,
+                "rank_spread": [
+                  9,
+                  16
+                ],
+                "model_variant": "Qwen3.8-Max (0902)",
+                "value": 1686,
+                "published_range": [
+                  1678,
+                  1694
+                ],
+                "published_plus_minus": 8,
+                "votes": 12467,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-12",
+                "label": "Qwen3.8-Max (0902)",
+                "result_id": "webdev-frontend-2026-10-22-rank-12",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 12,
+                  "rank_spread": [
+                    9,
+                    16
+                  ],
+                  "model_variant": "Qwen3.8-Max (0902)",
+                  "value": 1686,
+                  "published_range": [
+                    1678,
+                    1694
+                  ],
+                  "published_plus_minus": 8,
+                  "votes": 12467,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-12"
+                }
+              },
+              {
+                "rank": 13,
+                "rank_spread": [
+                  9,
+                  19
+                ],
+                "model_variant": "Qwen3.8-Max",
+                "value": 1679,
+                "published_range": [
+                  1666,
+                  1692
+                ],
+                "published_plus_minus": 13,
+                "votes": 2913,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-13",
+                "label": "Qwen3.8-Max",
+                "result_id": "webdev-frontend-2026-10-22-rank-13",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 13,
+                  "rank_spread": [
+                    9,
+                    19
+                  ],
+                  "model_variant": "Qwen3.8-Max",
+                  "value": 1679,
+                  "published_range": [
+                    1666,
+                    1692
+                  ],
+                  "published_plus_minus": 13,
+                  "votes": 2913,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-13"
+                }
+              },
+              {
+                "rank": 14,
+                "rank_spread": [
+                  10,
+                  17
+                ],
+                "model_variant": "Claude Opus 5 (High)",
+                "value": 1679,
+                "published_range": [
+                  1673,
+                  1685
+                ],
+                "published_plus_minus": 6,
+                "votes": 20352,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-14",
+                "label": "Claude Opus 5 (High)",
+                "result_id": "webdev-frontend-2026-10-22-rank-14",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 14,
+                  "rank_spread": [
+                    10,
+                    17
+                  ],
+                  "model_variant": "Claude Opus 5 (High)",
+                  "value": 1679,
+                  "published_range": [
+                    1673,
+                    1685
+                  ],
+                  "published_plus_minus": 6,
+                  "votes": 20352,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-14"
+                }
+              },
+              {
+                "rank": 15,
+                "rank_spread": [
+                  9,
+                  21
+                ],
+                "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "value": 1675,
+                "published_range": [
+                  1660,
+                  1690
+                ],
+                "published_plus_minus": 15,
+                "votes": 1943,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-15",
+                "label": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-15",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 15,
+                  "rank_spread": [
+                    9,
+                    21
+                  ],
+                  "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                  "value": 1675,
+                  "published_range": [
+                    1660,
+                    1690
+                  ],
+                  "published_plus_minus": 15,
+                  "votes": 1943,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-15"
+                }
+              },
+              {
+                "rank": 16,
+                "rank_spread": [
+                  10,
+                  19
+                ],
+                "model_variant": "Muse Spark 1.3 (Max)",
+                "value": 1672,
+                "published_range": [
+                  1664,
+                  1680
+                ],
+                "published_plus_minus": 8,
+                "votes": 7727,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-16",
+                "label": "Muse Spark 1.3 (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-16",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 16,
+                  "rank_spread": [
+                    10,
+                    19
+                  ],
+                  "model_variant": "Muse Spark 1.3 (Max)",
+                  "value": 1672,
+                  "published_range": [
+                    1664,
+                    1680
+                  ],
+                  "published_plus_minus": 8,
+                  "votes": 7727,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-16"
+                }
+              },
+              {
+                "rank": 17,
+                "rank_spread": [
+                  12,
+                  20
+                ],
+                "model_variant": "Kimi K3 (Max)",
+                "value": 1669,
+                "published_range": [
+                  1662,
+                  1676
+                ],
+                "published_plus_minus": 7,
+                "votes": 16223,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-17",
+                "label": "Kimi K3 (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-17",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 17,
+                  "rank_spread": [
+                    12,
+                    20
+                  ],
+                  "model_variant": "Kimi K3 (Max)",
+                  "value": 1669,
+                  "published_range": [
+                    1662,
+                    1676
+                  ],
+                  "published_plus_minus": 7,
+                  "votes": 16223,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-17"
+                }
+              },
+              {
+                "rank": 18,
+                "rank_spread": [
+                  14,
+                  22
+                ],
+                "model_variant": "Grok 4.7 (xHigh)",
+                "value": 1660,
+                "published_range": [
+                  1649,
+                  1671
+                ],
+                "published_plus_minus": 11,
+                "votes": 4414,
+                "preliminary": false,
+                "effort": "xhigh",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-18",
+                "label": "Grok 4.7 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-22-rank-18",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 18,
+                  "rank_spread": [
+                    14,
+                    22
+                  ],
+                  "model_variant": "Grok 4.7 (xHigh)",
+                  "value": 1660,
+                  "published_range": [
+                    1649,
+                    1671
+                  ],
+                  "published_plus_minus": 11,
+                  "votes": 4414,
+                  "preliminary": false,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-18"
+                }
+              },
+              {
+                "rank": 19,
+                "rank_spread": [
+                  14,
+                  25
+                ],
+                "model_variant": "Muse Wonder (Max)",
+                "value": 1657,
+                "published_range": [
+                  1643,
+                  1671
+                ],
+                "published_plus_minus": 14,
+                "votes": 2101,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-19",
+                "label": "Muse Wonder (Max)",
+                "result_id": "webdev-frontend-2026-10-22-rank-19",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 19,
+                  "rank_spread": [
+                    14,
+                    25
+                  ],
+                  "model_variant": "Muse Wonder (Max)",
+                  "value": 1657,
+                  "published_range": [
+                    1643,
+                    1671
+                  ],
+                  "published_plus_minus": 14,
+                  "votes": 2101,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-19"
+                }
+              },
+              {
+                "rank": 20,
+                "rank_spread": [
+                  16,
+                  26
+                ],
+                "model_variant": "MiMo-V2.6-Flash",
+                "value": 1652,
+                "published_range": [
+                  1642,
+                  1662
+                ],
+                "published_plus_minus": 10,
+                "votes": 4506,
+                "preliminary": false,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-22-rank-20",
+                "label": "MiMo-V2.6-Flash",
+                "result_id": "webdev-frontend-2026-10-22-rank-20",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 20,
+                  "rank_spread": [
+                    16,
+                    26
+                  ],
+                  "model_variant": "MiMo-V2.6-Flash",
+                  "value": 1652,
+                  "published_range": [
+                    1642,
+                    1662
+                  ],
+                  "published_plus_minus": 10,
+                  "votes": 4506,
+                  "preliminary": false,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-22-rank-20"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Arena Frontend preference rating · axis 1000–1900",
+                "field": "value",
+                "unit": "Arena rating points",
+                "domain": [
+                  1000,
+                  1900
+                ],
+                "direction": "higher_is_better",
+                "interval_field": "published_range",
+                "interval_kind": "published_interval"
+              }
+            ],
+            "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+            "source_locator": "October 22, 2026, Code Arena / WebDev / Frontend, ranks 1–20",
+            "settings": {
+              "category": "Code Arena / WebDev / Frontend; default domain and technology filters",
+              "displayed_total_votes": 807096,
+              "displayed_models": 151,
+              "selection": "First 20 displayed model/configuration rows of 151; incomplete table selection.",
+              "workflow": "Page describes multi-step reasoning, tool use, and HTML or React generation; exact per-row harness, tools and budgets unverified.",
+              "row_harness_and_tools": null,
+              "row_tool_budget": null,
+              "task_cost_usd": null,
+              "task_time_seconds": null,
+              "interval_kind": "published interval; confidence coverage not specified on the table",
+              "vote_count_basis": "Per-row votes, distinct from page-wide total807096."
+            },
+            "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+            "snapshot_at": "2026-10-22",
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-10-26",
+            "complete": false,
+            "coverage": "First 20 displayed model/configuration rows of 151; incomplete table selection.",
+            "limitations": [
+              "Dated first-20 selection from 151 configurations; not the complete board.",
+              "The table does not establish row evaluation dates, exact harness versions, tool budgets, task cost, task time, or interval confidence coverage.",
+              "Preference ratings are not screenshot reproduction scores or functional browser task pass rates."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "healthbench-professional-october-deployment",
+        "name": "HealthBench Professional · October deployment",
+        "category": "medical",
+        "question": "How do the October ChatGPT deployments score on professional medical conversations?",
+        "tests": "How do the October ChatGPT deployments score on professional medical conversations?",
+        "matters": "Rubric scores describe responses under a benchmark protocol. They do not establish patient outcomes or safe clinical deployment.",
+        "read": "The default graph uses length-adjusted scores; the unadjusted metric is a separate choice. October releases and revised comparison models must not be merged with the September table. Exact effort and run dates are unknown. These scores do not measure clinical efficacy.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-26/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-26",
+        "variants": [
+          {
+            "id": "healthbench-professional-october-deployment",
+            "label": "October release system-card table · separate deployment cohort",
+            "rows": [
+              {
+                "model_variant": "gpt-5.5 Instant",
+                "value": 38.4,
+                "unadjusted_value": 40.7,
+                "mean_response_length_characters": 2775,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "label": "gpt-5.5 Instant",
+                "result_id": "healthbench-professional-october-deployment-row-0",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/healthbench",
+                "raw": {
+                  "model_variant": "gpt-5.5 Instant",
+                  "value": 38.4,
+                  "unadjusted_value": 40.7,
+                  "mean_response_length_characters": 2775,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "uncertainty": null
+                }
+              },
+              {
+                "model_variant": "gpt-5.6-sol (August)",
+                "value": 54,
+                "unadjusted_value": 56.6,
+                "mean_response_length_characters": 2894,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "label": "gpt-5.6-sol (August)",
+                "result_id": "healthbench-professional-october-deployment-row-1",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/healthbench",
+                "raw": {
+                  "model_variant": "gpt-5.6-sol (August)",
+                  "value": 54,
+                  "unadjusted_value": 56.6,
+                  "mean_response_length_characters": 2894,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "uncertainty": null
+                }
+              },
+              {
+                "model_variant": "gpt-5.6-luna (August)",
+                "value": 44.1,
+                "unadjusted_value": 46.8,
+                "mean_response_length_characters": 2920,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "label": "gpt-5.6-luna (August)",
+                "result_id": "healthbench-professional-october-deployment-row-2",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/healthbench",
+                "raw": {
+                  "model_variant": "gpt-5.6-luna (August)",
+                  "value": 44.1,
+                  "unadjusted_value": 46.8,
+                  "mean_response_length_characters": 2920,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "uncertainty": null
+                }
+              },
+              {
+                "model_variant": "gpt-6-sol (October)",
+                "value": 55.2,
+                "unadjusted_value": 62.2,
+                "mean_response_length_characters": 4360,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "label": "gpt-6-sol (October)",
+                "result_id": "healthbench-professional-october-deployment-row-3",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/healthbench",
+                "raw": {
+                  "model_variant": "gpt-6-sol (October)",
+                  "value": 55.2,
+                  "unadjusted_value": 62.2,
+                  "mean_response_length_characters": 4360,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "uncertainty": null
+                }
+              },
+              {
+                "model_variant": "gpt-6-luna (October)",
+                "value": 48.2,
+                "unadjusted_value": 57.8,
+                "mean_response_length_characters": 5289,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "uncertainty": null,
+                "label": "gpt-6-luna (October)",
+                "result_id": "healthbench-professional-october-deployment-row-4",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/healthbench",
+                "raw": {
+                  "model_variant": "gpt-6-luna (October)",
+                  "value": 48.2,
+                  "unadjusted_value": 57.8,
+                  "mean_response_length_characters": 5289,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "cost_usd": null,
+                  "latency_seconds": null,
+                  "uncertainty": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "adjusted",
+                "label": "Length-adjusted rubric score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "raw",
+                "label": "Unadjusted rubric score",
+                "field": "unadjusted_value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://deploymentsafety.openai.com/gpt-6-october/healthbench",
+            "source_locator": "Table 5, Professional row",
+            "settings": {
+              "reasoning_effort": null,
+              "effort_policy": "System card uses lowest reasoning deployment settings for safety evaluations including mental health and maximum effort for capability assessments; exact HealthBench table effort not established.",
+              "sample_size": null,
+              "tools": null,
+              "harness": "OpenAI October release system-card evaluation; exact table-level settings unavailable",
+              "adjustment": "2000-character reference;1.47 points per500extra characters; shorter responses receive positive adjustment."
+            },
+            "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-10-26",
+            "complete": true,
+            "coverage": "Complete reported model columns for this selected table outcome; other outcomes not ingested.",
+            "limitations": [
+              "October ChatGPT models differ from September Codex/Work releases.",
+              "Previously launched comparison values may reflect later versions than at launch.",
+              "Run dates, measured cost/time and exact model snapshots remain unavailable.",
+              "These are developer-reported evaluations, not a controlled comparison against other cards."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mentalhealthbench-october-deployment",
+        "name": "MentalHealthBench · October deployment",
+        "category": "medical",
+        "question": "How do the October deployments respond to synthetic mental-health conversations?",
+        "tests": "How do the October deployments respond to synthetic mental-health conversations?",
+        "matters": "Rubric scores describe responses under a benchmark protocol. They do not establish patient outcomes or safe clinical deployment.",
+        "read": "Scores average four responses per task, then 1,215 task means. Bars show one standard error across task means, not a confidence interval. This lowest-deployment-effort cohort stays separate from the September maximum-effort and author-paper default-effort cohorts. Synthetic rubric performance does not establish clinical safety.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-10-26/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-26",
+        "variants": [
+          {
+            "id": "mentalhealthbench-october-deployment",
+            "label": "October release system-card table · separate deployment cohort",
+            "rows": [
+              {
+                "model_variant": "gpt-5.5 Instant (May)",
+                "value": 49.38,
+                "stderr_pp": 0.93,
+                "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "gpt-5.5 Instant (May)",
+                "result_id": "mentalhealthbench-october-deployment-row-0",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+                "raw": {
+                  "model_variant": "gpt-5.5 Instant (May)",
+                  "value": 49.38,
+                  "stderr_pp": 0.93,
+                  "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "model_variant": "gpt-5.5 Instant (June)",
+                "value": 53.93,
+                "stderr_pp": 0.93,
+                "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "gpt-5.5 Instant (June)",
+                "result_id": "mentalhealthbench-october-deployment-row-1",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+                "raw": {
+                  "model_variant": "gpt-5.5 Instant (June)",
+                  "value": 53.93,
+                  "stderr_pp": 0.93,
+                  "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "model_variant": "gpt-5.6-sol (August)",
+                "value": 47.53,
+                "stderr_pp": 0.97,
+                "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "gpt-5.6-sol (August)",
+                "result_id": "mentalhealthbench-october-deployment-row-2",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+                "raw": {
+                  "model_variant": "gpt-5.6-sol (August)",
+                  "value": 47.53,
+                  "stderr_pp": 0.97,
+                  "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "model_variant": "gpt-5.6-luna (August)",
+                "value": 45.11,
+                "stderr_pp": 0.95,
+                "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "gpt-5.6-luna (August)",
+                "result_id": "mentalhealthbench-october-deployment-row-3",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+                "raw": {
+                  "model_variant": "gpt-5.6-luna (August)",
+                  "value": 45.11,
+                  "stderr_pp": 0.95,
+                  "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "model_variant": "gpt-6-sol (October)",
+                "value": 48.81,
+                "stderr_pp": 0.97,
+                "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "gpt-6-sol (October)",
+                "result_id": "mentalhealthbench-october-deployment-row-4",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+                "raw": {
+                  "model_variant": "gpt-6-sol (October)",
+                  "value": 48.81,
+                  "stderr_pp": 0.97,
+                  "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "model_variant": "gpt-6-luna (October)",
+                "value": 51.73,
+                "stderr_pp": 0.96,
+                "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "gpt-6-luna (October)",
+                "result_id": "mentalhealthbench-october-deployment-row-5",
+                "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+                "raw": {
+                  "model_variant": "gpt-6-luna (October)",
+                  "value": 51.73,
+                  "stderr_pp": 0.96,
+                  "effort": "lowest reasoning deployment settings; exact effort identifier unavailable",
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task-clipped rubric score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://deploymentsafety.openai.com/gpt-6-october/mentalhealthbench",
+            "source_locator": "Table 6, overall row",
+            "settings": {
+              "reasoning_effort": "lowest reasoning deployment settings; exact effort identifiers unavailable",
+              "tasks": 1215,
+              "samples_per_task": 4,
+              "acuity_tasks": {
+                "non_acute": 650,
+                "high_acuity": 221,
+                "emergent": 344
+              },
+              "uncertainty": "one standard error across task means, not confidence interval",
+              "tools": null,
+              "harness": "OpenAI October release task-clipped rubric evaluation"
+            },
+            "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-10-26",
+            "complete": true,
+            "coverage": "Complete reported model columns for this selected table outcome; other outcomes not ingested.",
+            "limitations": [
+              "October ChatGPT models differ from September Codex/Work releases.",
+              "Previously launched comparison values may reflect later versions than at launch.",
+              "Run dates, measured cost/time and exact model snapshots remain unavailable.",
+              "These are developer-reported evaluations, not a controlled comparison against other cards."
+            ]
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -54172,6 +55829,7 @@ window.LAB_GALLERY = {
         "medagentbench"
       ],
       "webdev-arena-frontend": [
+        "webdev-arena-frontend-2026-10-22",
         "webdev-arena-frontend-2026-10-18",
         "webdev-arena-frontend-2026-10-08",
         "webdev-arena-frontend"
@@ -54181,6 +55839,7 @@ window.LAB_GALLERY = {
         "osworld-v2-1-offline-october"
       ],
       "healthbench-professional": [
+        "healthbench-professional-october-deployment",
         "healthbench-professional-openai-20260929",
         "healthbench-professional",
         "healthbench-professional-haiku55-effort"
@@ -54188,6 +55847,10 @@ window.LAB_GALLERY = {
       "waymo-onroad-safety": [
         "waymo-corrected-fleet-outcomes",
         "waymo-onroad-safety"
+      ],
+      "mentalhealthbench": [
+        "mentalhealthbench-october-deployment",
+        "mentalhealthbench"
       ]
     },
     "rune": {
@@ -89040,6 +90703,17 @@ window.LAB_GALLERY = {
         "healthbench-professional",
         "mentalhealthbench"
       ]
+    },
+    "weekly_refresh": {
+      "schema_version": 1,
+      "checked_at": "2026-10-26",
+      "source_snapshot_at": "2026-10-22",
+      "source_input": "data/benchmark-refresh-2026-10-26/source-packet.json",
+      "card_ids": [
+        "webdev-arena-frontend-2026-10-22",
+        "healthbench-professional-october-deployment",
+        "mentalhealthbench-october-deployment"
+      ]
     }
   },
   "expanded": {
@@ -103901,6 +105575,8 @@ window.LAB_GALLERY = {
       "data/gemini-4-argon-2026-10-15/evidence-manifest.json",
       "data/benchmark-refresh-2026-10-19/source-packet.json",
       "data/benchmark-refresh-2026-10-19/evidence-manifest.json",
+      "data/benchmark-refresh-2026-10-26/source-packet.json",
+      "data/benchmark-refresh-2026-10-26/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -103917,7 +105593,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-10-19.json",
+    "presentationMetadata": "data/gallery-metadata-2026-10-26.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

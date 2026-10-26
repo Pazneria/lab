@@ -76,7 +76,10 @@ assert.deepEqual(read("data/gallery-metadata-2026-10-15.json"), argon.metadata);
 const october = require("./build-gallery-refresh-2026-10-19.cjs")();
 assert.deepEqual(read("data/gallery-refresh-projection-2026-10-19.json"), october.projection);
 assert.deepEqual(read("data/gallery-metadata-2026-10-19.json"), october.metadata);
-const cardMetadata = october.metadata;
+const weekly = require("./build-gallery-refresh-2026-10-26.cjs")();
+assert.deepEqual(read("data/gallery-refresh-projection-2026-10-26.json"), weekly.projection);
+assert.deepEqual(read("data/gallery-metadata-2026-10-26.json"), weekly.metadata);
+const cardMetadata = weekly.metadata;
 assert.deepEqual(
   read("data/gallery-metadata-2026-10-05.json"),
   archivedMetadata,
@@ -282,7 +285,7 @@ const output = {
   frontend,
   supplement,
   cardMetadata,
-  coverage: october.coverage,
+  coverage: weekly.coverage,
   expanded: normalizeDisplayText({ ...community, medical }),
   provenance: {
     input:
@@ -295,6 +298,7 @@ const output = {
       ...refresh.source_files,
       ...argon.projection.source_files,
       ...october.projection.source_files,
+      ...weekly.projection.source_files,
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -311,13 +315,15 @@ const output = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json",
     ],
     rendererContract: "data/coverage-renderer-contract-2026-10-05.json",
-    presentationMetadata: "data/gallery-metadata-2026-10-19.json",
+    presentationMetadata: "data/gallery-metadata-2026-10-26.json",
     frontendInputStatus: frontendInput.endsWith(".working.json")
       ? "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
       : "Original public research packet supplied directly by parent; not Library materialization",
   },
 };
 for (const [id, patch] of Object.entries(october.notes))
+  output.notes[id] = { ...output.notes[id], ...patch };
+for (const [id, patch] of Object.entries(weekly.notes))
   output.notes[id] = { ...output.notes[id], ...patch };
 assert.equal(
   read("data/gallery-renderer-contract-2026-10-05-audit.json").counts
@@ -345,8 +351,11 @@ if (process.argv.includes("--check"))
   );
 else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
 const evidence = {
-  cards: 89,
-  coverageCards: 55,
+  cards: 92,
+  coverageCards: 58,
+  weeklyRows: weekly.projection.cards.reduce((n, c) => n + c.variants[0].rows.length, 0),
+  weeklyInputSHA256: Object.fromEntries(weekly.projection.source_files.map((p) => [p, sha(p)])),
+  weeklyProjectionSHA256: sha("data/gallery-refresh-projection-2026-10-26.json"),
   octoberSelectedRows: october.projection.card.variants[0].rows.length,
   octoberInputSHA256: Object.fromEntries(october.projection.source_files.map((p) => [p, sha(p)])),
   octoberProjectionSHA256: sha("data/gallery-refresh-projection-2026-10-19.json"),

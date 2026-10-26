@@ -52,27 +52,28 @@ node scripts/build-gallery-refresh-2026-10-26.cjs --check
 node tests/verify-benchmark-2026-10-26.cjs
 ```
 
-The standalone projection plans 92 direct cards and 60 families and preserves all
-55 prior coverage cards and their observations exactly. Its metadata keeps older
-Frontend and medical release/configuration choices explicit. This is a prepared
-data checkpoint, not an integrated or published gallery update.
+The integrated projection contains 92 direct cards and 60 families and preserves
+all 55 prior coverage cards and observations exactly. Earlier Frontend and medical
+release/configuration choices remain explicit. The owner's direct approval covers
+shared renderer/builder integration, testing and publication for this scoped change.
 
-## Integration blocked pending ownership coordination
+## Integration and validation
 
-Automatic approval review rejected a batch touching `assets/gallery.js`,
-`assets/coverage-graphs.js` and `scripts/build-gallery.cjs`, citing the earlier
-instruction against shared renderer overlap without coordination. That batch
-was not applied and has not been retried. No changed production asset is present.
+The two renderer validators accept the three exact new
+`coverage.weekly_refresh.card_ids`, 58 coverage cards and 92 total cards. The main
+builder consumes the dated standalone module and metadata. Source links, exact
+tables, adjusted/raw metrics and standard errors use the existing schema.
 
-The required integration is concrete: the two renderer validators must accept
-the three exact new `coverage.weekly_refresh.card_ids`, 58 coverage cards and 92
-total cards; the main builder must consume the new standalone module and dated
-metadata. Source links, exact tables and separate metrics use the existing schema.
-The existing trusted-branch validation workflow and regression expectations then
-need the dated branch/checkpoint before publication. No credential, permission,
-paid evaluation, account-sharing or security-policy change is required.
+The trusted-branch workflow includes this dated branch and the new offline
+checks; its read-only permissions, pinned test tools and isolation remain intact.
+Browser regressions exercise all 58 coverage charts, retained history/navigation,
+the selected Frontend values, medical metric switching/reload, typed uncertainty,
+and 320px accessibility. Negative checks reject wrong refresh dates, incomplete
+cohort membership and negative uncertainty. No credential, permission, paid
+evaluation, account-sharing or security-policy change is introduced.
 
-After coordinated ownership/approval, use the existing reversible PR/main GitHub
-Pages workflow, check the exact-head regression run, then verify successful Pages
-deployment, served asset/source hashes and the live graph/metric controls. These
-integration, browser, publication and live checks have not run for this checkpoint.
+Publication uses the existing reversible PR/main GitHub Pages workflow only after
+exact-head checks pass. The final report and PR checks record actual outcomes.
+Live verification checks the successful Pages head, exact served asset/source
+hashes, dated source metadata, and graph/metric controls. No benchmark execution
+or paid model API run is part of this update.

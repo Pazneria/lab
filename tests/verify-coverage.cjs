@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = require("../scripts/build-gallery-refresh-2026-10-19.cjs")().coverage;
+const coverage = require("../scripts/build-gallery-refresh-2026-10-26.cjs")().coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,10 +183,10 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 89);
-    assert.equal(await page.locator(".mini-graph svg").count(), 80);
+    assert.equal(await page.locator(".benchmark-card").count(), 92);
+    assert.equal(await page.locator(".mini-graph svg").count(), 83);
     pass(
-      "Default gallery groups result families without empty cards; all 89 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 92 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
@@ -215,7 +215,7 @@ async function main() {
       }
     }
     pass(
-      "All 55 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 58 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
     // The selected Argon records retain evaluator and metric boundaries.
     await go("benchmarks.html?q=gemini%204%20argon");
@@ -240,6 +240,30 @@ async function main() {
     assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "57.4");
     await page.locator("select[name=cohort]").selectOption("gemini-4-argon-aa-terminal-bench-4");
     assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "57");
+    await go("results.html?benchmark=webdev-arena-frontend-2026-10-22");
+    assert.equal(await page.locator(".coverage-mark").count(), 12);
+    await page.locator("input[name=all]").check();
+    assert.equal(await page.locator(".coverage-mark").count(), 20);
+    assert.match(await page.locator(".explanations").innerText(), /151/);
+    assert.match(await page.locator(".explanations").innerText(), /807,096/);
+    await page.locator(".coverage-mark").first().focus();
+    assert.match(await page.locator(".point-inspector").innerText(), /1,849/);
+    assert.match(await page.locator(".point-inspector").innerText(), /confidence level unspecified/);
+    await go("results.html?benchmark=healthbench-professional-october-deployment");
+    assert.equal(await page.locator(".coverage-mark").count(), 5);
+    await page.locator("select[name=view]").selectOption("raw");
+    assert.equal(await page.locator("select[name=view]").inputValue(), "raw");
+    assert.match(await page.locator(".coverage-chart").innerText(), /Unadjusted/);
+    await page.reload();
+    await page.locator(".coverage-chart").waitFor();
+    assert.equal(await page.locator("select[name=view]").inputValue(), "raw");
+    await go("results.html?benchmark=mentalhealthbench-october-deployment");
+    assert.equal(await page.locator(".coverage-mark").count(), 6);
+    assert.match(await page.locator(".explanations").innerText(), /lowest-deployment-effort/);
+    await page.locator(".coverage-mark").first().focus();
+    assert.match(await page.locator(".point-inspector").innerText(), /one standard error/);
+    assert.match(await page.locator(".point-inspector").innerText(), /unknown|not reported/i);
+    pass("October 22 selected Frontend values, five-column adjusted/raw medical choice and six-column lowest-deployment-effort mental-health standard errors remain distinct and survive reload");
     await page.setViewportSize({ width: 320, height: 844 });
     for (const id of coverage.model_updates.card_ids) {
       await go("results.html?benchmark=" + id);
@@ -298,7 +322,7 @@ async function main() {
     const snapshot = await page.locator(".date-facts dt").filter({ hasText: /^Source snapshot$/ }).evaluate((n) => n.nextElementSibling.textContent);
     assert.match(snapshot, /Not established/);
     await page.setViewportSize({ width: 320, height: 844 });
-    for (const id of ["webdev-arena-frontend-2026-10-08", "healthagentbench", "drivingbench-fixed-pilot", "waymo-corrected-fleet-outcomes"]) {
+    for (const id of ["webdev-arena-frontend-2026-10-08", "healthagentbench", "drivingbench-fixed-pilot", "waymo-corrected-fleet-outcomes", "webdev-arena-frontend-2026-10-22", "healthbench-professional-october-deployment", "mentalhealthbench-october-deployment"]) {
       await go("results.html?benchmark=" + id);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, id + " mobile overflow");
       await axe("October 12 mobile " + id);

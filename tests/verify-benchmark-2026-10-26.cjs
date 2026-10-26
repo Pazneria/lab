@@ -1,5 +1,5 @@
 "use strict";
-const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto');
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),vm=require('node:vm');
 const root=path.resolve(__dirname,'..'),read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const p=read('data/benchmark-refresh-2026-10-26/source-packet.json');
 const prior=require('../scripts/build-gallery-refresh-2026-10-19.cjs')();
@@ -39,4 +39,13 @@ assert.equal(next.coverage.familyGroups['webdev-arena-frontend'][0],added[0].id)
 assert.equal(next.coverage.familyGroups['healthbench-professional'][0],added[1].id);
 assert.deepEqual(next.coverage.familyGroups.mentalhealthbench,[added[2].id,'mentalhealthbench']);
 const sha=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'data/benchmark-refresh-2026-10-26/source-packet.json'))).digest('hex');
-console.log(JSON.stringify({passed:true,sourceSHA256:sha,addedRows:31,priorCoverageCardsUnchanged:55,plannedDirectCards:92,plannedFamilies:60,rendererIntegrated:false,benchmarkExecuted:false}));
+const sandbox={window:{},URL};
+vm.runInNewContext(fs.readFileSync(path.join(root,'assets/coverage-graphs.js'),'utf8'),sandbox);
+assert.equal(sandbox.window.LAB_COVERAGE.valid(next.coverage),true);
+for(const mutate of [x=>x.weekly_refresh.card_ids.pop(),x=>x.weekly_refresh.checked_at='2026-10-19',x=>x.cards.at(-1).variants[0].rows[0].stderr_pp=-1]){
+ const bad=structuredClone(next.coverage);mutate(bad);assert.equal(sandbox.window.LAB_COVERAGE.valid(bad),false);
+}
+const asset={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/gallery-data.js'),'utf8'),asset);
+assert.deepEqual(JSON.parse(JSON.stringify(asset.window.LAB_GALLERY.coverage)),next.coverage);
+assert.equal(asset.window.LAB_GALLERY.provenance.presentationMetadata,'data/gallery-metadata-2026-10-26.json');
+console.log(JSON.stringify({passed:true,sourceSHA256:sha,addedRows:31,priorCoverageCardsUnchanged:55,directCards:92,families:60,rendererIntegrated:true,benchmarkExecuted:false}));

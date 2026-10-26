@@ -76,8 +76,6 @@ vm.runInNewContext(fs.readFileSync(path.join(root, "assets/coverage-graphs.js"),
 assert.equal(sandbox.window.LAB_COVERAGE.valid(next.coverage), true);
 const served = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, "assets/gallery-data.js"), "utf8"), served);
-assert.equal(served.window.LAB_GALLERY.coverage.cards.length, 55);
-assert.equal(served.window.LAB_GALLERY.cardMetadata.counts.all, 89);
-assert.equal(served.window.LAB_GALLERY.coverage.cards.at(-1).variants[0].rows[0].value, 1848);
-assert.equal(served.window.LAB_GALLERY.provenance.presentationMetadata, "data/gallery-metadata-2026-10-19.json");
+assert.deepEqual(JSON.parse(JSON.stringify(served.window.LAB_GALLERY.coverage.cards.slice(0, 55))), next.coverage.cards);
+assert.equal(served.window.LAB_GALLERY.coverage.cards.find(c => c.id === "webdev-arena-frontend-2026-10-18").variants[0].rows[0].value, 1848);
 console.log(JSON.stringify({ passed: true, sourceSHA256: manifest.files[0].sha256, selectedRows: 20, directCards: 89, families: 60, oldSourcePreserved: true }));
