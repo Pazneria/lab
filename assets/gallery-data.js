@@ -11463,6 +11463,48 @@ window.LAB_GALLERY = {
       "matters": "Rubric scores describe responses under a benchmark protocol. They do not establish patient outcomes or safe clinical deployment.",
       "read": "Scores average four responses per task, then 1,215 task means. Bars show one standard error across task means, not a confidence interval. This lowest-deployment-effort cohort stays separate from the September maximum-effort and author-paper default-effort cohorts. Synthetic rubric performance does not establish clinical safety.",
       "date": "October release report reviewed October 26, 2026; precise publication and evaluation dates unavailable"
+    },
+    "gemini-4-carbon-google-report": {
+      "question": "What does Google report for Carbon?",
+      "tests": "Select a benchmark from Google’s evaluation PDF. Some results are self-computed and others reproduce external boards.",
+      "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+      "read": "Each choice is a different task or protocol. External results are attributed to Google’s reproduction. OSWorld uses the maximum of three runs; Agents’ Last Exam excludes the October 26 task update. The ExploitGym table does not identify which reported timeout produced its score. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+      "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
+    },
+    "gemini-4-carbon-aa-report": {
+      "question": "What has Artificial Analysis measured for Carbon?",
+      "tests": "Select a current AA benchmark or the separate launch coding-agent report. The Intelligence Index has its own comparison card.",
+      "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+      "read": "AA’s current benchmark payload and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+      "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
+    },
+    "gemini-4-carbon-vals-report": {
+      "question": "How does Carbon perform in Vals evaluations?",
+      "tests": "Select a Vals benchmark. Percentage scores and one standard error are preserved separately for each evaluation.",
+      "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+      "read": "The functional VibeCode test measures whether web apps satisfy browser tests. It answers a different question from Arena preference and Design2Code screenshot fidelity. Vals uses benchmark-specific agents; Terminal-Bench uses Mini-SWE-agent and VibeCode uses OpenHands. Only explicitly paired source costs and durations are retained. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+      "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
+    },
+    "webdev-arena-frontend-2026-10-27": {
+      "question": "Which generated websites did people prefer in the October 27 Frontend table?",
+      "tests": "First 20 of 153 configurations from the Frontend preference table, which reports 829,216 votes.",
+      "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
+      "read": "Carbon’s 1,793 rating is preliminary. This source table is dated October 27, while Carbon was announced October 28; neither date establishes when its evaluation ran. Published bounds have unspecified confidence coverage. Overall and HTML boards are different cohorts. Token prices are not task costs. Earlier dated Frontend tables remain in history.",
+      "date": "Source table dated October 27; reviewed October 28, 2026; run dates unavailable"
+    },
+    "vibe-code-v1-1-carbon": {
+      "question": "Does Carbon build web apps that pass functional browser tests?",
+      "tests": "Vals VibeCode v1.1 with modified OpenHands: browser tests check app requirements, with a five-hour and 1,000-turn budget.",
+      "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+      "read": "The functional VibeCode test measures whether web apps satisfy browser tests. It answers a different question from Arena preference and Design2Code screenshot fidelity. Vals uses benchmark-specific agents; Terminal-Bench uses Mini-SWE-agent and VibeCode uses OpenHands. Only explicitly paired source costs and durations are retained. The exact task count, harness commit and evaluation dates were not verified. Rank denominators count models, not test tasks. Bars show one standard error.",
+      "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
+    },
+    "aa-intelligence-index": {
+      "question": "How do exact model configurations compare on AA Intelligence Index v5?",
+      "tests": "Nine evaluations across knowledge work, coding, science and general intelligence. Each capability group contributes 25%. The default shows 12 of 29 collected configurations; all 29 remain selectable.",
+      "matters": "The current index combines harder tasks and a changed scoring mix. Version labels make the comparison meaningful.",
+      "read": "v5 was announced October 27. It adds FrontierCode 2.0 and Terminal-Bench-Science, and changes the knowledge and reasoning datasets. Exact effort and fallback labels remain attached to each model. Earlier index scores use different datasets and scoring: a numerical decline is not evidence of a capability regression. The archived v4.3.2 Argon result is a separate history choice. Missing v5 scores are unavailable, not zero. No cross-version trend is calculated.",
+      "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
     }
   },
   "frontend": {
@@ -12044,17 +12086,17 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-10-26",
-    "basis": "Earlier source evidence preserved; October 22 selected Frontend table and separate October medical deployment tables added after October 26 review.",
+    "prepared_at": "2026-10-28",
+    "basis": "Earlier evidence retained; restricted-rollout Carbon observations and a separately versioned AA v5 comparison added.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 92,
-      "plotted": 83,
-      "current": 56,
-      "historical": 29,
+      "all": 98,
+      "plotted": 89,
+      "current": 61,
+      "historical": 30,
       "source_only": 7,
       "unavailable": 2,
-      "default_families": 60
+      "default_families": 65
     },
     "cards": {
       "hle-diamond": {
@@ -12560,15 +12602,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-26",
-          "mode": "primary_source_recheck",
-          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
-          "audit_status": "vendor_protocol_review_no_pooled_row"
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Earlier observations preserved; selected Carbon variant added separately by evaluator and harness."
         },
-        "result_packet_checked_at": "2026-10-15",
+        "result_packet_checked_at": "2026-10-28",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": "Multiple dated source reports; see the separate cohorts.",
+        "publication_label": "Multiple source reports; see separate evaluator cohorts.",
         "evaluations": [
           {
             "slice": "43 published configurations",
@@ -12597,12 +12638,26 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Terminal-Bench 4.0 / Google-reproduced AA",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / Terminal-Bench 4.0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
           "earliest": "2026-09-29",
-          "latest": "2026-09-30",
-          "known": 3,
+          "latest": "2026-10-28",
+          "known": 5,
           "unknown": 48
         },
         "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
@@ -12675,15 +12730,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-26",
-          "mode": "primary_source_recheck",
-          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
-          "audit_status": "vendor_protocol_review_no_pooled_row"
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Earlier observations preserved; selected Carbon variant added separately by evaluator and harness."
         },
-        "result_packet_checked_at": "2026-10-15",
+        "result_packet_checked_at": "2026-10-28",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": "Multiple dated source reports; see the separate cohorts.",
+        "publication_label": "Multiple source reports; see separate evaluator cohorts.",
         "evaluations": [
           {
             "slice": "Overall · 17 native-agent systems",
@@ -12698,12 +12752,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Terminal-Bench-Science 0.1 / Google-reproduced AA",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
           "earliest": "2026-05-28",
-          "latest": "2026-09-30",
-          "known": 18,
+          "latest": "2026-10-28",
+          "known": 19,
           "unknown": 0
         },
         "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
@@ -14038,14 +14099,14 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected source cohort for this protocol; selection and incomplete model coverage are disclosed.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-15",
-          "mode": "parent_primary_research",
-          "scope": "Earlier source cohorts preserved; separate selected Argon reporting cohorts added with their own methods and publication dates."
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Earlier observations preserved; selected Carbon variant added separately by evaluator and harness."
         },
-        "result_packet_checked_at": "2026-10-15",
+        "result_packet_checked_at": "2026-10-28",
         "snapshot_at": null,
         "publication_at": null,
-        "publication_label": "Multiple dated source reports; see the separate cohorts.",
+        "publication_label": "Multiple source reports; see separate evaluator cohorts.",
         "evaluations": [
           {
             "slice": "Selected published rows",
@@ -14060,12 +14121,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / FrontierSWE 2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
           "earliest": "2026-09-30",
-          "latest": "2026-09-30",
-          "known": 1,
+          "latest": "2026-10-28",
+          "known": 2,
           "unknown": 3
         }
       },
@@ -14518,16 +14586,15 @@ window.LAB_GALLERY = {
         "cohort_basis": "Latest collected cohort for this named source and protocol; completeness and run-date limits remain explicit.",
         "discovery_lifecycle": null,
         "source_review": {
-          "date": "2026-10-26",
-          "mode": "primary_source_recheck",
-          "scope": "September22 Opus5.5 report:TB4.0 66.4%atxhigh; FrontierCodev1.1Main54.4%; OSWorld2.1partial81.8%; HLEtools67.7%. Other results use max unless noted, with safeguard fallback models on some tasks. Vendor model-agent configurations are not a clean-model universal cohort; no pooled score added.",
-          "audit_status": "vendor_protocol_review_no_pooled_row"
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Earlier observations preserved; selected Carbon variant added separately by evaluator and harness."
         },
-        "result_packet_checked_at": "2026-10-12",
+        "result_packet_checked_at": "2026-10-28",
         "snapshot_at": null,
         "observation_period_end": null,
-        "publication_at": "2026-10-07",
-        "publication_label": null,
+        "publication_at": null,
+        "publication_label": "Multiple source reports; see separate evaluator cohorts.",
         "evaluations": [
           {
             "slice": "October report · official 82-task offline subset",
@@ -14535,12 +14602,19 @@ window.LAB_GALLERY = {
             "latest": null,
             "known": 0,
             "unknown": 5
+          },
+          {
+            "slice": "Carbon / GOOGLE / OSWorld 2.1 offline partial / best of 3",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
           }
         ],
         "model_releases": {
-          "earliest": null,
-          "latest": null,
-          "known": 0,
+          "earliest": "2026-10-28",
+          "latest": "2026-10-28",
+          "known": 1,
           "unknown": 5
         },
         "review_source_input": "data/benchmark-refresh-2026-10-26/source-packet.json"
@@ -15040,8 +15114,8 @@ window.LAB_GALLERY = {
       },
       "webdev-arena-frontend-2026-10-22": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Selected October 22 preference snapshot, first 20 of 151; not a complete board.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier dated preference table retained; no before/after capability claim.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-10-26",
@@ -15126,6 +15200,438 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 6
+        }
+      },
+      "gemini-4-carbon-google-report": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
+        },
+        "result_packet_checked_at": "2026-10-28",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Carbon / GOOGLE / AA Intelligence Index v5.0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Vals Index v2.2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / SWE-sweep",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / FrontierSWE 2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Terminal-Bench 4.0 / Google-reproduced AA",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Agents Last Exam v1.1 / October 17 task version",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / OSWorld 2.1 offline partial / best of 3",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / AutomationBench / Zapier private set",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Vending-Bench 2 / simulated bank balance",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Chartography / no tools",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Blueprint-Bench 2 / similarity",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / GraphWalks 256k–1M / BFS F1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / RiemannBench",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / Terminal-Bench-Science 0.1 / Google-reproduced AA",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / CWE-bench v1 / programmatic pass@1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / ExploitGym / timeout attribution unresolved",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / GOOGLE / SEC-bench Pro / May 2026 JS engines",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-10-28",
+          "latest": "2026-10-28",
+          "known": 17,
+          "unknown": 0
+        }
+      },
+      "gemini-4-carbon-aa-report": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
+        },
+        "result_packet_checked_at": "2026-10-28",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Carbon / AA / AA-Briefcase v1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / automationbench-aa",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / terminalbench-4-0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / FrontierCode 2.0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / AA-Omniscience v1.1 index",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / gdp-pdf",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / hle-diamond",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / CritPt v2 hard subset",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / terminal-bench-science",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / AA / AA launch / Coding Agent Index",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-10-28",
+          "latest": "2026-10-28",
+          "known": 10,
+          "unknown": 0
+        }
+      },
+      "gemini-4-carbon-vals-report": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
+        },
+        "result_packet_checked_at": "2026-10-28",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Carbon / VALS / Vals Index v2.2",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / Finance Index",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / Legal Index",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / EMB v1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / Finance Agent v2.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / LegalResearch",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / TaxAgent",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / VibeCode v1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / HLAB-Vals-1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          },
+          {
+            "slice": "Carbon / VALS / Terminal-Bench 4.0",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-10-28",
+          "latest": "2026-10-28",
+          "known": 10,
+          "unknown": 0
+        }
+      },
+      "webdev-arena-frontend-2026-10-27": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
+        },
+        "result_packet_checked_at": "2026-10-28",
+        "snapshot_at": "2026-10-27",
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "October 27 / first 20 of 153 configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 20
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 20
+        }
+      },
+      "vibe-code-v1-1-carbon": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
+        },
+        "result_packet_checked_at": "2026-10-28",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Carbon / VALS / VibeCode v1.1",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-10-28",
+          "latest": "2026-10-28",
+          "known": 1,
+          "unknown": 0
+        }
+      },
+      "aa-intelligence-index": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-10-28",
+          "mode": "primary_source_review",
+          "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
+        },
+        "result_packet_checked_at": "2026-10-28",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "v5.0 / top 12 of 29 collected configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 12
+          },
+          {
+            "slice": "v5.0 / all 29 collected configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 29
+          },
+          {
+            "slice": "Historical v4.3.2 / Argon only / incomparable with v5",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 1
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-07-15",
+          "latest": "2026-10-28",
+          "known": 40,
+          "unknown": 2
         }
       }
     }
@@ -17324,11 +17830,99 @@ window.LAB_GALLERY = {
             "checked_at": "2026-10-15",
             "complete": false,
             "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-carbon-google-frontierswe-2",
+            "label": "Carbon / GOOGLE / FrontierSWE 2",
+            "rows": [
+              {
+                "id": "frontierswe-2",
+                "benchmark": "FrontierSWE 2",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 61.2,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces Proximal official public leaderboard.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "target_card_id": "frontierswe-v2",
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-frontierswe-2",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "frontierswe-2",
+                  "benchmark": "FrontierSWE 2",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 61.2,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces Proximal official public leaderboard.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "target_card_id": "frontierswe-v2",
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "FrontierSWE 2",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces Proximal official public leaderboard.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
           }
         ],
         "source_inputs": [
           "data/coverage-research-2026-10-05/coverage-expansion-inventory.json",
-          "data/gemini-4-argon-2026-10-15/source-packet.json"
+          "data/gemini-4-argon-2026-10-15/source-packet.json",
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
         ]
       },
       {
@@ -29121,11 +29715,196 @@ window.LAB_GALLERY = {
             "checked_at": "2026-10-15",
             "complete": false,
             "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-carbon-google-terminal-bench-4",
+            "label": "Carbon / GOOGLE / Terminal-Bench 4.0 / Google-reproduced AA",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4.0 / Google-reproduced AA",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 65.2,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces AA. Separate from rounded launch-article 64% and Vals Mini-SWE-agent 63.13%.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "target_card_id": "terminal-bench-4",
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-terminal-bench-4",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4.0 / Google-reproduced AA",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 65.2,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces AA. Separate from rounded launch-article 64% and Vals Mini-SWE-agent 63.13%.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "target_card_id": "terminal-bench-4",
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Terminal-Bench 4.0 / Google-reproduced AA",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces AA. Separate from rounded launch-article 64% and Vals Mini-SWE-agent 63.13%.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-terminal-bench-4",
+            "label": "Carbon / VALS / Terminal-Bench 4.0",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4.0",
+                "source_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+                "value": 63.13,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Mini-SWE-agent; 66 tasks, three runs avg@3, Daytona bash, 8h limit, no step/cost limit, strict all-pass verifier. Cost/test and duration/test are paired source table fields; 45m07s converted to2707s.",
+                "evaluation_date": null,
+                "cost_usd_per_task": 7.45,
+                "latency_seconds": 2707,
+                "sample_size": 66,
+                "stderr_pp": 2.2,
+                "target_card_id": "terminal-bench-4",
+                "reported_payload": {
+                  "score_percent": 63.13,
+                  "standard_error_pp": 2.2
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-terminal-bench-4",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4.0",
+                  "source_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+                  "value": 63.13,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Mini-SWE-agent; 66 tasks, three runs avg@3, Daytona bash, 8h limit, no step/cost limit, strict all-pass verifier. Cost/test and duration/test are paired source table fields; 45m07s converted to2707s.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": 7.45,
+                  "latency_seconds": 2707,
+                  "sample_size": 66,
+                  "stderr_pp": 2.2,
+                  "target_card_id": "terminal-bench-4",
+                  "reported_payload": {
+                    "score_percent": 63.13,
+                    "standard_error_pp": 2.2
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Terminal-Bench 4.0",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Mini-SWE-agent; 66 tasks, three runs avg@3, Daytona bash, 8h limit, no step/cost limit, strict all-pass verifier. Cost/test and duration/test are paired source table fields; 45m07s converted to2707s.",
+              "sample_size": 66,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
           }
         ],
         "source_inputs": [
           "data/coverage-research-2026-10-05/primary-source-additions.json",
-          "data/gemini-4-argon-2026-10-15/source-packet.json"
+          "data/gemini-4-argon-2026-10-15/source-packet.json",
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
         ]
       },
       {
@@ -29791,11 +30570,99 @@ window.LAB_GALLERY = {
             "checked_at": "2026-10-15",
             "complete": false,
             "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          },
+          {
+            "id": "gemini-4-carbon-google-terminal-bench-science-0-1",
+            "label": "Carbon / GOOGLE / Terminal-Bench-Science 0.1 / Google-reproduced AA",
+            "rows": [
+              {
+                "id": "terminal-bench-science-0-1",
+                "benchmark": "Terminal-Bench-Science 0.1 / Google-reproduced AA",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 64.8,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces AA; exact task/run date unavailable.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "target_card_id": "terminal-bench-science-native-agents",
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-terminal-bench-science-0-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "terminal-bench-science-0-1",
+                  "benchmark": "Terminal-Bench-Science 0.1 / Google-reproduced AA",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 64.8,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces AA; exact task/run date unavailable.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "target_card_id": "terminal-bench-science-native-agents",
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Terminal-Bench-Science 0.1 / Google-reproduced AA",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces AA; exact task/run date unavailable.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
           }
         ],
         "source_inputs": [
           "data/coverage-research-2026-10-05/primary-source-additions.json",
-          "data/gemini-4-argon-2026-10-15/source-packet.json"
+          "data/gemini-4-argon-2026-10-15/source-packet.json",
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
         ]
       },
       {
@@ -43417,7 +44284,8 @@ window.LAB_GALLERY = {
         "read": "Strict success requires every checkpoint to pass; partial credit is a different measurement. Keep this 82-task subset separate from the September full 108-task cohort and the retained OSWorld 2.0 developer-report card. The version selector links those cards without combining their rows or protocols. The source chart identifies 95% intervals but supplies no transcribed numeric bounds here, so no interval is invented. Anthropic ran the OpenAI models through their API.",
         "source_input": "data/benchmark-refresh-2026-10-12/lab-community.json",
         "source_inputs": [
-          "data/benchmark-refresh-2026-10-12/lab-community.json"
+          "data/benchmark-refresh-2026-10-12/lab-community.json",
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
         ],
         "variants": [
           {
@@ -43573,6 +44441,93 @@ window.LAB_GALLERY = {
             "checked_at": "2026-10-12",
             "complete": false,
             "coverage": "All five selected chart-labeled systems; a bounded offline subset."
+          },
+          {
+            "id": "gemini-4-carbon-google-osworld-2-1-offline",
+            "label": "Carbon / GOOGLE / OSWorld 2.1 offline partial / best of 3",
+            "rows": [
+              {
+                "id": "osworld-2-1-offline",
+                "benchmark": "OSWorld 2.1 offline partial / best of 3",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 81.5,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "82 offline tasks; maximum of three runs, single attempt per run. Updated Gemini CUA harness, parallel batch tools, screenshot history and compaction; official evaluator, 1080p, 500 steps, PyAutoGUI screenshot-only; safety filters on.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": 82,
+                "target_card_id": "osworld-v2-1-offline-october",
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-osworld-2-1-offline",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "osworld-2-1-offline",
+                  "benchmark": "OSWorld 2.1 offline partial / best of 3",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 81.5,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "82 offline tasks; maximum of three runs, single attempt per run. Updated Gemini CUA harness, parallel batch tools, screenshot history and compaction; official evaluator, 1080p, 500 steps, PyAutoGUI screenshot-only; safety filters on.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": 82,
+                  "target_card_id": "osworld-v2-1-offline-october",
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "OSWorld 2.1 offline partial / best of 3",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "82 offline tasks; maximum of three runs, single attempt per run. Updated Gemini CUA harness, parallel batch tools, screenshot history and compaction; official evaluator, 1080p, 500 steps, PyAutoGUI screenshot-only; safety filters on.",
+              "sample_size": 82,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
           }
         ],
         "historical": false,
@@ -52895,6 +53850,7141 @@ window.LAB_GALLERY = {
             ]
           }
         ]
+      },
+      {
+        "id": "gemini-4-carbon-google-report",
+        "name": "Gemini 4 Carbon / Google reported benchmarks",
+        "category": "standard",
+        "question": "What does Google report for Carbon?",
+        "tests": "Select a benchmark from Google’s evaluation PDF. Some results are self-computed and others reproduce external boards.",
+        "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+        "read": "Each choice is a different task or protocol. External results are attributed to Google’s reproduction. OSWorld uses the maximum of three runs; Agents’ Last Exam excludes the October 26 task update. The ExploitGym table does not identify which reported timeout produced its score. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+        "historical": false,
+        "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-28",
+        "variants": [
+          {
+            "id": "gemini-4-carbon-google-aa-index-v5",
+            "label": "Carbon / GOOGLE / AA Intelligence Index v5.0",
+            "rows": [
+              {
+                "id": "aa-index-v5",
+                "benchmark": "AA Intelligence Index v5.0",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 59,
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces AA index; not an independently controlled Google cohort.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-aa-index-v5",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "aa-index-v5",
+                  "benchmark": "AA Intelligence Index v5.0",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 59,
+                  "unit": "index points",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces AA index; not an independently controlled Google cohort.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "AA Intelligence Index v5.0",
+                "field": "value",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces AA index; not an independently controlled Google cohort.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-vals-index-v2-2",
+            "label": "Carbon / GOOGLE / Vals Index v2.2",
+            "rows": [
+              {
+                "id": "vals-index-v2-2",
+                "benchmark": "Vals Index v2.2",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 70.4,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces Vals composite; rounded separately from Vals model page 70.36%.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-vals-index-v2-2",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "vals-index-v2-2",
+                  "benchmark": "Vals Index v2.2",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 70.4,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces Vals composite; rounded separately from Vals model page 70.36%.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Vals Index v2.2",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces Vals composite; rounded separately from Vals model page 70.36%.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-swe-sweep",
+            "label": "Carbon / GOOGLE / SWE-sweep",
+            "rows": [
+              {
+                "id": "swe-sweep",
+                "benchmark": "SWE-sweep",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 9.6,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google self-computed subtask-weighted reward using mini-swe-agent; sample count unavailable.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-swe-sweep",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "swe-sweep",
+                  "benchmark": "SWE-sweep",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 9.6,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google self-computed subtask-weighted reward using mini-swe-agent; sample count unavailable.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "SWE-sweep",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google self-computed subtask-weighted reward using mini-swe-agent; sample count unavailable.",
+              "sample_size": null,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-frontierswe-2",
+            "label": "Carbon / GOOGLE / FrontierSWE 2",
+            "rows": [
+              {
+                "id": "frontierswe-2",
+                "benchmark": "FrontierSWE 2",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 61.2,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces Proximal official public leaderboard.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "target_card_id": "frontierswe-v2",
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-frontierswe-2",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "frontierswe-2",
+                  "benchmark": "FrontierSWE 2",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 61.2,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces Proximal official public leaderboard.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "target_card_id": "frontierswe-v2",
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "FrontierSWE 2",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces Proximal official public leaderboard.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-terminal-bench-4",
+            "label": "Carbon / GOOGLE / Terminal-Bench 4.0 / Google-reproduced AA",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4.0 / Google-reproduced AA",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 65.2,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces AA. Separate from rounded launch-article 64% and Vals Mini-SWE-agent 63.13%.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "target_card_id": "terminal-bench-4",
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-terminal-bench-4",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4.0 / Google-reproduced AA",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 65.2,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces AA. Separate from rounded launch-article 64% and Vals Mini-SWE-agent 63.13%.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "target_card_id": "terminal-bench-4",
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Terminal-Bench 4.0 / Google-reproduced AA",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces AA. Separate from rounded launch-article 64% and Vals Mini-SWE-agent 63.13%.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-agents-last-exam-1-1",
+            "label": "Carbon / GOOGLE / Agents Last Exam v1.1 / October 17 task version",
+            "rows": [
+              {
+                "id": "agents-last-exam-1-1",
+                "benchmark": "Agents Last Exam v1.1 / October 17 task version",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 77.4,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google self-computed ALE-Claw default harness; 122 tasks; 5-hour window; safety filters on; Oct17 task version excludes Oct26 update; average rubric score.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": 122,
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-agents-last-exam-1-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "agents-last-exam-1-1",
+                  "benchmark": "Agents Last Exam v1.1 / October 17 task version",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 77.4,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google self-computed ALE-Claw default harness; 122 tasks; 5-hour window; safety filters on; Oct17 task version excludes Oct26 update; average rubric score.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": 122,
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Agents Last Exam v1.1 / October 17 task version",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google self-computed ALE-Claw default harness; 122 tasks; 5-hour window; safety filters on; Oct17 task version excludes Oct26 update; average rubric score.",
+              "sample_size": 122,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-osworld-2-1-offline",
+            "label": "Carbon / GOOGLE / OSWorld 2.1 offline partial / best of 3",
+            "rows": [
+              {
+                "id": "osworld-2-1-offline",
+                "benchmark": "OSWorld 2.1 offline partial / best of 3",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 81.5,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "82 offline tasks; maximum of three runs, single attempt per run. Updated Gemini CUA harness, parallel batch tools, screenshot history and compaction; official evaluator, 1080p, 500 steps, PyAutoGUI screenshot-only; safety filters on.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": 82,
+                "target_card_id": "osworld-v2-1-offline-october",
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-osworld-2-1-offline",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "osworld-2-1-offline",
+                  "benchmark": "OSWorld 2.1 offline partial / best of 3",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 81.5,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "82 offline tasks; maximum of three runs, single attempt per run. Updated Gemini CUA harness, parallel batch tools, screenshot history and compaction; official evaluator, 1080p, 500 steps, PyAutoGUI screenshot-only; safety filters on.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": 82,
+                  "target_card_id": "osworld-v2-1-offline-october",
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "OSWorld 2.1 offline partial / best of 3",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "82 offline tasks; maximum of three runs, single attempt per run. Updated Gemini CUA harness, parallel batch tools, screenshot history and compaction; official evaluator, 1080p, 500 steps, PyAutoGUI screenshot-only; safety filters on.",
+              "sample_size": 82,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-automationbench-private",
+            "label": "Carbon / GOOGLE / AutomationBench / Zapier private set",
+            "rows": [
+              {
+                "id": "automationbench-private",
+                "benchmark": "AutomationBench / Zapier private set",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 53.9,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces official Zapier private leaderboard; incompatible with AutomationBench-AA.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-automationbench-private",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "automationbench-private",
+                  "benchmark": "AutomationBench / Zapier private set",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 53.9,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces official Zapier private leaderboard; incompatible with AutomationBench-AA.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "AutomationBench / Zapier private set",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces official Zapier private leaderboard; incompatible with AutomationBench-AA.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-vending-bench-2",
+            "label": "Carbon / GOOGLE / Vending-Bench 2 / simulated bank balance",
+            "rows": [
+              {
+                "id": "vending-bench-2",
+                "benchmark": "Vending-Bench 2 / simulated bank balance",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 16484,
+                "unit": "simulated USD balance",
+                "domain": [
+                  0,
+                  20000
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces Andon Labs leaderboard; simulated bank balance is an outcome, not task cost.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-vending-bench-2",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "vending-bench-2",
+                  "benchmark": "Vending-Bench 2 / simulated bank balance",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 16484,
+                  "unit": "simulated USD balance",
+                  "domain": [
+                    0,
+                    20000
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces Andon Labs leaderboard; simulated bank balance is an outcome, not task cost.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Vending-Bench 2 / simulated bank balance",
+                "field": "value",
+                "unit": "simulated USD balance",
+                "domain": [
+                  0,
+                  20000
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces Andon Labs leaderboard; simulated bank balance is an outcome, not task cost.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-chartography",
+            "label": "Carbon / GOOGLE / Chartography / no tools",
+            "rows": [
+              {
+                "id": "chartography",
+                "benchmark": "Chartography / no tools",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 72.5,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "No tools; Google reproduces Surge leaderboard.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-chartography",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "chartography",
+                  "benchmark": "Chartography / no tools",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 72.5,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "No tools; Google reproduces Surge leaderboard.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Chartography / no tools",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "No tools; Google reproduces Surge leaderboard.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-blueprint-bench-2",
+            "label": "Carbon / GOOGLE / Blueprint-Bench 2 / similarity",
+            "rows": [
+              {
+                "id": "blueprint-bench-2",
+                "benchmark": "Blueprint-Bench 2 / similarity",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 58.6,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces Andon Labs similarity score.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-blueprint-bench-2",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "blueprint-bench-2",
+                  "benchmark": "Blueprint-Bench 2 / similarity",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 58.6,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces Andon Labs similarity score.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Blueprint-Bench 2 / similarity",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces Andon Labs similarity score.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-graphwalks-256k-1m",
+            "label": "Carbon / GOOGLE / GraphWalks 256k–1M / BFS F1",
+            "rows": [
+              {
+                "id": "graphwalks-256k-1m",
+                "benchmark": "GraphWalks 256k–1M / BFS F1",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 96.2,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google self-computed BFS F1 over 200 problems with 256k–1M token contexts.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": 200,
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-graphwalks-256k-1m",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "graphwalks-256k-1m",
+                  "benchmark": "GraphWalks 256k–1M / BFS F1",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 96.2,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google self-computed BFS F1 over 200 problems with 256k–1M token contexts.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": 200,
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "GraphWalks 256k–1M / BFS F1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google self-computed BFS F1 over 200 problems with 256k–1M token contexts.",
+              "sample_size": 200,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-riemannbench",
+            "label": "Carbon / GOOGLE / RiemannBench",
+            "rows": [
+              {
+                "id": "riemannbench",
+                "benchmark": "RiemannBench",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 80,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces Surge public leaderboard.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-riemannbench",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "riemannbench",
+                  "benchmark": "RiemannBench",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 80,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces Surge public leaderboard.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "RiemannBench",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces Surge public leaderboard.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-terminal-bench-science-0-1",
+            "label": "Carbon / GOOGLE / Terminal-Bench-Science 0.1 / Google-reproduced AA",
+            "rows": [
+              {
+                "id": "terminal-bench-science-0-1",
+                "benchmark": "Terminal-Bench-Science 0.1 / Google-reproduced AA",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 64.8,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google reproduces AA; exact task/run date unavailable.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "target_card_id": "terminal-bench-science-native-agents",
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-terminal-bench-science-0-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "terminal-bench-science-0-1",
+                  "benchmark": "Terminal-Bench-Science 0.1 / Google-reproduced AA",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 64.8,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google reproduces AA; exact task/run date unavailable.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "target_card_id": "terminal-bench-science-native-agents",
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Terminal-Bench-Science 0.1 / Google-reproduced AA",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google reproduces AA; exact task/run date unavailable.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-cwe-bench-v1",
+            "label": "Carbon / GOOGLE / CWE-bench v1 / programmatic pass@1",
+            "rows": [
+              {
+                "id": "cwe-bench-v1",
+                "benchmark": "CWE-bench v1 / programmatic pass@1",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 71,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Collinear AI external evaluation reproduced by Google. Programmatic pass@1; pass@4 only breaks ties.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_reproduced_external",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-cwe-bench-v1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "cwe-bench-v1",
+                  "benchmark": "CWE-bench v1 / programmatic pass@1",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 71,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Collinear AI external evaluation reproduced by Google. Programmatic pass@1; pass@4 only breaks ties.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_reproduced_external"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "CWE-bench v1 / programmatic pass@1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Collinear AI external evaluation reproduced by Google. Programmatic pass@1; pass@4 only breaks ties.",
+              "sample_size": null,
+              "evidence_role": "vendor_reproduced_external"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-exploitgym",
+            "label": "Carbon / GOOGLE / ExploitGym / timeout attribution unresolved",
+            "rows": [
+              {
+                "id": "exploitgym",
+                "benchmark": "ExploitGym / timeout attribution unresolved",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 54.8,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Google self-computed Antigravity offline, one attempt/task, mitigations off; captured flag plus LLM judge. Methodology mentions 6h and 10h timeouts without assigning this result to one; timeout attribution remains unresolved.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-exploitgym",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "exploitgym",
+                  "benchmark": "ExploitGym / timeout attribution unresolved",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 54.8,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Google self-computed Antigravity offline, one attempt/task, mitigations off; captured flag plus LLM judge. Methodology mentions 6h and 10h timeouts without assigning this result to one; timeout attribution remains unresolved.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "ExploitGym / timeout attribution unresolved",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Google self-computed Antigravity offline, one attempt/task, mitigations off; captured flag plus LLM judge. Methodology mentions 6h and 10h timeouts without assigning this result to one; timeout attribution remains unresolved.",
+              "sample_size": null,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-google-sec-bench-pro",
+            "label": "Carbon / GOOGLE / SEC-bench Pro / May 2026 JS engines",
+            "rows": [
+              {
+                "id": "sec-bench-pro",
+                "benchmark": "SEC-bench Pro / May 2026 JS engines",
+                "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                "value": 88.2,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "183-task May2026 JavaScript engine split, Antigravity, pass@1 averaged across three independent attempts/task; vulnerable-versus-patched PoC crash check plus LLM judge.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": 183,
+                "evidence_role": "vendor_self_computed",
+                "label": "Gemini 4 Carbon (highest thinking; source exceptions)",
+                "result_id": "gemini-4-carbon-google-sec-bench-pro",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "highest thinking unless benchmark exception",
+                "raw": {
+                  "id": "sec-bench-pro",
+                  "benchmark": "SEC-bench Pro / May 2026 JS engines",
+                  "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+                  "value": 88.2,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "183-task May2026 JavaScript engine split, Antigravity, pass@1 averaged across three independent attempts/task; vulnerable-versus-patched PoC crash check plus LLM judge.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": 183,
+                  "evidence_role": "vendor_self_computed"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "SEC-bench Pro / May 2026 JS engines",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_model_evaluation.pdf",
+            "source_locator": "October 2026 evaluation PDF, results page 5 and methods pages 2–4",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "highest thinking unless benchmark exception",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "183-task May2026 JavaScript engine split, Antigravity, pass@1 averaged across three independent attempts/task; vulnerable-versus-patched PoC crash check plus LLM judge.",
+              "sample_size": 183,
+              "evidence_role": "vendor_self_computed"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          }
+        ]
+      },
+      {
+        "id": "gemini-4-carbon-aa-report",
+        "name": "Gemini 4 Carbon / Artificial Analysis benchmarks",
+        "category": "standard",
+        "question": "What has Artificial Analysis measured for Carbon?",
+        "tests": "Select a current AA benchmark or the separate launch coding-agent report. The Intelligence Index has its own comparison card.",
+        "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+        "read": "AA’s current benchmark payload and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+        "historical": false,
+        "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-28",
+        "variants": [
+          {
+            "id": "gemini-4-carbon-aa-aa-briefcase",
+            "label": "Carbon / AA / AA-Briefcase v1.1",
+            "rows": [
+              {
+                "id": "aa-briefcase",
+                "benchmark": "AA-Briefcase v1.1",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 1609.49,
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2000
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "aa-briefcase",
+                  "score": 1609.49,
+                  "outputTokensPerTask": 137924.83516483515,
+                  "costPerTask": 8.161283796963238,
+                  "timePerTask": 1402.53359436387
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-aa-briefcase",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "aa-briefcase",
+                  "benchmark": "AA-Briefcase v1.1",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 1609.49,
+                  "unit": "Elo",
+                  "domain": [
+                    0,
+                    2000
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "aa-briefcase",
+                    "score": 1609.49,
+                    "outputTokensPerTask": 137924.83516483515,
+                    "costPerTask": 8.161283796963238,
+                    "timePerTask": 1402.53359436387
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "AA-Briefcase v1.1",
+                "field": "value",
+                "unit": "Elo",
+                "domain": [
+                  0,
+                  2000
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-automationbench-aa",
+            "label": "Carbon / AA / automationbench-aa",
+            "rows": [
+              {
+                "id": "automationbench-aa",
+                "benchmark": "automationbench-aa",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 77.8166,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "automationbench-aa",
+                  "score": 0.7781660572624064,
+                  "outputTokensPerTask": 52006.280060882804,
+                  "costPerTask": 1.8895128856152559,
+                  "timePerTask": 528.8427919171493
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-automationbench-aa",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "automationbench-aa",
+                  "benchmark": "automationbench-aa",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 77.8166,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "automationbench-aa",
+                    "score": 0.7781660572624064,
+                    "outputTokensPerTask": 52006.280060882804,
+                    "costPerTask": 1.8895128856152559,
+                    "timePerTask": 528.8427919171493
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "automationbench-aa",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-terminalbench-4-0",
+            "label": "Carbon / AA / terminalbench-4-0",
+            "rows": [
+              {
+                "id": "terminalbench-4-0",
+                "benchmark": "terminalbench-4-0",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 65.1515,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": 66,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "terminalbench-4-0",
+                  "score": 0.651515151515151,
+                  "outputTokensPerTask": 160695.34848484848,
+                  "costPerTask": 10.05298420599429,
+                  "timePerTask": 1634.082973082077
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-terminalbench-4-0",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "terminalbench-4-0",
+                  "benchmark": "terminalbench-4-0",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 65.1515,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": 66,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "terminalbench-4-0",
+                    "score": 0.651515151515151,
+                    "outputTokensPerTask": 160695.34848484848,
+                    "costPerTask": 10.05298420599429,
+                    "timePerTask": 1634.082973082077
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "terminalbench-4-0",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": 66,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-frontiercode-2-0",
+            "label": "Carbon / AA / FrontierCode 2.0",
+            "rows": [
+              {
+                "id": "frontiercode-2-0",
+                "benchmark": "FrontierCode 2.0",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 40.5606,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": 132,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "frontiercode-2-0",
+                  "score": 0.405606060606061,
+                  "outputTokensPerTask": 127768.39393939394,
+                  "costPerTask": 12.01822900910347,
+                  "timePerTask": 1299.2545148504566
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-frontiercode-2-0",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "frontiercode-2-0",
+                  "benchmark": "FrontierCode 2.0",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 40.5606,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": 132,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "frontiercode-2-0",
+                    "score": 0.405606060606061,
+                    "outputTokensPerTask": 127768.39393939394,
+                    "costPerTask": 12.01822900910347,
+                    "timePerTask": 1299.2545148504566
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "FrontierCode 2.0",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": 132,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-omniscience",
+            "label": "Carbon / AA / AA-Omniscience v1.1 index",
+            "rows": [
+              {
+                "id": "omniscience",
+                "benchmark": "AA-Omniscience v1.1 index",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 53.5,
+                "unit": "signed index points",
+                "domain": [
+                  -100,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": 3000,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "omniscience",
+                  "score": 53.5,
+                  "outputTokensPerTask": 11899.838,
+                  "costPerTask": 0.24631198533333334,
+                  "timePerTask": 121.00737726125608
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-omniscience",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "omniscience",
+                  "benchmark": "AA-Omniscience v1.1 index",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 53.5,
+                  "unit": "signed index points",
+                  "domain": [
+                    -100,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": 3000,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "omniscience",
+                    "score": 53.5,
+                    "outputTokensPerTask": 11899.838,
+                    "costPerTask": 0.24631198533333334,
+                    "timePerTask": 121.00737726125608
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "AA-Omniscience v1.1 index",
+                "field": "value",
+                "unit": "signed index points",
+                "domain": [
+                  -100,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": 3000,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-gdp-pdf",
+            "label": "Carbon / AA / gdp-pdf",
+            "rows": [
+              {
+                "id": "gdp-pdf",
+                "benchmark": "gdp-pdf",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 28.4,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gdp-pdf",
+                  "score": 0.284,
+                  "outputTokensPerTask": 23383.98,
+                  "costPerTask": 0.84704612,
+                  "timePerTask": 237.7876143969075
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-gdp-pdf",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "gdp-pdf",
+                  "benchmark": "gdp-pdf",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 28.4,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gdp-pdf",
+                    "score": 0.284,
+                    "outputTokensPerTask": 23383.98,
+                    "costPerTask": 0.84704612,
+                    "timePerTask": 237.7876143969075
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "gdp-pdf",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-hle-diamond",
+            "label": "Carbon / AA / hle-diamond",
+            "rows": [
+              {
+                "id": "hle-diamond",
+                "benchmark": "hle-diamond",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 69.1,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": 1000,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "hle-diamond",
+                  "score": 0.691,
+                  "outputTokensPerTask": 67974.026,
+                  "costPerTask": 1.6276047800000002,
+                  "timePerTask": 691.2160155582311
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-hle-diamond",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "hle-diamond",
+                  "benchmark": "hle-diamond",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 69.1,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": 1000,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "hle-diamond",
+                    "score": 0.691,
+                    "outputTokensPerTask": 67974.026,
+                    "costPerTask": 1.6276047800000002,
+                    "timePerTask": 691.2160155582311
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "hle-diamond",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": 1000,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-critpt-v2-hard",
+            "label": "Carbon / AA / CritPt v2 hard subset",
+            "rows": [
+              {
+                "id": "critpt-v2-hard",
+                "benchmark": "CritPt v2 hard subset",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 63,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": 40,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "critpt-v2-hard",
+                  "score": 0.63,
+                  "outputTokensPerTask": 130898.225,
+                  "costPerTask": 3.907052761448875,
+                  "timePerTask": 1331.0812210555962
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-critpt-v2-hard",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "critpt-v2-hard",
+                  "benchmark": "CritPt v2 hard subset",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 63,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": 40,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "critpt-v2-hard",
+                    "score": 0.63,
+                    "outputTokensPerTask": 130898.225,
+                    "costPerTask": 3.907052761448875,
+                    "timePerTask": 1331.0812210555962
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "CritPt v2 hard subset",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": 40,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-terminal-bench-science",
+            "label": "Carbon / AA / terminal-bench-science",
+            "rows": [
+              {
+                "id": "terminal-bench-science",
+                "benchmark": "terminal-bench-science",
+                "source_url": "https://artificialanalysis.ai/models",
+                "value": 64.7619,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                "evaluation_date": null,
+                "sample_size": 70,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "terminal-bench-science",
+                  "score": 0.647619047619048,
+                  "outputTokensPerTask": 276017.0857142857,
+                  "costPerTask": 19.973866010343144,
+                  "timePerTask": 2806.7696065762434
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-terminal-bench-science",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "terminal-bench-science",
+                  "benchmark": "terminal-bench-science",
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "value": 64.7619,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+                  "evaluation_date": null,
+                  "sample_size": 70,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "terminal-bench-science",
+                    "score": 0.647619047619048,
+                    "outputTokensPerTask": 276017.0857142857,
+                    "costPerTask": 19.973866010343144,
+                    "timePerTask": 2806.7696065762434
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "terminal-bench-science",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
+              "sample_size": 70,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-aa-launch-coding-agent",
+            "label": "Carbon / AA / AA launch / Coding Agent Index",
+            "rows": [
+              {
+                "id": "launch-coding-agent",
+                "benchmark": "AA launch / Coding Agent Index",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+                "value": 59,
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "AA launch article: Antigravity CLI; TB4 rounded64% and FrontierCode v1.1 rounded51%. This coding-agent index is not the Intelligence Index v5.0 (which uses FrontierCode2.0).",
+                "other_reported_measurements": {
+                  "terminal_bench_4_percent": 64,
+                  "frontiercode_v1_1_percent": 51
+                },
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-aa-launch-coding-agent",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "launch-coding-agent",
+                  "benchmark": "AA launch / Coding Agent Index",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+                  "value": 59,
+                  "unit": "index points",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "AA launch article: Antigravity CLI; TB4 rounded64% and FrontierCode v1.1 rounded51%. This coding-agent index is not the Intelligence Index v5.0 (which uses FrontierCode2.0).",
+                  "other_reported_measurements": {
+                    "terminal_bench_4_percent": 64,
+                    "frontiercode_v1_1_percent": 51
+                  },
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "AA launch / Coding Agent Index",
+                "field": "value",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "AA launch article: Antigravity CLI; TB4 rounded64% and FrontierCode v1.1 rounded51%. This coding-agent index is not the Intelligence Index v5.0 (which uses FrontierCode2.0).",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          }
+        ]
+      },
+      {
+        "id": "gemini-4-carbon-vals-report",
+        "name": "Gemini 4 Carbon / Vals benchmarks",
+        "category": "standard",
+        "question": "How does Carbon perform in Vals evaluations?",
+        "tests": "Select a Vals benchmark. Percentage scores and one standard error are preserved separately for each evaluation.",
+        "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+        "read": "The functional VibeCode test measures whether web apps satisfy browser tests. It answers a different question from Arena preference and Design2Code screenshot fidelity. Vals uses benchmark-specific agents; Terminal-Bench uses Mini-SWE-agent and VibeCode uses OpenHands. Only explicitly paired source costs and durations are retained. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+        "historical": false,
+        "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-28",
+        "variants": [
+          {
+            "id": "gemini-4-carbon-vals-index",
+            "label": "Carbon / VALS / Vals Index v2.2",
+            "rows": [
+              {
+                "id": "index",
+                "benchmark": "Vals Index v2.2",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 70.36,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 0.97,
+                "reported_index_cost_usd_per_test": 10.51,
+                "reported_index_latency": "47m45s; index aggregation not independently verified, not a generic task-duration axis",
+                "reported_payload": {
+                  "score_percent": 70.36,
+                  "standard_error_pp": 0.97
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-index",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "index",
+                  "benchmark": "Vals Index v2.2",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 70.36,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 0.97,
+                  "reported_index_cost_usd_per_test": 10.51,
+                  "reported_index_latency": "47m45s; index aggregation not independently verified, not a generic task-duration axis",
+                  "reported_payload": {
+                    "score_percent": 70.36,
+                    "standard_error_pp": 0.97
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Vals Index v2.2",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-finance-index",
+            "label": "Carbon / VALS / Finance Index",
+            "rows": [
+              {
+                "id": "finance-index",
+                "benchmark": "Finance Index",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 66.35,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 1.4,
+                "reported_payload": {
+                  "score_percent": 66.35,
+                  "standard_error_pp": 1.4
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-finance-index",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "finance-index",
+                  "benchmark": "Finance Index",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 66.35,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 1.4,
+                  "reported_payload": {
+                    "score_percent": 66.35,
+                    "standard_error_pp": 1.4
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Finance Index",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-legal-index",
+            "label": "Carbon / VALS / Legal Index",
+            "rows": [
+              {
+                "id": "legal-index",
+                "benchmark": "Legal Index",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 75.83,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 1.85,
+                "reported_payload": {
+                  "score_percent": 75.83,
+                  "standard_error_pp": 1.85
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-legal-index",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "legal-index",
+                  "benchmark": "Legal Index",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 75.83,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 1.85,
+                  "reported_payload": {
+                    "score_percent": 75.83,
+                    "standard_error_pp": 1.85
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Legal Index",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-emb-v1-1",
+            "label": "Carbon / VALS / EMB v1.1",
+            "rows": [
+              {
+                "id": "emb-v1-1",
+                "benchmark": "EMB v1.1",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 76.47,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 2.21,
+                "reported_payload": {
+                  "score_percent": 76.47,
+                  "standard_error_pp": 2.21
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-emb-v1-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "emb-v1-1",
+                  "benchmark": "EMB v1.1",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 76.47,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 2.21,
+                  "reported_payload": {
+                    "score_percent": 76.47,
+                    "standard_error_pp": 2.21
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "EMB v1.1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-finance-agent-v2-1",
+            "label": "Carbon / VALS / Finance Agent v2.1",
+            "rows": [
+              {
+                "id": "finance-agent-v2-1",
+                "benchmark": "Finance Agent v2.1",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 67.16,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 2.02,
+                "reported_payload": {
+                  "score_percent": 67.16,
+                  "standard_error_pp": 2.02
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-finance-agent-v2-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "finance-agent-v2-1",
+                  "benchmark": "Finance Agent v2.1",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 67.16,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 2.02,
+                  "reported_payload": {
+                    "score_percent": 67.16,
+                    "standard_error_pp": 2.02
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Finance Agent v2.1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-legal-research",
+            "label": "Carbon / VALS / LegalResearch",
+            "rows": [
+              {
+                "id": "legal-research",
+                "benchmark": "LegalResearch",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 55.77,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 3.45,
+                "reported_payload": {
+                  "score_percent": 55.77,
+                  "standard_error_pp": 3.45
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-legal-research",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "legal-research",
+                  "benchmark": "LegalResearch",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 55.77,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 3.45,
+                  "reported_payload": {
+                    "score_percent": 55.77,
+                    "standard_error_pp": 3.45
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "LegalResearch",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-tax-agent",
+            "label": "Carbon / VALS / TaxAgent",
+            "rows": [
+              {
+                "id": "tax-agent",
+                "benchmark": "TaxAgent",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 48.86,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 3.42,
+                "reported_payload": {
+                  "score_percent": 48.86,
+                  "standard_error_pp": 3.42
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-tax-agent",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "tax-agent",
+                  "benchmark": "TaxAgent",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 48.86,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 3.42,
+                  "reported_payload": {
+                    "score_percent": 48.86,
+                    "standard_error_pp": 3.42
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "TaxAgent",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-vibe-code-v1-1",
+            "label": "Carbon / VALS / VibeCode v1.1",
+            "rows": [
+              {
+                "id": "vibe-code-v1-1",
+                "benchmark": "VibeCode v1.1",
+                "source_url": "https://www.vals.ai/benchmarks/vibe-code",
+                "value": 89.06,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Modified OpenHands (commit unavailable); functional webapp specs;20–60 browser tests/app, BrowserUse checks, test passes at90%substeps; five-hour/1000turnbudget, sandboxed services.36m12s converted to2172s. Number of ranked models is not task count.",
+                "evaluation_date": null,
+                "cost_usd_per_task": 8.25,
+                "latency_seconds": 2172,
+                "sample_size": null,
+                "stderr_pp": 2.29,
+                "reported_payload": {
+                  "score_percent": 89.06,
+                  "standard_error_pp": 2.29
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-vibe-code-v1-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "vibe-code-v1-1",
+                  "benchmark": "VibeCode v1.1",
+                  "source_url": "https://www.vals.ai/benchmarks/vibe-code",
+                  "value": 89.06,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Modified OpenHands (commit unavailable); functional webapp specs;20–60 browser tests/app, BrowserUse checks, test passes at90%substeps; five-hour/1000turnbudget, sandboxed services.36m12s converted to2172s. Number of ranked models is not task count.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": 8.25,
+                  "latency_seconds": 2172,
+                  "sample_size": null,
+                  "stderr_pp": 2.29,
+                  "reported_payload": {
+                    "score_percent": 89.06,
+                    "standard_error_pp": 2.29
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "VibeCode v1.1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/benchmarks/vibe-code",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Modified OpenHands (commit unavailable); functional webapp specs;20–60 browser tests/app, BrowserUse checks, test passes at90%substeps; five-hour/1000turnbudget, sandboxed services.36m12s converted to2172s. Number of ranked models is not task count.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-hlab-vals-1-1",
+            "label": "Carbon / VALS / HLAB-Vals-1.1",
+            "rows": [
+              {
+                "id": "hlab-vals-1-1",
+                "benchmark": "HLAB-Vals-1.1",
+                "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                "value": 17.5,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "sample_size": null,
+                "stderr_pp": 3,
+                "reported_payload": {
+                  "score_percent": 17.5,
+                  "standard_error_pp": 3
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-hlab-vals-1-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "hlab-vals-1-1",
+                  "benchmark": "HLAB-Vals-1.1",
+                  "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+                  "value": 17.5,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "sample_size": null,
+                  "stderr_pp": 3,
+                  "reported_payload": {
+                    "score_percent": 17.5,
+                    "standard_error_pp": 3
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "HLAB-Vals-1.1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/models/google_gemini-4-carbon",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          },
+          {
+            "id": "gemini-4-carbon-vals-terminal-bench-4",
+            "label": "Carbon / VALS / Terminal-Bench 4.0",
+            "rows": [
+              {
+                "id": "terminal-bench-4",
+                "benchmark": "Terminal-Bench 4.0",
+                "source_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+                "value": 63.13,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Mini-SWE-agent; 66 tasks, three runs avg@3, Daytona bash, 8h limit, no step/cost limit, strict all-pass verifier. Cost/test and duration/test are paired source table fields; 45m07s converted to2707s.",
+                "evaluation_date": null,
+                "cost_usd_per_task": 7.45,
+                "latency_seconds": 2707,
+                "sample_size": 66,
+                "stderr_pp": 2.2,
+                "target_card_id": "terminal-bench-4",
+                "reported_payload": {
+                  "score_percent": 63.13,
+                  "standard_error_pp": 2.2
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-terminal-bench-4",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "terminal-bench-4",
+                  "benchmark": "Terminal-Bench 4.0",
+                  "source_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+                  "value": 63.13,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Mini-SWE-agent; 66 tasks, three runs avg@3, Daytona bash, 8h limit, no step/cost limit, strict all-pass verifier. Cost/test and duration/test are paired source table fields; 45m07s converted to2707s.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": 7.45,
+                  "latency_seconds": 2707,
+                  "sample_size": 66,
+                  "stderr_pp": 2.2,
+                  "target_card_id": "terminal-bench-4",
+                  "reported_payload": {
+                    "score_percent": 63.13,
+                    "standard_error_pp": 2.2
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Terminal-Bench 4.0",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/benchmarks/terminal-bench-4",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Mini-SWE-agent; 66 tasks, three runs avg@3, Daytona bash, 8h limit, no step/cost limit, strict all-pass verifier. Cost/test and duration/test are paired source table fields; 45m07s converted to2707s.",
+              "sample_size": 66,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          }
+        ]
+      },
+      {
+        "id": "webdev-arena-frontend-2026-10-27",
+        "name": "WebDev Arena / Frontend / October 27",
+        "category": "frontend",
+        "question": "Which generated websites did people prefer in the October 27 Frontend table?",
+        "tests": "First 20 of 153 configurations from the Frontend preference table, which reports 829,216 votes.",
+        "matters": "Preference reveals appeal and perceived usefulness, while screenshot fidelity and functional browser checks answer different questions.",
+        "read": "Carbon’s 1,793 rating is preliminary. This source table is dated October 27, while Carbon was announced October 28; neither date establishes when its evaluation ran. Published bounds have unspecified confidence coverage. Overall and HTML boards are different cohorts. Token prices are not task costs. Earlier dated Frontend tables remain in history.",
+        "historical": false,
+        "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-28",
+        "variants": [
+          {
+            "id": "webdev-arena-frontend-2026-10-27",
+            "label": "October 27 / first 20 of 153 configurations",
+            "rows": [
+              {
+                "rank": 1,
+                "rank_spread": [
+                  1,
+                  1
+                ],
+                "model_variant": "Claude Opus 5.5 (Max)",
+                "value": 1854,
+                "published_plus_minus": 16,
+                "published_range": [
+                  1838,
+                  1870
+                ],
+                "votes": 2542,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-1",
+                "label": "Claude Opus 5.5 (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-1",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 1,
+                  "rank_spread": [
+                    1,
+                    1
+                  ],
+                  "model_variant": "Claude Opus 5.5 (Max)",
+                  "value": 1854,
+                  "published_plus_minus": 16,
+                  "published_range": [
+                    1838,
+                    1870
+                  ],
+                  "votes": 2542,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-1"
+                }
+              },
+              {
+                "rank": 2,
+                "rank_spread": [
+                  2,
+                  4
+                ],
+                "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                "value": 1807,
+                "published_plus_minus": 13,
+                "published_range": [
+                  1794,
+                  1820
+                ],
+                "votes": 3486,
+                "preliminary": false,
+                "effort": "xhigh",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-2",
+                "label": "Claude Sonnet 5.5 (xHigh)",
+                "result_id": "webdev-frontend-2026-10-27-rank-2",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 2,
+                  "rank_spread": [
+                    2,
+                    4
+                  ],
+                  "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                  "value": 1807,
+                  "published_plus_minus": 13,
+                  "published_range": [
+                    1794,
+                    1820
+                  ],
+                  "votes": 3486,
+                  "preliminary": false,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-2"
+                }
+              },
+              {
+                "rank": 3,
+                "rank_spread": [
+                  2,
+                  6
+                ],
+                "model_variant": "Gemini 4 Carbon (High)",
+                "value": 1793,
+                "published_plus_minus": 17,
+                "published_range": [
+                  1776,
+                  1810
+                ],
+                "votes": 1861,
+                "preliminary": true,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-3",
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "webdev-frontend-2026-10-27-rank-3",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 3,
+                  "rank_spread": [
+                    2,
+                    6
+                  ],
+                  "model_variant": "Gemini 4 Carbon (High)",
+                  "value": 1793,
+                  "published_plus_minus": 17,
+                  "published_range": [
+                    1776,
+                    1810
+                  ],
+                  "votes": 1861,
+                  "preliminary": true,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-3"
+                }
+              },
+              {
+                "rank": 4,
+                "rank_spread": [
+                  2,
+                  5
+                ],
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 1792,
+                "published_plus_minus": 11,
+                "published_range": [
+                  1781,
+                  1803
+                ],
+                "votes": 5714,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-4",
+                "label": "GPT-6 Astra (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-4",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 4,
+                  "rank_spread": [
+                    2,
+                    5
+                  ],
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 1792,
+                  "published_plus_minus": 11,
+                  "published_range": [
+                    1781,
+                    1803
+                  ],
+                  "votes": 5714,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-4"
+                }
+              },
+              {
+                "rank": 5,
+                "rank_spread": [
+                  3,
+                  6
+                ],
+                "model_variant": "Claude Fable 5.1 (Max)",
+                "value": 1777,
+                "published_plus_minus": 10,
+                "published_range": [
+                  1767,
+                  1787
+                ],
+                "votes": 6763,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-5",
+                "label": "Claude Fable 5.1 (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-5",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 5,
+                  "rank_spread": [
+                    3,
+                    6
+                  ],
+                  "model_variant": "Claude Fable 5.1 (Max)",
+                  "value": 1777,
+                  "published_plus_minus": 10,
+                  "published_range": [
+                    1767,
+                    1787
+                  ],
+                  "votes": 6763,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-5"
+                }
+              },
+              {
+                "rank": 6,
+                "rank_spread": [
+                  4,
+                  7
+                ],
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 1766,
+                "published_plus_minus": 13,
+                "published_range": [
+                  1753,
+                  1779
+                ],
+                "votes": 3286,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-6",
+                "label": "GPT-6.1 Sol (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-6",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 6,
+                  "rank_spread": [
+                    4,
+                    7
+                  ],
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 1766,
+                  "published_plus_minus": 13,
+                  "published_range": [
+                    1753,
+                    1779
+                  ],
+                  "votes": 3286,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-6"
+                }
+              },
+              {
+                "rank": 7,
+                "rank_spread": [
+                  7,
+                  8
+                ],
+                "model_variant": "Claude Sonnet 5.5 (High)",
+                "value": 1743,
+                "published_plus_minus": 10,
+                "published_range": [
+                  1733,
+                  1753
+                ],
+                "votes": 5073,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-7",
+                "label": "Claude Sonnet 5.5 (High)",
+                "result_id": "webdev-frontend-2026-10-27-rank-7",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 7,
+                  "rank_spread": [
+                    7,
+                    8
+                  ],
+                  "model_variant": "Claude Sonnet 5.5 (High)",
+                  "value": 1743,
+                  "published_plus_minus": 10,
+                  "published_range": [
+                    1733,
+                    1753
+                  ],
+                  "votes": 5073,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-7"
+                }
+              },
+              {
+                "rank": 8,
+                "rank_spread": [
+                  6,
+                  8
+                ],
+                "model_variant": "Muse Wonder Full (Max)",
+                "value": 1742,
+                "published_plus_minus": 16,
+                "published_range": [
+                  1726,
+                  1758
+                ],
+                "votes": 1668,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-8",
+                "label": "Muse Wonder Full (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-8",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 8,
+                  "rank_spread": [
+                    6,
+                    8
+                  ],
+                  "model_variant": "Muse Wonder Full (Max)",
+                  "value": 1742,
+                  "published_plus_minus": 16,
+                  "published_range": [
+                    1726,
+                    1758
+                  ],
+                  "votes": 1668,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-8"
+                }
+              },
+              {
+                "rank": 9,
+                "rank_spread": [
+                  9,
+                  11
+                ],
+                "model_variant": "Claude Opus 5 (Max)",
+                "value": 1712,
+                "published_plus_minus": 7,
+                "published_range": [
+                  1705,
+                  1719
+                ],
+                "votes": 15209,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-9",
+                "label": "Claude Opus 5 (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-9",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 9,
+                  "rank_spread": [
+                    9,
+                    11
+                  ],
+                  "model_variant": "Claude Opus 5 (Max)",
+                  "value": 1712,
+                  "published_plus_minus": 7,
+                  "published_range": [
+                    1705,
+                    1719
+                  ],
+                  "votes": 15209,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-9"
+                }
+              },
+              {
+                "rank": 10,
+                "rank_spread": [
+                  9,
+                  12
+                ],
+                "model_variant": "Kimi K3.1 Pro (Max)",
+                "value": 1708,
+                "published_plus_minus": 14,
+                "published_range": [
+                  1694,
+                  1722
+                ],
+                "votes": 2303,
+                "preliminary": true,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-10",
+                "label": "Kimi K3.1 Pro (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-10",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 10,
+                  "rank_spread": [
+                    9,
+                    12
+                  ],
+                  "model_variant": "Kimi K3.1 Pro (Max)",
+                  "value": 1708,
+                  "published_plus_minus": 14,
+                  "published_range": [
+                    1694,
+                    1722
+                  ],
+                  "votes": 2303,
+                  "preliminary": true,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-10"
+                }
+              },
+              {
+                "rank": 11,
+                "rank_spread": [
+                  9,
+                  17
+                ],
+                "model_variant": "Gemini 4 Argon (High)",
+                "value": 1694,
+                "published_plus_minus": 13,
+                "published_range": [
+                  1681,
+                  1707
+                ],
+                "votes": 2583,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-11",
+                "label": "Gemini 4 Argon (High)",
+                "result_id": "webdev-frontend-2026-10-27-rank-11",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 11,
+                  "rank_spread": [
+                    9,
+                    17
+                  ],
+                  "model_variant": "Gemini 4 Argon (High)",
+                  "value": 1694,
+                  "published_plus_minus": 13,
+                  "published_range": [
+                    1681,
+                    1707
+                  ],
+                  "votes": 2583,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-11"
+                }
+              },
+              {
+                "rank": 12,
+                "rank_spread": [
+                  10,
+                  17
+                ],
+                "model_variant": "Qwen3.8-Max (0902)",
+                "value": 1688,
+                "published_plus_minus": 7,
+                "published_range": [
+                  1681,
+                  1695
+                ],
+                "votes": 14308,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-12",
+                "label": "Qwen3.8-Max (0902)",
+                "result_id": "webdev-frontend-2026-10-27-rank-12",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 12,
+                  "rank_spread": [
+                    10,
+                    17
+                  ],
+                  "model_variant": "Qwen3.8-Max (0902)",
+                  "value": 1688,
+                  "published_plus_minus": 7,
+                  "published_range": [
+                    1681,
+                    1695
+                  ],
+                  "votes": 14308,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-12"
+                }
+              },
+              {
+                "rank": 13,
+                "rank_spread": [
+                  11,
+                  19
+                ],
+                "model_variant": "GPT-6 Sol (Max)",
+                "value": 1684,
+                "published_plus_minus": 11,
+                "published_range": [
+                  1673,
+                  1695
+                ],
+                "votes": 4479,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-13",
+                "label": "GPT-6 Sol (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-13",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 13,
+                  "rank_spread": [
+                    11,
+                    19
+                  ],
+                  "model_variant": "GPT-6 Sol (Max)",
+                  "value": 1684,
+                  "published_plus_minus": 11,
+                  "published_range": [
+                    1673,
+                    1695
+                  ],
+                  "votes": 4479,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-13"
+                }
+              },
+              {
+                "rank": 14,
+                "rank_spread": [
+                  11,
+                  19
+                ],
+                "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "value": 1683,
+                "published_plus_minus": 9,
+                "published_range": [
+                  1674,
+                  1692
+                ],
+                "votes": 6288,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-14",
+                "label": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-14",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 14,
+                  "rank_spread": [
+                    11,
+                    19
+                  ],
+                  "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                  "value": 1683,
+                  "published_plus_minus": 9,
+                  "published_range": [
+                    1674,
+                    1692
+                  ],
+                  "votes": 6288,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-14"
+                }
+              },
+              {
+                "rank": 15,
+                "rank_spread": [
+                  11,
+                  21
+                ],
+                "model_variant": "Qwen3.8-Max",
+                "value": 1678,
+                "published_plus_minus": 13,
+                "published_range": [
+                  1665,
+                  1691
+                ],
+                "votes": 2886,
+                "preliminary": true,
+                "effort": null,
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-15",
+                "label": "Qwen3.8-Max",
+                "result_id": "webdev-frontend-2026-10-27-rank-15",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 15,
+                  "rank_spread": [
+                    11,
+                    21
+                  ],
+                  "model_variant": "Qwen3.8-Max",
+                  "value": 1678,
+                  "published_plus_minus": 13,
+                  "published_range": [
+                    1665,
+                    1691
+                  ],
+                  "votes": 2886,
+                  "preliminary": true,
+                  "effort": null,
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-15"
+                }
+              },
+              {
+                "rank": 16,
+                "rank_spread": [
+                  11,
+                  20
+                ],
+                "model_variant": "Claude Opus 5 (High)",
+                "value": 1678,
+                "published_plus_minus": 6,
+                "published_range": [
+                  1672,
+                  1684
+                ],
+                "votes": 21365,
+                "preliminary": false,
+                "effort": "high",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-16",
+                "label": "Claude Opus 5 (High)",
+                "result_id": "webdev-frontend-2026-10-27-rank-16",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 16,
+                  "rank_spread": [
+                    11,
+                    20
+                  ],
+                  "model_variant": "Claude Opus 5 (High)",
+                  "value": 1678,
+                  "published_plus_minus": 6,
+                  "published_range": [
+                    1672,
+                    1684
+                  ],
+                  "votes": 21365,
+                  "preliminary": false,
+                  "effort": "high",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-16"
+                }
+              },
+              {
+                "rank": 17,
+                "rank_spread": [
+                  11,
+                  23
+                ],
+                "model_variant": "GPT-6.1 Terra (Max)",
+                "value": 1675,
+                "published_plus_minus": 17,
+                "published_range": [
+                  1658,
+                  1692
+                ],
+                "votes": 1474,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-17",
+                "label": "GPT-6.1 Terra (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-17",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 17,
+                  "rank_spread": [
+                    11,
+                    23
+                  ],
+                  "model_variant": "GPT-6.1 Terra (Max)",
+                  "value": 1675,
+                  "published_plus_minus": 17,
+                  "published_range": [
+                    1658,
+                    1692
+                  ],
+                  "votes": 1474,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-17"
+                }
+              },
+              {
+                "rank": 18,
+                "rank_spread": [
+                  13,
+                  21
+                ],
+                "model_variant": "Muse Spark 1.3 (Max)",
+                "value": 1672,
+                "published_plus_minus": 8,
+                "published_range": [
+                  1664,
+                  1680
+                ],
+                "votes": 8416,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-18",
+                "label": "Muse Spark 1.3 (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-18",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 18,
+                  "rank_spread": [
+                    13,
+                    21
+                  ],
+                  "model_variant": "Muse Spark 1.3 (Max)",
+                  "value": 1672,
+                  "published_plus_minus": 8,
+                  "published_range": [
+                    1664,
+                    1680
+                  ],
+                  "votes": 8416,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-18"
+                }
+              },
+              {
+                "rank": 19,
+                "rank_spread": [
+                  13,
+                  21
+                ],
+                "model_variant": "Kimi K3 (Max)",
+                "value": 1670,
+                "published_plus_minus": 6,
+                "published_range": [
+                  1664,
+                  1676
+                ],
+                "votes": 17009,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-19",
+                "label": "Kimi K3 (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-19",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 19,
+                  "rank_spread": [
+                    13,
+                    21
+                  ],
+                  "model_variant": "Kimi K3 (Max)",
+                  "value": 1670,
+                  "published_plus_minus": 6,
+                  "published_range": [
+                    1664,
+                    1676
+                  ],
+                  "votes": 17009,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-19"
+                }
+              },
+              {
+                "rank": 20,
+                "rank_spread": [
+                  15,
+                  24
+                ],
+                "model_variant": "Muse Wonder (Max)",
+                "value": 1660,
+                "published_plus_minus": 13,
+                "published_range": [
+                  1647,
+                  1673
+                ],
+                "votes": 2892,
+                "preliminary": false,
+                "effort": "max",
+                "harness": null,
+                "harness_version": null,
+                "tool_budget": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "webdev-frontend-2026-10-27-rank-20",
+                "label": "Muse Wonder (Max)",
+                "result_id": "webdev-frontend-2026-10-27-rank-20",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "raw": {
+                  "rank": 20,
+                  "rank_spread": [
+                    15,
+                    24
+                  ],
+                  "model_variant": "Muse Wonder (Max)",
+                  "value": 1660,
+                  "published_plus_minus": 13,
+                  "published_range": [
+                    1647,
+                    1673
+                  ],
+                  "votes": 2892,
+                  "preliminary": false,
+                  "effort": "max",
+                  "harness": null,
+                  "harness_version": null,
+                  "tool_budget": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "webdev-frontend-2026-10-27-rank-20"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Arena Frontend preference rating · axis 1000–1900",
+                "field": "value",
+                "unit": "Arena rating points",
+                "domain": [
+                  1000,
+                  1900
+                ],
+                "direction": "higher_is_better",
+                "interval_field": "published_range",
+                "interval_kind": "published_interval"
+              }
+            ],
+            "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+            "source_locator": "Code / WebDev / Frontend table dated October 27, ranks 1–20",
+            "settings": {
+              "category": "Code Arena / WebDev / Frontend; default domain and technology filters",
+              "displayed_total_votes": 829216,
+              "displayed_models": 153,
+              "selection": "First20 of153 published Frontend configurations; preliminary Carbon row; not complete board.",
+              "workflow": "Page describes multi-step reasoning, tool use, and HTML or React generation; exact per-row harness, tools and budgets unverified.",
+              "row_harness_and_tools": null,
+              "row_tool_budget": null,
+              "task_cost_usd": null,
+              "task_time_seconds": null,
+              "interval_kind": "published interval; confidence coverage not specified on the table",
+              "vote_count_basis": "Per-row votes, distinct from page-wide total807096."
+            },
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "snapshot_at": "2026-10-27",
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-10-28",
+            "complete": false,
+            "coverage": "First20 of153 published Frontend configurations; preliminary Carbon row; not complete board.",
+            "limitations": [
+              "Carbon’s 1,793 rating is preliminary. This source table is dated October 27, while Carbon was announced October 28; neither date establishes when its evaluation ran. Published bounds have unspecified confidence coverage. Overall and HTML boards are different cohorts. Token prices are not task costs. Earlier dated Frontend tables remain in history."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vibe-code-v1-1-carbon",
+        "name": "VibeCode v1.1 / Carbon functional web apps",
+        "category": "frontend",
+        "question": "Does Carbon build web apps that pass functional browser tests?",
+        "tests": "Vals VibeCode v1.1 with modified OpenHands: browser tests check app requirements, with a five-hour and 1,000-turn budget.",
+        "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
+        "read": "The functional VibeCode test measures whether web apps satisfy browser tests. It answers a different question from Arena preference and Design2Code screenshot fidelity. Vals uses benchmark-specific agents; Terminal-Bench uses Mini-SWE-agent and VibeCode uses OpenHands. Only explicitly paired source costs and durations are retained. The exact task count, harness commit and evaluation dates were not verified. Rank denominators count models, not test tasks. Bars show one standard error.",
+        "historical": false,
+        "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-carbon-2026-10-28/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-28",
+        "variants": [
+          {
+            "id": "gemini-4-carbon-vals-vibe-code-v1-1",
+            "label": "Carbon / VALS / VibeCode v1.1",
+            "rows": [
+              {
+                "id": "vibe-code-v1-1",
+                "benchmark": "VibeCode v1.1",
+                "source_url": "https://www.vals.ai/benchmarks/vibe-code",
+                "value": 89.06,
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Modified OpenHands (commit unavailable); functional webapp specs;20–60 browser tests/app, BrowserUse checks, test passes at90%substeps; five-hour/1000turnbudget, sandboxed services.36m12s converted to2172s. Number of ranked models is not task count.",
+                "evaluation_date": null,
+                "cost_usd_per_task": 8.25,
+                "latency_seconds": 2172,
+                "sample_size": null,
+                "stderr_pp": 2.29,
+                "reported_payload": {
+                  "score_percent": 89.06,
+                  "standard_error_pp": 2.29
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "gemini-4-carbon-vals-vibe-code-v1-1",
+                "model_release_date": "2026-10-28",
+                "model_id": null,
+                "effort": "high",
+                "raw": {
+                  "id": "vibe-code-v1-1",
+                  "benchmark": "VibeCode v1.1",
+                  "source_url": "https://www.vals.ai/benchmarks/vibe-code",
+                  "value": 89.06,
+                  "unit": "percent",
+                  "domain": [
+                    0,
+                    100
+                  ],
+                  "direction": "higher_is_better",
+                  "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Modified OpenHands (commit unavailable); functional webapp specs;20–60 browser tests/app, BrowserUse checks, test passes at90%substeps; five-hour/1000turnbudget, sandboxed services.36m12s converted to2172s. Number of ranked models is not task count.",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": 8.25,
+                  "latency_seconds": 2172,
+                  "sample_size": null,
+                  "stderr_pp": 2.29,
+                  "reported_payload": {
+                    "score_percent": 89.06,
+                    "standard_error_pp": 2.29
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "VibeCode v1.1",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "stderr_field": "stderr_pp"
+              }
+            ],
+            "source_url": "https://www.vals.ai/benchmarks/vibe-code",
+            "source_locator": "Named primary model/benchmark table; see raw source record",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "evaluation_date": null,
+            "snapshot_at": null,
+            "publication_at": null,
+            "complete": false,
+            "settings": {
+              "effort": "high",
+              "model_source_key": "gemini-4-carbon",
+              "public_api_id": null,
+              "exact_model_snapshot": null,
+              "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
+              "methodology": "Vals high reasoning; temperature/top-p/top-k default, maximum output1048576. Reported uncertainty is standard error, not95% CI. Composite SEM pools weighted variances; TB4 and FinanceAgent SEM over three run means; other single-run SEM over instances. Modified OpenHands (commit unavailable); functional webapp specs;20–60 browser tests/app, BrowserUse checks, test passes at90%substeps; five-hour/1000turnbudget, sandboxed services.36m12s converted to2172s. Number of ranked models is not task count.",
+              "sample_size": null,
+              "evidence_role": "independent_evaluator"
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Whiskers show one standard error in percentage points, not a 95% confidence interval."
+            ],
+            "coverage": "One selected Carbon observation from this evaluator and benchmark; not a complete model leaderboard."
+          }
+        ]
+      },
+      {
+        "id": "aa-intelligence-index",
+        "name": "Artificial Analysis Intelligence Index / v5",
+        "category": "standard",
+        "question": "How do exact model configurations compare on AA Intelligence Index v5?",
+        "tests": "Nine evaluations across knowledge work, coding, science and general intelligence. Each capability group contributes 25%. The default shows 12 of 29 collected configurations; all 29 remain selectable.",
+        "matters": "The current index combines harder tasks and a changed scoring mix. Version labels make the comparison meaningful.",
+        "read": "v5 was announced October 27. It adds FrontierCode 2.0 and Terminal-Bench-Science, and changes the knowledge and reasoning datasets. Exact effort and fallback labels remain attached to each model. Earlier index scores use different datasets and scoring: a numerical decline is not evidence of a capability regression. The archived v4.3.2 Argon result is a separate history choice. Missing v5 scores are unavailable, not zero. No cross-version trend is calculated.",
+        "historical": false,
+        "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+        "source_inputs": [
+          "data/gemini-4-carbon-2026-10-28/source-packet.json",
+          "data/gemini-4-argon-2026-10-15/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-10-28",
+        "variants": [
+          {
+            "id": "aa-index-v5-top12",
+            "label": "v5.0 / top 12 of 29 collected configurations",
+            "rows": [
+              {
+                "source_row_key": "gemini-4-carbon",
+                "model_variant": "Gemini 4 Carbon (High)",
+                "value": 59.43,
+                "raw_value": 59.425738829526,
+                "effort": "high",
+                "configuration_suffix": "High",
+                "model_release_date": "2026-10-28",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gemini-4-carbon",
+                  "name": "Gemini 4 Carbon (High)",
+                  "suffix": "High",
+                  "effort": {
+                    "slug": "high",
+                    "label": "high",
+                    "level": 40
+                  },
+                  "releaseDate": "2026-10-28",
+                  "intelligenceIndex": 59.425738829526,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "aa-v5-gemini-4-carbon",
+                "raw": {
+                  "source_row_key": "gemini-4-carbon",
+                  "model_variant": "Gemini 4 Carbon (High)",
+                  "value": 59.43,
+                  "raw_value": 59.425738829526,
+                  "effort": "high",
+                  "configuration_suffix": "High",
+                  "model_release_date": "2026-10-28",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gemini-4-carbon",
+                    "name": "Gemini 4 Carbon (High)",
+                    "suffix": "High",
+                    "effort": {
+                      "slug": "high",
+                      "label": "high",
+                      "level": 40
+                    },
+                    "releaseDate": "2026-10-28",
+                    "intelligenceIndex": 59.425738829526,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-opus-5-5",
+                "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+                "value": 58.41,
+                "raw_value": 58.4060336078904,
+                "effort": "max",
+                "configuration_suffix": "Max, Default Fallback",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-opus-5-5",
+                  "name": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "suffix": "Max, Default Fallback",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-22",
+                  "intelligenceIndex": 58.4060336078904,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Opus 5.5 (Max, Default Fallback)",
+                "result_id": "aa-v5-claude-opus-5-5",
+                "raw": {
+                  "source_row_key": "claude-opus-5-5",
+                  "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "value": 58.41,
+                  "raw_value": 58.4060336078904,
+                  "effort": "max",
+                  "configuration_suffix": "Max, Default Fallback",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-opus-5-5",
+                    "name": "Claude Opus 5.5 (Max, Default Fallback)",
+                    "suffix": "Max, Default Fallback",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-22",
+                    "intelligenceIndex": 58.4060336078904,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-astra",
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 56.85,
+                "raw_value": 56.8538559596797,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-astra",
+                  "name": "GPT-6 Astra (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-03",
+                  "intelligenceIndex": 56.8538559596797,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6 Astra (Max)",
+                "result_id": "aa-v5-gpt-6-astra",
+                "raw": {
+                  "source_row_key": "gpt-6-astra",
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 56.85,
+                  "raw_value": 56.8538559596797,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-astra",
+                    "name": "GPT-6 Astra (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-03",
+                    "intelligenceIndex": 56.8538559596797,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-1-sol",
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 54.51,
+                "raw_value": 54.5087338138148,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-09-29",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-1-sol",
+                  "name": "GPT-6.1 Sol (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-29",
+                  "intelligenceIndex": 54.5087338138148,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6.1 Sol (Max)",
+                "result_id": "aa-v5-gpt-6-1-sol",
+                "raw": {
+                  "source_row_key": "gpt-6-1-sol",
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 54.51,
+                  "raw_value": 54.5087338138148,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-09-29",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-1-sol",
+                    "name": "GPT-6.1 Sol (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-29",
+                    "intelligenceIndex": 54.5087338138148,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-sonnet-5-5",
+                "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                "value": 54.24,
+                "raw_value": 54.24133407109,
+                "effort": "max",
+                "configuration_suffix": "Max, Default Fallback",
+                "model_release_date": "2026-09-28",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-sonnet-5-5",
+                  "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                  "suffix": "Max, Default Fallback",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-28",
+                  "intelligenceIndex": 54.24133407109,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                "result_id": "aa-v5-claude-sonnet-5-5",
+                "raw": {
+                  "source_row_key": "claude-sonnet-5-5",
+                  "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                  "value": 54.24,
+                  "raw_value": 54.24133407109,
+                  "effort": "max",
+                  "configuration_suffix": "Max, Default Fallback",
+                  "model_release_date": "2026-09-28",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-sonnet-5-5",
+                    "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                    "suffix": "Max, Default Fallback",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-28",
+                    "intelligenceIndex": 54.24133407109,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-1-terra",
+                "model_variant": "GPT-6.1 Terra (Max)",
+                "value": 50.98,
+                "raw_value": 50.9765188577015,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-26",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-1-terra",
+                  "name": "GPT-6.1 Terra (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-26",
+                  "intelligenceIndex": 50.9765188577015,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6.1 Terra (Max)",
+                "result_id": "aa-v5-gpt-6-1-terra",
+                "raw": {
+                  "source_row_key": "gpt-6-1-terra",
+                  "model_variant": "GPT-6.1 Terra (Max)",
+                  "value": 50.98,
+                  "raw_value": 50.9765188577015,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-26",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-1-terra",
+                    "name": "GPT-6.1 Terra (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-26",
+                    "intelligenceIndex": 50.9765188577015,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gemini-4-argon",
+                "model_variant": "Gemini 4 Argon (High)",
+                "value": 50,
+                "raw_value": 50,
+                "effort": "high",
+                "configuration_suffix": "High",
+                "model_release_date": null,
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "reported_score": 50,
+                  "precision": "rounded announcement score"
+                },
+                "label": "Gemini 4 Argon (High)",
+                "result_id": "aa-v5-gemini-4-argon",
+                "raw": {
+                  "source_row_key": "gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon (High)",
+                  "value": 50,
+                  "raw_value": 50,
+                  "effort": "high",
+                  "configuration_suffix": "High",
+                  "model_release_date": null,
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "reported_score": 50,
+                    "precision": "rounded announcement score"
+                  }
+                }
+              },
+              {
+                "source_row_key": "muse-wonder-full",
+                "model_variant": "Muse Wonder Full (Max)",
+                "value": 49.73,
+                "raw_value": 49.7272123627021,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-12",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "muse-wonder-full",
+                  "name": "Muse Wonder Full (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-12",
+                  "intelligenceIndex": 49.7272123627021,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Muse Wonder Full (Max)",
+                "result_id": "aa-v5-muse-wonder-full",
+                "raw": {
+                  "source_row_key": "muse-wonder-full",
+                  "model_variant": "Muse Wonder Full (Max)",
+                  "value": 49.73,
+                  "raw_value": 49.7272123627021,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-12",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "muse-wonder-full",
+                    "name": "Muse Wonder Full (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-12",
+                    "intelligenceIndex": 49.7272123627021,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-fable-5-1",
+                "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+                "value": 49.01,
+                "raw_value": 49.0102124158081,
+                "effort": "max",
+                "configuration_suffix": "Max, Default Fallback",
+                "model_release_date": "2026-09-01",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-fable-5-1",
+                  "name": "Claude Fable 5.1 (Max, Default Fallback)",
+                  "suffix": "Max, Default Fallback",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-01",
+                  "intelligenceIndex": 49.0102124158081,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Fable 5.1 (Max, Default Fallback)",
+                "result_id": "aa-v5-claude-fable-5-1",
+                "raw": {
+                  "source_row_key": "claude-fable-5-1",
+                  "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+                  "value": 49.01,
+                  "raw_value": 49.0102124158081,
+                  "effort": "max",
+                  "configuration_suffix": "Max, Default Fallback",
+                  "model_release_date": "2026-09-01",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-fable-5-1",
+                    "name": "Claude Fable 5.1 (Max, Default Fallback)",
+                    "suffix": "Max, Default Fallback",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-01",
+                    "intelligenceIndex": 49.0102124158081,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "kimi-k3-1-pro",
+                "model_variant": "Kimi K3.1 Pro",
+                "value": 46,
+                "raw_value": 46.0026236744189,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-23",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "kimi-k3-1-pro",
+                  "name": "Kimi K3.1 Pro",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-23",
+                  "intelligenceIndex": 46.0026236744189,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Kimi K3.1 Pro",
+                "result_id": "aa-v5-kimi-k3-1-pro",
+                "raw": {
+                  "source_row_key": "kimi-k3-1-pro",
+                  "model_variant": "Kimi K3.1 Pro",
+                  "value": 46,
+                  "raw_value": 46.0026236744189,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-23",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "kimi-k3-1-pro",
+                    "name": "Kimi K3.1 Pro",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-23",
+                    "intelligenceIndex": 46.0026236744189,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "muse-wonder",
+                "model_variant": "Muse Wonder (Max)",
+                "value": 43.32,
+                "raw_value": 43.3248225998431,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-12",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "muse-wonder",
+                  "name": "Muse Wonder (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-12",
+                  "intelligenceIndex": 43.3248225998431,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Muse Wonder (Max)",
+                "result_id": "aa-v5-muse-wonder",
+                "raw": {
+                  "source_row_key": "muse-wonder",
+                  "model_variant": "Muse Wonder (Max)",
+                  "value": 43.32,
+                  "raw_value": 43.3248225998431,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-12",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "muse-wonder",
+                    "name": "Muse Wonder (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-12",
+                    "intelligenceIndex": 43.3248225998431,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-haiku-5-5",
+                "model_variant": "Claude Haiku 5.5 (Max)",
+                "value": 36.23,
+                "raw_value": 36.2345435880142,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-07",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-haiku-5-5",
+                  "name": "Claude Haiku 5.5 (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-07",
+                  "intelligenceIndex": 36.2345435880142,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Haiku 5.5 (Max)",
+                "result_id": "aa-v5-claude-haiku-5-5",
+                "raw": {
+                  "source_row_key": "claude-haiku-5-5",
+                  "model_variant": "Claude Haiku 5.5 (Max)",
+                  "value": 36.23,
+                  "raw_value": 36.2345435880142,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-07",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-haiku-5-5",
+                    "name": "Claude Haiku 5.5 (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-07",
+                    "intelligenceIndex": 36.2345435880142,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "index",
+                "label": "AA Intelligence Index v5.0",
+                "field": "value",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Public comparison payload (28 defaults) plus Argon announcement; not all 77 evaluated configurations",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "publication_at": null,
+            "snapshot_at": null,
+            "evaluation_date": null,
+            "complete": false,
+            "coverage": "28 models/configurations in retrieved public comparison payload plus the explicitly reported Argon High v5 announcement value. Not all77 evaluated configurations.",
+            "settings": {
+              "version": "5.0",
+              "announcement_date": "2026-10-27",
+              "weights": {
+                "AA-Briefcase v1.1": 0.15,
+                "AutomationBench-AA": 0.05,
+                "GDP.pdf": 0.05,
+                "FrontierCode 2.0": 0.15,
+                "Terminal-Bench4.0": 0.1,
+                "Terminal-Bench-Science0.1": 0.15,
+                "CritPt v2 hard40": 0.1,
+                "AA-Omniscience v1.1 accuracy": 0.1,
+                "AA-Omniscience v1.1 non-hallucination": 0.05,
+                "HLE-Diamond": 0.1
+              },
+              "protocols": [
+                {
+                  "evaluation": "AA-Briefcase v1.1",
+                  "tasks": 91,
+                  "repeats": 1,
+                  "tools": true,
+                  "harness": "AA agent; file outputs, combined rubric/analytical/presentation Elo"
+                },
+                {
+                  "evaluation": "AutomationBench-AA",
+                  "tasks": 657,
+                  "repeats": 1,
+                  "tools": true,
+                  "harness": "AA REST workflow tools; guardrail violation zeroes task"
+                },
+                {
+                  "evaluation": "GDP.pdf",
+                  "tasks": 100,
+                  "repeats": 5,
+                  "tools": false,
+                  "harness": "PDF-grounded rubric all-pass"
+                },
+                {
+                  "evaluation": "FrontierCode 2.0",
+                  "tasks": 132,
+                  "repeats": 3,
+                  "tools": true,
+                  "harness": "Stirrup; max500turns; tests/rubric; blocking failure scoreszero"
+                },
+                {
+                  "evaluation": "Terminal-Bench4.0",
+                  "tasks": 66,
+                  "repeats": 3,
+                  "tools": true,
+                  "harness": "mini-swe-agent; max500steps; bash; no compaction"
+                },
+                {
+                  "evaluation": "Terminal-Bench-Science0.1",
+                  "tasks": 70,
+                  "repeats": 3,
+                  "tools": true,
+                  "harness": "mini-swe-agent; max1000steps;30sdefaultcommandtimeout"
+                },
+                {
+                  "evaluation": "CritPt v2 hard40",
+                  "tasks": 40,
+                  "repeats": 5,
+                  "tools": true,
+                  "harness": "Stirrup offline Python; official grader"
+                },
+                {
+                  "evaluation": "AA-Omniscience v1.1",
+                  "tasks": 3000,
+                  "repeats": 1,
+                  "tools": false,
+                  "harness": "Open answer; accuracy and non-hallucination components"
+                },
+                {
+                  "evaluation": "HLE-Diamond",
+                  "tasks": 1000,
+                  "repeats": 1,
+                  "tools": false,
+                  "harness": "500reasoning/500knowledge; equality checker; pass@1"
+                }
+              ],
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "changes": "Nine evaluations with four equally weighted25% capability groups; addsFrontierCode2.0 and TBScience0.1; replaces HLE with1000-question HLE-Diamond, Omni with3000-questionv1.1 and CritPt with v2 hard40; removesGDPval-AA2.1,SciCode,AA-LCR1.1. Changes to datasets/scaling/weights make old index scores incomparable. A smaller v5 value does not imply capability regression.",
+              "normalization": "Public payload index values rounded to two decimal places for display; exact floating values retained in raw_value. Argon announcement only supplies rounded50. No index recomputation."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Older index versions cannot be compared numerically with v5; a lower number does not establish a capability regression.",
+              "Default shows 12 highest scores among the 29 collected configurations; select the full collected view for all 29. Uncollected or unreported configurations are unavailable, not zero."
+            ]
+          },
+          {
+            "id": "aa-index-v5-selected",
+            "label": "v5.0 / all 29 collected configurations",
+            "rows": [
+              {
+                "source_row_key": "gemini-4-carbon",
+                "model_variant": "Gemini 4 Carbon (High)",
+                "value": 59.43,
+                "raw_value": 59.425738829526,
+                "effort": "high",
+                "configuration_suffix": "High",
+                "model_release_date": "2026-10-28",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gemini-4-carbon",
+                  "name": "Gemini 4 Carbon (High)",
+                  "suffix": "High",
+                  "effort": {
+                    "slug": "high",
+                    "label": "high",
+                    "level": 40
+                  },
+                  "releaseDate": "2026-10-28",
+                  "intelligenceIndex": 59.425738829526,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Gemini 4 Carbon (High)",
+                "result_id": "aa-v5-gemini-4-carbon",
+                "raw": {
+                  "source_row_key": "gemini-4-carbon",
+                  "model_variant": "Gemini 4 Carbon (High)",
+                  "value": 59.43,
+                  "raw_value": 59.425738829526,
+                  "effort": "high",
+                  "configuration_suffix": "High",
+                  "model_release_date": "2026-10-28",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gemini-4-carbon",
+                    "name": "Gemini 4 Carbon (High)",
+                    "suffix": "High",
+                    "effort": {
+                      "slug": "high",
+                      "label": "high",
+                      "level": 40
+                    },
+                    "releaseDate": "2026-10-28",
+                    "intelligenceIndex": 59.425738829526,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-opus-5-5",
+                "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+                "value": 58.41,
+                "raw_value": 58.4060336078904,
+                "effort": "max",
+                "configuration_suffix": "Max, Default Fallback",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-opus-5-5",
+                  "name": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "suffix": "Max, Default Fallback",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-22",
+                  "intelligenceIndex": 58.4060336078904,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Opus 5.5 (Max, Default Fallback)",
+                "result_id": "aa-v5-claude-opus-5-5",
+                "raw": {
+                  "source_row_key": "claude-opus-5-5",
+                  "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "value": 58.41,
+                  "raw_value": 58.4060336078904,
+                  "effort": "max",
+                  "configuration_suffix": "Max, Default Fallback",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-opus-5-5",
+                    "name": "Claude Opus 5.5 (Max, Default Fallback)",
+                    "suffix": "Max, Default Fallback",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-22",
+                    "intelligenceIndex": 58.4060336078904,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-astra",
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 56.85,
+                "raw_value": 56.8538559596797,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-astra",
+                  "name": "GPT-6 Astra (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-03",
+                  "intelligenceIndex": 56.8538559596797,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6 Astra (Max)",
+                "result_id": "aa-v5-gpt-6-astra",
+                "raw": {
+                  "source_row_key": "gpt-6-astra",
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 56.85,
+                  "raw_value": 56.8538559596797,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-astra",
+                    "name": "GPT-6 Astra (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-03",
+                    "intelligenceIndex": 56.8538559596797,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-1-sol",
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 54.51,
+                "raw_value": 54.5087338138148,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-09-29",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-1-sol",
+                  "name": "GPT-6.1 Sol (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-29",
+                  "intelligenceIndex": 54.5087338138148,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6.1 Sol (Max)",
+                "result_id": "aa-v5-gpt-6-1-sol",
+                "raw": {
+                  "source_row_key": "gpt-6-1-sol",
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 54.51,
+                  "raw_value": 54.5087338138148,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-09-29",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-1-sol",
+                    "name": "GPT-6.1 Sol (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-29",
+                    "intelligenceIndex": 54.5087338138148,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-sonnet-5-5",
+                "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                "value": 54.24,
+                "raw_value": 54.24133407109,
+                "effort": "max",
+                "configuration_suffix": "Max, Default Fallback",
+                "model_release_date": "2026-09-28",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-sonnet-5-5",
+                  "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                  "suffix": "Max, Default Fallback",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-28",
+                  "intelligenceIndex": 54.24133407109,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                "result_id": "aa-v5-claude-sonnet-5-5",
+                "raw": {
+                  "source_row_key": "claude-sonnet-5-5",
+                  "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                  "value": 54.24,
+                  "raw_value": 54.24133407109,
+                  "effort": "max",
+                  "configuration_suffix": "Max, Default Fallback",
+                  "model_release_date": "2026-09-28",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-sonnet-5-5",
+                    "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                    "suffix": "Max, Default Fallback",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-28",
+                    "intelligenceIndex": 54.24133407109,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-1-terra",
+                "model_variant": "GPT-6.1 Terra (Max)",
+                "value": 50.98,
+                "raw_value": 50.9765188577015,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-26",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-1-terra",
+                  "name": "GPT-6.1 Terra (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-26",
+                  "intelligenceIndex": 50.9765188577015,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6.1 Terra (Max)",
+                "result_id": "aa-v5-gpt-6-1-terra",
+                "raw": {
+                  "source_row_key": "gpt-6-1-terra",
+                  "model_variant": "GPT-6.1 Terra (Max)",
+                  "value": 50.98,
+                  "raw_value": 50.9765188577015,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-26",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-1-terra",
+                    "name": "GPT-6.1 Terra (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-26",
+                    "intelligenceIndex": 50.9765188577015,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gemini-4-argon",
+                "model_variant": "Gemini 4 Argon (High)",
+                "value": 50,
+                "raw_value": 50,
+                "effort": "high",
+                "configuration_suffix": "High",
+                "model_release_date": null,
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "reported_score": 50,
+                  "precision": "rounded announcement score"
+                },
+                "label": "Gemini 4 Argon (High)",
+                "result_id": "aa-v5-gemini-4-argon",
+                "raw": {
+                  "source_row_key": "gemini-4-argon",
+                  "model_variant": "Gemini 4 Argon (High)",
+                  "value": 50,
+                  "raw_value": 50,
+                  "effort": "high",
+                  "configuration_suffix": "High",
+                  "model_release_date": null,
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v5",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "reported_score": 50,
+                    "precision": "rounded announcement score"
+                  }
+                }
+              },
+              {
+                "source_row_key": "muse-wonder-full",
+                "model_variant": "Muse Wonder Full (Max)",
+                "value": 49.73,
+                "raw_value": 49.7272123627021,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-12",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "muse-wonder-full",
+                  "name": "Muse Wonder Full (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-12",
+                  "intelligenceIndex": 49.7272123627021,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Muse Wonder Full (Max)",
+                "result_id": "aa-v5-muse-wonder-full",
+                "raw": {
+                  "source_row_key": "muse-wonder-full",
+                  "model_variant": "Muse Wonder Full (Max)",
+                  "value": 49.73,
+                  "raw_value": 49.7272123627021,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-12",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "muse-wonder-full",
+                    "name": "Muse Wonder Full (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-12",
+                    "intelligenceIndex": 49.7272123627021,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-fable-5-1",
+                "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+                "value": 49.01,
+                "raw_value": 49.0102124158081,
+                "effort": "max",
+                "configuration_suffix": "Max, Default Fallback",
+                "model_release_date": "2026-09-01",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-fable-5-1",
+                  "name": "Claude Fable 5.1 (Max, Default Fallback)",
+                  "suffix": "Max, Default Fallback",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-01",
+                  "intelligenceIndex": 49.0102124158081,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Fable 5.1 (Max, Default Fallback)",
+                "result_id": "aa-v5-claude-fable-5-1",
+                "raw": {
+                  "source_row_key": "claude-fable-5-1",
+                  "model_variant": "Claude Fable 5.1 (Max, Default Fallback)",
+                  "value": 49.01,
+                  "raw_value": 49.0102124158081,
+                  "effort": "max",
+                  "configuration_suffix": "Max, Default Fallback",
+                  "model_release_date": "2026-09-01",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-fable-5-1",
+                    "name": "Claude Fable 5.1 (Max, Default Fallback)",
+                    "suffix": "Max, Default Fallback",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-01",
+                    "intelligenceIndex": 49.0102124158081,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "kimi-k3-1-pro",
+                "model_variant": "Kimi K3.1 Pro",
+                "value": 46,
+                "raw_value": 46.0026236744189,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-23",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "kimi-k3-1-pro",
+                  "name": "Kimi K3.1 Pro",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-23",
+                  "intelligenceIndex": 46.0026236744189,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Kimi K3.1 Pro",
+                "result_id": "aa-v5-kimi-k3-1-pro",
+                "raw": {
+                  "source_row_key": "kimi-k3-1-pro",
+                  "model_variant": "Kimi K3.1 Pro",
+                  "value": 46,
+                  "raw_value": 46.0026236744189,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-23",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "kimi-k3-1-pro",
+                    "name": "Kimi K3.1 Pro",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-23",
+                    "intelligenceIndex": 46.0026236744189,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "muse-wonder",
+                "model_variant": "Muse Wonder (Max)",
+                "value": 43.32,
+                "raw_value": 43.3248225998431,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-12",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "muse-wonder",
+                  "name": "Muse Wonder (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-12",
+                  "intelligenceIndex": 43.3248225998431,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Muse Wonder (Max)",
+                "result_id": "aa-v5-muse-wonder",
+                "raw": {
+                  "source_row_key": "muse-wonder",
+                  "model_variant": "Muse Wonder (Max)",
+                  "value": 43.32,
+                  "raw_value": 43.3248225998431,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-12",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "muse-wonder",
+                    "name": "Muse Wonder (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-12",
+                    "intelligenceIndex": 43.3248225998431,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "claude-haiku-5-5",
+                "model_variant": "Claude Haiku 5.5 (Max)",
+                "value": 36.23,
+                "raw_value": 36.2345435880142,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-07",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "claude-haiku-5-5",
+                  "name": "Claude Haiku 5.5 (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-07",
+                  "intelligenceIndex": 36.2345435880142,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Claude Haiku 5.5 (Max)",
+                "result_id": "aa-v5-claude-haiku-5-5",
+                "raw": {
+                  "source_row_key": "claude-haiku-5-5",
+                  "model_variant": "Claude Haiku 5.5 (Max)",
+                  "value": 36.23,
+                  "raw_value": 36.2345435880142,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-07",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "claude-haiku-5-5",
+                    "name": "Claude Haiku 5.5 (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-07",
+                    "intelligenceIndex": 36.2345435880142,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "grok-4-7",
+                "model_variant": "Grok 4.7 (Xhigh)",
+                "value": 34.34,
+                "raw_value": 34.3350117067196,
+                "effort": "xhigh",
+                "configuration_suffix": "Xhigh",
+                "model_release_date": "2026-09-21",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "grok-4-7",
+                  "name": "Grok 4.7 (Xhigh)",
+                  "suffix": "Xhigh",
+                  "effort": {
+                    "slug": "xhigh",
+                    "label": "xhigh",
+                    "level": 50
+                  },
+                  "releaseDate": "2026-09-21",
+                  "intelligenceIndex": 34.3350117067196,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Grok 4.7 (Xhigh)",
+                "result_id": "aa-v5-grok-4-7",
+                "raw": {
+                  "source_row_key": "grok-4-7",
+                  "model_variant": "Grok 4.7 (Xhigh)",
+                  "value": 34.34,
+                  "raw_value": 34.3350117067196,
+                  "effort": "xhigh",
+                  "configuration_suffix": "Xhigh",
+                  "model_release_date": "2026-09-21",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "grok-4-7",
+                    "name": "Grok 4.7 (Xhigh)",
+                    "suffix": "Xhigh",
+                    "effort": {
+                      "slug": "xhigh",
+                      "label": "xhigh",
+                      "level": 50
+                    },
+                    "releaseDate": "2026-09-21",
+                    "intelligenceIndex": 34.3350117067196,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "qwen3-8-max",
+                "model_variant": "Qwen3.8 Max (0902)",
+                "value": 33.55,
+                "raw_value": 33.5545627367888,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-09-02",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "qwen3-8-max",
+                  "name": "Qwen3.8 Max (0902)",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-09-02",
+                  "intelligenceIndex": 33.5545627367888,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Qwen3.8 Max (0902)",
+                "result_id": "aa-v5-qwen3-8-max",
+                "raw": {
+                  "source_row_key": "qwen3-8-max",
+                  "model_variant": "Qwen3.8 Max (0902)",
+                  "value": 33.55,
+                  "raw_value": 33.5545627367888,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-09-02",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "qwen3-8-max",
+                    "name": "Qwen3.8 Max (0902)",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-09-02",
+                    "intelligenceIndex": 33.5545627367888,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "deepseek-v4-1-flash-1017",
+                "model_variant": "DeepSeek V4.1 Flash 1017 (Max)",
+                "value": 32.49,
+                "raw_value": 32.4896393532027,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-10-17",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "deepseek-v4-1-flash-1017",
+                  "name": "DeepSeek V4.1 Flash 1017 (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-10-17",
+                  "intelligenceIndex": 32.4896393532027,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "DeepSeek V4.1 Flash 1017 (Max)",
+                "result_id": "aa-v5-deepseek-v4-1-flash-1017",
+                "raw": {
+                  "source_row_key": "deepseek-v4-1-flash-1017",
+                  "model_variant": "DeepSeek V4.1 Flash 1017 (Max)",
+                  "value": 32.49,
+                  "raw_value": 32.4896393532027,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-10-17",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "deepseek-v4-1-flash-1017",
+                    "name": "DeepSeek V4.1 Flash 1017 (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-10-17",
+                    "intelligenceIndex": 32.4896393532027,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "glm-5-3",
+                "model_variant": "GLM-5.3 (Max)",
+                "value": 31.65,
+                "raw_value": 31.653381843882,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-08-18",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "glm-5-3",
+                  "name": "GLM-5.3 (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-08-18",
+                  "intelligenceIndex": 31.653381843882,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GLM-5.3 (Max)",
+                "result_id": "aa-v5-glm-5-3",
+                "raw": {
+                  "source_row_key": "glm-5-3",
+                  "model_variant": "GLM-5.3 (Max)",
+                  "value": 31.65,
+                  "raw_value": 31.653381843882,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-08-18",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "glm-5-3",
+                    "name": "GLM-5.3 (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-08-18",
+                    "intelligenceIndex": 31.653381843882,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gemini-3-8-flash",
+                "model_variant": "Gemini 3.8 Flash (High)",
+                "value": 30.55,
+                "raw_value": 30.5468119957291,
+                "effort": "high",
+                "configuration_suffix": "High",
+                "model_release_date": "2026-09-02",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gemini-3-8-flash",
+                  "name": "Gemini 3.8 Flash (High)",
+                  "suffix": "High",
+                  "effort": {
+                    "slug": "high",
+                    "label": "high",
+                    "level": 40
+                  },
+                  "releaseDate": "2026-09-02",
+                  "intelligenceIndex": 30.5468119957291,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Gemini 3.8 Flash (High)",
+                "result_id": "aa-v5-gemini-3-8-flash",
+                "raw": {
+                  "source_row_key": "gemini-3-8-flash",
+                  "model_variant": "Gemini 3.8 Flash (High)",
+                  "value": 30.55,
+                  "raw_value": 30.5468119957291,
+                  "effort": "high",
+                  "configuration_suffix": "High",
+                  "model_release_date": "2026-09-02",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gemini-3-8-flash",
+                    "name": "Gemini 3.8 Flash (High)",
+                    "suffix": "High",
+                    "effort": {
+                      "slug": "high",
+                      "label": "high",
+                      "level": 40
+                    },
+                    "releaseDate": "2026-09-02",
+                    "intelligenceIndex": 30.5468119957291,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "mimo-v2-6-pro",
+                "model_variant": "MiMo-V2.6-Pro",
+                "value": 29.89,
+                "raw_value": 29.8897833093321,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-09-21",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "mimo-v2-6-pro",
+                  "name": "MiMo-V2.6-Pro",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-09-21",
+                  "intelligenceIndex": 29.8897833093321,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "MiMo-V2.6-Pro",
+                "result_id": "aa-v5-mimo-v2-6-pro",
+                "raw": {
+                  "source_row_key": "mimo-v2-6-pro",
+                  "model_variant": "MiMo-V2.6-Pro",
+                  "value": 29.89,
+                  "raw_value": 29.8897833093321,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-09-21",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "mimo-v2-6-pro",
+                    "name": "MiMo-V2.6-Pro",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-09-21",
+                    "intelligenceIndex": 29.8897833093321,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "ling-3-1-flash-1019",
+                "model_variant": "Ling 3.1 Flash 1019",
+                "value": 29.47,
+                "raw_value": 29.470119369837,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-22",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "ling-3-1-flash-1019",
+                  "name": "Ling 3.1 Flash 1019",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-22",
+                  "intelligenceIndex": 29.470119369837,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Ling 3.1 Flash 1019",
+                "result_id": "aa-v5-ling-3-1-flash-1019",
+                "raw": {
+                  "source_row_key": "ling-3-1-flash-1019",
+                  "model_variant": "Ling 3.1 Flash 1019",
+                  "value": 29.47,
+                  "raw_value": 29.470119369837,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-22",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "ling-3-1-flash-1019",
+                    "name": "Ling 3.1 Flash 1019",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-22",
+                    "intelligenceIndex": 29.470119369837,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "minimax-m3-1-flash",
+                "model_variant": "MiniMax-M3.1-Flash",
+                "value": 28.91,
+                "raw_value": 28.9095214290458,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-19",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "minimax-m3-1-flash",
+                  "name": "MiniMax-M3.1-Flash",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-19",
+                  "intelligenceIndex": 28.9095214290458,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "MiniMax-M3.1-Flash",
+                "result_id": "aa-v5-minimax-m3-1-flash",
+                "raw": {
+                  "source_row_key": "minimax-m3-1-flash",
+                  "model_variant": "MiniMax-M3.1-Flash",
+                  "value": 28.91,
+                  "raw_value": 28.9095214290458,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-19",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "minimax-m3-1-flash",
+                    "name": "MiniMax-M3.1-Flash",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-19",
+                    "intelligenceIndex": 28.9095214290458,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "step-5",
+                "model_variant": "Step 5 Preview",
+                "value": 28.53,
+                "raw_value": 28.5283090216016,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-09-18",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "step-5",
+                  "name": "Step 5 Preview",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-09-18",
+                  "intelligenceIndex": 28.5283090216016,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Step 5 Preview",
+                "result_id": "aa-v5-step-5",
+                "raw": {
+                  "source_row_key": "step-5",
+                  "model_variant": "Step 5 Preview",
+                  "value": 28.53,
+                  "raw_value": 28.5283090216016,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-09-18",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "step-5",
+                    "name": "Step 5 Preview",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-09-18",
+                    "intelligenceIndex": 28.5283090216016,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "gpt-6-luna",
+                "model_variant": "GPT-6 Luna (Max)",
+                "value": 27.76,
+                "raw_value": 27.7552004938153,
+                "effort": "max",
+                "configuration_suffix": "Max",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "gpt-6-luna",
+                  "name": "GPT-6 Luna (Max)",
+                  "suffix": "Max",
+                  "effort": {
+                    "slug": "max",
+                    "label": "max",
+                    "level": 60
+                  },
+                  "releaseDate": "2026-09-22",
+                  "intelligenceIndex": 27.7552004938153,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "GPT-6 Luna (Max)",
+                "result_id": "aa-v5-gpt-6-luna",
+                "raw": {
+                  "source_row_key": "gpt-6-luna",
+                  "model_variant": "GPT-6 Luna (Max)",
+                  "value": 27.76,
+                  "raw_value": 27.7552004938153,
+                  "effort": "max",
+                  "configuration_suffix": "Max",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "gpt-6-luna",
+                    "name": "GPT-6 Luna (Max)",
+                    "suffix": "Max",
+                    "effort": {
+                      "slug": "max",
+                      "label": "max",
+                      "level": 60
+                    },
+                    "releaseDate": "2026-09-22",
+                    "intelligenceIndex": 27.7552004938153,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "mistral-large-4",
+                "model_variant": "Mistral Large 4 Preview",
+                "value": 25.29,
+                "raw_value": 25.286451488165,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-06",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "mistral-large-4",
+                  "name": "Mistral Large 4 Preview",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-06",
+                  "intelligenceIndex": 25.286451488165,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Mistral Large 4 Preview",
+                "result_id": "aa-v5-mistral-large-4",
+                "raw": {
+                  "source_row_key": "mistral-large-4",
+                  "model_variant": "Mistral Large 4 Preview",
+                  "value": 25.29,
+                  "raw_value": 25.286451488165,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-06",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "mistral-large-4",
+                    "name": "Mistral Large 4 Preview",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-06",
+                    "intelligenceIndex": 25.286451488165,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "muse-spark-open",
+                "model_variant": "Muse Spark Open (Xhigh)",
+                "value": 24.68,
+                "raw_value": 24.6815868992913,
+                "effort": "xhigh",
+                "configuration_suffix": "Xhigh",
+                "model_release_date": "2026-10-15",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "muse-spark-open",
+                  "name": "Muse Spark Open (Xhigh)",
+                  "suffix": "Xhigh",
+                  "effort": {
+                    "slug": "xhigh",
+                    "label": "xhigh",
+                    "level": 50
+                  },
+                  "releaseDate": "2026-10-15",
+                  "intelligenceIndex": 24.6815868992913,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Muse Spark Open (Xhigh)",
+                "result_id": "aa-v5-muse-spark-open",
+                "raw": {
+                  "source_row_key": "muse-spark-open",
+                  "model_variant": "Muse Spark Open (Xhigh)",
+                  "value": 24.68,
+                  "raw_value": 24.6815868992913,
+                  "effort": "xhigh",
+                  "configuration_suffix": "Xhigh",
+                  "model_release_date": "2026-10-15",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "muse-spark-open",
+                    "name": "Muse Spark Open (Xhigh)",
+                    "suffix": "Xhigh",
+                    "effort": {
+                      "slug": "xhigh",
+                      "label": "xhigh",
+                      "level": 50
+                    },
+                    "releaseDate": "2026-10-15",
+                    "intelligenceIndex": 24.6815868992913,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "qwen3-8-27b",
+                "model_variant": "Qwen3.8 27B (Xhigh)",
+                "value": 20.11,
+                "raw_value": 20.1068756031705,
+                "effort": "xhigh",
+                "configuration_suffix": "Xhigh",
+                "model_release_date": "2026-08-14",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "qwen3-8-27b",
+                  "name": "Qwen3.8 27B (Xhigh)",
+                  "suffix": "Xhigh",
+                  "effort": {
+                    "slug": "xhigh",
+                    "label": "xhigh",
+                    "level": 50
+                  },
+                  "releaseDate": "2026-08-14",
+                  "intelligenceIndex": 20.1068756031705,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Qwen3.8 27B (Xhigh)",
+                "result_id": "aa-v5-qwen3-8-27b",
+                "raw": {
+                  "source_row_key": "qwen3-8-27b",
+                  "model_variant": "Qwen3.8 27B (Xhigh)",
+                  "value": 20.11,
+                  "raw_value": 20.1068756031705,
+                  "effort": "xhigh",
+                  "configuration_suffix": "Xhigh",
+                  "model_release_date": "2026-08-14",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "qwen3-8-27b",
+                    "name": "Qwen3.8 27B (Xhigh)",
+                    "suffix": "Xhigh",
+                    "effort": {
+                      "slug": "xhigh",
+                      "label": "xhigh",
+                      "level": 50
+                    },
+                    "releaseDate": "2026-08-14",
+                    "intelligenceIndex": 20.1068756031705,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "k2-horizon-375b-a23b",
+                "model_variant": "K2 Horizon 375B A23B",
+                "value": 17.77,
+                "raw_value": 17.7702731734027,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "k2-horizon-375b-a23b",
+                  "name": "K2 Horizon 375B A23B",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-09-03",
+                  "intelligenceIndex": 17.7702731734027,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "K2 Horizon 375B A23B",
+                "result_id": "aa-v5-k2-horizon-375b-a23b",
+                "raw": {
+                  "source_row_key": "k2-horizon-375b-a23b",
+                  "model_variant": "K2 Horizon 375B A23B",
+                  "value": 17.77,
+                  "raw_value": 17.7702731734027,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "k2-horizon-375b-a23b",
+                    "name": "K2 Horizon 375B A23B",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-09-03",
+                    "intelligenceIndex": 17.7702731734027,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "reflection-beam",
+                "model_variant": "Beam 1.0",
+                "value": 17.73,
+                "raw_value": 17.7307282547205,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-16",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "reflection-beam",
+                  "name": "Beam 1.0",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-16",
+                  "intelligenceIndex": 17.7307282547205,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Beam 1.0",
+                "result_id": "aa-v5-reflection-beam",
+                "raw": {
+                  "source_row_key": "reflection-beam",
+                  "model_variant": "Beam 1.0",
+                  "value": 17.73,
+                  "raw_value": 17.7307282547205,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-16",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "reflection-beam",
+                    "name": "Beam 1.0",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-16",
+                    "intelligenceIndex": 17.7307282547205,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "nemotron-3-5-super-vl",
+                "model_variant": "Nemotron 3.5 Super VL",
+                "value": 13.62,
+                "raw_value": 13.6203422723141,
+                "effort": null,
+                "configuration_suffix": null,
+                "model_release_date": "2026-10-15",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "nemotron-3-5-super-vl",
+                  "name": "Nemotron 3.5 Super VL",
+                  "suffix": null,
+                  "effort": null,
+                  "releaseDate": "2026-10-15",
+                  "intelligenceIndex": 13.6203422723141,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Nemotron 3.5 Super VL",
+                "result_id": "aa-v5-nemotron-3-5-super-vl",
+                "raw": {
+                  "source_row_key": "nemotron-3-5-super-vl",
+                  "model_variant": "Nemotron 3.5 Super VL",
+                  "value": 13.62,
+                  "raw_value": 13.6203422723141,
+                  "effort": null,
+                  "configuration_suffix": null,
+                  "model_release_date": "2026-10-15",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "nemotron-3-5-super-vl",
+                    "name": "Nemotron 3.5 Super VL",
+                    "suffix": null,
+                    "effort": null,
+                    "releaseDate": "2026-10-15",
+                    "intelligenceIndex": 13.6203422723141,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              },
+              {
+                "source_row_key": "inkling",
+                "model_variant": "Inkling (Xhigh)",
+                "value": 12.48,
+                "raw_value": 12.4781698715401,
+                "effort": "xhigh",
+                "configuration_suffix": "Xhigh",
+                "model_release_date": "2026-07-15",
+                "evaluation_date": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_payload": {
+                  "slug": "inkling",
+                  "name": "Inkling (Xhigh)",
+                  "suffix": "Xhigh",
+                  "effort": {
+                    "slug": "xhigh",
+                    "label": "xhigh",
+                    "level": 50
+                  },
+                  "releaseDate": "2026-07-15",
+                  "intelligenceIndex": 12.4781698715401,
+                  "intelligenceIndexIsEstimated": false
+                },
+                "label": "Inkling (Xhigh)",
+                "result_id": "aa-v5-inkling",
+                "raw": {
+                  "source_row_key": "inkling",
+                  "model_variant": "Inkling (Xhigh)",
+                  "value": 12.48,
+                  "raw_value": 12.4781698715401,
+                  "effort": "xhigh",
+                  "configuration_suffix": "Xhigh",
+                  "model_release_date": "2026-07-15",
+                  "evaluation_date": null,
+                  "source_url": "https://artificialanalysis.ai/models",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_payload": {
+                    "slug": "inkling",
+                    "name": "Inkling (Xhigh)",
+                    "suffix": "Xhigh",
+                    "effort": {
+                      "slug": "xhigh",
+                      "label": "xhigh",
+                      "level": 50
+                    },
+                    "releaseDate": "2026-07-15",
+                    "intelligenceIndex": 12.4781698715401,
+                    "intelligenceIndexIsEstimated": false
+                  }
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "index",
+                "label": "AA Intelligence Index v5.0",
+                "field": "value",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Public comparison payload (28 defaults) plus Argon announcement; not all 77 evaluated configurations",
+            "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
+            "checked_at": "2026-10-28",
+            "publication_at": null,
+            "snapshot_at": null,
+            "evaluation_date": null,
+            "complete": false,
+            "coverage": "28 models/configurations in retrieved public comparison payload plus the explicitly reported Argon High v5 announcement value. Not all77 evaluated configurations.",
+            "settings": {
+              "version": "5.0",
+              "announcement_date": "2026-10-27",
+              "weights": {
+                "AA-Briefcase v1.1": 0.15,
+                "AutomationBench-AA": 0.05,
+                "GDP.pdf": 0.05,
+                "FrontierCode 2.0": 0.15,
+                "Terminal-Bench4.0": 0.1,
+                "Terminal-Bench-Science0.1": 0.15,
+                "CritPt v2 hard40": 0.1,
+                "AA-Omniscience v1.1 accuracy": 0.1,
+                "AA-Omniscience v1.1 non-hallucination": 0.05,
+                "HLE-Diamond": 0.1
+              },
+              "protocols": [
+                {
+                  "evaluation": "AA-Briefcase v1.1",
+                  "tasks": 91,
+                  "repeats": 1,
+                  "tools": true,
+                  "harness": "AA agent; file outputs, combined rubric/analytical/presentation Elo"
+                },
+                {
+                  "evaluation": "AutomationBench-AA",
+                  "tasks": 657,
+                  "repeats": 1,
+                  "tools": true,
+                  "harness": "AA REST workflow tools; guardrail violation zeroes task"
+                },
+                {
+                  "evaluation": "GDP.pdf",
+                  "tasks": 100,
+                  "repeats": 5,
+                  "tools": false,
+                  "harness": "PDF-grounded rubric all-pass"
+                },
+                {
+                  "evaluation": "FrontierCode 2.0",
+                  "tasks": 132,
+                  "repeats": 3,
+                  "tools": true,
+                  "harness": "Stirrup; max500turns; tests/rubric; blocking failure scoreszero"
+                },
+                {
+                  "evaluation": "Terminal-Bench4.0",
+                  "tasks": 66,
+                  "repeats": 3,
+                  "tools": true,
+                  "harness": "mini-swe-agent; max500steps; bash; no compaction"
+                },
+                {
+                  "evaluation": "Terminal-Bench-Science0.1",
+                  "tasks": 70,
+                  "repeats": 3,
+                  "tools": true,
+                  "harness": "mini-swe-agent; max1000steps;30sdefaultcommandtimeout"
+                },
+                {
+                  "evaluation": "CritPt v2 hard40",
+                  "tasks": 40,
+                  "repeats": 5,
+                  "tools": true,
+                  "harness": "Stirrup offline Python; official grader"
+                },
+                {
+                  "evaluation": "AA-Omniscience v1.1",
+                  "tasks": 3000,
+                  "repeats": 1,
+                  "tools": false,
+                  "harness": "Open answer; accuracy and non-hallucination components"
+                },
+                {
+                  "evaluation": "HLE-Diamond",
+                  "tasks": 1000,
+                  "repeats": 1,
+                  "tools": false,
+                  "harness": "500reasoning/500knowledge; equality checker; pass@1"
+                }
+              ],
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "changes": "Nine evaluations with four equally weighted25% capability groups; addsFrontierCode2.0 and TBScience0.1; replaces HLE with1000-question HLE-Diamond, Omni with3000-questionv1.1 and CritPt with v2 hard40; removesGDPval-AA2.1,SciCode,AA-LCR1.1. Changes to datasets/scaling/weights make old index scores incomparable. A smaller v5 value does not imply capability regression.",
+              "normalization": "Public payload index values rounded to two decimal places for display; exact floating values retained in raw_value. Argon announcement only supplies rounded50. No index recomputation."
+            },
+            "limitations": [
+              "Reporting sources and harnesses are separate cohorts; no independent evaluations were executed.",
+              "Evaluation dates and exact model snapshots are unavailable; source publication, model release and retrieval dates are different facts.",
+              "Missing cost, time, uncertainty and sample counts stay null. Token prices are not measured task costs.",
+              "Selected model rollout is restricted; AA model-page FAQ availability wording conflicts with the Google announcement and AA launch article.",
+              "Older index versions cannot be compared numerically with v5; a lower number does not establish a capability regression.",
+              "Default shows 12 highest scores among the 29 collected configurations; select the full collected view for all 29. Uncollected or unreported configurations are unavailable, not zero."
+            ]
+          },
+          {
+            "id": "gemini-4-argon-aa-intelligence-index-v4-3-2",
+            "label": "Historical v4.3.2 / Argon only / incomparable with v5",
+            "rows": [
+              {
+                "id": "intelligence-index-v4-3-2",
+                "benchmark": "AA Intelligence Index v4.3.2",
+                "metrics": [
+                  {
+                    "id": "index",
+                    "label": "Intelligence Index v4.3.2",
+                    "value": 53,
+                    "unit": "index points",
+                    "direction": "higher_is_better",
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  }
+                ],
+                "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+                "target_card_id": null,
+                "evidence_role": "independent_evaluator",
+                "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "model_id": "gemini-4-argon",
+                "evaluation_date": null,
+                "cost_usd": null,
+                "latency_seconds": null,
+                "label": "Gemini 4 Argon (high; Long Decode Continuation)",
+                "result_id": "gemini-4-argon-aa-intelligence-index-v4-3-2",
+                "effort": "high; Long Decode Continuation",
+                "model_release_date": "2026-09-30",
+                "broad_availability_date": "2026-10-13",
+                "measurements": {
+                  "index": 53
+                },
+                "raw": {
+                  "id": "intelligence-index-v4-3-2",
+                  "benchmark": "AA Intelligence Index v4.3.2",
+                  "metrics": [
+                    {
+                      "id": "index",
+                      "label": "Intelligence Index v4.3.2",
+                      "value": 53,
+                      "unit": "index points",
+                      "direction": "higher_is_better",
+                      "domain": [
+                        0,
+                        100
+                      ]
+                    }
+                  ],
+                  "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+                  "target_card_id": null,
+                  "evidence_role": "independent_evaluator",
+                  "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+                  "model_variant": "Gemini 4 Argon (high; Long Decode Continuation)",
+                  "model_id": "gemini-4-argon",
+                  "evaluation_date": null,
+                  "cost_usd": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "index",
+                "label": "Intelligence Index v4.3.2",
+                "field": "measurements.index",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs",
+            "source_locator": "September 30 AA article; AA Intelligence Index v4.3.2",
+            "settings": {
+              "model_id": "gemini-4-argon",
+              "effort": "high",
+              "methodology": "Directly reported rounded 53 points. The $1.99 cost is per Intelligence Index task under introductory/cache pricing, not a generic model task cost; article average output is approximately 62k tokens. No throughput supplied.",
+              "methodology_url": null,
+              "evidence_role": "independent_evaluator",
+              "long_decode_continuation": true,
+              "introductory_cost_usd_per_intelligence_index_task": 1.99,
+              "approximate_average_output_tokens_per_index_task": 62000,
+              "throughput_tokens_per_second": null,
+              "cost_basis": "September 30 reported introductory and cache pricing; not a generic task cost or current-price guarantee"
+            },
+            "limitations": [
+              "Only the selected Argon observations are imported; no complete updated leaderboard or matched-compute ranking is claimed.",
+              "Google reproduces some external boards; these are attributed to Google and not claimed independently reverified against those boards.",
+              "Publication, source-review, announcement and broad-availability dates are distinct; exact evaluation dates remain unknown.",
+              "Cost, latency and uncertainty are unavailable unless explicitly reported. Token list prices are not task costs.",
+              "No vendor and AA numbers are pooled or used to infer controlled improvements.",
+              "The September 30 article describes restricted availability; the October 13 official developer rollout supersedes that availability statement, not the article measurements."
+            ],
+            "source_input": "data/gemini-4-argon-2026-10-15/source-packet.json",
+            "evaluation_date": null,
+            "publication_at": "2026-09-30",
+            "snapshot_at": null,
+            "checked_at": "2026-10-15",
+            "complete": false,
+            "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -55829,6 +63919,7 @@ window.LAB_GALLERY = {
         "medagentbench"
       ],
       "webdev-arena-frontend": [
+        "webdev-arena-frontend-2026-10-27",
         "webdev-arena-frontend-2026-10-22",
         "webdev-arena-frontend-2026-10-18",
         "webdev-arena-frontend-2026-10-08",
@@ -90714,6 +98805,26 @@ window.LAB_GALLERY = {
         "healthbench-professional-october-deployment",
         "mentalhealthbench-october-deployment"
       ]
+    },
+    "carbon_updates": {
+      "schema_version": 1,
+      "checked_at": "2026-10-28",
+      "model_id": "gemini-4-carbon",
+      "index_version": "5.0",
+      "card_ids": [
+        "gemini-4-carbon-google-report",
+        "gemini-4-carbon-aa-report",
+        "gemini-4-carbon-vals-report",
+        "webdev-arena-frontend-2026-10-27",
+        "vibe-code-v1-1-carbon",
+        "aa-intelligence-index"
+      ],
+      "augmented_card_ids": [
+        "frontierswe-v2",
+        "terminal-bench-4",
+        "osworld-v2-1-offline-october",
+        "terminal-bench-science-native-agents"
+      ]
     }
   },
   "expanded": {
@@ -105577,6 +113688,8 @@ window.LAB_GALLERY = {
       "data/benchmark-refresh-2026-10-19/evidence-manifest.json",
       "data/benchmark-refresh-2026-10-26/source-packet.json",
       "data/benchmark-refresh-2026-10-26/evidence-manifest.json",
+      "data/gemini-4-carbon-2026-10-28/source-packet.json",
+      "data/gemini-4-carbon-2026-10-28/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -105593,7 +113706,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-10-26.json",
+    "presentationMetadata": "data/gallery-metadata-2026-10-28.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };
