@@ -38,7 +38,7 @@ function build() {
     google: ['Google reported benchmarks', 'What does Google report for Carbon?', 'Select a benchmark from Google’s evaluation PDF. Some results are self-computed and others reproduce external boards.',
       'Each choice is a different task or protocol. External results are attributed to Google’s reproduction. OSWorld uses the maximum of three runs; Agents’ Last Exam excludes the October 26 task update. The ExploitGym table does not identify which reported timeout produced its score.'],
     aa: ['Artificial Analysis benchmarks', 'What has Artificial Analysis measured for Carbon?', 'Select a current AA benchmark or the separate launch coding-agent report. The Intelligence Index has its own comparison card.',
-      'AA’s current benchmark payload and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations.'],
+      'AA’s current benchmark table and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations.'],
     vals: ['Vals benchmarks', 'How does Carbon perform in Vals evaluations?', 'Select a Vals benchmark. Percentage scores and one standard error are preserved separately for each evaluation.',
       'The functional VibeCode test measures whether web apps satisfy browser tests. It answers a different question from Arena preference and Design2Code screenshot fidelity. Vals uses benchmark-specific agents; Terminal-Bench uses Mini-SWE-agent and VibeCode uses OpenHands. Only explicitly paired source costs and durations are retained.']
   };
@@ -81,7 +81,7 @@ function build() {
   const indexRows = packet.aa_index.rows.map(r => ({...clone(r),label:r.model_variant,result_id:'aa-v5-'+r.source_row_key,raw:clone(r)}));
   const v5 = {id:'aa-index-v5-selected',label:'v5.0 / all 29 collected configurations',rows:indexRows,metrics:[indexMetric],source_url:packet.aa_index.source_url,
     source_locator:'Public comparison payload (28 defaults) plus Argon announcement; not all 77 evaluated configurations',source_input:sourceInput,checked_at:packet.checked_at,
-    publication_at:null,snapshot_at:null,evaluation_date:null,complete:false,coverage:packet.aa_index.selection,
+    publication_at:null,snapshot_at:null,evaluation_date:null,complete:false,coverage:"29 collected model configurations; this is a selection from AA’s larger v5 leaderboard.",
     settings:{version:'5.0',announcement_date:packet.aa_index.announcement_date,weights:clone(packet.aa_index.weights),protocols:clone(packet.aa_index.protocols),methodology_url:packet.aa_index.methodology_url,changes:packet.aa_index.changes,normalization:packet.aa_index.normalization},
     limitations:[...packet.limitations,'Older index versions cannot be compared numerically with v5; a lower number does not establish a capability regression.','Default shows 12 highest scores among the 29 collected configurations; select the full collected view for all 29. Uncollected or unreported configurations are unavailable, not zero.']};
   const top = clone(v5); top.id = 'aa-index-v5-top12'; top.label = 'v5.0 / top 12 of 29 collected configurations'; top.rows = top.rows.slice(0,12);

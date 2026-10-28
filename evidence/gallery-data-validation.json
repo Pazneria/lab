@@ -5,7 +5,7 @@
     "data/gemini-4-carbon-2026-10-28/source-packet.json": "aba6c001b9d77c690bf4b58adf66a29c0a912ee95078e046591502f555ef97f6",
     "data/gemini-4-carbon-2026-10-28/evidence-manifest.json": "505e25ec9881ba4322f69ee173aa0e8e7802ba5275884321bd9e59101abd9e40"
   },
-  "carbonProjectionSHA256": "5fc151d894cdf1102c0ffbd38d0b76858a82ff12bb578d6292341ae7eff08c7d",
+  "carbonProjectionSHA256": "bcf06ffc18c552467a024afe5eb8718c7ec74c18dad2acfba069ebb4a4ee76c3",
   "aaIndexVersion": "5.0",
   "aaIndexCollectedConfigurations": 29,
   "weeklyRows": 31,

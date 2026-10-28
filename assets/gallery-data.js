@@ -11475,7 +11475,7 @@ window.LAB_GALLERY = {
       "question": "What has Artificial Analysis measured for Carbon?",
       "tests": "Select a current AA benchmark or the separate launch coding-agent report. The Intelligence Index has its own comparison card.",
       "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
-      "read": "AA’s current benchmark payload and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+      "read": "AA’s current benchmark table and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
       "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
     },
     "gemini-4-carbon-vals-report": {
@@ -55328,7 +55328,7 @@ window.LAB_GALLERY = {
         "question": "What has Artificial Analysis measured for Carbon?",
         "tests": "Select a current AA benchmark or the separate launch coding-agent report. The Intelligence Index has its own comparison card.",
         "matters": "Inspect the new model with the evaluator, benchmark and settings attached to each result.",
-        "read": "AA’s current benchmark payload and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
+        "read": "AA’s current benchmark table and its launch coding-agent report use different setups. The launch report uses Antigravity CLI and FrontierCode v1.1; Intelligence Index v5 uses FrontierCode 2.0. Costs and decode-time estimates in raw details have their own definitions and are not generic measured task costs or durations. Carbon is in a restricted rollout. Exact evaluation dates and model snapshots remain unavailable. Source review on October 28 is not an evaluation date. No Carbon medical, robotics or driving score was verified in the reviewed sources; unavailable is not zero.",
         "historical": false,
         "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
         "source_inputs": [
@@ -59194,7 +59194,7 @@ window.LAB_GALLERY = {
             "snapshot_at": null,
             "evaluation_date": null,
             "complete": false,
-            "coverage": "28 models/configurations in retrieved public comparison payload plus the explicitly reported Argon High v5 announcement value. Not all77 evaluated configurations.",
+            "coverage": "29 collected model configurations; this is a selection from AA’s larger v5 leaderboard.",
             "settings": {
               "version": "5.0",
               "announcement_date": "2026-10-27",
@@ -60782,7 +60782,7 @@ window.LAB_GALLERY = {
             "snapshot_at": null,
             "evaluation_date": null,
             "complete": false,
-            "coverage": "28 models/configurations in retrieved public comparison payload plus the explicitly reported Argon High v5 announcement value. Not all77 evaluated configurations.",
+            "coverage": "29 collected model configurations; this is a selection from AA’s larger v5 leaderboard.",
             "settings": {
               "version": "5.0",
               "announcement_date": "2026-10-27",
