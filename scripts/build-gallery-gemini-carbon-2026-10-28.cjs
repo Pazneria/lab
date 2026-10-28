@@ -24,8 +24,8 @@ function build() {
     if (o.stderr_pp != null) metric.stderr_field = 'stderr_pp';
     return { id, label: 'Carbon / ' + provider.toUpperCase() + ' / ' + o.benchmark, rows: [row], metrics: [metric],
       source_url: o.source_url, source_locator: provider === 'google' ? 'October 2026 evaluation PDF, results page 5 and methods pages 2–4' : 'Named primary model/benchmark table; see raw source record',
-      source_input: sourceInput, checked_at: packet.checked_at, evaluation_date: null, snapshot_at: null,
-      publication_at: packet[provider].publication_date, complete: false,
+      source_input: sourceInput, checked_at: packet.checked_at, evaluation_date: null, snapshot_at: o.snapshot_at || null,
+      publication_at: o.publication_at || packet[provider].publication_date, complete: false,
       settings: { effort: packet[provider].effort, model_source_key: packet.model.source_key, public_api_id: null, exact_model_snapshot: null,
         availability: packet.model.availability, methodology: o.methodology, sample_size: o.sample_size,
         evidence_role: o.evidence_role || 'independent_evaluator',
@@ -67,7 +67,7 @@ function build() {
   av.rows = a.rows.map(raw => ({...clone(raw), label:raw.model_variant, result_id:raw.source_row_key, source_url:a.source_url, raw:clone(raw)}));
   av.source_input = sourceInput; av.snapshot_at = a.snapshot_at; av.checked_at = packet.checked_at;
   av.source_locator = 'Code / WebDev / Frontend table dated October 27, ranks 1–20';
-  av.settings = {...av.settings, displayed_models:a.displayed_models, displayed_total_votes:a.displayed_total_votes,selection:a.selection};
+  av.settings = {...av.settings, displayed_models:a.displayed_models, displayed_total_votes:a.displayed_total_votes,vote_count_basis:a.vote_count_basis,selection:a.selection};
   av.limitations = [arena.read]; av.coverage = a.selection; cards.push(arena);
   coverage.familyGroups['webdev-arena-frontend'].unshift(arena.id);
   metadata.cards['webdev-arena-frontend-2026-10-22'].cohort = 'historical';
@@ -97,7 +97,7 @@ function build() {
     notes[c.id] = {question:c.question,tests:c.tests,matters:c.matters,read:c.read,date:c.id === arena.id ? 'Source table dated October 27; reviewed October 28, 2026; run dates unavailable' : 'Primary sources reviewed October 28, 2026; run dates unavailable'};
     metadata.cards[c.id] = {evidence:'plotted',cohort:'latest_collected',cohort_basis:'Separate dated source observations; no independently executed evaluation and no cross-version ranking.',discovery_lifecycle:null,
       source_review:{date:packet.checked_at,mode:'primary_source_review',scope:'Named primary source tables, evaluation PDF and AA v5 methodology inspected.'},result_packet_checked_at:packet.checked_at,
-      snapshot_at:c.id === arena.id ? a.snapshot_at : null,publication_at:null,publication_label:null,
+      snapshot_at:c.variants.length === 1 ? c.variants[0].snapshot_at : null,publication_at:null,publication_label:null,
       evaluations:c.variants.map(v => ({slice:v.label,earliest:null,latest:null,known:0,unknown:v.rows.length})),
       model_releases:{earliest:null,latest:null,known:0,unknown:c.variants.reduce((n,v)=>n+v.rows.length,0)}};
   }

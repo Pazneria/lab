@@ -33,6 +33,11 @@ for(const row of index.variants[1].rows){
 }
 const google=packet.google.observations,vals=packet.vals.observations;
 assert.equal(google.length,17);assert.equal(vals.length,10);
+assert.deepEqual(['aa-briefcase','automationbench-aa','gdp-pdf'].map(id=>packet.aa.observations.find(o=>o.id===id).sample_size),[91,657,100]);
+assert.equal(card('gemini-4-carbon-aa-report').variants.at(-1).publication_at,'2026-10-28');
+assert.equal(vals.find(o=>o.id==='terminal-bench-4').snapshot_at,'2026-10-27');
+assert.equal(vals.find(o=>o.id==='vibe-code-v1-1').snapshot_at,'2026-10-27');
+assert.equal(next.metadata.cards['vibe-code-v1-1-carbon'].snapshot_at,'2026-10-27');
 assert.equal(google.find(o=>o.id==='sec-bench-pro').sample_size,183);
 assert.match(google.find(o=>o.id==='osworld-2-1-offline').methodology,/maximum of three/);
 assert.match(google.find(o=>o.id==='agents-last-exam-1-1').methodology,/excludes Oct26/);
@@ -48,6 +53,7 @@ assert.deepEqual(tb.map(v=>v.rows[0].value),[65.2,63.13],'Evaluator cohorts must
 const arena=card('webdev-arena-frontend-2026-10-27').variants[0];
 assert.equal(arena.rows.length,20);assert.equal(arena.snapshot_at,'2026-10-27');
 assert.deepEqual(arena.rows[2].published_range,[1776,1810]);assert.equal(arena.rows[2].value,1793);assert.equal(arena.rows[2].votes,1861);assert.equal(arena.rows[2].preliminary,true);
+assert.match(packet.arena_frontend.vote_count_basis,/829,216/);assert.equal(arena.settings.vote_count_basis,packet.arena_frontend.vote_count_basis);
 assert.equal(arena.settings.displayed_total_votes,829216);assert.equal(arena.settings.displayed_models,153);
 assert.equal(next.coverage.familyGroups['webdev-arena-frontend'][0],'webdev-arena-frontend-2026-10-27');
 assert.equal(next.metadata.cards['webdev-arena-frontend-2026-10-22'].cohort,'historical');

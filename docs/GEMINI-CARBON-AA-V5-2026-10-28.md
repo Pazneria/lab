@@ -64,3 +64,12 @@ normalization issue and then a missing visible preliminary label. Both were
 fixed and the complete coverage suite passed afterward. No source score changed.
 Hosted exact-head CI and deployment outcomes are recorded on the publication PR
 and in the final task report, rather than claimed prospectively here.
+
+A separate read-only review reparsed the saved AA response, checked all 28 exact
+v5 payload scores/configurations, all nine Carbon index components and the Google
+PDF's complete 17-value Carbon column. It reopened AA/Vals primary methodology
+and benchmark pages. Its stale Arena vote-total wording finding was corrected
+and regression-tested. The October 27 update dates on both Vals TB4 and VibeCode
+pages are retained as source snapshots, not run dates. The review confirmed the
+verified AA sample counts and source-specific publication dates; it did not run
+model evaluations or certify every historical gallery source.

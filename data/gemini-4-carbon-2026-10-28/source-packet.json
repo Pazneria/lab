@@ -352,7 +352,7 @@
         "direction": "higher_is_better",
         "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
         "evaluation_date": null,
-        "sample_size": null,
+        "sample_size": 91,
         "cost_usd_per_task": null,
         "latency_seconds": null,
         "reported_payload": {
@@ -376,7 +376,7 @@
         "direction": "higher_is_better",
         "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
         "evaluation_date": null,
-        "sample_size": null,
+        "sample_size": 657,
         "cost_usd_per_task": null,
         "latency_seconds": null,
         "reported_payload": {
@@ -472,7 +472,7 @@
         "direction": "higher_is_better",
         "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
         "evaluation_date": null,
-        "sample_size": null,
+        "sample_size": 100,
         "cost_usd_per_task": null,
         "latency_seconds": null,
         "reported_payload": {
@@ -574,7 +574,8 @@
         "evaluation_date": null,
         "cost_usd_per_task": null,
         "latency_seconds": null,
-        "sample_size": null
+        "sample_size": null,
+        "publication_at": "2026-10-28"
       }
     ],
     "launch_publication_date": "2026-10-28",
@@ -1082,7 +1083,8 @@
         "reported_payload": {
           "score_percent": 89.06,
           "standard_error_pp": 2.29
-        }
+        },
+        "snapshot_at": "2026-10-27"
       },
       {
         "id": "hlab-vals-1-1",
@@ -1127,7 +1129,8 @@
         "reported_payload": {
           "score_percent": 63.13,
           "standard_error_pp": 2.2
-        }
+        },
+        "snapshot_at": "2026-10-27"
       }
     ]
   },
@@ -1142,7 +1145,7 @@
     "selection": "First20 of153 published Frontend configurations; preliminary Carbon row; not complete board.",
     "outcome": "human pairwise preference, not screenshot fidelity or functional completion",
     "interval_kind": "published score range; confidence coverage not established by the table",
-    "vote_count_basis": "Per-row votes, distinct from page-wide total807096.",
+    "vote_count_basis": "Per-row votes, distinct from the page-wide total of 829,216.",
     "workflow": "Page describes multi-step reasoning, tools and HTML or React; exact row-level tools, harness and budgets unavailable.",
     "task_cost_usd": null,
     "task_time_seconds": null,

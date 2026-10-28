@@ -15571,7 +15571,7 @@ window.LAB_GALLERY = {
           "scope": "Named primary source tables, evaluation PDF and AA v5 methodology inspected."
         },
         "result_packet_checked_at": "2026-10-28",
-        "snapshot_at": null,
+        "snapshot_at": "2026-10-27",
         "publication_at": null,
         "publication_label": null,
         "evaluations": [
@@ -29829,6 +29829,7 @@ window.LAB_GALLERY = {
                   "score_percent": 63.13,
                   "standard_error_pp": 2.2
                 },
+                "snapshot_at": "2026-10-27",
                 "label": "Gemini 4 Carbon (High)",
                 "result_id": "gemini-4-carbon-vals-terminal-bench-4",
                 "model_release_date": "2026-10-28",
@@ -29855,7 +29856,8 @@ window.LAB_GALLERY = {
                   "reported_payload": {
                     "score_percent": 63.13,
                     "standard_error_pp": 2.2
-                  }
+                  },
+                  "snapshot_at": "2026-10-27"
                 }
               }
             ],
@@ -29878,7 +29880,7 @@ window.LAB_GALLERY = {
             "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
             "checked_at": "2026-10-28",
             "evaluation_date": null,
-            "snapshot_at": null,
+            "snapshot_at": "2026-10-27",
             "publication_at": null,
             "complete": false,
             "settings": {
@@ -55353,7 +55355,7 @@ window.LAB_GALLERY = {
                 "direction": "higher_is_better",
                 "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
                 "evaluation_date": null,
-                "sample_size": null,
+                "sample_size": 91,
                 "cost_usd_per_task": null,
                 "latency_seconds": null,
                 "reported_payload": {
@@ -55381,7 +55383,7 @@ window.LAB_GALLERY = {
                   "direction": "higher_is_better",
                   "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
                   "evaluation_date": null,
-                  "sample_size": null,
+                  "sample_size": 91,
                   "cost_usd_per_task": null,
                   "latency_seconds": null,
                   "reported_payload": {
@@ -55422,7 +55424,7 @@ window.LAB_GALLERY = {
               "exact_model_snapshot": null,
               "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
               "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
-              "sample_size": null,
+              "sample_size": 91,
               "evidence_role": "independent_evaluator",
               "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
               "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
@@ -55452,7 +55454,7 @@ window.LAB_GALLERY = {
                 "direction": "higher_is_better",
                 "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
                 "evaluation_date": null,
-                "sample_size": null,
+                "sample_size": 657,
                 "cost_usd_per_task": null,
                 "latency_seconds": null,
                 "reported_payload": {
@@ -55480,7 +55482,7 @@ window.LAB_GALLERY = {
                   "direction": "higher_is_better",
                   "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
                   "evaluation_date": null,
-                  "sample_size": null,
+                  "sample_size": 657,
                   "cost_usd_per_task": null,
                   "latency_seconds": null,
                   "reported_payload": {
@@ -55521,7 +55523,7 @@ window.LAB_GALLERY = {
               "exact_model_snapshot": null,
               "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
               "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
-              "sample_size": null,
+              "sample_size": 657,
               "evidence_role": "independent_evaluator",
               "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
               "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
@@ -55848,7 +55850,7 @@ window.LAB_GALLERY = {
                 "direction": "higher_is_better",
                 "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
                 "evaluation_date": null,
-                "sample_size": null,
+                "sample_size": 100,
                 "cost_usd_per_task": null,
                 "latency_seconds": null,
                 "reported_payload": {
@@ -55876,7 +55878,7 @@ window.LAB_GALLERY = {
                   "direction": "higher_is_better",
                   "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
                   "evaluation_date": null,
-                  "sample_size": null,
+                  "sample_size": 100,
                   "cost_usd_per_task": null,
                   "latency_seconds": null,
                   "reported_payload": {
@@ -55917,7 +55919,7 @@ window.LAB_GALLERY = {
               "exact_model_snapshot": null,
               "availability": "Restricted rollout to selected cyber defenders, followed by trusted Fairwind partners; broad public release date not announced. No API evaluation executed.",
               "methodology": "Current AA v5 model comparison payload; high effort, per-benchmark harnesses in AA methodology. Raw score retained; fraction scores multiplied by 100 for percentage display. AA reported decode-time estimates exclude TTFT/overhead and are not measured end-to-end task duration.",
-              "sample_size": null,
+              "sample_size": 100,
               "evidence_role": "independent_evaluator",
               "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
               "cost_basis": "AA weighted token-derived task cost at standard4/20USDperM input/output, cache adjustments. Intro50%discount excluded; no generic task-cost inference."
@@ -56251,6 +56253,7 @@ window.LAB_GALLERY = {
                 "cost_usd_per_task": null,
                 "latency_seconds": null,
                 "sample_size": null,
+                "publication_at": "2026-10-28",
                 "label": "Gemini 4 Carbon (High)",
                 "result_id": "gemini-4-carbon-aa-launch-coding-agent",
                 "model_release_date": "2026-10-28",
@@ -56275,7 +56278,8 @@ window.LAB_GALLERY = {
                   "evaluation_date": null,
                   "cost_usd_per_task": null,
                   "latency_seconds": null,
-                  "sample_size": null
+                  "sample_size": null,
+                  "publication_at": "2026-10-28"
                 }
               }
             ],
@@ -56298,7 +56302,7 @@ window.LAB_GALLERY = {
             "checked_at": "2026-10-28",
             "evaluation_date": null,
             "snapshot_at": null,
-            "publication_at": null,
+            "publication_at": "2026-10-28",
             "complete": false,
             "settings": {
               "effort": "high",
@@ -57031,6 +57035,7 @@ window.LAB_GALLERY = {
                   "score_percent": 89.06,
                   "standard_error_pp": 2.29
                 },
+                "snapshot_at": "2026-10-27",
                 "label": "Gemini 4 Carbon (High)",
                 "result_id": "gemini-4-carbon-vals-vibe-code-v1-1",
                 "model_release_date": "2026-10-28",
@@ -57056,7 +57061,8 @@ window.LAB_GALLERY = {
                   "reported_payload": {
                     "score_percent": 89.06,
                     "standard_error_pp": 2.29
-                  }
+                  },
+                  "snapshot_at": "2026-10-27"
                 }
               }
             ],
@@ -57079,7 +57085,7 @@ window.LAB_GALLERY = {
             "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
             "checked_at": "2026-10-28",
             "evaluation_date": null,
-            "snapshot_at": null,
+            "snapshot_at": "2026-10-27",
             "publication_at": null,
             "complete": false,
             "settings": {
@@ -57222,6 +57228,7 @@ window.LAB_GALLERY = {
                   "score_percent": 63.13,
                   "standard_error_pp": 2.2
                 },
+                "snapshot_at": "2026-10-27",
                 "label": "Gemini 4 Carbon (High)",
                 "result_id": "gemini-4-carbon-vals-terminal-bench-4",
                 "model_release_date": "2026-10-28",
@@ -57248,7 +57255,8 @@ window.LAB_GALLERY = {
                   "reported_payload": {
                     "score_percent": 63.13,
                     "standard_error_pp": 2.2
-                  }
+                  },
+                  "snapshot_at": "2026-10-27"
                 }
               }
             ],
@@ -57271,7 +57279,7 @@ window.LAB_GALLERY = {
             "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
             "checked_at": "2026-10-28",
             "evaluation_date": null,
-            "snapshot_at": null,
+            "snapshot_at": "2026-10-27",
             "publication_at": null,
             "complete": false,
             "settings": {
@@ -58403,7 +58411,7 @@ window.LAB_GALLERY = {
               "task_cost_usd": null,
               "task_time_seconds": null,
               "interval_kind": "published interval; confidence coverage not specified on the table",
-              "vote_count_basis": "Per-row votes, distinct from page-wide total807096."
+              "vote_count_basis": "Per-row votes, distinct from the page-wide total of 829,216."
             },
             "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
             "snapshot_at": "2026-10-27",
@@ -58458,6 +58466,7 @@ window.LAB_GALLERY = {
                   "score_percent": 89.06,
                   "standard_error_pp": 2.29
                 },
+                "snapshot_at": "2026-10-27",
                 "label": "Gemini 4 Carbon (High)",
                 "result_id": "gemini-4-carbon-vals-vibe-code-v1-1",
                 "model_release_date": "2026-10-28",
@@ -58483,7 +58492,8 @@ window.LAB_GALLERY = {
                   "reported_payload": {
                     "score_percent": 89.06,
                     "standard_error_pp": 2.29
-                  }
+                  },
+                  "snapshot_at": "2026-10-27"
                 }
               }
             ],
@@ -58506,7 +58516,7 @@ window.LAB_GALLERY = {
             "source_input": "data/gemini-4-carbon-2026-10-28/source-packet.json",
             "checked_at": "2026-10-28",
             "evaluation_date": null,
-            "snapshot_at": null,
+            "snapshot_at": "2026-10-27",
             "publication_at": null,
             "complete": false,
             "settings": {
