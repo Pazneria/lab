@@ -46,6 +46,9 @@ for(const mutate of [x=>x.weekly_refresh.card_ids.pop(),x=>x.weekly_refresh.chec
  const bad=structuredClone(next.coverage);mutate(bad);assert.equal(sandbox.window.LAB_COVERAGE.valid(bad),false);
 }
 const asset={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/gallery-data.js'),'utf8'),asset);
-assert.deepEqual(JSON.parse(JSON.stringify(asset.window.LAB_GALLERY.coverage)),next.coverage);
-assert.equal(asset.window.LAB_GALLERY.provenance.presentationMetadata,'data/gallery-metadata-2026-10-26.json');
+for (const old of next.coverage.cards) {
+ const current=JSON.parse(JSON.stringify(asset.window.LAB_GALLERY.coverage.cards.find(c=>c.id===old.id)));
+ assert.deepEqual(current.variants.slice(0,old.variants.length),old.variants);
+}
+assert.equal(asset.window.LAB_GALLERY.provenance.presentationMetadata,'data/gallery-metadata-2026-10-28.json');
 console.log(JSON.stringify({passed:true,sourceSHA256:sha,addedRows:31,priorCoverageCardsUnchanged:55,directCards:92,families:60,rendererIntegrated:true,benchmarkExecuted:false}));

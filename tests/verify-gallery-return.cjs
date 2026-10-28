@@ -6,8 +6,8 @@ const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   out = path.join(root, "evidence"),
   prefix = process.env.LAB_RETURN_PREFIX || "gallery-return";
-const currentFamilyCount = JSON.parse(fs.readFileSync(path.join(root, "data/gallery-metadata-2026-10-26.json"), "utf8")).counts.default_families;
-assert.equal(currentFamilyCount, 60);
+const currentFamilyCount = JSON.parse(fs.readFileSync(path.join(root, "data/gallery-metadata-2026-10-28.json"), "utf8")).counts.default_families;
+assert.equal(currentFamilyCount, 65);
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],

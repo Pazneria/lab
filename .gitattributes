@@ -69,3 +69,7 @@ data/gallery-metadata-2026-10-19.json text eol=lf
 data/benchmark-refresh-2026-10-26/** -text
 data/gallery-refresh-projection-2026-10-26.json text eol=lf
 data/gallery-metadata-2026-10-26.json text eol=lf
+
+# Exact Carbon/v5 research packet and portable generated projection.
+data/gemini-4-carbon-2026-10-28/** -text
+data/gallery-gemini-carbon-projection-2026-10-28.json text eol=lf

@@ -1,6 +1,13 @@
 {
-  "cards": 92,
-  "coverageCards": 58,
+  "cards": 98,
+  "coverageCards": 64,
+  "carbonInputSHA256": {
+    "data/gemini-4-carbon-2026-10-28/source-packet.json": "4bacac485f5e4c7314347f7849d63d0f3f15c82763c7213d1ff30637bd656b23",
+    "data/gemini-4-carbon-2026-10-28/evidence-manifest.json": "d537eb2cbd8d0b69a9aa180dcaf76f8ddd0cd1ecf63d538bff6cc2b8264c79bc"
+  },
+  "carbonProjectionSHA256": "e15ce99682419a87a6f54659b1ab361eee48b7f4e8c71a2c4a8a8dceabc26735",
+  "aaIndexVersion": "5.0",
+  "aaIndexCollectedConfigurations": 29,
   "weeklyRows": 31,
   "weeklyInputSHA256": {
     "data/benchmark-refresh-2026-10-26/source-packet.json": "e5e9e0133a50d2cbc29a62c9eb99489646506f7e9f7ff0501f7b0fd9d52900b0",

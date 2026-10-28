@@ -9,6 +9,7 @@ on:
       - codex/gemini-4-argon-tracker-2026-10-15
       - codex/benchmark-gallery-refresh-2026-10-19
       - codex/benchmark-gallery-refresh-2026-10-26
+      - codex/gemini-4-carbon-2026-10-28
 
 permissions:
   contents: read
@@ -21,7 +22,7 @@ jobs:
   gallery:
     if: >-
       github.repository == 'Pazneria/lab' &&
-      (github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-12' || github.ref == 'refs/heads/codex/gemini-4-argon-tracker-2026-10-15' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-19' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-26') &&
+      (github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-12' || github.ref == 'refs/heads/codex/gemini-4-argon-tracker-2026-10-15' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-19' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-26' || github.ref == 'refs/heads/codex/gemini-4-carbon-2026-10-28') &&
       github.event.repository.private == false
     runs-on: ubuntu-24.04
     timeout-minutes: 20
@@ -95,11 +96,13 @@ jobs:
           node scripts/build-gallery-gemini-argon-2026-10-15.cjs --check
           node scripts/build-gallery-refresh-2026-10-19.cjs --check
           node scripts/build-gallery-refresh-2026-10-26.cjs --check
+          node scripts/build-gallery-gemini-carbon-2026-10-28.cjs --check
           node scripts/build-gallery.cjs --check --publish-check
           node tests/verify-benchmark-refresh.cjs
           node tests/verify-gemini-argon.cjs
           node tests/verify-benchmark-2026-10-19.cjs
           node tests/verify-benchmark-2026-10-26.cjs
+          node tests/verify-gemini-carbon.cjs
           node scripts/verify-benchmark-refresh-boundary.cjs
           python tests/verify-static.py > "$RUNNER_TEMP/lab-static-check.log"
           tail -n 8 "$RUNNER_TEMP/lab-static-check.log"

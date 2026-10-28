@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = require("../scripts/build-gallery-refresh-2026-10-26.cjs")().coverage;
+const coverage = require("../scripts/build-gallery-gemini-carbon-2026-10-28.cjs")().coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,10 +183,10 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 92);
-    assert.equal(await page.locator(".mini-graph svg").count(), 83);
+    assert.equal(await page.locator(".benchmark-card").count(), 98);
+    assert.equal(await page.locator(".mini-graph svg").count(), 89);
     pass(
-      "Default gallery groups result families without empty cards; all 92 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 98 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
@@ -215,8 +215,41 @@ async function main() {
       }
     }
     pass(
-      "All 58 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 64 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
+    await go("results.html?benchmark=aa-intelligence-index");
+    assert.equal(await page.locator(".coverage-mark").count(),12);
+    assert.match(await page.locator(".explanations").innerText(),/numerical decline is not evidence/);
+    await page.locator("select[name=cohort]").selectOption("aa-index-v5-selected");
+    assert.equal(await page.locator(".chart-table tbody tr").count(),29);
+    await page.locator("input[name=all]").check();
+    assert.equal(await page.locator(".coverage-mark").count(),29);
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-aa-intelligence-index-v4-3-2");
+    assert.equal(await page.locator(".coverage-mark").count(),1);
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"),"53");
+    await page.reload();await page.locator(".coverage-chart").waitFor();
+    assert.equal(await page.locator("select[name=cohort]").inputValue(),"gemini-4-argon-aa-intelligence-index-v4-3-2");
+    await go("results.html?benchmark=webdev-arena-frontend-2026-10-27&config=Gemini%204%20Carbon");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"),"1793");
+    await page.locator(".coverage-mark").focus();
+    assert.match(await page.locator(".point-inspector").innerText(),/preliminary/i);
+    await go("results.html?benchmark=vibe-code-v1-1-carbon");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"),"89.06");
+    await page.locator(".coverage-mark").focus();
+    assert.match(await page.locator(".point-inspector").innerText(),/one standard error/);
+    await go("results.html?benchmark=terminal-bench-4");
+    await page.locator("select[name=cohort]").selectOption("gemini-4-carbon-google-terminal-bench-4");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"),"65.2");
+    await page.locator("select[name=cohort]").selectOption("gemini-4-carbon-vals-terminal-bench-4");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"),"63.13");
+    await page.setViewportSize({width:320,height:844});
+    for(const id of ["aa-intelligence-index","vibe-code-v1-1-carbon","gemini-4-carbon-google-report"]){
+      await go("results.html?benchmark="+id);
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,id+" mobile overflow");
+      await axe("Carbon/v5 mobile "+id);
+    }
+    await page.setViewportSize({width:1440,height:1000});
+    pass("AA v5 selected/full views and incomparable v4 history survive reload; Carbon preference, functional SEM and separate evaluator scores work on mobile");
     // The selected Argon records retain evaluator and metric boundaries.
     await go("benchmarks.html?q=gemini%204%20argon");
     assert.equal(await page.locator(".benchmark-card").count(), 2);
