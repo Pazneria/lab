@@ -40,7 +40,7 @@ export async function bootInspection({document,window,location,fetch,loadViewer=
   const response=await fetch('data/admission.json',{cache:'no-cache',redirect:'error'});if(!response.ok)throw Error('Could not load the attempt catalog.');
   const catalog=validateManifest(await response.json());entry=inspectableEntry(catalog,new URL(location.href).searchParams.get('attempt'));if(!entry)throw Error('This attempt has no available frozen GLB.');
   const prompt=catalog.prompts.find(p=>p.id===entry.promptId);$('title').textContent=prompt.title;$('model').textContent=entry.provenance.modelLabel;
-  $('disclosure').textContent=(entry.votingAvailable===false?'Public voting is unavailable for this new attempt while the service catalog awaits an update. ':'')+(entry.comparisonEligible===false?'Prompt mapping is unresolved; this attempt is excluded from comparisons. ':'')+(entry.provenance.limitations||[]).join(' ');
+  $('disclosure').textContent=(entry.votingAvailable===false?(entry.votingUnavailableReason||'Public voting is unavailable for this attempt.')+' ':'')+(entry.comparisonEligible===false?'Prompt mapping is unresolved; this attempt is excluded from comparisons. ':'')+(entry.provenance.limitations||[]).join(' ');
   $('record').href='results.html?attempt='+encodeURIComponent(entry.id);$('download').href=entry.asset.path;$('download').hidden=false;state.setPair([entry]);$('load').disabled=false;
  }catch(error){status('error',error.message);}
  return {state,load,stop,get entry(){return entry;}};

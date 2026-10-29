@@ -17,11 +17,11 @@ only when the visitor selects **Load 3D view**, uses the existing studio importe
 and unloads on hide/departure. It displays model identity and never writes votes.
 The original orientation, materials and file bytes are retained.
 
-**Public voting for all 63 new attempts is unavailable pending the existing
-service's catalog update.** `votingAvailable:false` excludes them from pairing
-and direct vote state. Historical ten eligible attempts and twelve pairs still
-work. Elena/Astra additionally has unresolved punctuation-variant prompt mapping;
-its file remains inspectable without being silently treated as identical input.
+**Public voting includes 62 new attempts plus the ten historical eligible
+attempts, giving 106 distinct-model attempt pairs across 18 prompts.** The service
+retains historical model identities, votes and rating rules. Elena/Astra has
+unresolved punctuation-variant prompt mapping and remains `votingAvailable:false`;
+its file is inspectable without being silently treated as identical input.
 
 ## Route and integration
 
@@ -134,9 +134,9 @@ Sol/Astra replacements retain their punctuation-variant launch hash; Luna receiv
 the exact corrected original launch. Each full launch hash remains separate from
 the common v2 hash. No received prompt or original failed history is rewritten.
 Original Sol/Astra export failures and the unresolved original Luna remain outside voting.
-New same-model repeats remain distinct records and are currently outside voting.
-Their future admission must preserve distinct-model pairing and the sampling
-policy above; existing judgments remain keyed to the original attempt IDs.
+New same-model repeats remain distinct records and only face other requested
+models under the sampling policy above. Existing judgments remain keyed to
+the original attempt IDs; historical rating model labels are retained.
 
 The leaderboard uses SceneBench's regularized Bradley–Terry fit on an Elo scale:
 baseline 1000, scale 400, prior precision 1, method `bt-elo-v1`. The prior adds no
