@@ -1,0 +1,589 @@
+{
+  "version": 1,
+  "corrections": [
+    {
+      "attemptId": "11-v1-luna",
+      "entryId": "entry-20261029-fa80670e76db36e8a2d5",
+      "kind": "additive correction/disclosure; original receipts and asset unchanged",
+      "notes": [
+        "Auditable receipt correction: timing.json gives start 2026-10-29T14:19:36.5744106-04:00, deadline 2026-10-29T15:19:36.5744106-04:00, and stop 2026-10-29T18:30:38.5233333+00:00. Handoff labels 14:19:36 and 15:19:36 as UTC incorrectly. Correct UTC start/deadline are 18:19:36.5744106 / 19:19:36.5744106. Offset-aware elapsed is 661.948923 seconds at microsecond precision, not the handoff's 662.523 seconds. No deadline overrun is shown. Original handoff has carriage-return/tab/bell damage in filenames; corrected references are rafi_haddad.glb, asset-checks.json and timing.json. Original bytes are unchanged."
+      ],
+      "timing": {
+        "implementationStart": "2026-10-29T14:19:36.5744106-04:00",
+        "deadline": "2026-10-29T15:19:36.5744106-04:00",
+        "actualStop": "2026-10-29T18:30:38.5233333+00:00",
+        "timezone": "Original source timezone/offset strings retained; see normalizedUtc separately.",
+        "source": "timing.json",
+        "sourceSha256": "caf697e8477596752d61130380f1427a2aba8dbc7eea1ea8c294c2ba8648c992",
+        "basis": "Independent audit selected the producer receipt; original strings retained.",
+        "normalizedUtc": {
+          "start": "2026-10-29T18:19:36.574410+00:00",
+          "deadline": "2026-10-29T19:19:36.574410+00:00",
+          "stop": "2026-10-29T18:30:38.523333+00:00"
+        },
+        "computedElapsedSeconds": 661.948923,
+        "deadlineIntervalSeconds": 3600.0,
+        "reportedStopBeforeDeadline": true,
+        "normalizationPrecision": "Microseconds; original strings may have seven fractional digits and are authoritative for original precision.",
+        "normalizationContext": null,
+        "attestation": "Producer-authored timing; no platform execution-history attestation. Files/mtime do not prove pre-recorded starts, historical immutability or absence of undisclosed work."
+      },
+      "originalSourceFiles": [
+        {
+          "file": "asset-checks.json",
+          "sha256": "9bdfe1e4879db46f1b078d0f1eb7d13032e4ec167c5358a792be194a6d3ba55a",
+          "byteLength": 1578,
+          "observedModifiedUtc": "2026-10-29T18:30:38.586193+00:00"
+        },
+        {
+          "file": "handoff.md",
+          "sha256": "1fe9b9ede6e093e953ccee60cf5ea09505cd954ef6d968b2142d50bda4f6b9ef",
+          "byteLength": 2223,
+          "observedModifiedUtc": "2026-10-29T18:30:38.595696+00:00"
+        },
+        {
+          "file": "rafi_haddad.glb",
+          "sha256": "b683d10e2a497ca565b25d9feb433eca76bd0d25ea005bd28206d5e4396bc666",
+          "byteLength": 1062280,
+          "observedModifiedUtc": "2026-10-29T18:28:52.003839+00:00"
+        },
+        {
+          "file": "rafi_haddad_generate.ps1",
+          "sha256": "f5cfda964df37a576ac114f0f0401120c62a255f7b4cd6921cce35b5c9f303a6",
+          "byteLength": 26372,
+          "observedModifiedUtc": "2026-10-29T18:28:31.757936+00:00"
+        },
+        {
+          "file": "timing.json",
+          "sha256": "caf697e8477596752d61130380f1427a2aba8dbc7eea1ea8c294c2ba8648c992",
+          "byteLength": 900,
+          "observedModifiedUtc": "2026-10-29T18:30:38.601252+00:00"
+        }
+      ],
+      "independentAuditFiles": [
+        {
+          "file": "12-luna-axis-evidence.json",
+          "byteLength": 3066,
+          "sha256": "940b1e1a4c62316c71cab44fe216621b5e9343db003df8ca14b748563cff2867"
+        },
+        {
+          "file": "14-sol-embedded-image-decode.json",
+          "byteLength": 2792,
+          "sha256": "f98260dbf710ccac0433f3d32682d98428f63c382e37403828de21810a183d8a"
+        },
+        {
+          "file": "characterbench-independent-audit.txt",
+          "byteLength": 9436,
+          "sha256": "4195297076678697c9b4f75890521ce2d4b004a5ca3a2f64f26189ec8d06aa20"
+        },
+        {
+          "file": "final-record-reconciliation.json",
+          "byteLength": 756,
+          "sha256": "478b970b875e94953f0a54778a864590d208f2bd0534577823f4066fd13714e9"
+        },
+        {
+          "file": "independent-audit-evidence.json",
+          "byteLength": 353618,
+          "sha256": "631aab385749527f4f6997c80a119340422774af5c92ed7c53b0088cdef943d6"
+        },
+        {
+          "file": "independent-host-loader.json",
+          "byteLength": 14974,
+          "sha256": "bb6d7711815f629c1ac21e6658947e35db09b09d21ae6451fa755f75a678bbc2"
+        },
+        {
+          "file": "independent-timing-audit.json",
+          "byteLength": 33101,
+          "sha256": "2b4966ed08f75af8a89805a50e0096754c201943c4b66e996cc7326dacaa806e"
+        },
+        {
+          "file": "priority-attempts.csv",
+          "byteLength": 16702,
+          "sha256": "0d17f33c10a0026f9e673efa3a94cc93a4ebc90e937273e48e21943fcdc4c41d"
+        }
+      ]
+    },
+    {
+      "attemptId": "12-v1-luna",
+      "entryId": "entry-20261029-4252e5f3b1f53c7090cd",
+      "kind": "additive correction/disclosure; original receipts and asset unchanged",
+      "notes": [
+        "Presentation defect: frozen geometry is Z-up with identity root transforms. The Y-up host preserves orientation, so the character would lie across the studio. This is a geometry/loader inference, not an observed browser render. The raw GLB remains unmodified; CPU import does not establish correct orientation."
+      ],
+      "timing": null,
+      "originalSourceFiles": [
+        {
+          "file": "Dalia_Okoro.glb",
+          "sha256": "4a5271e0b21a7fa6c728c750aab43403af1dffb803a9f06407b77c74f0bb9ae8",
+          "byteLength": 1639688,
+          "observedModifiedUtc": "2026-10-29T18:25:06.728535+00:00"
+        },
+        {
+          "file": "generate_dalia.py",
+          "sha256": "2d106bb89975df15bdb63b1c49a8b9d4fbdf1306f7ba32070292d28c497be357",
+          "byteLength": 23038,
+          "observedModifiedUtc": "2026-10-29T18:25:00.173906+00:00"
+        },
+        {
+          "file": "handoff.md",
+          "sha256": "12f6171b956fffae1e7ee1b643d416512661ebbc064075c711f09b1215dbec98",
+          "byteLength": 1890,
+          "observedModifiedUtc": "2026-10-29T18:26:30.635777+00:00"
+        },
+        {
+          "file": "run-record.json",
+          "sha256": "338fefed6308b2ff970ba8daefd7f6faff57ac71f7a6171f7916b7f950e62de4",
+          "byteLength": 1346,
+          "observedModifiedUtc": "2026-10-29T18:26:30.642307+00:00"
+        },
+        {
+          "file": "structural-check.json",
+          "sha256": "c7c048c0fb75841d1d9cf639957e1fc112ab041ce4492bb5f713d651b8d0a4cd",
+          "byteLength": 1142,
+          "observedModifiedUtc": "2026-10-29T18:25:52.321302+00:00"
+        },
+        {
+          "file": "validate_dalia.py",
+          "sha256": "41aa9883592eaffb8c8ad3b0ec7af16761c6a7e177d4586130a949f736c7e517",
+          "byteLength": 4351,
+          "observedModifiedUtc": "2026-10-29T18:25:43.887466+00:00"
+        }
+      ],
+      "independentAuditFiles": [
+        {
+          "file": "12-luna-axis-evidence.json",
+          "byteLength": 3066,
+          "sha256": "940b1e1a4c62316c71cab44fe216621b5e9343db003df8ca14b748563cff2867"
+        },
+        {
+          "file": "14-sol-embedded-image-decode.json",
+          "byteLength": 2792,
+          "sha256": "f98260dbf710ccac0433f3d32682d98428f63c382e37403828de21810a183d8a"
+        },
+        {
+          "file": "characterbench-independent-audit.txt",
+          "byteLength": 9436,
+          "sha256": "4195297076678697c9b4f75890521ce2d4b004a5ca3a2f64f26189ec8d06aa20"
+        },
+        {
+          "file": "final-record-reconciliation.json",
+          "byteLength": 756,
+          "sha256": "478b970b875e94953f0a54778a864590d208f2bd0534577823f4066fd13714e9"
+        },
+        {
+          "file": "independent-audit-evidence.json",
+          "byteLength": 353618,
+          "sha256": "631aab385749527f4f6997c80a119340422774af5c92ed7c53b0088cdef943d6"
+        },
+        {
+          "file": "independent-host-loader.json",
+          "byteLength": 14974,
+          "sha256": "bb6d7711815f629c1ac21e6658947e35db09b09d21ae6451fa755f75a678bbc2"
+        },
+        {
+          "file": "independent-timing-audit.json",
+          "byteLength": 33101,
+          "sha256": "2b4966ed08f75af8a89805a50e0096754c201943c4b66e996cc7326dacaa806e"
+        },
+        {
+          "file": "priority-attempts.csv",
+          "byteLength": 16702,
+          "sha256": "0d17f33c10a0026f9e673efa3a94cc93a4ebc90e937273e48e21943fcdc4c41d"
+        }
+      ]
+    },
+    {
+      "attemptId": "12-v1-terra",
+      "entryId": "entry-20261029-e8e46a62346d5e49b73a",
+      "kind": "additive correction/disclosure; original receipts and asset unchanged",
+      "notes": [
+        "HANDOFF.txt claims CPU front/back image review, but collected output and the enclosing attempt directory contain no matching render files. Treat the claim as producer testimony; side/above review was not claimed. No evidence was regenerated."
+      ],
+      "timing": null,
+      "originalSourceFiles": [
+        {
+          "file": "Dalia_Okoro.glb",
+          "sha256": "1d8d8cfbf3f133b4736a34b2740661d475b876485d297838867cfcb3be37c43f",
+          "byteLength": 1745420,
+          "observedModifiedUtc": "2026-10-29T18:22:37.001566+00:00"
+        },
+        {
+          "file": "generate.py",
+          "sha256": "7c80f105e1450d6a1ce3de4af35db032d37a508f0e4c255ba92db516964ba396",
+          "byteLength": 10275,
+          "observedModifiedUtc": "2026-10-29T18:22:31.042056+00:00"
+        },
+        {
+          "file": "HANDOFF.txt",
+          "sha256": "2c6573d504362612b86b3aa9c328abcabb53c1ecaf05495f14cd7867791ae399",
+          "byteLength": 1466,
+          "observedModifiedUtc": "2026-10-29T18:23:47.360095+00:00"
+        },
+        {
+          "file": "timing.json",
+          "sha256": "c924d6b212e2d07fc074f8722ad51a633999649deaeaf817d76fc777ccdfe494",
+          "byteLength": 361,
+          "observedModifiedUtc": "2026-10-29T18:23:47.337151+00:00"
+        }
+      ],
+      "independentAuditFiles": [
+        {
+          "file": "12-luna-axis-evidence.json",
+          "byteLength": 3066,
+          "sha256": "940b1e1a4c62316c71cab44fe216621b5e9343db003df8ca14b748563cff2867"
+        },
+        {
+          "file": "14-sol-embedded-image-decode.json",
+          "byteLength": 2792,
+          "sha256": "f98260dbf710ccac0433f3d32682d98428f63c382e37403828de21810a183d8a"
+        },
+        {
+          "file": "characterbench-independent-audit.txt",
+          "byteLength": 9436,
+          "sha256": "4195297076678697c9b4f75890521ce2d4b004a5ca3a2f64f26189ec8d06aa20"
+        },
+        {
+          "file": "final-record-reconciliation.json",
+          "byteLength": 756,
+          "sha256": "478b970b875e94953f0a54778a864590d208f2bd0534577823f4066fd13714e9"
+        },
+        {
+          "file": "independent-audit-evidence.json",
+          "byteLength": 353618,
+          "sha256": "631aab385749527f4f6997c80a119340422774af5c92ed7c53b0088cdef943d6"
+        },
+        {
+          "file": "independent-host-loader.json",
+          "byteLength": 14974,
+          "sha256": "bb6d7711815f629c1ac21e6658947e35db09b09d21ae6451fa755f75a678bbc2"
+        },
+        {
+          "file": "independent-timing-audit.json",
+          "byteLength": 33101,
+          "sha256": "2b4966ed08f75af8a89805a50e0096754c201943c4b66e996cc7326dacaa806e"
+        },
+        {
+          "file": "priority-attempts.csv",
+          "byteLength": 16702,
+          "sha256": "0d17f33c10a0026f9e673efa3a94cc93a4ebc90e937273e48e21943fcdc4c41d"
+        }
+      ]
+    },
+    {
+      "attemptId": "15-v1-astra",
+      "entryId": "entry-20261029-7d61dd530d712d2403af",
+      "kind": "additive correction/disclosure; original receipts and asset unchanged",
+      "notes": [
+        "side.png and above.png predate the final GLB export and are explicitly earlier-iteration evidence. Five other stills are later than export but remain producer evidence. Cleanup of renderer session 88028 is uncertain: Win32_Process inventory was denied, the renderer session became unavailable, and rendererStopUtc is null. Do not label cleanup verified."
+      ],
+      "timing": null,
+      "originalSourceFiles": [
+        {
+          "file": "above.png",
+          "sha256": "6b49de6bde0bb3908d563bd0a2848314a097d430395fd34deb71be99d166e9cc",
+          "byteLength": 86366,
+          "observedModifiedUtc": "2026-10-29T18:21:53.800641+00:00"
+        },
+        {
+          "file": "back.png",
+          "sha256": "8d18b1b9990437c61c54055cf8c7a303d69364229bbc7de1b8be7eb2b499b5f2",
+          "byteLength": 84231,
+          "observedModifiedUtc": "2026-10-29T18:26:17.640349+00:00"
+        },
+        {
+          "file": "canonical-prompt.txt",
+          "sha256": "1efe3929b87e5637bd9df5f38771712077c5089cd558d647ba7bbe274fefd620",
+          "byteLength": 7727,
+          "observedModifiedUtc": "2026-10-29T17:50:48.511105+00:00"
+        },
+        {
+          "file": "check_and_render.py",
+          "sha256": "60b6b239690e9efd2d5840379dacda2a3ec05131d43c4220f3a5104db913a544",
+          "byteLength": 6437,
+          "observedModifiedUtc": "2026-10-29T18:17:15.058047+00:00"
+        },
+        {
+          "file": "esme-duval-astra-bundle.zip",
+          "sha256": "39ade1c5386b3fb70c24b90df4c6e752f32fd56877e9c29649b693de75a9de85",
+          "byteLength": 2816722,
+          "observedModifiedUtc": "2026-10-29T18:31:10.043607+00:00"
+        },
+        {
+          "file": "esme-duval.glb",
+          "sha256": "0b6dca1b1ed881fbb5bc086d3ad1a204f44c31176e25e5a52db99eecc7e0890e",
+          "byteLength": 4850524,
+          "observedModifiedUtc": "2026-10-29T18:25:20.822508+00:00"
+        },
+        {
+          "file": "export-checks.json",
+          "sha256": "c167bb5071aea4036d71e926974bfae38de91151c67aa418e9df3def2a8eb826",
+          "byteLength": 1177,
+          "observedModifiedUtc": "2026-10-29T18:25:26.280554+00:00"
+        },
+        {
+          "file": "face.png",
+          "sha256": "9e651adc76890f4e7de1f2922d1cea4548d54f725831d12f8048b9c54f54396e",
+          "byteLength": 150551,
+          "observedModifiedUtc": "2026-10-29T18:26:45.635371+00:00"
+        },
+        {
+          "file": "finalize_receipt.py",
+          "sha256": "32f114a5d5646b1d8d507ba52ee384ae1cf8bba22d825152a455f6e22905f7d6",
+          "byteLength": 8966,
+          "observedModifiedUtc": "2026-10-29T18:28:01.197147+00:00"
+        },
+        {
+          "file": "front.png",
+          "sha256": "18ec9af8ae342fa3c0f3df74a281aec6063e583fc9ea7c1a410e548cd51bd51d",
+          "byteLength": 97134,
+          "observedModifiedUtc": "2026-10-29T18:25:55.775301+00:00"
+        },
+        {
+          "file": "frozen-prompt.json",
+          "sha256": "7ed384356206b56b384f79d043d570a46c9670c1c762bb3380d41d0abf6b2a19",
+          "byteLength": 8715,
+          "observedModifiedUtc": "2026-10-29T17:50:48.517948+00:00"
+        },
+        {
+          "file": "generate_esme.py",
+          "sha256": "bdb02efdd45cc938a5562c540663e313eb905f29ad076060ff58201ac3e823b1",
+          "byteLength": 30663,
+          "observedModifiedUtc": "2026-10-29T18:25:07.267258+00:00"
+        },
+        {
+          "file": "generation-stats.json",
+          "sha256": "370a0f42bf3049bd5423d29494104fc6ed99e563cdbd12e8ed33792e47ba7124",
+          "byteLength": 316,
+          "observedModifiedUtc": "2026-10-29T18:25:22.081879+00:00"
+        },
+        {
+          "file": "hand.png",
+          "sha256": "45d851c4b04a4821dc8b531b43d17a5b53028551e33884c4f72e68853317eb24",
+          "byteLength": 78567,
+          "observedModifiedUtc": "2026-10-29T18:26:53.505701+00:00"
+        },
+        {
+          "file": "HANDOFF.txt",
+          "sha256": "b122cd4dfea14bf472292e44177d2cd1e58ccb927028dd4cb2146d0172fcd72f",
+          "byteLength": 4102,
+          "observedModifiedUtc": "2026-10-29T18:31:09.701140+00:00"
+        },
+        {
+          "file": "inspection-geometry.npz",
+          "sha256": "83d9f724503968609885b365e86270769d2b0b51c6e2168cf779e808cbf3e14d",
+          "byteLength": 4332742,
+          "observedModifiedUtc": "2026-10-29T18:25:22.067809+00:00"
+        },
+        {
+          "file": "launch-prompt.txt",
+          "sha256": "6842e3b9c42d508424c88f5dc9609851b0b3b5dc97cfe13ff46a50088baf2cd7",
+          "byteLength": 8798,
+          "observedModifiedUtc": "2026-10-29T17:50:48.513105+00:00"
+        },
+        {
+          "file": "process-cleanup.json",
+          "sha256": "6de9619f6c599c807e4611d1e6a186ac40c78335911f14d2fe173707a3464adc",
+          "byteLength": 779,
+          "observedModifiedUtc": "2026-10-29T18:31:09.692517+00:00"
+        },
+        {
+          "file": "run-record.json",
+          "sha256": "c86c35d8759d9de53e27537e86f53f7f900e569de62691959b25a864fce76652",
+          "byteLength": 4624,
+          "observedModifiedUtc": "2026-10-29T18:31:09.700130+00:00"
+        },
+        {
+          "file": "SHA256SUMS.json",
+          "sha256": "400c1cceec0686b012a8d5c528503117d7bec59c98ebbc568790182ea5ffb593",
+          "byteLength": 1720,
+          "observedModifiedUtc": "2026-10-29T18:31:09.811929+00:00"
+        },
+        {
+          "file": "side.png",
+          "sha256": "d72702adff6f0ddb8d54e74b5c6743bdd419f888c7c2e1a21ea576bde788a1ea",
+          "byteLength": 67887,
+          "observedModifiedUtc": "2026-10-29T18:21:26.201371+00:00"
+        },
+        {
+          "file": "three-quarter.png",
+          "sha256": "759f5a29af025c49ae2f9d829b625b098e2fef9000f4121d6623f60af8ed791f",
+          "byteLength": 109748,
+          "observedModifiedUtc": "2026-10-29T18:26:33.819033+00:00"
+        },
+        {
+          "file": "visual-review.json",
+          "sha256": "42e044d8eabcf28524a1dfdeeabe8f3bfb4be0ca41e7bb7d89fb38feac17167e",
+          "byteLength": 1801,
+          "observedModifiedUtc": "2026-10-29T18:31:09.698589+00:00"
+        },
+        {
+          "file": "winding-review.json",
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "byteLength": 2,
+          "observedModifiedUtc": "2026-10-29T18:25:20.605939+00:00"
+        },
+        {
+          "file": "write_handoff.py",
+          "sha256": "b538efcff45ba54b11b418bb8db031fa0864027d55ce22e3d2038389a3aab17e",
+          "byteLength": 9928,
+          "observedModifiedUtc": "2026-10-29T18:31:08.066611+00:00"
+        }
+      ],
+      "independentAuditFiles": [
+        {
+          "file": "12-luna-axis-evidence.json",
+          "byteLength": 3066,
+          "sha256": "940b1e1a4c62316c71cab44fe216621b5e9343db003df8ca14b748563cff2867"
+        },
+        {
+          "file": "14-sol-embedded-image-decode.json",
+          "byteLength": 2792,
+          "sha256": "f98260dbf710ccac0433f3d32682d98428f63c382e37403828de21810a183d8a"
+        },
+        {
+          "file": "characterbench-independent-audit.txt",
+          "byteLength": 9436,
+          "sha256": "4195297076678697c9b4f75890521ce2d4b004a5ca3a2f64f26189ec8d06aa20"
+        },
+        {
+          "file": "final-record-reconciliation.json",
+          "byteLength": 756,
+          "sha256": "478b970b875e94953f0a54778a864590d208f2bd0534577823f4066fd13714e9"
+        },
+        {
+          "file": "independent-audit-evidence.json",
+          "byteLength": 353618,
+          "sha256": "631aab385749527f4f6997c80a119340422774af5c92ed7c53b0088cdef943d6"
+        },
+        {
+          "file": "independent-host-loader.json",
+          "byteLength": 14974,
+          "sha256": "bb6d7711815f629c1ac21e6658947e35db09b09d21ae6451fa755f75a678bbc2"
+        },
+        {
+          "file": "independent-timing-audit.json",
+          "byteLength": 33101,
+          "sha256": "2b4966ed08f75af8a89805a50e0096754c201943c4b66e996cc7326dacaa806e"
+        },
+        {
+          "file": "priority-attempts.csv",
+          "byteLength": 16702,
+          "sha256": "0d17f33c10a0026f9e673efa3a94cc93a4ebc90e937273e48e21943fcdc4c41d"
+        }
+      ]
+    },
+    {
+      "attemptId": "05-v1-astra",
+      "entryId": "entry-20261029-702678c6bca61ffa5d70",
+      "kind": "additive correction/disclosure; original receipts and asset unchanged",
+      "notes": [
+        "Four rubric-heading em dashes became hyphens in the supported actual shared launch text. Exact delivered text and hashes are retained separately. Canonical mapping is pending; comparisonEligible is false. The unchanged asset remains downloadable."
+      ],
+      "timing": null,
+      "originalSourceFiles": [
+        {
+          "file": "check_glb.py",
+          "sha256": "f22743fd6207d1eb2c16f69ddc05582593ab8272a1b237820aa24a936f81954f",
+          "byteLength": 6966,
+          "observedModifiedUtc": "2026-10-29T18:36:59.474117+00:00"
+        },
+        {
+          "file": "checks.json",
+          "sha256": "f6550334f451691edd8f43354d244ead778335457e98e65bdef90b3a868ea4a3",
+          "byteLength": 25282,
+          "observedModifiedUtc": "2026-10-29T18:37:06.007734+00:00"
+        },
+        {
+          "file": "Elena_Varga.glb",
+          "sha256": "a218b2128449fc6ad6e2b57577eb62057c614aa43f4366a3b7a7c55a12af6275",
+          "byteLength": 13816824,
+          "observedModifiedUtc": "2026-10-29T18:36:30.075628+00:00"
+        },
+        {
+          "file": "generate_elena.py",
+          "sha256": "dec0551ff3e90b7075a71b34b70e2a9ecf64fcc878451f969edbf4ebd11c6fcf",
+          "byteLength": 45133,
+          "observedModifiedUtc": "2026-10-29T18:36:12.674026+00:00"
+        },
+        {
+          "file": "handoff.txt",
+          "sha256": "238813c521491ed296f6d6da5de206974f2ab8da2de6ef3a9c0f4b96fd070b24",
+          "byteLength": 2370,
+          "observedModifiedUtc": "2026-10-29T18:45:03.968687+00:00"
+        },
+        {
+          "file": "inspect_glb.py",
+          "sha256": "10bfd3dc8a749ff8425b75854ce3de594a36c76aa3e688cdf14fac19c4203a2f",
+          "byteLength": 3008,
+          "observedModifiedUtc": "2026-10-29T18:36:58.928036+00:00"
+        },
+        {
+          "file": "receipt.json",
+          "sha256": "5f4529c39b36cbf6de093d9e279cc4b374ae9761ce1080191aa0c4516253fa4a",
+          "byteLength": 7160,
+          "observedModifiedUtc": "2026-10-29T18:45:03.968687+00:00"
+        },
+        {
+          "file": "SHA256SUMS.txt",
+          "sha256": "1b914637b8f1195e2f660a0572043ab393a388cbe9ec254ed28fc6b4aeb1fe97",
+          "byteLength": 732,
+          "observedModifiedUtc": "2026-10-29T18:45:04.005914+00:00"
+        },
+        {
+          "file": "shared_prompt.txt",
+          "sha256": "0bc04665087c9544bfcfefbe038568a5b83ce918684892cfdfcb5b59d3f5e316",
+          "byteLength": 9997,
+          "observedModifiedUtc": "2026-10-29T17:53:50.089546+00:00"
+        },
+        {
+          "file": "timing.json",
+          "sha256": "bb3b8f62369f5b649b59eef7f18445f8572b027e0166185ad75fee54f4ab7cbe",
+          "byteLength": 1229,
+          "observedModifiedUtc": "2026-10-29T18:45:03.956498+00:00"
+        }
+      ],
+      "independentAuditFiles": [
+        {
+          "file": "12-luna-axis-evidence.json",
+          "byteLength": 3066,
+          "sha256": "940b1e1a4c62316c71cab44fe216621b5e9343db003df8ca14b748563cff2867"
+        },
+        {
+          "file": "14-sol-embedded-image-decode.json",
+          "byteLength": 2792,
+          "sha256": "f98260dbf710ccac0433f3d32682d98428f63c382e37403828de21810a183d8a"
+        },
+        {
+          "file": "characterbench-independent-audit.txt",
+          "byteLength": 9436,
+          "sha256": "4195297076678697c9b4f75890521ce2d4b004a5ca3a2f64f26189ec8d06aa20"
+        },
+        {
+          "file": "final-record-reconciliation.json",
+          "byteLength": 756,
+          "sha256": "478b970b875e94953f0a54778a864590d208f2bd0534577823f4066fd13714e9"
+        },
+        {
+          "file": "independent-audit-evidence.json",
+          "byteLength": 353618,
+          "sha256": "631aab385749527f4f6997c80a119340422774af5c92ed7c53b0088cdef943d6"
+        },
+        {
+          "file": "independent-host-loader.json",
+          "byteLength": 14974,
+          "sha256": "bb6d7711815f629c1ac21e6658947e35db09b09d21ae6451fa755f75a678bbc2"
+        },
+        {
+          "file": "independent-timing-audit.json",
+          "byteLength": 33101,
+          "sha256": "2b4966ed08f75af8a89805a50e0096754c201943c4b66e996cc7326dacaa806e"
+        },
+        {
+          "file": "priority-attempts.csv",
+          "byteLength": 16702,
+          "sha256": "0d17f33c10a0026f9e673efa3a94cc93a4ebc90e937273e48e21943fcdc4c41d"
+        }
+      ]
+    }
+  ]
+}

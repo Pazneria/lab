@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self' data: blob:; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>Inspect a CharacterBench attempt - Jordan's Lab</title><link rel="stylesheet" href="assets/bench.css"><link rel="stylesheet" href="assets/results.css"><script type="module" src="assets/inspect.mjs"></script></head>
+<body><a class="skip" href="#main">Skip to inspection</a><header class="masthead"><span class="brand">JORDAN'S LAB</span><a href="results.html">All attempts</a></header>
+<main id="main"><section class="intro"><div><p class="eyebrow">CHARACTER / ORIGINAL ATTEMPT</p><h1 id="title">Inspect an attempt.</h1><p id="model" class="lede"></p></div></section>
+<p id="disclosure">Loading the frozen record.</p><p><a id="download" hidden download>Download original GLB</a> <a id="record" href="results.html">Full prompt and run evidence</a></p>
+<p id="status" role="status">The viewer starts when you choose Load 3D view.</p><button id="load" disabled>Load 3D view</button>
+<div class="toolbar" aria-label="Inspection controls"><label>Surface <select id="mode" disabled><option value="pbr">Original materials</option><option value="clay">Neutral clay</option><option value="wire">Wireframe</option></select></label><label>Light <input id="light" type="range" min="-180" max="180" value="35" disabled></label><button id="grid" aria-pressed="true" disabled>Floor grid</button><button id="reset" disabled>Reset view</button></div>
+<div id="stages" class="stages archive-stage"><div id="surface" class="surface" tabindex="0" role="group" aria-label="Character inspection" aria-describedby="camera-note status" aria-busy="false"></div></div>
+<div class="view-controls"><button data-view="front" disabled>Front</button><button data-view="side" disabled>Side</button><button data-view="back" disabled>Back</button><button data-view="top" disabled>Above</button><button data-view="face" disabled>Close-up</button></div>
+<p id="camera-note">Drag to rotate; scroll or pinch to zoom. Arrow keys rotate, plus/minus zoom, Home resets. Hidden pages unload the model; select Load 3D view to resume.</p>
+<p>Inspection shows the submitted orientation and materials. Framing uses the same neutral studio as comparisons. This page does not submit votes or assign scores.</p>
+<noscript><p><a href="data/admission.json">Read the manifest</a> for original files and exact prompts.</p></noscript></main><footer class="footer"><a href="results.html">All attempts</a><a href="./">Historical blind comparisons</a></footer></body></html>

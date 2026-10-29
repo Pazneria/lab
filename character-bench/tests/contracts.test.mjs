@@ -71,6 +71,30 @@ test('linked cameras are default; unlock keeps independent states and relink ado
   state.setLinked(true);assert.equal(state.snapshot.cameras[0].yaw,-1);assert.equal(state.snapshot.cameras[0].distance,5);
   state.setCamera(1,{pitch:Infinity,distance:-3});assert.ok(state.snapshot.cameras[0].distance>0);assert.ok(Number.isFinite(state.snapshot.cameras[0].pitch));
 });
+test('same-model repeats stay distinct but never face each other, with equal model-pair selection',()=>{
+ const modelEntry=(id,model)=>entry(id,{provenance:{modelLabel:model,requestedModel:model}});
+ const m=manifest([modelEntry('a1','A'),modelEntry('a2','A'),modelEntry('b1','B'),modelEntry('c1','C'),{...modelEntry('pending-mapping','D'),comparisonEligible:false}]);
+ assert.equal(eligiblePairs(m,prompt.id).length,5);
+ const counts=new Map();
+ for(let bin=0;bin<300;bin++){
+  const values=[.2,(bin+.5)/300,.2,.2],pair=chooseComparison(m,null,()=>values.shift()??.2).pair,key=pair.map(e=>e.provenance.requestedModel).sort().join('|');
+  counts.set(key,(counts.get(key)||0)+1);assert(!pair.some(e=>e.id==='pending-mapping'));
+ }
+ assert.deepEqual([...counts],[['A|B',100],['A|C',100],['B|C',100]]);
+ // No-repeat applies to the model pair, so repeat attempts cannot survive a
+ // filter that removes a singleton model pair and bias sequential exposure.
+ for(const previousPair of eligiblePairs(m,prompt.id)){
+  const prior=previousPair.map(e=>e.provenance.requestedModel).sort().join('|'),transitions=new Map();
+  for(let bin=0;bin<300;bin++){
+   const values=[.2,(bin+.5)/300,.2,.2];
+   const pair=chooseComparison(m,previousPair.map(e=>e.id).sort().join('|'),()=>values.shift()??.2).pair;
+   const key=pair.map(e=>e.provenance.requestedModel).sort().join('|');
+   assert.notEqual(key,prior);transitions.set(key,(transitions.get(key)||0)+1);
+  }
+  assert.deepEqual([...transitions.values()],[150,150]);
+ }
+ const state=createComparisonState(m.entries.slice(0,2));state.setReady(0,true);state.setReady(1,true);assert.equal(state.vote('a'),false);
+});
 test('vote needs both current imports; reveals only after one explicit valid preference',()=>{
   const state=createComparisonState([a,b]);assert.equal(state.label(0),'Attempt A');assert.equal(state.vote('a'),false);
   state.setReady(0,true);assert.equal(state.vote('a'),false);state.setReady(1,true);assert.equal(state.vote('skip'),false);

@@ -27,30 +27,44 @@ export function validateManifest(input) {
   return Object.freeze({version:1,prompts:[...prompts.values()],entries});
 }
 export function eligiblePairs(manifest,promptId) {
-  const entries=manifest.entries.filter(e=>e.promptId===promptId && e.admission.status==='verified');
+  const entries=manifest.entries.filter(e=>e.promptId===promptId && e.admission.status==='verified' && e.comparisonEligible!==false && e.votingAvailable!==false);
   const pairs=[];
   for(let i=0;i<entries.length;i++) for(let j=i+1;j<entries.length;j++) {
-    if(entries[i].id!==entries[j].id && entries[i].promptSha256===entries[j].promptSha256) pairs.push([entries[i],entries[j]]);
+    if(entries[i].id!==entries[j].id && entries[i].promptSha256===entries[j].promptSha256 && comparisonModel(entries[i])!==comparisonModel(entries[j])) pairs.push([entries[i],entries[j]]);
   }
   return pairs;
+}
+// Same-model repeats stay distinct records, but cannot form a model-rating pair.
+export function comparisonModel(entry){return entry.provenance?.requestedModel||entry.comparisonModel||entry.provenance?.sessionReportedModel||entry.provenance?.modelLabel;}
+const attemptPairKey=pair=>pair.map(entry=>entry.id).sort().join('|');
+const modelPairKey=pair=>pair.map(comparisonModel).sort().join('|');
+function withoutPreviousModelPair(pairs,previous){
+  const prior=pairs.find(pair=>attemptPairKey(pair)===previous);
+  return prior?pairs.filter(pair=>modelPairKey(pair)!==modelPairKey(prior)):pairs;
+}
+function pickModelPair(pairs,random){
+  const groups=new Map();
+  for(const pair of pairs){const key=pair.map(comparisonModel).sort().join('|');if(!groups.has(key))groups.set(key,[]);groups.get(key).push(pair);}
+  const pick=items=>items[Math.min(items.length-1,Math.max(0,Math.floor(random()*items.length)))];
+  const group=pick([...groups.values()]);return group.length===1?group[0]:pick(group);
 }
 export function choosePair(manifest,promptId,previous=null,random=Math.random) {
   const pairs=eligiblePairs(manifest,promptId);
   if(!pairs.length) return null;
-  const signature=p=>p.map(e=>e.id).sort().join('|');
-  const candidates=pairs.filter(p=>signature(p)!==previous);
-  const pool=candidates.length?candidates:pairs;
-  const index=Math.min(pool.length-1,Math.max(0,Math.floor(random()*pool.length)));
-  const pair=pool[index];
+  const candidates=withoutPreviousModelPair(pairs,previous);
+  const otherAttempts=pairs.filter(pair=>attemptPairKey(pair)!==previous);
+  const pool=candidates.length?candidates:otherAttempts.length?otherAttempts:pairs;
+  const pair=pickModelPair(pool,random);
   return random()<.5?[...pair]:[pair[1],pair[0]];
 }
 export function chooseComparison(manifest,previous=null,random=Math.random) {
   const options=manifest.prompts.map(prompt=>({promptId:prompt.id,pairs:eligiblePairs(manifest,prompt.id)})).filter(option=>option.pairs.length);
-  const alternatives=options.map(option=>({...option,pairs:option.pairs.filter(pair=>pair.map(entry=>entry.id).sort().join('|')!==previous)})).filter(option=>option.pairs.length);
-  const pool=alternatives.length?alternatives:options;if(!pool.length)return null;
+  const alternatives=options.map(option=>({...option,pairs:withoutPreviousModelPair(option.pairs,previous)})).filter(option=>option.pairs.length);
+  const otherAttempts=options.map(option=>({...option,pairs:option.pairs.filter(pair=>attemptPairKey(pair)!==previous)})).filter(option=>option.pairs.length);
+  const pool=alternatives.length?alternatives:otherAttempts.length?otherAttempts:options;if(!pool.length)return null;
   const pick=items=>items[Math.min(items.length-1,Math.max(0,Math.floor(random()*items.length)))];
   // Choose the prompt first so extra attempts cannot give it extra weight.
-  const option=pick(pool),pair=pick(option.pairs);
+  const option=pick(pool),pair=pickModelPair(option.pairs,random);
   return {promptId:option.promptId,pair:random()<.5?[...pair]:[pair[1],pair[0]]};
 }
 export const DEFAULT_CAMERA=Object.freeze({yaw:0,pitch:.12,distance:3.6,targetY:0});
@@ -66,7 +80,7 @@ export function createComparisonState(pair=null) {
   let current=pair, generation=0, choice=null, ready=[false,false], linked=true, active=0;
   let cameras=[{...DEFAULT_CAMERA},{...DEFAULT_CAMERA}];
   const isValidPair=()=>current?.length===2 && current[0].id!==current[1].id && current[0].promptId===current[1].promptId &&
-    current[0].promptSha256===current[1].promptSha256 && current.every(e=>e.admission?.status==='verified');
+    current[0].promptSha256===current[1].promptSha256 && comparisonModel(current[0])!==comparisonModel(current[1]) && current.every(e=>e.admission?.status==='verified'&&e.comparisonEligible!==false&&e.votingAvailable!==false);
   return {
     get snapshot(){return {pair:current,generation,choice,ready:[...ready],linked,active,cameras:cameras.map(c=>({...c})),revealed:choice!==null,canVote:!!isValidPair()&&ready.every(Boolean)&&choice===null};},
     setPair(pair){current=pair;generation++;choice=null;ready=[false,false];linked=true;active=0;cameras=[{...DEFAULT_CAMERA},{...DEFAULT_CAMERA}];return generation;},

@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import {validateManifest,eligiblePairs} from '../assets/contracts.mjs';
 const raw=JSON.parse(readFileSync(new URL('../data/admission.json',import.meta.url)));
 const evidence=JSON.parse(readFileSync(new URL('../data/farid-source-evidence.json',import.meta.url)));
-const manifest=validateManifest(raw);
+const manifest=validateManifest({...raw,entries:raw.entries.filter(e=>!e.id.startsWith('entry-20261029-'))});
 test('Farid v2 preserves exact rubric/common hash and four distinct completed attempts',()=>{
  const p=manifest.prompts.find(p=>p.id==='03');assert.equal(p.sha256,'e6c8206eda3e42ba7e2c68c5e37cfb26b5e95e0d83ac2ef7cd4b3896507c2767');
  assert.equal(createHash('sha256').update(p.text).digest('hex'),p.sha256);assert.match(p.text,/DRAFT V2/);assert.match(p.text,/Visual execution.*45 points/);assert(!p.text.endsWith('\n'));

@@ -1,0 +1,23 @@
+{
+  "baseCommit": "0ca714d0cfa61064945dae60ac1dac72a421822a",
+  "serialization": "JSON.stringify record; original property order",
+  "prompts": {
+    "01": "ce44c454b54ddeb09b1dbf619e5af27e95ffdfd2f62888a8599a672ec422ec7e",
+    "02": "256c9d536dfecbe2c5f61b297704c481a3ae08dcfd006bfa9e6473ee27ef4478",
+    "03": "65ec2f4ecfa009b905d326ee898155a1a19bd1d744cf35b9e8f8adfd1f37ea82"
+  },
+  "entries": {
+    "entry-01-01": "ca4f990b7982d72ff8d66d3a844bcbf0c3e7cf05d2e1ef68de11edc9b6fde4d1",
+    "entry-01-02": "c7ed41356a1dce7be61d9cf28f61f7b5dc5bc0c6baa2cb8915f81a770fd647b1",
+    "entry-02-01": "7d4e2f22736e7b98f03da4979653ed30ed81abd03a7af2317d56c05efb1c70d9",
+    "entry-02-02": "0bb57ca808f6a010083038044faef701b337e0f5f47e8d60e35dba4dadc3b3cf",
+    "entry-01-03": "388816827f14ddd7ee589156bab793da830652e273c80b2d8710ae624a73b823",
+    "entry-02-03": "6814025ec0efd612507b1002bdee609e5d96962f17ae1775c63da46f854c1343",
+    "entry-01-04": "ba3e75b589fffac0c8eea3428a61917c9952d602424081488aaea8222aff15cb",
+    "entry-02-04": "02398601ef3f99321ac559bdbd5f693b17193276ad5b8910001ef66da698643c",
+    "entry-03-r01": "925f2f4211ba7c4e79c172f2f514010350a94d02ea17aa7d07997303b4fbdbb5",
+    "entry-03-r02": "e93ecd0c67b299279af352b1516a114ba1062943ff0177ec5819b244bc97efcc",
+    "entry-03-04": "c2938df5c85e492f6aae21f40ba860e0712985702ac100d7453d197188fd826c",
+    "entry-03-r03": "f2d3b09379d6eb4378bcefbb8ef17c7d5cafb4e87448d4b4917d975bc5a0476e"
+  }
+}
