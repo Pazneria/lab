@@ -15,9 +15,11 @@ attempt had its own one-hour cap; the recorded clocks were not restarted.
 
 The publication has 18 prompts and 75 records, including two historical invalid
 files without downloads. All 73 available GLBs have download and inspection
-links. **All 63 new attempts are outside public voting until the existing
-service catalog is updated.** The ten historical eligible entries remain active.
-The new archive and viewer do not create credentials or submit judgments.
+links. The initial publication kept all 63 new attempts outside voting while
+the service catalog awaited an update. The subsequent authorized catalog update
+admits 62 new attempts alongside the ten historical eligible entries. Elena/Astra
+remains excluded pending prompt mapping. The archive and individual inspection
+viewer do not create voter credentials or submit judgments.
 
 ## Import limitation resolved
 

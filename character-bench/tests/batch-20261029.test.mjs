@@ -21,16 +21,17 @@ test('all 63 original exports and 15 new prompt texts remain exact and CPU-compa
  }
  assert.equal(images,54);assert.equal(inspectableEntry(catalog,'https://example.com/asset.glb'),null);
 });
-test('all new attempts are viewable but cannot vote against the unchanged published service',()=>{
- for(const e of batch){assert.equal(e.votingAvailable,false);assert.match(e.votingUnavailableReason,/service/);}
- const active=catalog.prompts.flatMap(p=>eligiblePairs(catalog,p.id));assert.equal(active.length,12);
- assert(active.flat().every(e=>!e.id.startsWith('entry-20261029-')));
+test('62 new attempts join distinct-model voting while the unresolved variant remains excluded',()=>{
+ assert.equal(batch.filter(e=>e.votingAvailable).length,62);
+ const active=catalog.prompts.flatMap(p=>eligiblePairs(catalog,p.id));assert.equal(active.length,106);
+ assert.equal(new Set(active.flat().map(e=>e.id)).size,72);
  const e=batch[0],peer=catalog.entries.find(p=>p.promptId===e.promptId&&p.provenance.requestedModel!==e.provenance.requestedModel&&p.admission.status==='verified');
- const state=createComparisonState([e,peer]);state.setReady(0,true);state.setReady(1,true);assert.equal(state.vote('a'),false);
+ const state=createComparisonState([e,peer]);state.setReady(0,true);state.setReady(1,true);assert.equal(state.vote('a'),true);
  // Simulate a future service admission without changing the public manifest.
  const future=validateManifest({...raw,entries:raw.entries.map(e=>({...e,votingAvailable:true}))});
  for(const p of future.prompts)for(const pair of eligiblePairs(future,p.id))assert.notEqual(pair[0].provenance.requestedModel,pair[1].provenance.requestedModel);
  const variant=batch.find(e=>e.provenance.batchAttemptId==='05-v1-astra');assert.equal(variant.comparisonEligible,false);assert.equal(variant.admission.status,'pending');
+ assert.equal(variant.votingAvailable,false);assert.match(variant.votingUnavailableReason,/prompt mapping/);
  assert(!future.prompts.flatMap(p=>eligiblePairs(future,p.id)).flat().some(e=>e.id===variant.id));
 });
 test('new disclosures retain real model defects, receipt corrections and unverified visuals',()=>{

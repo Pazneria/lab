@@ -1666,8 +1666,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-astra, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-a71c627e3e91eacf7b0e",
@@ -2020,8 +2019,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model gpt-6-astra, reasoning XHIGH; disclose if serving backend is not independently exposed. The parent will send no mid-run messages. No numeric grading weights are prescribed."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-9d9a4eeb2b812d63dd72",
@@ -2351,8 +2349,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-45633273b12540ef40d1",
@@ -2696,8 +2693,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-e2d482faf408066fb96d",
@@ -2912,8 +2908,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-f9bab703949835dcb6b1",
@@ -3206,8 +3201,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-ef93b221e5cb7ad5ce44",
@@ -3488,8 +3482,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-702678c6bca61ffa5d70",
@@ -3762,7 +3755,7 @@
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
       "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingUnavailableReason": "Public voting is unavailable because exact prompt mapping remains unresolved. The original file is available for inspection."
     },
     {
       "id": "entry-20261029-30e35f6e89bc1459ad72",
@@ -4014,8 +4007,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-0401739059a3654150ea",
@@ -4270,8 +4262,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-438b6399b970d0a7a8ff",
@@ -4481,8 +4472,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-d4c289b07d8674e4d8af",
@@ -4847,8 +4837,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-c40280d8ffe0827977ba",
@@ -5045,8 +5034,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-7224da1962c4170496c3",
@@ -5285,8 +5273,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-663d172944e4089ccf82",
@@ -5483,8 +5470,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-b992004c78a81a0f76dd",
@@ -5892,8 +5878,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-4bbb54df4856d8ddb6f7",
@@ -6123,8 +6108,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-9d0f23c64812c5b584aa",
@@ -6474,8 +6458,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-f0697ee09babf127c480",
@@ -6699,8 +6682,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-740760f64feb1bfcc6dd",
@@ -7047,8 +7029,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-5342e1d144374b1b3efe",
@@ -7257,8 +7238,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-718adbbfb991f7f0c858",
@@ -7533,8 +7513,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-1881a620e2d7c5866c34",
@@ -7731,8 +7710,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-edf7a2d45a5050dfd4af",
@@ -8181,8 +8159,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-24e61a2cdfa9fb6fa6a8",
@@ -8391,8 +8368,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-56e1fa918e9d467ce587",
@@ -8634,8 +8610,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-89dab8e46c99ad6fa873",
@@ -8836,8 +8811,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-d422c52a79a57b80dad5",
@@ -9334,8 +9308,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-7b02ebc481a0a9fe9c35",
@@ -9545,8 +9518,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-fc3e8fc14694d65f44f0",
@@ -9815,8 +9787,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-e81616ce85e1ff17260b",
@@ -10025,8 +9996,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-e82460a21eb74edda21b",
@@ -10451,8 +10421,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-fa80670e76db36e8a2d5",
@@ -10656,8 +10625,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-772cb36c3b6c760e3924",
@@ -10974,8 +10942,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-126cc4f70ef0ed3a63d9",
@@ -11178,8 +11145,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-80ad832485e35d626647",
@@ -11628,8 +11594,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-4252e5f3b1f53c7090cd",
@@ -11839,8 +11804,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-c0468e63808f2a961f2c",
@@ -12169,8 +12133,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-e8e46a62346d5e49b73a",
@@ -12368,8 +12331,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-85c683311b517d5c3020",
@@ -12824,8 +12786,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-22b9def5805df3422685",
@@ -13034,8 +12995,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-ee2228228429964ff921",
@@ -13370,8 +13330,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-fb12555223a1968e0b09",
@@ -13580,8 +13539,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-ed0178b5750516b202b6",
@@ -14006,8 +13964,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-a0e98c64d0b481b29ff2",
@@ -14210,8 +14167,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-f53d75232369606ad970",
@@ -14598,8 +14554,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-2fa363286cc300e24af6",
@@ -14808,8 +14763,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-7d61dd530d712d2403af",
@@ -15133,8 +15087,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-14c392bb6357835f7965",
@@ -15385,8 +15338,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-9e529954caba347bea30",
@@ -15679,8 +15631,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-52d076519c22d177741a",
@@ -15883,8 +15834,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-e4937f5316debb026053",
@@ -16131,8 +16081,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-bee73a5ecf9c2b838a81",
@@ -16341,8 +16290,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-3b26d46c1a4ec7969501",
@@ -16608,8 +16556,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-d0e3677d0e2421c9a3d6",
@@ -16816,8 +16763,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-9130a14847f6ab48a37a",
@@ -17134,8 +17080,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-9909fc627ab47b6fe5a5",
@@ -17320,8 +17265,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-56850cd5831bb82c4397",
@@ -17518,8 +17462,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-71db1e0bd795225ab7a2",
@@ -17726,8 +17669,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-b82f9e76f88e69128042",
@@ -18218,8 +18160,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-d6acf297445fd4cd3f00",
@@ -18440,8 +18381,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-3291d480c90fcc0942a8",
@@ -18697,8 +18637,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     },
     {
       "id": "entry-20261029-dd0c660afb1daae6626f",
@@ -18915,8 +18854,7 @@
         ],
         "executionConstraints": "Work only in your own fresh workspace and create your own character independently. Do not read or reuse other benchmark entrants or other project assets. Do not invoke other models or subagents. Do not publish or start another task. Do not launch/control a browser, Playwright, native UI, mouse or keyboard, or start preview servers. No GPU/performance benchmarks on the user's computer. Headless asset generation and lightweight non-browser asset/export checks are permitted. Disclose visual/interactive/deformation checks not performed. Use available reputable tools within existing permissions; any blocked action stays blocked. Before your final receipt, stop all workspace-owned background/test processes and verify cleanup. Preserve the final self-contained GLB and generation source with timing, actual checks and limitations. Requested model: recorded in the launch metadata; reasoning XHIGH. Disclose if serving backend is not independently exposed. The parent will send no mid-run messages. Use the grading criteria stated above."
       },
-      "votingAvailable": false,
-      "votingUnavailableReason": "Public voting is unavailable until this attempt is admitted by the existing voting service. Historical voting is unchanged."
+      "votingAvailable": true
     }
   ]
 }
