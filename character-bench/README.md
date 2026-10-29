@@ -1,8 +1,27 @@
 # CharacterBench comparison route
 
 A host-owned, buildless comparison UI for Jordan's Lab. This change is confined
-to `character-bench/`; it does not change the Lab lobby, benchmark entrants,
+to `character-bench/` and its file attributes; it does not change the Lab lobby,
 SceneBench catalog, votes or grading behavior. CharacterBench uses separate routes and tables in the existing public voting service; audience and bindings are preserved.
+
+## October 29 results
+
+[All attempts](results.html) contains 75 records and 73 original downloadable
+GLBs: the historical 12 records plus 63 new completed attempts. The new batch is
+three Astra repeats of Mara/Ivo/Farid and 15 new versioned briefs on Astra,
+Sol, Terra and Luna. The new records are additive; historical records and votes
+are unchanged. See [the batch evidence and limitations](data/OCTOBER-29.md).
+
+Every available file has a separate [inspection route](inspect.html). It starts
+only when the visitor selects **Load 3D view**, uses the existing studio importer,
+and unloads on hide/departure. It displays model identity and never writes votes.
+The original orientation, materials and file bytes are retained.
+
+**Public voting for all 63 new attempts is unavailable pending the existing
+service's catalog update.** `votingAvailable:false` excludes them from pairing
+and direct vote state. Historical ten eligible attempts and twelve pairs still
+work. Elena/Astra additionally has unresolved punctuation-variant prompt mapping;
+its file remains inspectable without being silently treated as identical input.
 
 ## Route and integration
 
@@ -19,9 +38,11 @@ or paused load. Next cancels old imports and skips without recording a vote;
 pending writes still require confirmation before navigation.
 
 On an unpinned initial load and every Next, an eligible character prompt is chosen
-uniformly first, then a pair within it, then left/right order with equal probability.
-Farid's extra pairs do not increase its chance of being selected. Next excludes
-the immediately previous unordered pair globally when any alternative exists;
+uniformly first, then a requested-model pair, then one of its attempt pairs, then
+left/right order with equal probability. Extra attempts cannot increase a
+model pair's sampling weight. Next excludes the immediately previous model pair
+within its prompt when alternatives exist; otherwise it avoids the prior attempt
+pair when possible. Same-requested-model attempts never face each other;
 later revisits remain possible. Reload does not force the last viewed pair, except
 that an unresolved write resumes its exact pair and orientation for safe retry.
 An explicit prompt link or manual prompt choice randomizes within that character.
@@ -113,8 +134,9 @@ Sol/Astra replacements retain their punctuation-variant launch hash; Luna receiv
 the exact corrected original launch. Each full launch hash remains separate from
 the common v2 hash. No received prompt or original failed history is rewritten.
 Original Sol/Astra export failures and the unresolved original Luna remain outside voting.
-Distinct models follow SceneBench eligibility; future same-model repeats need a
-separate within-model reporting policy before inclusion in this model ranking.
+New same-model repeats remain distinct records and are currently outside voting.
+Their future admission must preserve distinct-model pairing and the sampling
+policy above; existing judgments remain keyed to the original attempt IDs.
 
 The leaderboard uses SceneBench's regularized Bradley–Terry fit on an Elo scale:
 baseline 1000, scale 400, prior precision 1, method `bt-elo-v1`. The prior adds no
@@ -211,7 +233,10 @@ QA after the parent's graphics hold is lifted.
 
 ## CPU verification
 
-No dependency installation or build is required. From the repository root:
+The frontend is buildless. Core tests need Node; the real image-decoding tests
+also need an **already installed** Python with Pillow. Set
+`CHARACTERBENCH_PYTHON` to that executable when it is not the default Python.
+No dependency is installed by these commands. From the repository root:
 
 ```text
 node --experimental-vm-modules --test character-bench/tests/*.test.mjs
@@ -219,6 +244,8 @@ node --check character-bench/assets/app.mjs
 node --check character-bench/assets/viewer.mjs
 node --check character-bench/assets/preflight.mjs
 node --check character-bench/assets/preflight-worker.mjs
+node --check character-bench/assets/inspect.mjs
+node --check character-bench/assets/results.mjs
 ```
 
 The focused data/wiring/catalog tests cover same-prompt pairing, admission failures,
@@ -237,3 +264,17 @@ service build do not establish live deployment, mobile gestures, assistive-devic
 operation or steady graphics performance. Frozen runtime-review flags are retained
 until supported evidence is admitted. See the task integration handoff for exact
 validation/publication status. No active entrant was contacted or modified.
+
+`tools/parse-glb.cpu.mjs --list paths.json --output report.json` accepts an array
+of frozen GLB paths. It verifies the host profile, genuinely decodes embedded
+PNG/JPEG with bounded Pillow reads, imports with the pinned native loader, checks
+finite bounds and texture bindings, disposes resources, and verifies unchanged
+source hashes. The original image-refusing fixture remains separate historical
+evidence. It was a fixture limitation, not an exporter defect.
+
+Optional `tests/archive-browser.mjs` uses existing installations named by
+`LAB_PLAYWRIGHT_MODULE` and `LAB_BROWSER_EXECUTABLE`, with output under
+`CHARACTERBENCH_EVIDENCE`. It checks desktop/mobile archive layout and two small
+representative exports using CPU SwiftShader; external requests are blocked and
+no votes are submitted. This bounded smoke test does not certify all assets'
+visual quality, hardware performance, touch behavior or deformation.
