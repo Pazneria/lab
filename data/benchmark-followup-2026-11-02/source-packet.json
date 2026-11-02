@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-02",
+  "aa": {
+    "source_url": "https://artificialanalysis.ai/models",
+    "carbon_medium_url": "https://artificialanalysis.ai/models/gemini-4-carbon-medium",
+    "version": "5.0",
+    "selection": "Five configurations in the source FAQ, rounded to whole index points; not the complete leaderboard.",
+    "release_note": "Carbon announcement and AA model release date are October 28; evaluation date and exact model snapshot unknown. AA model-page availability FAQ conflicts with its no-public-API notice; access status is not resolved here.",
+    "cost_note": "The $6.59 weighted index task cost is AA’s token-derived, benchmark-weighted index statistic, not generic measured task cost.",
+    "rows": [
+      {
+        "label": "Gemini 4 Carbon (High)",
+        "value": 59,
+        "effort": "high",
+        "reported_weighted_index_cost_usd": null,
+        "model_release_date": "2026-10-28",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      },
+      {
+        "label": "Claude Opus 5.5 (Max, Default Fallback)",
+        "value": 58,
+        "effort": "max",
+        "reported_weighted_index_cost_usd": null,
+        "model_release_date": null,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      },
+      {
+        "label": "Gemini 4 Carbon (Medium)",
+        "value": 58,
+        "effort": "medium",
+        "reported_weighted_index_cost_usd": 6.59,
+        "model_release_date": "2026-10-28",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      },
+      {
+        "label": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+        "value": 57,
+        "effort": "xhigh",
+        "reported_weighted_index_cost_usd": null,
+        "model_release_date": null,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      },
+      {
+        "label": "GPT-6 Astra (Max)",
+        "value": 57,
+        "effort": "max",
+        "reported_weighted_index_cost_usd": null,
+        "model_release_date": null,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      }
+    ]
+  },
+  "robodojo_rc": {
+    "source_url": "https://robocurve.org/",
+    "protocol_url": "https://robocurve.org/opus-5-5-robodojo-rc-tier-1/",
+    "task_count": 6,
+    "attempts_per_configuration": 120,
+    "score_definition": "Mean human-graded rubric progress; partial credit is possible, so a mean score is not a task completion rate.",
+    "selection_limitation": "The authors first evaluated Astra on 18 real-world RoboDojo tasks and selected its six highest-scoring, easiest tasks for Tier 1. This selection limits generalization and can favor that system.",
+    "settings": "I2RT YAM robot arms and Inspect Robots; adapted tasks and progress rubrics. LLMs have 40 model calls, VLAs have 3,600 control steps. Costs are estimates: GPU rental for GR00T and MolmoAct2, Dream Labs hosted inference for Dream-1, API estimates for LLMs with Astra medium cache-adjusted. LLM time is wall-clock per attempt; VLA time is time to final score. Do not treat the time figures as one uniformly measured metric. Model release dates are not evaluation dates.",
+    "rows": [
+      {
+        "label": "GR00T N1.7",
+        "value": 9.5,
+        "reported_cost_usd_per_attempt": 0.05,
+        "reported_minutes": 0.9,
+        "cost_basis": "GPU rental",
+        "effort": null,
+        "model_release_date": "2026-04-17",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "VLA time to final score"
+      },
+      {
+        "label": "MolmoAct2",
+        "value": 18.9,
+        "reported_cost_usd_per_attempt": 0.07,
+        "reported_minutes": 0.8,
+        "cost_basis": "GPU rental",
+        "effort": null,
+        "model_release_date": "2026-05-04",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "VLA time to final score"
+      },
+      {
+        "label": "Dream-1",
+        "value": 59.3,
+        "reported_cost_usd_per_attempt": 0.15,
+        "reported_minutes": 1.5,
+        "cost_basis": "Dream Labs hosted inference",
+        "effort": null,
+        "model_release_date": "2026-10-19",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "VLA time to final score"
+      },
+      {
+        "label": "Gemini 3.8 Flash (high)",
+        "value": 36.2,
+        "reported_cost_usd_per_attempt": 0.66,
+        "reported_minutes": 7.2,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-09-02",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "Opus 5.5 (medium)",
+        "value": 36.0,
+        "reported_cost_usd_per_attempt": 0.9,
+        "reported_minutes": 4.5,
+        "cost_basis": "API estimate",
+        "effort": "medium",
+        "model_release_date": "2026-09-22",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "GPT-6 Sol (high) (fast)",
+        "value": 22.0,
+        "reported_cost_usd_per_attempt": 0.95,
+        "reported_minutes": 3.7,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-09-23",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "GPT-6 Astra (medium)",
+        "value": 36.7,
+        "reported_cost_usd_per_attempt": 1.14,
+        "reported_minutes": 4.2,
+        "cost_basis": "API estimate, cache-adjusted",
+        "effort": "medium",
+        "model_release_date": "2026-09-03",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "GPT-5.6 Sol (high) (fast)",
+        "value": 14.9,
+        "reported_cost_usd_per_attempt": 1.77,
+        "reported_minutes": 3.6,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-07-09",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "GPT-6.1 Sol (high) (fast)",
+        "value": 41.7,
+        "reported_cost_usd_per_attempt": 2.15,
+        "reported_minutes": 4.0,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-09-29",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "Opus 5.5 (high) (fast)",
+        "value": 38.2,
+        "reported_cost_usd_per_attempt": 2.23,
+        "reported_minutes": 3.1,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-09-22",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "Gemini 4 Argon (high) (priority)",
+        "value": 48.2,
+        "reported_cost_usd_per_attempt": 2.34,
+        "reported_minutes": 20.5,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-10-13",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      },
+      {
+        "label": "GPT-6 Astra (high) (fast)",
+        "value": 42.5,
+        "reported_cost_usd_per_attempt": 3.48,
+        "reported_minutes": 4.0,
+        "cost_basis": "API estimate",
+        "effort": "high",
+        "model_release_date": "2026-09-03",
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "time_basis": "LLM wall-clock per attempt"
+      }
+    ]
+  }
+}

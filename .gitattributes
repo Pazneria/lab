@@ -82,3 +82,6 @@ character-bench/tools/* text eol=lf
 
 data/benchmark-refresh-2026-11-02/** -text
 data/gallery-refresh-projection-2026-11-02.json text eol=lf
+
+data/benchmark-followup-2026-11-02/** -text
+data/gallery-followup-projection-2026-11-02.json text eol=lf

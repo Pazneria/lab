@@ -11526,6 +11526,20 @@ window.LAB_GALLERY = {
       "matters": "Human preference is different from screenshot fidelity and functional browser completion.",
       "read": "Higher ratings reflect voters’ preferences within this Website category. Other DesignArena boards and website subcategories are separate. Models without an effort label have unspecified effort. The source shows percentage margins of error, but its page and methodology describe uncertainty differently; no Elo error bars are inferred. Displayed time has an unverified definition. Evaluation dates, harness settings and task costs are unknown.",
       "date": "Website table updated November 2, 2026 at 14:07 UTC; evaluation dates unavailable"
+    },
+    "aa-intelligence-index-2026-11-02": {
+      "question": "How do reported configurations compare on AA Intelligence Index v5?",
+      "tests": "The five configurations in AA’s current FAQ are reported as rounded index points.",
+      "matters": "The index combines nine evaluations across four weighted capability groups.",
+      "read": "This selection includes Carbon Medium at its reported medium effort. Scores are rounded to whole points and drawn from the same source review; the earlier 29-configuration selection and v4.3.2 remain in history. Index versions use different tasks and cannot be compared as a capability trend. Evaluation dates and exact model snapshots are unknown.",
+      "date": "Source reviewed November 2, 2026; run dates unavailable"
+    },
+    "robodojo-rc-tier1-2026": {
+      "question": "How much progress do robot systems make on selected real-world tasks?",
+      "tests": "The author evaluates six adapted physical tasks with 120 attempts per configuration; human rubrics allow partial progress.",
+      "matters": "These are real robot trials under a specific task selection and controller setup.",
+      "read": "The values are average partial-progress scores, not task completion rates. Authors selected the six easiest tasks after evaluating Astra on 18 tasks; that selection limits generalization. LLMs and vision-language-action models use different control limits, cost bases and time definitions. Estimated costs and reported times are kept in each source record; the plot compares score only. Model release dates do not establish evaluation dates. This is separate from the older RoboDojo-RealEval cohort.",
+      "date": "Source reviewed November 2, 2026; run dates unavailable"
     }
   },
   "frontend": {
@@ -12108,16 +12122,16 @@ window.LAB_GALLERY = {
   "cardMetadata": {
     "schema_version": 1,
     "prepared_at": "2026-11-02",
-    "basis": "Earlier source records preserved; selected DesignArena Website preference results added.",
+    "basis": "Earlier evidence preserved; current AA v5 FAQ selection and separate real-robot RoboDojo-RC results added.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 101,
-      "plotted": 92,
-      "current": 64,
-      "historical": 30,
+      "all": 103,
+      "plotted": 94,
+      "current": 65,
+      "historical": 31,
       "source_only": 7,
       "unavailable": 2,
-      "default_families": 68
+      "default_families": 69
     },
     "cards": {
       "hle-diamond": {
@@ -15613,8 +15627,8 @@ window.LAB_GALLERY = {
       },
       "aa-intelligence-index": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier October 28 collection and v4.3.2 history retained separately from the November 2 source review.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-10-28",
@@ -15813,6 +15827,66 @@ window.LAB_GALLERY = {
           "latest": null,
           "known": 0,
           "unknown": 15
+        }
+      },
+      "aa-intelligence-index-2026-11-02": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Five configurations in the source FAQ, rounded to whole index points; not the complete leaderboard.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-02",
+          "mode": "primary_source_review",
+          "scope": "Direct primary source review; no new evaluations executed."
+        },
+        "result_packet_checked_at": "2026-11-02",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "AA v5 / five reported configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 5
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-10-28",
+          "latest": "2026-10-28",
+          "known": 2,
+          "unknown": 3
+        }
+      },
+      "robodojo-rc-tier1-2026": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Twelve configurations on six selected real-robot tasks; partial-progress score, not completion.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-02",
+          "mode": "primary_source_review",
+          "scope": "Direct primary source review; no new evaluations executed."
+        },
+        "result_packet_checked_at": "2026-11-02",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "RoboDojo-RC Tier 1 / 12 configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 12
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-04-17",
+          "latest": "2026-10-19",
+          "known": 12,
+          "unknown": 0
         }
       }
     }
@@ -64037,6 +64111,562 @@ window.LAB_GALLERY = {
             ]
           }
         ]
+      },
+      {
+        "id": "aa-intelligence-index-2026-11-02",
+        "name": "Artificial Analysis Intelligence Index / v5 / November 2 review",
+        "category": "standard",
+        "question": "How do reported configurations compare on AA Intelligence Index v5?",
+        "tests": "The five configurations in AA’s current FAQ are reported as rounded index points.",
+        "matters": "The index combines nine evaluations across four weighted capability groups.",
+        "read": "This selection includes Carbon Medium at its reported medium effort. Scores are rounded to whole points and drawn from the same source review; the earlier 29-configuration selection and v4.3.2 remain in history. Index versions use different tasks and cannot be compared as a capability trend. Evaluation dates and exact model snapshots are unknown.",
+        "historical": false,
+        "source_input": "data/benchmark-followup-2026-11-02/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-followup-2026-11-02/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-02",
+        "variants": [
+          {
+            "id": "aa-intelligence-index-2026-11-02",
+            "label": "AA v5 / five reported configurations",
+            "rows": [
+              {
+                "label": "Gemini 4 Carbon (High)",
+                "value": 59,
+                "effort": "high",
+                "reported_weighted_index_cost_usd": null,
+                "model_release_date": "2026-10-28",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-2026-11-02-0",
+                "raw": {
+                  "label": "Gemini 4 Carbon (High)",
+                  "value": 59,
+                  "effort": "high",
+                  "reported_weighted_index_cost_usd": null,
+                  "model_release_date": "2026-10-28",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Claude Opus 5.5 (Max, Default Fallback)",
+                "value": 58,
+                "effort": "max",
+                "reported_weighted_index_cost_usd": null,
+                "model_release_date": null,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-2026-11-02-1",
+                "raw": {
+                  "label": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "value": 58,
+                  "effort": "max",
+                  "reported_weighted_index_cost_usd": null,
+                  "model_release_date": null,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Gemini 4 Carbon (Medium)",
+                "value": 58,
+                "effort": "medium",
+                "reported_weighted_index_cost_usd": 6.59,
+                "model_release_date": "2026-10-28",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-2026-11-02-2",
+                "raw": {
+                  "label": "Gemini 4 Carbon (Medium)",
+                  "value": 58,
+                  "effort": "medium",
+                  "reported_weighted_index_cost_usd": 6.59,
+                  "model_release_date": "2026-10-28",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+                "value": 57,
+                "effort": "xhigh",
+                "reported_weighted_index_cost_usd": null,
+                "model_release_date": null,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-2026-11-02-3",
+                "raw": {
+                  "label": "Claude Opus 5.5 (Xhigh, Default Fallback)",
+                  "value": 57,
+                  "effort": "xhigh",
+                  "reported_weighted_index_cost_usd": null,
+                  "model_release_date": null,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "GPT-6 Astra (Max)",
+                "value": 57,
+                "effort": "max",
+                "reported_weighted_index_cost_usd": null,
+                "model_release_date": null,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-2026-11-02-4",
+                "raw": {
+                  "label": "GPT-6 Astra (Max)",
+                  "value": 57,
+                  "effort": "max",
+                  "reported_weighted_index_cost_usd": null,
+                  "model_release_date": null,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "index",
+                "label": "AA Intelligence Index v5.0",
+                "field": "value",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "Five configurations in the source FAQ, rounded to whole index points; not the complete leaderboard.",
+            "source_input": "data/benchmark-followup-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": false,
+            "coverage": "Five configurations in the source FAQ, rounded to whole index points; not the complete leaderboard.",
+            "settings": {
+              "version": "5.0",
+              "carbon_medium_source": "https://artificialanalysis.ai/models/gemini-4-carbon-medium",
+              "cost_note": "The $6.59 weighted index task cost is AA’s token-derived, benchmark-weighted index statistic, not generic measured task cost.",
+              "availability": "Carbon announcement and AA model release date are October 28; evaluation date and exact model snapshot unknown. AA model-page availability FAQ conflicts with its no-public-API notice; access status is not resolved here."
+            },
+            "limitations": [
+              "Evaluation dates and exact model snapshots are not reported."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "robodojo-rc-tier1-2026",
+        "name": "RoboDojo-RC / Tier 1 real robots",
+        "category": "physical",
+        "question": "How much progress do robot systems make on selected real-world tasks?",
+        "tests": "The author evaluates six adapted physical tasks with 120 attempts per configuration; human rubrics allow partial progress.",
+        "matters": "These are real robot trials under a specific task selection and controller setup.",
+        "read": "The values are average partial-progress scores, not task completion rates. Authors selected the six easiest tasks after evaluating Astra on 18 tasks; that selection limits generalization. LLMs and vision-language-action models use different control limits, cost bases and time definitions. Estimated costs and reported times are kept in each source record; the plot compares score only. Model release dates do not establish evaluation dates. This is separate from the older RoboDojo-RealEval cohort.",
+        "historical": false,
+        "source_input": "data/benchmark-followup-2026-11-02/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-followup-2026-11-02/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-02",
+        "variants": [
+          {
+            "id": "robodojo-rc-tier1-2026",
+            "label": "RoboDojo-RC Tier 1 / 12 configurations",
+            "rows": [
+              {
+                "label": "GR00T N1.7",
+                "value": 9.5,
+                "reported_cost_usd_per_attempt": 0.05,
+                "reported_minutes": 0.9,
+                "cost_basis": "GPU rental",
+                "effort": null,
+                "model_release_date": "2026-04-17",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "VLA time to final score",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-0",
+                "raw": {
+                  "label": "GR00T N1.7",
+                  "value": 9.5,
+                  "reported_cost_usd_per_attempt": 0.05,
+                  "reported_minutes": 0.9,
+                  "cost_basis": "GPU rental",
+                  "effort": null,
+                  "model_release_date": "2026-04-17",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "VLA time to final score"
+                }
+              },
+              {
+                "label": "MolmoAct2",
+                "value": 18.9,
+                "reported_cost_usd_per_attempt": 0.07,
+                "reported_minutes": 0.8,
+                "cost_basis": "GPU rental",
+                "effort": null,
+                "model_release_date": "2026-05-04",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "VLA time to final score",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-1",
+                "raw": {
+                  "label": "MolmoAct2",
+                  "value": 18.9,
+                  "reported_cost_usd_per_attempt": 0.07,
+                  "reported_minutes": 0.8,
+                  "cost_basis": "GPU rental",
+                  "effort": null,
+                  "model_release_date": "2026-05-04",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "VLA time to final score"
+                }
+              },
+              {
+                "label": "Dream-1",
+                "value": 59.3,
+                "reported_cost_usd_per_attempt": 0.15,
+                "reported_minutes": 1.5,
+                "cost_basis": "Dream Labs hosted inference",
+                "effort": null,
+                "model_release_date": "2026-10-19",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "VLA time to final score",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-2",
+                "raw": {
+                  "label": "Dream-1",
+                  "value": 59.3,
+                  "reported_cost_usd_per_attempt": 0.15,
+                  "reported_minutes": 1.5,
+                  "cost_basis": "Dream Labs hosted inference",
+                  "effort": null,
+                  "model_release_date": "2026-10-19",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "VLA time to final score"
+                }
+              },
+              {
+                "label": "Gemini 3.8 Flash (high)",
+                "value": 36.2,
+                "reported_cost_usd_per_attempt": 0.66,
+                "reported_minutes": 7.2,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-02",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-3",
+                "raw": {
+                  "label": "Gemini 3.8 Flash (high)",
+                  "value": 36.2,
+                  "reported_cost_usd_per_attempt": 0.66,
+                  "reported_minutes": 7.2,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-02",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Opus 5.5 (medium)",
+                "value": 36,
+                "reported_cost_usd_per_attempt": 0.9,
+                "reported_minutes": 4.5,
+                "cost_basis": "API estimate",
+                "effort": "medium",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-4",
+                "raw": {
+                  "label": "Opus 5.5 (medium)",
+                  "value": 36,
+                  "reported_cost_usd_per_attempt": 0.9,
+                  "reported_minutes": 4.5,
+                  "cost_basis": "API estimate",
+                  "effort": "medium",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6 Sol (high) (fast)",
+                "value": 22,
+                "reported_cost_usd_per_attempt": 0.95,
+                "reported_minutes": 3.7,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-23",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-5",
+                "raw": {
+                  "label": "GPT-6 Sol (high) (fast)",
+                  "value": 22,
+                  "reported_cost_usd_per_attempt": 0.95,
+                  "reported_minutes": 3.7,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-23",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6 Astra (medium)",
+                "value": 36.7,
+                "reported_cost_usd_per_attempt": 1.14,
+                "reported_minutes": 4.2,
+                "cost_basis": "API estimate, cache-adjusted",
+                "effort": "medium",
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-6",
+                "raw": {
+                  "label": "GPT-6 Astra (medium)",
+                  "value": 36.7,
+                  "reported_cost_usd_per_attempt": 1.14,
+                  "reported_minutes": 4.2,
+                  "cost_basis": "API estimate, cache-adjusted",
+                  "effort": "medium",
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-5.6 Sol (high) (fast)",
+                "value": 14.9,
+                "reported_cost_usd_per_attempt": 1.77,
+                "reported_minutes": 3.6,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-07-09",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-7",
+                "raw": {
+                  "label": "GPT-5.6 Sol (high) (fast)",
+                  "value": 14.9,
+                  "reported_cost_usd_per_attempt": 1.77,
+                  "reported_minutes": 3.6,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-07-09",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6.1 Sol (high) (fast)",
+                "value": 41.7,
+                "reported_cost_usd_per_attempt": 2.15,
+                "reported_minutes": 4,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-29",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-8",
+                "raw": {
+                  "label": "GPT-6.1 Sol (high) (fast)",
+                  "value": 41.7,
+                  "reported_cost_usd_per_attempt": 2.15,
+                  "reported_minutes": 4,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-29",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Opus 5.5 (high) (fast)",
+                "value": 38.2,
+                "reported_cost_usd_per_attempt": 2.23,
+                "reported_minutes": 3.1,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-9",
+                "raw": {
+                  "label": "Opus 5.5 (high) (fast)",
+                  "value": 38.2,
+                  "reported_cost_usd_per_attempt": 2.23,
+                  "reported_minutes": 3.1,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Gemini 4 Argon (high) (priority)",
+                "value": 48.2,
+                "reported_cost_usd_per_attempt": 2.34,
+                "reported_minutes": 20.5,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-10-13",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-10",
+                "raw": {
+                  "label": "Gemini 4 Argon (high) (priority)",
+                  "value": 48.2,
+                  "reported_cost_usd_per_attempt": 2.34,
+                  "reported_minutes": 20.5,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-10-13",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6 Astra (high) (fast)",
+                "value": 42.5,
+                "reported_cost_usd_per_attempt": 3.48,
+                "reported_minutes": 4,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11",
+                "raw": {
+                  "label": "GPT-6 Astra (high) (fast)",
+                  "value": 42.5,
+                  "reported_cost_usd_per_attempt": 3.48,
+                  "reported_minutes": 4,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "progress",
+                "label": "Mean task progress",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://robocurve.org/",
+            "source_locator": "Twelve configurations on six selected real-robot tasks; partial-progress score, not completion.",
+            "source_input": "data/benchmark-followup-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": false,
+            "coverage": "Twelve configurations on six selected real-robot tasks; partial-progress score, not completion.",
+            "settings": {
+              "tasks": 6,
+              "attempts_per_configuration": 120,
+              "protocol_url": "https://robocurve.org/opus-5-5-robodojo-rc-tier-1/",
+              "score_definition": "Mean human-graded rubric progress; partial credit is possible, so a mean score is not a task completion rate.",
+              "selection_limitation": "The authors first evaluated Astra on 18 real-world RoboDojo tasks and selected its six highest-scoring, easiest tasks for Tier 1. This selection limits generalization and can favor that system.",
+              "methodology": "I2RT YAM robot arms and Inspect Robots; adapted tasks and progress rubrics. LLMs have 40 model calls, VLAs have 3,600 control steps. Costs are estimates: GPU rental for GR00T and MolmoAct2, Dream Labs hosted inference for Dream-1, API estimates for LLMs with Astra medium cache-adjusted. LLM time is wall-clock per attempt; VLA time is time to final score. Do not treat the time figures as one uniformly measured metric. Model release dates are not evaluation dates."
+            },
+            "limitations": [
+              "Evaluation dates and exact model snapshots are not reported."
+            ]
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -66994,6 +67624,10 @@ window.LAB_GALLERY = {
       "mentalhealthbench": [
         "mentalhealthbench-october-deployment",
         "mentalhealthbench"
+      ],
+      "aa-intelligence-index": [
+        "aa-intelligence-index-2026-11-02",
+        "aa-intelligence-index"
       ]
     },
     "rune": {
@@ -101886,6 +102520,14 @@ window.LAB_GALLERY = {
         "vals-index-v2-2-2026-10-30",
         "ladder-robot-manipulation-2026"
       ]
+    },
+    "november_followup": {
+      "schema_version": 1,
+      "checked_at": "2026-11-02",
+      "card_ids": [
+        "aa-intelligence-index-2026-11-02",
+        "robodojo-rc-tier1-2026"
+      ]
     }
   },
   "expanded": {
@@ -116753,6 +117395,8 @@ window.LAB_GALLERY = {
       "data/gemini-4-carbon-2026-10-28/evidence-manifest.json",
       "data/benchmark-refresh-2026-11-02/source-packet.json",
       "data/benchmark-refresh-2026-11-02/evidence-manifest.json",
+      "data/benchmark-followup-2026-11-02/source-packet.json",
+      "data/benchmark-followup-2026-11-02/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -116769,7 +117413,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-11-02.json",
+    "presentationMetadata": "data/gallery-metadata-followup-2026-11-02.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

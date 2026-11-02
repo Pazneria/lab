@@ -1,0 +1,9 @@
+# November 2 AA and RoboDojo-RC follow-up
+
+Baseline `c686f4ab01a7924933ffd38822ea2aa82e63dd3b` is the published November 2 gallery refresh. Prior gallery rows and source packets remain intact.
+
+[Artificial Analysis](https://artificialanalysis.ai/models) reports five leading configurations in its FAQ, using rounded Intelligence Index v5 points. [Carbon Medium](https://artificialanalysis.ai/models/gemini-4-carbon-medium) scores 58 at medium reasoning effort; its model release date is October 28 and is not an evaluation date. AA's weighted $6.59 index-task cost is a token-derived benchmark-weighted statistic, not a generic measured task cost. The medium model's availability FAQ conflicts with the page's no-public-API notice; access is left unresolved. The earlier 29-configuration October 28 selection and v4.3.2 history remain accessible, with no cross-version trend.
+
+[Robocurve](https://robocurve.org/) reports 12 configurations on RoboDojo-RC Tier 1, with 120 attempts per configuration across six physical tasks. Its [September 23 protocol](https://robocurve.org/opus-5-5-robodojo-rc-tier-1/) says these were the six easiest after Astra was evaluated on 18 tasks. That model-specific selection limits generalization. Scores measure human-graded partial progress, not completion rates; this cohort is distinct from historical RoboDojo-RealEval.
+
+LLMs have a 40-call cap and wall-clock time per attempt; VLAs have a 3,600-step cap and time to final score. Costs are estimates with distinct bases: GPU rental for GR00T and MolmoAct2, hosted inference for Dream-1, and API costs for LLMs. Astra medium's cost is cache-adjusted. Dream-1's October 19 release date is not its evaluation date. Reported cost and time values remain in raw source details without a common time or cost plot. Exact evaluation dates and model snapshots remain unknown. No new evaluations were run.
