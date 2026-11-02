@@ -1062,12 +1062,24 @@
         state.history !== "source-only" &&
         state.history !== "unavailable"
       ) {
-        const seen = new Set();
-        cards = cards.filter((c) => {
+        // Choose among the cards that passed the active filters. Family order
+        // declares the preferred representative; encounter order can put a
+        // historical sibling first when newer coverage is appended later.
+        const preferred = new Map();
+        for (const c of cards) {
           const family = families.get(c.id) || c.id;
-          if (seen.has(family)) return false;
+          const members = input.coverage.familyGroups[family];
+          const rank = members ? members.indexOf(c.id) : 0;
+          const previous = preferred.get(family);
+          if (!previous || rank < previous.rank)
+            preferred.set(family, { card: c, rank });
+        }
+        const seen = new Set();
+        cards = cards.flatMap((c) => {
+          const family = families.get(c.id) || c.id;
+          if (seen.has(family)) return [];
           seen.add(family);
-          return true;
+          return [preferred.get(family).card];
         });
       }
       grid.replaceChildren(...cards.map(cardNode));

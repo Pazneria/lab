@@ -182,8 +182,39 @@ async function main() {
     assert.equal(await page.locator(".mini-evidence").count(), 0);
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
+    // Default family cards must follow the declared representative order.
+    const latestAA = page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]');
+    assert.equal(await latestAA.count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 0);
+    assert.match(await latestAA.locator(".mini-graph").textContent(), /Gemini 4 Carbon \(Medium\)/);
+    assert.equal(await latestAA.getAttribute("href"), "results.html?benchmark=aa-intelligence-index-2026-11-02");
+    assert.equal(await page.locator('[data-benchmark-id="webdev-arena-frontend-2026-10-27"]').count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="healthbench-professional-october-deployment"]').count(), 1);
+    await latestAA.click();
+    await page.locator(".coverage-chart").waitFor();
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 5);
+    await page.locator("select[name=family]").selectOption("aa-intelligence-index");
+    assert.match(page.url(), /benchmark=aa-intelligence-index(?:&|$)/);
+    await page.locator("select[name=cohort]").selectOption("aa-index-v5-selected");
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 29);
+    await page.locator("select[name=cohort]").selectOption("gemini-4-argon-aa-intelligence-index-v4-3-2");
+    assert.equal(await page.locator(".coverage-mark").getAttribute("data-value"), "53");
+    await page.locator("select[name=family]").selectOption("aa-intelligence-index-2026-11-02");
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 5);
+    await go("benchmarks.html?history=historical");
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 0);
+    await go("benchmarks.html?q=exact%20model%20configurations");
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 0);
+    await go("benchmarks.html?history=current");
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 1);
+    await go("benchmarks.html");
+    pass("Default family representatives follow declared order; filtered history, matching and AA detail selectors remain accessible");
     await page.getByLabel("Results history").selectOption("all");
     assert.equal(await page.locator(".benchmark-card").count(), 103);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 1);
     assert.equal(await page.locator(".mini-graph svg").count(), 94);
     pass(
       "Default gallery groups result families without empty cards; all 103 direct cards remain accessible, including all 20 discovery IDs",
