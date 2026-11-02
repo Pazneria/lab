@@ -1,6 +1,11 @@
 {
-  "cards": 98,
-  "coverageCards": 64,
+  "cards": 100,
+  "coverageCards": 66,
+  "novemberInputSHA256": {
+    "data/benchmark-refresh-2026-11-02/source-packet.json": "0be6471a5194ec816816d705605908f4c3a0e35e9bcd618da527e2bf8a671387",
+    "data/benchmark-refresh-2026-11-02/evidence-manifest.json": "30cf8a2ad2dbe82fe6e128297cc55a54ac56567216c60c838fcbf45b8ad4bb70"
+  },
+  "novemberProjectionSHA256": "4dc0d3d7b7c362044d69f7606a094ac247470e2c724665aa76c38798179da78f",
   "carbonInputSHA256": {
     "data/gemini-4-carbon-2026-10-28/source-packet.json": "4bacac485f5e4c7314347f7849d63d0f3f15c82763c7213d1ff30637bd656b23",
     "data/gemini-4-carbon-2026-10-28/evidence-manifest.json": "d537eb2cbd8d0b69a9aa180dcaf76f8ddd0cd1ecf63d538bff6cc2b8264c79bc"
