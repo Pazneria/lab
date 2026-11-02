@@ -50,5 +50,5 @@ for (const old of next.coverage.cards) {
  const current=JSON.parse(JSON.stringify(asset.window.LAB_GALLERY.coverage.cards.find(c=>c.id===old.id)));
  assert.deepEqual(current.variants.slice(0,old.variants.length),old.variants);
 }
-assert.equal(asset.window.LAB_GALLERY.provenance.presentationMetadata,'data/gallery-metadata-2026-11-02.json');
+assert.equal(asset.window.LAB_GALLERY.provenance.presentationMetadata,'data/gallery-metadata-followup-2026-11-02.json');
 console.log(JSON.stringify({passed:true,sourceSHA256:sha,addedRows:31,priorCoverageCardsUnchanged:55,directCards:92,families:60,rendererIntegrated:true,benchmarkExecuted:false}));

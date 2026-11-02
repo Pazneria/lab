@@ -1,6 +1,11 @@
 {
-  "cards": 101,
-  "coverageCards": 67,
+  "cards": 103,
+  "coverageCards": 69,
+  "followupInputSHA256": {
+    "data/benchmark-followup-2026-11-02/source-packet.json": "da3c5213f614f71c78fb812b3e39e3a1e77c3e30bf8193fd6201d1c903facd8f",
+    "data/benchmark-followup-2026-11-02/evidence-manifest.json": "fd83dcdba7989faec43cdc0acb3f61ce561776e19d37ee3983c3cad04cbdb228"
+  },
+  "followupProjectionSHA256": "5036a7cad7a9c75f7444c571760938f8c96f0a20cca84b805d998ed371ef7461",
   "novemberInputSHA256": {
     "data/benchmark-refresh-2026-11-02/source-packet.json": "8ac3f439c37bbbc2df74def148e4ce07991197d041e4ea440eaa7f9c093d4ee1",
     "data/benchmark-refresh-2026-11-02/evidence-manifest.json": "dccced2318fd23f9421b894948395c8e735412a6c64d95cbe9532c2a9ad9964e"

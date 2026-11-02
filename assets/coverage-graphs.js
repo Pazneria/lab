@@ -88,7 +88,7 @@
   function valid(data) {
     if (
       data?.schema_version !== 1 ||
-      data.cards?.length !== (data.november_refresh ? 67 : data.carbon_updates ? 64 : data.weekly_refresh ? 58 : data.benchmark_updates ? 55 : data.model_updates ? 54 : data.refresh ? 52 : 39) ||
+      data.cards?.length !== (data.november_followup ? 69 : data.november_refresh ? 67 : data.carbon_updates ? 64 : data.weekly_refresh ? 58 : data.benchmark_updates ? 55 : data.model_updates ? 54 : data.refresh ? 52 : 39) ||
       data.first_wave_ids?.length !== 27 ||
       data.backlog?.length !== 52 ||
       data.audits?.length !== 46 ||
@@ -98,7 +98,7 @@
     if (data.refresh && (data.refresh.schema_version !== 1 ||
       data.refresh.checked_at !== "2026-10-12" || data.refresh.card_ids?.length !== 13 ||
       new Set(data.refresh.card_ids).size !== 13 ||
-      new Set(data.cards.map((c) => c.id)).size !== (data.november_refresh ? 67 : data.carbon_updates ? 64 : data.weekly_refresh ? 58 : data.benchmark_updates ? 55 : data.model_updates ? 54 : 52) ||
+      new Set(data.cards.map((c) => c.id)).size !== (data.november_followup ? 69 : data.november_refresh ? 67 : data.carbon_updates ? 64 : data.weekly_refresh ? 58 : data.benchmark_updates ? 55 : data.model_updates ? 54 : 52) ||
       !data.refresh.card_ids.every((id) => data.cards.some((c) => c.id === id)) ||
       !Array.isArray(data.refresh.directory) ||
       !data.refresh.directory.every((c) => typeof c.name === "string" && safe(c.url) && typeof c.status === "string"))) return false;
@@ -130,6 +130,7 @@
       data.carbon_updates.augmented_card_ids?.length !== 4 || new Set(data.carbon_updates.augmented_card_ids).size !== 4 ||
       !["frontierswe-v2", "terminal-bench-4", "osworld-v2-1-offline-october", "terminal-bench-science-native-agents"].every(id => data.carbon_updates.augmented_card_ids.includes(id) && data.cards.some(c => c.id === id)))) return false;
     if (data.november_refresh && (data.november_refresh.schema_version !== 1 || data.november_refresh.checked_at !== "2026-11-02" || data.november_refresh.card_ids?.length !== 3 || !["designarena-website-2026-11-02", "vals-index-v2-2-2026-10-30", "ladder-robot-manipulation-2026"].every(id => data.november_refresh.card_ids.includes(id) && data.cards.some(c => c.id === id)))) return false;
+    if (data.november_followup && (data.november_followup.schema_version !== 1 || data.november_followup.checked_at !== "2026-11-02" || data.november_followup.card_ids?.length !== 2 || !["aa-intelligence-index-2026-11-02", "robodojo-rc-tier1-2026"].every(id => data.november_followup.card_ids.includes(id) && data.cards.some(c => c.id === id)))) return false;
     return (
       data.cards.every(
         (c) =>
