@@ -5,7 +5,7 @@
     "data/benchmark-refresh-2026-11-02/source-packet.json": "8ac3f439c37bbbc2df74def148e4ce07991197d041e4ea440eaa7f9c093d4ee1",
     "data/benchmark-refresh-2026-11-02/evidence-manifest.json": "dccced2318fd23f9421b894948395c8e735412a6c64d95cbe9532c2a9ad9964e"
   },
-  "novemberProjectionSHA256": "fdf78ba3d9b26641469305ef33d9e4156480bc525c37828d18ad43fdf295f482",
+  "novemberProjectionSHA256": "b72f058b8272d8152af4d259e4112da469fc71d212a7ba39e7808312110103c7",
   "carbonInputSHA256": {
     "data/gemini-4-carbon-2026-10-28/source-packet.json": "4bacac485f5e4c7314347f7849d63d0f3f15c82763c7213d1ff30637bd656b23",
     "data/gemini-4-carbon-2026-10-28/evidence-manifest.json": "d537eb2cbd8d0b69a9aa180dcaf76f8ddd0cd1ecf63d538bff6cc2b8264c79bc"

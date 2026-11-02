@@ -1696,9 +1696,9 @@
       "name": "LADDER / robot manipulation",
       "category": "physical",
       "question": "How reliably do robot systems complete multi-step manipulation tasks?",
-      "tests": "LADDER tests robot systems in simulation across 145 tasks and 2,024 episodes per system. Separate selectors show a 10-task Lite subset and individual real-robot tasks.",
+      "tests": "LADDER tests robot systems in simulation across 145 tasks and 2,024 episodes per system. Separate selectors show a 10-task Lite subset and real-robot task groups.",
       "matters": "Long tasks require a robot and its controller to complete every step; results are specific to the tested systems and settings.",
-      "read": "Full simulation scores pool episodes across suites; an equal-suite mean is a separate metric. Lite uses 10 tasks and must not be compared as a full-suite score. Hardware tasks use 12 episodes per system and are separate from simulation; the physical verifier differs. API costs per successful episode are source-reported estimates excluding simulator and low-level GPU costs, not cost per attempt. Evaluation dates and model effort remain unknown.",
+      "read": "Full simulation scores pool episodes across suites; an equal-suite mean is a separate metric. Lite uses 10 tasks and must not be compared as a full-suite score. Hardware uses 12 episodes per task and system; some rows pool tasks. Hardware results are separate from simulation; the physical verifier differs. API costs per successful episode are source-reported estimates excluding simulator and low-level GPU costs, not cost per attempt. Evaluation dates and model effort remain unknown.",
       "historical": false,
       "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
       "source_inputs": [
@@ -2172,8 +2172,8 @@
           "complete": true,
           "coverage": "Real robot / Franka / single destination / 5 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "Franka / single destination / 5 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "Franka / single destination / 5 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2257,8 +2257,8 @@
           "complete": true,
           "coverage": "Real robot / Franka / exclusion / 2 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "Franka / exclusion / 2 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "Franka / exclusion / 2 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2342,8 +2342,8 @@
           "complete": true,
           "coverage": "Real robot / Franka / ordered / 3 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "Franka / ordered / 3 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "Franka / ordered / 3 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2427,8 +2427,8 @@
           "complete": true,
           "coverage": "Real robot / WidowX / single destination / 1 subgoal",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "WidowX / single destination / 1 subgoal",
+            "episodes_per_task_per_system": 12,
+            "task_group": "WidowX / single destination / 1 subgoal",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2512,8 +2512,8 @@
           "complete": true,
           "coverage": "Real robot / WidowX / single destination / 2–3 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "WidowX / single destination / 2–3 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "WidowX / single destination / 2–3 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2597,8 +2597,8 @@
           "complete": true,
           "coverage": "Real robot / WidowX / split destination / 2–3 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "WidowX / split destination / 2–3 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "WidowX / split destination / 2–3 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2682,8 +2682,8 @@
           "complete": true,
           "coverage": "Real robot / WidowX / exclusion / 2 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "WidowX / exclusion / 2 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "WidowX / exclusion / 2 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2767,8 +2767,8 @@
           "complete": true,
           "coverage": "Real robot / WidowX / ordered / 2 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "WidowX / ordered / 2 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "WidowX / ordered / 2 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2852,8 +2852,8 @@
           "complete": true,
           "coverage": "Real robot / WidowX / duplicates / 2 subgoals",
           "settings": {
-            "episodes_per_system": 12,
-            "task": "WidowX / duplicates / 2 subgoals",
+            "episodes_per_task_per_system": 12,
+            "task_group": "WidowX / duplicates / 2 subgoals",
             "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
           },
           "limitations": [
@@ -2867,9 +2867,9 @@
   "notes": {
     "ladder-robot-manipulation-2026": {
       "question": "How reliably do robot systems complete multi-step manipulation tasks?",
-      "tests": "LADDER tests robot systems in simulation across 145 tasks and 2,024 episodes per system. Separate selectors show a 10-task Lite subset and individual real-robot tasks.",
+      "tests": "LADDER tests robot systems in simulation across 145 tasks and 2,024 episodes per system. Separate selectors show a 10-task Lite subset and real-robot task groups.",
       "matters": "Long tasks require a robot and its controller to complete every step; results are specific to the tested systems and settings.",
-      "read": "Full simulation scores pool episodes across suites; an equal-suite mean is a separate metric. Lite uses 10 tasks and must not be compared as a full-suite score. Hardware tasks use 12 episodes per system and are separate from simulation; the physical verifier differs. API costs per successful episode are source-reported estimates excluding simulator and low-level GPU costs, not cost per attempt. Evaluation dates and model effort remain unknown.",
+      "read": "Full simulation scores pool episodes across suites; an equal-suite mean is a separate metric. Lite uses 10 tasks and must not be compared as a full-suite score. Hardware uses 12 episodes per task and system; some rows pool tasks. Hardware results are separate from simulation; the physical verifier differs. API costs per successful episode are source-reported estimates excluding simulator and low-level GPU costs, not cost per attempt. Evaluation dates and model effort remain unknown.",
       "date": "Announced October 26, 2026; run dates unavailable"
     },
     "vals-index-v2-2-2026-10-30": {
