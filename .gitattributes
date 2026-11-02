@@ -79,3 +79,6 @@ character-bench/data/*.json text eol=lf
 character-bench/assets/*.mjs text eol=lf
 character-bench/tests/*.mjs text eol=lf
 character-bench/tools/* text eol=lf
+
+data/benchmark-refresh-2026-11-02/** -text
+data/gallery-refresh-projection-2026-11-02.json text eol=lf

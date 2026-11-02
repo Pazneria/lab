@@ -11103,7 +11103,7 @@ window.LAB_GALLERY = {
       "question": "Which AI-generated website designs do voters like?",
       "tests": "Anonymous tournaments compare four generated designs and collect five pairwise votes. The creator fits Bradley-Terry preference ratings from those choices. This card follows the Overall Frontend text-to-HTML track, which is separate from image-to-HTML, web-app and fullstack tracks.",
       "matters": "Design preference can capture whether a page feels coherent and appealing. It complements tests of visual fidelity and working features, because a popular design does not necessarily reproduce a reference or implement every requested behavior.",
-      "read": "DesignArena measures human preference with Bradley–Terry ratings. Website/frontend, HTML, agentic and builder setups remain separate. The reviewed category page provided no extractable synchronized score rows; unavailable is not zero. Output limits and settings are not standardized.",
+      "read": "The November 2 Website results are available in a separate DesignArena Website chart. Website, HTML, agentic and builder categories remain distinct; output limits and settings are not standardized.",
       "date": "Primary source checked October 5, 2026 · browser rating labels observed · numeric comparison not admitted",
       "notice": "The live board contains rating labels; no dated comparison, task cost or time values have been admitted for plotting here."
     },
@@ -11505,6 +11505,27 @@ window.LAB_GALLERY = {
       "matters": "The current index combines harder tasks and a changed scoring mix. Version labels make the comparison meaningful.",
       "read": "v5 was announced October 27. It adds FrontierCode 2.0 and Terminal-Bench-Science, and changes the knowledge and reasoning datasets. Exact effort and fallback labels remain attached to each model. Earlier index scores use different datasets and scoring: a numerical decline is not evidence of a capability regression. The archived v4.3.2 Argon result is a separate history choice. Missing v5 scores are unavailable, not zero. No cross-version trend is calculated.",
       "date": "Primary sources reviewed October 28, 2026; run dates unavailable"
+    },
+    "ladder-robot-manipulation-2026": {
+      "question": "How reliably do robot systems complete multi-step manipulation tasks?",
+      "tests": "LADDER tests robot systems in simulation across 145 tasks and 2,024 episodes per system. Separate selectors show a 10-task Lite subset and real-robot task groups.",
+      "matters": "Long tasks require a robot and its controller to complete every step; results are specific to the tested systems and settings.",
+      "read": "Full simulation scores pool episodes across suites; an equal-suite mean is a separate metric. Lite uses 10 tasks and must not be compared as a full-suite score. Hardware uses 12 episodes per task and system; some rows pool tasks. Hardware results are separate from simulation; the physical verifier differs. API costs per successful episode are source-reported estimates excluding simulator and low-level GPU costs, not cost per attempt. Evaluation dates and model effort remain unknown.",
+      "date": "Announced October 26, 2026; run dates unavailable"
+    },
+    "vals-index-v2-2-2026-10-30": {
+      "question": "How do models score on Vals Index v2.2?",
+      "tests": "This composite combines finance, coding, legal and tax benchmark results with GDP-based sector weights.",
+      "matters": "The index summarizes these benchmark tasks; it does not measure economic automation.",
+      "read": "The October 30 table reports 32 model names. Effort and agent settings are unspecified in this table. Earlier snapshots and versions remain distinct. Cost per test includes token-estimated Code Migration costs, and reported durations have an unverified composite aggregation; both are retained in source details. Evaluation dates and model snapshots are unknown.",
+      "date": "Version released October 19; leaderboard updated October 30, 2026"
+    },
+    "designarena-website-2026-11-02": {
+      "question": "Which generated websites do DesignArena voters prefer?",
+      "tests": "This Website leaderboard reports head-to-head design preferences. The chart selects the 15 visible configurations from 181 entries.",
+      "matters": "Human preference is different from screenshot fidelity and functional browser completion.",
+      "read": "Higher ratings reflect voters’ preferences within this Website category. Other DesignArena boards and website subcategories are separate. Models without an effort label have unspecified effort. The source shows percentage margins of error, but its page and methodology describe uncertainty differently; no Elo error bars are inferred. Displayed time has an unverified definition. Evaluation dates, harness settings and task costs are unknown.",
+      "date": "Website table updated November 2, 2026 at 14:07 UTC; evaluation dates unavailable"
     }
   },
   "frontend": {
@@ -12086,17 +12107,17 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-10-28",
-    "basis": "Earlier evidence retained; restricted-rollout Carbon observations and a separately versioned AA v5 comparison added.",
+    "prepared_at": "2026-11-02",
+    "basis": "Earlier source records preserved; selected DesignArena Website preference results added.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 98,
-      "plotted": 89,
-      "current": 61,
+      "all": 101,
+      "plotted": 92,
+      "current": 64,
       "historical": 30,
       "source_only": 7,
       "unavailable": 2,
-      "default_families": 65
+      "default_families": 68
     },
     "cards": {
       "hle-diamond": {
@@ -15632,6 +15653,166 @@ window.LAB_GALLERY = {
           "latest": "2026-10-28",
           "known": 40,
           "unknown": 2
+        }
+      },
+      "ladder-robot-manipulation-2026": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Full simulation, Lite subset and individual hardware tasks are separate cohorts.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-02",
+          "mode": "primary_source_review",
+          "scope": "Primary LADDER research and October 26 announcement."
+        },
+        "result_packet_checked_at": "2026-11-02",
+        "snapshot_at": null,
+        "publication_at": "2026-10-26",
+        "publication_label": "Announcement date; run dates unavailable",
+        "evaluations": [
+          {
+            "slice": "Full simulation / 145 tasks / pooled episodes",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 10
+          },
+          {
+            "slice": "LADDER-Lite / 10 simulated tasks",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / Franka / single destination / 5 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / Franka / exclusion / 2 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / Franka / ordered / 3 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / WidowX / single destination / 1 subgoal",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / WidowX / single destination / 2–3 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / WidowX / split destination / 2–3 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / WidowX / exclusion / 2 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / WidowX / ordered / 2 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          },
+          {
+            "slice": "Real robot / WidowX / duplicates / 2 subgoals",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 40
+        }
+      },
+      "vals-index-v2-2-2026-10-30": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Complete displayed October 30 v2.2 leaderboard; separate from earlier source snapshots.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-02",
+          "mode": "primary_source_review",
+          "scope": "Primary Vals index table and v2.2 methodology."
+        },
+        "result_packet_checked_at": "2026-11-02",
+        "snapshot_at": "2026-10-30",
+        "publication_at": "2026-10-19",
+        "publication_label": "Version release date; table updated October 30",
+        "evaluations": [
+          {
+            "slice": "v2.2 / October 30 / 32 reported models",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 32
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 32
+        }
+      },
+      "designarena-website-2026-11-02": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "15 visible rows of 181 website entries; website subcategory leaderboards are separate.",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-02",
+          "mode": "primary_source_review",
+          "scope": "Direct Website table and methodology review; no model evaluation executed."
+        },
+        "result_packet_checked_at": "2026-11-02",
+        "snapshot_at": "2026-11-02",
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Website / November 2 / first 15 of 181",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 15
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 15
         }
       }
     }
@@ -60995,6 +61176,2867 @@ window.LAB_GALLERY = {
             "coverage": "One selected Argon observation; not a complete updated model leaderboard. Every setting belongs to this reporting source."
           }
         ]
+      },
+      {
+        "id": "designarena-website-2026-11-02",
+        "name": "DesignArena / Website / November 2",
+        "category": "frontend",
+        "question": "Which generated websites do DesignArena voters prefer?",
+        "tests": "This Website leaderboard reports head-to-head design preferences. The chart selects the 15 visible configurations from 181 entries.",
+        "matters": "Human preference is different from screenshot fidelity and functional browser completion.",
+        "read": "Higher ratings reflect voters’ preferences within this Website category. Other DesignArena boards and website subcategories are separate. Models without an effort label have unspecified effort. The source shows percentage margins of error, but its page and methodology describe uncertainty differently; no Elo error bars are inferred. Displayed time has an unverified definition. Evaluation dates, harness settings and task costs are unknown.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-02/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-02",
+        "variants": [
+          {
+            "id": "designarena-website-2026-11-02",
+            "label": "Website / November 2 / first 15 of 181",
+            "rows": [
+              {
+                "rank": 1,
+                "model_variant": "Muse Wonder (max)",
+                "value": 1370,
+                "wins": 3552,
+                "losses": 2116,
+                "battles": 5668,
+                "win_rate_percent": 62.7,
+                "reported_moe_percent": 1.3,
+                "reported_time_seconds": 152.1,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": "max",
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-1",
+                "label": "Muse Wonder (max)",
+                "result_id": "designarena-website-20261102-1",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 1,
+                  "model_variant": "Muse Wonder (max)",
+                  "value": 1370,
+                  "wins": 3552,
+                  "losses": 2116,
+                  "battles": 5668,
+                  "win_rate_percent": 62.7,
+                  "reported_moe_percent": 1.3,
+                  "reported_time_seconds": 152.1,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": "max",
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-1"
+                }
+              },
+              {
+                "rank": 2,
+                "model_variant": "Muse Spark 1.3 (xhigh)",
+                "value": 1355,
+                "wins": 17493,
+                "losses": 12595,
+                "battles": 30088,
+                "win_rate_percent": 58.1,
+                "reported_moe_percent": 0.6,
+                "reported_time_seconds": 192.2,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": "xhigh",
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-2",
+                "label": "Muse Spark 1.3 (xhigh)",
+                "result_id": "designarena-website-20261102-2",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 2,
+                  "model_variant": "Muse Spark 1.3 (xhigh)",
+                  "value": 1355,
+                  "wins": 17493,
+                  "losses": 12595,
+                  "battles": 30088,
+                  "win_rate_percent": 58.1,
+                  "reported_moe_percent": 0.6,
+                  "reported_time_seconds": 192.2,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-2"
+                }
+              },
+              {
+                "rank": 3,
+                "model_variant": "Muse Spark 1.3 Max",
+                "value": 1345,
+                "wins": 15080,
+                "losses": 11721,
+                "battles": 26801,
+                "win_rate_percent": 56.3,
+                "reported_moe_percent": 0.6,
+                "reported_time_seconds": 253.5,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": "max",
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-3",
+                "label": "Muse Spark 1.3 Max",
+                "result_id": "designarena-website-20261102-3",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 3,
+                  "model_variant": "Muse Spark 1.3 Max",
+                  "value": 1345,
+                  "wins": 15080,
+                  "losses": 11721,
+                  "battles": 26801,
+                  "win_rate_percent": 56.3,
+                  "reported_moe_percent": 0.6,
+                  "reported_time_seconds": 253.5,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": "max",
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-3"
+                }
+              },
+              {
+                "rank": 4,
+                "model_variant": "GPT-6 Astra (max)",
+                "value": 1337,
+                "wins": 1622,
+                "losses": 1151,
+                "battles": 2773,
+                "win_rate_percent": 58.5,
+                "reported_moe_percent": 1.8,
+                "reported_time_seconds": 1090.2,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": "max",
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-4",
+                "label": "GPT-6 Astra (max)",
+                "result_id": "designarena-website-20261102-4",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 4,
+                  "model_variant": "GPT-6 Astra (max)",
+                  "value": 1337,
+                  "wins": 1622,
+                  "losses": 1151,
+                  "battles": 2773,
+                  "win_rate_percent": 58.5,
+                  "reported_moe_percent": 1.8,
+                  "reported_time_seconds": 1090.2,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": "max",
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-4"
+                }
+              },
+              {
+                "rank": 5,
+                "model_variant": "Kimi K3",
+                "value": 1334,
+                "wins": 2900,
+                "losses": 2047,
+                "battles": 4947,
+                "win_rate_percent": 58.6,
+                "reported_moe_percent": 1.4,
+                "reported_time_seconds": 840.6,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-5",
+                "label": "Kimi K3",
+                "result_id": "designarena-website-20261102-5",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 5,
+                  "model_variant": "Kimi K3",
+                  "value": 1334,
+                  "wins": 2900,
+                  "losses": 2047,
+                  "battles": 4947,
+                  "win_rate_percent": 58.6,
+                  "reported_moe_percent": 1.4,
+                  "reported_time_seconds": 840.6,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-5"
+                }
+              },
+              {
+                "rank": 6,
+                "model_variant": "Kimi K3.1 Pro",
+                "value": 1326,
+                "wins": 2103,
+                "losses": 1514,
+                "battles": 3617,
+                "win_rate_percent": 58.1,
+                "reported_moe_percent": 1.6,
+                "reported_time_seconds": 1227.4,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-6",
+                "label": "Kimi K3.1 Pro",
+                "result_id": "designarena-website-20261102-6",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 6,
+                  "model_variant": "Kimi K3.1 Pro",
+                  "value": 1326,
+                  "wins": 2103,
+                  "losses": 1514,
+                  "battles": 3617,
+                  "win_rate_percent": 58.1,
+                  "reported_moe_percent": 1.6,
+                  "reported_time_seconds": 1227.4,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-6"
+                }
+              },
+              {
+                "rank": 7,
+                "model_variant": "Claude Opus 5.5",
+                "value": 1325,
+                "wins": 2119,
+                "losses": 1722,
+                "battles": 3841,
+                "win_rate_percent": 55.2,
+                "reported_moe_percent": 1.6,
+                "reported_time_seconds": 304.9,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-7",
+                "label": "Claude Opus 5.5",
+                "result_id": "designarena-website-20261102-7",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 7,
+                  "model_variant": "Claude Opus 5.5",
+                  "value": 1325,
+                  "wins": 2119,
+                  "losses": 1722,
+                  "battles": 3841,
+                  "win_rate_percent": 55.2,
+                  "reported_moe_percent": 1.6,
+                  "reported_time_seconds": 304.9,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-7"
+                }
+              },
+              {
+                "rank": 8,
+                "model_variant": "Claude Sonnet 5.5",
+                "value": 1320,
+                "wins": 1630,
+                "losses": 1347,
+                "battles": 2977,
+                "win_rate_percent": 54.8,
+                "reported_moe_percent": 1.8,
+                "reported_time_seconds": 288.2,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-8",
+                "label": "Claude Sonnet 5.5",
+                "result_id": "designarena-website-20261102-8",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 8,
+                  "model_variant": "Claude Sonnet 5.5",
+                  "value": 1320,
+                  "wins": 1630,
+                  "losses": 1347,
+                  "battles": 2977,
+                  "win_rate_percent": 54.8,
+                  "reported_moe_percent": 1.8,
+                  "reported_time_seconds": 288.2,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-8"
+                }
+              },
+              {
+                "rank": 9,
+                "model_variant": "GPT-5.6 Sol (xhigh)",
+                "value": 1320,
+                "wins": 4431,
+                "losses": 3417,
+                "battles": 7848,
+                "win_rate_percent": 56.5,
+                "reported_moe_percent": 1.1,
+                "reported_time_seconds": 279.1,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": "xhigh",
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-9",
+                "label": "GPT-5.6 Sol (xhigh)",
+                "result_id": "designarena-website-20261102-9",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 9,
+                  "model_variant": "GPT-5.6 Sol (xhigh)",
+                  "value": 1320,
+                  "wins": 4431,
+                  "losses": 3417,
+                  "battles": 7848,
+                  "win_rate_percent": 56.5,
+                  "reported_moe_percent": 1.1,
+                  "reported_time_seconds": 279.1,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": "xhigh",
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-9"
+                }
+              },
+              {
+                "rank": 10,
+                "model_variant": "Gemini 4 Argon",
+                "value": 1315,
+                "wins": 5800,
+                "losses": 4687,
+                "battles": 10487,
+                "win_rate_percent": 55.3,
+                "reported_moe_percent": 1,
+                "reported_time_seconds": 235.6,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-10",
+                "label": "Gemini 4 Argon",
+                "result_id": "designarena-website-20261102-10",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 10,
+                  "model_variant": "Gemini 4 Argon",
+                  "value": 1315,
+                  "wins": 5800,
+                  "losses": 4687,
+                  "battles": 10487,
+                  "win_rate_percent": 55.3,
+                  "reported_moe_percent": 1,
+                  "reported_time_seconds": 235.6,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-10"
+                }
+              },
+              {
+                "rank": 11,
+                "model_variant": "GPT-6.1 Sol",
+                "value": 1314,
+                "wins": 2071,
+                "losses": 1791,
+                "battles": 3862,
+                "win_rate_percent": 53.6,
+                "reported_moe_percent": 1.6,
+                "reported_time_seconds": 260.1,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-11",
+                "label": "GPT-6.1 Sol",
+                "result_id": "designarena-website-20261102-11",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 11,
+                  "model_variant": "GPT-6.1 Sol",
+                  "value": 1314,
+                  "wins": 2071,
+                  "losses": 1791,
+                  "battles": 3862,
+                  "win_rate_percent": 53.6,
+                  "reported_moe_percent": 1.6,
+                  "reported_time_seconds": 260.1,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-11"
+                }
+              },
+              {
+                "rank": 12,
+                "model_variant": "Muse Spark 1.2",
+                "value": 1312,
+                "wins": 17998,
+                "losses": 16463,
+                "battles": 34461,
+                "win_rate_percent": 52.2,
+                "reported_moe_percent": 0.5,
+                "reported_time_seconds": 155.4,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-12",
+                "label": "Muse Spark 1.2",
+                "result_id": "designarena-website-20261102-12",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 12,
+                  "model_variant": "Muse Spark 1.2",
+                  "value": 1312,
+                  "wins": 17998,
+                  "losses": 16463,
+                  "battles": 34461,
+                  "win_rate_percent": 52.2,
+                  "reported_moe_percent": 0.5,
+                  "reported_time_seconds": 155.4,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-12"
+                }
+              },
+              {
+                "rank": 13,
+                "model_variant": "Claude Opus 5",
+                "value": 1308,
+                "wins": 6073,
+                "losses": 4782,
+                "battles": 10855,
+                "win_rate_percent": 56,
+                "reported_moe_percent": 0.9,
+                "reported_time_seconds": 317.5,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-13",
+                "label": "Claude Opus 5",
+                "result_id": "designarena-website-20261102-13",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 13,
+                  "model_variant": "Claude Opus 5",
+                  "value": 1308,
+                  "wins": 6073,
+                  "losses": 4782,
+                  "battles": 10855,
+                  "win_rate_percent": 56,
+                  "reported_moe_percent": 0.9,
+                  "reported_time_seconds": 317.5,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-13"
+                }
+              },
+              {
+                "rank": 14,
+                "model_variant": "Claude Fable 5.1",
+                "value": 1308,
+                "wins": 3614,
+                "losses": 2941,
+                "battles": 6555,
+                "win_rate_percent": 55.1,
+                "reported_moe_percent": 1.2,
+                "reported_time_seconds": 319.3,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-14",
+                "label": "Claude Fable 5.1",
+                "result_id": "designarena-website-20261102-14",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 14,
+                  "model_variant": "Claude Fable 5.1",
+                  "value": 1308,
+                  "wins": 3614,
+                  "losses": 2941,
+                  "battles": 6555,
+                  "win_rate_percent": 55.1,
+                  "reported_moe_percent": 1.2,
+                  "reported_time_seconds": 319.3,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-14"
+                }
+              },
+              {
+                "rank": 15,
+                "model_variant": "DeepSeek-V4.1-Flash",
+                "value": 1308,
+                "wins": 13341,
+                "losses": 12997,
+                "battles": 26338,
+                "win_rate_percent": 50.6,
+                "reported_moe_percent": 0.6,
+                "reported_time_seconds": 137.6,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "effort": null,
+                "harness": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "designarena-website-20261102-15",
+                "label": "DeepSeek-V4.1-Flash",
+                "result_id": "designarena-website-20261102-15",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "raw": {
+                  "rank": 15,
+                  "model_variant": "DeepSeek-V4.1-Flash",
+                  "value": 1308,
+                  "wins": 13341,
+                  "losses": 12997,
+                  "battles": 26338,
+                  "win_rate_percent": 50.6,
+                  "reported_moe_percent": 0.6,
+                  "reported_time_seconds": 137.6,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "effort": null,
+                  "harness": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "designarena-website-20261102-15"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "elo",
+                "label": "Website design preference rating",
+                "field": "value",
+                "unit": "Elo points",
+                "domain": [
+                  1000,
+                  1500
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www.designarena.ai/leaderboard/website",
+            "source_locator": "Website leaderboard, ranks 1–15, updated November 2 at 14:07 UTC; excludes subcategory leaderboards",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": "2026-11-02",
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": false,
+            "coverage": "15 visible rows of 181 website entries; website subcategory leaderboards are separate.",
+            "settings": {
+              "source_snapshot_timestamp": "2026-11-02T14:07:00Z",
+              "methodology_url": "https://notes.designarena.ai/methodology/",
+              "uncertainty": "The page describes MoE as Bradley–Terry Elo standard error while showing values with percent signs; methodology describes approximate 95% Wilson intervals for win rates. Preserve the raw percentages without drawing Elo error bars.",
+              "reported_time": "Displayed seconds are retained as source values; the measurement definition is unverified, so generic task latency remains null.",
+              "vote_threshold": 15
+            },
+            "limitations": [
+              "The page describes MoE as Bradley–Terry Elo standard error while showing values with percent signs; methodology describes approximate 95% Wilson intervals for win rates. Preserve the raw percentages without drawing Elo error bars.",
+              "Displayed seconds are retained as source values; the measurement definition is unverified, so generic task latency remains null.",
+              "Only 15 visible entries were collected; unknown effort, evaluation dates, cost and harness remain unknown."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "vals-index-v2-2-2026-10-30",
+        "name": "Vals Index v2.2 / October 30",
+        "category": "standard",
+        "question": "How do models score on Vals Index v2.2?",
+        "tests": "This composite combines finance, coding, legal and tax benchmark results with GDP-based sector weights.",
+        "matters": "The index summarizes these benchmark tasks; it does not measure economic automation.",
+        "read": "The October 30 table reports 32 model names. Effort and agent settings are unspecified in this table. Earlier snapshots and versions remain distinct. Cost per test includes token-estimated Code Migration costs, and reported durations have an unverified composite aggregation; both are retained in source details. Evaluation dates and model snapshots are unknown.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-02/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-02",
+        "variants": [
+          {
+            "id": "vals-index-v2-2-2026-10-30",
+            "label": "v2.2 / October 30 / 32 reported models",
+            "rows": [
+              {
+                "rank": 1,
+                "model_variant": "Claude Sonnet 5.5",
+                "value": 70.85,
+                "reported_cost_usd_per_test": 18.7,
+                "reported_duration_per_test": "1h26m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-1",
+                "label": "Claude Sonnet 5.5",
+                "result_id": "vals-index-v22-20261030-1",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 1,
+                  "model_variant": "Claude Sonnet 5.5",
+                  "value": 70.85,
+                  "reported_cost_usd_per_test": 18.7,
+                  "reported_duration_per_test": "1h26m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-1"
+                }
+              },
+              {
+                "rank": 2,
+                "model_variant": "Gemini 4 Carbon",
+                "value": 70.45,
+                "reported_cost_usd_per_test": 10.51,
+                "reported_duration_per_test": "47m45s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-2",
+                "label": "Gemini 4 Carbon",
+                "result_id": "vals-index-v22-20261030-2",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 2,
+                  "model_variant": "Gemini 4 Carbon",
+                  "value": 70.45,
+                  "reported_cost_usd_per_test": 10.51,
+                  "reported_duration_per_test": "47m45s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-2"
+                }
+              },
+              {
+                "rank": 3,
+                "model_variant": "Claude Opus 5.5",
+                "value": 70.18,
+                "reported_cost_usd_per_test": 28.12,
+                "reported_duration_per_test": "1h25m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-3",
+                "label": "Claude Opus 5.5",
+                "result_id": "vals-index-v22-20261030-3",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 3,
+                  "model_variant": "Claude Opus 5.5",
+                  "value": 70.18,
+                  "reported_cost_usd_per_test": 28.12,
+                  "reported_duration_per_test": "1h25m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-3"
+                }
+              },
+              {
+                "rank": 4,
+                "model_variant": "Gemini 4 Argon",
+                "value": 69.24,
+                "reported_cost_usd_per_test": 13.37,
+                "reported_duration_per_test": "44m58s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-4",
+                "label": "Gemini 4 Argon",
+                "result_id": "vals-index-v22-20261030-4",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 4,
+                  "model_variant": "Gemini 4 Argon",
+                  "value": 69.24,
+                  "reported_cost_usd_per_test": 13.37,
+                  "reported_duration_per_test": "44m58s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-4"
+                }
+              },
+              {
+                "rank": 5,
+                "model_variant": "Wonder Full",
+                "value": 66.79,
+                "reported_cost_usd_per_test": 6.81,
+                "reported_duration_per_test": "59m19s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-5",
+                "label": "Wonder Full",
+                "result_id": "vals-index-v22-20261030-5",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 5,
+                  "model_variant": "Wonder Full",
+                  "value": 66.79,
+                  "reported_cost_usd_per_test": 6.81,
+                  "reported_duration_per_test": "59m19s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-5"
+                }
+              },
+              {
+                "rank": 6,
+                "model_variant": "GPT-6 Astra",
+                "value": 65.02,
+                "reported_cost_usd_per_test": 21.28,
+                "reported_duration_per_test": "33m39s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-6",
+                "label": "GPT-6 Astra",
+                "result_id": "vals-index-v22-20261030-6",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 6,
+                  "model_variant": "GPT-6 Astra",
+                  "value": 65.02,
+                  "reported_cost_usd_per_test": 21.28,
+                  "reported_duration_per_test": "33m39s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-6"
+                }
+              },
+              {
+                "rank": 7,
+                "model_variant": "Wonder",
+                "value": 64.88,
+                "reported_cost_usd_per_test": 10.65,
+                "reported_duration_per_test": "35m24s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-7",
+                "label": "Wonder",
+                "result_id": "vals-index-v22-20261030-7",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 7,
+                  "model_variant": "Wonder",
+                  "value": 64.88,
+                  "reported_cost_usd_per_test": 10.65,
+                  "reported_duration_per_test": "35m24s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-7"
+                }
+              },
+              {
+                "rank": 8,
+                "model_variant": "GPT-6.1 Sol",
+                "value": 63.94,
+                "reported_cost_usd_per_test": 3.61,
+                "reported_duration_per_test": "44m24s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-8",
+                "label": "GPT-6.1 Sol",
+                "result_id": "vals-index-v22-20261030-8",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 8,
+                  "model_variant": "GPT-6.1 Sol",
+                  "value": 63.94,
+                  "reported_cost_usd_per_test": 3.61,
+                  "reported_duration_per_test": "44m24s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-8"
+                }
+              },
+              {
+                "rank": 9,
+                "model_variant": "Kimi K3.1 Pro",
+                "value": 62.52,
+                "reported_cost_usd_per_test": 6.44,
+                "reported_duration_per_test": "1h04m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-9",
+                "label": "Kimi K3.1 Pro",
+                "result_id": "vals-index-v22-20261030-9",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 9,
+                  "model_variant": "Kimi K3.1 Pro",
+                  "value": 62.52,
+                  "reported_cost_usd_per_test": 6.44,
+                  "reported_duration_per_test": "1h04m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-9"
+                }
+              },
+              {
+                "rank": 10,
+                "model_variant": "DeepSeek V4.1 Flash 1017",
+                "value": 61.26,
+                "reported_cost_usd_per_test": 0.66,
+                "reported_duration_per_test": "39m55s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-10",
+                "label": "DeepSeek V4.1 Flash 1017",
+                "result_id": "vals-index-v22-20261030-10",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 10,
+                  "model_variant": "DeepSeek V4.1 Flash 1017",
+                  "value": 61.26,
+                  "reported_cost_usd_per_test": 0.66,
+                  "reported_duration_per_test": "39m55s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-10"
+                }
+              },
+              {
+                "rank": 11,
+                "model_variant": "GPT-6.1 Terra",
+                "value": 60.54,
+                "reported_cost_usd_per_test": 2.94,
+                "reported_duration_per_test": "39m43s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-11",
+                "label": "GPT-6.1 Terra",
+                "result_id": "vals-index-v22-20261030-11",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 11,
+                  "model_variant": "GPT-6.1 Terra",
+                  "value": 60.54,
+                  "reported_cost_usd_per_test": 2.94,
+                  "reported_duration_per_test": "39m43s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-11"
+                }
+              },
+              {
+                "rank": 12,
+                "model_variant": "GLM 5.3",
+                "value": 59.73,
+                "reported_cost_usd_per_test": 8.52,
+                "reported_duration_per_test": "1h04m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-12",
+                "label": "GLM 5.3",
+                "result_id": "vals-index-v22-20261030-12",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 12,
+                  "model_variant": "GLM 5.3",
+                  "value": 59.73,
+                  "reported_cost_usd_per_test": 8.52,
+                  "reported_duration_per_test": "1h04m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-12"
+                }
+              },
+              {
+                "rank": 13,
+                "model_variant": "Qwen 3.8 Max 0902",
+                "value": 59.05,
+                "reported_cost_usd_per_test": 8.73,
+                "reported_duration_per_test": "1h46m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-13",
+                "label": "Qwen 3.8 Max 0902",
+                "result_id": "vals-index-v22-20261030-13",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 13,
+                  "model_variant": "Qwen 3.8 Max 0902",
+                  "value": 59.05,
+                  "reported_cost_usd_per_test": 8.73,
+                  "reported_duration_per_test": "1h46m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-13"
+                }
+              },
+              {
+                "rank": 14,
+                "model_variant": "Claude Haiku 5.5",
+                "value": 58.73,
+                "reported_cost_usd_per_test": 3.17,
+                "reported_duration_per_test": "49m57s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-14",
+                "label": "Claude Haiku 5.5",
+                "result_id": "vals-index-v22-20261030-14",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 14,
+                  "model_variant": "Claude Haiku 5.5",
+                  "value": 58.73,
+                  "reported_cost_usd_per_test": 3.17,
+                  "reported_duration_per_test": "49m57s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-14"
+                }
+              },
+              {
+                "rank": 15,
+                "model_variant": "Grok 4.7",
+                "value": 58.56,
+                "reported_cost_usd_per_test": 11.63,
+                "reported_duration_per_test": "33m34s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-15",
+                "label": "Grok 4.7",
+                "result_id": "vals-index-v22-20261030-15",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 15,
+                  "model_variant": "Grok 4.7",
+                  "value": 58.56,
+                  "reported_cost_usd_per_test": 11.63,
+                  "reported_duration_per_test": "33m34s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-15"
+                }
+              },
+              {
+                "rank": 16,
+                "model_variant": "MiMo V2.6 Pro",
+                "value": 57.81,
+                "reported_cost_usd_per_test": 0.43,
+                "reported_duration_per_test": "1h13m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-16",
+                "label": "MiMo V2.6 Pro",
+                "result_id": "vals-index-v22-20261030-16",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 16,
+                  "model_variant": "MiMo V2.6 Pro",
+                  "value": 57.81,
+                  "reported_cost_usd_per_test": 0.43,
+                  "reported_duration_per_test": "1h13m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-16"
+                }
+              },
+              {
+                "rank": 17,
+                "model_variant": "Mistral Large 4 OSS",
+                "value": 56.53,
+                "reported_cost_usd_per_test": 3.72,
+                "reported_duration_per_test": "47m48s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-17",
+                "label": "Mistral Large 4 OSS",
+                "result_id": "vals-index-v22-20261030-17",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 17,
+                  "model_variant": "Mistral Large 4 OSS",
+                  "value": 56.53,
+                  "reported_cost_usd_per_test": 3.72,
+                  "reported_duration_per_test": "47m48s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-17"
+                }
+              },
+              {
+                "rank": 18,
+                "model_variant": "Gemini 3.8 Flash",
+                "value": 55.95,
+                "reported_cost_usd_per_test": 5.03,
+                "reported_duration_per_test": "35m58s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-18",
+                "label": "Gemini 3.8 Flash",
+                "result_id": "vals-index-v22-20261030-18",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 18,
+                  "model_variant": "Gemini 3.8 Flash",
+                  "value": 55.95,
+                  "reported_cost_usd_per_test": 5.03,
+                  "reported_duration_per_test": "35m58s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-18"
+                }
+              },
+              {
+                "rank": 19,
+                "model_variant": "MiMo V2.6 Flash",
+                "value": 54.83,
+                "reported_cost_usd_per_test": 0.22,
+                "reported_duration_per_test": "1h07m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-19",
+                "label": "MiMo V2.6 Flash",
+                "result_id": "vals-index-v22-20261030-19",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 19,
+                  "model_variant": "MiMo V2.6 Flash",
+                  "value": 54.83,
+                  "reported_cost_usd_per_test": 0.22,
+                  "reported_duration_per_test": "1h07m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-19"
+                }
+              },
+              {
+                "rank": 20,
+                "model_variant": "Step 5 Preview",
+                "value": 54.76,
+                "reported_cost_usd_per_test": 2.73,
+                "reported_duration_per_test": "1h05m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-20",
+                "label": "Step 5 Preview",
+                "result_id": "vals-index-v22-20261030-20",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 20,
+                  "model_variant": "Step 5 Preview",
+                  "value": 54.76,
+                  "reported_cost_usd_per_test": 2.73,
+                  "reported_duration_per_test": "1h05m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-20"
+                }
+              },
+              {
+                "rank": 21,
+                "model_variant": "MiniMax-M3.1-Flash",
+                "value": 53.78,
+                "reported_cost_usd_per_test": 0.66,
+                "reported_duration_per_test": "43m18s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-21",
+                "label": "MiniMax-M3.1-Flash",
+                "result_id": "vals-index-v22-20261030-21",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 21,
+                  "model_variant": "MiniMax-M3.1-Flash",
+                  "value": 53.78,
+                  "reported_cost_usd_per_test": 0.66,
+                  "reported_duration_per_test": "43m18s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-21"
+                }
+              },
+              {
+                "rank": 22,
+                "model_variant": "Hy4 Preview",
+                "value": 53.21,
+                "reported_cost_usd_per_test": 1.57,
+                "reported_duration_per_test": "59m23s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-22",
+                "label": "Hy4 Preview",
+                "result_id": "vals-index-v22-20261030-22",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 22,
+                  "model_variant": "Hy4 Preview",
+                  "value": 53.21,
+                  "reported_cost_usd_per_test": 1.57,
+                  "reported_duration_per_test": "59m23s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-22"
+                }
+              },
+              {
+                "rank": 23,
+                "model_variant": "DeepSeek V4 Pro 0813",
+                "value": 52.97,
+                "reported_cost_usd_per_test": 2.5,
+                "reported_duration_per_test": "58m03s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-23",
+                "label": "DeepSeek V4 Pro 0813",
+                "result_id": "vals-index-v22-20261030-23",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 23,
+                  "model_variant": "DeepSeek V4 Pro 0813",
+                  "value": 52.97,
+                  "reported_cost_usd_per_test": 2.5,
+                  "reported_duration_per_test": "58m03s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-23"
+                }
+              },
+              {
+                "rank": 24,
+                "model_variant": "Kimi K3",
+                "value": 52.95,
+                "reported_cost_usd_per_test": 7.17,
+                "reported_duration_per_test": "1h15m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-24",
+                "label": "Kimi K3",
+                "result_id": "vals-index-v22-20261030-24",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 24,
+                  "model_variant": "Kimi K3",
+                  "value": 52.95,
+                  "reported_cost_usd_per_test": 7.17,
+                  "reported_duration_per_test": "1h15m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-24"
+                }
+              },
+              {
+                "rank": 25,
+                "model_variant": "GPT-6 Luna",
+                "value": 52.32,
+                "reported_cost_usd_per_test": 0.45,
+                "reported_duration_per_test": "32m23s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-25",
+                "label": "GPT-6 Luna",
+                "result_id": "vals-index-v22-20261030-25",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 25,
+                  "model_variant": "GPT-6 Luna",
+                  "value": 52.32,
+                  "reported_cost_usd_per_test": 0.45,
+                  "reported_duration_per_test": "32m23s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-25"
+                }
+              },
+              {
+                "rank": 26,
+                "model_variant": "GLM 5.3 Flash",
+                "value": 50.86,
+                "reported_cost_usd_per_test": 1.13,
+                "reported_duration_per_test": "1h04m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-26",
+                "label": "GLM 5.3 Flash",
+                "result_id": "vals-index-v22-20261030-26",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 26,
+                  "model_variant": "GLM 5.3 Flash",
+                  "value": 50.86,
+                  "reported_cost_usd_per_test": 1.13,
+                  "reported_duration_per_test": "1h04m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-26"
+                }
+              },
+              {
+                "rank": 27,
+                "model_variant": "Muse Spark Open",
+                "value": 48.57,
+                "reported_cost_usd_per_test": 4.72,
+                "reported_duration_per_test": "1h22m",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-27",
+                "label": "Muse Spark Open",
+                "result_id": "vals-index-v22-20261030-27",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 27,
+                  "model_variant": "Muse Spark Open",
+                  "value": 48.57,
+                  "reported_cost_usd_per_test": 4.72,
+                  "reported_duration_per_test": "1h22m",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-27"
+                }
+              },
+              {
+                "rank": 28,
+                "model_variant": "Mercury 3",
+                "value": 43.66,
+                "reported_cost_usd_per_test": 0.48,
+                "reported_duration_per_test": "22m06s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-28",
+                "label": "Mercury 3",
+                "result_id": "vals-index-v22-20261030-28",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 28,
+                  "model_variant": "Mercury 3",
+                  "value": 43.66,
+                  "reported_cost_usd_per_test": 0.48,
+                  "reported_duration_per_test": "22m06s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-28"
+                }
+              },
+              {
+                "rank": 29,
+                "model_variant": "Beam 1.0",
+                "value": 43.42,
+                "reported_cost_usd_per_test": null,
+                "reported_duration_per_test": "7m27s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-29",
+                "label": "Beam 1.0",
+                "result_id": "vals-index-v22-20261030-29",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 29,
+                  "model_variant": "Beam 1.0",
+                  "value": 43.42,
+                  "reported_cost_usd_per_test": null,
+                  "reported_duration_per_test": "7m27s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-29"
+                }
+              },
+              {
+                "rank": 30,
+                "model_variant": "Nemotron 3.5 Super VL",
+                "value": 29.76,
+                "reported_cost_usd_per_test": 0.63,
+                "reported_duration_per_test": "8m35s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-30",
+                "label": "Nemotron 3.5 Super VL",
+                "result_id": "vals-index-v22-20261030-30",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 30,
+                  "model_variant": "Nemotron 3.5 Super VL",
+                  "value": 29.76,
+                  "reported_cost_usd_per_test": 0.63,
+                  "reported_duration_per_test": "8m35s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-30"
+                }
+              },
+              {
+                "rank": 31,
+                "model_variant": "Inkling",
+                "value": 28.96,
+                "reported_cost_usd_per_test": 1.85,
+                "reported_duration_per_test": "17m13s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-31",
+                "label": "Inkling",
+                "result_id": "vals-index-v22-20261030-31",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 31,
+                  "model_variant": "Inkling",
+                  "value": 28.96,
+                  "reported_cost_usd_per_test": 1.85,
+                  "reported_duration_per_test": "17m13s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-31"
+                }
+              },
+              {
+                "rank": 32,
+                "model_variant": "Inkling Small",
+                "value": 27.59,
+                "reported_cost_usd_per_test": 0.4,
+                "reported_duration_per_test": "16m26s",
+                "effort": null,
+                "harness": null,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "source_row_key": "vals-index-v22-20261030-32",
+                "label": "Inkling Small",
+                "result_id": "vals-index-v22-20261030-32",
+                "source_url": "https://www.vals.ai/benchmarks/vals_index",
+                "raw": {
+                  "rank": 32,
+                  "model_variant": "Inkling Small",
+                  "value": 27.59,
+                  "reported_cost_usd_per_test": 0.4,
+                  "reported_duration_per_test": "16m26s",
+                  "effort": null,
+                  "harness": null,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "source_row_key": "vals-index-v22-20261030-32"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Vals Index v2.2 score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www.vals.ai/benchmarks/vals_index",
+            "source_locator": "October 30 Vals Index v2.2 leaderboard",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": "2026-10-30",
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "All 32 rows displayed in the source table; source settings may vary by model.",
+            "settings": {
+              "version": "2.2",
+              "version_release_date": "2026-10-19",
+              "methodology": "Four sector scores weighted 8.0 finance, 5.6 coding, 1.2 legal, 0.5 tax divided by 15.3; GDP-based weights do not measure actual economic automation. Tax was added in v2.1, not v2.2. v2.2 changes component versions and tax all-pass grading. Code Migration uses 50 of 120 CLI tasks plus 10 COBOL tasks, weighted 75/25. Index costs include token-estimated Code Migration costs. Table does not specify exact effort or harness per model."
+            },
+            "limitations": [
+              "GDP weights do not measure real-world economic automation.",
+              "Exact per-model effort, agents, evaluation dates, task-level costs and generic latencies are unknown.",
+              "Code Migration cost is token-estimated."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ladder-robot-manipulation-2026",
+        "name": "LADDER / robot manipulation",
+        "category": "physical",
+        "question": "How reliably do robot systems complete multi-step manipulation tasks?",
+        "tests": "LADDER tests robot systems in simulation across 145 tasks and 2,024 episodes per system. Separate selectors show a 10-task Lite subset and real-robot task groups.",
+        "matters": "Long tasks require a robot and its controller to complete every step; results are specific to the tested systems and settings.",
+        "read": "Full simulation scores pool episodes across suites; an equal-suite mean is a separate metric. Lite uses 10 tasks and must not be compared as a full-suite score. Hardware uses 12 episodes per task and system; some rows pool tasks. Hardware results are separate from simulation; the physical verifier differs. API costs per successful episode are source-reported estimates excluding simulator and low-level GPU costs, not cost per attempt. Evaluation dates and model effort remain unknown.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-02/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-02",
+        "variants": [
+          {
+            "id": "ladder-robot-manipulation-2026-full",
+            "label": "Full simulation / 145 tasks / pooled episodes",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 11,
+                "suite_mean": 13.1,
+                "subgoal_progress": 31.8,
+                "reported_plus_minus_pp": 1.4,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 11,
+                  "suite_mean": 13.1,
+                  "subgoal_progress": 31.8,
+                  "reported_plus_minus_pp": 1.4,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "Periodic trigger",
+                "value": 18.4,
+                "suite_mean": 19.4,
+                "subgoal_progress": 41.8,
+                "reported_plus_minus_pp": 1.7,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Periodic trigger",
+                  "value": 18.4,
+                  "suite_mean": 19.4,
+                  "subgoal_progress": 41.8,
+                  "reported_plus_minus_pp": 1.7,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "Proprioceptive trigger",
+                "value": 21.7,
+                "suite_mean": 21.9,
+                "subgoal_progress": 44.5,
+                "reported_plus_minus_pp": 1.8,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive trigger",
+                  "value": 21.7,
+                  "suite_mean": 21.9,
+                  "subgoal_progress": 44.5,
+                  "reported_plus_minus_pp": 1.8,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini 3.7 Flash",
+                "value": 25,
+                "suite_mean": 25,
+                "subgoal_progress": 46.9,
+                "reported_plus_minus_pp": 1.9,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-3",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini 3.7 Flash",
+                  "value": 25,
+                  "suite_mean": 25,
+                  "subgoal_progress": 46.9,
+                  "reported_plus_minus_pp": 1.9,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "VoLo / Gemini 3.7 Flash",
+                "value": 25.3,
+                "suite_mean": 25.3,
+                "subgoal_progress": 47.4,
+                "reported_plus_minus_pp": 1.9,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-4",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "VoLo / Gemini 3.7 Flash",
+                  "value": 25.3,
+                  "suite_mean": 25.3,
+                  "subgoal_progress": 47.4,
+                  "reported_plus_minus_pp": 1.9,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "CaP-X / Gemini 3.7 Flash",
+                "value": 25,
+                "suite_mean": 21.9,
+                "subgoal_progress": 39.3,
+                "reported_plus_minus_pp": 1.9,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-5",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "CaP-X / Gemini 3.7 Flash",
+                  "value": 25,
+                  "suite_mean": 21.9,
+                  "subgoal_progress": 39.3,
+                  "reported_plus_minus_pp": 1.9,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "TiPToP / Gemini 3.7 Flash",
+                "value": 9.4,
+                "suite_mean": 11.7,
+                "subgoal_progress": 14,
+                "reported_plus_minus_pp": 1.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-6",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "TiPToP / Gemini 3.7 Flash",
+                  "value": 9.4,
+                  "suite_mean": 11.7,
+                  "subgoal_progress": 14,
+                  "reported_plus_minus_pp": 1.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 40.1,
+                "suite_mean": 42.8,
+                "subgoal_progress": 63.3,
+                "reported_plus_minus_pp": 2.2,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-7",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 40.1,
+                  "suite_mean": 42.8,
+                  "subgoal_progress": 63.3,
+                  "reported_plus_minus_pp": 2.2,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              },
+              {
+                "label": "GPT-Policy / GPT-6 Astra",
+                "value": 62,
+                "suite_mean": 63.3,
+                "subgoal_progress": 81.8,
+                "reported_plus_minus_pp": 2.1,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": 6.49,
+                "result_id": "ladder-robot-manipulation-2026-full-8",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "GPT-Policy / GPT-6 Astra",
+                  "value": 62,
+                  "suite_mean": 63.3,
+                  "subgoal_progress": 81.8,
+                  "reported_plus_minus_pp": 2.1,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": 6.49
+                }
+              },
+              {
+                "label": "Privileged verifier / reference",
+                "value": 29.6,
+                "suite_mean": 29.8,
+                "subgoal_progress": 49.5,
+                "reported_plus_minus_pp": 2,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_api_usd_per_success": null,
+                "result_id": "ladder-robot-manipulation-2026-full-9",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Privileged verifier / reference",
+                  "value": 29.6,
+                  "suite_mean": 29.8,
+                  "subgoal_progress": 49.5,
+                  "reported_plus_minus_pp": 2,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_api_usd_per_success": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "pooled",
+                "label": "Pooled episode success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "suite-mean",
+                "label": "Equal-suite mean",
+                "field": "suite_mean",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              },
+              {
+                "id": "progress",
+                "label": "Equal-suite subgoal progress",
+                "field": "subgoal_progress",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Full simulation / 145 tasks / pooled episodes",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Full simulation / 145 tasks / pooled episodes",
+            "settings": {
+              "tasks": 145,
+              "episodes_per_system": 2024,
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-lite",
+            "label": "LADDER-Lite / 10 simulated tasks",
+            "rows": [
+              {
+                "label": "GPT-Policy / GPT-6 Astra",
+                "value": 62.5,
+                "reported_api_usd_per_success": 6.62,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-lite-0",
+                "source_url": "https://ladderrobotics.ai/",
+                "raw": {
+                  "label": "GPT-Policy / GPT-6 Astra",
+                  "value": 62.5,
+                  "reported_api_usd_per_success": 6.62,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "GPT-Policy / Gemini 4 Argon",
+                "value": 55.9,
+                "reported_api_usd_per_success": 1.33,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-lite-1",
+                "source_url": "https://ladderrobotics.ai/",
+                "raw": {
+                  "label": "GPT-Policy / Gemini 4 Argon",
+                  "value": 55.9,
+                  "reported_api_usd_per_success": 1.33,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "GPT-Policy / Claude Opus 5.5",
+                "value": 49,
+                "reported_api_usd_per_success": 7.02,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-lite-2",
+                "source_url": "https://ladderrobotics.ai/",
+                "raw": {
+                  "label": "GPT-Policy / Claude Opus 5.5",
+                  "value": 49,
+                  "reported_api_usd_per_success": 7.02,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "suite-mean",
+                "label": "Equal-suite success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/",
+            "source_locator": "LADDER-Lite / 10 simulated tasks",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "LADDER-Lite / 10 simulated tasks",
+            "settings": {
+              "tasks": 10,
+              "episodes_per_system": null,
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-1",
+            "label": "Real robot / Franka / single destination / 5 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-1-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 8.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-1-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 8.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 25,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-1-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 25,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / Franka / single destination / 5 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / Franka / single destination / 5 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "Franka / single destination / 5 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-2",
+            "label": "Real robot / Franka / exclusion / 2 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-2-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 83.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-2-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 83.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 100,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-2-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 100,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / Franka / exclusion / 2 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / Franka / exclusion / 2 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "Franka / exclusion / 2 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-3",
+            "label": "Real robot / Franka / ordered / 3 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 16.7,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-3-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 16.7,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 83.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-3-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 83.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 100,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-3-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 100,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / Franka / ordered / 3 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / Franka / ordered / 3 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "Franka / ordered / 3 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-4",
+            "label": "Real robot / WidowX / single destination / 1 subgoal",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 66.7,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-4-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 66.7,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 75,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-4-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 75,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 100,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-4-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 100,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / WidowX / single destination / 1 subgoal",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / WidowX / single destination / 1 subgoal",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "WidowX / single destination / 1 subgoal",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-5",
+            "label": "Real robot / WidowX / single destination / 2–3 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-5-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 33.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-5-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 33.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 87.5,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-5-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 87.5,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / WidowX / single destination / 2–3 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / WidowX / single destination / 2–3 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "WidowX / single destination / 2–3 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-6",
+            "label": "Real robot / WidowX / split destination / 2–3 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-6-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 29.2,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-6-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 29.2,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 83.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-6-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 83.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / WidowX / split destination / 2–3 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / WidowX / split destination / 2–3 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "WidowX / split destination / 2–3 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-7",
+            "label": "Real robot / WidowX / exclusion / 2 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-7-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 58.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-7-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 58.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 91.7,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-7-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 91.7,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / WidowX / exclusion / 2 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / WidowX / exclusion / 2 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "WidowX / exclusion / 2 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-8",
+            "label": "Real robot / WidowX / ordered / 2 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 8.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-8-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 8.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 33.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-8-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 33.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 41.7,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-8-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 41.7,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / WidowX / ordered / 2 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / WidowX / ordered / 2 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "WidowX / ordered / 2 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          },
+          {
+            "id": "ladder-robot-manipulation-2026-real-9",
+            "label": "Real robot / WidowX / duplicates / 2 subgoals",
+            "rows": [
+              {
+                "label": "Low-level policy",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-9-0",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Low-level policy",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                "value": 0,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-9-1",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "Proprioceptive verifier / Gemini Robotics-ER 2",
+                  "value": 0,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              },
+              {
+                "label": "PSP-Agent / Gemini 3.7 Flash",
+                "value": 58.3,
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "result_id": "ladder-robot-manipulation-2026-real-9-2",
+                "source_url": "https://ladderrobotics.ai/research",
+                "raw": {
+                  "label": "PSP-Agent / Gemini 3.7 Flash",
+                  "value": 58.3,
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Task success",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://ladderrobotics.ai/research",
+            "source_locator": "Real robot / WidowX / duplicates / 2 subgoals",
+            "source_input": "data/benchmark-refresh-2026-11-02/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-10-26",
+            "evaluation_date": null,
+            "checked_at": "2026-11-02",
+            "complete": true,
+            "coverage": "Real robot / WidowX / duplicates / 2 subgoals",
+            "settings": {
+              "episodes_per_task_per_system": 12,
+              "task_group": "WidowX / duplicates / 2 subgoals",
+              "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed."
+            },
+            "limitations": [
+              "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+              "Evaluation date and exact model effort are unavailable."
+            ]
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -98835,6 +101877,15 @@ window.LAB_GALLERY = {
         "osworld-v2-1-offline-october",
         "terminal-bench-science-native-agents"
       ]
+    },
+    "november_refresh": {
+      "schema_version": 1,
+      "checked_at": "2026-11-02",
+      "card_ids": [
+        "designarena-website-2026-11-02",
+        "vals-index-v2-2-2026-10-30",
+        "ladder-robot-manipulation-2026"
+      ]
     }
   },
   "expanded": {
@@ -113700,6 +116751,8 @@ window.LAB_GALLERY = {
       "data/benchmark-refresh-2026-10-26/evidence-manifest.json",
       "data/gemini-4-carbon-2026-10-28/source-packet.json",
       "data/gemini-4-carbon-2026-10-28/evidence-manifest.json",
+      "data/benchmark-refresh-2026-11-02/source-packet.json",
+      "data/benchmark-refresh-2026-11-02/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -113716,7 +116769,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-2026-10-28.json",
+    "presentationMetadata": "data/gallery-metadata-2026-11-02.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };

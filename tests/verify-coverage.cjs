@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = require("../scripts/build-gallery-gemini-carbon-2026-10-28.cjs")().coverage;
+const coverage = require("../scripts/build-gallery-refresh-2026-11-02.cjs")().coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,10 +183,10 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 98);
-    assert.equal(await page.locator(".mini-graph svg").count(), 89);
+    assert.equal(await page.locator(".benchmark-card").count(), 101);
+    assert.equal(await page.locator(".mini-graph svg").count(), 92);
     pass(
-      "Default gallery groups result families without empty cards; all 98 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 101 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
@@ -215,8 +215,33 @@ async function main() {
       }
     }
     pass(
-      "All 64 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 67 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
+    await go("results.html?benchmark=designarena-website-2026-11-02");
+    assert.equal(await page.locator(".chart-table tbody tr").count(),15);
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"1370");
+    assert.equal(await page.locator(".confidence-interval, .reported-interval").count(),0);
+    assert.match(await page.locator(".explanations").innerText(),/uncertainty differently/);
+    await go("results.html?benchmark=vals-index-v2-2-2026-10-30");
+    assert.equal(await page.locator(".chart-table tbody tr").count(),32);
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"70.85");
+    await page.locator("input[name=all]").check();assert.equal(await page.locator(".coverage-mark").count(),32);
+    await page.setViewportSize({width:320,height:844});
+    for(const id of ["designarena-website-2026-11-02","vals-index-v2-2-2026-10-30"]){
+      await go("results.html?benchmark="+id);assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false);await axe("November mobile "+id);
+    }
+    await page.setViewportSize({width:1440,height:1000});
+    pass("DesignArena and Vals dated comparisons preserve source values, uncertainty limits, full tables and mobile layout");
+    await go("results.html?benchmark=ladder-robot-manipulation-2026");
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"62");
+    await page.locator("select[name=view]").selectOption("suite-mean");
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"63.3");
+    await page.locator("select[name=cohort]").selectOption("ladder-robot-manipulation-2026-lite");
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"62.5");
+    await page.locator("select[name=cohort]").selectOption("ladder-robot-manipulation-2026-real-1");
+    assert.equal(await page.locator(".coverage-mark").count(),3);
+    assert.match(await page.locator(".explanations").innerText(),/12 episodes/);
+    pass("LADDER full pooled and suite mean, Lite and hardware tasks remain separate");
     await go("results.html?benchmark=aa-intelligence-index");
     assert.equal(await page.locator(".coverage-mark").count(),12);
     assert.match(await page.locator(".explanations").innerText(),/numerical decline is not evidence/);

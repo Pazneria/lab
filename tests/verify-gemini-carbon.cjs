@@ -66,5 +66,5 @@ for(const mutate of [x=>x.carbon_updates.index_version='4.3.2',x=>x.carbon_updat
  const bad=structuredClone(next.coverage);mutate(bad);assert.equal(sandbox.window.LAB_COVERAGE.valid(bad),false);
 }
 const served={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'assets/gallery-data.js'),'utf8'),served);
-assert.deepEqual(JSON.parse(JSON.stringify(served.window.LAB_GALLERY.coverage)),next.coverage);
+assert.deepEqual(JSON.parse(JSON.stringify(served.window.LAB_GALLERY.coverage.cards.slice(0,64))),next.coverage.cards);
 console.log(JSON.stringify({passed:true,v5Configurations:29,sourceObservations:37,arenaRows:20,newCards:6,preservedCoverageCards:58,benchmarkExecuted:false}));
