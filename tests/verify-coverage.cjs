@@ -183,10 +183,10 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 100);
-    assert.equal(await page.locator(".mini-graph svg").count(), 91);
+    assert.equal(await page.locator(".benchmark-card").count(), 101);
+    assert.equal(await page.locator(".mini-graph svg").count(), 92);
     pass(
-      "Default gallery groups result families without empty cards; all 100 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 101 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
@@ -215,7 +215,7 @@ async function main() {
       }
     }
     pass(
-      "All 66 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 67 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
     await go("results.html?benchmark=designarena-website-2026-11-02");
     assert.equal(await page.locator(".chart-table tbody tr").count(),15);
@@ -232,6 +232,16 @@ async function main() {
     }
     await page.setViewportSize({width:1440,height:1000});
     pass("DesignArena and Vals dated comparisons preserve source values, uncertainty limits, full tables and mobile layout");
+    await go("results.html?benchmark=ladder-robot-manipulation-2026");
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"62");
+    await page.locator("select[name=view]").selectOption("suite-mean");
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"63.3");
+    await page.locator("select[name=cohort]").selectOption("ladder-robot-manipulation-2026-lite");
+    assert.equal(await page.locator(".coverage-mark").first().getAttribute("data-value"),"62.5");
+    await page.locator("select[name=cohort]").selectOption("ladder-robot-manipulation-2026-real-1");
+    assert.equal(await page.locator(".coverage-mark").count(),3);
+    assert.match(await page.locator(".explanations").innerText(),/12 episodes/);
+    pass("LADDER full pooled and suite mean, Lite and hardware tasks remain separate");
     await go("results.html?benchmark=aa-intelligence-index");
     assert.equal(await page.locator(".coverage-mark").count(),12);
     assert.match(await page.locator(".explanations").innerText(),/numerical decline is not evidence/);

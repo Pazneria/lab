@@ -362,8 +362,8 @@ if (process.argv.includes("--check"))
   );
 else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
 const evidence = {
-  cards: 100,
-  coverageCards: 66,
+  cards: 101,
+  coverageCards: 67,
   novemberInputSHA256: Object.fromEntries(november.projection.source_files.map((p) => [p, sha(p)])),
   novemberProjectionSHA256: sha("data/gallery-refresh-projection-2026-11-02.json"),
   carbonInputSHA256: Object.fromEntries(carbon.projection.source_files.map((p) => [p, sha(p)])),

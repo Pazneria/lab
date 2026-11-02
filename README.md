@@ -1,10 +1,10 @@
 # Lab · AI benchmark gallery
 
-A source-backed gallery of **100 individual cards**, grouped into **67 benchmark and model-report families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
+A source-backed gallery of **101 individual cards**, grouped into **68 benchmark and model-report families with real graphs** in the default view. Cards span standard tests, community projects, frontend development, games, medicine, physical systems, workplace agents, long context, audio, video and languages. Related versions and setups have selectors; older direct URLs remain usable. Nine guides without admitted graphs and 52 additional research candidates stay in compact directories.
 
 The page preserves all **20 original discovery records**, their 51 URLs and 30 null metric definitions. The original **18 result rows and seven graph views**, 340 standard rows, frontend packet and expanded community source records remain unchanged. The new coverage input adds 319 primary rows, 81 selected first-wave observations and 1,392 RuneBench skill summaries for 87 configurations. No global score, cross-benchmark rank or missing-value zero is introduced. Selected cohorts are clearly incomplete, and source review dates remain separate from publication and evaluation dates.
 
-The [November 2 source refresh](docs/BENCHMARK-REFRESH-2026-11-02.md) adds a dated DesignArena Website preference comparison and the October 30 Vals Index v2.2 table, with uncertainty and source-specific cost limitations.
+The [November 2 source refresh](docs/BENCHMARK-REFRESH-2026-11-02.md) adds a dated DesignArena Website preference comparison, the October 30 Vals Index v2.2 table and separate LADDER robotics cohorts, with uncertainty and source-specific cost limitations.
 
 The [Carbon and AA v5 update](docs/GEMINI-CARBON-AA-V5-2026-10-28.md) adds separately sourced Carbon results, a current AA v5 comparison for 29 collected configurations, an October 27 Arena Frontend selection and Vals functional web-app evidence. Earlier index versions remain separate and numerically incomparable. Carbon is in a restricted rollout; missing medical and physical-world evaluations remain unavailable.
 

@@ -4,13 +4,13 @@
   "basis": "Earlier source records preserved; selected DesignArena Website preference results added.",
   "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
   "counts": {
-    "all": 100,
-    "plotted": 91,
-    "current": 63,
+    "all": 101,
+    "plotted": 92,
+    "current": 64,
     "historical": 30,
     "source_only": 7,
     "unavailable": 2,
-    "default_families": 67
+    "default_families": 68
   },
   "cards": {
     "hle-diamond": {
@@ -3546,6 +3546,106 @@
         "latest": "2026-10-28",
         "known": 40,
         "unknown": 2
+      }
+    },
+    "ladder-robot-manipulation-2026": {
+      "evidence": "plotted",
+      "cohort": "latest_collected",
+      "cohort_basis": "Full simulation, Lite subset and individual hardware tasks are separate cohorts.",
+      "discovery_lifecycle": null,
+      "source_review": {
+        "date": "2026-11-02",
+        "mode": "primary_source_review",
+        "scope": "Primary LADDER research and October 26 announcement."
+      },
+      "result_packet_checked_at": "2026-11-02",
+      "snapshot_at": null,
+      "publication_at": "2026-10-26",
+      "publication_label": "Announcement date; run dates unavailable",
+      "evaluations": [
+        {
+          "slice": "Full simulation / 145 tasks / pooled episodes",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 10
+        },
+        {
+          "slice": "LADDER-Lite / 10 simulated tasks",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / Franka / single destination / 5 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / Franka / exclusion / 2 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / Franka / ordered / 3 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / WidowX / single destination / 1 subgoal",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / WidowX / single destination / 2–3 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / WidowX / split destination / 2–3 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / WidowX / exclusion / 2 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / WidowX / ordered / 2 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        },
+        {
+          "slice": "Real robot / WidowX / duplicates / 2 subgoals",
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      ],
+      "model_releases": {
+        "earliest": null,
+        "latest": null,
+        "known": 0,
+        "unknown": 40
       }
     },
     "vals-index-v2-2-2026-10-30": {

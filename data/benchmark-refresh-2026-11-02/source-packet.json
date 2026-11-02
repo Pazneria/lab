@@ -735,5 +735,227 @@
         "source_row_key": "vals-index-v22-20261030-32"
       }
     ]
+  },
+  "ladder": {
+    "source_url": "https://ladderrobotics.ai/research",
+    "lite_source_url": "https://ladderrobotics.ai/",
+    "publication_at": "2026-10-26",
+    "tasks": 145,
+    "episodes_per_system": 2024,
+    "lite_tasks": 10,
+    "hardware_episodes_per_task_system": 12,
+    "methodology": "Three simulation suites; full pooled episode success and equally weighted suite mean are different metrics. Lite is 10 tasks and is not pooled into full results. Real Franka and WidowX tasks are separate cohorts; hardware proprioceptive verifier uses Gemini Robotics-ER 2, not the simulation verifier. API costs per successful episode use September 25 provider list prices, exclude simulator and low-level GPU costs; caching uncertainty makes GPT-Policy costs upper bounds, and missing Argon output tokens are estimated. Full-suite published plus/minus values are rounded 95% Wilson intervals in percentage points; exact endpoints are not reconstructed.",
+    "full": [
+      {
+        "label": "Low-level policy",
+        "value": 11.0,
+        "suite_mean": 13.1,
+        "subgoal_progress": 31.8,
+        "reported_plus_minus_pp": 1.4,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "Periodic trigger",
+        "value": 18.4,
+        "suite_mean": 19.4,
+        "subgoal_progress": 41.8,
+        "reported_plus_minus_pp": 1.7,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "Proprioceptive trigger",
+        "value": 21.7,
+        "suite_mean": 21.9,
+        "subgoal_progress": 44.5,
+        "reported_plus_minus_pp": 1.8,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "Proprioceptive verifier / Gemini 3.7 Flash",
+        "value": 25.0,
+        "suite_mean": 25.0,
+        "subgoal_progress": 46.9,
+        "reported_plus_minus_pp": 1.9,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "VoLo / Gemini 3.7 Flash",
+        "value": 25.3,
+        "suite_mean": 25.3,
+        "subgoal_progress": 47.4,
+        "reported_plus_minus_pp": 1.9,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "CaP-X / Gemini 3.7 Flash",
+        "value": 25.0,
+        "suite_mean": 21.9,
+        "subgoal_progress": 39.3,
+        "reported_plus_minus_pp": 1.9,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "TiPToP / Gemini 3.7 Flash",
+        "value": 9.4,
+        "suite_mean": 11.7,
+        "subgoal_progress": 14.0,
+        "reported_plus_minus_pp": 1.3,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "PSP-Agent / Gemini 3.7 Flash",
+        "value": 40.1,
+        "suite_mean": 42.8,
+        "subgoal_progress": 63.3,
+        "reported_plus_minus_pp": 2.2,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      },
+      {
+        "label": "GPT-Policy / GPT-6 Astra",
+        "value": 62.0,
+        "suite_mean": 63.3,
+        "subgoal_progress": 81.8,
+        "reported_plus_minus_pp": 2.1,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": 6.49
+      },
+      {
+        "label": "Privileged verifier / reference",
+        "value": 29.6,
+        "suite_mean": 29.8,
+        "subgoal_progress": 49.5,
+        "reported_plus_minus_pp": 2.0,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null,
+        "reported_api_usd_per_success": null
+      }
+    ],
+    "lite": [
+      {
+        "label": "GPT-Policy / GPT-6 Astra",
+        "value": 62.5,
+        "reported_api_usd_per_success": 6.62,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      },
+      {
+        "label": "GPT-Policy / Gemini 4 Argon",
+        "value": 55.9,
+        "reported_api_usd_per_success": 1.33,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      },
+      {
+        "label": "GPT-Policy / Claude Opus 5.5",
+        "value": 49.0,
+        "reported_api_usd_per_success": 7.02,
+        "evaluation_date": null,
+        "cost_usd_per_task": null,
+        "latency_seconds": null
+      }
+    ],
+    "real": [
+      {
+        "task": "Franka / single destination / 5 subgoals",
+        "values": [
+          0.0,
+          8.3,
+          25.0
+        ]
+      },
+      {
+        "task": "Franka / exclusion / 2 subgoals",
+        "values": [
+          0.0,
+          83.3,
+          100.0
+        ]
+      },
+      {
+        "task": "Franka / ordered / 3 subgoals",
+        "values": [
+          16.7,
+          83.3,
+          100.0
+        ]
+      },
+      {
+        "task": "WidowX / single destination / 1 subgoal",
+        "values": [
+          66.7,
+          75.0,
+          100.0
+        ]
+      },
+      {
+        "task": "WidowX / single destination / 2–3 subgoals",
+        "values": [
+          0.0,
+          33.3,
+          87.5
+        ]
+      },
+      {
+        "task": "WidowX / split destination / 2–3 subgoals",
+        "values": [
+          0.0,
+          29.2,
+          83.3
+        ]
+      },
+      {
+        "task": "WidowX / exclusion / 2 subgoals",
+        "values": [
+          0.0,
+          58.3,
+          91.7
+        ]
+      },
+      {
+        "task": "WidowX / ordered / 2 subgoals",
+        "values": [
+          8.3,
+          33.3,
+          41.7
+        ]
+      },
+      {
+        "task": "WidowX / duplicates / 2 subgoals",
+        "values": [
+          0.0,
+          0.0,
+          58.3
+        ]
+      }
+    ]
   }
 }
