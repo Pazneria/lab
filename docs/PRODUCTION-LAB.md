@@ -27,8 +27,11 @@ screen; the follow-up design, direct-click checks and captures are in
 [LAB-PHYSICAL-SCENEBENCH.md](LAB-PHYSICAL-SCENEBENCH.md).
 The catalog and home exit remain available in the minimal host menu.
 
-Claude's overlay, crosshair, area label, HUD and statistics UI are removed.
-The host provides Explore, Help and native destination controls.
+Claude's overlay, area label, HUD and statistics UI are removed.
+The host provides Explore, Help and native destination controls, plus a small
+white center crosshair with a dark edge while mouse look is captured. It is
+decorative and does not intercept input. Free-cursor browsing, loading, menus,
+dialogs, embedded scenes, focus loss and departure hide it.
 Mouse look uses direct movement deltas, adjustable sensitivity and bounded pitch.
 Keyboard input is canvas-scoped. Focus loss, capture release, dialogs and hidden
 documents clear held input and velocity; inactive pages render no frames.
