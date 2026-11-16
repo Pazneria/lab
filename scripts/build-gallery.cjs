@@ -88,7 +88,10 @@ assert.deepEqual(read("data/gallery-metadata-2026-11-02.json"), november.metadat
 const followup = require("./build-gallery-followup-2026-11-02.cjs")();
 assert.deepEqual(read("data/gallery-followup-projection-2026-11-02.json"), followup.projection);
 assert.deepEqual(read("data/gallery-metadata-followup-2026-11-02.json"), followup.metadata);
-const cardMetadata = followup.metadata;
+const november16 = require("./build-gallery-refresh-2026-11-16.cjs")();
+assert.deepEqual(read("data/gallery-refresh-projection-2026-11-16.json"), november16.projection);
+assert.deepEqual(read("data/gallery-metadata-2026-11-16.json"), november16.metadata);
+const cardMetadata = november16.metadata;
 assert.deepEqual(
   read("data/gallery-metadata-2026-10-05.json"),
   archivedMetadata,
@@ -294,7 +297,7 @@ const output = {
   frontend,
   supplement,
   cardMetadata,
-  coverage: followup.coverage,
+  coverage: november16.coverage,
   expanded: normalizeDisplayText({ ...community, medical }),
   provenance: {
     input:
@@ -311,6 +314,7 @@ const output = {
       ...carbon.projection.source_files,
       ...november.projection.source_files,
       ...followup.projection.source_files,
+      ...november16.projection.source_files,
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -327,7 +331,7 @@ const output = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json",
     ],
     rendererContract: "data/coverage-renderer-contract-2026-10-05.json",
-    presentationMetadata: "data/gallery-metadata-followup-2026-11-02.json",
+    presentationMetadata: "data/gallery-metadata-2026-11-16.json",
     frontendInputStatus: frontendInput.endsWith(".working.json")
       ? "Provisional renderer input reconstructed from retained packet fields; full original resend pending; numeric publication blocked"
       : "Original public research packet supplied directly by parent; not Library materialization",
@@ -341,6 +345,7 @@ for (const [id, patch] of Object.entries(carbon.notes))
   output.notes[id] = { ...output.notes[id], ...patch };
 for (const [id, patch] of Object.entries(november.notes)) output.notes[id] = { ...output.notes[id], ...patch };
 for (const [id, patch] of Object.entries(followup.notes)) output.notes[id] = { ...output.notes[id], ...patch };
+for (const [id, patch] of Object.entries(november16.notes)) output.notes[id] = { ...output.notes[id], ...patch };
 assert.equal(
   read("data/gallery-renderer-contract-2026-10-05-audit.json").counts
     .totalCards,
@@ -367,8 +372,10 @@ if (process.argv.includes("--check"))
   );
 else fs.writeFileSync(path.join(root, "assets/gallery-data.js"), js);
 const evidence = {
-  cards: 103,
-  coverageCards: 69,
+  cards: 109,
+  coverageCards: 75,
+  november16InputSHA256: Object.fromEntries(november16.projection.source_files.map((p) => [p, sha(p)])),
+  november16ProjectionSHA256: sha("data/gallery-refresh-projection-2026-11-16.json"),
   followupInputSHA256: Object.fromEntries(followup.projection.source_files.map((p) => [p, sha(p)])),
   followupProjectionSHA256: sha("data/gallery-followup-projection-2026-11-02.json"),
   novemberInputSHA256: Object.fromEntries(november.projection.source_files.map((p) => [p, sha(p)])),

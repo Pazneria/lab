@@ -6,7 +6,7 @@ const fs = require("node:fs"),
 const { chromium } = require(process.env.LAB_PLAYWRIGHT_MODULE || "playwright");
 const root = path.resolve(__dirname, ".."),
   read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
-const coverage = require("../scripts/build-gallery-followup-2026-11-02.cjs")().coverage;
+const coverage = require("../scripts/build-gallery-refresh-2026-11-16.cjs")().coverage;
 const report = {
   checkedAt: new Date().toISOString(),
   checks: [],
@@ -183,16 +183,16 @@ async function main() {
     await capture("coverage-gallery-desktop.png");
     await axe("default result gallery");
     // Default family cards must follow the declared representative order.
-    const latestAA = page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]');
+    const latestAA = page.locator('[data-benchmark-id="aa-intelligence-index-v501-2026-11-16"]');
     assert.equal(await latestAA.count(), 1);
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 0);
-    assert.match(await latestAA.locator(".mini-graph").textContent(), /Gemini 4 Carbon \(Medium\)/);
-    assert.equal(await latestAA.getAttribute("href"), "results.html?benchmark=aa-intelligence-index-2026-11-02");
-    assert.equal(await page.locator('[data-benchmark-id="webdev-arena-frontend-2026-10-27"]').count(), 1);
+    assert.match(await latestAA.locator(".mini-graph").textContent(), /Claude Fable 5.2/);
+    assert.equal(await latestAA.getAttribute("href"), "results.html?benchmark=aa-intelligence-index-v501-2026-11-16");
+    assert.equal(await page.locator('[data-benchmark-id="webdev-arena-frontend-2026-11-13"]').count(), 1);
     assert.equal(await page.locator('[data-benchmark-id="healthbench-professional-october-deployment"]').count(), 1);
     await latestAA.click();
     await page.locator(".coverage-chart").waitFor();
-    assert.equal(await page.locator(".chart-table tbody tr").count(), 5);
+    assert.equal(await page.locator(".chart-table tbody tr").count(), 27);
     await page.locator("select[name=family]").selectOption("aa-intelligence-index");
     assert.match(page.url(), /benchmark=aa-intelligence-index(?:&|$)/);
     await page.locator("select[name=cohort]").selectOption("aa-index-v5-selected");
@@ -202,22 +202,28 @@ async function main() {
     await page.locator("select[name=family]").selectOption("aa-intelligence-index-2026-11-02");
     assert.equal(await page.locator(".chart-table tbody tr").count(), 5);
     await go("benchmarks.html?history=historical");
-    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);
-    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 0);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-v501-2026-11-16"]').count(), 0);
     await go("benchmarks.html?q=exact%20model%20configurations");
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 0);
     await go("benchmarks.html?history=current");
-    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 1);
+    assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-v501-2026-11-16"]').count(), 1);
     await go("benchmarks.html");
     pass("Default family representatives follow declared order; filtered history, matching and AA detail selectors remain accessible");
+    for (const [id, date] of [['webdev-arena-frontend-2026-11-13','Nov 13, 2026'],['designarena-website-2026-11-16','Nov 16, 2026']]) {
+      await go('results.html?benchmark='+id);
+      const dates=page.locator('details').filter({has:page.locator('summary').getByText('Dates & evidence status')});
+      assert.match(await dates.textContent(),new RegExp('Source snapshot\\s*'+date.replace('.', '\\.')));
+    }
+    await go("benchmarks.html");
     await page.getByLabel("Results history").selectOption("all");
-    assert.equal(await page.locator(".benchmark-card").count(), 103);
+    assert.equal(await page.locator(".benchmark-card").count(), 109);
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-2026-11-02"]').count(), 1);
-    assert.equal(await page.locator(".mini-graph svg").count(), 94);
+    assert.equal(await page.locator(".mini-graph svg").count(), 100);
     pass(
-      "Default gallery groups result families without empty cards; all 103 direct cards remain accessible, including all 20 discovery IDs",
+      "Default gallery groups result families without empty cards; all 109 direct cards remain accessible, including all 20 discovery IDs",
     );
     for (const card of coverage.cards) {
       await go("results.html?benchmark=" + card.id);
@@ -246,7 +252,7 @@ async function main() {
       }
     }
     pass(
-      "All 69 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
+      "All 75 added or refreshed charts open, explain the test, support keyboard selection, expose exact tables and preserve safe HTTPS source links",
     );
     await go("results.html?benchmark=designarena-website-2026-11-02");
     assert.equal(await page.locator(".chart-table tbody tr").count(),15);

@@ -1,0 +1,7 @@
+# Benchmark source review, November 16, 2026
+
+This refresh records public source evidence; it did not run model evaluations. Earlier snapshots and original observations remain available as historical choices. AA Intelligence Index v5.0.1 regrades CritPt v2; its scores should not be read as a direct trend against v5.0. Arena and DesignArena measure preference, not browser task completion or screenshot fidelity. DesignArena's published MoE label and uncertainty descriptions differ, and its time aggregation is unspecified. RoboDojo-RC reports partial progress on six selected real-world tasks, with different time and cost bases for LLMs and VLAs. The AA HealthBench cohort is distinct from the OpenAI deployment cohort.
+
+OpenAI's [LifeVal paper](https://cdn.openai.com/pdf/lifeval.pdf) describes 169 tasks with an eight-hour timeout and plots mean reward against observed time and costs. Its figures do not provide a verified exact numeric table here, so no values were estimated. [Design2Code](https://github.com/NoviScl/Design2Code) remains historical screenshot-fidelity coverage; no verified modern frontier ranking was found. The existing Waymo on-road safety snapshot is distinct from model and simulated-driving rankings. No new clinical HealthBench evaluation was inferred from third-party page update dates.
+
+Source packets record source review dates separately from evaluation dates. Missing run dates, task costs and measurement definitions remain missing; model release dates do not substitute for evaluation dates.

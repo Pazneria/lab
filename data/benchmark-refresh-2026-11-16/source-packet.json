@@ -1,0 +1,782 @@
+{
+  "checked_at": "2026-11-16",
+  "aa": {
+    "source_url": "https://artificialanalysis.ai/models",
+    "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+    "version": "5.0.1",
+    "source_html_sha256": "faf2880efe73c89787524500677947847eb6d2e1d4305a0416641046154016e5",
+    "rows": [
+      {
+        "slug": "mimo-v2-6-pro",
+        "name": "MiMo-V2.6-Pro",
+        "suffix": null,
+        "effort": null,
+        "intelligenceIndex": 29.8897833093321,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-21"
+      },
+      {
+        "slug": "gpt-6-astra",
+        "name": "GPT-6 Astra (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 56.8538559596797,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-03"
+      },
+      {
+        "slug": "claude-opus-5-5",
+        "name": "Claude Opus 5.5 (Max, Default Fallback)",
+        "suffix": "Max, Default Fallback",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 59.1060336078904,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-22"
+      },
+      {
+        "slug": "ling-3-1-flash",
+        "name": "Ling 3.1 Flash 1019",
+        "suffix": null,
+        "effort": null,
+        "intelligenceIndex": 29.570119369837,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-22"
+      },
+      {
+        "slug": "claude-fable-5-2",
+        "name": "Claude Fable 5.2 (Max, Default Fallback)",
+        "suffix": "Max, Default Fallback",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 64.563595756626,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-11-09"
+      },
+      {
+        "slug": "grok-4-7",
+        "name": "Grok 4.7 (Xhigh)",
+        "suffix": "Xhigh",
+        "effort": {
+          "slug": "xhigh",
+          "label": "xhigh",
+          "level": 50
+        },
+        "intelligenceIndex": 35.4850117067196,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-21"
+      },
+      {
+        "slug": "kimi-k3-1-pro",
+        "name": "Kimi K3.1 Pro",
+        "suffix": null,
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 46.4526236744189,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-23"
+      },
+      {
+        "slug": "reflection-beam",
+        "name": "Beam 1.0",
+        "suffix": null,
+        "effort": null,
+        "intelligenceIndex": 17.7307282547205,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-16"
+      },
+      {
+        "slug": "gpt-6-luna",
+        "name": "GPT-6 Luna (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 27.8552004938153,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-22"
+      },
+      {
+        "slug": "claude-haiku-5-5",
+        "name": "Claude Haiku 5.5 (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 36.4845435880142,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-07"
+      },
+      {
+        "slug": "gemini-4-carbon",
+        "name": "Gemini 4 Carbon (High)",
+        "suffix": "High",
+        "effort": {
+          "slug": "high",
+          "label": "high",
+          "level": 40
+        },
+        "intelligenceIndex": 60.025738829526,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-28"
+      },
+      {
+        "slug": "qwen3-8-27b",
+        "name": "Qwen3.8 27B (Xhigh)",
+        "suffix": "Xhigh",
+        "effort": {
+          "slug": "xhigh",
+          "label": "xhigh",
+          "level": 50
+        },
+        "intelligenceIndex": 20.1068756031705,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-08-14"
+      },
+      {
+        "slug": "gpt-6-1-terra",
+        "name": "GPT-6.1 Terra (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 51.3265188577015,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-26"
+      },
+      {
+        "slug": "claude-sonnet-5-5",
+        "name": "Claude Sonnet 5.5 (Max, Default Fallback)",
+        "suffix": "Max, Default Fallback",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 54.54133407109,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-28"
+      },
+      {
+        "slug": "gpt-6-1-sol",
+        "name": "GPT-6.1 Sol (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 54.6087338138148,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-29"
+      },
+      {
+        "slug": "k2-horizon-375b-a23b",
+        "name": "K2 Horizon 375B A23B",
+        "suffix": null,
+        "effort": {
+          "slug": "high",
+          "label": "high",
+          "level": 40
+        },
+        "intelligenceIndex": 17.8202731734027,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-09-03"
+      },
+      {
+        "slug": "glm-5-3",
+        "name": "GLM-5.3 (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 31.653381843882,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-08-18"
+      },
+      {
+        "slug": "tencent-hy4",
+        "name": "Tencent Hy4",
+        "suffix": null,
+        "effort": null,
+        "intelligenceIndex": 34.5552385392508,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-11-03"
+      },
+      {
+        "slug": "gemini-4-hydrogen",
+        "name": "Gemini 4 Hydrogen (Xhigh)",
+        "suffix": "Xhigh",
+        "effort": {
+          "slug": "xhigh",
+          "label": "xhigh",
+          "level": 50
+        },
+        "intelligenceIndex": 53.9192287317542,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-11-12"
+      },
+      {
+        "slug": "muse-ember",
+        "name": "Muse Ember (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 36.0212987864912,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-11-09"
+      },
+      {
+        "slug": "nemotron-3-5-super-vl",
+        "name": "Nemotron 3.5 Super VL",
+        "suffix": null,
+        "effort": {
+          "slug": "high",
+          "label": "high",
+          "level": 40
+        },
+        "intelligenceIndex": 13.6203422723141,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-15"
+      },
+      {
+        "slug": "inkling-2-small",
+        "name": "Inkling 2 Small",
+        "suffix": null,
+        "effort": null,
+        "intelligenceIndex": 30.6286781498958,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-11-05"
+      },
+      {
+        "slug": "muse-wonder-full",
+        "name": "Muse Wonder Full (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 50.0772123627021,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-12"
+      },
+      {
+        "slug": "mistral-large-4",
+        "name": "Mistral Large 4 (High)",
+        "suffix": "High",
+        "effort": {
+          "slug": "high",
+          "label": "high",
+          "level": 40
+        },
+        "intelligenceIndex": 26.1249946754784,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-29"
+      },
+      {
+        "slug": "deepseek-v4-1-flash-1017",
+        "name": "DeepSeek V4.1 Flash 1017 (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 32.5896393532027,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-17"
+      },
+      {
+        "slug": "qwen4-max",
+        "name": "Qwen4 Max",
+        "suffix": null,
+        "effort": {
+          "slug": "xhigh",
+          "label": "xhigh",
+          "level": 50
+        },
+        "intelligenceIndex": 42.8914543287565,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-11-16"
+      },
+      {
+        "slug": "muse-wonder",
+        "name": "Muse Wonder (Max)",
+        "suffix": "Max",
+        "effort": {
+          "slug": "max",
+          "label": "max",
+          "level": 60
+        },
+        "intelligenceIndex": 43.5748225998431,
+        "intelligenceIndexIsEstimated": null,
+        "releaseDate": "2026-10-12"
+      }
+    ]
+  },
+  "arena": {
+    "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+    "snapshot": "2026-11-13",
+    "configurations": 158,
+    "votes": 872612,
+    "rows": [
+      [
+        "Claude Fable 5.2 (xHigh)",
+        1867,
+        22,
+        1144,
+        1,
+        2,
+        0
+      ],
+      [
+        "Claude Opus 5.5 (Max)",
+        1862,
+        14,
+        3237,
+        1,
+        2,
+        0
+      ],
+      [
+        "Claude Sonnet 5.5 (xHigh)",
+        1813,
+        11,
+        4754,
+        3,
+        4,
+        0
+      ],
+      [
+        "Gemini 4 Carbon (High)",
+        1793,
+        17,
+        1758,
+        3,
+        7,
+        1
+      ],
+      [
+        "Qwen4-Max (xHigh)",
+        1782,
+        18,
+        1365,
+        4,
+        8,
+        1
+      ],
+      [
+        "GPT-6 Astra (Max)",
+        1780,
+        9,
+        6929,
+        4,
+        7,
+        0
+      ],
+      [
+        "Claude Fable 5.1 (Max)",
+        1774,
+        9,
+        7846,
+        4,
+        8,
+        0
+      ],
+      [
+        "GPT-6.1 Sol (Max)",
+        1759,
+        11,
+        4639,
+        6,
+        10,
+        0
+      ],
+      [
+        "Claude Sonnet 5.5 (High)",
+        1747,
+        9,
+        6487,
+        8,
+        11,
+        0
+      ],
+      [
+        "Muse Wonder Full (Max)",
+        1743,
+        17,
+        1531,
+        8,
+        11,
+        0
+      ],
+      [
+        "Gemini 4 Hydrogen (High)",
+        1730,
+        16,
+        1617,
+        9,
+        12,
+        1
+      ],
+      [
+        "Claude Opus 5 (Max)",
+        1713,
+        7,
+        15123,
+        11,
+        14,
+        0
+      ],
+      [
+        "Kimi K3.1 Pro (Max)",
+        1703,
+        10,
+        4286,
+        12,
+        16,
+        0
+      ],
+      [
+        "Gemini 4 Argon (High)",
+        1699,
+        11,
+        4008,
+        12,
+        18,
+        0
+      ],
+      [
+        "Qwen3.8-Max (0902)",
+        1690,
+        7,
+        18378,
+        13,
+        20,
+        1
+      ],
+      [
+        "GPT-6.1 Terra (Max)",
+        1687,
+        12,
+        3416,
+        13,
+        23,
+        0
+      ],
+      [
+        "DeepSeek-V4.1-Flash-20261017 (Max)",
+        1681,
+        7,
+        12183,
+        15,
+        23,
+        0
+      ],
+      [
+        "GPT-6 Sol (Max)",
+        1680,
+        9,
+        5979,
+        14,
+        23,
+        0
+      ],
+      [
+        "Claude Opus 5 (High)",
+        1678,
+        6,
+        21379,
+        15,
+        23,
+        0
+      ],
+      [
+        "Qwen3.8-Max",
+        1676,
+        13,
+        2857,
+        14,
+        26,
+        1
+      ]
+    ]
+  },
+  "design": {
+    "source_url": "https://www.designarena.ai/leaderboard/website",
+    "methodology_url": "https://notes.designarena.ai/methodology/",
+    "snapshot": "2026-11-16 14:07 UTC",
+    "configurations": 187,
+    "rows": [
+      [
+        "Muse Wonder (max)",
+        1379,
+        3135,
+        1779,
+        63.8,
+        1.3,
+        4914,
+        155.7
+      ],
+      [
+        "Muse Spark 1.3 (xhigh)",
+        1360,
+        14246,
+        9764,
+        59.3,
+        0.6,
+        24010,
+        199.6
+      ],
+      [
+        "Claude Fable 5.2",
+        1353,
+        846,
+        549,
+        60.6,
+        2.6,
+        1395,
+        598
+      ],
+      [
+        "GPT-6 Astra (xhigh)",
+        1341,
+        3375,
+        2370,
+        58.8,
+        1.3,
+        5745,
+        586.9
+      ],
+      [
+        "Inkling 2 Small",
+        1337,
+        1363,
+        972,
+        58.4,
+        2,
+        2335,
+        566.7
+      ],
+      [
+        "Kimi K3",
+        1337,
+        2891,
+        1969,
+        59.5,
+        1.4,
+        4860,
+        834.7
+      ],
+      [
+        "Muse Ember",
+        1330,
+        1037,
+        706,
+        59.5,
+        2.3,
+        1743,
+        32.3
+      ],
+      [
+        "Claude Opus 5.5",
+        1326,
+        2204,
+        1765,
+        55.5,
+        1.5,
+        3969,
+        298.9
+      ],
+      [
+        "Kimi K3.1 Pro",
+        1321,
+        2142,
+        1572,
+        57.7,
+        1.6,
+        3714,
+        1169.4
+      ],
+      [
+        "GPT-5.6 Sol (xhigh)",
+        1319,
+        3862,
+        2926,
+        56.9,
+        1.2,
+        6788,
+        272.5
+      ],
+      [
+        "Gemini 4 Hydrogen",
+        1318,
+        601,
+        448,
+        57.3,
+        3,
+        1049,
+        93.3
+      ],
+      [
+        "Gemini 4 Carbon",
+        1317,
+        816,
+        633,
+        56.3,
+        2.6,
+        1449,
+        220.5
+      ],
+      [
+        "Gemini 4 Argon",
+        1316,
+        4799,
+        3847,
+        55.5,
+        1,
+        8646,
+        214.7
+      ],
+      [
+        "GPT-6.1 Sol",
+        1316,
+        2135,
+        1820,
+        54,
+        1.6,
+        3955,
+        239.2
+      ],
+      [
+        "MiMo-V2.6-Pro",
+        1311,
+        9387,
+        8721,
+        51.8,
+        0.7,
+        18108,
+        496.1
+      ]
+    ]
+  },
+  "bio": {
+    "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+    "publication": "2026-11-06",
+    "rows": [
+      [
+        "GPT-6 Astra",
+        66.7,
+        60.3,
+        73.1,
+        4704
+      ],
+      [
+        "GPT-6.1 Sol",
+        62,
+        55.6,
+        68.4,
+        5238
+      ],
+      [
+        "GPT-5.6 Sol",
+        43.8,
+        37.6,
+        50,
+        9099
+      ],
+      [
+        "GPT-6 Luna",
+        38.3,
+        32.3,
+        44.5,
+        13120
+      ],
+      [
+        "GPT-5.5",
+        35.4,
+        29.7,
+        41,
+        11135
+      ],
+      [
+        "GPT-5.4",
+        33.2,
+        28.3,
+        38.4,
+        13717
+      ],
+      [
+        "GPT-5.2",
+        31.2,
+        26.2,
+        36.3,
+        27620
+      ]
+    ]
+  },
+  "health": {
+    "source_url": "https://artificialanalysis.ai/evaluations/healthbench",
+    "rows": [
+      [
+        "Claude Fable 5.2 (Xhigh, Default Fallback)",
+        68.1,
+        "xhigh"
+      ],
+      [
+        "Claude Fable 5.2 (Max, Default Fallback)",
+        67.7,
+        "max"
+      ],
+      [
+        "Claude Fable 5.2 (High, Default Fallback)",
+        67.6,
+        "high"
+      ]
+    ]
+  },
+  "robot": {
+    "source_url": "https://robocurve.org/",
+    "additions": [
+      [
+        "Fable 5.2 (high) (fast)",
+        57.3,
+        5.93,
+        4.5,
+        "2026-11-09"
+      ],
+      [
+        "Gemini 4 Carbon (high)",
+        54.5,
+        2.16,
+        32.1,
+        "2026-11-10"
+      ]
+    ]
+  }
+}

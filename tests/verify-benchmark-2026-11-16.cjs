@@ -1,0 +1,17 @@
+"use strict";
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const prior=require('../scripts/build-gallery-followup-2026-11-02.cjs')(),next=require('../scripts/build-gallery-refresh-2026-11-16.cjs')();
+assert.deepEqual(next.coverage.cards.slice(0,69),prior.coverage.cards);
+assert.equal(next.metadata.counts.all,109);assert.equal(next.metadata.counts.default_families,71);
+const cards=next.projection.cards,by=id=>cards.find(c=>c.id===id).variants[0];
+assert.deepEqual(cards.map(c=>c.variants[0].rows.length),[27,20,15,7,3,14]);
+const aa=by('aa-intelligence-index-v501-2026-11-16');assert.equal(aa.settings.version,'5.0.1');assert.ok(aa.rows.some(r=>r.label.includes('Fable 5.2')&&r.value===64.56));assert.ok(aa.rows.every(r=>r.evaluation_date===null&&r.cost_usd_per_task===null));
+const arena=by('webdev-arena-frontend-2026-11-13');assert.deepEqual(arena.rows[0].rank_spread,[1,2]);assert.equal(arena.rows[0].value,1867);assert.equal(arena.rows[3].preliminary,true);assert.equal(arena.metrics[0].interval_kind,'published_interval');
+const design=by('designarena-website-2026-11-16');assert.equal(design.rows[0].value,1379);assert.equal(design.rows[0].reported_moe_percent,1.3);assert.equal(design.metrics[0].interval_field,undefined);assert.ok(design.rows.every(r=>r.latency_seconds===null));
+assert.equal(arena.snapshot_at,'2026-11-13');assert.equal(next.metadata.cards['webdev-arena-frontend-2026-11-13'].snapshot_at,'2026-11-13');assert.equal(design.snapshot_at,'2026-11-16');assert.equal(next.metadata.cards['designarena-website-2026-11-16'].snapshot_at,'2026-11-16');assert.equal(design.settings.snapshot,'2026-11-16 14:07 UTC');
+const bio=by('biobasicsbench-xhigh-2026-11-06');assert.deepEqual(bio.rows[0].ci,[60.3,73.1]);assert.equal(bio.rows[0].value,66.7);assert.equal(bio.metrics[0].ci_level,.95);assert.equal(bio.settings.attempts_per_task,5);
+const health=by('aa-healthbench-professional-2026-11-16');assert.deepEqual(health.rows.map(r=>r.value),[68.1,67.7,67.6]);assert.equal(health.settings.judge,'GPT-5.4 (low)');
+const robot=by('robodojo-rc-tier1-2026-11-16');assert.equal(robot.rows.find(r=>r.label.includes('Carbon')).value,54.5);assert.equal(robot.rows.find(r=>r.label.includes('Carbon')).access_status,'early access');assert.equal(robot.settings.attempts_per_configuration,120);
+for(const [group,id] of [['aa-intelligence-index',cards[0].id],['webdev-arena-frontend',cards[1].id],['designarena-website',cards[2].id],['robodojo-rc-tier1',cards[5].id]])assert.equal(next.coverage.familyGroups[group][0],id);
+const s={window:{},URL};vm.runInNewContext(fs.readFileSync('assets/coverage-graphs.js','utf8'),s);assert.equal(s.window.LAB_COVERAGE.valid(next.coverage),true);const bad=structuredClone(next.coverage);bad.november_16_refresh.card_ids.pop();assert.equal(s.window.LAB_COVERAGE.valid(bad),false);
+console.log('November 16 source, cohort, history and renderer checks passed');
