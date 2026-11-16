@@ -13,6 +13,7 @@ on:
       - codex/benchmark-refresh-2026-11-02
       - codex/aa-carbon-robodojo-2026-11-02
       - codex/gallery-family-default-2026-11-02
+      - codex/benchmark-refresh-2026-11-16
 
 permissions:
   contents: read
@@ -25,7 +26,7 @@ jobs:
   gallery:
     if: >-
       github.repository == 'Pazneria/lab' &&
-      (github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-12' || github.ref == 'refs/heads/codex/gemini-4-argon-tracker-2026-10-15' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-19' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-26' || github.ref == 'refs/heads/codex/gemini-4-carbon-2026-10-28' || github.ref == 'refs/heads/codex/benchmark-refresh-2026-11-02' || github.ref == 'refs/heads/codex/aa-carbon-robodojo-2026-11-02' || github.ref == 'refs/heads/codex/gallery-family-default-2026-11-02') &&
+      (github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-12' || github.ref == 'refs/heads/codex/gemini-4-argon-tracker-2026-10-15' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-19' || github.ref == 'refs/heads/codex/benchmark-gallery-refresh-2026-10-26' || github.ref == 'refs/heads/codex/gemini-4-carbon-2026-10-28' || github.ref == 'refs/heads/codex/benchmark-refresh-2026-11-02' || github.ref == 'refs/heads/codex/aa-carbon-robodojo-2026-11-02' || github.ref == 'refs/heads/codex/gallery-family-default-2026-11-02' || github.ref == 'refs/heads/codex/benchmark-refresh-2026-11-16') &&
       github.event.repository.private == false
     runs-on: ubuntu-24.04
     timeout-minutes: 20
@@ -102,6 +103,7 @@ jobs:
           node scripts/build-gallery-gemini-carbon-2026-10-28.cjs --check
           node scripts/build-gallery-refresh-2026-11-02.cjs --check
           node scripts/build-gallery-followup-2026-11-02.cjs --check
+          node scripts/build-gallery-refresh-2026-11-16.cjs --check
           node scripts/build-gallery.cjs --check --publish-check
           node tests/verify-benchmark-refresh.cjs
           node tests/verify-gemini-argon.cjs
@@ -110,6 +112,7 @@ jobs:
           node tests/verify-gemini-carbon.cjs
           node tests/verify-benchmark-2026-11-02.cjs
           node tests/verify-followup-2026-11-02.cjs
+          node tests/verify-benchmark-2026-11-16.cjs
           node scripts/verify-benchmark-refresh-boundary.cjs
           python tests/verify-static.py > "$RUNNER_TEMP/lab-static-check.log"
           tail -n 8 "$RUNNER_TEMP/lab-static-check.log"

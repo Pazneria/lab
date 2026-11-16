@@ -11540,6 +11540,48 @@ window.LAB_GALLERY = {
       "matters": "These are real robot trials under a specific task selection and controller setup.",
       "read": "The values are average partial-progress scores, not task completion rates. Authors selected the six easiest tasks after evaluating Astra on 18 tasks; that selection limits generalization. LLMs and vision-language-action models use different control limits, cost bases and time definitions. Estimated costs and reported times are kept in each source record; the plot compares score only. Model release dates do not establish evaluation dates. This is separate from the older RoboDojo-RealEval cohort.",
       "date": "Source reviewed November 2, 2026; run dates unavailable"
+    },
+    "aa-intelligence-index-v501-2026-11-16": {
+      "question": "How do configurations compare on AA’s current intelligence index?",
+      "tests": "An index combining nine evaluations in four weighted groups.",
+      "matters": "A broad, independently reported selection of model capabilities.",
+      "read": "AA regraded CritPt v2 in November 2026. Version 5.0.1 scores cannot be compared directly with older index versions; differences do not establish a capability regression. This is a 27-configuration server-rendered selection, not the complete leaderboard. Model release dates are not evaluation dates.",
+      "date": "Source reviewed November 16, 2026; run dates unavailable"
+    },
+    "webdev-arena-frontend-2026-11-13": {
+      "question": "Which frontend outputs do people prefer?",
+      "tests": "Human votes compare web development outputs.",
+      "matters": "Preference is one perspective on generated interfaces.",
+      "read": "First 20 of 158 configurations from the November 13 snapshot, with 872,612 votes overall. Published bounds have unspecified confidence coverage. Preference is not screenshot fidelity or functional completion; token prices are not task costs.",
+      "date": "Source reviewed November 16, 2026; run dates unavailable"
+    },
+    "designarena-website-2026-11-16": {
+      "question": "Which website designs do people prefer?",
+      "tests": "Visitors compare generated websites in pairwise votes.",
+      "matters": "Design preference measures a different outcome from task completion.",
+      "read": "First 15 visible Website HTML non-agentic rows of 187 at 14:07 UTC. The page labels MoE as a percentage while its footer and methodology describe uncertainty differently; the original label is retained without plotting it as an Elo interval. Reported time aggregation is unspecified.",
+      "date": "Source reviewed November 16, 2026; run dates unavailable"
+    },
+    "biobasicsbench-xhigh-2026-11-06": {
+      "question": "How well do AI agents handle routine wet-lab science questions?",
+      "tests": "100 tasks, five attempts per model setting, scored for rubric credit.",
+      "matters": "The tasks examine scientific reasoning relevant to routine laboratory work.",
+      "read": "Scores are mean reward, not task completion. The seven xhigh settings are the author’s comparable table; a figure includes other settings. Confidence intervals are 95% task-cluster bootstrap intervals. Output tokens are not measured task costs. Evaluation dates were not disclosed.",
+      "date": "Source reviewed November 16, 2026; run dates unavailable"
+    },
+    "aa-healthbench-professional-2026-11-16": {
+      "question": "How do reported Fable settings score on clinician conversations?",
+      "tests": "525 clinician conversations, four repeats and physician-written rubrics.",
+      "matters": "This tests responses on simulated professional medical conversations.",
+      "read": "These are AA independently evaluated length-adjusted scores using GPT-5.4 low as judge, not the raw score or the separate OpenAI deployment cohort. This selection contains the three configurations explicitly reported in the source summary. Run dates and task costs for these rows are not disclosed.",
+      "date": "Source reviewed November 16, 2026; run dates unavailable"
+    },
+    "robodojo-rc-tier1-2026-11-16": {
+      "question": "How much progress do robot systems make on selected real-world tasks?",
+      "tests": "The author evaluates six adapted physical tasks with 120 attempts per configuration; human rubrics allow partial progress.",
+      "matters": "These are real robot trials under a specific task selection and controller setup.",
+      "read": "The values are average partial-progress scores, not task completion rates. Authors selected the six easiest tasks after evaluating Astra on 18 tasks; that selection limits generalization. LLMs and vision-language-action models use different control limits, cost bases and time definitions. Estimated costs and reported times are kept in each source record; the plot compares score only. Model release dates do not establish evaluation dates. This is separate from the older RoboDojo-RealEval cohort. Carbon was evaluated in early access. Robocurve lists its release as November 10, while Google and AA list October 28; the conflicting source date is retained without assigning a normalized release date.",
+      "date": "Source reviewed November 16, 2026; run dates unavailable"
     }
   },
   "frontend": {
@@ -12121,17 +12163,17 @@ window.LAB_GALLERY = {
   },
   "cardMetadata": {
     "schema_version": 1,
-    "prepared_at": "2026-11-02",
-    "basis": "Earlier evidence preserved; current AA v5 FAQ selection and separate real-robot RoboDojo-RC results added.",
+    "prepared_at": "2026-11-16",
+    "basis": "Earlier evidence retained; new source snapshots and separately scoped evaluations added.",
     "filter_note": "Historical source guides also appear in Source guides. Latest collected means the selected protocol cohort, not a claim of new runs or a current global ranking.",
     "counts": {
-      "all": 103,
-      "plotted": 94,
-      "current": 65,
-      "historical": 31,
+      "all": 109,
+      "plotted": 100,
+      "current": 67,
+      "historical": 35,
       "source_only": 7,
       "unavailable": 2,
-      "default_families": 69
+      "default_families": 71
     },
     "cards": {
       "hle-diamond": {
@@ -15567,8 +15609,8 @@ window.LAB_GALLERY = {
       },
       "webdev-arena-frontend-2026-10-27": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Separate dated source observations; no independently executed evaluation and no cross-version ranking.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier source snapshot retained in history.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-10-28",
@@ -15801,8 +15843,8 @@ window.LAB_GALLERY = {
       },
       "designarena-website-2026-11-02": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "15 visible rows of 181 website entries; website subcategory leaderboards are separate.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier source snapshot retained in history.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-11-02",
@@ -15831,8 +15873,8 @@ window.LAB_GALLERY = {
       },
       "aa-intelligence-index-2026-11-02": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Five configurations in the source FAQ, rounded to whole index points; not the complete leaderboard.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier source snapshot retained in history.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-11-02",
@@ -15861,8 +15903,8 @@ window.LAB_GALLERY = {
       },
       "robodojo-rc-tier1-2026": {
         "evidence": "plotted",
-        "cohort": "latest_collected",
-        "cohort_basis": "Twelve configurations on six selected real-robot tasks; partial-progress score, not completion.",
+        "cohort": "historical",
+        "cohort_basis": "Earlier source snapshot retained in history.",
         "discovery_lifecycle": null,
         "source_review": {
           "date": "2026-11-02",
@@ -15887,6 +15929,186 @@ window.LAB_GALLERY = {
           "latest": "2026-10-19",
           "known": 12,
           "unknown": 0
+        }
+      },
+      "aa-intelligence-index-v501-2026-11-16": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "v5.0.1 / 27 available configurations",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-16",
+          "mode": "primary_source_review",
+          "scope": "Public source review; no model evaluations run."
+        },
+        "result_packet_checked_at": "2026-11-16",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "v5.0.1 / 27 available configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 27
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-08-14",
+          "latest": "2026-11-16",
+          "known": 27,
+          "unknown": 0
+        }
+      },
+      "webdev-arena-frontend-2026-11-13": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Frontend / November 13 / first 20 of 158",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-16",
+          "mode": "primary_source_review",
+          "scope": "Public source review; no model evaluations run."
+        },
+        "result_packet_checked_at": "2026-11-16",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Frontend / November 13 / first 20 of 158",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 20
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 20
+        }
+      },
+      "designarena-website-2026-11-16": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "Website / November 16 / first 15 of 187",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-16",
+          "mode": "primary_source_review",
+          "scope": "Public source review; no model evaluations run."
+        },
+        "result_packet_checked_at": "2026-11-16",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "Website / November 16 / first 15 of 187",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 15
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 15
+        }
+      },
+      "biobasicsbench-xhigh-2026-11-06": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "OpenAI report / seven xhigh settings",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-16",
+          "mode": "primary_source_review",
+          "scope": "Public source review; no model evaluations run."
+        },
+        "result_packet_checked_at": "2026-11-16",
+        "snapshot_at": null,
+        "publication_at": "2026-11-06",
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "OpenAI report / seven xhigh settings",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 7
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 7
+        }
+      },
+      "aa-healthbench-professional-2026-11-16": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "AA / three reported Fable settings",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-16",
+          "mode": "primary_source_review",
+          "scope": "Public source review; no model evaluations run."
+        },
+        "result_packet_checked_at": "2026-11-16",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "AA / three reported Fable settings",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 3
+          }
+        ],
+        "model_releases": {
+          "earliest": null,
+          "latest": null,
+          "known": 0,
+          "unknown": 3
+        }
+      },
+      "robodojo-rc-tier1-2026-11-16": {
+        "evidence": "plotted",
+        "cohort": "latest_collected",
+        "cohort_basis": "RoboDojo-RC Tier 1 / 14 configurations",
+        "discovery_lifecycle": null,
+        "source_review": {
+          "date": "2026-11-16",
+          "mode": "primary_source_review",
+          "scope": "Public source review; no model evaluations run."
+        },
+        "result_packet_checked_at": "2026-11-16",
+        "snapshot_at": null,
+        "publication_at": null,
+        "publication_label": null,
+        "evaluations": [
+          {
+            "slice": "RoboDojo-RC Tier 1 / 14 configurations",
+            "earliest": null,
+            "latest": null,
+            "known": 0,
+            "unknown": 14
+          }
+        ],
+        "model_releases": {
+          "earliest": "2026-04-17",
+          "latest": "2026-11-09",
+          "known": 13,
+          "unknown": 1
         }
       }
     }
@@ -64667,6 +64889,3295 @@ window.LAB_GALLERY = {
             ]
           }
         ]
+      },
+      {
+        "id": "aa-intelligence-index-v501-2026-11-16",
+        "name": "Artificial Analysis Intelligence Index / v5.0.1",
+        "category": "standard",
+        "question": "How do configurations compare on AA’s current intelligence index?",
+        "tests": "An index combining nine evaluations in four weighted groups.",
+        "matters": "A broad, independently reported selection of model capabilities.",
+        "read": "AA regraded CritPt v2 in November 2026. Version 5.0.1 scores cannot be compared directly with older index versions; differences do not establish a capability regression. This is a 27-configuration server-rendered selection, not the complete leaderboard. Model release dates are not evaluation dates.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-16/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-16",
+        "variants": [
+          {
+            "id": "aa-intelligence-index-v501-2026-11-16",
+            "label": "v5.0.1 / 27 available configurations",
+            "rows": [
+              {
+                "label": "Claude Fable 5.2 (Max, Default Fallback)",
+                "model_variant": "Claude Fable 5.2 (Max, Default Fallback)",
+                "value": 64.56,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-09",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 64.563595756626,
+                "model_identifier": "claude-fable-5-2",
+                "effort": "max",
+                "source_suffix": "Max, Default Fallback",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-0",
+                "raw": {
+                  "label": "Claude Fable 5.2 (Max, Default Fallback)",
+                  "model_variant": "Claude Fable 5.2 (Max, Default Fallback)",
+                  "value": 64.56,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-09",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 64.563595756626,
+                  "model_identifier": "claude-fable-5-2",
+                  "effort": "max",
+                  "source_suffix": "Max, Default Fallback",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Gemini 4 Carbon (High)",
+                "model_variant": "Gemini 4 Carbon (High)",
+                "value": 60.03,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-28",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 60.025738829526,
+                "model_identifier": "gemini-4-carbon",
+                "effort": "high",
+                "source_suffix": "High",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-1",
+                "raw": {
+                  "label": "Gemini 4 Carbon (High)",
+                  "model_variant": "Gemini 4 Carbon (High)",
+                  "value": 60.03,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-28",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 60.025738829526,
+                  "model_identifier": "gemini-4-carbon",
+                  "effort": "high",
+                  "source_suffix": "High",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Claude Opus 5.5 (Max, Default Fallback)",
+                "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+                "value": 59.11,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-22",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 59.1060336078904,
+                "model_identifier": "claude-opus-5-5",
+                "effort": "max",
+                "source_suffix": "Max, Default Fallback",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-2",
+                "raw": {
+                  "label": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "model_variant": "Claude Opus 5.5 (Max, Default Fallback)",
+                  "value": 59.11,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-22",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 59.1060336078904,
+                  "model_identifier": "claude-opus-5-5",
+                  "effort": "max",
+                  "source_suffix": "Max, Default Fallback",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "GPT-6 Astra (Max)",
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 56.85,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-03",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 56.8538559596797,
+                "model_identifier": "gpt-6-astra",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-3",
+                "raw": {
+                  "label": "GPT-6 Astra (Max)",
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 56.85,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-03",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 56.8538559596797,
+                  "model_identifier": "gpt-6-astra",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "GPT-6.1 Sol (Max)",
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 54.61,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-29",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 54.6087338138148,
+                "model_identifier": "gpt-6-1-sol",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-4",
+                "raw": {
+                  "label": "GPT-6.1 Sol (Max)",
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 54.61,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-29",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 54.6087338138148,
+                  "model_identifier": "gpt-6-1-sol",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                "value": 54.54,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-28",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 54.54133407109,
+                "model_identifier": "claude-sonnet-5-5",
+                "effort": "max",
+                "source_suffix": "Max, Default Fallback",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-5",
+                "raw": {
+                  "label": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                  "model_variant": "Claude Sonnet 5.5 (Max, Default Fallback)",
+                  "value": 54.54,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-28",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 54.54133407109,
+                  "model_identifier": "claude-sonnet-5-5",
+                  "effort": "max",
+                  "source_suffix": "Max, Default Fallback",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Gemini 4 Hydrogen (Xhigh)",
+                "model_variant": "Gemini 4 Hydrogen (Xhigh)",
+                "value": 53.92,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-12",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 53.9192287317542,
+                "model_identifier": "gemini-4-hydrogen",
+                "effort": "xhigh",
+                "source_suffix": "Xhigh",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-6",
+                "raw": {
+                  "label": "Gemini 4 Hydrogen (Xhigh)",
+                  "model_variant": "Gemini 4 Hydrogen (Xhigh)",
+                  "value": 53.92,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-12",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 53.9192287317542,
+                  "model_identifier": "gemini-4-hydrogen",
+                  "effort": "xhigh",
+                  "source_suffix": "Xhigh",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "GPT-6.1 Terra (Max)",
+                "model_variant": "GPT-6.1 Terra (Max)",
+                "value": 51.33,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-26",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 51.3265188577015,
+                "model_identifier": "gpt-6-1-terra",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-7",
+                "raw": {
+                  "label": "GPT-6.1 Terra (Max)",
+                  "model_variant": "GPT-6.1 Terra (Max)",
+                  "value": 51.33,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-26",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 51.3265188577015,
+                  "model_identifier": "gpt-6-1-terra",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Muse Wonder Full (Max)",
+                "model_variant": "Muse Wonder Full (Max)",
+                "value": 50.08,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-12",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 50.0772123627021,
+                "model_identifier": "muse-wonder-full",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-8",
+                "raw": {
+                  "label": "Muse Wonder Full (Max)",
+                  "model_variant": "Muse Wonder Full (Max)",
+                  "value": 50.08,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-12",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 50.0772123627021,
+                  "model_identifier": "muse-wonder-full",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Kimi K3.1 Pro",
+                "model_variant": "Kimi K3.1 Pro",
+                "value": 46.45,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-23",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 46.4526236744189,
+                "model_identifier": "kimi-k3-1-pro",
+                "effort": "max",
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-9",
+                "raw": {
+                  "label": "Kimi K3.1 Pro",
+                  "model_variant": "Kimi K3.1 Pro",
+                  "value": 46.45,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-23",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 46.4526236744189,
+                  "model_identifier": "kimi-k3-1-pro",
+                  "effort": "max",
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Muse Wonder (Max)",
+                "model_variant": "Muse Wonder (Max)",
+                "value": 43.57,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-12",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 43.5748225998431,
+                "model_identifier": "muse-wonder",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-10",
+                "raw": {
+                  "label": "Muse Wonder (Max)",
+                  "model_variant": "Muse Wonder (Max)",
+                  "value": 43.57,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-12",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 43.5748225998431,
+                  "model_identifier": "muse-wonder",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Qwen4 Max",
+                "model_variant": "Qwen4 Max",
+                "value": 42.89,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-16",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 42.8914543287565,
+                "model_identifier": "qwen4-max",
+                "effort": "xhigh",
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-11",
+                "raw": {
+                  "label": "Qwen4 Max",
+                  "model_variant": "Qwen4 Max",
+                  "value": 42.89,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-16",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 42.8914543287565,
+                  "model_identifier": "qwen4-max",
+                  "effort": "xhigh",
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Claude Haiku 5.5 (Max)",
+                "model_variant": "Claude Haiku 5.5 (Max)",
+                "value": 36.48,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-07",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 36.4845435880142,
+                "model_identifier": "claude-haiku-5-5",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-12",
+                "raw": {
+                  "label": "Claude Haiku 5.5 (Max)",
+                  "model_variant": "Claude Haiku 5.5 (Max)",
+                  "value": 36.48,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-07",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 36.4845435880142,
+                  "model_identifier": "claude-haiku-5-5",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Muse Ember (Max)",
+                "model_variant": "Muse Ember (Max)",
+                "value": 36.02,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-09",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 36.0212987864912,
+                "model_identifier": "muse-ember",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-13",
+                "raw": {
+                  "label": "Muse Ember (Max)",
+                  "model_variant": "Muse Ember (Max)",
+                  "value": 36.02,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-09",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 36.0212987864912,
+                  "model_identifier": "muse-ember",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Grok 4.7 (Xhigh)",
+                "model_variant": "Grok 4.7 (Xhigh)",
+                "value": 35.49,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-21",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 35.4850117067196,
+                "model_identifier": "grok-4-7",
+                "effort": "xhigh",
+                "source_suffix": "Xhigh",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-14",
+                "raw": {
+                  "label": "Grok 4.7 (Xhigh)",
+                  "model_variant": "Grok 4.7 (Xhigh)",
+                  "value": 35.49,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-21",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 35.4850117067196,
+                  "model_identifier": "grok-4-7",
+                  "effort": "xhigh",
+                  "source_suffix": "Xhigh",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Tencent Hy4",
+                "model_variant": "Tencent Hy4",
+                "value": 34.56,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-03",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 34.5552385392508,
+                "model_identifier": "tencent-hy4",
+                "effort": null,
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-15",
+                "raw": {
+                  "label": "Tencent Hy4",
+                  "model_variant": "Tencent Hy4",
+                  "value": 34.56,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-03",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 34.5552385392508,
+                  "model_identifier": "tencent-hy4",
+                  "effort": null,
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "DeepSeek V4.1 Flash 1017 (Max)",
+                "model_variant": "DeepSeek V4.1 Flash 1017 (Max)",
+                "value": 32.59,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-17",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 32.5896393532027,
+                "model_identifier": "deepseek-v4-1-flash-1017",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-16",
+                "raw": {
+                  "label": "DeepSeek V4.1 Flash 1017 (Max)",
+                  "model_variant": "DeepSeek V4.1 Flash 1017 (Max)",
+                  "value": 32.59,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-17",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 32.5896393532027,
+                  "model_identifier": "deepseek-v4-1-flash-1017",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "GLM-5.3 (Max)",
+                "model_variant": "GLM-5.3 (Max)",
+                "value": 31.65,
+                "evaluation_date": null,
+                "model_release_date": "2026-08-18",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 31.653381843882,
+                "model_identifier": "glm-5-3",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-17",
+                "raw": {
+                  "label": "GLM-5.3 (Max)",
+                  "model_variant": "GLM-5.3 (Max)",
+                  "value": 31.65,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-08-18",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 31.653381843882,
+                  "model_identifier": "glm-5-3",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Inkling 2 Small",
+                "model_variant": "Inkling 2 Small",
+                "value": 30.63,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-05",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 30.6286781498958,
+                "model_identifier": "inkling-2-small",
+                "effort": null,
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-18",
+                "raw": {
+                  "label": "Inkling 2 Small",
+                  "model_variant": "Inkling 2 Small",
+                  "value": 30.63,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-05",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 30.6286781498958,
+                  "model_identifier": "inkling-2-small",
+                  "effort": null,
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "MiMo-V2.6-Pro",
+                "model_variant": "MiMo-V2.6-Pro",
+                "value": 29.89,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-21",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 29.8897833093321,
+                "model_identifier": "mimo-v2-6-pro",
+                "effort": null,
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-19",
+                "raw": {
+                  "label": "MiMo-V2.6-Pro",
+                  "model_variant": "MiMo-V2.6-Pro",
+                  "value": 29.89,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-21",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 29.8897833093321,
+                  "model_identifier": "mimo-v2-6-pro",
+                  "effort": null,
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Ling 3.1 Flash 1019",
+                "model_variant": "Ling 3.1 Flash 1019",
+                "value": 29.57,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-22",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 29.570119369837,
+                "model_identifier": "ling-3-1-flash",
+                "effort": null,
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-20",
+                "raw": {
+                  "label": "Ling 3.1 Flash 1019",
+                  "model_variant": "Ling 3.1 Flash 1019",
+                  "value": 29.57,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-22",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 29.570119369837,
+                  "model_identifier": "ling-3-1-flash",
+                  "effort": null,
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "GPT-6 Luna (Max)",
+                "model_variant": "GPT-6 Luna (Max)",
+                "value": 27.86,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-22",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 27.8552004938153,
+                "model_identifier": "gpt-6-luna",
+                "effort": "max",
+                "source_suffix": "Max",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-21",
+                "raw": {
+                  "label": "GPT-6 Luna (Max)",
+                  "model_variant": "GPT-6 Luna (Max)",
+                  "value": 27.86,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-22",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 27.8552004938153,
+                  "model_identifier": "gpt-6-luna",
+                  "effort": "max",
+                  "source_suffix": "Max",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Mistral Large 4 (High)",
+                "model_variant": "Mistral Large 4 (High)",
+                "value": 26.12,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-29",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 26.1249946754784,
+                "model_identifier": "mistral-large-4",
+                "effort": "high",
+                "source_suffix": "High",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-22",
+                "raw": {
+                  "label": "Mistral Large 4 (High)",
+                  "model_variant": "Mistral Large 4 (High)",
+                  "value": 26.12,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-29",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 26.1249946754784,
+                  "model_identifier": "mistral-large-4",
+                  "effort": "high",
+                  "source_suffix": "High",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Qwen3.8 27B (Xhigh)",
+                "model_variant": "Qwen3.8 27B (Xhigh)",
+                "value": 20.11,
+                "evaluation_date": null,
+                "model_release_date": "2026-08-14",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 20.1068756031705,
+                "model_identifier": "qwen3-8-27b",
+                "effort": "xhigh",
+                "source_suffix": "Xhigh",
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-23",
+                "raw": {
+                  "label": "Qwen3.8 27B (Xhigh)",
+                  "model_variant": "Qwen3.8 27B (Xhigh)",
+                  "value": 20.11,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-08-14",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 20.1068756031705,
+                  "model_identifier": "qwen3-8-27b",
+                  "effort": "xhigh",
+                  "source_suffix": "Xhigh",
+                  "estimated": null
+                }
+              },
+              {
+                "label": "K2 Horizon 375B A23B",
+                "model_variant": "K2 Horizon 375B A23B",
+                "value": 17.82,
+                "evaluation_date": null,
+                "model_release_date": "2026-09-03",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 17.8202731734027,
+                "model_identifier": "k2-horizon-375b-a23b",
+                "effort": "high",
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-24",
+                "raw": {
+                  "label": "K2 Horizon 375B A23B",
+                  "model_variant": "K2 Horizon 375B A23B",
+                  "value": 17.82,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-09-03",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 17.8202731734027,
+                  "model_identifier": "k2-horizon-375b-a23b",
+                  "effort": "high",
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Beam 1.0",
+                "model_variant": "Beam 1.0",
+                "value": 17.73,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-16",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 17.7307282547205,
+                "model_identifier": "reflection-beam",
+                "effort": null,
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-25",
+                "raw": {
+                  "label": "Beam 1.0",
+                  "model_variant": "Beam 1.0",
+                  "value": 17.73,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-16",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 17.7307282547205,
+                  "model_identifier": "reflection-beam",
+                  "effort": null,
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              },
+              {
+                "label": "Nemotron 3.5 Super VL",
+                "model_variant": "Nemotron 3.5 Super VL",
+                "value": 13.62,
+                "evaluation_date": null,
+                "model_release_date": "2026-10-15",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "raw_value": 13.6203422723141,
+                "model_identifier": "nemotron-3-5-super-vl",
+                "effort": "high",
+                "source_suffix": null,
+                "estimated": null,
+                "source_url": "https://artificialanalysis.ai/models",
+                "result_id": "aa-intelligence-index-v501-2026-11-16-26",
+                "raw": {
+                  "label": "Nemotron 3.5 Super VL",
+                  "model_variant": "Nemotron 3.5 Super VL",
+                  "value": 13.62,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-10-15",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "raw_value": 13.6203422723141,
+                  "model_identifier": "nemotron-3-5-super-vl",
+                  "effort": "high",
+                  "source_suffix": null,
+                  "estimated": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "index",
+                "label": "AA Intelligence Index v5.0.1",
+                "field": "value",
+                "unit": "index points",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/models",
+            "source_locator": "v5.0.1 / 27 available configurations",
+            "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-16",
+            "complete": false,
+            "coverage": "v5.0.1 / 27 available configurations",
+            "settings": {
+              "version": "5.0.1",
+              "methodology_url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+              "source_html_sha256": "faf2880efe73c89787524500677947847eb6d2e1d4305a0416641046154016e5"
+            },
+            "limitations": [
+              "Exact evaluation dates are not reported."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "webdev-arena-frontend-2026-11-13",
+        "name": "WebDev Arena / Frontend / November 13",
+        "category": "frontend",
+        "question": "Which frontend outputs do people prefer?",
+        "tests": "Human votes compare web development outputs.",
+        "matters": "Preference is one perspective on generated interfaces.",
+        "read": "First 20 of 158 configurations from the November 13 snapshot, with 872,612 votes overall. Published bounds have unspecified confidence coverage. Preference is not screenshot fidelity or functional completion; token prices are not task costs.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-16/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-16",
+        "variants": [
+          {
+            "id": "webdev-arena-frontend-2026-11-13",
+            "label": "Frontend / November 13 / first 20 of 158",
+            "rows": [
+              {
+                "label": "Claude Fable 5.2 (xHigh)",
+                "model_variant": "Claude Fable 5.2 (xHigh)",
+                "value": 1867,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 1,
+                "published_plus_minus": 22,
+                "published_range": [
+                  1845,
+                  1889
+                ],
+                "votes": 1144,
+                "rank_spread": [
+                  1,
+                  2
+                ],
+                "preliminary": false,
+                "effort": "xhigh",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-0",
+                "raw": {
+                  "label": "Claude Fable 5.2 (xHigh)",
+                  "model_variant": "Claude Fable 5.2 (xHigh)",
+                  "value": 1867,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 1,
+                  "published_plus_minus": 22,
+                  "published_range": [
+                    1845,
+                    1889
+                  ],
+                  "votes": 1144,
+                  "rank_spread": [
+                    1,
+                    2
+                  ],
+                  "preliminary": false,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "Claude Opus 5.5 (Max)",
+                "model_variant": "Claude Opus 5.5 (Max)",
+                "value": 1862,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 2,
+                "published_plus_minus": 14,
+                "published_range": [
+                  1848,
+                  1876
+                ],
+                "votes": 3237,
+                "rank_spread": [
+                  1,
+                  2
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-1",
+                "raw": {
+                  "label": "Claude Opus 5.5 (Max)",
+                  "model_variant": "Claude Opus 5.5 (Max)",
+                  "value": 1862,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 2,
+                  "published_plus_minus": 14,
+                  "published_range": [
+                    1848,
+                    1876
+                  ],
+                  "votes": 3237,
+                  "rank_spread": [
+                    1,
+                    2
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Claude Sonnet 5.5 (xHigh)",
+                "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                "value": 1813,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 3,
+                "published_plus_minus": 11,
+                "published_range": [
+                  1802,
+                  1824
+                ],
+                "votes": 4754,
+                "rank_spread": [
+                  3,
+                  4
+                ],
+                "preliminary": false,
+                "effort": "xhigh",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-2",
+                "raw": {
+                  "label": "Claude Sonnet 5.5 (xHigh)",
+                  "model_variant": "Claude Sonnet 5.5 (xHigh)",
+                  "value": 1813,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 3,
+                  "published_plus_minus": 11,
+                  "published_range": [
+                    1802,
+                    1824
+                  ],
+                  "votes": 4754,
+                  "rank_spread": [
+                    3,
+                    4
+                  ],
+                  "preliminary": false,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "Gemini 4 Carbon (High)",
+                "model_variant": "Gemini 4 Carbon (High)",
+                "value": 1793,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 4,
+                "published_plus_minus": 17,
+                "published_range": [
+                  1776,
+                  1810
+                ],
+                "votes": 1758,
+                "rank_spread": [
+                  3,
+                  7
+                ],
+                "preliminary": true,
+                "effort": "high",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-3",
+                "raw": {
+                  "label": "Gemini 4 Carbon (High)",
+                  "model_variant": "Gemini 4 Carbon (High)",
+                  "value": 1793,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 4,
+                  "published_plus_minus": 17,
+                  "published_range": [
+                    1776,
+                    1810
+                  ],
+                  "votes": 1758,
+                  "rank_spread": [
+                    3,
+                    7
+                  ],
+                  "preliminary": true,
+                  "effort": "high"
+                }
+              },
+              {
+                "label": "Qwen4-Max (xHigh)",
+                "model_variant": "Qwen4-Max (xHigh)",
+                "value": 1782,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 5,
+                "published_plus_minus": 18,
+                "published_range": [
+                  1764,
+                  1800
+                ],
+                "votes": 1365,
+                "rank_spread": [
+                  4,
+                  8
+                ],
+                "preliminary": true,
+                "effort": "xhigh",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-4",
+                "raw": {
+                  "label": "Qwen4-Max (xHigh)",
+                  "model_variant": "Qwen4-Max (xHigh)",
+                  "value": 1782,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 5,
+                  "published_plus_minus": 18,
+                  "published_range": [
+                    1764,
+                    1800
+                  ],
+                  "votes": 1365,
+                  "rank_spread": [
+                    4,
+                    8
+                  ],
+                  "preliminary": true,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "GPT-6 Astra (Max)",
+                "model_variant": "GPT-6 Astra (Max)",
+                "value": 1780,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 6,
+                "published_plus_minus": 9,
+                "published_range": [
+                  1771,
+                  1789
+                ],
+                "votes": 6929,
+                "rank_spread": [
+                  4,
+                  7
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-5",
+                "raw": {
+                  "label": "GPT-6 Astra (Max)",
+                  "model_variant": "GPT-6 Astra (Max)",
+                  "value": 1780,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 6,
+                  "published_plus_minus": 9,
+                  "published_range": [
+                    1771,
+                    1789
+                  ],
+                  "votes": 6929,
+                  "rank_spread": [
+                    4,
+                    7
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Claude Fable 5.1 (Max)",
+                "model_variant": "Claude Fable 5.1 (Max)",
+                "value": 1774,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 7,
+                "published_plus_minus": 9,
+                "published_range": [
+                  1765,
+                  1783
+                ],
+                "votes": 7846,
+                "rank_spread": [
+                  4,
+                  8
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-6",
+                "raw": {
+                  "label": "Claude Fable 5.1 (Max)",
+                  "model_variant": "Claude Fable 5.1 (Max)",
+                  "value": 1774,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 7,
+                  "published_plus_minus": 9,
+                  "published_range": [
+                    1765,
+                    1783
+                  ],
+                  "votes": 7846,
+                  "rank_spread": [
+                    4,
+                    8
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "GPT-6.1 Sol (Max)",
+                "model_variant": "GPT-6.1 Sol (Max)",
+                "value": 1759,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 8,
+                "published_plus_minus": 11,
+                "published_range": [
+                  1748,
+                  1770
+                ],
+                "votes": 4639,
+                "rank_spread": [
+                  6,
+                  10
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-7",
+                "raw": {
+                  "label": "GPT-6.1 Sol (Max)",
+                  "model_variant": "GPT-6.1 Sol (Max)",
+                  "value": 1759,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 8,
+                  "published_plus_minus": 11,
+                  "published_range": [
+                    1748,
+                    1770
+                  ],
+                  "votes": 4639,
+                  "rank_spread": [
+                    6,
+                    10
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Claude Sonnet 5.5 (High)",
+                "model_variant": "Claude Sonnet 5.5 (High)",
+                "value": 1747,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 9,
+                "published_plus_minus": 9,
+                "published_range": [
+                  1738,
+                  1756
+                ],
+                "votes": 6487,
+                "rank_spread": [
+                  8,
+                  11
+                ],
+                "preliminary": false,
+                "effort": "high",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-8",
+                "raw": {
+                  "label": "Claude Sonnet 5.5 (High)",
+                  "model_variant": "Claude Sonnet 5.5 (High)",
+                  "value": 1747,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 9,
+                  "published_plus_minus": 9,
+                  "published_range": [
+                    1738,
+                    1756
+                  ],
+                  "votes": 6487,
+                  "rank_spread": [
+                    8,
+                    11
+                  ],
+                  "preliminary": false,
+                  "effort": "high"
+                }
+              },
+              {
+                "label": "Muse Wonder Full (Max)",
+                "model_variant": "Muse Wonder Full (Max)",
+                "value": 1743,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 10,
+                "published_plus_minus": 17,
+                "published_range": [
+                  1726,
+                  1760
+                ],
+                "votes": 1531,
+                "rank_spread": [
+                  8,
+                  11
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-9",
+                "raw": {
+                  "label": "Muse Wonder Full (Max)",
+                  "model_variant": "Muse Wonder Full (Max)",
+                  "value": 1743,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 10,
+                  "published_plus_minus": 17,
+                  "published_range": [
+                    1726,
+                    1760
+                  ],
+                  "votes": 1531,
+                  "rank_spread": [
+                    8,
+                    11
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Gemini 4 Hydrogen (High)",
+                "model_variant": "Gemini 4 Hydrogen (High)",
+                "value": 1730,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 11,
+                "published_plus_minus": 16,
+                "published_range": [
+                  1714,
+                  1746
+                ],
+                "votes": 1617,
+                "rank_spread": [
+                  9,
+                  12
+                ],
+                "preliminary": true,
+                "effort": "high",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-10",
+                "raw": {
+                  "label": "Gemini 4 Hydrogen (High)",
+                  "model_variant": "Gemini 4 Hydrogen (High)",
+                  "value": 1730,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 11,
+                  "published_plus_minus": 16,
+                  "published_range": [
+                    1714,
+                    1746
+                  ],
+                  "votes": 1617,
+                  "rank_spread": [
+                    9,
+                    12
+                  ],
+                  "preliminary": true,
+                  "effort": "high"
+                }
+              },
+              {
+                "label": "Claude Opus 5 (Max)",
+                "model_variant": "Claude Opus 5 (Max)",
+                "value": 1713,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 12,
+                "published_plus_minus": 7,
+                "published_range": [
+                  1706,
+                  1720
+                ],
+                "votes": 15123,
+                "rank_spread": [
+                  11,
+                  14
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-11",
+                "raw": {
+                  "label": "Claude Opus 5 (Max)",
+                  "model_variant": "Claude Opus 5 (Max)",
+                  "value": 1713,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 12,
+                  "published_plus_minus": 7,
+                  "published_range": [
+                    1706,
+                    1720
+                  ],
+                  "votes": 15123,
+                  "rank_spread": [
+                    11,
+                    14
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Kimi K3.1 Pro (Max)",
+                "model_variant": "Kimi K3.1 Pro (Max)",
+                "value": 1703,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 13,
+                "published_plus_minus": 10,
+                "published_range": [
+                  1693,
+                  1713
+                ],
+                "votes": 4286,
+                "rank_spread": [
+                  12,
+                  16
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-12",
+                "raw": {
+                  "label": "Kimi K3.1 Pro (Max)",
+                  "model_variant": "Kimi K3.1 Pro (Max)",
+                  "value": 1703,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 13,
+                  "published_plus_minus": 10,
+                  "published_range": [
+                    1693,
+                    1713
+                  ],
+                  "votes": 4286,
+                  "rank_spread": [
+                    12,
+                    16
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Gemini 4 Argon (High)",
+                "model_variant": "Gemini 4 Argon (High)",
+                "value": 1699,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 14,
+                "published_plus_minus": 11,
+                "published_range": [
+                  1688,
+                  1710
+                ],
+                "votes": 4008,
+                "rank_spread": [
+                  12,
+                  18
+                ],
+                "preliminary": false,
+                "effort": "high",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-13",
+                "raw": {
+                  "label": "Gemini 4 Argon (High)",
+                  "model_variant": "Gemini 4 Argon (High)",
+                  "value": 1699,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 14,
+                  "published_plus_minus": 11,
+                  "published_range": [
+                    1688,
+                    1710
+                  ],
+                  "votes": 4008,
+                  "rank_spread": [
+                    12,
+                    18
+                  ],
+                  "preliminary": false,
+                  "effort": "high"
+                }
+              },
+              {
+                "label": "Qwen3.8-Max (0902)",
+                "model_variant": "Qwen3.8-Max (0902)",
+                "value": 1690,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 15,
+                "published_plus_minus": 7,
+                "published_range": [
+                  1683,
+                  1697
+                ],
+                "votes": 18378,
+                "rank_spread": [
+                  13,
+                  20
+                ],
+                "preliminary": true,
+                "effort": null,
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-14",
+                "raw": {
+                  "label": "Qwen3.8-Max (0902)",
+                  "model_variant": "Qwen3.8-Max (0902)",
+                  "value": 1690,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 15,
+                  "published_plus_minus": 7,
+                  "published_range": [
+                    1683,
+                    1697
+                  ],
+                  "votes": 18378,
+                  "rank_spread": [
+                    13,
+                    20
+                  ],
+                  "preliminary": true,
+                  "effort": null
+                }
+              },
+              {
+                "label": "GPT-6.1 Terra (Max)",
+                "model_variant": "GPT-6.1 Terra (Max)",
+                "value": 1687,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 16,
+                "published_plus_minus": 12,
+                "published_range": [
+                  1675,
+                  1699
+                ],
+                "votes": 3416,
+                "rank_spread": [
+                  13,
+                  23
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-15",
+                "raw": {
+                  "label": "GPT-6.1 Terra (Max)",
+                  "model_variant": "GPT-6.1 Terra (Max)",
+                  "value": 1687,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 16,
+                  "published_plus_minus": 12,
+                  "published_range": [
+                    1675,
+                    1699
+                  ],
+                  "votes": 3416,
+                  "rank_spread": [
+                    13,
+                    23
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                "value": 1681,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 17,
+                "published_plus_minus": 7,
+                "published_range": [
+                  1674,
+                  1688
+                ],
+                "votes": 12183,
+                "rank_spread": [
+                  15,
+                  23
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-16",
+                "raw": {
+                  "label": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                  "model_variant": "DeepSeek-V4.1-Flash-20261017 (Max)",
+                  "value": 1681,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 17,
+                  "published_plus_minus": 7,
+                  "published_range": [
+                    1674,
+                    1688
+                  ],
+                  "votes": 12183,
+                  "rank_spread": [
+                    15,
+                    23
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "GPT-6 Sol (Max)",
+                "model_variant": "GPT-6 Sol (Max)",
+                "value": 1680,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 18,
+                "published_plus_minus": 9,
+                "published_range": [
+                  1671,
+                  1689
+                ],
+                "votes": 5979,
+                "rank_spread": [
+                  14,
+                  23
+                ],
+                "preliminary": false,
+                "effort": "max",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-17",
+                "raw": {
+                  "label": "GPT-6 Sol (Max)",
+                  "model_variant": "GPT-6 Sol (Max)",
+                  "value": 1680,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 18,
+                  "published_plus_minus": 9,
+                  "published_range": [
+                    1671,
+                    1689
+                  ],
+                  "votes": 5979,
+                  "rank_spread": [
+                    14,
+                    23
+                  ],
+                  "preliminary": false,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Claude Opus 5 (High)",
+                "model_variant": "Claude Opus 5 (High)",
+                "value": 1678,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 19,
+                "published_plus_minus": 6,
+                "published_range": [
+                  1672,
+                  1684
+                ],
+                "votes": 21379,
+                "rank_spread": [
+                  15,
+                  23
+                ],
+                "preliminary": false,
+                "effort": "high",
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-18",
+                "raw": {
+                  "label": "Claude Opus 5 (High)",
+                  "model_variant": "Claude Opus 5 (High)",
+                  "value": 1678,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 19,
+                  "published_plus_minus": 6,
+                  "published_range": [
+                    1672,
+                    1684
+                  ],
+                  "votes": 21379,
+                  "rank_spread": [
+                    15,
+                    23
+                  ],
+                  "preliminary": false,
+                  "effort": "high"
+                }
+              },
+              {
+                "label": "Qwen3.8-Max",
+                "model_variant": "Qwen3.8-Max",
+                "value": 1676,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 20,
+                "published_plus_minus": 13,
+                "published_range": [
+                  1663,
+                  1689
+                ],
+                "votes": 2857,
+                "rank_spread": [
+                  14,
+                  26
+                ],
+                "preliminary": true,
+                "effort": null,
+                "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+                "result_id": "webdev-arena-frontend-2026-11-13-19",
+                "raw": {
+                  "label": "Qwen3.8-Max",
+                  "model_variant": "Qwen3.8-Max",
+                  "value": 1676,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 20,
+                  "published_plus_minus": 13,
+                  "published_range": [
+                    1663,
+                    1689
+                  ],
+                  "votes": 2857,
+                  "rank_spread": [
+                    14,
+                    26
+                  ],
+                  "preliminary": true,
+                  "effort": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "rating",
+                "label": "Preference rating",
+                "field": "value",
+                "unit": "Elo",
+                "domain": [
+                  1000,
+                  2000
+                ],
+                "direction": "higher_is_better",
+                "interval_field": "published_range",
+                "interval_kind": "published_interval"
+              }
+            ],
+            "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
+            "source_locator": "Frontend / November 13 / first 20 of 158",
+            "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-16",
+            "complete": false,
+            "coverage": "Frontend / November 13 / first 20 of 158",
+            "settings": {
+              "snapshot": "2026-11-13",
+              "configurations": 158,
+              "votes": 872612
+            },
+            "limitations": [
+              "Exact evaluation dates are not reported."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "designarena-website-2026-11-16",
+        "name": "DesignArena / Website / November 16",
+        "category": "frontend",
+        "question": "Which website designs do people prefer?",
+        "tests": "Visitors compare generated websites in pairwise votes.",
+        "matters": "Design preference measures a different outcome from task completion.",
+        "read": "First 15 visible Website HTML non-agentic rows of 187 at 14:07 UTC. The page labels MoE as a percentage while its footer and methodology describe uncertainty differently; the original label is retained without plotting it as an Elo interval. Reported time aggregation is unspecified.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-16/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-16",
+        "variants": [
+          {
+            "id": "designarena-website-2026-11-16",
+            "label": "Website / November 16 / first 15 of 187",
+            "rows": [
+              {
+                "label": "Muse Wonder (max)",
+                "model_variant": "Muse Wonder (max)",
+                "value": 1379,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 1,
+                "wins": 3135,
+                "losses": 1779,
+                "win_rate_percent": 63.8,
+                "reported_moe_percent": 1.3,
+                "battles": 4914,
+                "reported_time_seconds": 155.7,
+                "effort": "max",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-0",
+                "raw": {
+                  "label": "Muse Wonder (max)",
+                  "model_variant": "Muse Wonder (max)",
+                  "value": 1379,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 1,
+                  "wins": 3135,
+                  "losses": 1779,
+                  "win_rate_percent": 63.8,
+                  "reported_moe_percent": 1.3,
+                  "battles": 4914,
+                  "reported_time_seconds": 155.7,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Muse Spark 1.3 (xhigh)",
+                "model_variant": "Muse Spark 1.3 (xhigh)",
+                "value": 1360,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 2,
+                "wins": 14246,
+                "losses": 9764,
+                "win_rate_percent": 59.3,
+                "reported_moe_percent": 0.6,
+                "battles": 24010,
+                "reported_time_seconds": 199.6,
+                "effort": "xhigh",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-1",
+                "raw": {
+                  "label": "Muse Spark 1.3 (xhigh)",
+                  "model_variant": "Muse Spark 1.3 (xhigh)",
+                  "value": 1360,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 2,
+                  "wins": 14246,
+                  "losses": 9764,
+                  "win_rate_percent": 59.3,
+                  "reported_moe_percent": 0.6,
+                  "battles": 24010,
+                  "reported_time_seconds": 199.6,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "Claude Fable 5.2",
+                "model_variant": "Claude Fable 5.2",
+                "value": 1353,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 3,
+                "wins": 846,
+                "losses": 549,
+                "win_rate_percent": 60.6,
+                "reported_moe_percent": 2.6,
+                "battles": 1395,
+                "reported_time_seconds": 598,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-2",
+                "raw": {
+                  "label": "Claude Fable 5.2",
+                  "model_variant": "Claude Fable 5.2",
+                  "value": 1353,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 3,
+                  "wins": 846,
+                  "losses": 549,
+                  "win_rate_percent": 60.6,
+                  "reported_moe_percent": 2.6,
+                  "battles": 1395,
+                  "reported_time_seconds": 598,
+                  "effort": null
+                }
+              },
+              {
+                "label": "GPT-6 Astra (xhigh)",
+                "model_variant": "GPT-6 Astra (xhigh)",
+                "value": 1341,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 4,
+                "wins": 3375,
+                "losses": 2370,
+                "win_rate_percent": 58.8,
+                "reported_moe_percent": 1.3,
+                "battles": 5745,
+                "reported_time_seconds": 586.9,
+                "effort": "xhigh",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-3",
+                "raw": {
+                  "label": "GPT-6 Astra (xhigh)",
+                  "model_variant": "GPT-6 Astra (xhigh)",
+                  "value": 1341,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 4,
+                  "wins": 3375,
+                  "losses": 2370,
+                  "win_rate_percent": 58.8,
+                  "reported_moe_percent": 1.3,
+                  "battles": 5745,
+                  "reported_time_seconds": 586.9,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "Inkling 2 Small",
+                "model_variant": "Inkling 2 Small",
+                "value": 1337,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 5,
+                "wins": 1363,
+                "losses": 972,
+                "win_rate_percent": 58.4,
+                "reported_moe_percent": 2,
+                "battles": 2335,
+                "reported_time_seconds": 566.7,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-4",
+                "raw": {
+                  "label": "Inkling 2 Small",
+                  "model_variant": "Inkling 2 Small",
+                  "value": 1337,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 5,
+                  "wins": 1363,
+                  "losses": 972,
+                  "win_rate_percent": 58.4,
+                  "reported_moe_percent": 2,
+                  "battles": 2335,
+                  "reported_time_seconds": 566.7,
+                  "effort": null
+                }
+              },
+              {
+                "label": "Kimi K3",
+                "model_variant": "Kimi K3",
+                "value": 1337,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 6,
+                "wins": 2891,
+                "losses": 1969,
+                "win_rate_percent": 59.5,
+                "reported_moe_percent": 1.4,
+                "battles": 4860,
+                "reported_time_seconds": 834.7,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-5",
+                "raw": {
+                  "label": "Kimi K3",
+                  "model_variant": "Kimi K3",
+                  "value": 1337,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 6,
+                  "wins": 2891,
+                  "losses": 1969,
+                  "win_rate_percent": 59.5,
+                  "reported_moe_percent": 1.4,
+                  "battles": 4860,
+                  "reported_time_seconds": 834.7,
+                  "effort": null
+                }
+              },
+              {
+                "label": "Muse Ember",
+                "model_variant": "Muse Ember",
+                "value": 1330,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 7,
+                "wins": 1037,
+                "losses": 706,
+                "win_rate_percent": 59.5,
+                "reported_moe_percent": 2.3,
+                "battles": 1743,
+                "reported_time_seconds": 32.3,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-6",
+                "raw": {
+                  "label": "Muse Ember",
+                  "model_variant": "Muse Ember",
+                  "value": 1330,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 7,
+                  "wins": 1037,
+                  "losses": 706,
+                  "win_rate_percent": 59.5,
+                  "reported_moe_percent": 2.3,
+                  "battles": 1743,
+                  "reported_time_seconds": 32.3,
+                  "effort": null
+                }
+              },
+              {
+                "label": "Claude Opus 5.5",
+                "model_variant": "Claude Opus 5.5",
+                "value": 1326,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 8,
+                "wins": 2204,
+                "losses": 1765,
+                "win_rate_percent": 55.5,
+                "reported_moe_percent": 1.5,
+                "battles": 3969,
+                "reported_time_seconds": 298.9,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-7",
+                "raw": {
+                  "label": "Claude Opus 5.5",
+                  "model_variant": "Claude Opus 5.5",
+                  "value": 1326,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 8,
+                  "wins": 2204,
+                  "losses": 1765,
+                  "win_rate_percent": 55.5,
+                  "reported_moe_percent": 1.5,
+                  "battles": 3969,
+                  "reported_time_seconds": 298.9,
+                  "effort": null
+                }
+              },
+              {
+                "label": "Kimi K3.1 Pro",
+                "model_variant": "Kimi K3.1 Pro",
+                "value": 1321,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 9,
+                "wins": 2142,
+                "losses": 1572,
+                "win_rate_percent": 57.7,
+                "reported_moe_percent": 1.6,
+                "battles": 3714,
+                "reported_time_seconds": 1169.4,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-8",
+                "raw": {
+                  "label": "Kimi K3.1 Pro",
+                  "model_variant": "Kimi K3.1 Pro",
+                  "value": 1321,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 9,
+                  "wins": 2142,
+                  "losses": 1572,
+                  "win_rate_percent": 57.7,
+                  "reported_moe_percent": 1.6,
+                  "battles": 3714,
+                  "reported_time_seconds": 1169.4,
+                  "effort": null
+                }
+              },
+              {
+                "label": "GPT-5.6 Sol (xhigh)",
+                "model_variant": "GPT-5.6 Sol (xhigh)",
+                "value": 1319,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 10,
+                "wins": 3862,
+                "losses": 2926,
+                "win_rate_percent": 56.9,
+                "reported_moe_percent": 1.2,
+                "battles": 6788,
+                "reported_time_seconds": 272.5,
+                "effort": "xhigh",
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-9",
+                "raw": {
+                  "label": "GPT-5.6 Sol (xhigh)",
+                  "model_variant": "GPT-5.6 Sol (xhigh)",
+                  "value": 1319,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 10,
+                  "wins": 3862,
+                  "losses": 2926,
+                  "win_rate_percent": 56.9,
+                  "reported_moe_percent": 1.2,
+                  "battles": 6788,
+                  "reported_time_seconds": 272.5,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "Gemini 4 Hydrogen",
+                "model_variant": "Gemini 4 Hydrogen",
+                "value": 1318,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 11,
+                "wins": 601,
+                "losses": 448,
+                "win_rate_percent": 57.3,
+                "reported_moe_percent": 3,
+                "battles": 1049,
+                "reported_time_seconds": 93.3,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-10",
+                "raw": {
+                  "label": "Gemini 4 Hydrogen",
+                  "model_variant": "Gemini 4 Hydrogen",
+                  "value": 1318,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 11,
+                  "wins": 601,
+                  "losses": 448,
+                  "win_rate_percent": 57.3,
+                  "reported_moe_percent": 3,
+                  "battles": 1049,
+                  "reported_time_seconds": 93.3,
+                  "effort": null
+                }
+              },
+              {
+                "label": "Gemini 4 Carbon",
+                "model_variant": "Gemini 4 Carbon",
+                "value": 1317,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 12,
+                "wins": 816,
+                "losses": 633,
+                "win_rate_percent": 56.3,
+                "reported_moe_percent": 2.6,
+                "battles": 1449,
+                "reported_time_seconds": 220.5,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-11",
+                "raw": {
+                  "label": "Gemini 4 Carbon",
+                  "model_variant": "Gemini 4 Carbon",
+                  "value": 1317,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 12,
+                  "wins": 816,
+                  "losses": 633,
+                  "win_rate_percent": 56.3,
+                  "reported_moe_percent": 2.6,
+                  "battles": 1449,
+                  "reported_time_seconds": 220.5,
+                  "effort": null
+                }
+              },
+              {
+                "label": "Gemini 4 Argon",
+                "model_variant": "Gemini 4 Argon",
+                "value": 1316,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 13,
+                "wins": 4799,
+                "losses": 3847,
+                "win_rate_percent": 55.5,
+                "reported_moe_percent": 1,
+                "battles": 8646,
+                "reported_time_seconds": 214.7,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-12",
+                "raw": {
+                  "label": "Gemini 4 Argon",
+                  "model_variant": "Gemini 4 Argon",
+                  "value": 1316,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 13,
+                  "wins": 4799,
+                  "losses": 3847,
+                  "win_rate_percent": 55.5,
+                  "reported_moe_percent": 1,
+                  "battles": 8646,
+                  "reported_time_seconds": 214.7,
+                  "effort": null
+                }
+              },
+              {
+                "label": "GPT-6.1 Sol",
+                "model_variant": "GPT-6.1 Sol",
+                "value": 1316,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 14,
+                "wins": 2135,
+                "losses": 1820,
+                "win_rate_percent": 54,
+                "reported_moe_percent": 1.6,
+                "battles": 3955,
+                "reported_time_seconds": 239.2,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-13",
+                "raw": {
+                  "label": "GPT-6.1 Sol",
+                  "model_variant": "GPT-6.1 Sol",
+                  "value": 1316,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 14,
+                  "wins": 2135,
+                  "losses": 1820,
+                  "win_rate_percent": 54,
+                  "reported_moe_percent": 1.6,
+                  "battles": 3955,
+                  "reported_time_seconds": 239.2,
+                  "effort": null
+                }
+              },
+              {
+                "label": "MiMo-V2.6-Pro",
+                "model_variant": "MiMo-V2.6-Pro",
+                "value": 1311,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "rank": 15,
+                "wins": 9387,
+                "losses": 8721,
+                "win_rate_percent": 51.8,
+                "reported_moe_percent": 0.7,
+                "battles": 18108,
+                "reported_time_seconds": 496.1,
+                "effort": null,
+                "source_url": "https://www.designarena.ai/leaderboard/website",
+                "result_id": "designarena-website-2026-11-16-14",
+                "raw": {
+                  "label": "MiMo-V2.6-Pro",
+                  "model_variant": "MiMo-V2.6-Pro",
+                  "value": 1311,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "rank": 15,
+                  "wins": 9387,
+                  "losses": 8721,
+                  "win_rate_percent": 51.8,
+                  "reported_moe_percent": 0.7,
+                  "battles": 18108,
+                  "reported_time_seconds": 496.1,
+                  "effort": null
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "rating",
+                "label": "Preference rating",
+                "field": "value",
+                "unit": "Elo",
+                "domain": [
+                  1000,
+                  1500
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://www.designarena.ai/leaderboard/website",
+            "source_locator": "Website / November 16 / first 15 of 187",
+            "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-16",
+            "complete": false,
+            "coverage": "Website / November 16 / first 15 of 187",
+            "settings": {
+              "snapshot": "2026-11-16 14:07 UTC",
+              "methodology_url": "https://notes.designarena.ai/methodology/",
+              "reported_time_definition": null
+            },
+            "limitations": [
+              "Exact evaluation dates are not reported."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "biobasicsbench-xhigh-2026-11-06",
+        "name": "BioBasicsBench / xhigh",
+        "category": "standard",
+        "question": "How well do AI agents handle routine wet-lab science questions?",
+        "tests": "100 tasks, five attempts per model setting, scored for rubric credit.",
+        "matters": "The tasks examine scientific reasoning relevant to routine laboratory work.",
+        "read": "Scores are mean reward, not task completion. The seven xhigh settings are the author’s comparable table; a figure includes other settings. Confidence intervals are 95% task-cluster bootstrap intervals. Output tokens are not measured task costs. Evaluation dates were not disclosed.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-16/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-16",
+        "variants": [
+          {
+            "id": "biobasicsbench-xhigh-2026-11-06",
+            "label": "OpenAI report / seven xhigh settings",
+            "rows": [
+              {
+                "label": "GPT-6 Astra (xhigh)",
+                "model_variant": "GPT-6 Astra (xhigh)",
+                "value": 66.7,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  60.3,
+                  73.1
+                ],
+                "output_tokens_per_task": 4704,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-0",
+                "raw": {
+                  "label": "GPT-6 Astra (xhigh)",
+                  "model_variant": "GPT-6 Astra (xhigh)",
+                  "value": 66.7,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    60.3,
+                    73.1
+                  ],
+                  "output_tokens_per_task": 4704
+                }
+              },
+              {
+                "label": "GPT-6.1 Sol (xhigh)",
+                "model_variant": "GPT-6.1 Sol (xhigh)",
+                "value": 62,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  55.6,
+                  68.4
+                ],
+                "output_tokens_per_task": 5238,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-1",
+                "raw": {
+                  "label": "GPT-6.1 Sol (xhigh)",
+                  "model_variant": "GPT-6.1 Sol (xhigh)",
+                  "value": 62,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    55.6,
+                    68.4
+                  ],
+                  "output_tokens_per_task": 5238
+                }
+              },
+              {
+                "label": "GPT-5.6 Sol (xhigh)",
+                "model_variant": "GPT-5.6 Sol (xhigh)",
+                "value": 43.8,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  37.6,
+                  50
+                ],
+                "output_tokens_per_task": 9099,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-2",
+                "raw": {
+                  "label": "GPT-5.6 Sol (xhigh)",
+                  "model_variant": "GPT-5.6 Sol (xhigh)",
+                  "value": 43.8,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    37.6,
+                    50
+                  ],
+                  "output_tokens_per_task": 9099
+                }
+              },
+              {
+                "label": "GPT-6 Luna (xhigh)",
+                "model_variant": "GPT-6 Luna (xhigh)",
+                "value": 38.3,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  32.3,
+                  44.5
+                ],
+                "output_tokens_per_task": 13120,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-3",
+                "raw": {
+                  "label": "GPT-6 Luna (xhigh)",
+                  "model_variant": "GPT-6 Luna (xhigh)",
+                  "value": 38.3,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    32.3,
+                    44.5
+                  ],
+                  "output_tokens_per_task": 13120
+                }
+              },
+              {
+                "label": "GPT-5.5 (xhigh)",
+                "model_variant": "GPT-5.5 (xhigh)",
+                "value": 35.4,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  29.7,
+                  41
+                ],
+                "output_tokens_per_task": 11135,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-4",
+                "raw": {
+                  "label": "GPT-5.5 (xhigh)",
+                  "model_variant": "GPT-5.5 (xhigh)",
+                  "value": 35.4,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    29.7,
+                    41
+                  ],
+                  "output_tokens_per_task": 11135
+                }
+              },
+              {
+                "label": "GPT-5.4 (xhigh)",
+                "model_variant": "GPT-5.4 (xhigh)",
+                "value": 33.2,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  28.3,
+                  38.4
+                ],
+                "output_tokens_per_task": 13717,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-5",
+                "raw": {
+                  "label": "GPT-5.4 (xhigh)",
+                  "model_variant": "GPT-5.4 (xhigh)",
+                  "value": 33.2,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    28.3,
+                    38.4
+                  ],
+                  "output_tokens_per_task": 13717
+                }
+              },
+              {
+                "label": "GPT-5.2 (xhigh)",
+                "model_variant": "GPT-5.2 (xhigh)",
+                "value": 31.2,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "ci": [
+                  26.2,
+                  36.3
+                ],
+                "output_tokens_per_task": 27620,
+                "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+                "result_id": "biobasicsbench-xhigh-2026-11-06-6",
+                "raw": {
+                  "label": "GPT-5.2 (xhigh)",
+                  "model_variant": "GPT-5.2 (xhigh)",
+                  "value": 31.2,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh",
+                  "ci": [
+                    26.2,
+                    36.3
+                  ],
+                  "output_tokens_per_task": 27620
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Mean rubric reward",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better",
+                "interval_field": "ci",
+                "interval_kind": "confidence_interval",
+                "ci_level": 0.95
+              }
+            ],
+            "source_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+            "source_locator": "OpenAI report / seven xhigh settings",
+            "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": "2026-11-06",
+            "evaluation_date": null,
+            "checked_at": "2026-11-16",
+            "complete": false,
+            "coverage": "OpenAI report / seven xhigh settings",
+            "settings": {
+              "tasks": 100,
+              "attempts_per_task": 5,
+              "effort": "xhigh",
+              "score": "mean reward"
+            },
+            "limitations": [
+              "Exact evaluation dates are not reported."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aa-healthbench-professional-2026-11-16",
+        "name": "HealthBench Professional / AA length-adjusted",
+        "category": "medical",
+        "question": "How do reported Fable settings score on clinician conversations?",
+        "tests": "525 clinician conversations, four repeats and physician-written rubrics.",
+        "matters": "This tests responses on simulated professional medical conversations.",
+        "read": "These are AA independently evaluated length-adjusted scores using GPT-5.4 low as judge, not the raw score or the separate OpenAI deployment cohort. This selection contains the three configurations explicitly reported in the source summary. Run dates and task costs for these rows are not disclosed.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-16/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-16",
+        "variants": [
+          {
+            "id": "aa-healthbench-professional-2026-11-16",
+            "label": "AA / three reported Fable settings",
+            "rows": [
+              {
+                "label": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+                "model_variant": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+                "value": 68.1,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "xhigh",
+                "source_url": "https://artificialanalysis.ai/evaluations/healthbench",
+                "result_id": "aa-healthbench-professional-2026-11-16-0",
+                "raw": {
+                  "label": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+                  "model_variant": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+                  "value": 68.1,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "xhigh"
+                }
+              },
+              {
+                "label": "Claude Fable 5.2 (Max, Default Fallback)",
+                "model_variant": "Claude Fable 5.2 (Max, Default Fallback)",
+                "value": 67.7,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "max",
+                "source_url": "https://artificialanalysis.ai/evaluations/healthbench",
+                "result_id": "aa-healthbench-professional-2026-11-16-1",
+                "raw": {
+                  "label": "Claude Fable 5.2 (Max, Default Fallback)",
+                  "model_variant": "Claude Fable 5.2 (Max, Default Fallback)",
+                  "value": 67.7,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "max"
+                }
+              },
+              {
+                "label": "Claude Fable 5.2 (High, Default Fallback)",
+                "model_variant": "Claude Fable 5.2 (High, Default Fallback)",
+                "value": 67.6,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "effort": "high",
+                "source_url": "https://artificialanalysis.ai/evaluations/healthbench",
+                "result_id": "aa-healthbench-professional-2026-11-16-2",
+                "raw": {
+                  "label": "Claude Fable 5.2 (High, Default Fallback)",
+                  "model_variant": "Claude Fable 5.2 (High, Default Fallback)",
+                  "value": 67.6,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "effort": "high"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Length-adjusted rubric score",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://artificialanalysis.ai/evaluations/healthbench",
+            "source_locator": "AA / three reported Fable settings",
+            "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-16",
+            "complete": false,
+            "coverage": "AA / three reported Fable settings",
+            "settings": {
+              "tasks": 525,
+              "repeats": 4,
+              "judge": "GPT-5.4 (low)"
+            },
+            "limitations": [
+              "Exact evaluation dates are not reported."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "robodojo-rc-tier1-2026-11-16",
+        "name": "RoboDojo-RC / Tier 1 / November 16",
+        "category": "physical",
+        "question": "How much progress do robot systems make on selected real-world tasks?",
+        "tests": "The author evaluates six adapted physical tasks with 120 attempts per configuration; human rubrics allow partial progress.",
+        "matters": "These are real robot trials under a specific task selection and controller setup.",
+        "read": "The values are average partial-progress scores, not task completion rates. Authors selected the six easiest tasks after evaluating Astra on 18 tasks; that selection limits generalization. LLMs and vision-language-action models use different control limits, cost bases and time definitions. Estimated costs and reported times are kept in each source record; the plot compares score only. Model release dates do not establish evaluation dates. This is separate from the older RoboDojo-RealEval cohort. Carbon was evaluated in early access. Robocurve lists its release as November 10, while Google and AA list October 28; the conflicting source date is retained without assigning a normalized release date.",
+        "historical": false,
+        "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+        "source_inputs": [
+          "data/benchmark-refresh-2026-11-16/source-packet.json"
+        ],
+        "source_packet_checked_at": "2026-11-16",
+        "variants": [
+          {
+            "id": "robodojo-rc-tier1-2026-11-16",
+            "label": "RoboDojo-RC Tier 1 / 14 configurations",
+            "rows": [
+              {
+                "label": "GR00T N1.7",
+                "value": 9.5,
+                "reported_cost_usd_per_attempt": 0.05,
+                "reported_minutes": 0.9,
+                "cost_basis": "GPU rental",
+                "effort": null,
+                "model_release_date": "2026-04-17",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "VLA time to final score",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-0",
+                "raw": {
+                  "label": "GR00T N1.7",
+                  "value": 9.5,
+                  "reported_cost_usd_per_attempt": 0.05,
+                  "reported_minutes": 0.9,
+                  "cost_basis": "GPU rental",
+                  "effort": null,
+                  "model_release_date": "2026-04-17",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "VLA time to final score"
+                }
+              },
+              {
+                "label": "MolmoAct2",
+                "value": 18.9,
+                "reported_cost_usd_per_attempt": 0.07,
+                "reported_minutes": 0.8,
+                "cost_basis": "GPU rental",
+                "effort": null,
+                "model_release_date": "2026-05-04",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "VLA time to final score",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-1",
+                "raw": {
+                  "label": "MolmoAct2",
+                  "value": 18.9,
+                  "reported_cost_usd_per_attempt": 0.07,
+                  "reported_minutes": 0.8,
+                  "cost_basis": "GPU rental",
+                  "effort": null,
+                  "model_release_date": "2026-05-04",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "VLA time to final score"
+                }
+              },
+              {
+                "label": "Dream-1",
+                "value": 59.3,
+                "reported_cost_usd_per_attempt": 0.15,
+                "reported_minutes": 1.5,
+                "cost_basis": "Dream Labs hosted inference",
+                "effort": null,
+                "model_release_date": "2026-10-19",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "VLA time to final score",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-2",
+                "raw": {
+                  "label": "Dream-1",
+                  "value": 59.3,
+                  "reported_cost_usd_per_attempt": 0.15,
+                  "reported_minutes": 1.5,
+                  "cost_basis": "Dream Labs hosted inference",
+                  "effort": null,
+                  "model_release_date": "2026-10-19",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "VLA time to final score"
+                }
+              },
+              {
+                "label": "Gemini 3.8 Flash (high)",
+                "value": 36.2,
+                "reported_cost_usd_per_attempt": 0.66,
+                "reported_minutes": 7.2,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-02",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-3",
+                "raw": {
+                  "label": "Gemini 3.8 Flash (high)",
+                  "value": 36.2,
+                  "reported_cost_usd_per_attempt": 0.66,
+                  "reported_minutes": 7.2,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-02",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Opus 5.5 (medium)",
+                "value": 36,
+                "reported_cost_usd_per_attempt": 0.9,
+                "reported_minutes": 4.5,
+                "cost_basis": "API estimate",
+                "effort": "medium",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-4",
+                "raw": {
+                  "label": "Opus 5.5 (medium)",
+                  "value": 36,
+                  "reported_cost_usd_per_attempt": 0.9,
+                  "reported_minutes": 4.5,
+                  "cost_basis": "API estimate",
+                  "effort": "medium",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6 Sol (high) (fast)",
+                "value": 22,
+                "reported_cost_usd_per_attempt": 0.95,
+                "reported_minutes": 3.7,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-23",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-5",
+                "raw": {
+                  "label": "GPT-6 Sol (high) (fast)",
+                  "value": 22,
+                  "reported_cost_usd_per_attempt": 0.95,
+                  "reported_minutes": 3.7,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-23",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6 Astra (medium)",
+                "value": 36.7,
+                "reported_cost_usd_per_attempt": 1.14,
+                "reported_minutes": 4.2,
+                "cost_basis": "API estimate, cache-adjusted",
+                "effort": "medium",
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-6",
+                "raw": {
+                  "label": "GPT-6 Astra (medium)",
+                  "value": 36.7,
+                  "reported_cost_usd_per_attempt": 1.14,
+                  "reported_minutes": 4.2,
+                  "cost_basis": "API estimate, cache-adjusted",
+                  "effort": "medium",
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-5.6 Sol (high) (fast)",
+                "value": 14.9,
+                "reported_cost_usd_per_attempt": 1.77,
+                "reported_minutes": 3.6,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-07-09",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-7",
+                "raw": {
+                  "label": "GPT-5.6 Sol (high) (fast)",
+                  "value": 14.9,
+                  "reported_cost_usd_per_attempt": 1.77,
+                  "reported_minutes": 3.6,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-07-09",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6.1 Sol (high) (fast)",
+                "value": 41.7,
+                "reported_cost_usd_per_attempt": 2.15,
+                "reported_minutes": 4,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-29",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-8",
+                "raw": {
+                  "label": "GPT-6.1 Sol (high) (fast)",
+                  "value": 41.7,
+                  "reported_cost_usd_per_attempt": 2.15,
+                  "reported_minutes": 4,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-29",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Opus 5.5 (high) (fast)",
+                "value": 38.2,
+                "reported_cost_usd_per_attempt": 2.23,
+                "reported_minutes": 3.1,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-22",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-9",
+                "raw": {
+                  "label": "Opus 5.5 (high) (fast)",
+                  "value": 38.2,
+                  "reported_cost_usd_per_attempt": 2.23,
+                  "reported_minutes": 3.1,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-22",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Gemini 4 Argon (high) (priority)",
+                "value": 48.2,
+                "reported_cost_usd_per_attempt": 2.34,
+                "reported_minutes": 20.5,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-10-13",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-10",
+                "raw": {
+                  "label": "Gemini 4 Argon (high) (priority)",
+                  "value": 48.2,
+                  "reported_cost_usd_per_attempt": 2.34,
+                  "reported_minutes": 20.5,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-10-13",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "GPT-6 Astra (high) (fast)",
+                "value": 42.5,
+                "reported_cost_usd_per_attempt": 3.48,
+                "reported_minutes": 4,
+                "cost_basis": "API estimate",
+                "effort": "high",
+                "model_release_date": "2026-09-03",
+                "evaluation_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "time_basis": "LLM wall-clock per attempt",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-11",
+                "raw": {
+                  "label": "GPT-6 Astra (high) (fast)",
+                  "value": 42.5,
+                  "reported_cost_usd_per_attempt": 3.48,
+                  "reported_minutes": 4,
+                  "cost_basis": "API estimate",
+                  "effort": "high",
+                  "model_release_date": "2026-09-03",
+                  "evaluation_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "time_basis": "LLM wall-clock per attempt"
+                }
+              },
+              {
+                "label": "Fable 5.2 (high) (fast)",
+                "model_variant": "Fable 5.2 (high) (fast)",
+                "value": 57.3,
+                "evaluation_date": null,
+                "model_release_date": "2026-11-09",
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_cost_usd_per_attempt": 5.93,
+                "reported_minutes": 4.5,
+                "source_reported_release_date": "2026-11-09",
+                "effort": "high",
+                "cost_basis": "API estimate",
+                "time_basis": "LLM wall-clock per attempt",
+                "access_status": null,
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-12",
+                "raw": {
+                  "label": "Fable 5.2 (high) (fast)",
+                  "model_variant": "Fable 5.2 (high) (fast)",
+                  "value": 57.3,
+                  "evaluation_date": null,
+                  "model_release_date": "2026-11-09",
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_cost_usd_per_attempt": 5.93,
+                  "reported_minutes": 4.5,
+                  "source_reported_release_date": "2026-11-09",
+                  "effort": "high",
+                  "cost_basis": "API estimate",
+                  "time_basis": "LLM wall-clock per attempt",
+                  "access_status": null
+                }
+              },
+              {
+                "label": "Gemini 4 Carbon (high)",
+                "model_variant": "Gemini 4 Carbon (high)",
+                "value": 54.5,
+                "evaluation_date": null,
+                "model_release_date": null,
+                "cost_usd_per_task": null,
+                "latency_seconds": null,
+                "reported_cost_usd_per_attempt": 2.16,
+                "reported_minutes": 32.1,
+                "source_reported_release_date": "2026-11-10",
+                "effort": "high",
+                "cost_basis": "API estimate",
+                "time_basis": "LLM wall-clock per attempt",
+                "access_status": "early access",
+                "source_url": "https://robocurve.org/",
+                "result_id": "robodojo-rc-tier1-2026-11-16-13",
+                "raw": {
+                  "label": "Gemini 4 Carbon (high)",
+                  "model_variant": "Gemini 4 Carbon (high)",
+                  "value": 54.5,
+                  "evaluation_date": null,
+                  "model_release_date": null,
+                  "cost_usd_per_task": null,
+                  "latency_seconds": null,
+                  "reported_cost_usd_per_attempt": 2.16,
+                  "reported_minutes": 32.1,
+                  "source_reported_release_date": "2026-11-10",
+                  "effort": "high",
+                  "cost_basis": "API estimate",
+                  "time_basis": "LLM wall-clock per attempt",
+                  "access_status": "early access"
+                }
+              }
+            ],
+            "metrics": [
+              {
+                "id": "score",
+                "label": "Mean task progress",
+                "field": "value",
+                "unit": "percent",
+                "domain": [
+                  0,
+                  100
+                ],
+                "direction": "higher_is_better"
+              }
+            ],
+            "source_url": "https://robocurve.org/",
+            "source_locator": "RoboDojo-RC Tier 1 / 14 configurations",
+            "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
+            "snapshot_at": null,
+            "publication_at": null,
+            "evaluation_date": null,
+            "checked_at": "2026-11-16",
+            "complete": false,
+            "coverage": "RoboDojo-RC Tier 1 / 14 configurations",
+            "settings": {
+              "tasks": 6,
+              "attempts_per_configuration": 120,
+              "selection": "Six easiest tasks selected after Astra was evaluated on 18.",
+              "protocol_url": "https://robocurve.org/opus-5-5-robodojo-rc-tier-1/"
+            },
+            "limitations": [
+              "Exact evaluation dates are not reported."
+            ]
+          }
+        ]
       }
     ],
     "first_wave_ids": [
@@ -67601,6 +71112,7 @@ window.LAB_GALLERY = {
         "medagentbench"
       ],
       "webdev-arena-frontend": [
+        "webdev-arena-frontend-2026-11-13",
         "webdev-arena-frontend-2026-10-27",
         "webdev-arena-frontend-2026-10-22",
         "webdev-arena-frontend-2026-10-18",
@@ -67626,8 +71138,17 @@ window.LAB_GALLERY = {
         "mentalhealthbench"
       ],
       "aa-intelligence-index": [
+        "aa-intelligence-index-v501-2026-11-16",
         "aa-intelligence-index-2026-11-02",
         "aa-intelligence-index"
+      ],
+      "designarena-website": [
+        "designarena-website-2026-11-16",
+        "designarena-website-2026-11-02"
+      ],
+      "robodojo-rc-tier1": [
+        "robodojo-rc-tier1-2026-11-16",
+        "robodojo-rc-tier1-2026"
       ]
     },
     "rune": {
@@ -102528,6 +106049,18 @@ window.LAB_GALLERY = {
         "aa-intelligence-index-2026-11-02",
         "robodojo-rc-tier1-2026"
       ]
+    },
+    "november_16_refresh": {
+      "schema_version": 1,
+      "checked_at": "2026-11-16",
+      "card_ids": [
+        "aa-intelligence-index-v501-2026-11-16",
+        "webdev-arena-frontend-2026-11-13",
+        "designarena-website-2026-11-16",
+        "biobasicsbench-xhigh-2026-11-06",
+        "aa-healthbench-professional-2026-11-16",
+        "robodojo-rc-tier1-2026-11-16"
+      ]
     }
   },
   "expanded": {
@@ -117397,6 +120930,8 @@ window.LAB_GALLERY = {
       "data/benchmark-refresh-2026-11-02/evidence-manifest.json",
       "data/benchmark-followup-2026-11-02/source-packet.json",
       "data/benchmark-followup-2026-11-02/evidence-manifest.json",
+      "data/benchmark-refresh-2026-11-16/source-packet.json",
+      "data/benchmark-refresh-2026-11-16/evidence-manifest.json",
       "data/current-reasoning-epoch.json",
       "data/current-mmmu-pro.original.json",
       "data/current-coding.original.json",
@@ -117413,7 +120948,7 @@ window.LAB_GALLERY = {
       "data/coverage-research-2026-10-05/runebench-primary-summary.json"
     ],
     "rendererContract": "data/coverage-renderer-contract-2026-10-05.json",
-    "presentationMetadata": "data/gallery-metadata-followup-2026-11-02.json",
+    "presentationMetadata": "data/gallery-metadata-2026-11-16.json",
     "frontendInputStatus": "Original public research packet supplied directly by parent; not Library materialization"
   }
 };
