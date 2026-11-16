@@ -36,15 +36,17 @@ function message(text=''){$('walk-status').hidden=!text;$('walk-message').textCo
 function clearInput(){actions.clear();keys.clear();drag=null;position.vx=0;position.vz=0;}
 function stop(){clearInput();message();if(frame)cancelAnimationFrame(frame);frame=0;lastTime=0;idleTime=0;}
 function pauseExit(){exitState=exitController.update(position,{dt:0,active:false});abortPreload();}
-function releaseLook(){captureId++;captureWanted=capturePending=captureLegacy=locked=false;if(document.pointerLockElement===canvas)document.exitPointerLock?.();clearInput();pauseExit();}
+function releaseLook(){captureId++;captureWanted=capturePending=captureLegacy=locked=false;if(document.pointerLockElement===canvas)document.exitPointerLock?.();clearInput();pauseExit();syncCrosshair();}
 function available(){return !!engine&&active&&!suspended&&!document.hidden&&document.hasFocus()&&!help.open&&!station.open&&!$('comparison-dialog').open&&!menu.open;}
 function inputReady(){return roomReady&&!handoff?.active&&available();}
+// Center aim matches locked station picking; free-cursor and embedded views use their own controls.
+function syncCrosshair(){$('lab-crosshair').hidden=!(locked&&document.pointerLockElement===canvas&&inputReady());}
 function loadingStage(text,destination='Lab'){$('loading-name').textContent=destination;$('loading-stage').textContent=text;$('lab-loading').classList.remove('is-ready');$('lab-loading').hidden=false;if(handoff?.active)$('lab-loading').setAttribute('aria-hidden','true');else $('lab-loading').removeAttribute('aria-hidden');}
 function releaseHandoff(){handoffObserver?.disconnect();handoffObserver=null;for(const [node,inert]of coveredElements)node.inert=inert;}
 function handoffChanged(){if(handoff?.active)return;releaseHandoff();if(!suspended&&!document.hidden){if(roomReady)canvas.focus({preventScroll:true});else if(failed)enterButton.focus({preventScroll:true});}invalidate();}
 function finishLoading(){if(roomReady)return;roomReady=true;$('lab-loading').classList.add('is-ready');$('lab-loading').setAttribute('aria-hidden','true');if(handoffEntry&&handoff.active){handoff.ready();handoffChanged();}else if(!document.activeElement||document.activeElement===document.body||document.activeElement===canvas)canvas.focus({preventScroll:true});}
 if(handoffEntry){handoffObserver=new MutationObserver(handoffChanged);handoffObserver.observe(document.documentElement,{attributes:true,attributeFilter:['data-room-handoff']});}
-function invalidate(){dirty=true;schedule();}
+function invalidate(){syncCrosshair();dirty=true;schedule();}
 function schedule(){if(available()&&!frame)frame=requestAnimationFrame(tick);}
 function targetKey(target){if(target?.comparison)return screen.hitTest(target.comparison)?.key||null;if(target?.destination)return 'station:'+target.destination;return null;}
 function status(){const kind=nearby(position);$('nearby').hidden=!kind||document.pointerLockElement===canvas;$('nearby').textContent=kind==='character'?'CharacterBench':kind==='worlds'?'Use SceneBench screen':kind==='home'?'Exit to home':kind==='animation'?'Animation studio':'Open catalog';}
@@ -99,7 +101,7 @@ const screen=createWalkableScreen({
   approach:focusWorlds
 });
 
-function showRoom(value){active=value;canvas.hidden=!value;$('room-access').hidden=value;canvas.parentElement.classList.toggle('is-access',!value);$('explore').hidden=!value;for(const id of ['visit-bench','visit-home','visit-character','visit-animation','reset'])$(id).disabled=!value;if(value)invalidate();}
+function showRoom(value){active=value;canvas.hidden=!value;$('room-access').hidden=value;canvas.parentElement.classList.toggle('is-access',!value);$('explore').hidden=!value;for(const id of ['visit-bench','visit-home','visit-character','visit-animation','reset'])$(id).disabled=!value;syncCrosshair();if(value)invalidate();}
 function fallback(text){failed=true;loading=false;roomReady=false;request++;releaseLook();stop();showRoom(false);engine?.dispose();engine=null;$('lab-loading').hidden=true;enterButton.hidden=false;enterButton.disabled=false;$('access-message').textContent=text;if(handoffEntry){handoff.fail();handoffChanged();}}
 async function enter(){
   if(loading)return;if(engine){showRoom(true);return;}
