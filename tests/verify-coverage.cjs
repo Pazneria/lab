@@ -211,6 +211,12 @@ async function main() {
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index-v501-2026-11-16"]').count(), 1);
     await go("benchmarks.html");
     pass("Default family representatives follow declared order; filtered history, matching and AA detail selectors remain accessible");
+    for (const [id, date] of [['webdev-arena-frontend-2026-11-13','Nov 13, 2026'],['designarena-website-2026-11-16','Nov 16, 2026']]) {
+      await go('results.html?benchmark='+id);
+      const dates=page.locator('details').filter({has:page.locator('summary').getByText('Dates & evidence status')});
+      assert.match(await dates.textContent(),new RegExp('Source snapshot\\s*'+date.replace('.', '\\.')));
+    }
+    await go("benchmarks.html");
     await page.getByLabel("Results history").selectOption("all");
     assert.equal(await page.locator(".benchmark-card").count(), 109);
     assert.equal(await page.locator('[data-benchmark-id="aa-intelligence-index"]').count(), 1);

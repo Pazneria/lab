@@ -15972,7 +15972,7 @@ window.LAB_GALLERY = {
           "scope": "Public source review; no model evaluations run."
         },
         "result_packet_checked_at": "2026-11-16",
-        "snapshot_at": null,
+        "snapshot_at": "2026-11-13",
         "publication_at": null,
         "publication_label": null,
         "evaluations": [
@@ -16002,7 +16002,7 @@ window.LAB_GALLERY = {
           "scope": "Public source review; no model evaluations run."
         },
         "result_packet_checked_at": "2026-11-16",
-        "snapshot_at": null,
+        "snapshot_at": "2026-11-16",
         "publication_at": null,
         "publication_label": null,
         "evaluations": [
@@ -66711,7 +66711,7 @@ window.LAB_GALLERY = {
             "source_url": "https://arena.ai/leaderboard/code/webdev/frontend",
             "source_locator": "Frontend / November 13 / first 20 of 158",
             "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
-            "snapshot_at": null,
+            "snapshot_at": "2026-11-13",
             "publication_at": null,
             "evaluation_date": null,
             "checked_at": "2026-11-16",
@@ -67304,7 +67304,7 @@ window.LAB_GALLERY = {
             "source_url": "https://www.designarena.ai/leaderboard/website",
             "source_locator": "Website / November 16 / first 15 of 187",
             "source_input": "data/benchmark-refresh-2026-11-16/source-packet.json",
-            "snapshot_at": null,
+            "snapshot_at": "2026-11-16",
             "publication_at": null,
             "evaluation_date": null,
             "checked_at": "2026-11-16",

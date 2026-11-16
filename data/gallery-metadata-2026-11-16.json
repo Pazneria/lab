@@ -3809,7 +3809,7 @@
         "scope": "Public source review; no model evaluations run."
       },
       "result_packet_checked_at": "2026-11-16",
-      "snapshot_at": null,
+      "snapshot_at": "2026-11-13",
       "publication_at": null,
       "publication_label": null,
       "evaluations": [
@@ -3839,7 +3839,7 @@
         "scope": "Public source review; no model evaluations run."
       },
       "result_packet_checked_at": "2026-11-16",
-      "snapshot_at": null,
+      "snapshot_at": "2026-11-16",
       "publication_at": null,
       "publication_label": null,
       "evaluations": [
