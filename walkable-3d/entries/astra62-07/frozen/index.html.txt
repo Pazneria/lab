@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#272824">
+  <meta name="description" content="Walk through Mass & Interval, an exhibition of three material studies at Kern Museum of Form.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./museum.css">
+  <title>Mass &amp; Interval — Kern Museum of Form</title>
+</head>
+<body data-state="loading">
+  <main>
+    <canvas id="view" tabindex="0" aria-label="Explorable three-dimensional museum. Use WASD to walk and the mouse to look around."></canvas>
+    <div class="identity hud" aria-label="Kern Museum of Form">
+      <span class="mark" aria-hidden="true"><i></i><i></i></span>
+      <strong>KERN</strong><span class="brand-divider"></span><span class="brand-sub">Museum of Form</span>
+    </div>
+    <div class="location hud" aria-live="polite"><span id="room-num">01</span><span id="room-name">Entrance gallery</span></div>
+    <section class="panel" aria-labelledby="exhibition">
+      <div class="panel-title"><h1 id="exhibition">Mass &amp; Interval</h1></div>
+      <p id="status" role="status">Preparing the gallery…</p>
+      <div class="main-controls">
+        <span><kbd>WASD</kbd> Walk</span>
+        <span><kbd>Mouse</kbd> Look</span>
+        <span><kbd>Shift</kbd> Walk faster</span>
+      </div>
+      <div class="actions">
+        <button type="button" id="enter" disabled>Enter museum <span aria-hidden="true">↗</span></button>
+        <button type="button" id="reset" disabled title="Return to the entrance (R)">Reset <span aria-hidden="true">↺</span></button>
+      </div>
+      <details id="more"><summary>All controls</summary>
+        <div class="details-grid">
+          <span><kbd>↑ ↓</kbd> Walk</span><span><kbd>← →</kbd> Turn</span>
+          <span><kbd>PgUp / PgDn</kbd> Tilt</span><span><kbd>Esc</kbd> Pause</span>
+          <span><kbd>R</kbd> Reset view</span><span><kbd>H</kbd> Hide interface</span>
+        </div>
+        <p>Drag to look when the mouse is free.</p>
+      </details>
+    </section>
+    <div class="walk-hint hud"><span id="drag-hint" hidden>Drag to look</span><span><kbd>Esc</kbd> Pause</span><span><kbd>R</kbd> Reset</span></div>
+    <noscript><p class="error">Enable JavaScript to enter the museum.</p></noscript>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

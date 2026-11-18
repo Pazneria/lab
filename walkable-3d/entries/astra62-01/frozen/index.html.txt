@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<base href="./">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#202d26">
+<meta name="description" content="Explore Fallowmere Station, a disused rural station at the edge of an autumn wood.">
+<title>Fallowmere Station</title>
+<link rel="stylesheet" href="./station.css">
+</head>
+<body class="loading">
+<canvas id="world" tabindex="-1" aria-label="Explorable 3D scene of Fallowmere Station"></canvas>
+<div id="veil" aria-hidden="true"></div>
+<main id="entry">
+  <div class="seal"><span></span><p id="status" role="status">Opening the station…</p><span></span></div>
+  <h1 id="title">Fallowmere Station</h1>
+  <p class="route">Through the waiting room, across the line, and into Ash Wood.</p>
+  <div class="action"><button id="start" disabled>Loading</button><span class="more">Explore on foot</span></div>
+  <div class="keys desktop" aria-label="Walking controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</span><span>Mouse to look</span><span><kbd>Shift</kbd> Brisk walk</span></div>
+  <div class="keys mobile">Move with the pad. Drag the scene to look around.</div>
+</main>
+<nav id="tools" aria-label="Scene controls">
+  <button id="pause"><kbd>Esc</kbd> Menu</button>
+  <button id="reset" aria-label="Reset to the station entrance"><kbd>R</kbd> Reset</button>
+</nav>
+<div id="dragHint">Drag to look <span>·</span> Arrow keys to turn</div>
+<div id="flash" role="status"></div>
+<div id="stick" aria-label="Movement pad"><span id="nub"></span></div>
+<noscript>This scene requires JavaScript and WebGL 2.</noscript>
+<script type="module" src="./station.js"></script>
+</body>
+</html>

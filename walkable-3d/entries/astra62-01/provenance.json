@@ -1,0 +1,762 @@
+{
+  "entry": "astra62-01",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-01\\source-preservation.zip",
+  "archiveSha256": "8302169c30c23b583b67dcb0204cb07a4820253c4aa0dee59b3964f7cc3e0385",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/art/ballast.jpg": "Fallowmere-Station/art/ballast.jpg",
+      "frozen/art/bark.jpg": "Fallowmere-Station/art/bark.jpg",
+      "frozen/art/birch.jpg": "Fallowmere-Station/art/birch.jpg",
+      "frozen/art/bluewood-n.jpg": "Fallowmere-Station/art/bluewood-n.jpg",
+      "frozen/art/bluewood.jpg": "Fallowmere-Station/art/bluewood.jpg",
+      "frozen/art/botany.png": "Fallowmere-Station/art/botany.png",
+      "frozen/art/brick-n.jpg": "Fallowmere-Station/art/brick-n.jpg",
+      "frozen/art/brick.jpg": "Fallowmere-Station/art/brick.jpg",
+      "frozen/art/creamwood-n.jpg": "Fallowmere-Station/art/creamwood-n.jpg",
+      "frozen/art/creamwood.jpg": "Fallowmere-Station/art/creamwood.jpg",
+      "frozen/art/greenwood-n.jpg": "Fallowmere-Station/art/greenwood-n.jpg",
+      "frozen/art/greenwood.jpg": "Fallowmere-Station/art/greenwood.jpg",
+      "frozen/art/iron-n.jpg": "Fallowmere-Station/art/iron-n.jpg",
+      "frozen/art/iron.jpg": "Fallowmere-Station/art/iron.jpg",
+      "frozen/art/leaves.png": "Fallowmere-Station/art/leaves.png",
+      "frozen/art/lettering.jpg": "Fallowmere-Station/art/lettering.jpg",
+      "frozen/art/litter.jpg": "Fallowmere-Station/art/litter.jpg",
+      "frozen/art/loam.jpg": "Fallowmere-Station/art/loam.jpg",
+      "frozen/art/path.jpg": "Fallowmere-Station/art/path.jpg",
+      "frozen/art/patina.png": "Fallowmere-Station/art/patina.png",
+      "frozen/art/plaster-n.jpg": "Fallowmere-Station/art/plaster-n.jpg",
+      "frozen/art/plaster.jpg": "Fallowmere-Station/art/plaster.jpg",
+      "frozen/art/slate-n.jpg": "Fallowmere-Station/art/slate-n.jpg",
+      "frozen/art/slate.jpg": "Fallowmere-Station/art/slate.jpg",
+      "frozen/art/sleeper-n.jpg": "Fallowmere-Station/art/sleeper-n.jpg",
+      "frozen/art/sleeper.jpg": "Fallowmere-Station/art/sleeper.jpg",
+      "frozen/art/stone-n.jpg": "Fallowmere-Station/art/stone-n.jpg",
+      "frozen/art/stone.jpg": "Fallowmere-Station/art/stone.jpg",
+      "frozen/art/tile-n.jpg": "Fallowmere-Station/art/tile-n.jpg",
+      "frozen/art/tile.jpg": "Fallowmere-Station/art/tile.jpg",
+      "frozen/art/wood-n.jpg": "Fallowmere-Station/art/wood-n.jpg",
+      "frozen/art/wood.jpg": "Fallowmere-Station/art/wood.jpg",
+      "frozen/fonts/baskervville.woff2": "Fallowmere-Station/fonts/baskervville.woff2",
+      "frozen/fonts/dm-sans.woff2": "Fallowmere-Station/fonts/dm-sans.woff2",
+      "frozen/index.html.txt": "Fallowmere-Station/index.html",
+      "frozen/station.css": "Fallowmere-Station/station.css",
+      "frozen/station.js": "Fallowmere-Station/station.js",
+      "frozen/world.bin.gz": "Fallowmere-Station/world.bin.gz",
+      "frozen/world.json": "Fallowmere-Station/world.json",
+      "READ-ME.txt": "READ-ME.txt",
+      "run-record.json": "run-record.json"
+    },
+    "perFileSourceHashes": {
+      "app.mjs": {
+        "sha256": "0b9859ed6d0f1d1c3b2d01fd81630634ecff3c09b2b81064dc55870d12064036",
+        "bytes": 12087
+      },
+      "build.mjs": {
+        "sha256": "65cfdf3397a7a8336560ad980d54f4fb611afc5625e425d5c2db27fc16b332d9",
+        "bytes": 4209
+      },
+      "bundle.mjs": {
+        "sha256": "70ac7e80d8faf11e8d8a226aad12008844100074ae3bfbab2c814d1596ee7527",
+        "bytes": 1329
+      },
+      "details.mjs": {
+        "sha256": "783f21d40e55d189fc89d5a5bc5ec930a8a8e42f1441d25dbc266395cc70af26",
+        "bytes": 5085
+      },
+      "falling.mjs": {
+        "sha256": "a807fa20f3278da596a33032db9483913596de1b4a3755fcab89e50c70a27166",
+        "bytes": 1601
+      },
+      "Fallowmere-Station.zip": {
+        "sha256": "4e7f16b2da1d16f31e6ab1b64c54c6f204299112bca6506d96dfd32c7b5e4ea1",
+        "bytes": 16738874
+      },
+      "fittings.mjs": {
+        "sha256": "f7f390f04a251707f1cc78eabcc0d54e60e7c7b2fdf007bfdd3c314c3bc00bd4",
+        "bytes": 10924
+      },
+      "geometry.mjs": {
+        "sha256": "a4f05aeaf227767818215520b78dae79d3a6a8a907255535ffd9fc96817eeb68",
+        "bytes": 6373
+      },
+      "ground-details.mjs": {
+        "sha256": "f0b32636b59f4f3a468091df8b831d4a7b48fa885de55e864c803b1fbf9121ba",
+        "bytes": 3866
+      },
+      "index.html": {
+        "sha256": "6100c80fbe5bad3be70d0be04c60f896f758ade272f9d092e7aeba04458fb41a",
+        "bytes": 1757
+      },
+      "land.mjs": {
+        "sha256": "d54402865ba76e2c1d1b2cc099ba0b06e87efa937c08b3085269f15660237df5",
+        "bytes": 6215
+      },
+      "launch.py": {
+        "sha256": "13b8c0910cdfa76028630273d147d1d748f54648170c890a31919b881716a830",
+        "bytes": 1383
+      },
+      "make-age.cjs": {
+        "sha256": "b99f3a0416edae7e8642e003b8351872cbd501c480745c937be2728904a7ce5c",
+        "bytes": 2665
+      },
+      "make-botany.cjs": {
+        "sha256": "fc6788434772c6df85e89352a8b7dce2347940753afc303855e844bb8bc8d935",
+        "bytes": 5375
+      },
+      "make-materials.cjs": {
+        "sha256": "228f80cd399ad603641fa9827d9a28ecc6aa1bb27c50b5922b5c25db75c42cde",
+        "bytes": 9484
+      },
+      "make-signs.cjs": {
+        "sha256": "f53613982699a64557a210e048d29d88d782772dab82f03c323627b6b1877527",
+        "bytes": 8300
+      },
+      "materials.mjs": {
+        "sha256": "c00b850bfcee58a55d6e5099d9934874538880243011e866bbc854b8c41021ba",
+        "bytes": 3314
+      },
+      "package-lock.json": {
+        "sha256": "20cc611150e437acee3f9d517e0caeef6b6e2bb7491767a77cd85f8803f3cfd5",
+        "bytes": 21864
+      },
+      "package.json": {
+        "sha256": "e0af7efed2d21bfec79d5bfd4fc639b4ed52c3452fe76964da60b7795a92fe6a",
+        "bytes": 214
+      },
+      "railway.mjs": {
+        "sha256": "02f5d0b1367798ba72dbf8c5ba438e7bbafc8ca67f457ffd46204b079d5f846c",
+        "bytes": 7617
+      },
+      "READ-ME.txt": {
+        "sha256": "15b43aaac10459b6f91050ff4dc7913aa5710e91a99a498a2b94b87e73beb4c0",
+        "bytes": 1309
+      },
+      "remnants.mjs": {
+        "sha256": "468ea5ab1e6c8380fa24b4a0c1f08204c11a2fe539bb017bf863241a66b86d2e",
+        "bytes": 8672
+      },
+      "run-record.json": {
+        "sha256": "44610f7c1b121cdf4072c75606f246d9a40b303f2986f1f260a127e40e335189",
+        "bytes": 2384
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "f3c47e8b51371151a71b0e1f5066220cfa8d14ef74a779d09f5d9992c0eb45e1",
+        "bytes": 4566
+      },
+      "sign-uv.mjs": {
+        "sha256": "8437fc3d9335bdde96f0e7a24b7454fa0077e4eada759fafa55b466250c3fcb3",
+        "bytes": 1095
+      },
+      "station.css": {
+        "sha256": "4e36d34d760c36f73f6df6d761f3abb218e2f6f967f55b9156209b6c5b213df5",
+        "bytes": 4408
+      },
+      "station.mjs": {
+        "sha256": "39ea75288e653d4f8406c34b5fd8ca416e555bd98947848d6ab5b1bc29a3a4c1",
+        "bytes": 11667
+      },
+      "verify.mjs": {
+        "sha256": "d243e1ec5d8a66874b6b20d20b72d51a2ba797f50f4cde50273dfabba1c4531d",
+        "bytes": 3826
+      },
+      "walk.mjs": {
+        "sha256": "81c8ebcd2d4afb081b46eb64caf4d45172e62150cac4e6c34a17b1dee89c7497",
+        "bytes": 1619
+      },
+      "woods.mjs": {
+        "sha256": "6b9d28be80c3fce01e8601555c6f2f3232d5d358ff4101406434b5210cde868c",
+        "bytes": 11806
+      },
+      "world.bin.gz": {
+        "sha256": "ef0475b9dcd24f45e61a56620cab5fa61b14a51f582d8ea28f028dd4b4150c99",
+        "bytes": 6002056
+      },
+      "world.json": {
+        "sha256": "08b9492391f7780aa487cc9c99d280a3c427ac72e41dfbb04dd1a6f7cc3ddc47",
+        "bytes": 195807
+      },
+      "Fallowmere-Station/index.html": {
+        "sha256": "461d1782cfc2307f29fc8c8035b5ddc89eeab72958095342ddc68369fe908e14",
+        "bytes": 1738
+      },
+      "Fallowmere-Station/launch.py": {
+        "sha256": "13b8c0910cdfa76028630273d147d1d748f54648170c890a31919b881716a830",
+        "bytes": 1383
+      },
+      "Fallowmere-Station/READ-ME.txt": {
+        "sha256": "15b43aaac10459b6f91050ff4dc7913aa5710e91a99a498a2b94b87e73beb4c0",
+        "bytes": 1309
+      },
+      "Fallowmere-Station/station.css": {
+        "sha256": "4e36d34d760c36f73f6df6d761f3abb218e2f6f967f55b9156209b6c5b213df5",
+        "bytes": 4408
+      },
+      "Fallowmere-Station/station.js": {
+        "sha256": "9779e73f56958bbf16ff99bdddb4c380182621fe01fab9b6c06d6dba78ea2286",
+        "bytes": 719545
+      },
+      "Fallowmere-Station/world.bin.gz": {
+        "sha256": "ef0475b9dcd24f45e61a56620cab5fa61b14a51f582d8ea28f028dd4b4150c99",
+        "bytes": 6002056
+      },
+      "Fallowmere-Station/world.json": {
+        "sha256": "08b9492391f7780aa487cc9c99d280a3c427ac72e41dfbb04dd1a6f7cc3ddc47",
+        "bytes": 195807
+      },
+      "Fallowmere-Station/licenses/baskervville.txt": {
+        "sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+        "bytes": 4314
+      },
+      "Fallowmere-Station/licenses/dm-sans.txt": {
+        "sha256": "6fbd040a29c2037a765dfb9f2561e9965b5c95c6dcb5dce516089d63d5f17af7",
+        "bytes": 4502
+      },
+      "Fallowmere-Station/licenses/three.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "Fallowmere-Station/fonts/baskervville.woff2": {
+        "sha256": "0dff01b8d35065db5aab1089ca58d191ff339796d629c9bef39ce065b30e6bac",
+        "bytes": 18028
+      },
+      "Fallowmere-Station/fonts/dm-sans.woff2": {
+        "sha256": "19bf1984956517c35c2bd35b6cdedac12a21d6fcd3596c614ecdfb88b648909d",
+        "bytes": 14304
+      },
+      "Fallowmere-Station/art/ballast.jpg": {
+        "sha256": "4950300faa458d1cdf4e5f9a44de82671e2f9f99eab5c64b9910fcfc2956c865",
+        "bytes": 207452
+      },
+      "Fallowmere-Station/art/bark.jpg": {
+        "sha256": "0626f28f99a78d8ebf7ad49daa6c90ecead787c809c6e9390fec8bc9d67ee758",
+        "bytes": 121138
+      },
+      "Fallowmere-Station/art/birch.jpg": {
+        "sha256": "fee78fbf182a73f3697a47302feca25386e0120b99d732be453384a7707d4d66",
+        "bytes": 150239
+      },
+      "Fallowmere-Station/art/bluewood-n.jpg": {
+        "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+        "bytes": 132567
+      },
+      "Fallowmere-Station/art/bluewood.jpg": {
+        "sha256": "9611345ce90ede4575d351d9710da75e294273cc7e83c2764fbc9014313eb000",
+        "bytes": 135955
+      },
+      "Fallowmere-Station/art/botany.png": {
+        "sha256": "3a28ce0124a2226214d8a7bea9cbd1f61235e18bc468bbbdb6aacba0fb50480f",
+        "bytes": 2258323
+      },
+      "Fallowmere-Station/art/brick-n.jpg": {
+        "sha256": "ab73e829745f79e467a1baf75a676641422586cb970010578defe4b98f6e7bbf",
+        "bytes": 421684
+      },
+      "Fallowmere-Station/art/brick.jpg": {
+        "sha256": "17b09ec9d0fad75b91e345d9b53c3db7744a89b6230a9f1090905106a237a315",
+        "bytes": 379961
+      },
+      "Fallowmere-Station/art/creamwood-n.jpg": {
+        "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+        "bytes": 132567
+      },
+      "Fallowmere-Station/art/creamwood.jpg": {
+        "sha256": "cfad67e4ab2f5eb4db98370173d1ab82c5b3adcc7097109fc7368d936060253d",
+        "bytes": 136937
+      },
+      "Fallowmere-Station/art/greenwood-n.jpg": {
+        "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+        "bytes": 132567
+      },
+      "Fallowmere-Station/art/greenwood.jpg": {
+        "sha256": "50a7d9554a718066da063695efd3456e7d67938dc488e76f52b1610f85fb71fc",
+        "bytes": 133751
+      },
+      "Fallowmere-Station/art/iron-n.jpg": {
+        "sha256": "640bedc864f66f59da481b4cab1badadb74583253f680b0e05b48fc5b78e9176",
+        "bytes": 77591
+      },
+      "Fallowmere-Station/art/iron.jpg": {
+        "sha256": "4353541efc2843322eb675c04869d1cbf38d2db5e0afa01992382bfa61c9a737",
+        "bytes": 104224
+      },
+      "Fallowmere-Station/art/leaves.png": {
+        "sha256": "c0a01c8311059c4dd8228160b6f1a8e6ff1eba6ff2d6cee90d8ce254a2c0c433",
+        "bytes": 68724
+      },
+      "Fallowmere-Station/art/lettering.jpg": {
+        "sha256": "ab3a4c5fae28df7de19eff7c8e116b78a5b115b3f465d140a11b0c5bb274fbaf",
+        "bytes": 623566
+      },
+      "Fallowmere-Station/art/litter.jpg": {
+        "sha256": "e24874da089b60f360fe7cb0c602d480b05eadfaa8ce487e13702a189760999e",
+        "bytes": 288377
+      },
+      "Fallowmere-Station/art/loam.jpg": {
+        "sha256": "1cdaac047da2c1cb39ede8a5192f31030ec939c9d695a93cb46ec6cad2bfbcb8",
+        "bytes": 184860
+      },
+      "Fallowmere-Station/art/path.jpg": {
+        "sha256": "8495cc92ece9ca2916d15480ec6439e57aef40e719f61fddd802516d206d5b7c",
+        "bytes": 185983
+      },
+      "Fallowmere-Station/art/patina.png": {
+        "sha256": "9ebd3978fd50393a55d1a72084d9c10643ca0d669de097c890130be5680e7ea2",
+        "bytes": 3014209
+      },
+      "Fallowmere-Station/art/plaster-n.jpg": {
+        "sha256": "65d53aff8aab93deefc7f28d4aa8d3cffa343c9f87cae94bfad8815fa33d5ccb",
+        "bytes": 174856
+      },
+      "Fallowmere-Station/art/plaster.jpg": {
+        "sha256": "36d57febe27bef9a3723e761475c1c219a125ce16694047c876b75dd68225530",
+        "bytes": 93927
+      },
+      "Fallowmere-Station/art/slate-n.jpg": {
+        "sha256": "5816c2bf090b76d3f6d01045ec473e696e60b754051b33fbcf3e01e6cb1e5591",
+        "bytes": 246373
+      },
+      "Fallowmere-Station/art/slate.jpg": {
+        "sha256": "fb9cda50f0fd313c37bd1732573f7ec179439e0f9f34034f6e79b100c1cb7016",
+        "bytes": 198776
+      },
+      "Fallowmere-Station/art/sleeper-n.jpg": {
+        "sha256": "e1c1467e0d4106d56204b78c7c1ba5bda2ad64c0391eccf4bdcec0c154ef93d4",
+        "bytes": 145798
+      },
+      "Fallowmere-Station/art/sleeper.jpg": {
+        "sha256": "be4eb53cc051b2be8d0c73adead298547dc799434f3d1d6bd0d528b61882de1d",
+        "bytes": 154775
+      },
+      "Fallowmere-Station/art/stone-n.jpg": {
+        "sha256": "eb887e7ffa6ec5983769fdf01d7394bcd3a7802557b6fbc7c2c72576f8b8df4a",
+        "bytes": 215863
+      },
+      "Fallowmere-Station/art/stone.jpg": {
+        "sha256": "e31c3cbdecf29aa6888059b223287a745703c230ba1366229bcd5160d7dc8f9d",
+        "bytes": 183450
+      },
+      "Fallowmere-Station/art/tile-n.jpg": {
+        "sha256": "2cd6206d02bbab07297866bf998de6084a590bf1155e19c31f0344be2f0d1f48",
+        "bytes": 135460
+      },
+      "Fallowmere-Station/art/tile.jpg": {
+        "sha256": "cfabba0db70ead57f7f1b3ffc56301f7c7ee1fb78bfeb7e11133c9ab0118dd37",
+        "bytes": 114554
+      },
+      "Fallowmere-Station/art/wood-n.jpg": {
+        "sha256": "c83890a66745ff1691b85a5bffa4e03cfd5b253088a9ef8648b356778831270e",
+        "bytes": 106885
+      },
+      "Fallowmere-Station/art/wood.jpg": {
+        "sha256": "208b6cd611c7f629af988b3b546ba02a355b2455cfb285cbdae9c7b45cabc250",
+        "bytes": 115312
+      },
+      "art/ballast-n.jpg": {
+        "sha256": "df68d699a25fdecab111d4af9c2ae20c94a8cddd4ddf93406be0df6f5e47a637",
+        "bytes": 303799
+      },
+      "art/ballast.jpg": {
+        "sha256": "4950300faa458d1cdf4e5f9a44de82671e2f9f99eab5c64b9910fcfc2956c865",
+        "bytes": 207452
+      },
+      "art/bark-n.jpg": {
+        "sha256": "f5573ea78c132f622c71fe18feaf0b617368156422af5dcda4678fed7d16896d",
+        "bytes": 140366
+      },
+      "art/bark.jpg": {
+        "sha256": "0626f28f99a78d8ebf7ad49daa6c90ecead787c809c6e9390fec8bc9d67ee758",
+        "bytes": 121138
+      },
+      "art/birch-n.jpg": {
+        "sha256": "301f79dfb67f4c4e53fbeae8b98a8cec6422923e70e023056ca6d7f6b6ea97a4",
+        "bytes": 99537
+      },
+      "art/birch.jpg": {
+        "sha256": "fee78fbf182a73f3697a47302feca25386e0120b99d732be453384a7707d4d66",
+        "bytes": 150239
+      },
+      "art/bluewood-n.jpg": {
+        "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+        "bytes": 132567
+      },
+      "art/bluewood.jpg": {
+        "sha256": "9611345ce90ede4575d351d9710da75e294273cc7e83c2764fbc9014313eb000",
+        "bytes": 135955
+      },
+      "art/botany.png": {
+        "sha256": "3a28ce0124a2226214d8a7bea9cbd1f61235e18bc468bbbdb6aacba0fb50480f",
+        "bytes": 2258323
+      },
+      "art/brick-n.jpg": {
+        "sha256": "ab73e829745f79e467a1baf75a676641422586cb970010578defe4b98f6e7bbf",
+        "bytes": 421684
+      },
+      "art/brick.jpg": {
+        "sha256": "17b09ec9d0fad75b91e345d9b53c3db7744a89b6230a9f1090905106a237a315",
+        "bytes": 379961
+      },
+      "art/creamwood-n.jpg": {
+        "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+        "bytes": 132567
+      },
+      "art/creamwood.jpg": {
+        "sha256": "cfad67e4ab2f5eb4db98370173d1ab82c5b3adcc7097109fc7368d936060253d",
+        "bytes": 136937
+      },
+      "art/greenwood-n.jpg": {
+        "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+        "bytes": 132567
+      },
+      "art/greenwood.jpg": {
+        "sha256": "50a7d9554a718066da063695efd3456e7d67938dc488e76f52b1610f85fb71fc",
+        "bytes": 133751
+      },
+      "art/iron-n.jpg": {
+        "sha256": "640bedc864f66f59da481b4cab1badadb74583253f680b0e05b48fc5b78e9176",
+        "bytes": 77591
+      },
+      "art/iron.jpg": {
+        "sha256": "4353541efc2843322eb675c04869d1cbf38d2db5e0afa01992382bfa61c9a737",
+        "bytes": 104224
+      },
+      "art/leaves.png": {
+        "sha256": "c0a01c8311059c4dd8228160b6f1a8e6ff1eba6ff2d6cee90d8ce254a2c0c433",
+        "bytes": 68724
+      },
+      "art/lettering.jpg": {
+        "sha256": "ab3a4c5fae28df7de19eff7c8e116b78a5b115b3f465d140a11b0c5bb274fbaf",
+        "bytes": 623566
+      },
+      "art/litter.jpg": {
+        "sha256": "e24874da089b60f360fe7cb0c602d480b05eadfaa8ce487e13702a189760999e",
+        "bytes": 288377
+      },
+      "art/loam-n.jpg": {
+        "sha256": "86865523cdddfebaf381a534c3c93019417425bcd29e1cd23488eab037105f72",
+        "bytes": 219225
+      },
+      "art/loam.jpg": {
+        "sha256": "1cdaac047da2c1cb39ede8a5192f31030ec939c9d695a93cb46ec6cad2bfbcb8",
+        "bytes": 184860
+      },
+      "art/path-n.jpg": {
+        "sha256": "86865523cdddfebaf381a534c3c93019417425bcd29e1cd23488eab037105f72",
+        "bytes": 219225
+      },
+      "art/path.jpg": {
+        "sha256": "8495cc92ece9ca2916d15480ec6439e57aef40e719f61fddd802516d206d5b7c",
+        "bytes": 185983
+      },
+      "art/patina.png": {
+        "sha256": "9ebd3978fd50393a55d1a72084d9c10643ca0d669de097c890130be5680e7ea2",
+        "bytes": 3014209
+      },
+      "art/plaster-n.jpg": {
+        "sha256": "65d53aff8aab93deefc7f28d4aa8d3cffa343c9f87cae94bfad8815fa33d5ccb",
+        "bytes": 174856
+      },
+      "art/plaster.jpg": {
+        "sha256": "36d57febe27bef9a3723e761475c1c219a125ce16694047c876b75dd68225530",
+        "bytes": 93927
+      },
+      "art/slate-n.jpg": {
+        "sha256": "5816c2bf090b76d3f6d01045ec473e696e60b754051b33fbcf3e01e6cb1e5591",
+        "bytes": 246373
+      },
+      "art/slate.jpg": {
+        "sha256": "fb9cda50f0fd313c37bd1732573f7ec179439e0f9f34034f6e79b100c1cb7016",
+        "bytes": 198776
+      },
+      "art/sleeper-n.jpg": {
+        "sha256": "e1c1467e0d4106d56204b78c7c1ba5bda2ad64c0391eccf4bdcec0c154ef93d4",
+        "bytes": 145798
+      },
+      "art/sleeper.jpg": {
+        "sha256": "be4eb53cc051b2be8d0c73adead298547dc799434f3d1d6bd0d528b61882de1d",
+        "bytes": 154775
+      },
+      "art/stone-n.jpg": {
+        "sha256": "eb887e7ffa6ec5983769fdf01d7394bcd3a7802557b6fbc7c2c72576f8b8df4a",
+        "bytes": 215863
+      },
+      "art/stone.jpg": {
+        "sha256": "e31c3cbdecf29aa6888059b223287a745703c230ba1366229bcd5160d7dc8f9d",
+        "bytes": 183450
+      },
+      "art/tile-n.jpg": {
+        "sha256": "2cd6206d02bbab07297866bf998de6084a590bf1155e19c31f0344be2f0d1f48",
+        "bytes": 135460
+      },
+      "art/tile.jpg": {
+        "sha256": "cfabba0db70ead57f7f1b3ffc56301f7c7ee1fb78bfeb7e11133c9ab0118dd37",
+        "bytes": 114554
+      },
+      "art/wood-n.jpg": {
+        "sha256": "c83890a66745ff1691b85a5bffa4e03cfd5b253088a9ef8648b356778831270e",
+        "bytes": 106885
+      },
+      "art/wood.jpg": {
+        "sha256": "208b6cd611c7f629af988b3b546ba02a355b2455cfb285cbdae9c7b45cabc250",
+        "bytes": 115312
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-01\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "c0a9ceee095cfcb7a8ad6b163008be39aea460d81a9634e44b63ff4b56fae54d",
+      "bytes": 1426
+    },
+    "launch-prompt.txt": {
+      "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",
+      "bytes": 6668
+    },
+    "READ-ME.txt": {
+      "sha256": "15b43aaac10459b6f91050ff4dc7913aa5710e91a99a498a2b94b87e73beb4c0",
+      "bytes": 1309
+    },
+    "run-record.json": {
+      "sha256": "44610f7c1b121cdf4072c75606f246d9a40b303f2986f1f260a127e40e335189",
+      "bytes": 2384
+    },
+    "source-audit.json": {
+      "sha256": "c6d0d0a20d2d88fbb7563ef07798b3359ece9addf70be5b6f279feca8ab4a1a9",
+      "bytes": 432
+    },
+    "frozen/index.html.txt": {
+      "sha256": "461d1782cfc2307f29fc8c8035b5ddc89eeab72958095342ddc68369fe908e14",
+      "bytes": 1738
+    },
+    "frozen/station.css": {
+      "sha256": "4e36d34d760c36f73f6df6d761f3abb218e2f6f967f55b9156209b6c5b213df5",
+      "bytes": 4408
+    },
+    "frozen/station.js": {
+      "sha256": "9779e73f56958bbf16ff99bdddb4c380182621fe01fab9b6c06d6dba78ea2286",
+      "bytes": 719545
+    },
+    "frozen/world.bin.gz": {
+      "sha256": "ef0475b9dcd24f45e61a56620cab5fa61b14a51f582d8ea28f028dd4b4150c99",
+      "bytes": 6002056
+    },
+    "frozen/world.json": {
+      "sha256": "08b9492391f7780aa487cc9c99d280a3c427ac72e41dfbb04dd1a6f7cc3ddc47",
+      "bytes": 195807
+    },
+    "frozen/art/ballast.jpg": {
+      "sha256": "4950300faa458d1cdf4e5f9a44de82671e2f9f99eab5c64b9910fcfc2956c865",
+      "bytes": 207452
+    },
+    "frozen/art/bark.jpg": {
+      "sha256": "0626f28f99a78d8ebf7ad49daa6c90ecead787c809c6e9390fec8bc9d67ee758",
+      "bytes": 121138
+    },
+    "frozen/art/birch.jpg": {
+      "sha256": "fee78fbf182a73f3697a47302feca25386e0120b99d732be453384a7707d4d66",
+      "bytes": 150239
+    },
+    "frozen/art/bluewood-n.jpg": {
+      "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+      "bytes": 132567
+    },
+    "frozen/art/bluewood.jpg": {
+      "sha256": "9611345ce90ede4575d351d9710da75e294273cc7e83c2764fbc9014313eb000",
+      "bytes": 135955
+    },
+    "frozen/art/botany.png": {
+      "sha256": "3a28ce0124a2226214d8a7bea9cbd1f61235e18bc468bbbdb6aacba0fb50480f",
+      "bytes": 2258323
+    },
+    "frozen/art/brick-n.jpg": {
+      "sha256": "ab73e829745f79e467a1baf75a676641422586cb970010578defe4b98f6e7bbf",
+      "bytes": 421684
+    },
+    "frozen/art/brick.jpg": {
+      "sha256": "17b09ec9d0fad75b91e345d9b53c3db7744a89b6230a9f1090905106a237a315",
+      "bytes": 379961
+    },
+    "frozen/art/creamwood-n.jpg": {
+      "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+      "bytes": 132567
+    },
+    "frozen/art/creamwood.jpg": {
+      "sha256": "cfad67e4ab2f5eb4db98370173d1ab82c5b3adcc7097109fc7368d936060253d",
+      "bytes": 136937
+    },
+    "frozen/art/greenwood-n.jpg": {
+      "sha256": "e4f03cca430c10aec4a377b93a69eb1964d370b818ea56a0cd1f24b9b257262d",
+      "bytes": 132567
+    },
+    "frozen/art/greenwood.jpg": {
+      "sha256": "50a7d9554a718066da063695efd3456e7d67938dc488e76f52b1610f85fb71fc",
+      "bytes": 133751
+    },
+    "frozen/art/iron-n.jpg": {
+      "sha256": "640bedc864f66f59da481b4cab1badadb74583253f680b0e05b48fc5b78e9176",
+      "bytes": 77591
+    },
+    "frozen/art/iron.jpg": {
+      "sha256": "4353541efc2843322eb675c04869d1cbf38d2db5e0afa01992382bfa61c9a737",
+      "bytes": 104224
+    },
+    "frozen/art/leaves.png": {
+      "sha256": "c0a01c8311059c4dd8228160b6f1a8e6ff1eba6ff2d6cee90d8ce254a2c0c433",
+      "bytes": 68724
+    },
+    "frozen/art/lettering.jpg": {
+      "sha256": "ab3a4c5fae28df7de19eff7c8e116b78a5b115b3f465d140a11b0c5bb274fbaf",
+      "bytes": 623566
+    },
+    "frozen/art/litter.jpg": {
+      "sha256": "e24874da089b60f360fe7cb0c602d480b05eadfaa8ce487e13702a189760999e",
+      "bytes": 288377
+    },
+    "frozen/art/loam.jpg": {
+      "sha256": "1cdaac047da2c1cb39ede8a5192f31030ec939c9d695a93cb46ec6cad2bfbcb8",
+      "bytes": 184860
+    },
+    "frozen/art/path.jpg": {
+      "sha256": "8495cc92ece9ca2916d15480ec6439e57aef40e719f61fddd802516d206d5b7c",
+      "bytes": 185983
+    },
+    "frozen/art/patina.png": {
+      "sha256": "9ebd3978fd50393a55d1a72084d9c10643ca0d669de097c890130be5680e7ea2",
+      "bytes": 3014209
+    },
+    "frozen/art/plaster-n.jpg": {
+      "sha256": "65d53aff8aab93deefc7f28d4aa8d3cffa343c9f87cae94bfad8815fa33d5ccb",
+      "bytes": 174856
+    },
+    "frozen/art/plaster.jpg": {
+      "sha256": "36d57febe27bef9a3723e761475c1c219a125ce16694047c876b75dd68225530",
+      "bytes": 93927
+    },
+    "frozen/art/slate-n.jpg": {
+      "sha256": "5816c2bf090b76d3f6d01045ec473e696e60b754051b33fbcf3e01e6cb1e5591",
+      "bytes": 246373
+    },
+    "frozen/art/slate.jpg": {
+      "sha256": "fb9cda50f0fd313c37bd1732573f7ec179439e0f9f34034f6e79b100c1cb7016",
+      "bytes": 198776
+    },
+    "frozen/art/sleeper-n.jpg": {
+      "sha256": "e1c1467e0d4106d56204b78c7c1ba5bda2ad64c0391eccf4bdcec0c154ef93d4",
+      "bytes": 145798
+    },
+    "frozen/art/sleeper.jpg": {
+      "sha256": "be4eb53cc051b2be8d0c73adead298547dc799434f3d1d6bd0d528b61882de1d",
+      "bytes": 154775
+    },
+    "frozen/art/stone-n.jpg": {
+      "sha256": "eb887e7ffa6ec5983769fdf01d7394bcd3a7802557b6fbc7c2c72576f8b8df4a",
+      "bytes": 215863
+    },
+    "frozen/art/stone.jpg": {
+      "sha256": "e31c3cbdecf29aa6888059b223287a745703c230ba1366229bcd5160d7dc8f9d",
+      "bytes": 183450
+    },
+    "frozen/art/tile-n.jpg": {
+      "sha256": "2cd6206d02bbab07297866bf998de6084a590bf1155e19c31f0344be2f0d1f48",
+      "bytes": 135460
+    },
+    "frozen/art/tile.jpg": {
+      "sha256": "cfabba0db70ead57f7f1b3ffc56301f7c7ee1fb78bfeb7e11133c9ab0118dd37",
+      "bytes": 114554
+    },
+    "frozen/art/wood-n.jpg": {
+      "sha256": "c83890a66745ff1691b85a5bffa4e03cfd5b253088a9ef8648b356778831270e",
+      "bytes": 106885
+    },
+    "frozen/art/wood.jpg": {
+      "sha256": "208b6cd611c7f629af988b3b546ba02a355b2455cfb285cbdae9c7b45cabc250",
+      "bytes": 115312
+    },
+    "frozen/fonts/baskervville.woff2": {
+      "sha256": "0dff01b8d35065db5aab1089ca58d191ff339796d629c9bef39ce065b30e6bac",
+      "bytes": 18028
+    },
+    "frozen/fonts/dm-sans.woff2": {
+      "sha256": "19bf1984956517c35c2bd35b6cdedac12a21d6fcd3596c614ecdfb88b648909d",
+      "bytes": 14304
+    },
+    "host-runtime-check.json": {
+      "sha256": "38155519428ceb4b66d92a0440272283fe166e904890562f79fdedced04fb08f",
+      "bytes": 1917
+    },
+    "preview.jpg": {
+      "sha256": "2df68b9a38a9cbdb4f5518e936fe31360cc00e6575a133fb1ffd5d07f1638e54",
+      "bytes": 148770
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "READ-ME.txt",
+      "run-record.json",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/station.css",
+      "frozen/station.js",
+      "frozen/world.bin.gz",
+      "frozen/world.json",
+      "frozen/art/ballast.jpg",
+      "frozen/art/bark.jpg",
+      "frozen/art/birch.jpg",
+      "frozen/art/bluewood-n.jpg",
+      "frozen/art/bluewood.jpg",
+      "frozen/art/botany.png",
+      "frozen/art/brick-n.jpg",
+      "frozen/art/brick.jpg",
+      "frozen/art/creamwood-n.jpg",
+      "frozen/art/creamwood.jpg",
+      "frozen/art/greenwood-n.jpg",
+      "frozen/art/greenwood.jpg",
+      "frozen/art/iron-n.jpg",
+      "frozen/art/iron.jpg",
+      "frozen/art/leaves.png",
+      "frozen/art/lettering.jpg",
+      "frozen/art/litter.jpg",
+      "frozen/art/loam.jpg",
+      "frozen/art/path.jpg",
+      "frozen/art/patina.png",
+      "frozen/art/plaster-n.jpg",
+      "frozen/art/plaster.jpg",
+      "frozen/art/slate-n.jpg",
+      "frozen/art/slate.jpg",
+      "frozen/art/sleeper-n.jpg",
+      "frozen/art/sleeper.jpg",
+      "frozen/art/stone-n.jpg",
+      "frozen/art/stone.jpg",
+      "frozen/art/tile-n.jpg",
+      "frozen/art/tile.jpg",
+      "frozen/art/wood-n.jpg",
+      "frozen/art/wood.jpg",
+      "frozen/fonts/baskervville.woff2",
+      "frozen/fonts/dm-sans.woff2",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:06:50.738Z",
+    "sha256": "2df68b9a38a9cbdb4f5518e936fe31360cc00e6575a133fb1ffd5d07f1638e54",
+    "bytes": 148770,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

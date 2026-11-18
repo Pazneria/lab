@@ -1,0 +1,28 @@
+{
+  "requestedModel": "GPT-6.2 Astra",
+  "requestedEffort": "XHIGH",
+  "requestedService": "Standard",
+  "servingMetadata": "Actual model variant, reasoning effort and service tier are not exposed to this agent.",
+  "firstImplementationUTC": "2026-11-17T23:06:37.1987721+00:00",
+  "deadlineUTC": "2026-11-18T00:06:37.1987721+00:00",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-01",
+  "exposedIdentity": "Codex, based on GPT-6. No per-request serving variant, effort or service tier is exposed.",
+  "preflight": "Verified the exact assigned working directory, then checked that it was empty and queried the local package cache before the first implementation write.",
+  "artifact": "Fallowmere-Station",
+  "portableArchive": "Fallowmere-Station.zip",
+  "archiveSha256": "4e7f16b2da1d16f31e6ab1b64c54c6f204299112bca6506d96dfd32c7b5e4ea1",
+  "verification": [
+    "Non-serving geometry build and JavaScript bundle completed successfully.",
+    "JavaScript syntax checks and Python launcher AST check passed.",
+    "Validated 328 packed meshes, 526066 packed vertices and 1173651 in-range triangle indices.",
+    "Validated 32 material images, 15 sign atlas regions and referenced controls and fonts.",
+    "CPU traversal covered 124 metres through both waiting-room doors, platform, crossing and woodland return. Wall, bench, column and reset checks passed.",
+    "Verified all 44 archive members byte-for-byte against the static build."
+  ],
+  "preview": "Suggested http://127.0.0.1:43871/. The Windows active-listener lookup was denied access. The supplied launcher chooses a free loopback port if the preferred port is occupied.",
+  "inspectionDeferred": "No browser, headless browser, screenshot, GPU test, interactive test, server or frame-time benchmark was launched. Visual correctness and performance await inspection.",
+  "interruptions": "No timed pause or deadline extension. One transient tool-session state loss required resubmitting a source write and confirming completed texture output on disk.",
+  "cleanup": "All entry generator, build, verification and archiving commands finished. No entry-local esbuild helper remained. No server, watcher, browser or benchmark was started.",
+  "actualStopUTC": "2026-11-18T00:01:41.4192230+00:00",
+  "elapsedSeconds": 3304.2204509
+}

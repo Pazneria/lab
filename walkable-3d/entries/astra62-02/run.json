@@ -1,0 +1,68 @@
+{
+  "entry": "SceneBench 2026-11-17 scene 02",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-02",
+  "requested": {
+    "model": "GPT-6.2 Astra",
+    "reasoningEffort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposedServingMetadata": {
+    "sessionDescription": "Codex, based on GPT-6",
+    "exactModel": null,
+    "reasoningEffort": null,
+    "serviceTier": null,
+    "note": "Exact serving fields were not exposed to this session."
+  },
+  "firstImplementation": "2026-11-17T23:07:48.5418330+00:00",
+  "deadline": "2026-11-18T00:07:48.5418330+00:00",
+  "interruptionHistory": "No interruption, restart, or deadline extension. Initial sandboxed registry and listener queries required approved retries while the clock continued.",
+  "launch": "python -m http.server 48262 --bind 127.0.0.1 --directory \"C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-02\"",
+  "suggestedAddress": "http://127.0.0.1:48262/",
+  "portCheck": "Passive query found zero TCP listeners on port 48262. No server was started.",
+  "build": {
+    "vertices": 181411,
+    "mainTriangles": 151400,
+    "reflectionTriangles": 66360,
+    "drawGroups": 35,
+    "staticLights": 30,
+    "collisionFootprints": 63,
+    "atlasLayers": 54,
+    "atlasWidth": 3072,
+    "atlasHeight": 2304
+  },
+  "checks": [
+    "CPU-only geometry and 2D texture compilation completed.",
+    "JavaScript syntax, referenced scripts and control element IDs passed.",
+    "Binary layout, group spans, vertex material indices and every mesh index passed.",
+    "PNG dimensions, all chunk CRCs and decompressed scanline length passed.",
+    "GLSL ES syntax and scope checks passed for nine stages. Static varying checks passed for five shader pairs.",
+    "Static 10 cm floor-grid flood fill with the 21.5 cm body radius connected the entrance, center, all four sheltered counter positions, passage and tea counter.",
+    "Dependency-free static verification passed again after temporary tooling cleanup."
+  ],
+  "deferred": [
+    "Browser launch",
+    "GPU shader compile and link",
+    "Visual inspection",
+    "Interactive walkthrough",
+    "Frame-time measurements"
+  ],
+  "cleanup": "All commands and tracked subprocesses exited. Removed the temporary .build-tools directory. No server, browser, watcher or test process was left running.",
+  "sha256": {
+    "artwork.js": "2f337666cdc81f73b578e1469a1c5846de89def5e0f3bcbb37bef74be2c4b845",
+    "build-art.cjs": "f1445a0d6e709aeab7c8aa82646056f32a2da0a6f2118b68b33139f8371ff0ce",
+    "build.cjs": "83b44d63d33aa4a7e84dd006acb5e2ffcb9012c2f18feebd9c136886bd5eb901",
+    "courtyard.mesh": "5c8921ec1f310f99811940b0d46fee822b6c2d009a24596349c205819c5bc07e",
+    "district.js": "6d1417543fe75c781d340b576d9073066575fa0578e642fe12c37900273c08a8",
+    "geometry.js": "ef96e33b6d24e928a1757de17a56b68acdf66a204154bd3e047d7396c7d7bab7",
+    "index.html": "06c1c29c8e87aa2f2f6262fe8e173aff1dd7932fd21776cb9364e1074184502e",
+    "main.js": "8d51cbb1aeb9c590dd26c7932cd3d0092fbe1e96f4d9bdfaaa72191cf5d156e7",
+    "market-atlas.png": "0428f9fd74820cdf887abb4d2b8bcd03c289eb66642db85313c8d2c5cb2e83ea",
+    "market.js": "00545f546913dc0bea669b9055f1f5b2539244c570c28b89016987eb746c375c",
+    "materials.js": "e71b24bff9c78d4cdcbce5e91cbb66d6f9e2b83ae4c6a4a53d5846d68a629236",
+    "README.txt": "a0e1fe26b9be700e3251cd7c17406753876d3a7a8713608c7387d906779b920b",
+    "renderer.js": "30fa429dd8167be80acd6e24cad79ffd3086576844535bb491832d0061aedf21",
+    "verify.cjs": "40bd4991f2c3b91bf2570c3caad603a6b064b27cb39e2af598d68d8c9e4129f9"
+  },
+  "actualStop": "2026-11-18T00:03:02.9313603+00:00",
+  "elapsed": "00:55:14.3895273"
+}

@@ -1,0 +1,34 @@
+@font-face{font-family:Baskervville;src:url('./fonts/baskervville.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'DM Sans';src:url('./fonts/dm-sans.woff2') format('woff2');font-weight:100 900;font-display:swap}
+:root{color-scheme:dark;font-family:'DM Sans',Arial,sans-serif;color:#f3eddb;background:#27322b}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden}button{font:inherit;cursor:pointer}button:focus-visible{outline:2px solid #fff1c8;outline-offset:5px}
+#world{display:block;width:100%;height:100%;outline:none;touch-action:none}
+#veil{position:fixed;inset:0;background:linear-gradient(90deg,rgba(19,25,21,.31),transparent 68%),linear-gradient(0deg,rgba(16,23,19,.83),rgba(16,23,19,.32) 26%,transparent 54%);pointer-events:none;transition:opacity .36s}
+#entry{position:fixed;left:clamp(26px,4.65vw,90px);bottom:clamp(29px,5.8vh,74px);max-width:min(690px,calc(100vw - 50px));text-shadow:0 1px 6px #1118}
+.seal{display:flex;align-items:center;gap:13px;color:#e8d6ab}
+.seal p{margin:0;font-size:10px;letter-spacing:.225em;line-height:1.45;text-transform:uppercase}
+.seal span{width:24px;border-top:1px solid currentColor;opacity:.8}.seal span:last-child{width:45px}
+h1{font-family:Baskervville,Georgia,serif;font-weight:400;letter-spacing:-.057em;line-height:1.10;font-size:clamp(44px,5.4vw,85px);margin:11px 0 8px}
+.route{font-size:clamp(13px,1.08vw,17px);line-height:1.55;letter-spacing:.009em;color:#eee8d8;margin:0 0 24px}
+.action{display:flex;gap:15px;align-items:center}#start{background:#ede7d3;border:1px solid #f6efd9;color:#28372e;padding:12px 19px 12px 20px;min-width:135px;min-height:43px;font-size:13px;letter-spacing:.01em;box-shadow:0 2px 8px #0d1c132c;transition:background .16s}
+#start:after{content:'→';margin-left:24px;font-family:Arial,sans-serif}
+#start:hover{background:#fff7df}#start:disabled{opacity:.52;cursor:wait}
+.more{color:#dddac8;font-size:11px;letter-spacing:.055em}
+.keys{display:flex;gap:18px;margin-top:20px;align-items:center;color:#e1ddce;font-size:11px;letter-spacing:.02em}
+.keys span{display:inline-flex;gap:3px;align-items:center}.keys span:first-child kbd:last-child{margin-right:4px}
+kbd{display:inline-flex;justify-content:center;align-items:center;min-width:16px;height:18px;padding:1px 4px;font:10px/1 'DM Sans',sans-serif;color:inherit;border-radius:3px;border:1px solid #e5e7cd65}
+#tools{position:fixed;display:flex;gap:6px;right:clamp(14px,2.2vw,40px);top:clamp(14px,2.7vh,35px)}
+#tools button{display:flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid #dedec332;border-radius:3px;color:#eee9d8;background:#223029bb;font-size:11px;box-shadow:0 1px 6px #0a170c20}
+#tools button:hover{background:#25382cf2}#tools button kbd{border-color:#ece2c34d;height:16px;font-size:9px}
+#tools #pause,.mobile,#stick,#dragHint{display:none}.walking #entry{display:none}.walking #veil{opacity:0}
+.walking #tools #pause{display:flex}.walking #tools{opacity:.7}.walking.drag-look #tools:hover{opacity:1}
+#flash,#dragHint{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);padding:9px 14px;border-radius:3px;background:#26342cdc;color:#f3eddc;pointer-events:none;font-size:12px;white-space:nowrap}
+#flash{opacity:0;transition:opacity .2s}#flash.shown{opacity:1}.drag-look #dragHint{display:block;bottom:18px;font-size:10px;background:#2230279c}#dragHint span{margin:0 5px}
+.loading #tools,.failed #tools{display:none}.loading .keys,.failed .keys,.loading .more,.failed .more{visibility:hidden}
+.loading #veil,.failed #veil{background:radial-gradient(ellipse at 70% 8%,#596250,#384539 42%,#202e26)}
+.failed .seal p{text-transform:none;letter-spacing:0;font-size:13px;max-width:510px}.failed .seal span{display:none}
+noscript{position:fixed;left:20px;top:20px}
+@media (pointer:coarse){.desktop{display:none}.keys.mobile{display:block}.walking #stick{display:grid;place-items:center;position:fixed;bottom:max(26px,env(safe-area-inset-bottom));left:24px;width:86px;height:86px;border-radius:50%;background:#e4dfc128;border:1px solid #e4dfc17a;touch-action:none}.walking #nub{width:32px;height:32px;border-radius:50%;background:#eee8d185;border:1px solid #ffffff66}.drag-look #dragHint{display:none}}
+@media (max-height:480px){#entry{bottom:16px}h1{font-size:42px}.route{margin-bottom:12px}.keys{margin-top:12px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+

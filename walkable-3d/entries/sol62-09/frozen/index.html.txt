@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151b1d">
+  <title>Kestrel Station · Rotor Service Bay</title>
+  <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+  <main id="viewport" aria-label="Kestrel Station rotor service bay">
+    <div id="film-edge" aria-hidden="true"></div>
+    <header class="header">
+      <span class="station-mark" aria-hidden="true"></span>
+      <div>
+        <div class="station">KESTREL STATION</div>
+        <div class="station-sub">ENGINEERING <b></b> BAY 09</div>
+      </div>
+    </header>
+    <div class="location"><i></i><span id="zone">MAIN WORK FLOOR</span><strong id="level">L0</strong></div>
+    <div id="reticle" aria-hidden="true"></div>
+    <section id="gate" aria-labelledby="gate-title">
+      <div class="gate-code"><i></i> KESTREL / ENGINEERING</div>
+      <h1 id="gate-title">Rotor service bay</h1>
+      <p id="gate-copy">Walk the work floor, then take the stairs to the inspection deck.</p>
+      <button id="engage" disabled type="button">Preparing bay</button>
+      <div class="gate-keys"><span><kbd>W A S D</kbd> Move</span><span><kbd>Mouse</kbd> Look</span><span><kbd>R</kbd> Reset</span></div>
+      <button id="drag-mode" type="button" hidden>Use drag-to-look</button>
+    </section>
+    <footer id="controls" aria-label="Exploration controls">
+      <span><kbd>W A S D</kbd> Move</span>
+      <span id="look-control"><kbd>Mouse</kbd> Look</span>
+      <span><kbd>Shift</kbd> Move faster</span>
+      <button type="button" id="reset"><kbd>R</kbd> Reset</button>
+      <span id="release"><kbd>Esc</kbd> Release</span>
+    </footer>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

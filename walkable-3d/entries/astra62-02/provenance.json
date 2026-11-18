@@ -1,0 +1,187 @@
+{
+  "entry": "astra62-02",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-02\\source-preservation.zip",
+  "archiveSha256": "51229762120d5242432622bf0520107ecf2ceffb86e4a05163b814f735e9da0e",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/artwork.js": "artwork.js",
+      "frozen/courtyard.mesh": "courtyard.mesh",
+      "frozen/district.js": "district.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js",
+      "frozen/market-atlas.png": "market-atlas.png",
+      "frozen/market.js": "market.js",
+      "frozen/materials.js": "materials.js",
+      "frozen/renderer.js": "renderer.js",
+      "README.txt": "README.txt",
+      "run.json": "run.json"
+    },
+    "perFileSourceHashes": {
+      "artwork.js": {
+        "sha256": "2f337666cdc81f73b578e1469a1c5846de89def5e0f3bcbb37bef74be2c4b845",
+        "bytes": 6667
+      },
+      "build-art.cjs": {
+        "sha256": "f1445a0d6e709aeab7c8aa82646056f32a2da0a6f2118b68b33139f8371ff0ce",
+        "bytes": 1271
+      },
+      "build.cjs": {
+        "sha256": "83b44d63d33aa4a7e84dd006acb5e2ffcb9012c2f18feebd9c136886bd5eb901",
+        "bytes": 5481
+      },
+      "courtyard.mesh": {
+        "sha256": "5c8921ec1f310f99811940b0d46fee822b6c2d009a24596349c205819c5bc07e",
+        "bytes": 6926496
+      },
+      "district.js": {
+        "sha256": "6d1417543fe75c781d340b576d9073066575fa0578e642fe12c37900273c08a8",
+        "bytes": 31000
+      },
+      "geometry.js": {
+        "sha256": "ef96e33b6d24e928a1757de17a56b68acdf66a204154bd3e047d7396c7d7bab7",
+        "bytes": 10484
+      },
+      "index.html": {
+        "sha256": "06c1c29c8e87aa2f2f6262fe8e173aff1dd7932fd21776cb9364e1074184502e",
+        "bytes": 3974
+      },
+      "main.js": {
+        "sha256": "8d51cbb1aeb9c590dd26c7932cd3d0092fbe1e96f4d9bdfaaa72191cf5d156e7",
+        "bytes": 9867
+      },
+      "market-atlas.png": {
+        "sha256": "0428f9fd74820cdf887abb4d2b8bcd03c289eb66642db85313c8d2c5cb2e83ea",
+        "bytes": 4657287
+      },
+      "market.js": {
+        "sha256": "00545f546913dc0bea669b9055f1f5b2539244c570c28b89016987eb746c375c",
+        "bytes": 33329
+      },
+      "materials.js": {
+        "sha256": "e71b24bff9c78d4cdcbce5e91cbb66d6f9e2b83ae4c6a4a53d5846d68a629236",
+        "bytes": 10093
+      },
+      "README.txt": {
+        "sha256": "a0e1fe26b9be700e3251cd7c17406753876d3a7a8713608c7387d906779b920b",
+        "bytes": 2503
+      },
+      "renderer.js": {
+        "sha256": "30fa429dd8167be80acd6e24cad79ffd3086576844535bb491832d0061aedf21",
+        "bytes": 20224
+      },
+      "run.json": {
+        "sha256": "10b45831c11faf76457cce099a62fa29d565a59450d4d888f67492c73273789f",
+        "bytes": 3793
+      },
+      "verify.cjs": {
+        "sha256": "40bd4991f2c3b91bf2570c3caad603a6b064b27cb39e2af598d68d8c9e4129f9",
+        "bytes": 5283
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-02\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "75c6a0b246c08b8137243465f3c813c0fe1ba80632265100aa2a006f622bced2",
+      "bytes": 1311
+    },
+    "launch-prompt.txt": {
+      "sha256": "0e6f602a86782fafa7f5accba0eaf46ecd8bc721e7d91804960e6c9bbe054be4",
+      "bytes": 6935
+    },
+    "README.txt": {
+      "sha256": "a0e1fe26b9be700e3251cd7c17406753876d3a7a8713608c7387d906779b920b",
+      "bytes": 2503
+    },
+    "run.json": {
+      "sha256": "10b45831c11faf76457cce099a62fa29d565a59450d4d888f67492c73273789f",
+      "bytes": 3793
+    },
+    "source-audit.json": {
+      "sha256": "396d9c7bcfe89ca4e9a2c4863b6b090cb1b6fd0851f8f4ef53e80bf1d7d464c4",
+      "bytes": 401
+    },
+    "frozen/artwork.js": {
+      "sha256": "2f337666cdc81f73b578e1469a1c5846de89def5e0f3bcbb37bef74be2c4b845",
+      "bytes": 6667
+    },
+    "frozen/courtyard.mesh": {
+      "sha256": "5c8921ec1f310f99811940b0d46fee822b6c2d009a24596349c205819c5bc07e",
+      "bytes": 6926496
+    },
+    "frozen/district.js": {
+      "sha256": "6d1417543fe75c781d340b576d9073066575fa0578e642fe12c37900273c08a8",
+      "bytes": 31000
+    },
+    "frozen/geometry.js": {
+      "sha256": "ef96e33b6d24e928a1757de17a56b68acdf66a204154bd3e047d7396c7d7bab7",
+      "bytes": 10484
+    },
+    "frozen/index.html.txt": {
+      "sha256": "06c1c29c8e87aa2f2f6262fe8e173aff1dd7932fd21776cb9364e1074184502e",
+      "bytes": 3974
+    },
+    "frozen/main.js": {
+      "sha256": "8d51cbb1aeb9c590dd26c7932cd3d0092fbe1e96f4d9bdfaaa72191cf5d156e7",
+      "bytes": 9867
+    },
+    "frozen/market-atlas.png": {
+      "sha256": "0428f9fd74820cdf887abb4d2b8bcd03c289eb66642db85313c8d2c5cb2e83ea",
+      "bytes": 4657287
+    },
+    "frozen/market.js": {
+      "sha256": "00545f546913dc0bea669b9055f1f5b2539244c570c28b89016987eb746c375c",
+      "bytes": 33329
+    },
+    "frozen/materials.js": {
+      "sha256": "e71b24bff9c78d4cdcbce5e91cbb66d6f9e2b83ae4c6a4a53d5846d68a629236",
+      "bytes": 10093
+    },
+    "frozen/renderer.js": {
+      "sha256": "30fa429dd8167be80acd6e24cad79ffd3086576844535bb491832d0061aedf21",
+      "bytes": 20224
+    },
+    "host-runtime-check.json": {
+      "sha256": "ed4054a73f008186eed8aa766340129e5b8691ff027896faa1bdbe868027cd05",
+      "bytes": 286
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.txt",
+      "run.json",
+      "source-audit.json",
+      "frozen/artwork.js",
+      "frozen/courtyard.mesh",
+      "frozen/district.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/market-atlas.png",
+      "frozen/market.js",
+      "frozen/materials.js",
+      "frozen/renderer.js",
+      "host-runtime-check.json"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged."
+  }
+}

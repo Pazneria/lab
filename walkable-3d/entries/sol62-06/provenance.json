@@ -1,0 +1,152 @@
+{
+  "entry": "sol62-06",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-06\\source-preservation.zip",
+  "archiveSha256": "362b18de9883dc4a796bd1f1e8c43e3409766ccd10a7b7aa89f54d5fefba0ee3",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/app.mjs": "app.mjs",
+      "frozen/index.html.txt": "index.html",
+      "frozen/render.mjs": "render.mjs",
+      "frozen/scene.bin": "scene.bin",
+      "frozen/shaders.mjs": "shaders.mjs",
+      "frozen/style.css": "style.css",
+      "frozen/terrain.mjs": "terrain.mjs",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "app.mjs": {
+        "sha256": "ee8368a18d765800facbfbcde9e9b3822b62a1a8c49c8141d5c0fbb4c74a8347",
+        "bytes": 8322
+      },
+      "build.mjs": {
+        "sha256": "0fc16e0b053f065fc4956f8f11a71f79a2a4c7e9765a2663a5d08f669b05d7cb",
+        "bytes": 43569
+      },
+      "index.html": {
+        "sha256": "4c2770d21fdb046beb10ec6b1a1c106c772692868f7e6f958cc38bbf854081d1",
+        "bytes": 1822
+      },
+      "README.md": {
+        "sha256": "bd921ec640bf904932699dbd5183a593890a5c0ef9c511e4eb8a833edfaf60ee",
+        "bytes": 2061
+      },
+      "render.mjs": {
+        "sha256": "df505cf7b3e7a706e92c99d8b81befe03108118c3526422f1b4e02113f491c18",
+        "bytes": 14458
+      },
+      "scene.bin": {
+        "sha256": "4a2d1318ba9e64ea65d3e58cfcc8e6301d2e69c36363a31c3e7baadf4bfe7eb5",
+        "bytes": 7983064
+      },
+      "serve.cjs": {
+        "sha256": "5680f52920c8477643d4b7942369e7d2be2b48f0809f96672ae4ab6102f4a9bf",
+        "bytes": 2018
+      },
+      "shaders.mjs": {
+        "sha256": "7d1c96c0d7bef4b253e1922f27462dd02edf3abc1459e88ef677a0473a131150",
+        "bytes": 12328
+      },
+      "style.css": {
+        "sha256": "03fabc26cdb2dcb708d9c41953b11ea0abc2c978a708ad2073432e0642c0ce8e",
+        "bytes": 4326
+      },
+      "terrain.mjs": {
+        "sha256": "f269810cff7178f6267e041e6b2f1b0cc69ea4aa68f763d613b0516f530cc814",
+        "bytes": 9457
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-06\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "ffec2a4dddc878fa72f28834571b8dffa4aee6341370835438279611c27ec0a0",
+      "bytes": 1420
+    },
+    "launch-prompt.txt": {
+      "sha256": "2ffabaa281b0fc6b348c8ca3f410e0b3d6df4808fb8265f01b09611a53c3407b",
+      "bytes": 6958
+    },
+    "README.md": {
+      "sha256": "bd921ec640bf904932699dbd5183a593890a5c0ef9c511e4eb8a833edfaf60ee",
+      "bytes": 2061
+    },
+    "source-audit.json": {
+      "sha256": "6e0331478b4a7edaec32de2a629e478c778e91b06d12a95a7ff5746626149666",
+      "bytes": 401
+    },
+    "frozen/app.mjs": {
+      "sha256": "ee8368a18d765800facbfbcde9e9b3822b62a1a8c49c8141d5c0fbb4c74a8347",
+      "bytes": 8322
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4c2770d21fdb046beb10ec6b1a1c106c772692868f7e6f958cc38bbf854081d1",
+      "bytes": 1822
+    },
+    "frozen/render.mjs": {
+      "sha256": "df505cf7b3e7a706e92c99d8b81befe03108118c3526422f1b4e02113f491c18",
+      "bytes": 14458
+    },
+    "frozen/scene.bin": {
+      "sha256": "4a2d1318ba9e64ea65d3e58cfcc8e6301d2e69c36363a31c3e7baadf4bfe7eb5",
+      "bytes": 7983064
+    },
+    "frozen/shaders.mjs": {
+      "sha256": "7d1c96c0d7bef4b253e1922f27462dd02edf3abc1459e88ef677a0473a131150",
+      "bytes": 12328
+    },
+    "frozen/style.css": {
+      "sha256": "03fabc26cdb2dcb708d9c41953b11ea0abc2c978a708ad2073432e0642c0ce8e",
+      "bytes": 4326
+    },
+    "frozen/terrain.mjs": {
+      "sha256": "f269810cff7178f6267e041e6b2f1b0cc69ea4aa68f763d613b0516f530cc814",
+      "bytes": 9457
+    },
+    "host-runtime-check.json": {
+      "sha256": "7967b46786e5083097abc0b31a981fc763af17b9437d4670538734825e65c04d",
+      "bytes": 1911
+    },
+    "preview.jpg": {
+      "sha256": "f0c55138aa2b0ad9ca5ed3e15352b61309f278937383e96cae36213ec44c21f0",
+      "bytes": 62620
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/app.mjs",
+      "frozen/index.html.txt",
+      "frozen/render.mjs",
+      "frozen/scene.bin",
+      "frozen/shaders.mjs",
+      "frozen/style.css",
+      "frozen/terrain.mjs",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:08:15.227Z",
+    "sha256": "f0c55138aa2b0ad9ca5ed3e15352b61309f278937383e96cae36213ec44c21f0",
+    "bytes": 62620,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "entry": "astra62-05",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-05\\source-preservation.zip",
+  "archiveSha256": "f2f6fb7977f0eaaa538bf2bad63015ccbae36f4805e6c4912bbfe5becc486c1a",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/atlas.js": "atlas.js",
+      "frozen/fieldgear.js": "fieldgear.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/interior.js": "interior.js",
+      "frozen/landscape.js": "landscape.js",
+      "frozen/render.js": "render.js",
+      "frozen/shaders.js": "shaders.js",
+      "frozen/shelter.js": "shelter.js",
+      "frozen/station.css": "station.css",
+      "frozen/walk.js": "walk.js",
+      "README.md": "README.md",
+      "RUN-RECORD.txt": "RUN-RECORD.txt"
+    },
+    "perFileSourceHashes": {
+      "atlas.js": {
+        "sha256": "e912a7cc588e37d4c2bcc549dba4cbc477817ceadca36f40d5e5e2b316097f1d",
+        "bytes": 8975
+      },
+      "fieldgear.js": {
+        "sha256": "61ab635ad53d599bfa01b44f2805d59de41884bcfe397c2bbe69ba558699c648",
+        "bytes": 5896
+      },
+      "geometry.js": {
+        "sha256": "930e46ab55607d1fb866bc5081df1d7270c7576e85806f54671ffff68d32ee5e",
+        "bytes": 6573
+      },
+      "index.html": {
+        "sha256": "d28f9015869b7d738058dca1a53621e2893cd4907ce6bcc0e746cfe598cfb3f4",
+        "bytes": 2183
+      },
+      "interior.js": {
+        "sha256": "3bb982043906457ea059b8405265aa16b30a0b45d7d87e5d54cc687ef57af277",
+        "bytes": 20258
+      },
+      "Isobar-05.zip": {
+        "sha256": "3e60f3cf7eb42404fd8099f3f2e7114e79da749d6813371d8431c21e8f1652c6",
+        "bytes": 47052
+      },
+      "landscape.js": {
+        "sha256": "5f50d61d5b349468dd92368b78e1f1d8163f9693f73bde64bcf660d996d1dbd9",
+        "bytes": 9137
+      },
+      "README.md": {
+        "sha256": "130159c84e36d7f01630008311aa544f97758e24b7593fb8b9afa18a3cf76df2",
+        "bytes": 1901
+      },
+      "render.js": {
+        "sha256": "f529fa73f1d4209c547eb0ecc48c0e8bdb913b5668544691095b60cd0eb36bb6",
+        "bytes": 15205
+      },
+      "RUN-RECORD.txt": {
+        "sha256": "485a2a0574c1bb53a7a2dbaa35a38c4ea482aa7b332851f11e30edfceffdab95",
+        "bytes": 2441
+      },
+      "shaders.js": {
+        "sha256": "4dc8b22b37936349edf9ace2dcd7c589b90b8d19142ac7887dad2379346ce62f",
+        "bytes": 13815
+      },
+      "shelter.js": {
+        "sha256": "a54365541870840627aabf743e624043c87f958e280566095f367ce0deb17bc8",
+        "bytes": 14398
+      },
+      "station.css": {
+        "sha256": "8979b1bc9090b8d87c1fde640f66848c75bc7844a0a5bd76de0419d0fc2650bc",
+        "bytes": 5022
+      },
+      "walk.js": {
+        "sha256": "e9a7f6fc5ebccb8a634120ebcdf7134440d2965e6b9b652de7feb48c41c2dc2c",
+        "bytes": 7425
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-05\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "88d1b52519b468434e9b82b6e5a36dc377604a8d0d3d69dc1217afc0baff775c",
+      "bytes": 1426
+    },
+    "launch-prompt.txt": {
+      "sha256": "3105a31098ecf4ff4e1e92cbb2058d292440555c6690f6c5150db2b079103d67",
+      "bytes": 6979
+    },
+    "README.md": {
+      "sha256": "130159c84e36d7f01630008311aa544f97758e24b7593fb8b9afa18a3cf76df2",
+      "bytes": 1901
+    },
+    "RUN-RECORD.txt": {
+      "sha256": "485a2a0574c1bb53a7a2dbaa35a38c4ea482aa7b332851f11e30edfceffdab95",
+      "bytes": 2441
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/atlas.js": {
+      "sha256": "e912a7cc588e37d4c2bcc549dba4cbc477817ceadca36f40d5e5e2b316097f1d",
+      "bytes": 8975
+    },
+    "frozen/fieldgear.js": {
+      "sha256": "61ab635ad53d599bfa01b44f2805d59de41884bcfe397c2bbe69ba558699c648",
+      "bytes": 5896
+    },
+    "frozen/geometry.js": {
+      "sha256": "930e46ab55607d1fb866bc5081df1d7270c7576e85806f54671ffff68d32ee5e",
+      "bytes": 6573
+    },
+    "frozen/index.html.txt": {
+      "sha256": "d28f9015869b7d738058dca1a53621e2893cd4907ce6bcc0e746cfe598cfb3f4",
+      "bytes": 2183
+    },
+    "frozen/interior.js": {
+      "sha256": "3bb982043906457ea059b8405265aa16b30a0b45d7d87e5d54cc687ef57af277",
+      "bytes": 20258
+    },
+    "frozen/landscape.js": {
+      "sha256": "5f50d61d5b349468dd92368b78e1f1d8163f9693f73bde64bcf660d996d1dbd9",
+      "bytes": 9137
+    },
+    "frozen/render.js": {
+      "sha256": "f529fa73f1d4209c547eb0ecc48c0e8bdb913b5668544691095b60cd0eb36bb6",
+      "bytes": 15205
+    },
+    "frozen/shaders.js": {
+      "sha256": "4dc8b22b37936349edf9ace2dcd7c589b90b8d19142ac7887dad2379346ce62f",
+      "bytes": 13815
+    },
+    "frozen/shelter.js": {
+      "sha256": "a54365541870840627aabf743e624043c87f958e280566095f367ce0deb17bc8",
+      "bytes": 14398
+    },
+    "frozen/station.css": {
+      "sha256": "8979b1bc9090b8d87c1fde640f66848c75bc7844a0a5bd76de0419d0fc2650bc",
+      "bytes": 5022
+    },
+    "frozen/walk.js": {
+      "sha256": "e9a7f6fc5ebccb8a634120ebcdf7134440d2965e6b9b652de7feb48c41c2dc2c",
+      "bytes": 7425
+    },
+    "host-runtime-check.json": {
+      "sha256": "eb2e479867a8f3639b3d258eec2bc2db75ffd2a0f37abc0464de05a5727d694c",
+      "bytes": 2068
+    },
+    "preview.jpg": {
+      "sha256": "2bf492aa4d3897c04d6339f2fcb043d3bdfff38a15866efd579bc6e698021a02",
+      "bytes": 81514
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN-RECORD.txt",
+      "source-audit.json",
+      "frozen/atlas.js",
+      "frozen/fieldgear.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/interior.js",
+      "frozen/landscape.js",
+      "frozen/render.js",
+      "frozen/shaders.js",
+      "frozen/shelter.js",
+      "frozen/station.css",
+      "frozen/walk.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:18.510Z",
+    "sha256": "2bf492aa4d3897c04d6339f2fcb043d3bdfff38a15866efd579bc6e698021a02",
+    "bytes": 81514,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

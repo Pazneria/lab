@@ -1,0 +1,220 @@
+{
+  "entry": "sol62-16",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-16\\source-preservation.zip",
+  "archiveSha256": "af58464cca640e15788f3f6677c78e7d64c00a03a86a7bd680d298e3dd044bf1",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/art.js": "src/art.js",
+      "frozen/src/kitchen.js": "src/kitchen.js",
+      "frozen/src/layout.js": "src/layout.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/plants.js": "src/plants.js",
+      "frozen/src/rooms.js": "src/rooms.js",
+      "frozen/src/scene.js": "src/scene.js",
+      "frozen/src/vessels.js": "src/vessels.js",
+      "frozen/src/workroom.js": "src/workroom.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "README.md": "README.md",
+      "licenses/vendor/LICENSE": "vendor/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "check.mjs": {
+        "sha256": "eac0d82d0801ad12011ef4413058455407c515393506ccc2c47323af9674e99f",
+        "bytes": 6669
+      },
+      "index.html": {
+        "sha256": "4a1ac216513276ca71c6c76cfbd6a67a0061a02e8223b0009d304ced2a7e2f87",
+        "bytes": 1634
+      },
+      "package.json": {
+        "sha256": "3e090d50f3a4226a1404f47a92b389140efe63de74c45cfefbe6e0c02aea3b77",
+        "bytes": 181
+      },
+      "README.md": {
+        "sha256": "ad62d7efbfeb6b95f513ca31ebb4e459dcc339a66a7c138b1dd86576576bf8a7",
+        "bytes": 1777
+      },
+      "serve.mjs": {
+        "sha256": "c0746babedeb1bf6e6a82138a1b552649decc04d692c0a06913239fc6eb63398",
+        "bytes": 1405
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "ffb5dfa23c54873836b36170bc0dce56cefe5216b9a8da283d6eea429d1e9a7e",
+        "bytes": 1351
+      },
+      "style.css": {
+        "sha256": "d7dd64160c1d4d712ce4f52850776c8f851775f6052aea6a1b1fb149367fa65e",
+        "bytes": 3045
+      },
+      "vendor/LICENSE": {
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "bytes": 1081
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7",
+        "bytes": 691648
+      },
+      "src/art.js": {
+        "sha256": "bfd6a37c41b511334796045933b2d8f91c16bf7d248f105649dd94b6f5f2bb47",
+        "bytes": 15830
+      },
+      "src/kitchen.js": {
+        "sha256": "6b91a35603f63db40721ec992c00793c662c111284642656a415abdc312d9bfd",
+        "bytes": 18664
+      },
+      "src/layout.js": {
+        "sha256": "194839c6ba0e3b23dbb40a3f74e1d6de8742f4fc9dfc3566426b5474c7694a27",
+        "bytes": 2773
+      },
+      "src/main.js": {
+        "sha256": "b72679ddfc203bc556d39bb13043628ed5f573920eae06607f23ba0a7f51dac3",
+        "bytes": 7453
+      },
+      "src/plants.js": {
+        "sha256": "c1c5f0d7d069f182ebb12ffa86abd74829c98ee7bdb06abb1b41ee0d77d58698",
+        "bytes": 16219
+      },
+      "src/rooms.js": {
+        "sha256": "6f072ab51d2385a6603ad3d21a97010d0733b8ccb6e34909deea175cd685afae",
+        "bytes": 19903
+      },
+      "src/scene.js": {
+        "sha256": "5f52c137ed6fc91c6847f6ae51fbfe938af72b224cbd55a2e812ae990dfbc1f1",
+        "bytes": 13444
+      },
+      "src/vessels.js": {
+        "sha256": "1d4bb4f398ab66a80db2fc2e271efcc0cbd1303cfcc7ea9d2368697ac07e9f71",
+        "bytes": 9089
+      },
+      "src/workroom.js": {
+        "sha256": "05f56d8b4771cde9561103981e31008e6c1caecf6bbffbfe6de0e8edaa935a9a",
+        "bytes": 17015
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-16\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "2a22487b947bba32572e84b84f005f501de1bf9df1e389428eb118cefe67c58a",
+      "bytes": 1421
+    },
+    "launch-prompt.txt": {
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "bytes": 7573
+    },
+    "README.md": {
+      "sha256": "ad62d7efbfeb6b95f513ca31ebb4e459dcc339a66a7c138b1dd86576576bf8a7",
+      "bytes": 1777
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4a1ac216513276ca71c6c76cfbd6a67a0061a02e8223b0009d304ced2a7e2f87",
+      "bytes": 1634
+    },
+    "frozen/style.css": {
+      "sha256": "d7dd64160c1d4d712ce4f52850776c8f851775f6052aea6a1b1fb149367fa65e",
+      "bytes": 3045
+    },
+    "licenses/vendor/LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "frozen/src/art.js": {
+      "sha256": "bfd6a37c41b511334796045933b2d8f91c16bf7d248f105649dd94b6f5f2bb47",
+      "bytes": 15830
+    },
+    "frozen/src/kitchen.js": {
+      "sha256": "6b91a35603f63db40721ec992c00793c662c111284642656a415abdc312d9bfd",
+      "bytes": 18664
+    },
+    "frozen/src/layout.js": {
+      "sha256": "194839c6ba0e3b23dbb40a3f74e1d6de8742f4fc9dfc3566426b5474c7694a27",
+      "bytes": 2773
+    },
+    "frozen/src/main.js": {
+      "sha256": "b72679ddfc203bc556d39bb13043628ed5f573920eae06607f23ba0a7f51dac3",
+      "bytes": 7453
+    },
+    "frozen/src/plants.js": {
+      "sha256": "c1c5f0d7d069f182ebb12ffa86abd74829c98ee7bdb06abb1b41ee0d77d58698",
+      "bytes": 16219
+    },
+    "frozen/src/rooms.js": {
+      "sha256": "6f072ab51d2385a6603ad3d21a97010d0733b8ccb6e34909deea175cd685afae",
+      "bytes": 19903
+    },
+    "frozen/src/scene.js": {
+      "sha256": "5f52c137ed6fc91c6847f6ae51fbfe938af72b224cbd55a2e812ae990dfbc1f1",
+      "bytes": 13444
+    },
+    "frozen/src/vessels.js": {
+      "sha256": "1d4bb4f398ab66a80db2fc2e271efcc0cbd1303cfcc7ea9d2368697ac07e9f71",
+      "bytes": 9089
+    },
+    "frozen/src/workroom.js": {
+      "sha256": "05f56d8b4771cde9561103981e31008e6c1caecf6bbffbfe6de0e8edaa935a9a",
+      "bytes": 17015
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7",
+      "bytes": 691648
+    },
+    "host-runtime-check.json": {
+      "sha256": "0f5a346ce7dd63ba40ef3dcea1a4cb3bd58ea09c1f7901c8c9e5c7c496e62c1d",
+      "bytes": 2067
+    },
+    "preview.jpg": {
+      "sha256": "745a9058aae6147083820e1e068e6b94ada82a2d42a96c1fa5f09d8d2aa55fb1",
+      "bytes": 123578
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "licenses/vendor/LICENSE",
+      "frozen/src/art.js",
+      "frozen/src/kitchen.js",
+      "frozen/src/layout.js",
+      "frozen/src/main.js",
+      "frozen/src/plants.js",
+      "frozen/src/rooms.js",
+      "frozen/src/scene.js",
+      "frozen/src/vessels.js",
+      "frozen/src/workroom.js",
+      "frozen/vendor/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:07.259Z",
+    "sha256": "745a9058aae6147083820e1e068e6b94ada82a2d42a96c1fa5f09d8d2aa55fb1",
+    "bytes": 123578,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

@@ -1,0 +1,25 @@
+SceneBench 2026-11-17 / scene 20 / The Gilded Hem
+
+Requested run identity: GPT-6.2 Astra / XHIGH effort / Standard service.
+Exposed serving metadata: The session identifies Codex as based on GPT-6. The precise serving model version, reasoning-effort setting and service tier were not exposed or independently verified. No global configuration was used to infer them.
+Verified working directory before implementation: C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-20
+First implementation and dependency-work timestamp: 2026-11-18T02:09:01.4449687Z
+Deadline: 2026-11-18T03:09:01.4449687Z
+Actual stop timestamp: 2026-11-18T03:02:34.5912080Z
+Elapsed wall-clock time: 00:53:33.1462393
+Interruptions: No external interruptions, pauses, restarts or extensions. The first sandboxed registry fetch failed and its authorized retry succeeded. A sandboxed listener lookup lacked permission; the authorized read-only lookup confirmed port 46220 was unused. These operations were inside the recorded interval.
+
+Release: The-Gilded-Hem.zip (5,472,375 bytes; 28 verified files).
+Release SHA-256: b1723650ab7f0215123f88e4d4ebe247dcf0db1e0f8c9b7a95d41308c1ddf14f
+Original unpacked entry point: index.html
+Location: C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-20
+Suggested launch command from the entry directory: python -m http.server 46220 --bind 127.0.0.1
+Suggested launch address: http://127.0.0.1:46220/
+The port was unused at the read-only check. No preview is running.
+
+Authorship: Original scene meshes, fitted furniture, clothing goods, fittings, camp, patterns, lettering, paper illustrations and procedural landscape were produced in this isolated directory. Local runtime library: Three.js 0.160.1. Offline texture asset library: @napi-rs/canvas 0.1.80. No assistants, external models or pre-existing project assets were used.
+Checks: CPU-only asset compilation; syntax checks for 15 authored modules; finite mesh attributes, valid index and buffer ranges, material/texture/GLSL-chunk references, PNG signatures/dimensions, and local runtime dependencies. The baked scene has 88 meshes, 344,392 vertices, 268,468 triangles and 18 texture images. The sampled navigation route reached all 17 waypoints. Stair heights in centimetres were 0, 18, 36, 54, 72, 90, 72, 54, 36, 18, 0. Eleven floor-support samples and six obstruction checks passed. Archive CRC and individual byte comparisons passed.
+Unverified: Browser presentation and interaction, graphics compatibility and measured performance are reserved for separate judging.
+Limits: Desktop WebGL and keyboard movement. Static mechanisms. Simplified collision around small wares, furniture, ropes and the edge of camp.
+Cleanup: All entry commands completed. No browser, renderer test, watcher, HTTP server, benchmark or background job was launched. Temporary compiler dependencies and the downloaded tarball were removed.
+Rebuilding from the retained authoring sources is optional. To regenerate the baked assets, install @napi-rs/canvas@0.1.80 with npm install --prefix .asset-tools --no-save @napi-rs/canvas@0.1.80, then run node build-assets.mjs. The release itself needs no npm installation or build step.

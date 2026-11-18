@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#263e39">
+  <title>Maison des Marées · Royal Tailor’s Atelier</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="atelier">
+    <canvas id="view" tabindex="0" aria-label="First-person royal tailoring atelier. Click for mouse look. Move with W, A, S and D. Press H for all controls."></canvas>
+    <div id="loading" role="status"><span class="needle"></span><span id="loading-note">Opening the atelier…</span></div>
+    <div id="hud" hidden>
+      <div class="signature">
+        <canvas id="seal" width="90" height="90" aria-hidden="true"></canvas>
+        <div><p class="house">Maison des Marées</p><p id="location">Fitting room</p></div>
+      </div>
+      <div class="actions">
+        <button id="help-button" aria-expanded="false" aria-controls="help">Controls <kbd>H</kbd></button>
+        <button id="reset-button" title="Return to the entrance">Reset <kbd>R</kbd></button>
+      </div>
+      <div id="aim" aria-hidden="true"></div>
+      <div class="hint"><strong id="enter-hint">Click to explore</strong><span id="move-hint">WASD to walk · Mouse to look</span></div>
+      <aside id="help" hidden aria-label="Exploration controls">
+        <div class="help-head"><h1>Exploring the atelier</h1><button id="close-help" aria-label="Close controls">×</button></div>
+        <dl>
+          <div><dt>Walk</dt><dd>W A S D</dd></div>
+          <div><dt>Look around</dt><dd>Mouse · click to capture</dd></div>
+          <div><dt>Walk briskly</dt><dd>Hold Shift</dd></div>
+          <div><dt>Inspect details</dt><dd>Hold F</dd></div>
+          <div><dt>Lower your viewpoint</dt><dd>Hold C</dd></div>
+          <div><dt>Return to entrance</dt><dd>R</dd></div>
+          <div><dt>Release the mouse</dt><dd>Esc</dd></div>
+        </dl>
+        <p class="alternative">You can also drag to look. Arrow keys walk and turn, and Page Up / Down tilt the view. On a touch screen, drag on the left to move and on the right to look.</p>
+      </aside>
+      <div id="notice" role="status" aria-live="polite"></div>
+    </div>
+    <noscript>Enable JavaScript to explore the atelier.</noscript>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#171514">
+<title>The Ember Ward</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script defer src="engine.js"></script>
+<script defer src="craft.js"></script>
+<script defer src="architecture.js"></script>
+<script defer src="fixtures.js"></script>
+<script defer src="roost.js"></script>
+<script defer src="quarters.js"></script>
+<script defer src="walk.js"></script>
+</head>
+<body>
+<canvas id="scene" aria-label="The Ember Ward, a walkable dragon caretaker’s quarters"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<header class="hud">
+<div class="location" id="location"><span></span> Caretaker’s room</div>
+<div class="hud-keys" aria-hidden="true"><kbd>R</kbd> Reset <kbd>Esc</kbd> Controls</div>
+<div class="hud-buttons"><button id="reset" type="button" title="Reset view and position (R)">Reset</button><button id="guide" type="button" title="Show controls (Escape)">Controls</button></div>
+</header>
+<div id="reticle" aria-hidden="true"></div>
+<div id="object" aria-hidden="true"></div>
+<p id="drag-hint" role="status">Hold and drag to look around</p>
+<main id="menu" class="menu">
+<div class="menu-inner">
+<p class="kicker"><span></span> WARDKEEPER’S QUARTERS</p>
+<h1>The Ember<br>Ward</h1>
+<p class="subtitle">A dragon’s roost and the small room<br>of the person who tends it.</p>
+<button id="enter" type="button" disabled>Enter the quarters <span aria-hidden="true">↗</span></button>
+<p id="keys" class="keys"><b>W A S D</b> Walk <i></i> <b>Mouse</b> Look <i></i> <b>R</b> Reset <i></i> <b>Esc</b> Pause</p>
+<p id="status" class="status" role="status"></p>
+</div>
+<div class="route" aria-hidden="true">CARETAKER’S ROOM <i></i> TACK PASSAGE <i></i> ROOST</div>
+</main>
+<noscript>The Ember Ward requires JavaScript and WebGL 2.</noscript>
+</body>
+</html>
+

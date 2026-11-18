@@ -1,0 +1,192 @@
+{
+  "entry": "sol62-14",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-14\\source-preservation.zip",
+  "archiveSha256": "2b23ce7c1d01f933ef0971db099a436c4bf826f9d6e92e127b00e5647c3ff8e7",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-B7TnL51r.js": "dist/assets/index-B7TnL51r.js",
+      "frozen/assets/index-Cwfj54su.css": "dist/assets/index-Cwfj54su.css",
+      "frozen/assets/three-core-BGg43aid.js": "dist/assets/three-core-BGg43aid.js",
+      "frozen/assets/three-webgl-DU3FQqCq.js": "dist/assets/three-webgl-DU3FQqCq.js",
+      "frozen/index.html.txt": "dist/index.html",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "architecture.js": {
+        "sha256": "3beb2def749e4924e330e8d6a7f6ecc87d6a7bb437ed8c4c330ed72cb7f47da5",
+        "bytes": 12463
+      },
+      "ceramic.js": {
+        "sha256": "caf64b7f1584be6d8df46310b280c13e701fe2b72516005b80135f03970cdfee",
+        "bytes": 11956
+      },
+      "garden.js": {
+        "sha256": "47a418d8a79cc380fac145c042c7d75d3d0f137567579924b4729f1c2737e0a6",
+        "bytes": 7494
+      },
+      "glazing.js": {
+        "sha256": "5c820760661d0112ee781f497c59865447b529d14d62454e194318140e67d489",
+        "bytes": 8944
+      },
+      "index.html": {
+        "sha256": "e7e1a5d625e0a0d7387a377c3aca5531bf92efc441ca772df34b8b51b7f1d387",
+        "bytes": 1627
+      },
+      "kiln.js": {
+        "sha256": "7e8f13a5c837d70f6994b024dfcc82f63ff9dc9fc8263839e30d8723c9075ef1",
+        "bytes": 14324
+      },
+      "kit.js": {
+        "sha256": "2b32bfc0606ccd7c22e5eed260958c092581cfe5f2b8fd544ed1821d67982f92",
+        "bytes": 10760
+      },
+      "layout.js": {
+        "sha256": "372e88267d1fc08329f1c7f4462becad96135ff96cfa1486a92788d54dbb5ea3",
+        "bytes": 915
+      },
+      "main.js": {
+        "sha256": "ae43faed44541438419276e102d35d2e11827fada635163f23e938c43772931e",
+        "bytes": 8381
+      },
+      "package-lock.json": {
+        "sha256": "de1761b332149fc65e8480639d2aaa40a1f1b021364621cc3c66ccbfef73ac0d",
+        "bytes": 35118
+      },
+      "package.json": {
+        "sha256": "9df43026fb07f06c10b02897c6066fe664c37054f786ae610e305ac43e67a64f",
+        "bytes": 371
+      },
+      "props.js": {
+        "sha256": "0916134c12bcada3f4fb7c9587c416dfc9266840d4adb52a511660e53a251217",
+        "bytes": 6713
+      },
+      "README.md": {
+        "sha256": "4c2dcbf5f07570b6a8b5088717fb4d26bb2d571fe97b1e91efffd148045132e3",
+        "bytes": 1590
+      },
+      "studio.js": {
+        "sha256": "44f249263fad31f58692863a6217e84e824a9fd0fe16b99ab073e3b34d9965d2",
+        "bytes": 14768
+      },
+      "style.css": {
+        "sha256": "73ab804f0b053c462f1c1480c2c68235c3e3684c3c2e28c45f4da364b5f601c1",
+        "bytes": 3082
+      },
+      "textures.js": {
+        "sha256": "b4a07da7618499c2a8b9bdfcda2f257a7479d4ab7693f8372a7d7585373eb56d",
+        "bytes": 11275
+      },
+      "vite.config.js": {
+        "sha256": "1872acf3342fe70ba922f05c17d3885589e3eb0b91c764a880b6d2eb4d15165e",
+        "bytes": 334
+      },
+      "world.js": {
+        "sha256": "4728657925ece4e5ed238c1d8f3befba8e60c1be640a1dd3118e515146faf23b",
+        "bytes": 2874
+      },
+      "dist/index.html": {
+        "sha256": "5baa4ed7f824de277ee6507dab6a7f4950ea8345f7c84ba9117636d06a1a4b6c",
+        "bytes": 1847
+      },
+      "dist/assets/index-B7TnL51r.js": {
+        "sha256": "562f23bf16c090d4456fa562f8a61eab231bcb4f2f2aaecf47a109f72f8b7fc2",
+        "bytes": 82418
+      },
+      "dist/assets/index-Cwfj54su.css": {
+        "sha256": "bef49d239394cf529cd692e55c0131e97897623c20b29a216045294c191a9cad",
+        "bytes": 2563
+      },
+      "dist/assets/three-core-BGg43aid.js": {
+        "sha256": "f91c4be64db27d11d4c503b42da8506ceb988a51c8b109fb576287dc5299bdb5",
+        "bytes": 197443
+      },
+      "dist/assets/three-webgl-DU3FQqCq.js": {
+        "sha256": "abb22d9944e40a727f5f03f5063c852aad44818ab4af1d1a4ab7e879b5a4112d",
+        "bytes": 324442
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-14\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "0fa1f0034b3ac2120238395ad2dd4e78cff74e6720073c9530eb9f1581f3aff5",
+      "bytes": 1421
+    },
+    "launch-prompt.txt": {
+      "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
+      "bytes": 7673
+    },
+    "README.md": {
+      "sha256": "4c2dcbf5f07570b6a8b5088717fb4d26bb2d571fe97b1e91efffd148045132e3",
+      "bytes": 1590
+    },
+    "source-audit.json": {
+      "sha256": "bdec977abb5a60a5e4e241cadbe42be70510ef54280082aa5aa6e405dcb38757",
+      "bytes": 418
+    },
+    "frozen/index.html.txt": {
+      "sha256": "5baa4ed7f824de277ee6507dab6a7f4950ea8345f7c84ba9117636d06a1a4b6c",
+      "bytes": 1847
+    },
+    "frozen/assets/index-B7TnL51r.js": {
+      "sha256": "562f23bf16c090d4456fa562f8a61eab231bcb4f2f2aaecf47a109f72f8b7fc2",
+      "bytes": 82418
+    },
+    "frozen/assets/index-Cwfj54su.css": {
+      "sha256": "bef49d239394cf529cd692e55c0131e97897623c20b29a216045294c191a9cad",
+      "bytes": 2563
+    },
+    "frozen/assets/three-core-BGg43aid.js": {
+      "sha256": "f91c4be64db27d11d4c503b42da8506ceb988a51c8b109fb576287dc5299bdb5",
+      "bytes": 197443
+    },
+    "frozen/assets/three-webgl-DU3FQqCq.js": {
+      "sha256": "abb22d9944e40a727f5f03f5063c852aad44818ab4af1d1a4ab7e879b5a4112d",
+      "bytes": 324442
+    },
+    "host-runtime-check.json": {
+      "sha256": "4eafe912315b1f187fdb2645d2a534a3e6957a48058d5a26c7054b69ce01ee59",
+      "bytes": 2062
+    },
+    "preview.jpg": {
+      "sha256": "599784afc079cf33199324970da6975b8afd88f1d58ff57aeab93d59bdf00c00",
+      "bytes": 127141
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/assets/index-B7TnL51r.js",
+      "frozen/assets/index-Cwfj54su.css",
+      "frozen/assets/three-core-BGg43aid.js",
+      "frozen/assets/three-webgl-DU3FQqCq.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:04.483Z",
+    "sha256": "599784afc079cf33199324970da6975b8afd88f1d58ff57aeab93d59bdf00c00",
+    "bytes": 127141,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Meridian Atelier</title>
+  <meta name="description" content="Explore a royal tailor’s fitting room, cloth archive and workroom.">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <main id="atelier" aria-label="The Meridian Atelier, an explorable 3D scene">
+    <div id="viewport" aria-label="3D viewport"></div>
+    <div class="vignette"></div>
+    <header class="wayfinding" aria-live="polite">
+      <span class="compass" aria-hidden="true">✦</span>
+      <div><div class="house">THE MERIDIAN ATELIER</div><div id="room">Fitting rooms</div></div>
+    </header>
+    <div id="reticle" aria-hidden="true"></div>
+    <aside class="actions" aria-label="Scene controls">
+      <button id="help" type="button" aria-label="Show controls" title="Controls">?</button>
+      <button id="reset" type="button" aria-label="Return to entrance" title="Return to entrance (R)">↺</button>
+    </aside>
+    <section id="welcome" class="welcome" aria-label="Entrance and controls">
+      <span class="eyebrow">WARDROBE OF THE MERIDIAN COURT</span>
+      <h1>The Meridian<br>Atelier</h1>
+      <p id="welcome-text">The coat for the winter audience is still on its form. Follow the cloth archive to the workroom.</p>
+      <button id="enter" type="button" disabled>Preparing the atelier…</button>
+      <div class="input-guide"><span><kbd>W A S D</kbd> Walk</span><span><kbd>Mouse</kbd> Look</span><span><kbd>R</kbd> Reset</span></div>
+    </section>
+    <div id="hint" class="hint" aria-live="polite" hidden></div>
+    <div class="footer" aria-label="Keyboard shortcuts"><kbd>Esc</kbd> Release mouse <span>·</span> <kbd>R</kbd> Entrance</div>
+    <noscript><p class="error">Enable JavaScript to enter the atelier.</p></noscript>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

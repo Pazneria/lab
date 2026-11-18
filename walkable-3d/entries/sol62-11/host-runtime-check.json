@@ -1,0 +1,62 @@
+{
+  "id": "sol62-11",
+  "startedAt": "2026-11-18T04:11:56.586Z",
+  "status": "captured",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "frozenHtmlSha256": "eec7bd8f58135d9f519d7cb2f5ee0055a11b52e88c9fc000da9dc69c0281d1e1",
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "iframeBounds": {
+    "x": 19,
+    "y": 125.4375,
+    "width": 1242,
+    "height": 776.515625
+  },
+  "inputSmoke": "W key down/up for250ms and R reset dispatched after default preview; no full-route or movement-correctness claim.",
+  "capture": {
+    "index": 0,
+    "canvas": {
+      "id": "",
+      "width": 1242,
+      "height": 777,
+      "cssWidth": 1242,
+      "cssHeight": 777
+    },
+    "output": {
+      "width": 960,
+      "height": 600
+    },
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "pointerLocked": true,
+    "quality": 88,
+    "channelStddev": [
+      59.88460210981666,
+      54.31373076492242,
+      51.349418663258
+    ]
+  },
+  "bytes": 94587,
+  "sha256": "41d6c38ee0b44adeab00e8499f4b67a35225cd706595373e6638dfa832cf3c0b",
+  "filename": "sol62-11.jpg",
+  "capturedAt": "2026-11-18T04:11:59.310Z",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:11:59.351Z",
+  "evidenceFolder": "preview-composited-recheck20",
+  "captureSource": "Actual unchanged scene in local Pages-shaped opaque iframe; inert leaderboard GET fixture only, no production vote writes.",
+  "performance": "NOT MEASURED",
+  "browserAndServerClosed": true
+}

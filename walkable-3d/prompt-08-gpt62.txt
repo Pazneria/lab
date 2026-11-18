@@ -1,0 +1,57 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a working boathouse beside a quiet tidal inlet in soft morning light. Connect a small timber workshop, a short pier, and an accessible patch of exposed shoreline. The viewer should be able to inspect the workshop, walk out along the pier, and reach the shore by a clear, safe route.
+
+Anchor the scene with one small boat resting near the building. Use salt-worn boards, damp stone, rope, painted hull surfaces, and shallow water to make the location convincing. Give practical objects sensible placement: coils beside mooring points, tools near a bench, and crates where someone could carry them. The change from dry timber to tide-marked surfaces should reward close inspection. Surrounding water and distant land can stay simple. Treat the tide as fixed; working boat physics and a large coastline are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, inspect the workshop, walk along the pier, reach the exposed shore and look back toward the building. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Distinct salt-worn boards, painted hull surfaces, rope, damp stone and shallow water
+- Tide marks and wear placed in plausible locations
+- Practical objects that relate naturally to the workshop and mooring areas
+- Soft morning light that reveals surface depth without flattening the workshop interior
+- Purposeful close-range detail across the workshop, pier, boat and shoreline
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while looking across water and shoreline from the pier
+- Smooth transitions when the workshop interior and exterior come into view together
+- Minimal water-related slowdown, flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A timber workshop, short pier and accessible exposed shoreline beside a quiet tidal inlet
+- One small boat near the building and a clearly readable low-tide setting
+- Safe walking access through the workshop, along the pier and down to the shore
+- Convincing scale, clear pier edges and water boundaries, and walkable changes in ground height
+
+MY INSPECTION ROUTE
+
+Workshop → pier end → shore access → boat view → return.
+
+I will pay particular attention to looking across water and shoreline from the pier, circling the boat where accessible and turning back toward the workshop. Pier edges, changes in ground height and the water boundary should be clear, and the route should not require accidental swimming or jumping. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

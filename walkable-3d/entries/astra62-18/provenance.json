@@ -1,0 +1,337 @@
+{
+  "entry": "astra62-18",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-18\\source-preservation.zip",
+  "archiveSha256": "28a42f61bd50d1ddb64dfa89d923d1b4714d86ff09717828605d4ac2869a981f",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/atmosphere.png": "atmosphere.png",
+      "frozen/berth.mjs": "berth.mjs",
+      "frozen/boot.mjs": "boot.mjs",
+      "frozen/cabin.bin": "cabin.bin",
+      "frozen/cabin.css": "cabin.css",
+      "frozen/cabin.json": "cabin.json",
+      "frozen/finish.mjs": "finish.mjs",
+      "frozen/firmament.png": "firmament.png",
+      "frozen/geometry.mjs": "geometry.mjs",
+      "frozen/hull.mjs": "hull.mjs",
+      "frozen/index.html.txt": "index.html",
+      "frozen/joinery.mjs": "joinery.mjs",
+      "frozen/lookout.mjs": "lookout.mjs",
+      "frozen/printwork.js": "printwork.js",
+      "frozen/shaders.js": "shaders.js",
+      "frozen/study.mjs": "study.mjs",
+      "frozen/surfaces.png": "surfaces.png",
+      "frozen/textiles.mjs": "textiles.mjs",
+      "frozen/type/barlow.woff2": "type/barlow.woff2",
+      "frozen/type/baskervville.woff2": "type/baskervville.woff2",
+      "frozen/type/ibm-plex-mono.woff2": "type/ibm-plex-mono.woff2",
+      "frozen/walk.mjs": "walk.mjs",
+      "README.txt": "README.txt",
+      "RUN.txt": "RUN.txt",
+      "licenses/type/barlow-license.txt": "type/barlow-license.txt",
+      "licenses/type/baskervville-license.txt": "type/baskervville-license.txt",
+      "licenses/type/ibm-plex-mono-license.txt": "type/ibm-plex-mono-license.txt"
+    },
+    "perFileSourceHashes": {
+      "atmosphere.png": {
+        "sha256": "d61ec94037252e6cd30ea398ebdefd5f584eb1ecefde37c8aa7f5ae118207d5f",
+        "bytes": 1888667
+      },
+      "bake.mjs": {
+        "sha256": "0f112698c9a5b532e99987778d580b8aed27dc96a8173d168c1d98c51a1159c4",
+        "bytes": 7824
+      },
+      "berth.mjs": {
+        "sha256": "d3d13cba3f3ae778076ab958bac8826498dfbe65f4d5ef5d86137c0872493ce4",
+        "bytes": 6392
+      },
+      "boot.mjs": {
+        "sha256": "2bfa055d9a4ecc59119610817c006a6b7830ecfc3cc8c6d62dc985ea475a6728",
+        "bytes": 13379
+      },
+      "cabin.bin": {
+        "sha256": "27dfe7a7b284546e6295a7b40d71fad3f0f8e326666536b6c4491bf091cc02df",
+        "bytes": 6526044
+      },
+      "cabin.css": {
+        "sha256": "7f42393997867ae933f350651e58a83dda139ab44f68c14d051903d5837d712e",
+        "bytes": 4270
+      },
+      "cabin.json": {
+        "sha256": "49669f8540ff709bc4f922886aaaaffba83b9e0ff2acd8fa8b29bbe3996fc357",
+        "bytes": 4290
+      },
+      "finish.mjs": {
+        "sha256": "0000b654994ffb987707845ab27a6ef0ae6a0e435b5af5e89c08f646aad12bf7",
+        "bytes": 5531
+      },
+      "firmament.png": {
+        "sha256": "0ef0e6b7ad1ab40c5e4966bc98e873dfe2e04d9d7341721427f849c8fb8d6bc3",
+        "bytes": 546612
+      },
+      "geometry.mjs": {
+        "sha256": "c59de10ec52352c72b194f8f0fdde7c5930487dd8dc75e214a61d12b14bc1681",
+        "bytes": 7559
+      },
+      "hull.mjs": {
+        "sha256": "92256430aa99296c636be30fcae57c28adc9379f7996d4c2927364fce82bddbb",
+        "bytes": 5399
+      },
+      "index.html": {
+        "sha256": "ab6d4895998da8c597a6a0dbe396210a318d388ee8ab435229ecfb1d35032a04",
+        "bytes": 2603
+      },
+      "joinery.mjs": {
+        "sha256": "490e313cd4967cb6158240e84a7292eca7347534bd7db70cbb03892f89519c71",
+        "bytes": 3822
+      },
+      "lookout.mjs": {
+        "sha256": "083184725eb2c0784ea8234890d6f7b1db9184ba7199dfc39a47f434c4d19fd9",
+        "bytes": 6494
+      },
+      "make_textures.py": {
+        "sha256": "306f0cef9a3f5646fc65735d6941c7d7c857e310d400106301d481315abeec83",
+        "bytes": 5936
+      },
+      "printwork.js": {
+        "sha256": "82b19cda2cc6b40cbaa02893a6dfbf76af2bf862d0cb919212fdf0ca63befda1",
+        "bytes": 14266
+      },
+      "README.txt": {
+        "sha256": "9896e13146e7cc760c9f04058b9a0c5f72ea83433232a5cb5ca26e55fee3014e",
+        "bytes": 2750
+      },
+      "RUN.txt": {
+        "sha256": "f67e81dce084c42a03206cb5b624aaddf01b61489a1f67777672b20a7e29f66d",
+        "bytes": 2885
+      },
+      "shaders.js": {
+        "sha256": "a061d04fbf0164ac675de08d75cbf9d856d8ee2178bf51528326ea078e828aa5",
+        "bytes": 7031
+      },
+      "Soundings.zip": {
+        "sha256": "31462d83d5cda2ba91b2cfed334bb727f892e13fb55d8f6e835343c9294bfc37",
+        "bytes": 7449356
+      },
+      "study.mjs": {
+        "sha256": "b1cfddddf24210972ac947f7ffa49bbf14fb01cf63f750bff3ca44241fffef82",
+        "bytes": 9137
+      },
+      "surfaces.png": {
+        "sha256": "c219321000942e3d7ff2e01247ccb19486fe4e02d19818fa053de318b2775be5",
+        "bytes": 1907306
+      },
+      "textiles.mjs": {
+        "sha256": "18137cc0d45b29c68139f5f606dc6e99c4998fa4728624855acd6f443c1a0158",
+        "bytes": 2595
+      },
+      "walk.mjs": {
+        "sha256": "01e578a5a72cd1191666ea94f146e734d1a4e525af87265497b33da494fe71c0",
+        "bytes": 2641
+      },
+      "type/barlow-license.txt": {
+        "sha256": "4877e0c1b66f0b16cc3ebc4801c4def24c06252f618b9229428b20c7387aa0c0",
+        "bytes": 6014
+      },
+      "type/barlow.woff2": {
+        "sha256": "b0a8ad37ac45f5fb22ced461576db72e44e295107aad7a9c8a7a4bad728fd03b",
+        "bytes": 22196
+      },
+      "type/baskervville-license.txt": {
+        "sha256": "9993ecfed665b8ce0132d725aaeb49f3d4c2532945f0637bd04743b041fe6fdb",
+        "bytes": 4527
+      },
+      "type/baskervville.woff2": {
+        "sha256": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142",
+        "bytes": 18088
+      },
+      "type/ibm-plex-mono-license.txt": {
+        "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f",
+        "bytes": 5299
+      },
+      "type/ibm-plex-mono.woff2": {
+        "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+        "bytes": 14708
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-18\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "b12044ffe1e98dc0e7c9e2ca8a7709773447cb0e057b5ddbe938d6c964811ccd",
+      "bytes": 1523
+    },
+    "launch-prompt.txt": {
+      "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
+      "bytes": 7611
+    },
+    "README.txt": {
+      "sha256": "9896e13146e7cc760c9f04058b9a0c5f72ea83433232a5cb5ca26e55fee3014e",
+      "bytes": 2750
+    },
+    "RUN.txt": {
+      "sha256": "f67e81dce084c42a03206cb5b624aaddf01b61489a1f67777672b20a7e29f66d",
+      "bytes": 2885
+    },
+    "source-audit.json": {
+      "sha256": "796315dbfd83820ab36c6e421dab2bbe16a4da8c38c554e12ba866c3faaf8bcb",
+      "bytes": 428
+    },
+    "frozen/atmosphere.png": {
+      "sha256": "d61ec94037252e6cd30ea398ebdefd5f584eb1ecefde37c8aa7f5ae118207d5f",
+      "bytes": 1888667
+    },
+    "frozen/berth.mjs": {
+      "sha256": "d3d13cba3f3ae778076ab958bac8826498dfbe65f4d5ef5d86137c0872493ce4",
+      "bytes": 6392
+    },
+    "frozen/boot.mjs": {
+      "sha256": "2bfa055d9a4ecc59119610817c006a6b7830ecfc3cc8c6d62dc985ea475a6728",
+      "bytes": 13379
+    },
+    "frozen/cabin.bin": {
+      "sha256": "27dfe7a7b284546e6295a7b40d71fad3f0f8e326666536b6c4491bf091cc02df",
+      "bytes": 6526044
+    },
+    "frozen/cabin.css": {
+      "sha256": "7f42393997867ae933f350651e58a83dda139ab44f68c14d051903d5837d712e",
+      "bytes": 4270
+    },
+    "frozen/cabin.json": {
+      "sha256": "49669f8540ff709bc4f922886aaaaffba83b9e0ff2acd8fa8b29bbe3996fc357",
+      "bytes": 4290
+    },
+    "frozen/finish.mjs": {
+      "sha256": "0000b654994ffb987707845ab27a6ef0ae6a0e435b5af5e89c08f646aad12bf7",
+      "bytes": 5531
+    },
+    "frozen/firmament.png": {
+      "sha256": "0ef0e6b7ad1ab40c5e4966bc98e873dfe2e04d9d7341721427f849c8fb8d6bc3",
+      "bytes": 546612
+    },
+    "frozen/geometry.mjs": {
+      "sha256": "c59de10ec52352c72b194f8f0fdde7c5930487dd8dc75e214a61d12b14bc1681",
+      "bytes": 7559
+    },
+    "frozen/hull.mjs": {
+      "sha256": "92256430aa99296c636be30fcae57c28adc9379f7996d4c2927364fce82bddbb",
+      "bytes": 5399
+    },
+    "frozen/index.html.txt": {
+      "sha256": "ab6d4895998da8c597a6a0dbe396210a318d388ee8ab435229ecfb1d35032a04",
+      "bytes": 2603
+    },
+    "frozen/joinery.mjs": {
+      "sha256": "490e313cd4967cb6158240e84a7292eca7347534bd7db70cbb03892f89519c71",
+      "bytes": 3822
+    },
+    "frozen/lookout.mjs": {
+      "sha256": "083184725eb2c0784ea8234890d6f7b1db9184ba7199dfc39a47f434c4d19fd9",
+      "bytes": 6494
+    },
+    "frozen/printwork.js": {
+      "sha256": "82b19cda2cc6b40cbaa02893a6dfbf76af2bf862d0cb919212fdf0ca63befda1",
+      "bytes": 14266
+    },
+    "frozen/shaders.js": {
+      "sha256": "a061d04fbf0164ac675de08d75cbf9d856d8ee2178bf51528326ea078e828aa5",
+      "bytes": 7031
+    },
+    "frozen/study.mjs": {
+      "sha256": "b1cfddddf24210972ac947f7ffa49bbf14fb01cf63f750bff3ca44241fffef82",
+      "bytes": 9137
+    },
+    "frozen/surfaces.png": {
+      "sha256": "c219321000942e3d7ff2e01247ccb19486fe4e02d19818fa053de318b2775be5",
+      "bytes": 1907306
+    },
+    "frozen/textiles.mjs": {
+      "sha256": "18137cc0d45b29c68139f5f606dc6e99c4998fa4728624855acd6f443c1a0158",
+      "bytes": 2595
+    },
+    "frozen/walk.mjs": {
+      "sha256": "01e578a5a72cd1191666ea94f146e734d1a4e525af87265497b33da494fe71c0",
+      "bytes": 2641
+    },
+    "licenses/type/barlow-license.txt": {
+      "sha256": "4877e0c1b66f0b16cc3ebc4801c4def24c06252f618b9229428b20c7387aa0c0",
+      "bytes": 6014
+    },
+    "licenses/type/baskervville-license.txt": {
+      "sha256": "9993ecfed665b8ce0132d725aaeb49f3d4c2532945f0637bd04743b041fe6fdb",
+      "bytes": 4527
+    },
+    "licenses/type/ibm-plex-mono-license.txt": {
+      "sha256": "23b0a9d0c6d3f140a0b77e483c5cfa6bba574325ef5cb189ed9f2fec4884533f",
+      "bytes": 5299
+    },
+    "frozen/type/barlow.woff2": {
+      "sha256": "b0a8ad37ac45f5fb22ced461576db72e44e295107aad7a9c8a7a4bad728fd03b",
+      "bytes": 22196
+    },
+    "frozen/type/baskervville.woff2": {
+      "sha256": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142",
+      "bytes": 18088
+    },
+    "frozen/type/ibm-plex-mono.woff2": {
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "bytes": 14708
+    },
+    "host-runtime-check.json": {
+      "sha256": "5850c2ec105b9e7a4eedbde5641f3853c3b4cc1ebc145762333bd21dba304cf3",
+      "bytes": 2827
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.txt",
+      "RUN.txt",
+      "source-audit.json",
+      "frozen/atmosphere.png",
+      "frozen/berth.mjs",
+      "frozen/boot.mjs",
+      "frozen/cabin.bin",
+      "frozen/cabin.css",
+      "frozen/cabin.json",
+      "frozen/finish.mjs",
+      "frozen/firmament.png",
+      "frozen/geometry.mjs",
+      "frozen/hull.mjs",
+      "frozen/index.html.txt",
+      "frozen/joinery.mjs",
+      "frozen/lookout.mjs",
+      "frozen/printwork.js",
+      "frozen/shaders.js",
+      "frozen/study.mjs",
+      "frozen/surfaces.png",
+      "frozen/textiles.mjs",
+      "frozen/walk.mjs",
+      "licenses/type/barlow-license.txt",
+      "licenses/type/baskervville-license.txt",
+      "licenses/type/ibm-plex-mono-license.txt",
+      "frozen/type/barlow.woff2",
+      "frozen/type/baskervville.woff2",
+      "frozen/type/ibm-plex-mono.woff2",
+      "host-runtime-check.json"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Approved resources and all three fonts loaded with matching hashes, but opaque-frame startup failed: getImageData canvas tainted by cross-origin data. Original payload and sandbox unchanged."
+  }
+}

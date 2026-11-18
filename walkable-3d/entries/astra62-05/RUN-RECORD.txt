@@ -1,0 +1,19 @@
+SceneBench 2026-11-17 / Scene 05 / Isobar 05
+Workspace: C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-05
+Requested identity: GPT-6.2 Astra / XHIGH effort / Standard service.
+Exposed identity: Codex, GPT-6 family. Exact serving model ID, effort and service tier were not exposed to this run.
+First implementation action, workspace and toolchain inventory: 2026-11-17T23:07:58.5895002+00:00
+First source file creation: 2026-11-17T23:10:59.2894345Z
+One-hour deadline: 2026-11-18T00:07:58.5895002+00:00
+Actual stop after build, packaging, verification and cleanup: 2026-11-17T23:54:58.8665127+00:00
+Elapsed wall time: 00:47:00.2770125
+Interruption: At approximately 23:50 UTC the execution tool reported a user abort during optional finishing edits to geometry.js, shelter.js, interior.js, shaders.js and render.js. The panel bevel, wall-equipment repositioning and additional reflected-light edits did not execute. The deadline continued uninterrupted.
+Checks: Nine JavaScript files passed syntax checks. Ten HTML resource references and the control IDs resolved. All five GLSL ES vertex/fragment pairs passed offline compilation and stage linking. Mesh checks covered 259467 finite vertices, 228373 indexed triangles, 32 culling ranges, 20 atlas tiles and 52 colliders. A 1491-position static clearance and elevation check passed in both travel directions. Largest rise was 0.195 m. Nine solid-object probes passed.
+Verification scope: No browser, headless browser, UI test, screenshot renderer, graphics context, GPU test, performance benchmark, or server was launched. Visual appearance, interactive behavior and frame times await benchmark inspection.
+Cleanup: All one-shot shell, Node and offline validator checks exited. No server, browser, watcher or test process remains from this entry. Entry-local temporary validation tools and their inputs were removed.
+Suggested launch address: http://127.0.0.1:48185/ . The port was unoccupied at the read-only listener check.
+Launch from the extracted build folder: python -m http.server 48185 --bind 127.0.0.1
+Portable archive: C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-05\Isobar-05.zip
+Archive size: 47052 bytes
+SHA-256: 3E60F3CF7EB42404FD8099F3F2E7114E79DA749D6813371D8431C21E8F1652C6
+All 12 archive members were verified byte-for-byte against the delivered source and instructions.

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211a14">
+  <title>The Last Waystation</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="scene" aria-label="The Last Waystation, an explorable 3D scene"></main>
+  <div id="reticle" aria-hidden="true"></div>
+  <aside class="overlay" id="overlay" aria-labelledby="title">
+    <div class="panel">
+      <p class="eyebrow">Rooms above the Kestrel Inn</p>
+      <h1 id="title">The Last<br>Waystation</h1>
+      <p class="intro">Mara Vale settled here after thirty years on the road. Her old shield holds the tea.</p>
+      <button id="enter" type="button" disabled>Preparing the room…</button>
+      <button id="reset" class="secondary" type="button" hidden>Return to entrance</button>
+      <p class="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Walk <span></span> Mouse Look<br><kbd>R</kbd> Reset <span></span> <kbd>Esc</kbd> Pause</p>
+      <p id="error" role="status" hidden></p>
+    </div>
+  </aside>
+  <div id="hud" hidden><span id="place">The upstairs room</span><span class="hud-keys" id="hud-keys">WASD · Walk &nbsp; Mouse · Look &nbsp; R · Reset &nbsp; Esc · Pause</span></div>
+  <div id="object-label" role="status" aria-live="polite" hidden></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

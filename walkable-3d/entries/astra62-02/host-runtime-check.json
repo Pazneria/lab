@@ -1,0 +1,8 @@
+{
+  "id": "astra62-02",
+  "status": "observed-startup-failure",
+  "reason": "Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged.",
+  "sourceChanged": false,
+  "performance": "NOT MEASURED",
+  "browserAndServerClosed": true
+}

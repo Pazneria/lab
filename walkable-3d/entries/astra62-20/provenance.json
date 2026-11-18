@@ -1,0 +1,466 @@
+{
+  "entry": "astra62-20",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-20\\source-preservation.zip",
+  "archiveSha256": "04066552eadb8394e9000b0d7334d1d65e37311ca721caf86bf43b84971e83fc",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/art.js": "art.js",
+      "frozen/assets/glaze-reflection.png": "assets/glaze-reflection.png",
+      "frozen/assets/scene.bin": "assets/scene.bin",
+      "frozen/assets/scene.json": "assets/scene.json",
+      "frozen/assets/texture-00-earth.png": "assets/texture-00-earth.png",
+      "frozen/assets/texture-01-MeshBasicMaterial.png": "assets/texture-01-MeshBasicMaterial.png",
+      "frozen/assets/texture-02-MeshBasicMaterial.png": "assets/texture-02-MeshBasicMaterial.png",
+      "frozen/assets/texture-03-MeshBasicMaterial.png": "assets/texture-03-MeshBasicMaterial.png",
+      "frozen/assets/texture-04-sky.png": "assets/texture-04-sky.png",
+      "frozen/assets/texture-05-MeshBasicMaterial.png": "assets/texture-05-MeshBasicMaterial.png",
+      "frozen/assets/texture-06-metal.png": "assets/texture-06-metal.png",
+      "frozen/assets/texture-07-wood.png": "assets/texture-07-wood.png",
+      "frozen/assets/texture-08-paint.png": "assets/texture-08-paint.png",
+      "frozen/assets/texture-09-leather.png": "assets/texture-09-leather.png",
+      "frozen/assets/texture-10-art0.png": "assets/texture-10-art0.png",
+      "frozen/assets/texture-11-cloth.png": "assets/texture-11-cloth.png",
+      "frozen/assets/texture-12-fabric1.png": "assets/texture-12-fabric1.png",
+      "frozen/assets/texture-13-fabric0.png": "assets/texture-13-fabric0.png",
+      "frozen/assets/texture-14-fabric2.png": "assets/texture-14-fabric2.png",
+      "frozen/assets/texture-15-fabric3.png": "assets/texture-15-fabric3.png",
+      "frozen/assets/texture-16-fabric4.png": "assets/texture-16-fabric4.png",
+      "frozen/camp.js": "camp.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/goods.js": "goods.js",
+      "frozen/home.js": "home.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/joinery.js": "joinery.js",
+      "frozen/landscape.js": "landscape.js",
+      "frozen/main.js": "main.js",
+      "frozen/materials.js": "materials.js",
+      "frozen/package/build/three.module.min.js": "package/build/three.module.min.js",
+      "frozen/scene-loader.js": "scene-loader.js",
+      "frozen/scene.css": "scene.css",
+      "frozen/shop.js": "shop.js",
+      "frozen/wagon.js": "wagon.js",
+      "frozen/walk.js": "walk.js",
+      "README.md": "README.md",
+      "RUN-RECORD.txt": "RUN-RECORD.txt",
+      "licenses/package/LICENSE": "package/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "art.js": {
+        "sha256": "18efa7b67a7efbfde97c11c5c69433a2be10f15b368246c287ade4b2bf06b74a",
+        "bytes": 8553
+      },
+      "build-assets.mjs": {
+        "sha256": "4ecc473458ade666a0752bdef8ff6c17eb11b5aabe6b0d6dc9edbfabe3d1567b",
+        "bytes": 7246
+      },
+      "camp.js": {
+        "sha256": "2d6a752ea964cd735f46b85a3681ab6d858640b36bb64881797f5138c25a38af",
+        "bytes": 7187
+      },
+      "check-build.mjs": {
+        "sha256": "885ecbf99b1d70d8efa83b16fa7de221ac546a7a4492f4aa3f570f47c76b8d9b",
+        "bytes": 5800
+      },
+      "geometry.js": {
+        "sha256": "fde655ec7128289544c165bac9a18733f6e20beb0e26d6d313b715494ff5f825",
+        "bytes": 7734
+      },
+      "goods.js": {
+        "sha256": "c6956d29ee8c80542c6090081c9599bff3302e30f32fe0825f08f2fc850045ad",
+        "bytes": 6762
+      },
+      "home.js": {
+        "sha256": "3c2166042b299ac14793debe2a0d340535946ac9d2a5edb2d64e8e70cdf04783",
+        "bytes": 10845
+      },
+      "index.html": {
+        "sha256": "b5af72fec86251edc006ed633782d5eff1dac4cb3bf178fee71b8365530cfb06",
+        "bytes": 1621
+      },
+      "joinery.js": {
+        "sha256": "790843dff956a093c3fcb5e6c2009993e48ada73724e4dacb73ae6d32e65c3cc",
+        "bytes": 4522
+      },
+      "landscape.js": {
+        "sha256": "b31ef2422a94a47c0bea4bd16f06d27de0307d6ffae089e31a233cbca09c5572",
+        "bytes": 11605
+      },
+      "main.js": {
+        "sha256": "e5f366815c49a2922d5d55d29d28845376960507cdb3f718448359e717a2efc9",
+        "bytes": 8015
+      },
+      "materials.js": {
+        "sha256": "c0f3ff35552187e357969fc417a379b72925e5cd7e399c04cf9d220e1c572da8",
+        "bytes": 4962
+      },
+      "README.md": {
+        "sha256": "10c2dad60a28ecb98623f61655f755cb9dd7feab404f87d31dfd908cd7b6902c",
+        "bytes": 2989
+      },
+      "RUN-RECORD.txt": {
+        "sha256": "16f2badfd300d482bb0cd9ab31686aadd9d0fcff4164491af415baca0a4e7121",
+        "bytes": 3241
+      },
+      "scene-loader.js": {
+        "sha256": "a166b7f4e04891745721e4717106b451621c0e6b5582f47d820f47d4b39d4ad8",
+        "bytes": 3065
+      },
+      "scene.css": {
+        "sha256": "6e667cbe601525041680123fbb214b94de2e34f249c0ff614b09712c8617aff1",
+        "bytes": 1841
+      },
+      "shop.js": {
+        "sha256": "d997383ff4902d21a06a8f35f5ec7b29930c70efb86bcc172a2ff5e235946388",
+        "bytes": 14321
+      },
+      "The-Gilded-Hem.zip": {
+        "sha256": "b1723650ab7f0215123f88e4d4ebe247dcf0db1e0f8c9b7a95d41308c1ddf14f",
+        "bytes": 5472375
+      },
+      "wagon.js": {
+        "sha256": "1be6ac8c0b49921c8b5ab014f124dd7ddd5f5b2799eac2ecbe60bfbe7033afd4",
+        "bytes": 12520
+      },
+      "walk.js": {
+        "sha256": "4b149d6e0f1b7ab636f8e71c47f9e3c6d7d2a8ed459925211229728f4d9698cd",
+        "bytes": 2690
+      },
+      "package/LICENSE": {
+        "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+        "bytes": 1081
+      },
+      "package/build/three.module.min.js": {
+        "sha256": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+        "bytes": 670681
+      },
+      "assets/glaze-reflection.png": {
+        "sha256": "842cb4846c189711cac9e3890334b05113f369204b8029a99853e8b9e9ca395d",
+        "bytes": 3698
+      },
+      "assets/scene.bin": {
+        "sha256": "d9818d431c3f92f13c644b4f0ea5969b84a51a80a26db9fc4d551d09b87dbbd4",
+        "bytes": 10023940
+      },
+      "assets/scene.json": {
+        "sha256": "d130730ba76ae1ddd84157546091eff90c700fa905d8be6f0a0a80b7c98bb1ce",
+        "bytes": 73598
+      },
+      "assets/texture-00-earth.png": {
+        "sha256": "f0964ba4b9d4c8c26977e5011d2d3edca00c3fa5f7f6754928c295f5f8892097",
+        "bytes": 130314
+      },
+      "assets/texture-01-MeshBasicMaterial.png": {
+        "sha256": "d658048222f90d0a40e849eb29846a540b24b2fddf3e572ea8ed74ff8eb08794",
+        "bytes": 23029
+      },
+      "assets/texture-02-MeshBasicMaterial.png": {
+        "sha256": "25d57f26ebd1f6061428434d1098bcd2d95704682fe6ea04303d65d01bef4593",
+        "bytes": 26301
+      },
+      "assets/texture-03-MeshBasicMaterial.png": {
+        "sha256": "b3d1770136a8b459ee6f12201fac36b378b0a8351dcb417c2c9d7227ef28b9a1",
+        "bytes": 22903
+      },
+      "assets/texture-04-sky.png": {
+        "sha256": "2ebc843f7409d8bf7de51b1767a8e1afadc80836c863ae643cb7484a84216250",
+        "bytes": 77063
+      },
+      "assets/texture-05-MeshBasicMaterial.png": {
+        "sha256": "91c3797597a9bba7608984b5d75279eb887efaa16f7256494abf0c26ab2949f6",
+        "bytes": 13556
+      },
+      "assets/texture-06-metal.png": {
+        "sha256": "d8fcfec93ba1d993e9f4d5694d6a25db2bed1008eb265ffb74f0da957090f8ae",
+        "bytes": 66717
+      },
+      "assets/texture-07-wood.png": {
+        "sha256": "63b26c7c1eb5afa212004872e03ccd5cfb786f9409e5245c01e2ff606e794377",
+        "bytes": 321624
+      },
+      "assets/texture-08-paint.png": {
+        "sha256": "4d2bb2fb33c462295fe6ea0d82b6614e7e27973db4e650ceb58fff16f5d72704",
+        "bytes": 274313
+      },
+      "assets/texture-09-leather.png": {
+        "sha256": "9718cc3c0452ef9c0d48c1792cebb66c1d7511e4764dc9b98301c77243d6d02e",
+        "bytes": 71615
+      },
+      "assets/texture-10-art0.png": {
+        "sha256": "af9bdbc10a31f30dd718aca4ea480401166ae24343c3a0bf2274e72ac0da72a1",
+        "bytes": 525754
+      },
+      "assets/texture-11-cloth.png": {
+        "sha256": "2ecb54106795315e2a075236b10132e09589c58c9b38963da55b005ef2a6742f",
+        "bytes": 72529
+      },
+      "assets/texture-12-fabric1.png": {
+        "sha256": "cb8e455baee633dad4f40b368b8bc4046dc8a60aae56f785259fb22938ba4850",
+        "bytes": 8544
+      },
+      "assets/texture-13-fabric0.png": {
+        "sha256": "1f0571094f916a149bf8926394aea6a1e669941dd3ec3653ce007e9dcfdebe56",
+        "bytes": 8851
+      },
+      "assets/texture-14-fabric2.png": {
+        "sha256": "4ebd19d02d2b0a53415e66e08d3b8a601100444865d45709a8d3d96021f3df22",
+        "bytes": 3782
+      },
+      "assets/texture-15-fabric3.png": {
+        "sha256": "d16267112542a94115e12bc88873cf8e323c6808a75faf17def2fcd1c59a0cd1",
+        "bytes": 9484
+      },
+      "assets/texture-16-fabric4.png": {
+        "sha256": "9a1c3937f34fc934409bc9e06257c8206bf142894645725c8cda6b7d4a0bfc88",
+        "bytes": 3654
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-20\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "31ef58660c1ee736d1b97383d8a0eef714e840f68bb89205132e0a64170ee7a3",
+      "bytes": 1352
+    },
+    "launch-prompt.txt": {
+      "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "bytes": 7830
+    },
+    "README.md": {
+      "sha256": "10c2dad60a28ecb98623f61655f755cb9dd7feab404f87d31dfd908cd7b6902c",
+      "bytes": 2989
+    },
+    "RUN-RECORD.txt": {
+      "sha256": "16f2badfd300d482bb0cd9ab31686aadd9d0fcff4164491af415baca0a4e7121",
+      "bytes": 3241
+    },
+    "source-audit.json": {
+      "sha256": "d2ee376a68e5e90f5c24556f963a15d83b28b3bc7e4b7c2637c98b61e79867ae",
+      "bytes": 457
+    },
+    "frozen/art.js": {
+      "sha256": "18efa7b67a7efbfde97c11c5c69433a2be10f15b368246c287ade4b2bf06b74a",
+      "bytes": 8553
+    },
+    "frozen/camp.js": {
+      "sha256": "2d6a752ea964cd735f46b85a3681ab6d858640b36bb64881797f5138c25a38af",
+      "bytes": 7187
+    },
+    "frozen/geometry.js": {
+      "sha256": "fde655ec7128289544c165bac9a18733f6e20beb0e26d6d313b715494ff5f825",
+      "bytes": 7734
+    },
+    "frozen/goods.js": {
+      "sha256": "c6956d29ee8c80542c6090081c9599bff3302e30f32fe0825f08f2fc850045ad",
+      "bytes": 6762
+    },
+    "frozen/home.js": {
+      "sha256": "3c2166042b299ac14793debe2a0d340535946ac9d2a5edb2d64e8e70cdf04783",
+      "bytes": 10845
+    },
+    "frozen/index.html.txt": {
+      "sha256": "b5af72fec86251edc006ed633782d5eff1dac4cb3bf178fee71b8365530cfb06",
+      "bytes": 1621
+    },
+    "frozen/joinery.js": {
+      "sha256": "790843dff956a093c3fcb5e6c2009993e48ada73724e4dacb73ae6d32e65c3cc",
+      "bytes": 4522
+    },
+    "frozen/landscape.js": {
+      "sha256": "b31ef2422a94a47c0bea4bd16f06d27de0307d6ffae089e31a233cbca09c5572",
+      "bytes": 11605
+    },
+    "frozen/main.js": {
+      "sha256": "e5f366815c49a2922d5d55d29d28845376960507cdb3f718448359e717a2efc9",
+      "bytes": 8015
+    },
+    "frozen/materials.js": {
+      "sha256": "c0f3ff35552187e357969fc417a379b72925e5cd7e399c04cf9d220e1c572da8",
+      "bytes": 4962
+    },
+    "frozen/scene-loader.js": {
+      "sha256": "a166b7f4e04891745721e4717106b451621c0e6b5582f47d820f47d4b39d4ad8",
+      "bytes": 3065
+    },
+    "frozen/scene.css": {
+      "sha256": "6e667cbe601525041680123fbb214b94de2e34f249c0ff614b09712c8617aff1",
+      "bytes": 1841
+    },
+    "frozen/shop.js": {
+      "sha256": "d997383ff4902d21a06a8f35f5ec7b29930c70efb86bcc172a2ff5e235946388",
+      "bytes": 14321
+    },
+    "frozen/wagon.js": {
+      "sha256": "1be6ac8c0b49921c8b5ab014f124dd7ddd5f5b2799eac2ecbe60bfbe7033afd4",
+      "bytes": 12520
+    },
+    "frozen/walk.js": {
+      "sha256": "4b149d6e0f1b7ab636f8e71c47f9e3c6d7d2a8ed459925211229728f4d9698cd",
+      "bytes": 2690
+    },
+    "licenses/package/LICENSE": {
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "bytes": 1081
+    },
+    "frozen/assets/glaze-reflection.png": {
+      "sha256": "842cb4846c189711cac9e3890334b05113f369204b8029a99853e8b9e9ca395d",
+      "bytes": 3698
+    },
+    "frozen/assets/scene.bin": {
+      "sha256": "d9818d431c3f92f13c644b4f0ea5969b84a51a80a26db9fc4d551d09b87dbbd4",
+      "bytes": 10023940
+    },
+    "frozen/assets/scene.json": {
+      "sha256": "d130730ba76ae1ddd84157546091eff90c700fa905d8be6f0a0a80b7c98bb1ce",
+      "bytes": 73598
+    },
+    "frozen/assets/texture-00-earth.png": {
+      "sha256": "f0964ba4b9d4c8c26977e5011d2d3edca00c3fa5f7f6754928c295f5f8892097",
+      "bytes": 130314
+    },
+    "frozen/assets/texture-01-MeshBasicMaterial.png": {
+      "sha256": "d658048222f90d0a40e849eb29846a540b24b2fddf3e572ea8ed74ff8eb08794",
+      "bytes": 23029
+    },
+    "frozen/assets/texture-02-MeshBasicMaterial.png": {
+      "sha256": "25d57f26ebd1f6061428434d1098bcd2d95704682fe6ea04303d65d01bef4593",
+      "bytes": 26301
+    },
+    "frozen/assets/texture-03-MeshBasicMaterial.png": {
+      "sha256": "b3d1770136a8b459ee6f12201fac36b378b0a8351dcb417c2c9d7227ef28b9a1",
+      "bytes": 22903
+    },
+    "frozen/assets/texture-04-sky.png": {
+      "sha256": "2ebc843f7409d8bf7de51b1767a8e1afadc80836c863ae643cb7484a84216250",
+      "bytes": 77063
+    },
+    "frozen/assets/texture-05-MeshBasicMaterial.png": {
+      "sha256": "91c3797597a9bba7608984b5d75279eb887efaa16f7256494abf0c26ab2949f6",
+      "bytes": 13556
+    },
+    "frozen/assets/texture-06-metal.png": {
+      "sha256": "d8fcfec93ba1d993e9f4d5694d6a25db2bed1008eb265ffb74f0da957090f8ae",
+      "bytes": 66717
+    },
+    "frozen/assets/texture-07-wood.png": {
+      "sha256": "63b26c7c1eb5afa212004872e03ccd5cfb786f9409e5245c01e2ff606e794377",
+      "bytes": 321624
+    },
+    "frozen/assets/texture-08-paint.png": {
+      "sha256": "4d2bb2fb33c462295fe6ea0d82b6614e7e27973db4e650ceb58fff16f5d72704",
+      "bytes": 274313
+    },
+    "frozen/assets/texture-09-leather.png": {
+      "sha256": "9718cc3c0452ef9c0d48c1792cebb66c1d7511e4764dc9b98301c77243d6d02e",
+      "bytes": 71615
+    },
+    "frozen/assets/texture-10-art0.png": {
+      "sha256": "af9bdbc10a31f30dd718aca4ea480401166ae24343c3a0bf2274e72ac0da72a1",
+      "bytes": 525754
+    },
+    "frozen/assets/texture-11-cloth.png": {
+      "sha256": "2ecb54106795315e2a075236b10132e09589c58c9b38963da55b005ef2a6742f",
+      "bytes": 72529
+    },
+    "frozen/assets/texture-12-fabric1.png": {
+      "sha256": "cb8e455baee633dad4f40b368b8bc4046dc8a60aae56f785259fb22938ba4850",
+      "bytes": 8544
+    },
+    "frozen/assets/texture-13-fabric0.png": {
+      "sha256": "1f0571094f916a149bf8926394aea6a1e669941dd3ec3653ce007e9dcfdebe56",
+      "bytes": 8851
+    },
+    "frozen/assets/texture-14-fabric2.png": {
+      "sha256": "4ebd19d02d2b0a53415e66e08d3b8a601100444865d45709a8d3d96021f3df22",
+      "bytes": 3782
+    },
+    "frozen/assets/texture-15-fabric3.png": {
+      "sha256": "d16267112542a94115e12bc88873cf8e323c6808a75faf17def2fcd1c59a0cd1",
+      "bytes": 9484
+    },
+    "frozen/assets/texture-16-fabric4.png": {
+      "sha256": "9a1c3937f34fc934409bc9e06257c8206bf142894645725c8cda6b7d4a0bfc88",
+      "bytes": 3654
+    },
+    "frozen/package/build/three.module.min.js": {
+      "sha256": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
+      "bytes": 670681
+    },
+    "host-runtime-check.json": {
+      "sha256": "6fde92fb70248e30944409c191bece9e478f6892ba870818cea2433ec5f2a332",
+      "bytes": 2444
+    },
+    "preview.jpg": {
+      "sha256": "4de011820680a85dd3792da418fd937578eff13fa455a51d3a861bb02e630a40",
+      "bytes": 105593
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN-RECORD.txt",
+      "source-audit.json",
+      "frozen/art.js",
+      "frozen/camp.js",
+      "frozen/geometry.js",
+      "frozen/goods.js",
+      "frozen/home.js",
+      "frozen/index.html.txt",
+      "frozen/joinery.js",
+      "frozen/landscape.js",
+      "frozen/main.js",
+      "frozen/materials.js",
+      "frozen/scene-loader.js",
+      "frozen/scene.css",
+      "frozen/shop.js",
+      "frozen/wagon.js",
+      "frozen/walk.js",
+      "licenses/package/LICENSE",
+      "frozen/assets/glaze-reflection.png",
+      "frozen/assets/scene.bin",
+      "frozen/assets/scene.json",
+      "frozen/assets/texture-00-earth.png",
+      "frozen/assets/texture-01-MeshBasicMaterial.png",
+      "frozen/assets/texture-02-MeshBasicMaterial.png",
+      "frozen/assets/texture-03-MeshBasicMaterial.png",
+      "frozen/assets/texture-04-sky.png",
+      "frozen/assets/texture-05-MeshBasicMaterial.png",
+      "frozen/assets/texture-06-metal.png",
+      "frozen/assets/texture-07-wood.png",
+      "frozen/assets/texture-08-paint.png",
+      "frozen/assets/texture-09-leather.png",
+      "frozen/assets/texture-10-art0.png",
+      "frozen/assets/texture-11-cloth.png",
+      "frozen/assets/texture-12-fabric1.png",
+      "frozen/assets/texture-13-fabric0.png",
+      "frozen/assets/texture-14-fabric2.png",
+      "frozen/assets/texture-15-fabric3.png",
+      "frozen/assets/texture-16-fabric4.png",
+      "frozen/package/build/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:22:41.926Z",
+    "sha256": "4de011820680a85dd3792da418fd937578eff13fa455a51d3a861bb02e630a40",
+    "bytes": 105593,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

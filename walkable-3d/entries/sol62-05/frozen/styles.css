@@ -1,0 +1,48 @@
+:root {
+  color-scheme: dark;
+  background: #182e49;
+  color: #edf1f4;
+  font-family: system-ui, sans-serif;
+  --amber: #f6b679;
+  --soft: #bac9d8;
+}
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; overscroll-behavior: none; }
+#view { position: fixed; inset: 0; overflow: hidden; isolation: isolate; touch-action: none; }
+canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: -2; }
+.view-shade { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 57% 46%, transparent 54%, #08142535 100%); }
+.overlay { position: absolute; inset: 0; display: grid; place-items: end start; padding: clamp(20px, 5.4vw, 88px); background: linear-gradient(78deg, #081827a8, #08182708 74%); }
+.overlay[hidden], .touch[hidden] { display: none; }
+.card { width: min(410px, 100%); padding: 26px 30px 24px; background: #0c1929e6; border: 1px solid #c4d9ed36; box-shadow: 0 14px 45px #08142238; }
+.station { display: flex; align-items: center; gap: 10px; margin: 0 0 9px; font: 600 .69rem/1.45 ui-monospace, monospace; color: var(--amber); letter-spacing: .13em; }
+.station span { height: 1px; width: 17px; background: #f6b67975; }
+h1 { margin: 0; font-size: clamp(2.2rem, 5.3vw, 3.45rem); line-height: .98; letter-spacing: -.052em; font-weight: 540; }
+.intro { font-size: .94rem; color: var(--soft); line-height: 1.52; max-width: 30ch; margin: 12px 0 17px; }
+button { appearance: none; border-radius: 2px; color: #172537; background: var(--amber); border: 1px solid #ffe3c2; padding: 10px 17px; font: 760 .85rem/1.25 system-ui, sans-serif; cursor: pointer; }
+button:hover:not(:disabled) { background: #ffd3a7; }
+button:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+button:disabled { opacity: .58; cursor: default; }
+.keys { display: flex; flex-wrap: wrap; gap: 9px 13px; margin-top: 18px; }
+.keys p { display: flex; gap: 5px; align-items: center; margin: 0; font-size: .72rem; color: var(--soft); white-space: nowrap; }
+kbd { display: inline-block; color: #f4f9ff; background: #d5e7fb15; border: 1px solid #d5e7fb35; padding: 2px 4px; border-radius: 2px; font: .65rem/1.13 ui-monospace, monospace; }
+.hud { position: absolute; top: 20px; left: 23px; pointer-events: none; font: 600 .66rem/1.6 ui-monospace, monospace; letter-spacing: .1em; color: #eef5ff; text-shadow: 0 1px 6px #071325, 0 0 12px #071325; }
+.hud-station i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 8px; background: var(--amber); box-shadow: 0 0 7px #ffaf58a0; }
+.hud-station span { margin: 0 2px; color: var(--amber); }
+.hud-location { color: #d6e6fb; margin-left: 14px; letter-spacing: .16em; }
+.hud-help { position: absolute; right: 23px; bottom: 19px; display: none; align-items: center; gap: 7px; color: #e9f3ff; font-size: .72rem; text-shadow: 0 1px 5px #081725, 0 0 8px #081725; pointer-events: none; }
+.hud-help kbd:not(:first-child) { margin-left: 5px; }
+.reticle { position: absolute; inset: 50% auto auto 50%; width: 4px; height: 4px; border-radius: 50%; transform: translate(-50%,-50%); background: #f5f9fcb0; box-shadow: 0 0 2px #02152b; pointer-events: none; display: none; }
+.playing .reticle, .playing .hud-help { display: flex; }
+.touch { position: absolute; inset: auto 18px 18px; display: flex; justify-content: space-between; align-items: end; pointer-events: none; }
+.stick, .touch-actions { pointer-events: auto; touch-action: none; }
+.touch-actions { display: flex; gap: 8px; }
+.stick { width: 92px; height: 92px; border: 1px solid #cedef490; border-radius: 50%; background: #0a1a325e; display: grid; place-items: center; }
+.stick > div { width: 36px; height: 36px; border-radius: 50%; background: #dbe8f8a0; }
+.touch-actions button { background: #142435b5; color: #f6ddbf; border-color: #bbcad89e; }
+.touch-mode .hud-help { display: none; }
+noscript { position: absolute; top: 58px; left: 24px; }
+@media (max-height: 530px) {
+  .overlay { padding: 15px; }
+  .card { padding: 17px 20px 16px; }
+  .keys { margin-top: 11px; }
+}

@@ -1,0 +1,278 @@
+{
+  "entry": "astra62-13",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-13\\source-preservation.zip",
+  "archiveSha256": "9befd10b9f8de85a49674d5632d8b1bce30eccca59a2ed2c8b44d9402714439d",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/cabin.js": "cabin.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/graphics.js": "graphics.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/light-data.js": "light-data.js",
+      "frozen/machinery.js": "machinery.js",
+      "frozen/main.js": "main.js",
+      "frozen/material-data.js": "material-data.js",
+      "frozen/navigation.js": "navigation.js",
+      "frozen/scenery.js": "scenery.js",
+      "frozen/station.js": "station.js",
+      "frozen/surfaces.js": "surfaces.js",
+      "frozen/weather-data.js": "weather-data.js"
+    },
+    "perFileSourceHashes": {
+      "bake-light.cjs": {
+        "sha256": "93bd26c312d6f8f60be566067906b23af5f8f47938379b5c064a2dcb5d52f1c4",
+        "bytes": 4608
+      },
+      "bake-textures.cjs": {
+        "sha256": "3c99c13b8876c525f0b872322e67a63c5797af51a09126d68ce3dea9c9696867",
+        "bytes": 5383
+      },
+      "bake-weather.cjs": {
+        "sha256": "2c8facb7f7d192357cb6fa123842d1312e43af47b1d94535737f9c700b3d135e",
+        "bytes": 4593
+      },
+      "build-standalone.cjs": {
+        "sha256": "5bb75ff737fb0b8ad5d6219eb8882a13f170bc4f56e75857aed6b66c6dcef900",
+        "bytes": 873
+      },
+      "cabin.js": {
+        "sha256": "f13778bc96825291e5526905f6cde65e95ee24fbabf4ed7bca5ece668055125b",
+        "bytes": 11556
+      },
+      "check-build.cjs": {
+        "sha256": "ba65d4841d9a8f43a570aee50b574280fcef96b22d0892131f48d93186db8059",
+        "bytes": 5109
+      },
+      "geometry.js": {
+        "sha256": "6e1a393bc2532e23fc248eec06e22882894be29a8292a52dac07a8a5b0375b3f",
+        "bytes": 5702
+      },
+      "graphics.js": {
+        "sha256": "91491cd4df8f1c3dc7ac37c2e6c0a2154180c2bfda647dbb12dd3b181ca583ed",
+        "bytes": 21448
+      },
+      "index.html": {
+        "sha256": "2f72b5c6cc3add2baf8848969938f9ff1cddf905fc3820ac280551c5a65e2611",
+        "bytes": 3232
+      },
+      "light-data.js": {
+        "sha256": "f2967bb2443bc0141d962a13e2b4fd9d790bbf7cbc3c1102413b7d877267dc5a",
+        "bytes": 1310400
+      },
+      "machinery.js": {
+        "sha256": "37e50678d0f924b6d69fc1c1018a502ed233a0bde1bf6ef328b1a2afbf593298",
+        "bytes": 12946
+      },
+      "main.js": {
+        "sha256": "576e48659a641393ae80fd06156765d379442f4add217b6646a0de1c2f19c03c",
+        "bytes": 5830
+      },
+      "material-data.js": {
+        "sha256": "52c37029746df19e02e5db5c505e85ff38c4060ccf397ab451d5281b72ca22a3",
+        "bytes": 6550688
+      },
+      "navigation.js": {
+        "sha256": "89e653ba031fa50d3f8547e1c7ae7ea643970951fd8eb91e4c108cd2b87edbe8",
+        "bytes": 1345
+      },
+      "scenery.js": {
+        "sha256": "4e480eb47fca84e481345d03de2ed242c005fc1124b260e1d97b1f533e2ff90c",
+        "bytes": 6252
+      },
+      "station.js": {
+        "sha256": "60295cae1ebc1c2d4a7f29cf9c4658e552924db8feaac6a3fd21cfd7dfbb16c9",
+        "bytes": 19693
+      },
+      "surfaces.js": {
+        "sha256": "dbff3830a42c6fd6e6f7baab83b687ee8a8c8c84a7313ffa99c184a36041f414",
+        "bytes": 7176
+      },
+      "weather-data.js": {
+        "sha256": "5b21ee9f07898cad3d8b22b68b7f5c07fd649f1b845ce59b17c077547387dcd1",
+        "bytes": 444060
+      },
+      ".validator-cache/_update-notifier-last-checked": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      ".validator-cache/_logs/2026-11-18T01_50_59_971Z-debug-0.log": {
+        "sha256": "c3821fed904d9b6cd41596abd36287f0de47985c096a8cd1a5d9fe52f0f6747b",
+        "bytes": 2796
+      },
+      ".validator-cache/_cacache/index-v5/ac/90/64f7aa5952c0cb2deb2b8c1914a0cd71969c37e4870b12ecf61b60cb463f": {
+        "sha256": "6f53ce25593c9c6ae495e84c0bdbb18138c67d05fdef6768f0a12533f1960856",
+        "bytes": 756
+      },
+      ".validator-cache/_cacache/index-v5/97/e5/a491105bdefff6f28c38b9a0f6089dca33c9ea681c87d70d4aff1533403f": {
+        "sha256": "6733e54be77d1dfb882ddd8474d918d6f2a5e34c2bcd5677b5417276ad50cd05",
+        "bytes": 801
+      },
+      ".validator-cache/_cacache/content-v2/sha512/a6/19/f441a4d2dfee9a77e7e6500312fd83fbe26ffd1276e41903967ad0378a37f7f3b8828111df702ee5679a478a681f8b880087c9422dd1ec2a789707034ed9": {
+        "sha256": "df59c603639f47156c2768f879941030f8f6b7c213140e40d99d0d8ed7d1f981",
+        "bytes": 7559
+      },
+      ".validator-cache/_cacache/content-v2/sha512/62/63/215c3f69b140ba75595f4d9d4607801a789206f036771b6a18b56719dc3d7929b54aba1153dad96aec5a83d5c116acffa47d5695f5d28eac880a93a98c6b": {
+        "sha256": "6aab5d7194e3d75b065aef39b9a255d0ce4490526fe753d2031564a1936cb136",
+        "bytes": 6069975
+      },
+      ".validator/halo.frag": {
+        "sha256": "7a1db12b0cd10c5ccdecc74451f574cd94f10247dc1be16ab6ec3d645b784344",
+        "bytes": 188
+      },
+      ".validator/halo.vert": {
+        "sha256": "6cb9f87f09a47df9048439494fc46116f948cf363140cd542bed028c4dddce2d",
+        "bytes": 520
+      },
+      ".validator/rain.frag": {
+        "sha256": "3034c6521bd0ac7ee8cc4808c7a9d955ae2e51ac35e6840ae0fc7e55b7ce9ec5",
+        "bytes": 112
+      },
+      ".validator/rain.vert": {
+        "sha256": "0aa6de6a86733a6fd38eb54b589ed70cacc89e0e4796019bb25d2ae1be129151",
+        "bytes": 549
+      },
+      ".validator/shadow.frag": {
+        "sha256": "f8fe82275c7f5faed91551281f45d50a11eb8a18a53f95b0f668f516b1e17efb",
+        "bytes": 54
+      },
+      ".validator/shadow.vert": {
+        "sha256": "b6043e5832241600125d2736c58f1ba9f40bd88c7493365df9db2aeaeee4dcf4",
+        "bytes": 105
+      },
+      ".validator/sky.frag": {
+        "sha256": "d5c177ae36957f12a9b55b1648141ab0e13fceecd1e11acfdba596a4fa5f4967",
+        "bytes": 860
+      },
+      ".validator/sky.vert": {
+        "sha256": "4001fca1590ffed38ad4ad6325a6376c45fc9e21989783c4a3f002dcef53a0a5",
+        "bytes": 131
+      },
+      ".validator/surface.frag": {
+        "sha256": "153e994cbc95dd8dcaa3243e37f5d2d3cd12b7889cf735bf0253b7a1c83ec8ae",
+        "bytes": 6824
+      },
+      ".validator/surface.vert": {
+        "sha256": "5f72a7c330d83dad7002fb7d73a13ffa65964585acf074db870d67e695f93f7f",
+        "bytes": 466
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-13\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": "Producer Astra13 records stop reading about four seconds after the deadline, says editing ended before it; final shader changes were not validated.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "12f1b0bdac6af8bd615a8c4f04656a529c45f4066382377fb5e3bf1f6423a14e",
+      "bytes": 1572
+    },
+    "launch-prompt.txt": {
+      "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
+      "bytes": 7656
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/cabin.js": {
+      "sha256": "f13778bc96825291e5526905f6cde65e95ee24fbabf4ed7bca5ece668055125b",
+      "bytes": 11556
+    },
+    "frozen/geometry.js": {
+      "sha256": "6e1a393bc2532e23fc248eec06e22882894be29a8292a52dac07a8a5b0375b3f",
+      "bytes": 5702
+    },
+    "frozen/graphics.js": {
+      "sha256": "91491cd4df8f1c3dc7ac37c2e6c0a2154180c2bfda647dbb12dd3b181ca583ed",
+      "bytes": 21448
+    },
+    "frozen/index.html.txt": {
+      "sha256": "2f72b5c6cc3add2baf8848969938f9ff1cddf905fc3820ac280551c5a65e2611",
+      "bytes": 3232
+    },
+    "frozen/light-data.js": {
+      "sha256": "f2967bb2443bc0141d962a13e2b4fd9d790bbf7cbc3c1102413b7d877267dc5a",
+      "bytes": 1310400
+    },
+    "frozen/machinery.js": {
+      "sha256": "37e50678d0f924b6d69fc1c1018a502ed233a0bde1bf6ef328b1a2afbf593298",
+      "bytes": 12946
+    },
+    "frozen/main.js": {
+      "sha256": "576e48659a641393ae80fd06156765d379442f4add217b6646a0de1c2f19c03c",
+      "bytes": 5830
+    },
+    "frozen/material-data.js": {
+      "sha256": "52c37029746df19e02e5db5c505e85ff38c4060ccf397ab451d5281b72ca22a3",
+      "bytes": 6550688
+    },
+    "frozen/navigation.js": {
+      "sha256": "89e653ba031fa50d3f8547e1c7ae7ea643970951fd8eb91e4c108cd2b87edbe8",
+      "bytes": 1345
+    },
+    "frozen/scenery.js": {
+      "sha256": "4e480eb47fca84e481345d03de2ed242c005fc1124b260e1d97b1f533e2ff90c",
+      "bytes": 6252
+    },
+    "frozen/station.js": {
+      "sha256": "60295cae1ebc1c2d4a7f29cf9c4658e552924db8feaac6a3fd21cfd7dfbb16c9",
+      "bytes": 19693
+    },
+    "frozen/surfaces.js": {
+      "sha256": "dbff3830a42c6fd6e6f7baab83b687ee8a8c8c84a7313ffa99c184a36041f414",
+      "bytes": 7176
+    },
+    "frozen/weather-data.js": {
+      "sha256": "5b21ee9f07898cad3d8b22b68b7f5c07fd649f1b845ce59b17c077547387dcd1",
+      "bytes": 444060
+    },
+    "host-runtime-check.json": {
+      "sha256": "1cf09716e84699f4d0519cd63cae3bdb276b870de2f307fee0d42a2f7a6d5aa5",
+      "bytes": 1916
+    },
+    "preview.jpg": {
+      "sha256": "504b7484738b73311b95068f69c2a0176ef6bc5c8b88ab1bb2aed451a7024a6c",
+      "bytes": 101925
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "source-audit.json",
+      "frozen/cabin.js",
+      "frozen/geometry.js",
+      "frozen/graphics.js",
+      "frozen/index.html.txt",
+      "frozen/light-data.js",
+      "frozen/machinery.js",
+      "frozen/main.js",
+      "frozen/material-data.js",
+      "frozen/navigation.js",
+      "frozen/scenery.js",
+      "frozen/station.js",
+      "frozen/surfaces.js",
+      "frozen/weather-data.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:39.698Z",
+    "sha256": "504b7484738b73311b95068f69c2a0176ef6bc5c8b88ab1bb2aed451a7024a6c",
+    "bytes": 101925,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "entry": "SceneBench 2026-11-17, scene 12",
+  "title": "The Night Pier",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-12",
+  "requested_run": {
+    "model": "GPT-6.2 Astra",
+    "reasoning_effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "identity": "Codex, based on GPT-6",
+    "exact_model_id": null,
+    "reasoning_effort": null,
+    "service_tier": null,
+    "note": "Exact serving fields were not exposed in this session."
+  },
+  "first_implementation_action": "Workspace and dependency inventory after verifying the exact assigned working directory.",
+  "first_implementation": "2026-11-18T01:04:15.6820126+00:00",
+  "deadline": "2026-11-18T02:04:15.6820126+00:00",
+  "actual_stop": "2026-11-18T01:59:40.843536+00:00",
+  "elapsed_seconds": 3325.162,
+  "interruptions": [],
+  "deadline_extended": false,
+  "checks": {
+    "cpu_asset_build": "passed",
+    "javascript_syntax": "14 authored modules and vendored Three.js passed",
+    "glsl_syntax": "Three vertex/fragment pairs passed CPU parsing",
+    "packed_asset_integrity": "passed",
+    "archive_integrity": "CRC and per-file SHA-256 verified against original bytes",
+    "geometry": {
+      "vertices": 128301,
+      "triangles": 122544,
+      "opaque_batches": 23,
+      "texture_atlases": 4,
+      "original_prints": 61
+    },
+    "route": {
+      "connected": true,
+      "length_m": 30.2,
+      "sample_grid_m": 0.1,
+      "player_radius_m": 0.205,
+      "minimum_sampled_center_clearance_m": 0.28,
+      "all_five_fronts": true,
+      "feature_sides_and_rear": true,
+      "counter_and_return": true,
+      "entrance_sightline_clear": true
+    },
+    "collision": {
+      "cabinet_fronts": 5,
+      "end_walls": 2,
+      "directional_cases": 1712
+    },
+    "reserved_for_later": [
+      "browser launch",
+      "visual verification",
+      "interactive walk-through",
+      "GPU validation",
+      "frame-time measurements"
+    ]
+  },
+  "cleanup": "All dependency, build and check commands ran in the foreground and exited. Temporary build dependencies removed. No server, watcher, browser or background test process was started.",
+  "launch_command": "python -m http.server 49172 --bind 127.0.0.1",
+  "suggested_launch_address": "http://127.0.0.1:49172/",
+  "port_check": "No listener on 49172 during the passive TCP table check. No server started.",
+  "archive": "night-pier-scene12.zip",
+  "archive_bytes": 2675631,
+  "archive_sha256": "68d50ea8bcb5946c3b8d5dd217333962d4a82034079cc9b1886a15ba3c0d0ae5",
+  "original_file_sha256": {
+    "index.html": "55262c56c88175c4b4efa3b96ce539e7e16b92be128106b53b08f7f619d78781",
+    "style.css": "0a9a796201999204e7cfe4e26f634ec3724e98b019b184b2796417f65eab4d09",
+    "launch.cmd": "0b636acac65651921834352e4054a3b4a7dd9133495f3e6109ced02252c35616",
+    "README.md": "6a2907574d92fa530f55cc649cc5f4a54ab1bca99d359d5680df6671fe7c6d93",
+    "bake-light.mjs": "caabc64dcf01174876379120fdf54d96391e66c38c8a02b706f1e127f2d502a0",
+    "bake.mjs": "7a27670720e8716dde2e2acbf8d13710f73c402da73d750c900975ce7962b021",
+    "cabinets.mjs": "d97f094982b15143a4499fc7fb4d7d20104cbec1f222d321d5e652f7979a57ca",
+    "check.mjs": "f1f12c2641fed693a0d36c4b6102f4491cbdd2b1d126d876cdf8cd0b83a1ce41",
+    "fittings-art.mjs": "988d18d342e44ce0b0b373ba893ce03b33c4ed24ca35794b98066f58da8d0d4e",
+    "furniture.mjs": "2d382b62df8513b38aff6c38a0f70422d7bef8d18c1ec453af896adf911d0af0",
+    "game-art.mjs": "dac32934e601b850556c19cecc9e7e132cc35599a1c0ce2534503c09e507bdbd",
+    "graphics.mjs": "7097444696f9dcbb2ff0710fdad2b3946352433e11f94f3b82cdda11f57bddf3",
+    "house-art.mjs": "75a383488ad8e419a41193a246044cc33ea3901e9f01b1ce5c8a6402222b3383",
+    "layout.mjs": "ec00297365583413de05dc20f944c027eb2f83e86f0f9709d793eb0eff947a7a",
+    "main.mjs": "0e71bee36b211c4816c47d12f5d389e1986063073aa8a03155ca44885e8500ee",
+    "model.mjs": "6134bfc5c3901ac4c802f03b0750e664542faba795e37ed983ce3b4b6362bbe5",
+    "render.mjs": "a36dc0fa3fff220788731591df452fa0eb5fed0ad7e350d59bb1eb5121652be1",
+    "room.mjs": "5d02db9dfa8ffc130aa0ddef65dcd4fe01702ce5457d6d5f89a199c494b73dee",
+    "assets/prints-01.webp": "5407964579ec68987af501bbac33e205fd3a1b6f2b9aa2b16716f007e31397d6",
+    "assets/prints-02.webp": "3e8ca9d521204bb1b642494354e225c97f39685f56b917bd7fa5eac735bf2fde",
+    "assets/prints-03.webp": "763c90cc7e7b4a35ef3785fde5b99675070a71a5c611dec2d0eeba4edec6a563",
+    "assets/prints-04.webp": "6ee6e09ef0f2796db2346e90d9e7daa67996e2bb7b28ad0f286d33a323d39fa6",
+    "assets/room.mesh": "222537ae016e5b142b97a916338b393b3c3904a922b6d8a041bdd1644c959a5e",
+    "assets/scene.json": "87daf0fd4da3b25c221ac27aab160041a5be8676893c2235ea43b322653a5362",
+    "vendor/LICENSE": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+    "vendor/three.module.min.js": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7"
+  }
+}

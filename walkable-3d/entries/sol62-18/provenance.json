@@ -1,0 +1,334 @@
+{
+  "entry": "sol62-18",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-18\\source-preservation.zip",
+  "archiveSha256": "aaa85b4d5f5bfd6999b91027760983c546ae8cbdfd13e3544c3c43c0e7eea77b",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/pelagic.png": "dist/assets/pelagic.png",
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/src/bedroom.js": "dist/src/bedroom.js",
+      "frozen/src/graphics.js": "dist/src/graphics.js",
+      "frozen/src/kit.js": "dist/src/kit.js",
+      "frozen/src/layout.js": "dist/src/layout.js",
+      "frozen/src/main.js": "dist/src/main.js",
+      "frozen/src/materials.js": "dist/src/materials.js",
+      "frozen/src/observation.js": "dist/src/observation.js",
+      "frozen/src/props.js": "dist/src/props.js",
+      "frozen/src/shell.js": "dist/src/shell.js",
+      "frozen/src/space.js": "dist/src/space.js",
+      "frozen/src/study.js": "dist/src/study.js",
+      "frozen/src/walk.js": "dist/src/walk.js",
+      "frozen/style.css": "dist/style.css",
+      "frozen/vendor/three.core.js": "dist/vendor/three.core.js",
+      "frozen/vendor/three.module.js": "dist/vendor/three.module.js",
+      "README.md": "README.md",
+      "licenses/dist/vendor/THREE-LICENSE.txt": "dist/vendor/THREE-LICENSE.txt"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "5cbb5c9e79e7c18cda1c5a9eeadf70584854c77483add8413cc29fe1d9bac09f",
+        "bytes": 30
+      },
+      "index.html": {
+        "sha256": "12402e971b616be718a839d6befc75cd794fb8157882d78f31192fa1c4989ada",
+        "bytes": 1922
+      },
+      "package-lock.json": {
+        "sha256": "b424ead9b603e56c3c7c7ecc4bed812d34448172dc2c2d2eb77333e94282963f",
+        "bytes": 545
+      },
+      "package.json": {
+        "sha256": "fa85c7d254ee00794dce1c9bd62ef129e7f59427150c6cc734911c171ac09897",
+        "bytes": 246
+      },
+      "README.md": {
+        "sha256": "9571ff1cf96582b012a043e18cc5dbee03c59994b49f32d1dda60375cdb5d37b",
+        "bytes": 1602
+      },
+      "style.css": {
+        "sha256": "d028626afcf11f786d8aa3d3f94612201f9dcac5bf13ec394792bf8edac16395",
+        "bytes": 3535
+      },
+      "src/bedroom.js": {
+        "sha256": "cf9f095d50ddd73594bc7d979d92fb9948c52f0f5887be5151a1ebcc86974b5d",
+        "bytes": 13417
+      },
+      "src/graphics.js": {
+        "sha256": "61a408f137434de9e879e64d0c36c1236c1e079ed399db5821c33e355f93bf24",
+        "bytes": 12082
+      },
+      "src/kit.js": {
+        "sha256": "1760897fc2b1b279a82d8f72e128ce8e60aecad6a6176d892f8d2ccb7912b17c",
+        "bytes": 9298
+      },
+      "src/layout.js": {
+        "sha256": "ef64c51a733510d783dde6cd2de64b5dec36a71034c030465935fd86fc6898f7",
+        "bytes": 2852
+      },
+      "src/main.js": {
+        "sha256": "e0f82a52a814e4aefde8274352f30c31a6e524c4d20d3a84200e43c43973d392",
+        "bytes": 7971
+      },
+      "src/materials.js": {
+        "sha256": "df8b923cd43aa09a625045c3477d4279269530438cbfd33f6df8f4885800d98f",
+        "bytes": 8667
+      },
+      "src/observation.js": {
+        "sha256": "27f7bba3ca4a8447a8f58601210fd3dca0867bd20a0d4abc374c89dde7812971",
+        "bytes": 8719
+      },
+      "src/props.js": {
+        "sha256": "6043acb2f85aef0e20b304e45c720f16d0170ebf3139dc0f2132b495681e60cd",
+        "bytes": 5222
+      },
+      "src/shell.js": {
+        "sha256": "8999680c3fadd5d2870a17001107340bb5f221463795190ed1f4bcc3473969e5",
+        "bytes": 9441
+      },
+      "src/space.js": {
+        "sha256": "aadbf8d9a03190e2e0fc44c21ae81f2381f4a4e6add186540d013474f69eb8ad",
+        "bytes": 7229
+      },
+      "src/study.js": {
+        "sha256": "3a3c9554a35064a2116bfb1bc348c0256dd10ca27f99dac7fb7f0a05425d8e84",
+        "bytes": 12511
+      },
+      "src/walk.js": {
+        "sha256": "834d3f221c2b4606a862409416f44540aa550bf821fa3d1a049cb9c43817087a",
+        "bytes": 1264
+      },
+      "scripts/build.mjs": {
+        "sha256": "70f180c60bbd7a5dffc89ea7a999521c18eaaa1a9f90953bb8d392621ad8cbe9",
+        "bytes": 1426
+      },
+      "scripts/check.mjs": {
+        "sha256": "99077b047fb667dbcbd375c53583eaf56e025be45b9e2627d01c22bc831d3a67",
+        "bytes": 8372
+      },
+      "scripts/planet.mjs": {
+        "sha256": "856c0e8122ecdcf10647d79de7716fed90ef02fde243972ee6d184665b81f0e2",
+        "bytes": 4340
+      },
+      "dist/index.html": {
+        "sha256": "c7ec51f6a87b6a21c598009addf640e9bb51a45d679889bdc8058e7ddbaeed96",
+        "bytes": 2007
+      },
+      "dist/style.css": {
+        "sha256": "d028626afcf11f786d8aa3d3f94612201f9dcac5bf13ec394792bf8edac16395",
+        "bytes": 3535
+      },
+      "dist/vendor/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "dist/vendor/three.core.js": {
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      "dist/vendor/three.module.js": {
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      "dist/src/bedroom.js": {
+        "sha256": "cf9f095d50ddd73594bc7d979d92fb9948c52f0f5887be5151a1ebcc86974b5d",
+        "bytes": 13417
+      },
+      "dist/src/graphics.js": {
+        "sha256": "61a408f137434de9e879e64d0c36c1236c1e079ed399db5821c33e355f93bf24",
+        "bytes": 12082
+      },
+      "dist/src/kit.js": {
+        "sha256": "1760897fc2b1b279a82d8f72e128ce8e60aecad6a6176d892f8d2ccb7912b17c",
+        "bytes": 9298
+      },
+      "dist/src/layout.js": {
+        "sha256": "ef64c51a733510d783dde6cd2de64b5dec36a71034c030465935fd86fc6898f7",
+        "bytes": 2852
+      },
+      "dist/src/main.js": {
+        "sha256": "e0f82a52a814e4aefde8274352f30c31a6e524c4d20d3a84200e43c43973d392",
+        "bytes": 7971
+      },
+      "dist/src/materials.js": {
+        "sha256": "df8b923cd43aa09a625045c3477d4279269530438cbfd33f6df8f4885800d98f",
+        "bytes": 8667
+      },
+      "dist/src/observation.js": {
+        "sha256": "27f7bba3ca4a8447a8f58601210fd3dca0867bd20a0d4abc374c89dde7812971",
+        "bytes": 8719
+      },
+      "dist/src/props.js": {
+        "sha256": "6043acb2f85aef0e20b304e45c720f16d0170ebf3139dc0f2132b495681e60cd",
+        "bytes": 5222
+      },
+      "dist/src/shell.js": {
+        "sha256": "8999680c3fadd5d2870a17001107340bb5f221463795190ed1f4bcc3473969e5",
+        "bytes": 9441
+      },
+      "dist/src/space.js": {
+        "sha256": "aadbf8d9a03190e2e0fc44c21ae81f2381f4a4e6add186540d013474f69eb8ad",
+        "bytes": 7229
+      },
+      "dist/src/study.js": {
+        "sha256": "3a3c9554a35064a2116bfb1bc348c0256dd10ca27f99dac7fb7f0a05425d8e84",
+        "bytes": 12511
+      },
+      "dist/src/walk.js": {
+        "sha256": "834d3f221c2b4606a862409416f44540aa550bf821fa3d1a049cb9c43817087a",
+        "bytes": 1264
+      },
+      "dist/assets/pelagic.png": {
+        "sha256": "2d57cd7c1c645feb7a04897b0b16d57c01e408ab19a82663643d6e6ef1c7734d",
+        "bytes": 719570
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-18\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "a51d42a22751974b08b93795f8a1359dfa31345b78d93ba2a00300c7f9939f25",
+      "bytes": 1421
+    },
+    "launch-prompt.txt": {
+      "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
+      "bytes": 7611
+    },
+    "README.md": {
+      "sha256": "9571ff1cf96582b012a043e18cc5dbee03c59994b49f32d1dda60375cdb5d37b",
+      "bytes": 1602
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/index.html.txt": {
+      "sha256": "c7ec51f6a87b6a21c598009addf640e9bb51a45d679889bdc8058e7ddbaeed96",
+      "bytes": 2007
+    },
+    "frozen/style.css": {
+      "sha256": "d028626afcf11f786d8aa3d3f94612201f9dcac5bf13ec394792bf8edac16395",
+      "bytes": 3535
+    },
+    "licenses/dist/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/assets/pelagic.png": {
+      "sha256": "2d57cd7c1c645feb7a04897b0b16d57c01e408ab19a82663643d6e6ef1c7734d",
+      "bytes": 719570
+    },
+    "frozen/src/bedroom.js": {
+      "sha256": "cf9f095d50ddd73594bc7d979d92fb9948c52f0f5887be5151a1ebcc86974b5d",
+      "bytes": 13417
+    },
+    "frozen/src/graphics.js": {
+      "sha256": "61a408f137434de9e879e64d0c36c1236c1e079ed399db5821c33e355f93bf24",
+      "bytes": 12082
+    },
+    "frozen/src/kit.js": {
+      "sha256": "1760897fc2b1b279a82d8f72e128ce8e60aecad6a6176d892f8d2ccb7912b17c",
+      "bytes": 9298
+    },
+    "frozen/src/layout.js": {
+      "sha256": "ef64c51a733510d783dde6cd2de64b5dec36a71034c030465935fd86fc6898f7",
+      "bytes": 2852
+    },
+    "frozen/src/main.js": {
+      "sha256": "e0f82a52a814e4aefde8274352f30c31a6e524c4d20d3a84200e43c43973d392",
+      "bytes": 7971
+    },
+    "frozen/src/materials.js": {
+      "sha256": "df8b923cd43aa09a625045c3477d4279269530438cbfd33f6df8f4885800d98f",
+      "bytes": 8667
+    },
+    "frozen/src/observation.js": {
+      "sha256": "27f7bba3ca4a8447a8f58601210fd3dca0867bd20a0d4abc374c89dde7812971",
+      "bytes": 8719
+    },
+    "frozen/src/props.js": {
+      "sha256": "6043acb2f85aef0e20b304e45c720f16d0170ebf3139dc0f2132b495681e60cd",
+      "bytes": 5222
+    },
+    "frozen/src/shell.js": {
+      "sha256": "8999680c3fadd5d2870a17001107340bb5f221463795190ed1f4bcc3473969e5",
+      "bytes": 9441
+    },
+    "frozen/src/space.js": {
+      "sha256": "aadbf8d9a03190e2e0fc44c21ae81f2381f4a4e6add186540d013474f69eb8ad",
+      "bytes": 7229
+    },
+    "frozen/src/study.js": {
+      "sha256": "3a3c9554a35064a2116bfb1bc348c0256dd10ca27f99dac7fb7f0a05425d8e84",
+      "bytes": 12511
+    },
+    "frozen/src/walk.js": {
+      "sha256": "834d3f221c2b4606a862409416f44540aa550bf821fa3d1a049cb9c43817087a",
+      "bytes": 1264
+    },
+    "frozen/vendor/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "host-runtime-check.json": {
+      "sha256": "cc2e77de390a13afb239a2d5dd45321b998251bc2ba5aa96b4bfce7d21eeef53",
+      "bytes": 1907
+    },
+    "preview.jpg": {
+      "sha256": "eb57200a16ab86943f7447027f8f3f4c00a574687d60a343b38266bced7a05c0",
+      "bytes": 86767
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "licenses/dist/vendor/THREE-LICENSE.txt",
+      "frozen/assets/pelagic.png",
+      "frozen/src/bedroom.js",
+      "frozen/src/graphics.js",
+      "frozen/src/kit.js",
+      "frozen/src/layout.js",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/observation.js",
+      "frozen/src/props.js",
+      "frozen/src/shell.js",
+      "frozen/src/space.js",
+      "frozen/src/study.js",
+      "frozen/src/walk.js",
+      "frozen/vendor/three.core.js",
+      "frozen/vendor/three.module.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:08:45.033Z",
+    "sha256": "eb57200a16ab86943f7447027f8f3f4c00a574687d60a343b38266bced7a05c0",
+    "bytes": 86767,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b9a485">
+  <title>The Lark &amp; Latch</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js",
+        "three/addons/": "./node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main id="view" aria-label="Three-dimensional merchant wagon" tabindex="0"></main>
+  <div class="masthead" aria-hidden="true">
+    <div><span class="owner">Nell Finch's roadside wares</span><strong>The Lark &amp; Latch</strong></div>
+  </div>
+  <div id="reticle" aria-hidden="true"></div>
+  <div class="field-guide">
+    <div class="location"><span class="location-dot"></span><span id="location">Roadside camp</span></div>
+    <div class="directions"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move <span class="separator"></span> <span id="look-mode">Mouse look</span> <span class="separator"></span> <kbd>R</kbd> Reset <span class="separator"></span> <kbd>Esc</kbd> Release mouse</div>
+  </div>
+  <section id="welcome" class="welcome" aria-label="Exploration controls">
+    <div class="welcome-rule"></div>
+    <p>Follow the rear steps into the wagon. Nell’s workbench is just beyond the bunk.</p>
+    <button id="enter" type="button" disabled>Loading scene…</button>
+
+  </section>
+  <div id="error" class="error" role="alert" hidden></div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

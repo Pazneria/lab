@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101c20">
+  <title>Nacre House · Benthic Habitat 07</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="view" tabindex="0" aria-label="Explorable three-dimensional underwater apartment"></canvas>
+  <div id="chrome">
+    <header><span class="station-mark" aria-hidden="true"><i></i><i></i><i></i></span><div class="wordmark">NACRE HOUSE<small>BENTHIC HABITAT <b>07</b></small></div></header>
+    <div id="depth"><span class="live-dot"></span> HABITAT SEALED <i></i> 186 <span>m</span></div>
+    <div id="reticle"></div>
+    <div id="location"><span class="location-line"></span><span id="room-name">Living quarters</span></div>
+    <div id="actions"><button id="help" title="Show controls (H)" aria-label="Show controls">?</button><button id="reset" title="Return to entrance (R)" aria-label="Return to entrance">↺</button></div>
+    <section id="guide" aria-label="Walking controls">
+      <div class="guide-title"><span class="small-rule"></span> RESIDENT ACCESS</div>
+      <h1>Living quarters</h1>
+      <div class="guide-details"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</span><span><svg viewBox="0 0 16 20" aria-hidden="true"><rect x="2.5" y="1.5" width="11" height="17" rx="5.5"/><path d="M8 2v5"/></svg> Look</span></div>
+      <button id="enter">Explore the habitat <span>→</span></button>
+      <p><kbd>H</kbd> Controls <span>·</span> <kbd>R</kbd> Reset <span>·</span> <kbd>Esc</kbd> Release</p>
+    </section>
+    <div id="notice" role="status">Preparing the habitat…</div>
+  </div>
+  <script src="art.js" defer></script>
+  <script src="navigation.js" defer></script>
+  <script src="viewer.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+ASHWICK ROOST
+SceneBench 2026-11-17 / Scene 21
+
+Release
+index.html is the complete standalone WebGL 2 scene. Its materials, drawings, mesh packet, shaders and controls are embedded. The other source files are retained for inspection. The judged HTML can be copied by itself.
+
+Artifact directory
+C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-21
+
+Launch
+Open index.html in a desktop WebGL 2 browser. For localhost use the following PowerShell command.
+
+python -m http.server 48321 --bind 127.0.0.1 --directory "C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-21"
+
+Suggested launch address
+http://127.0.0.1:48321/index.html
+The server was left stopped. Windows denied the read-only listener-table query for checking port 48321, so port availability is unverified.
+
+Controls
+Click Enter quarters or press Enter to start. WASD moves and the mouse looks around. Shift walks faster. R returns the keeper to the entrance. Esc or H opens the controls. Left and right arrows turn, up and down arrows walk, and Page Up and Page Down tilt the view. Drag-to-look is available when the browser declines mouse capture.
+
+Inspection
+Walk past the bed and the keeper's journal to the arched doorway. The wash bench and fitted harness lead to the larger roost. The floor path reaches the claw-scarred timber rest and continues around it past the furnace, drinking pan and hoist. Turn toward the small lit doorway to return.
+
+Checks performed
+- All 12 embedded JavaScript sources parsed and matched their authored files.
+- All four GLSL ES shaders passed CPU parsing and declaration checks with @shaderfrog/glsl-parser 7.0.1.
+- The 16 original RGBA colour/relief tiles decoded at 384 by 384 pixels per tile.
+- The release loader decompressed the packed geometry. All vertex values, index bounds and batch offsets passed validation.
+- The packed asset has 307,932 indexed vertices, 212,796 triangles and 45 draw batches.
+- Collision-grid flood fill connected all 10 inspection positions. The movement solver followed a 22-waypoint round trip and returned to the entrance. Three eye-height segments through the doorways cleared the actual triangle geometry.
+- The validation used CPU-only operations. Visual appearance, GPU execution, live input and frame times remain unmeasured. The scene is intended for seated desktop keyboard and mouse exploration at a fixed eye height.
+
+Run identity and timing
+Requested assignment: GPT-6.2 Astra, XHIGH reasoning effort, Standard service.
+Exposed runtime identity: Codex based on the GPT-6 family. The exact serving model, reasoning effort and service tier were unavailable as session metadata.
+First implementation action: 2026-11-18T03:08:04.4343359+00:00
+One-hour deadline: 2026-11-18T04:08:04.4343359+00:00
+Interruption history: none.
+Process cleanup: every entry-owned generator, validation, installation and packaging process exited. The temporary GLSL parser and its cache were removed. No server, watcher, browser, GPU test or performance benchmark was started. No unrelated process was stopped.
+
+Actual stop: 2026-11-18T04:02:54.3368090+00:00
+Elapsed: 00:54:49.9024731
+Original index.html bytes: 12372916
+SHA-256: 499D7F96CB2CB40BC745A8BBEB4531C453B453B73B928230D17E705C115B8F16

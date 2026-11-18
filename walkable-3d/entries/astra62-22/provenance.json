@@ -1,0 +1,272 @@
+{
+  "entry": "astra62-22",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-22\\source-preservation.zip",
+  "archiveSha256": "86b9e26f0df91ebe6e431e974bbe6906030eadd56dc011ee81267df27ed23a69",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/archive.js": "atelier/archive.js",
+      "frozen/fitting.js": "atelier/fitting.js",
+      "frozen/geometry.js": "atelier/geometry.js",
+      "frozen/index.html.txt": "atelier/index.html",
+      "frozen/lighting.js": "atelier/lighting.js",
+      "frozen/main.js": "atelier/main.js",
+      "frozen/mantle.js": "atelier/mantle.js",
+      "frozen/materials.js": "atelier/materials.js",
+      "frozen/objects.js": "atelier/objects.js",
+      "frozen/rooms.js": "atelier/rooms.js",
+      "frozen/style.css": "atelier/style.css",
+      "frozen/vendor/three.core.min.js": "atelier/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "atelier/vendor/three.module.min.js",
+      "frozen/visibility.js": "atelier/visibility.js",
+      "frozen/walking.js": "atelier/walking.js",
+      "frozen/workshop.js": "atelier/workshop.js",
+      "frozen/world.js": "atelier/world.js",
+      "README.md": "README.md",
+      "run-record.json": "run-record.json",
+      "licenses/atelier/vendor/LICENSE": "atelier/vendor/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "README.md": {
+        "sha256": "8bb5198808c36e58e8913d896c40bcb2d6ae447cff421e72eff66e631a8c6862",
+        "bytes": 2713
+      },
+      "run-record.json": {
+        "sha256": "1e713be4d8861bfe2e5f40e662d7e031454c99c3ea12e42b3cabe7e74e407903",
+        "bytes": 2405
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "07c82a6bc0fa5f32bf24d9d918f493a9d534e151378d51c9ff7aed3b212da0d2",
+        "bytes": 1581
+      },
+      "verify.mjs": {
+        "sha256": "f88223969242e4322e24590f58a9bc6015d3ce307baa4fc034d7f667f460f6d5",
+        "bytes": 5331
+      },
+      "atelier/archive.js": {
+        "sha256": "b7a788a45034e62fad94be23109ab752abf31776d2f8fa6f35dd9d972239cd36",
+        "bytes": 10100
+      },
+      "atelier/fitting.js": {
+        "sha256": "36482030b649d53c0e6f2da279245d016f9fb81714ca4b6cb81e02cf7aa78cc9",
+        "bytes": 10005
+      },
+      "atelier/geometry.js": {
+        "sha256": "db7e05f711d06ee95c623502d17a15b45cf693e488dd3fe89ec6d9025a07ad55",
+        "bytes": 6315
+      },
+      "atelier/index.html": {
+        "sha256": "d712b95bf2e4e276dd65de21a128e34b446956766a0bd6784831f6052bd0dd26",
+        "bytes": 2420
+      },
+      "atelier/lighting.js": {
+        "sha256": "8a9b3b1833518788c082428e1dd9bd99dcc968496429c05c05f006d09953ff33",
+        "bytes": 3449
+      },
+      "atelier/main.js": {
+        "sha256": "7bfd7404ab51f63c9e5c2e5aa0086ebe1d47eb65bfaf6cdbeb1ed85bbf172f9d",
+        "bytes": 3911
+      },
+      "atelier/mantle.js": {
+        "sha256": "78848db784d174c705a8aa080ea282367891ec9c2ebffba11a5d642b3fd8a69a",
+        "bytes": 13476
+      },
+      "atelier/materials.js": {
+        "sha256": "955883873b7e1a1513b8626e23e11d116ed8abf1f596a22dbb1b263832dbe2f4",
+        "bytes": 12887
+      },
+      "atelier/objects.js": {
+        "sha256": "89f76424fd02ac7777c10f9d76704d0070fda1ecd665eb8c1f22197f7c2111f4",
+        "bytes": 6554
+      },
+      "atelier/rooms.js": {
+        "sha256": "6289ea1c057049b9a2fdea9be3db9b0bea3fb12583b7c227ffb1f143e221b1cf",
+        "bytes": 11496
+      },
+      "atelier/style.css": {
+        "sha256": "dccafe1d99f6f5f4715e8d9d888132b1243f8526dc2f1261e3b4f962ab9a4165",
+        "bytes": 3894
+      },
+      "atelier/visibility.js": {
+        "sha256": "bd5f947d43b7c15573fe947c1b3373c72e1fdaf900074aa5c52c20fa40819dde",
+        "bytes": 1481
+      },
+      "atelier/walking.js": {
+        "sha256": "07e5d793a6a3d96d5ea8c955201899f5b17aaba3b260bdc77b88cabc207c75cb",
+        "bytes": 6250
+      },
+      "atelier/workshop.js": {
+        "sha256": "ba1d9b06970e4c4291cc5e0a11e206d713aa454b17588f57b41b8d945de8887f",
+        "bytes": 17774
+      },
+      "atelier/world.js": {
+        "sha256": "3fe5271766d70531e5bf6108d05dd286ceffcf46ac38b89b2792c673a5f8d019",
+        "bytes": 798
+      },
+      "atelier/vendor/LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "atelier/vendor/three.core.min.js": {
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      "atelier/vendor/three.module.min.js": {
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-22\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "9e56b043e2c162c8f2491e5b94a247f93ca979a53fa207f6c767d7cdc97ae80e",
+      "bytes": 1427
+    },
+    "launch-prompt.txt": {
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
+      "bytes": 7901
+    },
+    "README.md": {
+      "sha256": "8bb5198808c36e58e8913d896c40bcb2d6ae447cff421e72eff66e631a8c6862",
+      "bytes": 2713
+    },
+    "run-record.json": {
+      "sha256": "1e713be4d8861bfe2e5f40e662d7e031454c99c3ea12e42b3cabe7e74e407903",
+      "bytes": 2405
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/archive.js": {
+      "sha256": "b7a788a45034e62fad94be23109ab752abf31776d2f8fa6f35dd9d972239cd36",
+      "bytes": 10100
+    },
+    "frozen/fitting.js": {
+      "sha256": "36482030b649d53c0e6f2da279245d016f9fb81714ca4b6cb81e02cf7aa78cc9",
+      "bytes": 10005
+    },
+    "frozen/geometry.js": {
+      "sha256": "db7e05f711d06ee95c623502d17a15b45cf693e488dd3fe89ec6d9025a07ad55",
+      "bytes": 6315
+    },
+    "frozen/index.html.txt": {
+      "sha256": "d712b95bf2e4e276dd65de21a128e34b446956766a0bd6784831f6052bd0dd26",
+      "bytes": 2420
+    },
+    "frozen/lighting.js": {
+      "sha256": "8a9b3b1833518788c082428e1dd9bd99dcc968496429c05c05f006d09953ff33",
+      "bytes": 3449
+    },
+    "frozen/main.js": {
+      "sha256": "7bfd7404ab51f63c9e5c2e5aa0086ebe1d47eb65bfaf6cdbeb1ed85bbf172f9d",
+      "bytes": 3911
+    },
+    "frozen/mantle.js": {
+      "sha256": "78848db784d174c705a8aa080ea282367891ec9c2ebffba11a5d642b3fd8a69a",
+      "bytes": 13476
+    },
+    "frozen/materials.js": {
+      "sha256": "955883873b7e1a1513b8626e23e11d116ed8abf1f596a22dbb1b263832dbe2f4",
+      "bytes": 12887
+    },
+    "frozen/objects.js": {
+      "sha256": "89f76424fd02ac7777c10f9d76704d0070fda1ecd665eb8c1f22197f7c2111f4",
+      "bytes": 6554
+    },
+    "frozen/rooms.js": {
+      "sha256": "6289ea1c057049b9a2fdea9be3db9b0bea3fb12583b7c227ffb1f143e221b1cf",
+      "bytes": 11496
+    },
+    "frozen/style.css": {
+      "sha256": "dccafe1d99f6f5f4715e8d9d888132b1243f8526dc2f1261e3b4f962ab9a4165",
+      "bytes": 3894
+    },
+    "frozen/visibility.js": {
+      "sha256": "bd5f947d43b7c15573fe947c1b3373c72e1fdaf900074aa5c52c20fa40819dde",
+      "bytes": 1481
+    },
+    "frozen/walking.js": {
+      "sha256": "07e5d793a6a3d96d5ea8c955201899f5b17aaba3b260bdc77b88cabc207c75cb",
+      "bytes": 6250
+    },
+    "frozen/workshop.js": {
+      "sha256": "ba1d9b06970e4c4291cc5e0a11e206d713aa454b17588f57b41b8d945de8887f",
+      "bytes": 17774
+    },
+    "frozen/world.js": {
+      "sha256": "3fe5271766d70531e5bf6108d05dd286ceffcf46ac38b89b2792c673a5f8d019",
+      "bytes": 798
+    },
+    "licenses/atelier/vendor/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "host-runtime-check.json": {
+      "sha256": "60595448bac23d668b9330a94a896ae4b7261c922b66f340dd453813befc02df",
+      "bytes": 2069
+    },
+    "preview.jpg": {
+      "sha256": "c65855b220b78ea0d8f3c5512da3aaf52cf72fd062ce40521279c6bcee107719",
+      "bytes": 118740
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json",
+      "source-audit.json",
+      "frozen/archive.js",
+      "frozen/fitting.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/lighting.js",
+      "frozen/main.js",
+      "frozen/mantle.js",
+      "frozen/materials.js",
+      "frozen/objects.js",
+      "frozen/rooms.js",
+      "frozen/style.css",
+      "frozen/visibility.js",
+      "frozen/walking.js",
+      "frozen/workshop.js",
+      "frozen/world.js",
+      "licenses/atelier/vendor/LICENSE",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:22.169Z",
+    "sha256": "c65855b220b78ea0d8f3c5512da3aaf52cf72fd062ce40521279c6bcee107719",
+    "bytes": 118740,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "sol62-07",
+  "startedAt": "2026-11-18T04:11:45.679Z",
+  "status": "captured",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "frozenHtmlSha256": "6c58a391fd9f016b790db6cff9bab5702af45ed1fa9a33819b0549e5bbec028b",
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "iframeBounds": {
+    "x": 19,
+    "y": 125.4375,
+    "width": 1242,
+    "height": 776.515625
+  },
+  "inputSmoke": "W key down/up for250ms and R reset dispatched after default preview; no full-route or movement-correctness claim.",
+  "capture": {
+    "index": 0,
+    "canvas": {
+      "id": "museum",
+      "width": 1242,
+      "height": 777,
+      "cssWidth": 1242,
+      "cssHeight": 777
+    },
+    "output": {
+      "width": 960,
+      "height": 600
+    },
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "pointerLocked": true,
+    "quality": 88,
+    "channelStddev": [
+      38.63676219966785,
+      39.098270097878135,
+      41.64429486330075
+    ]
+  },
+  "bytes": 85433,
+  "sha256": "193d1a2b647fbe7b44829a510b01144396bcf0d5842dae26f37693aae31eaec9",
+  "filename": "sol62-07.jpg",
+  "capturedAt": "2026-11-18T04:11:50.463Z",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:11:50.499Z",
+  "evidenceFolder": "preview-composited-recheck20",
+  "captureSource": "Actual unchanged scene in local Pages-shaped opaque iframe; inert leaderboard GET fixture only, no production vote writes.",
+  "performance": "NOT MEASURED",
+  "browserAndServerClosed": true
+}

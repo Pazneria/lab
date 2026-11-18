@@ -1,0 +1,280 @@
+{
+  "entry": "astra62-16",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-16\\source-preservation.zip",
+  "archiveSha256": "085f616619de1b844299675000abece9ad61617a95fc9c02bd56f90f31d2a2c8",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/architecture.js": "architecture.js",
+      "frozen/botany.js": "botany.js",
+      "frozen/cottage.bin.gz": "cottage.bin.gz",
+      "frozen/cottage.json": "cottage.json",
+      "frozen/explore.js": "explore.js",
+      "frozen/finishing.js": "finishing.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/glasshouse.js": "glasshouse.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/kitchen.js": "kitchen.js",
+      "frozen/letterpress.js": "letterpress.js",
+      "frozen/navigation.js": "navigation.js",
+      "frozen/objects.js": "objects.js",
+      "frozen/renderer.js": "renderer.js",
+      "frozen/shaders.js": "shaders.js",
+      "frozen/stillroom.js": "stillroom.js",
+      "frozen/style.css": "style.css",
+      "frozen/surfaces.js": "surfaces.js",
+      "README.md": "README.md",
+      "run.json": "run.json"
+    },
+    "perFileSourceHashes": {
+      "architecture.js": {
+        "sha256": "ad14d9de342ca5e8b40dce7c7863c836cb6cd3d1ecacd8530654b8820b700b4d",
+        "bytes": 11330
+      },
+      "botany.js": {
+        "sha256": "beb441f8f39a2e8051162088c86f60c40dad9ebe9b84904a5f59cdedca2efc57",
+        "bytes": 6850
+      },
+      "build.cjs": {
+        "sha256": "dea2c09bef3a401672cc5dc741f22193ddf3f6b415df0fd640a0eb03c7ac2151",
+        "bytes": 4957
+      },
+      "cottage.bin.gz": {
+        "sha256": "e61c2b0218091134afa1f490f440a634627a5593b9d1773304be5cd610f0b07d",
+        "bytes": 6044402
+      },
+      "cottage.json": {
+        "sha256": "2ac2d2bc1c6cb7f1dde345f640eab63e137d953a60453ab3f0f63f2c2de2b13e",
+        "bytes": 11251
+      },
+      "explore.js": {
+        "sha256": "7a6b57909b4bce401a323c7d8bf20db0b5c12063ed2471c39ad64858c7f4c8eb",
+        "bytes": 8119
+      },
+      "finishing.js": {
+        "sha256": "e3f270e16607275b7b290028a4d0d9e2059d5ba7cddc14cdec38b82289883fc8",
+        "bytes": 5092
+      },
+      "geometry.js": {
+        "sha256": "827b2a4fe2cd67b18be2d0a1a2e99c24be276f9f2e457e0107ceae038eed04ad",
+        "bytes": 7808
+      },
+      "glasshouse.js": {
+        "sha256": "a73bd45288469f3f135ed5d7d33796c86278c412aaef77bea0691a08f8707855",
+        "bytes": 7215
+      },
+      "index.html": {
+        "sha256": "67cdd49e76c02b407488cc33c3e358a7ceadb610ef56ff93974ab6529b465164",
+        "bytes": 3730
+      },
+      "kitchen.js": {
+        "sha256": "08ae09ecb9f7f6cbd5b92d1c1cce3e335e4edf00ea52116d3673c9bbd0582e3f",
+        "bytes": 9633
+      },
+      "letterpress.js": {
+        "sha256": "803d68b93748f1f2ebcdfee1d51f0d4221b982a9b1166205b168191aa7848021",
+        "bytes": 5519
+      },
+      "navigation.js": {
+        "sha256": "6891c323c87e29ae5cc0f7e87dff210e959877c84316d36e3d650405cc7c2e76",
+        "bytes": 775
+      },
+      "objects.js": {
+        "sha256": "3be74c796013f531f01a70978c1538f140972cf44f003f3fcda10559e2c68fbd",
+        "bytes": 8679
+      },
+      "README.md": {
+        "sha256": "d33eced6441a1e1ce9eea3973d3684506c7d86901b2fcc8f79db76d352e8ab0e",
+        "bytes": 3410
+      },
+      "renderer.js": {
+        "sha256": "2b0d0b53e59bd64881cda1a758e4cd7ff11d4d019a6c8dad3c36e9f5f6bfbfab",
+        "bytes": 11088
+      },
+      "run.json": {
+        "sha256": "7f519828a4cb6e374a0383ead4db68f9e929a79c4e2e8a17f03c80b0ed9a39fc",
+        "bytes": 2053
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "b1e472bf54a87225cb625fa2a77dcc596c77e825f961e5d067f631560c90e88a",
+        "bytes": 1805
+      },
+      "shaders.js": {
+        "sha256": "3bcc04cc6cd45a1a6b71ad9a0f2386093e6ad804b6bb6f70b30f1879aaf6c427",
+        "bytes": 7882
+      },
+      "stillroom.js": {
+        "sha256": "261e4fefc210d73ed5ca95596fde36beceec4b83522e907b087577a62d9b9d9c",
+        "bytes": 10008
+      },
+      "style.css": {
+        "sha256": "f336a8887f3f1b2f7c8f52c63fbee0ea4e68e5f4f77bc4cd32d58ae78c995331",
+        "bytes": 4989
+      },
+      "surfaces.js": {
+        "sha256": "d71de3f880e2cd9ed573c48720d367ce12db40c5ef6dc6f176a2e33f20154cb7",
+        "bytes": 3239
+      },
+      "The-Crooked-Quince.zip": {
+        "sha256": "7fa1b91894538b89abf1f53cc11ca9ca54c5376d22bad5b65c03de8ec9b65efa",
+        "bytes": 6067720
+      },
+      "verify.cjs": {
+        "sha256": "d65175ffa84239d0069f4b2794473d9319ed9fbaa945bae13de33a260f40fde8",
+        "bytes": 4355
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-16\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "c278a517c7478e5b006240f4286532e88ae5bef73e19ac37080627308b0660ff",
+      "bytes": 1352
+    },
+    "launch-prompt.txt": {
+      "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
+      "bytes": 7573
+    },
+    "README.md": {
+      "sha256": "d33eced6441a1e1ce9eea3973d3684506c7d86901b2fcc8f79db76d352e8ab0e",
+      "bytes": 3410
+    },
+    "run.json": {
+      "sha256": "7f519828a4cb6e374a0383ead4db68f9e929a79c4e2e8a17f03c80b0ed9a39fc",
+      "bytes": 2053
+    },
+    "source-audit.json": {
+      "sha256": "6852c4ea3028ae47e13c7b8ee09d51237ff25e42f3d61d8c37c1a1b80c58df32",
+      "bytes": 405
+    },
+    "frozen/architecture.js": {
+      "sha256": "ad14d9de342ca5e8b40dce7c7863c836cb6cd3d1ecacd8530654b8820b700b4d",
+      "bytes": 11330
+    },
+    "frozen/botany.js": {
+      "sha256": "beb441f8f39a2e8051162088c86f60c40dad9ebe9b84904a5f59cdedca2efc57",
+      "bytes": 6850
+    },
+    "frozen/cottage.bin.gz": {
+      "sha256": "e61c2b0218091134afa1f490f440a634627a5593b9d1773304be5cd610f0b07d",
+      "bytes": 6044402
+    },
+    "frozen/cottage.json": {
+      "sha256": "2ac2d2bc1c6cb7f1dde345f640eab63e137d953a60453ab3f0f63f2c2de2b13e",
+      "bytes": 11251
+    },
+    "frozen/explore.js": {
+      "sha256": "7a6b57909b4bce401a323c7d8bf20db0b5c12063ed2471c39ad64858c7f4c8eb",
+      "bytes": 8119
+    },
+    "frozen/finishing.js": {
+      "sha256": "e3f270e16607275b7b290028a4d0d9e2059d5ba7cddc14cdec38b82289883fc8",
+      "bytes": 5092
+    },
+    "frozen/geometry.js": {
+      "sha256": "827b2a4fe2cd67b18be2d0a1a2e99c24be276f9f2e457e0107ceae038eed04ad",
+      "bytes": 7808
+    },
+    "frozen/glasshouse.js": {
+      "sha256": "a73bd45288469f3f135ed5d7d33796c86278c412aaef77bea0691a08f8707855",
+      "bytes": 7215
+    },
+    "frozen/index.html.txt": {
+      "sha256": "67cdd49e76c02b407488cc33c3e358a7ceadb610ef56ff93974ab6529b465164",
+      "bytes": 3730
+    },
+    "frozen/kitchen.js": {
+      "sha256": "08ae09ecb9f7f6cbd5b92d1c1cce3e335e4edf00ea52116d3673c9bbd0582e3f",
+      "bytes": 9633
+    },
+    "frozen/letterpress.js": {
+      "sha256": "803d68b93748f1f2ebcdfee1d51f0d4221b982a9b1166205b168191aa7848021",
+      "bytes": 5519
+    },
+    "frozen/navigation.js": {
+      "sha256": "6891c323c87e29ae5cc0f7e87dff210e959877c84316d36e3d650405cc7c2e76",
+      "bytes": 775
+    },
+    "frozen/objects.js": {
+      "sha256": "3be74c796013f531f01a70978c1538f140972cf44f003f3fcda10559e2c68fbd",
+      "bytes": 8679
+    },
+    "frozen/renderer.js": {
+      "sha256": "2b0d0b53e59bd64881cda1a758e4cd7ff11d4d019a6c8dad3c36e9f5f6bfbfab",
+      "bytes": 11088
+    },
+    "frozen/shaders.js": {
+      "sha256": "3bcc04cc6cd45a1a6b71ad9a0f2386093e6ad804b6bb6f70b30f1879aaf6c427",
+      "bytes": 7882
+    },
+    "frozen/stillroom.js": {
+      "sha256": "261e4fefc210d73ed5ca95596fde36beceec4b83522e907b087577a62d9b9d9c",
+      "bytes": 10008
+    },
+    "frozen/style.css": {
+      "sha256": "f336a8887f3f1b2f7c8f52c63fbee0ea4e68e5f4f77bc4cd32d58ae78c995331",
+      "bytes": 4989
+    },
+    "frozen/surfaces.js": {
+      "sha256": "d71de3f880e2cd9ed573c48720d367ce12db40c5ef6dc6f176a2e33f20154cb7",
+      "bytes": 3239
+    },
+    "host-runtime-check.json": {
+      "sha256": "9a6c3bc6978058567aa06131fa240f7ed61c0e32be30211696ce9bd7a20b5d52",
+      "bytes": 4610
+    },
+    "preview.jpg": {
+      "sha256": "d6ca9521d2dad460879f79fc2a26fb3a588fe952440d2281f1adaa9c9e111778",
+      "bytes": 118894
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run.json",
+      "source-audit.json",
+      "frozen/architecture.js",
+      "frozen/botany.js",
+      "frozen/cottage.bin.gz",
+      "frozen/cottage.json",
+      "frozen/explore.js",
+      "frozen/finishing.js",
+      "frozen/geometry.js",
+      "frozen/glasshouse.js",
+      "frozen/index.html.txt",
+      "frozen/kitchen.js",
+      "frozen/letterpress.js",
+      "frozen/navigation.js",
+      "frozen/objects.js",
+      "frozen/renderer.js",
+      "frozen/shaders.js",
+      "frozen/stillroom.js",
+      "frozen/style.css",
+      "frozen/surfaces.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:22:19.844Z",
+    "sha256": "d6ca9521d2dad460879f79fc2a26fb3a588fe952440d2281f1adaa9c9e111778",
+    "bytes": 118894,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

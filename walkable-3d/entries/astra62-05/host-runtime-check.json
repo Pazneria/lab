@@ -1,0 +1,62 @@
+{
+  "id": "astra62-05",
+  "startedAt": "2026-11-18T04:11:15.634Z",
+  "status": "captured",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [
+    "Click existing #engage start control"
+  ],
+  "frozenHtmlSha256": "d28f9015869b7d738058dca1a53621e2893cd4907ce6bcc0e746cfe598cfb3f4",
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "iframeBounds": {
+    "x": 19,
+    "y": 125.4375,
+    "width": 1242,
+    "height": 776.515625
+  },
+  "inputSmoke": "W key down/up for250ms and R reset dispatched after default preview; no full-route or movement-correctness claim.",
+  "capture": {
+    "index": 0,
+    "canvas": {
+      "id": "view",
+      "width": 1242,
+      "height": 777,
+      "cssWidth": 1242,
+      "cssHeight": 777
+    },
+    "output": {
+      "width": 960,
+      "height": 600
+    },
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "pointerLocked": true,
+    "quality": 88,
+    "channelStddev": [
+      47.027870469751576,
+      45.95559651879061,
+      45.7819148033516
+    ]
+  },
+  "bytes": 81514,
+  "sha256": "2bf492aa4d3897c04d6339f2fcb043d3bdfff38a15866efd579bc6e698021a02",
+  "filename": "astra62-05.jpg",
+  "capturedAt": "2026-11-18T04:11:18.510Z",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:11:18.550Z",
+  "evidenceFolder": "preview-composited-recheck20",
+  "captureSource": "Actual unchanged scene in local Pages-shaped opaque iframe; inert leaderboard GET fixture only, no production vote writes.",
+  "performance": "NOT MEASURED",
+  "browserAndServerClosed": true
+}

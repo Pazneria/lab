@@ -1,0 +1,274 @@
+{
+  "entry": "sol62-04",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-04\\source-preservation.zip",
+  "archiveSha256": "6a6a0dd8d0780f48439ffd901466c05818ebe794d9b19dfeb99022cb8ebfe254",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/craft.js": "src/craft.js",
+      "frozen/src/foliage.js": "src/foliage.js",
+      "frozen/src/geometry.js": "src/geometry.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/site.js": "src/site.js",
+      "frozen/src/textures.js": "src/textures.js",
+      "frozen/src/world.js": "src/world.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three/build/three.module.js": "dependency-closure/build/three.module.js",
+      "frozen/vendor/three/build/three.core.js": "dependency-closure/build/three.core.js",
+      "frozen/vendor/three/build/three.module.min.js": "dependency-closure/build/three.module.min.js",
+      "frozen/vendor/three/build/three.core.min.js": "dependency-closure/build/three.core.min.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "dependency-closure/examples/jsm/utils/BufferGeometryUtils.js",
+      "three-LICENSE": "dependency-closure/LICENSE",
+      "three-package.json": "dependency-closure/package.json",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "4e928330e1669d7d8bfb79dcbcd507c791e5a40f17cc6dee77bcfc799b48dc71",
+        "bytes": 1828
+      },
+      "package-lock.json": {
+        "sha256": "6d3e04051d9f05ed7341b3f949d872bb4d5e862f00cbd28362fb0b61e263d7a8",
+        "bytes": 527
+      },
+      "package.json": {
+        "sha256": "56f8536240347417d1238f01709e4d27df0b1d401ff61b60aee07bc87c806c47",
+        "bytes": 459
+      },
+      "README.md": {
+        "sha256": "82bd44de30d4c9b3c2471eb0e4f567784cfff5f0e842a27026732dda548e2294",
+        "bytes": 1564
+      },
+      "serve.mjs": {
+        "sha256": "6fcf031597be588b30ce7bd19895fc93e1625ac419a5446ea1f10ec71d4b1c43",
+        "bytes": 2267
+      },
+      "style.css": {
+        "sha256": "02b7119461bbba95b02e6868fb742279d1468b0ef77de21026d14bf85066e6c4",
+        "bytes": 2399
+      },
+      "The-Fern-House.zip": {
+        "sha256": "cf78747bab5439a87ba6d77def22d21de69ad71ca46ea3908cf4a6540c6a39b7",
+        "bytes": 444518
+      },
+      "tests/structure.mjs": {
+        "sha256": "a2ebd82acd90d68b5711e5699f922e295918f671f16f234579cecf8313b981b5",
+        "bytes": 7625
+      },
+      "src/craft.js": {
+        "sha256": "0bb8a8752f966321be2917a38316a1bd0dbc9eabe917e7c1788b356d51926665",
+        "bytes": 16546
+      },
+      "src/foliage.js": {
+        "sha256": "2ef20a22d77a474a1c07aa95a517a60ef0f33f67bc1f3edc0e29c49396c025e7",
+        "bytes": 29068
+      },
+      "src/geometry.js": {
+        "sha256": "476091d9f16cbb4a1a03bf07577dd246ec319fc3037e7bd9e8861b2b8869a356",
+        "bytes": 6496
+      },
+      "src/main.js": {
+        "sha256": "8917c8a58220866db4c5596dd688b93860ea158fff2517177fe31f9edd380454",
+        "bytes": 11251
+      },
+      "src/site.js": {
+        "sha256": "87e00ea5b992b746a9de908c83a9c8b35fc6ee089b1d41847621621508c9f052",
+        "bytes": 20016
+      },
+      "src/textures.js": {
+        "sha256": "74078ba9aa4c072bd1d3e29bdceab02164b62fe668b262b166eedbfda81936eb",
+        "bytes": 10918
+      },
+      "src/world.js": {
+        "sha256": "7360193a0ba980d9186d6a6de4e1805cd5ea2c94c13907cb485711b14748ad6f",
+        "bytes": 1867
+      }
+    },
+    "dependencyClosure": [
+      {
+        "path": "frozen/vendor/three/build/three.module.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\build\\three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      {
+        "path": "frozen/vendor/three/build/three.core.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\build\\three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      {
+        "path": "frozen/vendor/three/build/three.module.min.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\build\\three.module.min.js",
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      },
+      {
+        "path": "frozen/vendor/three/build/three.core.min.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\build\\three.core.min.js",
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\examples\\jsm\\utils\\BufferGeometryUtils.js",
+        "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+        "bytes": 35539
+      },
+      {
+        "path": "three-LICENSE",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\LICENSE",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      {
+        "path": "three-package.json",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-04\\node_modules\\three\\package.json",
+        "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+        "bytes": 4635
+      }
+    ],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-04\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./vendor/three.module.js",
+          "./vendor/three/build/three.module.js"
+        ]
+      ]
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "59329ae32f4a24fa896ac13730b14c2b36073b53d2b408796d4a83c0e5ebced8",
+      "bytes": 1420
+    },
+    "launch-prompt.txt": {
+      "sha256": "9bdc755a7c3088bf6b34b3736076fe207254fa68182bc3cb08e82a989af83cf8",
+      "bytes": 6964
+    },
+    "README.md": {
+      "sha256": "82bd44de30d4c9b3c2471eb0e4f567784cfff5f0e842a27026732dda548e2294",
+      "bytes": 1564
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "three-LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "three-package.json": {
+      "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+      "bytes": 4635
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4e928330e1669d7d8bfb79dcbcd507c791e5a40f17cc6dee77bcfc799b48dc71",
+      "bytes": 1828
+    },
+    "frozen/style.css": {
+      "sha256": "02b7119461bbba95b02e6868fb742279d1468b0ef77de21026d14bf85066e6c4",
+      "bytes": 2399
+    },
+    "frozen/src/craft.js": {
+      "sha256": "0bb8a8752f966321be2917a38316a1bd0dbc9eabe917e7c1788b356d51926665",
+      "bytes": 16546
+    },
+    "frozen/src/foliage.js": {
+      "sha256": "2ef20a22d77a474a1c07aa95a517a60ef0f33f67bc1f3edc0e29c49396c025e7",
+      "bytes": 29068
+    },
+    "frozen/src/geometry.js": {
+      "sha256": "476091d9f16cbb4a1a03bf07577dd246ec319fc3037e7bd9e8861b2b8869a356",
+      "bytes": 6496
+    },
+    "frozen/src/main.js": {
+      "sha256": "8917c8a58220866db4c5596dd688b93860ea158fff2517177fe31f9edd380454",
+      "bytes": 11251
+    },
+    "frozen/src/site.js": {
+      "sha256": "87e00ea5b992b746a9de908c83a9c8b35fc6ee089b1d41847621621508c9f052",
+      "bytes": 20016
+    },
+    "frozen/src/textures.js": {
+      "sha256": "74078ba9aa4c072bd1d3e29bdceab02164b62fe668b262b166eedbfda81936eb",
+      "bytes": 10918
+    },
+    "frozen/src/world.js": {
+      "sha256": "7360193a0ba980d9186d6a6de4e1805cd5ea2c94c13907cb485711b14748ad6f",
+      "bytes": 1867
+    },
+    "frozen/vendor/three/build/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/build/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "frozen/vendor/three/build/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "bytes": 35539
+    },
+    "host-runtime-check.json": {
+      "sha256": "561222b5a92b5f26e3aad1e627e8305438ef18dd5e9625a25e965a1e62bc89c3",
+      "bytes": 1908
+    },
+    "preview.jpg": {
+      "sha256": "70ebc40b80d5597026ae08c97e54d26a440613a4003d91768e3d1d8284cfbbc3",
+      "bytes": 171806
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "three-LICENSE",
+      "three-package.json",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "frozen/src/craft.js",
+      "frozen/src/foliage.js",
+      "frozen/src/geometry.js",
+      "frozen/src/main.js",
+      "frozen/src/site.js",
+      "frozen/src/textures.js",
+      "frozen/src/world.js",
+      "frozen/vendor/three/build/three.core.js",
+      "frozen/vendor/three/build/three.core.min.js",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/build/three.module.min.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:08:09.821Z",
+    "sha256": "70ebc40b80d5597026ae08c97e54d26a440613a4003d91768e3d1d8284cfbbc3",
+    "bytes": 171806,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

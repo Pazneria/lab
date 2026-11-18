@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#202824">
+  <title>Hollowmere Cavern</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="explorer" aria-label="Hollowmere Cavern, a walkable limestone cave">
+    <canvas id="cave" tabindex="0" aria-label="3D cavern. Click to enter, move with WASD, and look with the mouse. R resets your position.">This scene requires WebGL 2.</canvas>
+    <div class="top-shade" aria-hidden="true"></div>
+    <header class="identity">
+      <span class="survey-mark" aria-hidden="true"><i></i></span>
+      <div><h1>Hollowmere Cavern</h1><p id="station">Entrance recess</p></div>
+    </header>
+    <nav class="tools" aria-label="Exploration controls">
+      <button id="help" type="button" aria-haspopup="dialog">Controls</button>
+      <button id="reset" type="button" title="Return to entrance (R)" disabled><span class="reset-glyph" aria-hidden="true">↺</span> Reset</button>
+    </nav>
+    <div class="locked-keys" aria-hidden="true"><kbd>Esc</kbd> Release <span></span> <kbd>R</kbd> Reset</div>
+    <div class="focus-dot" aria-hidden="true"></div>
+    <section class="entry" aria-label="Enter the scene">
+      <p id="load-status" role="status">Opening cavern…</p>
+      <button id="enter" class="enter" type="button" hidden><span id="enter-label">Enter cavern</span><span aria-hidden="true">→</span></button>
+      <p id="entry-help" hidden><span class="desktop-copy"><kbd>W</kbd><span class="keys-row"><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span></span><span id="entry-copy">Walk · Mouse to look</span></p>
+    </section>
+    <div id="notice" class="notice" role="status"></div>
+    <div id="touch-pad" aria-label="Movement pad"><span id="thumb"></span></div>
+    <dialog id="guide" aria-labelledby="guide-title">
+      <div class="guide-head"><h2 id="guide-title">Controls</h2><button id="close-help" type="button" aria-label="Close controls">×</button></div>
+      <dl>
+        <div><dt>Walk</dt><dd><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></dd></div>
+        <div><dt>Look around</dt><dd>Mouse or arrow keys</dd></div>
+        <div><dt>Walk faster</dt><dd>Hold <kbd>Shift</kbd></dd></div>
+        <div><dt>Return to entrance</dt><dd><kbd>R</kbd></dd></div>
+        <div><dt>Release mouse</dt><dd><kbd>Esc</kbd></dd></div>
+      </dl>
+      <p>Follow the rope along the pool, then pass under the arch to reach the upper landing.</p>
+      <p class="fallback-help">You can also drag the view to look around. On a touch screen, walk with the pad at lower left.</p>
+    </dialog>
+    <noscript><p class="failure">Enable JavaScript to enter Hollowmere Cavern.</p></noscript>
+  </main>
+  <script>if(location.protocol==='file:'){document.getElementById('load-status').textContent='Launch from this folder with python -m http.server 48626 --bind 127.0.0.1, then open http://127.0.0.1:48626/';}</script>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>
+

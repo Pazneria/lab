@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#132840">
+  <title>Lark Glacier Field Station</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="view" aria-label="Lark Glacier Field Station, a first-person 3D scene">
+    <div class="view-shade" aria-hidden="true"></div>
+    <div class="reticle" aria-hidden="true"></div>
+    <div class="hud">
+      <div class="hud-station"><i></i>LARK <span> / </span> GLACIER FIELD STATION</div>
+      <div class="hud-location" id="location">APPROACH</div>
+    </div>
+    <div class="hud-help"><kbd>W A S D</kbd> Move <kbd>R</kbd> Reset <kbd>Esc</kbd> Pause</div>
+    <section id="overlay" class="overlay" aria-labelledby="title">
+      <div class="card">
+        <p class="station">P–04 <span></span> ANTARCTIC FIELD SHELTER</p>
+        <h1 id="title">Lark Glacier</h1>
+        <p id="intro" class="intro">Blue twilight at the field station. Follow the tracks to the lit entrance.</p>
+        <button id="go" type="button" disabled>Preparing scene</button>
+        <div class="keys">
+          <p><kbd>W A S D</kbd> <span>Walk</span></p>
+          <p><kbd>Mouse</kbd> <span>Look</span></p>
+          <p><kbd>Shift</kbd> <span>Walk faster</span></p>
+          <p><kbd>R</kbd> <span>Reset view</span></p>
+          <p><kbd>Esc</kbd> <span>Pause</span></p>
+        </div>
+      </div>
+    </section>
+    <div class="touch" hidden>
+      <div class="stick" id="stick"><div id="knob"></div></div>
+            <div class="touch-actions">
+        <button id="touch-pause" type="button" aria-label="Pause">Pause</button>
+        <button id="touch-reset" type="button" aria-label="Reset view">Reset</button>
+      </div>
+    </div>
+    <noscript>This scene needs JavaScript and WebGL 2.</noscript>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

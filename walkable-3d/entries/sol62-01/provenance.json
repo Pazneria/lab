@@ -1,0 +1,216 @@
+{
+  "entry": "sol62-01",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-01\\source-preservation.zip",
+  "archiveSha256": "56002cc4ccb20a987aa7f7e74bc0814ab68362fce8e3ad3f05793d79a117be9c",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/details.js": "details.js",
+      "frozen/geom.js": "geom.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/layout.js": "layout.js",
+      "frozen/main.js": "main.js",
+      "frozen/materials.js": "materials.js",
+      "frozen/railway.js": "railway.js",
+      "frozen/station.js": "station.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three.core.min.js": "vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "frozen/woodland.js": "woodland.js",
+      "README.md": "README.md",
+      "licenses/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt"
+    },
+    "perFileSourceHashes": {
+      "details.js": {
+        "sha256": "68eaf3e75dc4e3d21ca2a762c621bb6714d40af6d054b9e4591a78a6fe0eae4a",
+        "bytes": 11326
+      },
+      "geom.js": {
+        "sha256": "e96ef0a763943ef673b161a503b2d16d86b6160379f17bee47e3d6ce7975677f",
+        "bytes": 8102
+      },
+      "index.html": {
+        "sha256": "0b9248fbaeb8c73f2bbceea6350c646bda746fa6b3fcb02c7f8d3d39286580cc",
+        "bytes": 1579
+      },
+      "layout.js": {
+        "sha256": "b71c5132c45ca64ce87a73a9d814aec56ca324b4917871184d2f57fc35f89847",
+        "bytes": 8244
+      },
+      "main.js": {
+        "sha256": "3801956a6b784b7f73a71bbe366d5a716bf9315ccc5f67c94c7ab19957a868d1",
+        "bytes": 12324
+      },
+      "materials.js": {
+        "sha256": "275f45564b24ac0e949c4d0c2fb30fc669a9b8e1799db4c09ca7ce691c93912b",
+        "bytes": 18832
+      },
+      "package.json": {
+        "sha256": "6e1c3faf82598f00a730ae5192f602931ed7ed684408f8d3a891d9ffe07d1164",
+        "bytes": 138
+      },
+      "railway.js": {
+        "sha256": "f764a88e9c8c313e90377677240925f202747b1a4d484c39ef821350123bba55",
+        "bytes": 16254
+      },
+      "README.md": {
+        "sha256": "3f2379dac932763493e6169fa67737189aed2e8c533a8e822f397f7ac99d223f",
+        "bytes": 1776
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "14d291f3ddbbf4e93e038be4d82a248f65c6f1225f828bd865848a61e4b8ab1a",
+        "bytes": 1271
+      },
+      "station.js": {
+        "sha256": "1893b94ec514acd50e6f73bea0738d696d926b2a645eea4f56f780b4aa94bf53",
+        "bytes": 19632
+      },
+      "style.css": {
+        "sha256": "41eba0b41ed92814e50b28a98209308546f2a194770139f637e5be80ed77dab4",
+        "bytes": 2897
+      },
+      "verify.js": {
+        "sha256": "444e6d64c85ffe62b35e91ce6696162811c3999b0943628dc89c24177819dbbc",
+        "bytes": 8430
+      },
+      "woodland.js": {
+        "sha256": "5b6726cba99b659dfc177ae6a833841ed8fbe2038c42ea4a771b90b79740d880",
+        "bytes": 24613
+      },
+      "vendor/THREE-LICENSE.txt": {
+        "sha256": "ef1d5d386527d7356ea401a8d3dbb4555f0ce6ae86ae2203f000210dff5b1019",
+        "bytes": 1106
+      },
+      "vendor/three.core.min.js": {
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-01\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "8187ba2fd17162268028ab6cda423aaf1d58a28f83ccddbbb2a7c71e481e843a",
+      "bytes": 1420
+    },
+    "launch-prompt.txt": {
+      "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",
+      "bytes": 6668
+    },
+    "README.md": {
+      "sha256": "3f2379dac932763493e6169fa67737189aed2e8c533a8e822f397f7ac99d223f",
+      "bytes": 1776
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/details.js": {
+      "sha256": "68eaf3e75dc4e3d21ca2a762c621bb6714d40af6d054b9e4591a78a6fe0eae4a",
+      "bytes": 11326
+    },
+    "frozen/geom.js": {
+      "sha256": "e96ef0a763943ef673b161a503b2d16d86b6160379f17bee47e3d6ce7975677f",
+      "bytes": 8102
+    },
+    "frozen/index.html.txt": {
+      "sha256": "0b9248fbaeb8c73f2bbceea6350c646bda746fa6b3fcb02c7f8d3d39286580cc",
+      "bytes": 1579
+    },
+    "frozen/layout.js": {
+      "sha256": "b71c5132c45ca64ce87a73a9d814aec56ca324b4917871184d2f57fc35f89847",
+      "bytes": 8244
+    },
+    "frozen/main.js": {
+      "sha256": "3801956a6b784b7f73a71bbe366d5a716bf9315ccc5f67c94c7ab19957a868d1",
+      "bytes": 12324
+    },
+    "frozen/materials.js": {
+      "sha256": "275f45564b24ac0e949c4d0c2fb30fc669a9b8e1799db4c09ca7ce691c93912b",
+      "bytes": 18832
+    },
+    "frozen/railway.js": {
+      "sha256": "f764a88e9c8c313e90377677240925f202747b1a4d484c39ef821350123bba55",
+      "bytes": 16254
+    },
+    "frozen/station.js": {
+      "sha256": "1893b94ec514acd50e6f73bea0738d696d926b2a645eea4f56f780b4aa94bf53",
+      "bytes": 19632
+    },
+    "frozen/style.css": {
+      "sha256": "41eba0b41ed92814e50b28a98209308546f2a194770139f637e5be80ed77dab4",
+      "bytes": 2897
+    },
+    "frozen/woodland.js": {
+      "sha256": "5b6726cba99b659dfc177ae6a833841ed8fbe2038c42ea4a771b90b79740d880",
+      "bytes": 24613
+    },
+    "licenses/vendor/THREE-LICENSE.txt": {
+      "sha256": "ef1d5d386527d7356ea401a8d3dbb4555f0ce6ae86ae2203f000210dff5b1019",
+      "bytes": 1106
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "host-runtime-check.json": {
+      "sha256": "8dc9a4c03be11d76ce0b493f44dafa188ed64f160f103872f3d32ee1f1ddc6f3",
+      "bytes": 1908
+    },
+    "preview.jpg": {
+      "sha256": "0887d50de9433a3323bb8e03151c6ec5d76b345e29893bffd9bb8356c563328f",
+      "bytes": 147801
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/details.js",
+      "frozen/geom.js",
+      "frozen/index.html.txt",
+      "frozen/layout.js",
+      "frozen/main.js",
+      "frozen/materials.js",
+      "frozen/railway.js",
+      "frozen/station.js",
+      "frozen/style.css",
+      "frozen/woodland.js",
+      "licenses/vendor/THREE-LICENSE.txt",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:08:01.060Z",
+    "sha256": "0887d50de9433a3323bb8e03151c6ec5d76b345e29893bffd9bb8356c563328f",
+    "bytes": 147801,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

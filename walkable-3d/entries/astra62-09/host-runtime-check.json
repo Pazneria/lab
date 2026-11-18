@@ -1,0 +1,62 @@
+{
+  "id": "astra62-09",
+  "startedAt": "2026-11-18T04:11:21.127Z",
+  "status": "captured",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [
+    "Click existing #explore start control"
+  ],
+  "frozenHtmlSha256": "b7a9286acf170c35f77ab78f5c3c531bbc5e0a4ec2b48e8ed7205a291a7a75ed",
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "iframeBounds": {
+    "x": 19,
+    "y": 125.4375,
+    "width": 1242,
+    "height": 776.515625
+  },
+  "inputSmoke": "W key down/up for250ms and R reset dispatched after default preview; no full-route or movement-correctness claim.",
+  "capture": {
+    "index": 0,
+    "canvas": {
+      "id": "view",
+      "width": 1242,
+      "height": 777,
+      "cssWidth": 1242,
+      "cssHeight": 777
+    },
+    "output": {
+      "width": 960,
+      "height": 600
+    },
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "pointerLocked": true,
+    "quality": 88,
+    "channelStddev": [
+      52.542882928044804,
+      50.14434609079337,
+      48.72714369744068
+    ]
+  },
+  "bytes": 138543,
+  "sha256": "3fcc275f4fdf28ca6400cb844b7093be56e4ebe079a3996a3067f7f4cbe8c908",
+  "filename": "astra62-09.jpg",
+  "capturedAt": "2026-11-18T04:11:23.860Z",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:11:23.899Z",
+  "evidenceFolder": "preview-composited-recheck20",
+  "captureSource": "Actual unchanged scene in local Pages-shaped opaque iframe; inert leaderboard GET fixture only, no production vote writes.",
+  "performance": "NOT MEASURED",
+  "browserAndServerClosed": true
+}

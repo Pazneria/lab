@@ -1,0 +1,28 @@
+{
+  "id": "astra62-14",
+  "scene": 14,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-14",
+  "requestedModel": "gpt-6.2-astra",
+  "requestedEffort": "xhigh",
+  "requestedService": "default/standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "effectiveServiceTier": null,
+  "completionClearedByParent": true,
+  "timingCaveat": null,
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "timingAuthority": "Original source records and parent completion/caveat disclosures only; no inferred deadline compliance.",
+  "qa": {
+    "static": "Frozen hashes, source mapping and initial runtime closure assembled; release review pending.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN: Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged.",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "NOT CAPTURED"
+  },
+  "generationSeparation": "No entrant coaching, edits, repairs, rebuilds or post-deadline fixes. Active entrants never inspected.",
+  "releaseGate": "Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged."
+}

@@ -1,0 +1,43 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; }
+html, body { height: 100%; width: 100%; margin: 0; overflow: hidden; }
+body { background: #a39980; color: #fff3d9; font: 14px/1.5 system-ui, sans-serif; }
+#view, #view canvas { width: 100%; height: 100%; display: block; position: absolute; inset: 0; outline: 0; }
+#view { touch-action: none; }
+.masthead {
+  position: fixed; top: 24px; left: 26px; display: flex; gap: 11px; align-items: center;
+  text-shadow: 0 1px 6px #131a18, 0 0 22px #15211c; pointer-events: none;
+}
+.masthead strong { display: block; font: 500 clamp(23px, 3vw, 35px)/1 Georgia, serif; letter-spacing: .005em; }
+.owner { display: block; font-size: 9px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 4px; }
+.field-guide {
+  position: fixed; bottom: 22px; left: 24px; padding: 9px 13px; border: 1px solid #f0d6a956;
+  background: #1e2825e8; border-radius: 5px; pointer-events: none; box-shadow: 0 3px 22px #181f1a33;
+}
+.location { display: flex; align-items: center; gap: 7px; color: #ffdb98; margin-bottom: 3px; font: 700 10px/1.4 system-ui, sans-serif; letter-spacing: .085em; text-transform: uppercase; }
+.location-dot { border-radius: 50%; width: 5px; height: 5px; background: #f4c37d; }
+.directions { display: flex; flex-wrap: wrap; align-items: center; column-gap: 4px; color: #f1e5cf; font-size: 11px; }
+kbd { border: 1px solid #9e937b87; padding: 0 4px; border-radius: 3px; font: 10px/1.5 system-ui, sans-serif; }
+.separator { width: 2px; height: 2px; background: #dfbf8e; margin: 0 6px; border-radius: 50%; }
+.welcome {
+  position: fixed; right: 25px; bottom: 22px; max-width: 265px; padding: 14px 17px 16px;
+  background: #26312af2; border: 1px solid #e5c58d69; box-shadow: 0 7px 38px #24271f6b; border-radius: 4px;
+}
+.welcome-rule { width: 25px; height: 2px; background: #e9bc79; }
+.welcome p { margin: 8px 0 11px; font-size: 13px; color: #f3e7cc; }
+button {
+  padding: 7px 12px; font: inherit; font-weight: 700; color: #20302b; background: #edc282;
+  border: 1px solid #f2d4a7; border-radius: 3px; cursor: pointer;
+}
+button:hover { background: #f8d9a9; }
+button:focus-visible { outline: 2px solid #fff2d8; outline-offset: 3px; }
+button:disabled { opacity: .6; cursor: progress; }
+body.exploring .welcome { display: none; }
+#reticle { display: none; position: fixed; top: 50%; left: 50%; translate: -50% -50%; width: 4px; height: 4px; background: #fff5da; border-radius: 50%; box-shadow: 0 0 3px #272018; pointer-events: none; }
+body.exploring #reticle { display: block; }
+.error { position: fixed; top: 50%; left: 50%; translate: -50% -50%; max-width: 25rem; background: #252d27; border: 1px solid #edc282; padding: 18px 22px; border-radius: 4px; }
+@media (max-width: 670px) {
+  .masthead { top: 14px; left: 14px; }
+  .field-guide { bottom: 10px; left: 10px; right: 10px; }
+  .welcome { bottom: 72px; right: 10px; }
+}

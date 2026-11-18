@@ -1,0 +1,61 @@
+@font-face{font-family:Baskervville;src:url('baskervville-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Baskervville;src:url('baskervville-latin-400-italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Instrument Sans";src:url('instrument-sans-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+*{box-sizing:border-box}
+:root{color-scheme:light;--paper:#f4f2e7;--ink:#263f33;--hair:rgba(216,224,207,.49);font-family:"Instrument Sans","Segoe UI",Arial,sans-serif}
+html,body,#exhibit{margin:0;width:100%;height:100%;overflow:hidden}
+body{background:#c6cbb9;color:var(--ink)}
+#exhibit{position:relative;isolation:isolate}
+#scene{display:block;width:100%;height:100%;outline:0;touch-action:none;cursor:grab}
+#scene:active{cursor:grabbing}
+.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(14,29,21,.17),transparent 18%,transparent 83%,rgba(9,20,14,.18));z-index:1}
+.mast{position:absolute;z-index:3;top:max(22px,env(safe-area-inset-top));left:max(24px,env(safe-area-inset-left));right:max(24px,env(safe-area-inset-right));display:flex;align-items:flex-start;justify-content:space-between;gap:14px;pointer-events:none}
+.house-name{display:flex;align-items:center;gap:13px;color:#f6f3e2;background:rgba(31,54,43,.92);border:1px solid #91a38d;border-radius:3px;padding:11px 20px 12px 13px;box-shadow:0 2px 11px #15231b20}
+.fern-mark{width:29px;height:38px;color:#c9d2ae;margin:0 0 0 1px}
+h1,h2,p{margin:0}
+h1{font:400 27px/.99 Baskervville,Georgia,"Times New Roman",serif;letter-spacing:-.75px}
+.house-name p{margin:6px 0 0 1px;text-transform:uppercase;font:600 8px/1.2 "Instrument Sans","Segoe UI",Arial,sans-serif;letter-spacing:2.05px;color:#ccd4bf}
+nav{display:flex;gap:6px;pointer-events:auto}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.tool{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:rgba(243,243,229,.93);border:1px solid #f6f6e7a3;border-radius:3px;min-height:37px;padding:0 12px;color:#2c4337;font-size:12px;font-weight:550;box-shadow:0 2px 9px #15231b15}
+.tool svg{width:16px;height:16px;stroke:currentColor;stroke-width:1.35;stroke-linejoin:round;stroke-linecap:round}
+.tool:hover,.tool:focus-visible,.tool[aria-expanded=true]{background:#fffdf0}
+button:focus-visible{outline:2px solid #cfaa64;outline-offset:3px}
+.bottom{position:absolute;bottom:max(20px,env(safe-area-inset-bottom));left:24px;right:24px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:15px;pointer-events:none}
+.location{display:flex;align-items:center;gap:9px;color:#faf8eb;text-shadow:0 1px 4px #16301c,0 0 12px #18291e;letter-spacing:.3px;font:italic 17px/1.2 Baskervville,Georgia,serif;padding-bottom:10px}
+.location-line{width:26px;height:1px;background:#e7ead2;box-shadow:0 1px 3px #193324}
+.control-strip{display:flex;align-items:center;gap:17px;padding:5px 5px 5px 13px;min-height:39px;background:rgba(34,52,42,.93);border:1px solid #b9c3ac83;border-radius:4px;box-shadow:0 2px 10px #16251a25;color:#eff0e0;pointer-events:auto}
+.hint{display:flex;align-items:center;gap:6px;white-space:nowrap;font-size:11px}
+.keys{display:flex;gap:2px}
+kbd{border:1px solid #b6c0a975;border-bottom-color:#b6c0a9a6;border-radius:3px;display:inline-flex;justify-content:center;align-items:center;min-width:17px;height:19px;padding:0 3px;color:#e5e8d6;font:10px/1 ui-monospace,Consolas,monospace}
+.look-hint svg{fill:none;stroke:currentColor;stroke-width:1.15;width:15px;height:17px}
+#enter{background:#e4e7d1;color:#2b4435;border:0;border-radius:2px;height:28px;padding:0 11px;font-size:11px;font-weight:650}
+#enter span{display:inline-block;margin-left:7px;font-size:14px;font-weight:400}
+#enter:hover{background:#f7f6e7}
+#enter:disabled{opacity:.6}
+.release-hint{display:none;padding-right:7px}
+.engaged #enter{display:none}
+.engaged .release-hint{display:flex}
+#reticle{position:absolute;left:50%;top:50%;width:3px;height:3px;transform:translate(-50%,-50%);background:#f4f0d9a1;box-shadow:0 0 2px #263f40aa;border-radius:50%;display:none;pointer-events:none}
+.locked #reticle{display:block}
+.plan{position:absolute;top:69px;right:24px;width:198px;z-index:4;border:1px solid #a5ad97;border-radius:3px;background:var(--paper);color:var(--ink);box-shadow:0 6px 24px #14251b24}
+.plan[hidden]{display:none}
+.plan-head{margin:11px 12px 0;display:flex;align-items:center;justify-content:space-between;padding-bottom:7px;border-bottom:1px solid #bec7b5}
+h2{font:400 21px/1.12 Baskervville,Georgia,serif;letter-spacing:-.45px}
+.close{border:0;background:transparent;color:#657462;font:22px/1 Baskervville,Georgia,serif;margin:-3px 0 0;padding:0 3px}
+#map{display:block;width:100%;height:auto}
+.plan-foot{border-top:1px solid #c4cbb9;margin:0 12px;display:flex;align-items:center;gap:7px;padding:9px 0 11px;font-size:11px;letter-spacing:.1px}
+.plan-foot i{width:6px;height:6px;background:#a75e37;border-radius:50%}
+.loading{position:absolute;z-index:8;inset:0;background:#dbe0ce;display:flex;align-items:center;justify-content:center;color:var(--ink);text-align:center}
+.loading[hidden]{display:none}
+.loading>div{max-width:490px;margin:24px}
+.loading p{font:italic 20px/1.45 Baskervville,Georgia,serif;margin:12px 0}
+.loading-line{display:inline-block;height:2px;width:56px;background:#607860;animation:breathe 1.25s ease-in-out infinite alternate}
+@keyframes breathe{from{transform:scaleX(.38);opacity:.4}to{transform:scaleX(1);opacity:1}}
+.loading.failed .loading-line{animation:none;background:#926a4a}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+#touch-pad{display:none}
+@media(max-width:720px){.mast{top:13px;left:13px;right:13px}.house-name{padding:9px 12px 9px 9px;gap:8px}.fern-mark{width:23px;height:32px}h1{font-size:23px}.house-name p{font-size:7px;letter-spacing:1.5px;margin-top:4px}.tool{padding:0 9px;min-height:34px}.bottom{left:13px;right:13px;bottom:13px;align-items:flex-start;flex-direction:column;gap:6px}.location{padding:0;font-size:15px}.control-strip{gap:12px}.plan{top:55px;right:13px;width:174px}}
+@media(max-width:430px){.tool span{display:none}.control-strip{gap:9px}.crouch-hint{display:none}.location-line{width:18px}}
+@media(pointer:coarse){.bottom{left:auto;align-items:flex-end}.walk-hint,.crouch-hint,.release-hint,.engaged .release-hint{display:none}.control-strip{gap:8px}.engaged .control-strip{padding-right:13px}#touch-pad{display:grid;position:absolute;z-index:4;left:16px;bottom:16px;grid-template-columns:repeat(3,35px);grid-template-rows:repeat(2,33px);gap:3px;touch-action:none}#touch-pad button{color:#e9eddc;background:#2e493cca;border:1px solid #c2cdb08c;border-radius:3px;font-size:18px;touch-action:none}#touch-pad button:first-child{grid-column:2}#touch-pad button:nth-child(2){grid-column:1}#touch-pad button:active{background:#566e52}}
+@media(prefers-reduced-motion:reduce){.loading-line{animation:none}}

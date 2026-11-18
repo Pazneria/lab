@@ -1,0 +1,105 @@
+{
+  "id": "astra62-16",
+  "startedAt": "2026-11-18T04:22:16.467Z",
+  "status": "captured",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [
+    "Click existing #enter start control"
+  ],
+  "frozenHtmlSha256": "67cdd49e76c02b407488cc33c3e358a7ceadb610ef56ff93974ab6529b465164",
+  "auditedResourceResponses": [
+    {
+      "path": "cottage.json",
+      "status": 200,
+      "bytes": 11251,
+      "sha256": "2ac2d2bc1c6cb7f1dde345f640eab63e137d953a60453ab3f0f63f2c2de2b13e",
+      "cors": "*"
+    },
+    {
+      "path": "cottage.bin.gz",
+      "status": 200,
+      "bytes": 6044402,
+      "sha256": "e61c2b0218091134afa1f490f440a634627a5593b9d1773304be5cd610f0b07d",
+      "cors": "*"
+    }
+  ],
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "localFontStatuses": [],
+  "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "iframeBounds": {
+    "x": 19,
+    "y": 125.4375,
+    "width": 1242,
+    "height": 776.515625
+  },
+  "inputSmoke": "W key down/up for250ms and R reset dispatched after default preview; no full-route or movement-correctness claim.",
+  "negativeCheckActive": true,
+  "negativeConsoleErrors": [
+    "Connecting to 'http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-18/frozen/cabin.json' violates the following Content Security Policy directive: \"connect-src http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-16/frozen/cottage.json http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-16/frozen/cottage.bin.gz\". The action has been blocked.",
+    "Fetch API cannot load http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-18/frozen/cabin.json. Refused to connect because it violates the document's Content Security Policy.",
+    "Connecting to 'https://example.invalid/scenebench-denied-check' violates the following Content Security Policy directive: \"connect-src http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-16/frozen/cottage.json http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-16/frozen/cottage.bin.gz\". The action has been blocked.",
+    "Fetch API cannot load https://example.invalid/scenebench-denied-check. Refused to connect because it violates the document's Content Security Policy.",
+    "Connecting to 'https://walkable-worlds-voting.pazneria.chatgpt.site/api/v1/leaderboard' violates the following Content Security Policy directive: \"connect-src http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-16/frozen/cottage.json http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-16/frozen/cottage.bin.gz\". The action has been blocked.",
+    "Fetch API cannot load https://walkable-worlds-voting.pazneria.chatgpt.site/api/v1/leaderboard. Refused to connect because it violates the document's Content Security Policy."
+  ],
+  "negativeRequestFailures": [],
+  "negativeNetworkDispatches": [],
+  "negativeCases": [
+    "http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-18/frozen/cabin.json",
+    "https://example.invalid/scenebench-denied-check",
+    "https://walkable-worlds-voting.pazneria.chatgpt.site/api/v1/leaderboard"
+  ],
+  "negativeFetchResults": [
+    true,
+    true,
+    true
+  ],
+  "negativeCspCheck": {
+    "status": "passed",
+    "allThreeUrlsBlockedBeforeNetwork": true,
+    "siblingEntryExternalAndApiDenied": true,
+    "hostUnloadedFrame": true
+  },
+  "capture": {
+    "index": 0,
+    "canvas": {
+      "id": "world",
+      "width": 1242,
+      "height": 777,
+      "cssWidth": 1242,
+      "cssHeight": 777
+    },
+    "output": {
+      "width": 960,
+      "height": 600
+    },
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "pointerLocked": true,
+    "quality": 88,
+    "channelStddev": [
+      36.92858251980455,
+      37.0409754265619,
+      34.172316618072635
+    ]
+  },
+  "bytes": 118894,
+  "sha256": "d6ca9521d2dad460879f79fc2a26fb3a588fe952440d2281f1adaa9c9e111778",
+  "filename": "astra62-16.jpg",
+  "capturedAt": "2026-11-18T04:22:19.844Z",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:22:19.891Z",
+  "browserAndServerClosed": true,
+  "performance": "NOT MEASURED",
+  "note": "Separate approved host smoke/capture and exact-resource verification. No entrant repair or source change."
+}

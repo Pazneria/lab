@@ -1,0 +1,57 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact underwater researcher's apartment arranged as a domestic living/sleeping room, a connected work nook and a small observation room looking onto a dark reef. Let ordinary comfort coexist with the unmistakable construction of a home under water. From the entrance, lead me past the domestic furniture, up to the workbench and into the observation room before returning toward the living area.
+
+Give the apartment a lived-in domestic center with soft furnishings and a few personal touches. The work nook should communicate marine research through its work surface, storage and a small selection of specimens or instruments whose exact design is yours. Make the observation window visibly substantial: deep reveals, thick framing and credible structural supports should communicate pressure and scale. Beyond it, a small dark reef with a few readable silhouettes or muted points of life is enough. Distinguish sealed painted metal, rubber seals, glass, textiles and damp-weather wear without making the living space look flooded. Warm interior lamps and cool blue-green exterior light should preserve a clear view of the room and its construction. Keep everything within these three connected spaces; a large ocean, fluid simulation, swimming, creature AI and functioning research instruments are unnecessary.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will approach the domestic furniture, inspect the work surface and window construction, look out at the reef and turn back into the apartment. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- A convincing undersea home that balances ordinary domestic comfort with research work
+- Substantial observation-window framing, deep reveals and credible pressure-resistant construction
+- Distinct sealed metal, rubber, glass, textiles and restrained wear at close range
+- Readable warm interior lighting against a dark blue-green reef view
+- Purposeful detail at the living furniture, work surface, window and return viewpoint
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing observation glazing, reef silhouettes and the illuminated interior together
+- Smooth movement between the domestic room, work nook and observation room
+- Minimal slowdown from transparency, underwater atmosphere or window effects, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A domestic living/sleeping room with ordinary comfortable furnishings
+- A connected research work nook and observation room with a substantial window onto a bounded dark reef
+- Walkable access to the work surface and close to the window framing, with a clear return route
+- Convincing human scale, usable furniture clearances, safe observation access and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → domestic living/sleeping area → research work surface → observation-window frame → reef view → return view into the apartment → entrance.
+
+I will pay particular attention to the window’s physical thickness, the contrast between a comfortable interior and the dark reef, and clear material definition near the glass. Specific specimens, instruments and reef life are optional; the three core spaces, research character, substantial window and route are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

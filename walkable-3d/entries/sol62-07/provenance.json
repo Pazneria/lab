@@ -1,0 +1,330 @@
+{
+  "entry": "sol62-07",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-07\\source-preservation.zip",
+  "archiveSha256": "5b33c95323b76596d3e027a7ab40ca5af586fb13045bc4de9b20d54f8a5a386b",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/aggregate-relief.png": "dist/assets/aggregate-relief.png",
+      "frozen/assets/aggregate.png": "dist/assets/aggregate.png",
+      "frozen/assets/bronze-brush.png": "dist/assets/bronze-brush.png",
+      "frozen/assets/bronze.png": "dist/assets/bronze.png",
+      "frozen/assets/concrete-relief.png": "dist/assets/concrete-relief.png",
+      "frozen/assets/concrete.png": "dist/assets/concrete.png",
+      "frozen/assets/limestone-relief.png": "dist/assets/limestone-relief.png",
+      "frozen/assets/limestone.png": "dist/assets/limestone.png",
+      "frozen/assets/oak.png": "dist/assets/oak.png",
+      "frozen/assets/resin-flutes.png": "dist/assets/resin-flutes.png",
+      "frozen/index.html.txt": "dist/index.html",
+      "frozen/museum.css": "dist/museum.css",
+      "frozen/museum.js": "dist/museum.js",
+      "README.md": "README.md",
+      "licenses/dist/THREE-LICENSE.txt": "dist/THREE-LICENSE.txt"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "913a5e80446aad84df3f5d4efba5f43196845a8a0c2611394f0fbfff8d4bac3d",
+        "bytes": 26
+      },
+      "package-lock.json": {
+        "sha256": "c38e83811d8ceb026a9b7d513ebb222a64c9ac597ef18c95c8f32f26bedf4a1a",
+        "bytes": 14823
+      },
+      "package.json": {
+        "sha256": "0b3be2c99a82083d490acc74e03c565d8feb4ae25d9d0a3730442af486962f89",
+        "bytes": 335
+      },
+      "README.md": {
+        "sha256": "73aa1df3b45736923e51f5ed5226457b7fd64dde416109dbd48884393b911518",
+        "bytes": 1983
+      },
+      "src/architecture.js": {
+        "sha256": "866b5270d263045e4b33ed03df589333796b5eeb4087328f94fc7e05aaee2823",
+        "bytes": 16597
+      },
+      "src/fixtures.js": {
+        "sha256": "ef47c3c215038f7f1096e7122d980dd9cc1a8cabae6da7ffe40bd203ffb10cf9",
+        "bytes": 8468
+      },
+      "src/lighting.js": {
+        "sha256": "57d0181b55ad7ba1b2d70951d0c26285eb6f4ef18884e9b225ed6ddcee2dcb58",
+        "bytes": 6000
+      },
+      "src/main.js": {
+        "sha256": "24d05dbd032a5c104f801b16ffdf4459340ff591eab1d50a149f76c051d29ed7",
+        "bytes": 2791
+      },
+      "src/materials.js": {
+        "sha256": "7e6adc0a7fdfc6989f9d4a82c3637052c40cbc23e9c833ebb5ddf75f9c218e91",
+        "bytes": 6977
+      },
+      "src/modeling.js": {
+        "sha256": "fa3dcee9833ea304effbe638c48c64afdedca0decd60ac10c58727f949f5236e",
+        "bytes": 5225
+      },
+      "src/navigation.js": {
+        "sha256": "d7e45d53487a4a8d0233d7b7b8787b39bb94887aea12aeed7519b4b1a10bddf9",
+        "bytes": 8114
+      },
+      "src/plan.js": {
+        "sha256": "dd98c6b644c46a78536c6483c46c5ab8a3e9ffd88defbcac2193cec3b1c663d7",
+        "bytes": 5117
+      },
+      "src/sculptures.js": {
+        "sha256": "3e6e5e6a9d6480c438f6596b4e18bab2121b87bf394b8284af38235cf3143e38",
+        "bytes": 8639
+      },
+      "scripts/build.mjs": {
+        "sha256": "f9ec500dac6959900c855ac03da5807e89ed5a60fb223155983fd28ace6facea",
+        "bytes": 583
+      },
+      "scripts/check.mjs": {
+        "sha256": "c8e39169a06d8d7ea1f6fdd27a9c546160d64a02daf5fe9835976e9556738d1f",
+        "bytes": 10998
+      },
+      "scripts/serve.mjs": {
+        "sha256": "d0c87b8a3f13159e80ccab5ed5ecb9a574b1cf08410694bdf0bef6f0495ffb2f",
+        "bytes": 1413
+      },
+      "scripts/textures.py": {
+        "sha256": "64b7123b4a0c675aac3ee2a9e843bc1980722f5b94d54f6e1931f01eeb7f6541",
+        "bytes": 6854
+      },
+      "public/index.html": {
+        "sha256": "6c58a391fd9f016b790db6cff9bab5702af45ed1fa9a33819b0549e5bbec028b",
+        "bytes": 2605
+      },
+      "public/museum.css": {
+        "sha256": "8c4fad0e9f5b716acdf72630cace8688b97f92c06396ea9105d342eaadaaab23",
+        "bytes": 4922
+      },
+      "public/assets/aggregate-relief.png": {
+        "sha256": "60912fb962e9343187e09655b57183c54c301a1c471b306aa1da99b58ea688c2",
+        "bytes": 157368
+      },
+      "public/assets/aggregate.png": {
+        "sha256": "bff18875a2c90d92f3bfb48a3136bf8e08f38014508337fa255313b62b7900ed",
+        "bytes": 319224
+      },
+      "public/assets/bronze-brush.png": {
+        "sha256": "dc14fd831c4d65bf057b8c9c43bac906cc3cee351994f6e11086a110f8231991",
+        "bytes": 191509
+      },
+      "public/assets/bronze.png": {
+        "sha256": "7dbb16334d00a09a5f3f45778c77059c91a44dfa0aab6ce9ceb90b57ac76a32f",
+        "bytes": 379694
+      },
+      "public/assets/concrete-relief.png": {
+        "sha256": "6ba0b9fb7adbc8c1488a1f7c33d4447ba23bffda407422507a3f2bf77e9a64c1",
+        "bytes": 697275
+      },
+      "public/assets/concrete.png": {
+        "sha256": "3995f138f7b5bb5a694e451eed7cc0f355d50751b98f38caccfc5dcc87b138c8",
+        "bytes": 1241299
+      },
+      "public/assets/limestone-relief.png": {
+        "sha256": "35ddd9f978419577807fbfd8bfb38c1bd414d1e5a6d192e47560324b51a372c7",
+        "bytes": 158042
+      },
+      "public/assets/limestone.png": {
+        "sha256": "676c61f329b6267d3732ee32588c641875584f88df524bef354786260eee0d75",
+        "bytes": 329366
+      },
+      "public/assets/oak.png": {
+        "sha256": "5c606b32772264fa2d163068f2629f2dea83ae929ce2b7fd4178eb7545cf7663",
+        "bytes": 325122
+      },
+      "public/assets/resin-flutes.png": {
+        "sha256": "cb79547ee75f41603f4e57f3557ef2cfb7e3a59086ef2e2ae467392eb2180215",
+        "bytes": 39475
+      },
+      "dist/index.html": {
+        "sha256": "6c58a391fd9f016b790db6cff9bab5702af45ed1fa9a33819b0549e5bbec028b",
+        "bytes": 2605
+      },
+      "dist/museum.css": {
+        "sha256": "8c4fad0e9f5b716acdf72630cace8688b97f92c06396ea9105d342eaadaaab23",
+        "bytes": 4922
+      },
+      "dist/museum.js": {
+        "sha256": "a121245063901eb4c483ba409cde57d39bb6199dcf97c4a9c42efef6945d18e7",
+        "bytes": 554507
+      },
+      "dist/museum.js.LEGAL.txt": {
+        "sha256": "373b12aaa205aa5bc749aef71f9d69280e4b405d39570ffcd66a385349d76587",
+        "bytes": 188
+      },
+      "dist/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "dist/assets/aggregate-relief.png": {
+        "sha256": "60912fb962e9343187e09655b57183c54c301a1c471b306aa1da99b58ea688c2",
+        "bytes": 157368
+      },
+      "dist/assets/aggregate.png": {
+        "sha256": "bff18875a2c90d92f3bfb48a3136bf8e08f38014508337fa255313b62b7900ed",
+        "bytes": 319224
+      },
+      "dist/assets/bronze-brush.png": {
+        "sha256": "dc14fd831c4d65bf057b8c9c43bac906cc3cee351994f6e11086a110f8231991",
+        "bytes": 191509
+      },
+      "dist/assets/bronze.png": {
+        "sha256": "7dbb16334d00a09a5f3f45778c77059c91a44dfa0aab6ce9ceb90b57ac76a32f",
+        "bytes": 379694
+      },
+      "dist/assets/concrete-relief.png": {
+        "sha256": "6ba0b9fb7adbc8c1488a1f7c33d4447ba23bffda407422507a3f2bf77e9a64c1",
+        "bytes": 697275
+      },
+      "dist/assets/concrete.png": {
+        "sha256": "3995f138f7b5bb5a694e451eed7cc0f355d50751b98f38caccfc5dcc87b138c8",
+        "bytes": 1241299
+      },
+      "dist/assets/limestone-relief.png": {
+        "sha256": "35ddd9f978419577807fbfd8bfb38c1bd414d1e5a6d192e47560324b51a372c7",
+        "bytes": 158042
+      },
+      "dist/assets/limestone.png": {
+        "sha256": "676c61f329b6267d3732ee32588c641875584f88df524bef354786260eee0d75",
+        "bytes": 329366
+      },
+      "dist/assets/oak.png": {
+        "sha256": "5c606b32772264fa2d163068f2629f2dea83ae929ce2b7fd4178eb7545cf7663",
+        "bytes": 325122
+      },
+      "dist/assets/resin-flutes.png": {
+        "sha256": "cb79547ee75f41603f4e57f3557ef2cfb7e3a59086ef2e2ae467392eb2180215",
+        "bytes": 39475
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-07\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "992762a6d6eb42f9e5cb9b3abf08224a8c258555cc6335bafe29c7fb631772e8",
+      "bytes": 1420
+    },
+    "launch-prompt.txt": {
+      "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",
+      "bytes": 7098
+    },
+    "README.md": {
+      "sha256": "73aa1df3b45736923e51f5ed5226457b7fd64dde416109dbd48884393b911518",
+      "bytes": 1983
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/index.html.txt": {
+      "sha256": "6c58a391fd9f016b790db6cff9bab5702af45ed1fa9a33819b0549e5bbec028b",
+      "bytes": 2605
+    },
+    "frozen/museum.css": {
+      "sha256": "8c4fad0e9f5b716acdf72630cace8688b97f92c06396ea9105d342eaadaaab23",
+      "bytes": 4922
+    },
+    "frozen/museum.js": {
+      "sha256": "a121245063901eb4c483ba409cde57d39bb6199dcf97c4a9c42efef6945d18e7",
+      "bytes": 554507
+    },
+    "licenses/dist/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/assets/aggregate-relief.png": {
+      "sha256": "60912fb962e9343187e09655b57183c54c301a1c471b306aa1da99b58ea688c2",
+      "bytes": 157368
+    },
+    "frozen/assets/aggregate.png": {
+      "sha256": "bff18875a2c90d92f3bfb48a3136bf8e08f38014508337fa255313b62b7900ed",
+      "bytes": 319224
+    },
+    "frozen/assets/bronze-brush.png": {
+      "sha256": "dc14fd831c4d65bf057b8c9c43bac906cc3cee351994f6e11086a110f8231991",
+      "bytes": 191509
+    },
+    "frozen/assets/bronze.png": {
+      "sha256": "7dbb16334d00a09a5f3f45778c77059c91a44dfa0aab6ce9ceb90b57ac76a32f",
+      "bytes": 379694
+    },
+    "frozen/assets/concrete-relief.png": {
+      "sha256": "6ba0b9fb7adbc8c1488a1f7c33d4447ba23bffda407422507a3f2bf77e9a64c1",
+      "bytes": 697275
+    },
+    "frozen/assets/concrete.png": {
+      "sha256": "3995f138f7b5bb5a694e451eed7cc0f355d50751b98f38caccfc5dcc87b138c8",
+      "bytes": 1241299
+    },
+    "frozen/assets/limestone-relief.png": {
+      "sha256": "35ddd9f978419577807fbfd8bfb38c1bd414d1e5a6d192e47560324b51a372c7",
+      "bytes": 158042
+    },
+    "frozen/assets/limestone.png": {
+      "sha256": "676c61f329b6267d3732ee32588c641875584f88df524bef354786260eee0d75",
+      "bytes": 329366
+    },
+    "frozen/assets/oak.png": {
+      "sha256": "5c606b32772264fa2d163068f2629f2dea83ae929ce2b7fd4178eb7545cf7663",
+      "bytes": 325122
+    },
+    "frozen/assets/resin-flutes.png": {
+      "sha256": "cb79547ee75f41603f4e57f3557ef2cfb7e3a59086ef2e2ae467392eb2180215",
+      "bytes": 39475
+    },
+    "host-runtime-check.json": {
+      "sha256": "915f0fadb005fea6038923096b0f73e4c59b162c02e0a73fee107e9d21af7e3e",
+      "bytes": 2066
+    },
+    "preview.jpg": {
+      "sha256": "193d1a2b647fbe7b44829a510b01144396bcf0d5842dae26f37693aae31eaec9",
+      "bytes": 85433
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/museum.css",
+      "frozen/museum.js",
+      "licenses/dist/THREE-LICENSE.txt",
+      "frozen/assets/aggregate-relief.png",
+      "frozen/assets/aggregate.png",
+      "frozen/assets/bronze-brush.png",
+      "frozen/assets/bronze.png",
+      "frozen/assets/concrete-relief.png",
+      "frozen/assets/concrete.png",
+      "frozen/assets/limestone-relief.png",
+      "frozen/assets/limestone.png",
+      "frozen/assets/oak.png",
+      "frozen/assets/resin-flutes.png",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:50.463Z",
+    "sha256": "193d1a2b647fbe7b44829a510b01144396bcf0d5842dae26f37693aae31eaec9",
+    "bytes": 85433,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

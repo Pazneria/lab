@@ -1,0 +1,432 @@
+{
+  "entry": "astra62-09",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-09\\source-preservation.zip",
+  "archiveSha256": "9af268b34fc80dfbfacb0a1f58ad996896e87bb00ede6a7f9e2fd13984fa0e98",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/bay-geometry.gz": "assets/bay-geometry.gz",
+      "frozen/assets/bay.json": "assets/bay.json",
+      "frozen/assets/deck-use.png": "assets/deck-use.png",
+      "frozen/assets/finish.png": "assets/finish.png",
+      "frozen/assets/light-volume.gz": "assets/light-volume.gz",
+      "frozen/assets/satellite.png": "assets/satellite.png",
+      "frozen/bay.css": "bay.css",
+      "frozen/deck-wear.mjs": "deck-wear.mjs",
+      "frozen/equipment.mjs": "equipment.mjs",
+      "frozen/gallery.mjs": "gallery.mjs",
+      "frozen/geometry.mjs": "geometry.mjs",
+      "frozen/index.html.txt": "index.html",
+      "frozen/irradiance.mjs": "irradiance.mjs",
+      "frozen/layout.mjs": "layout.mjs",
+      "frozen/load.mjs": "load.mjs",
+      "frozen/main.mjs": "main.mjs",
+      "frozen/markings.mjs": "markings.mjs",
+      "frozen/materials.mjs": "materials.mjs",
+      "frozen/navigation.mjs": "navigation.mjs",
+      "frozen/outside.mjs": "outside.mjs",
+      "frozen/plate.mjs": "plate.mjs",
+      "frozen/recirculator.mjs": "recirculator.mjs",
+      "frozen/shop.mjs": "shop.mjs",
+      "frozen/structure.mjs": "structure.mjs",
+      "frozen/surface-assets.mjs": "surface-assets.mjs",
+      "frozen/vendor/fflate.module.js": "vendor/fflate.module.js",
+      "frozen/vendor/three.core.min.js": "vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "completion.json": "completion.json",
+      "README.md": "README.md",
+      "run-start.json": "run-start.json",
+      "licenses/vendor/FFLATE-LICENSE.txt": "vendor/FFLATE-LICENSE.txt",
+      "licenses/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt",
+      "frozen/assets/studio.f16": "assets/studio.f16"
+    },
+    "perFileSourceHashes": {
+      "bay.css": {
+        "sha256": "fcfbdb16a673f1e367b39892eb7fdaa5f28266c275fe5031567687f10aeb9aa9",
+        "bytes": 5560
+      },
+      "build.mjs": {
+        "sha256": "ef45bc84bc3c322a75bb9039d4e17837fa9da7bf47b44dd2394c901ddbc6b2ae",
+        "bytes": 2821
+      },
+      "completion.json": {
+        "sha256": "337656ddb5df037ff8858d3cf66a2421ed8588dbf35faabf3878d84564920c22",
+        "bytes": 2723
+      },
+      "deck-wear.mjs": {
+        "sha256": "ebfaf31f6c4836999524a85d467461ea87c5df0322f5317e63dd677ef0eb6938",
+        "bytes": 2607
+      },
+      "equipment.mjs": {
+        "sha256": "e8755ebca28e2ff343d89cc6d4ba18ed65f78f4a7abedfb67044703de93378f2",
+        "bytes": 6283
+      },
+      "gallery.mjs": {
+        "sha256": "e2fef5ffe55238b1b7e6dd159c237f39c3bb22ba8ca0127eea3cd5fe0529f906",
+        "bytes": 4867
+      },
+      "geometry.mjs": {
+        "sha256": "eb851120509dbf5696657b5034f22e8c94821ee78d6c7441fe54c40e86a26f79",
+        "bytes": 8086
+      },
+      "index.html": {
+        "sha256": "b7a9286acf170c35f77ab78f5c3c531bbc5e0a4ec2b48e8ed7205a291a7a75ed",
+        "bytes": 2886
+      },
+      "irradiance.mjs": {
+        "sha256": "5c80df836826cd01f362fcf077866e3a885eae9a2d1700d78f098b9562612f3d",
+        "bytes": 3749
+      },
+      "Kestrel-Bay-09.zip": {
+        "sha256": "d322ff0362c1758496ddf9df55cfdfd7dab7df6f95a2fd065eaaf1435fb3fab4",
+        "bytes": 5673147
+      },
+      "layout.mjs": {
+        "sha256": "e7f2f77a6da19396eb30ccc2a0f43ecf7f6270224267f116670de0d858768cd4",
+        "bytes": 388
+      },
+      "load.mjs": {
+        "sha256": "043bef30c30b44426e47f4b3591d531f044e240d10f738b24cc7833ee54f5bf0",
+        "bytes": 3826
+      },
+      "main.mjs": {
+        "sha256": "23f9c9955c90a4b33d327ef5336a4eb6d1e22e039a885335558ad7587788d301",
+        "bytes": 5225
+      },
+      "MANIFEST.sha256": {
+        "sha256": "2917dccffc676ffe44e31b1eb469b2ba3d97bfd6fde4996a04a8ffeb9ef3893f",
+        "bytes": 3110
+      },
+      "markings.mjs": {
+        "sha256": "33b928f4e07848cdda12745ff965ffa0f53f1dde850c6fd75f5c8dcb44c3765d",
+        "bytes": 4580
+      },
+      "materials.mjs": {
+        "sha256": "cca6e0aed6c6684c14c4cfaa7bfbb82915d26ebea5a564492d2d0b97a881ff33",
+        "bytes": 8002
+      },
+      "navigation.mjs": {
+        "sha256": "b941cccfe0ab4e5221d90f170e1b6831900cad9c710890138b23fa35f40fe3f0",
+        "bytes": 5800
+      },
+      "outside.mjs": {
+        "sha256": "a07508ef979da383540c4f38e4b8188c72e27307df30abba4a37d4326de3be9b",
+        "bytes": 2041
+      },
+      "package-lock.json": {
+        "sha256": "6c6a856d0680a4f0aeebdd9bd333f307205ca7180c01017068de9186dec16511",
+        "bytes": 443
+      },
+      "package.json": {
+        "sha256": "c0b149a4c26b810e9deb73b89409ff239c76d857b249e6f9b49cb28d152c8971",
+        "bytes": 51
+      },
+      "plate.mjs": {
+        "sha256": "d7b092ab0bf7c58774970f651fb3133dc1ffb3476d7acfdffbd5f2f4dbe4dd6a",
+        "bytes": 2862
+      },
+      "README.md": {
+        "sha256": "15a1d579a532090c9c25331e10795e916335ebbfcda2822f671be02a2bef28e4",
+        "bytes": 4534
+      },
+      "recirculator.mjs": {
+        "sha256": "8c66be260fcc7cd3c92c97968249b69941152718ea758fe21f97fe2f7848c8f6",
+        "bytes": 9824
+      },
+      "run-start.json": {
+        "sha256": "1a034856acde00aec3d63a0cbd58a345409a5284767615fe32cd10c88221c4b9",
+        "bytes": 348
+      },
+      "shop.mjs": {
+        "sha256": "cae8ef4ffdf58a73316502e622a0537e0ed5d46d1e0d1caaadaea8b579903b14",
+        "bytes": 10749
+      },
+      "structure.mjs": {
+        "sha256": "e0afcd58f24ec2faedc7c9fcaea52a755a29f793a7173a38e42a40a0c5429bba",
+        "bytes": 12481
+      },
+      "surface-assets.mjs": {
+        "sha256": "193014efc49e2b49ca5d4e8d299faa0469561028cd8ef1d8a01482015fca36fb",
+        "bytes": 7739
+      },
+      "verify.mjs": {
+        "sha256": "8c00ba5b189e3e8ad513b1cbc4fd2b47a565c326f8bfd98073fa088bbbcf30ef",
+        "bytes": 5913
+      },
+      "vendor/FFLATE-LICENSE.txt": {
+        "sha256": "805f6cb28bb8b6d3a0badd83c93bccd9671fa01a3b4b92b7042b0743325ac243",
+        "bytes": 1069
+      },
+      "vendor/fflate.module.js": {
+        "sha256": "209a4412eb48ce609edb4391992a792ffcc3983d30ee7e2b0b89a8c470f3cd8a",
+        "bytes": 89384
+      },
+      "vendor/package.json": {
+        "sha256": "ccdf8de44295f59be00f6b8cf1359959938a16a4ccf8c55940d8af1894748c5f",
+        "bytes": 19
+      },
+      "vendor/THREE-LICENSE.txt": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.core.min.js": {
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      },
+      "assets/bay-geometry.gz": {
+        "sha256": "30688acce6fd921558f63df9d33a3c8c74ba35faa8fc4ecd5b4b3ffb55fe67a8",
+        "bytes": 1765975
+      },
+      "assets/bay.json": {
+        "sha256": "8b80eeec1a858469716baca290841971be4d749c9fc051666cd21e305dfd5083",
+        "bytes": 20807
+      },
+      "assets/deck-use.png": {
+        "sha256": "743f18e842b76a9190f3a03a5dc3793896a1d9eead54a78d5307c17d93dcd231",
+        "bytes": 193989
+      },
+      "assets/finish.png": {
+        "sha256": "0951089f987cc66987dce1961192f1bbb8a089c8ae0ae426710dab2fda11fb91",
+        "bytes": 1306472
+      },
+      "assets/light-volume.gz": {
+        "sha256": "7ac378786710575abde74a7227242dd5d19c98abbdfc07938a684b35a39552dd",
+        "bytes": 725127
+      },
+      "assets/satellite.png": {
+        "sha256": "f5c7843e610367107b1f859a89b71ff3797c084d9258fef37c556b35d4f7d578",
+        "bytes": 1385261
+      },
+      "assets/studio.f16": {
+        "sha256": "307b8db785eb0348379198f11e606e13fda2391248444e468f09f276bf920967",
+        "bytes": 262144
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-09\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "completion.json": {
+      "sha256": "337656ddb5df037ff8858d3cf66a2421ed8588dbf35faabf3878d84564920c22",
+      "bytes": 2723
+    },
+    "host-run-record.json": {
+      "sha256": "4df8317551cf3f43897c668e438b74442e9cd198931b6d6d34ddb422cd65a02a",
+      "bytes": 1426
+    },
+    "launch-prompt.txt": {
+      "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+      "bytes": 7164
+    },
+    "README.md": {
+      "sha256": "15a1d579a532090c9c25331e10795e916335ebbfcda2822f671be02a2bef28e4",
+      "bytes": 4534
+    },
+    "run-start.json": {
+      "sha256": "1a034856acde00aec3d63a0cbd58a345409a5284767615fe32cd10c88221c4b9",
+      "bytes": 348
+    },
+    "source-audit.json": {
+      "sha256": "41c2b9abca7abad13e11bcd2bb295aaf7802f0819b05c015b1468a9638cd2ad5",
+      "bytes": 402
+    },
+    "frozen/bay.css": {
+      "sha256": "fcfbdb16a673f1e367b39892eb7fdaa5f28266c275fe5031567687f10aeb9aa9",
+      "bytes": 5560
+    },
+    "frozen/deck-wear.mjs": {
+      "sha256": "ebfaf31f6c4836999524a85d467461ea87c5df0322f5317e63dd677ef0eb6938",
+      "bytes": 2607
+    },
+    "frozen/equipment.mjs": {
+      "sha256": "e8755ebca28e2ff343d89cc6d4ba18ed65f78f4a7abedfb67044703de93378f2",
+      "bytes": 6283
+    },
+    "frozen/gallery.mjs": {
+      "sha256": "e2fef5ffe55238b1b7e6dd159c237f39c3bb22ba8ca0127eea3cd5fe0529f906",
+      "bytes": 4867
+    },
+    "frozen/geometry.mjs": {
+      "sha256": "eb851120509dbf5696657b5034f22e8c94821ee78d6c7441fe54c40e86a26f79",
+      "bytes": 8086
+    },
+    "frozen/index.html.txt": {
+      "sha256": "b7a9286acf170c35f77ab78f5c3c531bbc5e0a4ec2b48e8ed7205a291a7a75ed",
+      "bytes": 2886
+    },
+    "frozen/irradiance.mjs": {
+      "sha256": "5c80df836826cd01f362fcf077866e3a885eae9a2d1700d78f098b9562612f3d",
+      "bytes": 3749
+    },
+    "frozen/layout.mjs": {
+      "sha256": "e7f2f77a6da19396eb30ccc2a0f43ecf7f6270224267f116670de0d858768cd4",
+      "bytes": 388
+    },
+    "frozen/load.mjs": {
+      "sha256": "043bef30c30b44426e47f4b3591d531f044e240d10f738b24cc7833ee54f5bf0",
+      "bytes": 3826
+    },
+    "frozen/main.mjs": {
+      "sha256": "23f9c9955c90a4b33d327ef5336a4eb6d1e22e039a885335558ad7587788d301",
+      "bytes": 5225
+    },
+    "frozen/markings.mjs": {
+      "sha256": "33b928f4e07848cdda12745ff965ffa0f53f1dde850c6fd75f5c8dcb44c3765d",
+      "bytes": 4580
+    },
+    "frozen/materials.mjs": {
+      "sha256": "cca6e0aed6c6684c14c4cfaa7bfbb82915d26ebea5a564492d2d0b97a881ff33",
+      "bytes": 8002
+    },
+    "frozen/navigation.mjs": {
+      "sha256": "b941cccfe0ab4e5221d90f170e1b6831900cad9c710890138b23fa35f40fe3f0",
+      "bytes": 5800
+    },
+    "frozen/outside.mjs": {
+      "sha256": "a07508ef979da383540c4f38e4b8188c72e27307df30abba4a37d4326de3be9b",
+      "bytes": 2041
+    },
+    "frozen/plate.mjs": {
+      "sha256": "d7b092ab0bf7c58774970f651fb3133dc1ffb3476d7acfdffbd5f2f4dbe4dd6a",
+      "bytes": 2862
+    },
+    "frozen/recirculator.mjs": {
+      "sha256": "8c66be260fcc7cd3c92c97968249b69941152718ea758fe21f97fe2f7848c8f6",
+      "bytes": 9824
+    },
+    "frozen/shop.mjs": {
+      "sha256": "cae8ef4ffdf58a73316502e622a0537e0ed5d46d1e0d1caaadaea8b579903b14",
+      "bytes": 10749
+    },
+    "frozen/structure.mjs": {
+      "sha256": "e0afcd58f24ec2faedc7c9fcaea52a755a29f793a7173a38e42a40a0c5429bba",
+      "bytes": 12481
+    },
+    "frozen/surface-assets.mjs": {
+      "sha256": "193014efc49e2b49ca5d4e8d299faa0469561028cd8ef1d8a01482015fca36fb",
+      "bytes": 7739
+    },
+    "licenses/vendor/FFLATE-LICENSE.txt": {
+      "sha256": "805f6cb28bb8b6d3a0badd83c93bccd9671fa01a3b4b92b7042b0743325ac243",
+      "bytes": 1069
+    },
+    "licenses/vendor/THREE-LICENSE.txt": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/assets/bay-geometry.gz": {
+      "sha256": "30688acce6fd921558f63df9d33a3c8c74ba35faa8fc4ecd5b4b3ffb55fe67a8",
+      "bytes": 1765975
+    },
+    "frozen/assets/bay.json": {
+      "sha256": "8b80eeec1a858469716baca290841971be4d749c9fc051666cd21e305dfd5083",
+      "bytes": 20807
+    },
+    "frozen/assets/deck-use.png": {
+      "sha256": "743f18e842b76a9190f3a03a5dc3793896a1d9eead54a78d5307c17d93dcd231",
+      "bytes": 193989
+    },
+    "frozen/assets/finish.png": {
+      "sha256": "0951089f987cc66987dce1961192f1bbb8a089c8ae0ae426710dab2fda11fb91",
+      "bytes": 1306472
+    },
+    "frozen/assets/light-volume.gz": {
+      "sha256": "7ac378786710575abde74a7227242dd5d19c98abbdfc07938a684b35a39552dd",
+      "bytes": 725127
+    },
+    "frozen/assets/satellite.png": {
+      "sha256": "f5c7843e610367107b1f859a89b71ff3797c084d9258fef37c556b35d4f7d578",
+      "bytes": 1385261
+    },
+    "frozen/vendor/fflate.module.js": {
+      "sha256": "209a4412eb48ce609edb4391992a792ffcc3983d30ee7e2b0b89a8c470f3cd8a",
+      "bytes": 89384
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "frozen/assets/studio.f16": {
+      "sha256": "307b8db785eb0348379198f11e606e13fda2391248444e468f09f276bf920967",
+      "bytes": 262144
+    },
+    "host-runtime-check.json": {
+      "sha256": "e7818507267827b30f026223cad7c8a978a6f47e0297ca2e5c89878854c53182",
+      "bytes": 2071
+    },
+    "preview.jpg": {
+      "sha256": "3fcc275f4fdf28ca6400cb844b7093be56e4ebe079a3996a3067f7f4cbe8c908",
+      "bytes": 138543
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "completion.json",
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run-start.json",
+      "source-audit.json",
+      "frozen/bay.css",
+      "frozen/deck-wear.mjs",
+      "frozen/equipment.mjs",
+      "frozen/gallery.mjs",
+      "frozen/geometry.mjs",
+      "frozen/index.html.txt",
+      "frozen/irradiance.mjs",
+      "frozen/layout.mjs",
+      "frozen/load.mjs",
+      "frozen/main.mjs",
+      "frozen/markings.mjs",
+      "frozen/materials.mjs",
+      "frozen/navigation.mjs",
+      "frozen/outside.mjs",
+      "frozen/plate.mjs",
+      "frozen/recirculator.mjs",
+      "frozen/shop.mjs",
+      "frozen/structure.mjs",
+      "frozen/surface-assets.mjs",
+      "licenses/vendor/FFLATE-LICENSE.txt",
+      "licenses/vendor/THREE-LICENSE.txt",
+      "frozen/assets/bay-geometry.gz",
+      "frozen/assets/bay.json",
+      "frozen/assets/deck-use.png",
+      "frozen/assets/finish.png",
+      "frozen/assets/light-volume.gz",
+      "frozen/assets/satellite.png",
+      "frozen/vendor/fflate.module.js",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js",
+      "frozen/assets/studio.f16",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:23.860Z",
+    "sha256": "3fcc275f4fdf28ca6400cb844b7093be56e4ebe079a3996a3067f7f4cbe8c908",
+    "bytes": 138543,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

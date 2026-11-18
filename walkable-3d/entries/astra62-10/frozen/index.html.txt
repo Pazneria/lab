@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#292c26">
+  <meta name="description" content="Explore Alderwick Hill Library, a three-dimensional hillside reading room and map gallery.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./library.css">
+  <title>Alderwick Hill Library</title>
+</head>
+<body class="loading">
+  <main id="library" aria-label="Alderwick Hill Library">
+    <canvas id="view" tabindex="0" aria-label="Three-dimensional library. Use W A S D to walk and the mouse to look. Press R to reset."></canvas>
+    <div class="top-shade" aria-hidden="true"></div>
+    <header class="museum-ui">
+      <div class="wordmark" aria-label="Alderwick Hill Library">
+        <span class="crest" aria-hidden="true"><i></i></span>
+        <span class="name"><span>Alderwick</span><small>Hill Library</small></span>
+      </div>
+      <nav aria-label="Exploration controls">
+        <button id="help-button" aria-expanded="false" aria-controls="help">Controls <kbd>?</kbd></button>
+        <button id="reset">Reset <kbd>R</kbd></button>
+      </nav>
+    </header>
+    <section id="help" class="help" hidden aria-label="Exploration controls">
+      <div class="help-heading"><h1>Exploring the library</h1><button id="close-help" aria-label="Close controls">×</button></div>
+      <dl>
+        <div><dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></dt><dd>Walk</dd></div>
+        <div><dt>Mouse</dt><dd>Look around</dd></div>
+        <div><dt><kbd>↑</kbd><kbd>↓</kbd> <kbd>←</kbd><kbd>→</kbd></dt><dd>Walk and turn</dd></div>
+        <div><dt><kbd>Shift</kbd></dt><dd>Walk faster</dd></div>
+        <div><dt><kbd>Esc</kbd></dt><dd>Release mouse</dd></div>
+        <div><dt><kbd>R</kbd> <kbd>H</kbd></dt><dd>Reset / hide interface</dd></div>
+      </dl>
+      <p>Drag the view to look if your browser keeps the cursor visible. On touchscreens, walk with the pad and drag the scene to turn.</p>
+    </section>
+    <div id="arrival" class="museum-ui">
+      <button id="enter">Enter library</button>
+      <span id="prompt-hint">WASD to walk · Mouse to look</span>
+    </div>
+    <div class="location museum-ui" aria-hidden="true"><span id="floor">Ground floor</span><span id="zone">Reading room</span></div>
+    <div class="in-play museum-ui"><kbd>Esc</kbd> release mouse</div>
+    <div id="walk-pad" aria-label="Touch movement pad"><i id="walk-knob"></i></div>
+    <div id="opening" role="status"><div class="loading-mark" aria-hidden="true"></div><span id="load-text">Opening the library…</span><span id="load-detail"></span></div>
+    <div id="announcement" class="sr-only" aria-live="polite"></div>
+  </main>
+  <noscript>Enable JavaScript to explore Alderwick Hill Library.</noscript>
+  <script>
+    if (location.protocol === 'file:') {
+      document.getElementById('load-text').textContent = 'Open the library on localhost';
+      document.getElementById('load-detail').textContent = 'In this folder, run python -m http.server 48910 --bind 127.0.0.1 and visit http://127.0.0.1:48910/.';
+    }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

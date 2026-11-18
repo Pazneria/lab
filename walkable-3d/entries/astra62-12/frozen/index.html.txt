@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#213833">
+  <meta name="description" content="Explore The Night Pier, an original neighborhood arcade after hours.">
+  <title>The Night Pier · Neighborhood Arcade</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="arcade" aria-label="The Night Pier, explorable 3D arcade">
+    <canvas id="view" tabindex="0" aria-label="First-person view. Use W A S D to walk, the mouse to look, and R to return to the entrance."></canvas>
+    <section id="welcome" aria-labelledby="name">
+      <div class="title-line"><span class="house-mark" aria-hidden="true">✦</span><h1 id="name">The Night Pier</h1></div>
+      <p id="intro">WASD to walk <span>·</span> Mouse to look</p>
+      <button id="enter" disabled>Opening the arcade…</button>
+    </section>
+    <div id="commands" aria-label="Scene controls">
+      <button id="help-button" aria-controls="help" aria-expanded="false"><span class="help-symbol" aria-hidden="true">?</span> Controls</button>
+      <button id="reset-button" title="Return to the entrance (R)"><span aria-hidden="true">↶</span> Reset</button>
+    </div>
+    <section id="help" aria-label="Exploration controls" hidden>
+      <div class="help-title"><h2>Controls</h2><button id="close-help" aria-label="Close controls">×</button></div>
+      <dl>
+        <div><dt>Walk</dt><dd><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></dd></div>
+        <div><dt>Look around</dt><dd>Mouse</dd></div>
+        <div><dt>Walk forward / back</dt><dd><kbd>↑</kbd> <kbd>↓</kbd></dd></div>
+        <div><dt>Turn left / right</dt><dd><kbd>←</kbd> <kbd>→</kbd></dd></div>
+        <div><dt>Walk faster</dt><dd><kbd>Shift</kbd></dd></div>
+        <div><dt>Return to entrance</dt><dd><kbd>R</kbd></dd></div>
+        <div><dt>Release mouse</dt><dd><kbd>Esc</kbd></dd></div>
+        <div><dt>Show controls</dt><dd><kbd>H</kbd></dd></div>
+      </dl>
+      <p>If mouse capture is unavailable, drag the view to look around.</p>
+    </section>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <noscript>Enable JavaScript to explore The Night Pier.</noscript>
+  </main>
+  <script type="module" src="./main.mjs"></script>
+</body>
+</html>

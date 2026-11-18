@@ -1,0 +1,296 @@
+{
+  "entry": "astra62-04",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-04\\source-preservation.zip",
+  "archiveSha256": "37e97576cfc96d25b4cee9d1f014339b231edae74ebcbba98a420055c723928e",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/architecture.js": "architecture.js",
+      "frozen/artwork.js": "artwork.js",
+      "frozen/baskervville-latin-400-italic.woff2": "baskervville-latin-400-italic.woff2",
+      "frozen/baskervville-latin-400-normal.woff2": "baskervville-latin-400-normal.woff2",
+      "frozen/botany.js": "botany.js",
+      "frozen/fittings.js": "fittings.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/instrument-sans-latin-400-normal.woff2": "instrument-sans-latin-400-normal.woff2",
+      "frozen/palm-house.mesh.gz": "palm-house.mesh.gz",
+      "frozen/planting.js": "planting.js",
+      "frozen/potting.js": "potting.js",
+      "frozen/renderer.js": "renderer.js",
+      "frozen/shaders.js": "shaders.js",
+      "frozen/style.css": "style.css",
+      "frozen/surface-studies.bin.gz": "surface-studies.bin.gz",
+      "frozen/visitor.js": "visitor.js",
+      "frozen/walk.js": "walk.js",
+      "README.md": "README.md",
+      "run.json": "run.json",
+      "licenses/baskervville-license.txt": "baskervville-license.txt",
+      "licenses/instrument-sans-license.txt": "instrument-sans-license.txt"
+    },
+    "perFileSourceHashes": {
+      "architecture.js": {
+        "sha256": "b0d237da3f396e1b2a031f5f7183ee6cfbb779649ed097adc45739364177e3c8",
+        "bytes": 12738
+      },
+      "artwork.js": {
+        "sha256": "65ca6451985860f9cc2b047d17a5e34ee4427ea8b2a7bc71bdf22442d41afc94",
+        "bytes": 7726
+      },
+      "bake-scene.cjs": {
+        "sha256": "1b840e8b2f35bc2db00d426c11e6d702cb126d68a9a561d45f30056b8e4e699b",
+        "bytes": 5183
+      },
+      "bake-surfaces.cjs": {
+        "sha256": "1f2814811292be2b1b2b6f2114e34743b983123dd6b6b2a09d2ae9e833032b47",
+        "bytes": 7752
+      },
+      "baskervville-latin-400-italic.woff2": {
+        "sha256": "12304ed58983cb52e07841bffbb4101204b9d591e630cd75886fd1b5653d3c32",
+        "bytes": 19068
+      },
+      "baskervville-latin-400-normal.woff2": {
+        "sha256": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142",
+        "bytes": 18088
+      },
+      "baskervville-license.txt": {
+        "sha256": "9993ecfed665b8ce0132d725aaeb49f3d4c2532945f0637bd04743b041fe6fdb",
+        "bytes": 4527
+      },
+      "botany.js": {
+        "sha256": "4d20e9ea49447eeba0d9e1316812a967848022f4c7c2d37fd313760e7969ca30",
+        "bytes": 13932
+      },
+      "check-build.cjs": {
+        "sha256": "37b768fc1a4bca3ba86f503e4b69ac6e5183a4da2d7463de70f8618a84bce41b",
+        "bytes": 5067
+      },
+      "fittings.js": {
+        "sha256": "87fb5937fc607ee008c745604927bba5cdcdd0175905bc49d4589ecb7705a5e9",
+        "bytes": 8029
+      },
+      "geometry.js": {
+        "sha256": "e864cc3237970071813c3c304ee8544a4adb23c15e0b6622a0dbfb1b7cb99dff",
+        "bytes": 7112
+      },
+      "index.html": {
+        "sha256": "a6eb4a6a9098a7f58fbfdb42f52b7387e490abd02c9ad04e45b561319cdc21a5",
+        "bytes": 4316
+      },
+      "instrument-sans-latin-400-normal.woff2": {
+        "sha256": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+        "bytes": 16860
+      },
+      "instrument-sans-license.txt": {
+        "sha256": "c27a3c53c3beed7f5c26853afa15991478ff7145d3754a36b0382f84e10c0d03",
+        "bytes": 4538
+      },
+      "palm-house.mesh.gz": {
+        "sha256": "d660f73f9479d922ee1e4833931b3dd1f4b727632c1e066020af26691cdbf6c3",
+        "bytes": 4831423
+      },
+      "planting.js": {
+        "sha256": "62d3eb0672410d3d90e663bf2345aa82810821bda498f2c65739b6125acd888d",
+        "bytes": 5534
+      },
+      "potting.js": {
+        "sha256": "313257f9865c277a0c08749004fd73266f7628e059afd143c6d90f59e84f0723",
+        "bytes": 10832
+      },
+      "README.md": {
+        "sha256": "ab191ce7e5dcc2b5eccb68c74f7e278fb44a2b2a441bf855e3afb4f93578a588",
+        "bytes": 3427
+      },
+      "renderer.js": {
+        "sha256": "821fb928a1cff993ed6fd3412c2b03d16c709d74375d6654d1c2826546c07de8",
+        "bytes": 12994
+      },
+      "run.json": {
+        "sha256": "eb69b3ceec8db8029948f1830d691a3cbb13fc5808d1bddf5caadcba621485d9",
+        "bytes": 4523
+      },
+      "shaders.js": {
+        "sha256": "3e6534b9561ac8fa8b2e587a9bca5afb681172815f9698692e145c889fd45aee",
+        "bytes": 9321
+      },
+      "style.css": {
+        "sha256": "a9d8ee8a3e86ade9755f763f7172d6d074823b94430ffffa63aaac7a83d8e999",
+        "bytes": 7120
+      },
+      "surface-studies.bin.gz": {
+        "sha256": "82923eeba24229be16731a1c0c742ac8c10e9a5b5d6f055e498187078947a622",
+        "bytes": 8545819
+      },
+      "visitor.js": {
+        "sha256": "16ff9eebe4d661d1aa4e949d445d5b0420afee01dcfcf1245000161bc9702a0d",
+        "bytes": 7978
+      },
+      "walk.js": {
+        "sha256": "33be7978ec774c31a5c00e64450afd4619c0ddd55985981543ef317896aab795",
+        "bytes": 2639
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-04\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "e780064849f3db2a2ade6e8592e64e0c91d3fae2e4b9d3394247efd369261ed5",
+      "bytes": 1426
+    },
+    "launch-prompt.txt": {
+      "sha256": "9bdc755a7c3088bf6b34b3736076fe207254fa68182bc3cb08e82a989af83cf8",
+      "bytes": 6964
+    },
+    "README.md": {
+      "sha256": "ab191ce7e5dcc2b5eccb68c74f7e278fb44a2b2a441bf855e3afb4f93578a588",
+      "bytes": 3427
+    },
+    "run.json": {
+      "sha256": "eb69b3ceec8db8029948f1830d691a3cbb13fc5808d1bddf5caadcba621485d9",
+      "bytes": 4523
+    },
+    "source-audit.json": {
+      "sha256": "46e001c700f70061c6a63cc2f4532b7468d21391d3078dc3839bdcf5f96d6bbd",
+      "bytes": 431
+    },
+    "frozen/architecture.js": {
+      "sha256": "b0d237da3f396e1b2a031f5f7183ee6cfbb779649ed097adc45739364177e3c8",
+      "bytes": 12738
+    },
+    "frozen/artwork.js": {
+      "sha256": "65ca6451985860f9cc2b047d17a5e34ee4427ea8b2a7bc71bdf22442d41afc94",
+      "bytes": 7726
+    },
+    "frozen/baskervville-latin-400-italic.woff2": {
+      "sha256": "12304ed58983cb52e07841bffbb4101204b9d591e630cd75886fd1b5653d3c32",
+      "bytes": 19068
+    },
+    "frozen/baskervville-latin-400-normal.woff2": {
+      "sha256": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142",
+      "bytes": 18088
+    },
+    "frozen/botany.js": {
+      "sha256": "4d20e9ea49447eeba0d9e1316812a967848022f4c7c2d37fd313760e7969ca30",
+      "bytes": 13932
+    },
+    "frozen/fittings.js": {
+      "sha256": "87fb5937fc607ee008c745604927bba5cdcdd0175905bc49d4589ecb7705a5e9",
+      "bytes": 8029
+    },
+    "frozen/geometry.js": {
+      "sha256": "e864cc3237970071813c3c304ee8544a4adb23c15e0b6622a0dbfb1b7cb99dff",
+      "bytes": 7112
+    },
+    "frozen/index.html.txt": {
+      "sha256": "a6eb4a6a9098a7f58fbfdb42f52b7387e490abd02c9ad04e45b561319cdc21a5",
+      "bytes": 4316
+    },
+    "frozen/instrument-sans-latin-400-normal.woff2": {
+      "sha256": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+      "bytes": 16860
+    },
+    "frozen/palm-house.mesh.gz": {
+      "sha256": "d660f73f9479d922ee1e4833931b3dd1f4b727632c1e066020af26691cdbf6c3",
+      "bytes": 4831423
+    },
+    "frozen/planting.js": {
+      "sha256": "62d3eb0672410d3d90e663bf2345aa82810821bda498f2c65739b6125acd888d",
+      "bytes": 5534
+    },
+    "frozen/potting.js": {
+      "sha256": "313257f9865c277a0c08749004fd73266f7628e059afd143c6d90f59e84f0723",
+      "bytes": 10832
+    },
+    "frozen/renderer.js": {
+      "sha256": "821fb928a1cff993ed6fd3412c2b03d16c709d74375d6654d1c2826546c07de8",
+      "bytes": 12994
+    },
+    "frozen/shaders.js": {
+      "sha256": "3e6534b9561ac8fa8b2e587a9bca5afb681172815f9698692e145c889fd45aee",
+      "bytes": 9321
+    },
+    "frozen/style.css": {
+      "sha256": "a9d8ee8a3e86ade9755f763f7172d6d074823b94430ffffa63aaac7a83d8e999",
+      "bytes": 7120
+    },
+    "frozen/surface-studies.bin.gz": {
+      "sha256": "82923eeba24229be16731a1c0c742ac8c10e9a5b5d6f055e498187078947a622",
+      "bytes": 8545819
+    },
+    "frozen/visitor.js": {
+      "sha256": "16ff9eebe4d661d1aa4e949d445d5b0420afee01dcfcf1245000161bc9702a0d",
+      "bytes": 7978
+    },
+    "frozen/walk.js": {
+      "sha256": "33be7978ec774c31a5c00e64450afd4619c0ddd55985981543ef317896aab795",
+      "bytes": 2639
+    },
+    "licenses/baskervville-license.txt": {
+      "sha256": "9993ecfed665b8ce0132d725aaeb49f3d4c2532945f0637bd04743b041fe6fdb",
+      "bytes": 4527
+    },
+    "licenses/instrument-sans-license.txt": {
+      "sha256": "c27a3c53c3beed7f5c26853afa15991478ff7145d3754a36b0382f84e10c0d03",
+      "bytes": 4538
+    },
+    "host-runtime-check.json": {
+      "sha256": "83b9b3c3cbfbb954ad5284e0ef767665c9d52fd31af2d31d66ad025df2483964",
+      "bytes": 2069
+    },
+    "preview.jpg": {
+      "sha256": "1d38e6456c46c5a8f96699e90a0414da864475f04cca1a20a4da717f4a8d0b23",
+      "bytes": 166927
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run.json",
+      "source-audit.json",
+      "frozen/architecture.js",
+      "frozen/artwork.js",
+      "frozen/baskervville-latin-400-italic.woff2",
+      "frozen/baskervville-latin-400-normal.woff2",
+      "frozen/botany.js",
+      "frozen/fittings.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/instrument-sans-latin-400-normal.woff2",
+      "frozen/palm-house.mesh.gz",
+      "frozen/planting.js",
+      "frozen/potting.js",
+      "frozen/renderer.js",
+      "frozen/shaders.js",
+      "frozen/style.css",
+      "frozen/surface-studies.bin.gz",
+      "frozen/visitor.js",
+      "frozen/walk.js",
+      "licenses/baskervville-license.txt",
+      "licenses/instrument-sans-license.txt",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:15.591Z",
+    "sha256": "1d38e6456c46c5a8f96699e90a0414da864475f04cca1a20a4da717f4a8d0b23",
+    "bytes": 166927,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

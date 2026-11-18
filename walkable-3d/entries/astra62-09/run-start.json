@@ -1,0 +1,7 @@
+{
+  "entry": "SceneBench 2026-11-17 scene 09",
+  "requested": "GPT-6.2 Astra / XHIGH / Standard",
+  "serving_metadata": "Agent interface identifies Codex based on GPT-6. Exact serving model, effort and tier are not exposed.",
+  "first_implementation": "2026-11-18T00:07:17.4555549+00:00",
+  "deadline": "2026-11-18T01:07:17.4555549+00:00"
+}

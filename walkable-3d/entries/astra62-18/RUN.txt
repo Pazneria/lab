@@ -1,0 +1,37 @@
+SceneBench 2026-11-17 / scene 18
+Requested: GPT-6.2 Astra / XHIGH / Standard
+Exposed serving metadata: Codex, based on GPT-6. No per-run model variant, effort or service-tier identifier exposed.
+Workspace verified: C:\Users\jmore\Documents\Codex\2026-10-26\task\batch-20261117-gpt62\entrants\astra\scene-18
+First implementation action: 2026-11-18 02:08:37 UTC (local authoring-tool and workspace preflight).
+Deadline: 2026-11-18 03:08:37 UTC.
+
+Confirmed artifact timings from the filesystem
+First authored run record created 2026-11-18T02:09:49.5789077Z.
+First geometry source file created 2026-11-18T02:13:53.7049041Z.
+The one-hour clock includes the initial toolchain check before either write.
+
+Build
+Soundings.zip, 7,449,356 bytes, 18 entries, each verified against its source bytes.
+SHA-256 31462d83d5cda2ba91b2cfed334bb727f892e13fb55d8f6e835343c9294bfc37
+Unpacked entry point index.html. Launch instructions and controls are in README.txt.
+Suggested local address http://127.0.0.1:48118/
+An inspection of the local listener table showed port 48118 available.
+
+Checks completed
+All 13 JS modules and the Python asset-generator syntax passed.
+Khronos glslang 11.7.0 performed static GLSL ES validation and linkage of the interior, space and glass programs.
+The final mesh contains 210,714 packed vertices and 244,818 triangles in 23 spatial/material batches.
+All packed indices, vertex bounds, section lengths and quantized normals passed.
+A CPU check of the production collision routine traversed 18 waypoints and 644 checked steps across the inspection and return route, with 16 obstacle footprints and both end boundaries.
+Analytical mesh queries checked the sightline to space through the glass, return hatch direction, side hulls, sloped shoulders, deck and ceiling.
+PNG dimensions, CRCs and decoded lengths, font signatures and licenses, local module references, HTML IDs, and server MIME mappings were checked.
+The final portable ZIP passed CRC and byte-for-byte content verification.
+
+Execution and cleanup
+One assigned agent worked exclusively in this entry directory. All scene meshes, illustrations, surface patterns and celestial textures were authored for this entry.
+The three local OFL fonts are from the Fontsource 5.3.0 registry packages. The temporary validator was extracted from npm package glslang-validator-prebuilt-predownloaded 0.0.2. Registry package checksums were verified.
+Every bounded command completed. The temporary compiler and its six input files were removed. No background process was launched.
+No browser, headless browser, UI test, screenshot renderer, GPU test, frame-time benchmark or server was started. Browser behavior, appearance, and performance remain unverified.
+Interruptions: none. The clock was never paused or extended.
+Actual stop timestamp: 2026-11-18 03:03:35.627 +00:00 (UTC).
+Elapsed from timing origin: 00:54:58.6277365.

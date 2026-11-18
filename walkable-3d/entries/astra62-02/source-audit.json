@@ -1,0 +1,9 @@
+{
+  "directFetchCandidates": [
+    "frozen/main.js"
+  ],
+  "localFontCandidates": [],
+  "otherReviewCandidates": [],
+  "currentHostCsp": "connect-src none; font-src none; no policy change authorized",
+  "note": "Static candidates require call-site review and separate smoke validation. Bundled optional vendor loaders/preload fallbacks are not automatically classified as active external requests."
+}

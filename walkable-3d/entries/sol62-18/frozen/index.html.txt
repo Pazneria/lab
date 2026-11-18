@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141a20">
+  <title>The Quiet Meridian · Captain’s Quarters</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="experience" aria-label="The Quiet Meridian, an explorable three-dimensional captain’s quarters">
+    <div id="viewport"></div>
+    <header class="identity">
+      <span class="insignia" aria-hidden="true"><i></i><i></i><i></i></span>
+      <div>
+        <div class="ship">THE QUIET MERIDIAN</div>
+        <div class="zone" id="zone">Captain’s quarters</div>
+      </div>
+    </header>
+    <div id="reticle" aria-hidden="true"></div>
+    <div class="tools">
+      <button id="reset" type="button" title="Return to entrance (R)" aria-label="Return to entrance">↶ <span>Reset</span></button>
+      <button id="help" type="button" title="Controls (H)" aria-expanded="true" aria-controls="controls"><span class="key-icon">?</span> <span>Controls</span></button>
+    </div>
+    <section id="controls" aria-label="Controls">
+      <div class="panel-main">
+        <button id="enter" type="button">Explore quarters <span aria-hidden="true">↗</span></button>
+        <span id="look-instructions">Click to capture the mouse, or drag to look.</span>
+      </div>
+      <div class="bindings">
+        <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</span>
+        <span><kbd>Shift</kbd> Quick walk</span>
+        <span><kbd>R</kbd> Reset</span>
+        <span><kbd>Esc</kbd> Release mouse</span>
+      </div>
+      <p>Arrow keys also move and turn.</p>
+    </section>
+    <div id="loading" role="status">
+      <i class="loading-line" aria-hidden="true"></i>
+      <span id="status">Preparing quarters</span>
+    </div>
+  </main>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

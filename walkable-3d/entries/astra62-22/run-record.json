@@ -1,0 +1,47 @@
+{
+  "benchmark": "SceneBench 2026-11-17, scene 22",
+  "title": "Maison des Marées",
+  "requested": {
+    "model": "GPT-6.2 Astra",
+    "effort": "XHIGH",
+    "service": "Standard"
+  },
+  "serving_metadata": {
+    "exposed_identity": "Codex, based on GPT-6",
+    "exact_model": null,
+    "effort": null,
+    "service_tier": null,
+    "note": "Exact serving model, effort and service tier were not exposed. No global configuration file was used."
+  },
+  "verified_workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-22",
+  "first_implementation_action": "Dependency preparation and local environment check after verifying the empty destination",
+  "first_implementation_utc": "2026-11-18T03:07:11.8634367+00:00",
+  "deadline_utc": "2026-11-18T04:07:11.8634367+00:00",
+  "actual_stop_utc": "2026-11-18T03:57:05.9677489+00:00",
+  "elapsed_seconds": 2994.104,
+  "interruptions": [],
+  "build_directory": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-22\\atelier",
+  "suggested_launch_address": "http://127.0.0.1:8422/",
+  "suggested_port_status": "Unconfirmed. The OS denied the TCP listener inventory check. No listener was opened.",
+  "build_files": 18,
+  "build_bytes": 831923,
+  "checksum_manifest_sha256": "07c82a6bc0fa5f32bf24d9d918f493a9d534e151378d51c9ff7aed3b212da0d2",
+  "checks": [
+    "16 authored, vendored and verification JavaScript modules passed syntax checks",
+    "Local module dependencies and vendored Three.js license verified",
+    "296854 finite mesh vertices, 377970 indexed triangles, 117 static material batches",
+    "25 print atlas entries fit the atlas",
+    "Movement solver traversed the complete inspection route and returned to the entrance",
+    "Entrance and four garment inspection sightlines passed CPU ray checks",
+    "Conservative furnishing visibility checks passed",
+    "All 18 build file SHA-256 checksums independently verified after temporary dependency cleanup"
+  ],
+  "testing_deferred": [
+    "Browser launch",
+    "Visual verification",
+    "Interactive control testing",
+    "GPU checks",
+    "Frame-time measurements"
+  ],
+  "process_cleanup": "All one-shot CLI processes completed. The temporary node_modules install was removed. No server, browser, watcher or benchmark process was launched."
+}

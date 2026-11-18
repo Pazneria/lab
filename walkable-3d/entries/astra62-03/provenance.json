@@ -1,0 +1,482 @@
+{
+  "entry": "astra62-03",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-03\\source-preservation.zip",
+  "archiveSha256": "5d7a6c2b85b7d5f26efd8b200579ce1dea4ccefdfbcdc9e7fd95d9e037eb26a5",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/approaches.js": "approaches.js",
+      "frozen/chamber.js": "chamber.js",
+      "frozen/dome.js": "dome.js",
+      "frozen/fittings.js": "fittings.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/instrument.js": "instrument.js",
+      "frozen/landscape.js": "landscape.js",
+      "frozen/layout.js": "layout.js",
+      "frozen/main.js": "main.js",
+      "frozen/materials.js": "materials.js",
+      "frozen/observatory.mesh.gz": "observatory.mesh.gz",
+      "frozen/style.css": "style.css",
+      "frozen/textures/ashlar-n.jpg": "textures/ashlar-n.jpg",
+      "frozen/textures/ashlar.jpg": "textures/ashlar.jpg",
+      "frozen/textures/cedar-n.jpg": "textures/cedar-n.jpg",
+      "frozen/textures/cedar.jpg": "textures/cedar.jpg",
+      "frozen/textures/copper-n.jpg": "textures/copper-n.jpg",
+      "frozen/textures/copper-orm.jpg": "textures/copper-orm.jpg",
+      "frozen/textures/copper.jpg": "textures/copper.jpg",
+      "frozen/textures/dome-n.jpg": "textures/dome-n.jpg",
+      "frozen/textures/dome-orm.jpg": "textures/dome-orm.jpg",
+      "frozen/textures/dome.jpg": "textures/dome.jpg",
+      "frozen/textures/flag-n.jpg": "textures/flag-n.jpg",
+      "frozen/textures/flag.jpg": "textures/flag.jpg",
+      "frozen/textures/lime-n.jpg": "textures/lime-n.jpg",
+      "frozen/textures/lime.jpg": "textures/lime.jpg",
+      "frozen/textures/sand-n.jpg": "textures/sand-n.jpg",
+      "frozen/textures/sand.jpg": "textures/sand.jpg",
+      "frozen/textures/strata-n.jpg": "textures/strata-n.jpg",
+      "frozen/textures/strata.jpg": "textures/strata.jpg",
+      "frozen/vendor/three.core.min.js": "vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "frozen/view.js": "view.js",
+      "frozen/walk.js": "walk.js",
+      "frozen/weathering.js": "weathering.js",
+      "README.md": "README.md",
+      "run.json": "run.json",
+      "licenses/vendor/LICENSE": "vendor/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "approaches.js": {
+        "sha256": "e49ff143060b6b6b168f532178f269460003553e4eb8189e08fe004725b46459",
+        "bytes": 9222
+      },
+      "build.mjs": {
+        "sha256": "9c95bc253ba6899c49006c02e6e1dcafdc75f42bc7ef1ec3cab4d780d566a6e4",
+        "bytes": 4795
+      },
+      "chamber.js": {
+        "sha256": "004c26cfe6dc71864bad007d4031f659858310c392198c937dfa6583e0ba99e2",
+        "bytes": 8946
+      },
+      "check.mjs": {
+        "sha256": "e7f33415533269002d05be258951b78f0d061bd273ed359a913aca6a47e18e5f",
+        "bytes": 9000
+      },
+      "CHECKS.txt": {
+        "sha256": "180f2afbb8e32eacf5eb4f6d9c7d79c34913cc2ddc863b6a2d54981f3a9c4790",
+        "bytes": 958
+      },
+      "dome.js": {
+        "sha256": "7e88ac5c7771f78aa0de492b28d634ce1aca202c51f8d83b47ed74b05ae6f22b",
+        "bytes": 5366
+      },
+      "fittings.js": {
+        "sha256": "242c722f6406a9724c59d5bec6d1961cc7ff0e6e27f03422cb0f767c7b21ce7b",
+        "bytes": 14017
+      },
+      "geometry.js": {
+        "sha256": "41c589e43d74a802a7c7ff1af3c258cbbe70e1524a3b5d6beba7768e4e6e5555",
+        "bytes": 8620
+      },
+      "index.html": {
+        "sha256": "860e305de99f3baecc1de82359063faa7985c53622f5cdd3615223c0606abdee",
+        "bytes": 3250
+      },
+      "instrument.js": {
+        "sha256": "c1863463d5b09a1308e283b941b490fdd75031c324c00f05fbc1b9b09d46342c",
+        "bytes": 10000
+      },
+      "landscape.js": {
+        "sha256": "8c368b5522e5dd0d7b7a7c188868d527e9e8908a46a4f6b2275f5f9b8d7cb1fb",
+        "bytes": 8774
+      },
+      "layout.js": {
+        "sha256": "455a3d9d167bc7959151ae9ceec5f33eb37fbdb8823cff691a96997ea591731b",
+        "bytes": 1007
+      },
+      "main.js": {
+        "sha256": "2ee7b2183418f13f632bc0974482fc5d4bf20982cae2155335410c5d89dd418f",
+        "bytes": 9036
+      },
+      "make-materials.mjs": {
+        "sha256": "5b2eed4a67345e8b077782ec476f1931ffc14a23aac828d0d3b9e7371508aa3c",
+        "bytes": 5010
+      },
+      "materials.js": {
+        "sha256": "5a8041c2341be18ae84cadf3e6004a4bb2316f2077e38cb8de39223773096e49",
+        "bytes": 14503
+      },
+      "meridian-house.zip": {
+        "sha256": "abac726376084eb1a9b51a5b10056cc1e0565605b648bfd3a47402e38c4aa453",
+        "bytes": 8800386
+      },
+      "observatory.mesh.gz": {
+        "sha256": "2b64b6ccf36151ae7ba8b4e0dd43edb90b1a8ea27fac1598d5279121f1299451",
+        "bytes": 3294842
+      },
+      "package.json": {
+        "sha256": "bae108225cbcc55a5edb29fe979e4a45a53d4004943fa076cbdfb0a336e7994a",
+        "bytes": 181
+      },
+      "README.md": {
+        "sha256": "0884f424a5a8265a174e206eaa93a36bc5cee96da4edc39fe55b2106110480c1",
+        "bytes": 2742
+      },
+      "run.json": {
+        "sha256": "9ca03b6603b249adfa94399f90ae02acb143d80d383e561a276e00214d5a819e",
+        "bytes": 2289
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "78d71333b6341d8871b2a57580d1b279425348670d4fc0ae6057ac0f76db6235",
+        "bytes": 3528
+      },
+      "style.css": {
+        "sha256": "ba1ec31c3b4cb5ea1d10faed40dbfa299ac6580fb8d9dfe73d981765058cf98e",
+        "bytes": 5486
+      },
+      "view.js": {
+        "sha256": "c15d157b5514f96ba7d3fc5de5454d50136024172f18837d517bdce53ce58eeb",
+        "bytes": 8291
+      },
+      "walk.js": {
+        "sha256": "fe5247af3862e2c8f87613b1cea770f9a55963d74930dfbe7d09308fa8aebece",
+        "bytes": 3934
+      },
+      "weathering.js": {
+        "sha256": "51a4463a5d0240307a9d0069385470d871b73fee2bdd58012e75cfc7ee96105a",
+        "bytes": 3922
+      },
+      "vendor/LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.core.min.js": {
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      },
+      "textures/ashlar-n.jpg": {
+        "sha256": "d2e093d5ba4a5eda0c8dfc7efc13a9453170564ed44bd5683416a599ac7e314f",
+        "bytes": 622014
+      },
+      "textures/ashlar.jpg": {
+        "sha256": "a30e0bb696f445428c73ef4dae0716c29df3efb6cb2257871c53e5b5a807f3d7",
+        "bytes": 101834
+      },
+      "textures/cedar-n.jpg": {
+        "sha256": "9d43d73e1bbe15c1e04ff079fb2700a456b98f3f593f06d773016a38268cc5d2",
+        "bytes": 181553
+      },
+      "textures/cedar.jpg": {
+        "sha256": "564cb5348b8a2957d7434e56d1a014a04ff4233f80269c5f7648952cee32e19a",
+        "bytes": 69846
+      },
+      "textures/copper-n.jpg": {
+        "sha256": "643f3f77fea6bf9eeeb9a2fd59a8e4609082c8c4f02e99c5495c34157a517a76",
+        "bytes": 310914
+      },
+      "textures/copper-orm.jpg": {
+        "sha256": "624b703e81b51066ea5f33e0ff08e211c03b2760769d43fd2bdfb1fffd4fbe1b",
+        "bytes": 199218
+      },
+      "textures/copper.jpg": {
+        "sha256": "b1234c9fd6a1b39803746092d236ed35566c0fc9bf066574a81cb3b409a7d7d7",
+        "bytes": 130705
+      },
+      "textures/dome-n.jpg": {
+        "sha256": "643f3f77fea6bf9eeeb9a2fd59a8e4609082c8c4f02e99c5495c34157a517a76",
+        "bytes": 310914
+      },
+      "textures/dome-orm.jpg": {
+        "sha256": "8e43842ab04f9332eef0b51d4e3fbddaf2d3fa4809b59b71ba369648f7f35697",
+        "bytes": 199211
+      },
+      "textures/dome.jpg": {
+        "sha256": "d21ba05f8ca9bf914aee6ee8af65adb03d9c38165aeb9eaf4d4f177080c6c914",
+        "bytes": 112963
+      },
+      "textures/flag-n.jpg": {
+        "sha256": "a090b59870648c67286a4c80d8a21085499b65be83fe0dd43752abf5aed59185",
+        "bytes": 622052
+      },
+      "textures/flag.jpg": {
+        "sha256": "a1094e04fb7a15bd9ad65f736c1eddd9b90104235fbd0f913c052778592367e4",
+        "bytes": 104338
+      },
+      "textures/lime-n.jpg": {
+        "sha256": "373cf1c392cf54e89c73e21bbc1421198d89d76053ec1a39f43c2b9c03ed5c93",
+        "bytes": 606318
+      },
+      "textures/lime.jpg": {
+        "sha256": "88bda0026a73d3d9d9d477de25b4f5dabab2055c40ebeece60a963f75ac216ff",
+        "bytes": 100509
+      },
+      "textures/sand-n.jpg": {
+        "sha256": "f30a77e9b3bdf0a747427983f1aabcb80ad32d0ce1193ac0d22f34e87c2a2262",
+        "bytes": 710114
+      },
+      "textures/sand.jpg": {
+        "sha256": "ea11a6c81a97fe3eceb4a02b4b8c61c18a3c1930c89429cd63f20533526eb909",
+        "bytes": 151178
+      },
+      "textures/strata-n.jpg": {
+        "sha256": "d2e093d5ba4a5eda0c8dfc7efc13a9453170564ed44bd5683416a599ac7e314f",
+        "bytes": 622014
+      },
+      "textures/strata.jpg": {
+        "sha256": "a49b9d97170e9d288f977c1bc2db9bc9a417dd7d79b8120e27ea90255eaa8fb4",
+        "bytes": 104305
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-03\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "7a610062ccf32eefb85f6ffda388372fd6ec1c1e3eea9464af1b49d04a2bb130",
+      "bytes": 1426
+    },
+    "launch-prompt.txt": {
+      "sha256": "8d2733f26050fe5bf0d03ef1ed9b92a2cc372943938c7e8d8878d5a5ef6d23d5",
+      "bytes": 7090
+    },
+    "README.md": {
+      "sha256": "0884f424a5a8265a174e206eaa93a36bc5cee96da4edc39fe55b2106110480c1",
+      "bytes": 2742
+    },
+    "run.json": {
+      "sha256": "9ca03b6603b249adfa94399f90ae02acb143d80d383e561a276e00214d5a819e",
+      "bytes": 2289
+    },
+    "source-audit.json": {
+      "sha256": "13833c287aa0c5ece1dea018904b8c2d50101dae903826e80057206ef03fe84c",
+      "bytes": 401
+    },
+    "frozen/approaches.js": {
+      "sha256": "e49ff143060b6b6b168f532178f269460003553e4eb8189e08fe004725b46459",
+      "bytes": 9222
+    },
+    "frozen/chamber.js": {
+      "sha256": "004c26cfe6dc71864bad007d4031f659858310c392198c937dfa6583e0ba99e2",
+      "bytes": 8946
+    },
+    "frozen/dome.js": {
+      "sha256": "7e88ac5c7771f78aa0de492b28d634ce1aca202c51f8d83b47ed74b05ae6f22b",
+      "bytes": 5366
+    },
+    "frozen/fittings.js": {
+      "sha256": "242c722f6406a9724c59d5bec6d1961cc7ff0e6e27f03422cb0f767c7b21ce7b",
+      "bytes": 14017
+    },
+    "frozen/geometry.js": {
+      "sha256": "41c589e43d74a802a7c7ff1af3c258cbbe70e1524a3b5d6beba7768e4e6e5555",
+      "bytes": 8620
+    },
+    "frozen/index.html.txt": {
+      "sha256": "860e305de99f3baecc1de82359063faa7985c53622f5cdd3615223c0606abdee",
+      "bytes": 3250
+    },
+    "frozen/instrument.js": {
+      "sha256": "c1863463d5b09a1308e283b941b490fdd75031c324c00f05fbc1b9b09d46342c",
+      "bytes": 10000
+    },
+    "frozen/landscape.js": {
+      "sha256": "8c368b5522e5dd0d7b7a7c188868d527e9e8908a46a4f6b2275f5f9b8d7cb1fb",
+      "bytes": 8774
+    },
+    "frozen/layout.js": {
+      "sha256": "455a3d9d167bc7959151ae9ceec5f33eb37fbdb8823cff691a96997ea591731b",
+      "bytes": 1007
+    },
+    "frozen/main.js": {
+      "sha256": "2ee7b2183418f13f632bc0974482fc5d4bf20982cae2155335410c5d89dd418f",
+      "bytes": 9036
+    },
+    "frozen/materials.js": {
+      "sha256": "5a8041c2341be18ae84cadf3e6004a4bb2316f2077e38cb8de39223773096e49",
+      "bytes": 14503
+    },
+    "frozen/observatory.mesh.gz": {
+      "sha256": "2b64b6ccf36151ae7ba8b4e0dd43edb90b1a8ea27fac1598d5279121f1299451",
+      "bytes": 3294842
+    },
+    "frozen/style.css": {
+      "sha256": "ba1ec31c3b4cb5ea1d10faed40dbfa299ac6580fb8d9dfe73d981765058cf98e",
+      "bytes": 5486
+    },
+    "frozen/view.js": {
+      "sha256": "c15d157b5514f96ba7d3fc5de5454d50136024172f18837d517bdce53ce58eeb",
+      "bytes": 8291
+    },
+    "frozen/walk.js": {
+      "sha256": "fe5247af3862e2c8f87613b1cea770f9a55963d74930dfbe7d09308fa8aebece",
+      "bytes": 3934
+    },
+    "frozen/weathering.js": {
+      "sha256": "51a4463a5d0240307a9d0069385470d871b73fee2bdd58012e75cfc7ee96105a",
+      "bytes": 3922
+    },
+    "licenses/vendor/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/textures/ashlar-n.jpg": {
+      "sha256": "d2e093d5ba4a5eda0c8dfc7efc13a9453170564ed44bd5683416a599ac7e314f",
+      "bytes": 622014
+    },
+    "frozen/textures/ashlar.jpg": {
+      "sha256": "a30e0bb696f445428c73ef4dae0716c29df3efb6cb2257871c53e5b5a807f3d7",
+      "bytes": 101834
+    },
+    "frozen/textures/cedar-n.jpg": {
+      "sha256": "9d43d73e1bbe15c1e04ff079fb2700a456b98f3f593f06d773016a38268cc5d2",
+      "bytes": 181553
+    },
+    "frozen/textures/cedar.jpg": {
+      "sha256": "564cb5348b8a2957d7434e56d1a014a04ff4233f80269c5f7648952cee32e19a",
+      "bytes": 69846
+    },
+    "frozen/textures/copper-n.jpg": {
+      "sha256": "643f3f77fea6bf9eeeb9a2fd59a8e4609082c8c4f02e99c5495c34157a517a76",
+      "bytes": 310914
+    },
+    "frozen/textures/copper-orm.jpg": {
+      "sha256": "624b703e81b51066ea5f33e0ff08e211c03b2760769d43fd2bdfb1fffd4fbe1b",
+      "bytes": 199218
+    },
+    "frozen/textures/copper.jpg": {
+      "sha256": "b1234c9fd6a1b39803746092d236ed35566c0fc9bf066574a81cb3b409a7d7d7",
+      "bytes": 130705
+    },
+    "frozen/textures/dome-n.jpg": {
+      "sha256": "643f3f77fea6bf9eeeb9a2fd59a8e4609082c8c4f02e99c5495c34157a517a76",
+      "bytes": 310914
+    },
+    "frozen/textures/dome-orm.jpg": {
+      "sha256": "8e43842ab04f9332eef0b51d4e3fbddaf2d3fa4809b59b71ba369648f7f35697",
+      "bytes": 199211
+    },
+    "frozen/textures/dome.jpg": {
+      "sha256": "d21ba05f8ca9bf914aee6ee8af65adb03d9c38165aeb9eaf4d4f177080c6c914",
+      "bytes": 112963
+    },
+    "frozen/textures/flag-n.jpg": {
+      "sha256": "a090b59870648c67286a4c80d8a21085499b65be83fe0dd43752abf5aed59185",
+      "bytes": 622052
+    },
+    "frozen/textures/flag.jpg": {
+      "sha256": "a1094e04fb7a15bd9ad65f736c1eddd9b90104235fbd0f913c052778592367e4",
+      "bytes": 104338
+    },
+    "frozen/textures/lime-n.jpg": {
+      "sha256": "373cf1c392cf54e89c73e21bbc1421198d89d76053ec1a39f43c2b9c03ed5c93",
+      "bytes": 606318
+    },
+    "frozen/textures/lime.jpg": {
+      "sha256": "88bda0026a73d3d9d9d477de25b4f5dabab2055c40ebeece60a963f75ac216ff",
+      "bytes": 100509
+    },
+    "frozen/textures/sand-n.jpg": {
+      "sha256": "f30a77e9b3bdf0a747427983f1aabcb80ad32d0ce1193ac0d22f34e87c2a2262",
+      "bytes": 710114
+    },
+    "frozen/textures/sand.jpg": {
+      "sha256": "ea11a6c81a97fe3eceb4a02b4b8c61c18a3c1930c89429cd63f20533526eb909",
+      "bytes": 151178
+    },
+    "frozen/textures/strata-n.jpg": {
+      "sha256": "d2e093d5ba4a5eda0c8dfc7efc13a9453170564ed44bd5683416a599ac7e314f",
+      "bytes": 622014
+    },
+    "frozen/textures/strata.jpg": {
+      "sha256": "a49b9d97170e9d288f977c1bc2db9bc9a417dd7d79b8120e27ea90255eaa8fb4",
+      "bytes": 104305
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "host-runtime-check.json": {
+      "sha256": "62447bcc9a118c0d8f88f73511ba41a45ff3a776229237a643c96a11abca4e9f",
+      "bytes": 1915
+    },
+    "preview.jpg": {
+      "sha256": "a1895d4e65a171bc2f487b38a364f154d37abe99af98cf2f783709403ab534a2",
+      "bytes": 91741
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run.json",
+      "source-audit.json",
+      "frozen/approaches.js",
+      "frozen/chamber.js",
+      "frozen/dome.js",
+      "frozen/fittings.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/instrument.js",
+      "frozen/landscape.js",
+      "frozen/layout.js",
+      "frozen/main.js",
+      "frozen/materials.js",
+      "frozen/observatory.mesh.gz",
+      "frozen/style.css",
+      "frozen/view.js",
+      "frozen/walk.js",
+      "frozen/weathering.js",
+      "licenses/vendor/LICENSE",
+      "frozen/textures/ashlar-n.jpg",
+      "frozen/textures/ashlar.jpg",
+      "frozen/textures/cedar-n.jpg",
+      "frozen/textures/cedar.jpg",
+      "frozen/textures/copper-n.jpg",
+      "frozen/textures/copper-orm.jpg",
+      "frozen/textures/copper.jpg",
+      "frozen/textures/dome-n.jpg",
+      "frozen/textures/dome-orm.jpg",
+      "frozen/textures/dome.jpg",
+      "frozen/textures/flag-n.jpg",
+      "frozen/textures/flag.jpg",
+      "frozen/textures/lime-n.jpg",
+      "frozen/textures/lime.jpg",
+      "frozen/textures/sand-n.jpg",
+      "frozen/textures/sand.jpg",
+      "frozen/textures/strata-n.jpg",
+      "frozen/textures/strata.jpg",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:09.016Z",
+    "sha256": "a1895d4e65a171bc2f487b38a364f154d37abe99af98cf2f783709403ab534a2",
+    "bytes": 91741,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
+  }
+}

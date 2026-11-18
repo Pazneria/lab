@@ -1,0 +1,234 @@
+{
+  "entry": "astra62-21",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-21\\source-preservation.zip",
+  "archiveSha256": "f32f6de9382971c6611e3648928b80628f1554e78a0b0b5f94ae3e8ce2565af2",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/architecture.js": "architecture.js",
+      "frozen/engine.js": "engine.js",
+      "frozen/finishes.js": "finishes.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/main.js": "main.js",
+      "frozen/materials.js": "materials.js",
+      "frozen/packed-scene.js": "packed-scene.js",
+      "frozen/passage.js": "passage.js",
+      "frozen/props.js": "props.js",
+      "frozen/quarters.js": "quarters.js",
+      "frozen/roost.js": "roost.js",
+      "frozen/scene.css": "scene.css",
+      "frozen/tiles.js": "tiles.js",
+      "RUN-RECORD.txt": "RUN-RECORD.txt"
+    },
+    "perFileSourceHashes": {
+      "architecture.js": {
+        "sha256": "6b35ba34dc925b4e5a6e9452c1ab95bf17d42b2513fea067a32fba5dc73e5298",
+        "bytes": 12449
+      },
+      "bake.cjs": {
+        "sha256": "954836b8f853dedf618f773993197719bbda23553c390d5543f7ed154e71838c",
+        "bytes": 4855
+      },
+      "engine.js": {
+        "sha256": "caf5dc9632784ae44af3a4bf92be4b3fc0d318822af3c7f70bc9186d282eadf9",
+        "bytes": 12555
+      },
+      "entry.template.html": {
+        "sha256": "61a3a579267074193bb6eb115a6620e951271774850a24806dffd005d92cc25d",
+        "bytes": 2006
+      },
+      "finishes.js": {
+        "sha256": "acb386a0fd001951650476cc083badf3eea5e4b2d0b8680955f3bca15c4933e0",
+        "bytes": 7227
+      },
+      "geometry.js": {
+        "sha256": "c3fa13c0a1e18b48cbb377fbd4ebcd90817b969514063872fc823962c3f6e434",
+        "bytes": 8744
+      },
+      "index.html": {
+        "sha256": "499d7f96cb2cb40bc745a8bbeb4531c453b453b73b928230d17e705c115b8f16",
+        "bytes": 12372916
+      },
+      "main.js": {
+        "sha256": "c6db38d738fa6b695e893041622ff6b5ed127354e8b242ae383154cfa01a8698",
+        "bytes": 8282
+      },
+      "make_textures.py": {
+        "sha256": "3145811b454f4222297c5043b217da412b68b455599345b3125de8461083fad3",
+        "bytes": 5992
+      },
+      "materials.js": {
+        "sha256": "f13708cfa2b23b8680568e372d3715159ae19332d1b981a80b8958f7b6aa3be1",
+        "bytes": 9775
+      },
+      "packed-scene.js": {
+        "sha256": "7089964be761e1f9f8979adb80399d281b01f1a453cb5606b89f1ad0d6b87d1f",
+        "bytes": 5475685
+      },
+      "passage.js": {
+        "sha256": "fafa7075be50a1afc7b40867fc02828760dc87887b9fee9b8532a611c8a5d95d",
+        "bytes": 10260
+      },
+      "props.js": {
+        "sha256": "273b9cf34fec37dc982cb9907aa5b08c6fa08c51027dc7e486a6a1927f1cc7ff",
+        "bytes": 8096
+      },
+      "quarters.js": {
+        "sha256": "d75f8877365cc7e41b007b7db4443e59dadcf461ad010b02e5bf43e65e5ca540",
+        "bytes": 10170
+      },
+      "release.cjs": {
+        "sha256": "4b8f13f6c93a35621ae86931828e570c82036207e0fa7e1b5e9410a0031b07f9",
+        "bytes": 662
+      },
+      "roost.js": {
+        "sha256": "21a24582f8744264c040016ad210493dbc3e15fe00cce81b8a0203618bbd48a7",
+        "bytes": 17980
+      },
+      "RUN-RECORD.txt": {
+        "sha256": "2c49e5eb2f3d766327b84c5865b4326cca810931979d060177ec32a4962f0b56",
+        "bytes": 3296
+      },
+      "scene.css": {
+        "sha256": "f1b87f2ea791081d174d97499c79df96cf2d63e734d5eb81f53e9336045f4120",
+        "bytes": 3222
+      },
+      "tiles.js": {
+        "sha256": "7487efd3288eee425a9e0e8f9ed5b79778090f41992035f5a1ae27591f2d5339",
+        "bytes": 6786673
+      },
+      "verify.cjs": {
+        "sha256": "43bd8650f710ccf719bb96ea2587fb04afe836a03b4500e5f6bb75d8a162da8d",
+        "bytes": 7145
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-21\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "170506a6af5a3bbb87c2d9e53a3cb888fb1ec834c614ed123446043f5bfeac63",
+      "bytes": 1427
+    },
+    "launch-prompt.txt": {
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "bytes": 7870
+    },
+    "RUN-RECORD.txt": {
+      "sha256": "2c49e5eb2f3d766327b84c5865b4326cca810931979d060177ec32a4962f0b56",
+      "bytes": 3296
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/architecture.js": {
+      "sha256": "6b35ba34dc925b4e5a6e9452c1ab95bf17d42b2513fea067a32fba5dc73e5298",
+      "bytes": 12449
+    },
+    "frozen/engine.js": {
+      "sha256": "caf5dc9632784ae44af3a4bf92be4b3fc0d318822af3c7f70bc9186d282eadf9",
+      "bytes": 12555
+    },
+    "frozen/finishes.js": {
+      "sha256": "acb386a0fd001951650476cc083badf3eea5e4b2d0b8680955f3bca15c4933e0",
+      "bytes": 7227
+    },
+    "frozen/geometry.js": {
+      "sha256": "c3fa13c0a1e18b48cbb377fbd4ebcd90817b969514063872fc823962c3f6e434",
+      "bytes": 8744
+    },
+    "frozen/index.html.txt": {
+      "sha256": "499d7f96cb2cb40bc745a8bbeb4531c453b453b73b928230d17e705c115b8f16",
+      "bytes": 12372916
+    },
+    "frozen/main.js": {
+      "sha256": "c6db38d738fa6b695e893041622ff6b5ed127354e8b242ae383154cfa01a8698",
+      "bytes": 8282
+    },
+    "frozen/materials.js": {
+      "sha256": "f13708cfa2b23b8680568e372d3715159ae19332d1b981a80b8958f7b6aa3be1",
+      "bytes": 9775
+    },
+    "frozen/packed-scene.js": {
+      "sha256": "7089964be761e1f9f8979adb80399d281b01f1a453cb5606b89f1ad0d6b87d1f",
+      "bytes": 5475685
+    },
+    "frozen/passage.js": {
+      "sha256": "fafa7075be50a1afc7b40867fc02828760dc87887b9fee9b8532a611c8a5d95d",
+      "bytes": 10260
+    },
+    "frozen/props.js": {
+      "sha256": "273b9cf34fec37dc982cb9907aa5b08c6fa08c51027dc7e486a6a1927f1cc7ff",
+      "bytes": 8096
+    },
+    "frozen/quarters.js": {
+      "sha256": "d75f8877365cc7e41b007b7db4443e59dadcf461ad010b02e5bf43e65e5ca540",
+      "bytes": 10170
+    },
+    "frozen/roost.js": {
+      "sha256": "21a24582f8744264c040016ad210493dbc3e15fe00cce81b8a0203618bbd48a7",
+      "bytes": 17980
+    },
+    "frozen/scene.css": {
+      "sha256": "f1b87f2ea791081d174d97499c79df96cf2d63e734d5eb81f53e9336045f4120",
+      "bytes": 3222
+    },
+    "frozen/tiles.js": {
+      "sha256": "7487efd3288eee425a9e0e8f9ed5b79778090f41992035f5a1ae27591f2d5339",
+      "bytes": 6786673
+    },
+    "host-runtime-check.json": {
+      "sha256": "6794aba580fd211bd521ba875ea2077d211b61e56d5ddfa197f79d49500cef8d",
+      "bytes": 2068
+    },
+    "preview.jpg": {
+      "sha256": "1069c903dc1a13046459c9aa17ac2d0dd215ccf44f46f80c5390033433028067",
+      "bytes": 154411
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "RUN-RECORD.txt",
+      "source-audit.json",
+      "frozen/architecture.js",
+      "frozen/engine.js",
+      "frozen/finishes.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/main.js",
+      "frozen/materials.js",
+      "frozen/packed-scene.js",
+      "frozen/passage.js",
+      "frozen/props.js",
+      "frozen/quarters.js",
+      "frozen/roost.js",
+      "frozen/scene.css",
+      "frozen/tiles.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:28.141Z",
+    "sha256": "1069c903dc1a13046459c9aa17ac2d0dd215ccf44f46f80c5390033433028067",
+    "bytes": 154411,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

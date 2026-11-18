@@ -1,0 +1,240 @@
+{
+  "entry": "sol62-09",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-09\\source-preservation.zip",
+  "archiveSha256": "987c09687210cb3668cc68514f1d0c229c20f592131c82f043457a68ea5c7ce3",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/app.mjs": "app.mjs",
+      "frozen/exterior.mjs": "exterior.mjs",
+      "frozen/index.html.txt": "index.html",
+      "frozen/machine.mjs": "machine.mjs",
+      "frozen/materials.mjs": "materials.mjs",
+      "frozen/navigation.mjs": "navigation.mjs",
+      "frozen/rigging.mjs": "rigging.mjs",
+      "frozen/service.mjs": "service.mjs",
+      "frozen/shell.mjs": "shell.mjs",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three.core.min.js": "vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "frozen/world.mjs": "world.mjs",
+      "README.md": "README.md",
+      "licenses/vendor/LICENSE": "vendor/LICENSE",
+      "frozen/build.mjs": "build.mjs"
+    },
+    "perFileSourceHashes": {
+      "app.mjs": {
+        "sha256": "65dd49d8aeb0180bfa7871b3a1176072cce0faf3421610a1862c02ec1a29b7c4",
+        "bytes": 8916
+      },
+      "build.mjs": {
+        "sha256": "62b807bce87ffd3c9b3c30fd79771887174da99b84338d03ef4d3a2442dfb702",
+        "bytes": 9701
+      },
+      "checks.mjs": {
+        "sha256": "2350be310cb7da3c00f988e4a9f03384903ad1ec03fd96eba56d8eb2a0eb2995",
+        "bytes": 8719
+      },
+      "exterior.mjs": {
+        "sha256": "fed39cf7290d1263675058170c27328fd250460b5c9f32af01b065b2694b2324",
+        "bytes": 5282
+      },
+      "index.html": {
+        "sha256": "45fef27451fbab1622f753f9cbac6ad3ccac11a670b9f4b63a21b27700af1672",
+        "bytes": 1799
+      },
+      "machine.mjs": {
+        "sha256": "affc6cf742776b6ef0007d3ed0f6aaf1990b446837cbba53ac58bb6b56713b5d",
+        "bytes": 14306
+      },
+      "materials.mjs": {
+        "sha256": "4194484d8d750be97b88442631c338eac53df1dc7979cf8bae69bdc956f01a01",
+        "bytes": 11398
+      },
+      "navigation.mjs": {
+        "sha256": "8e4cd45a9fe0d4a950de2f6001a7a9c570f7326ad9f79c51173a11b8edc6c0a9",
+        "bytes": 3868
+      },
+      "package.json": {
+        "sha256": "02422f54de8be25d0ca8f1ac4a0837dc32f22b3c2be29b6d9d81db1a480805a8",
+        "bytes": 163
+      },
+      "README.md": {
+        "sha256": "b96242e03951021278ce6cfc598dc2df9fcbcb91e32283914e7a85d13cd1de60",
+        "bytes": 1968
+      },
+      "rigging.mjs": {
+        "sha256": "84afc7488bd3dffd63c92c410e91c77452e47370ee81e0b0c68d04d031f020a7",
+        "bytes": 11977
+      },
+      "serve.mjs": {
+        "sha256": "a95154be9eb3e14944ff28caf01589880f5592f55252f403707f99b7a5a6d2a5",
+        "bytes": 2142
+      },
+      "service.mjs": {
+        "sha256": "3b89731f22353b4baa8c55f3db9067410e6b93d4bcb39f830374b123b521531c",
+        "bytes": 15207
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "bfbf73ea49108b2ce1eec2a7937650127b74d8cfc7a5f0120c4b994985a95306",
+        "bytes": 1521
+      },
+      "shell.mjs": {
+        "sha256": "e1f86aec3e63b29f0445e8c868c52a7e7c62f3cfda48d7ad28beecb0d8057e4a",
+        "bytes": 15907
+      },
+      "style.css": {
+        "sha256": "91d109ad89687dbbe90ea4e1eed3dcd26680ce9a908fc60fa9f3374f01fca2dc",
+        "bytes": 3946
+      },
+      "world.mjs": {
+        "sha256": "3e4e32cf610dead93a1ca5c215da347142e832d0b83bbd46f0c8fef690954147",
+        "bytes": 2784
+      },
+      "vendor/LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.core.min.js": {
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-09\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "66a82e4ab920545a31234e0b204dc282d7025b03ba841cbedee094e508a17c6c",
+      "bytes": 1420
+    },
+    "launch-prompt.txt": {
+      "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
+      "bytes": 7164
+    },
+    "README.md": {
+      "sha256": "b96242e03951021278ce6cfc598dc2df9fcbcb91e32283914e7a85d13cd1de60",
+      "bytes": 1968
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/app.mjs": {
+      "sha256": "65dd49d8aeb0180bfa7871b3a1176072cce0faf3421610a1862c02ec1a29b7c4",
+      "bytes": 8916
+    },
+    "frozen/exterior.mjs": {
+      "sha256": "fed39cf7290d1263675058170c27328fd250460b5c9f32af01b065b2694b2324",
+      "bytes": 5282
+    },
+    "frozen/index.html.txt": {
+      "sha256": "45fef27451fbab1622f753f9cbac6ad3ccac11a670b9f4b63a21b27700af1672",
+      "bytes": 1799
+    },
+    "frozen/machine.mjs": {
+      "sha256": "affc6cf742776b6ef0007d3ed0f6aaf1990b446837cbba53ac58bb6b56713b5d",
+      "bytes": 14306
+    },
+    "frozen/materials.mjs": {
+      "sha256": "4194484d8d750be97b88442631c338eac53df1dc7979cf8bae69bdc956f01a01",
+      "bytes": 11398
+    },
+    "frozen/navigation.mjs": {
+      "sha256": "8e4cd45a9fe0d4a950de2f6001a7a9c570f7326ad9f79c51173a11b8edc6c0a9",
+      "bytes": 3868
+    },
+    "frozen/rigging.mjs": {
+      "sha256": "84afc7488bd3dffd63c92c410e91c77452e47370ee81e0b0c68d04d031f020a7",
+      "bytes": 11977
+    },
+    "frozen/service.mjs": {
+      "sha256": "3b89731f22353b4baa8c55f3db9067410e6b93d4bcb39f830374b123b521531c",
+      "bytes": 15207
+    },
+    "frozen/shell.mjs": {
+      "sha256": "e1f86aec3e63b29f0445e8c868c52a7e7c62f3cfda48d7ad28beecb0d8057e4a",
+      "bytes": 15907
+    },
+    "frozen/style.css": {
+      "sha256": "91d109ad89687dbbe90ea4e1eed3dcd26680ce9a908fc60fa9f3374f01fca2dc",
+      "bytes": 3946
+    },
+    "frozen/world.mjs": {
+      "sha256": "3e4e32cf610dead93a1ca5c215da347142e832d0b83bbd46f0c8fef690954147",
+      "bytes": 2784
+    },
+    "licenses/vendor/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "frozen/build.mjs": {
+      "sha256": "62b807bce87ffd3c9b3c30fd79771887174da99b84338d03ef4d3a2442dfb702",
+      "bytes": 9701
+    },
+    "host-runtime-check.json": {
+      "sha256": "12ce6400c5ff478b11ad99430712856c2e42410ab01869ffae98397eac4d0670",
+      "bytes": 2062
+    },
+    "preview.jpg": {
+      "sha256": "dc50686509de2e455879367686a7fc236c97f9ae7cae16fd46e60372efedc01d",
+      "bytes": 122569
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/app.mjs",
+      "frozen/exterior.mjs",
+      "frozen/index.html.txt",
+      "frozen/machine.mjs",
+      "frozen/materials.mjs",
+      "frozen/navigation.mjs",
+      "frozen/rigging.mjs",
+      "frozen/service.mjs",
+      "frozen/shell.mjs",
+      "frozen/style.css",
+      "frozen/world.mjs",
+      "licenses/vendor/LICENSE",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js",
+      "frozen/build.mjs",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:56.552Z",
+    "sha256": "dc50686509de2e455879367686a7fc236c97f9ae7cae16fd46e60372efedc01d",
+    "bytes": 122569,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

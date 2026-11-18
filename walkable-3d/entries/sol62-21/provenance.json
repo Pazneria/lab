@@ -1,0 +1,164 @@
+{
+  "entry": "sol62-21",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-21\\source-preservation.zip",
+  "archiveSha256": "82321408b1a18b098904a5f19873d955dda1010d29121093489b02891537691f",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/architecture.js": "architecture.js",
+      "frozen/craft.js": "craft.js",
+      "frozen/engine.js": "engine.js",
+      "frozen/fixtures.js": "fixtures.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/quarters.js": "quarters.js",
+      "frozen/roost.js": "roost.js",
+      "frozen/style.css": "style.css",
+      "frozen/walk.js": "walk.js",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "architecture.js": {
+        "sha256": "8150787b3d5ae4a5c4f071b2077215d66b81a7570b5c451b985f1a741da4b047",
+        "bytes": 10859
+      },
+      "craft.js": {
+        "sha256": "4bbae2ddff7dfa1407ec3d5fe1aee1a4b8ba2590d81ef5a6a0fae500efc30ea8",
+        "bytes": 12203
+      },
+      "engine.js": {
+        "sha256": "d710666c56222786c4530c0afc440399760346898ae592b2d67c6647fab3f54c",
+        "bytes": 26943
+      },
+      "fixtures.js": {
+        "sha256": "5a93cc01b71ffadb19b9fc90c455f7a39e48118c2f128518fe6597e40d0d2697",
+        "bytes": 22838
+      },
+      "index.html": {
+        "sha256": "081a22ebf92aeeeaba1e321aff8af676377759f8b72a09b7478c42181cc101ee",
+        "bytes": 2002
+      },
+      "quarters.js": {
+        "sha256": "9cc4f1971399524aabf5495f2db60d4479352e5184e8ff9b79049027ed7a7eb1",
+        "bytes": 3716
+      },
+      "README.md": {
+        "sha256": "7ebc5debe616de75745ab7beaa8546422581467e3e9b72e6f699ef4fce51399d",
+        "bytes": 1566
+      },
+      "roost.js": {
+        "sha256": "eb044e6a6c8b26024a8721c66cf6d68915b7fce38fc988483fba2c9c25a350d2",
+        "bytes": 22059
+      },
+      "style.css": {
+        "sha256": "fbac1af6a6c7966d1bade07669432c4a6a41c07a5e68f3de5e468f04bc7fddef",
+        "bytes": 4412
+      },
+      "walk.js": {
+        "sha256": "eb44b49952ab7671e9384705aeb1660cbef6aa34bdff8b2078c29265436ea0c3",
+        "bytes": 8640
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-21\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "96c4991ddcb342e58695b9511e60afed249995a3f1ad329031649aa825e0e03f",
+      "bytes": 1421
+    },
+    "launch-prompt.txt": {
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "bytes": 7870
+    },
+    "README.md": {
+      "sha256": "7ebc5debe616de75745ab7beaa8546422581467e3e9b72e6f699ef4fce51399d",
+      "bytes": 1566
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/architecture.js": {
+      "sha256": "8150787b3d5ae4a5c4f071b2077215d66b81a7570b5c451b985f1a741da4b047",
+      "bytes": 10859
+    },
+    "frozen/craft.js": {
+      "sha256": "4bbae2ddff7dfa1407ec3d5fe1aee1a4b8ba2590d81ef5a6a0fae500efc30ea8",
+      "bytes": 12203
+    },
+    "frozen/engine.js": {
+      "sha256": "d710666c56222786c4530c0afc440399760346898ae592b2d67c6647fab3f54c",
+      "bytes": 26943
+    },
+    "frozen/fixtures.js": {
+      "sha256": "5a93cc01b71ffadb19b9fc90c455f7a39e48118c2f128518fe6597e40d0d2697",
+      "bytes": 22838
+    },
+    "frozen/index.html.txt": {
+      "sha256": "081a22ebf92aeeeaba1e321aff8af676377759f8b72a09b7478c42181cc101ee",
+      "bytes": 2002
+    },
+    "frozen/quarters.js": {
+      "sha256": "9cc4f1971399524aabf5495f2db60d4479352e5184e8ff9b79049027ed7a7eb1",
+      "bytes": 3716
+    },
+    "frozen/roost.js": {
+      "sha256": "eb044e6a6c8b26024a8721c66cf6d68915b7fce38fc988483fba2c9c25a350d2",
+      "bytes": 22059
+    },
+    "frozen/style.css": {
+      "sha256": "fbac1af6a6c7966d1bade07669432c4a6a41c07a5e68f3de5e468f04bc7fddef",
+      "bytes": 4412
+    },
+    "frozen/walk.js": {
+      "sha256": "eb44b49952ab7671e9384705aeb1660cbef6aa34bdff8b2078c29265436ea0c3",
+      "bytes": 8640
+    },
+    "host-runtime-check.json": {
+      "sha256": "a3e6d7e53fe7e7c96a28dbeb6b3efcd386da28012aa52155e0fbfb0cdce3a563",
+      "bytes": 2066
+    },
+    "preview.jpg": {
+      "sha256": "274d997e879fdf55d3f56a311471548a0b6a52773704c3946775cdbd6d5e5e7f",
+      "bytes": 88705
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/architecture.js",
+      "frozen/craft.js",
+      "frozen/engine.js",
+      "frozen/fixtures.js",
+      "frozen/index.html.txt",
+      "frozen/quarters.js",
+      "frozen/roost.js",
+      "frozen/style.css",
+      "frozen/walk.js",
+      "host-runtime-check.json",
+      "preview.jpg"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:13.074Z",
+    "sha256": "274d997e879fdf55d3f56a311471548a0b6a52773704c3946775cdbd6d5e5e7f",
+    "bytes": 88705,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
+  }
+}

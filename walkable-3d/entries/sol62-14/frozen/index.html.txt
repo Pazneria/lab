@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#262d29">
+  <title>Fallow Kiln · Ceramics Workshop</title>
+  <script type="module" crossorigin src="./assets/index-B7TnL51r.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-core-BGg43aid.js">
+  <link rel="modulepreload" crossorigin href="./assets/three-webgl-DU3FQqCq.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-Cwfj54su.css">
+</head>
+<body>
+  <main id="view" aria-label="Fallow Kiln, a walkable ceramics workshop"></main>
+  <aside id="hud" aria-live="polite" hidden>
+    <div class="location"><span class="dot"></span><span id="room">Making studio</span></div>
+    <button id="help" aria-label="Show controls">&#63;</button>
+  </aside>
+  <div id="reticle" aria-hidden="true" hidden></div>
+  <section id="panel" aria-labelledby="title">
+    <div class="ident">
+      <svg viewBox="0 0 38 42" width="33" height="37" fill="none" aria-hidden="true">
+        <path d="M12 4h14M13 7c0 5-3 7-5 10-5 6-5 15 1 20h20c6-5 6-14 1-20-2-3-5-5-5-10M7 24c8-5 16 4 24-1M8 29c8-5 15 4 22-1m-16 9v3h10v-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+      <div><p class="eyebrow">CERAMICS WORKSHOP</p><h1 id="title">Fallow Kiln</h1></div>
+    </div>
+    <div class="controls">
+      <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</span>
+      <span><kbd>Mouse</kbd> Look</span>
+      <span><kbd>R</kbd> Reset</span>
+      <span><kbd>Esc</kbd> Release</span>
+    </div>
+    <div class="actions">
+      <button id="enter" disabled>Preparing workshop…</button>
+      <button id="reset" hidden>Return to entrance</button>
+    </div>
+    <p id="status" role="status"></p>
+  </section>
+</body>
+</html>

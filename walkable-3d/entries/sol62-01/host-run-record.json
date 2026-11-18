@@ -1,0 +1,28 @@
+{
+  "id": "sol62-01",
+  "scene": 1,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-01",
+  "requestedModel": "gpt-6.2-sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "default/standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "effectiveServiceTier": null,
+  "completionClearedByParent": true,
+  "timingCaveat": null,
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "timingAuthority": "Original source records and parent completion/caveat disclosures only; no inferred deadline compliance.",
+  "qa": {
+    "static": "Frozen original and runtime source mapping hashes checked.",
+    "visual": "Genuine nonblank default view captured; contact sheet reviewed. No visual score.",
+    "interactive": "Original start control and bounded W/R input dispatch without errors; iframe/context unload verified. No full-route claim.",
+    "gpu": "Browser rendering observed; no GPU benchmark or compatibility guarantee.",
+    "performance": "NOT RUN",
+    "preview": "CAPTURED genuine960x600 JPEG"
+  },
+  "generationSeparation": "No entrant coaching, edits, repairs, rebuilds or post-deadline fixes. Active entrants never inspected.",
+  "releaseGate": "Local validation passed. Public host/service parity and production responses require publication readback."
+}
