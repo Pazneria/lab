@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2c3834">
+<title>The Gilded Hem · A travelling haberdashery</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./scene.css">
+</head>
+<body>
+<main id="scene" aria-label="Explorable travelling merchant's wagon"></main>
+<aside class="identity" aria-label="The Gilded Hem, travelling haberdashery">
+<div class="mark" aria-hidden="true">✴</div>
+<div><h1>The Gilded Hem</h1><p>Travelling haberdashery</p></div>
+</aside>
+<div class="scene-controls">
+<span id="instruction" role="status">Preparing the wagon…</span>
+<span class="rule"></span><span><kbd>W A S D</kbd> Walk</span><span><kbd>Mouse</kbd> Look</span>
+<button id="reset" title="Return to the camp (R)"><span aria-hidden="true">↺</span> Reset</button>
+<button id="help" aria-label="Show controls" aria-expanded="false">?</button>
+</div>
+<aside id="helpPanel" hidden><h2>Walk around</h2><p>Click the scene to capture the mouse. Use W A S D to walk and the mouse to look. Esc releases the cursor.</p><p>Drag to look while the cursor is free. Up and Down walk, Left and Right turn, and Page Up and Page Down tilt the view. Hold Shift to walk faster. R returns you to camp. H hides or shows the controls.</p></aside>
+<noscript>This scene requires JavaScript.</noscript>
+<script>
+if (location.protocol === 'file:') document.querySelector('#instruction').textContent = 'Use the local launch command in README.md';
+</script>
+<script type="module" src="./main.js"></script>
+</body></html>

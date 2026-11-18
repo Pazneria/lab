@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#192c30">
+<title>Soundings — Captain’s Quarters</title>
+<link rel="stylesheet" href="cabin.css">
+</head>
+<body>
+<main id="scene" aria-label="Explorable captain’s quarters">
+ <canvas id="port" tabindex="0" aria-label="Three-dimensional captain’s quarters. Use W A S D to move, the mouse or arrow keys to look, and R to reset."></canvas>
+ <div id="loading" role="status"><span class="shipmark" aria-hidden="true">≋</span><span id="loadText">Opening quarters</span></div>
+ <section id="intro" aria-labelledby="sceneTitle" hidden>
+  <div class="eyebrow"><span class="line"></span> S.V. NACRE <span class="slash">/</span> CABIN 04</div>
+  <h1 id="sceneTitle">Soundings</h1>
+  <p>Captain L. Serrat’s private quarters</p>
+  <button class="enter" id="enter" type="button">Enter quarters <span aria-hidden="true">↗</span></button>
+  <div class="quick normalHints"><span><b>WASD</b> move</span><span><b>Mouse</b> look</span><span><b>R</b> reset</span></div>
+  <div class="quick touchHints">Drag to look · Use the arrows to walk</div>
+ </section>
+ <div id="location" hidden><span class="hullNo">NACRE <i>/</i> 04</span><span id="zone">Sleeping quarters</span></div>
+ <div id="tools" hidden>
+  <button id="helpButton" aria-expanded="false" aria-controls="help" title="Controls (H)">Controls <kbd>H</kbd></button>
+  <button id="reset" title="Return to entrance (R)">Reset <kbd>R</kbd></button>
+ </div>
+ <section id="help" aria-label="Scene controls" hidden>
+  <div class="eyebrow">EXPLORATION</div>
+  <h2>Controls</h2>
+  <dl><dt>W A S D</dt><dd>Walk</dd><dt>Mouse / drag</dt><dd>Look around</dd><dt>Arrow keys</dt><dd>Turn and look</dd><dt>Shift</dt><dd>Walk faster</dd><dt>R</dt><dd>Return to entrance</dd><dt>Esc</dt><dd>Release the mouse</dd><dt>H</dt><dd>Close controls</dd></dl>
+  <button id="resume" class="enter" type="button">Resume exploring <span aria-hidden="true">↗</span></button>
+ </section>
+ <div id="dpad" hidden aria-label="Touch movement"><button data-key="KeyW" aria-label="Walk forward">↑</button><div><button data-key="KeyA" aria-label="Walk left">←</button><button data-key="KeyS" aria-label="Walk backward">↓</button><button data-key="KeyD" aria-label="Walk right">→</button></div></div>
+ <div id="notice" role="status" hidden></div>
+ <noscript>This explorable scene requires JavaScript and WebGL 2.</noscript>
+</main>
+<script type="module" src="./boot.mjs"></script>
+</body>
+</html>

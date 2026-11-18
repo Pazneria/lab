@@ -1,0 +1,258 @@
+{
+  "entry": "astra62-17",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-17\\source-preservation.zip",
+  "archiveSha256": "753b0e37fc30d5a0cbfa6b8531751c49c4996ea62a6a205c5ff8df2fe90378ce",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/art.js": "art.js",
+      "frozen/balcony.js": "balcony.js",
+      "frozen/core.js": "core.js",
+      "frozen/domestic.js": "domestic.js",
+      "frozen/furnishings.js": "furnishings.js",
+      "frozen/hearth.js": "hearth.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/navigation.js": "navigation.js",
+      "frozen/package/build/three.min.js": "package/build/three.min.js",
+      "frozen/room.css": "room.css",
+      "frozen/shading.js": "shading.js",
+      "frozen/sky.js": "sky.js",
+      "frozen/study.js": "study.js",
+      "frozen/surfaces.js": "surfaces.js",
+      "frozen/walk.js": "walk.js",
+      "README.md": "README.md",
+      "RUN.json": "RUN.json",
+      "licenses/package/LICENSE": "package/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "art.js": {
+        "sha256": "7a5154154f8b909472e1a1b92eea6ddfe15961f48291a8880833134b8a47d4f8",
+        "bytes": 12571
+      },
+      "bake.cjs": {
+        "sha256": "eba7152781871c471f1b5b85d4f954d226b2a6188ebb3bcf11227fd4e9bd599c",
+        "bytes": 4758
+      },
+      "balcony.js": {
+        "sha256": "b0e08d8f655bd243d07419002b487e04f5a06c3a47e5c18f195997401989fb39",
+        "bytes": 10723
+      },
+      "building.js": {
+        "sha256": "5e2992d74200f50f5be4e2f0705092d5bb6155b6ac7c2aff36638b940ec2f976",
+        "bytes": 7809
+      },
+      "check.cjs": {
+        "sha256": "b17149deef5a7ff0eeffcde13e9f2e367f696f56f2ef46978ca8a7310bcbb1d7",
+        "bytes": 5893
+      },
+      "core.js": {
+        "sha256": "5b8d3dc8311262acdd7ec9aa68d289875821cda9f7402459a0ce4c36cc175585",
+        "bytes": 12025
+      },
+      "domestic.js": {
+        "sha256": "c3923bc03305489179c904b54c23333f8814bd4cbbcaf7e335bb1c665638b631",
+        "bytes": 12078
+      },
+      "furnishings.js": {
+        "sha256": "8129208479a0feab002cd12fb4eb0d842db6f041793121d02421ac011f31b069",
+        "bytes": 13250
+      },
+      "hearth.js": {
+        "sha256": "6aebacc98bb133d43fcbffd0547e1894f658d6d54b7b0bed582b739098270b7f",
+        "bytes": 10503
+      },
+      "index.html": {
+        "sha256": "3f746df1f559334bdea97d274f4de747213cf9ef789a3f33ca6f4632fcba5721",
+        "bytes": 2231
+      },
+      "navigation.js": {
+        "sha256": "d12581789af59d74f4c895e0a172d71065782d2ff57e4f7c43bdcdec47895e3e",
+        "bytes": 1896
+      },
+      "README.md": {
+        "sha256": "4b26eda08b8836d4c39c7ae2afa64e34ca6b400c496ca8665800ebfe397a6c36",
+        "bytes": 3054
+      },
+      "room.css": {
+        "sha256": "51077361a12027b63531f36a7b9b6bf09fe6e2acb94ffb3b25d0e629959389bd",
+        "bytes": 3335
+      },
+      "RUN.json": {
+        "sha256": "233a56345f210c169bc6d1b5f5b29e00f53cbcb7e36b34e5a8e1113a5983b24c",
+        "bytes": 2631
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "5c96276d15c0df2927fae215b43d54071f119f8c87d30cd56e8b9b9c0d9e97f8",
+        "bytes": 1815
+      },
+      "shade-bake.cjs": {
+        "sha256": "1b9141a310fc927d10978efcfd3f824bdb78352000eb88266b901de77546b22c",
+        "bytes": 3899
+      },
+      "shading.js": {
+        "sha256": "032788943065fcd8d06bc66f78e09aafbe9bcebd563a3ccd76897ef6dceb128e",
+        "bytes": 393614
+      },
+      "sky-bake.cjs": {
+        "sha256": "01ececd5bc8f257d43a0078eeac9a906a951daafcfc76931685e98ae3da77031",
+        "bytes": 2629
+      },
+      "sky.js": {
+        "sha256": "6949e955db324401c2dd7b7cb5d80c56c1aad0e1a47da186e21c984fa644c7fb",
+        "bytes": 587526
+      },
+      "study.js": {
+        "sha256": "6e67de2497fc6ae802b563c27641ab83a152fe8a72a6400e7c8462412a276fcb",
+        "bytes": 11736
+      },
+      "surfaces.js": {
+        "sha256": "e2e6642f2a959b5d8987bb2308a59ce9e55c559ca0b7a81cf6d8fdd2751fd423",
+        "bytes": 5620668
+      },
+      "The-Thaw-Room.zip": {
+        "sha256": "9a04ee4cb93d24be3f6012b593bf56c296896b49c23605117373798508b21ba0",
+        "bytes": 5051806
+      },
+      "walk.js": {
+        "sha256": "a5068308beb69c32ac80da49986ad930b7baf7745adb7ec3b883602a77a630d4",
+        "bytes": 10169
+      },
+      "package/LICENSE": {
+        "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+        "bytes": 1081
+      },
+      "package/build/three.min.js": {
+        "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa",
+        "bytes": 669884
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-17\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "18b1141277ec5736efa19b81a1a1f651143eb201b7e4d87c677d1335b2111b89",
+      "bytes": 1261
+    },
+    "launch-prompt.txt": {
+      "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
+      "bytes": 7743
+    },
+    "README.md": {
+      "sha256": "4b26eda08b8836d4c39c7ae2afa64e34ca6b400c496ca8665800ebfe397a6c36",
+      "bytes": 3054
+    },
+    "RUN.json": {
+      "sha256": "233a56345f210c169bc6d1b5f5b29e00f53cbcb7e36b34e5a8e1113a5983b24c",
+      "bytes": 2631
+    },
+    "source-audit.json": {
+      "sha256": "2ab35e9c3dd1a6d340ff88f716d13698113b5fc14582854700cef8b7cc2c5969",
+      "bytes": 420
+    },
+    "frozen/art.js": {
+      "sha256": "7a5154154f8b909472e1a1b92eea6ddfe15961f48291a8880833134b8a47d4f8",
+      "bytes": 12571
+    },
+    "frozen/balcony.js": {
+      "sha256": "b0e08d8f655bd243d07419002b487e04f5a06c3a47e5c18f195997401989fb39",
+      "bytes": 10723
+    },
+    "frozen/core.js": {
+      "sha256": "5b8d3dc8311262acdd7ec9aa68d289875821cda9f7402459a0ce4c36cc175585",
+      "bytes": 12025
+    },
+    "frozen/domestic.js": {
+      "sha256": "c3923bc03305489179c904b54c23333f8814bd4cbbcaf7e335bb1c665638b631",
+      "bytes": 12078
+    },
+    "frozen/furnishings.js": {
+      "sha256": "8129208479a0feab002cd12fb4eb0d842db6f041793121d02421ac011f31b069",
+      "bytes": 13250
+    },
+    "frozen/hearth.js": {
+      "sha256": "6aebacc98bb133d43fcbffd0547e1894f658d6d54b7b0bed582b739098270b7f",
+      "bytes": 10503
+    },
+    "frozen/index.html.txt": {
+      "sha256": "3f746df1f559334bdea97d274f4de747213cf9ef789a3f33ca6f4632fcba5721",
+      "bytes": 2231
+    },
+    "frozen/navigation.js": {
+      "sha256": "d12581789af59d74f4c895e0a172d71065782d2ff57e4f7c43bdcdec47895e3e",
+      "bytes": 1896
+    },
+    "frozen/room.css": {
+      "sha256": "51077361a12027b63531f36a7b9b6bf09fe6e2acb94ffb3b25d0e629959389bd",
+      "bytes": 3335
+    },
+    "frozen/shading.js": {
+      "sha256": "032788943065fcd8d06bc66f78e09aafbe9bcebd563a3ccd76897ef6dceb128e",
+      "bytes": 393614
+    },
+    "frozen/sky.js": {
+      "sha256": "6949e955db324401c2dd7b7cb5d80c56c1aad0e1a47da186e21c984fa644c7fb",
+      "bytes": 587526
+    },
+    "frozen/study.js": {
+      "sha256": "6e67de2497fc6ae802b563c27641ab83a152fe8a72a6400e7c8462412a276fcb",
+      "bytes": 11736
+    },
+    "frozen/surfaces.js": {
+      "sha256": "e2e6642f2a959b5d8987bb2308a59ce9e55c559ca0b7a81cf6d8fdd2751fd423",
+      "bytes": 5620668
+    },
+    "frozen/walk.js": {
+      "sha256": "a5068308beb69c32ac80da49986ad930b7baf7745adb7ec3b883602a77a630d4",
+      "bytes": 10169
+    },
+    "licenses/package/LICENSE": {
+      "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d",
+      "bytes": 1081
+    },
+    "frozen/package/build/three.min.js": {
+      "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa",
+      "bytes": 669884
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN.json",
+      "source-audit.json",
+      "frozen/art.js",
+      "frozen/balcony.js",
+      "frozen/core.js",
+      "frozen/domestic.js",
+      "frozen/furnishings.js",
+      "frozen/hearth.js",
+      "frozen/index.html.txt",
+      "frozen/navigation.js",
+      "frozen/room.css",
+      "frozen/shading.js",
+      "frozen/sky.js",
+      "frozen/study.js",
+      "frozen/surfaces.js",
+      "frozen/walk.js",
+      "licenses/package/LICENSE",
+      "frozen/package/build/three.min.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

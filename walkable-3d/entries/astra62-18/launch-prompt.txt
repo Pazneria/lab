@@ -1,0 +1,57 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a compact starship captain's private quarters arranged as a bedroom, a connected private study and a small observation nook. Blend the practical order of command with the domestic personality of one original captain. From the entrance, give a clear route past the sleeping area, alongside the study desk and into the observation nook, then back through the quarters.
+
+Make the rooms feel like a real home inside a vessel, with believable built-in storage, panel joints, seating and a few personal choices that soften their precision. The study should suggest command responsibilities through the arrangement of its desk and work materials without requiring readable screens or functioning controls. The observation nook needs a seat or resting ledge and a convincingly framed window onto space; a simple planet, stars or distant light beyond the glass is enough. Distinguish painted composite panels, brushed metal, soft textiles and glazing. Use restrained practical strips or recessed lights, with a cool view-side glow and a warmer domestic pocket rather than making every surface luminous. Keep the design original and limited to these three connected spaces; no bridge, ship systems, moving spacecraft or elaborate space simulation is required.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect the sleeping-area fittings, approach the study desk, stand beside the observation window and look back into the quarters. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Build only the standalone scene; website navigation, voting, accounts and backends are outside scope.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Original captain’s quarters with both domestic personality and a convincing command context
+- Believable built-in furniture, panel joints and observation-window construction
+- Distinct painted composite, brushed metal, textiles and glass at close range
+- Restrained practical lighting with readable warm domestic and cool observation areas
+- Purposeful detail across the bedroom, desk and view back from the observation nook
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while viewing lit panel details, the furnished study and the space view together
+- Smooth movement between the bedroom, private study and observation nook
+- Minimal slowdown from excessive emissive detail, glazing or lighting effects, distracting flicker, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A compact bedroom with domestic furnishings and built-in storage
+- A connected private study with a desk and an observation nook with a framed view of space
+- Walkable access past the sleeping area, alongside the desk and up to the observation window, with a return route
+- Convincing human scale, comfortable passages, safe window-side access and sensible collision
+
+MY INSPECTION ROUTE
+
+Entrance → sleeping-area fittings → private study desk → observation nook and window → return view into the quarters → entrance.
+
+I will pay particular attention to construction at panel seams, the difference between soft domestic materials and precise ship finishes, and the room’s readability against the window. Specific personal objects and celestial scenery are your choice; the three core spaces, desk, observation view and route are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

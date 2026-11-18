@@ -1,0 +1,242 @@
+{
+  "entry": "astra62-19",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-19\\source-preservation.zip",
+  "archiveSha256": "bfcd33f5f245bf699baeee62b6051a4123663a7acccceb00465210d6b65dfb9b",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/architecture.mjs": "architecture.mjs",
+      "frozen/art.js": "art.js",
+      "frozen/domestic.mjs": "domestic.mjs",
+      "frozen/geometry.mjs": "geometry.mjs",
+      "frozen/habitat.json": "habitat.json",
+      "frozen/habitat.mesh.gz": "habitat.mesh.gz",
+      "frozen/index.html.txt": "index.html",
+      "frozen/materials.mjs": "materials.mjs",
+      "frozen/navigation.js": "navigation.js",
+      "frozen/reef.mjs": "reef.mjs",
+      "frozen/research.mjs": "research.mjs",
+      "frozen/style.css": "style.css",
+      "frozen/surface.rgba.gz": "surface.rgba.gz",
+      "frozen/viewer.js": "viewer.js",
+      "README.md": "README.md",
+      "run-record.json": "run-record.json",
+      "frozen/scene.vert": "scene.vert",
+      "frozen/scene.frag": "scene.frag"
+    },
+    "perFileSourceHashes": {
+      "architecture.mjs": {
+        "sha256": "292484468c0336956324443efbb8722024dbb91c76bed5225a855b5f87313726",
+        "bytes": 12337
+      },
+      "art.js": {
+        "sha256": "56c4abafebfd6ff2ca551dcf6aca8086f313d5eb220435434eec6a5828442b02",
+        "bytes": 13810
+      },
+      "bake.mjs": {
+        "sha256": "ea07cab16ae370cbb298ae4bfcf7229c6219378770a3a6c68202614eaa00ca4e",
+        "bytes": 6159
+      },
+      "check.mjs": {
+        "sha256": "64db4fdccc879305ebbc50ed61e1d3d8b9a44760b8eb61c288fbf4c110d8f0f8",
+        "bytes": 4479
+      },
+      "domestic.mjs": {
+        "sha256": "37b5595ccab2200c7a9aa88d78f5cbd0296fdff5a5cf3ae26122a611c713b5b2",
+        "bytes": 16355
+      },
+      "geometry.mjs": {
+        "sha256": "21537d5b1dbc628beeaa2ffd34e78ecfdc1de27f4444ba4e9e3c5c0329f05c34",
+        "bytes": 9737
+      },
+      "habitat.json": {
+        "sha256": "ce9a3aa3296ada2a075543102b1502e92ac7b3a0c8ba6179f9595b52a6a45d5f",
+        "bytes": 8015
+      },
+      "habitat.mesh.gz": {
+        "sha256": "d075f098a1f6cf9455cafbe17ff5b48cb7229a06af0b7bfd3d29f85be0b8603c",
+        "bytes": 4893752
+      },
+      "index.html": {
+        "sha256": "4179669aa9d2af39d8f7abe37752ea3468ef460415b197deb9e1f1594d47affe",
+        "bytes": 1884
+      },
+      "materials.mjs": {
+        "sha256": "0d93a060656419d42367159bab0cf4865f8702615ddc0f4a984218004e9dd5ad",
+        "bytes": 4078
+      },
+      "nacre-house.zip": {
+        "sha256": "c1422810c9cb890637a84fdb30c5578133846a0e25909703c5d183cff462489c",
+        "bytes": 7573398
+      },
+      "navigation.js": {
+        "sha256": "d767ca08eb6ea58c7607283d3b5875a7dd9c0ffe5dedf3de8fa5b47966758e3f",
+        "bytes": 1611
+      },
+      "README.md": {
+        "sha256": "f1958f5e2ba10289055e8c3f775bbfe2c1f248228c5b2166fd56461260812df0",
+        "bytes": 2622
+      },
+      "reef.mjs": {
+        "sha256": "a965a997b02a95deab4fe31cdad3287675630a1e8cd73dbbea5c1dd905a65b83",
+        "bytes": 7228
+      },
+      "research.mjs": {
+        "sha256": "d234117cb56405715d15ed0a737284511f5bb2e0aff5ddba5f535d7d8253f4a9",
+        "bytes": 13583
+      },
+      "run-record.json": {
+        "sha256": "458d0e33705afba6e30467eba17e936664302030004fc7d2e5a9cf6f1340504e",
+        "bytes": 4452
+      },
+      "scene.frag": {
+        "sha256": "74f7de2e68ce0d1ab671f94fea6003537ab68c02025e3745e4974569c44ffe6e",
+        "bytes": 4723
+      },
+      "scene.vert": {
+        "sha256": "f8885aa382d09bbc479c74dfd21519adca7571ef230b747bda04939cbf0cc005",
+        "bytes": 951
+      },
+      "style.css": {
+        "sha256": "a6e1585f53bb270e692f4a03b79e9407afadbe9b776935d843b892088b86b334",
+        "bytes": 4869
+      },
+      "surface.rgba.gz": {
+        "sha256": "10c78644160c5ed7ddbc122877d4f269ce61a46f45a9b5c0c47b8d62882946ce",
+        "bytes": 2625495
+      },
+      "viewer.js": {
+        "sha256": "deae32cd4f5fb7cab5e9a424c25432c02aca74a304e341a8036872d0a1adcfdc",
+        "bytes": 15313
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-19\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "48c2b90cf06eeaec98cd4fb2d2faab0cd813e3ec36298dc58fa7cae1a1c87a84",
+      "bytes": 1261
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "README.md": {
+      "sha256": "f1958f5e2ba10289055e8c3f775bbfe2c1f248228c5b2166fd56461260812df0",
+      "bytes": 2622
+    },
+    "run-record.json": {
+      "sha256": "458d0e33705afba6e30467eba17e936664302030004fc7d2e5a9cf6f1340504e",
+      "bytes": 4452
+    },
+    "source-audit.json": {
+      "sha256": "00cb9d860499fb31e2676e39477903b079fe75ff28347a991022ac4b7f7ac520",
+      "bytes": 403
+    },
+    "frozen/architecture.mjs": {
+      "sha256": "292484468c0336956324443efbb8722024dbb91c76bed5225a855b5f87313726",
+      "bytes": 12337
+    },
+    "frozen/art.js": {
+      "sha256": "56c4abafebfd6ff2ca551dcf6aca8086f313d5eb220435434eec6a5828442b02",
+      "bytes": 13810
+    },
+    "frozen/domestic.mjs": {
+      "sha256": "37b5595ccab2200c7a9aa88d78f5cbd0296fdff5a5cf3ae26122a611c713b5b2",
+      "bytes": 16355
+    },
+    "frozen/geometry.mjs": {
+      "sha256": "21537d5b1dbc628beeaa2ffd34e78ecfdc1de27f4444ba4e9e3c5c0329f05c34",
+      "bytes": 9737
+    },
+    "frozen/habitat.json": {
+      "sha256": "ce9a3aa3296ada2a075543102b1502e92ac7b3a0c8ba6179f9595b52a6a45d5f",
+      "bytes": 8015
+    },
+    "frozen/habitat.mesh.gz": {
+      "sha256": "d075f098a1f6cf9455cafbe17ff5b48cb7229a06af0b7bfd3d29f85be0b8603c",
+      "bytes": 4893752
+    },
+    "frozen/index.html.txt": {
+      "sha256": "4179669aa9d2af39d8f7abe37752ea3468ef460415b197deb9e1f1594d47affe",
+      "bytes": 1884
+    },
+    "frozen/materials.mjs": {
+      "sha256": "0d93a060656419d42367159bab0cf4865f8702615ddc0f4a984218004e9dd5ad",
+      "bytes": 4078
+    },
+    "frozen/navigation.js": {
+      "sha256": "d767ca08eb6ea58c7607283d3b5875a7dd9c0ffe5dedf3de8fa5b47966758e3f",
+      "bytes": 1611
+    },
+    "frozen/reef.mjs": {
+      "sha256": "a965a997b02a95deab4fe31cdad3287675630a1e8cd73dbbea5c1dd905a65b83",
+      "bytes": 7228
+    },
+    "frozen/research.mjs": {
+      "sha256": "d234117cb56405715d15ed0a737284511f5bb2e0aff5ddba5f535d7d8253f4a9",
+      "bytes": 13583
+    },
+    "frozen/style.css": {
+      "sha256": "a6e1585f53bb270e692f4a03b79e9407afadbe9b776935d843b892088b86b334",
+      "bytes": 4869
+    },
+    "frozen/surface.rgba.gz": {
+      "sha256": "10c78644160c5ed7ddbc122877d4f269ce61a46f45a9b5c0c47b8d62882946ce",
+      "bytes": 2625495
+    },
+    "frozen/viewer.js": {
+      "sha256": "deae32cd4f5fb7cab5e9a424c25432c02aca74a304e341a8036872d0a1adcfdc",
+      "bytes": 15313
+    },
+    "frozen/scene.vert": {
+      "sha256": "f8885aa382d09bbc479c74dfd21519adca7571ef230b747bda04939cbf0cc005",
+      "bytes": 951
+    },
+    "frozen/scene.frag": {
+      "sha256": "74f7de2e68ce0d1ab671f94fea6003537ab68c02025e3745e4974569c44ffe6e",
+      "bytes": 4723
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run-record.json",
+      "source-audit.json",
+      "frozen/architecture.mjs",
+      "frozen/art.js",
+      "frozen/domestic.mjs",
+      "frozen/geometry.mjs",
+      "frozen/habitat.json",
+      "frozen/habitat.mesh.gz",
+      "frozen/index.html.txt",
+      "frozen/materials.mjs",
+      "frozen/navigation.js",
+      "frozen/reef.mjs",
+      "frozen/research.mjs",
+      "frozen/style.css",
+      "frozen/surface.rgba.gz",
+      "frozen/viewer.js",
+      "frozen/scene.vert",
+      "frozen/scene.frag"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

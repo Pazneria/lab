@@ -8743,6 +8743,271 @@
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
       "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "astra62-18",
+      "title": "SOUNDINGS",
+      "description": "A captain’s bedroom, private study and observation nook onto space.",
+      "promptId": "18",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.txt",
+          "path": "README.txt"
+        },
+        {
+          "label": "Original producer RUN.txt",
+          "path": "RUN.txt"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "28a42f61bd50d1ddb64dfa89d923d1b4714d86ff09717828605d4ac2869a981f",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "ab6d4895998da8c597a6a0dbe396210a318d388ee8ab435229ecfb1d35032a04",
+      "promptVersion": "18-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "astra62-19",
+      "title": "Nacre House",
+      "description": "A domestic room, research work nook and substantial observation window onto a bounded dark reef.",
+      "promptId": "19",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run-record.json",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "bfcd33f5f245bf699baeee62b6051a4123663a7acccceb00465210d6b65dfb9b",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "4179669aa9d2af39d8f7abe37752ea3468ef460415b197deb9e1f1594d47affe",
+      "promptVersion": "19-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "astra62-20",
+      "title": "The Gilded Hem",
+      "description": "A tiny-home wagon, storage/work shopfront area and immediately adjacent camp.",
+      "promptId": "20",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN-RECORD.txt",
+          "path": "RUN-RECORD.txt"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "04066552eadb8394e9000b0d7334d1d65e37311ca721caf86bf43b84971e83fc",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "b5af72fec86251edc006ed633782d5eff1dac4cb3bf178fee71b8365530cfb06",
+      "promptVersion": "20-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "astra62-16",
+      "title": "The Crooked Quince",
+      "description": "A cozy kitchen, crowded magical workroom and little framed greenhouse.",
+      "promptId": "16",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run.json",
+          "path": "run.json"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "085f616619de1b844299675000abece9ad61617a95fc9c02bd56f90f31d2a2c8",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "67cdd49e76c02b407488cc33c3e358a7ceadb610ef56ff93974ab6529b465164",
+      "promptVersion": "16-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "astra62-17",
+      "title": "The Thaw Room",
+      "description": "A living/sleeping room, study-and-storage alcove and covered balcony or inn corridor.",
+      "promptId": "17",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer RUN.json",
+          "path": "RUN.json"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "753b0e37fc30d5a0cbfa6b8531751c49c4996ea62a6a205c5ff8df2fe90378ce",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "3f746df1f559334bdea97d274f4de747213cf9ef789a3f33ca6f4632fcba5721",
+      "promptVersion": "17-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
     }
   ],
   "prompts": [

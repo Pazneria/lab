@@ -1,0 +1,66 @@
+{
+  "entry": "SceneBench 2026-11-17 / scene 17 / The Thaw Room",
+  "requested": {
+    "model": "GPT-6.2 Astra",
+    "effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "identity": "Codex, based on GPT-6",
+    "exact_model_variant": null,
+    "reasoning_effort": null,
+    "service_tier": null,
+    "note": "The session exposed no more specific serving metadata."
+  },
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-17",
+  "first_implementation_utc": "2026-11-18T02:08:35.1134590+00:00",
+  "deadline_utc": "2026-11-18T03:08:35.1134590+00:00",
+  "actual_stop_utc": "2026-11-18T03:04:48.0896639+00:00",
+  "elapsed_seconds": 3372.976,
+  "interruptions": [
+    "The initial sandboxed write was denied and the offline package attempt exited. Scoped approval allowed writing in the assigned directory and retrieving Three.js from the npm registry.",
+    "A later read-only listener-table check required scoped approval. The run clock continued throughout."
+  ],
+  "build": "index.html",
+  "portable_build": "The-Thaw-Room.zip",
+  "zip_sha256": "9a04ee4cb93d24be3f6012b593bf56c296896b49c23605117373798508b21ba0",
+  "preserved_file_hashes": "SHA256SUMS.txt",
+  "suggested_launch_address": "http://127.0.0.1:48173/",
+  "port_check": "Read-only operating system listener table returned zero listeners on port 48173. No port was bound.",
+  "verification": {
+    "syntax": "passed",
+    "texturePayloads": 13,
+    "inspectionLoop": [
+      "Entrance to tea table",
+      "Tea table into study",
+      "Study door to balcony",
+      "Along covered balcony",
+      "Balcony door to bedside",
+      "Bedside to entrance"
+    ],
+    "staticBatches": 75,
+    "allMeshes": 90,
+    "triangles": 378507,
+    "vertices": 435682,
+    "colliders": 35,
+    "pointsOfInterest": 5,
+    "reachableSampleCells": 4424,
+    "clearanceRadiusMetres": 0.202,
+    "reachableLocations": [
+      "sledge",
+      "bedside",
+      "study",
+      "studyThreshold",
+      "balconyNorth",
+      "balconyReturn",
+      "sittingThreshold"
+    ]
+  },
+  "archive_check": "All 18 archived files matched their original local bytes.",
+  "deferred_checks": [
+    "Visual inspection",
+    "Browser and interactive input testing",
+    "GPU and frame-time measurements"
+  ],
+  "cleanup": "All dependency, generation, packaging and check commands exited. The downloaded dependency tarball was removed after extracting the runtime and license. No server, watcher, browser, UI test or benchmark process was started."
+}

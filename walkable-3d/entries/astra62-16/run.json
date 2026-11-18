@@ -1,0 +1,52 @@
+{
+  "run": "SceneBench 2026-11-17, scene 16",
+  "title": "The Crooked Quince",
+  "requested": "GPT-6.2 Astra / XHIGH / Standard",
+  "exposed": "Codex based on GPT-6. Exact serving model, effort and service tier unavailable.",
+  "started": "2026-11-18T02:09:19.8476466+00:00",
+  "deadline": "2026-11-18T03:09:19.8476466+00:00",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-16",
+  "requested_identity": {
+    "model": "GPT-6.2 Astra",
+    "effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "base_identity": "Codex based on GPT-6",
+    "exact_model": null,
+    "effort": null,
+    "service": null,
+    "note": "The session did not expose the exact serving variant, reasoning effort or service tier."
+  },
+  "interruption_history": "No external interruptions, clock resets or extensions. One HTML write encountered a PowerShell quotation error and was retried successfully within the original clock.",
+  "checks": {
+    "type": "CPU-only",
+    "JavaScript_sources_parsed": 16,
+    "packed_vertices": 293101,
+    "triangles": 234887,
+    "spatial_batches": 64,
+    "collision_footprints": 47,
+    "route_segments": 22,
+    "route_metres": 31.04,
+    "rooms_reached": [
+      "Kitchen",
+      "Stillroom",
+      "Glasshouse"
+    ],
+    "return_to_entrance": true,
+    "archive_files_verified_byte_for_byte": 10
+  },
+  "deferred": [
+    "browser launch",
+    "visual inspection",
+    "interactive input testing",
+    "GPU shader compilation",
+    "GPU testing",
+    "frame-time measurement"
+  ],
+  "cleanup": "Both finite asset-build processes exited with status 0. The verification and packaging commands exited. No server, watcher, browser, external worker or persistent test process was started.",
+  "suggested_launch_address": "http://127.0.0.1:48116/",
+  "port_check": "Port 48116 was absent from the local TCP endpoint table at 2026-11-18T03:04:56.1970748+00:00.",
+  "stopped": "2026-11-18T03:05:27.836077+00:00",
+  "elapsed_seconds": 3367.988431
+}

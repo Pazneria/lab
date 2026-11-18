@@ -1,0 +1,87 @@
+{
+  "entry": "SceneBench 2026-11-17 / scene 19 / Nacre House",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-19",
+  "requested_identity": {
+    "model": "GPT-6.2 Astra",
+    "reasoning_effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "description": "Codex based on GPT-6",
+    "exact_model": null,
+    "reasoning_effort": null,
+    "service": null,
+    "note": "The session did not expose an exact serving model, effort or tier. No global configuration was used to infer them."
+  },
+  "first_implementation_action": "Inventory of the verified empty entry directory and local coding tools.",
+  "first_implementation_utc": "2026-11-18T02:09:00.986893+00:00",
+  "deadline_utc": "2026-11-18T03:09:00.986893+00:00",
+  "interruptions": [
+    "The default filesystem sandbox blocked the first generated-asset write. The approved local bake completed in the assigned directory.",
+    "The sandbox restricted an initial local listener-table read. The approved read-only query found zero TCP listeners on port 57119."
+  ],
+  "deadline_extensions": 0,
+  "archive": {
+    "path": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-19\\nacre-house.zip",
+    "bytes": 7573398,
+    "sha256": "c1422810c9cb890637a84fdb30c5578133846a0e25909703c5d183cff462489c",
+    "verified_exact_member_bytes": 19
+  },
+  "runtime": {
+    "entrypoint": "index.html",
+    "suggested_launch_address": "http://127.0.0.1:57119/",
+    "requirements": [
+      "WebGL 2",
+      "gzip DecompressionStream",
+      "keyboard and mouse"
+    ],
+    "dependencies": "All scene assets are local."
+  },
+  "checks": {
+    "result": "Passed",
+    "node_syntax_sources": 11,
+    "vertices": 290540,
+    "triangles": 335022,
+    "draw_batches": 8,
+    "surface_types": 20,
+    "atlas_plates_used": 24,
+    "checked": [
+      "Packed asset lengths and references",
+      "Finite vertex data, valid material IDs and triangle indices",
+      "Triangle indices within stored spatial bounds",
+      "Illustration coverage",
+      "CPU-only connected floor map of the requested round trip",
+      "Numeric collision checks at both open passages, one closed bulkhead, the glazing and entrance",
+      "Byte verification of every ZIP member"
+    ]
+  },
+  "deferred_to_judging": [
+    "Browser launch and driver shader compilation",
+    "Visual inspection and interactive walking",
+    "GPU or frame-time measurement"
+  ],
+  "process_cleanup": "Every build and check process exited. No server, watcher, browser, UI test or GPU process was launched. Packaging uses a one-shot process.",
+  "sha256_by_original_file": {
+    "index.html": "4179669aa9d2af39d8f7abe37752ea3468ef460415b197deb9e1f1594d47affe",
+    "style.css": "a6e1585f53bb270e692f4a03b79e9407afadbe9b776935d843b892088b86b334",
+    "viewer.js": "deae32cd4f5fb7cab5e9a424c25432c02aca74a304e341a8036872d0a1adcfdc",
+    "navigation.js": "d767ca08eb6ea58c7607283d3b5875a7dd9c0ffe5dedf3de8fa5b47966758e3f",
+    "art.js": "56c4abafebfd6ff2ca551dcf6aca8086f313d5eb220435434eec6a5828442b02",
+    "scene.vert": "f8885aa382d09bbc479c74dfd21519adca7571ef230b747bda04939cbf0cc005",
+    "scene.frag": "74f7de2e68ce0d1ab671f94fea6003537ab68c02025e3745e4974569c44ffe6e",
+    "habitat.json": "ce9a3aa3296ada2a075543102b1502e92ac7b3a0c8ba6179f9595b52a6a45d5f",
+    "habitat.mesh.gz": "d075f098a1f6cf9455cafbe17ff5b48cb7229a06af0b7bfd3d29f85be0b8603c",
+    "surface.rgba.gz": "10c78644160c5ed7ddbc122877d4f269ce61a46f45a9b5c0c47b8d62882946ce",
+    "README.md": "f1958f5e2ba10289055e8c3f775bbfe2c1f248228c5b2166fd56461260812df0",
+    "geometry.mjs": "21537d5b1dbc628beeaa2ffd34e78ecfdc1de27f4444ba4e9e3c5c0329f05c34",
+    "architecture.mjs": "292484468c0336956324443efbb8722024dbb91c76bed5225a855b5f87313726",
+    "domestic.mjs": "37b5595ccab2200c7a9aa88d78f5cbd0296fdff5a5cf3ae26122a611c713b5b2",
+    "research.mjs": "d234117cb56405715d15ed0a737284511f5bb2e0aff5ddba5f535d7d8253f4a9",
+    "reef.mjs": "a965a997b02a95deab4fe31cdad3287675630a1e8cd73dbbea5c1dd905a65b83",
+    "materials.mjs": "0d93a060656419d42367159bab0cf4865f8702615ddc0f4a984218004e9dd5ad",
+    "bake.mjs": "ea07cab16ae370cbb298ae4bfcf7229c6219378770a3a6c68202614eaa00ca4e",
+    "check.mjs": "64db4fdccc879305ebbc50ed61e1d3d8b9a44760b8eb61c288fbf4c110d8f0f8"
+  },
+  "stop_utc": "2026-11-18T03:03:01.346507+00:00",
+  "elapsed_seconds": 3240.359614
+}

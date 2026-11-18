@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#272721">
+<title>The Thaw Room · The Copper Ibex</title>
+<link rel="stylesheet" href="./room.css">
+</head>
+<body>
+<canvas id="view" tabindex="0" aria-label="Explorable three-dimensional mountaineer's room"></canvas>
+<div class="edge"></div>
+<header id="identity">
+  <svg viewBox="0 0 44 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"><path d="M3 30 15 11l5 8 7-13 14 24M9 23l6-5 5 5 7-10 8 11M4 35h36M12 39h20"/><path d="m17 31 6-10 6 10"/></g></svg>
+  <div><div class="eyebrow">THE COPPER IBEX <i></i> UPPER ROOMS</div><h1>The Thaw Room</h1></div>
+</header>
+<div id="loading" role="status"><span></span>Opening the shutters</div>
+<div id="reticle"></div>
+<div id="focus" hidden><kbd>E</kbd><span></span></div>
+<aside id="note" hidden aria-live="polite"><div class="eyebrow">FROM THE ROOM</div><h2></h2><p></p><small>E &nbsp; Close</small></aside>
+<footer>
+<div class="instruction" id="start" role="button" tabindex="0"><span class="lamp"></span><span>Click to explore</span></div>
+<div class="guide"><span><kbd>W A S D</kbd> Walk</span><span><kbd>Mouse</kbd> Look</span><span><kbd>Esc</kbd> Release</span></div>
+<button id="reset" title="Return to the entrance (R)" aria-label="Reset to entrance"><svg width="15" height="15" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8a7 7 0 1 1-.7 5M4.5 3.7v5.2h5.2"/></svg><span>Reset</span><kbd>R</kbd></button>
+</footer>
+<noscript>This room requires JavaScript and WebGL.</noscript>
+<script src="./package/build/three.min.js"></script>
+<script src="./surfaces.js"></script>
+<script src="./core.js"></script>
+<script src="./art.js"></script>
+<script src="./building.js"></script>
+<script src="./hearth.js"></script>
+<script src="./furnishings.js"></script>
+<script src="./study.js"></script>
+<script src="./domestic.js"></script>
+<script src="./sky.js"></script>
+<script src="./balcony.js"></script>
+<script src="./navigation.js"></script>
+<script src="./shading.js"></script>
+<script src="./walk.js"></script>
+</body>
+</html>
