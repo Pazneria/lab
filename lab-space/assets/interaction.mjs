@@ -25,6 +25,10 @@ export function comparisonTargetAt(point,previews=comparisonLayout.cards){
   for(let slot=0;slot<previews.length;slot++)if(containsPoint(previews[slot],point))return {kind:'entry',slot};
   return comparisonLayout.buttons.find(bounds=>containsPoint(bounds,point))||null;
 }
+export function canvasCenter(rect){
+  if(!rect||![rect.left,rect.top,rect.width,rect.height].every(Number.isFinite)||rect.width<=0||rect.height<=0)return null;
+  return {x:rect.left+rect.width/2,y:rect.top+rect.height/2};
+}
 export function canvasPointer(clientX,clientY,rect){
   if(!rect||![rect.left,rect.top,rect.width,rect.height,clientX,clientY].every(Number.isFinite)||!(rect.width>0&&rect.height>0))return null;
   const x=(clientX-rect.left)/rect.width,y=(clientY-rect.top)/rect.height;

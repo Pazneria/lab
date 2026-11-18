@@ -15,10 +15,10 @@ const settle=()=>new Promise(resolve=>setImmediate(resolve));
 function until(f,predicate,max=500){for(let i=0;i<max&&!predicate();i++)f.flush(f.clock+50);assert.ok(predicate(),'Expected bounded controller progress');}
 
 async function controllerFixture({reducedMotion=false,animate=false,deferImport=false,state={},characterHref='../character-bench/?prompt=02',animationHref='../animation-studio/',storageDenied=false,session=new Map(),referrer='',settleEye=false,requestLock,characterState='ready',figurineState='ready',drawError=false,renderable=true,actualNavigation=false,fetchResponse,handoff=false,coverFade=true,comparisonReady=true}={}) {
-  const elements=new Map(),renderers=[],frames=new Map(),cancelled=[],log=[],advances=[],routes=[],media=[],observers=[],captureRequests=[],timers=new Map(),fetches=[];
+  const picks=[];const elements=new Map(),renderers=[],frames=new Map(),cancelled=[],log=[],advances=[],routes=[],media=[],observers=[],captureRequests=[],timers=new Map(),fetches=[];
   let timerId=0;
   let nextFrame=0,maxFrames=0,clock=100,focused=true,picked={point:{x:3,z:3}},screenCallbacks,importRelease;
-  let navigationRestores=0;
+  let navigationRestores=0,screenApi;
   const mutations=[],handoffEvents=[];
   const incoming=handoff?{active:true,room:'lab',camera:'default-entry-v2',...handoff}:null;
   const importGate=deferImport?new Promise(resolve=>{importRelease=resolve;}):null;
@@ -102,15 +102,15 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
     byId('screen-controls').addEventListener('click',inspect);
     byId('visit-screen').addEventListener('click',()=>callbacks.approach());
     byId('comparison-dialog').addEventListener('close',()=>callbacks.resume());
-    return {source:{},inspect,get ready(){return comparisonReady;},hitTest:point=>point?.key==='none'?null:point?.key?{key:point.key}:{key:'preview-a'},
-      activate(point){if(point?.key==='none')return;if(['vote:a','next'].includes(point?.key)){callbacks.changed({});return;}callbacks.depart();location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
+    return screenApi={source:{},inspect,get ready(){return comparisonReady;},hitTest:point=>point?.key==='none'?null:{key:point?.key||'preview-a',kind:point?.key==='next'?'next':point?.key?.startsWith('vote:')?'vote':'entry',choice:point?.key?.split(':')[1]||'a',slot:0},
+      activate(point){if(point?.key==='none')return;if(['vote:a','next'].includes(point?.key)){callbacks.changed({});return;}callbacks.depart();byId('comparison-dialog').open=false;location.assign('https://example.test/lab/walkable-3d/scene.html?entry=a');},
     };
   }});
   const room=synthetic({createRoom(canvas,onLost,options){
     const renderer={id:renderers.length+1,needsAnimation:animate,draws:[],targets:[],poses:[],disposed:false,diagnostics:{characterState,figurineState},
       draw(position,options){assert.equal(this.disposed,false,'Disposed renderer must never draw');if(drawError)throw Error('fixture draw error');this.draws.push({position:copy(position),...options});return renderable;},pose(position){this.poses.push(copy(position));},
       exit(doors){this.doors=copy(doors);return false;},
-      comparison(){},target(value){this.targets.push(copy(value));},pick:()=>picked,
+      comparison(){},target(value){this.targets.push(copy(value));},pick:(x,y)=>{picks.push({x,y});return picked;},
       dispose(){this.disposed=true;log.push({event:'dispose',id:this.id});},onLost,changed:options.changed,
     };
     renderers.push(renderer);log.push({event:'create',id:renderer.id});return renderer;
@@ -122,7 +122,7 @@ async function controllerFixture({reducedMotion=false,animate=false,deferImport=
   });
   await module.link(path=>path.endsWith('walkable-screen.js')?screens:path.endsWith('scene-navigation.js')?synthetic({createSceneNavigation:()=>({restore(){navigationRestores++;}})}):path.endsWith('interaction.mjs')?synthetic(interaction):path.endsWith('production-exit.mjs')?synthetic(exit):path.endsWith('animation-studio/navigation.mjs')?synthetic(workbenchNavigation):navigation);
   await module.evaluate();if(!deferImport){await settle();const pending=[...frames];frames.clear();for(const [,callback]of pending)callback(clock);}
-  return {canvas,document,window,byId,history,location,renderers,log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,surfaces,mutations,handoffEvents,completeCover,
+  return {canvas,document,window,byId,history,location,renderers,picks,get screenApi(){return screenApi;},log,advances,routes,frames,cancelled,media,observers,screenCallbacks,session,captureRequests,timers,fetches,surfaces,mutations,handoffEvents,completeCover,
     get qa(){return window.__productionLab;},get maxFrames(){return maxFrames;},
     get engine(){return renderers.at(-1);},get clock(){return clock;},set clock(value){clock=value;},
     set focused(value){focused=value;},set picked(value){picked=value;},
@@ -233,6 +233,8 @@ test('physical character selection disposes the renderer before same-tab dedicat
   await f.byId('explore').emit('click');
   await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,isPrimary:true});
   await f.canvas.emit('pointerup',{button:0,pointerId:1,clientX:500,clientY:300,isPrimary:true});
+  assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.engine.disposed,false);
+  await f.canvas.emit('keydown',{code:'Escape'});await f.byId('visit-character').emit('click');
   assert.deepEqual(f.log.slice(-2),[{event:'dispose',id:1},{event:'assign',url:'https://example.test/lab/character-bench/?prompt=02'}]);
   assert.equal(f.qa.engine,null);assert.equal(f.frames.size,0);assert.equal(f.qa.suspended,true);
   assert.equal(f.history.state.labLayoutVersion,'fixture-layout');assert.equal(f.history.state.labPosition.z,7.3);
@@ -364,7 +366,7 @@ test('first mouse gesture over an exhibit or floor captures without activating; 
     assert.equal(f.captureRequests.length,1);assert.equal(f.captureRequests[0].unadjustedMovement,true);
     assert.equal(f.log.some(r=>r.event==='assign'),false);assert.equal(f.routes.length,0);f.flush();
     assert.deepEqual(f.advances.at(-1).actions,['forward']);
-    if(target.destination){await f.canvas.emit('pointerdown',{button:0,pointerId:2,clientX:500,clientY:300,pointerType:'mouse'});assert.equal(f.log.at(-1).event,'assign');}
+    if(target.destination){await f.canvas.emit('pointerdown',{button:0,pointerId:2,clientX:500,clientY:300,pointerType:'mouse'});assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.log.some(r=>r.event==='assign'),false);}
   }
 });
 
@@ -516,11 +518,13 @@ test('intentional catalog and Home object clicks open their manual controls with
   }
 });
 
-test('physical SceneBench previews act directly at any distance and preserve the west return pose before one scene departure',async()=>{
+test('physical SceneBench selection retains capture until Escape and explicit entry navigation preserves the west return pose',async()=>{
   for(const pose of [realNavigation.spawn(),realNavigation.exhibits.worlds.approach]){
     const f=await controllerFixture();f.qa.teleport(pose);f.flush();f.picked={comparison:{key:'preview-a'}};await f.byId('explore').emit('click');
     await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
-    assert.equal(f.byId('comparison-dialog').open,false);assert.deepEqual(f.log.slice(-2).map(e=>e.event),['dispose','assign']);
+    assert.equal(f.byId('comparison-dialog').open,false);assert.equal(f.document.pointerLockElement,f.canvas);
+    await f.canvas.emit('keydown',{code:'Escape'});assert.equal(f.byId('comparison-dialog').open,true);f.screenApi.activate({key:'preview-a'});
+    assert.deepEqual(f.log.slice(-2).map(e=>e.event),['dispose','assign']);
     assert.match(f.log.at(-1).url,/walkable-3d\/scene.html/);assert.equal(f.routes.length,0);
     const approach=realNavigation.exhibits.worlds.approach;
     for(const key of ['x','z','yaw','pitch'])assert.equal(f.history.state.labPosition[key],approach[key]);
@@ -646,6 +650,8 @@ test('physical animation workbench disposes before same-tab departure and saves 
   const f=await controllerFixture({animate:true});await f.byId('explore').emit('click');await f.heldInput();f.flush();f.flush();
   const pose=f.qa.position,engine=f.engine;f.picked={destination:'animation'};
   await f.canvas.emit('keydown',{code:'KeyE'});
+  assert.equal(engine.disposed,false);assert.equal(f.document.pointerLockElement,f.canvas);
+  await f.canvas.emit('keydown',{code:'Escape'});await f.byId('visit-animation').emit('click');
   assert.equal(engine.disposed,true);assert.equal(f.qa.engine,null);assert.equal(f.frames.size,0);assert.equal(f.document.pointerLockElement,null);
   assert.deepEqual(f.log.slice(-2),[{event:'dispose',id:1},{event:'assign',url:'https://example.test/lab/animation-studio/'}]);
   const record=JSON.parse(f.session.get(workbenchNavigation.WORKBENCH_RETURN_KEY));
@@ -694,11 +700,13 @@ test('figurine load failure keeps the Lab usable and the existing studio menu ro
 });
 
 
-test('first unlocked mouse click on the counter figurine departs directly without acquiring look capture',async()=>{
+test('first mouse click over the figurine only acquires look; selection waits for Escape and explicit navigation',async()=>{
  const f=await controllerFixture();f.picked={destination:'animation'};
  const g={button:0,pointerId:21,clientX:500,clientY:300,isPrimary:true,pointerType:'mouse'};
- await f.canvas.emit('pointerdown',g);assert.equal(f.captureRequests.length,0);assert.equal(f.engine.disposed,false);
- await f.canvas.emit('pointerup',g);assert.equal(f.engine.disposed,true);assert.equal(f.log.at(-1).url,'https://example.test/lab/animation-studio/');
+ await f.canvas.emit('pointerdown',g);assert.equal(f.captureRequests.length,1);assert.equal(f.engine.disposed,false);
+ await f.canvas.emit('pointerup',g);assert.equal(f.engine.disposed,false);assert.equal(f.document.pointerLockElement,f.canvas);
+ await f.canvas.emit('keydown',{code:'KeyE'});assert.equal(f.engine.disposed,false);
+ await f.canvas.emit('keydown',{code:'Escape'});await f.byId('visit-animation').emit('click');assert.equal(f.engine.disposed,true);assert.equal(f.log.at(-1).url,'https://example.test/lab/animation-studio/');
 });
 test('figurine mouse drag or changed release target cannot cause an unintended studio departure',async()=>{
  for(const changed of ['drag','target']){
@@ -706,6 +714,19 @@ test('figurine mouse drag or changed release target cannot cause an unintended s
   await f.canvas.emit('pointerdown',g);
   if(changed==='drag')await f.canvas.emit('pointermove',{...g,clientX:540,buttons:1});else f.picked={destination:'character'};
   await f.canvas.emit('pointerup',{...g,clientX:changed==='drag'?540:500});
-  assert.equal(f.captureRequests.length,0);assert.equal(f.engine.disposed,false);assert.equal(f.log.some(e=>e.event==='assign'),false);
+  assert.equal(f.captureRequests.length,1);assert.equal(f.engine.disposed,false);assert.equal(f.log.some(e=>e.event==='assign'),false);
  }
+});
+
+test('locked aim and repeated object uses stay centered with a visible reticle until Escape; reentry needs a gesture',async()=>{
+ const f=await controllerFixture();assert.equal(f.byId('aim-reticle').hidden,true);f.picked={comparison:{key:'next'}};
+ const gesture={button:0,pointerId:1,clientX:85,clientY:111,pointerType:'mouse'};
+ await f.canvas.emit('pointerdown',gesture);await f.canvas.emit('pointerup',gesture);assert.equal(f.captureRequests.length,1);assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.byId('aim-reticle').hidden,false);
+ await f.heldInput();
+ for(let i=0;i<3;i++){await f.canvas.emit('pointerdown',{...gesture,pointerId:i+2});assert.deepEqual(f.picks.at(-1),{x:500,y:300});assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.byId('comparison-dialog').open,false);}
+ f.picked={destination:'catalog'};await f.canvas.emit('pointerdown',gesture);assert.equal(f.document.pointerLockElement,f.canvas);assert.equal(f.byId('station-dialog').open,false);assert.match(f.byId('walk-message').textContent,/Escape/);
+ await f.canvas.emit('keydown',{code:'Escape'});assert.equal(f.document.pointerLockElement,null);assert.equal(f.byId('aim-reticle').hidden,true);const requests=f.captureRequests.length;
+ await f.document.emit('mousemove',{movementX:100,movementY:10});await f.byId('help-dialog').emit('cancel');f.flush();assert.equal(f.captureRequests.length,requests);assert.deepEqual(f.advances.at(-1).actions,[]);
+ await f.canvas.emit('pointerdown',{...gesture,pointerId:8});assert.equal(f.captureRequests.length,requests+1);assert.equal(f.byId('aim-reticle').hidden,false);
+ f.focused=false;await f.window.emit('blur');assert.equal(f.byId('aim-reticle').hidden,true);assert.equal(f.document.pointerLockElement,null);
 });

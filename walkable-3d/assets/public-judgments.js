@@ -44,6 +44,14 @@ export function loadPublicLeaderboard(force=false){
   loading=request('leaderboard').then(data=>{snapshot=data;lastError='';notify();return data;}).catch(error=>{lastError=error.message;notify();return null;}).finally(()=>{loading=null;});
   return loading;
 }
+// Counts come only from a successful service snapshot. Missing/outdated service
+// contracts and read failures are unknown, never invented zero-vote scenes.
+export function publicEntryVoteCounts(entries){
+  const counts=snapshot?.entryVotes;
+  if(!publicVotingEnabled||lastError||!counts||Array.isArray(counts))return null;
+  if(entries.some(entry=>!Object.hasOwn(counts,entry.id)||!Number.isSafeInteger(counts[entry.id])||counts[entry.id]<0))return null;
+  return new Map(entries.map(entry=>[entry.id,counts[entry.id]]));
+}
 export function submitPublicVote(entries,choice,reportedBlind){
   if(!publicVotingEnabled)return Promise.resolve(null);
   const ids=entries.map(entry=>typeof entry==='string'?entry:entry.id),key=pairKey(ids);

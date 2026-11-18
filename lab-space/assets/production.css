@@ -21,3 +21,11 @@ dialog{color:#23332f;background:#f4f5ee;border-color:#b3c5bd}dialog::backdrop{ba
 
 /* A static cursor cue accompanies the small counter figurine rim. */
 #room.is-figurine-hover{cursor:pointer}
+
+/* Same center as the room canvas; this cue never intercepts a gesture. */
+.aim-reticle{position:absolute;z-index:3;left:50%;top:50%;width:20px;height:20px;transform:translate(-50%,-50%);pointer-events:none;filter:drop-shadow(0 1px 2px #000)}
+.aim-reticle::before,.aim-reticle::after{content:"";position:absolute;background:#fff;border:1px solid #152027;border-radius:2px}
+.aim-reticle::before{width:20px;height:4px;left:0;top:8px}.aim-reticle::after{width:4px;height:20px;left:8px;top:0}
+.aim-reticle.is-target::before,.aim-reticle.is-target::after{background:#9ff0c0}
+.aim-hint{position:absolute;z-index:3;top:calc(50% + 24px);left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);padding:5px 9px;border-radius:4px;background:#101820d9;color:#fff;font:12px/1.5 system-ui,sans-serif;text-align:center;pointer-events:none}
+.aim-reticle[hidden],.aim-hint[hidden]{display:none}

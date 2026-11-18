@@ -136,7 +136,7 @@ test('shared viewer invokes navigation only for explicit exit, preserving legacy
   const nodes=new Map(),events=new Map();let exits=0,back=0;
   const node=selector=>{if(selector==='#scene-mount iframe')return null;if(!nodes.has(selector))nodes.set(selector,{open:false,disabled:false,listeners:{},close(){this.open=false;},replaceChildren(){},addEventListener(type,fn){this.listeners[type]=fn;}});return nodes.get(selector);};
   const context=vm.createContext({URL,clearTimeout,document:{querySelector:node,createElement(){},addEventListener(type,fn){events.set(type,fn);}},history:{state:{walkableScene:'a'},back(){back++;}},addEventListener(type,fn){events.set(type,fn);},location:{hash:''}});
-  const module=await moduleIn(context,'walkable-3d/assets/viewer.js');await module.link(()=>{});await module.evaluate();
+  const module=await moduleIn(context,'walkable-3d/assets/viewer.js'),policy=await moduleIn(context,'walkable-3d/assets/resource-policy.js');await module.link(()=>policy);await module.evaluate();
   const viewer=module.namespace.createViewer({onExit(){exits++;}});viewer.close(false);assert.equal(exits,0);viewer.close();assert.equal(exits,1);assert.equal(back,0);
   events.get('pagehide')();assert.equal(exits,1);
   const legacy=module.namespace.createViewer();legacy.close();assert.equal(back,1);

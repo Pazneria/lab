@@ -1,6 +1,6 @@
 import {createWalkableScreen} from './walkable-screen.js';
 import {createSceneNavigation} from '../../walkable-3d/assets/scene-navigation.js';
-import {clickSlop,movedBeyondClick,intentionalClick} from './interaction.mjs';
+import {clickSlop,movedBeyondClick,intentionalClick,canvasCenter} from './interaction.mjs';
 import {advance,spawn,nearby,safeDestination,walkable,exhibits,roomLayoutVersion,setExitDoors} from './production-navigation.mjs';
 import {createExitController,HOME_URL} from './production-exit.mjs';
 import {workbenchDestination,saveWorkbenchReturn,takeWorkbenchReturn} from '../../animation-studio/navigation.mjs';
@@ -17,6 +17,7 @@ let handoffObserver=null;
 if(!handoffEntry)createSceneNavigation(new URL('../../walkable-3d/',import.meta.url)).restore();
 let position=spawn(),engine=null,active=false,loading=false,failed=false,suspended=false,request=0;
 let frame=0,lastTime=0,idleTime=0,dirty=true,drag=null,restoreFocus=null;
+let selectedAction=null;
 let roomReady=false,captureId=0,captureWanted=false,capturePending=false,captureLegacy=false,locked=false,dragFallback=false;
 const pitchLimit=Math.PI/2-.02;
 let exitController=createExitController(),exitState=exitController.snapshot(),exitNavigating=false,exitTimer=0,preloadController=null,preloadStatus='idle',preloadEpoch=0;
@@ -36,7 +37,7 @@ function message(text=''){$('walk-status').hidden=!text;$('walk-message').textCo
 function clearInput(){actions.clear();keys.clear();drag=null;position.vx=0;position.vz=0;}
 function stop(){clearInput();message();if(frame)cancelAnimationFrame(frame);frame=0;lastTime=0;idleTime=0;}
 function pauseExit(){exitState=exitController.update(position,{dt:0,active:false});abortPreload();}
-function releaseLook(){captureId++;captureWanted=capturePending=captureLegacy=locked=false;if(document.pointerLockElement===canvas)document.exitPointerLock?.();clearInput();pauseExit();}
+function releaseLook(){captureId++;captureWanted=capturePending=captureLegacy=locked=false;if(document.pointerLockElement===canvas)document.exitPointerLock?.();clearInput();pauseExit();updateAim();}
 function available(){return !!engine&&active&&!suspended&&!document.hidden&&document.hasFocus()&&!help.open&&!station.open&&!$('comparison-dialog').open&&!menu.open;}
 function inputReady(){return roomReady&&!handoff?.active&&available();}
 function loadingStage(text,destination='Lab'){$('loading-name').textContent=destination;$('loading-stage').textContent=text;$('lab-loading').classList.remove('is-ready');$('lab-loading').hidden=false;if(handoff?.active)$('lab-loading').setAttribute('aria-hidden','true');else $('lab-loading').removeAttribute('aria-hidden');}
@@ -47,8 +48,21 @@ if(handoffEntry){handoffObserver=new MutationObserver(handoffChanged);handoffObs
 function invalidate(){dirty=true;schedule();}
 function schedule(){if(available()&&!frame)frame=requestAnimationFrame(tick);}
 function targetKey(target){if(target?.comparison)return screen.hitTest(target.comparison)?.key||null;if(target?.destination)return 'station:'+target.destination;return null;}
+function centeredTarget(){const point=canvasCenter(canvas.getBoundingClientRect());return point?engine?.pick(point.x,point.y):null;}
+const destinationNames={worlds:'SceneBench',character:'CharacterBench',animation:'Animation Studio',catalog:'Catalog',home:'Home'};
+function aimedAction(target){
+  if(target?.comparison){const hit=screen.hitTest(target.comparison);if(!hit)return null;return {hit,label:hit.kind==='entry'?`Select scene ${hit.slot?'B':'A'}`:hit.kind==='next'?'Next comparison':hit.kind==='previous'?'Previous comparison':hit.kind==='vote'?(hit.choice==='tie'?'Tie':`Prefer ${hit.choice.toUpperCase()}`):'Use comparison'};}
+  return target?.destination?{label:destinationNames[target.destination]||'Use object'}:null;
+}
+function updateAim(){
+  const show=locked&&document.pointerLockElement===canvas&&inputReady();$('aim-reticle').hidden=!show;$('aim-hint').hidden=!show;
+  if(!show)return;
+  const action=aimedAction(centeredTarget());$('aim-reticle').classList.toggle('is-target',!!action);
+  const text=action?`${action.label} · Click or E`:'Mouse to look · Esc for controls';
+  if($('aim-hint').textContent!==text)$('aim-hint').textContent=text;
+}
 function status(){const kind=nearby(position);$('nearby').hidden=!kind||document.pointerLockElement===canvas;$('nearby').textContent=kind==='character'?'CharacterBench':kind==='worlds'?'Use SceneBench screen':kind==='home'?'Exit to home':kind==='animation'?'Animation studio':'Open catalog';}
-function draw(dt=0,time=performance.now()/1000,interactive=false){if(!available())return;try{const rendered=engine.draw(position,{dt,time,interactive});if(rendered===false)return;status();if(!roomReady){const state=engine.diagnostics?.characterState,figure=engine.diagnostics?.figurineState;if(state==='failed')fallback('The character could not load. Try again or open a destination below.');else if((!state||state==='ready')&&(!figure||figure==='ready'||figure==='failed')&&(!handoff?.active||screen.ready)){finishLoading();if(figure==='failed')message('The figurine could not load. Animation Studio is available in the menu.');}else loadingStage(state==='loading'?'Placing character':figure==='loading'?'Placing figurine':'Preparing exhibits');}}catch{fallback('The 3D Lab stopped. Try again or open a destination below.');}}
+function draw(dt=0,time=performance.now()/1000,interactive=false){if(!available())return;try{const rendered=engine.draw(position,{dt,time,interactive});if(rendered===false)return;status();updateAim();if(!roomReady){const state=engine.diagnostics?.characterState,figure=engine.diagnostics?.figurineState;if(state==='failed')fallback('The character could not load. Try again or open a destination below.');else if((!state||state==='ready')&&(!figure||figure==='ready'||figure==='failed')&&(!handoff?.active||screen.ready)){finishLoading();if(figure==='failed')message('The figurine could not load. Animation Studio is available in the menu.');}else loadingStage(state==='loading'?'Placing character':figure==='loading'?'Placing figurine':'Preparing exhibits');}}catch{fallback('The 3D Lab stopped. Try again or open a destination below.');}}
 function tick(time){
   frame=0;if(!available()){lastTime=0;return;}
   const dt=lastTime?Math.min(Math.max((time-lastTime)/1000,0),.05):0;lastTime=time;idleTime+=dt;
@@ -119,7 +133,7 @@ function characterDestination(){
 function preserveCharacterReturn(){preserve();try{const {x,z,yaw,pitch,crouch=false}=position;sessionStorage.setItem('lab.production.character-return.v1',JSON.stringify({layout:roomLayoutVersion,position:{x,z,yaw,pitch,crouch}}));}catch{}}
 function focusWorlds(){
   if(!active||!roomReady||failed||handoff?.active)return;
-  releaseLook();stop();help.close();menu.open=false;position={...spawn(),...exhibits.worlds.approach,crouch:false};preserve();canvas.focus({preventScroll:true});invalidate();
+  if(!locked)releaseLook();stop();help.close();menu.open=false;position={...spawn(),...exhibits.worlds.approach,crouch:false};preserve();canvas.focus({preventScroll:true});invalidate();
 }
 function openStation(kind){
   if(kind==='worlds'){focusWorlds();return;}
@@ -136,12 +150,27 @@ function openStation(kind){
   }
   restoreFocus=document.activeElement;const home=kind==='home';$('dialog-number').textContent=home?'Exit':'Catalog';$('dialog-title').textContent=home?'Return home':'Catalog & evidence';$('dialog-copy').textContent=home?"Return to Jordan’s home page.":'Browse the public benchmark catalog, sources, and graphs.';$('dialog-link').href=safeDestination(kind);$('dialog-link').textContent=home?'Exit to home':'Open catalog';$('dialog-link').hidden=false;station.showModal();
 }
-function activate(target){if(target?.comparison)screen.activate(target.comparison);else if(['character','catalog','home','worlds','animation'].includes(target?.destination))openStation(target.destination);}
+function activate(target){
+  const action=aimedAction(target);
+  if(locked&&action&&(action.hit?.kind==='entry'||target?.destination&&target.destination!=='worlds')){
+    // A destination leaves this document. Select it in-world; Escape is the
+    // intentional release before its ordinary accessible navigation controls.
+    selectedAction={scene:action.hit?.kind==='entry',destination:target?.destination,label:action.label.replace(/^Select /,'')};
+    message(`${action.label} selected. Press Escape to open its controls.`);return;
+  }
+  selectedAction=null;
+  if(target?.comparison)screen.activate(target.comparison);else if(['character','catalog','home','worlds','animation'].includes(target?.destination))openStation(target.destination);
+}
 
 $('visit-screen').hidden=false;$('screen-controls').hidden=false;$('help').hidden=false;
 $('worlds-link').addEventListener('click',event=>{if(active&&roomReady&&!failed){event.preventDefault();focusWorlds();}});
 enterButton.addEventListener('click',enter);
-function openHelp(){if(!inputReady())return;releaseLook();stop();help.showModal();$('resume-look').focus({preventScroll:true});}
+function openHelp(){
+  if(!inputReady())return;const selected=selectedAction;selectedAction=null;releaseLook();stop();
+  if(selected?.scene){screen.inspect();return;}
+  $('selected-action').hidden=!selected;$('selected-action').textContent=selected?`${selected.label} selected. Choose the matching destination below.`:'';
+  help.showModal();$('resume-look').focus({preventScroll:true});
+}
 $('help').addEventListener('click',openHelp);
 help.addEventListener('close',()=>{canvas.focus({preventScroll:true});invalidate();});
 help.addEventListener('cancel',event=>{event.preventDefault();help.close();});
@@ -156,7 +185,7 @@ gentle.addEventListener('change',()=>{stop();invalidate();});
 function captureFallback(){capturePending=captureWanted=captureLegacy=false;if(inputReady()){dragFallback=true;message('Hold the left mouse button to look. Escape opens controls.');}}
 async function requestLook(){
   if(!inputReady()||locked||capturePending)return;
-  message();canvas.focus({preventScroll:true});
+  selectedAction=null;$('selected-action').hidden=true;message();canvas.focus({preventScroll:true});
   if(!canvas.requestPointerLock){captureFallback();return;}
   const id=++captureId;capturePending=captureWanted=true;captureLegacy=false;
   try{
@@ -174,7 +203,7 @@ canvas.addEventListener('keydown',event=>{
   if(!inputReady())return;
   if(keyMap[event.code]){event.preventDefault();message();keys.add(event.code);actions.add(keyMap[event.code]);schedule();}
   else if(event.code==='Enter'&&!locked){event.preventDefault();if(!event.repeat)requestLook();}
-  else if(event.code==='KeyE'||event.code==='Enter'){event.preventDefault();if(!event.repeat){const rect=canvas.getBoundingClientRect(),target=engine.pick(rect.left+rect.width/2,rect.top+rect.height/2);if(target?.comparison||target?.destination)activate(target);else {const kind=nearby(position);if(kind!=='worlds')openStation(kind);}}}
+  else if(event.code==='KeyE'||event.code==='Enter'){event.preventDefault();if(!event.repeat){const target=centeredTarget();if(target?.comparison||target?.destination)activate(target);else {const kind=nearby(position);if(kind!=='worlds')openStation(kind);}}}
   else if(event.code==='KeyC'&&!event.repeat){event.preventDefault();position.crouch=!position.crouch;invalidate();}
   else if(event.code==='KeyR'&&!event.repeat){event.preventDefault();stop();position=spawn();invalidate();}
   else if(event.code==='Escape'&&!event.repeat){event.preventDefault();openHelp();}
@@ -184,17 +213,16 @@ canvas.addEventListener('blur',()=>{releaseLook();stop();invalidate();});
 function sensitivityPercent(){return Math.max(40,Math.min(220,Number($('sensitivity').value)||100));}
 function look(dx,dy){if(!Number.isFinite(dx)||!Number.isFinite(dy))return;const sensitivity=.0026*sensitivityPercent()/100;position.yaw-=dx*sensitivity;position.pitch=Math.max(-pitchLimit,Math.min(pitchLimit,position.pitch-dy*sensitivity));engine?.pose?.(position);invalidate();}
 $('sensitivity').addEventListener('input',()=>{$('sensitivity-value').textContent=sensitivityPercent()+'%';});
-document.addEventListener('pointerlockchange',()=>{const wasLocked=locked;locked=document.pointerLockElement===canvas;capturePending=captureLegacy=false;if(locked&&(!captureWanted||!inputReady())){document.exitPointerLock?.();locked=false;}if(locked){drag=null;dragFallback=false;canvas.focus({preventScroll:true});}else {captureWanted=false;if(wasLocked){clearInput();message();pauseExit();}}$('explore').hidden=!active||locked;invalidate();});
+document.addEventListener('pointerlockchange',()=>{const wasLocked=locked;locked=document.pointerLockElement===canvas;capturePending=captureLegacy=false;if(locked&&(!captureWanted||!inputReady())){document.exitPointerLock?.();locked=false;}if(locked){drag=null;dragFallback=false;canvas.focus({preventScroll:true});}else {captureWanted=false;if(wasLocked){clearInput();message();pauseExit();}}$('explore').hidden=!active||locked;updateAim();if(wasLocked&&!locked&&selectedAction&&document.hasFocus()&&!document.hidden&&inputReady())openHelp();invalidate();});
 document.addEventListener('pointerlockerror',()=>{if(captureLegacy&&capturePending)captureFallback();});
 document.addEventListener('mousemove',event=>{if(locked&&document.pointerLockElement===canvas&&inputReady())look(event.movementX,event.movementY);});
 canvas.addEventListener('pointerdown',event=>{
   if(event.button!==0||!inputReady()||event.isPrimary===false)return;
   canvas.focus({preventScroll:true});message();
-  if(locked){const rect=canvas.getBoundingClientRect();activate(engine.pick(rect.left+rect.width/2,rect.top+rect.height/2));return;}
+  if(locked){event.preventDefault();activate(centeredTarget());return;}
   const target=engine.pick(event.clientX,event.clientY);
-  // The small counter figurine has a direct click affordance; retain ordinary
-  // first-gesture look capture on the floor and existing exhibit screens.
-  const capture=(!event.pointerType||event.pointerType==='mouse')&&!dragFallback&&target?.destination!=='animation';
+  // The acquiring gesture never also activates an object underneath the aim.
+  const capture=(!event.pointerType||event.pointerType==='mouse')&&!dragFallback;
   canvas.setPointerCapture(event.pointerId);drag={id:event.pointerId,x:event.clientX,y:event.clientY,startX:event.clientX,startY:event.clientY,moved:false,capture,slop:clickSlop(event.pointerType),targetKey:targetKey(target),view:{...position}};
   if(capture)requestLook();
 });
