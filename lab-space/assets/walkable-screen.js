@@ -1,8 +1,8 @@
 import {createSceneNavigation} from '../../walkable-3d/assets/scene-navigation.js';
 import {comparisonLayout,comparisonTargetAt,fitPreview} from './interaction.mjs';
 import {renderLeaderboard} from '../../walkable-3d/assets/judgments.js';
-import {modelName,comparisonKey,randomComparison,hasRandomComparison,isOpenable,unavailableSummary} from '../../walkable-3d/assets/comparisons.js';
-import {publicVotingEnabled,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
+import {modelName,comparisonKey,randomComparison,hasRandomComparison,comparisonPairs,sortEntriesByVotes,isOpenable,unavailableSummary} from '../../walkable-3d/assets/comparisons.js';
+import {publicVotingEnabled,submitPublicVote,hasPublicVote,publicEntryVoteCounts,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from '../../walkable-3d/assets/public-judgments.js';
 
 // This canvas contains only two JPEG stills and host controls. No entrant runs here.
 export function createWalkableScreen({changed,suspend,resume,approach,depart=suspend,returned=null,initialPrompt=null}) {
@@ -14,7 +14,7 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
   const navigation=createSceneNavigation(base);
   let comparisonId='',leaving=false;
   const publicStatus=new Map();
-  let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
+  let canShuffle=false,revealed=false,labelsSeenThisComparison=false,choosing=false,selectionEpoch=0;
   function refresh(){if(!persistent)return;try{const old=JSON.parse(localStorage.getItem(key));if(old?.version===1)for(const field of ['grades','preferences','opened'])if(old[field]&&typeof old[field]==='object'&&!Array.isArray(old[field]))record[field]=old[field];}catch{persistent=false;}}
   refresh();try{localStorage.setItem(key,JSON.stringify(record));}catch{persistent=false;}
   const pair=()=>pairs[index]||entries.slice(0,1),pairKey=()=>comparisonKey(pair());
@@ -57,7 +57,7 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     const failed=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');
     const unverified=entries.filter(e=>e.availability==='unverified').length;
     const partial=entries.filter(e=>e.completionStatus==='partial').length;
-    $('screen-boundary').textContent=(canShuffle?(revealed?'Your choice and both model labels remain visible. Next comparison uses the random picker.':'Next skips to a random prompt and model pair without recording a vote.'):'Waiting for two admitted models to compare.')+(unverified?` ${unverified} ${unverified===1?'entry has':'entries have'} no independent host runtime verification. Inspect producer evidence and limitations in the notebook.`:'')+(partial?` Includes ${partial} partial handoff stopped early; no completion or repair was made.`:'')+(failed.length?` ${unavailableSummary(failed)}; inspect the records in the notebook.`:'');
+    $('screen-boundary').textContent=!publicEntryVoteCounts(allEntries)?'Public vote counts are unavailable. Eligible comparisons are shuffled until counts return.':(canShuffle?(revealed?'Your choice and both model labels remain visible. Unrated scenes first, then fewest votes; equal counts are shuffled.':'Next prioritizes unrated scenes, then scenes with the fewest votes. Ties are shuffled.'):'Waiting for two admitted models to compare.')+(unverified?` ${unverified} ${unverified===1?'entry has':'entries have'} no independent host runtime verification. Inspect producer evidence and limitations in the notebook.`:'')+(partial?` Includes ${partial} partial handoff stopped early; no completion or repair was made.`:'')+(failed.length?` ${unavailableSummary(failed)}; inspect the records in the notebook.`:'');
     const cards=current.map((entry,slot)=>{const card=document.createElement('article'),button=document.createElement('button'),img=document.createElement('img'),h=document.createElement('h3'),model=document.createElement('p'),details=document.createElement('a');
       button.type='button';button.dataset.screenOpen=entry.id;button.setAttribute('aria-label',`Open entry ${slot?'B':'A'}: ${entry.title}`);
       if(entry.previewAvailable===false){const placeholder=document.createElement('span');placeholder.className='screen-placeholder';placeholder.textContent='Preview not captured. Open the frozen build to inspect it.';button.append(placeholder);}
@@ -67,8 +67,8 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     for(const button of document.querySelectorAll('[data-screen-choice]'))button.disabled=!both;
     $('screen-vote').textContent=error||(revealed?'Models revealed. Choose Next comparison when ready.':both?'Both opened for this comparison. Choose your preference.':'Open both scenes in this comparison to vote.')+(vote?(vote==='tie'?' Saved preference: tie.':vote==='skip'?' Previously skipped.':` Saved preference: entry ${current[0]?.id===vote?'A':'B'}.`):'');
     $('screen-clear').disabled=!both||(!vote&&!hasPublicVote(current));$('screen-storage').textContent=publicVotingEnabled?'New A/B choices are sent anonymously to the public leaderboard. Existing private records and rubric notes are not uploaded.':persistent?'Preferences are saved in this browser only. No public tally.':'Storage unavailable: preferences last for this page session only.';
-    $('screen-next').textContent=revealed?'Next comparison':'Next random pair';
-    $('screen-next').setAttribute('aria-label',revealed?'Next random comparison; keep saved choice':'Skip to a random prompt and model pair without voting');
+    $('screen-next').textContent='Next comparison';
+    $('screen-next').setAttribute('aria-label',revealed?'Next least-voted comparison; keep saved choice':'Skip to a least-voted eligible comparison without voting');
     $('screen-reveal').hidden=!revealed;$('screen-reveal-next').hidden=!revealed;$('screen-reveal-next').disabled=!canShuffle;
     if(revealed){
       const result=document.createElement('strong');result.textContent=vote==='tie'?'Your choice: tie':current.some(e=>e.id===vote)?`Your choice: ${vote===current[0].id?'A':'B'}`:'Choice cleared. Models remain revealed.';
@@ -82,10 +82,12 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
   function rememberPair(){const url=new URL(location.href);url.searchParams.set('prompt',promptId);url.searchParams.delete('return');history.replaceState({...history.state,labPair:pairKey(),labPairOrder:pair().map(e=>e.id),labPrompt:promptId,labComparison:snapshot()},'',url);}
   function resetComparison(){comparisonId=crypto.randomUUID();openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;}
   function step(delta){if(leaving)return;const next=Math.max(0,Math.min(pairs.length-1,index+delta));if(next===index)return;index=next;resetComparison();rememberPair();loadPreviews();render();}
-  function nextComparison(){
-    if(leaving)return;
-    const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
-    const next=randomComparison(prompts,allEntries,pairKey());if(!next){render();return;}
+  async function nextComparison(){
+    if(leaving||choosing)return;
+    const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. Another eligible comparison is ready.';
+    const expectedSelection=selectionEpoch;choosing=true;if(publicVotingEnabled)await loadPublicLeaderboard(true);choosing=false;
+    if(leaving||expectedSelection!==selectionEpoch)return;
+    const next=randomComparison(prompts,allEntries,pairKey(),publicEntryVoteCounts(allEntries));if(!next){render();return;}
     selectPrompt(next.promptId,false,next.entries);$('notice').textContent=message;
   }
   async function vote(choice){
@@ -139,9 +141,9 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
   renderPublicLeaderboard($('screen-public-leaderboard'));loadPublicLeaderboard();
   render();
   function selectPrompt(id,restore=false,chosenPair=null,entryId=null){
-    resetComparison();
-    const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=allEntries.filter(e=>e.promptId===promptId&&isOpenable(e));pairs=[];
-    for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
+    selectionEpoch++;resetComparison();
+    const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;entries=sortEntriesByVotes(allEntries.filter(e=>e.promptId===promptId&&isOpenable(e)),publicEntryVoteCounts(allEntries));pairs=[];
+    pairs=comparisonPairs(entries,publicEntryVoteCounts(allEntries));
     index=chosenPair?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair))):entryId?Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId))):restore?Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===history.state?.labPair)):0;
     const order=chosenPair?.map(e=>e.id)||(restore?history.state?.labPairOrder:null);
     if(pairs[index]&&Array.isArray(order)&&order.length===2&&order[0]!==order[1]&&order.every(id=>pairs[index].some(e=>e.id===id)))pairs[index]=order.map(id=>pairs[index].find(e=>e.id===id));
@@ -162,17 +164,18 @@ export function createWalkableScreen({changed,suspend,resume,approach,depart=sus
     if(visit.returnToControls)inspect();else if(returned)returned();else $('screen-controls').focus({preventScroll:true});
   }
   addEventListener('pageshow',event=>{if(event.persisted){receiveReturn();refresh();render();}});
-  $('screen-prompt').addEventListener('change',()=>selectPrompt($('screen-prompt').value));
-  fetch(new URL('entries.json',base),{credentials:'omit'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
+  $('screen-prompt').addEventListener('change',async()=>{const id=$('screen-prompt').value;if(publicVotingEnabled)await loadPublicLeaderboard(true);if($('screen-prompt').value===id&&!leaving)selectPrompt(id);});
+  fetch(new URL('entries.json',base),{credentials:'omit'}).then(r=>{if(!r.ok)throw Error();return r.json();}).then(async data=>{
     allEntries=data.entries;if(!Array.isArray(allEntries)||allEntries.some(e=>!/^[a-z0-9-]+$/.test(e.id)||!/^[a-f0-9]{64}$/.test(e.htmlSha256)))throw Error();prompts=data.prompts;canShuffle=hasRandomComparison(prompts,allEntries);
     $('screen-prompt').replaceChildren(...prompts.map(p=>{const o=document.createElement('option');o.value=p.id;o.textContent=`${p.id} / ${p.title}`;return o;}));
+    if(publicVotingEnabled)await loadPublicLeaderboard();
     const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry')),visit=navigation.receipt();
     if(!initialPrompt&&visit&&!history.state?.labComparison)history.replaceState({...history.state,labPrompt:visit.promptId,labPairOrder:visit.pair,labPair:visit.pair.slice().sort().join('::'),labComparison:visit},'');
     if(initialPrompt)selectPrompt(initialPrompt);
     else if(history.state?.labPrompt)selectPrompt(history.state.labPrompt,true);
     else if(requestedEntry)selectPrompt(requestedEntry.promptId,false,null,requestedEntry.id);
     else if(params.has('prompt'))selectPrompt(params.get('prompt'));
-    else {const initial=randomComparison(prompts,allEntries);selectPrompt(initial?.promptId||prompts[0]?.id,false,initial?.entries);}
+    else {const initial=randomComparison(prompts,allEntries,undefined,publicEntryVoteCounts(allEntries));selectPrompt(initial?.promptId||prompts[0]?.id,false,initial?.entries);}
     if(!initialPrompt)receiveReturn(visit);
   }).catch(()=>{error='The entry index could not load. Use the standalone benchmark link or reload.';render();});
   return {source,hitTest,activate,inspect,get ready(){return entries.length>0&&(!initialPrompt||pair().every(entry=>entry.previewAvailable===false||images.get(entry.id)?.complete));}};

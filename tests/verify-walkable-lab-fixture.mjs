@@ -8,7 +8,8 @@ export async function moduleIn(context,path) {
   const url=new URL('../'+path,import.meta.url);
   return new vm.SourceTextModule(readFileSync(url,'utf8'),{context,initializeImportMeta(meta){meta.url='https://example.test/lab/'+path;}});
 }
-export async function screenFixture({placeholder=false,failedImage=false,pendingImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false,initialPrompt=null,departurePose={x:1,z:2,yaw:.3,pitch:.1},physicalReturn=false}={}) {
+export async function screenFixture({placeholder=false,failedImage=false,pendingImage=false,catalog,href='https://example.test/lab/lab-space/',state={},session=new Map(),storage=new Map(),random=()=>0,storageDisabled=false,initialPrompt=null,departurePose={x:1,z:2,yaw:.3,pitch:.1},physicalReturn=false,publicCounts=null,publicCountsAfterVote=null,publicReadFails=false}={}) {
+  let liveCounts=publicCounts,serviceReads=0;const publicWrites=[];
   const elements=new Map(),opened=[],images=[],events=new Map(),assigned=[],drawingCalls=[];let departures=0,resumes=0,returns=0;
   const drawing=new Proxy({},{get:(target,kind)=>(...args)=>drawingCalls.push({kind,args,fillStyle:target.fillStyle,font:target.font})});
   function element(){return {dataset:{},children:[],listeners:{},hidden:false,disabled:false,checked:true,open:false,
@@ -31,7 +32,7 @@ export async function screenFixture({placeholder=false,failedImage=false,pending
   const synthetic=values=>new vm.SyntheticModule(Object.keys(values),function(){for(const [key,value]of Object.entries(values))this.setExport(key,value);},{context});
   const comparisons=await moduleIn(context,'walkable-3d/assets/comparisons.js'),navigation=await moduleIn(context,'walkable-3d/assets/scene-navigation.js');
   const module=await moduleIn(context,'lab-space/assets/walkable-screen.js');
-  await module.link(path=>path.endsWith('interaction.mjs')?synthetic(input):path.endsWith('scene-navigation.js')?navigation:path.endsWith('public-judgments.js')?synthetic({publicVotingEnabled:false,submitPublicVote(){throw Error('Unexpected public write');},hasPublicVote:()=>false,loadPublicLeaderboard(){},renderPublicLeaderboard(){},subscribePublicJudgments(){}}):path.endsWith('comparisons.js')?comparisons:synthetic({renderLeaderboard(){}}));
+  await module.link(path=>path.endsWith('interaction.mjs')?synthetic(input):path.endsWith('scene-navigation.js')?navigation:path.endsWith('public-judgments.js')?synthetic({publicVotingEnabled:publicCounts!==null,publicEntryVoteCounts:()=>publicReadFails||!liveCounts?null:new Map(Object.entries(liveCounts)),submitPublicVote(entries,choice){publicWrites.push({entries:entries.map(e=>e.id),choice});if(publicCountsAfterVote)liveCounts=publicCountsAfterVote;return Promise.resolve();},hasPublicVote:()=>false,loadPublicLeaderboard(){serviceReads++;return Promise.resolve(publicReadFails?null:{});},renderPublicLeaderboard(){},subscribePublicJudgments(){}}):path.endsWith('comparisons.js')?comparisons:synthetic({renderLeaderboard(){}}));
   await module.evaluate();
   const api=module.namespace.createWalkableScreen({initialPrompt,changed(){},suspend(){},resume(){resumes++;},depart(){departures++;history.state.labPosition={...departurePose};},returned:physicalReturn?()=>{returns++;byId('room').focus();}:null,approach(){}});
   await new Promise(resolve=>setImmediate(resolve));
@@ -43,5 +44,5 @@ export async function screenFixture({placeholder=false,failedImage=false,pending
     return {nav,visit};
   }
   async function returnVisit(options={}) {await sceneVisit(options);for(const listener of events.get('pageshow')||[])listener({persisted:true});}
-  return {api,byId,opened,entries,images,storage,session,choices,history,location,assigned,drawingCalls,sceneVisit,returnVisit,events,get departures(){return departures;},get resumes(){return resumes;},get returns(){return returns;},ready:()=>returnVisit({ready:true})};
+  return {api,byId,opened,entries,images,storage,session,choices,history,location,assigned,drawingCalls,sceneVisit,returnVisit,events,publicWrites,get serviceReads(){return serviceReads;},get departures(){return departures;},get resumes(){return resumes;},get returns(){return returns;},ready:()=>returnVisit({ready:true})};
 }

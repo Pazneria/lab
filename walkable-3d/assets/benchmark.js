@@ -1,8 +1,8 @@
 import {modelName} from './comparisons.js';
 import {createViewer} from './viewer.js';
 import {createGradeForm,renderLeaderboard} from './judgments.js';
-import {comparisonKey,randomComparison,initialComparison,hasRandomComparison,isOpenable,unavailableLabel,unavailableSummary} from './comparisons.js';
-import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicVote,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from './public-judgments.js';
+import {comparisonKey,randomComparison,initialComparison,hasRandomComparison,comparisonPairs,sortEntriesByVotes,isOpenable,unavailableLabel,unavailableSummary} from './comparisons.js';
+import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicVote,publicEntryVoteCounts,loadPublicLeaderboard,renderPublicLeaderboard,subscribePublicJudgments} from './public-judgments.js';
 /* The Lab host owns this file. Frozen entrant programs are never evaluated here. */
 (() => {
   'use strict';
@@ -12,7 +12,7 @@ import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicV
   let record = blank(), persistent = true, entries = [], failedEntries = [], allEntries = [], prompts = [], versions = [], promptId = '01', promptRequest = 0, pairs = [], pairIndex = 0;
   const openedThisComparison=new Set();
   const publicStatus=new Map();
-  let canShuffle=false,revealed=false,labelsSeenThisComparison=false;
+  let canShuffle=false,revealed=false,labelsSeenThisComparison=false,choosing=false,selectionEpoch=0;
   const viewer=createViewer({gradeForm,gradeLabelFor:entry=>`${selected()[0]?.id===entry.id?'A':selected()[1]?.id===entry.id?'B':'Scene'} / ${entry.title} — ${modelVisible(entry)?modelName(entry):'Model hidden until reveal'}`,onReady(entry){if(entry.availability==='failed')return;if(selected().some(e=>e.id===entry.id))openedThisComparison.add(entry.id);refresh();record.opened[entry.id]=new Date().toISOString();save();},onClose:updateVote});
   const open=(...args)=>viewer.open(...args),close=(...args)=>viewer.close(...args);
   try {
@@ -149,7 +149,7 @@ import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicV
     const choice = saved?.choice;
     $('#vote-status').textContent = !saved ? 'No preference recorded.' : choice === 'tie' ? 'Your preference: tie.' : choice === 'skip' ? 'This pair is skipped.' : `Your preference: entry ${pair.findIndex(e => e.id === choice) === 0 ? 'A' : 'B'}.`;
     $('#vote-reveal').hidden=!revealed;$('#reveal-next').hidden=!revealed;$('#reveal-next').disabled=!canShuffle;
-    $('#next-pair').textContent=revealed?'Next comparison':'Next random pair';
+    $('#next-pair').textContent='Next comparison';
     document.querySelector('[data-choice="skip"]').hidden=revealed;
     if(revealed){
       const result=el('strong',choice==='tie'?'Your choice: tie':pair.some(e=>e.id===choice)?`Your choice: ${choice===pair[0].id?'A':'B'}`:'Choice cleared. Models remain revealed.');
@@ -185,9 +185,12 @@ import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicV
   renderPublicLeaderboard($('#public-leaderboard'));loadPublicLeaderboard();
   $('#blind').checked = true;
   $('#blind').addEventListener('change',()=>{if(!$('#blind').checked)labelsSeenThisComparison=true;updateLabels();});
-  function nextComparison(){
-    const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. A random prompt and model pair are ready.';
-    const next=randomComparison(prompts,allEntries,pairKey());if(!next){updateVote();return;}
+  async function nextComparison(){
+    const message=revealed?'Next comparison ready. Your saved preference is unchanged.':'Skipped without recording a vote. Another eligible comparison is ready.';
+    if(choosing)return;const expectedSelection=selectionEpoch;choosing=true;
+    if(publicVotingEnabled)await loadPublicLeaderboard(true);
+    choosing=false;if(expectedSelection!==selectionEpoch)return;
+    const next=randomComparison(prompts,allEntries,pairKey(),publicEntryVoteCounts(allEntries));if(!next){updateVote();return;}
     if(viewer.isOpen)close(false);
     selectPrompt(next.promptId,undefined,next.entries);const url=new URL(location.href);url.search='?prompt='+promptId;url.hash='';history.replaceState(history.state,'',url);$('#notice').textContent=message;
   }
@@ -200,10 +203,10 @@ import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicV
   });
 
   function selectPrompt(id,entryId,chosenPair=null){
-    openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;
+    selectionEpoch++;openedThisComparison.clear();revealed=false;labelsSeenThisComparison=false;
     const prompt=prompts.find(p=>p.id===id)||prompts[0];promptId=prompt.id;promptRequest++;
-    entries=allEntries.filter(e=>e.promptId===promptId&&isOpenable(e));failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
-    for(let i=0;i<entries.length;i++)for(let j=i+1;j<entries.length;j++)pairs.push([entries[i],entries[j]]);
+    entries=sortEntriesByVotes(allEntries.filter(e=>e.promptId===promptId&&isOpenable(e)),publicEntryVoteCounts(allEntries));failedEntries=allEntries.filter(e=>e.promptId===promptId&&e.availability==='failed');pairs=[];pairIndex=0;
+    pairs=comparisonPairs(entries,publicEntryVoteCounts(allEntries));
     if(entryId)pairIndex=Math.max(0,pairs.findIndex(pair=>pair.some(e=>e.id===entryId)));
     if(chosenPair){pairIndex=Math.max(0,pairs.findIndex(pair=>comparisonKey(pair)===comparisonKey(chosenPair)));if(pairs[pairIndex])pairs[pairIndex]=chosenPair.slice();}
     $('#prompt-select').value=promptId;$('#prompt-label').textContent=`Prompt ${prompt.id} / ${prompt.title}`;$('#prompt-title').textContent=prompt.brief;
@@ -220,24 +223,26 @@ import {publicVotingEnabled,pendingPublicComparisons,submitPublicVote,hasPublicV
     try{const response=await fetch(version.path,{credentials:'omit'});if(!response.ok)throw Error();const bytes=await response.arrayBuffer();const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(hash!==version.sha256)throw Error();if(request!==promptRequest)return;$('#prompt-text').textContent=new TextDecoder().decode(bytes);}
     catch{if(request===promptRequest)$('#prompt-text').textContent='The prompt could not be loaded or its source hash did not match. No reconstructed text is shown.';}
   }
-  $('#prompt-select').addEventListener('change',()=>{selectPrompt($('#prompt-select').value);const u=new URL(location.href);u.search='?prompt='+promptId;u.hash='';history.replaceState(history.state,'',u);});
+  $('#prompt-select').addEventListener('change',async()=>{const id=$('#prompt-select').value;if(publicVotingEnabled)await loadPublicLeaderboard(true);if($('#prompt-select').value!==id)return;selectPrompt(id);const u=new URL(location.href);u.search='?prompt='+promptId;u.hash='';history.replaceState(history.state,'',u);});
   $('#prompt-version').addEventListener('change',loadPrompt);
   $('#full-prompt').addEventListener('toggle',()=>{if($('#full-prompt').open)loadPrompt();});
   addEventListener('hashchange',()=>{if(location.hash==='#full-prompt'){$('#full-prompt').open=true;loadPrompt();$('#full-prompt').scrollIntoView();}});
 
   storageState();
-  fetch('entries.json', { credentials: 'omit' }).then(r => { if (!r.ok) throw Error(); return r.json(); }).then(data => {
+  fetch('entries.json', { credentials: 'omit' }).then(r => { if (!r.ok) throw Error(); return r.json(); }).then(async data => {
     if (!Array.isArray(data.entries) || !data.entries.length) throw Error();
     allEntries = data.entries;
     if (allEntries.some(e => !/^[a-z0-9-]+$/.test(e.id) || !/^[a-f0-9]{64}$/.test(e.htmlSha256))) throw Error();
     prompts=data.prompts; versions=data.promptVersions;canShuffle=hasRandomComparison(prompts,allEntries);
     $('#prompt-select').replaceChildren(...prompts.map(p=>{const o=el('option',`${p.id} / ${p.title}`);o.value=p.id;return o;}));
+    if(publicVotingEnabled)await loadPublicLeaderboard();
     const params=new URLSearchParams(location.search),requestedEntry=allEntries.find(e=>e.id===params.get('entry'));
-    const initial=!params.has('entry')&&!params.has('prompt')?initialComparison(prompts,allEntries,pendingPublicComparisons()):null;
+    const initial=!params.has('entry')&&!params.has('prompt')?initialComparison(prompts,allEntries,pendingPublicComparisons(),publicEntryVoteCounts(allEntries)):null;
     selectPrompt(initial?.promptId||requestedEntry?.promptId||params.get('prompt')||'01',requestedEntry?.id,initial?.entries);
     if(params.has('version') && [...$('#prompt-version').options].some(o=>o.value===params.get('version'))) $('#prompt-version').value=params.get('version');
     if(location.hash==='#full-prompt'){$('#full-prompt').open=true;loadPrompt();$('#full-prompt').scrollIntoView();}
     render();
+    if(!publicEntryVoteCounts(allEntries))$('#notice').textContent='Public vote counts are unavailable. Eligible comparisons are shuffled until counts return.';
     if(requestedEntry?.availability==='failed'){const article=document.querySelector(`[data-entry="${requestedEntry.id}"]`);article.querySelector('details').open=true;article.scrollIntoView();}
     if (location.hash.startsWith('#scene=')) $('#notice').textContent = 'Scene link received. Choose Open walkable scene when you are ready; no scene starts automatically.';
   }).catch(() => {
