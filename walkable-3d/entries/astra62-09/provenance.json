@@ -37,7 +37,8 @@
       "README.md": "README.md",
       "run-start.json": "run-start.json",
       "licenses/vendor/FFLATE-LICENSE.txt": "vendor/FFLATE-LICENSE.txt",
-      "licenses/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt"
+      "licenses/vendor/THREE-LICENSE.txt": "vendor/THREE-LICENSE.txt",
+      "frozen/assets/studio.f16": "assets/studio.f16"
     },
     "perFileSourceHashes": {
       "bay.css": {
@@ -360,6 +361,10 @@
     "frozen/vendor/three.module.min.js": {
       "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
       "bytes": 338908
+    },
+    "frozen/assets/studio.f16": {
+      "sha256": "307b8db785eb0348379198f11e606e13fda2391248444e468f09f276bf920967",
+      "bytes": 262144
     }
   },
   "publication": {
@@ -399,7 +404,8 @@
       "frozen/assets/satellite.png",
       "frozen/vendor/fflate.module.js",
       "frozen/vendor/three.core.min.js",
-      "frozen/vendor/three.module.min.js"
+      "frozen/vendor/three.module.min.js",
+      "frozen/assets/studio.f16"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
