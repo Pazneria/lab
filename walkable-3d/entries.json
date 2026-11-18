@@ -6831,7 +6831,15 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "world.json",
+        "world.bin.gz"
+      ],
+      "hostFontAssets": [
+        "fonts/baskervville.woff2",
+        "fonts/dm-sans.woff2"
+      ]
     },
     {
       "id": "astra62-02",
@@ -6884,7 +6892,10 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "courtyard.mesh"
+      ]
     },
     {
       "id": "astra62-03",
@@ -6937,7 +6948,10 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "observatory.mesh.gz"
+      ]
     },
     {
       "id": "astra62-04",
@@ -6990,7 +7004,16 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "palm-house.mesh.gz",
+        "surface-studies.bin.gz"
+      ],
+      "hostFontAssets": [
+        "baskervville-latin-400-normal.woff2",
+        "baskervville-latin-400-italic.woff2",
+        "instrument-sans-latin-400-normal.woff2"
+      ]
     },
     {
       "id": "astra62-05",
@@ -7096,7 +7119,16 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "cavern.mesh",
+        "field.json",
+        "clearance.bin",
+        "bedding.png",
+        "pavement.png",
+        "water-detail.png",
+        "mineral.volume"
+      ]
     },
     {
       "id": "astra62-07",
@@ -7149,7 +7181,15 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "assets/museum.json",
+        "assets/museum.bin",
+        "assets/irradiance.gz",
+        "assets/surface.gz",
+        "assets/volume.gz",
+        "assets/lettering.gz"
+      ]
     },
     {
       "id": "astra62-08",
@@ -7259,7 +7299,13 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "assets/bay.json",
+        "assets/bay-geometry.gz",
+        "assets/light-volume.gz",
+        "assets/studio.f16"
+      ]
     },
     {
       "id": "astra62-10",
@@ -7312,7 +7358,10 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "assets/library.mesh.gz"
+      ]
     },
     {
       "id": "astra62-11",
@@ -7365,7 +7414,11 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "assets/scene.json",
+        "assets/world.bin.gz"
+      ]
     },
     {
       "id": "astra62-12",
@@ -7418,7 +7471,11 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "assets/scene.json",
+        "assets/room.mesh"
+      ]
     },
     {
       "id": "astra62-13",
@@ -7570,7 +7627,10 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "rooms.bin.gz"
+      ]
     },
     {
       "id": "sol62-01",
@@ -7874,7 +7934,10 @@
       "availability": "unverified",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "hostFetchAssets": [
+        "scene.bin"
+      ]
     },
     {
       "id": "sol62-07",
