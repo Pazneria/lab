@@ -8640,6 +8640,109 @@
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
       "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "sol62-21",
+      "title": "The Ember Ward",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "sol62",
+      "requestedConfiguration": "GPT-6.2 Sol / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "82321408b1a18b098904a5f19873d955dda1010d29121093489b02891537691f",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "081a22ebf92aeeeaba1e321aff8af676377759f8b72a09b7478c42181cc101ee",
+      "promptVersion": "21-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "sol62-22",
+      "title": "The Meridian Atelier",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "sol62",
+      "requestedConfiguration": "GPT-6.2 Sol / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "de7841eff58ba6833ccf1cfd151f6f2d6598766d96ddc6454567df1a7b75d8a9",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "73c8d541871efe388841f87637bcecc07796e804f23e1b9c778d083da1f44903",
+      "promptVersion": "22-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
     }
   ],
   "prompts": [
@@ -9630,6 +9733,24 @@
       "label": "GPT-6.2 batch / unchanged initial execution conditions",
       "path": "prompt-20-gpt62.txt",
       "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
+      "source": "Canonical exact launch bytes verified against current repository blob and prior launch SHA-256; parent prepared the same full initial task.",
+      "note": "Requested model/effort/service are controller selections, not independently exposed serving metadata. No prompt improvements or later coaching."
+    },
+    {
+      "id": "21-gpt62",
+      "promptId": "21",
+      "label": "GPT-6.2 batch / unchanged initial execution conditions",
+      "path": "prompt-21-gpt62.txt",
+      "sha256": "04fc5d0b347a300be291332e03671d77a11874e598bff99a965707fc3564dd0c",
+      "source": "Canonical exact launch bytes verified against current repository blob and prior launch SHA-256; parent prepared the same full initial task.",
+      "note": "Requested model/effort/service are controller selections, not independently exposed serving metadata. No prompt improvements or later coaching."
+    },
+    {
+      "id": "22-gpt62",
+      "promptId": "22",
+      "label": "GPT-6.2 batch / unchanged initial execution conditions",
+      "path": "prompt-22-gpt62.txt",
+      "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
       "source": "Canonical exact launch bytes verified against current repository blob and prior launch SHA-256; parent prepared the same full initial task.",
       "note": "Requested model/effort/service are controller selections, not independently exposed serving metadata. No prompt improvements or later coaching."
     }
