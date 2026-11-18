@@ -9008,6 +9008,59 @@
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
       "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+    },
+    {
+      "id": "astra62-22",
+      "title": "Maison des Marées",
+      "description": "A fitting room, fabric archive and workshop with an extraordinary unfinished outfit.",
+      "promptId": "22",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
+        "Genuine preview pending separate validation; no generated image or score supplied."
+      ],
+      "documents": [
+        {
+          "label": "Original producer README.md",
+          "path": "README.md"
+        },
+        {
+          "label": "Original producer run-record.json",
+          "path": "run-record.json"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": false,
+      "previewAlt": "Genuine preview pending separate validation.",
+      "archiveSha256": "86b9e26f0df91ebe6e431e974bbe6906030eadd56dc011ee81267df27ed23a69",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "d712b95bf2e4e276dd65de21a128e34b446956766a0bd6784831f6052bd0dd26",
+      "promptVersion": "22-gpt62",
+      "availability": "unverified",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
     }
   ],
   "prompts": [
