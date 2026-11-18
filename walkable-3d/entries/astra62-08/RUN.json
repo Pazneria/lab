@@ -1,0 +1,38 @@
+{
+  "requested_model": "GPT-6.2 Astra",
+  "requested_effort": "XHIGH",
+  "requested_service": "Standard",
+  "exposed_model": "Codex, GPT-6 family",
+  "exposed_effort": null,
+  "exposed_service": null,
+  "first_implementation": "2026-11-18T00:07:01.7291456+00:00",
+  "deadline": "2026-11-18T01:07:01.7291456+00:00",
+  "stop": "2026-11-18T00:59:26.2186155+00:00",
+  "interruptions": [],
+  "entry": "SceneBench 2026-11-17 / scene 08",
+  "workspace_verified": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-08",
+  "exposed_specific_serving_model": null,
+  "artifact": {
+    "file": "index.html",
+    "bytes": 16170937,
+    "sha256": "b4d140187f3bc8c27fa094767ea7d45b3ebbfd3d9d323402a236b0d1e1d6d992",
+    "suggested_launch_address": "http://127.0.0.1:48308/"
+  },
+  "checks": {
+    "javascript_sources_parsed": 19,
+    "standalone_script_parsed_and_compared_to_sources": true,
+    "offline_shader_programs_linked": 6,
+    "validator": "Khronos glslang 11.7.0",
+    "material_layers": 16,
+    "static_triangles": 447402,
+    "spatial_batches": 179,
+    "reflection_triangles": 37526,
+    "lettering_panels": 24,
+    "route_waypoints": 27,
+    "collision_cases": 10,
+    "largest_sampled_route_footing_change_m": 0.053
+  },
+  "interactive_verification": "Reserved for separate judging. No browser, renderer test, screenshot, GPU test or performance benchmark was run.",
+  "process_cleanup": "All one-shot build and static-check processes exited. No server, watcher or browser was started. Both temporary validator directories were removed and checked absent.",
+  "elapsed_seconds": 3144.4894699
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>The Fern House</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+  <main id="scene" aria-label="The Fern House, an explorable 3D greenhouse">
+    <div id="view"></div>
+    <div id="reticle" aria-hidden="true"></div>
+    <div id="overlay" class="overlay">
+      <section class="panel" aria-labelledby="title">
+        <p class="eyebrow" id="status" role="status">Preparing the glasshouse</p>
+        <h1 id="title">The Fern House</h1>
+        <div class="rules" aria-label="Controls">
+          <span><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> Walk</span>
+          <span><kbd id="look-key">Mouse</kbd> Look</span>
+          <span><kbd>C</kbd> Hold to crouch</span>
+          <span><kbd>R</kbd> Return to entrance</span>
+          <span><kbd>Esc</kbd> Show controls</span>
+        </div>
+        <button id="enter" type="button" disabled>Enter the greenhouse <span aria-hidden="true">↗</span></button>
+        <button id="reset" class="secondary" type="button" hidden>Return to entrance</button>
+      </section>
+    </div>
+    <div id="hint" class="hint" hidden><span id="drag-hint" hidden>Drag to look · </span><kbd>Esc</kbd> Controls <span aria-hidden="true">·</span> <kbd>R</kbd> Entrance</div>
+  </main>
+  <script type="module">
+    import('./src/main.js').catch(error => {
+      console.error(error);
+      document.getElementById('status').textContent = 'The greenhouse files could not load';
+      document.getElementById('enter').textContent = 'Launch through the local server';
+    });
+  </script>
+</body>
+</html>

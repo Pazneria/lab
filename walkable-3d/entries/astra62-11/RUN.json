@@ -1,0 +1,64 @@
+{
+  "benchmark": "SceneBench 2026-11-17",
+  "entry": "Scene 11 / Fieldwork — Instrument Hall",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-11",
+  "verified_workspace_before_implementation": true,
+  "initial_workspace_empty": true,
+  "requested_assignment": {
+    "model": "GPT-6.2 Astra",
+    "effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "description": "Codex, an agent based on GPT-6",
+    "exact_model_id": null,
+    "reasoning_effort": null,
+    "service_tier": null,
+    "note": "No per-turn exact model, effort, or tier was exposed."
+  },
+  "first_implementation_utc": "2026-11-18T01:05:06.7807270+00:00",
+  "deadline_utc": "2026-11-18T02:05:06.7807270+00:00",
+  "actual_stop_utc": "2026-11-18T01:55:09.4371713+00:00",
+  "elapsed_seconds": 3002.656444,
+  "interruptions": [],
+  "deadline_extensions": 0,
+  "recoveries": [
+    "The sandboxed local listener lookup lacked OS permission. The scoped read-only retry succeeded.",
+    "An optional Pillow metadata check found Pillow unavailable. The release checker read the PNG dimensions directly."
+  ],
+  "archive": "Fieldwork-Scene11.zip",
+  "archive_bytes": 3583778,
+  "archive_sha256": "7243c775aedf3ccba771beeed0a807317fa004b390cbc72728136afe1832de6d",
+  "archived_files_byte_compared": 32,
+  "runtime_entry": "index.html",
+  "suggested_launch_address": "http://127.0.0.1:54111/",
+  "port_check": {
+    "checked_utc": "2026-11-18T01:41:37.7563050+00:00",
+    "listeners": 0
+  },
+  "checks": {
+    "cpu_build": "passed",
+    "authored_js_modules": 11,
+    "syntax_and_local_bindings": "passed",
+    "geometry_buffers_and_indices": "passed",
+    "png_dimensions_and_atlas_uvs": "passed",
+    "geometry_batches": 20,
+    "triangles": 135378,
+    "vertices": 189515,
+    "texture_files": 10,
+    "graphic_atlases": 4,
+    "collision_volumes": 22,
+    "inspection_route_m": 57.11,
+    "route_sample_count": 1296,
+    "player_radius_m": 0.215,
+    "minimum_sampled_centre_clearance_m": 0.44,
+    "dependency_free_release_check": "passed",
+    "archive_byte_equivalence": "passed"
+  },
+  "deferred_checks": [
+    "Browser startup and visual inspection",
+    "Live controls and collision",
+    "GPU frame times and performance"
+  ],
+  "process_cleanup": "All entry-launched installation, build, syntax-check and packaging processes completed. Entry-local node_modules was removed. No server, watcher, browser, UI-test or GPU-test process was launched."
+}

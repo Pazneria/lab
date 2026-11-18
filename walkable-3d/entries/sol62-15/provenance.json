@@ -1,0 +1,162 @@
+{
+  "entry": "sol62-15",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-15\\source-preservation.zip",
+  "archiveSha256": "7cce84921212b7994c463207f70b56f3fd46bdb1507dbf3d77203c5a493fb6d1",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "dist/Wren-House.html",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      ".gitignore": {
+        "sha256": "71deaff0781d7deeb8ab877f51aa00ca3ba0e71302d8c3ead0c56d2deda103cc",
+        "bytes": 33
+      },
+      "index.html": {
+        "sha256": "397c28c494be4f7397e0cc6cf34246ed240f45fa50d1d9bddabd604eb3b48f0e",
+        "bytes": 1406
+      },
+      "package-lock.json": {
+        "sha256": "67989295e028a1b70ed48309cee0e522379f42bd54b26dc297e6033cef0a6f35",
+        "bytes": 35128
+      },
+      "package.json": {
+        "sha256": "ec56dfa56a7e218f49ccad4654be195b7b90f8c966db0b6970f1a34f1cc99bbe",
+        "bytes": 373
+      },
+      "README.md": {
+        "sha256": "bf6d05aaca9bc3a2507f5dbec4feeaf9fe6c4479e6061ce66b32423e828dc8ad",
+        "bytes": 1624
+      },
+      "vite.config.js": {
+        "sha256": "cbbbfc9c9e84ff4cf254177fb13d57748fde61de2a6b6a7ba3fad28c8802a67f",
+        "bytes": 234
+      },
+      "src/architecture.js": {
+        "sha256": "b8618db9ef2f8f0a5abbcae3e1bced85ac159fa3f4918ac2d3b678744c2eb868",
+        "bytes": 13529
+      },
+      "src/bedroom.js": {
+        "sha256": "6ec88f8ef02b69f881998b1da5806c472dec7245e7a8e219cd924a95c9fe604d",
+        "bytes": 15190
+      },
+      "src/controls.js": {
+        "sha256": "244ad1b6db056ccaf6f484bc109b50787768cb653ea22c06cb26df98d8260a89",
+        "bytes": 5591
+      },
+      "src/geometry.js": {
+        "sha256": "22c3b23e247cc67a86125aac3d1c192f539000b4d78bd7ffbdbe665b022731a4",
+        "bytes": 11810
+      },
+      "src/layout.js": {
+        "sha256": "fe339ee4b1caac89ab6007cc03c5a8c10c99fc4164f202fe2530749ebedfd308",
+        "bytes": 3010
+      },
+      "src/lighting.js": {
+        "sha256": "7416607a5159560b63dc1f9c53086f46b956842806a96c299aed1931f335cb45",
+        "bytes": 7832
+      },
+      "src/main.js": {
+        "sha256": "82f0ed136e74f2bd7e4fea9d41bfce67bdd117ffd402f233e20bc81398a2c60e",
+        "bytes": 2655
+      },
+      "src/props.js": {
+        "sha256": "b4705b493efbfdfc0a4fe3c07540a82d81bd854271813a3ad4ff57d96a6e8d6b",
+        "bytes": 8653
+      },
+      "src/study.js": {
+        "sha256": "83419f477ec6eed996bc844c7307d253aaeaeca9dcc5707fbff267d9c0e52b18",
+        "bytes": 13559
+      },
+      "src/style.css": {
+        "sha256": "21a09a8e26b91dc0d4cd4fae1586165862ef66cbd4e0f7c90df1bfdb5ccc6013",
+        "bytes": 3170
+      },
+      "src/textures.js": {
+        "sha256": "fa9c8026aa2b11f3247663ba9e24f79b8bb2bdc3b50ff9cac031564ab4a976d5",
+        "bytes": 21705
+      },
+      "src/wardrobe.js": {
+        "sha256": "ba4485ff42c8fc3ab120bfac368cd7a1a14a8485e17686cc6ff2c26cf54f023a",
+        "bytes": 14511
+      },
+      "src/world.js": {
+        "sha256": "0afea9b135988d2e9e6dc756cbd40cb0be9136c8c187ec918907cd4f92fff82d",
+        "bytes": 1142
+      },
+      "scripts/check-scene.js": {
+        "sha256": "9e21d6c1b31a1b254c6770832a986a3638f4a6ee9d9d942b97ae4e75eef794d0",
+        "bytes": 5805
+      },
+      "scripts/pack.js": {
+        "sha256": "ee595febad94dfd5d6361e28095df3ed8e96998ef7ab1caa26336cc267df3689",
+        "bytes": 1506
+      },
+      "dist/index.html": {
+        "sha256": "ead5130d26197826647baa48c2752da86eaf008f06c41e71a05c1e5475c97dda",
+        "bytes": 1505
+      },
+      "dist/Wren-House.html": {
+        "sha256": "32a40ab84d730662b814ce64fa54019162e56b905387b97e1670b4f4b3ac7e6e",
+        "bytes": 609263
+      },
+      "dist/assets/index-CYBkYco4.js": {
+        "sha256": "13473e4053ed3d90b2c36fa0c2f35c2689e9951d6d7c2228015367998bad7deb",
+        "bytes": 604130
+      },
+      "dist/assets/index-Rr4G3eGX.css": {
+        "sha256": "ae3b19d07e60a05dfe3d67acd1cdbd0f863bd7e7935676464217f1c262c4b981",
+        "bytes": 2625
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-15\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "e93d9f694140b8ea2681536e9fb24041a780940c2eb0af178182bb8dc99fb9f6",
+      "bytes": 1255
+    },
+    "launch-prompt.txt": {
+      "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
+      "bytes": 7673
+    },
+    "README.md": {
+      "sha256": "bf6d05aaca9bc3a2507f5dbec4feeaf9fe6c4479e6061ce66b32423e828dc8ad",
+      "bytes": 1624
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/index.html.txt": {
+      "sha256": "32a40ab84d730662b814ce64fa54019162e56b905387b97e1670b4f4b3ac7e6e",
+      "bytes": 609263
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/index.html.txt"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

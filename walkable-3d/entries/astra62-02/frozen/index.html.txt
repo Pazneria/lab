@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111b23">
+<title>Ameniwa · Rain Court Night Market</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#18232f;color:#f4e9d7;font-family:"Segoe UI",Arial,sans-serif}canvas#view{display:block;width:100%;height:100%;touch-action:none;outline:0;cursor:grab}canvas#view:active{cursor:grabbing}
+#brand,#actions,#welcome,#guide,#where,#touchpad{position:fixed;z-index:2}
+#brand{left:28px;top:23px;display:flex;gap:13px;align-items:center;pointer-events:none;text-shadow:0 1px 6px #090e16,0 1px 18px #0a101a}
+.seal{background:#a44733;color:#ffefcc;border:1px solid #dab58c9e;box-shadow:inset 0 0 0 2px #a44733,inset 0 0 0 3px #edca974f;display:grid;place-items:center;width:40px;height:40px;font:27px/1 "Yu Mincho","MS Mincho",serif}
+.wordmark{font:500 21px/1.1 Georgia,serif;letter-spacing:.15em}.small{margin-top:5px;font-size:9px;line-height:1.25;font-weight:600;letter-spacing:.21em;text-transform:uppercase}
+#actions{right:24px;top:24px;display:flex;gap:6px}button{font:inherit;color:inherit;cursor:pointer}
+.bare{border:1px solid #d8d4bc47;border-radius:3px;background:#101a23ce;font-size:12px;padding:8px 12px}.bare:hover,.bare:focus-visible{background:#344047}
+#welcome,#guide{bottom:29px;left:28px;max-width:calc(100vw - 48px);background:#101b22ed;border:1px solid #c1b6a34a;padding:17px 20px;border-radius:4px;box-shadow:0 8px 40px #0a10194d}
+#welcome strong{font:24px/1.2 Georgia,serif}.hint{font-size:12px;color:#d1cabe;line-height:1.65;margin:8px 0 0}#enter{padding:8px 15px;border:1px solid #dfc5a1;background:#e6c6a0;color:#282925;font-weight:600;font-size:12px;border-radius:2px;margin-top:12px}
+#guide{font-size:13px;line-height:2}kbd{display:inline-block;min-width:1.6em;text-align:center;font:11px/1.5 monospace;padding:1px 4px;margin-right:2px;border-radius:2px;border:1px solid #93a1a05e;color:#f3e2cd}
+#where{bottom:19px;right:24px;pointer-events:none;letter-spacing:.14em;text-transform:uppercase;font-size:10px;text-shadow:0 1px 4px #000,0 0 9px #000}
+#touchpad{display:none;left:19px;bottom:24px;width:92px;height:92px;border-radius:50%;border:1px solid #f5e6bf55;background:#111b263d;touch-action:none}#stick{position:absolute;left:32px;top:32px;width:26px;height:26px;border-radius:50%;background:#f5e6bf88}
+[hidden]{display:none!important}body.exploring canvas{cursor:crosshair}@media(pointer:coarse){body.exploring #touchpad{display:block}}@media(max-width:640px){#brand{left:14px;top:14px}#actions{right:12px;top:16px}.wordmark{font-size:15px}.small{font-size:7px}.seal{width:32px;height:32px;font-size:22px}#welcome,#guide{bottom:18px;left:14px}.bare{padding:7px 8px}}
+</style>
+</head>
+<body>
+<canvas id="view" aria-label="Explorable three-dimensional night market" tabindex="0"></canvas>
+<div id="brand"><span class="seal" lang="ja">雨</span><div><div class="wordmark">AMENIWA</div><div class="small">Rain Court · Night Market</div></div></div>
+<div id="actions"><button class="bare" id="help" title="Controls (H)" aria-expanded="false">Controls</button><button class="bare" id="reset" title="Return to the courtyard entrance (R)">Reset ↺</button></div>
+<section id="welcome"><strong id="arrive">Rain Court</strong><p class="hint" id="intro">Preparing the courtyard…</p><button id="enter" hidden>Enter market &nbsp; ↗</button></section>
+<div id="guide" hidden><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Walk &nbsp; <kbd>Shift</kbd> Brisk walk<br>Mouse or drag to look · Arrow keys to walk and turn<br><kbd>R</kbd> Return to entrance &nbsp; <kbd>H</kbd> Controls &nbsp; <kbd>Esc</kbd> Release mouse</div>
+<div id="where" hidden>Courtyard entrance</div><div id="touchpad"><div id="stick"></div></div>
+<script defer src="renderer.js"></script><script defer src="main.js"></script>
+</body></html>

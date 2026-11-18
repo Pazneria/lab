@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171c18">
+  <title>Limewater Cavern</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-mode="loading">
+  <main class="cavern" aria-label="Limewater Cavern">
+    <canvas id="view" tabindex="0" aria-label="First-person view of the cave"></canvas>
+
+    <header class="hud">
+      <div class="location">
+        <span class="survey-dot" aria-hidden="true"></span>
+        <span id="place" aria-live="polite">Entrance recess</span>
+      </div>
+      <button id="reset" class="reset" type="button" disabled>Reset <kbd>R</kbd></button>
+    </header>
+
+    <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+      <p class="eyebrow" id="eyebrow">Limestone cavern</p>
+      <h1 id="welcome-title">Limewater</h1>
+      <p class="welcome-copy" id="welcome-copy">Follow the dry bank through the arch to the survey landing.</p>
+      <button class="enter" type="button" id="enter" disabled>Preparing cavern…</button>
+    </section>
+
+    <div class="reticle" id="reticle" aria-hidden="true" hidden></div>
+    <footer class="controls" id="controls" aria-label="Exploration controls" hidden>
+      <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Move</span></div>
+      <div class="control-look"><span class="mouse" aria-hidden="true"></span><span id="look-hint">Mouse to look</span></div>
+      <div><kbd>Shift</kbd><span>Walk faster</span></div>
+      <div><kbd>Esc</kbd><span id="exit-hint">Release mouse</span></div>
+    </footer>
+
+    <noscript>This scene needs JavaScript and WebGL 2.</noscript>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

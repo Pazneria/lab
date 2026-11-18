@@ -1,0 +1,53 @@
+:root{color-scheme:light;--ink:#292b25;--paper:#f1efe6;--quiet:#64665b;--hair:#ccccc0;font-family:Inter,"Segoe UI",Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}
+html,body,main{margin:0;width:100%;height:100%;overflow:hidden}
+body{color:var(--ink);background:#727369}
+#view{display:block;width:100%;height:100%;outline:0;touch-action:none}
+.hud,.panel,.walk-hint{position:fixed;z-index:1}
+.identity,.location{top:22px;display:flex;align-items:center;color:var(--paper);background:rgba(37,39,33,.86);height:36px;user-select:none;pointer-events:none}
+.identity{left:24px;padding:0 14px 0 12px;gap:10px}
+.identity strong{font-size:13px;font-weight:650;letter-spacing:.19em}
+.brand-divider{width:1px;height:14px;background:#979a88;opacity:.55;margin-left:1px}
+.brand-sub,.location,.walk-hint{font-size:12px;font-weight:450;letter-spacing:.012em}
+.mark{display:block;width:17px;height:20px;position:relative}
+.mark i{position:absolute;top:1px;left:0;width:7px;height:18px;background:#e7e7d9}
+.mark i+i{width:9px;left:8px;clip-path:polygon(90% 0,100% 0,43% 48%,100% 100%,13% 100%,0 58%,0 36%)}
+.location{right:24px;padding:0 14px;gap:10px}
+#room-num{font-family:"IBM Plex Mono",Consolas,monospace;font-size:11px;opacity:.71;border-right:1px solid #777b6b;padding-right:10px;font-variant-numeric:tabular-nums}
+.panel{left:24px;bottom:24px;width:min(352px,calc(100vw - 32px));background:var(--paper);padding:20px 21px 13px;box-shadow:0 2px 13px #15181026;border:1px solid #f8f5e9aa}
+h1{font-family:"Baskervville",Georgia,"Times New Roman",serif;font-size:34px;line-height:1.06;font-weight:400;letter-spacing:-.045em;margin:0}
+#status{margin:11px 0 0;color:var(--quiet);font-size:12px;line-height:1.45}
+#status:empty{display:none}
+.main-controls{display:flex;justify-content:space-between;gap:5px;border-top:1px solid var(--hair);padding-top:12px;margin-top:16px}
+.main-controls span,.details-grid span,.walk-hint span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap;font-size:11px}
+kbd{font:500 10px/1.2 "IBM Plex Mono",Consolas,monospace;border:1px solid #bebfb1;border-radius:2px;padding:2px 4px;letter-spacing:0;background:#fbfaf356}
+.actions{display:flex;gap:7px;margin-top:15px}
+button{appearance:none;border:0;border-radius:0;cursor:pointer;font:550 12px/1 "Segoe UI",Arial,sans-serif}
+button:focus-visible,summary:focus-visible{outline:2px solid #337267;outline-offset:3px}
+button:disabled{opacity:.5;cursor:wait}
+#enter{background:var(--ink);color:var(--paper);height:36px;flex:1;display:flex;align-items:center;justify-content:space-between;padding:0 12px}
+#enter:hover:not(:disabled){background:#41453a}
+#enter span{font-size:17px;font-weight:400}
+#reset{height:36px;border:1px solid var(--hair);padding:0 12px;background:transparent;color:#51534a}
+#reset:hover:not(:disabled){background:#e5e5d8}
+#reset span{font-size:15px;margin-left:5px}
+details{margin-top:10px;font-size:11px;color:var(--quiet)}
+summary{cursor:pointer;width:max-content;font-size:10px;letter-spacing:.015em}
+.details-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:7px 5px;border-top:1px solid var(--hair);margin-top:10px;padding-top:10px}
+details p{margin-bottom:1px}
+.walk-hint{bottom:21px;left:24px;padding:7px 10px;display:none;align-items:center;gap:13px;background:#252721c9;color:#f1efe5;pointer-events:none;user-select:none}
+.walk-hint kbd{background:transparent;border-color:#999e8e87}
+.walk-hint [hidden]{display:none}
+body[data-state="walking"] .panel{display:none}
+body[data-state="walking"] .walk-hint{display:flex}
+body[data-state="walking"] .identity .brand-sub,body[data-state="walking"] .brand-divider{display:none}
+body[data-state="walking"][data-hide-hud="true"] .hud{display:none}
+.error{position:absolute;inset:1rem auto auto 1rem;background:var(--paper);padding:1em}
+@media(max-width:600px){
+  .identity,.location{top:12px;height:31px}
+  .identity{left:12px}.location{right:12px}
+  .brand-sub,.brand-divider{display:none}
+  .panel{left:12px;bottom:12px;padding:17px 16px 11px}
+  .walk-hint{bottom:12px;left:12px}
+}
+@media(max-height:470px){.panel{padding-top:12px;bottom:10px}.panel h1{font-size:26px}.main-controls{margin-top:10px;padding-top:8px}.actions{margin-top:9px}}

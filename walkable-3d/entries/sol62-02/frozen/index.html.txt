@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111822">
+  <title>Lantern Court · After the Rain</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.min.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <main id="viewport" aria-label="Explorable three-dimensional night market"></main>
+  <header class="masthead">
+    <div class="mark" aria-hidden="true"><i></i></div>
+    <div><div class="location">LANTERN COURT</div><div id="area" class="area">Courtyard entrance</div></div>
+  </header>
+  <div class="actions">
+    <button class="quiet" id="reset" type="button">Reset <kbd>R</kbd></button>
+    <button class="quiet" id="show-controls" type="button" aria-expanded="true">Controls <kbd>Esc</kbd></button>
+  </div>
+  <div id="reticle" aria-hidden="true"></div>
+  <div id="drag-hint" hidden>Drag to look</div>
+  <section id="welcome" class="welcome" aria-label="Market controls">
+    <div class="small">LANTERN COURT / AFTER HOURS</div>
+    <h1>After the Rain</h1>
+    <p>Cross the courtyard and follow the covered passage to the tea counter.</p>
+    <div class="legend">
+      <div><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>Walk</span></div>
+      <div><span>Mouse</span><span>Look</span></div>
+      <div><span><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span><span>Look with keys</span></div>
+      <div><span><kbd>Shift</kbd></span><span>Walk faster</span></div>
+    </div>
+    <button id="enter" class="enter" type="button" disabled>Preparing courtyard…</button>
+    <div id="status" class="status" role="status"></div>
+  </section>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

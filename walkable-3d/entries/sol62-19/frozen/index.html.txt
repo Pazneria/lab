@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1719">
+  <title>Nereid · Berth 04</title>
+  <meta name="description" content="Explore a marine researcher's private quarters beneath the continental shelf.">
+  <script type="module" crossorigin src="./assets/index-D7j42fgy.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-fuS2wX-w.css">
+</head>
+<body>
+  <main id="habitat" aria-label="Nereid underwater habitat"></main>
+
+  <div class="telemetry" id="telemetry" aria-hidden="true">
+    <div class="telemetry__mark"><span></span> NEREID <b>04</b></div>
+    <p id="location">Crew quarters</p>
+  </div>
+  <div id="reticle" aria-hidden="true"></div>
+  <div id="keyboard-tip" aria-hidden="true"><kbd>R</kbd> Reset <span></span> <kbd>Esc</kbd> Pause</div>
+
+  <section id="entry" aria-labelledby="heading">
+    <div class="entry__body">
+      <p class="eyebrow"><i></i> Shelf station &nbsp; / &nbsp; Private quarters</p>
+      <h1 id="heading">Nereid<span>04</span></h1>
+      <p class="subtitle">A home beneath the shelf</p>
+      <button type="button" id="enter">Enter the berth <span aria-hidden="true">↗</span></button>
+      <button type="button" id="reset" hidden>Reset position</button>
+      <p class="input-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move <b>·</b> Mouse look <b>·</b> <kbd>Shift</kbd> Walk faster</p>
+    </div>
+  </section>
+  <div id="drag-tip" role="status" hidden>Drag on the scene to look · Esc to pause</div>
+  <div id="fatal" role="alert" hidden></div>
+</body>
+</html>

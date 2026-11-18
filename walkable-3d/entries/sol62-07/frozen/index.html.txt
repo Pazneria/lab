@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#25231f">
+  <title>Section Seven — Museum of Material Studies</title>
+  <link rel="stylesheet" href="./museum.css">
+</head>
+<body>
+  <main aria-label="Section Seven, an explorable 3D museum">
+    <canvas id="museum" aria-label="Museum viewport. Click to look with your mouse." tabindex="0"></canvas>
+
+    <header class="masthead">
+      <div class="museum-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div>
+        <span class="museum-name">Section Seven</span>
+        <div class="location" id="location">01 &nbsp; Entrance gallery</div>
+      </div>
+    </header>
+
+    <aside class="actions" aria-label="View controls">
+      <button id="reset" type="button" title="Reset view (R)"><span aria-hidden="true">↺</span> Reset view</button>
+      <button id="help-toggle" type="button" aria-expanded="false" aria-controls="help" title="Controls">?</button>
+    </aside>
+
+    <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+      <div class="welcome-index"><span>Section Seven</span><span>01—03</span></div>
+      <h1 id="welcome-title">Material<br>Studies</h1>
+      <p>Three works in stone, cast resin and folded bronze.</p>
+      <button type="button" id="enter" disabled>Preparing the museum <span aria-hidden="true">↗</span></button>
+      <div class="welcome-controls" id="welcome-controls">WASD to move · Mouse to look</div>
+    </section>
+
+    <section id="help" class="help" aria-labelledby="help-title" hidden>
+      <h2 id="help-title">Controls</h2>
+      <dl>
+        <dt>Move</dt><dd><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd></dd>
+        <dt>Look</dt><dd>Mouse or drag</dd>
+        <dt>Turn with keys</dt><dd><kbd>←</kbd> <kbd>→</kbd></dd>
+        <dt>Brisk walk</dt><dd><kbd>Shift</kbd></dd>
+        <dt>Release mouse</dt><dd><kbd>Esc</kbd></dd>
+        <dt>Reset view</dt><dd><kbd>R</kbd></dd>
+      </dl>
+    </section>
+
+    <div class="reticle" aria-hidden="true"></div>
+    <div class="hint" id="hint" hidden>
+      <span id="move-hint"><kbd>WASD</kbd> Move</span>
+      <span id="look-hint">Click or drag to look</span>
+      <span class="hint-desktop"><kbd>R</kbd> Reset</span>
+    </div>
+    <div class="touch-move" id="touch-move" aria-hidden="true" hidden><i></i></div>
+    <noscript><p class="fatal">Enable JavaScript to enter the museum.</p></noscript>
+  </main>
+  <script type="module" src="./museum.js"></script>
+</body>
+</html>

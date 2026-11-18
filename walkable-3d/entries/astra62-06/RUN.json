@@ -1,0 +1,81 @@
+{
+  "entry": "SceneBench 2026-11-17, scene 06",
+  "title": "Hollowmere Cavern",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-06",
+  "requested_identity": {
+    "model": "GPT-6.2 Astra",
+    "reasoning_effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "identity": "Codex, based on GPT-6",
+    "exact_serving_model": null,
+    "reasoning_effort": null,
+    "service_tier": null,
+    "note": "No per-run exact model, effort, or service tier was exposed. No global configuration file was consulted."
+  },
+  "first_implementation_action": "Entry-local dependency and workspace inventory, immediately following the required exact working-directory check.",
+  "first_implementation_utc": "2026-11-18T00:06:24.4719816+00:00",
+  "first_source_creation_utc": "2026-11-18T00:10:06.8475719Z",
+  "deadline_utc": "2026-11-18T01:06:24.4719816+00:00",
+  "actual_stop_utc": "2026-11-18T00:57:06.3067364+00:00",
+  "elapsed_seconds": 3041.8348,
+  "interruptions": [],
+  "portable_build": "Hollowmere-Cavern.zip",
+  "archive_bytes": 8916584,
+  "launch_command_from_workspace": "python -m http.server 48626 --bind 127.0.0.1",
+  "suggested_launch_address": "http://127.0.0.1:48626/",
+  "checks_performed": [
+    "All 11 JavaScript modules passed node --check; the renderer import graph resolved without a graphics context.",
+    "All four GLSL ES shader pairs compiled and linked with the CPU-only Khronos glslang validator 11.7.0.",
+    "HTML ID uniqueness, 14 script-referenced controls, local module and stylesheet references passed.",
+    "Mesh positions, normals, attribute and index ranges, primary and distant draw bounds, PNG payloads and geological volume validated.",
+    "11 reference positions connected on the clearance grid; 29.99 m primary route, 1.84 m elevation gain, 0.523 m minimum centerline clearance, 0.265 m walker radius.",
+    "Five discrete sightlines from accessible eye positions to the modeled pool passed triangle intersection checks, including the reverse view under the arch.",
+    "All 21 files in the portable ZIP matched the workspace files byte-for-byte.",
+    "No TCP entry with local port 48626 was present at the passive port check."
+  ],
+  "deferred_checks": [
+    "Browser launch",
+    "Interactive exploration",
+    "Visual inspection",
+    "GPU execution",
+    "Frame-time and performance measurements"
+  ],
+  "process_cleanup": {
+    "tracked_jobs": "All tool-started asset builds, registry commands, validators, static checks and packaging commands completed and exited.",
+    "persistent_processes_started": [],
+    "browsers_servers_watchers_started": 0,
+    "temporary_validator": "Removed from the entry directory.",
+    "additional_os_audit": "The entry-scoped Windows CIM process-list query was denied access to CIM; cleanup is established from the tracked child exits. No unrelated processes were terminated."
+  },
+  "limitations": [
+    "Requires a WebGL 2 browser and HTTP serving.",
+    "The single parallax-corrected reflection probe approximates nearby irregular banks.",
+    "Visual and interactive behavior and frame times await the separate judging session."
+  ],
+  "sha256": {
+    "bake-light.mjs": "3bfd858b54582b7128c4dbb41abd49bc88f339c1575605f7164c5a3fe84fd02b",
+    "bedding.png": "98f4e9f4e9d7f63f50a98b2910de43f5fe333bbdabfde9f4f20dfc7a123fc1f8",
+    "build-world.mjs": "0f802c698c6ef1c80e542adf437d9a7c7b0a0d4bc1ee7638f8f675dddba3366d",
+    "cavern.mesh": "0cd4ddf23ccc5aefd957619411eb5679ca77fb06768716faa8e7ce991e002611",
+    "clearance.bin": "fa090fbc93acd3f6000c0160104e229420092a21f9f1b4d1d9adcc400444d5fe",
+    "field.json": "46af001b739047115ba4c403619656781d446b238878b6fb1d2974c4b85c50d0",
+    "Hollowmere-Cavern.zip": "1a26ce4a0258485531b0309c20ea31a903007704f1f2ad240feb997f2e4ad251",
+    "index.html": "7ed2f27b66ab17f195155d1790e64f4f024846b08526ca28a67e8fe947c7a685",
+    "landform.mjs": "b879ac0c616106fb89e4f81bf7f472c752097131f02283b735e507c46eb44119",
+    "main.mjs": "84b78d079378aa6572d31b474aca3d37be7844281e24e814edec7c31750f0a7e",
+    "make-materials.mjs": "02b72ac9a3da3f463d635c8a9284259f01d50a1f02c4c6db3b1310965ad69881",
+    "mesh-tools.mjs": "224e403f85b05d230ec4644111e3b826ceec186b5daddab744976e75dcd275e6",
+    "mineral.volume": "591a8a7b81248f2e61aaa0becba617455526497e601cf198762f5e02ad4fa069",
+    "pack-space.mjs": "6bb4b56536c10cb93b25223bcb5017608a1d57c8a8514f0cc365e6d4426388e7",
+    "pavement.png": "fd724bcb1d2ef97cf1f3b5fa5e22e476ace4babdfa472eff2b0e9d8ad5e30e5c",
+    "README.md": "6c6fdea818f8b56262904a6d04e6595d4b48646b728ec0d4ea4541c57480323b",
+    "render.mjs": "a330e00caea9b2bebeedee1581c8f09999f0cedc36872c90fd1ae3a6c9409183",
+    "shaders.mjs": "bed618720909a744228dafa90d0f16f4940aaa421c2aa5d2c884666c4926a525",
+    "style.css": "0d536a768bfe3c121f68683723b57d6a86be192460041a9d8da357897bf82dc9",
+    "verify.mjs": "3889ffe8e613ef5a784411fdd7e816a7f9c5cd9a65f116ee6ed2a6061f9cfab0",
+    "walk.mjs": "c83959ec96cf4cb1e0541c12bb16de0ea282277f39555dca9361f9fa193cc80d",
+    "water-detail.png": "fa1321298db8db5160df6822fa7211b2b217446cf04373aff45dd96eab79ae45"
+  }
+}

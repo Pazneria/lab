@@ -1,0 +1,39 @@
+{
+  "entry": "SceneBench 2026-11-17 / scene 15 / The Hushwing Post",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-15",
+  "requested": {
+    "effort": "XHIGH",
+    "model": "GPT-6.2 Astra",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "effort": null,
+    "exact_model": null,
+    "identity": "Codex, based on GPT-6",
+    "service": null
+  },
+  "first_implementation_utc": "2026-11-18T01:04:34.4903315+00:00",
+  "deadline_utc": "2026-11-18T02:04:34.4903315+00:00",
+  "interruption_history": [
+    "Optional build subdirectory creation was denied by the sandbox. Work continued with flat files in the same verified workspace. No pause, restart or deadline extension."
+  ],
+  "archive": "Hushwing-Post-scene-15.zip",
+  "archive_sha256": "4f92f2372ac5232da15576a85ec49ba50013f6af3ae71e47cad5aecac3c20496",
+  "archive_files_verified_byte_for_byte": 16,
+  "scene_asset_sha256": "ab9d037402011f9277474f5106eef5c382b1e7b69c0baca17e9be0cd158fb3ed",
+  "launch": "python -m http.server 47115 --bind 127.0.0.1 --directory \"C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-15\"",
+  "suggested_address": "http://127.0.0.1:47115/",
+  "checks": [
+    "12 JavaScript module syntax checks passed",
+    "Six GLSL stages parsed using the integrity-checked ShaderFrog GLSL parser 7.0.1 in memory",
+    "All packed indices and spatial bounds passed",
+    "18 artwork command streams passed numeric checks",
+    "773 clearance samples on a 19.16 m loop and five blocking contact probes passed",
+    "Python identifies JavaScript modules as text/javascript",
+    "Port 47115 had no listener at the pre-handoff check"
+  ],
+  "interactive_verification": "Deferred. No browser, screenshot renderer, GPU test or frame-time benchmark was used.",
+  "cleanup": "All build, validation, registry-read, search and packaging processes exited. No server, watcher or browser was started.",
+  "actual_stop_utc": "2026-11-18T01:57:51.9581627+00:00",
+  "elapsed_seconds": 3197.4678312
+}

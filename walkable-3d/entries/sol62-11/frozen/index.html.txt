@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Parallax Field Lab</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="lab" aria-label="Parallax Field Lab, a walkable 3D exhibition">
+    <div id="viewport"></div>
+    <div class="interface">
+      <header class="masthead">
+        <span class="mark" aria-hidden="true"><i></i><b></b></span>
+        <div>
+          <h1>Parallax <span>Field Lab</span></h1>
+          <p>Instrumentation gallery</p>
+        </div>
+      </header>
+
+      <aside class="plan" aria-label="Floor plan">
+        <svg viewBox="0 0 130 99" aria-hidden="true">
+          <path class="shell" d="M34.27 8H95.73V18.86H123.92V61.56H95.73V92H34.27V61.56H6.08V18.86H34.27Z"/>
+          <path class="zone" d="M34.27 19H7V61H34.27M95.73 19H123V61H95.73"/>
+          <text x="19.5" y="40">P</text><text x="110.5" y="40">M</text>
+          <circle class="center" cx="65" cy="49.31" r="7.5"/>
+          <path class="threshold" d="M57 92h16"/>
+          <g id="plan-player" transform="translate(65 83)">
+            <circle r="4"/>
+            <path d="M0 -10V-5"/>
+          </g>
+        </svg>
+      </aside>
+
+      <div id="reticle" class="reticle" hidden aria-hidden="true"></div>
+      <section id="prompt" class="prompt" aria-label="Exploration controls">
+        <button id="enter" class="enter" type="button" disabled>Preparing the lab</button>
+        <p id="hint">WASD to walk · Mouse to look · Esc to pause</p>
+      </section>
+      <div class="station" aria-hidden="true">
+        <span id="station-id" class="station-id">00</span>
+        <div><span class="wayfinding">You are here</span><span id="station-name">Entrance</span></div>
+      </div>
+      <div class="quick-controls">
+        <span id="look-shortcut" class="look-shortcut" hidden>Drag to look</span>
+        <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Walk</span>
+        <span><kbd>Esc</kbd> Pause</span>
+        <button id="reset" type="button" title="Return to entrance (R)"><kbd>R</kbd> Reset</button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </div>
+    <noscript>This gallery requires JavaScript and a WebGL 2 browser.</noscript>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

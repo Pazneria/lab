@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202f30">
+  <title>Low Water — Tideway Boatworks</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="viewport" aria-label="Explorable 3D tidal inlet">
+    <div id="hud" hidden>
+      <p id="location" aria-live="polite">Landing pier</p>
+      <div id="reticle" aria-hidden="true"></div>
+      <button id="reset" type="button" title="Return to the starting view">Reset <kbd>R</kbd></button>
+    </div>
+    <section id="panel" aria-labelledby="title">
+      <div class="masthead">
+        <p class="eyebrow">Tideway Boatworks</p>
+        <h1 id="title">Low Water</h1>
+      </div>
+      <p id="status" role="status">Preparing the inlet…</p>
+      <div id="game-menu" hidden>
+        <button id="enter" type="button">Explore <span aria-hidden="true">↗</span></button>
+        <dl class="controls">
+          <div><dt>Walk</dt><dd><kbd>W A S D</kbd> or <kbd>↑ ← ↓ →</kbd></dd></div>
+          <div><dt>Look</dt><dd>Mouse or click and drag</dd></div>
+          <div><dt>Release mouse</dt><dd><kbd>Esc</kbd></dd></div>
+        </dl>
+      </div>
+      <noscript>Enable JavaScript to explore the scene.</noscript>
+    </section>
+  </main>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

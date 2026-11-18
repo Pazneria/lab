@@ -1,0 +1,55 @@
+{
+  "entry": "SceneBench 2026-11-17, scene 03, Meridian House",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-03",
+  "requested": {
+    "model": "GPT-6.2 Astra",
+    "effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed": {
+    "identity": "Codex, based on GPT-6",
+    "serving_model": null,
+    "reasoning_effort": null,
+    "service_tier": null,
+    "note": "Exact per-request serving model, effort and service tier were not exposed."
+  },
+  "workspace_verified_empty_utc": "2026-11-17T23:06:45.3281043Z",
+  "first_implementation_utc": "2026-11-17T23:07:02.4459684+00:00",
+  "deadline_utc": "2026-11-18T00:07:02.4459684+00:00",
+  "actual_stop_utc": "2026-11-18T00:00:27.3249001+00:00",
+  "elapsed_seconds": 3204.8789,
+  "interruptions": [
+    "The first timing-file write required filesystem approval for the prescribed workspace. First attempt 23:07:02 UTC, file created 23:07:28 UTC. The clock continued.",
+    "A terminal handle was unavailable when polling the final material generator. Both material masks were present and the matching process count was confirmed as zero. The deadline was unchanged."
+  ],
+  "build": {
+    "archive": "meridian-house.zip",
+    "archive_bytes": 8800386,
+    "archive_sha256": "abac726376084eb1a9b51a5b10056cc1e0565605b648bfd3a47402e38c4aa453",
+    "archive_members": 44,
+    "byte_verification": "All 44 members matched their original bytes.",
+    "entry_point": "index.html",
+    "mesh_batches": 73,
+    "vertices": 269225,
+    "triangles": 186939,
+    "suggested_address": "http://127.0.0.1:48753/"
+  },
+  "checks": {
+    "report": "CHECKS.txt",
+    "cpu_route_steps": 1066,
+    "connected_floor_samples": 2991,
+    "visual_verification": "Not performed",
+    "interactive_verification": "Not performed",
+    "frame_times": "Not measured"
+  },
+  "cleanup": {
+    "generator_processes_remaining": 0,
+    "listening_processes_on_suggested_port": 0,
+    "task_servers_started": 0,
+    "task_browsers_started": 0,
+    "watchers_started": 0,
+    "gpu_tests_started": 0,
+    "benchmarks_started": 0,
+    "status": "All entry commands completed. No entry process was left running. No unrelated process was terminated."
+  }
+}

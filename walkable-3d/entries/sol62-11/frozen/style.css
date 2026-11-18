@@ -1,0 +1,103 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #f5f2e8;
+  background: #222724;
+}
+* { box-sizing: border-box; }
+body { margin: 0; overflow: hidden; }
+[hidden] { display: none !important; }
+#lab, #viewport, .interface { position: fixed; inset: 0; }
+#viewport canvas { display: block; width: 100%; height: 100%; touch-action: none; outline: none; }
+.interface { pointer-events: none; }
+.interface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #11191650, transparent 22%, transparent 77%, #11191680);
+}
+.masthead, .station, .quick-controls, .plan, .prompt, .reticle, .error { position: absolute; }
+.masthead { top: 25px; left: 28px; display: flex; align-items: center; gap: 12px; text-shadow: 0 1px 6px #0009; }
+.masthead h1 { margin: 0; font-weight: 660; font-size: 19px; letter-spacing: -.045em; line-height: 1.05; }
+.masthead h1 span { font-weight: 450; }
+.masthead p { margin: 5px 0 0; font-size: 9px; text-transform: uppercase; letter-spacing: .2em; color: #e3ebde; }
+.mark { display: block; position: relative; width: 33px; height: 31px; transform: rotate(-24deg); }
+.mark i, .mark b { position: absolute; border: 1.5px solid #d5f1ce; border-radius: 50%; width: 18px; height: 29px; }
+.mark i { left: 3px; }
+.mark b { right: 3px; }
+.plan {
+  top: 22px;
+  right: 26px;
+  width: 120px;
+  padding: 9px;
+  background: #1c2825c4;
+  border: 1px solid #dbe9d438;
+  border-radius: 4px;
+}
+.plan svg { display: block; width: 100%; }
+.plan .shell { fill: #c7dcc313; stroke: #e0edd4a3; stroke-width: 1.15; }
+.plan .zone { fill: #b2c7a329; stroke: none; }
+.plan text { fill: #f0ead1; font: 650 9px system-ui, sans-serif; dominant-baseline: central; text-anchor: middle; }
+.plan .center { fill: #b9e2b731; stroke: #b9e2b7; stroke-width: 1.2; }
+.plan .threshold { stroke: #eff7d9; stroke-width: 1.5; }
+#plan-player circle { fill: #f3d69e; stroke: #27342c; stroke-width: 1.2; }
+#plan-player path { fill: none; stroke: #f3d69e; stroke-width: 1.5; stroke-linecap: round; }
+.reticle { inset: 50% auto auto 50%; width: 4px; height: 4px; transform: translate(-50%, -50%); border-radius: 50%; background: #ffffe9b2; box-shadow: 0 0 2px 1px #1e282b60; }
+.prompt {
+  left: 50%;
+  bottom: 33px;
+  transform: translateX(-50%);
+  width: min(510px, 92vw);
+  text-align: center;
+}
+.enter {
+  border: 1px solid #ddecdb;
+  border-radius: 4px;
+  background: #d8e8cd;
+  color: #1c2c23;
+  font: 650 14px/1 system-ui, sans-serif;
+  letter-spacing: .012em;
+  cursor: pointer;
+  padding: 15px 23px;
+  pointer-events: auto;
+  box-shadow: 0 4px 25px #111a145e;
+}
+.enter:hover { background: #f0f7df; }
+.enter:disabled { opacity: .7; cursor: default; }
+.prompt p { margin: 11px 0 0; font-size: 11px; text-shadow: 0 1px 4px #000; }
+.station { bottom: 24px; left: 27px; display: flex; align-items: center; gap: 9px; text-shadow: 0 1px 5px #000; }
+.station-id {
+  display: grid;
+  place-content: center;
+  width: 33px; height: 33px;
+  border: 1px solid #e2f1dc6b;
+  background: #243225b5;
+  border-radius: 3px;
+  font: 12px ui-monospace, monospace;
+  color: #e2f1ce;
+}
+.station div { display: grid; gap: 2px; }
+.wayfinding { color: #e6e7d6; font-size: 8px; letter-spacing: .15em; text-transform: uppercase; }
+#station-name { font-weight: 600; font-size: 12px; }
+.quick-controls {
+  right: 26px;
+  bottom: 23px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 10px;
+  color: #fffce9;
+  text-shadow: 0 1px 4px #000;
+}
+.quick-controls button { pointer-events: auto; border: 1px solid #dbe9d44d; background: #202923b8; color: inherit; border-radius: 3px; padding: 5px; cursor: pointer; font: inherit; }
+.quick-controls button:hover { background: #36463a; }
+kbd { display: inline-grid; place-content: center; min-width: 14px; min-height: 15px; margin-right: 2px; padding: 0 3px; border-radius: 2px; background: #202923ba; border: 1px solid #e4ebd761; font: 9px ui-monospace, monospace; }
+.error { bottom: 19%; left: 50%; transform: translateX(-50%); width: min(480px, 90vw); background: #302823; padding: 16px; border: 1px solid #dba991; border-radius: 4px; color: #ffeada; }
+button:focus-visible { outline: 2px solid #fbf4cc; outline-offset: 4px; }
+@media (max-width: 660px) {
+  .masthead { left: 14px; top: 16px; }
+  .plan { top: 12px; right: 12px; width: 88px; padding: 6px; }
+  .station { left: 13px; bottom: 13px; }
+  .quick-controls { right: 12px; bottom: 13px; }
+  .quick-controls > span:not(.look-shortcut) { display: none; }
+  .prompt { bottom: 62px; }
+}

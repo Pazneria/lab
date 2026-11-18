@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alder Halt | An abandoned woodland station</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="scene" aria-label="Alder Halt interactive 3D scene"></main>
+  <div id="hud" hidden>
+    <div id="location" aria-live="polite"><span class="site">ALDER HALT</span><span id="area">Station approach</span></div>
+    <div id="reticle" aria-hidden="true"></div>
+    <div id="trail"><span id="hint"></span></div>
+    <div id="shortcut"><kbd>Esc</kbd> Pause <span class="sep"></span> <kbd>R</kbd> Reset</div>
+  </div>
+  <section id="overlay" aria-labelledby="title">
+    <div class="panel">
+      <p class="line">WREN VALLEY RAILWAY</p>
+      <h1 id="title">Alder Halt</h1>
+      <p id="intro">Follow the old station path through the waiting room, then cross the rails to the woodland footpath.</p>
+      <button id="enter" type="button" disabled>Preparing scene…</button>
+      <p id="error" hidden role="alert"></p>
+      <dl aria-label="Controls">
+        <div><dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></dt><dd>Walk</dd></div>
+        <div><dt>Mouse</dt><dd>Look</dd></div>
+        <div><dt><kbd>Shift</kbd></dt><dd>Walk faster</dd></div>
+        <div><dt><kbd>R</kbd></dt><dd>Return to the entrance</dd></div>
+      </dl>
+      <button id="reset" class="secondary" type="button" hidden>Reset to entrance</button>
+    </div>
+  </section>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

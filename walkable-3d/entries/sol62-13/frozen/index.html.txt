@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Rainline — Falken Pass aerial tramway</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <canvas id="view" aria-label="Explorable 3D cable-car station"></canvas>
+  <div id="interface">
+    <header class="station-id">
+      <span class="station-icon" aria-hidden="true"><i></i><b></b></span>
+      <span><strong>FALKEN PASS</strong><small>AERIAL TRAMWAY · 1,640 M</small></span>
+    </header>
+    <div class="zone" id="zone" aria-live="polite">TERMINAL</div>
+    <div class="reticle" aria-hidden="true"></div>
+    <div class="veil" id="veil">
+      <section class="intro" aria-labelledby="heading">
+        <p class="eyebrow">LINE 01 &nbsp;/&nbsp; LOWER STATION</p>
+        <h1 id="heading">Rainline</h1>
+        <p class="intro-copy">Explore the terminal, follow the platform past Cabin 01 and step out beneath the lookout canopy.</p>
+        <button id="enter" type="button">Enter station <span aria-hidden="true">↗</span></button>
+        <p class="input-note">WASD to walk · Mouse to look · Esc to pause</p>
+      </section>
+    </div>
+    <footer class="controls"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Walk</span><span><kbd>R</kbd> Reset</span><span><kbd>Esc</kbd> Pause</span></footer>
+    <p id="error" class="error" role="alert" hidden></p>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#263335">
+  <title>Meridian House — Plateau Observatory</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main id="world" aria-label="Explorable three-dimensional desert observatory"></main>
+  <div class="header" aria-label="Observatory location and controls">
+    <div class="identity">
+      <div class="mark" aria-hidden="true"></div>
+      <div><strong>Meridian House</strong><span id="location">Approach</span></div>
+    </div>
+    <button class="reset" id="reset" type="button" title="Reset to the approach (R)">Reset <kbd>R</kbd></button>
+  </div>
+  <div id="reticle" aria-hidden="true" hidden></div>
+  <div id="controls" class="controls" aria-label="Controls" hidden>
+    <span><kbd>W A S D</kbd> Walk</span>
+    <span><kbd>Shift</kbd> Quick walk</span>
+    <span id="look-label"><kbd>Mouse</kbd> Look</span>
+    <span><kbd>Esc</kbd> Release</span>
+  </div>
+  <div id="intro" class="intro">
+    <div class="panel">
+      <p class="eyebrow">PLATEAU OBSERVATORY</p>
+      <h1 id="headline">Meridian House</h1>
+      <p id="intro-description">Walk through the shaded passage to the telescope, then follow the east arch to the open terrace.</p>
+      <button id="enter" type="button" disabled>Preparing the scene…</button>
+      <p class="hint" id="hint">WASD or arrow keys to walk. Move the mouse to look.</p>
+    </div>
+  </div>
+  <noscript><div class="noscript">Enable JavaScript to enter the observatory.</div></noscript>
+  <script type="module" src="./scene.js"></script>
+</body>
+</html>

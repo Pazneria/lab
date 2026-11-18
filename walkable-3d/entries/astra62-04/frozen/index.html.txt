@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#263d32">
+  <title>The Palm House · Tropical Conservatory</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script src="artwork.js" defer></script>
+  <script src="shaders.js" defer></script>
+  <script src="renderer.js" defer></script>
+  <script src="walk.js" defer></script>
+  <script src="visitor.js" defer></script>
+</head>
+<body>
+  <main id="exhibit" aria-label="The Palm House, explorable three-dimensional greenhouse">
+    <canvas id="scene" tabindex="0" aria-label="Greenhouse view. Walk with W A S D and look with the mouse or arrow keys. Press R to reset."></canvas>
+    <div class="shade" aria-hidden="true"></div>
+    <header class="mast">
+      <div class="house-name">
+        <svg class="fern-mark" viewBox="0 0 36 46" fill="none" aria-hidden="true">
+          <path d="M8 42C13 28 20 18 29 5" stroke="currentColor" stroke-width="1.3"/>
+          <g fill="currentColor">
+            <path d="M12.6 31.5C4.1 30 3.1 23.4 3.2 18.5C8.6 20.8 12.8 24.8 12.6 31.5ZM12.7 31C17.4 23.6 24.6 23.2 29.7 23.3C25.7 27.6 20.4 32 12.7 31Z"/>
+            <path d="M17.4 23.2C10 21.2 10.7 15.4 10.5 10.7C15 14.2 17.7 17.9 17.4 23.2ZM17.5 22.1C22 16.2 27.7 15.7 32.6 15.4C28.6 20.1 23.7 22.8 17.5 22.1Z"/>
+            <path d="M22.6 15.8C18 13.5 18 8.6 18.7 4.9C22.2 8.1 23.4 11.7 22.6 15.8ZM22.7 15.4C26.3 10.7 30.6 9.8 34.4 9.5C31.5 12.7 28.4 15.4 22.7 15.4ZM27.5 8C26.2 4 28.3 1.6 31.3.2C31.2 3.6 30 6.2 27.5 8Z"/>
+          </g>
+        </svg>
+        <div><h1>The Palm House</h1><p>Tropical conservatory</p></div>
+      </div>
+      <nav aria-label="Scene tools">
+        <button class="tool" id="plan-toggle" type="button" title="Floor plan (M)" aria-controls="plan" aria-expanded="false">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m2.5 4.5 4.8-1.8 5.4 2.1 4.8-1.9v12.7l-4.8 1.8-5.4-2.1-4.8 1.9zM7.3 2.8v12.4m5.4-10.4v12.5"/></svg><span>Plan</span>
+        </button>
+        <button class="tool" id="reset" type="button" title="Return to the threshold (R)">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3.6 8.2a6.5 6.5 0 1 1 .6 5.2M3.4 3.6v4.9h4.9"/></svg><span>Reset</span>
+        </button>
+      </nav>
+    </header>
+    <aside id="plan" class="plan" hidden aria-label="Floor plan">
+      <div class="plan-head"><h2>Floor plan</h2><button id="close-plan" class="close" type="button" aria-label="Close floor plan">×</button></div>
+      <canvas id="map" width="384" height="480" aria-label="Position and view direction in the greenhouse"></canvas>
+      <div class="plan-foot"><i></i><span id="map-location">Threshold</span></div>
+    </aside>
+    <div id="reticle" aria-hidden="true"></div>
+    <div class="bottom">
+      <div class="location"><span class="location-line"></span><span id="location">Threshold</span></div>
+      <div class="control-strip" aria-label="Movement controls">
+        <div class="hint walk-hint"><span class="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span><span>Walk</span></div>
+        <div class="hint look-hint"><svg viewBox="0 0 16 20" aria-hidden="true"><rect x="2.4" y="1.6" width="11.2" height="16.8" rx="5.4"/><path d="M8 2v5"/></svg><span id="look-text">Look</span></div>
+        <div class="hint crouch-hint"><kbd>C</kbd><span>Hold to crouch</span></div>
+        <button id="enter" type="button" disabled>Explore <span aria-hidden="true">↗</span></button>
+        <div class="hint release-hint"><kbd>Esc</kbd><span>Release</span></div>
+      </div>
+    </div>
+    <div id="touch-pad" aria-label="Touch movement"><button data-key="KeyW" aria-label="Forward">↑</button><button data-key="KeyA" aria-label="Left">←</button><button data-key="KeyS" aria-label="Backward">↓</button><button data-key="KeyD" aria-label="Right">→</button></div>
+    <div id="loading" class="loading"><div><span class="loading-line"></span><p id="load-text" role="status">Opening the glasshouse…</p></div></div>
+    <div id="notice" class="sr-only" role="status" aria-live="polite"></div>
+    <noscript>Enable JavaScript to explore the greenhouse.</noscript>
+  </main>
+</body></html>

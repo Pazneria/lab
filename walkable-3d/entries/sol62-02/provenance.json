@@ -1,0 +1,258 @@
+{
+  "entry": "sol62-02",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-02\\source-preservation.zip",
+  "archiveSha256": "fac63954d379b25e5515c478f1f69ae43eeca8580c173b132dd4e0374d0cf0dc",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/architecture.js": "src/architecture.js",
+      "frozen/src/geometry.js": "src/geometry.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/market.js": "src/market.js",
+      "frozen/src/materials.js": "src/materials.js",
+      "frozen/src/navigation.js": "src/navigation.js",
+      "frozen/src/pavement.js": "src/pavement.js",
+      "frozen/src/stalls.js": "src/stalls.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three/build/three.module.js": "dependency-closure/build/three.module.js",
+      "frozen/vendor/three/build/three.core.js": "dependency-closure/build/three.core.js",
+      "frozen/vendor/three/build/three.module.min.js": "dependency-closure/build/three.module.min.js",
+      "frozen/vendor/three/build/three.core.min.js": "dependency-closure/build/three.core.min.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "dependency-closure/examples/jsm/utils/BufferGeometryUtils.js",
+      "three-LICENSE": "dependency-closure/LICENSE",
+      "three-package.json": "dependency-closure/package.json",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "397b2a19d8aaaf4b714c4a5440f8f6f8c7849979a4fec06a6198a78595b66be9",
+        "bytes": 1898
+      },
+      "package-lock.json": {
+        "sha256": "3757d83e3ca310b82814777a7507c5a1fb458392421e6c8cd1a776f4033009c2",
+        "bytes": 543
+      },
+      "package.json": {
+        "sha256": "06e92c3f68e3cdad2833e17d459b3b0018c57a48830d447d57b437acef4c07dc",
+        "bytes": 422
+      },
+      "README.md": {
+        "sha256": "9a926623f665a869dcce77fdc5f41c681e72eca8ec9d64e4675658aa7cfd492d",
+        "bytes": 1663
+      },
+      "style.css": {
+        "sha256": "d3ab7a0b31272ab54f2cd00fcb2d8d112f0c7026c20f00f81dc69a961f62987c",
+        "bytes": 3694
+      },
+      "src/architecture.js": {
+        "sha256": "9325842181076343efd09b5f210b7d0b46f37527f021b59cf2c875422e7e9335",
+        "bytes": 20505
+      },
+      "src/geometry.js": {
+        "sha256": "1a1d9c819173429c5edb1c553230f4b8da5a4766fea11bf44a68e44e8d2808ee",
+        "bytes": 11255
+      },
+      "src/main.js": {
+        "sha256": "42790c42b83e27707bb95c8ee5d43ec01d37e855f41553da283272d44d25d819",
+        "bytes": 8849
+      },
+      "src/market.js": {
+        "sha256": "6b957d634fff8952c82d750d0b2176c74a1e73c5aa354fbe2044aab78ecb2a90",
+        "bytes": 2549
+      },
+      "src/materials.js": {
+        "sha256": "351690b012d48ffeb769f7b273931974ff52ee24ed992bf8b1f7762e3471be87",
+        "bytes": 16693
+      },
+      "src/navigation.js": {
+        "sha256": "504610e29ec87197d812cd5ed78618335859685e6bc65a1a021cc90ab892512b",
+        "bytes": 1847
+      },
+      "src/pavement.js": {
+        "sha256": "49cda5ae45975663d5b8d1513db2f14c0b9adb53f6e026b0f14388a9ce0cc524",
+        "bytes": 4516
+      },
+      "src/stalls.js": {
+        "sha256": "dbd6e8c71a6dfdddf7c882d9d25bafbc4fee6a5e4c5ea9148600d6b3d9cc73c3",
+        "bytes": 18988
+      }
+    },
+    "dependencyClosure": [
+      {
+        "path": "frozen/vendor/three/build/three.module.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\build\\three.module.js",
+        "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+        "bytes": 603113
+      },
+      {
+        "path": "frozen/vendor/three/build/three.core.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\build\\three.core.js",
+        "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+        "bytes": 1403455
+      },
+      {
+        "path": "frozen/vendor/three/build/three.module.min.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\build\\three.module.min.js",
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      },
+      {
+        "path": "frozen/vendor/three/build/three.core.min.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\build\\three.core.min.js",
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\examples\\jsm\\utils\\BufferGeometryUtils.js",
+        "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+        "bytes": 35539
+      },
+      {
+        "path": "three-LICENSE",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\LICENSE",
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      {
+        "path": "three-package.json",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-02\\node_modules\\three\\package.json",
+        "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+        "bytes": 4635
+      }
+    ],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-02\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": [
+        [
+          "./node_modules/three/",
+          "./vendor/three/"
+        ]
+      ]
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "993a193a360add33ea2d4ea0e87fab6f679f6c4c56c0b151db148be050c7bd0b",
+      "bytes": 1254
+    },
+    "launch-prompt.txt": {
+      "sha256": "0e6f602a86782fafa7f5accba0eaf46ecd8bc721e7d91804960e6c9bbe054be4",
+      "bytes": 6935
+    },
+    "README.md": {
+      "sha256": "9a926623f665a869dcce77fdc5f41c681e72eca8ec9d64e4675658aa7cfd492d",
+      "bytes": 1663
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "three-LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "three-package.json": {
+      "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
+      "bytes": 4635
+    },
+    "frozen/index.html.txt": {
+      "sha256": "397b2a19d8aaaf4b714c4a5440f8f6f8c7849979a4fec06a6198a78595b66be9",
+      "bytes": 1898
+    },
+    "frozen/style.css": {
+      "sha256": "d3ab7a0b31272ab54f2cd00fcb2d8d112f0c7026c20f00f81dc69a961f62987c",
+      "bytes": 3694
+    },
+    "frozen/src/architecture.js": {
+      "sha256": "9325842181076343efd09b5f210b7d0b46f37527f021b59cf2c875422e7e9335",
+      "bytes": 20505
+    },
+    "frozen/src/geometry.js": {
+      "sha256": "1a1d9c819173429c5edb1c553230f4b8da5a4766fea11bf44a68e44e8d2808ee",
+      "bytes": 11255
+    },
+    "frozen/src/main.js": {
+      "sha256": "42790c42b83e27707bb95c8ee5d43ec01d37e855f41553da283272d44d25d819",
+      "bytes": 8849
+    },
+    "frozen/src/market.js": {
+      "sha256": "6b957d634fff8952c82d750d0b2176c74a1e73c5aa354fbe2044aab78ecb2a90",
+      "bytes": 2549
+    },
+    "frozen/src/materials.js": {
+      "sha256": "351690b012d48ffeb769f7b273931974ff52ee24ed992bf8b1f7762e3471be87",
+      "bytes": 16693
+    },
+    "frozen/src/navigation.js": {
+      "sha256": "504610e29ec87197d812cd5ed78618335859685e6bc65a1a021cc90ab892512b",
+      "bytes": 1847
+    },
+    "frozen/src/pavement.js": {
+      "sha256": "49cda5ae45975663d5b8d1513db2f14c0b9adb53f6e026b0f14388a9ce0cc524",
+      "bytes": 4516
+    },
+    "frozen/src/stalls.js": {
+      "sha256": "dbd6e8c71a6dfdddf7c882d9d25bafbc4fee6a5e4c5ea9148600d6b3d9cc73c3",
+      "bytes": 18988
+    },
+    "frozen/vendor/three/build/three.core.js": {
+      "sha256": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
+      "bytes": 1403455
+    },
+    "frozen/vendor/three/build/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three/build/three.module.js": {
+      "sha256": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a",
+      "bytes": 603113
+    },
+    "frozen/vendor/three/build/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    },
+    "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+      "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
+      "bytes": 35539
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "three-LICENSE",
+      "three-package.json",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "frozen/src/architecture.js",
+      "frozen/src/geometry.js",
+      "frozen/src/main.js",
+      "frozen/src/market.js",
+      "frozen/src/materials.js",
+      "frozen/src/navigation.js",
+      "frozen/src/pavement.js",
+      "frozen/src/stalls.js",
+      "frozen/vendor/three/build/three.core.js",
+      "frozen/vendor/three/build/three.core.min.js",
+      "frozen/vendor/three/build/three.module.js",
+      "frozen/vendor/three/build/three.module.min.js",
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "entry": "sol62-19",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-19\\source-preservation.zip",
+  "archiveSha256": "731420e0928f1d1703f8adf2b9758403e31bfd118de094e972f7a6aaa87be731",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/index-D7j42fgy.js": "dist/assets/index-D7j42fgy.js",
+      "frozen/assets/index-fuS2wX-w.css": "dist/assets/index-fuS2wX-w.css",
+      "frozen/index.html.txt": "dist/index.html",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "apartment.js": {
+        "sha256": "92ee79e9ca54679f2eb41f25ee2c3f3b25fbc064ff7ee365c695b858e22009ae",
+        "bytes": 3191
+      },
+      "architecture.js": {
+        "sha256": "4eced9f62c9799d543d514cf4977acb71636c739fd154b2474f2c25763cbd268",
+        "bytes": 18396
+      },
+      "art.js": {
+        "sha256": "aa321facd4508e560ebab7ed96601a16aedd23a734a65284291491899f179132",
+        "bytes": 10685
+      },
+      "furniture.js": {
+        "sha256": "982b5b6813b741332cf7a78fbddea9d99f54fec4a37ae6b459c90821ac24a636",
+        "bytes": 22248
+      },
+      "geometry.js": {
+        "sha256": "20cef6ad09d8aa771100e301b084b4c890b8f1cbd7d3327dc6aeaa03ee1d19cb",
+        "bytes": 16347
+      },
+      "index.html": {
+        "sha256": "2c14f9f1b3c7f76c2f1c0d43480171671a07197c1f9f1c296007d9e587e8b35b",
+        "bytes": 1602
+      },
+      "lab.js": {
+        "sha256": "1839bace099607316a6ce10d19894f9796a9d5707a6d6ba9579aa1a4d5c1143d",
+        "bytes": 15151
+      },
+      "main.js": {
+        "sha256": "d16a28c50414aa62043ba530bb90e7b0d6ccf9471d0a67a7c4853414366418df",
+        "bytes": 7428
+      },
+      "navigation.js": {
+        "sha256": "45114bb795125df2fc31457c6dab20119a2b2839d1e4cd9cfd493458bbc8c49f",
+        "bytes": 2706
+      },
+      "package-lock.json": {
+        "sha256": "91e8dceec74d9ff85d861f39cc51c0b923f63db670de56175ac0dc661a8773c1",
+        "bytes": 35114
+      },
+      "package.json": {
+        "sha256": "610b992d734fe1cd38d7746b3ea90e394853c46a8c951a52db27715398e065b4",
+        "bytes": 308
+      },
+      "README.md": {
+        "sha256": "35c9f79b92e87a2b12b69333827bd94ab6b2970006dcb04e6043281697c1833e",
+        "bytes": 1559
+      },
+      "reef.js": {
+        "sha256": "36c51288fa77e016b60846dcbd745b0dee3b11488872e7fd74bde19dfd941f26",
+        "bytes": 18348
+      },
+      "styles.css": {
+        "sha256": "84554b2e396dd2d77fea8c71bd112f2f80596d031b0090993b21383740be5be6",
+        "bytes": 3621
+      },
+      "dist/index.html": {
+        "sha256": "bc6970a491e2f0ef710b667caec5fb83fc4f232b0c7317d4e109b6d5e018ed31",
+        "bytes": 1658
+      },
+      "dist/assets/index-D7j42fgy.js": {
+        "sha256": "8230c1b018f1add42405541b0bbded330e3fa550dd3e4b46d695fc962b8d8067",
+        "bytes": 592446
+      },
+      "dist/assets/index-fuS2wX-w.css": {
+        "sha256": "44e607cd04b970eb7d5cb7554348ba3931ceaa4213c0cfa2eb69f9f1677c0b52",
+        "bytes": 3117
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-19\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "d881b860d55ab3c7f6ad29bf48acf6780af7c3802876c214c98bc336fd7bd1d0",
+      "bytes": 1255
+    },
+    "launch-prompt.txt": {
+      "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
+      "bytes": 7727
+    },
+    "README.md": {
+      "sha256": "35c9f79b92e87a2b12b69333827bd94ab6b2970006dcb04e6043281697c1833e",
+      "bytes": 1559
+    },
+    "source-audit.json": {
+      "sha256": "4fd2a54b66b911f81def205a5c953f617c4562e54e66e8ba05a67dec09761151",
+      "bytes": 418
+    },
+    "frozen/index.html.txt": {
+      "sha256": "bc6970a491e2f0ef710b667caec5fb83fc4f232b0c7317d4e109b6d5e018ed31",
+      "bytes": 1658
+    },
+    "frozen/assets/index-D7j42fgy.js": {
+      "sha256": "8230c1b018f1add42405541b0bbded330e3fa550dd3e4b46d695fc962b8d8067",
+      "bytes": 592446
+    },
+    "frozen/assets/index-fuS2wX-w.css": {
+      "sha256": "44e607cd04b970eb7d5cb7554348ba3931ceaa4213c0cfa2eb69f9f1677c0b52",
+      "bytes": 3117
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/assets/index-D7j42fgy.js",
+      "frozen/assets/index-fuS2wX-w.css"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

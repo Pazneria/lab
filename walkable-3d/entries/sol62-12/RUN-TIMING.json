@@ -1,0 +1,30 @@
+{
+  "requestedModel": "GPT-6.2 Sol",
+  "requestedEffort": "XHIGH",
+  "requestedService": "Standard",
+  "conservativeCutoffUtc": "2026-11-18T01:30:42Z",
+  "firstImplementationUtc": "2026-11-18T00:31:25.674Z",
+  "deadlineUtc": "2026-11-18T01:31:25.674Z",
+  "scene": "SceneBench 2026-11-17, scene 12",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-12",
+  "actualStopUtc": "2026-11-18T01:19:27.175Z",
+  "servingMetadata": {
+    "genericModelFamily": "GPT-6",
+    "exactModel": null,
+    "reasoningEffort": null,
+    "serviceTier": null
+  },
+  "interruptionHistory": [
+    "An initial sandbox write was blocked before the first successful implementation. The run resumed with approved writes limited to the specified scene workspace."
+  ],
+  "processCleanup": "All commands returned exit statuses and no background session was started. The process query found no browser, server, test or package process associated with the entry path.",
+  "checks": [
+    "Nine JavaScript modules parsed",
+    "HTTP module MIME type checked without serving",
+    "CPU geometry and collision checks passed",
+    "CPU route and sightline checks passed"
+  ],
+  "suggestedLaunchAddress": "http://127.0.0.1:8712/",
+  "browserOrServerStarted": false,
+  "checksumFile": "SHA256SUMS.txt"
+}

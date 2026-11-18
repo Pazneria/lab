@@ -1,0 +1,75 @@
+{
+  "entry": "SceneBench 2026-11-17 scene 09",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-09",
+  "requested": {
+    "model": "GPT-6.2 Astra",
+    "effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "agent_family": "Codex based on GPT-6",
+    "exact_model": null,
+    "effort": null,
+    "service": null,
+    "note": "Exact serving identity, effort and service tier were not exposed to this run."
+  },
+  "first_implementation": "2026-11-18T00:07:17.4555549+00:00",
+  "deadline": "2026-11-18T01:07:17.4555549+00:00",
+  "interruptions": {
+    "suspensions": 0,
+    "deadline_extensions": 0,
+    "notes": "The clock ran continuously. A sandboxed registry lookup for the CPU shader validator and an OS listener query required approved retries. Both completed."
+  },
+  "build": {
+    "archive": "Kestrel-Bay-09.zip",
+    "bytes": 5673147,
+    "sha256": "d322ff0362c1758496ddf9df55cfdfd7dab7df6f95a2fd065eaaf1435fb3fab4",
+    "byte_verified_members": 39,
+    "entry_point": "index.html",
+    "manifest": "MANIFEST.sha256"
+  },
+  "static_checks": {
+    "geometryBatches": 49,
+    "vertices": 289413,
+    "triangles": 220520,
+    "printedLegends": 25,
+    "collisionBoxes": 69,
+    "distinctTreadHeights": 16,
+    "riseM": 0.1575,
+    "treadM": 0.32,
+    "galleryEyeM": 4.155,
+    "runtimeModules": 12,
+    "checks": [
+      "runtime import closure",
+      "HTML control references",
+      "packed assets",
+      "index and attribute bounds",
+      "shader include expansion",
+      "inspection route geometry",
+      "stair ascent and descent",
+      "lower gallery clearance",
+      "rail and obstruction blocking",
+      "reset pose"
+    ]
+  },
+  "syntax": {
+    "javascript_files_passed": 22,
+    "glsl_es_300_material_pairs_passed": 4,
+    "glsl_validator": "glslang 11.7.0, standalone CPU check with an alias for the unused Three.js average helper"
+  },
+  "deferred": [
+    "Browser launch",
+    "Visual and interactive review",
+    "GPU and frame-time measurement"
+  ],
+  "cleanup": "All entry-owned finite commands exited. No server, browser, watcher, GPU test or benchmark was started. Temporary compiler and npm installation folders were removed. No unrelated process was terminated.",
+  "suggested_address": "http://127.0.0.1:49109/",
+  "port_check": "No listener on 49109 at 2026-11-18T00:44:09.6631421+00:00. No port was bound.",
+  "limitations": [
+    "Desktop WebGL 2 with keyboard and mouse",
+    "Simplified collision volumes for major obstructions",
+    "Browser behavior and performance await independent judging"
+  ],
+  "actual_stop": "2026-11-18T00:50:18.038695+00:00",
+  "elapsed_seconds": 2580.583141
+}

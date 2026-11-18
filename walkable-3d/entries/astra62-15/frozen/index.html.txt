@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#222e2b">
+  <title>The Hushwing Post · Mara's quarters</title>
+  <link rel="stylesheet" href="./scene.css">
+</head>
+<body>
+  <main id="rooms" aria-label="Explore the private rooms of Mara Venn, night-route surveyor">
+    <canvas id="view" tabindex="0" aria-label="First-person 3D interior. Click to look around. Move with WASD."></canvas>
+    <div id="veil"></div>
+    <section id="plate" aria-label="Scene controls">
+      <div class="eyebrow"><span class="rule"></span>PRIVATE QUARTERS <span class="dot">◆</span> ALDER FELL</div>
+      <h1>The Hushwing Post</h1>
+      <p>Mara Venn, surveyor of the night routes</p>
+      <div class="actions"><button id="enter" disabled>Preparing rooms…</button><button id="reset" aria-label="Reset to the entrance">Reset</button></div>
+      <div class="legend"><b>W A S D</b> walk <i>·</i> <b>Mouse</b> look <i>·</i> <b>R</b> return <i>·</i> <b>Esc</b> release</div>
+    </section>
+    <div id="hint">WASD to walk <span>·</span> Mouse to look <span>·</span> R to return <span>·</span> Esc to release</div>
+    <button id="touchReset" aria-label="Reset view">↺</button>
+    <div id="stick" aria-hidden="true"><div></div></div>
+    <div id="error" role="alert" hidden></div>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

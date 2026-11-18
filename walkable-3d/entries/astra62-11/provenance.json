@@ -1,0 +1,348 @@
+{
+  "entry": "astra62-11",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-11\\source-preservation.zip",
+  "archiveSha256": "1e0bc31346e827e9a64ad050b3889933cf7edad9c71b3322ba2fb5fd866c2ee1",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/brushing-3.png": "assets/brushing-3.png",
+      "frozen/assets/contact-7.png": "assets/contact-7.png",
+      "frozen/assets/floor-0.png": "assets/floor-0.png",
+      "frozen/assets/graphic0-4.png": "assets/graphic0-4.png",
+      "frozen/assets/graphic1-5.png": "assets/graphic1-5.png",
+      "frozen/assets/graphic2-6.png": "assets/graphic2-6.png",
+      "frozen/assets/graphic3-9.png": "assets/graphic3-9.png",
+      "frozen/assets/laminate-8.png": "assets/laminate-8.png",
+      "frozen/assets/matte-1.png": "assets/matte-1.png",
+      "frozen/assets/metal-2.png": "assets/metal-2.png",
+      "frozen/assets/scene.json": "assets/scene.json",
+      "frozen/assets/world.bin.gz": "assets/world.bin.gz",
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/fabrication.js": "src/fabrication.js",
+      "frozen/src/graphics.js": "src/graphics.js",
+      "frozen/src/hall.js": "src/hall.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/navigation.js": "src/navigation.js",
+      "frozen/src/rendering.js": "src/rendering.js",
+      "frozen/src/scanner.js": "src/scanner.js",
+      "frozen/src/stations.js": "src/stations.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three.core.min.js": "vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "README.md": "README.md",
+      "RUN.json": "RUN.json",
+      "licenses/vendor/LICENSE": "vendor/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "build.mjs": {
+        "sha256": "f683b539d3a63502af23fce3d77d07695695906f482d784b2cca319f60c5dcb5",
+        "bytes": 4878
+      },
+      "Fieldwork-Scene11.zip": {
+        "sha256": "7243c775aedf3ccba771beeed0a807317fa004b390cbc72728136afe1832de6d",
+        "bytes": 3583778
+      },
+      "index.html": {
+        "sha256": "c644e87858b8d8c16b25c563b77e9cfc1a44c86bfb3570d9c255054d53e3a1ec",
+        "bytes": 3211
+      },
+      "package-lock.json": {
+        "sha256": "2899760381858828089af38738587e66c08901722723d56139d724a3e6e13354",
+        "bytes": 7173
+      },
+      "package.json": {
+        "sha256": "40d89b319f146230872e9e2be50fb109d4e7f808fc52fc348e268f094d3be651",
+        "bytes": 267
+      },
+      "README.md": {
+        "sha256": "4ada81451dc8d15edc85fc7a278d576181b9c4dd1405c284e41f6c3571e21bd1",
+        "bytes": 3829
+      },
+      "RUN.json": {
+        "sha256": "a01764cd1dfc6926b36c91ba84d43840f7433c3d61e4a5b00db90d2c1100e81e",
+        "bytes": 2581
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "b6197292adac0f9ee04b547e64e4e47cfd307e6ddaa9d85ff9137c1195b5baf0",
+        "bytes": 2587
+      },
+      "style.css": {
+        "sha256": "a450c6954553e4e94b806a70b7c12a6ea45a3e6d9a2673ebdd18bc1c8ea468dd",
+        "bytes": 5841
+      },
+      "verify.mjs": {
+        "sha256": "73ba2333704c90b9b6a217bb18f752f0e067dab535faa7f3a879a6a51c84308f",
+        "bytes": 4947
+      },
+      "vendor/LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.core.min.js": {
+        "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+        "bytes": 381124
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+        "bytes": 338908
+      },
+      "src/bake-light.js": {
+        "sha256": "1510e3c19de7fa53e75b424738bda9662204b9385fa9255ef9c1dd8d0be351d3",
+        "bytes": 3292
+      },
+      "src/fabrication.js": {
+        "sha256": "9e510ec38a80de80b729d48ade1019d6b9824f9a62c471f82c032b4f3ec6afc1",
+        "bytes": 13384
+      },
+      "src/graphics.js": {
+        "sha256": "1d25ba44dfa820721b0efb800ea98ee20927cc73788bbbe339bb6b269b5ee576",
+        "bytes": 8877
+      },
+      "src/hall.js": {
+        "sha256": "169402217a443110090e040cbad476da51564d55a6258715a8320b349db5b209",
+        "bytes": 14776
+      },
+      "src/main.js": {
+        "sha256": "08be5feb98ed476a3ca598d7b224b59bab7632aff9c0f51fe8a88db42e31be9d",
+        "bytes": 8301
+      },
+      "src/navigation.js": {
+        "sha256": "993157d97fe99f1c258c03ef560d15cfc01cdccba164ff48b2e8f33aad50142e",
+        "bytes": 1790
+      },
+      "src/rendering.js": {
+        "sha256": "4278afb6117667262d84c701dd673e6d39518d2716a7c27fe0d21a3f6b9432ac",
+        "bytes": 6500
+      },
+      "src/scanner.js": {
+        "sha256": "168ffdbc2d5637139d723488d619db49f690547531ffcccfaf8b2ffa9ec5b895",
+        "bytes": 14880
+      },
+      "src/stations.js": {
+        "sha256": "88bb1c8d8a5efc1abf9754cc05a16f21c417f0f7cc09be947f448c3e5d0c882f",
+        "bytes": 21074
+      },
+      "assets/brushing-3.png": {
+        "sha256": "3b4b23e2c3e86e04a143a191909824620b3cae6766be4e1516227f63e3dcae04",
+        "bytes": 65138
+      },
+      "assets/contact-7.png": {
+        "sha256": "adcb40a2bf0ae8a91d150d80bd7780ecfd4db058edd3a11abb48c614d184b97f",
+        "bytes": 12609
+      },
+      "assets/floor-0.png": {
+        "sha256": "5609794f99a4a7d3dbe77a386b8c3a74475e743a2ed64c736f02ffc3166a284a",
+        "bytes": 74373
+      },
+      "assets/graphic0-4.png": {
+        "sha256": "f0995bbf5ecce10ac5ab3f72165438004d2dfd342459b29106124a43d8ecafba",
+        "bytes": 218503
+      },
+      "assets/graphic1-5.png": {
+        "sha256": "9869702e69ca544bccc0bdda0ff754423b46cd52614323093dfe4ed08abf72d1",
+        "bytes": 341580
+      },
+      "assets/graphic2-6.png": {
+        "sha256": "d96e015b012274c17e76cf526c136b5cf0dcd1690456d90ca4ba7ed957d14676",
+        "bytes": 363706
+      },
+      "assets/graphic3-9.png": {
+        "sha256": "ab64e283506ab8935c0470f7bbffcb5ca77b94538b442cfe51c921ba7b8efcfa",
+        "bytes": 53721
+      },
+      "assets/laminate-8.png": {
+        "sha256": "97ff4b0db0e63d9de4b532493664b9fed5ac526df4501d660fdcb43380d9b41f",
+        "bytes": 58060
+      },
+      "assets/matte-1.png": {
+        "sha256": "ea5b9d03186e0a21037ccfa1169a86e878e4a6ad3d8859b7530e6cc5d9fd84e2",
+        "bytes": 56129
+      },
+      "assets/metal-2.png": {
+        "sha256": "7fa4dbd9d62da44937b8cb8184cc6f7220d654110b9ad569ccf33a53e9c6296e",
+        "bytes": 55500
+      },
+      "assets/scene.json": {
+        "sha256": "4d9838d6d625582525ad3c383a7e87b73ca627f481773fa36023a7999df509c2",
+        "bytes": 15584
+      },
+      "assets/world.bin.gz": {
+        "sha256": "e4dd756eb3300efc42cfff1d0a2f041471fd0de8271f313308b90a938edf4522",
+        "bytes": 2300886
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-11\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "46812cb1325c96008737d9bb3c1bd6e3428883ce19639ec091d2e34f246e1a65",
+      "bytes": 1261
+    },
+    "launch-prompt.txt": {
+      "sha256": "f820cf9e7d3549318ae1f2f367239dba92af12c653f0514e56d08b861c55d4e9",
+      "bytes": 7738
+    },
+    "README.md": {
+      "sha256": "4ada81451dc8d15edc85fc7a278d576181b9c4dd1405c284e41f6c3571e21bd1",
+      "bytes": 3829
+    },
+    "RUN.json": {
+      "sha256": "a01764cd1dfc6926b36c91ba84d43840f7433c3d61e4a5b00db90d2c1100e81e",
+      "bytes": 2581
+    },
+    "source-audit.json": {
+      "sha256": "104f4bacffe848d61ab5cb48797bd546290b2ce293cd496e414d1e1f64bc7026",
+      "bytes": 410
+    },
+    "frozen/index.html.txt": {
+      "sha256": "c644e87858b8d8c16b25c563b77e9cfc1a44c86bfb3570d9c255054d53e3a1ec",
+      "bytes": 3211
+    },
+    "frozen/style.css": {
+      "sha256": "a450c6954553e4e94b806a70b7c12a6ea45a3e6d9a2673ebdd18bc1c8ea468dd",
+      "bytes": 5841
+    },
+    "licenses/vendor/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/assets/brushing-3.png": {
+      "sha256": "3b4b23e2c3e86e04a143a191909824620b3cae6766be4e1516227f63e3dcae04",
+      "bytes": 65138
+    },
+    "frozen/assets/contact-7.png": {
+      "sha256": "adcb40a2bf0ae8a91d150d80bd7780ecfd4db058edd3a11abb48c614d184b97f",
+      "bytes": 12609
+    },
+    "frozen/assets/floor-0.png": {
+      "sha256": "5609794f99a4a7d3dbe77a386b8c3a74475e743a2ed64c736f02ffc3166a284a",
+      "bytes": 74373
+    },
+    "frozen/assets/graphic0-4.png": {
+      "sha256": "f0995bbf5ecce10ac5ab3f72165438004d2dfd342459b29106124a43d8ecafba",
+      "bytes": 218503
+    },
+    "frozen/assets/graphic1-5.png": {
+      "sha256": "9869702e69ca544bccc0bdda0ff754423b46cd52614323093dfe4ed08abf72d1",
+      "bytes": 341580
+    },
+    "frozen/assets/graphic2-6.png": {
+      "sha256": "d96e015b012274c17e76cf526c136b5cf0dcd1690456d90ca4ba7ed957d14676",
+      "bytes": 363706
+    },
+    "frozen/assets/graphic3-9.png": {
+      "sha256": "ab64e283506ab8935c0470f7bbffcb5ca77b94538b442cfe51c921ba7b8efcfa",
+      "bytes": 53721
+    },
+    "frozen/assets/laminate-8.png": {
+      "sha256": "97ff4b0db0e63d9de4b532493664b9fed5ac526df4501d660fdcb43380d9b41f",
+      "bytes": 58060
+    },
+    "frozen/assets/matte-1.png": {
+      "sha256": "ea5b9d03186e0a21037ccfa1169a86e878e4a6ad3d8859b7530e6cc5d9fd84e2",
+      "bytes": 56129
+    },
+    "frozen/assets/metal-2.png": {
+      "sha256": "7fa4dbd9d62da44937b8cb8184cc6f7220d654110b9ad569ccf33a53e9c6296e",
+      "bytes": 55500
+    },
+    "frozen/assets/scene.json": {
+      "sha256": "4d9838d6d625582525ad3c383a7e87b73ca627f481773fa36023a7999df509c2",
+      "bytes": 15584
+    },
+    "frozen/assets/world.bin.gz": {
+      "sha256": "e4dd756eb3300efc42cfff1d0a2f041471fd0de8271f313308b90a938edf4522",
+      "bytes": 2300886
+    },
+    "frozen/src/fabrication.js": {
+      "sha256": "9e510ec38a80de80b729d48ade1019d6b9824f9a62c471f82c032b4f3ec6afc1",
+      "bytes": 13384
+    },
+    "frozen/src/graphics.js": {
+      "sha256": "1d25ba44dfa820721b0efb800ea98ee20927cc73788bbbe339bb6b269b5ee576",
+      "bytes": 8877
+    },
+    "frozen/src/hall.js": {
+      "sha256": "169402217a443110090e040cbad476da51564d55a6258715a8320b349db5b209",
+      "bytes": 14776
+    },
+    "frozen/src/main.js": {
+      "sha256": "08be5feb98ed476a3ca598d7b224b59bab7632aff9c0f51fe8a88db42e31be9d",
+      "bytes": 8301
+    },
+    "frozen/src/navigation.js": {
+      "sha256": "993157d97fe99f1c258c03ef560d15cfc01cdccba164ff48b2e8f33aad50142e",
+      "bytes": 1790
+    },
+    "frozen/src/rendering.js": {
+      "sha256": "4278afb6117667262d84c701dd673e6d39518d2716a7c27fe0d21a3f6b9432ac",
+      "bytes": 6500
+    },
+    "frozen/src/scanner.js": {
+      "sha256": "168ffdbc2d5637139d723488d619db49f690547531ffcccfaf8b2ffa9ec5b895",
+      "bytes": 14880
+    },
+    "frozen/src/stations.js": {
+      "sha256": "88bb1c8d8a5efc1abf9754cc05a16f21c417f0f7cc09be947f448c3e5d0c882f",
+      "bytes": 21074
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "61ba0df005b05991361d040d8ff670e1aadfd0ce7aeebd1fdb0725957a8957de",
+      "bytes": 381124
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
+      "bytes": 338908
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN.json",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "licenses/vendor/LICENSE",
+      "frozen/assets/brushing-3.png",
+      "frozen/assets/contact-7.png",
+      "frozen/assets/floor-0.png",
+      "frozen/assets/graphic0-4.png",
+      "frozen/assets/graphic1-5.png",
+      "frozen/assets/graphic2-6.png",
+      "frozen/assets/graphic3-9.png",
+      "frozen/assets/laminate-8.png",
+      "frozen/assets/matte-1.png",
+      "frozen/assets/metal-2.png",
+      "frozen/assets/scene.json",
+      "frozen/assets/world.bin.gz",
+      "frozen/src/fabrication.js",
+      "frozen/src/graphics.js",
+      "frozen/src/hall.js",
+      "frozen/src/main.js",
+      "frozen/src/navigation.js",
+      "frozen/src/rendering.js",
+      "frozen/src/scanner.js",
+      "frozen/src/stations.js",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

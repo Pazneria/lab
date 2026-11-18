@@ -1,0 +1,61 @@
+{
+  "benchmark": "SceneBench 2026-11-17",
+  "scene": 10,
+  "title": "Alderwick Hill Library",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-10",
+  "workspace_verified_before_implementation": true,
+  "requested": {
+    "model": "GPT-6.2 Astra",
+    "reasoning_effort": "XHIGH",
+    "service": "Standard"
+  },
+  "exposed_serving_metadata": {
+    "agent_description": "Codex, based on GPT-6",
+    "exact_model": null,
+    "reasoning_effort": null,
+    "service": null,
+    "note": "Exact serving model, effort and tier were not exposed in the run context."
+  },
+  "timing": {
+    "first_implementation_utc": "2026-11-18T00:06:27.5836621+00:00",
+    "first_action": "Post-verification project inventory and toolchain check",
+    "deadline_utc": "2026-11-18T01:06:27.5836621+00:00",
+    "stopped_utc": "2026-11-18T01:00:43.9348872+00:00",
+    "elapsed_seconds": 3256.351,
+    "interruptions": []
+  },
+  "artifact": {
+    "archive": "Alderwick-Hill-Library.zip",
+    "bytes": 6495315,
+    "sha256": "25ff1ad6b2d07d91aba00bfd8e18972a0c8ed0e2a5786b94498f3537bdd2dde4",
+    "contents_manifest": "BUILD.sha256",
+    "members_verified_byte_for_byte": 37
+  },
+  "launch": {
+    "command": "python -m http.server 48910 --bind 127.0.0.1",
+    "suggested_address": "http://127.0.0.1:48910/",
+    "running_preview": false
+  },
+  "checks": {
+    "syntax_modules": 21,
+    "asset_and_import_checks": "passed",
+    "scene_and_package_checks": "passed",
+    "route_segments": 22,
+    "additional_window_and_east_stack_segments": 11,
+    "stair_treads_checked": 21,
+    "sight_lines_checked": 3,
+    "direct_sunlight_path": "passed",
+    "packed_triangle_count": 294622,
+    "packed_vertex_count": 410953,
+    "packed_mesh_batches": 99,
+    "modeled_books": 2726,
+    "static_collision_shapes": 84
+  },
+  "deferred": [
+    "Browser launch and rendering",
+    "Visual inspection",
+    "Interactive playthrough",
+    "GPU tests and frame-time measurements"
+  ],
+  "cleanup": "All entry-owned command and build processes exited. No server, watcher, browser or test process was left running. The downloaded source package archive was removed after extracting the licensed runtime. Proposed port had zero listening sockets at the final check."
+}

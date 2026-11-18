@@ -1,0 +1,73 @@
+{
+  "requested_model": "GPT-6.2 Astra",
+  "requested_effort": "XHIGH",
+  "requested_service": "Standard",
+  "exposed_serving_model": null,
+  "exposed_effort": null,
+  "exposed_service": null,
+  "first_implementation_utc": "2026-11-17T18:07:51.2247048-05:00",
+  "deadline_utc": "2026-11-17T19:07:51.2247048-05:00",
+  "workspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-04",
+  "entry": "SceneBench 2026-11-17 / scene 04 / The Palm House",
+  "exposed_model_family": "GPT-6 (session role description)",
+  "serving_metadata_note": "Exact serving model, reasoning effort and service tier were not independently exposed.",
+  "checks": {
+    "javascript_syntax_files": 14,
+    "local_font_references": 3,
+    "shader_programs_compiled_and_linked_offline": [
+      "opaque",
+      "glass",
+      "shadow",
+      "sky"
+    ],
+    "opaque_triangles": 350402,
+    "glass_triangles": 552,
+    "packed_vertices": 354970,
+    "visibility_groups": 45,
+    "material_layers": 23,
+    "collision_shapes": 18,
+    "route_length_m": 43.07,
+    "route_clearance_samples": 1089,
+    "walking_radius_m": 0.2,
+    "geometry_texture_and_camera_checks": "passed"
+  },
+  "deferred_checks": [
+    "Browser loading and visual inspection",
+    "Interactive movement and pointer capture",
+    "GPU and frame-time measurements"
+  ],
+  "suggested_launch_address": "http://127.0.0.1:41864/",
+  "port_status": "Passive listener inspection found port 41864 free. No server was started.",
+  "interruptions": [
+    "Late optional architecture.js edits to taper the soil edge and reorient the door kick panel were denied by automatic approval review, including the permitted retry. Review interpreted the greenhouse source change as outside authorization to run SceneBench. Neither edit executed. The previously packed and checked geometry was retained. No clock reset or extension."
+  ],
+  "cleanup": "All entry-started shells, CPU builders, syntax checks and GLSL validators exited. Temporary .qa files were removed. No browser, server, watcher or test process remains running for the entry.",
+  "sha256_payload_files": {
+    "architecture.js": "b0d237da3f396e1b2a031f5f7183ee6cfbb779649ed097adc45739364177e3c8",
+    "artwork.js": "65ca6451985860f9cc2b047d17a5e34ee4427ea8b2a7bc71bdf22442d41afc94",
+    "bake-scene.cjs": "1b840e8b2f35bc2db00d426c11e6d702cb126d68a9a561d45f30056b8e4e699b",
+    "bake-surfaces.cjs": "1f2814811292be2b1b2b6f2114e34743b983123dd6b6b2a09d2ae9e833032b47",
+    "baskervville-latin-400-italic.woff2": "12304ed58983cb52e07841bffbb4101204b9d591e630cd75886fd1b5653d3c32",
+    "baskervville-latin-400-normal.woff2": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142",
+    "baskervville-license.txt": "9993ecfed665b8ce0132d725aaeb49f3d4c2532945f0637bd04743b041fe6fdb",
+    "botany.js": "4d20e9ea49447eeba0d9e1316812a967848022f4c7c2d37fd313760e7969ca30",
+    "check-build.cjs": "37b768fc1a4bca3ba86f503e4b69ac6e5183a4da2d7463de70f8618a84bce41b",
+    "fittings.js": "87fb5937fc607ee008c745604927bba5cdcdd0175905bc49d4589ecb7705a5e9",
+    "geometry.js": "e864cc3237970071813c3c304ee8544a4adb23c15e0b6622a0dbfb1b7cb99dff",
+    "index.html": "a6eb4a6a9098a7f58fbfdb42f52b7387e490abd02c9ad04e45b561319cdc21a5",
+    "instrument-sans-latin-400-normal.woff2": "9a91efaa3599a6ef01b2f49e9ec670e3a2f39baeef09c73198f1052cf3bb0850",
+    "instrument-sans-license.txt": "c27a3c53c3beed7f5c26853afa15991478ff7145d3754a36b0382f84e10c0d03",
+    "palm-house.mesh.gz": "d660f73f9479d922ee1e4833931b3dd1f4b727632c1e066020af26691cdbf6c3",
+    "planting.js": "62d3eb0672410d3d90e663bf2345aa82810821bda498f2c65739b6125acd888d",
+    "potting.js": "313257f9865c277a0c08749004fd73266f7628e059afd143c6d90f59e84f0723",
+    "README.md": "ab191ce7e5dcc2b5eccb68c74f7e278fb44a2b2a441bf855e3afb4f93578a588",
+    "renderer.js": "821fb928a1cff993ed6fd3412c2b03d16c709d74375d6654d1c2826546c07de8",
+    "shaders.js": "3e6534b9561ac8fa8b2e587a9bca5afb681172815f9698692e145c889fd45aee",
+    "style.css": "a9d8ee8a3e86ade9755f763f7172d6d074823b94430ffffa63aaac7a83d8e999",
+    "surface-studies.bin.gz": "82923eeba24229be16731a1c0c742ac8c10e9a5b5d6f055e498187078947a622",
+    "visitor.js": "16ff9eebe4d661d1aa4e949d445d5b0420afee01dcfcf1245000161bc9702a0d",
+    "walk.js": "33be7978ec774c31a5c00e64450afd4619c0ddd55985981543ef317896aab795"
+  },
+  "actual_stop_utc": "2026-11-17T23:55:06.3437276+00:00",
+  "elapsed_seconds": 2835.344
+}

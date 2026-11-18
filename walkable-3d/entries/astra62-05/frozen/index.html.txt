@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102433"><title>Isobar 05 · Polar Field Station</title>
+<link rel="stylesheet" href="station.css">
+</head>
+<body>
+<canvas id="view" tabindex="0" aria-label="Explorable three-dimensional polar field station"></canvas>
+<header id="identity"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M2 27 8 22 11 12 17 7 23 6 29 10 29 18 33 22 38 23"/><path d="m2 32 9-6 4-12 5-4 5 2 1 7 5 7 7 2"/><path d="m5 36 10-7 4-12 2-2 2 7 6 8 8 3"/></g></svg><div><div class="eyebrow">Polar field survey</div><h1>Isobar <span>/</span> 05</h1></div></header>
+<div id="bearing" aria-label="Compass"><div id="direction">N</div><div class="scale"></div><output id="degrees">000°</output></div>
+<div id="site"><i></i><span id="zone">Snow apron</span></div>
+<div id="controls"><button id="engage"><i class="mouse"></i><span>Explore station</span><span class="chevron">↗</span></button><div id="keys"><span><kbd>W A S D</kbd> move</span><span><kbd>Mouse</kbd> look</span><span><kbd>R</kbd> reset</span></div></div>
+<div id="actions"><button id="help" title="Controls (H)" aria-label="Show controls">?</button><button id="reset" title="Reset position (R)" aria-label="Reset position">↺</button></div>
+<section id="guide" hidden><button id="dismiss" aria-label="Close controls">×</button><h2>Field controls</h2><dl><dt>Walk</dt><dd>W A S D</dd><dt>Look</dt><dd>Mouse or drag</dd><dt>Turn / tilt</dt><dd>Arrow keys</dd><dt>Walk slowly</dt><dd>Shift</dd><dt>Return to apron</dt><dd>R</dd><dt>Show controls</dt><dd>H</dd><dt>Release mouse</dt><dd>Esc</dd></dl></section>
+<div id="crosshair"></div><div id="error" hidden></div>
+<script src="geometry.js"></script>
+<script src="atlas.js"></script>
+<script src="landscape.js"></script>
+<script src="shelter.js"></script>
+<script src="interior.js"></script>
+<script src="fieldgear.js"></script>
+<script src="shaders.js"></script>
+<script src="render.js"></script>
+<script src="walk.js"></script>
+</body></html>

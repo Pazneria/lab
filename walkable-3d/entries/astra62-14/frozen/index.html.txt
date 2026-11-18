@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#25362e"><title>Marl Yard — Stoneware Works</title>
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+<canvas id="view" tabindex="0" aria-label="Walk through Marl Yard, an explorable three-dimensional pottery studio"></canvas>
+<header class="identity">
+<svg class="seal" width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="1" y="1" width="42" height="42" rx="4" fill="#ba5b3d"/><g fill="none" stroke="#f6ecd6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 28V13l7 9 5-9 6 9 6-9v15M10 31h24"/><path d="M17 26h10"/></g></svg>
+<div><h1>Marl Yard</h1><div class="sub">STONEWARE WORKS</div></div>
+</header>
+<div class="actions"><button type="button" id="help" title="Controls (H)" aria-label="Show controls" aria-expanded="false">?</button><button type="button" id="reset" title="Return to entrance (R)" aria-label="Reset to entrance"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10a8 8 0 1 1 .9 6M4 4v6h6"/></svg></button></div>
+<aside id="guide" hidden><div class="guideTitle">Workshop controls</div><dl><dt>Walk</dt><dd>W A S D</dd><dt>Walk faster</dt><dd>Hold Shift</dd><dt>Look</dt><dd>Mouse · arrow keys</dd><dt>Release mouse</dt><dd>Esc</dd><dt>Return to entrance</dt><dd>R</dd><dt>Show controls</dt><dd>H</dd></dl><p>Click the scene to capture the mouse, or drag to look around.</p></aside>
+<div id="cross" hidden></div>
+<footer><div class="place"><span class="placeIndex" id="zoneNo">01</span><span id="zone">Throwing room</span></div><button id="enter" type="button"><span class="mouseIcon"></span><span id="entryText">Preparing workshop…</span></button></footer>
+<div id="error" hidden role="alert"></div>
+<script defer src="workshop.pack.js"></script><script defer src="surfaces.pack.js"></script><script defer src="lettering.js"></script><script defer src="render.js"></script><script defer src="walk.js"></script>
+</body></html>

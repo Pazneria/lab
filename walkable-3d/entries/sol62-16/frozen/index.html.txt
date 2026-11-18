@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191e18">
+  <title>The Bramble &amp; Kettle</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <main id="view" aria-label="First-person cottage scene" data-mode="loading">
+    <canvas id="world" aria-label="The Bramble and Kettle cottage"></canvas>
+    <div id="vignette" aria-hidden="true"></div>
+    <div id="crosshair" aria-hidden="true"></div>
+    <aside id="welcome">
+      <div class="rule" aria-hidden="true"></div>
+      <h1>The Bramble<br>&amp; Kettle</h1>
+      <button id="enter" type="button" disabled>Preparing cottage…</button>
+      <p id="hint">A first-person walk through the cottage</p>
+    </aside>
+    <div id="hud" aria-label="Room and controls">
+      <span id="room">Kitchen</span>
+      <span id="mini"><kbd>H</kbd> Controls</span>
+    </div>
+    <aside id="help" hidden aria-label="Controls">
+      <h2>Controls</h2>
+      <dl>
+        <div><dt>Walk</dt><dd><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrows</dd></div>
+        <div><dt>Look</dt><dd id="look-help">Mouse</dd></div>
+        <div><dt>Walk faster</dt><dd><kbd>Shift</kbd></dd></div>
+        <div><dt>Return to entrance</dt><dd><kbd>R</kbd></dd></div>
+        <div><dt>Toggle controls</dt><dd><kbd>H</kbd></dd></div>
+        <div><dt>Pause</dt><dd><kbd>Esc</kbd></dd></div>
+      </dl>
+    </aside>
+    <noscript>This scene needs JavaScript and WebGL 2.</noscript>
+  </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "entry": "SceneBench 2026-11-17 / scene 14",
+  "requestedModel": "GPT-6.2 Astra",
+  "requestedEffort": "XHIGH",
+  "requestedService": "Standard",
+  "exposedServingMetadata": "Codex, GPT-6 family. Exact serving model, effort and tier are not exposed.",
+  "firstImplementationUTC": "2026-11-18T01:04:34.1292595Z",
+  "firstAction": "Entry directory inventory and local runtime checks after the exact working-directory check.",
+  "deadlineUTC": "2026-11-18T02:04:34.1292595Z",
+  "interruptions": [
+    "The sandbox blocked the initial run-record write. Scoped write approval allowed work to continue in the designated directory. A read-only port check also required scoped access. The original clock continued throughout."
+  ],
+  "workspaceVerified": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\astra\\scene-14",
+  "checks": [
+    "Non-serving geometry and material builds completed.",
+    "JavaScript and Python source syntax passed.",
+    "Packed bounds, indices, materials, sign references and winding checked.",
+    "31 static route segments cleared 35 colliders with 0.113 m minimum clearance beyond player radius.",
+    "All eight ZIP entries matched the original bytes.",
+    "Single-port listener query found 0 listeners on 49174."
+  ],
+  "deferredChecks": [
+    "Browser loading and visual appearance",
+    "Interactive movement and mouse capture",
+    "GPU shader compilation",
+    "Frame-time performance"
+  ],
+  "cleanup": "All one-shot shell, Python and Node jobs exited. No server, watcher, browser, renderer or benchmark process was launched.",
+  "archiveSHA256": "1cd1bb33011a1cc77ed0d1c2861489aeaa60cbb9dc409edccf97ffa3d5e772d6",
+  "stopUTC": "2026-11-18T01:59:36.7722755Z",
+  "elapsedSeconds": 3302.643
+}

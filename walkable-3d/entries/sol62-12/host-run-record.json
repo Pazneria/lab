@@ -1,0 +1,28 @@
+{
+  "id": "sol62-12",
+  "scene": 12,
+  "sourceWorkspace": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-12",
+  "requestedModel": "gpt-6.2-sol",
+  "requestedEffort": "xhigh",
+  "requestedService": "default/standard",
+  "verifiedBackendModel": null,
+  "effectiveEffort": null,
+  "effectiveServiceTier": null,
+  "completionClearedByParent": true,
+  "timingCaveat": "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp.",
+  "independentlyVerifiedTiming": false,
+  "firstImplementationUtc": null,
+  "deadlineUtc": null,
+  "stopUtc": null,
+  "timingAuthority": "Original source records and parent completion/caveat disclosures only; no inferred deadline compliance.",
+  "qa": {
+    "static": "Frozen hashes, source mapping and initial runtime closure assembled; release review pending.",
+    "visual": "NOT RUN",
+    "interactive": "NOT RUN",
+    "gpu": "NOT RUN",
+    "performance": "NOT RUN",
+    "preview": "UNCAPTURED"
+  },
+  "generationSeparation": "No entrant coaching, edits, repairs, rebuilds or post-deadline fixes. Active entrants never inspected.",
+  "releaseGate": "DRAFT/STAGED: browser validation waits for active generation or separate safe environment; matching current v13 service source access also required without creating credentials."
+}

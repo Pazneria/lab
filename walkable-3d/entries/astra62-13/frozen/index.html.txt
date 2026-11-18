@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#233237">
+<title>Nordgrat — Bergstation 2148</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;background:#899da2;color:#f6f3e8;font-family:"Segoe UI",Arial,sans-serif}#view{display:block;width:100%;height:100%;outline:0;touch-action:none}body.play #view{cursor:none}
+#mast{position:fixed;left:25px;top:22px;display:flex;align-items:center;gap:11px;pointer-events:none;text-shadow:0 1px 5px #17242899}.mark{width:34px;height:35px;fill:none;stroke:#fbf6e7;stroke-width:2}.name{font-size:15px;font-weight:780;letter-spacing:2px;line-height:1.1}.sub{font-size:9px;letter-spacing:2.1px;font-weight:650;opacity:.85;margin-top:5px}
+#hud{position:fixed;bottom:22px;left:24px;display:flex;align-items:center;gap:14px;max-width:calc(100% - 48px);padding:10px 12px;background:#15252be0;border:1px solid #d2dfd52b;border-radius:6px;box-shadow:0 3px 20px #00141826;color:#eeeee6;font-size:12px;user-select:none}button{appearance:none;border:0;cursor:pointer;background:#e9bd67;color:#1b2424;font:700 12px "Segoe UI",sans-serif;border-radius:3px;padding:8px 12px}button:focus-visible{outline:2px solid white;outline-offset:3px}#reset{background:#d6e1df12;color:#e6ece7;border:1px solid #c7d8d52e;padding:6px 9px}.keys{color:#bfcac8;font-size:11px;line-height:1.6}.keys b{font-weight:650;color:white}body.play #hud{opacity:0;pointer-events:none}#dot{position:fixed;left:50%;top:50%;width:3px;height:3px;transform:translate(-50%,-50%);border-radius:100%;background:#f7f7eaaa;box-shadow:0 0 3px #162423;display:none;pointer-events:none}body.play #dot{display:block}
+#status{position:fixed;inset:0;display:grid;place-content:center;text-align:center;padding:24px;background:#23383c;z-index:3;color:#f3e9cd;font-size:15px;letter-spacing:.5px}#status[hidden]{display:none}@media(max-width:680px){#hud{flex-wrap:wrap;gap:6px 10px;bottom:12px;left:12px}#mast{top:15px;left:15px}.keys{font-size:10px}}
+</style>
+</head>
+<body>
+<canvas id="view" tabindex="0" aria-label="Explorable Nordgrat mountain cable-car station"></canvas>
+<div id="mast" aria-hidden="true"><svg class="mark" viewBox="0 0 36 36"><path d="M2 28 12 9l6 10 6-13 10 22H2Zm6-1L15 15m9-8-2 14 4-3 5 9"/></svg><div><div class="name">NORDGRAT</div><div class="sub">BERGSTATION &nbsp; / &nbsp; 2148 M</div></div></div>
+<div id="hud"><button id="enter">Enter station</button><span class="keys"><b>WASD</b> walk &nbsp; <b>Mouse</b> look &nbsp; <b>Esc</b> release &nbsp; <b>R</b> reset</span><button id="reset" title="Return to the entrance">Reset</button></div>
+<div id="dot"></div><div id="status">Opening Nordgrat station…</div>
+<script src="light-data.js"></script><script src="weather-data.js"></script><script src="material-data.js"></script><script src="geometry.js"></script><script src="surfaces.js"></script><script src="graphics.js"></script><script src="scenery.js"></script><script src="station.js"></script><script src="machinery.js"></script><script src="cabin.js"></script><script src="navigation.js"></script><script src="main.js"></script>
+</body></html>

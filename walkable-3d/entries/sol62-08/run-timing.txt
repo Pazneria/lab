@@ -1,0 +1,10 @@
+SceneBench 2026-11-17 | Scene 08 | Low Water
+Requested serving settings: GPT-6.2 Sol / XHIGH / Standard
+Exposed serving metadata: GPT-6 family only. Exact model, effort, and service tier unavailable.
+First successful implementation action: 2026-11-17 23:46:35.634 +00:00
+Deadline: 2026-11-18 00:46:35.634 +00:00
+Actual stop: 2026-11-18 00:19:27.059 +00:00
+Interruptions: Initial sandbox write denial resolved by scoped escalation. No paused work period or deadline extension.
+Cleanup: All local command processes exited. Registry archive removed. No server, browser, watcher, renderer, or benchmark was started.
+Checks: 13 JavaScript modules passed syntax checks. CPU-only assembly and sampled collision routes passed. Suggested port 43808 had no listener when checked.
+Pending for separate judging: Browser runtime, visual inspection, interactive controls, and frame times.

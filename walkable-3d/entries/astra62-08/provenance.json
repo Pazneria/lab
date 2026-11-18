@@ -1,0 +1,260 @@
+{
+  "entry": "astra62-08",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-08\\source-preservation.zip",
+  "archiveSha256": "9e103c145684f24d4c04d13eae3fee10492746bab914549791b1db02ec94310d",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/details.js": "details.js",
+      "frozen/fittings.js": "fittings.js",
+      "frozen/geometry.js": "geometry.js",
+      "frozen/index.html.txt": "index.html",
+      "frozen/inlet.js": "inlet.js",
+      "frozen/lettering.js": "lettering.js",
+      "frozen/materials.js": "materials.js",
+      "frozen/navigation.js": "navigation.js",
+      "frozen/renderer.js": "renderer.js",
+      "frozen/shaders.js": "shaders.js",
+      "frozen/strand.js": "strand.js",
+      "frozen/style.css": "style.css",
+      "frozen/walk.js": "walk.js",
+      "frozen/wharf.js": "wharf.js",
+      "frozen/workshop.js": "workshop.js",
+      "frozen/world.js": "world.js",
+      "frozen/wren.js": "wren.js",
+      "README.md": "README.md",
+      "RUN.json": "RUN.json"
+    },
+    "perFileSourceHashes": {
+      "build.cjs": {
+        "sha256": "b0f5f1a879a582c4b5b9ece102c1b58c69c432f0402463579d265c35a0a0665a",
+        "bytes": 7143
+      },
+      "details.js": {
+        "sha256": "882be247f708d4015d9afc7c27caea444228b9eec62f8a9bdd7db8a8a6187d3a",
+        "bytes": 6596
+      },
+      "fittings.js": {
+        "sha256": "fe00d708b938ad9174b6c8dc2bcd6b0921d8f349bbe73fab94feaec76988a420",
+        "bytes": 14062
+      },
+      "geometry.js": {
+        "sha256": "0ca467cee87f7e7adde0f2f96644511de6a17d072dbc4256ec5ab88d85d3b0cc",
+        "bytes": 7935
+      },
+      "index.html": {
+        "sha256": "b4d140187f3bc8c27fa094767ea7d45b3ebbfd3d9d323402a236b0d1e1d6d992",
+        "bytes": 16170937
+      },
+      "inlet.js": {
+        "sha256": "7d05ee8e67a839462b5791fb200e4444b2f1c57f649e9e003e8ca430cddc084e",
+        "bytes": 8419
+      },
+      "lettering.js": {
+        "sha256": "7533f575c37b6ebb8ecb4b5da06cad518fbb6540bf06b3b48097e0124ac2241b",
+        "bytes": 6021
+      },
+      "make-materials.cjs": {
+        "sha256": "5297f8a9537c0e1f2de2271cf67910457f87e6b38a7587154bfe9d90949d5996",
+        "bytes": 4866
+      },
+      "materials.js": {
+        "sha256": "d23366e88007cdef59f7359edbe2c5d1b6e2a7bb3b68a7aec139bca3b0f57230",
+        "bytes": 6515418
+      },
+      "navigation.js": {
+        "sha256": "e306bd948fe49d7b6e94d072893ed0e5db398819b16f9595f2b653e6e2e48203",
+        "bytes": 3485
+      },
+      "package.cjs": {
+        "sha256": "a52543f9d934b3c2d320a866afa24535ffffcbbb20ef5aa68bbbb9eb0b6f30a1",
+        "bytes": 832
+      },
+      "page.template.html": {
+        "sha256": "3ea7be9c4bbb18fccbba5961685d39018c24e25f2c348f2b6580d36d293f8def",
+        "bytes": 2543
+      },
+      "README.md": {
+        "sha256": "32556213f3da7b791b87ee3744ea9e488c02c195203eed00d2ee789ae1684f12",
+        "bytes": 2491
+      },
+      "renderer.js": {
+        "sha256": "8472e5148cc02207c4051cc752e10e31105e78c7b387d12495c659ee95503b30",
+        "bytes": 12469
+      },
+      "RUN.json": {
+        "sha256": "14f94937992c1b0d8f7b64a8af8991ad6f84e00ecd92e799f391267ab01a6f73",
+        "bytes": 1680
+      },
+      "shaders.js": {
+        "sha256": "4602b4efdfa5483f54e4302679f0605dd156692f49e54d9d936f108d0df79e4d",
+        "bytes": 12311
+      },
+      "strand.js": {
+        "sha256": "9aa7c3152f8fb2455e8f3e018d06489eda761098938f3b77ca4b78063b501200",
+        "bytes": 3490
+      },
+      "style.css": {
+        "sha256": "e2cba14eea5aa5840ceae86ae5358e074e05b77a000142b298d0eec483958f26",
+        "bytes": 4613
+      },
+      "verify.cjs": {
+        "sha256": "861bb2f58cbc0a397112d344ed5c67813e5efa3ba0a19a033162d0f2e68ed15d",
+        "bytes": 5526
+      },
+      "walk.js": {
+        "sha256": "84f2c1dd9647e3a7ff8b96e519d5541802b1c6f29df8ffef2c8ebab1f6a793dd",
+        "bytes": 7770
+      },
+      "wharf.js": {
+        "sha256": "8c4b972f20d880008e2c61e05bb6ddd4a300091edaf9feff415397846adfd4ce",
+        "bytes": 8171
+      },
+      "workshop.js": {
+        "sha256": "f578f86fa93b0504fdcaedac5c4b0744a520e16585604653c18df1450943247f",
+        "bytes": 11184
+      },
+      "world.js": {
+        "sha256": "422dbe9f6cbeb8a4db7180cf9c06d2da4179b0e29168f41f66ef796c72b590d1",
+        "bytes": 9573080
+      },
+      "wren.js": {
+        "sha256": "00e58a4bc7c9a50b46ab76380bdd1b18f6403a0ad0bd0206a75bfe80fde9ad81",
+        "bytes": 9134
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-08\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "85027d8e18746314c3d0d2de737515be1087b85df498fae91976cb7684e5e876",
+      "bytes": 1260
+    },
+    "launch-prompt.txt": {
+      "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
+      "bytes": 6967
+    },
+    "README.md": {
+      "sha256": "32556213f3da7b791b87ee3744ea9e488c02c195203eed00d2ee789ae1684f12",
+      "bytes": 2491
+    },
+    "RUN.json": {
+      "sha256": "14f94937992c1b0d8f7b64a8af8991ad6f84e00ecd92e799f391267ab01a6f73",
+      "bytes": 1680
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/details.js": {
+      "sha256": "882be247f708d4015d9afc7c27caea444228b9eec62f8a9bdd7db8a8a6187d3a",
+      "bytes": 6596
+    },
+    "frozen/fittings.js": {
+      "sha256": "fe00d708b938ad9174b6c8dc2bcd6b0921d8f349bbe73fab94feaec76988a420",
+      "bytes": 14062
+    },
+    "frozen/geometry.js": {
+      "sha256": "0ca467cee87f7e7adde0f2f96644511de6a17d072dbc4256ec5ab88d85d3b0cc",
+      "bytes": 7935
+    },
+    "frozen/index.html.txt": {
+      "sha256": "b4d140187f3bc8c27fa094767ea7d45b3ebbfd3d9d323402a236b0d1e1d6d992",
+      "bytes": 16170937
+    },
+    "frozen/inlet.js": {
+      "sha256": "7d05ee8e67a839462b5791fb200e4444b2f1c57f649e9e003e8ca430cddc084e",
+      "bytes": 8419
+    },
+    "frozen/lettering.js": {
+      "sha256": "7533f575c37b6ebb8ecb4b5da06cad518fbb6540bf06b3b48097e0124ac2241b",
+      "bytes": 6021
+    },
+    "frozen/materials.js": {
+      "sha256": "d23366e88007cdef59f7359edbe2c5d1b6e2a7bb3b68a7aec139bca3b0f57230",
+      "bytes": 6515418
+    },
+    "frozen/navigation.js": {
+      "sha256": "e306bd948fe49d7b6e94d072893ed0e5db398819b16f9595f2b653e6e2e48203",
+      "bytes": 3485
+    },
+    "frozen/renderer.js": {
+      "sha256": "8472e5148cc02207c4051cc752e10e31105e78c7b387d12495c659ee95503b30",
+      "bytes": 12469
+    },
+    "frozen/shaders.js": {
+      "sha256": "4602b4efdfa5483f54e4302679f0605dd156692f49e54d9d936f108d0df79e4d",
+      "bytes": 12311
+    },
+    "frozen/strand.js": {
+      "sha256": "9aa7c3152f8fb2455e8f3e018d06489eda761098938f3b77ca4b78063b501200",
+      "bytes": 3490
+    },
+    "frozen/style.css": {
+      "sha256": "e2cba14eea5aa5840ceae86ae5358e074e05b77a000142b298d0eec483958f26",
+      "bytes": 4613
+    },
+    "frozen/walk.js": {
+      "sha256": "84f2c1dd9647e3a7ff8b96e519d5541802b1c6f29df8ffef2c8ebab1f6a793dd",
+      "bytes": 7770
+    },
+    "frozen/wharf.js": {
+      "sha256": "8c4b972f20d880008e2c61e05bb6ddd4a300091edaf9feff415397846adfd4ce",
+      "bytes": 8171
+    },
+    "frozen/workshop.js": {
+      "sha256": "f578f86fa93b0504fdcaedac5c4b0744a520e16585604653c18df1450943247f",
+      "bytes": 11184
+    },
+    "frozen/world.js": {
+      "sha256": "422dbe9f6cbeb8a4db7180cf9c06d2da4179b0e29168f41f66ef796c72b590d1",
+      "bytes": 9573080
+    },
+    "frozen/wren.js": {
+      "sha256": "00e58a4bc7c9a50b46ab76380bdd1b18f6403a0ad0bd0206a75bfe80fde9ad81",
+      "bytes": 9134
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN.json",
+      "source-audit.json",
+      "frozen/details.js",
+      "frozen/fittings.js",
+      "frozen/geometry.js",
+      "frozen/index.html.txt",
+      "frozen/inlet.js",
+      "frozen/lettering.js",
+      "frozen/materials.js",
+      "frozen/navigation.js",
+      "frozen/renderer.js",
+      "frozen/shaders.js",
+      "frozen/strand.js",
+      "frozen/style.css",
+      "frozen/walk.js",
+      "frozen/wharf.js",
+      "frozen/workshop.js",
+      "frozen/world.js",
+      "frozen/wren.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

@@ -1,0 +1,11 @@
+SceneBench 2026-11-17 / scene 07
+Requested: GPT-6.2 Astra, XHIGH effort, Standard service.
+Runtime disclosure: Codex, GPT-6 family. Exact serving model, effort and service tier are not exposed to this agent.
+First implementation action (workspace inventory): 2026-11-18 00:06:55 UTC
+Deadline: 2026-11-18 01:06:55 UTC
+Actual stop: 2026-11-18 01:02:23 UTC
+Elapsed: 00:55:28
+Interruption history: No user interruption or deadline extension. Sandbox approval retries for workspace writes, registry access and a read-only listener check occurred within the timed run.
+Cleanup: Every entry build and check process exited. Temporary compiler products and the temporary validator were removed. No browser, server, watcher or benchmark was launched.
+Verification: CPU route, collision, floor agreement, assets, lettering, JavaScript syntax and offline GLSL compilation/linking passed. All 13 runtime file hashes were verified.
+Suggested launch: http://127.0.0.1:48707/ (no active listener at port check).

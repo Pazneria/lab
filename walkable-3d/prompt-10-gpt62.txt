@@ -1,0 +1,57 @@
+You are completing an entry in my personal benchmark for explorable 3D browser scenes. I will judge the result myself by walking around it and inspecting it from different viewpoints. Visual detail and smooth performance matter most.
+
+You have a maximum of one hour, including implementation, asset work, testing and final fixes. Deliver your best working build within that time.
+
+Create a small hillside library with a tall central reading room and a partial upper gallery reached by a broad staircase. A window-side reading alcove should connect naturally to the main room. The viewer must be able to browse the lower shelves, climb to the gallery, and look back across the space from above.
+
+Make the room feel collected over time through varied book sizes, warm timber, painted plaster, dark iron fittings, and worn leather furniture. Use shelf groupings and a few carefully arranged objects to avoid identical repetition. Late-day light from tall windows should reveal the depth of the room while keeping the gallery readable. A few lamps may add warmth in shaded corners. The hillside view can be a simple backdrop. There is no need for readable book pages, a functioning catalog, or additional floors.
+
+The result must run in a browser as an actual 3D environment. Provide mouse-look, keyboard movement, clear controls and a reset option. Use human-scale proportions and sensible collision so I can explore without walking through major walls or falling through floors. A screenshot, video, fixed camera or automatic tour is not a substitute.
+
+Make the scene hold up beyond its opening view. I will inspect surfaces and objects closely, turn around, browse the lower shelves, visit the reading alcove and climb to the gallery to look back across the room. Spend your time on convincing geometry, materials, lighting and purposeful detail while keeping movement responsive. Extra game mechanics are unnecessary.
+
+GRADING: 100 POINTS
+
+Visual detail and overall visual quality: 45 points
+- Varied book sizes and shelf groupings with plausible arrangements rather than identical repetition
+- Distinct warm timber, painted plaster, dark iron fittings and worn leather furniture
+- Appropriate wear and carefully arranged objects that make the room feel collected over time
+- Late-day light from tall windows that reveals the depth of the room while keeping the upper gallery readable
+- Purposeful detail that remains convincing from above and up close
+
+Smooth performance: 35 points
+- Responsive movement and camera turns
+- Consistent performance while looking down across shelves from the gallery and turning near the densest book groupings
+- Smooth movement toward the tall windows and along the staircase
+- Minimal geometry-related slowdown, distracting repetition changes, stuttering, disruptive loading or instability
+
+I will assess performance while actually exploring, supported by frame-time measurements. Claimed frame rates alone do not earn points.
+
+Scene fulfillment and exploration: 20 points
+- A tall central reading room, partial upper gallery and broad staircase
+- A connected window-side reading alcove and explorable lower shelves
+- An upper viewpoint back across the room and a hillside setting beyond the windows
+- Convincing scale, comfortable stair access, safe edges and useful sight lines along connected routes
+
+MY INSPECTION ROUTE
+
+Lower shelves → reading alcove → broad staircase → upper gallery → overlook → return.
+
+I will pay particular attention to looking down across shelves from the gallery, turning near the densest book groupings and walking toward the tall windows. Check comfortable stair access, safe edges, useful sight lines and detail that remains convincing from above and up close. Suggested props are optional; the core spaces and routes are required.
+
+When finished, provide the working build, how to launch it, its controls and any known limitations.
+
+Execution rules shared by all entrants: Work only in your own new workspace. Do not read or reuse other entrants' files or existing project assets. Do not use other models or subagents. Use ordinary local coding/browser tools and reputable installed or registry libraries; no paid services, purchases, new credentials, external communication or public publication. Record exact model/effort, actual first implementation time, one-hour deadline and actual stop timestamp. Stop editing at that deadline and disclose interruptions. Use a distinct available localhost port. Do not foreground the user's browser. Report artifact path, preview address, test results and limitations; Jordan assigns scores. Performance judging will happen separately after builds, not from competing simultaneous build workloads.
+
+EXECUTION CONDITIONS FOR THIS RUN (supplied in full before implementation)
+
+These execution conditions supersede any conflicting tool, testing, server or preview instructions above. The scene brief and grading criteria above are unchanged.
+
+- Work only in a new isolated workspace for this entry. Do not read, copy or reuse other entrants' files, builds or project assets. Do not inspect comparison entries.
+- Use only the model assigned to this run. Do not use other models, subagents, delegated workers or model-backed external tools.
+- The maximum is one hour of wall-clock time from your first implementation action, including coding, asset creation, dependency work, permitted checks and final fixes. Record the actual model and effort setting, first implementation timestamp, deadline exactly 60 minutes later and actual stop timestamp, all with time zones. Supply any interruption history. Do not reset or extend the deadline after interruptions. Stop editing at the deadline even if incomplete.
+- Do not launch or use a browser, headless browser, browser automation, UI test, screenshot renderer, GPU test or performance benchmark. Do not start a development, preview, HTTP or other server. Do not open or foreground the user's browser. Lightweight CPU-only static checks, syntax checks, type checks and non-serving build commands are allowed; keep them bounded and avoid unnecessary load.
+- Build the explorable browser scene as requested, but leave visual verification, interactive testing and performance judging for a later separate session. Clearly distinguish checks actually performed from checks not performed. Do not claim visual correctness or measured frame rates without evidence.
+- Use ordinary local coding tools and reputable installed or registry libraries. No paid services, purchases, new credentials, external communication or public publication.
+- Provide the artifact path, precise launch command and controls, and known limitations. If documenting a localhost address or port, label it as a suggested launch address, not a running preview. Do not start the server to verify that address.
+- Before the final report, stop and clean up every process you started for this entry. Do not terminate unrelated processes or another entrant's work. Report process cleanup and the actual stop timestamp. Leave no server, watcher, browser or test process running.

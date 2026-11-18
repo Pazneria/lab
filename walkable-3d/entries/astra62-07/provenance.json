@@ -1,0 +1,240 @@
+{
+  "entry": "astra62-07",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-07\\source-preservation.zip",
+  "archiveSha256": "87e5cd99817a10d70ddcfaf63bd7a805f74377afe374b8d86653db1b6e6b1942",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/app.mjs": "app.mjs",
+      "frozen/assets/irradiance.gz": "assets/irradiance.gz",
+      "frozen/assets/lettering.gz": "assets/lettering.gz",
+      "frozen/assets/museum.bin": "assets/museum.bin",
+      "frozen/assets/museum.json": "assets/museum.json",
+      "frozen/assets/surface.gz": "assets/surface.gz",
+      "frozen/assets/volume.gz": "assets/volume.gz",
+      "frozen/build/finish.mjs": "build/finish.mjs",
+      "frozen/build/prepare.mjs": "build/prepare.mjs",
+      "frozen/index.html.txt": "index.html",
+      "frozen/movement.mjs": "movement.mjs",
+      "frozen/museum.css": "museum.css",
+      "frozen/render.mjs": "render.mjs",
+      "frozen/shaders.mjs": "shaders.mjs",
+      "frozen/world.mjs": "world.mjs",
+      "identity.txt": "identity.txt",
+      "README.md": "README.md"
+    },
+    "perFileSourceHashes": {
+      "app.mjs": {
+        "sha256": "acf1961507448dec43b1125876c651bad33be7a07300baa319d31ea3239835df",
+        "bytes": 5517
+      },
+      "identity.txt": {
+        "sha256": "fdf097e6aa771ca74db229e1186580117e314d45cee5cdef21eb49c503894d98",
+        "bytes": 1002
+      },
+      "index.html": {
+        "sha256": "9e0f32533055bd0da566f2e89bddb930a551fecfe4c6c34bed86c80474c8ddde",
+        "bytes": 2444
+      },
+      "movement.mjs": {
+        "sha256": "4b10a7d3d9ba83d12019d38f512a371cfa791f7420acb8801b0641e237d938da",
+        "bytes": 2428
+      },
+      "museum.css": {
+        "sha256": "87d1432625df9fe392312175700566716053b78c938bbcf7cca3b7d7dca87457",
+        "bytes": 4209
+      },
+      "README.md": {
+        "sha256": "17d0f672e6562ea48b67257f23912e4bfeaaaac3a5bb1f965edc120a09f18021",
+        "bytes": 3088
+      },
+      "render.mjs": {
+        "sha256": "444c401b61f82a4074b18e72cbf508a5225a22c686ac60203447264d089b87e4",
+        "bytes": 10006
+      },
+      "serve.mjs": {
+        "sha256": "a4cad7e4d9ee43ffb027bc9f24d96ae26e5d130869df28fa20997b1c5d033caa",
+        "bytes": 1964
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "bb400eb8939ab8749ea4ee29e429483b5f1890665ac3914b3e81c07c2099431b",
+        "bytes": 1060
+      },
+      "shaders.mjs": {
+        "sha256": "9266b7071f7736a30d1a15cb2d99ade34abf221cd5fa128f8a63b06b84146055",
+        "bytes": 13361
+      },
+      "world.mjs": {
+        "sha256": "d61f3a05701d2b163d3f9a6ccd7998636cfdf63487ec4a44bae8875d3a11cd77",
+        "bytes": 17708
+      },
+      "build/Bake.cs": {
+        "sha256": "a3453a4a3b8eb80f661e7db0ffecf72347a4c135c854fd0a5d0f4162c91c46cd",
+        "bytes": 15882
+      },
+      "build/check.mjs": {
+        "sha256": "2ec031b0aee70a04038532d7e1b0075da90d2f2b930b21a8a3f6631898d0ae1b",
+        "bytes": 5831
+      },
+      "build/finish.mjs": {
+        "sha256": "34b820125ddc20464a56520d8641155bc59ff5c40f1e64a0a275caaabdc343c6",
+        "bytes": 4199
+      },
+      "build/Lettering.cs": {
+        "sha256": "32422fd054339a58de82cc91df546ac9f19557e17a59fc8693897246fa422017",
+        "bytes": 4181
+      },
+      "build/prepare.mjs": {
+        "sha256": "c25390f9e74a8a1048cfb4e807d57925e5d86fd58c01231752a936bd392217c3",
+        "bytes": 3400
+      },
+      "assets/irradiance.gz": {
+        "sha256": "6a3d69adb128cdddd6e50637901e042ea233d19cd3877e739ec53e8db361a19e",
+        "bytes": 412071
+      },
+      "assets/lettering.gz": {
+        "sha256": "01188558960de608ff0b4eb840b439b6f04ebb1561e7de72535c476a43a51000",
+        "bytes": 53259
+      },
+      "assets/museum.bin": {
+        "sha256": "d147e7efb9bec97c23beeedc37920bd9b384a3c917accb4e9c8b92913fa088bc",
+        "bytes": 1000520
+      },
+      "assets/museum.json": {
+        "sha256": "ea5d0e75e39e27cb2da6b3720373cdbd392635357dfb08102f868fd237bbab90",
+        "bytes": 8529
+      },
+      "assets/surface.gz": {
+        "sha256": "75a91116ba3830d0aaefb610dfe6d58a89ac3f7ae7a7bcaf49ebb5fb59cf3612",
+        "bytes": 3392571
+      },
+      "assets/volume.gz": {
+        "sha256": "61a6e368c2661cb80936fd3bc280d98650686fa55636f840c3e49656c3ab7b29",
+        "bytes": 1001137
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-07\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "9e70a06ebec34b4259a19322a8c350e230f8df548513a7b5644290623647bd79",
+      "bytes": 1260
+    },
+    "identity.txt": {
+      "sha256": "fdf097e6aa771ca74db229e1186580117e314d45cee5cdef21eb49c503894d98",
+      "bytes": 1002
+    },
+    "launch-prompt.txt": {
+      "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",
+      "bytes": 7098
+    },
+    "README.md": {
+      "sha256": "17d0f672e6562ea48b67257f23912e4bfeaaaac3a5bb1f965edc120a09f18021",
+      "bytes": 3088
+    },
+    "source-audit.json": {
+      "sha256": "d0f96d1eaa0bb1f78700f4a05ce0ff3494f9574e6127af679700347921614b42",
+      "bytes": 404
+    },
+    "frozen/app.mjs": {
+      "sha256": "acf1961507448dec43b1125876c651bad33be7a07300baa319d31ea3239835df",
+      "bytes": 5517
+    },
+    "frozen/index.html.txt": {
+      "sha256": "9e0f32533055bd0da566f2e89bddb930a551fecfe4c6c34bed86c80474c8ddde",
+      "bytes": 2444
+    },
+    "frozen/movement.mjs": {
+      "sha256": "4b10a7d3d9ba83d12019d38f512a371cfa791f7420acb8801b0641e237d938da",
+      "bytes": 2428
+    },
+    "frozen/museum.css": {
+      "sha256": "87d1432625df9fe392312175700566716053b78c938bbcf7cca3b7d7dca87457",
+      "bytes": 4209
+    },
+    "frozen/render.mjs": {
+      "sha256": "444c401b61f82a4074b18e72cbf508a5225a22c686ac60203447264d089b87e4",
+      "bytes": 10006
+    },
+    "frozen/shaders.mjs": {
+      "sha256": "9266b7071f7736a30d1a15cb2d99ade34abf221cd5fa128f8a63b06b84146055",
+      "bytes": 13361
+    },
+    "frozen/world.mjs": {
+      "sha256": "d61f3a05701d2b163d3f9a6ccd7998636cfdf63487ec4a44bae8875d3a11cd77",
+      "bytes": 17708
+    },
+    "frozen/assets/irradiance.gz": {
+      "sha256": "6a3d69adb128cdddd6e50637901e042ea233d19cd3877e739ec53e8db361a19e",
+      "bytes": 412071
+    },
+    "frozen/assets/lettering.gz": {
+      "sha256": "01188558960de608ff0b4eb840b439b6f04ebb1561e7de72535c476a43a51000",
+      "bytes": 53259
+    },
+    "frozen/assets/museum.bin": {
+      "sha256": "d147e7efb9bec97c23beeedc37920bd9b384a3c917accb4e9c8b92913fa088bc",
+      "bytes": 1000520
+    },
+    "frozen/assets/museum.json": {
+      "sha256": "ea5d0e75e39e27cb2da6b3720373cdbd392635357dfb08102f868fd237bbab90",
+      "bytes": 8529
+    },
+    "frozen/assets/surface.gz": {
+      "sha256": "75a91116ba3830d0aaefb610dfe6d58a89ac3f7ae7a7bcaf49ebb5fb59cf3612",
+      "bytes": 3392571
+    },
+    "frozen/assets/volume.gz": {
+      "sha256": "61a6e368c2661cb80936fd3bc280d98650686fa55636f840c3e49656c3ab7b29",
+      "bytes": 1001137
+    },
+    "frozen/build/finish.mjs": {
+      "sha256": "34b820125ddc20464a56520d8641155bc59ff5c40f1e64a0a275caaabdc343c6",
+      "bytes": 4199
+    },
+    "frozen/build/prepare.mjs": {
+      "sha256": "c25390f9e74a8a1048cfb4e807d57925e5d86fd58c01231752a936bd392217c3",
+      "bytes": 3400
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "identity.txt",
+      "launch-prompt.txt",
+      "README.md",
+      "source-audit.json",
+      "frozen/app.mjs",
+      "frozen/index.html.txt",
+      "frozen/movement.mjs",
+      "frozen/museum.css",
+      "frozen/render.mjs",
+      "frozen/shaders.mjs",
+      "frozen/world.mjs",
+      "frozen/assets/irradiance.gz",
+      "frozen/assets/lettering.gz",
+      "frozen/assets/museum.bin",
+      "frozen/assets/museum.json",
+      "frozen/assets/surface.gz",
+      "frozen/assets/volume.gz",
+      "frozen/build/finish.mjs",
+      "frozen/build/prepare.mjs"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

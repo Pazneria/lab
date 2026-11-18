@@ -1,0 +1,84 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #11181d;
+  color: #e9edeb;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html, body, #experience, #viewport { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+#experience { position: relative; isolation: isolate; }
+#viewport { position: absolute; inset: 0; }
+canvas { display: block; width: 100%; height: 100%; outline: none; touch-action: none; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible { outline: 2px solid #d3eadc; outline-offset: 4px; }
+[hidden] { display: none !important; }
+
+.identity {
+  position: absolute;
+  top: 26px;
+  left: 27px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  text-shadow: 0 1px 7px #10171e, 0 1px 14px #10171e;
+}
+.ship { font-size: 11px; font-weight: 700; letter-spacing: .24em; }
+.zone { color: #d0d5d1; font-size: 12px; margin-top: 4px; }
+.insignia { display: grid; gap: 3px; padding: 4px 5px; transform: skew(-23deg); }
+.insignia i { display: block; width: 21px; height: 2px; background: #c9dfd4; box-shadow: 0 0 7px #10171e; }
+.insignia i:nth-child(2) { width: 15px; }
+.insignia i:nth-child(3) { width: 9px; }
+
+.tools { position: absolute; top: 22px; right: 24px; display: flex; gap: 6px; }
+.tools button {
+  border: 1px solid #daebdf36;
+  background: #141b20b8;
+  padding: 8px 11px;
+  border-radius: 4px;
+  color: #eef2ed;
+  font-size: 12px;
+}
+.tools button:hover { background: #28352d; }
+.key-icon { margin-right: 2px; }
+
+#controls {
+  position: absolute;
+  left: 27px;
+  bottom: 26px;
+  max-width: calc(100% - 54px);
+  padding: 13px 15px 12px;
+  border: 1px solid #cbded040;
+  border-radius: 6px;
+  background: #131b21eb;
+  box-shadow: 0 4px 18px #0c12175c;
+  font-size: 12px;
+}
+.panel-main { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+#enter { background: #c8ded2; color: #172921; border: 0; border-radius: 3px; padding: 8px 10px; font-weight: 680; }
+#enter:hover { background: #e6f1e6; }
+#enter span { margin-left: 5px; }
+#look-instructions { color: #cdd9d2; }
+.bindings { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 12px; color: #e4e9e5; }
+.bindings > span { white-space: nowrap; }
+kbd { display: inline-block; min-width: 17px; text-align: center; font: inherit; font-size: 10px; padding: 2px 4px; border: 1px solid #d5dfd343; border-radius: 3px; margin-right: 2px; background: #303c40; }
+#controls p { margin: 8px 0 0; color: #acbab2; font-size: 11px; }
+#reticle { display: none; position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; margin: -2px 0 0 -2px; background: #ecf5ebae; border-radius: 50%; box-shadow: 0 0 4px #060e13; pointer-events: none; }
+.is-locked #reticle { display: block; }
+.is-locked .tools, .is-locked .identity { opacity: .65; }
+.is-locked #enter { display: none; }
+#loading { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 12px; padding: 24px; background: #10171c; text-align: center; font-size: 13px; }
+.loading-line { width: 46px; height: 2px; background: #afc9be; }
+@media (max-width: 540px) {
+  .identity { top: 14px; left: 13px; gap: 5px; }
+  .ship { font-size: 9px; letter-spacing: .12em; }
+  .zone { font-size: 11px; }
+  .tools { top: 12px; right: 12px; }
+  .tools button { padding: 6px 8px; }
+  #controls { left: 12px; bottom: 12px; max-width: calc(100% - 24px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tools, .identity { transition: opacity .2s ease; }
+}

@@ -1,0 +1,232 @@
+{
+  "entry": "sol62-08",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-08\\source-preservation.zip",
+  "archiveSha256": "807c5fac8ea0a70b43fef5f9d4269524232f5dc55860e0b78733415a31753995",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/index.html.txt": "index.html",
+      "frozen/src/boathouse.js": "src/boathouse.js",
+      "frozen/src/dinghy.js": "src/dinghy.js",
+      "frozen/src/dock.js": "src/dock.js",
+      "frozen/src/landscape.js": "src/landscape.js",
+      "frozen/src/layout.js": "src/layout.js",
+      "frozen/src/main.js": "src/main.js",
+      "frozen/src/materials.js": "src/materials.js",
+      "frozen/src/props.js": "src/props.js",
+      "frozen/src/workshop.js": "src/workshop.js",
+      "frozen/src/world.js": "src/world.js",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three.core.min.js": "vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "README.md": "README.md",
+      "run-timing.txt": "run-timing.txt",
+      "licenses/vendor/LICENSE": "vendor/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "index.html": {
+        "sha256": "db9c29ab96a103399fc74123552a487b78ebc353da4a96fb4f9054d521356526",
+        "bytes": 1416
+      },
+      "package.json": {
+        "sha256": "1e1f25a6f216a829d83cecd0a1db7ac54e3f53732950a10b6e881424ddd43130",
+        "bytes": 96
+      },
+      "README.md": {
+        "sha256": "6952d44c60a8a6f51780aa50afbb1821359bef2028a66bd19f53be43e96ef1bd",
+        "bytes": 2057
+      },
+      "run-timing.txt": {
+        "sha256": "eefcdc5873560b36a4e92fa274c37fcda90a4cc97daaf6ea8c9db11ef0a652a5",
+        "bytes": 885
+      },
+      "SHA256SUMS.txt": {
+        "sha256": "6004f111ab616e8ede0d5c404c5bbe2aece003d7f9bd73f63622aa12bf19dd74",
+        "bytes": 1479
+      },
+      "style.css": {
+        "sha256": "a98277e730463581213c465a7e682000483d87aefeb1574c483a9472d672ef0d",
+        "bytes": 2215
+      },
+      "vendor/LICENSE": {
+        "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+        "bytes": 1081
+      },
+      "vendor/three.core.min.js": {
+        "sha256": "79f2b4f58d3e99a9948a4d3b7f6d5c2daf705bdefe9fb82ebec715623966551c",
+        "bytes": 380374
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "06552c54e4071fbc7305117aafe6765d92c5d2a2a83507d4f05b9bf4f3d4d463",
+        "bytes": 338836
+      },
+      "src/boathouse.js": {
+        "sha256": "e76862a0e21e0ba9cc3d4d61cda411212b68580485dcd5ffb258150de818eafd",
+        "bytes": 15445
+      },
+      "src/build-kit.js": {
+        "sha256": "96797f2e34b57a0d2303da569cf5aded8b57e150cbba3687d757c2fbefe7cd35",
+        "bytes": 9513
+      },
+      "src/dinghy.js": {
+        "sha256": "cf1a8009e8d364416d422cc7e31caa69e8c8b87ffa41c67e5999f99eb7896222",
+        "bytes": 11642
+      },
+      "src/dock.js": {
+        "sha256": "e6ad18157eb275c6b8238f5edce2dcd5f2ed751a04299b4e1ca313a9e2d9896a",
+        "bytes": 11182
+      },
+      "src/landscape.js": {
+        "sha256": "26195d642cd70463e51a23591ede643cb82df08542557f860952f3d13a9c0c94",
+        "bytes": 17179
+      },
+      "src/layout.js": {
+        "sha256": "1a7a822ac3a0c25dfc8d5a3a893c34caa491b4cfff4a161e693f8503d63c0ad8",
+        "bytes": 5684
+      },
+      "src/main.js": {
+        "sha256": "aa8fe429a97cbe329622a908b131c51790c2c454f03f52c70cc9e57475d99522",
+        "bytes": 7435
+      },
+      "src/materials.js": {
+        "sha256": "fc6fb94589084b15c4a409c54e9c1b6f1c17ac52ca4d57fdc60f53759f417dfd",
+        "bytes": 10537
+      },
+      "src/props.js": {
+        "sha256": "fb9fac3320f0ad058a764fdee180813f311be7636bd2d960308f20327d1d1cc1",
+        "bytes": 4282
+      },
+      "src/workshop.js": {
+        "sha256": "1b0d375eb947b376f53eb6f6b20b4e24e8569d7d3c6c121e37257bf06eb9ffec",
+        "bytes": 16898
+      },
+      "src/world.js": {
+        "sha256": "0614e4b1062abf1aaf6decc1e6cda9a813aef4afffceba7feae39c63808bf2af",
+        "bytes": 1846
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-08\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Sol / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp.",
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "d476da3c3ff94ff8cc12f520524ebeba13e628df640da7bbe2ca860cd30ddd06",
+      "bytes": 1422
+    },
+    "launch-prompt.txt": {
+      "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
+      "bytes": 6967
+    },
+    "README.md": {
+      "sha256": "6952d44c60a8a6f51780aa50afbb1821359bef2028a66bd19f53be43e96ef1bd",
+      "bytes": 2057
+    },
+    "run-timing.txt": {
+      "sha256": "eefcdc5873560b36a4e92fa274c37fcda90a4cc97daaf6ea8c9db11ef0a652a5",
+      "bytes": 885
+    },
+    "source-audit.json": {
+      "sha256": "6a99854a7213037f30c56138d01b5583c89e563beca24567f3f4ced2cb5bb6a1",
+      "bytes": 377
+    },
+    "frozen/index.html.txt": {
+      "sha256": "db9c29ab96a103399fc74123552a487b78ebc353da4a96fb4f9054d521356526",
+      "bytes": 1416
+    },
+    "frozen/style.css": {
+      "sha256": "a98277e730463581213c465a7e682000483d87aefeb1574c483a9472d672ef0d",
+      "bytes": 2215
+    },
+    "licenses/vendor/LICENSE": {
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
+      "bytes": 1081
+    },
+    "frozen/src/boathouse.js": {
+      "sha256": "e76862a0e21e0ba9cc3d4d61cda411212b68580485dcd5ffb258150de818eafd",
+      "bytes": 15445
+    },
+    "frozen/src/dinghy.js": {
+      "sha256": "cf1a8009e8d364416d422cc7e31caa69e8c8b87ffa41c67e5999f99eb7896222",
+      "bytes": 11642
+    },
+    "frozen/src/dock.js": {
+      "sha256": "e6ad18157eb275c6b8238f5edce2dcd5f2ed751a04299b4e1ca313a9e2d9896a",
+      "bytes": 11182
+    },
+    "frozen/src/landscape.js": {
+      "sha256": "26195d642cd70463e51a23591ede643cb82df08542557f860952f3d13a9c0c94",
+      "bytes": 17179
+    },
+    "frozen/src/layout.js": {
+      "sha256": "1a7a822ac3a0c25dfc8d5a3a893c34caa491b4cfff4a161e693f8503d63c0ad8",
+      "bytes": 5684
+    },
+    "frozen/src/main.js": {
+      "sha256": "aa8fe429a97cbe329622a908b131c51790c2c454f03f52c70cc9e57475d99522",
+      "bytes": 7435
+    },
+    "frozen/src/materials.js": {
+      "sha256": "fc6fb94589084b15c4a409c54e9c1b6f1c17ac52ca4d57fdc60f53759f417dfd",
+      "bytes": 10537
+    },
+    "frozen/src/props.js": {
+      "sha256": "fb9fac3320f0ad058a764fdee180813f311be7636bd2d960308f20327d1d1cc1",
+      "bytes": 4282
+    },
+    "frozen/src/workshop.js": {
+      "sha256": "1b0d375eb947b376f53eb6f6b20b4e24e8569d7d3c6c121e37257bf06eb9ffec",
+      "bytes": 16898
+    },
+    "frozen/src/world.js": {
+      "sha256": "0614e4b1062abf1aaf6decc1e6cda9a813aef4afffceba7feae39c63808bf2af",
+      "bytes": 1846
+    },
+    "frozen/vendor/three.core.min.js": {
+      "sha256": "79f2b4f58d3e99a9948a4d3b7f6d5c2daf705bdefe9fb82ebec715623966551c",
+      "bytes": 380374
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "06552c54e4071fbc7305117aafe6765d92c5d2a2a83507d4f05b9bf4f3d4d463",
+      "bytes": 338836
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "run-timing.txt",
+      "source-audit.json",
+      "frozen/index.html.txt",
+      "frozen/style.css",
+      "licenses/vendor/LICENSE",
+      "frozen/src/boathouse.js",
+      "frozen/src/dinghy.js",
+      "frozen/src/dock.js",
+      "frozen/src/landscape.js",
+      "frozen/src/layout.js",
+      "frozen/src/main.js",
+      "frozen/src/materials.js",
+      "frozen/src/props.js",
+      "frozen/src/workshop.js",
+      "frozen/src/world.js",
+      "frozen/vendor/three.core.min.js",
+      "frozen/vendor/three.module.min.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

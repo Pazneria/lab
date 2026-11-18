@@ -1,0 +1,244 @@
+{
+  "entry": "astra62-06",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-06\\source-preservation.zip",
+  "archiveSha256": "f8eefa1e511857ab64fc9d1808df7643f5340266332a375fbea12e993ce6b29e",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/bedding.png": "bedding.png",
+      "frozen/cavern.mesh": "cavern.mesh",
+      "frozen/clearance.bin": "clearance.bin",
+      "frozen/field.json": "field.json",
+      "frozen/index.html.txt": "index.html",
+      "frozen/landform.mjs": "landform.mjs",
+      "frozen/main.mjs": "main.mjs",
+      "frozen/mesh-tools.mjs": "mesh-tools.mjs",
+      "frozen/mineral.volume": "mineral.volume",
+      "frozen/pavement.png": "pavement.png",
+      "frozen/render.mjs": "render.mjs",
+      "frozen/shaders.mjs": "shaders.mjs",
+      "frozen/style.css": "style.css",
+      "frozen/walk.mjs": "walk.mjs",
+      "frozen/water-detail.png": "water-detail.png",
+      "README.md": "README.md",
+      "RUN.json": "RUN.json"
+    },
+    "perFileSourceHashes": {
+      "bake-light.mjs": {
+        "sha256": "3bfd858b54582b7128c4dbb41abd49bc88f339c1575605f7164c5a3fe84fd02b",
+        "bytes": 6134
+      },
+      "bedding.png": {
+        "sha256": "98f4e9f4e9d7f63f50a98b2910de43f5fe333bbdabfde9f4f20dfc7a123fc1f8",
+        "bytes": 1900402
+      },
+      "build-world.mjs": {
+        "sha256": "0f802c698c6ef1c80e542adf437d9a7c7b0a0d4bc1ee7638f8f675dddba3366d",
+        "bytes": 17782
+      },
+      "cavern.mesh": {
+        "sha256": "0cd4ddf23ccc5aefd957619411eb5679ca77fb06768716faa8e7ce991e002611",
+        "bytes": 8655768
+      },
+      "clearance.bin": {
+        "sha256": "fa090fbc93acd3f6000c0160104e229420092a21f9f1b4d1d9adcc400444d5fe",
+        "bytes": 116800
+      },
+      "field.json": {
+        "sha256": "46af001b739047115ba4c403619656781d446b238878b6fb1d2974c4b85c50d0",
+        "bytes": 24141
+      },
+      "Hollowmere-Cavern.zip": {
+        "sha256": "1a26ce4a0258485531b0309c20ea31a903007704f1f2ad240feb997f2e4ad251",
+        "bytes": 8916584
+      },
+      "index.html": {
+        "sha256": "7ed2f27b66ab17f195155d1790e64f4f024846b08526ca28a67e8fe947c7a685",
+        "bytes": 3130
+      },
+      "landform.mjs": {
+        "sha256": "b879ac0c616106fb89e4f81bf7f472c752097131f02283b735e507c46eb44119",
+        "bytes": 7483
+      },
+      "main.mjs": {
+        "sha256": "84b78d079378aa6572d31b474aca3d37be7844281e24e814edec7c31750f0a7e",
+        "bytes": 7218
+      },
+      "make-materials.mjs": {
+        "sha256": "02b72ac9a3da3f463d635c8a9284259f01d50a1f02c4c6db3b1310965ad69881",
+        "bytes": 6365
+      },
+      "mesh-tools.mjs": {
+        "sha256": "224e403f85b05d230ec4644111e3b826ceec186b5daddab744976e75dcd275e6",
+        "bytes": 5386
+      },
+      "mineral.volume": {
+        "sha256": "591a8a7b81248f2e61aaa0becba617455526497e601cf198762f5e02ad4fa069",
+        "bytes": 442368
+      },
+      "pack-space.mjs": {
+        "sha256": "6bb4b56536c10cb93b25223bcb5017608a1d57c8a8514f0cc365e6d4426388e7",
+        "bytes": 4702
+      },
+      "pavement.png": {
+        "sha256": "fd724bcb1d2ef97cf1f3b5fa5e22e476ace4babdfa472eff2b0e9d8ad5e30e5c",
+        "bytes": 1899482
+      },
+      "README.md": {
+        "sha256": "6c6fdea818f8b56262904a6d04e6595d4b48646b728ec0d4ea4541c57480323b",
+        "bytes": 2807
+      },
+      "render.mjs": {
+        "sha256": "a330e00caea9b2bebeedee1581c8f09999f0cedc36872c90fd1ae3a6c9409183",
+        "bytes": 14043
+      },
+      "RUN.json": {
+        "sha256": "ab30a9698141480eeabeff390bf9cf74a54ecb0840c6ec0146a88d65c89be2fa",
+        "bytes": 5249
+      },
+      "shaders.mjs": {
+        "sha256": "bed618720909a744228dafa90d0f16f4940aaa421c2aa5d2c884666c4926a525",
+        "bytes": 10695
+      },
+      "style.css": {
+        "sha256": "0d536a768bfe3c121f68683723b57d6a86be192460041a9d8da357897bf82dc9",
+        "bytes": 6558
+      },
+      "verify.mjs": {
+        "sha256": "3889ffe8e613ef5a784411fdd7e816a7f9c5cd9a65f116ee6ed2a6061f9cfab0",
+        "bytes": 7484
+      },
+      "walk.mjs": {
+        "sha256": "c83959ec96cf4cb1e0541c12bb16de0ea282277f39555dca9361f9fa193cc80d",
+        "bytes": 2074
+      },
+      "water-detail.png": {
+        "sha256": "fa1321298db8db5160df6822fa7211b2b217446cf04373aff45dd96eab79ae45",
+        "bytes": 150104
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-06\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "b7f3829785dd460f22f6c3b6f6fd2035b7b6916a1afe94788a5b6923a97576a1",
+      "bytes": 1260
+    },
+    "launch-prompt.txt": {
+      "sha256": "2ffabaa281b0fc6b348c8ca3f410e0b3d6df4808fb8265f01b09611a53c3407b",
+      "bytes": 6958
+    },
+    "README.md": {
+      "sha256": "6c6fdea818f8b56262904a6d04e6595d4b48646b728ec0d4ea4541c57480323b",
+      "bytes": 2807
+    },
+    "RUN.json": {
+      "sha256": "ab30a9698141480eeabeff390bf9cf74a54ecb0840c6ec0146a88d65c89be2fa",
+      "bytes": 5249
+    },
+    "source-audit.json": {
+      "sha256": "d0f96d1eaa0bb1f78700f4a05ce0ff3494f9574e6127af679700347921614b42",
+      "bytes": 404
+    },
+    "frozen/bedding.png": {
+      "sha256": "98f4e9f4e9d7f63f50a98b2910de43f5fe333bbdabfde9f4f20dfc7a123fc1f8",
+      "bytes": 1900402
+    },
+    "frozen/cavern.mesh": {
+      "sha256": "0cd4ddf23ccc5aefd957619411eb5679ca77fb06768716faa8e7ce991e002611",
+      "bytes": 8655768
+    },
+    "frozen/clearance.bin": {
+      "sha256": "fa090fbc93acd3f6000c0160104e229420092a21f9f1b4d1d9adcc400444d5fe",
+      "bytes": 116800
+    },
+    "frozen/field.json": {
+      "sha256": "46af001b739047115ba4c403619656781d446b238878b6fb1d2974c4b85c50d0",
+      "bytes": 24141
+    },
+    "frozen/index.html.txt": {
+      "sha256": "7ed2f27b66ab17f195155d1790e64f4f024846b08526ca28a67e8fe947c7a685",
+      "bytes": 3130
+    },
+    "frozen/landform.mjs": {
+      "sha256": "b879ac0c616106fb89e4f81bf7f472c752097131f02283b735e507c46eb44119",
+      "bytes": 7483
+    },
+    "frozen/main.mjs": {
+      "sha256": "84b78d079378aa6572d31b474aca3d37be7844281e24e814edec7c31750f0a7e",
+      "bytes": 7218
+    },
+    "frozen/mesh-tools.mjs": {
+      "sha256": "224e403f85b05d230ec4644111e3b826ceec186b5daddab744976e75dcd275e6",
+      "bytes": 5386
+    },
+    "frozen/mineral.volume": {
+      "sha256": "591a8a7b81248f2e61aaa0becba617455526497e601cf198762f5e02ad4fa069",
+      "bytes": 442368
+    },
+    "frozen/pavement.png": {
+      "sha256": "fd724bcb1d2ef97cf1f3b5fa5e22e476ace4babdfa472eff2b0e9d8ad5e30e5c",
+      "bytes": 1899482
+    },
+    "frozen/render.mjs": {
+      "sha256": "a330e00caea9b2bebeedee1581c8f09999f0cedc36872c90fd1ae3a6c9409183",
+      "bytes": 14043
+    },
+    "frozen/shaders.mjs": {
+      "sha256": "bed618720909a744228dafa90d0f16f4940aaa421c2aa5d2c884666c4926a525",
+      "bytes": 10695
+    },
+    "frozen/style.css": {
+      "sha256": "0d536a768bfe3c121f68683723b57d6a86be192460041a9d8da357897bf82dc9",
+      "bytes": 6558
+    },
+    "frozen/walk.mjs": {
+      "sha256": "c83959ec96cf4cb1e0541c12bb16de0ea282277f39555dca9361f9fa193cc80d",
+      "bytes": 2074
+    },
+    "frozen/water-detail.png": {
+      "sha256": "fa1321298db8db5160df6822fa7211b2b217446cf04373aff45dd96eab79ae45",
+      "bytes": 150104
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN.json",
+      "source-audit.json",
+      "frozen/bedding.png",
+      "frozen/cavern.mesh",
+      "frozen/clearance.bin",
+      "frozen/field.json",
+      "frozen/index.html.txt",
+      "frozen/landform.mjs",
+      "frozen/main.mjs",
+      "frozen/mesh-tools.mjs",
+      "frozen/mineral.volume",
+      "frozen/pavement.png",
+      "frozen/render.mjs",
+      "frozen/shaders.mjs",
+      "frozen/style.css",
+      "frozen/walk.mjs",
+      "frozen/water-detail.png"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}

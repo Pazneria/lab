@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c211c">
+  <title>Ashcombe Reading Room</title>
+  <script type="module" crossorigin src="./assets/index-CWH3x7Km.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CHLJKU9d.css">
+</head>
+<body>
+  <main id="room" aria-label="Three-dimensional hillside library"></main>
+  <div id="veil" aria-hidden="true"></div>
+  <div id="reticle" aria-hidden="true"></div>
+  <div class="location" aria-hidden="true"><i></i><span id="location">Reading room</span></div>
+  <div id="play-controls" class="play-controls" aria-hidden="true"><kbd>ESC</kbd> Pause <kbd>R</kbd> Reset</div>
+  <section id="panel" aria-labelledby="title">
+    <div class="mark" aria-hidden="true"><span></span><i></i><span></span></div>
+    <h1 id="title">Ashcombe<br>Reading Room</h1>
+    <p id="intro">Click to capture the mouse and explore.</p>
+    <button id="enter" type="button" disabled>Preparing the room…</button>
+    <dl class="keys">
+      <div><dt>W A S D</dt><dd>Walk</dd></div>
+      <div><dt>Mouse</dt><dd>Look</dd></div>
+      <div><dt>Shift</dt><dd>Walk faster</dd></div>
+      <div><dt>R</dt><dd>Reset view</dd></div>
+    </dl>
+    <p id="status" role="status"></p>
+  </section>
+  <noscript>This scene requires JavaScript and WebGL 2.</noscript>
+</body>
+</html>

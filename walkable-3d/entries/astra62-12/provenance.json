@@ -1,0 +1,300 @@
+{
+  "entry": "astra62-12",
+  "archiveSource": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-12\\source-preservation.zip",
+  "archiveSha256": "a72f6540c827bee3ac264a82b9dcb6129361d8e711364b7db69b6e7498d9dccc",
+  "originalPreserved": true,
+  "source": {
+    "runtimeMapping": {
+      "frozen/assets/prints-01.webp": "assets/prints-01.webp",
+      "frozen/assets/prints-02.webp": "assets/prints-02.webp",
+      "frozen/assets/prints-03.webp": "assets/prints-03.webp",
+      "frozen/assets/prints-04.webp": "assets/prints-04.webp",
+      "frozen/assets/room.mesh": "assets/room.mesh",
+      "frozen/assets/scene.json": "assets/scene.json",
+      "frozen/cabinets.mjs": "cabinets.mjs",
+      "frozen/fittings-art.mjs": "fittings-art.mjs",
+      "frozen/furniture.mjs": "furniture.mjs",
+      "frozen/game-art.mjs": "game-art.mjs",
+      "frozen/graphics.mjs": "graphics.mjs",
+      "frozen/house-art.mjs": "house-art.mjs",
+      "frozen/index.html.txt": "index.html",
+      "frozen/layout.mjs": "layout.mjs",
+      "frozen/main.mjs": "main.mjs",
+      "frozen/model.mjs": "model.mjs",
+      "frozen/render.mjs": "render.mjs",
+      "frozen/room.mjs": "room.mjs",
+      "frozen/style.css": "style.css",
+      "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
+      "README.md": "README.md",
+      "RUN.json": "RUN.json",
+      "licenses/vendor/LICENSE": "vendor/LICENSE"
+    },
+    "perFileSourceHashes": {
+      "bake-light.mjs": {
+        "sha256": "caabc64dcf01174876379120fdf54d96391e66c38c8a02b706f1e127f2d502a0",
+        "bytes": 3736
+      },
+      "bake.mjs": {
+        "sha256": "7a27670720e8716dde2e2acbf8d13710f73c402da73d750c900975ce7962b021",
+        "bytes": 4168
+      },
+      "cabinets.mjs": {
+        "sha256": "d97f094982b15143a4499fc7fb4d7d20104cbec1f222d321d5e652f7979a57ca",
+        "bytes": 16506
+      },
+      "check.mjs": {
+        "sha256": "f1f12c2641fed693a0d36c4b6102f4491cbdd2b1d126d876cdf8cd0b83a1ce41",
+        "bytes": 7296
+      },
+      "fittings-art.mjs": {
+        "sha256": "988d18d342e44ce0b0b373ba893ce03b33c4ed24ca35794b98066f58da8d0d4e",
+        "bytes": 4462
+      },
+      "furniture.mjs": {
+        "sha256": "2d382b62df8513b38aff6c38a0f70422d7bef8d18c1ec453af896adf911d0af0",
+        "bytes": 10789
+      },
+      "game-art.mjs": {
+        "sha256": "dac32934e601b850556c19cecc9e7e132cc35599a1c0ce2534503c09e507bdbd",
+        "bytes": 14726
+      },
+      "graphics.mjs": {
+        "sha256": "7097444696f9dcbb2ff0710fdad2b3946352433e11f94f3b82cdda11f57bddf3",
+        "bytes": 3892
+      },
+      "house-art.mjs": {
+        "sha256": "75a383488ad8e419a41193a246044cc33ea3901e9f01b1ce5c8a6402222b3383",
+        "bytes": 14322
+      },
+      "index.html": {
+        "sha256": "55262c56c88175c4b4efa3b96ce539e7e16b92be128106b53b08f7f619d78781",
+        "bytes": 2383
+      },
+      "launch.cmd": {
+        "sha256": "0b636acac65651921834352e4054a3b4a7dd9133495f3e6109ced02252c35616",
+        "bytes": 78
+      },
+      "layout.mjs": {
+        "sha256": "ec00297365583413de05dc20f944c027eb2f83e86f0f9709d793eb0eff947a7a",
+        "bytes": 3588
+      },
+      "main.mjs": {
+        "sha256": "0e71bee36b211c4816c47d12f5d389e1986063073aa8a03155ca44885e8500ee",
+        "bytes": 9065
+      },
+      "model.mjs": {
+        "sha256": "6134bfc5c3901ac4c802f03b0750e664542faba795e37ed983ce3b4b6362bbe5",
+        "bytes": 10142
+      },
+      "night-pier-scene12.zip": {
+        "sha256": "68d50ea8bcb5946c3b8d5dd217333962d4a82034079cc9b1886a15ba3c0d0ae5",
+        "bytes": 2675631
+      },
+      "README.md": {
+        "sha256": "6a2907574d92fa530f55cc649cc5f4a54ab1bca99d359d5680df6671fe7c6d93",
+        "bytes": 3166
+      },
+      "render.mjs": {
+        "sha256": "a36dc0fa3fff220788731591df452fa0eb5fed0ad7e350d59bb1eb5121652be1",
+        "bytes": 5512
+      },
+      "room.mjs": {
+        "sha256": "5d02db9dfa8ffc130aa0ddef65dcd4fe01702ce5457d6d5f89a199c494b73dee",
+        "bytes": 11132
+      },
+      "RUN.json": {
+        "sha256": "06fc15f58f63907d626635de88cf37a7a00e278d9e68f2c81ecf6036d771f7c9",
+        "bytes": 4941
+      },
+      "style.css": {
+        "sha256": "0a9a796201999204e7cfe4e26f634ec3724e98b019b184b2796417f65eab4d09",
+        "bytes": 3890
+      },
+      "vendor/LICENSE": {
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "bytes": 1081
+      },
+      "vendor/three.module.min.js": {
+        "sha256": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7",
+        "bytes": 691648
+      },
+      "assets/prints-01.webp": {
+        "sha256": "5407964579ec68987af501bbac33e205fd3a1b6f2b9aa2b16716f007e31397d6",
+        "bytes": 451274
+      },
+      "assets/prints-02.webp": {
+        "sha256": "3e8ca9d521204bb1b642494354e225c97f39685f56b917bd7fa5eac735bf2fde",
+        "bytes": 402070
+      },
+      "assets/prints-03.webp": {
+        "sha256": "763c90cc7e7b4a35ef3785fde5b99675070a71a5c611dec2d0eeba4edec6a563",
+        "bytes": 213794
+      },
+      "assets/prints-04.webp": {
+        "sha256": "6ee6e09ef0f2796db2346e90d9e7daa67996e2bb7b28ad0f286d33a323d39fa6",
+        "bytes": 176830
+      },
+      "assets/room.mesh": {
+        "sha256": "222537ae016e5b142b97a916338b393b3c3904a922b6d8a041bdd1644c959a5e",
+        "bytes": 1322914
+      },
+      "assets/scene.json": {
+        "sha256": "87daf0fd4da3b25c221ac27aab160041a5be8676893c2235ea43b322653a5362",
+        "bytes": 7139
+      }
+    },
+    "dependencyClosure": [],
+    "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\astra-12\\source-preservation.zip"
+  },
+  "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+  "timingCaveat": null,
+  "hostingAdjustments": [
+    {
+      "inMemoryHtmlPathSubstitutions": []
+    },
+    "No CSP, viewer security, audience, auth or database changes. No source repair/rebuild. Static staging pending separate validation."
+  ],
+  "files": {
+    "host-run-record.json": {
+      "sha256": "901bc7e27e838f59a80e119df27a790a060e495a78a337006efbb0a53d24fe74",
+      "bytes": 1261
+    },
+    "launch-prompt.txt": {
+      "sha256": "36fc3fcc64709283474dbc638587f09ce4035d5003be0939b0f8120fadc1e678",
+      "bytes": 7716
+    },
+    "README.md": {
+      "sha256": "6a2907574d92fa530f55cc649cc5f4a54ab1bca99d359d5680df6671fe7c6d93",
+      "bytes": 3166
+    },
+    "RUN.json": {
+      "sha256": "06fc15f58f63907d626635de88cf37a7a00e278d9e68f2c81ecf6036d771f7c9",
+      "bytes": 4941
+    },
+    "source-audit.json": {
+      "sha256": "b61b865d5736467958c228925be669f7d821aa3875f9e028da1903751f374425",
+      "bytes": 402
+    },
+    "frozen/cabinets.mjs": {
+      "sha256": "d97f094982b15143a4499fc7fb4d7d20104cbec1f222d321d5e652f7979a57ca",
+      "bytes": 16506
+    },
+    "frozen/fittings-art.mjs": {
+      "sha256": "988d18d342e44ce0b0b373ba893ce03b33c4ed24ca35794b98066f58da8d0d4e",
+      "bytes": 4462
+    },
+    "frozen/furniture.mjs": {
+      "sha256": "2d382b62df8513b38aff6c38a0f70422d7bef8d18c1ec453af896adf911d0af0",
+      "bytes": 10789
+    },
+    "frozen/game-art.mjs": {
+      "sha256": "dac32934e601b850556c19cecc9e7e132cc35599a1c0ce2534503c09e507bdbd",
+      "bytes": 14726
+    },
+    "frozen/graphics.mjs": {
+      "sha256": "7097444696f9dcbb2ff0710fdad2b3946352433e11f94f3b82cdda11f57bddf3",
+      "bytes": 3892
+    },
+    "frozen/house-art.mjs": {
+      "sha256": "75a383488ad8e419a41193a246044cc33ea3901e9f01b1ce5c8a6402222b3383",
+      "bytes": 14322
+    },
+    "frozen/index.html.txt": {
+      "sha256": "55262c56c88175c4b4efa3b96ce539e7e16b92be128106b53b08f7f619d78781",
+      "bytes": 2383
+    },
+    "frozen/layout.mjs": {
+      "sha256": "ec00297365583413de05dc20f944c027eb2f83e86f0f9709d793eb0eff947a7a",
+      "bytes": 3588
+    },
+    "frozen/main.mjs": {
+      "sha256": "0e71bee36b211c4816c47d12f5d389e1986063073aa8a03155ca44885e8500ee",
+      "bytes": 9065
+    },
+    "frozen/model.mjs": {
+      "sha256": "6134bfc5c3901ac4c802f03b0750e664542faba795e37ed983ce3b4b6362bbe5",
+      "bytes": 10142
+    },
+    "frozen/render.mjs": {
+      "sha256": "a36dc0fa3fff220788731591df452fa0eb5fed0ad7e350d59bb1eb5121652be1",
+      "bytes": 5512
+    },
+    "frozen/room.mjs": {
+      "sha256": "5d02db9dfa8ffc130aa0ddef65dcd4fe01702ce5457d6d5f89a199c494b73dee",
+      "bytes": 11132
+    },
+    "frozen/style.css": {
+      "sha256": "0a9a796201999204e7cfe4e26f634ec3724e98b019b184b2796417f65eab4d09",
+      "bytes": 3890
+    },
+    "licenses/vendor/LICENSE": {
+      "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+      "bytes": 1081
+    },
+    "frozen/assets/prints-01.webp": {
+      "sha256": "5407964579ec68987af501bbac33e205fd3a1b6f2b9aa2b16716f007e31397d6",
+      "bytes": 451274
+    },
+    "frozen/assets/prints-02.webp": {
+      "sha256": "3e8ca9d521204bb1b642494354e225c97f39685f56b917bd7fa5eac735bf2fde",
+      "bytes": 402070
+    },
+    "frozen/assets/prints-03.webp": {
+      "sha256": "763c90cc7e7b4a35ef3785fde5b99675070a71a5c611dec2d0eeba4edec6a563",
+      "bytes": 213794
+    },
+    "frozen/assets/prints-04.webp": {
+      "sha256": "6ee6e09ef0f2796db2346e90d9e7daa67996e2bb7b28ad0f286d33a323d39fa6",
+      "bytes": 176830
+    },
+    "frozen/assets/room.mesh": {
+      "sha256": "222537ae016e5b142b97a916338b393b3c3904a922b6d8a041bdd1644c959a5e",
+      "bytes": 1322914
+    },
+    "frozen/assets/scene.json": {
+      "sha256": "87daf0fd4da3b25c221ac27aab160041a5be8676893c2235ea43b322653a5362",
+      "bytes": 7139
+    },
+    "frozen/vendor/three.module.min.js": {
+      "sha256": "08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7",
+      "bytes": 691648
+    }
+  },
+  "publication": {
+    "publishedFiles": [
+      "host-run-record.json",
+      "launch-prompt.txt",
+      "README.md",
+      "RUN.json",
+      "source-audit.json",
+      "frozen/cabinets.mjs",
+      "frozen/fittings-art.mjs",
+      "frozen/furniture.mjs",
+      "frozen/game-art.mjs",
+      "frozen/graphics.mjs",
+      "frozen/house-art.mjs",
+      "frozen/index.html.txt",
+      "frozen/layout.mjs",
+      "frozen/main.mjs",
+      "frozen/model.mjs",
+      "frozen/render.mjs",
+      "frozen/room.mjs",
+      "frozen/style.css",
+      "licenses/vendor/LICENSE",
+      "frozen/assets/prints-01.webp",
+      "frozen/assets/prints-02.webp",
+      "frozen/assets/prints-03.webp",
+      "frozen/assets/prints-04.webp",
+      "frozen/assets/room.mesh",
+      "frozen/assets/scene.json",
+      "frozen/vendor/three.module.min.js"
+    ],
+    "retainedOutsidePages": [
+      "Full source/build preservation archive and development/check/cache files outside Git and Pages."
+    ]
+  },
+  "previewCapture": {
+    "status": "uncaptured",
+    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+  }
+}
