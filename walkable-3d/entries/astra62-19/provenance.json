@@ -123,8 +123,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "830ded1403e8af2a55de8cfda76afac43c7b45be985141d9aa7bd9120b4f427f",
-      "bytes": 1298
+      "sha256": "7509166e5334d5683a24f6bcc89f0bd4f8a65be990cda54e50f636c26d4c3fbe",
+      "bytes": 1352
     },
     "launch-prompt.txt": {
       "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
@@ -207,8 +207,12 @@
       "bytes": 4723
     },
     "host-runtime-check.json": {
-      "sha256": "509252d3c01a03ed85a96040cc5c05986bf0db3ceaca346dfc18370b31723658",
-      "bytes": 289
+      "sha256": "bf31fee3f9c4143839e498523047817e9862745b6103022ea601b9791685d3ab",
+      "bytes": 2995
+    },
+    "preview.jpg": {
+      "sha256": "243f917e86b7f7098dfc65d2fffcf209d51945f66b928e5e765a9ee2f92e3b54",
+      "bytes": 86380
     }
   },
   "publication": {
@@ -234,14 +238,19 @@
       "frozen/viewer.js",
       "frozen/scene.vert",
       "frozen/scene.frag",
-      "host-runtime-check.json"
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:22:38.723Z",
+    "sha256": "243f917e86b7f7098dfc65d2fffcf209d51945f66b928e5e765a9ee2f92e3b54",
+    "bytes": 86380,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

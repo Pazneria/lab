@@ -17,12 +17,12 @@
   "timingAuthority": "Original source records and parent completion/caveat disclosures only; no inferred deadline compliance.",
   "qa": {
     "static": "Frozen hashes, source mapping and initial runtime closure assembled; release review pending.",
-    "visual": "NOT RUN",
-    "interactive": "NOT RUN: Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
-    "gpu": "NOT RUN",
+    "visual": "NOT VERIFIED: Approved resources and all three fonts loaded with matching hashes, but opaque-frame startup failed: getImageData canvas tainted by cross-origin data. Original payload and sandbox unchanged.",
+    "interactive": "NOT RUN: startup failed.",
+    "gpu": "Browser startup attempted; no benchmark.",
     "performance": "NOT RUN",
     "preview": "NOT CAPTURED"
   },
   "generationSeparation": "No entrant coaching, edits, repairs, rebuilds or post-deadline fixes. Active entrants never inspected.",
-  "releaseGate": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
+  "releaseGate": "Approved resources and all three fonts loaded with matching hashes, but opaque-frame startup failed: getImageData canvas tainted by cross-origin data. Original payload and sandbox unchanged."
 }

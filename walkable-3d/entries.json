@@ -8873,7 +8873,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
+        "Approved resources and all three fonts loaded with matching hashes, but opaque-frame startup failed: getImageData canvas tainted by cross-origin data. Original payload and sandbox unchanged."
       ],
       "documents": [
         {
@@ -8913,7 +8913,16 @@
       "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
+      "runtimeVerification": "Approved resources and all three fonts loaded with matching hashes, but opaque-frame startup failed: getImageData canvas tainted by cross-origin data. Original payload and sandbox unchanged.",
+      "hostFetchAssets": [
+        "cabin.json",
+        "cabin.bin"
+      ],
+      "hostFontAssets": [
+        "type/barlow.woff2",
+        "type/baskervville.woff2",
+        "type/ibm-plex-mono.woff2"
+      ],
       "failureCategory": "host-policy",
       "admissionWithheld": true
     },
@@ -8930,9 +8939,7 @@
       "controls": "Use the original entry control and controls in the unchanged producer README.",
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
-      "limitations": [
-        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
-      ],
+      "limitations": [],
       "documents": [
         {
           "label": "Original producer README.md",
@@ -8961,19 +8968,24 @@
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine unchanged default startup view captured in the opaque local host sandbox.",
       "archiveSha256": "bfcd33f5f245bf699baeee62b6051a4123663a7acccceb00465210d6b65dfb9b",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4179669aa9d2af39d8f7abe37752ea3468ef460415b197deb9e1f1594d47affe",
       "promptVersion": "19-gpt62",
-      "availability": "failed",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
-      "failureCategory": "host-policy",
-      "admissionWithheld": true
+      "runtimeVerification": "Passed separate local host startup, original start control, exact approved resource response status/bytes/hash/CORS checks, genuine nonblank default-view capture, bounded W/R input dispatch and iframe/context unload. No full-route or performance grade.",
+      "hostFetchAssets": [
+        "habitat.json",
+        "habitat.mesh.gz",
+        "surface.rgba.gz",
+        "scene.vert",
+        "scene.frag"
+      ]
     },
     {
       "id": "astra62-20",
@@ -8988,9 +9000,7 @@
       "controls": "Use the original entry control and controls in the unchanged producer README.",
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
-      "limitations": [
-        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
-      ],
+      "limitations": [],
       "documents": [
         {
           "label": "Original producer README.md",
@@ -9019,19 +9029,21 @@
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine unchanged default startup view captured in the opaque local host sandbox.",
       "archiveSha256": "04066552eadb8394e9000b0d7334d1d65e37311ca721caf86bf43b84971e83fc",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "b5af72fec86251edc006ed633782d5eff1dac4cb3bf178fee71b8365530cfb06",
       "promptVersion": "20-gpt62",
-      "availability": "failed",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
-      "failureCategory": "host-policy",
-      "admissionWithheld": true
+      "runtimeVerification": "Passed separate local host startup, original start control, exact approved resource response status/bytes/hash/CORS checks, genuine nonblank default-view capture, bounded W/R input dispatch and iframe/context unload. No full-route or performance grade.",
+      "hostFetchAssets": [
+        "assets/scene.json",
+        "assets/scene.bin"
+      ]
     },
     {
       "id": "astra62-16",
@@ -9046,9 +9058,7 @@
       "controls": "Use the original entry control and controls in the unchanged producer README.",
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
-      "limitations": [
-        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
-      ],
+      "limitations": [],
       "documents": [
         {
           "label": "Original producer README.md",
@@ -9077,19 +9087,21 @@
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine unchanged default startup view captured in the opaque local host sandbox.",
       "archiveSha256": "085f616619de1b844299675000abece9ad61617a95fc9c02bd56f90f31d2a2c8",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "67cdd49e76c02b407488cc33c3e358a7ceadb610ef56ff93974ab6529b465164",
       "promptVersion": "16-gpt62",
-      "availability": "failed",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
-      "failureCategory": "host-policy",
-      "admissionWithheld": true
+      "runtimeVerification": "Passed separate local host startup, original start control, exact approved resource response status/bytes/hash/CORS checks, genuine nonblank default-view capture, bounded W/R input dispatch and iframe/context unload. No full-route or performance grade.",
+      "hostFetchAssets": [
+        "cottage.json",
+        "cottage.bin.gz"
+      ]
     },
     {
       "id": "astra62-17",

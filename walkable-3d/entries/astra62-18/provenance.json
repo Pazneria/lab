@@ -168,8 +168,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "95911f0cb7d16e844c589b041b81d816bb66b5765d561f4c20eb097c8fed6175",
-      "bytes": 1298
+      "sha256": "b12044ffe1e98dc0e7c9e2ca8a7709773447cb0e057b5ddbe938d6c964811ccd",
+      "bytes": 1523
     },
     "launch-prompt.txt": {
       "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
@@ -288,8 +288,8 @@
       "bytes": 14708
     },
     "host-runtime-check.json": {
-      "sha256": "39185023d346c44760a7aba3568aeee04a26321bb89972a900e084bb778179ee",
-      "bytes": 289
+      "sha256": "5850c2ec105b9e7a4eedbde5641f3853c3b4cc1ebc145762333bd21dba304cf3",
+      "bytes": 2827
     }
   },
   "publication": {
@@ -332,6 +332,6 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
+    "reason": "Approved resources and all three fonts loaded with matching hashes, but opaque-frame startup failed: getImageData canvas tainted by cross-origin data. Original payload and sandbox unchanged."
   }
 }

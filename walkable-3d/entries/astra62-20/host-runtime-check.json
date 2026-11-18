@@ -1,8 +1,78 @@
 {
   "id": "astra62-20",
-  "status": "withheld-pending-resource-approval",
-  "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
-  "sourceChanged": false,
+  "startedAt": "2026-11-18T04:22:38.764Z",
+  "status": "captured",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [
+    "Click existing #scene canvas start control"
+  ],
+  "frozenHtmlSha256": "b5af72fec86251edc006ed633782d5eff1dac4cb3bf178fee71b8365530cfb06",
+  "auditedResourceResponses": [
+    {
+      "path": "assets/scene.json",
+      "status": 200,
+      "bytes": 73598,
+      "sha256": "d130730ba76ae1ddd84157546091eff90c700fa905d8be6f0a0a80b7c98bb1ce",
+      "cors": "*"
+    },
+    {
+      "path": "assets/scene.bin",
+      "status": 200,
+      "bytes": 10023940,
+      "sha256": "d9818d431c3f92f13c644b4f0ea5969b84a51a80a26db9fc4d551d09b87dbbd4",
+      "cors": "*"
+    }
+  ],
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "localFontStatuses": [],
+  "viewerMessageAfterStart": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "viewport": {
+    "width": 1280,
+    "height": 972
+  },
+  "iframeBounds": {
+    "x": 19,
+    "y": 125.4375,
+    "width": 1242,
+    "height": 776.515625
+  },
+  "inputSmoke": "W key down/up for250ms and R reset dispatched after default preview; no full-route or movement-correctness claim.",
+  "capture": {
+    "index": 0,
+    "canvas": {
+      "id": "",
+      "width": 1242,
+      "height": 777,
+      "cssWidth": 1242,
+      "cssHeight": 777
+    },
+    "output": {
+      "width": 960,
+      "height": 600
+    },
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "pointerLocked": true,
+    "quality": 88,
+    "channelStddev": [
+      54.61736356360856,
+      54.47820526294141,
+      72.58595970259763
+    ]
+  },
+  "bytes": 105593,
+  "sha256": "4de011820680a85dd3792da418fd937578eff13fa455a51d3a861bb02e630a40",
+  "filename": "astra62-20.jpg",
+  "capturedAt": "2026-11-18T04:22:41.926Z",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:22:41.963Z",
+  "browserAndServerClosed": true,
   "performance": "NOT MEASURED",
-  "browserAndServerClosed": true
+  "note": "Separate approved host smoke/capture and exact-resource verification. No entrant repair or source change."
 }

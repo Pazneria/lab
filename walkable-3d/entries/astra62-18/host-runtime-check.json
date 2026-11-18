@@ -1,8 +1,76 @@
 {
   "id": "astra62-18",
-  "status": "withheld-pending-resource-approval",
-  "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
-  "sourceChanged": false,
+  "startedAt": "2026-11-18T04:22:19.892Z",
+  "status": "capture-failed",
+  "consoleErrors": [
+    "SecurityError: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.\n    at loadResources (http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-18/frozen/boot.mjs:43:48)\n    at init (http://127.0.0.1:5197/lab/walkable-3d/entries/astra62-18/frozen/boot.mjs:164:56)"
+  ],
+  "pageErrors": [],
+  "requestFailures": [],
+  "nonReadRequests": [],
+  "unexpectedExternalRequests": [],
+  "controls": [],
+  "frozenHtmlSha256": "ab6d4895998da8c597a6a0dbe396210a318d388ee8ab435229ecfb1d35032a04",
+  "auditedResourceResponses": [
+    {
+      "path": "type/baskervville.woff2",
+      "status": 200,
+      "bytes": 18088,
+      "sha256": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142",
+      "cors": "*"
+    },
+    {
+      "path": "type/barlow.woff2",
+      "status": 200,
+      "bytes": 22196,
+      "sha256": "b0a8ad37ac45f5fb22ced461576db72e44e295107aad7a9c8a7a4bad728fd03b",
+      "cors": "*"
+    },
+    {
+      "path": "cabin.json",
+      "status": 200,
+      "bytes": 4290,
+      "sha256": "49669f8540ff709bc4f922886aaaaffba83b9e0ff2acd8fa8b29bbe3996fc357",
+      "cors": "*"
+    },
+    {
+      "path": "type/ibm-plex-mono.woff2",
+      "status": 200,
+      "bytes": 14708,
+      "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+      "cors": "*"
+    },
+    {
+      "path": "cabin.bin",
+      "status": 200,
+      "bytes": 6526044,
+      "sha256": "27dfe7a7b284546e6295a7b40d71fad3f0f8e326666536b6c4491bf091cc02df",
+      "cors": "*"
+    }
+  ],
+  "hostVisibility": "visible",
+  "viewerMessage": "Ready. Click the entry control inside the scene. Press Esc to release the mouse, then choose Grade this scene or close to vote.",
+  "readyObserved": true,
+  "localFontStatuses": [
+    {
+      "family": "Barlow",
+      "status": "loaded"
+    },
+    {
+      "family": "Baskervville",
+      "status": "loaded"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "status": "loaded"
+    }
+  ],
+  "error": "locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#enter') to be visible\u001b[22m\n\u001b[2m    34 × locator resolved to hidden <button id=\"enter\" class=\"enter\" type=\"button\">…</button>\u001b[22m\n",
+  "observedSceneText": "≋\nUnable to open the quarters. Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.",
+  "viewerUnloaded": true,
+  "contextClosed": true,
+  "finishedAt": "2026-11-18T04:22:35.782Z",
+  "browserAndServerClosed": true,
   "performance": "NOT MEASURED",
-  "browserAndServerClosed": true
+  "note": "Separate approved host smoke/capture and exact-resource verification. No entrant repair or source change."
 }

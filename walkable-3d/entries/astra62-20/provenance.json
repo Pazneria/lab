@@ -228,8 +228,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "347469ca640019b41ebfc136c437a942c078b1ebf87908470b848e147e3c4062",
-      "bytes": 1298
+      "sha256": "31ef58660c1ee736d1b97383d8a0eef714e840f68bb89205132e0a64170ee7a3",
+      "bytes": 1352
     },
     "launch-prompt.txt": {
       "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
@@ -396,8 +396,12 @@
       "bytes": 670681
     },
     "host-runtime-check.json": {
-      "sha256": "083b9533d96889bcad5311fe7354015076bfbb6239bd2485fa2edb1e0f6975fe",
-      "bytes": 289
+      "sha256": "6fde92fb70248e30944409c191bece9e478f6892ba870818cea2433ec5f2a332",
+      "bytes": 2444
+    },
+    "preview.jpg": {
+      "sha256": "4de011820680a85dd3792da418fd937578eff13fa455a51d3a861bb02e630a40",
+      "bytes": 105593
     }
   },
   "publication": {
@@ -444,14 +448,19 @@
       "frozen/assets/texture-15-fabric3.png",
       "frozen/assets/texture-16-fabric4.png",
       "frozen/package/build/three.module.min.js",
-      "host-runtime-check.json"
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:22:41.926Z",
+    "sha256": "4de011820680a85dd3792da418fd937578eff13fa455a51d3a861bb02e630a40",
+    "bytes": 105593,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

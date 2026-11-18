@@ -237,6 +237,97 @@ export const approvedResources = {
       }
     ],
     "hostFontAssets": []
+  },
+  "astra62-16": {
+    "hostFetchAssets": [
+      {
+        "relativePath": "cottage.json",
+        "bytes": 11251,
+        "sha256": "2ac2d2bc1c6cb7f1dde345f640eab63e137d953a60453ab3f0f63f2c2de2b13e"
+      },
+      {
+        "relativePath": "cottage.bin.gz",
+        "bytes": 6044402,
+        "sha256": "e61c2b0218091134afa1f490f440a634627a5593b9d1773304be5cd610f0b07d"
+      }
+    ],
+    "hostFontAssets": []
+  },
+  "astra62-18": {
+    "hostFetchAssets": [
+      {
+        "relativePath": "cabin.json",
+        "bytes": 4290,
+        "sha256": "49669f8540ff709bc4f922886aaaaffba83b9e0ff2acd8fa8b29bbe3996fc357"
+      },
+      {
+        "relativePath": "cabin.bin",
+        "bytes": 6526044,
+        "sha256": "27dfe7a7b284546e6295a7b40d71fad3f0f8e326666536b6c4491bf091cc02df"
+      }
+    ],
+    "hostFontAssets": [
+      {
+        "relativePath": "type/barlow.woff2",
+        "bytes": 22196,
+        "sha256": "b0a8ad37ac45f5fb22ced461576db72e44e295107aad7a9c8a7a4bad728fd03b"
+      },
+      {
+        "relativePath": "type/baskervville.woff2",
+        "bytes": 18088,
+        "sha256": "60ee0786854562db477ab5a9d4c363e65121a88c46650aee107d7d5010bd3142"
+      },
+      {
+        "relativePath": "type/ibm-plex-mono.woff2",
+        "bytes": 14708,
+        "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7"
+      }
+    ]
+  },
+  "astra62-19": {
+    "hostFetchAssets": [
+      {
+        "relativePath": "habitat.json",
+        "bytes": 8015,
+        "sha256": "ce9a3aa3296ada2a075543102b1502e92ac7b3a0c8ba6179f9595b52a6a45d5f"
+      },
+      {
+        "relativePath": "habitat.mesh.gz",
+        "bytes": 4893752,
+        "sha256": "d075f098a1f6cf9455cafbe17ff5b48cb7229a06af0b7bfd3d29f85be0b8603c"
+      },
+      {
+        "relativePath": "surface.rgba.gz",
+        "bytes": 2625495,
+        "sha256": "10c78644160c5ed7ddbc122877d4f269ce61a46f45a9b5c0c47b8d62882946ce"
+      },
+      {
+        "relativePath": "scene.vert",
+        "bytes": 951,
+        "sha256": "f8885aa382d09bbc479c74dfd21519adca7571ef230b747bda04939cbf0cc005"
+      },
+      {
+        "relativePath": "scene.frag",
+        "bytes": 4723,
+        "sha256": "74f7de2e68ce0d1ab671f94fea6003537ab68c02025e3745e4974569c44ffe6e"
+      }
+    ],
+    "hostFontAssets": []
+  },
+  "astra62-20": {
+    "hostFetchAssets": [
+      {
+        "relativePath": "assets/scene.json",
+        "bytes": 73598,
+        "sha256": "d130730ba76ae1ddd84157546091eff90c700fa905d8be6f0a0a80b7c98bb1ce"
+      },
+      {
+        "relativePath": "assets/scene.bin",
+        "bytes": 10023940,
+        "sha256": "d9818d431c3f92f13c644b4f0ea5969b84a51a80a26db9fc4d551d09b87dbbd4"
+      }
+    ],
+    "hostFontAssets": []
   }
 };
 export function resourceSources(entry, field, folder) {

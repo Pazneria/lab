@@ -14,7 +14,7 @@ test('all 111 prior records and default policies remain byte-equivalent',()=>{
  assert.deepEqual(catalog.entries.slice(0,111),baseline.entries);
  for(const e of catalog.entries.filter(e=>!approvedResources[e.id]))assert.equal(scenePolicy(e,folder(e.id)),old(e,folder(e.id)));
 });
-test('only the approved 30 asset and five font URLs are admitted; every file matches publication manifest and bytes',()=>{
+test('only the approved41 asset and eight font URLs are admitted; every file matches publication manifest and bytes',()=>{
  let fetches=0,fonts=0;
  for(const [id,fields] of Object.entries(approvedResources)){
   const entry=catalog.entries.find(e=>e.id===id),f=folder(id),policy=scenePolicy(entry,f);
@@ -31,7 +31,7 @@ test('only the approved 30 asset and five font URLs are admitted; every file mat
   const neutral={...entry};delete neutral.hostFetchAssets;delete neutral.hostFontAssets;
   assert.equal(policy.replace(/font-src [^;]+/,'font-src NONE').replace(/connect-src [^;]+/,'connect-src NONE'),old(neutral,f).replace(/font-src [^;]+/,'font-src NONE').replace(/connect-src [^;]+/,'connect-src NONE'));
  }
- assert.equal(fetches,30);assert.equal(fonts,5);
+ assert.equal(fetches,41);assert.equal(fonts,8);
 });
 test('malformed, expanded, sibling-entry, API and external metadata fail closed',()=>{
  const e=catalog.entries.find(e=>e.id==='astra62-01'),f=folder(e.id);
@@ -49,4 +49,11 @@ test('viewer retains sandbox, error-unload and authenticated bridge',()=>{
  assert.match(source,/securitypolicyviolation.*send\('failed'\)/);
  assert.match(source,/event\.origin !== 'null'/);assert.match(source,/event\.data\.token !== active\.token/);
  assert.match(source,/const csp = scenePolicy\(entry, folder\)/);
+});
+
+test('final extension leaves all earlier twelve opt-in policies unchanged',async()=>{
+ const oldSource=execFileSync('git',['show','8295cb1f304e5b14336d79a7ba465bec7cd16545:walkable-3d/assets/resource-policy.js'],{cwd:root});
+ const old=await import('data:text/javascript;base64,'+oldSource.toString('base64'));
+ for(const id of Object.keys(old.approvedResources)){const e=catalog.entries.find(e=>e.id===id);assert.equal(scenePolicy(e,folder(id)),old.scenePolicy(e,folder(id)));}
+ assert.throws(()=>scenePolicy({...catalog.entries.find(e=>e.id==='astra62-16'),hostFetchAssets:['cabin.json','cabin.bin']},folder('astra62-16')));
 });

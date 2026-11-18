@@ -137,8 +137,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "2ab3b81f796e932a08ceb6e77af325eefa3679c7e4c9c1fff86d30ee9ae183eb",
-      "bytes": 1298
+      "sha256": "c278a517c7478e5b006240f4286532e88ae5bef73e19ac37080627308b0660ff",
+      "bytes": 1352
     },
     "launch-prompt.txt": {
       "sha256": "854b3c28df8c603311ba98b91a7ab735ed6365e610d3365ade63fbb223b5498d",
@@ -229,8 +229,12 @@
       "bytes": 3239
     },
     "host-runtime-check.json": {
-      "sha256": "424601050f7395cde79e4f42d45eb771d650d2f03f657f427e6feb30dd7c9777",
-      "bytes": 289
+      "sha256": "9a6c3bc6978058567aa06131fa240f7ed61c0e32be30211696ce9bd7a20b5d52",
+      "bytes": 4610
+    },
+    "preview.jpg": {
+      "sha256": "d6ca9521d2dad460879f79fc2a26fb3a588fe952440d2281f1adaa9c9e111778",
+      "bytes": 118894
     }
   },
   "publication": {
@@ -258,14 +262,19 @@
       "frozen/stillroom.js",
       "frozen/style.css",
       "frozen/surfaces.js",
-      "host-runtime-check.json"
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:22:19.844Z",
+    "sha256": "d6ca9521d2dad460879f79fc2a26fb3a588fe952440d2281f1adaa9c9e111778",
+    "bytes": 118894,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }
