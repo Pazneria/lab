@@ -93,8 +93,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "d881b860d55ab3c7f6ad29bf48acf6780af7c3802876c214c98bc336fd7bd1d0",
-      "bytes": 1255
+      "sha256": "1e7e618a1a301fca209886ae72d7cf2137e7df004e6e1ca69e0a498c78e46d9c",
+      "bytes": 1421
     },
     "launch-prompt.txt": {
       "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
@@ -119,6 +119,14 @@
     "frozen/assets/index-fuS2wX-w.css": {
       "sha256": "44e607cd04b970eb7d5cb7554348ba3931ceaa4213c0cfa2eb69f9f1677c0b52",
       "bytes": 3117
+    },
+    "host-runtime-check.json": {
+      "sha256": "0e3c1e194dedce90275944141ea8c539a6b52b7ce16e19d040733f4138ca0782",
+      "bytes": 1908
+    },
+    "preview.jpg": {
+      "sha256": "afdb7e622375743962482d61180e687d8b540e49da27da06e83f44e646a549e7",
+      "bytes": 107780
     }
   },
   "publication": {
@@ -129,14 +137,20 @@
       "source-audit.json",
       "frozen/index.html.txt",
       "frozen/assets/index-D7j42fgy.js",
-      "frozen/assets/index-fuS2wX-w.css"
+      "frozen/assets/index-fuS2wX-w.css",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:08:48.048Z",
+    "sha256": "afdb7e622375743962482d61180e687d8b540e49da27da06e83f44e646a549e7",
+    "bytes": 107780,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

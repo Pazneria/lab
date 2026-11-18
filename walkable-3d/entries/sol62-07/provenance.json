@@ -212,8 +212,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "43f26e0c48e02755ee22268abd1119d7e7ff3a03175418cc952e5b8c38302316",
-      "bytes": 1254
+      "sha256": "992762a6d6eb42f9e5cb9b3abf08224a8c258555cc6335bafe29c7fb631772e8",
+      "bytes": 1420
     },
     "launch-prompt.txt": {
       "sha256": "a40948fd4afa98102d2268392d37b9b638a486474ef2b1028701ed1c8035aeed",
@@ -282,6 +282,14 @@
     "frozen/assets/resin-flutes.png": {
       "sha256": "cb79547ee75f41603f4e57f3557ef2cfb7e3a59086ef2e2ae467392eb2180215",
       "bytes": 39475
+    },
+    "host-runtime-check.json": {
+      "sha256": "915f0fadb005fea6038923096b0f73e4c59b162c02e0a73fee107e9d21af7e3e",
+      "bytes": 2066
+    },
+    "preview.jpg": {
+      "sha256": "193d1a2b647fbe7b44829a510b01144396bcf0d5842dae26f37693aae31eaec9",
+      "bytes": 85433
     }
   },
   "publication": {
@@ -303,14 +311,20 @@
       "frozen/assets/limestone-relief.png",
       "frozen/assets/limestone.png",
       "frozen/assets/oak.png",
-      "frozen/assets/resin-flutes.png"
+      "frozen/assets/resin-flutes.png",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:50.463Z",
+    "sha256": "193d1a2b647fbe7b44829a510b01144396bcf0d5842dae26f37693aae31eaec9",
+    "bytes": 85433,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

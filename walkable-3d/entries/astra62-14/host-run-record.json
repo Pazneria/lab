@@ -18,11 +18,11 @@
   "qa": {
     "static": "Frozen hashes, source mapping and initial runtime closure assembled; release review pending.",
     "visual": "NOT RUN",
-    "interactive": "NOT RUN",
+    "interactive": "NOT RUN: Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged.",
     "gpu": "NOT RUN",
     "performance": "NOT RUN",
-    "preview": "UNCAPTURED"
+    "preview": "NOT CAPTURED"
   },
   "generationSeparation": "No entrant coaching, edits, repairs, rebuilds or post-deadline fixes. Active entrants never inspected.",
-  "releaseGate": "DRAFT/STAGED: browser validation waits for active generation or separate safe environment; matching current v13 service source access also required without creating credentials."
+  "releaseGate": "Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged."
 }

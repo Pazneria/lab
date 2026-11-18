@@ -130,8 +130,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "b7f3829785dd460f22f6c3b6f6fd2035b7b6916a1afe94788a5b6923a97576a1",
-      "bytes": 1260
+      "sha256": "a5a9367f56a49baa5878bd64faab0a7c22071379ffe192b308becbc14e413ed8",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "2ffabaa281b0fc6b348c8ca3f410e0b3d6df4808fb8265f01b09611a53c3407b",
@@ -208,6 +208,14 @@
     "frozen/water-detail.png": {
       "sha256": "fa1321298db8db5160df6822fa7211b2b217446cf04373aff45dd96eab79ae45",
       "bytes": 150104
+    },
+    "host-runtime-check.json": {
+      "sha256": "760cf099bc2ea27326d7e2c71f5c9f7e2879fec5efccda9f5273a7cbb3e4ab5f",
+      "bytes": 1915
+    },
+    "preview.jpg": {
+      "sha256": "853f50e4be390b2bcd1838128974819e527d0b280900cff1d1082879a00ced2a",
+      "bytes": 90334
     }
   },
   "publication": {
@@ -231,14 +239,20 @@
       "frozen/shaders.mjs",
       "frozen/style.css",
       "frozen/walk.mjs",
-      "frozen/water-detail.png"
+      "frozen/water-detail.png",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:17.135Z",
+    "sha256": "853f50e4be390b2bcd1838128974819e527d0b280900cff1d1082879a00ced2a",
+    "bytes": 90334,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

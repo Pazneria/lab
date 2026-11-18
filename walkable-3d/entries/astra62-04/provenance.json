@@ -143,8 +143,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "9c9392a821589d3aa82871f02eef3e32961a6815afe975929965cdc2c93c6106",
-      "bytes": 1260
+      "sha256": "e780064849f3db2a2ade6e8592e64e0c91d3fae2e4b9d3394247efd369261ed5",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "9bdc755a7c3088bf6b34b3736076fe207254fa68182bc3cb08e82a989af83cf8",
@@ -241,6 +241,14 @@
     "licenses/instrument-sans-license.txt": {
       "sha256": "c27a3c53c3beed7f5c26853afa15991478ff7145d3754a36b0382f84e10c0d03",
       "bytes": 4538
+    },
+    "host-runtime-check.json": {
+      "sha256": "83b9b3c3cbfbb954ad5284e0ef767665c9d52fd31af2d31d66ad025df2483964",
+      "bytes": 2069
+    },
+    "preview.jpg": {
+      "sha256": "1d38e6456c46c5a8f96699e90a0414da864475f04cca1a20a4da717f4a8d0b23",
+      "bytes": 166927
     }
   },
   "publication": {
@@ -269,14 +277,20 @@
       "frozen/visitor.js",
       "frozen/walk.js",
       "licenses/baskervville-license.txt",
-      "licenses/instrument-sans-license.txt"
+      "licenses/instrument-sans-license.txt",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:15.591Z",
+    "sha256": "1d38e6456c46c5a8f96699e90a0414da864475f04cca1a20a4da717f4a8d0b23",
+    "bytes": 166927,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

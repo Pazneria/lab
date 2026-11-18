@@ -21,7 +21,8 @@
       "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
       "README.md": "README.md",
       "run-timing.txt": "run-timing.txt",
-      "licenses/vendor/LICENSE": "vendor/LICENSE"
+      "licenses/vendor/LICENSE": "vendor/LICENSE",
+      "frozen/src/build-kit.js": "src/build-kit.js"
     },
     "perFileSourceHashes": {
       "index.html": {
@@ -118,8 +119,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "d476da3c3ff94ff8cc12f520524ebeba13e628df640da7bbe2ca860cd30ddd06",
-      "bytes": 1422
+      "sha256": "35983c3cd2c545e2f4997b5b7dc23e30935f7e3c2547e9bcbcd0363a0e76d703",
+      "bytes": 1588
     },
     "launch-prompt.txt": {
       "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
@@ -196,6 +197,18 @@
     "frozen/vendor/three.module.min.js": {
       "sha256": "06552c54e4071fbc7305117aafe6765d92c5d2a2a83507d4f05b9bf4f3d4d463",
       "bytes": 338836
+    },
+    "frozen/src/build-kit.js": {
+      "sha256": "96797f2e34b57a0d2303da569cf5aded8b57e150cbba3687d757c2fbefe7cd35",
+      "bytes": 9513
+    },
+    "host-runtime-check.json": {
+      "sha256": "267c990df8111e17d868eed297d4c97a25438badc4f0f30c001e832a88369657",
+      "bytes": 2061
+    },
+    "preview.jpg": {
+      "sha256": "031de57f7c3c8bc4d2bc147238b847a35172964c3de33151364e4b56acd7587b",
+      "bytes": 107175
     }
   },
   "publication": {
@@ -219,14 +232,21 @@
       "frozen/src/workshop.js",
       "frozen/src/world.js",
       "frozen/vendor/three.core.min.js",
-      "frozen/vendor/three.module.min.js"
+      "frozen/vendor/three.module.min.js",
+      "frozen/src/build-kit.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:53.869Z",
+    "sha256": "031de57f7c3c8bc4d2bc147238b847a35172964c3de33151364e4b56acd7587b",
+    "bytes": 107175,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

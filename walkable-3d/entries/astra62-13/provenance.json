@@ -170,8 +170,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "009b6445d24492eac8b01f7c0616eae1ce96be0fdbdae71b3f65d96c7971a89b",
-      "bytes": 1406
+      "sha256": "12f1b0bdac6af8bd615a8c4f04656a529c45f4066382377fb5e3bf1f6423a14e",
+      "bytes": 1572
     },
     "launch-prompt.txt": {
       "sha256": "31ced7d1944ae0d18012a511f368feac877e0ec4b20141e69c6a589457f1a0b8",
@@ -232,6 +232,14 @@
     "frozen/weather-data.js": {
       "sha256": "5b21ee9f07898cad3d8b22b68b7f5c07fd649f1b845ce59b17c077547387dcd1",
       "bytes": 444060
+    },
+    "host-runtime-check.json": {
+      "sha256": "1cf09716e84699f4d0519cd63cae3bdb276b870de2f307fee0d42a2f7a6d5aa5",
+      "bytes": 1916
+    },
+    "preview.jpg": {
+      "sha256": "504b7484738b73311b95068f69c2a0176ef6bc5c8b88ab1bb2aed451a7024a6c",
+      "bytes": 101925
     }
   },
   "publication": {
@@ -251,14 +259,20 @@
       "frozen/scenery.js",
       "frozen/station.js",
       "frozen/surfaces.js",
-      "frozen/weather-data.js"
+      "frozen/weather-data.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:39.698Z",
+    "sha256": "504b7484738b73311b95068f69c2a0176ef6bc5c8b88ab1bb2aed451a7024a6c",
+    "bytes": 101925,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

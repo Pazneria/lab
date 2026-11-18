@@ -116,8 +116,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "ed3385d2d3555e025543db9d1afad7a10bcbf5252c5eef4a78352781760c4fcb",
-      "bytes": 1261
+      "sha256": "08aebd16095c856fca81b881bde0ec4b560fb55d6c1857eb62623577322583e2",
+      "bytes": 1358
     },
     "launch-prompt.txt": {
       "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
@@ -186,6 +186,10 @@
     "frozen/workshop.pack.js": {
       "sha256": "3969ad00c843f4dad023fc8453d63ef873f7cd6f56d8a5d623ef92fa4c1c88e3",
       "bytes": 9997049
+    },
+    "host-runtime-check.json": {
+      "sha256": "283b498f74ce7065a59c80ec0175246fca485739903cc1583de4a7c64e0652ad",
+      "bytes": 309
     }
   },
   "publication": {
@@ -207,7 +211,8 @@
       "frozen/surfaces.pack.js",
       "frozen/walk.js",
       "frozen/workshop.js",
-      "frozen/workshop.pack.js"
+      "frozen/workshop.pack.js",
+      "host-runtime-check.json"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
@@ -215,6 +220,6 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "reason": "Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged."
   }
 }

@@ -18,11 +18,11 @@
   "qa": {
     "static": "Frozen hashes, source mapping and initial runtime closure assembled; release review pending.",
     "visual": "NOT RUN",
-    "interactive": "NOT RUN",
+    "interactive": "NOT RUN: Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged.",
     "gpu": "NOT RUN",
     "performance": "NOT RUN",
-    "preview": "UNCAPTURED"
+    "preview": "NOT CAPTURED"
   },
   "generationSeparation": "No entrant coaching, edits, repairs, rebuilds or post-deadline fixes. Active entrants never inspected.",
-  "releaseGate": "DRAFT/STAGED: browser validation waits for active generation or separate safe environment; matching current v13 service source access also required without creating credentials."
+  "releaseGate": "Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged."
 }

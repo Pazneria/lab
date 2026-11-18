@@ -135,8 +135,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "479b4f726cd85010bdc076bcefaa49ec5d9bdfb31ba0e4781a4f6438cf510d45",
-      "bytes": 1255
+      "sha256": "92c1298613979da0503e50c320984ffd8398353eba8a0bb05f4ec559047ced4f",
+      "bytes": 1421
     },
     "launch-prompt.txt": {
       "sha256": "afce81e406f667458145431a43542d55bae551c6b60282d6fc986c617e09da02",
@@ -217,6 +217,14 @@
     "three-package.json": {
       "sha256": "219ef226f588ac2f07b2311a9c58900226cffb17583713649f48bbe78aff2197",
       "bytes": 4635
+    },
+    "host-runtime-check.json": {
+      "sha256": "2330f551323dc7ae235268cebb782798511d7289d1f987763db3b91cc555e13c",
+      "bytes": 2063
+    },
+    "preview.jpg": {
+      "sha256": "0ad459b52752ea7bbb5f25dc8eb30413272e3cd125dd46668001a26de70e26c7",
+      "bytes": 108562
     }
   },
   "publication": {
@@ -241,14 +249,20 @@
       "frozen/vendor/three/build/three.core.js",
       "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
       "three-LICENSE",
-      "three-package.json"
+      "three-package.json",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:16.371Z",
+    "sha256": "0ad459b52752ea7bbb5f25dc8eb30413272e3cd125dd46668001a26de70e26c7",
+    "bytes": 108562,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

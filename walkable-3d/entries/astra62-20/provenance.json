@@ -228,8 +228,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "ccefff4706e815870836bb4a51a18b9fd0548c55b1d6597138e0edb091c89d9f",
-      "bytes": 1261
+      "sha256": "347469ca640019b41ebfc136c437a942c078b1ebf87908470b848e147e3c4062",
+      "bytes": 1298
     },
     "launch-prompt.txt": {
       "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
@@ -394,6 +394,10 @@
     "frozen/package/build/three.module.min.js": {
       "sha256": "3e690ac7d180b0aadf0891bea39eec643e29e2d3e75c99b18689518665f69ba6",
       "bytes": 670681
+    },
+    "host-runtime-check.json": {
+      "sha256": "083b9533d96889bcad5311fe7354015076bfbb6239bd2485fa2edb1e0f6975fe",
+      "bytes": 289
     }
   },
   "publication": {
@@ -439,7 +443,8 @@
       "frozen/assets/texture-14-fabric2.png",
       "frozen/assets/texture-15-fabric3.png",
       "frozen/assets/texture-16-fabric4.png",
-      "frozen/package/build/three.module.min.js"
+      "frozen/package/build/three.module.min.js",
+      "host-runtime-check.json"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
@@ -447,6 +452,6 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
   }
 }

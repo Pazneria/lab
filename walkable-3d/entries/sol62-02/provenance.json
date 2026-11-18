@@ -139,8 +139,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "993a193a360add33ea2d4ea0e87fab6f679f6c4c56c0b151db148be050c7bd0b",
-      "bytes": 1254
+      "sha256": "894dba5a0007fe3e72c9f8b935a8c7fc7aadd65b1cd6356b4eaae5d7b35ace80",
+      "bytes": 1420
     },
     "launch-prompt.txt": {
       "sha256": "0e6f602a86782fafa7f5accba0eaf46ecd8bc721e7d91804960e6c9bbe054be4",
@@ -221,6 +221,14 @@
     "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
       "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
       "bytes": 35539
+    },
+    "host-runtime-check.json": {
+      "sha256": "3150adc2a15a47d84b8afbc0a2f79fe737805dc54078a3c9f6fccef681dd1b63",
+      "bytes": 2059
+    },
+    "preview.jpg": {
+      "sha256": "6da175b11d42fb13c7fffb0085cfab348e0fc52a2c724a28bfecaec86cd4a6be",
+      "bytes": 99807
     }
   },
   "publication": {
@@ -245,14 +253,20 @@
       "frozen/vendor/three/build/three.core.min.js",
       "frozen/vendor/three/build/three.module.js",
       "frozen/vendor/three/build/three.module.min.js",
-      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:42.496Z",
+    "sha256": "6da175b11d42fb13c7fffb0085cfab348e0fc52a2c724a28bfecaec86cd4a6be",
+    "bytes": 99807,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

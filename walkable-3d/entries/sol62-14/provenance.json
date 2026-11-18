@@ -119,8 +119,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "5ce4ae7942e35adb3df438cd24e2d13421574c17865fb4b9ca1f4f10bfdc85c3",
-      "bytes": 1255
+      "sha256": "0fa1f0034b3ac2120238395ad2dd4e78cff74e6720073c9530eb9f1581f3aff5",
+      "bytes": 1421
     },
     "launch-prompt.txt": {
       "sha256": "f4aead8ac32525de96718a3ff74980f317257544a5393481e7f92e005bfdb834",
@@ -153,6 +153,14 @@
     "frozen/assets/three-webgl-DU3FQqCq.js": {
       "sha256": "abb22d9944e40a727f5f03f5063c852aad44818ab4af1d1a4ab7e879b5a4112d",
       "bytes": 324442
+    },
+    "host-runtime-check.json": {
+      "sha256": "4eafe912315b1f187fdb2645d2a534a3e6957a48058d5a26c7054b69ce01ee59",
+      "bytes": 2062
+    },
+    "preview.jpg": {
+      "sha256": "599784afc079cf33199324970da6975b8afd88f1d58ff57aeab93d59bdf00c00",
+      "bytes": 127141
     }
   },
   "publication": {
@@ -165,14 +173,20 @@
       "frozen/assets/index-B7TnL51r.js",
       "frozen/assets/index-Cwfj54su.css",
       "frozen/assets/three-core-BGg43aid.js",
-      "frozen/assets/three-webgl-DU3FQqCq.js"
+      "frozen/assets/three-webgl-DU3FQqCq.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:04.483Z",
+    "sha256": "599784afc079cf33199324970da6975b8afd88f1d58ff57aeab93d59bdf00c00",
+    "bytes": 127141,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

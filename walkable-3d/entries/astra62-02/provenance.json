@@ -93,8 +93,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "c3e2c8659a1267b17af9928ace405c26ec51662ed0514c092dde04644dafc537",
-      "bytes": 1260
+      "sha256": "75c6a0b246c08b8137243465f3c813c0fe1ba80632265100aa2a006f622bced2",
+      "bytes": 1311
     },
     "launch-prompt.txt": {
       "sha256": "0e6f602a86782fafa7f5accba0eaf46ecd8bc721e7d91804960e6c9bbe054be4",
@@ -151,6 +151,10 @@
     "frozen/renderer.js": {
       "sha256": "30fa429dd8167be80acd6e24cad79ffd3086576844535bb491832d0061aedf21",
       "bytes": 20224
+    },
+    "host-runtime-check.json": {
+      "sha256": "ed4054a73f008186eed8aa766340129e5b8691ff027896faa1bdbe868027cd05",
+      "bytes": 286
     }
   },
   "publication": {
@@ -169,7 +173,8 @@
       "frozen/market-atlas.png",
       "frozen/market.js",
       "frozen/materials.js",
-      "frozen/renderer.js"
+      "frozen/renderer.js",
+      "host-runtime-check.json"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
@@ -177,6 +182,6 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "reason": "Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged."
   }
 }

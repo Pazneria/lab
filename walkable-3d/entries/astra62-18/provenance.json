@@ -168,8 +168,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "134902660818dc0228b82357fb47ea0bc2c24004fac1d03955ed3fcd94a4dbba",
-      "bytes": 1261
+      "sha256": "95911f0cb7d16e844c589b041b81d816bb66b5765d561f4c20eb097c8fed6175",
+      "bytes": 1298
     },
     "launch-prompt.txt": {
       "sha256": "c20ca8642b697df1454bc0be8056e6b4eab818f3771b97ec2f1f2538b0d721df",
@@ -286,6 +286,10 @@
     "frozen/type/ibm-plex-mono.woff2": {
       "sha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
       "bytes": 14708
+    },
+    "host-runtime-check.json": {
+      "sha256": "39185023d346c44760a7aba3568aeee04a26321bb89972a900e084bb778179ee",
+      "bytes": 289
     }
   },
   "publication": {
@@ -319,7 +323,8 @@
       "licenses/type/ibm-plex-mono-license.txt",
       "frozen/type/barlow.woff2",
       "frozen/type/baskervville.woff2",
-      "frozen/type/ibm-plex-mono.woff2"
+      "frozen/type/ibm-plex-mono.woff2",
+      "host-runtime-check.json"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
@@ -327,6 +332,6 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
   }
 }

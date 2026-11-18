@@ -108,8 +108,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "919eba48f8b46fc140e957e7edd2a60cc34606bc0dc433a1e2b82223086f1cbd",
-      "bytes": 1261
+      "sha256": "d5b751a3123d11631ad3f8499ba7fa1c0433107ad3164436a8c096a2c60a7b5a",
+      "bytes": 1427
     },
     "launch-prompt.txt": {
       "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
@@ -178,6 +178,14 @@
     "frozen/wardrobe.mjs": {
       "sha256": "bd55512fd3530445d2e574c55802da592a2b90d0daf7ce77ec16523891688268",
       "bytes": 11498
+    },
+    "host-runtime-check.json": {
+      "sha256": "8a9772a78cf902ee007ad5cceb7c51c0b26854e082e77305b4b708923022d940",
+      "bytes": 1916
+    },
+    "preview.jpg": {
+      "sha256": "4a3a181f6efc5d63ae43b291c2dfe5d8d0387936d31b6181f9aa05651c6964b8",
+      "bytes": 130186
     }
   },
   "publication": {
@@ -199,14 +207,20 @@
       "frozen/rooms.mjs",
       "frozen/scene.css",
       "frozen/study.mjs",
-      "frozen/wardrobe.mjs"
+      "frozen/wardrobe.mjs",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:57.581Z",
+    "sha256": "4a3a181f6efc5d63ae43b291c2dfe5d8d0387936d31b6181f9aa05651c6964b8",
+    "bytes": 130186,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

@@ -244,8 +244,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "ed64b92a3c501f5df75caff95cb68f47a7262cbb9c62658c73d6a6e8bdaf4348",
-      "bytes": 1260
+      "sha256": "7a610062ccf32eefb85f6ffda388372fd6ec1c1e3eea9464af1b49d04a2bb130",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "8d2733f26050fe5bf0d03ef1ed9b92a2cc372943938c7e8d8878d5a5ef6d23d5",
@@ -410,6 +410,14 @@
     "frozen/vendor/three.module.min.js": {
       "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
       "bytes": 338908
+    },
+    "host-runtime-check.json": {
+      "sha256": "62447bcc9a118c0d8f88f73511ba41a45ff3a776229237a643c96a11abca4e9f",
+      "bytes": 1915
+    },
+    "preview.jpg": {
+      "sha256": "a1895d4e65a171bc2f487b38a364f154d37abe99af98cf2f783709403ab534a2",
+      "bytes": 91741
     }
   },
   "publication": {
@@ -455,14 +463,20 @@
       "frozen/textures/strata-n.jpg",
       "frozen/textures/strata.jpg",
       "frozen/vendor/three.core.min.js",
-      "frozen/vendor/three.module.min.js"
+      "frozen/vendor/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:09.016Z",
+    "sha256": "a1895d4e65a171bc2f487b38a364f154d37abe99af98cf2f783709403ab534a2",
+    "bytes": 91741,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

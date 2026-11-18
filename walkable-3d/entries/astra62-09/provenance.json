@@ -223,8 +223,8 @@
       "bytes": 2723
     },
     "host-run-record.json": {
-      "sha256": "2f024352c4bb67934cc1a398bb2eee25d32bb3092e4211210b4df4a86f98835f",
-      "bytes": 1260
+      "sha256": "4df8317551cf3f43897c668e438b74442e9cd198931b6d6d34ddb422cd65a02a",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
@@ -365,6 +365,14 @@
     "frozen/assets/studio.f16": {
       "sha256": "307b8db785eb0348379198f11e606e13fda2391248444e468f09f276bf920967",
       "bytes": 262144
+    },
+    "host-runtime-check.json": {
+      "sha256": "e7818507267827b30f026223cad7c8a978a6f47e0297ca2e5c89878854c53182",
+      "bytes": 2071
+    },
+    "preview.jpg": {
+      "sha256": "3fcc275f4fdf28ca6400cb844b7093be56e4ebe079a3996a3067f7f4cbe8c908",
+      "bytes": 138543
     }
   },
   "publication": {
@@ -405,14 +413,20 @@
       "frozen/vendor/fflate.module.js",
       "frozen/vendor/three.core.min.js",
       "frozen/vendor/three.module.min.js",
-      "frozen/assets/studio.f16"
+      "frozen/assets/studio.f16",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:23.860Z",
+    "sha256": "3fcc275f4fdf28ca6400cb844b7093be56e4ebe079a3996a3067f7f4cbe8c908",
+    "bytes": 138543,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

@@ -22,7 +22,8 @@
       "frozen/walk.js": "walk.js",
       "README.md": "README.md",
       "RUN.json": "RUN.json",
-      "licenses/package/LICENSE": "package/LICENSE"
+      "licenses/package/LICENSE": "package/LICENSE",
+      "frozen/building.js": "building.js"
     },
     "perFileSourceHashes": {
       "art.js": {
@@ -139,8 +140,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "18b1141277ec5736efa19b81a1a1f651143eb201b7e4d87c677d1335b2111b89",
-      "bytes": 1261
+      "sha256": "2308adce1885279d6d50e64c826b718b12adf27e025b95e2f924b594348a79cd",
+      "bytes": 1427
     },
     "launch-prompt.txt": {
       "sha256": "ee887c0d6964f22151bffe3ffbc0589c2766a5c806d93d60ef70614815de9776",
@@ -221,6 +222,18 @@
     "frozen/package/build/three.min.js": {
       "sha256": "170c6789f43217c96b3170f4b42fafe135de7f7cd48497a4218f9757ee1d49fa",
       "bytes": 669884
+    },
+    "frozen/building.js": {
+      "sha256": "5e2992d74200f50f5be4e2f0705092d5bb6155b6ac7c2aff36638b940ec2f976",
+      "bytes": 7809
+    },
+    "host-runtime-check.json": {
+      "sha256": "395753c711211aaf6d62617adcb5764e0b08613d00f1e19eedc1e931671ba417",
+      "bytes": 2069
+    },
+    "preview.jpg": {
+      "sha256": "c4e94cf4d7aa7da7d2b5b6cbbd19ad8688995257e571c71ec14d64d8df4fc29e",
+      "bytes": 129756
     }
   },
   "publication": {
@@ -245,14 +258,21 @@
       "frozen/surfaces.js",
       "frozen/walk.js",
       "licenses/package/LICENSE",
-      "frozen/package/build/three.min.js"
+      "frozen/package/build/three.min.js",
+      "frozen/building.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:19.214Z",
+    "sha256": "c4e94cf4d7aa7da7d2b5b6cbbd19ad8688995257e571c71ec14d64d8df4fc29e",
+    "bytes": 129756,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

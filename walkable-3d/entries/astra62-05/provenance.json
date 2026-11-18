@@ -90,8 +90,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "29736c8dfd87b574ae947b82afa1e3252965d372f1cad96240af206157125775",
-      "bytes": 1260
+      "sha256": "88d1b52519b468434e9b82b6e5a36dc377604a8d0d3d69dc1217afc0baff775c",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "3105a31098ecf4ff4e1e92cbb2058d292440555c6690f6c5150db2b079103d67",
@@ -152,6 +152,14 @@
     "frozen/walk.js": {
       "sha256": "e9a7f6fc5ebccb8a634120ebcdf7134440d2965e6b9b652de7feb48c41c2dc2c",
       "bytes": 7425
+    },
+    "host-runtime-check.json": {
+      "sha256": "eb2e479867a8f3639b3d258eec2bc2db75ffd2a0f37abc0464de05a5727d694c",
+      "bytes": 2068
+    },
+    "preview.jpg": {
+      "sha256": "2bf492aa4d3897c04d6339f2fcb043d3bdfff38a15866efd579bc6e698021a02",
+      "bytes": 81514
     }
   },
   "publication": {
@@ -171,14 +179,20 @@
       "frozen/shaders.js",
       "frozen/shelter.js",
       "frozen/station.css",
-      "frozen/walk.js"
+      "frozen/walk.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:18.510Z",
+    "sha256": "2bf492aa4d3897c04d6339f2fcb043d3bdfff38a15866efd579bc6e698021a02",
+    "bytes": 81514,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

@@ -514,8 +514,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "6ff252e98ff18ef671bc69c41b856dec2e224eff62f4fb45e2e914b414bbad89",
-      "bytes": 1260
+      "sha256": "c0a9ceee095cfcb7a8ad6b163008be39aea460d81a9634e44b63ff4b56fae54d",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "9f42c9b33d422e654ca706fb939d4e50feb685a929d90e72060d515c66cb92c2",
@@ -688,6 +688,14 @@
     "frozen/fonts/dm-sans.woff2": {
       "sha256": "19bf1984956517c35c2bd35b6cdedac12a21d6fcd3596c614ecdfb88b648909d",
       "bytes": 14304
+    },
+    "host-runtime-check.json": {
+      "sha256": "38155519428ceb4b66d92a0440272283fe166e904890562f79fdedced04fb08f",
+      "bytes": 1917
+    },
+    "preview.jpg": {
+      "sha256": "2df68b9a38a9cbdb4f5518e936fe31360cc00e6575a133fb1ffd5d07f1638e54",
+      "bytes": 148770
     }
   },
   "publication": {
@@ -735,14 +743,20 @@
       "frozen/art/wood-n.jpg",
       "frozen/art/wood.jpg",
       "frozen/fonts/baskervville.woff2",
-      "frozen/fonts/dm-sans.woff2"
+      "frozen/fonts/dm-sans.woff2",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:06:50.738Z",
+    "sha256": "2df68b9a38a9cbdb4f5518e936fe31360cc00e6575a133fb1ffd5d07f1638e54",
+    "bytes": 148770,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

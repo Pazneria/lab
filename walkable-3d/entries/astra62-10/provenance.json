@@ -209,8 +209,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "675e89d6d68a48b60951640b86b788316821877bd7bb570ee773feb370a13605",
-      "bytes": 1261
+      "sha256": "c1f06ad1c67490d4631831c1dc3b0ba1ab1d4b9e49189ac580a993cfd89b9f3c",
+      "bytes": 1427
     },
     "launch-prompt.txt": {
       "sha256": "66abbb54666f190fe4ed3987d00e7619b1cf36ba1bb34dd8fca169cedcadf442",
@@ -347,6 +347,14 @@
     "frozen/vendor/three.module.min.js": {
       "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
       "bytes": 338908
+    },
+    "host-runtime-check.json": {
+      "sha256": "a5cc8a6f29153a4441a6c841a2bb55b0e161631727e118aa7397b44f1832d1ea",
+      "bytes": 1916
+    },
+    "preview.jpg": {
+      "sha256": "8277e1ee95690e66c6d08828e31004d473dfced230c83dbd85d87a39339b467c",
+      "bytes": 128798
     }
   },
   "publication": {
@@ -385,14 +393,20 @@
       "frozen/src/stacks.js",
       "frozen/src/workshop.js",
       "frozen/vendor/three.core.min.js",
-      "frozen/vendor/three.module.min.js"
+      "frozen/vendor/three.module.min.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:32.096Z",
+    "sha256": "8277e1ee95690e66c6d08828e31004d473dfced230c83dbd85d87a39339b467c",
+    "bytes": 128798,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

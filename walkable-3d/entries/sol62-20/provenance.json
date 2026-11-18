@@ -22,7 +22,8 @@
       "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": "dependency-closure/examples/jsm/utils/BufferGeometryUtils.js",
       "three-LICENSE": "dependency-closure/LICENSE",
       "three-package.json": "dependency-closure/package.json",
-      "README.md": "README.md"
+      "README.md": "README.md",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": "dependency-closure/examples/jsm/geometries/RoundedBoxGeometry.js"
     },
     "perFileSourceHashes": {
       "camp.js": {
@@ -120,6 +121,12 @@
         "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-20\\node_modules\\three\\package.json",
         "sha256": "aa42494664dba4cf76d89c6975ee38321a402f09a048672e190bad6f13beec93",
         "bytes": 4635
+      },
+      {
+        "path": "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+        "originalPath": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\entrants\\sol\\scene-20\\node_modules\\three\\examples\\jsm\\geometries\\RoundedBoxGeometry.js",
+        "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8",
+        "bytes": 6476
       }
     ],
     "sourceArchive": "C:\\Users\\jmore\\Documents\\Codex\\2026-10-26\\task\\batch-20261117-gpt62\\frozen-ready\\sol-20\\source-preservation.zip"
@@ -139,8 +146,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "f5d52e9ea935be189ac419a7a19036b42aadc836bff74b05d409b39a26a93be7",
-      "bytes": 1255
+      "sha256": "9bdafa3f6d3bcc9536296f3500832a3e2a613cc52b6b260ef47fd8abec390e16",
+      "bytes": 1421
     },
     "launch-prompt.txt": {
       "sha256": "06d2d0940bd33a345dbddf7a0407f190704b3cbbe9e7db6aa899c517b3cd072a",
@@ -221,6 +228,18 @@
     "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
       "sha256": "fda7e946b8e0b5ab39b779206589e7a1079a22eb24efb89d7223e03fdfb1f751",
       "bytes": 35539
+    },
+    "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+      "sha256": "c1b7c9bd2cddff2e3f3a0723f618a3d364a47450e3d25771d21faed88410bec8",
+      "bytes": 6476
+    },
+    "host-runtime-check.json": {
+      "sha256": "bec036822d7dcd11af972a1bcfa1fc5fac850581bd40cf4c526f8696b0a211f3",
+      "bytes": 2060
+    },
+    "preview.jpg": {
+      "sha256": "e360aeecd7ff4e30e402be561664079cf025ab33d7a0d515cd2280fe90c1fb62",
+      "bytes": 98081
     }
   },
   "publication": {
@@ -245,14 +264,21 @@
       "frozen/vendor/three/build/three.core.min.js",
       "frozen/vendor/three/build/three.module.js",
       "frozen/vendor/three/build/three.module.min.js",
-      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js"
+      "frozen/vendor/three/examples/jsm/utils/BufferGeometryUtils.js",
+      "frozen/vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:12:10.503Z",
+    "sha256": "e360aeecd7ff4e30e402be561664079cf025ab33d7a0d515cd2280fe90c1fb62",
+    "bytes": 98081,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

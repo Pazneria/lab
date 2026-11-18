@@ -136,8 +136,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "85027d8e18746314c3d0d2de737515be1087b85df498fae91976cb7684e5e876",
-      "bytes": 1260
+      "sha256": "c67cd03e83e99d161851aeedd8ff08acebcaf99a319f073d7ac4aa411c98d7ca",
+      "bytes": 1426
     },
     "launch-prompt.txt": {
       "sha256": "aae50ca33ba69d24ca8084fc01c4633d9cafe4f6a80ebaa5a142b2e1644d195b",
@@ -222,6 +222,14 @@
     "frozen/wren.js": {
       "sha256": "00e58a4bc7c9a50b46ab76380bdd1b18f6403a0ad0bd0206a75bfe80fde9ad81",
       "bytes": 9134
+    },
+    "host-runtime-check.json": {
+      "sha256": "cd1b5fb7cea9b06017d2b699867ad195f93d0aeef6f7fd1434a3885dd5eec264",
+      "bytes": 1917
+    },
+    "preview.jpg": {
+      "sha256": "e03baacbb787153005b78863e9537569852eaa41c22a3c0dbbf54a51993698b9",
+      "bytes": 123014
     }
   },
   "publication": {
@@ -247,14 +255,20 @@
       "frozen/wharf.js",
       "frozen/workshop.js",
       "frozen/world.js",
-      "frozen/wren.js"
+      "frozen/wren.js",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:07:25.937Z",
+    "sha256": "e03baacbb787153005b78863e9537569852eaa41c22a3c0dbbf54a51993698b9",
+    "bytes": 123014,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

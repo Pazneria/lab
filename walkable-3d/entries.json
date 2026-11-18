@@ -6794,8 +6794,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -6817,21 +6816,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "8302169c30c23b583b67dcb0204cb07a4820253c4aa0dee59b3964f7cc3e0385",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "461d1782cfc2307f29fc8c8035b5ddc89eeab72958095342ddc68369fe908e14",
       "promptVersion": "01-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "world.json",
         "world.bin.gz"
@@ -6855,8 +6858,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged."
       ],
       "documents": [
         {
@@ -6878,6 +6880,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -6889,13 +6895,15 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "06c1c29c8e87aa2f2f6262fe8e173aff1dd7932fd21776cb9364e1074184502e",
       "promptVersion": "02-gpt62",
-      "availability": "unverified",
+      "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Opaque-origin host startup: texSubImage3D rejected a tainted canvas. Original scene files and sandbox unchanged.",
       "hostFetchAssets": [
         "courtyard.mesh"
-      ]
+      ],
+      "failureCategory": "host-policy",
+      "admissionWithheld": true
     },
     {
       "id": "astra62-03",
@@ -6911,8 +6919,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -6934,21 +6941,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "5d7a6c2b85b7d5f26efd8b200579ce1dea4ccefdfbcdc9e7fd95d9e037eb26a5",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "860e305de99f3baecc1de82359063faa7985c53622f5cdd3615223c0606abdee",
       "promptVersion": "03-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "observatory.mesh.gz"
       ]
@@ -6967,8 +6978,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -6990,21 +7000,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "37e97576cfc96d25b4cee9d1f014339b231edae74ebcbba98a420055c723928e",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "a6eb4a6a9098a7f58fbfdb42f52b7387e490abd02c9ad04e45b561319cdc21a5",
       "promptVersion": "04-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "palm-house.mesh.gz",
         "surface-studies.bin.gz"
@@ -7029,8 +7043,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7052,21 +7065,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "f2f6fb7977f0eaaa538bf2bad63015ccbae36f4805e6c4912bbfe5becc486c1a",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "d28f9015869b7d738058dca1a53621e2893cd4907ce6bcc0e746cfe598cfb3f4",
       "promptVersion": "05-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "astra62-06",
@@ -7082,8 +7099,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7105,21 +7121,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "f8eefa1e511857ab64fc9d1808df7643f5340266332a375fbea12e993ce6b29e",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "7ed2f27b66ab17f195155d1790e64f4f024846b08526ca28a67e8fe947c7a685",
       "promptVersion": "06-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "cavern.mesh",
         "field.json",
@@ -7144,8 +7164,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7167,21 +7186,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "87e5cd99817a10d70ddcfaf63bd7a805f74377afe374b8d86653db1b6e6b1942",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "9e0f32533055bd0da566f2e89bddb930a551fecfe4c6c34bed86c80474c8ddde",
       "promptVersion": "07-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "assets/museum.json",
         "assets/museum.bin",
@@ -7205,8 +7228,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7228,21 +7250,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "9e103c145684f24d4c04d13eae3fee10492746bab914549791b1db02ec94310d",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "b4d140187f3bc8c27fa094767ea7d45b3ebbfd3d9d323402a236b0d1e1d6d992",
       "promptVersion": "08-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "astra62-09",
@@ -7258,8 +7284,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7285,21 +7310,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "9af268b34fc80dfbfacb0a1f58ad996896e87bb00ede6a7f9e2fd13984fa0e98",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "b7a9286acf170c35f77ab78f5c3c531bbc5e0a4ec2b48e8ed7205a291a7a75ed",
       "promptVersion": "09-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "assets/bay.json",
         "assets/bay-geometry.gz",
@@ -7321,8 +7350,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7344,21 +7372,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "2bb1afa935e43e39bdf045a25472add7a8a948b2ed2c8ddf76dd9591cbebc62a",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "678a17268173a56d7f3cc5f9b5deb00426ac9d90b0c9ad0cca26e699e2c9862a",
       "promptVersion": "10-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "assets/library.mesh.gz"
       ]
@@ -7377,8 +7409,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7400,21 +7431,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "1e0bc31346e827e9a64ad050b3889933cf7edad9c71b3322ba2fb5fd866c2ee1",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "c644e87858b8d8c16b25c563b77e9cfc1a44c86bfb3570d9c255054d53e3a1ec",
       "promptVersion": "11-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "assets/scene.json",
         "assets/world.bin.gz"
@@ -7434,8 +7469,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7457,21 +7491,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "a72f6540c827bee3ac264a82b9dcb6129361d8e711364b7db69b6e7498d9dccc",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "55262c56c88175c4b4efa3b96ce539e7e16b92be128106b53b08f7f619d78781",
       "promptVersion": "12-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "assets/scene.json",
         "assets/room.mesh"
@@ -7491,9 +7529,8 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied.",
-        "Producer Astra13 records stop reading about four seconds after the deadline, says editing ended before it; final shader changes were not validated."
+        "Producer Astra13 records stop reading about four seconds after the deadline, says editing ended before it; final shader changes were not validated.",
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7507,21 +7544,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "9befd10b9f8de85a49674d5632d8b1bce30eccca59a2ed2c8b44d9402714439d",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "2f72b5c6cc3add2baf8848969938f9ff1cddf905fc3820ac280551c5a65e2611",
       "promptVersion": "13-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "astra62-14",
@@ -7537,8 +7578,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged."
       ],
       "documents": [
         {
@@ -7560,6 +7600,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -7571,10 +7615,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "61ee3dca5e270a09f8414fc6d5ff1b67a142d3b28df1e022c9aea5a7d6595623",
       "promptVersion": "14-gpt62",
-      "availability": "unverified",
+      "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Local browser startup shader compilation failed: ERROR0:135 'patch': illegal reserved word and syntax error. Original shader unchanged.",
+      "failureCategory": "runtime",
+      "admissionWithheld": false
     },
     {
       "id": "astra62-15",
@@ -7590,8 +7636,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7613,21 +7658,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "c0c5e6a6e4c8df5cf636ab84d927a17cb9f5dcf44cf3a1e03b4df1d3c34ba771",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "14586604d4931878eb115d435c665b490c53f3087a14b10b061e08bb017308b0",
       "promptVersion": "15-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "rooms.bin.gz"
       ]
@@ -7646,8 +7695,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7665,21 +7713,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "56002cc4ccb20a987aa7f7e74bc0814ab68362fce8e3ad3f05793d79a117be9c",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "0b9248fbaeb8c73f2bbceea6350c646bda746fa6b3fcb02c7f8d3d39286580cc",
       "promptVersion": "01-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-02",
@@ -7695,8 +7747,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7714,6 +7765,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -7723,17 +7778,17 @@
           "./vendor/three/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "fac63954d379b25e5515c478f1f69ae43eeca8580c173b132dd4e0374d0cf0dc",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "397b2a19d8aaaf4b714c4a5440f8f6f8c7849979a4fec06a6198a78595b66be9",
       "promptVersion": "02-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-03",
@@ -7749,8 +7804,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7768,21 +7822,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "8104983c6cfb013d9e74dcf5dd225b245b35e45f3bc5b9b36ed671dd3ec3f15e",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "fc71de0ee7474f396440e9c03b3ecf58297e1dc46f5087a001789577348dca49",
       "promptVersion": "03-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-04",
@@ -7798,8 +7856,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7817,6 +7874,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -7826,17 +7887,17 @@
           "./vendor/three/build/three.module.js"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "6a6a0dd8d0780f48439ffd901466c05818ebe794d9b19dfeb99022cb8ebfe254",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4e928330e1669d7d8bfb79dcbcd507c791e5a40f17cc6dee77bcfc799b48dc71",
       "promptVersion": "04-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-05",
@@ -7852,8 +7913,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7871,21 +7931,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "1f9d6126bd7f78b2b2767121a61767e4a62699d8c805cd36e5cb383fb69f76ff",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "1097599c2bf6838165c219472c5a1a939c8f4161e86fecee10c31563f5ab4644",
       "promptVersion": "05-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-06",
@@ -7901,8 +7965,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7920,21 +7983,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "362b18de9883dc4a796bd1f1e8c43e3409766ccd10a7b7aa89f54d5fefba0ee3",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4c2770d21fdb046beb10ec6b1a1c106c772692868f7e6f958cc38bbf854081d1",
       "promptVersion": "06-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks.",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured.",
       "hostFetchAssets": [
         "scene.bin"
       ]
@@ -7953,8 +8020,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -7972,21 +8038,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "5b33c95323b76596d3e027a7ab40ca5af586fb13045bc4de9b20d54f8a5a386b",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "6c58a391fd9f016b790db6cff9bab5702af45ed1fa9a33819b0549e5bbec028b",
       "promptVersion": "07-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-08",
@@ -8002,9 +8072,8 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied.",
-        "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp."
+        "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp.",
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8026,21 +8095,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "807c5fac8ea0a70b43fef5f9d4269524232f5dc55860e0b78733415a31753995",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "db9c29ab96a103399fc74123552a487b78ebc353da4a96fb4f9054d521356526",
       "promptVersion": "08-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-09",
@@ -8056,8 +8129,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8075,21 +8147,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "987c09687210cb3668cc68514f1d0c229c20f592131c82f043457a68ea5c7ce3",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "45fef27451fbab1622f753f9cbac6ad3ccac11a670b9f4b63a21b27700af1672",
       "promptVersion": "09-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-10",
@@ -8105,8 +8181,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8124,21 +8199,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "64879e38ddc22c3bb64a6f13305d0d36e8da8c4c05223ec9d438ef8add49dea2",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "1ce8f9c1f431e8c622ae0dca412aea25f0d3cb94176ee46e1615df6e3424f10d",
       "promptVersion": "10-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-11",
@@ -8154,8 +8233,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8173,21 +8251,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "2d41c8b57d37f732cb2a29b0069dc03c1552e585b8b9959d51ae50477de50370",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "eec7bd8f58135d9f519d7cb2f5ee0055a11b52e88c9fc000da9dc69c0281d1e1",
       "promptVersion": "11-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-12",
@@ -8203,9 +8285,8 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied.",
-        "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp."
+        "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp.",
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8227,21 +8308,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "cd5fbd27366e5411b851334cd7f9722ef9a832f4ffae75f1518a87a55e0fc9a2",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "e4cf88a6d5b9756a272e398534ce750cec7b04b3fb2444730af6b7c5754f1cb4",
       "promptVersion": "12-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-13",
@@ -8257,9 +8342,8 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied.",
-        "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp."
+        "Producer times first successful write after an earlier denied implementation attempt; conservative cap compliance cannot be independently established from that timestamp.",
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8277,21 +8361,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "e03afdeaa523ea3b691f4078eaa16236ff2362fcd4ad77f8fe4ff5d6f761b0bf",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "d1cef2fc1a68feea31b78397563560aee2fdc9ad2765a0baa2114e4b8464ccdb",
       "promptVersion": "13-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-14",
@@ -8307,8 +8395,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8326,21 +8413,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "2b23ce7c1d01f933ef0971db099a436c4bf826f9d6e92e127b00e5647c3ff8e7",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "5baa4ed7f824de277ee6507dab6a7f4950ea8345f7c84ba9117636d06a1a4b6c",
       "promptVersion": "14-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-15",
@@ -8356,8 +8447,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8375,21 +8465,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "7cce84921212b7994c463207f70b56f3fd46bdb1507dbf3d77203c5a493fb6d1",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "32a40ab84d730662b814ce64fa54019162e56b905387b97e1670b4f4b3ac7e6e",
       "promptVersion": "15-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-16",
@@ -8405,8 +8499,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8424,21 +8517,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "af58464cca640e15788f3f6677c78e7d64c00a03a86a7bd680d298e3dd044bf1",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4a1ac216513276ca71c6c76cfbd6a67a0061a02e8223b0009d304ced2a7e2f87",
       "promptVersion": "16-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-17",
@@ -8454,8 +8551,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8473,21 +8569,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "7bd2029d46c6a9ebdb9018d626326a01c7177b9ebed0953a32df7ecf1b5e3d37",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "e60639f66f65c8a4f4cb3f747b991f862337872cba497c82414fae6a9a89583f",
       "promptVersion": "17-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-18",
@@ -8503,8 +8603,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8522,21 +8621,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "aaa85b4d5f5bfd6999b91027760983c546ae8cbdfd13e3544c3c43c0e7eea77b",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "c7ec51f6a87b6a21c598009addf640e9bb51a45d679889bdc8058e7ddbaeed96",
       "promptVersion": "18-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-19",
@@ -8552,8 +8655,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8571,21 +8673,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "731420e0928f1d1703f8adf2b9758403e31bfd118de094e972f7a6aaa87be731",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "bc6970a491e2f0ef710b667caec5fb83fc4f232b0c7317d4e109b6d5e018ed31",
       "promptVersion": "19-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-20",
@@ -8601,8 +8707,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8620,6 +8725,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -8629,17 +8738,17 @@
           "./vendor/three/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "421c4219a6644406b77b97b2b1b350f18fe0de16656ba205ffe01accfc79cee9",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "75939c433226a28230846ba7a2c6559c9b3268282eb16f1500040e8b495f1ceb",
       "promptVersion": "20-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-21",
@@ -8655,8 +8764,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8674,21 +8782,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "82321408b1a18b098904a5f19873d955dda1010d29121093489b02891537691f",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "081a22ebf92aeeeaba1e321aff8af676377759f8b72a09b7478c42181cc101ee",
       "promptVersion": "21-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "sol62-22",
@@ -8704,8 +8816,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8723,6 +8834,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -8732,17 +8847,17 @@
           "./vendor/three/"
         ]
       ],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "de7841eff58ba6833ccf1cfd151f6f2d6598766d96ddc6454567df1a7b75d8a9",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "73c8d541871efe388841f87637bcecc07796e804f23e1b9c778d083da1f44903",
       "promptVersion": "22-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "astra62-18",
@@ -8758,8 +8873,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
       ],
       "documents": [
         {
@@ -8781,6 +8895,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -8792,10 +8910,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "ab6d4895998da8c597a6a0dbe396210a318d388ee8ab435229ecfb1d35032a04",
       "promptVersion": "18-gpt62",
-      "availability": "unverified",
+      "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
+      "failureCategory": "host-policy",
+      "admissionWithheld": true
     },
     {
       "id": "astra62-19",
@@ -8811,8 +8931,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
       ],
       "documents": [
         {
@@ -8834,6 +8953,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -8845,10 +8968,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "4179669aa9d2af39d8f7abe37752ea3468ef460415b197deb9e1f1594d47affe",
       "promptVersion": "19-gpt62",
-      "availability": "unverified",
+      "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
+      "failureCategory": "host-policy",
+      "admissionWithheld": true
     },
     {
       "id": "astra62-20",
@@ -8864,8 +8989,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
       ],
       "documents": [
         {
@@ -8887,6 +9011,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -8898,10 +9026,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "b5af72fec86251edc006ed633782d5eff1dac4cb3bf178fee71b8365530cfb06",
       "promptVersion": "20-gpt62",
-      "availability": "unverified",
+      "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
+      "failureCategory": "host-policy",
+      "admissionWithheld": true
     },
     {
       "id": "astra62-16",
@@ -8917,8 +9047,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
       ],
       "documents": [
         {
@@ -8940,6 +9069,10 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
@@ -8951,10 +9084,12 @@
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "67cdd49e76c02b407488cc33c3e358a7ceadb610ef56ff93974ab6529b465164",
       "promptVersion": "16-gpt62",
-      "availability": "unverified",
+      "availability": "failed",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session.",
+      "failureCategory": "host-policy",
+      "admissionWithheld": true
     },
     {
       "id": "astra62-17",
@@ -8970,8 +9105,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -8993,21 +9127,25 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "753b0e37fc30d5a0cbfa6b8531751c49c4996ea62a6a205c5ff8df2fe90378ce",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "3f746df1f559334bdea97d274f4de747213cf9ef789a3f33ca6f4632fcba5721",
       "promptVersion": "17-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     },
     {
       "id": "astra62-22",
@@ -9023,8 +9161,7 @@
       "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
       "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
       "limitations": [
-        "CPU-only preservation/import stage. Hosted startup, visual appearance, interactive behavior and performance remain unverified.",
-        "Genuine preview pending separate validation; no generated image or score supplied."
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
       ],
       "documents": [
         {
@@ -9046,21 +9183,77 @@
         {
           "label": "Controller request, timing caveats and importer QA limits",
           "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
         }
       ],
       "readySelector": "canvas",
       "hostPathReplacements": [],
-      "previewAvailable": false,
-      "previewAlt": "Genuine preview pending separate validation.",
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
       "archiveSha256": "86b9e26f0df91ebe6e431e974bbe6906030eadd56dc011ee81267df27ed23a69",
       "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
       "archiveLocation": "retained-outside-repository",
       "htmlSha256": "d712b95bf2e4e276dd65de21a128e34b446956766a0bd6784831f6052bd0dd26",
       "promptVersion": "22-gpt62",
-      "availability": "unverified",
+      "availability": "ready",
       "completionStatus": "completed",
       "webgl": "WebGL (host startup unverified)",
-      "runtimeVerification": "NOT RUN. Static review pending; no importer browser, renderer, server, movement or performance checks."
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
+    },
+    {
+      "id": "astra62-21",
+      "title": "Ashwick Roost · Keeper's Quarters",
+      "description": "A modest bedroom, gear/service passage and one large warm roost.",
+      "promptId": "21",
+      "comparisonModel": "astra62",
+      "requestedConfiguration": "GPT-6.2 Astra / XHIGH (requested; standard service)",
+      "modelDisclosure": "Parent requested GPT-6.2 Astra / XHIGH / default (standard) service. Producer sees GPT-6 family metadata; exact serving variant, effective effort and service tier are unavailable and not independently verified.",
+      "buildWindow": "One-hour first-implementation cap. Producer timing claims retained unchanged; independent actual timing and compliance unknown.",
+      "interruptions": "Original producer interruption history preserved; parent confirms completed handoff and cleanup. No importer midrun messages or deadline extension.",
+      "controls": "Use the original entry control and controls in the unchanged producer README.",
+      "producerChecks": "Producer reports bounded CPU-only source/build/geometry checks. See original documents; no importer runtime or performance pass is claimed.",
+      "performanceEvidence": "No measured frame time or performance grade. CPU construction and geometry checks do not establish GPU behavior.",
+      "limitations": [
+        "Local startup/input/unload smoke only; no full-route correctness or GPU performance grade."
+      ],
+      "documents": [
+        {
+          "label": "Original producer RUN-RECORD.txt",
+          "path": "RUN-RECORD.txt"
+        },
+        {
+          "label": "Exact canonical initial launch",
+          "path": "launch-prompt.txt"
+        },
+        {
+          "label": "Static host compatibility review candidates",
+          "path": "source-audit.json"
+        },
+        {
+          "label": "Controller request, timing caveats and importer QA limits",
+          "path": "host-run-record.json"
+        },
+        {
+          "label": "Separate host startup/capture evidence and verification limits",
+          "path": "host-runtime-check.json"
+        }
+      ],
+      "readySelector": "canvas",
+      "hostPathReplacements": [],
+      "previewAvailable": true,
+      "previewAlt": "Genuine default startup view captured from the unchanged scene in the local opaque host sandbox.",
+      "archiveSha256": "f32f6de9382971c6611e3648928b80628f1554e78a0b0b5f94ae3e8ce2565af2",
+      "archiveKind": "Host-created original source/build/record snapshot retained outside Git and Pages; producer archives remain in the private frozen queue.",
+      "archiveLocation": "retained-outside-repository",
+      "htmlSha256": "499d7f96cb2cb40bc745a8bbeb4531c453b453b73b928230d17e705c115b8f16",
+      "promptVersion": "21-gpt62",
+      "availability": "ready",
+      "completionStatus": "completed",
+      "webgl": "WebGL (host startup unverified)",
+      "runtimeVerification": "Passed local Pages-shaped host startup, original start control, nonblank default-view capture, bounded W key down/up and R reset dispatch without runtime errors, and iframe/context unload. Full-route correctness, hosted production behavior and performance remain unmeasured."
     }
   ],
   "prompts": [

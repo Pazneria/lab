@@ -19,7 +19,8 @@
       "frozen/vendor/three.module.min.js": "vendor/three.module.min.js",
       "frozen/world.mjs": "world.mjs",
       "README.md": "README.md",
-      "licenses/vendor/LICENSE": "vendor/LICENSE"
+      "licenses/vendor/LICENSE": "vendor/LICENSE",
+      "frozen/build.mjs": "build.mjs"
     },
     "perFileSourceHashes": {
       "app.mjs": {
@@ -116,8 +117,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "3fab4dee83b9fc580c7a2937a45c5925a98f838471639a0491976a481c081f62",
-      "bytes": 1254
+      "sha256": "66a82e4ab920545a31234e0b204dc282d7025b03ba841cbedee094e508a17c6c",
+      "bytes": 1420
     },
     "launch-prompt.txt": {
       "sha256": "7a667bba66962fb6fbe3df8991d84333c8e741781f9afb89d2ad6391e2490b84",
@@ -186,6 +187,18 @@
     "frozen/vendor/three.module.min.js": {
       "sha256": "e2b5ee6bccd38fd6d8a2428546b83c5f2426d84b152ef82be8055556e3b40eb6",
       "bytes": 338908
+    },
+    "frozen/build.mjs": {
+      "sha256": "62b807bce87ffd3c9b3c30fd79771887174da99b84338d03ef4d3a2442dfb702",
+      "bytes": 9701
+    },
+    "host-runtime-check.json": {
+      "sha256": "12ce6400c5ff478b11ad99430712856c2e42410ab01869ffae98397eac4d0670",
+      "bytes": 2062
+    },
+    "preview.jpg": {
+      "sha256": "dc50686509de2e455879367686a7fc236c97f9ae7cae16fd46e60372efedc01d",
+      "bytes": 122569
     }
   },
   "publication": {
@@ -207,14 +220,21 @@
       "frozen/world.mjs",
       "licenses/vendor/LICENSE",
       "frozen/vendor/three.core.min.js",
-      "frozen/vendor/three.module.min.js"
+      "frozen/vendor/three.module.min.js",
+      "frozen/build.mjs",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:11:56.552Z",
+    "sha256": "dc50686509de2e455879367686a7fc236c97f9ae7cae16fd46e60372efedc01d",
+    "bytes": 122569,
+    "method": "Browser compositor canvas-element screenshot, center-cropped/resized using sharp; no WebGL buffer export",
+    "noPerformanceGrade": true
   }
 }

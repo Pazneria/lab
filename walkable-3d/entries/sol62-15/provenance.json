@@ -123,8 +123,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "e93d9f694140b8ea2681536e9fb24041a780940c2eb0af178182bb8dc99fb9f6",
-      "bytes": 1255
+      "sha256": "f6ee6a47df2bd527c1c62cff248817d00c0bf2e73eb32f58754a1d50c5722991",
+      "bytes": 1421
     },
     "launch-prompt.txt": {
       "sha256": "8925bbac5f3e307d6b095ae2b3ce9bda3cd1e83589ed958f0fae60ebdc94e0f2",
@@ -141,6 +141,14 @@
     "frozen/index.html.txt": {
       "sha256": "32a40ab84d730662b814ce64fa54019162e56b905387b97e1670b4f4b3ac7e6e",
       "bytes": 609263
+    },
+    "host-runtime-check.json": {
+      "sha256": "1d8df8a04b495c91fba86c621bb3251ddf12a641bb46073f7900e85a41590e60",
+      "bytes": 1907
+    },
+    "preview.jpg": {
+      "sha256": "b89f22456fdd44b7f1af1633d9ec27228aefe9a2deb1058497c8c8d015692e95",
+      "bytes": 121069
     }
   },
   "publication": {
@@ -149,14 +157,20 @@
       "launch-prompt.txt",
       "README.md",
       "source-audit.json",
-      "frozen/index.html.txt"
+      "frozen/index.html.txt",
+      "host-runtime-check.json",
+      "preview.jpg"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
     ]
   },
   "previewCapture": {
-    "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "status": "captured",
+    "capturedAt": "2026-11-18T04:08:37.226Z",
+    "sha256": "b89f22456fdd44b7f1af1633d9ec27228aefe9a2deb1058497c8c8d015692e95",
+    "bytes": 121069,
+    "method": "Actual canvas pixels exported in the existing host default viewpoint",
+    "noPerformanceGrade": true
   }
 }

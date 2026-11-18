@@ -123,8 +123,8 @@
   ],
   "files": {
     "host-run-record.json": {
-      "sha256": "48c2b90cf06eeaec98cd4fb2d2faab0cd813e3ec36298dc58fa7cae1a1c87a84",
-      "bytes": 1261
+      "sha256": "830ded1403e8af2a55de8cfda76afac43c7b45be985141d9aa7bd9120b4f427f",
+      "bytes": 1298
     },
     "launch-prompt.txt": {
       "sha256": "7284d29c88d7f299ff9ec9a24afad0de2bc05fc18f6ba488a963998decad2ccf",
@@ -205,6 +205,10 @@
     "frozen/scene.frag": {
       "sha256": "74f7de2e68ce0d1ab671f94fea6003537ab68c02025e3745e4974569c44ffe6e",
       "bytes": 4723
+    },
+    "host-runtime-check.json": {
+      "sha256": "509252d3c01a03ed85a96040cc5c05986bf0db3ceaca346dfc18370b31723658",
+      "bytes": 289
     }
   },
   "publication": {
@@ -229,7 +233,8 @@
       "frozen/surface.rgba.gz",
       "frozen/viewer.js",
       "frozen/scene.vert",
-      "frozen/scene.frag"
+      "frozen/scene.frag",
+      "host-runtime-check.json"
     ],
     "retainedOutsidePages": [
       "Full source/build preservation archive and development/check/cache files outside Git and Pages."
@@ -237,6 +242,6 @@
   },
   "previewCapture": {
     "status": "uncaptured",
-    "reason": "Browser/GPU validation prohibited on Windows while entrants execute; no separate safe execution environment available to this worker."
+    "reason": "Additional11 exact asset/three font URL approval pending; this entry was not launched in capture session."
   }
 }
