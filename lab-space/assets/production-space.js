@@ -51,7 +51,7 @@ function targetKey(target){if(target?.comparison)return screen.hitTest(target.co
 function centeredTarget(){const point=canvasCenter(canvas.getBoundingClientRect());return point?engine?.pick(point.x,point.y):null;}
 const destinationNames={worlds:'SceneBench',character:'CharacterBench',animation:'Animation Studio',catalog:'Catalog',home:'Home'};
 function aimedAction(target){
-  if(target?.comparison){const hit=screen.hitTest(target.comparison);if(!hit)return null;return {hit,label:hit.kind==='entry'?`Select scene ${hit.slot?'B':'A'}`:hit.kind==='next'?'Next comparison':hit.kind==='previous'?'Previous comparison':hit.kind==='vote'?(hit.choice==='tie'?'Tie':`Prefer ${hit.choice.toUpperCase()}`):'Use comparison'};}
+  if(target?.comparison){const hit=screen.hitTest(target.comparison);if(!hit)return null;return {hit,label:hit.kind==='entry'?`Open scene ${hit.slot?'B':'A'}`:hit.kind==='next'?'Next comparison':hit.kind==='previous'?'Previous comparison':hit.kind==='vote'?(hit.choice==='tie'?'Tie':`Prefer ${hit.choice.toUpperCase()}`):'Use comparison'};}
   return target?.destination?{label:destinationNames[target.destination]||'Use object'}:null;
 }
 function updateAim(){
@@ -152,10 +152,10 @@ function openStation(kind){
 }
 function activate(target){
   const action=aimedAction(target);
-  if(locked&&action&&(action.hit?.kind==='entry'||target?.destination&&target.destination!=='worlds')){
+  if(locked&&action&&target?.destination&&target.destination!=='worlds'){
     // A destination leaves this document. Select it in-world; Escape is the
     // intentional release before its ordinary accessible navigation controls.
-    selectedAction={scene:action.hit?.kind==='entry',destination:target?.destination,label:action.label.replace(/^Select /,'')};
+    selectedAction={destination:target.destination,label:action.label.replace(/^Select /,'')};
     message(`${action.label} selected. Press Escape to open its controls.`);return;
   }
   selectedAction=null;
@@ -167,7 +167,6 @@ $('worlds-link').addEventListener('click',event=>{if(active&&roomReady&&!failed)
 enterButton.addEventListener('click',enter);
 function openHelp(){
   if(!inputReady())return;const selected=selectedAction;selectedAction=null;releaseLook();stop();
-  if(selected?.scene){screen.inspect();return;}
   $('selected-action').hidden=!selected;$('selected-action').textContent=selected?`${selected.label} selected. Choose the matching destination below.`:'';
   help.showModal();$('resume-look').focus({preventScroll:true});
 }

@@ -518,13 +518,11 @@ test('intentional catalog and Home object clicks open their manual controls with
   }
 });
 
-test('physical SceneBench selection retains capture until Escape and explicit entry navigation preserves the west return pose',async()=>{
+test('physical SceneBench scene click opens the selected entry and preserves the west return pose',async()=>{
   for(const pose of [realNavigation.spawn(),realNavigation.exhibits.worlds.approach]){
     const f=await controllerFixture();f.qa.teleport(pose);f.flush();f.picked={comparison:{key:'preview-a'}};await f.byId('explore').emit('click');
     await f.canvas.emit('pointerdown',{button:0,pointerId:1,clientX:500,clientY:300,pointerType:'mouse'});
-    assert.equal(f.byId('comparison-dialog').open,false);assert.equal(f.document.pointerLockElement,f.canvas);
-    await f.canvas.emit('keydown',{code:'Escape'});assert.equal(f.byId('comparison-dialog').open,true);f.screenApi.activate({key:'preview-a'});
-    assert.deepEqual(f.log.slice(-2).map(e=>e.event),['dispose','assign']);
+    assert.equal(f.byId('comparison-dialog').open,false);assert.deepEqual(f.log.slice(-2).map(e=>e.event),['dispose','assign']);
     assert.match(f.log.at(-1).url,/walkable-3d\/scene.html/);assert.equal(f.routes.length,0);
     const approach=realNavigation.exhibits.worlds.approach;
     for(const key of ['x','z','yaw','pitch'])assert.equal(f.history.state.labPosition[key],approach[key]);
